@@ -1,49 +1,26 @@
-
 sudo: required
 language: node_js
 node_js:
-  - "node"
-
+- node
 services:
-  - docker
-
+- docker
 dist: trusty
-sudo: required
-
 branches:
   only:
-    - master
-    - develop
-
+  - master
+  - develop
 before_install:
-  # install heroku CLI
-  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
-  # login to docker registries (dockerhub + heroku)
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
-
-# Install requirements
+- wget -qO- https://toolbelt.heroku.com/install.sh | sh
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
 install: docker-compose build
-
 script:
-  # build docker images
-  - docker build -t eepmoody/open5e-api-beta
-  - docker tag eepmoody/open5e-api-beta registry.heroku.com/open5e-api/web
-
+- docker build -t eepmoody/open5e-api-beta
+- docker tag eepmoody/open5e-api-beta registry.heroku.com/open5e-api/web
 deploy:
   provider: script
-  script: 
-    # push to dockerhub & heroku
-    docker push eepmoody/open5e-api-beta;
-    docker push registry.heroku.com/open5e-api/web;
+  script: docker push eepmoody/open5e-api-beta; docker push registry.heroku.com/open5e-api/web;
   on:
     branch: master
-
-# after_success:
-#   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-#   - chmod +x send.sh
-#   - ./send.sh success $WEBHOOK_URL
-# after_failure:
-#   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-#   - chmod +x send.sh
-#   - ./send.sh failure $WEBHOOK_URL
+  api_key:
+    secure: XT/6aiNfeLTwGWJXvwDgLEsbd+FLcDRAojrlod+bRb7FxvkEnjjZI9tswKVpc3lFudgNQy+uGtVmocajRCRVenkYklpeQQBB3C7KJukz04UpGdntzpS0ITpc3i3BUbtKKTSO72aDSPSR6q8ypXxeI1BTxHJ3tHVtnNGjzC//3v2tXHpGgSsAMWXEGQpZkCEPJHFj7NOXIEyOKHumm8ggt7eZv2LNg5r8x0DeLfrdUts7K7HbORliKeF+FwSU1lSFKWcKF1ngZbxgnd4PTfpePpXZfx3iv8CpIpVErq6B7VmCHw07j8OlTkRaiMteXp0anN3X9a9lFAbB/cV1tMfDeElyzJ/Gp1N3+MOMu9odmxzcAa/J1MW56styrbW9xsIu05YS8zxWX5czzO0scydwNZ+FqisnomiwvRyFBd0Co5w6Cy2tRyrH4hx6YNW4fdzMVgdAxo4t6uYp0kwS/VXragSucifOBDxRr7MYXXqXd2H4qib+GVQap77zg+eWAhgsxcNY108h+iwn6IcKgUDJweRhpPSfM6cFogYfDPGByhvhVEOW+ytWcvWWOpfVVqpXGJS+yBQCTD79Q74PsOKumhN9beP3ENczKf6mZG5mZ51N39P9W17E4JW6vz+VfmT4gdD6iuDIt+ZGyf2AK/Et99NZGbOqgTVX7U1ERXCPkO8=
