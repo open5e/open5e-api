@@ -39,33 +39,4 @@ pipenv run python manage.py rebuild_index #rebuild search index to reflect model
 
 You will want to leave the server terminal running while you launch the UI in a separate termainal so you can observe requests.
 
-If all you want to test against is the API/backend, you're done! Otherwise you'll want to open another window and...
-
-
-# Build and run the UI layer
-
-Open5e uses the Nuxt framework for Vue.js, which takes care of a lot of the architectural work for the frontend layer while allowing a large amount of flexibility.
-
-## Build Setup
-
-From /open5e
-
-``` bash
-# install dependencies
-$ npm install # Or yarn install
-
-# Optional: point it at a real API by setting API_URL=https:someurl.com
-# serve with hot reload at localhost:3000. If you 
-$ npm run dev
-```
-
-Other build options:
-```
-# build for production and launch server
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+If all you want to test against is the API/backend, you're done! Otherwise you'll want to run the UI layer from www.github.com/eepmoody/open5e.
