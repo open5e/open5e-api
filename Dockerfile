@@ -6,11 +6,9 @@ ENV DJANGO_SECRET=default
 ENV OPEN5E_DEBUG=False
 ENV SERVER_NAME=localhost
 
-COPY ./server /server
+COPY ./ /
 
-COPY ./data /data
-
-WORKDIR /server
+WORKDIR /
 
 RUN sh scripts/generate_self_signed_cert.sh && \
   pip install pipenv && pipenv install && \
