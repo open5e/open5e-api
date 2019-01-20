@@ -16,7 +16,6 @@ script:
 - docker build -t eepmoody/open5e-api-beta .
 - docker push eepmoody/open5e-api-beta
 - docker tag eepmoody/open5e-api-beta registry.heroku.com/open5e-api-beta/web
-- docker push registry.heroku.com/open5e-api-beta/web
 deploy:
   skip_cleanup: true
   app: open5e-api-beta

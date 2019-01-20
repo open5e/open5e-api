@@ -1,6 +1,7 @@
 version: '3'
 services:
   api-beta:
+    build: .
     environment:
       - OPEN5E_DEBUG=False
       - 'DJANGO_SECRET=${DJANGO_SECRET}'

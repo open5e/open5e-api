@@ -6,12 +6,13 @@ ENV DJANGO_SECRET=default
 ENV OPEN5E_DEBUG=False
 ENV SERVER_NAME=localhost
 
-COPY ./ /
+ADD . /
 
 WORKDIR /
 
-RUN pip freeze > requirements.txt && \
-  sh scripts/generate_self_signed_cert.sh && \
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN sh scripts/generate_self_signed_cert.sh && \
   pip install pipenv && pipenv install && \
   pipenv run python manage.py migrate && \
   pipenv run python manage.py populatedb --flush /data/WOTC_5e_SRD_v5.1/
