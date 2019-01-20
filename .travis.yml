@@ -1,7 +1,10 @@
 
-language: node_js
+sudo: requiredlanguage: node_js
 node_js:
   - "node"
+
+services:
+  - docker
 
 dist: trusty
 sudo: required
@@ -11,16 +14,35 @@ branches:
     - master
     - develop
 
+before_install:
+  # install heroku CLI
+  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
+  # login to docker registries (dockerhub + heroku)
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
+
 # Install requirements
-install: npm install
+install: docker-compose build
 
-script: npm run build
+script:
+  # build docker images
+  - docker build -t eepmoody/open5e-api-beta
+  - docker tag eepmoody/open5e-api-beta registry.heroku.com/open5e-api/web
 
-after_success:
-  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-  - chmod +x send.sh
-  - ./send.sh success $WEBHOOK_URL
-after_failure:
-  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-  - chmod +x send.sh
-  - ./send.sh failure $WEBHOOK_URL
+deploy:
+  provider: script
+  script: 
+    # push to dockerhub & heroku
+    docker push eepmoody/open5e-api-beta;
+    docker push registry.heroku.com/open5e-api/web;
+  on:
+    branch: master
+
+# after_success:
+#   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+#   - chmod +x send.sh
+#   - ./send.sh success $WEBHOOK_URL
+# after_failure:
+#   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+#   - chmod +x send.sh
+#   - ./send.sh failure $WEBHOOK_URL

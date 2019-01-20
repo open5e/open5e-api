@@ -1,1 +1,1 @@
-web: npm run start
+web: docker-compose build && docker-compose up
