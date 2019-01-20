@@ -14,11 +14,16 @@ before_install:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 script:
+- pip freeze > requirements.txt
 - docker build -t eepmoody/open5e-api-beta .
-- docker tag eepmoody/open5e-api-beta registry.heroku.com/open5e-api/web
+- docker push eepmoody/open5e-api-beta
+- docker tag eepmoody/open5e-api-beta registry.heroku.com/open5e-api-beta/web
+
 deploy:
   provider: script
-  script: docker push eepmoody/open5e-api-beta; docker push registry.heroku.com/open5e-api/web;
+  script: 
+  - docker push registry.heroku.com/open5e-api-beta/web
+  - heroku container:release web -a open5e-api-beta
   on:
     branch: master
   api_key:
