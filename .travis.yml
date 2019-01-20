@@ -12,7 +12,7 @@ branches:
 before_install:
 - wget -qO- https://toolbelt.heroku.com/install.sh | sh
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-install: docker-compose build
+
 script:
 - docker build -t eepmoody/open5e-api-beta .
 - docker tag eepmoody/open5e-api-beta registry.heroku.com/open5e-api/web

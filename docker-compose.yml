@@ -1,7 +1,6 @@
 version: '3'
 services:
   api-beta:
-    image: 'eepmoody/open5e-api-beta:latest'
     environment:
       - OPEN5E_DEBUG=False
       - 'DJANGO_SECRET=${DJANGO_SECRET}'
@@ -10,7 +9,6 @@ services:
       - '8000:8000'
     depends_on:
       - nginx
-      - watchtower
   nginx:
     image: 'nginx:latest'
     environment:
@@ -21,11 +19,6 @@ services:
     ports:
       - '0.0.0.0:80:80'
       - '0.0.0.0:443:443'
-  watchtower:
-    image: v2tec/watchtower
-    volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-    command: '--interval 30'
   dev:
     build: .
     depends_on:
