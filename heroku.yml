@@ -1,7 +1,8 @@
 build: 
   languages: 
-    - python 
-  packages:
-    - python3.7.1
+    - python
+release:
+  command:
+    - sh scripts/build.sh
 run: 
   web: pip install -r requirements.txt && gunicorn server.wsgi
