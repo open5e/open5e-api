@@ -1,10 +1,5 @@
 build: 
   languages: 
     - python 
-  post:
-    - pip install --no-cache-dir -r requirements.txt
-    - pip install pipenv && pipenv install
-    - pipenv run python manage.py migrate
-    - pipenv run python manage.py populatedb --flush /data/WOTC_5e_SRD_v5.1/
 run: 
   web: pipenv run python manage.py runserver $PORT 
