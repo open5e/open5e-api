@@ -14,18 +14,20 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY', 'insecure')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['OPEN5E_DEBUG']
+DEBUG = os.environ.get('OPEN5E_DEBUG', 'False')
 
-ALLOWED_HOSTS = ['localhost', '.open5e.com', os.environ['SERVER_NAME']]
+ALLOWED_HOSTS = ['localhost', '.open5e.com', os.environ.get('SERVER_NAME', '')]
 
 
 # Application definition
