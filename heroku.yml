@@ -2,4 +2,4 @@ build:
   languages: 
     - python 
 run: 
-  web: pipenv run python manage.py runserver $PORT 
+  web: pipenv run gunicorn server.wsgi

@@ -15,12 +15,12 @@ before_install:
 script:
 - docker build -t eepmoody/open5e-api-beta .
 - docker push eepmoody/open5e-api-beta
-- docker tag eepmoody/open5e-api-beta registry.heroku.com/open5e-api-beta/web
-deploy:
-  skip_cleanup: true
-  app: open5e-api-beta
-  provider: heroku
-  on:
-    branch: master
-  api_key:
-    secure: w/cUVdh/LLTZdlxA6kykZ0VeqIoOKhs4gkcvqjk3/cbE6QJzxc986B84ZO/Cew8ibkzG/XY+4JCNu1n6l06liD4qXZbKiVdGL7jVaTtOhotLqq7QNb48DY7i5P41RXOqo7j+IpRZs5HL/VjrPr08O/d4FfP5YJhkx1tvxh8TvoL0v0bCxOyfsnKy3z6dzdWENUO0I7p0uk2g//aKcxHhrYqtcCtUMOtpAz08u9yw8ToBSY2X3DESiEDGwOCEPcOfP9irkt/6vFO3CW0x5ovMQXHAU2EXaEhZWqWa1JZpNsQ0szejeT37j6ehHG9Av3g1dyZI7Ez7MdXeIpJgpdnd7SNFQp29VNISuZtkjbi03th8YxgiklHkXR0LHSnXShIyNCDHC0XI9otnjnFFYd1j8dggBzvS9lF/Lva6cdKnIDaH1ideD6AcCfI6JA82p5HuvnVXQmAgW3sDErV42mty6L6/OA0lGze1PCLNKi0Zs3ZooR8WPSBwq7jEf0Dw9muGmZLiWfKvcmTFeVIoAOGarGyJN4C/X/9YsjCr9JrCk8s1LkcOT6R8BbnF5iY9Ku5+DwiGZSWg+v9UAKIE23WOyG1JMJ/X0KK0KWwkFwxHcX5+XwDW6JdPkdOFNdntJ4VHeMimj6d8knQmW2PfnvKVVH+KkeEdZa1/4UFTQy+Q9G4=
+# - docker tag eepmoody/open5e-api-beta registry.heroku.com/open5e-api-beta/web
+# deploy:
+#   skip_cleanup: true
+#   app: open5e-api-beta
+#   provider: heroku
+#   on:
+#     branch: master
+#   api_key:
+#     secure: w/cUVdh/LLTZdlxA6kykZ0VeqIoOKhs4gkcvqjk3/cbE6QJzxc986B84ZO/Cew8ibkzG/XY+4JCNu1n6l06liD4qXZbKiVdGL7jVaTtOhotLqq7QNb48DY7i5P41RXOqo7j+IpRZs5HL/VjrPr08O/d4FfP5YJhkx1tvxh8TvoL0v0bCxOyfsnKy3z6dzdWENUO0I7p0uk2g//aKcxHhrYqtcCtUMOtpAz08u9yw8ToBSY2X3DESiEDGwOCEPcOfP9irkt/6vFO3CW0x5ovMQXHAU2EXaEhZWqWa1JZpNsQ0szejeT37j6ehHG9Av3g1dyZI7Ez7MdXeIpJgpdnd7SNFQp29VNISuZtkjbi03th8YxgiklHkXR0LHSnXShIyNCDHC0XI9otnjnFFYd1j8dggBzvS9lF/Lva6cdKnIDaH1ideD6AcCfI6JA82p5HuvnVXQmAgW3sDErV42mty6L6/OA0lGze1PCLNKi0Zs3ZooR8WPSBwq7jEf0Dw9muGmZLiWfKvcmTFeVIoAOGarGyJN4C/X/9YsjCr9JrCk8s1LkcOT6R8BbnF5iY9Ku5+DwiGZSWg+v9UAKIE23WOyG1JMJ/X0KK0KWwkFwxHcX5+XwDW6JdPkdOFNdntJ4VHeMimj6d8knQmW2PfnvKVVH+KkeEdZa1/4UFTQy+Q9G4=
