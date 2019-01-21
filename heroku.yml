@@ -1,8 +1,9 @@
 build: 
   languages: 
     - python
-  pre:
-    - heroku config:unset GITHUB_USERNAME
+  config: 
+    PYTHONHOME: Null
+
 release:
   command:
     - sh scripts/build.sh
