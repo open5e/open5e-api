@@ -1,8 +1,3 @@
-
-pip install -r requirements.txt
-
-python ../manage.py makemigrations
-# django migrate
-python ../manage.py migrate
-# django collectstatic
-python ../manage.py collectstatic
+pipenv run pip install requirements.txt
+pipenv run python manage.py migrate
+pipenv run python manage.py populatedb --flush /data/WOTC_5e_SRD_v5.1/

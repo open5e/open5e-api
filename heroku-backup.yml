@@ -1,0 +1,7 @@
+build:
+  language:
+    - python
+release:
+  web: chmod -x ./scripts/build.sh && ./scripts/build.sh
+run:
+  web: pipenv run python manage.py runserver $PORT
