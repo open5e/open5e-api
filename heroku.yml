@@ -2,4 +2,4 @@ build:
   languages: 
     - python 
 run: 
-  web: pipenv install && pipenv run gunicorn server.wsgi
+  web: pipenv run pip3 install -r requirements.txt && pipenv run gunicorn server.wsgi
