@@ -5,4 +5,4 @@ release:
   command:
     - sh scripts/build.sh
 run: 
-  web: pip install -r requirements.txt && gunicorn server.wsgi
+  web: pipenv install -r requirements.txt && pipenv run gunicorn server.wsgi
