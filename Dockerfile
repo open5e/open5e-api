@@ -2,7 +2,7 @@ FROM python:3.7
 
 # These values are hard coded for the build, but
 # should be set to something else at run time
-ENV DJANGO_SECRET=default
+ENV SECRET_KEY=default
 ENV OPEN5E_DEBUG=False
 ENV SERVER_NAME=localhost
 

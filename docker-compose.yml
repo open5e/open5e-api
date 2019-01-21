@@ -4,7 +4,7 @@ services:
     build: .
     environment:
       - OPEN5E_DEBUG=False
-      - 'DJANGO_SECRET=${DJANGO_SECRET}'
+      - 'SECRET_KEY=${SECRET_KEY}'
       - 'SERVER_NAME=${SERVER_NAME}'
     ports:
       - '8000:8000'
@@ -26,7 +26,7 @@ services:
       - nginx
     environment:
       - OPEN5E_DEBUG=True
-      - 'DJANGO_SECRET=a_secret'
+      - 'SECRET_KEY=a_secret'
       - 'SERVER_NAME=localhost'
     ports:
       - '8000:8000'

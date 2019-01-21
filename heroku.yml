@@ -1,6 +1,11 @@
 build: 
-  language: 
+  languages: 
     - python 
-  web: chmod -x ./scripts/build.sh && ./scripts/build.sh 
+  pre: 
+    - pip install pipenv
+    - pipenv run pip install -r requirements.txt
+  post:
+    - pipenv run python manage.py migrate
+    - pipenv run python manage.py populatedb --flush /data/WOTC_5e_SRD_v5.1/
 run: 
   web: pipenv run python manage.py runserver $PORT 
