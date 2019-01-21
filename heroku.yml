@@ -1,10 +1,5 @@
 build: 
   languages: 
     - python 
-release:
-  command:
-    - python --version
-    - pip install pipenv
-    - pipenv install
 run: 
-  web: pipenv run gunicorn server.wsgi
+  web: pipenv install && pipenv run gunicorn server.wsgi
