@@ -3,7 +3,7 @@ services:
   server:
     build: .
     environment:
-      - OPEN5E_DEBUG=False
+      - OPEN5E_DEBUG=${OPEN5E_DEBUG}
       - 'SECRET_KEY=${SECRET_KEY}'
       - 'SERVER_NAME=${SERVER_NAME}'
       - 'CERTFILE=${CERTFILE}'

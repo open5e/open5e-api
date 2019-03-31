@@ -18,5 +18,9 @@ RUN pipenv run python manage.py collectstatic --noinput
 
 #populate the db
 RUN pipenv run python manage.py populatedb --flush ./data/WOTC_5e_SRD_v5.1/
+
+# Create the self-signed certs for gunicorn.
+RUN pipenv run sh ./scripts/generate_self_signed_cert.sh
+
 #run gunicorn.
-CMD ["pipenv", "run", "gunicorn","-b", ":8888", "server.wsgi:application"]
+CMD ["pipenv", "run", "gunicorn","--certfile=${CERTFILE}", "--keyfile=${KEYFILE}","-b", ":8888", "server.wsgi:application"]

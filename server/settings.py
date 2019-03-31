@@ -23,12 +23,14 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'insecure')
+assert 'SECRET_KEY' in os.environ, 'Set SECRET_KEY in your .env file!'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('OPEN5E_DEBUG', 'False')
+DEBUG = os.environ.get('OPEN5E_DEBUG', False)
 
-ALLOWED_HOSTS = ['localhost', '.open5e.com', os.environ.get('SERVER_NAME', '')]
+## Always allow connections from localhost, and the SERVER_NAME if it's there in the .env file.
+ALLOWED_HOSTS = ['localhost', os.environ.get('SERVER_NAME', '')]
 
 
 # Application definition
