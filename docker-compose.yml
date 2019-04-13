@@ -1,6 +1,7 @@
 version: '3'
 services:
   server:
+    image: 'eepmoody/open5e-beta:latest'
     build: .
     environment:
       - OPEN5E_DEBUG=${OPEN5E_DEBUG}
@@ -12,4 +13,11 @@ services:
       - '443:8888'
     volumes:
       - .:/usr/src/open5e-api/
+    depends_on:
+      - watchtower
+  watchtower:
+    image: v2tec/watchtower
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    command: '--interval 30'
 
