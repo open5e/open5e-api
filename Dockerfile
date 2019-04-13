@@ -1,21 +1,5 @@
 FROM python:3.7
 
-ARG OPEN5E_DEBUG=True
-ENV OPEN5E_DEBUG=$OPEN5E_DEBUG
-
-ARG SECRET_KEY=replace-me
-ENV SECRET_KEY=$SECRET_KEY
-
-ARG SERVER_NAME=localhost
-ENV SERVER_NAME=$SERVER_NAME
-
-ARG CERTFILE=selfsigned.crt
-ENV CERTFILE=$CERTFILE
-
-ARG KEYFILE=selfsigned.key
-ENV KEYFILE=$KEYFILE
-
-
 RUN mkdir -p /opt/services/open5e-api
 WORKDIR /opt/services/open5e-api
 # copy our project code
