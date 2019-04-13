@@ -3,7 +3,7 @@ from django.db import models
 import json
 
 class Document(models.Model):
-    slug = models.SlugField(unique=True, default=uuid.uuid1)
+    slug = models.SlugField(unique=True, allow_unicode=False, default=uuid.uuid1)
     title = models.TextField() # System Reference Document
     desc = models.TextField() 
     license = models.TextField() # Open Gaming License
@@ -14,7 +14,7 @@ class Document(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 class GameContent(models.Model):
-    slug = models.SlugField(unique=True, default=uuid.uuid1, primary_key=True) # dispel-evil-and-good
+    slug = models.SlugField(unique=True, default=uuid.uuid1, allow_unicode=False, primary_key=True) # dispel-evil-and-good
     name = models.TextField() # Barbarian or Blinded
     desc = models.TextField() # A description of the Game Content Item
     document = models.ForeignKey(Document, on_delete=models.CASCADE) # Like the System Reference Document
