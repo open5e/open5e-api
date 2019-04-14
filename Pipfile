@@ -4,14 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
-djangorestframework = "*"
+django = "==2.1"
+djangorestframework = "==3.8.2"
 django-filter = "*"
 django-cors-headers = "*"
 pylint = "*"
-django-haystack = "*"
+django-haystack = "==2.8.1"
 whoosh = "*"
-drf-haystack = "*"
+drf-haystack = "==1.8.4"
 "markdown2" = "*"
 markdown = "*"
 python-decouple = "==3.1"
