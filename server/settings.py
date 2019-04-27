@@ -30,7 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ.get('OPEN5E_DEBUG', False)
 
 ## Always allow connections from localhost, and the SERVER_NAME if it's there in the .env file.
-ALLOWED_HOSTS = ['localhost', os.environ.get('SERVER_NAME', '')]
+ALLOWED_HOSTS = ['localhost', os.environ.get('SERVER_NAME', ''), 'api.open5e.com', 'api-beta.open5e.com']
 
 
 # Application definition
