@@ -14,7 +14,9 @@ The Django API uses Django REST Framework for its browsability and ease of use w
 
 The server runs in a docker container. You'll need to first install docker on your system, then getting it running is extremely simple:
 
-starting from root `/open5e` directory:
+First, you will need to [install Docker](https://docs.docker.com/v17.12/install/), and if using Windows you will need to seperately install [docker-compose](https://docs.docker.com/docker-for-windows/install/)
+
+`cd` into the root `/open5e` directory in the shell program of your choice, then:
 
 ``` bash
 export OPEN_5E_ROOT=`pwd` #set the /server folder as the root of the Python project
@@ -22,6 +24,8 @@ export SECRET_KEY='@pt#ouh)@!c+2eh(!aj_vtc=s7t$uk-l1!ry3^fcercz%si01@' # this sh
 docker-compose build dev
 docker-compose up dev
 ```
+
+(On windows, you will need to use `SET` instead of `export`) 
 
 If you need to work with the db, serializers, or other django-level elements, you will need to be running the docker container then exec into it:
 
@@ -44,28 +48,4 @@ If all you want to test against is the API/backend, you're done! Otherwise you'l
 
 # Build and run the UI layer
 
-Open5e uses the Nuxt framework for Vue.js, which takes care of a lot of the architectural work for the frontend layer while allowing a large amount of flexibility.
-
-## Build Setup
-
-From /open5e
-
-``` bash
-# install dependencies
-$ npm install # Or yarn install
-
-# Optional: point it at a real API by setting API_URL=https:someurl.com
-# serve with hot reload at localhost:3000. If you 
-$ npm run dev
-```
-
-Other build options:
-```
-# build for production and launch server
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+To run the UI layer, you will need to clone the repo at https://github.com/eepMoody/open5e and follow the instructions there.
