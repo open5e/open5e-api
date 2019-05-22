@@ -14,7 +14,10 @@ The Django API uses Django REST Framework for its browsability and ease of use w
 
 The server runs in a docker container. You'll need to first install docker on your system, then getting it running is extremely simple:
 
-First, you will need to [install Docker](https://docs.docker.com/v17.12/install/), and if using Windows you will need to seperately install [docker-compose](https://docs.docker.com/docker-for-windows/install/)
+First, you will need to [install Docker](https://docs.docker.com/v17.12/install/)
+If you are using Windows, you will need to either run a linux VM, or install the Ubuntu CLI from the microsoft store.
+This is due to the scripts causing syntax errors in windows, as they are designed for bash.
+If you install Ubuntu from the microsoft store follow these steps: (https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4)
 
 `cd` into the root `/open5e` directory in the shell program of your choice, then:
 
@@ -25,7 +28,6 @@ docker-compose build dev
 docker-compose up dev
 ```
 
-(On windows, you will need to use `SET` instead of `export`) 
 
 If you need to work with the db, serializers, or other django-level elements, you will need to be running the docker container then exec into it:
 
