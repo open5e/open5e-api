@@ -394,6 +394,8 @@ class Importer:
                 i.reactions_json = json.dumps(o['reactions'])
             else:
                 i.reactions_json = json.dumps("")
+            if 'legendary_desc' in o:
+                i.legendary_desc = o['legendary_desc']
             if 'legendary_actions' in o:
                 for idx, z in enumerate(o['legendary_actions']):
                     if z['attack_bonus'] == 0 and 'damage_dice' not in z:

@@ -70,6 +70,7 @@ class Monster(GameContent):
     reactions_json = models.TextField() # A list of reactions in json text.
     def reactions(self):
         return json.loads(self.reactions_json)
+    legendary_desc = models.TextField()
     legendary_actions_json = models.TextField() # a list of legendary actions in json.
     def legendary_actions(self):
         return json.loads(self.legendary_actions_json)

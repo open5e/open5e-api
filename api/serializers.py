@@ -77,6 +77,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'challenge_rating',
             'actions',
             'reactions',
+            'legendary_desc',
             'legendary_actions',
             'special_abilities',
             'document_slug'
