@@ -67,6 +67,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'wisdom_save',
             'charisma_save',
             'perception',
+            'skills',
             'damage_vulnerabilities',
             'damage_resistances',
             'damage_immunities',
