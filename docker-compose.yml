@@ -20,4 +20,17 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
     command: '--interval 30'
+  local:
+    build: .
+    environment:
+      - OPEN5E_DEBUG=${OPEN5E_DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+      - SERVER_NAME=${SERVER_NAME}
+      - CERTFILE=${CERTFILE}
+      - KEYFILE=${KEYFILE}
+    ports:
+      - '8888:8888'
+    volumes:
+      - .:/usr/src/open5e-api/
+
 

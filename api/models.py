@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from jsonfield import JSONField
 import json
 
 class Document(models.Model):
@@ -35,6 +36,8 @@ class Monster(GameContent):
     hit_points = models.IntegerField(null=True)
     hit_dice = models.TextField()
     speed_json = models.TextField()
+    def speed(self):
+        return json.loads(self.speed_json)
     strength = models.IntegerField(null=True)
     dexterity = models.IntegerField(null=True)
     constitution = models.IntegerField(null=True)
@@ -48,6 +51,9 @@ class Monster(GameContent):
     wisdom_save = models.IntegerField(null=True)
     charisma_save = models.IntegerField(null=True)
     perception = models.IntegerField(null=True)
+    skills_json = models.TextField()
+    def skills(self):
+        return json.loads(self.skills_json)
     damage_vulnerabilities = models.TextField()
     damage_resistances = models.TextField()
     damage_immunities = models.TextField()
@@ -55,8 +61,6 @@ class Monster(GameContent):
     senses = models.TextField()
     languages = models.TextField()
     challenge_rating = models.TextField()
-    def speed(self):
-        return json.loads(self.speed_json)
     actions_json = models.TextField() #a list of actions in json text.
     def actions(self):
         return json.loads(self.actions_json)
@@ -66,6 +70,7 @@ class Monster(GameContent):
     reactions_json = models.TextField() # A list of reactions in json text.
     def reactions(self):
         return json.loads(self.reactions_json)
+    legendary_desc = models.TextField()
     legendary_actions_json = models.TextField() # a list of legendary actions in json.
     def legendary_actions(self):
         return json.loads(self.legendary_actions_json)

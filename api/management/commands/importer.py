@@ -315,8 +315,47 @@ class Importer:
                 i.wisdom_save = o['wisdom_save']
             if 'charisma_save' in o:
                 i.charisma_save = o['charisma_save']
+            # SKILLS START HERE
+            skills = {}
+            if 'acrobatics' in o:
+                skills['acrobatics'] = o['acrobatics']
+            if 'animal handling' in o:
+                skills['animal_handling'] = o['animal handling']
+            if 'arcana' in o:
+                skills['arcana'] = o['arcana']
+            if 'athletics' in o:
+                skills['athletics'] = o['athletics']
+            if 'deception' in o:
+                skills['deception'] = o['deception']
+            if 'history' in o:
+                skills['history'] = o['history']
+            if 'insight' in o:
+                skills['insight'] = o['insight']
+            if 'intimidation' in o:
+                skills['intimidation'] = o['intimidation']
+            if 'investigation' in o:
+                skills['investigation'] = o['investigation']
+            if 'medicine' in o:
+                skills['medicine'] = o['medicine']
+            if 'nature' in o:
+                skills['nature'] = o['nature']
+            if 'perception' in o:
+                skills['perception'] = o['perception']
+            if 'performance' in o:
+                skills['performance'] = o['performance']
             if 'perception' in o:
                 i.perception = o['perception']
+                skills['perception'] = o['perception']
+            if 'religion' in o:
+                skills['religion'] = o['religion']
+            if 'sleight of hand' in o:
+                skills['sleight_of_hand'] = o['sleight of hand']
+            if 'stealth' in o:
+                skills['stealth'] = o['stealth']
+            if 'survival' in o:
+                skills['survival'] = o['survival']
+            i.skills_json = json.dumps(skills)
+            # END OF SKILLS  
             if 'damage_vulnerabilities' in o:
                 i.damage_vulnerabilities = o['damage_vulnerabilities']
             if 'damage_resistances' in o:
@@ -355,6 +394,8 @@ class Importer:
                 i.reactions_json = json.dumps(o['reactions'])
             else:
                 i.reactions_json = json.dumps("")
+            if 'legendary_desc' in o:
+                i.legendary_desc = o['legendary_desc']
             if 'legendary_actions' in o:
                 for idx, z in enumerate(o['legendary_actions']):
                     if z['attack_bonus'] == 0 and 'damage_dice' not in z:

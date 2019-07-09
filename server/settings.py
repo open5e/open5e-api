@@ -30,7 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ.get('OPEN5E_DEBUG', False)
 
 ## Always allow connections from localhost, and the SERVER_NAME if it's there in the .env file.
-ALLOWED_HOSTS = ['localhost', os.environ.get('SERVER_NAME', ''), 'api.open5e.com', 'api-beta.open5e.com']
+ALLOWED_HOSTS = ['localhost', os.environ.get('SERVER_NAME', ''), '0.0.0.0', 'api.open5e.com', 'api-beta.open5e.com']
 
 
 # Application definition
@@ -164,10 +164,12 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3333',
-    '127.0.0.1:3333',
-    '127.0.0.1:8888',
-    'localhost:8888'
+    'https://0.0.0.0',
+    'https://0.0.0.0:8888',
+    'https://localhost:3333',
+    'https://127.0.0.1:3333',
+    'https://127.0.0.1:8888',
+    'https://localhost:8888',
 )
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') #This setting allows the header from NGINX to tell us that the request is secured.
