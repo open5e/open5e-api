@@ -83,3 +83,6 @@ class Command(BaseCommand):
                 spl = json.load(spl_data)
                 self.stdout.write(self.style.SUCCESS(importer.SpellImporter(options, spl)))
 
+            with open(dir+'weapons.json') as spl_data:
+                spl = json.load(spl_data)
+                self.stdout.write(self.style.SUCCESS(importer.WeaponImporter(options, spl)))

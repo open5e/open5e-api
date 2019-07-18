@@ -606,3 +606,40 @@ class Importer:
                 else: updated += 1
 
         return self.returner('Spells',added,updated,skipped)
+
+    def WeaponImporter(self, options, json_object):
+        skipped,added,updated = (0,0,0) #Count for all of the different results.
+        if bool(options['flush']): Weapon.objects.all().delete()
+
+        for o in json_object:
+            new = False
+            exists = False
+            if Weapon.objects.filter(slug=slugify(o['name'])).exists():
+                i = Weapon.objects.get(slug=slugify(o['name']))
+                exists = True
+            else:
+                i = Weapon(document = self.d)
+                new = True
+            if 'name' in o:
+                i.name = o['name']
+                i.slug = slugify(o['name'])
+            if 'category' in o:
+                i.category = o['category']
+            if 'cost' in o:
+                i.cost = o['cost']
+            if 'damage_dice' in o:
+                i.damage_dice = o['damage_dice']
+            if 'damage_type' in o:
+                i.damage_type = o['damage_type']
+            if 'weight' in o:
+                i.weight = o['weight']
+            if 'properties' in o:
+                i.properties_json = json.dumps(o['properties'])
+            if bool(options['testrun']) or (exists and options['append']):
+               skipped += 1
+            else:
+                i.save()
+                if new: added += 1
+                else: updated += 1
+
+        return self.returner('Weapons',added,updated,skipped)
