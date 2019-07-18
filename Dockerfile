@@ -19,6 +19,9 @@ RUN pipenv run python manage.py collectstatic --noinput
 #populate the db
 RUN pipenv run python manage.py populatedb --flush ./data/WOTC_5e_SRD_v5.1/
 
+#build the search index
+RUN pipenv run python manage.py update_index --remove
+
 # Create the self-signed certs for gunicorn.
 RUN pipenv run sh ./scripts/generate_self_signed_cert.sh
 

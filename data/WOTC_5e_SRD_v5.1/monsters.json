@@ -70,6 +70,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The aboleth regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -217,6 +218,7 @@
                 "damage_dice": "12d8"
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -241,104 +243,6 @@
         },
         "group": "Black Dragon",
         "armor_desc": "natural armor"
-    },
-    {
-        "name": "Adult Blue Dracolich",
-        "size": "Huge",
-        "type": "undead",
-        "subtype": "",
-        "alignment": "lawful evil",
-        "armor_class": 19,
-        "hit_points": 225,
-        "hit_dice": "18d12",
-        "speed": "40 ft., burrow 30 ft., fly 80 ft.",
-        "strength": 25,
-        "dexterity": 10,
-        "constitution": 23,
-        "intelligence": 16,
-        "wisdom": 15,
-        "charisma": 19,
-        "perception": 12,
-        "damage_vulnerabilities": "",
-        "damage_resistances": "necrotic",
-        "damage_immunities": "lightning, poison",
-        "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
-        "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 22",
-        "languages": "Common, Draconic",
-        "challenge_rating": "17",
-        "special_abilities": [
-            {
-                "name": "Legendary Resistance (3/Day)",
-                "desc": "If the dracolich fails a saving throw, it can choose to succeed instead.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Magic Resistance",
-                "desc": "The dracolich has advantage on saving throws against spells and other magical effects.",
-                "attack_bonus": 0
-            }
-        ],
-        "actions": [
-            {
-                "name": "Multiattack",
-                "desc": "The dracolich can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Bite",
-                "desc": "Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 18 (2d10 + 7) piercing damage plus 5 (1d10) lightning damage.",
-                "attack_bonus": 12,
-                "damage_dice": "2d10 + 1d10",
-                "damage_bonus": 7
-            },
-            {
-                "name": "Claw",
-                "desc": "Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 14 (2d6 + 7) slashing damage.",
-                "attack_bonus": 12,
-                "damage_dice": "2d6",
-                "damage_bonus": 7
-            },
-            {
-                "name": "Tail",
-                "desc": "Melee Weapon Attack: +12 to hit, reach 15 ft., one target. Hit: 16 (2d8 + 7) bludgeoning damage.",
-                "attack_bonus": 12,
-                "damage_dice": "2d8",
-                "damage_bonus": 7
-            },
-            {
-                "name": "Frightful Presence",
-                "desc": "Each creature of the dracolich's choice that is within 120 feet of the dracolich and aware of it must succeed on a DC 18 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dracolich's Frightful Presence for the next 24 hours.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Lightning Breath (Recharge 5-6)",
-                "desc": "The dracolich exhales lightning in a 90-foot line that is 5 feet wide. Each creature in that line must make a DC 20 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.",
-                "attack_bonus": 0,
-                "damage_dice": "12d10"
-            }
-        ],
-        "legendary_actions": [
-            {
-                "name": "Detect",
-                "desc": "The dracolich makes a Wisdom (Perception) check.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Tail Attack",
-                "desc": "The dracolich makes a tail attack.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Wing Attack (Costs 2 Actions)",
-                "desc": "The dracolich beats its tattered wings. Each creature within 10 ft. of the dracolich must succeed on a DC 21 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. After beating its wings this way, the dracolich can fly up to half its flying speed.",
-                "attack_bonus": 0
-            }
-        ],
-        "speed_json": {
-            "walk": 40,
-            "burrow": 30,
-            "fly": 80
-        }
     },
     {
         "name": "Adult Blue Dragon",
@@ -415,6 +319,7 @@
                 "damage_dice": "12d10"
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -512,9 +417,27 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 45 (13d6) fire damage on a failed save, or half as much damage on a successful one.\nSleep Breath. The dragon exhales sleep gas in a 60-foot cone. Each creature in that area must succeed on a DC 18 Constitution saving throw or fall unconscious for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Fire Breath.** The dragon exhales fire in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 45 (13d6) fire damage on a failed save, or half as much damage on a successful one.\n**Sleep Breath.** The dragon exhales sleep gas in a 60-foot cone. Each creature in that area must succeed on a DC 18 Constitution saving throw or fall unconscious for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
                 "attack_bonus": 0,
                 "damage_dice": "13d6"
+            }
+        ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
+        "legendary_actions": [
+            {
+                "name": "Detect",
+                "desc": "The dragon makes a Wisdom (Perception) check.",
+                "attack_bonus": 0
+            },
+            {
+                "name": "Tail Attack",
+                "desc": "The dragon makes a tail attack.",
+                "attack_bonus": 0
+            },
+            {
+                "name": "Wing Attack (Costs 2 Actions)",
+                "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                "attack_bonus": 0
             }
         ],
         "speed_json": {
@@ -601,11 +524,17 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nLightning Breath. The dragon exhales lightning in a 90-foot line that is 5 feet wide. Each creature in that line must make a DC 19 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.\nRepulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 19 Strength saving throw. On a failed save, the creature is pushed 60 feet away from the dragon.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Lightning Breath.** The dragon exhales lightning in a 90-foot line that is 5 feet wide. Each creature in that line must make a DC 19 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.\n**Repulsion Breath.** The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 19 Strength saving throw. On a failed save, the creature is pushed 60 feet away from the dragon.",
                 "attack_bonus": 0,
                 "damage_dice": "12d10"
-            }
+            },
+            {
+                "name": "Change Shape",
+                "desc": "The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).\nIn a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.",
+                "attack_bonus": 0
+			}
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -702,11 +631,12 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nAcid Breath. The dragon exhales acid in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 54 (12d8) acid damage on a failed save, or half as much damage on a successful one.\nSlowing Breath. The dragon exhales gas in a 60-foot cone. Each creature in that area must succeed on a DC 18 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Acid Breath.** The dragon exhales acid in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 54 (12d8) acid damage on a failed save, or half as much damage on a successful one.\n**Slowing Breath.** The dragon exhales gas in a 60-foot cone. Each creature in that area must succeed on a DC 18 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
                 "attack_bonus": 0,
                 "damage_dice": "12d8"
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -809,11 +739,17 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 21 Dexterity saving throw, taking 66 (12d10) fire damage on a failed save, or half as much damage on a successful one.\nWeakening Breath. The dragon exhales gas in a 60-foot cone. Each creature in that area must succeed on a DC 21 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Fire Breath.** The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 21 Dexterity saving throw, taking 66 (12d10) fire damage on a failed save, or half as much damage on a successful one.\n**Weakening Breath.** The dragon exhales gas in a 60-foot cone. Each creature in that area must succeed on a DC 21 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
                 "attack_bonus": 0,
                 "damage_dice": "12d10"
-            }
+            },
+            {
+                "name": "Change Shape",
+                "desc": "The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).\nIn a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.",
+                "attack_bonus": 0
+			}
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -922,6 +858,7 @@
                 "damage_dice": "16d6"
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -1020,14 +957,9 @@
                 "desc": "The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 21 Dexterity saving throw, taking 63 (18d6) fire damage on a failed save, or half as much damage on a successful one.",
                 "attack_bonus": 0,
                 "damage_dice": "18d6"
-            },
-            {
-                "name": "Lair Actions",
-                "desc": "On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects: the dragon can't use the same effect two rounds in a row:\n\u2022 Magma erupts from a point on the ground the dragon can see within 120 feet of it, creating a 20-foot-high, 5-foot-radius geyser. Each creature in the geyser's area must make a DC 15 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.\n\u2022 A tremor shakes the lair in a 60-foot-radius around the dragon. Each creature other than the dragon on the ground in that area must succeed on a DC 15 Dexterity saving throw or be knocked prone.\n\u2022 Volcanic gases form a cloud in a 20-foot-radius sphere centered on a point the dragon can see within 120 feet of it. The sphere spreads around corners, and its area is lightly obscured. It lasts until initiative count 20 on the next round. Each creature that starts its turn in the cloud must succeed on a DC 13 Constitution saving throw or be poisoned until the end of its turn. While poisoned in this way, a creature is incapacitated.",
-                "attack_bonus": 0,
-                "damage_dice": "6d6"
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -1125,11 +1057,17 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nCold Breath. The dragon exhales an icy blast in a 60-foot cone. Each creature in that area must make a DC 20 Constitution saving throw, taking 58 (13d8) cold damage on a failed save, or half as much damage on a successful one.\nParalyzing Breath. The dragon exhales paralyzing gas in a 60-foot cone. Each creature in that area must succeed on a DC 20 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Cold Breath.** The dragon exhales an icy blast in a 60-foot cone. Each creature in that area must make a DC 20 Constitution saving throw, taking 58 (13d8) cold damage on a failed save, or half as much damage on a successful one.\n**Paralyzing Breath.** The dragon exhales paralyzing gas in a 60-foot cone. Each creature in that area must succeed on a DC 20 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
                 "attack_bonus": 0,
                 "damage_dice": "13d8"
-            }
+            },
+            {
+                "name": "Change Shape",
+                "desc": "The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).\nIn a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.",
+                "attack_bonus": 0
+			}
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -1186,7 +1124,7 @@
         "special_abilities": [
             {
                 "name": "Ice Walk",
-                "desc": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra moment.",
+                "desc": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra movement.",
                 "attack_bonus": 0
             },
             {
@@ -1234,6 +1172,7 @@
                 "damage_dice": "12d8"
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -1354,11 +1293,6 @@
                 "name": "Legendary Resistance (3/Day)",
                 "desc": "If the dragon fails a saving throw, it can choose to succeed instead.",
                 "attack_bonus": 0
-            },
-            {
-                "name": "Legendary Resistance (3/Day)",
-                "desc": "If the dragon fails a saving throw, it can choose to succeed instead.",
-                "attack_bonus": 0
             }
         ],
         "actions": [
@@ -1399,6 +1333,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -1453,6 +1388,13 @@
         "senses": "blindsight 60 ft., darkvision 120 ft., passive Perception 27",
         "languages": "Common, Draconic",
         "challenge_rating": "23",
+		"special_abilities": [
+            {
+                "name": "Legendary Resistance (3/Day)",
+                "desc": "If the dragon fails a saving throw, it can choose to succeed instead.",
+                "attack_bonus": 0
+            }
+        ],
         "actions": [
             {
                 "name": "Multiattack",
@@ -1492,6 +1434,7 @@
                 "damage_dice": "16d10"
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -1589,7 +1532,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons:\nFire Breath. The dragon exhales fire in an 90-foot line that is 10 feet wide. Each creature in that line must make a DC 21 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one.\nSleep Breath. The dragon exhales sleep gas in a 90-foot cone. Each creature in that area must succeed on a DC 21 Constitution saving throw or fall unconscious for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
+                "desc": "The dragon uses one of the following breath weapons:\n**Fire Breath.** The dragon exhales fire in an 90-foot line that is 10 feet wide. Each creature in that line must make a DC 21 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one.\n**Sleep Breath.** The dragon exhales sleep gas in a 90-foot cone. Each creature in that area must succeed on a DC 21 Constitution saving throw or fall unconscious for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
                 "attack_bonus": 0,
                 "damage_dice": "16d6"
             },
@@ -1599,6 +1542,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -1700,7 +1644,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nLightning Breath. The dragon exhales lightning in a 120-foot line that is 10 feet wide. Each creature in that line must make a DC 23 Dexterity saving throw, taking 88 (16d10) lightning damage on a failed save, or half as much damage on a successful one.\nRepulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 23 Strength saving throw. On a failed save, the creature is pushed 60 feet away from the dragon.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Lightning Breath.** The dragon exhales lightning in a 120-foot line that is 10 feet wide. Each creature in that line must make a DC 23 Dexterity saving throw, taking 88 (16d10) lightning damage on a failed save, or half as much damage on a successful one.\n**Repulsion Breath.** The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 23 Strength saving throw. On a failed save, the creature is pushed 60 feet away from the dragon.",
                 "attack_bonus": 0,
                 "damage_dice": "16d10"
             },
@@ -1710,6 +1654,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -1806,7 +1751,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nAcid Breath. The dragon exhales acid in an 90-foot line that is 10 feet wide. Each creature in that line must make a DC 22 Dexterity saving throw, taking 63 (14d8) acid damage on a failed save, or half as much damage on a successful one.\nSlowing Breath. The dragon exhales gas in a 90-foot cone. Each creature in that area must succeed on a DC 22 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Acid Breath.** The dragon exhales acid in an 90-foot line that is 10 feet wide. Each creature in that line must make a DC 22 Dexterity saving throw, taking 63 (14d8) acid damage on a failed save, or half as much damage on a successful one.\n**Slowing Breath.** The dragon exhales gas in a 90-foot cone. Each creature in that area must succeed on a DC 22 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
                 "attack_bonus": 0,
                 "damage_dice": "14d8"
             },
@@ -1816,6 +1761,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -1918,7 +1864,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 71 (13d10) fire damage on a failed save, or half as much damage on a successful one.\nWeakening Breath. The dragon exhales gas in a 90-foot cone. Each creature in that area must succeed on a DC 24 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Fire Breath.** The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 71 (13d10) fire damage on a failed save, or half as much damage on a successful one.\n**Weakening Breath.** The dragon exhales gas in a 90-foot cone. Each creature in that area must succeed on a DC 24 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
                 "attack_bonus": 0,
                 "damage_dice": "13d10"
             },
@@ -1928,6 +1874,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -2036,6 +1983,7 @@
                 "damage_dice": "22d6"
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -2057,7 +2005,8 @@
             "walk": 40,
             "fly": 80,
             "swim": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Ancient Red Dragon",
@@ -2134,6 +2083,7 @@
                 "damage_dice": "26d6"
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -2241,6 +2191,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Detect",
@@ -2297,7 +2248,7 @@
         "special_abilities": [
             {
                 "name": "Ice Walk",
-                "desc": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra moment.",
+                "desc": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra movement.",
                 "attack_bonus": 0
             },
             {
@@ -2343,6 +2294,24 @@
                 "desc": "The dragon exhales an icy blast in a 90-foot cone. Each creature in that area must make a DC 22 Constitution saving throw, taking 72 (l6d8) cold damage on a failed save, or half as much damage on a successful one.",
                 "attack_bonus": 0,
                 "damage_dice": "16d8"
+            }
+        ],
+		"legendary_desc": "The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.",
+        "legendary_actions": [
+            {
+                "name": "Detect",
+                "desc": "The dragon makes a Wisdom (Perception) check.",
+                "attack_bonus": 0
+            },
+            {
+                "name": "Tail Attack",
+                "desc": "The dragon makes a tail attack.",
+                "attack_bonus": 0
+            },
+            {
+                "name": "Wing Attack (Costs 2 Actions)",
+                "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                "attack_bonus": 0
             }
         ],
         "speed_json": {
@@ -2416,10 +2385,11 @@
             },
             {
                 "name": "Roar (3/Day)",
-                "desc": "The sphinx emits a magical roar. Each time it roars before finishing a long rest, the roar is louder and the effect is different, as detailed below. Each creature within 500 feet of the sphinx and able to hear the roar must make a saving throw.\n\nFirst Roar. Each creature that fails a DC 18 Wisdom saving throw is frightened for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n\nSecond Roar. Each creature that fails a DC 18 Wisdom saving throw is deafened and frightened for 1 minute. A frightened creature is paralyzed and can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n\nThird Roar. Each creature makes a DC 18 Constitution saving throw. On a failed save, a creature takes 44 (8d10) thunder damage and is knocked prone. On a successful save, the creature takes half as much damage and isn't knocked prone.",
+                "desc": "The sphinx emits a magical roar. Each time it roars before finishing a long rest, the roar is louder and the effect is different, as detailed below. Each creature within 500 feet of the sphinx and able to hear the roar must make a saving throw.\n**First Roar.** Each creature that fails a DC 18 Wisdom saving throw is frightened for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n**Second Roar.** Each creature that fails a DC 18 Wisdom saving throw is deafened and frightened for 1 minute. A frightened creature is paralyzed and can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n**Third Roar.** Each creature makes a DC 18 Constitution saving throw. On a failed save, a creature takes 44 (8d10) thunder damage and is knocked prone. On a successful save, the creature takes half as much damage and isn't knocked prone.",
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The sphinx regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Claw Attack",
@@ -2541,7 +2511,7 @@
             "walk": 30,
             "burrow": 10
         },
-        "armor_desc": "natural armor"
+        "armor_desc": "14 (natural armor), 11 while prone"
     },
     {
         "name": "Ape",
@@ -2644,7 +2614,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "15 with _mage armor_"
     },
     {
         "name": "Assassin",
@@ -2716,7 +2687,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "studded leather"
     },
     {
         "name": "Awakened Shrub",
@@ -2802,7 +2774,8 @@
         ],
         "speed_json": {
             "walk": 20
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Axe Beak",
@@ -3113,7 +3086,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "leather armor"
     },
     {
         "name": "Bandit Captain",
@@ -3173,7 +3147,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "studded leather"
     },
     {
         "name": "Barbed Devil",
@@ -3523,7 +3498,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "hide armor"
     },
     {
         "name": "Black Bear",
@@ -3579,7 +3555,8 @@
         "speed_json": {
             "walk": 40,
             "climb": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Black Dragon Wyrmling",
@@ -3902,7 +3879,8 @@
         ],
         "speed_json": {
             "walk": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Bone Devil",
@@ -4030,7 +4008,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in an 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 14 (4d6) fire damage on a failed save, or half as much damage on a successful one.\nSleep Breath. The dragon exhales sleep gas in a 15-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw or fall unconscious for 1 minute. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Fire Breath.** The dragon exhales fire in an 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 14 (4d6) fire damage on a failed save, or half as much damage on a successful one.\n**Sleep Breath.** The dragon exhales sleep gas in a 15-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw or fall unconscious for 1 minute. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
                 "attack_bonus": 0,
                 "damage_dice": "4d6"
             }
@@ -4089,7 +4067,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nLightning Breath. The dragon exhales lightning in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 16 (3d10) lightning damage on a failed save, or half as much damage on a successful one.\nRepulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 12 Strength saving throw. On a failed save, the creature is pushed 30 feet away from the dragon.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Lightning Breath.** The dragon exhales lightning in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 16 (3d10) lightning damage on a failed save, or half as much damage on a successful one.\n**Repulsion Breath.** The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 12 Strength saving throw. On a failed save, the creature is pushed 30 feet away from the dragon.",
                 "attack_bonus": 0,
                 "damage_dice": "3d10"
             }
@@ -4157,7 +4135,8 @@
         "speed_json": {
             "walk": 40,
             "climb": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Bugbear",
@@ -4305,68 +4284,6 @@
         }
     },
     {
-        "name": "Carrion Crawler",
-        "size": "Large",
-        "type": "monstrosity",
-        "subtype": "",
-        "alignment": "unaligned",
-        "armor_class": 13,
-        "hit_points": 51,
-        "hit_dice": "6d10",
-        "speed": "30 ft., climb 30 ft.",
-        "strength": 14,
-        "dexterity": 13,
-        "constitution": 16,
-        "intelligence": 1,
-        "wisdom": 12,
-        "charisma": 5,
-        "perception": 3,
-        "damage_vulnerabilities": "",
-        "damage_resistances": "",
-        "damage_immunities": "",
-        "condition_immunities": "",
-        "senses": "darkvision 60 ft., passive Perception 13",
-        "languages": "",
-        "challenge_rating": "2",
-        "special_abilities": [
-            {
-                "name": "Keen Smell",
-                "desc": "The carrion crawler has advantage on Wisdom (Perception) checks that rely on smell.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Spider Climb",
-                "desc": "The carrion crawler can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
-                "attack_bonus": 0
-            }
-        ],
-        "actions": [
-            {
-                "name": "Multiattack",
-                "desc": "The carrion crawler makes two attacks: one with its tentacles and one with its bite.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Tentacles",
-                "desc": "Melee Weapon Attack: +8 to hit, reach 10 ft., one creature. Hit: 4 (1d4 + 2) poison damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 minute. Until this poison ends, the target is paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the poison on itself on a success.",
-                "attack_bonus": 8,
-                "damage_dice": "1d4",
-                "damage_bonus": 2
-            },
-            {
-                "name": "Bite",
-                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage.",
-                "attack_bonus": 4,
-                "damage_dice": "2d4",
-                "damage_bonus": 2
-            }
-        ],
-        "speed_json": {
-            "walk": 30,
-            "climb": 30
-        }
-    },
-    {
         "name": "Cat",
         "size": "Tiny",
         "type": "beast",
@@ -4409,63 +4326,6 @@
         "speed_json": {
             "walk": 40,
             "climb": 30
-        }
-    },
-    {
-        "name": "Cave Bear",
-        "size": "Large",
-        "type": "beast",
-        "subtype": "",
-        "alignment": "unaligned",
-        "armor_class": 12,
-        "hit_points": 42,
-        "hit_dice": "5d10",
-        "speed": "40 ft., swim 30 ft.",
-        "strength": 20,
-        "dexterity": 10,
-        "constitution": 16,
-        "intelligence": 2,
-        "wisdom": 13,
-        "charisma": 7,
-        "perception": 3,
-        "damage_vulnerabilities": "",
-        "damage_resistances": "",
-        "damage_immunities": "",
-        "condition_immunities": "",
-        "senses": "darkvision 60 ft., passive Perception 13",
-        "languages": "",
-        "challenge_rating": "2",
-        "special_abilities": [
-            {
-                "name": "Keen Smell",
-                "desc": "The bear has advantage on Wisdom (Perception) checks that rely on smell.",
-                "attack_bonus": 0
-            }
-        ],
-        "actions": [
-            {
-                "name": "Multiattack",
-                "desc": "The bear makes two attacks: one with its bite and one with its claws.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Bite",
-                "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1d8 + 5) piercing damage.",
-                "attack_bonus": 7,
-                "damage_dice": "1d8",
-                "damage_bonus": 5
-            },
-            {
-                "name": "Claws",
-                "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
-                "attack_bonus": 7,
-                "damage_dice": "2d6",
-                "damage_bonus": 5
-            }
-        ],
-        "speed_json": {
-            "walk": 40,
-            "swim": 30
         }
     },
     {
@@ -5101,7 +4961,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nAcid Breath. The dragon exhales acid in an 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 18 (4d8) acid damage on a failed save, or half as much damage on a successful one.\nSlowing Breath. The dragon exhales gas in a 1 5-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Acid Breath.** The dragon exhales acid in an 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 18 (4d8) acid damage on a failed save, or half as much damage on a successful one.\n**Slowing Breath.** The dragon exhales gas in a 1 5-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
                 "attack_bonus": 0,
                 "damage_dice": "4d8"
             }
@@ -5226,7 +5086,8 @@
         "speed_json": {
             "walk": 20,
             "swim": 20
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Crocodile",
@@ -5271,7 +5132,8 @@
         "speed_json": {
             "walk": 20,
             "swim": 20
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Cult Fanatic",
@@ -5327,7 +5189,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "leather armor"
     },
     {
         "name": "Cultist",
@@ -5372,7 +5235,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "leather armor"
     },
     {
         "name": "Darkmantle",
@@ -5540,7 +5404,8 @@
         ],
         "speed_json": {
             "walk": 20
-        }
+        },
+        "armor_desc": "chain shirt"
     },
     {
         "name": "Deer",
@@ -5700,7 +5565,8 @@
         ],
         "speed_json": {
             "walk": 50
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Djinni",
@@ -5736,12 +5602,12 @@
             },
             {
                 "name": "Innate Spellcasting",
-                "desc": "The djinni's innate spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n\nAt will: detect evil and good, detect magic, thunderwave 3/day each: create food and water (can create wine instead of water), tongues, wind walk\n1/day each: conjure elemental (air elemental only), creation, gaseous form, invisibility, major image, plane shift",
+                "desc": "The djinni's innate spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n\nAt will: detect evil and good, detect magic, thunderwave\n3/day each: create food and water (can create wine instead of water), tongues, wind walk\n1/day each: conjure elemental (air elemental only), creation, gaseous form, invisibility, major image, plane shift",
                 "attack_bonus": 0
             },
             {
                 "name": "Variant: Genie Powers",
-                "desc": "Genies have a variety of magical capabilities, including spells. A few have even greater powers that allow them to alter their appearance or the nature of reality.\n\nDisguises.\nSome genies can veil themselves in illusion to pass as other similarly shaped creatures. Such genies can innately cast the disguise self spell at will, often with a longer duration than is normal for that spell. Mightier genies can cast the true polymorph spell one to three times per day, possibly with a longer duration than normal. Such genies can change only their own shape, but a rare few can use the spell on other creatures and objects as well.\nWishes.\nThe genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year). and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.\nTo be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the wish spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit.",
+                "desc": "Genies have a variety of magical capabilities, including spells. A few have even greater powers that allow them to alter their appearance or the nature of reality.\n\n**Disguises.** Some genies can veil themselves in illusion to pass as other similarly shaped creatures. Such genies can innately cast the disguise self spell at will, often with a longer duration than is normal for that spell. Mightier genies can cast the true polymorph spell one to three times per day, possibly with a longer duration than normal. Such genies can change only their own shape, but a rare few can use the spell on other creatures and objects as well.\n**Wishes.** The genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year). and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.\nTo be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the wish spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit.",
                 "attack_bonus": 0
             }
         ],
@@ -5791,8 +5657,8 @@
         "insight": 3,
         "damage_vulnerabilities": "",
         "damage_resistances": "",
-        "damage_immunities": "charmed",
-        "condition_immunities": "",
+        "damage_immunities": "",
+        "condition_immunities": "charmed",
         "senses": "darkvision 60 ft., passive Perception 11",
         "languages": "Common",
         "challenge_rating": "3",
@@ -6145,7 +6011,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "chain shirt"
     },
     {
         "name": "Druid",
@@ -6190,7 +6057,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "16 with _barkskin_"
     },
     {
         "name": "Dryad",
@@ -6242,7 +6110,7 @@
         "actions": [
             {
                 "name": "Club",
-                "desc": "Melee Weapon Attack: +2 to hit (+6 to hit with shillelagh), reach 5 ft., one target. Hit: 2 (1 d4) bludgeoning damage, or 8 (1d8 + 4) bludgeoning damage with shillelagh.",
+                "desc": "Melee Weapon Attack: +2 to hit (+6 to hit with shillelagh), reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage, or 8 (1d8 + 4) bludgeoning damage with shillelagh.",
                 "attack_bonus": 2,
                 "damage_dice": "1d4"
             },
@@ -6356,7 +6224,7 @@
             },
             {
                 "name": "Innate Spellcasting (1/Day)",
-                "desc": "The mephit can innately cast sleep, requiring no material components. Its innate spellcasting ability is Charisma.",
+                "desc": "The mephit can innately cast _sleep_, requiring no material components. Its innate spellcasting ability is Charisma.",
                 "attack_bonus": 0
             }
         ],
@@ -6525,7 +6393,7 @@
             },
             {
                 "name": "Variant: Genie Powers",
-                "desc": "Genies have a variety of magical capabilities, including spells. A few have even greater powers that allow them to alter their appearance or the nature of reality.\n\nDisguises.\nSome genies can veil themselves in illusion to pass as other similarly shaped creatures. Such genies can innately cast the disguise self spell at will, often with a longer duration than is normal for that spell. Mightier genies can cast the true polymorph spell one to three times per day, possibly with a longer duration than normal. Such genies can change only their own shape, but a rare few can use the spell on other creatures and objects as well.\nWishes.\nThe genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year). and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.\nTo be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the wish spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit.",
+                "desc": "Genies have a variety of magical capabilities, including spells. A few have even greater powers that allow them to alter their appearance or the nature of reality.\n\n**Disguises.** Some genies can veil themselves in illusion to pass as other similarly shaped creatures. Such genies can innately cast the disguise self spell at will, often with a longer duration than is normal for that spell. Mightier genies can cast the true polymorph spell one to three times per day, possibly with a longer duration than normal. Such genies can change only their own shape, but a rare few can use the spell on other creatures and objects as well.\n**Wishes.** The genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year). and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.\nTo be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the wish spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit.",
                 "attack_bonus": 0
             }
         ],
@@ -6604,7 +6472,8 @@
         ],
         "speed_json": {
             "walk": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Elk",
@@ -7475,7 +7344,7 @@
             },
             {
                 "name": "Horrifying Visage",
-                "desc": "Each non-undead creature within 60 ft. of the ghost that can see it must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. If the save fails by 5 or more, the target also ages 1d4 _ 10 years. A frightened target can repeat the saving throw at the end of each of its turns, ending the frightened condition on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to this ghost's Horrifying Visage for the next 24 hours. The aging effect can be reversed with a greater restoration spell, but only within 24 hours of it occurring.",
+                "desc": "Each non-undead creature within 60 ft. of the ghost that can see it must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. If the save fails by 5 or more, the target also ages 1d4 x 10 years. A frightened target can repeat the saving throw at the end of each of its turns, ending the frightened condition on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to this ghost's Horrifying Visage for the next 24 hours. The aging effect can be reversed with a greater restoration spell, but only within 24 hours of it occurring.",
                 "attack_bonus": 0
             },
             {
@@ -7735,7 +7604,8 @@
         ],
         "speed_json": {
             "walk": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Centipede",
@@ -7772,7 +7642,8 @@
         "speed_json": {
             "walk": 30,
             "climb": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Constrictor Snake",
@@ -7862,7 +7733,8 @@
         "speed_json": {
             "walk": 30,
             "swim": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Crocodile",
@@ -7919,7 +7791,8 @@
         "speed_json": {
             "walk": 30,
             "swim": 50
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Eagle",
@@ -8028,7 +7901,8 @@
         ],
         "speed_json": {
             "walk": 60
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Fire Beetle",
@@ -8071,7 +7945,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Frog",
@@ -8176,7 +8051,8 @@
         ],
         "speed_json": {
             "walk": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Hyena",
@@ -8269,7 +8145,8 @@
         "speed_json": {
             "walk": 30,
             "climb": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Octopus",
@@ -8551,7 +8428,8 @@
         ],
         "speed_json": {
             "walk": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Sea Horse",
@@ -8601,7 +8479,8 @@
         "speed_json": {
             "walk": 0,
             "swim": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Shark",
@@ -8650,7 +8529,8 @@
         ],
         "speed_json": {
             "swim": 50
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Spider",
@@ -8710,7 +8590,8 @@
         "speed_json": {
             "walk": 30,
             "climb": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Giant Toad",
@@ -9166,7 +9047,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "studded leather, shield"
     },
     {
         "name": "Gnoll",
@@ -9373,7 +9255,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 22 (4d10) fire damage on a failed save, or half as much damage on a successful one.\nWeakening Breath. The dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Fire Breath.** The dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 22 (4d10) fire damage on a failed save, or half as much damage on a successful one.\n**Weakening Breath.** The dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
                 "attack_bonus": 0,
                 "damage_dice": "4d10"
             }
@@ -9405,8 +9287,8 @@
         "perception": 4,
         "damage_vulnerabilities": "",
         "damage_resistances": "",
-        "damage_immunities": "petrified",
-        "condition_immunities": "",
+        "damage_immunities": "",
+        "condition_immunities": "petrified",
         "senses": "darkvision 60 ft., passive Perception 14",
         "languages": "",
         "challenge_rating": "5",
@@ -9777,8 +9659,8 @@
         "stealth": 3,
         "damage_vulnerabilities": "",
         "damage_resistances": "",
-        "damage_immunities": "blinded",
-        "condition_immunities": "",
+        "damage_immunities": "",
+        "condition_immunities": "blinded",
         "senses": "blindsight 30 ft. or 10 ft. while deafened (blind beyond this radius), passive Perception 13",
         "languages": "Undercommon",
         "challenge_rating": "1/4",
@@ -9847,7 +9729,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "chain shirt, shield"
     },
     {
         "name": "Guardian Naga",
@@ -9968,6 +9851,7 @@
                 "damage_bonus": 4
             }
         ],
+		"legendary_desc": "The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The sphinx regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Claw Attack",
@@ -10052,7 +9936,6 @@
         "speed_json": {
             "walk": 30
         },
-        "group": "Hags",
         "armor_desc": "plate"
     },
     {
@@ -10603,7 +10486,8 @@
         ],
         "speed_json": {
             "swim": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Hydra",
@@ -10831,7 +10715,7 @@
             },
             {
                 "name": "Innate Spellcasting (1/Day)",
-                "desc": "The mephit can innately cast fog cloud, requiring no material components. Its innate spellcasting ability is Charisma.",
+                "desc": "The mephit can innately cast _fog cloud_, requiring no material components. Its innate spellcasting ability is Charisma.",
                 "attack_bonus": 0
             }
         ],
@@ -10905,7 +10789,7 @@
             },
             {
                 "name": "Variant: Familiar",
-                "desc": "The imp can serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the quasit senses as long as they are within 1 mile of each other. While the imp is within 10 feet of its master, the master shares the quasit's Magic Resistance trait. At any time and for any reason, the imp can end its service as a familiar, ending the telepathic bond.",
+                "desc": "The imp can serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the imp senses as long as they are within 1 mile of each other. While the imp is within 10 feet of its master, the master shares the imp's Magic Resistance trait. At any time and for any reason, the imp can end its service as a familiar, ending the telepathic bond.",
                 "attack_bonus": 0
             }
         ],
@@ -11163,7 +11047,8 @@
         ],
         "speed_json": {
             "swim": 60
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Knight",
@@ -11231,7 +11116,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "plate"
     },
     {
         "name": "Kobold",
@@ -11365,6 +11251,7 @@
                 "damage_dice": "4d10"
             }
         ],
+		"legendary_desc": "The kraken can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The kraken regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Tentacle Attack or Fling",
@@ -11417,7 +11304,7 @@
         "special_abilities": [
             {
                 "name": "Innate Spellcasting",
-                "desc": "The lamia's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast the following spells, requiring no material components. At will: disguise self (any humanoid form), major image 3/day each: charm person, mirror image, scrying, suggestion 1/day: geas",
+                "desc": "The lamia's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast the following spells, requiring no material components.\n\nAt will: disguise self (any humanoid form), major image\n3/day each: charm person, mirror image, scrying, suggestion\n1/day: geas",
                 "attack_bonus": 0
             }
         ],
@@ -11560,6 +11447,7 @@
                 "damage_dice": "3d6"
             }
         ],
+		"legendary_desc": "The lich can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The lich regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Cantrip",
@@ -11810,7 +11698,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "15 with _mage armor_"
     },
     {
         "name": "Magma Mephit",
@@ -11850,7 +11739,7 @@
             },
             {
                 "name": "Innate Spellcasting (1/Day)",
-                "desc": "The mephit can innately cast heat metal (spell save DC 10), requiring no material components. Its innate spellcasting ability is Charisma.",
+                "desc": "The mephit can innately cast _heat metal_ (spell save DC 10), requiring no material components. Its innate spellcasting ability is Charisma.",
                 "attack_bonus": 0
             }
         ],
@@ -11976,7 +11865,8 @@
         ],
         "speed_json": {
             "walk": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Manticore",
@@ -12693,6 +12583,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The mummy lord can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The mummy lord regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Attack",
@@ -12991,7 +12882,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "breastplate"
     },
     {
         "name": "Ochre Jelly",
@@ -13651,7 +13543,8 @@
         "speed_json": {
             "walk": 30,
             "climb": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Pit Fiend",
@@ -13957,7 +13850,8 @@
         "speed_json": {
             "walk": 40,
             "swim": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Pony",
@@ -14044,7 +13938,8 @@
         ],
         "speed_json": {
             "walk": 25
-        }
+        },
+        "armor_desc": "chain shirt"
     },
     {
         "name": "Pseudodragon",
@@ -14526,7 +14421,8 @@
         ],
         "speed_json": {
             "swim": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Remorhaz",
@@ -14621,7 +14517,8 @@
         ],
         "speed_json": {
             "walk": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Riding Horse",
@@ -15194,7 +15091,8 @@
         ],
         "speed_json": {
             "walk": 10
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Scout",
@@ -15253,7 +15151,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "leather armor"
     },
     {
         "name": "Sea Hag",
@@ -15397,7 +15296,7 @@
             },
             {
                 "name": "Shadow Stealth",
-                "desc": "While in dim light or darkness, the shadow can take the Hide action as a bonus action. Its stealth bonus is also improved to +6.",
+                "desc": "While in dim light or darkness, the shadow can take the Hide action as a bonus action.",
                 "attack_bonus": 0
             },
             {
@@ -15622,7 +15521,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nCold Breath. The dragon exhales an icy blast in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.\nParalyzing Breath. The dragon exhales paralyzing gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Cold Breath.** The dragon exhales an icy blast in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.\n**Paralyzing Breath.** The dragon exhales paralyzing gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
                 "attack_bonus": 0,
                 "damage_dice": "4d8"
             }
@@ -15759,6 +15658,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The solar can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The solar regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Teleport",
@@ -16094,7 +15994,7 @@
             },
             {
                 "name": "Innate Spellcasting (1/Day)",
-                "desc": "The mephit can innately cast blur, requiring no material components. Its innate spellcasting ability is Charisma.",
+                "desc": "The mephit can innately cast _blur_, requiring no material components. Its innate spellcasting ability is Charisma.",
                 "attack_bonus": 0
             }
         ],
@@ -16538,7 +16438,8 @@
             "walk": 20,
             "burrow": 5,
             "climb": 20
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Swarm of Centipedes",
@@ -16581,7 +16482,8 @@
         "speed_json": {
             "walk": 20,
             "climb": 20
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Swarm of Insects",
@@ -16624,7 +16526,8 @@
         "speed_json": {
             "walk": 20,
             "climb": 20
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Swarm of Poisonous Snakes",
@@ -16868,7 +16771,8 @@
         "speed_json": {
             "walk": 20,
             "climb": 20
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Swarm of Wasps",
@@ -16911,7 +16815,8 @@
         "speed_json": {
             "walk": 5,
             "fly": 30
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Tarrasque",
@@ -17006,6 +16911,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The tarrasque regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Attack",
@@ -17081,7 +16987,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "leather armor"
     },
     {
         "name": "Tiger",
@@ -17245,7 +17152,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "hide armor"
     },
     {
         "name": "Triceratops",
@@ -17336,7 +17244,7 @@
             },
             {
                 "name": "Variant: Loathsome Limbs",
-                "desc": "Whenever the troll takes at least 15 slashing damage at one time, roll a d20 to determine what else happens to it:\n1-10: Nothing else happens.\n11-14: One leg is severed from the troll if it has any legs left.\n15- 18: One arm is severed from the troll if it has any arms left.\n19-20: The troll is decapitated, but the troll dies only if it can't regenerate. If it dies, so does the severed head.\nIf the troll finishes a short or long rest without reattaching a severed limb or head, the part regrows. At that point, the severed part dies. Until then, a severed part acts on the troll's initiative and has its own action and movement. A severed part has AC 13, 10 hit points, and the troll's Regeneration trait.\nA severed leg is unable to attack and has a speed of 5 feet.\nA severed arm has a speed of 5 feet and can make one claw attack on its turn, with disadvantage on the attack roll unless the troll can see the arm and its target. Each time the troll loses an arm, it loses a claw attack.\nIf its head is severed, the troll loses its bite attack and its body is blinded unless the head can see it. The severed head has a speed of 0 feet and the troll's Keen Smell trait. It can make a bite attack but only against a target in its space.\nThe troll's speed is halved if it's missing a leg. If it loses both legs, it falls prone. If it has both arms, it can crawl. With only one arm, it can still crawl, but its speed is halved. With no arms or legs, its speed is 0, and it can't benefit from bonuses to speed.",
+                "desc": "Whenever the troll takes at least 15 slashing damage at one time, roll a d20 to determine what else happens to it:\n\n**1-10:** Nothing else happens.\n**11-14:** One leg is severed from the troll if it has any legs left.\n**15- 18:** One arm is severed from the troll if it has any arms left.\n**19-20:** The troll is decapitated, but the troll dies only if it can't regenerate. If it dies, so does the severed head.\n\nIf the troll finishes a short or long rest without reattaching a severed limb or head, the part regrows. At that point, the severed part dies. Until then, a severed part acts on the troll's initiative and has its own action and movement. A severed part has AC 13, 10 hit points, and the troll's Regeneration trait.\nA **severed leg** is unable to attack and has a speed of 5 feet.\nA **severed arm** has a speed of 5 feet and can make one claw attack on its turn, with disadvantage on the attack roll unless the troll can see the arm and its target. Each time the troll loses an arm, it loses a claw attack.\nIf its head is severed, the troll loses its bite attack and its body is blinded unless the head can see it. The **severed head** has a speed of 0 feet and the troll's Keen Smell trait. It can make a bite attack but only against a target in its space.\nThe troll's speed is halved if it's missing a leg. If it loses both legs, it falls prone. If it has both arms, it can crawl. With only one arm, it can still crawl, but its speed is halved. With no arms or legs, its speed is 0, and it can't benefit from bonuses to speed.",
                 "attack_bonus": 0
             }
         ],
@@ -17494,6 +17402,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The unicorn can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The unicorn regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Hooves",
@@ -17597,7 +17506,7 @@
             },
             {
                 "name": "Charm",
-                "desc": "The vampire targets one humanoid it can see within 30 ft. of it. If the target can see the vampire, the target must succeed on a DC 17 Wisdom saving throw against this magic or be charmed by the vampire. The charmed target regards the vampire as a trusted friend to be heeded and protected. Although the target isn't under the vampire's control, it takes the vampire's requests or actions in the most favorable way it can, and it is a willing target for the vampire's bit attack.\nEach time the vampire or the vampire's companions do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the vampire is destroyed, is on a different plane of existence than the target, or takes a bonus action to end the effect.",
+                "desc": "The vampire targets one humanoid it can see within 30 ft. of it. If the target can see the vampire, the target must succeed on a DC 17 Wisdom saving throw against this magic or be charmed by the vampire. The charmed target regards the vampire as a trusted friend to be heeded and protected. Although the target isn't under the vampire's control, it takes the vampire's requests or actions in the most favorable way it can, and it is a willing target for the vampire's bite attack.\nEach time the vampire or the vampire's companions do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the vampire is destroyed, is on a different plane of existence than the target, or takes a bonus action to end the effect.",
                 "attack_bonus": 0
             },
             {
@@ -17606,6 +17515,7 @@
                 "attack_bonus": 0
             }
         ],
+		"legendary_desc": "The vampire can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The vampire regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
                 "name": "Move",
@@ -17753,7 +17663,8 @@
         ],
         "speed_json": {
             "walk": 30
-        }
+        },
+        "armor_desc": "splint"
     },
     {
         "name": "Violet Fungus",
@@ -18067,7 +17978,8 @@
             "walk": 30,
             "swim": 90
         },
-        "group": "Elementals"
+        "group": "Elementals",
+        "armor_desc": "natural armor"
     },
     {
         "name": "Weasel",
@@ -18145,7 +18057,7 @@
             },
             {
                 "name": "Keen Smell",
-                "desc": "The werebear has advantage on WisGlom (Perception) checks that rely on smell.",
+                "desc": "The werebear has advantage on Wisdom (Perception) checks that rely on smell.",
                 "attack_bonus": 0
             }
         ],
@@ -18182,7 +18094,7 @@
             "walk": 30
         },
         "group": "Lycanthropes",
-        "armor_desc": "natural armor"
+        "armor_desc": "10 in humanoid form, 11 (natural armor) in bear and hybrid form"
     },
     {
         "name": "Wereboar",
@@ -18252,7 +18164,7 @@
             "walk": 30
         },
         "group": "Lycanthropes",
-        "armor_desc": "natural armor"
+        "armor_desc": "10 in humanoid form, 11 (natural armor) in boar or hybrid form"
     },
     {
         "name": "Wererat",
@@ -18476,7 +18388,7 @@
             "walk": 30
         },
         "group": "Lycanthropes",
-        "armor_desc": "natural armor"
+        "armor_desc": "11 in humanoid form, 12 (natural armor) in wolf or hybrid form"
     },
     {
         "name": "White Dragon Wyrmling",
@@ -18719,7 +18631,8 @@
         ],
         "speed_json": {
             "walk": 50
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Wolf",
@@ -18769,7 +18682,8 @@
         ],
         "speed_json": {
             "walk": 40
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Worg",
@@ -18813,7 +18727,8 @@
         ],
         "speed_json": {
             "walk": 50
-        }
+        },
+        "armor_desc": "natural armor"
     },
     {
         "name": "Wraith",
@@ -19184,7 +19099,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 42 (12d6) fire damage on a failed save, or half as much damage on a successful one.\nSleep Breath. The dragon exhales sleep gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw or fall unconscious for 5 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Fire Breath.** The dragon exhales fire in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 42 (12d6) fire damage on a failed save, or half as much damage on a successful one.\n**Sleep Breath.** The dragon exhales sleep gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw or fall unconscious for 5 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
                 "attack_bonus": 0,
                 "damage_dice": "12d6"
             }
@@ -19256,7 +19171,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nLightning Breath. The dragon exhales lightning in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.\nRepulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 15 Strength saving throw. On a failed save, the creature is pushed 40 feet away from the dragon.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Lightning Breath.** The dragon exhales lightning in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.\n**Repulsion Breath.** The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 15 Strength saving throw. On a failed save, the creature is pushed 40 feet away from the dragon.",
                 "attack_bonus": 0,
                 "damage_dice": "10d10"
             }
@@ -19321,7 +19236,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nAcid Breath. The dragon exhales acid in an 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 40 (9d8) acid damage on a failed save, or half as much damage on a successful one.\nSlowing Breath. The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Acid Breath.** The dragon exhales acid in an 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 40 (9d8) acid damage on a failed save, or half as much damage on a successful one.\n**Slowing Breath.** The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
                 "attack_bonus": 0,
                 "damage_dice": "9d8"
             }
@@ -19394,7 +19309,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 55 (10d10) fire damage on a failed save, or half as much damage on a successful one.\nWeakening Breath. The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Fire Breath.** The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 55 (10d10) fire damage on a failed save, or half as much damage on a successful one.\n**Weakening Breath.** The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
                 "attack_bonus": 0,
                 "damage_dice": "10d10"
             }
@@ -19596,7 +19511,7 @@
             },
             {
                 "name": "Breath Weapons (Recharge 5-6)",
-                "desc": "The dragon uses one of the following breath weapons.\nCold Breath. The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.\nParalyzing Breath. The dragon exhales paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+                "desc": "The dragon uses one of the following breath weapons.\n**Cold Breath.** The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.\n**Paralyzing Breath.** The dragon exhales paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
                 "attack_bonus": 0,
                 "damage_dice": "12d8"
             }
@@ -19640,7 +19555,7 @@
         "special_abilities": [
             {
                 "name": "Ice Walk",
-                "desc": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra moment.",
+                "desc": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra movement.",
                 "attack_bonus": 0
             }
         ],
