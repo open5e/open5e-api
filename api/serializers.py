@@ -208,6 +208,21 @@ class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedM
         model = MagicItem
         fields = ('slug','name','type','desc','rarity','requires_attunement','document_slug')
 
+class WeaponSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Weapon
+        fields = (
+            'name',
+            'slug',
+            'category',
+            'document_slug',
+            'cost',
+            'damage_dice',
+            'damage_type',
+            'weight',
+            'properties')
+
+
 class AggregateSerializer(HighlighterMixin, HaystackSerializer):
 
     class Meta:
