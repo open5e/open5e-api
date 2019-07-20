@@ -169,3 +169,13 @@ class MagicItemViewSet(viewsets.ModelViewSet):
     filter_fields=(
         'name',
     )
+
+class WeaponViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows viewing of Archetypes.
+    """
+    queryset = Weapon.objects.all()
+    serializer_class = WeaponSerializer
+    filter_fields=(
+        'name',
+    )

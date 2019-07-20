@@ -169,3 +169,15 @@ class MagicItem(GameContent):
     rarity = models.TextField()
     requires_attunement = models.TextField()
     route = models.TextField(default="magicitems/")
+
+class Weapon(GameContent):
+    category = models.TextField()
+    cost = models.TextField()
+    damage_dice = models.TextField()
+    damage_type = models.TextField()
+    weight = models.TextField()
+    properties_json = models.TextField()
+    def properties(self):
+        if self.properties_json:
+            return json.loads(self.properties_json)
+    route = models.TextField(default="weapons/")

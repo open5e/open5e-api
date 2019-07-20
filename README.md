@@ -1,53 +1,39 @@
 # open5e is being rebuilt in Django and Vue.js!
 
-## Check the [Beta Site](https://beta.open5e.com) and [Beta API](https://api-beta.open5e.com) to see what's up!
-
-We have a discord going for discussing the rebuild, and I hope you'll join us! https://discord.gg/9RNE2rY 
-
 Open5e is a community project driven by a small number of volunteers in their spare time. We welcome any and all contributions! Please join our Discord to help out: https://discord.gg/9RNE2rY or check out the issue board if you'd like to see what's being worked on!
 
-# Starting the Server
+The Django API uses Django REST Framework for its browsability and ease of use when developing CRUD endpoints.  It uses django's default SQLite database, and pulls the data from the /data directory.
 
-The Django API uses Django REST Framework for its browsability and ease of use when developing CRUD endpoints.
+# Quickstart
+The API uses docker-compose to run, and by default binds https:// on port 443, which may not work for your system (I believe windows has problems binding on low ports.)  Here's the default command, run from the root.
+> docker-compose up
 
-## Server Quickstart
+This will allow you to access the project on https://localhost.
 
-The server runs in a docker container. You'll need to first install docker on your system, then getting it running is extremely simple:
+If you'd like to use docker and docker-compose for development, I would suggest rebinding the ports. Here's an example command that would allow for running the project on a non-standard port.
 
-First, you will need to [install Docker](https://docs.docker.com/v17.12/install/)
-If you are using Windows, you will need to either run a linux VM, or install the Ubuntu CLI from the microsoft store.
-This is due to the scripts causing syntax errors in windows, as they are designed for bash.
-If you install Ubuntu from the microsoft store follow these steps: (https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4)
+> docker-compose run --publish 8888:8888 server
 
-`cd` into the root `/open5e` directory in the shell program of your choice, then:
+This command runs the Server module (defined in docker-compose.yml), binding the port 8888 to 8888 locally.  This should allow you to access the site on https://localhost:8888.
 
-``` bash
-export OPEN_5E_ROOT=`pwd` #set the /server folder as the root of the Python project
-export SECRET_KEY='@pt#ouh)@!c+2eh(!aj_vtc=s7t$uk-l1!ry3^fcercz%si01@' # this should be a nukable test key that you're manually replacing at startup time for production
-docker-compose build dev
-docker-compose up dev
-```
+# Development using Django Server
+To do any python development on the django application itself, I would suggest using django's built-in server as it allows for various things (such as debug mode and quick reloads).  Here's the general process for getting that up and running.
 
+First, install pipenv from here (https://pipenv.readthedocs.io/en/latest/). 
 
-If you need to work with the db, serializers, or other django-level elements, you will need to be running the docker container then exec into it:
+Once pipenv is installed locally, you can then use it to install of the project dependencies defined in the Pipfile.
+> pipenv install
 
-``` bash
-bash -c "clear && docker exec -it open5e_dev_1 sh"
-```
+Then you will need to use the built-in django migration function to define your database, making sure to run it within the pipenv environment.
+> pipenv run python manage.py migrate
 
-From there you can apply any typical python/django commands. Some common and useful commands include:
+You will then need to collect the static files (this makes django-resk-framework look presentable when viewing it in html).
+> pipenv run python manage.py collectstatic --noinput
 
-``` python
-pipenv run python manage.py makemigrations #create a new migration for the db
-pipenv run python manage.py migrate #apply any pending db migrations
-pipenv run python manage.py rebuild_index #rebuild search index to reflect model or indexer changes
-```
+Finally, you will need to load the SRD data from the json files in the /data folder.  This is using the custom populatedb command.
+> pipenv run python manage.py populatedb --flush ./data/WOTC_5e_SRD_v5.1/
 
-You will want to leave the server terminal running while you launch the UI in a separate termainal so you can observe requests.
+At that point, you will be able to run the django server normally (within the pipenv environment).
+> pipenv run python manage.py runserver
 
-If all you want to test against is the API/backend, you're done! Otherwise you'll want to open another window and...
-
-
-# Build and run the UI layer
-
-To run the UI layer, you will need to clone the repo at https://github.com/eepMoody/open5e and follow the instructions there.
+And your server should be available at http://localhost:8000.
