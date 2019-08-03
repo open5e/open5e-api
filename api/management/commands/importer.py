@@ -346,6 +346,8 @@ class Importer:
             if 'perception' in o:
                 i.perception = o['perception']
                 skills['perception'] = o['perception']
+            if 'persuasion' in o:
+                skills['persuasion'] = o['persuasion']
             if 'religion' in o:
                 skills['religion'] = o['religion']
             if 'sleight of hand' in o:
