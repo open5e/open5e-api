@@ -17,6 +17,10 @@ class Importer:
         message += 'Skipped:{0}'.format(skipped)
         return message
 
+    def displayer(self, object_type, name):
+        message= 'loading... ' + name + '. '
+        return message
+
 
     def DocumentImporter(self, options, json_object):
         skipped,added,updated,tested = (0,0,0,0) #Count for all of the different results.
@@ -255,13 +259,15 @@ class Importer:
 
         return self.returner('Magic Items',added,updated,skipped)
 
-    def MonsterImporter(self, options, json_object):
+    def MonsterImporter(self, options, json_object, skip_flush=False):
         skipped,added,updated = (0,0,0) #Count for all of the different results.
-        if bool(options['flush']): Monster.objects.all().delete()
+        if bool(options['flush']) and not skip_flush: Monster.objects.all().delete()
 
         for o in json_object:
             new = False
             exists = False
+            # print( 'Monster ' + o['name'] ) # this is useful for debugging new JSON files
+
             if Monster.objects.filter(slug=slugify(o['name'])).exists():
                 i = Monster.objects.get(slug=slugify(o['name']))
                 exists = True
