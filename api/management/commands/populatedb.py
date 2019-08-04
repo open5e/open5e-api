@@ -13,6 +13,7 @@ class Command(BaseCommand):
         parser.add_argument('directory', nargs='+', type=str, help='Directory that contains %model_name%.json files to be loaded.')
 
         # Named (optional) arguments
+
         parser.add_argument('--flush', action='store_true', help='Flushes all existing database data before adding new objects.',)
 
         parser.add_argument('--update', action='store_true', help='Updates existing database data based on slugs.')
@@ -64,6 +65,10 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.SUCCESS(importer.MagicItemImporter(options, mag)))
 
             with open(dir+'monsters.json') as mon_data:
+                mon = json.load(mon_data)
+                self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(options, mon)))
+
+            with open(dir+'tome_of_beasts.json') as mon_data:
                 mon = json.load(mon_data)
                 self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(options, mon)))
 
