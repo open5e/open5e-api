@@ -70,7 +70,7 @@ class Command(BaseCommand):
 
             with open(dir+'tome_of_beasts.json') as mon_data:
                 mon = json.load(mon_data)
-                self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(options, mon)))
+                self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(options, mon, True)))
 
             with open(dir+'planes.json') as pln_data:
                 pln = json.load(pln_data)

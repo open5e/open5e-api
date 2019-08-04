@@ -259,9 +259,9 @@ class Importer:
 
         return self.returner('Magic Items',added,updated,skipped)
 
-    def MonsterImporter(self, options, json_object):
+    def MonsterImporter(self, options, json_object, skip_flush=False):
         skipped,added,updated = (0,0,0) #Count for all of the different results.
-        if bool(options['flush']): Monster.objects.all().delete()
+        if bool(options['flush']) and not skip_flush: Monster.objects.all().delete()
 
         for o in json_object:
             new = False
