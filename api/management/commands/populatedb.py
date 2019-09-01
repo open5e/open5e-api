@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
 import json
 from . import importer as i
+from pathlib import Path
 
 
 class Command(BaseCommand):
@@ -44,50 +45,68 @@ class Command(BaseCommand):
                 docs = json.load(doc_data)
                 self.stdout.write(self.style.SUCCESS(importer.DocumentImporter(options, docs)))
             
-            with open(dir+'backgrounds.json') as bg_data:
-                bgs = json.load(bg_data)
-                self.stdout.write(self.style.SUCCESS(importer.BackgroundImporter(options, bgs)))
+            bgs_file = Path(dir+'backgrounds.json')
+            if bgs_file.exists():
+                with open(bgs_file) as bg_data:
+                    bgs = json.load(bg_data)
+                    self.stdout.write(self.style.SUCCESS(importer.BackgroundImporter(options, bgs)))
 
-            with open(dir+'classes.json') as cls_data:
-                cls = json.load(cls_data)
-                self.stdout.write(self.style.SUCCESS(importer.ClassImporter(options, cls)))
+            cls_file = Path(dir+'classes.json')
+            if cls_file.exists():
+                with open(cls_file) as cls_data:
+                    cls = json.load(cls_data)
+                    self.stdout.write(self.style.SUCCESS(importer.ClassImporter(options, cls)))
 
-            with open(dir+'conditions.json') as con_data:
-                con = json.load(con_data)
-                self.stdout.write(self.style.SUCCESS(importer.ConditionImporter(options, con)))
+            con_file = Path(dir+'conditions.json')
+            if con_file.exists():
+                with open(con_file) as con_data:
+                    con = json.load(con_data)
+                    self.stdout.write(self.style.SUCCESS(importer.ConditionImporter(options, con)))
 
-            with open(dir+'feats.json') as fea_data:
-                fea = json.load(fea_data)
-                self.stdout.write(self.style.SUCCESS(importer.FeatImporter(options, fea)))
+            fea_file = Path(dir+'feats.json')
+            if fea_file.exists():
+                with open(fea_file) as fea_data:
+                    fea = json.load(fea_data)
+                    self.stdout.write(self.style.SUCCESS(importer.FeatImporter(options, fea)))
 
-            with open(dir+'magicitems.json') as mag_data:
-                mag = json.load(mag_data)
-                self.stdout.write(self.style.SUCCESS(importer.MagicItemImporter(options, mag)))
+            mag_file = Path(dir+'magicitems.json')
+            if mag_file.exists():
+                with open(mag_file) as mag_data:
+                    mag = json.load(mag_data)
+                    self.stdout.write(self.style.SUCCESS(importer.MagicItemImporter(options, mag)))
 
-            with open(dir+'monsters.json') as mon_data:
-                mon = json.load(mon_data)
-                self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(options, mon)))
+            mon_file = Path(dir+'monsters.json')
+            if mon_file.exists():
+                with open(mon_file) as mon_data:
+                    mon = json.load(mon_data)
+                    self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(options, mon)))
 
-            with open(dir+'tome_of_beasts.json') as mon_data:
-                mon = json.load(mon_data)
-                self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(options, mon, True)))
+            pln_file = Path(dir+'planes.json')
+            if pln_file.exists():
+                with open(pln_file) as pln_data:
+                    pln = json.load(pln_data)
+                    self.stdout.write(self.style.SUCCESS(importer.PlaneImporter(options, pln)))
 
-            with open(dir+'planes.json') as pln_data:
-                pln = json.load(pln_data)
-                self.stdout.write(self.style.SUCCESS(importer.PlaneImporter(options, pln)))
+            sec_file = Path(dir+'sections.json')
+            if sec_file.exists():
+                with open(sec_file) as sec_data:
+                    sec = json.load(sec_data)
+                    self.stdout.write(self.style.SUCCESS(importer.SectionImporter(options, sec)))
 
-            with open(dir+'sections.json') as sec_data:
-                sec = json.load(sec_data)
-                self.stdout.write(self.style.SUCCESS(importer.SectionImporter(options, sec)))
+            rac_file = Path(dir+'races.json')
+            if rac_file.exists():
+                with open(rac_file) as rac_data:
+                    rac = json.load(rac_data)
+                    self.stdout.write(self.style.SUCCESS(importer.RaceImporter(options, rac)))
 
-            with open(dir+'races.json') as rac_data:
-                rac = json.load(rac_data)
-                self.stdout.write(self.style.SUCCESS(importer.RaceImporter(options, rac)))
+            spl_file = Path(dir+'spells.json')
+            if spl_file.exists():
+                with open(spl_file) as spl_data:
+                    spl = json.load(spl_data)
+                    self.stdout.write(self.style.SUCCESS(importer.SpellImporter(options, spl)))
 
-            with open(dir+'spells.json') as spl_data:
-                spl = json.load(spl_data)
-                self.stdout.write(self.style.SUCCESS(importer.SpellImporter(options, spl)))
-
-            with open(dir+'weapons.json') as spl_data:
-                spl = json.load(spl_data)
-                self.stdout.write(self.style.SUCCESS(importer.WeaponImporter(options, spl)))
+            wea_file = Path(dir+'weapons.json')
+            if wea_file.exists():
+                with open(wea_file) as wea_data:
+                    wea = json.load(wea_data)
+                    self.stdout.write(self.style.SUCCESS(importer.WeaponImporter(options, wea)))

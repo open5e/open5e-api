@@ -36,6 +36,7 @@ class DocumentViewSet(viewsets.ModelViewSet):
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer
     filter_fields = (
+        'slug',
         'title',
         'organization',
         'license',
@@ -47,6 +48,7 @@ class SpellViewSet(viewsets.ModelViewSet):
     """
     queryset = Spell.objects.all()
     serializer_class = SpellSerializer
+    ordering=['name']
     filter_fields = (
         'level',
         'school',
@@ -63,10 +65,13 @@ class MonsterViewSet(viewsets.ModelViewSet):
     """
     queryset = Monster.objects.all()
     serializer_class = MonsterSerializer
+    ordering=['name']
     filter_fields=(
         'challenge_rating',
         'armor_class',
         'name',
+        'document',
+        'document__slug',
     )
 
 class BackgroundViewSet(viewsets.ModelViewSet):
@@ -75,6 +80,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
     """
     queryset = Background.objects.all()
     serializer_class = BackgroundSerializer
+    ordering=['name']
     filter_fields=(
         'name',
         'skill_proficiencies',
@@ -97,6 +103,7 @@ class SectionViewSet(viewsets.ModelViewSet):
     """
     queryset = Section.objects.all()
     serializer_class = SectionSerializer
+    ordering=['name']
     filter_fields=(
         'name',
         'parent',
