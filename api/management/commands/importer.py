@@ -30,15 +30,15 @@ class Importer:
             new = False
             exists = False
             #Setting up the object.
-            if Document.objects.filter(slug=slugify(o['title'])).exists():
-                i = Document.objects.get(slug=slugify(o['title']))
+            if Document.objects.filter(slug=slugify(o['slug'])).exists():
+                i = Document.objects.get(slug=slugify(o['slug']))
                 exists = True
             else:
                 i = Document()
                 new = True
             #Adding the data to the created object.
             i.title = o['title']
-            i.slug = slugify(o['title'])
+            i.slug = slugify(o['slug'])
             i.desc = o['desc']
             i.author = o['author']
             i.license = o['license']
