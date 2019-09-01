@@ -48,6 +48,7 @@ class SpellViewSet(viewsets.ModelViewSet):
     """
     queryset = Spell.objects.all()
     serializer_class = SpellSerializer
+    ordering_fields = '__all__'
     ordering=['name']
     filter_fields = (
         'level',
@@ -66,6 +67,7 @@ class MonsterViewSet(viewsets.ModelViewSet):
     """
     queryset = Monster.objects.all()
     serializer_class = MonsterSerializer
+    ordering_fields = '__all__'
     ordering=['name']
     filter_fields=(
         'challenge_rating',
@@ -81,6 +83,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
     """
     queryset = Background.objects.all()
     serializer_class = BackgroundSerializer
+    ordering_fields = '__all__'
     ordering=['name']
     filter_fields=(
         'name',
@@ -106,6 +109,7 @@ class SectionViewSet(viewsets.ModelViewSet):
     """
     queryset = Section.objects.all()
     serializer_class = SectionSerializer
+    ordering_fields = '__all__'
     ordering=['name']
     filter_fields=(
         'name',
