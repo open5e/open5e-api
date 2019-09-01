@@ -75,6 +75,7 @@ class Monster(GameContent):
     def legendary_actions(self):
         return json.loads(self.legendary_actions_json)
     route = models.TextField(default="monsters/") 
+    img_main = models.URLField(null=True)
 
 class Spell(GameContent):
     higher_level = models.TextField()

@@ -1,6 +1,8 @@
 from api.models import *
 from django.template.defaultfilters import slugify
 import json
+from pathlib import Path
+from django.core.management.base import BaseCommand, CommandError
 
 class Importer:
     
@@ -262,6 +264,7 @@ class Importer:
     def MonsterImporter(self, options, json_object, skip_flush=False):
         skipped,added,updated = (0,0,0) #Count for all of the different results.
         if bool(options['flush']) and not skip_flush: Monster.objects.all().delete()
+        img_dir='./static/img/monsters/'
 
         for o in json_object:
             new = False
@@ -277,6 +280,9 @@ class Importer:
             if 'name' in o:
                 i.name = o['name']
                 i.slug = slugify(o['name'])
+            img_file = Path(img_dir + slugify(o['name']) + '.png')
+            if img_file.exists():
+                i.img_main = img_file
             if 'size' in o:
                 i.size = o['size']
             if 'type' in o:

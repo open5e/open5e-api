@@ -80,7 +80,8 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'legendary_desc',
             'legendary_actions',
             'special_abilities',
-            'document_slug'
+            'img_main',
+            'document_slug',
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
