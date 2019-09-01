@@ -57,6 +57,7 @@ class SpellViewSet(viewsets.ModelViewSet):
         'concentration',
         'casting_time',
         'dnd_class',
+        'document__slug',
     )
 
 class MonsterViewSet(viewsets.ModelViewSet):
@@ -85,6 +86,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
         'name',
         'skill_proficiencies',
         'languages'
+        'document__slug',
     )
 
 class PlaneViewSet(viewsets.ModelViewSet):
@@ -95,6 +97,7 @@ class PlaneViewSet(viewsets.ModelViewSet):
     serializer_class = PlaneSerializer
     filter_fields=(
         'name',
+        'document__slug',
     )
 
 class SectionViewSet(viewsets.ModelViewSet):
@@ -107,6 +110,7 @@ class SectionViewSet(viewsets.ModelViewSet):
     filter_fields=(
         'name',
         'parent',
+        'document__slug',
     )
 
 class FeatViewSet(viewsets.ModelViewSet):
@@ -115,7 +119,7 @@ class FeatViewSet(viewsets.ModelViewSet):
     """
     queryset = Feat.objects.all()
     serializer_class = FeatSerializer
-    filter_fields=('name','prerequisite')
+    filter_fields=('name','prerequisite', 'document__slug',)
 
 class ConditionViewSet(viewsets.ModelViewSet):
     """
@@ -125,6 +129,7 @@ class ConditionViewSet(viewsets.ModelViewSet):
     serializer_class = ConditionSerializer
     filter_fields=(
         'name',
+        'document__slug',
     )
 
 class RaceViewSet(viewsets.ModelViewSet):
@@ -135,6 +140,7 @@ class RaceViewSet(viewsets.ModelViewSet):
     serializer_class = RaceSerializer
     filter_fields=(
         'name',
+        'document__slug',
     )
 
 class SubraceViewSet(viewsets.ModelViewSet):
@@ -145,6 +151,7 @@ class SubraceViewSet(viewsets.ModelViewSet):
     serializer_class = SubraceSerializer
     filter_fields=(
         'name',
+        'document__slug',
     )
 
 class CharClassViewSet(viewsets.ModelViewSet):
@@ -155,6 +162,7 @@ class CharClassViewSet(viewsets.ModelViewSet):
     serializer_class = CharClassSerializer
     filter_fields=(
         'name',
+        'document__slug',
     )
 
 class ArchetypeViewSet(viewsets.ModelViewSet):
@@ -165,6 +173,7 @@ class ArchetypeViewSet(viewsets.ModelViewSet):
     serializer_class = ArchetypeSerializer
     filter_fields=(
         'name',
+        'document__slug',
     )
 
 class MagicItemViewSet(viewsets.ModelViewSet):
@@ -174,7 +183,8 @@ class MagicItemViewSet(viewsets.ModelViewSet):
     queryset = MagicItem.objects.all()
     serializer_class = MagicItemSerializer
     filter_fields=(
-        'name',
+        'name',        
+        'document__slug',
     )
 
 class WeaponViewSet(viewsets.ModelViewSet):
@@ -184,5 +194,6 @@ class WeaponViewSet(viewsets.ModelViewSet):
     queryset = Weapon.objects.all()
     serializer_class = WeaponSerializer
     filter_fields=(
-        'name',
+        'name',        
+        'document__slug',
     )
