@@ -48,6 +48,7 @@ class SpellViewSet(viewsets.ModelViewSet):
     """
     queryset = Spell.objects.all()
     serializer_class = SpellSerializer
+    search_fields = ['dnd_class', 'name']
     ordering_fields = '__all__'
     ordering=['name']
     filter_fields = (
@@ -72,6 +73,7 @@ class MonsterViewSet(viewsets.ModelViewSet):
     filter_fields=(
         'challenge_rating',
         'armor_class',
+        'type',
         'name',
         'document',
         'document__slug',
