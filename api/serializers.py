@@ -38,9 +38,18 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ('url', 'name')
 
-class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
+class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer, serializers.ModelSerializer):
+    
+    img_main = serializers.SerializerMethodField()
+
+    def get_img_main(self, monster):
+        request = self.context.get('request')
+        domain = str(request.get_host())
+        img_url = monster.img_main
+        return ('http://{domain}/{path}'.format(domain=domain, path=img_url))
     class Meta:
         model = Monster
+
         fields = (
             'slug',
             'name',
@@ -80,7 +89,8 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'legendary_desc',
             'legendary_actions',
             'special_abilities',
-            'document_slug'
+            'img_main',
+            'document_slug',
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
