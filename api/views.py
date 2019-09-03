@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
+import django_filters
 from api.models import *
 from api.serializers import *
 from drf_haystack.serializers import HaystackSerializer
@@ -18,21 +19,21 @@ class SearchView(HaystackViewSet):
     serializer_class = AggregateSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
-class GroupViewSet(viewsets.ModelViewSet):
+class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
-class DocumentViewSet(viewsets.ModelViewSet):
+class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer
     filter_fields = (
@@ -42,7 +43,7 @@ class DocumentViewSet(viewsets.ModelViewSet):
         'license',
         )
 
-class SpellViewSet(viewsets.ModelViewSet):
+class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of spells.
     """
@@ -51,6 +52,10 @@ class SpellViewSet(viewsets.ModelViewSet):
     search_fields = ['dnd_class', 'name']
     ordering_fields = '__all__'
     ordering=['name']
+    filter_backends = (
+        filters.OrderingFilter,
+        django_filters.rest_framework.DjangoFilterBackend
+    )
     filter_fields = (
         'level',
         'school',
@@ -62,15 +67,19 @@ class SpellViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class MonsterViewSet(viewsets.ModelViewSet):
+class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of monsters.
     """
     queryset = Monster.objects.all()
     serializer_class = MonsterSerializer
     ordering_fields = '__all__'
-    ordering=['name']
-    filter_fields=(
+    ordering = ['name']
+    filter_backends = (
+        filters.OrderingFilter,
+        django_filters.rest_framework.DjangoFilterBackend
+    )
+    filter_fields = (
         'challenge_rating',
         'armor_class',
         'type',
@@ -79,7 +88,7 @@ class MonsterViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class BackgroundViewSet(viewsets.ModelViewSet):
+class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Backgrounds.
     """
@@ -87,6 +96,10 @@ class BackgroundViewSet(viewsets.ModelViewSet):
     serializer_class = BackgroundSerializer
     ordering_fields = '__all__'
     ordering=['name']
+    filter_backends = (
+        filters.OrderingFilter,
+        django_filters.rest_framework.DjangoFilterBackend
+    )
     filter_fields=(
         'name',
         'skill_proficiencies',
@@ -94,7 +107,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class PlaneViewSet(viewsets.ModelViewSet):
+class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Planes.
     """
@@ -105,7 +118,7 @@ class PlaneViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class SectionViewSet(viewsets.ModelViewSet):
+class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Sections.
     """
@@ -113,13 +126,17 @@ class SectionViewSet(viewsets.ModelViewSet):
     serializer_class = SectionSerializer
     ordering_fields = '__all__'
     ordering=['name']
+    filter_backends = (
+        filters.OrderingFilter,
+        django_filters.rest_framework.DjangoFilterBackend
+    )
     filter_fields=(
         'name',
         'parent',
         'document__slug',
     )
 
-class FeatViewSet(viewsets.ModelViewSet):
+class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Feats.
     """
@@ -127,7 +144,7 @@ class FeatViewSet(viewsets.ModelViewSet):
     serializer_class = FeatSerializer
     filter_fields=('name','prerequisite', 'document__slug',)
 
-class ConditionViewSet(viewsets.ModelViewSet):
+class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Backgrounds.
     """
@@ -138,7 +155,7 @@ class ConditionViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class RaceViewSet(viewsets.ModelViewSet):
+class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Races and Subraces.
     """
@@ -149,7 +166,7 @@ class RaceViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class SubraceViewSet(viewsets.ModelViewSet):
+class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Races and Subraces.
     """
@@ -160,7 +177,7 @@ class SubraceViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class CharClassViewSet(viewsets.ModelViewSet):
+class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Classes and Archetypes.
     """
@@ -171,7 +188,7 @@ class CharClassViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class ArchetypeViewSet(viewsets.ModelViewSet):
+class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Archetypes.
     """
@@ -182,7 +199,7 @@ class ArchetypeViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class MagicItemViewSet(viewsets.ModelViewSet):
+class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Archetypes.
     """
@@ -193,7 +210,7 @@ class MagicItemViewSet(viewsets.ModelViewSet):
         'document__slug',
     )
 
-class WeaponViewSet(viewsets.ModelViewSet):
+class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of Archetypes.
     """

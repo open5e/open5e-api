@@ -76,6 +76,8 @@ class Monster(GameContent):
         return json.loads(self.legendary_actions_json)
     route = models.TextField(default="monsters/") 
     img_main = models.URLField(null=True)
+    class Meta:
+        ordering = ['name']
 
 class Spell(GameContent):
     higher_level = models.TextField()
@@ -93,6 +95,8 @@ class Spell(GameContent):
     archetype = models.TextField()
     circles = models.TextField()
     route = models.TextField(default="spells/") 
+    class Meta:
+        ordering = ['name']
 
 class CharClass(GameContent):
     hit_dice = models.TextField()
