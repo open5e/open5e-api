@@ -52,10 +52,6 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     search_fields = ['dnd_class', 'name']
     ordering_fields = '__all__'
     ordering=['name']
-    filter_backends = (
-        filters.OrderingFilter,
-        django_filters.rest_framework.DjangoFilterBackend
-    )
     filter_fields = (
         'level',
         'school',
@@ -75,10 +71,6 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = MonsterSerializer
     ordering_fields = '__all__'
     ordering = ['name']
-    filter_backends = (
-        filters.OrderingFilter,
-        django_filters.rest_framework.DjangoFilterBackend
-    )
     filter_fields = (
         'challenge_rating',
         'armor_class',
@@ -96,10 +88,6 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = BackgroundSerializer
     ordering_fields = '__all__'
     ordering=['name']
-    filter_backends = (
-        filters.OrderingFilter,
-        django_filters.rest_framework.DjangoFilterBackend
-    )
     filter_fields=(
         'name',
         'skill_proficiencies',
@@ -126,10 +114,6 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = SectionSerializer
     ordering_fields = '__all__'
     ordering=['name']
-    filter_backends = (
-        filters.OrderingFilter,
-        django_filters.rest_framework.DjangoFilterBackend
-    )
     filter_fields=(
         'name',
         'parent',
