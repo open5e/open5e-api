@@ -46,7 +46,10 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
         request = self.context.get('request')
         domain = str(request.get_host())
         img_url = monster.img_main
-        return ('http://{domain}/{path}'.format(domain=domain, path=img_url))
+        if img_url != None:
+            return ('http://{domain}/{path}'.format(domain=domain, path=img_url))
+        else:
+             return None
     class Meta:
         model = Monster
 
