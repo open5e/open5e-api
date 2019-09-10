@@ -268,4 +268,5 @@ class AggregateSerializer(HighlighterMixin, HaystackSerializer):
             'rarity',
             'type',
             'source',
-            'requires_attunement',]
+            'requires_attunement',
+            'document_slug']

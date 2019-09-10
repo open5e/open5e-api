@@ -4,6 +4,7 @@ import datetime
 
 
 class MonsterIndex(indexes.SearchIndex, indexes.Indexable):
+  document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
   text = indexes.CharField(document=True, use_template=True)
   name = indexes.EdgeNgramField(model_attr='name', )
   route = indexes.CharField(model_attr='route', indexed=False)
@@ -29,6 +30,7 @@ class MonsterIndex(indexes.SearchIndex, indexes.Indexable):
     )
 
 class SpellIndex(indexes.SearchIndex, indexes.Indexable):
+  document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
   text = indexes.CharField(document=True, use_template=True)
   name = indexes.EdgeNgramField(model_attr='name', )
   route = indexes.CharField(model_attr='route', indexed=False)
@@ -37,7 +39,6 @@ class SpellIndex(indexes.SearchIndex, indexes.Indexable):
   level = indexes.CharField(model_attr='level', indexed=False)
   school = indexes.CharField(model_attr='school', indexed=False)
   dnd_class = indexes.CharField(model_attr='dnd_class', indexed=False)
-  route = indexes.CharField(model_attr='route', indexed=False)
 
 
   def get_model(self):
@@ -50,6 +51,7 @@ class SpellIndex(indexes.SearchIndex, indexes.Indexable):
     )
 
 class SectionIndex(indexes.SearchIndex, indexes.Indexable):
+  document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
   text = indexes.CharField(document=True, use_template=True)
   name = indexes.EdgeNgramField(model_attr='name', )
   route = indexes.CharField(model_attr='route', indexed=False)
@@ -66,6 +68,7 @@ class SectionIndex(indexes.SearchIndex, indexes.Indexable):
     )
 
 class ConditionIndex(indexes.SearchIndex, indexes.Indexable):
+  document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
   text = indexes.CharField(document=True, use_template=True)
   name = indexes.EdgeNgramField(model_attr='name', )
   route = indexes.CharField(model_attr='route', indexed=False)
@@ -82,6 +85,7 @@ class ConditionIndex(indexes.SearchIndex, indexes.Indexable):
     )
 
 class CharClassIndex(indexes.SearchIndex, indexes.Indexable):
+  document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
   text = indexes.CharField(document=True, use_template=True)
   name = indexes.EdgeNgramField(model_attr='name', )
   route = indexes.CharField(model_attr='route', indexed=False)
@@ -97,6 +101,7 @@ class CharClassIndex(indexes.SearchIndex, indexes.Indexable):
     )
 
 class RaceIndex(indexes.SearchIndex, indexes.Indexable):
+  document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
   text = indexes.CharField(document=True, use_template=True)
   name = indexes.EdgeNgramField(model_attr='name')
   route = indexes.CharField(model_attr='route', indexed=False)
@@ -112,6 +117,7 @@ class RaceIndex(indexes.SearchIndex, indexes.Indexable):
     )
 
 class MagicItemIndex(indexes.SearchIndex, indexes.Indexable):
+  document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
   text = indexes.CharField(document=True, use_template=True)
   name = indexes.EdgeNgramField(model_attr='name')
   route = indexes.CharField(model_attr='route', indexed=False)
