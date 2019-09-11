@@ -94,7 +94,6 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'special_abilities',
             'img_main',
             'document_slug',
-            'document_title',
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -120,7 +119,6 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'archetype',
             'circles',
             'document_slug',
-            'document_title',
         )
 
 class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -137,7 +135,6 @@ class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.Hyperlinked
             'feature_desc',
             'suggested_characteristics',
             'document_slug',
-            'document_title',
         )
 
 class PlaneSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -149,7 +146,7 @@ class SectionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
     class Meta:
         model = Section
         fields = ('slug','name','desc','document_slug',
-        'document_title','parent')
+        'parent')
 
 class FeatSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -180,7 +177,6 @@ class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'slug',
             'desc',
             'document_slug',
-            'document_title',
             'asi_desc',
             'asi',
             'age',
@@ -197,7 +193,12 @@ class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
 class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Archetype
-        fields = ('name','slug','desc','document_slug')
+        fields = (
+            'name',
+            'slug',
+            'desc',
+            'document_slug'
+        )
 
 class CharClassSerializer(serializers.HyperlinkedModelSerializer):
     archetypes = ArchetypeSerializer(many=True,read_only=True)
@@ -208,7 +209,6 @@ class CharClassSerializer(serializers.HyperlinkedModelSerializer):
             'slug',
             'desc',
             'document_slug',
-            'document_title',
             'hit_dice',
             'hp_at_1st_level',
             'hp_at_higher_levels',
@@ -226,7 +226,15 @@ class CharClassSerializer(serializers.HyperlinkedModelSerializer):
 class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = MagicItem
-        fields = ('slug','name','type','desc','rarity','requires_attunement','document_slug')
+        fields = (
+            'slug',
+            'name',
+            'type',
+            'desc',
+            'rarity',
+            'requires_attunement',
+            'document_slug'
+        )
 
 class WeaponSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -236,7 +244,6 @@ class WeaponSerializer(serializers.HyperlinkedModelSerializer):
             'slug',
             'category',
             'document_slug',
-            'document_title',
             'cost',
             'damage_dice',
             'damage_type',
