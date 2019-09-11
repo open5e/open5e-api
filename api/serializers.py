@@ -93,7 +93,8 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'legendary_actions',
             'special_abilities',
             'img_main',
-            'document_slug',
+            'document__slug',
+            'document__title',
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -118,7 +119,8 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'dnd_class',
             'archetype',
             'circles',
-            'document_slug',
+            'document__slug',
+            'document__title',
         )
 
 class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -134,29 +136,50 @@ class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.Hyperlinked
             'feature',
             'feature_desc',
             'suggested_characteristics',
-            'document_slug',
+            'document__slug',
+            'document__title',
         )
 
 class PlaneSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Plane
-        fields = ('slug','name','desc','document_slug')
+        fields = ('slug','name','desc','document__slug'),
+        'document__title'
 
 class SectionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Section
-        fields = ('slug','name','desc','document_slug',
-        'parent')
+        fields = (
+            'slug',
+            'name',
+            'desc',
+            'document__slug',
+            'document__title',
+            'parent'
+        )
 
 class FeatSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Feat
-        fields = ('slug','name','desc','prerequisite','document_slug')
+        fields = (
+            'slug',
+            'name',
+            'desc',
+            'prerequisite',
+            'document__slug',
+            'document__title'
+        )
 
 class ConditionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Condition
-        fields = ('slug','name','desc','document_slug')
+        fields = (
+            'slug',
+            'name',
+            'desc',
+            'document__slug',
+            'document__title'
+        )
 
 class SubraceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -166,7 +189,8 @@ class SubraceSerializer(serializers.HyperlinkedModelSerializer):
         'desc',
         'asi',
         'asi_desc',
-        'document_slug')
+        'document__slug'),
+        'document__title'
 
 class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     subraces = SubraceSerializer(many=True,read_only=True)
@@ -176,7 +200,8 @@ class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'name',
             'slug',
             'desc',
-            'document_slug',
+            'document__slug',
+            'document__title',
             'asi_desc',
             'asi',
             'age',
@@ -197,7 +222,7 @@ class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'slug',
             'desc',
-            'document_slug'
+            'document__slug'
         )
 
 class CharClassSerializer(serializers.HyperlinkedModelSerializer):
@@ -208,7 +233,8 @@ class CharClassSerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'slug',
             'desc',
-            'document_slug',
+            'document__slug',
+            'document__title',
             'hit_dice',
             'hp_at_1st_level',
             'hp_at_higher_levels',
@@ -233,7 +259,8 @@ class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedM
             'desc',
             'rarity',
             'requires_attunement',
-            'document_slug'
+            'document__slug',
+            'document__title'
         )
 
 class WeaponSerializer(serializers.HyperlinkedModelSerializer):
@@ -243,7 +270,8 @@ class WeaponSerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'slug',
             'category',
-            'document_slug',
+            'document__slug',
+            'document__title',
             'cost',
             'damage_dice',
             'damage_type',
@@ -283,5 +311,6 @@ class AggregateSerializer(HighlighterMixin, HaystackSerializer):
             'type',
             'source',
             'requires_attunement',
-            'document_slug',
+            'document__slug',
+            'document__title',
             'document_title']

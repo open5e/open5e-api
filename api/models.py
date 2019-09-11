@@ -20,8 +20,10 @@ class GameContent(models.Model):
     desc = models.TextField() # A description of the Game Content Item
     document = models.ForeignKey(Document, on_delete=models.CASCADE) # Like the System Reference Document
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    def document_slug(self):
+    def document__slug(self):
         return self.document.slug
+    def document__title(self):
+        return self.document.title
     class Meta:
         abstract=True
 
