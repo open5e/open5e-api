@@ -4,8 +4,6 @@ import datetime
 
 
 class MonsterIndex(indexes.SearchIndex, indexes.Indexable):
-  document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
-  document_title = indexes.CharField(model_attr='document__title', indexed=False)
   text = indexes.CharField(document=True, use_template=True)
   name = indexes.EdgeNgramField(model_attr='name', )
   route = indexes.CharField(model_attr='route', indexed=False)
@@ -20,6 +18,8 @@ class MonsterIndex(indexes.SearchIndex, indexes.Indexable):
   wisdom = indexes.CharField(model_attr='wisdom', indexed=False)
   charisma = indexes.CharField(model_attr='charisma', indexed=False)
   challenge_rating = indexes.CharField(model_attr='challenge_rating', indexed=False)
+  document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
+  document_title = indexes.CharField(model_attr='document__title', indexed=False)
 
   def get_model(self):
     return Monster

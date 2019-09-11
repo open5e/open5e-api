@@ -143,8 +143,7 @@ class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.Hyperlinked
 class PlaneSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Plane
-        fields = ('slug','name','desc','document__slug'),
-        'document__title'
+        fields = ('slug','name','desc','document__slug', 'document__title')
 
 class SectionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -200,8 +199,6 @@ class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'name',
             'slug',
             'desc',
-            'document__slug',
-            'document__title',
             'asi_desc',
             'asi',
             'age',
@@ -213,6 +210,8 @@ class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'vision',
             'traits',
             'subraces',
+            'document__slug',
+            'document__title',
         )
 
 class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
@@ -222,7 +221,8 @@ class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'slug',
             'desc',
-            'document__slug'
+            'document__slug',
+            'document__title',
         )
 
 class CharClassSerializer(serializers.HyperlinkedModelSerializer):
@@ -233,8 +233,6 @@ class CharClassSerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'slug',
             'desc',
-            'document__slug',
-            'document__title',
             'hit_dice',
             'hp_at_1st_level',
             'hp_at_higher_levels',
@@ -247,7 +245,10 @@ class CharClassSerializer(serializers.HyperlinkedModelSerializer):
             'table',
             'spellcasting_ability',
             'subtypes_name',
-            'archetypes',)
+            'archetypes',
+            'document__slug',
+            'document__title',
+        )
 
 class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -311,6 +312,5 @@ class AggregateSerializer(HighlighterMixin, HaystackSerializer):
             'type',
             'source',
             'requires_attunement',
-            'document__slug',
-            'document__title',
+            'document_slug',
             'document_title']

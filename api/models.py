@@ -16,8 +16,8 @@ class Document(models.Model):
 
 class GameContent(models.Model):
     slug = models.SlugField(unique=True, default=uuid.uuid1, allow_unicode=False, primary_key=True) # dispel-evil-and-good
-    name = models.TextField() # Barbarian or Blinded
-    desc = models.TextField() # A description of the Game Content Item
+    name = models.TextField()
+    desc = models.TextField()
     document = models.ForeignKey(Document, on_delete=models.CASCADE) # Like the System Reference Document
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     def document__slug(self):
