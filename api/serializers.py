@@ -188,8 +188,10 @@ class SubraceSerializer(serializers.HyperlinkedModelSerializer):
         'desc',
         'asi',
         'asi_desc',
-        'document__slug'),
+        'document__slug',
         'document__title'
+    )
+
 
 class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     subraces = SubraceSerializer(many=True,read_only=True)
@@ -313,4 +315,6 @@ class AggregateSerializer(HighlighterMixin, HaystackSerializer):
             'source',
             'requires_attunement',
             'document_slug',
-            'document_title']
+            'document_title'
+        ]
+        
