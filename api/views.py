@@ -80,6 +80,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
         'document',
         'document__slug',
     )
+    search_fields = ['name']
 
 class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -95,6 +96,7 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
         'languages'
         'document__slug',
     )
+    search_fields = ['name']
 
 class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -194,6 +196,7 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
         'name',        
         'document__slug',
     )
+    search_fields = ['name']
 
 class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -205,3 +208,4 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
         'name',        
         'document__slug',
     )
+    search_fields = ['name']
