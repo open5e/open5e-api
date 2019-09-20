@@ -18908,6 +18908,69 @@
    {
       "actions" : [
          {
+            "desc" : "The tulpa makes two black claw attacks.",
+            "name" : "Multiattack"
+         },
+         {
+            "attack_bonus" : 5,
+            "damage_dice" : "2d8+3",
+            "desc" : "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 12 (2d8 + 3) necrotic damage.",
+            "name" : "Black Claw"
+         },
+         {
+            "attack_bonus" : 4,
+            "damage_dice" : "4d10",
+            "desc" : "Ranged Spell Attack: +4 to hit, range 120 ft., one target. Hit: 22 (4d10) psychic damage.",
+            "name" : "Psychic Blast"
+         },
+         {
+            "desc" : "The tulpa uses its action to fill a 40-foot radius around itself with dread-inducing psychic energy. Each creature, other than the tulpa’s creator, within that area must succeed on a DC 13 Wisdom saving throw or be frightened of the tulpa until the end of its next turn and become cursed. A creature with an Intelligence of 5 or lower can’t be cursed. While cursed by the tulpa, that creature’s own thoughts turn ever more dark and brooding. Its sense of hope fades, and shadows seem overly large and ominous. The cursed creature can repeat the saving throw whenever it finishes a long rest, ending the effect on itself on a success. If not cured within three days, the cursed creature manifests its own tulpa.",
+            "name" : "Imposing Dread (1/Day)"
+         }
+      ],
+      "alignment" : "neutral evil",
+      "armor_class" : "13",
+      "challenge_rating" : "4",
+      "charisma" : "9",
+      "condition_immunities" : "charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
+      "constitution" : "14",
+      "damage_immunities" : "cold, necrotic, poison",
+      "damage_resistances" : "acid, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical attacks",
+      "damage_vulnerabilities" : "radiant",
+      "dexterity" : "16",
+      "hit_dice" : "6d8+12",
+      "hit_points" : "39",
+      "intelligence" : "10",
+      "languages" : "the languages spoken by its creator",
+      "name" : "Tulpa",
+      "senses" : "darkvision 60 ft., passive Perception 12",
+      "size" : "Medium",
+      "special_abilities" : [
+         {
+            "desc" : "The tulpa can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.",
+            "name" : "Incorporeal Movement"
+         },
+         {
+            "desc" : "Within a day of being slain, the tulpa reforms within 500 feet of its creator. It doesn’t reform if its creator is slain, or if the creator’s mental disturbance is healed. The tulpa is immune to all damage dealt to it by its creator.",
+            "name" : "Rise Again"
+         },
+         {
+            "desc" : "The tulpa always remains within 500 feet if its creator. As long as the tulpa is within 500 feet of its creator, the creator has disadvantage on Wisdom saving throws.",
+            "name" : "It Follows"
+         }
+      ],
+      "speed" : "fly speed equal to its creator’s current speed; (hover)",
+      "speed_json" : {
+         "hover" : true
+      },
+      "strength" : "14",
+      "subtype" : "",
+      "type" : "undead",
+      "wisdom" : "14"
+   },
+   {
+      "actions" : [
+         {
             "desc" : "The tusked crimson ogre makes two attacks: one with its morningstar and one with its bite.",
             "name" : "Multiattack"
          },
