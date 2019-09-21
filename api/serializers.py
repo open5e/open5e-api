@@ -192,6 +192,7 @@ class SubraceSerializer(serializers.HyperlinkedModelSerializer):
         'slug',
         'desc',
         'asi',
+        'traits',
         'asi_desc',
         'document__slug',
         'document__title'
