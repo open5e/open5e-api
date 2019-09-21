@@ -13,6 +13,7 @@ class Document(models.Model):
     version = models.TextField() # 5.1
     url = models.URLField() # http://dnd.wizards.com/articles/features/systems-reference-document-srd
     created_at = models.DateTimeField(auto_now_add=True)
+    license_url= models.TextField(default="http://open5e.com/legal")
 
 class GameContent(models.Model):
     slug = models.SlugField(unique=True, default=uuid.uuid1, allow_unicode=False, primary_key=True) # dispel-evil-and-good
@@ -24,6 +25,8 @@ class GameContent(models.Model):
         return self.document.slug
     def document__title(self):
         return self.document.title
+    def document__license_url(self):
+        return self.document.license_url
     class Meta:
         abstract=True
 

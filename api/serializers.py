@@ -31,7 +31,8 @@ class DocumentSerializer(serializers.HyperlinkedModelSerializer):
             fields = (
                 'title', 
                 'slug', 
-                'url',)
+                'url',
+                'license_url',)
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -95,6 +96,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'img_main',
             'document__slug',
             'document__title',
+            'document__license_url',
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -121,6 +123,7 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'circles',
             'document__slug',
             'document__title',
+            'document__license_url',
         )
 
 class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -138,6 +141,7 @@ class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.Hyperlinked
             'suggested_characteristics',
             'document__slug',
             'document__title',
+            'document__license_url',
         )
 
 class PlaneSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -154,6 +158,7 @@ class SectionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'desc',
             'document__slug',
             'document__title',
+            'document__license_url',
             'parent'
         )
 
@@ -214,6 +219,7 @@ class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'subraces',
             'document__slug',
             'document__title',
+            'document__license_url',
         )
 
 class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
@@ -225,6 +231,7 @@ class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
             'desc',
             'document__slug',
             'document__title',
+            'document__license_url',
         )
 
 class CharClassSerializer(serializers.HyperlinkedModelSerializer):
@@ -250,6 +257,7 @@ class CharClassSerializer(serializers.HyperlinkedModelSerializer):
             'archetypes',
             'document__slug',
             'document__title',
+            'document__license_url',
         )
 
 class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -275,6 +283,7 @@ class WeaponSerializer(serializers.HyperlinkedModelSerializer):
             'category',
             'document__slug',
             'document__title',
+            'document__license_url',
             'cost',
             'damage_dice',
             'damage_type',
