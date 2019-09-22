@@ -11,6 +11,7 @@ COPY . /opt/services/open5e-api
 RUN pipenv install
 
 # migrate the db
+RUN pipenv run python manage.py makemigrations
 RUN pipenv run python manage.py migrate
 
 # collect the static files
