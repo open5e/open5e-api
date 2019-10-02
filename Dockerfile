@@ -23,6 +23,9 @@ RUN pipenv run python manage.py populatedb --flush ./data/WOTC_5e_SRD_v5.1/
 #add the tome of beasts
 RUN pipenv run python manage.py populatedb --append ./data/tome_of_beasts/
 
+#add the creature codex
+RUN pipenv run python manage.py populatedb --append ./data/creature_codex/
+
 #build the search index
 RUN pipenv run python manage.py update_index --remove
 
