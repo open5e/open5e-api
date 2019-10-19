@@ -25,8 +25,7 @@ class Importer:
 
     def update_monster(self, monster, spell):
         db_monster = Monster.objects.get(slug=monster)
-        print (monster)
-        db_spell = Spell.objects.get(slug=spell)
+        db_spell = Spell.objects.get(slug=slugify(spell))
         MonsterSpell.objects.create(spell=db_spell, monster=db_monster)  # <----- Create m2m relation
 
     def DocumentImporter(self, options, json_object):

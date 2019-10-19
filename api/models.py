@@ -103,8 +103,8 @@ class Monster(GameContent):
     img_main = models.URLField(null=True)
 
 class MonsterSpell(models.Model):
-    spell = models.ForeignKey(Spell, on_delete="CASCADE")
-    monster = models.ForeignKey(Monster, on_delete="CASCADE")
+    spell = models.ForeignKey(Spell, on_delete=models.CASCADE)
+    monster = models.ForeignKey(Monster, on_delete=models.CASCADE)
 
 class CharClass(GameContent):
     hit_dice = models.TextField()
