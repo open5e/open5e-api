@@ -51,9 +51,9 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             return ('http://{domain}/{path}'.format(domain=domain, path=img_url))
         else:
              return None
+            
     class Meta:
         model = Monster
-
         fields = (
             'slug',
             'name',
@@ -93,7 +93,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'legendary_desc',
             'legendary_actions',
             'special_abilities',
-            'spells',
+            'spell_list',
             'img_main',
             'document__slug',
             'document__title',

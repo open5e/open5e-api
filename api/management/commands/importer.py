@@ -23,6 +23,11 @@ class Importer:
         message= 'loading... ' + name + '. '
         return message
 
+    def update_monster(self, monster, spell):
+        db_monster = Monster.objects.get(slug=monster)
+        print (monster)
+        db_spell = Spell.objects.get(slug=spell)
+        MonsterSpell.objects.create(spell=db_spell, monster=db_monster)  # <----- Create m2m relation
 
     def DocumentImporter(self, options, json_object):
         skipped,added,updated,tested = (0,0,0,0) #Count for all of the different results.
@@ -271,7 +276,6 @@ class Importer:
         for o in json_object:
             new = False
             exists = False
-            # print( 'Monster ' + o['name'] ) # this is useful for debugging new JSON files
 
             if Monster.objects.filter(slug=slugify(o['name'])).exists():
                 i = Monster.objects.get(slug=slugify(o['name']))
@@ -434,9 +438,11 @@ class Importer:
                skipped += 1
             else:
                 i.save()
+                if 'spells' in o:
+                    for spell in o['spells']:
+                        self.update_monster(i.slug, spell)
                 if new: added += 1
                 else: updated += 1
-
         return self.returner('Monsters',added,updated,skipped)
 
     def PlaneImporter(self, options, json_object):

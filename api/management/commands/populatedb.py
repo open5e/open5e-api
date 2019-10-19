@@ -75,6 +75,12 @@ class Command(BaseCommand):
                     mag = json.load(mag_data)
                     self.stdout.write(self.style.SUCCESS(importer.MagicItemImporter(options, mag)))
 
+            spl_file = Path(dir+'spells.json')
+            if spl_file.exists():
+                with open(spl_file) as spl_data:
+                    spl = json.load(spl_data)
+                    self.stdout.write(self.style.SUCCESS(importer.SpellImporter(options, spl)))
+
             mon_file = Path(dir+'monsters.json')
             if mon_file.exists():
                 with open(mon_file) as mon_data:
@@ -98,12 +104,6 @@ class Command(BaseCommand):
                 with open(rac_file) as rac_data:
                     rac = json.load(rac_data)
                     self.stdout.write(self.style.SUCCESS(importer.RaceImporter(options, rac)))
-
-            spl_file = Path(dir+'spells.json')
-            if spl_file.exists():
-                with open(spl_file) as spl_data:
-                    spl = json.load(spl_data)
-                    self.stdout.write(self.style.SUCCESS(importer.SpellImporter(options, spl)))
 
             wea_file = Path(dir+'weapons.json')
             if wea_file.exists():
