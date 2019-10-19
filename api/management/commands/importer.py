@@ -75,6 +75,8 @@ class Importer:
                 i.desc = o['desc']
             if 'skill-proficiencies' in o:
                 i.skill_proficiencies = o['skill-proficiencies']
+            if 'tool-proficiencies' in o:
+                i.tool_proficiencies = o['tool-proficiencies']
             if 'languages' in o:
                 i.languages = o['languages']
             if 'equipment' in o:
@@ -413,6 +415,12 @@ class Importer:
                 i.reactions_json = json.dumps("")
             if 'legendary_desc' in o:
                 i.legendary_desc = o['legendary_desc']
+            # import spells array
+            if 'spells' in o:
+                i.spells_json = json.dumps(o['spells'])
+            else:
+                i.spells_json=json.dumps("")
+            # import legendary actions array
             if 'legendary_actions' in o:
                 for idx, z in enumerate(o['legendary_actions']):
                     if 'attack_bonus' in z:

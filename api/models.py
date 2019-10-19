@@ -79,6 +79,9 @@ class Monster(GameContent):
     legendary_actions_json = models.TextField() # a list of legendary actions in json.
     def legendary_actions(self):
         return json.loads(self.legendary_actions_json)
+    spells_json = models.TextField()
+    def spells(self):
+        return json.loads(self.spells_json)
     route = models.TextField(default="monsters/") 
     img_main = models.URLField(null=True)
 
@@ -163,8 +166,9 @@ class Condition(GameContent):
     route = models.TextField(default="conditions/") 
 
 class Background(GameContent):
-    skill_proficiencies = models.TextField()
-    languages = models.TextField()
+    skill_proficiencies = models.TextField(null=True)
+    tool_proficiencies=models.TextField(null=True)
+    languages = models.TextField(null=True)
     equipment = models.TextField()
     feature = models.TextField()
     feature_desc = models.TextField()
