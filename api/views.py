@@ -57,7 +57,7 @@ class SpellFilter(django_filters.FilterSet):
             'components': ['iexact', 'exact', 'in', ],
             'concentration': ['iexact', 'exact', 'in', ],
             'casting_time': ['iexact', 'exact', 'in', ],
-            'dnd_class': ['iexact', 'exact', 'in', ],
+            'dnd_class': ['iexact', 'exact', 'in', 'icontains'],
             'document__slug': ['iexact', 'exact', 'in', ],
         }
 
