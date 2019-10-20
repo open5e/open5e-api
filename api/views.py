@@ -43,11 +43,31 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
         'license',
         )
 
+class SpellFilter(django_filters.FilterSet):
+  
+    class Meta:
+        model = Spell
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'level': ['iexact', 'exact', 'in', ],
+            'level_int': ['iexact', 'exact', 'range'],
+            'school': ['iexact', 'exact', 'in', ],
+            'duration': ['iexact', 'exact', 'in', ],
+            'components': ['iexact', 'exact', 'in', ],
+            'concentration': ['iexact', 'exact', 'in', ],
+            'casting_time': ['iexact', 'exact', 'in', ],
+            'dnd_class': ['iexact', 'exact', 'in', ],
+            'document__slug': ['iexact', 'exact', 'in', ],
+        }
+
+
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of spells.
     """
     queryset = Spell.objects.all()
+    filter_class=SpellFilter
     serializer_class = SpellSerializer
     search_fields = ['dnd_class', 'name']
     ordering_fields = '__all__'
