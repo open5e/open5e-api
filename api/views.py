@@ -53,6 +53,8 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     ordering_fields = '__all__'
     ordering=['name']
     filter_fields = (
+        'slug',
+        'name',
         'level',
         'level_int',
         'school',
