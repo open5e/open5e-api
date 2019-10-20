@@ -115,7 +115,7 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     filter_fields=(
         'name',
         'skill_proficiencies',
-        'languages'
+        'languages',
         'document__slug',
     )
     search_fields = ['name']

@@ -30,6 +30,24 @@ class GameContent(models.Model):
     class Meta:
         abstract=True
 
+class Spell(GameContent):
+    higher_level = models.TextField()
+    page = models.TextField()
+    range = models.TextField()
+    components = models.TextField()
+    material = models.TextField()
+    ritual = models.TextField()
+    duration = models.TextField()
+    concentration = models.TextField()
+    casting_time = models.TextField()
+    level = models.TextField()
+    level_int = models.IntegerField(null=True)
+    school = models.TextField()
+    dnd_class = models.TextField()
+    archetype = models.TextField()
+    circles = models.TextField()
+    route = models.TextField(default="spells/")
+
 class Monster(GameContent):
     size = models.TextField()
     type = models.TextField()
@@ -79,26 +97,14 @@ class Monster(GameContent):
     legendary_actions_json = models.TextField() # a list of legendary actions in json.
     def legendary_actions(self):
         return json.loads(self.legendary_actions_json)
+    spells_json = models.TextField()
+    spell_list = models.ManyToManyField(Spell, related_name='monsters', symmetrical=True, through="monsterSpell")
     route = models.TextField(default="monsters/") 
     img_main = models.URLField(null=True)
 
-class Spell(GameContent):
-    higher_level = models.TextField()
-    page = models.TextField()
-    range = models.TextField()
-    components = models.TextField()
-    material = models.TextField()
-    ritual = models.TextField()
-    duration = models.TextField()
-    concentration = models.TextField()
-    casting_time = models.TextField()
-    level = models.TextField()
-    level_int = models.IntegerField(null=True)
-    school = models.TextField()
-    dnd_class = models.TextField()
-    archetype = models.TextField()
-    circles = models.TextField()
-    route = models.TextField(default="spells/") 
+class MonsterSpell(models.Model):
+    spell = models.ForeignKey(Spell, on_delete=models.CASCADE)
+    monster = models.ForeignKey(Monster, on_delete=models.CASCADE)
 
 class CharClass(GameContent):
     hit_dice = models.TextField()
@@ -163,8 +169,9 @@ class Condition(GameContent):
     route = models.TextField(default="conditions/") 
 
 class Background(GameContent):
-    skill_proficiencies = models.TextField()
-    languages = models.TextField()
+    skill_proficiencies = models.TextField(null=True)
+    tool_proficiencies=models.TextField(null=True)
+    languages = models.TextField(null=True)
     equipment = models.TextField()
     feature = models.TextField()
     feature_desc = models.TextField()

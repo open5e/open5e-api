@@ -26,6 +26,9 @@ RUN pipenv run python manage.py populatedb --append ./data/tome_of_beasts/
 #add the creature codex
 RUN pipenv run python manage.py populatedb --append ./data/creature_codex/
 
+#add original open5e content
+RUN pipenv run python manage.py populatedb --append ./data/open5e_original/
+
 #build the search index
 RUN pipenv run python manage.py update_index --remove
 

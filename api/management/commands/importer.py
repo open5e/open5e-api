@@ -23,6 +23,10 @@ class Importer:
         message= 'loading... ' + name + '. '
         return message
 
+    def update_monster(self, monster, spell):
+        db_monster = Monster.objects.get(slug=monster)
+        db_spell = Spell.objects.get(slug=slugify(spell))
+        MonsterSpell.objects.create(spell=db_spell, monster=db_monster)  # <----- Create m2m relation
 
     def DocumentImporter(self, options, json_object):
         skipped,added,updated,tested = (0,0,0,0) #Count for all of the different results.
@@ -75,6 +79,8 @@ class Importer:
                 i.desc = o['desc']
             if 'skill-proficiencies' in o:
                 i.skill_proficiencies = o['skill-proficiencies']
+            if 'tool-proficiencies' in o:
+                i.tool_proficiencies = o['tool-proficiencies']
             if 'languages' in o:
                 i.languages = o['languages']
             if 'equipment' in o:
@@ -269,7 +275,6 @@ class Importer:
         for o in json_object:
             new = False
             exists = False
-            # print( 'Monster ' + o['name'] ) # this is useful for debugging new JSON files
 
             if Monster.objects.filter(slug=slugify(o['name'])).exists():
                 i = Monster.objects.get(slug=slugify(o['name']))
@@ -413,6 +418,12 @@ class Importer:
                 i.reactions_json = json.dumps("")
             if 'legendary_desc' in o:
                 i.legendary_desc = o['legendary_desc']
+            # import spells array
+            if 'spells' in o:
+                i.spells_json = json.dumps(o['spells'])
+            else:
+                i.spells_json=json.dumps("")
+            # import legendary actions array
             if 'legendary_actions' in o:
                 for idx, z in enumerate(o['legendary_actions']):
                     if 'attack_bonus' in z:
@@ -426,9 +437,11 @@ class Importer:
                skipped += 1
             else:
                 i.save()
+                if 'spells' in o:
+                    for spell in o['spells']:
+                        self.update_monster(i.slug, spell)
                 if new: added += 1
                 else: updated += 1
-
         return self.returner('Monsters',added,updated,skipped)
 
     def PlaneImporter(self, options, json_object):
