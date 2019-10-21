@@ -24,6 +24,7 @@ class Importer:
         return message
 
     def update_monster(self, monster, spell):
+        # print(spell) # useful for debugging new lists
         db_monster = Monster.objects.get(slug=monster)
         db_spell = Spell.objects.get(slug=slugify(spell))
         MonsterSpell.objects.create(spell=db_spell, monster=db_monster)  # <----- Create m2m relation
@@ -275,7 +276,7 @@ class Importer:
         for o in json_object:
             new = False
             exists = False
-
+            # print(o['name]) # useful for debugging new lists
             if Monster.objects.filter(slug=slugify(o['name'])).exists():
                 i = Monster.objects.get(slug=slugify(o['name']))
                 exists = True
