@@ -17,17 +17,17 @@ RUN pipenv run python manage.py migrate
 # collect the static files
 RUN pipenv run python manage.py collectstatic --noinput
 
+#add original open5e content
+RUN pipenv run python manage.py populatedb --flush ./data/open5e_original/
+
 #populate the db
-RUN pipenv run python manage.py populatedb --flush ./data/WOTC_5e_SRD_v5.1/
+RUN pipenv run python manage.py populatedb --append ./data/WOTC_5e_SRD_v5.1/
 
 #add the tome of beasts
 RUN pipenv run python manage.py populatedb --append ./data/tome_of_beasts/
 
 #add the creature codex
 RUN pipenv run python manage.py populatedb --append ./data/creature_codex/
-
-#add original open5e content
-RUN pipenv run python manage.py populatedb --append ./data/open5e_original/
 
 #build the search index
 RUN pipenv run python manage.py update_index --remove
