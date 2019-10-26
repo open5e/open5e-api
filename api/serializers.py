@@ -32,6 +32,14 @@ class DocumentSerializer(serializers.HyperlinkedModelSerializer):
                 'title', 
                 'slug', 
                 'url',
+                'license',
+                'desc',
+                'license',
+                'author',
+                'organization',
+                'version',
+                'created_at',
+                'copyright',
                 'license_url',)
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
