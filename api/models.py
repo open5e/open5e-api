@@ -12,6 +12,7 @@ class Document(models.Model):
     organization = models.TextField() # Wizards of the Coast
     version = models.TextField() # 5.1
     url = models.URLField() # http://dnd.wizards.com/articles/features/systems-reference-document-srd
+    copyright = models.TextField( null = True ) # Copyright 2025 open5e
     created_at = models.DateTimeField(auto_now_add=True)
     license_url= models.TextField(default="http://open5e.com/legal")
 

@@ -51,6 +51,7 @@ class Importer:
             i.license = o['license']
             i.version = o['version']
             i.url = o['url']
+            i.copyright = o['copyright']
             if bool(options['testrun']) or (exists and options['append']):
                skipped += 1
             else:
