@@ -27,7 +27,7 @@ assert 'SECRET_KEY' in os.environ, 'Set SECRET_KEY in your .env file!'
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('OPEN5E_DEBUG', False)
+DEBUG = os.environ.get('OPEN5E_DEBUG', '') != 'False'
 
 ## Always allow connections from localhost, and the SERVER_NAME if it's there in the .env file.
 ALLOWED_HOSTS = ['localhost', os.environ.get('SERVER_NAME', ''), '0.0.0.0', 'api.open5e.com', 'api-beta.open5e.com']
