@@ -196,3 +196,27 @@ class Weapon(GameContent):
         if self.properties_json:
             return json.loads(self.properties_json)
     route = models.TextField(default="weapons/")
+
+class Armor(GameContent):
+    category = models.TextField()
+    cost=models.TextField()
+    weight = models.TextField()
+    stealth_disadvantage=models.BooleanField()
+    base_ac = models.IntegerField()
+    plus_dex_mod = models.BooleanField()
+    plus_con_mod = models.BooleanField()
+    plus_wis_mod = models.BooleanField()
+    plus_flat_mod = models.IntegerField()
+    plus_max = models.IntegerField() #Build a shield this way.
+    def ac_string(self):
+        ac = str(base_ac)
+        if self.plus_dex_mod: ac.append(" + Dex modifier")
+        if self.plus_dex_mod: ac.append(" + Con modifier")
+        if self.plus_dex_mod: ac.append(" + Wis modifier")
+        if self.plus_flat_mod: ac.append(" +"+str(self.plus_flat_mod))
+        if self.dex_max: ac.append(" (max 2)")
+        return ac.strip()
+
+    strength_requirement = models.IntegerField()
+
+    route = models.TextField(default="armor/")

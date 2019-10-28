@@ -36,6 +36,7 @@ router.register(r'classes',views.CharClassViewSet)
 #router.register(r'archetypes',views.ArchetypeViewSet)
 router.register(r'magicitems',views.MagicItemViewSet)
 router.register(r'weapons',views.WeaponViewSet)
+router.register(r'armor',views.ArmorViewSet)
 
 router.register('search', views.SearchView, base_name="global-search")
 
