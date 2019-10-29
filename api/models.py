@@ -206,8 +206,8 @@ class Armor(GameContent):
     plus_dex_mod = models.BooleanField()
     plus_con_mod = models.BooleanField()
     plus_wis_mod = models.BooleanField()
-    plus_flat_mod = models.IntegerField()
-    plus_max = models.IntegerField() #Build a shield this way.
+    plus_flat_mod = models.IntegerField(null=True) #Build a shield this way.
+    plus_max = models.IntegerField(null=True) 
     def ac_string(self):
         ac = str(base_ac)
         if self.plus_dex_mod: ac.append(" + Dex modifier")
