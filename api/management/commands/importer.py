@@ -722,4 +722,4 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Weapons',added,updated,skipped)
+        return self.returner('Armor',added,updated,skipped)
