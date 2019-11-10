@@ -4,7 +4,7 @@ from jsonfield import JSONField
 import json
 
 class Document(models.Model):
-    slug = models.SlugField(unique=True, default=uuid.uuid1)
+    slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1)
     title = models.TextField() # System Reference Document
     desc = models.TextField() 
     license = models.TextField() # Open Gaming License
@@ -17,7 +17,7 @@ class Document(models.Model):
     license_url= models.TextField(default="http://open5e.com/legal")
 
 class GameContent(models.Model):
-    slug = models.SlugField(unique=True, default=uuid.uuid1, primary_key=True) # dispel-evil-and-good
+    slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1, primary_key=True) # dispel-evil-and-good
     name = models.TextField()
     desc = models.TextField()
     document = models.ForeignKey(Document, on_delete=models.CASCADE) # Like the System Reference Document
