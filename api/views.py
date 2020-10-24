@@ -10,6 +10,10 @@ from api.models import Monster
 from api.search_indexes import MonsterIndex
 
 
+class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Manifest.objects.all()
+    serializer_class = ManifestSerializer
+
 class SearchView(HaystackViewSet):
 
     # `index_models` is an optional list of which models you would like to include
@@ -17,7 +21,6 @@ class SearchView(HaystackViewSet):
     # a way to filter out those of no interest for this particular view.
     # (Translates to `SearchQuerySet().models(*index_models)` behind the scenes.
     serializer_class = AggregateSerializer
-
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """

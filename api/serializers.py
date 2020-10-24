@@ -5,6 +5,11 @@ from drf_haystack.viewsets import HaystackViewSet
 from api.models import *
 from .search_indexes import *
 
+class ManifestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Manifest
+        fields = ('filename', 'type', 'hash', 'created_at')
+
 class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
