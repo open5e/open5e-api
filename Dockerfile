@@ -29,6 +29,9 @@ RUN pipenv run python manage.py populatedb --append ./data/tome_of_beasts/
 #add the creature codex
 RUN pipenv run python manage.py populatedb --append ./data/creature_codex/
 
+#add deep magic
+RUN pipenv run python manage.py populatedb --append ./data/deep_magic/
+
 #build the search index
 RUN pipenv run python manage.py update_index --remove
 
