@@ -234,3 +234,15 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
         'document__slug',
     )
     search_fields = ['name']
+
+class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint that allows viewing of Archetypes.
+    """
+    queryset = Armor.objects.all()
+    serializer_class = ArmorSerializer
+    filter_fields=(
+        'name',        
+        'document__slug',
+    )
+    search_fields = ['name']

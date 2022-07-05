@@ -306,6 +306,22 @@ class WeaponSerializer(serializers.HyperlinkedModelSerializer):
             'weight',
             'properties')
 
+class ArmorSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Armor
+        fields = (
+            'name',
+            'slug',
+            'category',
+            'document__slug',
+            'document__title',
+            'document__license_url',
+            'ac_string',
+            'strength_requirement',
+            'cost',
+            'weight',
+            'stealth_disadvantage')
+
 
 class AggregateSerializer(HighlighterMixin, HaystackSerializer):
 

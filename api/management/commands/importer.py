@@ -699,3 +699,48 @@ class Importer:
                 else: updated += 1
 
         return self.returner('Weapons',added,updated,skipped)
+
+    def ArmorImporter(self, options, json_object):
+        skipped,added,updated = (0,0,0) #Count for all of the different results.
+        if bool(options['flush']): Armor.objects.all().delete()
+
+        for o in json_object:
+            new = False
+            exists = False
+            if Armor.objects.filter(slug=slugify(o['name'])).exists():
+                i = Armor.objects.get(slug=slugify(o['name']))
+                exists = True
+            else:
+                i = Armor(document = self.d)
+                new = True
+            if 'name' in o:
+                i.name = o['name']
+                i.slug = slugify(o['name'])
+            if 'category' in o:
+                i.category = o['category']
+            if 'cost' in o:
+                i.cost = o['cost']
+            if 'stealth_disadvantage' in o:
+                i.stealth_disadvantage = o['stealth_disadvantage']
+            if 'base_ac' in o:
+                i.base_ac = o['base_ac']
+            if 'plus_dex_mod' in o:
+                i.plus_dex_mod = o['plus_dex_mod']
+            if 'plus_con_mod' in o:
+                i.plus_con_mod = o['plus_con_mod']
+            if 'plus_wis_mod' in o:
+                i.plus_wis_mod = o['plus_wis_mod']
+            if 'plus_flat_mod' in o:
+                i.plus_flat_mod = o['plus_flat_mod']
+            if 'plus_max' in o:
+                i.plus_max = o['plus_max']
+            if 'strength_requirement' in o:
+                i.strength_requirement = o['strength_requirement']
+            if bool(options['testrun']) or (exists and options['append']):
+               skipped += 1
+            else:
+                i.save()
+                if new: added += 1
+                else: updated += 1
+
+        return self.returner('Armor',added,updated,skipped)

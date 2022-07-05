@@ -143,3 +143,9 @@ class Command(BaseCommand):
                 with open(wea_file, encoding="utf-8") as wea_data:
                     wea = json.load(wea_data)
                     self.stdout.write(self.style.SUCCESS(importer.WeaponImporter(options, wea)))
+
+            arm_file = Path(dir+'armor.json')
+            if arm_file.exists():
+                with open(arm_file, encoding="utf-8") as arm_data:
+                    arm = json.load(arm_data)
+                    self.stdout.write(self.style.SUCCESS(importer.ArmorImporter(options, arm)))
