@@ -21,7 +21,6 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
     command: '--interval 30 --cleanup'
   local:
-    image: 'eepmoody/open5e-api:latest'
     build: .
     environment:
       - OPEN5E_DEBUG=${OPEN5E_DEBUG}
