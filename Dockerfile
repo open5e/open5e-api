@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.8
 
 RUN mkdir -p /opt/services/open5e-api
 WORKDIR /opt/services/open5e-api
