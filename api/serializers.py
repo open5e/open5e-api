@@ -5,6 +5,11 @@ from drf_haystack.viewsets import HaystackViewSet
 from api.models import *
 from .search_indexes import *
 
+class ManifestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Manifest
+        fields = ('filename', 'type', 'hash', 'created_at')
+
 class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
@@ -300,6 +305,22 @@ class WeaponSerializer(serializers.HyperlinkedModelSerializer):
             'damage_type',
             'weight',
             'properties')
+
+class ArmorSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Armor
+        fields = (
+            'name',
+            'slug',
+            'category',
+            'document__slug',
+            'document__title',
+            'document__license_url',
+            'ac_string',
+            'strength_requirement',
+            'cost',
+            'weight',
+            'stealth_disadvantage')
 
 
 class AggregateSerializer(HighlighterMixin, HaystackSerializer):
