@@ -22,6 +22,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 router = routers.DefaultRouter()
 #router.register(r'users', views.UserViewSet)
 #router.register(r'groups', views.GroupViewSet)
+router.register(r'manifest', views.ManifestViewSet)
 router.register(r'spells', views.SpellViewSet)
 router.register(r'monsters', views.MonsterViewSet)
 router.register(r'documents', views.DocumentViewSet)
@@ -36,8 +37,9 @@ router.register(r'classes',views.CharClassViewSet)
 #router.register(r'archetypes',views.ArchetypeViewSet)
 router.register(r'magicitems',views.MagicItemViewSet)
 router.register(r'weapons',views.WeaponViewSet)
+router.register(r'armor',views.ArmorViewSet)
 
-router.register('search', views.SearchView, base_name="global-search")
+router.register('search', views.SearchView, basename="global-search")
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

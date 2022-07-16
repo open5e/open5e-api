@@ -2301,7 +2301,7 @@
             },
             {
                 "name": "Cold Breath (Recharge 5-6)",
-                "desc": "The dragon exhales an icy blast in a 90-foot cone. Each creature in that area must make a DC 22 Constitution saving throw, taking 72 (l6d8) cold damage on a failed save, or half as much damage on a successful one.",
+                "desc": "The dragon exhales an icy blast in a 90-foot cone. Each creature in that area must make a DC 22 Constitution saving throw, taking 72 (16d8) cold damage on a failed save, or half as much damage on a successful one.",
                 "attack_bonus": 0,
                 "damage_dice": "16d8"
             }
@@ -7383,9 +7383,9 @@
         "wisdom": 10,
         "charisma": 8,
         "damage_vulnerabilities": "",
-        "damage_resistances": "",
-        "damage_immunities": "necrotic",
-        "condition_immunities": "poisoned",
+        "damage_resistances": "necrotic",
+        "damage_immunities": "poison",
+        "condition_immunities": "charmed, exhaustion, poisoned",
         "senses": "darkvision 60 ft., passive Perception 10",
         "languages": "Common",
         "challenge_rating": "2",
@@ -9873,7 +9873,7 @@
         "actions": [
             {
                 "name": "Spear",
-                "desc": "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.",
+                "desc": "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.",
                 "attack_bonus": 3,
                 "damage_dice": "1d6",
                 "damage_bonus": 1
@@ -11575,7 +11575,7 @@
         "actions": [
             {
                 "name": "Fist",
-                "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage",
+                "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
                 "attack_bonus": 3,
                 "damage_dice": "1d4"
             }
@@ -11628,7 +11628,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:\n\n• Cantrips (at will): mage hand, prestidigitation, ray of frost\n• 1st level (4 slots): detect magic, magic missile, shield, thunderwave\n• 2nd level (3 slots): detect thoughts, invisibility, Melf's acid arrow, mirror image\n• 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball\n• 4th level (3 slots): blight, dimension door\n• 5th level (3 slots): cloudkill, scrying\n• 6th level (1 slot): disintegrate, globe of invulnerability\n• 7th level (1 slot): finger of death, plane shift\n• 8th level (1 slot): dominate monster, power word stun\n• 9th level (1 slot): power word kill",
+                "desc": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:\n\n• Cantrips (at will): mage hand, prestidigitation, ray of frost\n• 1st level (4 slots): detect magic, magic missile, shield, thunderwave\n• 2nd level (3 slots): detect thoughts, invisibility, acid arrow, mirror image\n• 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball\n• 4th level (3 slots): blight, dimension door\n• 5th level (3 slots): cloudkill, scrying\n• 6th level (1 slot): disintegrate, globe of invulnerability\n• 7th level (1 slot): finger of death, plane shift\n• 8th level (1 slot): dominate monster, power word stun\n• 9th level (1 slot): power word kill",
                 "attack_bonus": 0
             },
             {

@@ -1,283 +1,186 @@
 [
     {
-        "id": "no_armor",
-        "name": "No Armor",
-        "type": "No Armor",
+        "name": "Unarmored",
+        "category": "No Armor",
         "rarity": "Standard",
-        "ac": 10,
+        "base_ac": 10,
+		"plus_dex_mod": true,
         "cost": "5 gp",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": null
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
     },
     {
-        "id": "padded_armour",
-        "name": "Padded Armor",
-        "type": "Light Armor",
+        "name": "Padded",
+        "category": "Light Armor",
         "rarity": "Standard",
-        "ac": 11,
+        "base_ac": 11,
+		"plus_dex_mod": true,
         "cost": "5 gp",
         "weight": "8 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": null
-            }
-        ],
-        "requirements": {},
-        "disadvantage": true
+        "stealth_disadvantage": true
     },
     {
-        "id": "leather_armour",
-        "name": "Leather Armor",
-        "type": "Light Armor",
+        "name": "Leather",
+        "category": "Light Armor",
         "rarity": "Standard",
-        "ac": 11,
+        "base_ac": 11,
+		"plus_dex_mod": true,
         "cost": "10 gp",
         "weight": "10 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": null
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
     },
     {
-        "id": "studded_leather_armour",
-        "name": "Studded Leather Armor",
-        "type": "Light Armor",
+        "name": "Studded Leather",
+        "category": "Light Armor",
         "rarity": "Standard",
-        "ac": 12,
+        "base_ac": 12,
+		"plus_dex_mod": true,
         "cost": "45 gp",
         "weight": "13 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": null
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
     },
     {
-        "id": "hide",
         "name": "Hide",
-        "type": "Medium Armor",
-        "ac": 12,
+        "category": "Medium Armor",
+        "base_ac": 12,
+		"plus_dex_mod": true,
+		"plus_max": 2,
         "cost": "10 gp",
         "weight": "12 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": 2
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
     },
     {
-        "id": "chain_shirt",
         "name": "Chain Shirt",
-        "type": "Medium Armor",
+        "category": "Medium Armor",
         "rarity": "Standard",
-        "ac": 13,
+        "base_ac": 13,
+		"plus_dex_mod": true,
+		"plus_max": 2,
         "cost": "50 gp",
         "weight": "20 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": 2
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
     },
     {
-        "id": "scale",
         "name": "Scale mail",
-        "type": "Medium Armor",
+        "category": "Medium Armor",
         "rarity": "Standard",
-        "ac": 14,
+        "base_ac": 14,
+		"plus_dex_mod": true,
+		"plus_max": 2,
         "cost": "50 gp",
         "weight": "45 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": 2
-            }
-        ],
-        "requirements": {},
-        "disadvantage": true
+        "stealth_disadvantage": true
     },
     {
-        "id": "breastplate",
         "name": "Breastplate",
-        "type": "Medium Armor",
+        "category": "Medium Armor",
         "rarity": "Standard",
-        "ac": 14,
+        "base_ac": 14 ,
+		"plus_dex_mod": true,
+		"plus_max": 2,
         "cost": "400 gp",
         "weight": "20 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": 2
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
     },
     {
-        "id": "half_plate",
         "name": "Half plate",
-        "type": "Medium Armor",
+        "category": "Medium Armor",
         "rarity": "Standard",
-        "ac": 15,
+        "base_ac": 15,
+		"plus_dex_mod": true,
+		"plus_max": 2,
         "cost": "750 gp",
         "weight": "40 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": 2
-            }
-        ],
-        "requirements": {},
-        "disadvantage": true
+        "stealth_disadvantage": true
     },
     {
-        "id": "ring_mail",
         "name": "Ring mail",
-        "type": "Heavy Armor",
+        "category": "Heavy Armor",
         "rarity": "Standard",
-        "ac": 14,
+        "base_ac": 14,
         "cost": "30 gp",
         "weight": "40 lb.",
-        "modifier": [],
-        "requirements": {},
-        "disadvantage": true
+        "stealth_disadvantage": true
     },
     {
-        "id": "chain_mail",
         "name": "Chain mail",
-        "type": "Heavy Armor",
+        "category": "Heavy Armor",
         "rarity": "Standard",
-        "ac": 16,
+        "base_ac": 16,
+		"strength_requirement": 13,
         "cost": "75 gp",
         "weight": "55 lb.",
-        "modifier": [],
-        "requirements": {
-            "strength": 13
-        },
-        "disadvantage": true
+        "stealth_disadvantage": true
     },
     {
-        "id": "splint",
         "name": "Splint",
-        "type": "Heavy Armor",
+        "category": "Heavy Armor",
         "rarity": "Standard",
-        "ac": 17,
+        "base_ac":17,
+		"strength_requirement": 15,
         "cost": "200 gp",
         "weight": "60 lb.",
-        "modifier": [],
-        "requirements": {
-            "strength": 15
-        },
-        "disadvantage": true
+        "stealth_disadvantage": true
     },
     {
-        "id": "plate_mail",
         "name": "Plate Mail",
-        "type": "Heavy Armor",
+        "category": "Heavy Armor",
         "rarity": "Standard",
-        "ac": 18,
+        "base_ac": 18,
+		"strength_requirement": 15,
         "cost": "1500 gp",
         "weight": "65 lb.",
-        "requirements": {
-            "strength": 15
-        },
-        "modifier": [],
-        "disadvantage": true
+        "stealth_disadvantage": true
     },
     {
-        "id": "mage_armour_spell",
-        "name": "Mage Armour spell",
-        "type": "Spell",
+        "name": "Mage Armor",
+        "category": "Spell",
         "rarity": "",
-        "ac": 13,
+        "base_ac": 13,
+		"plus_dex_mod": true,
         "cost": "0 gp",
         "weight": "0 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": null
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
     },
     {
-        "id": "barbarian_unarmoured",
-        "name": "Barbarian Unarmoured",
-        "type": "Defense ability",
+        "name": "Unarmored Defense (Barbarian)",
+        "category": "Class Feature",
         "rarity": "",
-        "ac": 10,
+        "base_ac": 10,
+		"plus_dex_mod": true,
+		"plus_con_mod": true,
         "cost": "0 gp",
         "weight": "0 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": null
-            },
-            {
-                "ability": "constitution",
-                "max": null
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
     },
     {
-        "id": "monk_unarmoured",
-        "name": "Monk Unarmoured",
-        "type": "Defense ability",
+        "name": "Unarmored Defense (Monk)",
+        "category": "Class Feature",
         "rarity": "",
-        "ac": 10,
+        "base_ac": 10,
+		"plus_dex_mod": true,
+		"plus_wis_mod": true,
         "cost": "0 gp",
         "weight": "0 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": null
-            },
-            {
-                "ability": "wisdom",
-                "max": null
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
     },
     {
-        "id": "sorcerer_draconic",
-        "name": "Sorcerer Draconic",
-        "type": "Resilience ability",
+        "name": "Draconic Resilience",
+        "category": "Class Feature",
         "rarity": "",
-        "ac": 13,
+        "base_ac": 13,
+		"plus_dex_mod": true,
         "cost": "0 gp",
         "weight": "0 lb.",
-        "modifier": [
-            {
-                "ability": "dexterity",
-                "max": null
-            }
-        ],
-        "requirements": {},
-        "disadvantage": false
+        "stealth_disadvantage": false
+    },
+    {
+        "name": "Shield",
+        "category": "Shield",
+        "rarity": "",
+        "base_ac": 0,
+        "plus_flat_mod": 2,
+        "cost": "10 gp",
+        "weight": "6 lb.",
+        "stealth_disadvantage": false
     }
 ]
