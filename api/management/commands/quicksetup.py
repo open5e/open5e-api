@@ -6,7 +6,7 @@ class Command(BaseCommand):
 
     migrations = 'python manage.py makemigrations && pipenv run python manage.py migrate'
     collect_static = 'python manage.py collectstatic --noinput'
-    populate_db= 'pipenv run python manage.py populatedb --flush ./data/open5e_original/ && pipenv run python manage.py populatedb --append ./data/WOTC_5e_SRD_v5.1/ && pipenv run python manage.py populatedb --append ./data/tome_of_beasts/ && pipenv run python manage.py populatedb --append ./data/creature_codex/'
+    populate_db= 'pipenv run python manage.py populatedb --flush ./data/open5e_original/ && pipenv run python manage.py populatedb --append ./data/WOTC_5e_SRD_v5.1/ && pipenv run python manage.py populatedb --append ./data/tome_of_beasts/ && pipenv run python manage.py populatedb --append ./data/creature_codex/ && pipenv run python manage.py populatedb --append ./data/tome_of_beasts_2/'
     rebuild_index= 'pipenv run python manage.py update_index --remove'
 
     os.system(migrations)
