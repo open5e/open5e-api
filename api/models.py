@@ -3,6 +3,13 @@ from django.db import models
 from jsonfield import JSONField
 import json
 
+
+class Manifest(models.Model):
+    filename = models.CharField(max_length=255, unique=True)
+    type = models.CharField(max_length=25)
+    hash = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+
 class Document(models.Model):
     slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1)
     title = models.TextField() # System Reference Document

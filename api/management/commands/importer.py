@@ -29,6 +29,27 @@ class Importer:
         db_spell = Spell.objects.get(slug=slugify(spell))
         MonsterSpell.objects.create(spell=db_spell, monster=db_monster)  # <----- Create m2m relation
 
+    def ManifestImporter(self, options, filepath, filehash):
+        skipped,added,updated,tested = (0,0,0,0) #Count for all of the different results.
+
+        new = False
+        exists = False
+
+        if Manifest.objects.filter(filename=str(filepath)).exists():
+            i = Manifest.objects.get(filename=str(filepath))
+            exists = True
+        else:
+            i = Manifest()
+            new = True
+
+        i.filename = str(filepath)
+        i.hash = filehash
+        i.type = filepath.stem
+        i.save()
+
+        if new: added += 1
+        else: updated += 1
+
     def DocumentImporter(self, options, json_object):
         skipped,added,updated,tested = (0,0,0,0) #Count for all of the different results.
         if bool(options['flush']): Document.objects.all().delete()
