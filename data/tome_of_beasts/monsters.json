@@ -1273,7 +1273,7 @@
         ],
         "actions": [
             {
-                "name": "Short Sword",
+                "name": "Shortsword",
                 "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 8 (1d6 + 5) piercing damage.",
                 "attack_bonus": 8,
                 "damage_dice": "1d6"
@@ -3476,7 +3476,7 @@
     {
         "name": "Clockwork Beetle Swarm",
         "size": "Large",
-        "type": "Swarm of Tiny constructs",
+        "type": "swarm of Tiny constructs",
         "subtype": "",
         "alignment": "neutral",
         "armor_class": 14,
@@ -4105,7 +4105,7 @@
     {
         "name": "Death Butterfly Swarm",
         "size": "Large",
-        "type": "swarm of tiny beasts",
+        "type": "swarm of Tiny beasts",
         "subtype": "",
         "alignment": "chaotic evil",
         "armor_class": 15,
@@ -4154,7 +4154,7 @@
             },
             {
                 "name": "Bites",
-                "desc": "Melee Weapon Attack: +3 to hit, reach 0 ft., every target in the swarm's space. Hit: 22 (6d6 + 1) piercing damage, or 11 (3d6 + 1) piercing damage if the swarm has half of its hit points or fewer. The target also takes 10 (3d6) poison damage and becomes poisoned for 1d4 rounds; a successful DC 13 Constitution saving throw reduces poison damage by half and prevents the poisoned condition..",
+                "desc": "Melee Weapon Attack: +3 to hit, reach 0 ft., every target in the swarm's space. Hit: 22 (6d6 + 1) piercing damage, or 11 (3d6 + 1) piercing damage if the swarm has half of its hit points or fewer. The target also takes 10 (3d6) poison damage and becomes poisoned for 1d4 rounds; a successful DC 13 Constitution saving throw reduces poison damage by half and prevents the poisoned condition.",
                 "attack_bonus": 3,
                 "damage_dice": "6d6"
             }
@@ -4163,7 +4163,7 @@
     {
         "name": "Greater Death Butterfly Swarm",
         "size": "Huge",
-        "type": "swarm of tiny beasts",
+        "type": "swarm of Tiny beasts",
         "subtype": "",
         "alignment": "chaotic evil",
         "armor_class": 15,
@@ -6657,13 +6657,13 @@
         "actions": [
             {
                 "name": "Bite",
-                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., single target. Hit: 11 (2d6 + 4) piercing damage.",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage.",
                 "attack_bonus": 6,
                 "damage_dice": "2d6"
             },
             {
                 "name": "Claw",
-                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., single target. Hit: 14 (3d6 + 4) slashing damage.",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (3d6 + 4) slashing damage.",
                 "attack_bonus": 6,
                 "damage_dice": "3d6"
             },
@@ -11495,7 +11495,8 @@
     {
         "name": "Shadow Fey Enchantress",
         "size": "Medium",
-        "type": "humanoid (shadow fey)",
+        "type": "humanoid",
+        "subtype": "shadow fey",
         "alignment": "lawful evil",
         "armor_class": 16,
         "armor_desc": "breastplate",
@@ -12032,7 +12033,7 @@
             },
             {
                 "name": "Shortsword",
-                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2)",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
                 "attack_bonus": 4,
                 "damage_dice": "1d6+2"
             },
@@ -12223,7 +12224,7 @@
             },
             {
                 "name": "Claw",
-                "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., 1 creature. Hit: 16 (2d12 + 3) slashing damage. If the target is disoriented by Distortion Gaze, this attack does an additional 13 (3d8) psychic damage and heals the fear smith by an equal amount.",
+                "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 16 (2d12 + 3) slashing damage. If the target is disoriented by Distortion Gaze, this attack does an additional 13 (3d8) psychic damage and heals the fear smith by an equal amount.",
                 "attack_bonus": 7,
                 "damage_dice": "2d12+3"
             },
@@ -15763,7 +15764,7 @@
             },
             {
                 "name": "Stomp",
-                "desc": "Melee Weapon Attack. +11 to hit, reach 10 ft. Hit: 20 (2d12 + 7) bludgeoning damage.",
+                "desc": "Melee Weapon Attack. +11 to hit, reach 10 ft., one target. Hit: 20 (2d12 + 7) bludgeoning damage.",
                 "attack_bonus": 0
             }
         ],
@@ -20069,8 +20070,9 @@
     {
         "name": "Nkosi",
         "size": "Medium",
-        "type": "humanoid (shapechanger",
-        "alignment": "nkosi), lawful neutral",
+        "type": "humanoid",
+        "subtype": "shapechanger, nkosi",
+        "alignment": "lawful neutral",
         "armor_class": 15,
         "armor_desc": "studded leather",
         "hit_points": 11,
@@ -20130,8 +20132,9 @@
     {
         "name": "Nkosi Pridelord",
         "size": "Medium",
-        "type": "humanoid (shapechanger",
-        "alignment": "nkosi), lawful neutral",
+        "type": "humanoid",
+        "subtype": "shapechanger, nkosi",
+        "alignment": "lawful neutral",
         "armor_class": 16,
         "armor_desc": "studded leather",
         "hit_points": 93,
@@ -22537,7 +22540,7 @@
         "actions": [
             {
                 "name": "Multiattack",
-                "desc": "The selang makes two dagger attacks or two short bow attacks.",
+                "desc": "The selang makes two dagger attacks or two shortbow attacks.",
                 "attack_bonus": 0
             },
             {
@@ -22547,7 +22550,7 @@
                 "damage_dice": "1d4"
             },
             {
-                "name": "Short Bow",
+                "name": "Shortbow",
                 "desc": "Ranged Weapon Attack: +4 to hit, range 80/320, one target. Hit: 5 (1d6 + 2) piercing damage plus sleep poison.",
                 "attack_bonus": 4,
                 "damage_dice": "1d6"
@@ -24632,7 +24635,7 @@
     {
         "name": "Manabane Scarab Swarm",
         "size": "Medium",
-        "type": "Swarm of Tiny beasts",
+        "type": "swarm of Tiny beasts",
         "subtype": "",
         "alignment": "unaligned",
         "armor_class": 15,
@@ -25240,12 +25243,7 @@
             },
             {
                 "name": "Slam",
-                "desc": "Melee Weapon Attack. +10 to hit, reach 5 ft., one target.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Hit: 12 (1d10+7) bludgeoning damage",
-                "desc": "The target is also knocked inside the tophet's burning belly if the attack scores a critical hit.",
+                "desc": "Melee Weapon Attack. +10 to hit, reach 5 ft., one target. Hit: 12 (1d10+7) bludgeoning damage. The target is also knocked inside the tophet's burning belly if the attack scores a critical hit.",
                 "attack_bonus": 0
             },
             {
@@ -25637,7 +25635,7 @@
             },
             {
                 "name": "Slam",
-                "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., single target. Hit: 15 (3d6 + 5) bludgeoning damage.",
+                "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 15 (3d6 + 5) bludgeoning damage.",
                 "attack_bonus": 8,
                 "damage_dice": "3d6"
             },
@@ -27728,7 +27726,8 @@
     {
         "name": "Bandit Lord",
         "size": "Medium",
-        "type": "Humanoid (Any Race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "any non-lawful",
         "armor_class": 16,
         "armor_desc": "breastplate",
@@ -27800,7 +27799,8 @@
     {
         "name": "Black Knight Commander",
         "size": "Medium",
-        "type": "Humanoid (Any Race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "lawful evil",
         "armor_class": 18,
         "armor_desc": "plate",
@@ -27870,7 +27870,8 @@
     {
         "name": "City Watch Captain",
         "size": "Medium",
-        "type": "Humanoid (Any Race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "lawful neutral",
         "armor_class": 17,
         "armor_desc": "scale mail",
@@ -27936,7 +27937,7 @@
     {
         "name": "Devilbound Gnomish Prince",
         "size": "Small",
-        "type": "Humanoid",
+        "type": "humanoid",
         "subtype": "gnome",
         "alignment": "any evil",
         "armor_class": 12,
@@ -28009,7 +28010,7 @@
     {
         "name": "Dwarven Ringmage",
         "size": "Medium",
-        "type": "Humanoid",
+        "type": "humanoid",
         "subtype": "dwarf",
         "alignment": "any",
         "armor_class": 16,
@@ -28074,7 +28075,7 @@
     {
         "name": "Elvish Veteran Archer",
         "size": "Medium",
-        "type": "Humanoid",
+        "type": "humanoid",
         "subtype": "elf",
         "alignment": "chaotic good or chaotic neutral",
         "armor_class": 15,
@@ -28300,7 +28301,8 @@
     {
         "name": "Scorpion Cultist",
         "size": "Medium",
-        "type": "humanoid (any race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "neutral",
         "armor_class": 13,
         "armor_desc": "leather armor",
@@ -28354,7 +28356,7 @@
     {
         "name": "Wolf Reaver Dwarf",
         "size": "Medium",
-        "type": "Humanoid",
+        "type": "humanoid",
         "subtype": "dwarf",
         "alignment": "any chaotic",
         "armor_class": 16,
@@ -28427,7 +28429,8 @@
     {
         "name": "Emerald Order Cult Leader",
         "size": "Medium",
-        "type": "Humanoid (any race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "lawful neutral or evil",
         "armor_class": 14,
         "armor_desc": "breastplate",
