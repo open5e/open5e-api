@@ -1273,7 +1273,7 @@
         ],
         "actions": [
             {
-                "name": "Short Sword",
+                "name": "Shortsword",
                 "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 8 (1d6 + 5) piercing damage.",
                 "attack_bonus": 8,
                 "damage_dice": "1d6"
@@ -1900,7 +1900,7 @@
         "perception": 4,
         "stealth": 5,
         "damage_immunities": "cold",
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "senses": "darkvision 60 ft., passive Perception 14",
         "languages": "Common, Dwarvish, Giant",
         "challenge_rating": "2",
@@ -2276,7 +2276,7 @@
         "acrobatics": 8,
         "perception": 6,
         "stealth": 8,
-        "vulnerable": "bludgeoning",
+        "damage_vulnerabilities": "bludgeoning",
         "damage_resistances": "piercing and slashing from nonmagical attacks",
         "damage_immunities": "poison",
         "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, prone, restrained, stunned",
@@ -2834,7 +2834,7 @@
         "intelligence": 7,
         "wisdom": 10,
         "charisma": 9,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "bludgeoning, piercing",
         "condition_immunities": "blinded, deafened",
         "senses": "blindsight 60 ft. (blind beyond this radius), passive Perception 10",
@@ -3198,7 +3198,7 @@
         "charisma": 14,
         "perception": 4,
         "stealth": 7,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "senses": "darkvision 60 ft., passive Perception 14",
         "languages": "Briarclick, Common, Sylvan",
         "challenge_rating": "1",
@@ -3476,7 +3476,7 @@
     {
         "name": "Clockwork Beetle Swarm",
         "size": "Large",
-        "type": "Swarm of Tiny constructs",
+        "type": "swarm of Tiny constructs",
         "subtype": "",
         "alignment": "neutral",
         "armor_class": 14,
@@ -4105,7 +4105,7 @@
     {
         "name": "Death Butterfly Swarm",
         "size": "Large",
-        "type": "swarm of tiny beasts",
+        "type": "swarm of Tiny beasts",
         "subtype": "",
         "alignment": "chaotic evil",
         "armor_class": 15,
@@ -4125,7 +4125,7 @@
         "wisdom": 12,
         "charisma": 15,
         "damage_resistances": "bludgeoning, piercing, slashing",
-        "vulnerable": "cold, fire",
+        "damage_vulnerabilities": "cold, fire",
         "condition_immunities": "charmed, frightened, paralyzed, petrified, prone, restrained, petrified",
         "senses": "darkvision 60 ft., passive Perception 11",
         "challenge_rating": "4",
@@ -4137,7 +4137,7 @@
             },
             {
                 "name": "Swarm",
-                "desc": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit point.",
+                "desc": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.",
                 "attack_bonus": 0
             },
             {
@@ -4154,7 +4154,7 @@
             },
             {
                 "name": "Bites",
-                "desc": "Melee Weapon Attack: +3 to hit, reach 0 ft., every target in the swarm's space. Hit: 22 (6d6 + 1) piercing damage, or 11 (3d6 + 1) piercing damage if the swarm has half of its hit points or fewer. The target also takes 10 (3d6) poison damage and becomes poisoned for 1d4 rounds; a successful DC 13 Constitution saving throw reduces poison damage by half and prevents the poisoned condition..",
+                "desc": "Melee Weapon Attack: +3 to hit, reach 0 ft., every target in the swarm's space. Hit: 22 (6d6 + 1) piercing damage, or 11 (3d6 + 1) piercing damage if the swarm has half of its hit points or fewer. The target also takes 10 (3d6) poison damage and becomes poisoned for 1d4 rounds; a successful DC 13 Constitution saving throw reduces poison damage by half and prevents the poisoned condition.",
                 "attack_bonus": 3,
                 "damage_dice": "6d6"
             }
@@ -4163,7 +4163,7 @@
     {
         "name": "Greater Death Butterfly Swarm",
         "size": "Huge",
-        "type": "swarm of tiny beasts",
+        "type": "swarm of Tiny beasts",
         "subtype": "",
         "alignment": "chaotic evil",
         "armor_class": 15,
@@ -4183,7 +4183,7 @@
         "wisdom": 15,
         "charisma": 12,
         "damage_resistances": "bludgeoning, piercing, and slashing",
-        "vulnerable": "cold, fire",
+        "damage_vulnerabilities": "cold, fire",
         "condition_immunities": "charmed, frightened, paralyzed, petrified, prone, restrained, petrified",
         "senses": "darkvision 60 ft., passive Perception 12",
         "challenge_rating": "6",
@@ -4195,7 +4195,7 @@
             },
             {
                 "name": "Swarm",
-                "desc": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit point.",
+                "desc": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.",
                 "attack_bonus": 0
             },
             {
@@ -4316,7 +4316,7 @@
         "strength_save": 5,
         "constitution_save": 4,
         "charisma_save": 3,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "cold",
         "senses": "darkvision 120 ft., passive Perception 9",
         "languages": "Common, Void Speech",
@@ -4378,7 +4378,7 @@
         "athletics": 6,
         "deception": 4,
         "perception": 3,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "cold",
         "senses": "darkvision 120 ft., passive Perception 13",
         "languages": "Common, Void Speech",
@@ -4449,7 +4449,7 @@
         "charisma_save": 7,
         "arcana": 4,
         "perception": 6,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "cold, thunder",
         "senses": "darkvision 240 ft., passive Perception 16",
         "languages": "Common, Void Speech",
@@ -4532,7 +4532,7 @@
         "intimidation": 5,
         "perception": 4,
         "stealth": 7,
-        "vulnerable": "cold",
+        "damage_vulnerabilities": "cold",
         "damage_resistances": "fire, lightning, poison; bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "poison",
         "condition_immunities": "frightened, poisoned",
@@ -5259,7 +5259,7 @@
         "perception": 13,
         "damage_resistances": "acid, lightning; bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "fire, poison, thunder",
-        "vulnerable": "cold",
+        "damage_vulnerabilities": "cold",
         "condition_immunities": "charmed, deafened, frightened, paralyzed, petrified, poisoned, stunned",
         "senses": "blindsight 120 ft., darkvision 40 ft., passive Perception 23",
         "languages": "Common, Darakhul, Derro, Draconic, Dwarvish, Infernal, Nurian, Primordial, Void Speech; telepathy 300 ft.",
@@ -5420,7 +5420,7 @@
         "intimidate": 14,
         "perception": 12,
         "religion": 12,
-        "vulnerable": "cold",
+        "damage_vulnerabilities": "cold",
         "damage_immunities": "acid, fire, lightning, poison; bludgeoning, piercing, and slashing from nonmagical attacks",
         "condition_immunities": "charmed, frightened, poisoned, stunned",
         "senses": "truesight 120 ft., passive Perception 22",
@@ -5993,7 +5993,7 @@
         "insight": 9,
         "perception": 9,
         "persuasion": 11,
-        "vulnerable": "cold",
+        "damage_vulnerabilities": "cold",
         "damage_immunities": "fire, poison; bludgeoning, piercing, slashing",
         "condition_immunities": "charmed, frightened, paralyzed, petrified, prone, poisoned, restrained, stunned",
         "senses": "blindsight 10 ft., darkvision 120 ft., passive Perception 19",
@@ -6400,7 +6400,7 @@
             },
             {
                 "name": "Innate Spellcasting",
-                "desc": "the chort devil's spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). The chort devil can innately cast the following spells, requiring no material components:\n\nat will: blur, magic circle, teleportation\n\n3/day: scorching ray (5 rays)\n\n1/day each: dispel magic, dominate person, flame strike, haste",
+                "desc": "the chort devil's spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). The chort devil can innately cast the following spells, requiring no material components:\n\nat will: blur, magic circle, teleport\n\n3/day: scorching ray (5 rays)\n\n1/day each: dispel magic, dominate person, flame strike, haste",
                 "attack_bonus": 0
             }
         ],
@@ -6650,20 +6650,20 @@
             },
             {
                 "name": "Innate Spellcasting",
-                "desc": "the ink devil's spellcasting ability is Charisma (spell save DC 14). The ink devil can cast the following spells, requiring no material components:\n\nat will: detect magic, illusory script, invisibility, teleportation (self plus 50 lb of objects only)\n\n1/day each: glyph of warding, planar ally (1d4 + 1 lemures 40 percent, or 1 ink devil 25 percent)",
+                "desc": "the ink devil's spellcasting ability is Charisma (spell save DC 14). The ink devil can cast the following spells, requiring no material components:\n\nat will: detect magic, illusory script, invisibility, teleport (self plus 50 lb of objects only)\n\n1/day each: glyph of warding, planar ally (1d4 + 1 lemures 40 percent, or 1 ink devil 25 percent)",
                 "attack_bonus": 0
             }
         ],
         "actions": [
             {
                 "name": "Bite",
-                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., single target. Hit: 11 (2d6 + 4) piercing damage.",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage.",
                 "attack_bonus": 6,
                 "damage_dice": "2d6"
             },
             {
                 "name": "Claw",
-                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., single target. Hit: 14 (3d6 + 4) slashing damage.",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (3d6 + 4) slashing damage.",
                 "attack_bonus": 6,
                 "damage_dice": "3d6"
             },
@@ -6679,7 +6679,7 @@
             },
             {
                 "name": "Devil's Mark",
-                "desc": "Ink devils can flick ink from their fingertips at a single target within 15 feet of the devil. The target must succeed on a Dexterity saving throw (DC 13), or the affected creature gains a devil's mark-a black, red, or purple tattoo in the shape of an archduke's personal seal (most often Mammon or Totivillus but sometimes Arbeyach, Asmodeus, Beelzebub, Dispater, or others). All devils have advantage on spell attacks made against the devil-marked creature, and the creature has disadvantage on saving throws made against spells and abilities used by devils. The mark can be removed only by a remove curse spell or comparable magic. In addition, the mark detects as faintly evil and often shifts its position on the body. Paladins, witchfinders, and some clerics may consider such a mark proof that a creature has made a pact with a devil.",
+                "desc": "Ink devils can flick ink from their fingertips at a single target within 15 feet of the devil. The target must succeed on a Dexterity saving throw (DC 13), or the affected creature gains a devil's mark—a black, red, or purple tattoo in the shape of an archduke's personal seal (most often Mammon or Totivillus but sometimes Arbeyach, Asmodeus, Beelzebub, Dispater, or others). All devils have advantage on spell attacks made against the devil-marked creature, and the creature has disadvantage on saving throws made against spells and abilities used by devils. The mark can be removed only by a remove curse spell or comparable magic. In addition, the mark detects as faintly evil and often shifts its position on the body. Paladins, witchfinders, and some clerics may consider such a mark proof that a creature has made a pact with a devil.",
                 "attack_bonus": 0
             }
         ]
@@ -10188,7 +10188,7 @@
         "charisma_save": 4,
         "perception": 5,
         "stealth": 7,
-        "vulnerable": "radiant",
+        "damage_vulnerabilities": "radiant",
         "damage_immunities": "cold",
         "condition_immunities": "paralyzed, unconscious",
         "senses": "darkvision 120 ft., passive Perception 15",
@@ -10324,7 +10324,7 @@
         "perception": 3,
         "stealth": 5,
         "damage_immunities": "poison",
-        "vulnerable": "acid",
+        "damage_vulnerabilities": "acid",
         "condition_immunities": "paralyzed, poisoned",
         "senses": "darkvision 60 ft., passive Perception 13",
         "languages": "Common, Draconic",
@@ -11495,7 +11495,8 @@
     {
         "name": "Shadow Fey Enchantress",
         "size": "Medium",
-        "type": "humanoid (shadow fey)",
+        "type": "humanoid",
+        "subtype": "shadow fey",
         "alignment": "lawful evil",
         "armor_class": 16,
         "armor_desc": "breastplate",
@@ -11830,7 +11831,7 @@
         "dexterity_save": 4,
         "constitution_save": 2,
         "stealth": 4,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "bludgeoning",
         "damage_immunities": "poison",
         "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
@@ -12032,7 +12033,7 @@
             },
             {
                 "name": "Shortsword",
-                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2)",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
                 "attack_bonus": 4,
                 "damage_dice": "1d6+2"
             },
@@ -12186,7 +12187,7 @@
         "wisdom": 15,
         "charisma": 18,
         "wisdom_save": 6,
-        "intimidate": 6,
+        "intimidate": 8,
         "stealth": 7,
         "damage_resistances": "bludgeoning, piercing, and slashing from weapons that aren't made of cold iron",
         "condition_immunities": "charmed, frightened",
@@ -12223,7 +12224,7 @@
             },
             {
                 "name": "Claw",
-                "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., 1 creature. Hit: 16 (2d12 + 3) slashing damage. If the target is disoriented by Distortion Gaze, this attack does an additional 13 (3d8) psychic damage and heals the fear smith by an equal amount.",
+                "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 16 (2d12 + 3) slashing damage. If the target is disoriented by Distortion Gaze, this attack does an additional 13 (3d8) psychic damage and heals the fear smith by an equal amount.",
                 "attack_bonus": 7,
                 "damage_dice": "2d12+3"
             },
@@ -12871,7 +12872,7 @@
         "history": 9,
         "insight": 10,
         "perception": 10,
-        "damage_resistances": "fire, cold; bludgeoning, piercing, and slashing damage from weapons that aren't cold iron",
+        "damage_resistances": "cold, fire; bludgeoning, piercing, and slashing damage from weapons that aren't cold iron",
         "damage_immunities": "radiant",
         "condition_immunities": "blinded, charmed, frightened",
         "senses": "truesight 60 ft., passive Perception 19",
@@ -12980,7 +12981,7 @@
         "nature": 7,
         "perception": 6,
         "stealth": 8,
-        "damage_resistances": "fire, cold, thunder; bludgeoning, piercing, and slashing damage from weapons that aren't cold iron",
+        "damage_resistances": "cold, fire, thunder; bludgeoning, piercing, and slashing damage from weapons that aren't cold iron",
         "damage_immunities": "lightning",
         "condition_immunities": "exhaustion",
         "senses": "blindsight 10 ft., darkvision 60 ft., passive Perception 16",
@@ -13062,7 +13063,7 @@
                 "attack_bonus": 0
             },
             {
-                "name": "Ripple (2 Actions)",
+                "name": "Ripple (Costs 2 Actions)",
                 "desc": "The River King magically ripples like sunlight on the surface of water. Until the start of his next turn, all attacks against him have disadvantage.",
                 "attack_bonus": 0
             }
@@ -13175,7 +13176,7 @@
                 "attack_bonus": 0
             },
             {
-                "name": "Snowfall Mantle (2 Actions)",
+                "name": "Snowfall Mantle (Costs 2 Actions)",
                 "desc": "The Snow Queen throws her mantle of snow at a point she can see within 60 feet. An area within 30 feet of that point instantly becomes covered in deep snow. Creatures in the area must succeed on a DC 17 Strength saving throw or be restrained. The area becomes difficult terrain, costing 2 feet of movement for every 1 foot moved. The difficult terrain lasts until the end of the Snow Queen's next turn, at which time her mantle returns to her shoulders.",
                 "attack_bonus": 0
             }
@@ -13430,7 +13431,7 @@
         "deception": 4,
         "perception": 5,
         "stealth": 8,
-        "vulnerable": "radiant",
+        "damage_vulnerabilities": "radiant",
         "damage_resistances": "cold, lightning; bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "necrotic, poison",
         "condition_immunities": "charmed, paralyzed, exhaustion, poison, stunned, unconscious",
@@ -13688,7 +13689,7 @@
         "wisdom": 11,
         "charisma": 1,
         "stealth": 7,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "bludgeoning and piercing from nonmagical attacks",
         "damage_immunities": "cold",
         "condition_immunities": "blinded, charmed, deafened, frightened, prone",
@@ -15763,7 +15764,7 @@
             },
             {
                 "name": "Stomp",
-                "desc": "Melee Weapon Attack. +11 to hit, reach 10 ft. Hit: 20 (2d12 + 7) bludgeoning damage.",
+                "desc": "Melee Weapon Attack. +11 to hit, reach 10 ft., one target. Hit: 20 (2d12 + 7) bludgeoning damage.",
                 "attack_bonus": 0
             }
         ],
@@ -16121,7 +16122,7 @@
         "charisma": 14,
         "performance": 7,
         "stealth": 6,
-        "vulnerable": "thunder",
+        "damage_vulnerabilities": "thunder",
         "senses": "blindsight 60 ft., passive Perception 12",
         "languages": "Common, Abyssal, Giant",
         "challenge_rating": "5",
@@ -16325,17 +16326,17 @@
         "legendary_desc": "A herald of blood can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. A herald of blood regains spent legendary actions at the start of its turn.",
         "legendary_actions": [
             {
-                "name": "Move (1 Action)",
+                "name": "Move",
                 "desc": "The herald of blood moves up to half its speed.",
                 "attack_bonus": 0
             },
             {
-                "name": "Call of Blood (2 Actions)",
+                "name": "Call of Blood (Costs 2 Actions)",
                 "desc": "Melee Weapon Attack. +10 to hit, reach 5 ft., all creatures in reach. Hit: 39 (6d12) necrotic damage and each target must make a successful DC 17 Constitution saving throw or gain 1 level of exhaustion.",
                 "attack_bonus": 0
             },
             {
-                "name": "Majesty of Ragnarok (3 Actions)",
+                "name": "Majesty of Ragnarok (Costs 3 Actions)",
                 "desc": "The herald of blood emits a terrifying burst of eldritch power. All creatures within 100 feet and in direct line of sight of the herald take 32 (5d12) necrotic damage, gain 2 levels of exhaustion, and are permanently blinded. Targets that make a successful DC 15 Charisma saving throw are not blinded and gain only 1 level of exhaustion.",
                 "attack_bonus": 0
             }
@@ -16508,7 +16509,7 @@
         "perception": 5,
         "stealth": 6,
         "damage_immunities": "cold",
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "senses": "darkvision 60 ft., passive Perception 15",
         "languages": "understands Elvish and Umbral but can't speak",
         "challenge_rating": "5",
@@ -16724,7 +16725,7 @@
         "deception": 9,
         "persuasion": 9,
         "stealth": 6,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "cold",
         "senses": "darkvision 60 ft., passive Perception 11",
@@ -16820,7 +16821,7 @@
         "wisdom_save": 3,
         "deception": 8,
         "stealth": 8,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "cold; bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "poison",
         "condition_immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
@@ -16889,7 +16890,7 @@
         "wisdom": 10,
         "charisma": 5,
         "wisdom_save": 2,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "bludgeoning",
         "condition_immunities": "exhaustion, frightened",
         "senses": "darkvision 60 ft., passive Perception 10",
@@ -18164,7 +18165,7 @@
         "athletics": 8,
         "perception": 4,
         "stealth": 9,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_immunities": "cold",
         "condition_immunities": "paralyzed, prone, unconscious",
         "senses": "darkvision 60 ft., tremorsense 120 ft. on ice, passive Perception 14",
@@ -18313,7 +18314,7 @@
         "intelligence": 5,
         "wisdom": 5,
         "charisma": 5,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_immunities": "poison, psychic",
         "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned, unconscious",
         "senses": "sight 20 ft. (blind beyond the radius of its own light), passive Perception 10",
@@ -18793,7 +18794,7 @@
         "intelligence_save": 7,
         "wisdom_save": 8,
         "charisma_save": 9,
-        "vulnerable": "radiant",
+        "damage_vulnerabilities": "radiant",
         "damage_resistances": "acid, fire, lightning, cold; bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "necrotic, poison",
         "condition_immunities": "charmed, frightened, paralyzed, petrified, poisoned, stunned, unconscious",
@@ -19694,7 +19695,7 @@
         "wisdom": 10,
         "charisma": 14,
         "wisdom_save": 2,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "necrotic, poison",
         "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
@@ -20025,7 +20026,7 @@
         "charisma": 16,
         "perception": 5,
         "stealth": 5,
-        "vulnerable": "radiant; silvered weapons",
+        "damage_vulnerabilities": "radiant; silvered weapons",
         "damage_resistances": "lightning, thunder; bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons",
         "senses": "darkvision 60 ft., passive Perception 15",
         "languages": "Common, Giant, Goblin, telepathy 200 ft. (with falsemen only)",
@@ -20069,8 +20070,9 @@
     {
         "name": "Nkosi",
         "size": "Medium",
-        "type": "humanoid (shapechanger",
-        "alignment": "nkosi), lawful neutral",
+        "type": "humanoid",
+        "subtype": "shapechanger, nkosi",
+        "alignment": "lawful neutral",
         "armor_class": 15,
         "armor_desc": "studded leather",
         "hit_points": 11,
@@ -20130,8 +20132,9 @@
     {
         "name": "Nkosi Pridelord",
         "size": "Medium",
-        "type": "humanoid (shapechanger",
-        "alignment": "nkosi), lawful neutral",
+        "type": "humanoid",
+        "subtype": "shapechanger, nkosi",
+        "alignment": "lawful neutral",
         "armor_class": 16,
         "armor_desc": "studded leather",
         "hit_points": 93,
@@ -20386,7 +20389,7 @@
         "history": 5,
         "insight": 10,
         "perception": 10,
-        "vulnerable": "thunder",
+        "damage_vulnerabilities": "thunder",
         "damage_resistances": "fire, lightning; bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "acid",
         "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
@@ -20505,7 +20508,7 @@
         "wisdom": 12,
         "charisma": 17,
         "perception": 3,
-        "vulnerable": "thunder",
+        "damage_vulnerabilities": "thunder",
         "damage_resistances": "acid, cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "poison",
         "condition_immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
@@ -21127,7 +21130,7 @@
         "charisma": 12,
         "wisdom_save": 6,
         "charisma_save": 6,
-        "vulnerable": "fire, cold",
+        "damage_vulnerabilities": "cold, fire",
         "damage_resistances": "bludgeoning, piercing",
         "condition_immunities": "blinded, deafened",
         "senses": "passive Perception $1",
@@ -22253,7 +22256,7 @@
         "charisma": 9,
         "perception": 5,
         "stealth": 2,
-        "vulnerable": "thunder",
+        "damage_vulnerabilities": "thunder",
         "damage_resistances": "fire; bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "acid, poison",
         "condition_immunities": "exhaustion, paralyzed, petrified, poisoned, unconscious",
@@ -22537,7 +22540,7 @@
         "actions": [
             {
                 "name": "Multiattack",
-                "desc": "The selang makes two dagger attacks or two short bow attacks.",
+                "desc": "The selang makes two dagger attacks or two shortbow attacks.",
                 "attack_bonus": 0
             },
             {
@@ -22547,7 +22550,7 @@
                 "damage_dice": "1d4"
             },
             {
-                "name": "Short Bow",
+                "name": "Shortbow",
                 "desc": "Ranged Weapon Attack: +4 to hit, range 80/320, one target. Hit: 5 (1d6 + 2) piercing damage plus sleep poison.",
                 "attack_bonus": 4,
                 "damage_dice": "1d6"
@@ -23008,7 +23011,7 @@
         "wisdom": 10,
         "charisma": 8,
         "stealth": 3,
-        "vulnerable": "radiant",
+        "damage_vulnerabilities": "radiant",
         "damage_resistances": "acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons",
         "damage_immunities": "necrotic, poison",
         "condition_immunities": "exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
@@ -23152,7 +23155,7 @@
         "charisma": 4,
         "perception": 1,
         "stealth": 2,
-        "vulnerable": "bludgeoning",
+        "damage_vulnerabilities": "bludgeoning",
         "damage_immunities": "cold, necrotic, poison",
         "condition_immunities": "exhaustion, poisoned",
         "senses": "darkvision 60 ft., blindsense 30 ft., passive Perception 11",
@@ -24632,7 +24635,7 @@
     {
         "name": "Manabane Scarab Swarm",
         "size": "Medium",
-        "type": "Swarm of Tiny beasts",
+        "type": "swarm of Tiny beasts",
         "subtype": "",
         "alignment": "unaligned",
         "armor_class": 15,
@@ -24761,7 +24764,7 @@
         "wisdom": 13,
         "charisma": 10,
         "stealth": 5,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "damage_resistances": "cold; bludgeoning, piercing, and slashing",
         "condition_immunities": "charmed, frightened, paralyzed, petrified, prone, restrained, stunned",
         "senses": "darkvision 60 ft., passive Perception 11",
@@ -24950,7 +24953,7 @@
         "perception": 4,
         "damage_resistances": "lightning, thunder; bludgeoning, piercing, and slashing from nonmagical attacks",
         "damage_immunities": "poison",
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "condition_immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
         "senses": "darkvision 60 ft., passive Perception 14",
         "languages": "Common, Dwarvish, Primordial",
@@ -25215,7 +25218,7 @@
         "constitution_save": 8,
         "perception": 3,
         "damage_resistances": "necrotic",
-        "damage_immunities": "fire, cold, poison",
+        "damage_immunities": "cold, fire, poison",
         "condition_immunities": "exhaustion, frightened, paralyzed, petrified, poisoned",
         "senses": "darkvision 200 ft., passive Perception 13",
         "languages": "Common",
@@ -25240,12 +25243,7 @@
             },
             {
                 "name": "Slam",
-                "desc": "Melee Weapon Attack. +10 to hit, reach 5 ft., one target.",
-                "attack_bonus": 0
-            },
-            {
-                "name": "Hit: 12 (1d10+7) bludgeoning damage",
-                "desc": "The target is also knocked inside the tophet's burning belly if the attack scores a critical hit.",
+                "desc": "Melee Weapon Attack. +10 to hit, reach 5 ft., one target. Hit: 12 (1d10+7) bludgeoning damage. The target is also knocked inside the tophet's burning belly if the attack scores a critical hit.",
                 "attack_bonus": 0
             },
             {
@@ -25608,7 +25606,7 @@
         "wisdom": 16,
         "charisma": 11,
         "damage_resistances": "bludgeoning and piercing",
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "senses": "darkvision 60 ft., passive Perception 13",
         "languages": "Common, Druidic, Elvish, Sylvan",
         "challenge_rating": "6",
@@ -25637,7 +25635,7 @@
             },
             {
                 "name": "Slam",
-                "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., single target. Hit: 15 (3d6 + 5) bludgeoning damage.",
+                "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 15 (3d6 + 5) bludgeoning damage.",
                 "attack_bonus": 8,
                 "damage_dice": "3d6"
             },
@@ -26641,7 +26639,7 @@
         "constitution_save": 6,
         "wisdom_save": 6,
         "charisma_save": 7,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "condition_immunities": "blinded, deafened",
         "senses": "blindsight 30 ft. (blind beyond this radius), passive Perception 13",
         "languages": "Common",
@@ -26718,7 +26716,7 @@
         "intelligence": 6,
         "wisdom": 6,
         "charisma": 8,
-        "vulnerable": "fire",
+        "damage_vulnerabilities": "fire",
         "condition_immunities": "blinded, deafened",
         "senses": "blindsight 30 ft. (blind beyond this radius), passive Perception 8",
         "languages": "-",
@@ -27204,7 +27202,7 @@
         "medicine": 6,
         "religion": 3,
         "damage_resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical attacks",
-        "vulnerable": "radiant",
+        "damage_vulnerabilities": "radiant",
         "senses": "darkvision 60 ft., passive Perception 13",
         "languages": "the languages it knew in life",
         "challenge_rating": "5",
@@ -27728,7 +27726,8 @@
     {
         "name": "Bandit Lord",
         "size": "Medium",
-        "type": "Humanoid (Any Race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "any non-lawful",
         "armor_class": 16,
         "armor_desc": "breastplate",
@@ -27800,7 +27799,8 @@
     {
         "name": "Black Knight Commander",
         "size": "Medium",
-        "type": "Humanoid (Any Race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "lawful evil",
         "armor_class": 18,
         "armor_desc": "plate",
@@ -27870,7 +27870,8 @@
     {
         "name": "City Watch Captain",
         "size": "Medium",
-        "type": "Humanoid (Any Race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "lawful neutral",
         "armor_class": 17,
         "armor_desc": "scale mail",
@@ -27936,7 +27937,7 @@
     {
         "name": "Devilbound Gnomish Prince",
         "size": "Small",
-        "type": "Humanoid",
+        "type": "humanoid",
         "subtype": "gnome",
         "alignment": "any evil",
         "armor_class": 12,
@@ -28009,7 +28010,7 @@
     {
         "name": "Dwarven Ringmage",
         "size": "Medium",
-        "type": "Humanoid",
+        "type": "humanoid",
         "subtype": "dwarf",
         "alignment": "any",
         "armor_class": 16,
@@ -28074,7 +28075,7 @@
     {
         "name": "Elvish Veteran Archer",
         "size": "Medium",
-        "type": "Humanoid",
+        "type": "humanoid",
         "subtype": "elf",
         "alignment": "chaotic good or chaotic neutral",
         "armor_class": 15,
@@ -28300,7 +28301,8 @@
     {
         "name": "Scorpion Cultist",
         "size": "Medium",
-        "type": "humanoid (any race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "neutral",
         "armor_class": 13,
         "armor_desc": "leather armor",
@@ -28354,7 +28356,7 @@
     {
         "name": "Wolf Reaver Dwarf",
         "size": "Medium",
-        "type": "Humanoid",
+        "type": "humanoid",
         "subtype": "dwarf",
         "alignment": "any chaotic",
         "armor_class": 16,
@@ -28427,7 +28429,8 @@
     {
         "name": "Emerald Order Cult Leader",
         "size": "Medium",
-        "type": "Humanoid (any race)",
+        "type": "humanoid",
+        "subtype": "any race",
         "alignment": "lawful neutral or evil",
         "armor_class": 14,
         "armor_desc": "breastplate",
