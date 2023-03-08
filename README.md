@@ -35,3 +35,16 @@ At that point, you will be able to run the django server normally (within the pi
 > pipenv run python manage.py runserver
 
 And your server should be available at http://localhost:8000.
+
+## Starting up a droplet
+This deployment has been tested using DigitalOcean with Docker.
+
+To start up the server from scratch on a droplet:
+
+```
+git pull https://github.com/eepMoody/open5e-api
+export SECRET_KEY=a_new_secret_key
+export SERVER_NAME=whatever.open5e.com
+cd open5e-api/
+docker-compose up
+```
