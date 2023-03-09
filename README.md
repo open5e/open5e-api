@@ -59,7 +59,7 @@ This deployment has been tested using DigitalOcean with Docker.
 To start up the server from scratch on a droplet:
 
 ```
-git pull https://github.com/eepMoody/open5e-api
+git pull https://github.com/open5e/open5e-api
 export SECRET_KEY=a_new_secret_key
 export SERVER_NAME=whatever.open5e.com
 cd open5e-api/
