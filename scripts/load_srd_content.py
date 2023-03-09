@@ -1,12 +1,17 @@
-import os, sys
-root_path = os.environ['OPEN_5E_ROOT']
-sys.path.append(root_path)
+import json
+import os
+import sys
+
 import django
 from django.template.defaultfilters import slugify
+
+from api.models import *
+
+
+root_path = os.environ['OPEN_5E_ROOT']
+sys.path.append(root_path)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
 django.setup()
-from api.models import *
-import json
 
 data_directory = root_path + ('' if root_path.endswith('/') else '/') + '../data/'
 

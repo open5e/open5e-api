@@ -1,7 +1,8 @@
-import uuid
-from django.db import models
-from jsonfield import JSONField
 import json
+import uuid
+
+from jsonfield import JSONField
+from django.db import models
 
 
 class Manifest(models.Model):

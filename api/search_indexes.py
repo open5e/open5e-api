@@ -1,6 +1,8 @@
-from api.models import *
-from haystack import indexes
 import datetime
+
+from haystack import indexes
+
+from api.models import *
 
 
 class MonsterIndex(indexes.SearchIndex, indexes.Indexable):

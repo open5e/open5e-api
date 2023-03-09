@@ -1,13 +1,17 @@
-import os, sys
+import json
+import os
+import sys
+
+import django
+from django.contrib.auth.models import User
+from slugify import slugify
+
+from api.models import Spell, Monster
+
 root_path = os.environ['OPEN_5E_ROOT']
 sys.path.append(root_path)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'server.settings'
-import django
 django.setup()
-from django.contrib.auth.models import User
-from api.models import Spell, Monster
-from slugify import slugify
-import json
 
 file_location = root_path + ('' if root_path.endswith('/') else '/') + 'data/monsters/5e-SRD-Monsters.json'
 

@@ -1,13 +1,13 @@
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets, filters
 import django_filters
-from api.models import *
-from api.serializers import *
 from drf_haystack.serializers import HaystackSerializer
 from drf_haystack.viewsets import HaystackViewSet
+from rest_framework import viewsets, filters
 
+from api.models import *
 from api.models import Monster
 from api.search_indexes import MonsterIndex
+from api.serializers import *
 
 
 class ManifestViewSet(viewsets.ReadOnlyModelViewSet):

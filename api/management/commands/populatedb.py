@@ -1,9 +1,11 @@
-from django.core.management.base import BaseCommand, CommandError
-import json
-from . import importer as i
-from api.models import Manifest
-from pathlib import Path
 import hashlib
+import json
+from pathlib import Path
+
+from django.core.management.base import BaseCommand, CommandError
+
+from api.management.commands.importer import Importer
+from api.models import Manifest
 
 
 def get_hash(filepath):
@@ -51,7 +53,7 @@ class Command(BaseCommand):
 
         if bool(options['flush']): Manifest.objects.all().delete()
         for dir in options['directory']:
-            importer = i.Importer()
+            importer = Importer()
             with open(dir+'document.json', encoding="utf-8") as doc_data:
                 docs = json.load(doc_data)
                 self.stdout.write(self.style.SUCCESS(importer.DocumentImporter(options, docs)))

@@ -1,5 +1,5 @@
-import re
 import json
+import re
 
 allSpells = open('../../srd-source/full lists/markdown/spellist.md', 'r', encoding="utf8").read().split('\n## ')
 allSpells.pop(0)

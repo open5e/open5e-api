@@ -1,9 +1,11 @@
-from api.models import *
-from django.template.defaultfilters import slugify
 import json
 from pathlib import Path
+
 from django.core.management.base import BaseCommand, CommandError
+from django.template.defaultfilters import slugify
 from fractions import Fraction
+
+from api.models import *
 
 class Importer:
     

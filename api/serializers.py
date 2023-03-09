@@ -1,9 +1,10 @@
 from django.contrib.auth.models import User, Group
-from rest_framework import serializers
 from drf_haystack.serializers import HighlighterMixin, HaystackSerializer
 from drf_haystack.viewsets import HaystackViewSet
+from rest_framework import serializers
+
 from api.models import *
-from .search_indexes import *
+from api.search_indexes import *
 
 class ManifestSerializer(serializers.ModelSerializer):
     class Meta:
