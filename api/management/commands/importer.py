@@ -37,6 +37,12 @@ class ImportSpec(NamedTuple):
     import_func: Callable[[Dict, Dict], "ImportResult"]
     # import_options contains standard options to toggle during import.
     options: ImportOptions
+    # Some imports have a hierarchical nature, such as Race>Subrace.
+    # In those cases, importing the higher model should include a spec to
+    # import the lower model.
+    # The higher spec's import_func should explicitly include a call to the
+    # lower spec's import_func.
+    sub_spec: Optional["ImportSpec"] = None
 
 
 class ImportResult(enum.Enum):
@@ -152,111 +158,6 @@ class Importer:
 
         return _completion_message('Backgrounds', added, updated, skipped)
 
-    def ClassImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Archetype.objects.all().delete()
-        if bool(options['flush']): models.CharClass.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.CharClass.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.CharClass.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.CharClass(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'subtypes-name' in o:
-                i.subtypes_name = o['subtypes-name']
-            if 'hit-dice' in o['features']:
-                i.hit_dice = o['features']['hit-dice']
-            if 'hp-at-1st-level' in o['features']:
-                i.hp_at_1st_level = o['features']['hp-at-1st-level']
-            if 'hp-at-higher-levels' in o['features']:
-                i.hp_at_higher_levels = o['features']['hp-at-higher-levels']
-            if 'prof-armor' in o['features']:
-                i.prof_armor = o['features']['prof-armor']
-            if 'prof-weapons' in o['features']:
-                i.prof_weapons = o['features']['prof-weapons']
-            if 'prof-tools' in o['features']:
-                i.prof_tools = o['features']['prof-tools']
-            if 'prof-saving-throws' in o['features']:
-                i.prof_saving_throws = o['features']['prof-saving-throws']
-            if 'prof-skills' in o['features']:
-                i.prof_skills = o['features']['prof-skills']
-            if 'equipment' in o['features']:
-                i.equipment = o['features']['equipment']
-            if 'table' in o['features']:
-                i.table = o['features']['table']
-            if 'spellcasting-ability' in o['features']:
-                i.spellcasting_ability = o['features']['spellcasting-ability']
-            if 'desc' in o['features']:
-                i.desc = o['features']['desc']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if 'subtypes' in o:
-                    self.ArchetypeImporter(options, o['subtypes'], i)
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Classes', added, updated, skipped)
-
-    def ArchetypeImporter(self, options, json_object, char_class):
-        skipped, added, updated = (0, 0, 0)
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Archetype.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Archetype.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Archetype(document = self._last_document_imported, char_class=char_class)
-                if 'name' in o:
-                    i.name = o['name']
-                    i.slug = slugify(o['name'])
-                if 'desc' in o:
-                    i.desc = o['desc']          
-                if bool(options['testrun']) or (exists and options['append']):
-                    skipped += 1
-                else:
-                    i.save()
-                if new: added += 1
-                else: updated += 1
-        return _completion_message('Archetypes', added, updated, skipped)
-
-    def ConditionImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Condition.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Condition.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Condition.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Condition(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'desc' in o:
-                i.desc = o['desc']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Conditions', added, updated, skipped)
-
     def import_models_from_json(
         self,
         import_spec: ImportSpec,
@@ -266,6 +167,8 @@ class Importer:
         skipped, added, updated = (0, 0, 0)
         if import_spec.options.flush:
             import_spec.model_class.objects.all().delete()
+            if import_spec.sub_spec:
+                import_spec.sub_spec.model_class.objects.all().delete()
         for model_json in models_json:
             import_result = import_spec.import_func(model_json, import_spec)
             if import_result is ImportResult.SKIPPED:
@@ -278,6 +181,91 @@ class Importer:
                 raise ValueError(f'Unexpected ImportResult: {import_result}')
         return _completion_message(
             import_spec.model_class.plural_str(), added, updated, skipped)
+
+    def import_class(self, class_json, import_spec):
+        new = False
+        exists = False
+        if models.CharClass.objects.filter(slug=slugify(class_json['name'])).exists():
+            i = models.CharClass.objects.get(slug=slugify(class_json['name']))
+            exists = True
+        else:
+            i = models.CharClass(document = self._last_document_imported)
+            new = True
+        if 'name' in class_json:
+            i.name = class_json['name']
+            i.slug = slugify(class_json['name'])
+        if 'subtypes-name' in class_json:
+            i.subtypes_name = class_json['subtypes-name']
+        if 'hit-dice' in class_json['features']:
+            i.hit_dice = class_json['features']['hit-dice']
+        if 'hp-at-1st-level' in class_json['features']:
+            i.hp_at_1st_level = class_json['features']['hp-at-1st-level']
+        if 'hp-at-higher-levels' in class_json['features']:
+            i.hp_at_higher_levels = class_json['features']['hp-at-higher-levels']
+        if 'prof-armor' in class_json['features']:
+            i.prof_armor = class_json['features']['prof-armor']
+        if 'prof-weapons' in class_json['features']:
+            i.prof_weapons = class_json['features']['prof-weapons']
+        if 'prof-tools' in class_json['features']:
+            i.prof_tools = class_json['features']['prof-tools']
+        if 'prof-saving-throws' in class_json['features']:
+            i.prof_saving_throws = class_json['features']['prof-saving-throws']
+        if 'prof-skills' in class_json['features']:
+            i.prof_skills = class_json['features']['prof-skills']
+        if 'equipment' in class_json['features']:
+            i.equipment = class_json['features']['equipment']
+        if 'table' in class_json['features']:
+            i.table = class_json['features']['table']
+        if 'spellcasting-ability' in class_json['features']:
+            i.spellcasting_ability = class_json['features']['spellcasting-ability']
+        if 'desc' in class_json['features']:
+            i.desc = class_json['features']['desc']
+        # Must save model before Archetypes can point to it
+        result = _determine_import_result(import_spec.options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        for subclass in class_json.get('subtypes', []):
+            subclass['char_class'] = i
+        self.import_models_from_json(import_spec.sub_spec, class_json['subtypes'])
+        return result
+
+    def import_archetype(self, archetype_json, import_spec):
+        new = False
+        exists = False
+        if models.Archetype.objects.filter(slug=slugify(archetype_json['name'])).exists():
+            i = models.Archetype.objects.get(slug=slugify(archetype_json['name']))
+            exists = True
+        else:
+            # char_class should be set in import_class
+            i = models.Archetype(document = self._last_document_imported, char_class=archetype_json['char_class'])
+        if 'name' in archetype_json:
+            i.name = archetype_json['name']
+            i.slug = slugify(archetype_json['name'])
+        if 'desc' in archetype_json:
+            i.desc = archetype_json['desc']          
+        result = _determine_import_result(import_spec.options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
+
+    def import_condition(self, condition_json, import_spec):
+        new = False
+        exists = False
+        if models.Condition.objects.filter(slug=slugify(condition_json['name'])).exists():
+            i = models.Condition.objects.get(slug=slugify(condition_json['name']))
+            exists = True
+        else:
+            i = models.Condition(document = self._last_document_imported)
+            new = True
+        if 'name' in condition_json:
+            i.name = condition_json['name']
+            i.slug = slugify(condition_json['name'])
+        if 'desc' in condition_json:
+            i.desc = condition_json['desc']
+        result = _determine_import_result(import_spec.options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
 
     def import_feat(self, feat_json, import_spec) -> ImportResult:
         new = False
@@ -514,88 +502,74 @@ class Importer:
             i.save()
         return result
 
-    def RaceImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Subrace.objects.all().delete()
-        if bool(options['flush']): models.Race.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Race.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Race.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Race(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'desc' in o:
-                i.desc = o['desc']
-            if 'asi-desc' in o:
-                i.asi_desc = o['asi-desc']
-            if 'asi' in o:
-                i.asi_json = json.dumps(o['asi']) # convert the asi json object into a string for storage.
-            if 'age' in o:
-                i.age = o['age']
-            if 'alignment' in o:
-                i.alignment = o['alignment']
-            if 'size' in o:
-                i.size = o['size']
-            if 'speed'in o:
-                i.speed_json = json.dumps(o['speed']) # conver the speed object into a string for db storage.
-            if 'speed-desc' in o:
-                i.speed_desc = o['speed-desc']
-            if 'languages' in o:
-                i.languages = o['languages']
-            if 'vision' in o:
-                i.vision = o['vision']
-            if 'traits' in o:
-                i.traits = o['traits']
-                                
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if 'subtypes' in o:
-                    self.SubraceImporter(options, o['subtypes'], i)
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Races', added, updated, skipped)
+    def import_race(self, race_json, import_spec):
+        new = False
+        exists = False
+        if models.Race.objects.filter(slug=slugify(race_json['name'])).exists():
+            i = models.Race.objects.get(slug=slugify(race_json['name']))
+            exists = True
+        else:
+            i = models.Race(document = self._last_document_imported)
+            new = True
+        if 'name' in race_json:
+            i.name = race_json['name']
+            i.slug = slugify(race_json['name'])
+        if 'desc' in race_json:
+            i.desc = race_json['desc']
+        if 'asi-desc' in race_json:
+            i.asi_desc = race_json['asi-desc']
+        if 'asi' in race_json:
+            i.asi_json = json.dumps(race_json['asi']) # convert the asi json object into a string for storage.
+        if 'age' in race_json:
+            i.age = race_json['age']
+        if 'alignment' in race_json:
+            i.alignment = race_json['alignment']
+        if 'size' in race_json:
+            i.size = race_json['size']
+        if 'speed'in race_json:
+            i.speed_json = json.dumps(race_json['speed']) # conver the speed object into a string for db storage.
+        if 'speed-desc' in race_json:
+            i.speed_desc = race_json['speed-desc']
+        if 'languages' in race_json:
+            i.languages = race_json['languages']
+        if 'vision' in race_json:
+            i.vision = race_json['vision']
+        if 'traits' in race_json:
+            i.traits = race_json['traits']
+        # Race must be saved before sub-races can point to them
+        result = _determine_import_result(import_spec.options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        for subtype in race_json.get('subtypes', []):
+            subtype['parent_race'] = i
+        self.import_models_from_json(import_spec.sub_spec, race_json.get('subtypes', []))
+        return result
         
-    def SubraceImporter(self, options, json_object, parent_race):
-        skipped, added, updated = (0, 0, 0)
-        #if bool(options['flush']): Subrace.objects.all().delete()
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Subrace.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Subrace.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Subrace(document = self._last_document_imported, parent_race=parent_race)
-                new = True
-                if 'name' in o:
-                    i.name = o['name']
-                    i.slug = slugify(o['name'])
-                if 'desc' in o:
-                    i.desc = o['desc']
-                if 'asi-desc' in o:
-                    i.asi_desc = o['asi-desc']
-                if 'asi' in o:
-                    i.asi_json = json.dumps(o['asi'])
-                if 'traits' in o:
-                    i.traits = o['traits']    
-                if bool(options['testrun']) or (exists and options['append']):
-                    skipped += 1
-                else:
-                    i.save()
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Subraces', added, updated, skipped)
+    def import_subrace(self, subrace_json, import_spec):
+        new = False
+        exists = False
+        if models.Subrace.objects.filter(slug=slugify(subrace_json['name'])).exists():
+            i = models.Subrace.objects.get(slug=slugify(subrace_json['name']))
+            exists = True
+        else:
+            # parent_race should be set during import_race()
+            i = models.Subrace(document = self._last_document_imported, parent_race=subrace_json['parent_race'])
+            new = True
+            if 'name' in subrace_json:
+                i.name = subrace_json['name']
+                i.slug = slugify(subrace_json['name'])
+            if 'desc' in subrace_json:
+                i.desc = subrace_json['desc']
+            if 'asi-desc' in subrace_json:
+                i.asi_desc = subrace_json['asi-desc']
+            if 'asi' in subrace_json:
+                i.asi_json = json.dumps(subrace_json['asi'])
+            if 'traits' in subrace_json:
+                i.traits = subrace_json['traits']    
+        result = _determine_import_result(import_spec.options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
 
     def import_section(self, section_json, import_spec) -> ImportResult:
         new = False

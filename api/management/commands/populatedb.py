@@ -86,7 +86,17 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, cls_file, cls_hash)
             with open(cls_file, encoding="utf-8") as cls_data:
                 cls = json.load(cls_data)
-                self.stdout.write(self.style.SUCCESS(importer.ClassImporter(self.options, cls)))
+            report = importer.import_models_from_json(
+                ImportSpec(
+                    models.CharClass,
+                    importer.import_class,
+                    import_options,
+                    sub_spec=ImportSpec(
+                        models.Archetype,
+                        importer.import_archetype,
+                        import_options)),
+                cls)
+            self.stdout.write(self.style.SUCCESS(report))
 
         con_file = Path(directory / 'conditions.json')
         if con_file.exists():
@@ -94,7 +104,11 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, con_file, con_hash)
             with open(con_file, encoding="utf-8") as con_data:
                 con = json.load(con_data)
-                self.stdout.write(self.style.SUCCESS(importer.ConditionImporter(self.options, con)))
+            report = importer.import_models_from_json(
+                ImportSpec(models.Condition, importer.import_condition, import_options),
+                con
+            )
+            self.stdout.write(self.style.SUCCESS(report))
 
         fea_file = Path(directory / 'feats.json')
         if fea_file.exists():
@@ -174,7 +188,17 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, rac_file, rac_hash)
             with open(rac_file, encoding="utf-8") as rac_data:
                 rac = json.load(rac_data)
-                self.stdout.write(self.style.SUCCESS(importer.RaceImporter(self.options, rac)))
+            report = importer.import_models_from_json(
+                ImportSpec(
+                    models.Race,
+                    importer.import_race,
+                    import_options,
+                    sub_spec=ImportSpec(
+                        models.Subrace,
+                        importer.import_subrace,
+                        import_options)),
+                rac)
+            self.stdout.write(self.style.SUCCESS(report))
 
         wea_file = Path(directory / 'weapons.json')
         if wea_file.exists():
