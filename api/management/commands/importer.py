@@ -1,7 +1,7 @@
 import enum
 import json
 import pathlib
-from typing import Dict, List, Optional
+from typing import Callable, Dict, List, Optional
 
 from django.core.management.base import BaseCommand, CommandError
 from django.db import models as django_models
@@ -261,43 +261,11 @@ class Importer:
 
         return _completion_message('Feats', added, updated, skipped)
 
-    def MagicItemImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.MagicItem.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.MagicItem.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.MagicItem.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.MagicItem(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'desc' in o:
-                i.desc = o['desc']
-            if 'type' in o:
-                i.type = o['type']
-            if 'rarity' in o:
-                i.rarity = o['rarity']
-            if 'requires-attunement' in o:
-                i.requires_attunement = o['requires-attunement']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Magic Items', added, updated, skipped)
-
     def import_models_from_json(
         self,
         model_class: django_models.Model,
         models_json: List[Dict],
+        import_func: Callable[[Dict, Dict], ImportResult],
         options: Dict[str, bool]
     ) -> str:
         """Import a list of models from a source JSON file.
@@ -306,6 +274,10 @@ class Importer:
             model_class: The class of the model to turn the JSON into.
             models_json: A json list of objects, where each object represents
                 a single model (such as a Monster, a Spell, etc.)
+            import_func: A function to import a single model from a JSON object.
+                Should take the model JSON as its first argument, and options
+                as its second argument, and return an ImportResult specifying
+                whether a model was skipped, added, or updated.
             options: A dict specifying certain command-line options.
 
         Returns:
@@ -315,7 +287,7 @@ class Importer:
         if options['flush']:
             model_class.objects.all().delete()
         for model_json in models_json:
-            import_result = self._import_monster_from_json(model_json, options)
+            import_result = import_func(model_json, options)
             if import_result is ImportResult.SKIPPED:
                 skipped += 1
             elif import_result is ImportResult.ADDED:
@@ -327,7 +299,36 @@ class Importer:
         return _completion_message(
             model_class.plural_str(), added, updated, skipped)
 
-    def _import_monster_from_json(self, monster_json, options) -> ImportResult:
+    def import_magic_item(self, magic_item_json, options):
+        new = False
+        exists = False
+        if models.MagicItem.objects.filter(slug=slugify(magic_item_json['name'])).exists():
+            i = models.MagicItem.objects.get(slug=slugify(magic_item_json['name']))
+            exists = True
+        else:
+            i = models.MagicItem(document = self._last_document_imported)
+            new = True
+        if 'name' in magic_item_json:
+            i.name = magic_item_json['name']
+            i.slug = slugify(magic_item_json['name'])
+        if 'desc' in magic_item_json:
+            i.desc = magic_item_json['desc']
+        if 'type' in magic_item_json:
+            i.type = magic_item_json['type']
+        if 'rarity' in magic_item_json:
+            i.rarity = magic_item_json['rarity']
+        if 'requires-attunement' in magic_item_json:
+            i.requires_attunement = magic_item_json['requires-attunement']
+        if bool(options['testrun']) or (exists and options['append']):
+           return ImportResult.SKIPPED
+        else:
+            i.save()
+            if new:
+                return ImportResult.ADDED
+            else:
+                return ImportResult.UPDATED
+
+    def import_monster(self, monster_json, options) -> ImportResult:
         new = False
         exists = False
         slug_name = slugify(['name'])

@@ -104,7 +104,7 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, mag_file, mag_hash)
             with open(mag_file, encoding="utf-8") as mag_data:
                 mag = json.load(mag_data)
-                self.stdout.write(self.style.SUCCESS(importer.MagicItemImporter(self.options, mag)))
+                self.stdout.write(self.style.SUCCESS(importer.import_models_from_json(models.MagicItem, mag, importer.import_magic_item, self.options)))
 
         spl_file = Path(directory / 'spells.json')
         if spl_file.exists():
@@ -120,7 +120,7 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, mon_file, mon_hash)
             with open(mon_file, encoding="utf-8") as mon_data:
                 mon = json.load(mon_data)
-                self.stdout.write(self.style.SUCCESS(importer.import_models_from_json(models.Monster, mon, self.options)))
+                self.stdout.write(self.style.SUCCESS(importer.import_models_from_json(models.Monster, mon, importer.import_monster, self.options)))
 
         pln_file = Path(directory / 'planes.json')
         if pln_file.exists():
