@@ -1,3 +1,20 @@
+"""Definition for the `manage.py populatedb` command.
+
+This command reads .json files in the given directories, and creates/updates
+models based on the JSON contents. For example, if any given directory contains
+a file called `monsters.json`, then its contents will be used to create or
+update Monster models in our database.
+
+The logic for actually creating the models is mostly contained in importer.py.
+Each type of model to import is described via an importer.ImportSpec object.
+importer.Importer.import_models_from_json() then reads the import spec and a
+given filepath to call the appropriate model-generating function and save it to
+the database.
+
+For info about subcommands and flags, see Command.add_arguments().
+"""
+
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -21,12 +38,14 @@ def _get_md5_hash(filepath: Path) -> str:
 
 
 class Command(BaseCommand):
+    """Definition for the `manage.py populatedb` command."""
 
     help = "Loads all properly formatted data into the database from the given directories."
     document = ""
 
-    def add_arguments(self, parser):
-        # Positional Arguments.
+    def add_arguments(self, parser: argparse.ArgumentParser):
+        """Define arguments for the `manage.py` command."""
+        # Positional arguments.
         parser.add_argument(
             "directories",
             nargs="+",
@@ -34,8 +53,7 @@ class Command(BaseCommand):
             help="Directories that contains %model_name%.json files to be loaded.",
         )
 
-        # Named (optional) arguments
-
+        # Named (optional) arguments.
         parser.add_argument(
             "--flush",
             action="store_true",
@@ -59,6 +77,7 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
+        """Main logic for the command."""
         directories = options["directories"]
         if options["flush"]:
             self.stdout.write(self.style.WARNING("Flushing existing database."))
@@ -77,7 +96,7 @@ class Command(BaseCommand):
                 )
             )
         else:
-            raise ValueError("Invalid options combination.")
+            raise ValueError("Please select at least one option.")
 
         self.options = options
 
@@ -88,6 +107,7 @@ class Command(BaseCommand):
             self._populate_from_directory(Path(directory))
 
     def _populate_from_directory(self, directory: Path) -> None:
+        """Import models from all the .json files in a single directory."""
         self.stdout.write(self.style.SUCCESS(f"Reading in files from {directory}"))
 
         import_options = ImportOptions(

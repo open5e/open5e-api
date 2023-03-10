@@ -1,3 +1,12 @@
+"""Logic for creating or updating models based on JSON data.
+
+The logic here is used by the `manage.py populatedb` subcommand. Generally,
+populatedb finds JSON files and passes them into
+Importer.import_models_from_json, along with an ImportSpec describing what model
+to create, what function to use to create the model, etc.
+Each model type (ex. Monster) has a separate Importer.import_<model> method.
+"""
+
 import enum
 import json
 import pathlib
@@ -58,7 +67,10 @@ class ImportResult(enum.Enum):
 
 
 class Importer:
+    """Class to manage importing data from JSON sources."""
+
     def __init__(self, options: ImportOptions):
+        """Initialize the Importer."""
         self._last_document_imported: Optional[models.Document] = None
         self.options = options
 
@@ -85,7 +97,7 @@ class Importer:
         import_spec: ImportSpec,
         models_json: List[Dict],
     ) -> str:
-        """Import a list of models from a source JSON file."""
+        """Import a list of models from a source JSON list."""
         skipped, added, updated = (0, 0, 0)
         if self.options.flush:
             import_spec.model_class.objects.all().delete()
@@ -106,6 +118,7 @@ class Importer:
         )
 
     def import_document(self, document_json, import_spec) -> ImportResult:
+        """Create or update a single Document model from a JSON object."""
         new = False
         exists = False
         slug = slugify(document_json["slug"])
@@ -132,6 +145,7 @@ class Importer:
         return result
 
     def import_background(self, background_json, import_spec) -> ImportResult:
+        """Create or update a single Background model from a JSON object."""
         new = False
         exists = False
         slug = slugify(background_json["name"])
@@ -165,6 +179,11 @@ class Importer:
         return result
 
     def import_class(self, class_json, import_spec) -> ImportResult:
+        """Create or update a single CharClass model from a JSON object.
+
+        Note: This will also create or update any Subraces referenced by the
+        JSON's `subtypes` field.
+        """
         new = False
         exists = False
         slug = slugify(class_json["name"])
@@ -212,6 +231,7 @@ class Importer:
         return result
 
     def import_archetype(self, archetype_json, import_spec) -> ImportResult:
+        """Create or update a single Archetype model from a JSON object."""
         new = False
         exists = False
         slug = slugify(archetype_json["name"])
@@ -234,6 +254,7 @@ class Importer:
         return result
 
     def import_condition(self, condition_json, import_spec) -> ImportResult:
+        """Create or update a single Condition model from a JSON object."""
         new = False
         exists = False
         slug = slugify(condition_json["name"])
@@ -253,6 +274,7 @@ class Importer:
         return result
 
     def import_feat(self, feat_json, import_spec) -> ImportResult:
+        """Create or update a single Feat model from a JSON object."""
         new = False
         exists = False
         slug = slugify(feat_json["name"])
@@ -274,6 +296,7 @@ class Importer:
         return result
 
     def import_magic_item(self, magic_item_json, import_spec) -> ImportResult:
+        """Create or update a single MagicItem model from a JSON object."""
         new = False
         exists = False
         slug = slugify(magic_item_json["name"])
@@ -299,6 +322,11 @@ class Importer:
         return result
 
     def import_monster(self, monster_json, import_spec) -> ImportResult:
+        """Create or update a single Monster model from a JSON object.
+
+        Note: This should be called AFTER importing spells, because some
+        Monsters can reference existing Spells.
+        """
         new = False
         exists = False
         slug = slugify(monster_json["name"])
@@ -468,6 +496,7 @@ class Importer:
         return result
 
     def import_plane(self, plane_json, import_spec) -> ImportResult:
+        """Create or update a single Plane model from a JSON object."""
         new = False
         exists = False
         slug = slugify(plane_json["name"])
@@ -487,6 +516,11 @@ class Importer:
         return result
 
     def import_race(self, race_json, import_spec) -> ImportResult:
+        """Create or update a single Race model from a JSON object.
+
+        Note: This will also create or update any Subraces referenced by the
+        JSON's `subtypes` field.
+        """
         new = False
         exists = False
         slug = slugify(race_json["name"])
@@ -536,6 +570,7 @@ class Importer:
         return result
 
     def import_subrace(self, subrace_json, import_spec) -> ImportResult:
+        """Create or update a single Subrace model from a JSON object."""
         new = False
         exists = False
         slug = slugify(subrace_json["name"])
@@ -565,6 +600,7 @@ class Importer:
         return result
 
     def import_section(self, section_json, import_spec) -> ImportResult:
+        """Create or update a single Section model from a JSON object."""
         new = False
         exists = False
         slug = slugify(section_json["name"])
@@ -586,6 +622,7 @@ class Importer:
         return result
 
     def import_spell(self, spell_json, import_spec) -> ImportResult:
+        """Create or update a single Spell model from a JSON object."""
         new = False
         exists = False
         slug = slugify(spell_json["name"])
@@ -635,6 +672,7 @@ class Importer:
         return result
 
     def import_weapon(self, weapon_json, import_spec) -> ImportResult:
+        """Create or update a single Weapon model from a JSON object."""
         new = False
         exists = False
         slug = slugify(weapon_json["name"])
@@ -664,6 +702,7 @@ class Importer:
         return result
 
     def import_armor(self, armor_json, import_spec) -> ImportResult:
+        """Create or update a single Armor model from a JSON object."""
         new = False
         exists = False
         slug = slugify(armor_json["name"])
