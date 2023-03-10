@@ -12,16 +12,6 @@ class Importer:
     def __init__(self):
         self.d  = []
 
-    def returner(self, object_type, added, updated, skipped):
-        message = 'Completed loading ' + object_type + '.  '
-        message = message.ljust(36)
-        message += 'Added:{0}'.format(added)
-        message = message.ljust(48)
-        message += 'Updated:{0}'.format(updated)
-        message = message.ljust(60)
-        message += 'Skipped:{0}'.format(skipped)
-        return message
-
     def update_monster(self, monster, spell):
         # print(spell) # useful for debugging new lists
         db_monster = models.Monster.objects.get(slug=monster)
@@ -29,7 +19,7 @@ class Importer:
         models.MonsterSpell.objects.create(spell=db_spell, monster=db_monster)  # <----- Create m2m relation
 
     def ManifestImporter(self, options, filepath, filehash):
-        skipped,added,updated,tested = (0,0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
 
         new = False
         exists = False
@@ -50,7 +40,7 @@ class Importer:
         else: updated += 1
 
     def DocumentImporter(self, options, json_object):
-        skipped,added,updated,tested = (0,0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Document.objects.all().delete()
 
         for o in json_object:
@@ -79,10 +69,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
         self.d = i
-        return self.returner('Document',added,updated,skipped)
+        return _completion_message('Document', added, updated, skipped)
 
     def BackgroundImporter(self, options, json_object):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Background.objects.all().delete()
 
         for o in json_object:
@@ -120,10 +110,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Backgrounds',added,updated,skipped)
+        return _completion_message('Backgrounds', added, updated, skipped)
 
     def ClassImporter(self, options, json_object):
-        skipped,added,updated,tested = (0,0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Archetype.objects.all().delete()
         if bool(options['flush']): models.CharClass.objects.all().delete()
 
@@ -174,10 +164,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Classes',added,updated,skipped)
+        return _completion_message('Classes', added, updated, skipped)
 
     def ArchetypeImporter(self, options, json_object, char_class):
-        skipped,added,updated,tested = (0,0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
 
         for o in json_object:
             new = False
@@ -198,10 +188,10 @@ class Importer:
                     i.save()
                 if new: added += 1
                 else: updated += 1
-        return self.returner('Archetypes',added,updated,skipped)
+        return _completion_message('Archetypes', added, updated, skipped)
 
     def ConditionImporter(self, options, json_object):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Condition.objects.all().delete()
 
         for o in json_object:
@@ -225,10 +215,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Conditions',added,updated,skipped)
+        return _completion_message('Conditions', added, updated, skipped)
 
     def FeatImporter(self, options, json_object):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Feat.objects.all().delete()
 
         for o in json_object:
@@ -254,10 +244,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Feats',added,updated,skipped)
+        return _completion_message('Feats', added, updated, skipped)
 
     def MagicItemImporter(self, options, json_object):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.MagicItem.objects.all().delete()
 
         for o in json_object:
@@ -287,10 +277,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Magic Items',added,updated,skipped)
+        return _completion_message('Magic Items', added, updated, skipped)
 
     def MonsterImporter(self, options, json_object, skip_flush=False):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']) and not skip_flush: models.Monster.objects.all().delete()
         img_dir='./static/img/monsters/'
 
@@ -465,10 +455,10 @@ class Importer:
                         self.update_monster(i.slug, spell)
                 if new: added += 1
                 else: updated += 1
-        return self.returner('Monsters',added,updated,skipped)
+        return _completion_message('Monsters', added, updated, skipped)
 
     def PlaneImporter(self, options, json_object):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Plane.objects.all().delete()
 
         for o in json_object:
@@ -492,10 +482,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Planes',added,updated,skipped)
+        return _completion_message('Planes', added, updated, skipped)
 
     def RaceImporter(self, options, json_object):
-        skipped,added,updated,tested = (0,0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Subrace.objects.all().delete()
         if bool(options['flush']): models.Race.objects.all().delete()
 
@@ -543,10 +533,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Races',added,updated,skipped)
+        return _completion_message('Races', added, updated, skipped)
         
     def SubraceImporter(self, options, json_object, parent_race):
-        skipped,added,updated,tested = (0,0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         #if bool(options['flush']): Subrace.objects.all().delete()
         for o in json_object:
             new = False
@@ -575,10 +565,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Subraces',added,updated,skipped)
+        return _completion_message('Subraces', added, updated, skipped)
 
     def SectionImporter(self, options, json_object):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Section.objects.all().delete()
 
         for o in json_object:
@@ -604,10 +594,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Sections',added,updated,skipped)
+        return _completion_message('Sections', added, updated, skipped)
         
     def SpellImporter(self, options, json_object):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Spell.objects.all().delete()
 
         for o in json_object:
@@ -661,10 +651,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Spells',added,updated,skipped)
+        return _completion_message('Spells', added, updated, skipped)
 
     def WeaponImporter(self, options, json_object):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Weapon.objects.all().delete()
 
         for o in json_object:
@@ -698,10 +688,10 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Weapons',added,updated,skipped)
+        return _completion_message('Weapons', added, updated, skipped)
 
     def ArmorImporter(self, options, json_object):
-        skipped,added,updated = (0,0,0) # Count for all of the different results.
+        skipped, added, updated = (0, 0, 0)
         if bool(options['flush']): models.Armor.objects.all().delete()
 
         for o in json_object:
@@ -743,4 +733,20 @@ class Importer:
                 if new: added += 1
                 else: updated += 1
 
-        return self.returner('Armor',added,updated,skipped)
+        return _completion_message('Armor', added, updated, skipped)
+
+def _completion_message(
+    object_type: str,
+    added: int,
+    updated: int,
+    skipped: int,
+) -> str:
+    """Return a string describing a completed batch of imports."""
+    message = f'Completed loading {object_type}.  '
+    message = message.ljust(36)
+    message += f'Added:{added}'
+    message = message.ljust(48)
+    message += f'Updated:{updated}'
+    message = message.ljust(60)
+    message += f'Skipped:{skipped}'
+    return message
