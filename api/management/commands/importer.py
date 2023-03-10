@@ -63,10 +63,10 @@ class Importer:
     def __init__(self):
         self._last_document_imported: Optional[models.Document] = None
 
-    def create_monster_spell_relationship(self, monster, spell):
+    def create_monster_spell_relationship(self, monster_slug, spell_slug):
         """Create a many-to-many relationship between Monsters and Spells."""
-        db_monster = models.Monster.objects.get(slug=monster)
-        db_spell = models.Spell.objects.get(slug=slugify(spell))
+        db_monster = models.Monster.objects.get(slug=monster_slug)
+        db_spell = models.Spell.objects.get(slug=spell_slug)
         models.MonsterSpell.objects.create(spell=db_spell, monster=db_monster)
 
     def ManifestImporter(self, options, filepath: str, filehash: str) -> None:
@@ -120,16 +120,17 @@ class Importer:
     def import_document(self, document_json, import_spec) -> ImportResult:
         new = False
         exists = False
+        slug = slugify(document_json["slug"])
         # Setting up the object.
-        if models.Document.objects.filter(slug=slugify(document_json["slug"])).exists():
-            i = models.Document.objects.get(slug=slugify(document_json["slug"]))
+        if models.Document.objects.filter(slug=slug).exists():
+            i = models.Document.objects.get(slug=slug)
             exists = True
         else:
             i = models.Document()
             new = True
         # Adding the data to the created object.
         i.title = document_json["title"]
-        i.slug = slugify(document_json["slug"])
+        i.slug = slug
         i.desc = document_json["desc"]
         i.author = document_json["author"]
         i.license = document_json["license"]
@@ -145,17 +146,16 @@ class Importer:
     def import_background(self, background_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Background.objects.filter(
-            slug=slugify(background_json["name"])
-        ).exists():
-            i = models.Background.objects.get(slug=slugify(background_json["name"]))
+        slug = slugify(background_json["name"])
+        if models.Background.objects.filter(slug=slug).exists():
+            i = models.Background.objects.get(slug=slug)
             exists = True
         else:
             i = models.Background(document=self._last_document_imported)
             new = True
         if "name" in background_json:
             i.name = background_json["name"]
-            i.slug = slugify(background_json["name"])
+            i.slug = slug
         if "desc" in background_json:
             i.desc = background_json["desc"]
         if "skill-proficiencies" in background_json:
@@ -180,15 +180,16 @@ class Importer:
     def import_class(self, class_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.CharClass.objects.filter(slug=slugify(class_json["name"])).exists():
-            i = models.CharClass.objects.get(slug=slugify(class_json["name"]))
+        slug = slugify(class_json["name"])
+        if models.CharClass.objects.filter(slug=slug).exists():
+            i = models.CharClass.objects.get(slug=slug)
             exists = True
         else:
             i = models.CharClass(document=self._last_document_imported)
             new = True
         if "name" in class_json:
             i.name = class_json["name"]
-            i.slug = slugify(class_json["name"])
+            i.slug = slug
         if "subtypes-name" in class_json:
             i.subtypes_name = class_json["subtypes-name"]
         if "hit-dice" in class_json["features"]:
@@ -227,10 +228,9 @@ class Importer:
     def import_archetype(self, archetype_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Archetype.objects.filter(
-            slug=slugify(archetype_json["name"])
-        ).exists():
-            i = models.Archetype.objects.get(slug=slugify(archetype_json["name"]))
+        slug = slugify(archetype_json["name"])
+        if models.Archetype.objects.filter(slug=slug).exists():
+            i = models.Archetype.objects.get(slug=slug)
             exists = True
         else:
             # char_class should be set in import_class
@@ -240,7 +240,7 @@ class Importer:
             )
         if "name" in archetype_json:
             i.name = archetype_json["name"]
-            i.slug = slugify(archetype_json["name"])
+            i.slug = slug
         if "desc" in archetype_json:
             i.desc = archetype_json["desc"]
         result = _determine_import_result(import_spec.options, new, exists)
@@ -251,17 +251,16 @@ class Importer:
     def import_condition(self, condition_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Condition.objects.filter(
-            slug=slugify(condition_json["name"])
-        ).exists():
-            i = models.Condition.objects.get(slug=slugify(condition_json["name"]))
+        slug = slugify(condition_json["name"])
+        if models.Condition.objects.filter(slug=slug).exists():
+            i = models.Condition.objects.get(slug=slug)
             exists = True
         else:
             i = models.Condition(document=self._last_document_imported)
             new = True
         if "name" in condition_json:
             i.name = condition_json["name"]
-            i.slug = slugify(condition_json["name"])
+            i.slug = slug
         if "desc" in condition_json:
             i.desc = condition_json["desc"]
         result = _determine_import_result(import_spec.options, new, exists)
@@ -272,15 +271,16 @@ class Importer:
     def import_feat(self, feat_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Feat.objects.filter(slug=slugify(feat_json["name"])).exists():
-            i = models.Feat.objects.get(slug=slugify(feat_json["name"]))
+        slug = slugify(feat_json["name"])
+        if models.Feat.objects.filter(slug=slug).exists():
+            i = models.Feat.objects.get(slug=slug)
             exists = True
         else:
             i = models.Feat(document=self._last_document_imported)
             new = True
         if "name" in feat_json:
             i.name = feat_json["name"]
-            i.slug = slugify(feat_json["name"])
+            i.slug = slug
         if "desc" in feat_json:
             i.desc = feat_json["desc"]
         if "prerequisite" in feat_json:
@@ -293,17 +293,16 @@ class Importer:
     def import_magic_item(self, magic_item_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.MagicItem.objects.filter(
-            slug=slugify(magic_item_json["name"])
-        ).exists():
-            i = models.MagicItem.objects.get(slug=slugify(magic_item_json["name"]))
+        slug = slugify(magic_item_json["name"])
+        if models.MagicItem.objects.filter(slug=slug).exists():
+            i = models.MagicItem.objects.get(slug=slug)
             exists = True
         else:
             i = models.MagicItem(document=self._last_document_imported)
             new = True
         if "name" in magic_item_json:
             i.name = magic_item_json["name"]
-            i.slug = slugify(magic_item_json["name"])
+            i.slug = slug
         if "desc" in magic_item_json:
             i.desc = magic_item_json["desc"]
         if "type" in magic_item_json:
@@ -320,17 +319,17 @@ class Importer:
     def import_monster(self, monster_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        slug_name = slugify(["name"])
-        if models.Monster.objects.filter(slug=slugify(monster_json["name"])).exists():
-            i = models.Monster.objects.get(slug=slugify(monster_json["name"]))
+        slug = slugify(monster_json["name"])
+        if models.Monster.objects.filter(slug=slug).exists():
+            i = models.Monster.objects.get(slug=slug)
             exists = True
         else:
             i = models.Monster(document=self._last_document_imported)
             new = True
         if "name" in monster_json:
             i.name = monster_json["name"]
-            i.slug = slugify(monster_json["name"])
-        img_file = MONSTERS_IMG_DIR / f"{slugify(monster_json['name'])}.png"
+            i.slug = slug
+        img_file = MONSTERS_IMG_DIR / f"{slug}.png"
         if img_file.exists():
             i.img_main = img_file
         if "size" in monster_json:
@@ -484,21 +483,22 @@ class Importer:
             i.save()
             # Spells should have already been defined in import_spell().
             for spell in monster_json.get("spells", []):
-                self.create_monster_spell_relationship(i.slug, spell)
+                self.create_monster_spell_relationship(i.slug, slugify(spell))
         return result
 
     def import_plane(self, plane_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Plane.objects.filter(slug=slugify(plane_json["name"])).exists():
-            i = models.Plane.objects.get(slug=slugify(plane_json["name"]))
+        slug = slugify(plane_json["name"])
+        if models.Plane.objects.filter(slug=slug).exists():
+            i = models.Plane.objects.get(slug=slug)
             exists = True
         else:
             i = models.Plane(document=self._last_document_imported)
             new = True
         if "name" in plane_json:
             i.name = plane_json["name"]
-            i.slug = slugify(plane_json["name"])
+            i.slug = slug
         if "desc" in plane_json:
             i.desc = plane_json["desc"]
         result = _determine_import_result(import_spec.options, new, exists)
@@ -509,15 +509,16 @@ class Importer:
     def import_race(self, race_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Race.objects.filter(slug=slugify(race_json["name"])).exists():
-            i = models.Race.objects.get(slug=slugify(race_json["name"]))
+        slug = slugify(race_json["name"])
+        if models.Race.objects.filter(slug=slug).exists():
+            i = models.Race.objects.get(slug=slug)
             exists = True
         else:
             i = models.Race(document=self._last_document_imported)
             new = True
         if "name" in race_json:
             i.name = race_json["name"]
-            i.slug = slugify(race_json["name"])
+            i.slug = slug
         if "desc" in race_json:
             i.desc = race_json["desc"]
         if "asi-desc" in race_json:
@@ -558,8 +559,9 @@ class Importer:
     def import_subrace(self, subrace_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Subrace.objects.filter(slug=slugify(subrace_json["name"])).exists():
-            i = models.Subrace.objects.get(slug=slugify(subrace_json["name"]))
+        slug = slugify(subrace_json["name"])
+        if models.Subrace.objects.filter(slug=slug).exists():
+            i = models.Subrace.objects.get(slug=slug)
             exists = True
         else:
             # parent_race should be set during import_race()
@@ -570,7 +572,7 @@ class Importer:
             new = True
             if "name" in subrace_json:
                 i.name = subrace_json["name"]
-                i.slug = slugify(subrace_json["name"])
+                i.slug = slug
             if "desc" in subrace_json:
                 i.desc = subrace_json["desc"]
             if "asi-desc" in subrace_json:
@@ -587,15 +589,16 @@ class Importer:
     def import_section(self, section_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Section.objects.filter(slug=slugify(section_json["name"])).exists():
-            i = models.Section.objects.get(slug=slugify(section_json["name"]))
+        slug = slugify(section_json["name"])
+        if models.Section.objects.filter(slug=slug).exists():
+            i = models.Section.objects.get(slug=slug)
             exists = True
         else:
             i = models.Section(document=self._last_document_imported)
             new = True
         if "name" in section_json:
             i.name = section_json["name"]
-            i.slug = slugify(section_json["name"])
+            i.slug = slug
         if "desc" in section_json:
             i.desc = section_json["desc"]
         if "parent" in section_json:
@@ -608,15 +611,16 @@ class Importer:
     def import_spell(self, spell_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Spell.objects.filter(slug=slugify(spell_json["name"])).exists():
-            i = models.Spell.objects.get(slug=slugify(spell_json["name"]))
+        slug = slugify(spell_json["name"])
+        if models.Spell.objects.filter(slug=slug).exists():
+            i = models.Spell.objects.get(slug=slug)
             exists = True
         else:
             i = models.Spell(document=self._last_document_imported)
             new = True
         if "name" in spell_json:
             i.name = spell_json["name"]
-            i.slug = slugify(spell_json["name"])
+            i.slug = slug
         if "desc" in spell_json:
             i.desc = spell_json["desc"]
         if "higher_level" in spell_json:
@@ -657,15 +661,16 @@ class Importer:
     def import_weapon(self, weapon_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Weapon.objects.filter(slug=slugify(weapon_json["name"])).exists():
-            i = models.Weapon.objects.get(slug=slugify(weapon_json["name"]))
+        slug = slugify(weapon_json["name"])
+        if models.Weapon.objects.filter(slug=slug).exists():
+            i = models.Weapon.objects.get(slug=slug)
             exists = True
         else:
             i = models.Weapon(document=self._last_document_imported)
             new = True
         if "name" in weapon_json:
             i.name = weapon_json["name"]
-            i.slug = slugify(weapon_json["name"])
+            i.slug = slug
         if "category" in weapon_json:
             i.category = weapon_json["category"]
         if "cost" in weapon_json:
@@ -686,15 +691,16 @@ class Importer:
     def import_armor(self, armor_json, import_spec) -> ImportResult:
         new = False
         exists = False
-        if models.Armor.objects.filter(slug=slugify(armor_json["name"])).exists():
-            i = models.Armor.objects.get(slug=slugify(armor_json["name"]))
+        slug = slugify(armor_json["name"])
+        if models.Armor.objects.filter(slug=slug).exists():
+            i = models.Armor.objects.get(slug=slug)
             exists = True
         else:
             i = models.Armor(document=self._last_document_imported)
             new = True
         if "name" in armor_json:
             i.name = armor_json["name"]
-            i.slug = slugify(armor_json["name"])
+            i.slug = slug
         if "category" in armor_json:
             i.category = armor_json["category"]
         if "cost" in armor_json:
