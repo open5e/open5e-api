@@ -232,35 +232,6 @@ class Importer:
 
         return _completion_message('Conditions', added, updated, skipped)
 
-    def FeatImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Feat.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Feat.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Feat.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Feat(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'desc' in o:
-                i.desc = o['desc']
-            if 'prerequisite' in o:
-                i.prerequisite = o['prerequisite']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Feats', added, updated, skipped)
-
     def import_models_from_json(
         self,
         model_class: django_models.Model,
@@ -299,6 +270,27 @@ class Importer:
         return _completion_message(
             model_class.plural_str(), added, updated, skipped)
 
+    def import_feat(self, feat_json, options):
+        new = False
+        exists = False
+        if models.Feat.objects.filter(slug=slugify(feat_json['name'])).exists():
+            i = models.Feat.objects.get(slug=slugify(feat_json['name']))
+            exists = True
+        else:
+            i = models.Feat(document = self._last_document_imported)
+            new = True
+        if 'name' in feat_json:
+            i.name = feat_json['name']
+            i.slug = slugify(feat_json['name'])
+        if 'desc' in feat_json:
+            i.desc = feat_json['desc']
+        if 'prerequisite' in feat_json:
+            i.prerequisite = feat_json['prerequisite']
+        result = _determine_import_result(options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
+
     def import_magic_item(self, magic_item_json, options):
         new = False
         exists = False
@@ -319,14 +311,10 @@ class Importer:
             i.rarity = magic_item_json['rarity']
         if 'requires-attunement' in magic_item_json:
             i.requires_attunement = magic_item_json['requires-attunement']
-        if bool(options['testrun']) or (exists and options['append']):
-           return ImportResult.SKIPPED
-        else:
+        result = _determine_import_result(options, new, exists)
+        if result is not ImportResult.SKIPPED:
             i.save()
-            if new:
-                return ImportResult.ADDED
-            else:
-                return ImportResult.UPDATED
+        return result
 
     def import_monster(self, monster_json, options) -> ImportResult:
         new = False
@@ -490,18 +478,13 @@ class Importer:
             i.legendary_actions_json = json.dumps(monster_json['legendary_actions'])
         else:
             i.legendary_actions_json = json.dumps("")
-        if bool(options['testrun']) or (exists and options['append']):
-           return ImportResult.SKIPPED
-        else:
+        result = _determine_import_result(options, new, exists)
+        if result is not ImportResult.SKIPPED:
             i.save()
             if 'spells' in monster_json:
                 for spell in monster_json['spells']:
                     self.update_monster(i.slug, spell)
-            if new:
-                return ImportResult.ADDED
->>>>>>> e0e772d (importer: Abstractify adding multiple entities)
-            else:
-                return ImportResult.UPDATED
+        return result
 
     def PlaneImporter(self, options, json_object):
         skipped, added, updated = (0, 0, 0)
@@ -796,3 +779,16 @@ def _completion_message(
     message = message.ljust(60)
     message += f'Skipped:{skipped}'
     return message
+
+def _determine_import_result(
+    options: Dict[str, bool],
+    new: bool,
+    exists: bool,
+) -> ImportResult:
+    """Check whether an import resulted in a skip, an add, or an update."""
+    if options['testrun'] or (exists and options['append']):
+        return ImportResult.SKIPPED
+    elif new:
+        return ImportResult.ADDED
+    else:
+        return ImportResult.UPDATED

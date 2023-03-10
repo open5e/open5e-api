@@ -96,7 +96,13 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, fea_file, fea_hash)
             with open(fea_file, encoding="utf-8") as fea_data:
                 fea = json.load(fea_data)
-                self.stdout.write(self.style.SUCCESS(importer.FeatImporter(self.options, fea)))
+            report = importer.import_models_from_json(
+                models.Feat,
+                fea,
+                importer.import_feat,
+                self.options
+            )
+            self.stdout.write(self.style.SUCCESS(report))
 
         mag_file = Path(directory / 'magicitems.json')
         if mag_file.exists():
