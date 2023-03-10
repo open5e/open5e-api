@@ -4,7 +4,7 @@ from pathlib import Path
 
 from django.core.management.base import BaseCommand, CommandError
 
-from api.management.commands.importer import Importer
+from api.management.commands.importer import Importer, ImportSpec
 from api import models
 
 
@@ -97,9 +97,8 @@ class Command(BaseCommand):
             with open(fea_file, encoding="utf-8") as fea_data:
                 fea = json.load(fea_data)
             report = importer.import_models_from_json(
-                models.Feat,
+                ImportSpec(models.Feat, importer.import_feat),
                 fea,
-                importer.import_feat,
                 self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
@@ -111,9 +110,8 @@ class Command(BaseCommand):
             with open(mag_file, encoding="utf-8") as mag_data:
                 mag = json.load(mag_data)
             report = importer.import_models_from_json(
-                models.MagicItem,
+                ImportSpec(models.MagicItem, importer.import_magic_item),
                 mag,
-                importer.import_magic_item,
                 self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
@@ -124,7 +122,12 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, spl_file, spl_hash)
             with open(spl_file, encoding="utf-8") as spl_data:
                 spl = json.load(spl_data)
-                self.stdout.write(self.style.SUCCESS(importer.SpellImporter(self.options, spl)))
+            report = importer.import_models_from_json(
+                ImportSpec(models.Spell, importer.import_spell),
+                spl,
+                self.options
+            )
+            self.stdout.write(self.style.SUCCESS(report))
 
         mon_file = Path(directory / 'monsters.json')
         if mon_file.exists():
@@ -133,9 +136,8 @@ class Command(BaseCommand):
             with open(mon_file, encoding="utf-8") as mon_data:
                 mon = json.load(mon_data)
             report = importer.import_models_from_json(
-                models.Monster,
+                ImportSpec(models.Monster, importer.import_monster),
                 mon,
-                importer.import_monster,
                 self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
@@ -147,9 +149,8 @@ class Command(BaseCommand):
             with open(pln_file, encoding="utf-8") as pln_data:
                 pln = json.load(pln_data)
             report = importer.import_models_from_json(
-                models.Plane,
+                ImportSpec(models.Plane, importer.import_plane),
                 pln,
-                importer.import_plane,
                 self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
@@ -160,7 +161,12 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, sec_file, sec_hash)
             with open(sec_file, encoding="utf-8") as sec_data:
                 sec = json.load(sec_data)
-                self.stdout.write(self.style.SUCCESS(importer.SectionImporter(self.options, sec)))
+            report = importer.import_models_from_json(
+                ImportSpec(models.Section, importer.import_section),
+                sec,
+                self.options
+            )
+            self.stdout.write(self.style.SUCCESS(report))
 
         rac_file = Path(directory / 'races.json')
         if rac_file.exists():
@@ -176,10 +182,20 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, wea_file, wea_hash)
             with open(wea_file, encoding="utf-8") as wea_data:
                 wea = json.load(wea_data)
-                self.stdout.write(self.style.SUCCESS(importer.WeaponImporter(self.options, wea)))
+            report = importer.import_models_from_json(
+                ImportSpec(models.Weapon, importer.import_weapon),
+                wea,
+                self.options
+            )
+            self.stdout.write(self.style.SUCCESS(report))
 
         arm_file = Path(directory / 'armor.json')
         if arm_file.exists():
             with open(arm_file, encoding="utf-8") as arm_data:
                 arm = json.load(arm_data)
-                self.stdout.write(self.style.SUCCESS(importer.ArmorImporter(self.options, arm)))
+            report = importer.import_models_from_json(
+                ImportSpec(models.Armor, importer.import_armor),
+                arm,
+                self.options
+            )
+            self.stdout.write(self.style.SUCCESS(report))

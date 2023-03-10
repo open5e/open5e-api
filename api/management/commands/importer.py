@@ -1,7 +1,7 @@
 import enum
 import json
 import pathlib
-from typing import Callable, Dict, List, Optional
+from typing import Callable, Dict, List, NamedTuple, Optional
 
 from django.core.management.base import BaseCommand, CommandError
 from django.db import models as django_models
@@ -14,8 +14,19 @@ from api import models
 MONSTERS_IMG_DIR = pathlib.Path('.', 'static', 'img', 'monsters').absolute()
 
 
+class ImportSpec(NamedTuple):
+    """Helper class to specify how to import a type of model."""
+    # model_class is the type of model to create.
+    model_class: django_models.Model
+    # import_func is the function that creates a model based on JSON.
+    # It should take the model JSON as its first argument, and options as its
+    # second argument, and return an ImportResult specifying whether a model
+    # was skipped, added, or updated.
+    import_func: Callable[[Dict, Dict], "ImportResult"]
+
+
 class ImportResult(enum.Enum):
-    """What happened from a single import. Was the entity added? Skipped?"""
+    """What happened from a single import. Was a model added? Skipped?"""
     UNSPECIFIED = 0
     ADDED = 1
     SKIPPED = 2
@@ -234,31 +245,16 @@ class Importer:
 
     def import_models_from_json(
         self,
-        model_class: django_models.Model,
+        import_spec: ImportSpec,
         models_json: List[Dict],
-        import_func: Callable[[Dict, Dict], ImportResult],
         options: Dict[str, bool]
     ) -> str:
-        """Import a list of models from a source JSON file.
-
-        Args:
-            model_class: The class of the model to turn the JSON into.
-            models_json: A json list of objects, where each object represents
-                a single model (such as a Monster, a Spell, etc.)
-            import_func: A function to import a single model from a JSON object.
-                Should take the model JSON as its first argument, and options
-                as its second argument, and return an ImportResult specifying
-                whether a model was skipped, added, or updated.
-            options: A dict specifying certain command-line options.
-
-        Returns:
-            A string specifying how many models were skipped, added, etc.
-        """
+        """Import a list of models from a source JSON file."""
         skipped, added, updated = (0, 0, 0)
         if options['flush']:
-            model_class.objects.all().delete()
+            import_spec.model_class.objects.all().delete()
         for model_json in models_json:
-            import_result = import_func(model_json, options)
+            import_result = import_spec.import_func(model_json, options)
             if import_result is ImportResult.SKIPPED:
                 skipped += 1
             elif import_result is ImportResult.ADDED:
@@ -268,7 +264,7 @@ class Importer:
             else:
                 raise ValueError(f'Unexpected ImportResult: {import_result}')
         return _completion_message(
-            model_class.plural_str(), added, updated, skipped)
+            import_spec.model_class.plural_str(), added, updated, skipped)
 
     def import_feat(self, feat_json, options) -> ImportResult:
         new = False
@@ -588,173 +584,141 @@ class Importer:
 
         return _completion_message('Subraces', added, updated, skipped)
 
-    def SectionImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Section.objects.all().delete()
+    def import_section(self, section_json, options) -> ImportResult:
+        new = False
+        exists = False
+        if models.Section.objects.filter(slug=slugify(section_json['name'])).exists():
+            i = models.Section.objects.get(slug=slugify(section_json['name']))
+            exists = True
+        else:
+            i = models.Section(document = self._last_document_imported)
+            new = True
+        if 'name' in section_json:
+            i.name = section_json['name']
+            i.slug = slugify(section_json['name'])
+        if 'desc' in section_json:
+            i.desc = section_json['desc']
+        if 'parent' in section_json:
+            i.parent = section_json['parent']
+        result = _determine_import_result(options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
 
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Section.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Section.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Section(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'desc' in o:
-                i.desc = o['desc']
-            if 'parent' in o:
-                i.parent = o['parent']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
+    def import_spell(self, spell_json, options) -> ImportResult:
+        new = False
+        exists = False
+        if models.Spell.objects.filter(slug=slugify(spell_json['name'])).exists():
+            i = models.Spell.objects.get(slug=slugify(spell_json['name']))
+            exists = True
+        else:
+            i = models.Spell(document = self._last_document_imported)
+            new = True
+        if 'name' in spell_json:
+            i.name = spell_json['name']
+            i.slug = slugify(spell_json['name'])
+        if 'desc' in spell_json:
+            i.desc = spell_json['desc']
+        if 'higher_level' in spell_json:
+            i.higher_level = spell_json['higher_level']
+        if 'page' in spell_json:
+            i.page = spell_json['page']
+        if 'range' in spell_json:
+            i.range = spell_json['range']
+        if 'components' in spell_json:
+            i.components = spell_json['components']
+        if 'material' in spell_json:
+            i.material = spell_json['material']
+        if 'ritual' in spell_json:
+            i.ritual = spell_json['ritual']
+        if 'duration' in spell_json:
+            i.duration = spell_json['duration']
+        if 'concentration' in spell_json:
+            i.concentration = spell_json['concentration']
+        if 'casting_time' in spell_json:
+            i.casting_time = spell_json['casting_time']
+        if 'level' in spell_json:
+            i.level = spell_json['level']
+        if 'level_int' in spell_json:
+            i.level_int = spell_json['level_int']
+        if 'school' in spell_json:
+            i.school = spell_json['school']
+        if 'class' in spell_json:
+            i.dnd_class = spell_json['class']
+        if 'archetype' in spell_json:
+            i.archetype = spell_json['archetype']
+        if 'circles' in spell_json:
+            i.circles = spell_json['circles']
+        result = _determine_import_result(options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
 
-        return _completion_message('Sections', added, updated, skipped)
-        
-    def SpellImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Spell.objects.all().delete()
+    def import_weapon(self, weapon_json, options) -> ImportResult:
+        new = False
+        exists = False
+        if models.Weapon.objects.filter(slug=slugify(weapon_json['name'])).exists():
+            i = models.Weapon.objects.get(slug=slugify(weapon_json['name']))
+            exists = True
+        else:
+            i = models.Weapon(document = self._last_document_imported)
+            new = True
+        if 'name' in weapon_json:
+            i.name = weapon_json['name']
+            i.slug = slugify(weapon_json['name'])
+        if 'category' in weapon_json:
+            i.category = weapon_json['category']
+        if 'cost' in weapon_json:
+            i.cost = weapon_json['cost']
+        if 'damage_dice' in weapon_json:
+            i.damage_dice = weapon_json['damage_dice']
+        if 'damage_type' in weapon_json:
+            i.damage_type = weapon_json['damage_type']
+        if 'weight' in weapon_json:
+            i.weight = weapon_json['weight']
+        if 'properties' in weapon_json:
+            i.properties_json = json.dumps(weapon_json['properties'])
+        result = _determine_import_result(options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
 
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Spell.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Spell.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Spell(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'desc' in o:
-                i.desc = o['desc']
-            if 'higher_level' in o:
-                i.higher_level = o['higher_level']
-            if 'page' in o:
-                i.page = o['page']
-            if 'range' in o:
-                i.range = o['range']
-            if 'components' in o:
-                i.components = o['components']
-            if 'material' in o:
-                i.material = o['material']
-            if 'ritual' in o:
-                i.ritual = o['ritual']
-            if 'duration' in o:
-                i.duration = o['duration']
-            if 'concentration' in o:
-                i.concentration = o['concentration']
-            if 'casting_time' in o:
-                i.casting_time = o['casting_time']
-            if 'level' in o:
-                i.level = o['level']
-            if 'level_int' in o:
-                i.level_int = o['level_int']
-            if 'school' in o:
-                i.school = o['school']
-            if 'class' in o:
-                i.dnd_class = o['class']
-            if 'archetype' in o:
-                i.archetype = o['archetype']
-            if 'circles' in o:
-                i.circles = o['circles']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Spells', added, updated, skipped)
-
-    def WeaponImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Weapon.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Weapon.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Weapon.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Weapon(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'category' in o:
-                i.category = o['category']
-            if 'cost' in o:
-                i.cost = o['cost']
-            if 'damage_dice' in o:
-                i.damage_dice = o['damage_dice']
-            if 'damage_type' in o:
-                i.damage_type = o['damage_type']
-            if 'weight' in o:
-                i.weight = o['weight']
-            if 'properties' in o:
-                i.properties_json = json.dumps(o['properties'])
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Weapons', added, updated, skipped)
-
-    def ArmorImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Armor.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Armor.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Armor.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Armor(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'category' in o:
-                i.category = o['category']
-            if 'cost' in o:
-                i.cost = o['cost']
-            if 'stealth_disadvantage' in o:
-                i.stealth_disadvantage = o['stealth_disadvantage']
-            if 'base_ac' in o:
-                i.base_ac = o['base_ac']
-            if 'plus_dex_mod' in o:
-                i.plus_dex_mod = o['plus_dex_mod']
-            if 'plus_con_mod' in o:
-                i.plus_con_mod = o['plus_con_mod']
-            if 'plus_wis_mod' in o:
-                i.plus_wis_mod = o['plus_wis_mod']
-            if 'plus_flat_mod' in o:
-                i.plus_flat_mod = o['plus_flat_mod']
-            if 'plus_max' in o:
-                i.plus_max = o['plus_max']
-            if 'strength_requirement' in o:
-                i.strength_requirement = o['strength_requirement']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Armor', added, updated, skipped)
+    def import_armor(self, armor_json, options) -> ImportResult:
+        new = False
+        exists = False
+        if models.Armor.objects.filter(slug=slugify(armor_json['name'])).exists():
+            i = models.Armor.objects.get(slug=slugify(armor_json['name']))
+            exists = True
+        else:
+            i = models.Armor(document = self._last_document_imported)
+            new = True
+        if 'name' in armor_json:
+            i.name = armor_json['name']
+            i.slug = slugify(armor_json['name'])
+        if 'category' in armor_json:
+            i.category = armor_json['category']
+        if 'cost' in armor_json:
+            i.cost = armor_json['cost']
+        if 'stealth_disadvantage' in armor_json:
+            i.stealth_disadvantage = armor_json['stealth_disadvantage']
+        if 'base_ac' in armor_json:
+            i.base_ac = armor_json['base_ac']
+        if 'plus_dex_mod' in armor_json:
+            i.plus_dex_mod = armor_json['plus_dex_mod']
+        if 'plus_con_mod' in armor_json:
+            i.plus_con_mod = armor_json['plus_con_mod']
+        if 'plus_wis_mod' in armor_json:
+            i.plus_wis_mod = armor_json['plus_wis_mod']
+        if 'plus_flat_mod' in armor_json:
+            i.plus_flat_mod = armor_json['plus_flat_mod']
+        if 'plus_max' in armor_json:
+            i.plus_max = armor_json['plus_max']
+        if 'strength_requirement' in armor_json:
+            i.strength_requirement = armor_json['strength_requirement']
+        result = _determine_import_result(options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
 
 def _completion_message(
     object_type: str,
