@@ -8,8 +8,11 @@ from api.management.commands.importer import Importer
 from api.models import Manifest
 
 
-def get_hash(filepath):
-    # https://stackoverflow.com/a/1131238
+def _get_md5_hash(filepath: Path) -> str:
+    """Construct an md5 hash for a file, using chunks to accomodate large files.
+
+    Cribbed from https://stackoverflow.com/a/1131238.
+    """
     file_hash = hashlib.md5()
     with open(filepath, "rb") as f:
         while chunk := f.read(8192):
@@ -65,7 +68,7 @@ class Command(BaseCommand):
         
         bgs_file = Path(directory / 'backgrounds.json')
         if bgs_file.exists():
-            bgs_hash = get_hash(bgs_file)
+            bgs_hash = _get_md5_hash(bgs_file)
             importer.ManifestImporter(self.options, bgs_file, bgs_hash)
             with open(bgs_file, encoding="utf-8") as bg_data:
                 bgs = json.load(bg_data)
@@ -73,7 +76,7 @@ class Command(BaseCommand):
 
         cls_file = Path(directory / 'classes.json')
         if cls_file.exists():
-            cls_hash = get_hash(cls_file)
+            cls_hash = _get_md5_hash(cls_file)
             importer.ManifestImporter(self.options, cls_file, cls_hash)
             with open(cls_file, encoding="utf-8") as cls_data:
                 cls = json.load(cls_data)
@@ -81,7 +84,7 @@ class Command(BaseCommand):
 
         con_file = Path(directory / 'conditions.json')
         if con_file.exists():
-            con_hash = get_hash(con_file)
+            con_hash = _get_md5_hash(con_file)
             importer.ManifestImporter(self.options, con_file, con_hash)
             with open(con_file, encoding="utf-8") as con_data:
                 con = json.load(con_data)
@@ -89,7 +92,7 @@ class Command(BaseCommand):
 
         fea_file = Path(directory / 'feats.json')
         if fea_file.exists():
-            fea_hash = get_hash(fea_file)
+            fea_hash = _get_md5_hash(fea_file)
             importer.ManifestImporter(self.options, fea_file, fea_hash)
             with open(fea_file, encoding="utf-8") as fea_data:
                 fea = json.load(fea_data)
@@ -97,7 +100,7 @@ class Command(BaseCommand):
 
         mag_file = Path(directory / 'magicitems.json')
         if mag_file.exists():
-            mag_hash = get_hash(mag_file)
+            mag_hash = _get_md5_hash(mag_file)
             importer.ManifestImporter(self.options, mag_file, mag_hash)
             with open(mag_file, encoding="utf-8") as mag_data:
                 mag = json.load(mag_data)
@@ -105,7 +108,7 @@ class Command(BaseCommand):
 
         spl_file = Path(directory / 'spells.json')
         if spl_file.exists():
-            spl_hash = get_hash(spl_file)
+            spl_hash = _get_md5_hash(spl_file)
             importer.ManifestImporter(self.options, spl_file, spl_hash)
             with open(spl_file, encoding="utf-8") as spl_data:
                 spl = json.load(spl_data)
@@ -113,7 +116,7 @@ class Command(BaseCommand):
 
         mon_file = Path(directory / 'monsters.json')
         if mon_file.exists():
-            mon_hash = get_hash(mon_file)
+            mon_hash = _get_md5_hash(mon_file)
             importer.ManifestImporter(self.options, mon_file, mon_hash)
             with open(mon_file, encoding="utf-8") as mon_data:
                 mon = json.load(mon_data)
@@ -121,7 +124,7 @@ class Command(BaseCommand):
 
         pln_file = Path(directory / 'planes.json')
         if pln_file.exists():
-            pln_hash = get_hash(pln_file)
+            pln_hash = _get_md5_hash(pln_file)
             importer.ManifestImporter(self.options, pln_file, pln_hash)
             with open(pln_file, encoding="utf-8") as pln_data:
                 pln = json.load(pln_data)
@@ -129,7 +132,7 @@ class Command(BaseCommand):
 
         sec_file = Path(directory / 'sections.json')
         if sec_file.exists():
-            sec_hash = get_hash(sec_file)
+            sec_hash = _get_md5_hash(sec_file)
             importer.ManifestImporter(self.options, sec_file, sec_hash)
             with open(sec_file, encoding="utf-8") as sec_data:
                 sec = json.load(sec_data)
@@ -137,7 +140,7 @@ class Command(BaseCommand):
 
         rac_file = Path(directory / 'races.json')
         if rac_file.exists():
-            rac_hash = get_hash(rac_file)
+            rac_hash = _get_md5_hash(rac_file)
             importer.ManifestImporter(self.options, rac_file, rac_hash)
             with open(rac_file, encoding="utf-8") as rac_data:
                 rac = json.load(rac_data)
@@ -145,7 +148,7 @@ class Command(BaseCommand):
 
         wea_file = Path(directory / 'weapons.json')
         if wea_file.exists():
-            wea_hash = get_hash(wea_file)
+            wea_hash = _get_md5_hash(wea_file)
             importer.ManifestImporter(self.options, wea_file, wea_hash)
             with open(wea_file, encoding="utf-8") as wea_data:
                 wea = json.load(wea_data)
