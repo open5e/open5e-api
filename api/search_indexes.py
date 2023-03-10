@@ -18,6 +18,7 @@ class MonsterIndex(indexes.SearchIndex, indexes.Indexable):
   wisdom = indexes.CharField(model_attr='wisdom', indexed=False)
   charisma = indexes.CharField(model_attr='charisma', indexed=False)
   challenge_rating = indexes.CharField(model_attr='challenge_rating', indexed=False)
+  cr = indexes.CharField(model_attr='cr', indexed=False)
   document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
   document_title = indexes.CharField(model_attr='document__title', indexed=False)
 
