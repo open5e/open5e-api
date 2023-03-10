@@ -68,28 +68,17 @@ class Importer:
         db_spell = models.Spell.objects.get(slug=spell_slug)
         models.MonsterSpell.objects.create(spell=db_spell, monster=db_monster)
 
-    def ManifestImporter(self, filepath: str, filehash: str) -> None:
-        skipped, added, updated = (0, 0, 0)
-
-        new = False
-        exists = False
-
-        if models.Manifest.objects.filter(filename=str(filepath)).exists():
-            i = models.Manifest.objects.get(filename=str(filepath))
-            exists = True
+    def import_manifest(self, filepath: pathlib.Path, filehash: str) -> None:
+        """Create or update a Manifest model for the given file."""
+        filepath_str = str(filepath)
+        if models.Manifest.objects.filter(filename=filepath_str).exists():
+            manifest = models.Manifest.objects.get(filename=filepath_str)
         else:
-            i = models.Manifest()
-            new = True
-
-        i.filename = str(filepath)
-        i.hash = filehash
-        i.type = filepath.stem
-        i.save()
-
-        if new:
-            added += 1
-        else:
-            updated += 1
+            manifest = models.Manifest()
+        manifest.filename = filepath_str
+        manifest.hash = filehash
+        manifest.type = filepath.stem
+        manifest.save()
 
     def import_models_from_json(
         self,

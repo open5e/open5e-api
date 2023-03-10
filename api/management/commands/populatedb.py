@@ -144,7 +144,7 @@ class Command(BaseCommand):
             if not filepath.exists():
                 continue
             md5_hash = _get_md5_hash(filepath)
-            importer.ManifestImporter(filepath, md5_hash)
+            importer.import_manifest(filepath, md5_hash)
             with open(filepath, encoding="utf-8") as json_file:
                 json_data = json.load(json_file)
             report = importer.import_models_from_json(import_spec, json_data)
