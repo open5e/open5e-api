@@ -1,7 +1,6 @@
 import json
 import uuid
 
-from jsonfield import JSONField
 from django.db import models
 
 

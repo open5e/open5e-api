@@ -2,7 +2,7 @@ import datetime
 
 from haystack import indexes
 
-from api.models import *
+from api import models
 
 
 class MonsterIndex(indexes.SearchIndex, indexes.Indexable):
@@ -25,7 +25,7 @@ class MonsterIndex(indexes.SearchIndex, indexes.Indexable):
   document_title = indexes.CharField(model_attr='document__title', indexed=False)
 
   def get_model(self):
-    return Monster
+    return models.Monster
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
@@ -47,7 +47,7 @@ class SpellIndex(indexes.SearchIndex, indexes.Indexable):
 
 
   def get_model(self):
-    return Spell
+    return models.Spell
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
@@ -65,7 +65,7 @@ class SectionIndex(indexes.SearchIndex, indexes.Indexable):
 
 
   def get_model(self):
-    return Section
+    return models.Section
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
@@ -83,7 +83,7 @@ class ConditionIndex(indexes.SearchIndex, indexes.Indexable):
 
 
   def get_model(self):
-    return Condition
+    return models.Condition
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
@@ -100,7 +100,7 @@ class CharClassIndex(indexes.SearchIndex, indexes.Indexable):
   slug = indexes.CharField(model_attr='slug', indexed=False)
 
   def get_model(self):
-    return CharClass
+    return models.CharClass
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
@@ -117,7 +117,7 @@ class RaceIndex(indexes.SearchIndex, indexes.Indexable):
   slug = indexes.CharField(model_attr='slug', indexed=False)
 
   def get_model(self):
-    return Race
+    return models.Race
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
@@ -137,7 +137,7 @@ class MagicItemIndex(indexes.SearchIndex, indexes.Indexable):
   requires_attunement = indexes.CharField(model_attr='requires_attunement', indexed=False)
 
   def get_model(self):
-    return MagicItem
+    return models.MagicItem
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""

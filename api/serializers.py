@@ -1,14 +1,13 @@
 from django.contrib.auth.models import User, Group
 from drf_haystack.serializers import HighlighterMixin, HaystackSerializer
-from drf_haystack.viewsets import HaystackViewSet
 from rest_framework import serializers
 
-from api.models import *
-from api.search_indexes import *
+from api import models
+from api import search_indexes
 
 class ManifestSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Manifest
+        model = models.Manifest
         fields = ('filename', 'type', 'hash', 'created_at')
 
 class DynamicFieldsModelSerializer(serializers.ModelSerializer):
@@ -33,7 +32,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 class DocumentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-            model = Document
+            model = models.Document
             fields = (
                 'title', 
                 'slug', 
@@ -67,7 +66,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
              return None
             
     class Meta:
-        model = Monster
+        model = models.Monster
         fields = (
             'slug',
             'name',
@@ -117,7 +116,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
 
 class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Spell
+        model = models.Spell
         fields = (
             'slug',
             'name',
@@ -144,7 +143,7 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
 
 class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Background
+        model = models.Background
         fields = (
             'name',
             'desc',
@@ -163,12 +162,12 @@ class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.Hyperlinked
 
 class PlaneSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Plane
+        model = models.Plane
         fields = ('slug','name','desc','document__slug', 'document__title')
 
 class SectionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Section
+        model = models.Section
         fields = (
             'slug',
             'name',
@@ -181,7 +180,7 @@ class SectionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
 
 class FeatSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Feat
+        model = models.Feat
         fields = (
             'slug',
             'name',
@@ -193,7 +192,7 @@ class FeatSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
 
 class ConditionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Condition
+        model = models.Condition
         fields = (
             'slug',
             'name',
@@ -204,7 +203,7 @@ class ConditionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedM
 
 class SubraceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Subrace
+        model = models.Subrace
         fields = ('name',
         'slug',
         'desc',
@@ -219,7 +218,7 @@ class SubraceSerializer(serializers.HyperlinkedModelSerializer):
 class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     subraces = SubraceSerializer(many=True,read_only=True)
     class Meta:
-        model = Race
+        model = models.Race
         fields = (
             'name',
             'slug',
@@ -242,7 +241,7 @@ class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
 
 class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Archetype
+        model = models.Archetype
         fields = (
             'name',
             'slug',
@@ -255,7 +254,7 @@ class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
 class CharClassSerializer(serializers.HyperlinkedModelSerializer):
     archetypes = ArchetypeSerializer(many=True,read_only=True)
     class Meta:
-        model = CharClass
+        model = models.CharClass
         fields = (
             'name',
             'slug',
@@ -280,7 +279,7 @@ class CharClassSerializer(serializers.HyperlinkedModelSerializer):
 
 class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = MagicItem
+        model = models.MagicItem
         fields = (
             'slug',
             'name',
@@ -294,7 +293,7 @@ class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedM
 
 class WeaponSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Weapon
+        model = models.Weapon
         fields = (
             'name',
             'slug',
@@ -310,7 +309,7 @@ class WeaponSerializer(serializers.HyperlinkedModelSerializer):
 
 class ArmorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Armor
+        model = models.Armor
         fields = (
             'name',
             'slug',
@@ -328,13 +327,13 @@ class ArmorSerializer(serializers.HyperlinkedModelSerializer):
 class AggregateSerializer(HighlighterMixin, HaystackSerializer):
 
     class Meta:
-        index_classes = [MonsterIndex, 
-            SpellIndex, 
-            SectionIndex, 
-            ConditionIndex, 
-            CharClassIndex, 
-            RaceIndex,
-            MagicItemIndex,]
+        index_classes = [search_indexes.MonsterIndex, 
+            search_indexes.SpellIndex, 
+            search_indexes.SectionIndex, 
+            search_indexes.ConditionIndex, 
+            search_indexes.CharClassIndex, 
+            search_indexes.RaceIndex,
+            search_indexes.MagicItemIndex,]
         fields = ['name',
             'text',
             'route',
