@@ -5,7 +5,7 @@ from pathlib import Path
 from django.core.management.base import BaseCommand, CommandError
 
 from api.management.commands.importer import Importer
-from api.models import Manifest
+from api import models
 
 
 def _get_md5_hash(filepath: Path) -> str:
@@ -55,7 +55,7 @@ class Command(BaseCommand):
         self.options = options
 
         if bool(options['flush']):
-            Manifest.objects.all().delete()
+            models.Manifest.objects.all().delete()
 
         for directory in options['directories']:
             self._populate_from_directory(Path(directory))
@@ -120,7 +120,7 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, mon_file, mon_hash)
             with open(mon_file, encoding="utf-8") as mon_data:
                 mon = json.load(mon_data)
-                self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(self.options, mon)))
+                self.stdout.write(self.style.SUCCESS(importer.import_models_from_json(models.Monster, mon, self.options)))
 
         pln_file = Path(directory / 'planes.json')
         if pln_file.exists():

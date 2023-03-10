@@ -1,11 +1,26 @@
+import enum
 import json
-from pathlib import Path
+import pathlib
+from typing import Dict, List, Optional
 
 from django.core.management.base import BaseCommand, CommandError
+from django.db import models as django_models
 from django.template.defaultfilters import slugify
 from fractions import Fraction
 
 from api import models
+
+# MONSTERS_IMG_DIR is the path in this repo for static monster images.
+MONSTERS_IMG_DIR = pathlib.Path('.', 'static', 'img', 'monsters').absolute()
+
+
+class ImportResult(enum.Enum):
+    """What happened from a single import. Was the entity added? Skipped?"""
+    UNSPECIFIED = 0
+    ADDED = 1
+    SKIPPED = 2
+    UPDATED = 3
+
 
 class Importer:
     
@@ -18,7 +33,7 @@ class Importer:
         db_spell = models.Spell.objects.get(slug=slugify(spell))
         models.MonsterSpell.objects.create(spell=db_spell, monster=db_monster)  # <----- Create m2m relation
 
-    def ManifestImporter(self, options, filepath, filehash):
+    def ManifestImporter(self, options, filepath: str, filehash: str) -> None:
         skipped, added, updated = (0, 0, 0)
 
         new = False
@@ -279,183 +294,213 @@ class Importer:
 
         return _completion_message('Magic Items', added, updated, skipped)
 
-    def MonsterImporter(self, options, json_object, skip_flush=False):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']) and not skip_flush: models.Monster.objects.all().delete()
-        img_dir='./static/img/monsters/'
+    def import_models_from_json(
+        self,
+        model_class: django_models.Model,
+        models_json: List[Dict],
+        options: Dict[str, bool]
+    ) -> str:
+        """Import a list of models from a source JSON file.
 
-        for o in json_object:
-            new = False
-            exists = False
-            # print(o['name]) # useful for debugging new lists
-            if models.Monster.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Monster.objects.get(slug=slugify(o['name']))
-                exists = True
+        Args:
+            model_class: The class of the model to turn the JSON into.
+            models_json: A json list of objects, where each object represents
+                a single model (such as a Monster, a Spell, etc.)
+            options: A dict specifying certain command-line options.
+
+        Returns:
+            A string specifying how many models were skipped, added, etc.
+        """
+        skipped, added, updated = (0, 0, 0)
+        if options['flush']:
+            model_class.objects.all().delete()
+        for model_json in models_json:
+            import_result = self._import_monster_from_json(model_json, options)
+            if import_result is ImportResult.SKIPPED:
+                skipped += 1
+            elif import_result is ImportResult.ADDED:
+                added += 1
+            elif import_result is ImportResult.UPDATED:
+                updated += 1
             else:
-                i = models.Monster(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            img_file = Path(img_dir + slugify(o['name']) + '.png')
-            if img_file.exists():
-                i.img_main = img_file
-            if 'size' in o:
-                i.size = o['size']
-            if 'type' in o:
-                i.type = o['type']
-            if 'subtype' in o:
-                i.subtype = o['subtype']
-            if 'group' in o:
-                i.group = o['group']
-            if 'alignment' in o:
-                i.alignment = o['alignment']
-            if 'armor_class' in o:
-                i.armor_class = o['armor_class']
-            if 'armor_desc' in o:
-                i.armor_desc = o['armor_desc']
-            if 'hit_points' in o:
-                i.hit_points = o['hit_points']
-            if 'hit_dice' in o:
-                i.hit_dice = o['hit_dice']
-            if 'speed' in o:
-                i.speed_json = json.dumps(o['speed_json'])
-            if 'strength' in o:
-                i.strength = o['strength']
-            if 'dexterity' in o:
-                i.dexterity = o['dexterity']
-            if 'constitution' in o:
-                i.constitution = o['constitution']
-            if 'intelligence' in o:
-                i.intelligence = o['intelligence']
-            if 'wisdom' in o:
-                i.wisdom = o['wisdom']
-            if 'charisma' in o:
-                i.charisma = o['charisma']
-            if 'strength_save' in o:
-                i.strength_save = o['strength_save']
-            if 'dexterity_save' in o:
-                i.dexterity_save = o['dexterity_save']
-            if 'constitution_save' in o:
-                i.constitution_save = o['constitution_save']
-            if 'intelligence_save' in o:
-                i.intelligence_save = o['intelligence_save']
-            if 'wisdom_save' in o:
-                i.wisdom_save = o['wisdom_save']
-            if 'charisma_save' in o:
-                i.charisma_save = o['charisma_save']
-            # SKILLS START HERE
-            skills = {}
-            if 'acrobatics' in o:
-                skills['acrobatics'] = o['acrobatics']
-            if 'animal handling' in o:
-                skills['animal_handling'] = o['animal handling']
-            if 'arcana' in o:
-                skills['arcana'] = o['arcana']
-            if 'athletics' in o:
-                skills['athletics'] = o['athletics']
-            if 'deception' in o:
-                skills['deception'] = o['deception']
-            if 'history' in o:
-                skills['history'] = o['history']
-            if 'insight' in o:
-                skills['insight'] = o['insight']
-            if 'intimidation' in o:
-                skills['intimidation'] = o['intimidation']
-            if 'investigation' in o:
-                skills['investigation'] = o['investigation']
-            if 'medicine' in o:
-                skills['medicine'] = o['medicine']
-            if 'nature' in o:
-                skills['nature'] = o['nature']
-            if 'perception' in o:
-                skills['perception'] = o['perception']
-            if 'performance' in o:
-                skills['performance'] = o['performance']
-            if 'perception' in o:
-                i.perception = o['perception']
-                skills['perception'] = o['perception']
-            if 'persuasion' in o:
-                skills['persuasion'] = o['persuasion']
-            if 'religion' in o:
-                skills['religion'] = o['religion']
-            if 'sleight of hand' in o:
-                skills['sleight_of_hand'] = o['sleight of hand']
-            if 'stealth' in o:
-                skills['stealth'] = o['stealth']
-            if 'survival' in o:
-                skills['survival'] = o['survival']
-            i.skills_json = json.dumps(skills)
-            # END OF SKILLS  
-            if 'damage_vulnerabilities' in o:
-                i.damage_vulnerabilities = o['damage_vulnerabilities']
-            if 'damage_resistances' in o:
-                i.damage_resistances = o['damage_resistances']
-            if 'damage_immunities' in o:
-                i.damage_immunities = o['damage_immunities']
-            if 'condition_immunities' in o:
-                i.condition_immunities = o['condition_immunities']
-            if 'senses' in o:
-                i.senses = o['senses']
-            if 'languages' in o:
-                i.languages = o['languages']
-            if 'challenge_rating' in o:
-                i.challenge_rating = o['challenge_rating']
-                i.cr = float(Fraction(i.challenge_rating))
-            if 'actions' in o:
-                for idx, z in enumerate(o['actions']):
-                    if 'attack_bonus' in z:
-                        if z['attack_bonus'] == 0 and 'damage_dice' not in z:
-                            del z['attack_bonus']
-                    o['actions'][idx] = z
-                i.actions_json = json.dumps(o['actions'])
+                raise ValueError(f'Unexpected ImportResult: {import_result}')
+        return _completion_message(
+            model_class.plural_str(), added, updated, skipped)
+
+    def _import_monster_from_json(self, monster_json, options) -> ImportResult:
+        new = False
+        exists = False
+        slug_name = slugify(['name'])
+        if models.Monster.objects.filter(slug=slugify(monster_json['name'])).exists():
+            i = models.Monster.objects.get(slug=slugify(monster_json['name']))
+            exists = True
+        else:
+            i = models.Monster(document = self._last_document_imported)
+            new = True
+        if 'name' in monster_json:
+            i.name = monster_json['name']
+            i.slug = slugify(monster_json['name'])
+        img_file = MONSTERS_IMG_DIR / f"{slugify(monster_json['name'])}.png"
+        if img_file.exists():
+            i.img_main = img_file
+        if 'size' in monster_json:
+            i.size = monster_json['size']
+        if 'type' in monster_json:
+            i.type = monster_json['type']
+        if 'subtype' in monster_json:
+            i.subtype = monster_json['subtype']
+        if 'group' in monster_json:
+            i.group = monster_json['group']
+        if 'alignment' in monster_json:
+            i.alignment = monster_json['alignment']
+        if 'armor_class' in monster_json:
+            i.armor_class = monster_json['armor_class']
+        if 'armor_desc' in monster_json:
+            i.armor_desc = monster_json['armor_desc']
+        if 'hit_points' in monster_json:
+            i.hit_points = monster_json['hit_points']
+        if 'hit_dice' in monster_json:
+            i.hit_dice = monster_json['hit_dice']
+        if 'speed' in monster_json:
+            i.speed_json = json.dumps(monster_json['speed_json'])
+        if 'strength' in monster_json:
+            i.strength = monster_json['strength']
+        if 'dexterity' in monster_json:
+            i.dexterity = monster_json['dexterity']
+        if 'constitution' in monster_json:
+            i.constitution = monster_json['constitution']
+        if 'intelligence' in monster_json:
+            i.intelligence = monster_json['intelligence']
+        if 'wisdom' in monster_json:
+            i.wisdom = monster_json['wisdom']
+        if 'charisma' in monster_json:
+            i.charisma = monster_json['charisma']
+        if 'strength_save' in monster_json:
+            i.strength_save = monster_json['strength_save']
+        if 'dexterity_save' in monster_json:
+            i.dexterity_save = monster_json['dexterity_save']
+        if 'constitution_save' in monster_json:
+            i.constitution_save = monster_json['constitution_save']
+        if 'intelligence_save' in monster_json:
+            i.intelligence_save = monster_json['intelligence_save']
+        if 'wisdom_save' in monster_json:
+            i.wisdom_save = monster_json['wisdom_save']
+        if 'charisma_save' in monster_json:
+            i.charisma_save = monster_json['charisma_save']
+        # SKILLS START HERE
+        skills = {}
+        if 'acrobatics' in monster_json:
+            skills['acrobatics'] = monster_json['acrobatics']
+        if 'animal handling' in monster_json:
+            skills['animal_handling'] = monster_json['animal handling']
+        if 'arcana' in monster_json:
+            skills['arcana'] = monster_json['arcana']
+        if 'athletics' in monster_json:
+            skills['athletics'] = monster_json['athletics']
+        if 'deception' in monster_json:
+            skills['deception'] = monster_json['deception']
+        if 'history' in monster_json:
+            skills['history'] = monster_json['history']
+        if 'insight' in monster_json:
+            skills['insight'] = monster_json['insight']
+        if 'intimidation' in monster_json:
+            skills['intimidation'] = monster_json['intimidation']
+        if 'investigation' in monster_json:
+            skills['investigation'] = monster_json['investigation']
+        if 'medicine' in monster_json:
+            skills['medicine'] = monster_json['medicine']
+        if 'nature' in monster_json:
+            skills['nature'] = monster_json['nature']
+        if 'perception' in monster_json:
+            skills['perception'] = monster_json['perception']
+        if 'performance' in monster_json:
+            skills['performance'] = monster_json['performance']
+        if 'perception' in monster_json:
+            i.perception = monster_json['perception']
+            skills['perception'] = monster_json['perception']
+        if 'persuasion' in monster_json:
+            skills['persuasion'] = monster_json['persuasion']
+        if 'religion' in monster_json:
+            skills['religion'] = monster_json['religion']
+        if 'sleight of hand' in monster_json:
+            skills['sleight_of_hand'] = monster_json['sleight of hand']
+        if 'stealth' in monster_json:
+            skills['stealth'] = monster_json['stealth']
+        if 'survival' in monster_json:
+            skills['survival'] = monster_json['survival']
+        i.skills_json = json.dumps(skills)
+        # END OF SKILLS  
+        if 'damage_vulnerabilities' in monster_json:
+            i.damage_vulnerabilities = monster_json['damage_vulnerabilities']
+        if 'damage_resistances' in monster_json:
+            i.damage_resistances = monster_json['damage_resistances']
+        if 'damage_immunities' in monster_json:
+            i.damage_immunities = monster_json['damage_immunities']
+        if 'condition_immunities' in monster_json:
+            i.condition_immunities = monster_json['condition_immunities']
+        if 'senses' in monster_json:
+            i.senses = monster_json['senses']
+        if 'languages' in monster_json:
+            i.languages = monster_json['languages']
+        if 'challenge_rating' in monster_json:
+            i.challenge_rating = monster_json['challenge_rating']
+            i.cr = float(Fraction(i.challenge_rating))
+        if 'actions' in monster_json:
+            for idx, z in enumerate(monster_json['actions']):
+                if 'attack_bonus' in z:
+                    if z['attack_bonus'] == 0 and 'damage_dice' not in z:
+                        del z['attack_bonus']
+                monster_json['actions'][idx] = z
+            i.actions_json = json.dumps(monster_json['actions'])
+        else:
+            i.actions_json = json.dumps("")
+        if 'special_abilities' in monster_json:
+            for idx, z in enumerate(monster_json['special_abilities']):
+                if 'attack_bonus' in z:
+                    if z['attack_bonus'] == 0 and 'damage_dice' not in z:
+                        del z['attack_bonus']
+                monster_json['special_abilities'][idx] = z
+            i.special_abilities_json = json.dumps(monster_json['special_abilities'])
+        else:
+            i.special_abilities_json = json.dumps("")
+        if 'reactions' in monster_json:
+            for idx, z in enumerate(monster_json['reactions']):
+                if 'attack_bonus' in z:
+                    if z['attack_bonus'] == 0 and 'damage_dice' not in z:
+                        del z['attack_bonus']
+                monster_json['reactions'][idx] = z
+            i.reactions_json = json.dumps(monster_json['reactions'])
+        else:
+            i.reactions_json = json.dumps("")
+        if 'legendary_desc' in monster_json:
+            i.legendary_desc = monster_json['legendary_desc']
+        # import spells array
+        if 'spells' in monster_json:
+            i.spells_json = json.dumps(monster_json['spells'])
+        else:
+            i.spells_json=json.dumps("")
+        # import legendary actions array
+        if 'legendary_actions' in monster_json:
+            for idx, z in enumerate(monster_json['legendary_actions']):
+                if 'attack_bonus' in z:
+                    if z['attack_bonus'] == 0 and 'damage_dice' not in z:
+                        del z['attack_bonus']
+                monster_json['legendary_actions'][idx] = z
+            i.legendary_actions_json = json.dumps(monster_json['legendary_actions'])
+        else:
+            i.legendary_actions_json = json.dumps("")
+        if bool(options['testrun']) or (exists and options['append']):
+           return ImportResult.SKIPPED
+        else:
+            i.save()
+            if 'spells' in monster_json:
+                for spell in monster_json['spells']:
+                    self.update_monster(i.slug, spell)
+            if new:
+                return ImportResult.ADDED
+>>>>>>> e0e772d (importer: Abstractify adding multiple entities)
             else:
-                i.actions_json = json.dumps("")
-            if 'special_abilities' in o:
-                for idx, z in enumerate(o['special_abilities']):
-                    if 'attack_bonus' in z:
-                        if z['attack_bonus'] == 0 and 'damage_dice' not in z:
-                            del z['attack_bonus']
-                    o['special_abilities'][idx] = z
-                i.special_abilities_json = json.dumps(o['special_abilities'])
-            else:
-                i.special_abilities_json = json.dumps("")
-            if 'reactions' in o:
-                for idx, z in enumerate(o['reactions']):
-                    if 'attack_bonus' in z:
-                        if z['attack_bonus'] == 0 and 'damage_dice' not in z:
-                            del z['attack_bonus']
-                    o['reactions'][idx] = z
-                i.reactions_json = json.dumps(o['reactions'])
-            else:
-                i.reactions_json = json.dumps("")
-            if 'legendary_desc' in o:
-                i.legendary_desc = o['legendary_desc']
-            # import spells array
-            if 'spells' in o:
-                i.spells_json = json.dumps(o['spells'])
-            else:
-                i.spells_json=json.dumps("")
-            # import legendary actions array
-            if 'legendary_actions' in o:
-                for idx, z in enumerate(o['legendary_actions']):
-                    if 'attack_bonus' in z:
-                        if z['attack_bonus'] == 0 and 'damage_dice' not in z:
-                            del z['attack_bonus']
-                    o['legendary_actions'][idx] = z
-                i.legendary_actions_json = json.dumps(o['legendary_actions'])
-            else:
-                i.legendary_actions_json = json.dumps("")
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if 'spells' in o:
-                    for spell in o['spells']:
-                        self.update_monster(i.slug, spell)
-                if new: added += 1
-                else: updated += 1
-        return _completion_message('Monsters', added, updated, skipped)
+                return ImportResult.UPDATED
 
     def PlaneImporter(self, options, json_object):
         skipped, added, updated = (0, 0, 0)

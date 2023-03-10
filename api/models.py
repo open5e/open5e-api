@@ -10,6 +10,11 @@ class Manifest(models.Model):
     hash = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Manifests"
+
 class Document(models.Model):
     slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1)
     title = models.TextField() # System Reference Document
@@ -22,6 +27,11 @@ class Document(models.Model):
     copyright = models.TextField( null = True ) # Copyright 2025 open5e
     created_at = models.DateTimeField(auto_now_add=True)
     license_url= models.TextField(default="http://open5e.com/legal")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Documents"
 
 class GameContent(models.Model):
     slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1, primary_key=True) # dispel-evil-and-good
@@ -37,6 +47,11 @@ class GameContent(models.Model):
         return self.document.license_url
     class Meta:
         abstract=True
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "GameContents"
 
 class Spell(GameContent):
     higher_level = models.TextField()
@@ -55,6 +70,11 @@ class Spell(GameContent):
     archetype = models.TextField()
     circles = models.TextField()
     route = models.TextField(default="spells/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Spells"
 
 class Monster(GameContent):
     size = models.TextField()
@@ -111,9 +131,19 @@ class Monster(GameContent):
     route = models.TextField(default="monsters/") 
     img_main = models.URLField(null=True)
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Monsters"
+
 class MonsterSpell(models.Model):
     spell = models.ForeignKey(Spell, on_delete=models.CASCADE)
     monster = models.ForeignKey(Monster, on_delete=models.CASCADE)
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "MonsterSpells"
 
 class CharClass(GameContent):
     hit_dice = models.TextField()
@@ -130,9 +160,19 @@ class CharClass(GameContent):
     subtypes_name = models.TextField()
     route = models.TextField(default="classes/")
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "CharClasses"
+
 class Archetype(GameContent):
     char_class = models.ForeignKey(CharClass, related_name='archetypes', on_delete=models.CASCADE, null=True)
     route = models.TextField(default="archetypes/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Archetypes"
 
 class Race(GameContent):
     asi_desc = models.TextField()
@@ -151,6 +191,11 @@ class Race(GameContent):
     traits = models.TextField()
     route = models.TextField(default="races/")
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Races"
+
 class Subrace(GameContent):
     asi_desc = models.TextField()
     asi_json = models.TextField()
@@ -160,22 +205,47 @@ class Subrace(GameContent):
     parent_race = models.ForeignKey(Race, related_name='subraces', on_delete=models.CASCADE, null=True)
     route = models.TextField(default="subraces/")
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Subraces"
+
 class Plane(GameContent):
     pass
     route = models.TextField(default="planes/") 
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Planes"
+
 class Section(GameContent):
     parent = models.TextField(null=True)
     route = models.TextField(default="sections/") 
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Sections"
     
 class Feat(GameContent):
         
     prerequisite = models.TextField()
     route = models.TextField(default="conditions/") 
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Feats"
+
 class Condition(GameContent):
     pass
     route = models.TextField(default="conditions/") 
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Conditions"
 
 class Background(GameContent):
     skill_proficiencies = models.TextField(null=True)
@@ -187,11 +257,21 @@ class Background(GameContent):
     suggested_characteristics = models.TextField()
     route = models.TextField(default="backgrounds/") 
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Backgrounds"
+
 class MagicItem(GameContent):
     type = models.TextField()
     rarity = models.TextField()
     requires_attunement = models.TextField()
     route = models.TextField(default="magicitems/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "MagicItems"
 
 class Weapon(GameContent):
     category = models.TextField()
@@ -204,6 +284,11 @@ class Weapon(GameContent):
         if self.properties_json:
             return json.loads(self.properties_json)
     route = models.TextField(default="weapons/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Weapons"
 
 class Armor(GameContent):
     category = models.TextField()
@@ -228,3 +313,8 @@ class Armor(GameContent):
     strength_requirement = models.IntegerField(null=True)
 
     route = models.TextField(default="armor/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Armors"
