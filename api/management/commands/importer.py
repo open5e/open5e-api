@@ -28,6 +28,9 @@ class ImportOptions(NamedTuple):
 
 class ImportSpec(NamedTuple):
     """Specifications for how to import a particular type of model."""
+    # filename is the expended basename of the JSON file containing data.
+    # This should probably be None for sub-specs, such as Archetype.
+    filename: Optional[pathlib.Path]
     # model_class is the type of model to create.
     model_class: django_models.Model
     # import_func is the function that creates a model based on JSON.
@@ -85,79 +88,6 @@ class Importer:
         if new: added += 1
         else: updated += 1
 
-    def DocumentImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Document.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            # Setting up the object.
-            if models.Document.objects.filter(slug=slugify(o['slug'])).exists():
-                i = models.Document.objects.get(slug=slugify(o['slug']))
-                exists = True
-            else:
-                i = models.Document()
-                new = True
-            # Adding the data to the created object.
-            i.title = o['title']
-            i.slug = slugify(o['slug'])
-            i.desc = o['desc']
-            i.author = o['author']
-            i.license = o['license']
-            i.version = o['version']
-            i.url = o['url']
-            i.copyright = o['copyright']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
-        self._last_document_imported = i
-        return _completion_message('Document', added, updated, skipped)
-
-    def BackgroundImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Background.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Background.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Background.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Background(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'desc' in o:
-                i.desc = o['desc']
-            if 'skill-proficiencies' in o:
-                i.skill_proficiencies = o['skill-proficiencies']
-            if 'tool-proficiencies' in o:
-                i.tool_proficiencies = o['tool-proficiencies']
-            if 'languages' in o:
-                i.languages = o['languages']
-            if 'equipment' in o:
-                i.equipment = o['equipment']
-            if 'feature-name' in o:
-                i.feature = o['feature-name']
-            if 'feature-desc' in o:
-                i.feature_desc = o['feature-desc']
-            if 'suggested-characteristics' in o:
-                i.suggested_characteristics = o['suggested-characteristics']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Backgrounds', added, updated, skipped)
-
     def import_models_from_json(
         self,
         import_spec: ImportSpec,
@@ -182,7 +112,65 @@ class Importer:
         return _completion_message(
             import_spec.model_class.plural_str(), added, updated, skipped)
 
-    def import_class(self, class_json, import_spec):
+    def import_document(self, document_json, import_spec) -> ImportResult:
+        new = False
+        exists = False
+        # Setting up the object.
+        if models.Document.objects.filter(slug=slugify(document_json['slug'])).exists():
+            i = models.Document.objects.get(slug=slugify(document_json['slug']))
+            exists = True
+        else:
+            i = models.Document()
+            new = True
+        # Adding the data to the created object.
+        i.title = document_json['title']
+        i.slug = slugify(document_json['slug'])
+        i.desc = document_json['desc']
+        i.author = document_json['author']
+        i.license = document_json['license']
+        i.version = document_json['version']
+        i.url = document_json['url']
+        i.copyright = document_json['copyright']
+        self._last_document_imported = i
+        result = _determine_import_result(import_spec.options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
+
+    def import_background(self, background_json, import_spec) -> ImportResult:
+        new = False
+        exists = False
+        if models.Background.objects.filter(slug=slugify(background_json['name'])).exists():
+            i = models.Background.objects.get(slug=slugify(background_json['name']))
+            exists = True
+        else:
+            i = models.Background(document = self._last_document_imported)
+            new = True
+        if 'name' in background_json:
+            i.name = background_json['name']
+            i.slug = slugify(background_json['name'])
+        if 'desc' in background_json:
+            i.desc = background_json['desc']
+        if 'skill-proficiencies' in background_json:
+            i.skill_proficiencies = background_json['skill-proficiencies']
+        if 'tool-proficiencies' in background_json:
+            i.tool_proficiencies = background_json['tool-proficiencies']
+        if 'languages' in background_json:
+            i.languages = background_json['languages']
+        if 'equipment' in background_json:
+            i.equipment = background_json['equipment']
+        if 'feature-name' in background_json:
+            i.feature = background_json['feature-name']
+        if 'feature-desc' in background_json:
+            i.feature_desc = background_json['feature-desc']
+        if 'suggested-characteristics' in background_json:
+            i.suggested_characteristics = background_json['suggested-characteristics']
+        result = _determine_import_result(import_spec.options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
+
+    def import_class(self, class_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.CharClass.objects.filter(slug=slugify(class_json['name'])).exists():
@@ -229,7 +217,7 @@ class Importer:
         self.import_models_from_json(import_spec.sub_spec, class_json['subtypes'])
         return result
 
-    def import_archetype(self, archetype_json, import_spec):
+    def import_archetype(self, archetype_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Archetype.objects.filter(slug=slugify(archetype_json['name'])).exists():
@@ -248,7 +236,7 @@ class Importer:
             i.save()
         return result
 
-    def import_condition(self, condition_json, import_spec):
+    def import_condition(self, condition_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Condition.objects.filter(slug=slugify(condition_json['name'])).exists():
@@ -502,7 +490,7 @@ class Importer:
             i.save()
         return result
 
-    def import_race(self, race_json, import_spec):
+    def import_race(self, race_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Race.objects.filter(slug=slugify(race_json['name'])).exists():
@@ -545,7 +533,7 @@ class Importer:
         self.import_models_from_json(import_spec.sub_spec, race_json.get('subtypes', []))
         return result
         
-    def import_subrace(self, subrace_json, import_spec):
+    def import_subrace(self, subrace_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Subrace.objects.filter(slug=slugify(subrace_json['name'])).exists():
