@@ -153,9 +153,8 @@ class Importer:
         else:
             i = models.Background(document=self._last_document_imported)
             new = True
-        if "name" in background_json:
-            i.name = background_json["name"]
-            i.slug = slug
+        i.name = background_json["name"]
+        i.slug = slug
         if "desc" in background_json:
             i.desc = background_json["desc"]
         if "skill-proficiencies" in background_json:
@@ -187,9 +186,8 @@ class Importer:
         else:
             i = models.CharClass(document=self._last_document_imported)
             new = True
-        if "name" in class_json:
-            i.name = class_json["name"]
-            i.slug = slug
+        i.name = class_json["name"]
+        i.slug = slug
         if "subtypes-name" in class_json:
             i.subtypes_name = class_json["subtypes-name"]
         if "hit-dice" in class_json["features"]:
@@ -238,9 +236,8 @@ class Importer:
                 document=self._last_document_imported,
                 char_class=archetype_json["char_class"],
             )
-        if "name" in archetype_json:
-            i.name = archetype_json["name"]
-            i.slug = slug
+        i.name = archetype_json["name"]
+        i.slug = slug
         if "desc" in archetype_json:
             i.desc = archetype_json["desc"]
         result = _determine_import_result(import_spec.options, new, exists)
@@ -258,9 +255,8 @@ class Importer:
         else:
             i = models.Condition(document=self._last_document_imported)
             new = True
-        if "name" in condition_json:
-            i.name = condition_json["name"]
-            i.slug = slug
+        i.name = condition_json["name"]
+        i.slug = slug
         if "desc" in condition_json:
             i.desc = condition_json["desc"]
         result = _determine_import_result(import_spec.options, new, exists)
@@ -278,9 +274,8 @@ class Importer:
         else:
             i = models.Feat(document=self._last_document_imported)
             new = True
-        if "name" in feat_json:
-            i.name = feat_json["name"]
-            i.slug = slug
+        i.name = feat_json["name"]
+        i.slug = slug
         if "desc" in feat_json:
             i.desc = feat_json["desc"]
         if "prerequisite" in feat_json:
@@ -300,9 +295,8 @@ class Importer:
         else:
             i = models.MagicItem(document=self._last_document_imported)
             new = True
-        if "name" in magic_item_json:
-            i.name = magic_item_json["name"]
-            i.slug = slug
+        i.name = magic_item_json["name"]
+        i.slug = slug
         if "desc" in magic_item_json:
             i.desc = magic_item_json["desc"]
         if "type" in magic_item_json:
@@ -326,9 +320,8 @@ class Importer:
         else:
             i = models.Monster(document=self._last_document_imported)
             new = True
-        if "name" in monster_json:
-            i.name = monster_json["name"]
-            i.slug = slug
+        i.name = monster_json["name"]
+        i.slug = slug
         img_file = MONSTERS_IMG_DIR / f"{slug}.png"
         if img_file.exists():
             i.img_main = img_file
@@ -496,9 +489,8 @@ class Importer:
         else:
             i = models.Plane(document=self._last_document_imported)
             new = True
-        if "name" in plane_json:
-            i.name = plane_json["name"]
-            i.slug = slug
+        i.name = plane_json["name"]
+        i.slug = slug
         if "desc" in plane_json:
             i.desc = plane_json["desc"]
         result = _determine_import_result(import_spec.options, new, exists)
@@ -516,9 +508,8 @@ class Importer:
         else:
             i = models.Race(document=self._last_document_imported)
             new = True
-        if "name" in race_json:
-            i.name = race_json["name"]
-            i.slug = slug
+        i.name = race_json["name"]
+        i.slug = slug
         if "desc" in race_json:
             i.desc = race_json["desc"]
         if "asi-desc" in race_json:
@@ -570,17 +561,16 @@ class Importer:
                 parent_race=subrace_json["parent_race"],
             )
             new = True
-            if "name" in subrace_json:
-                i.name = subrace_json["name"]
-                i.slug = slug
-            if "desc" in subrace_json:
-                i.desc = subrace_json["desc"]
-            if "asi-desc" in subrace_json:
-                i.asi_desc = subrace_json["asi-desc"]
-            if "asi" in subrace_json:
-                i.asi_json = json.dumps(subrace_json["asi"])
-            if "traits" in subrace_json:
-                i.traits = subrace_json["traits"]
+        i.name = subrace_json["name"]
+        i.slug = slug
+        if "desc" in subrace_json:
+            i.desc = subrace_json["desc"]
+        if "asi-desc" in subrace_json:
+            i.asi_desc = subrace_json["asi-desc"]
+        if "asi" in subrace_json:
+            i.asi_json = json.dumps(subrace_json["asi"])
+        if "traits" in subrace_json:
+            i.traits = subrace_json["traits"]
         result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
@@ -596,9 +586,8 @@ class Importer:
         else:
             i = models.Section(document=self._last_document_imported)
             new = True
-        if "name" in section_json:
-            i.name = section_json["name"]
-            i.slug = slug
+        i.name = section_json["name"]
+        i.slug = slug
         if "desc" in section_json:
             i.desc = section_json["desc"]
         if "parent" in section_json:
@@ -618,9 +607,8 @@ class Importer:
         else:
             i = models.Spell(document=self._last_document_imported)
             new = True
-        if "name" in spell_json:
-            i.name = spell_json["name"]
-            i.slug = slug
+        i.name = spell_json["name"]
+        i.slug = slug
         if "desc" in spell_json:
             i.desc = spell_json["desc"]
         if "higher_level" in spell_json:
@@ -668,9 +656,8 @@ class Importer:
         else:
             i = models.Weapon(document=self._last_document_imported)
             new = True
-        if "name" in weapon_json:
-            i.name = weapon_json["name"]
-            i.slug = slug
+        i.name = weapon_json["name"]
+        i.slug = slug
         if "category" in weapon_json:
             i.category = weapon_json["category"]
         if "cost" in weapon_json:
@@ -698,9 +685,8 @@ class Importer:
         else:
             i = models.Armor(document=self._last_document_imported)
             new = True
-        if "name" in armor_json:
-            i.name = armor_json["name"]
-            i.slug = slug
+        i.name = armor_json["name"]
+        i.slug = slug
         if "category" in armor_json:
             i.category = armor_json["category"]
         if "cost" in armor_json:
