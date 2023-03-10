@@ -122,6 +122,7 @@ class Command(BaseCommand):
                 "document.json",
                 models.Document,
                 importer.import_document,
+                create_manifest=False
             ),
             ImportSpec(
                 "backgrounds.json",
@@ -163,8 +164,9 @@ class Command(BaseCommand):
             filepath = directory / import_spec.filename
             if not filepath.exists():
                 continue
-            md5_hash = _get_md5_hash(filepath)
-            importer.import_manifest(filepath, md5_hash)
+            if import_spec.create_manifest:
+                md5_hash = _get_md5_hash(filepath)
+                importer.import_manifest(filepath, md5_hash)
             with open(filepath, encoding="utf-8") as json_file:
                 json_data = json.load(json_file)
             report = importer.import_models_from_json(import_spec, json_data)

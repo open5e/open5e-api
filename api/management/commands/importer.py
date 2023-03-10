@@ -55,6 +55,8 @@ class ImportSpec(NamedTuple):
     # The higher spec's import_func should explicitly include a call to the
     # lower spec's import_func.
     sub_spec: Optional["ImportSpec"] = None
+    # Whether to create a Manifest for the JSON file.
+    create_manifest: bool = True
 
 
 class ImportResult(enum.Enum):
