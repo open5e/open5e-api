@@ -90,75 +90,53 @@ class Command(BaseCommand):
     def _populate_from_directory(self, directory: Path) -> None:
         self.stdout.write(self.style.SUCCESS(f"Reading in files from {directory}"))
 
-        importer = Importer()
         import_options = ImportOptions(
             flush=self.options["flush"],
             update=self.options["update"],
             testrun=self.options["testrun"],
             append=self.options["append"],
         )
+        importer = Importer(import_options)
         import_specs = [
             ImportSpec(
                 "document.json",
                 models.Document,
                 importer.import_document,
-                import_options,
             ),
             ImportSpec(
                 "backgrounds.json",
                 models.Background,
                 importer.import_background,
-                import_options,
             ),
             ImportSpec(
                 "classes.json",
                 models.CharClass,
                 importer.import_class,
-                import_options,
-                sub_spec=ImportSpec(
-                    None, models.Archetype, importer.import_archetype, import_options
-                ),
+                sub_spec=ImportSpec(None, models.Archetype, importer.import_archetype),
             ),
             ImportSpec(
                 "conditions.json",
                 models.Condition,
                 importer.import_condition,
-                import_options,
             ),
-            ImportSpec("feats.json", models.Feat, importer.import_feat, import_options),
+            ImportSpec("feats.json", models.Feat, importer.import_feat),
             ImportSpec(
                 "magicitems.json",
                 models.MagicItem,
                 importer.import_magic_item,
-                import_options,
             ),
-            ImportSpec(
-                "spells.json", models.Spell, importer.import_spell, import_options
-            ),
-            ImportSpec(
-                "monsters.json", models.Monster, importer.import_monster, import_options
-            ),
-            ImportSpec(
-                "planes.json", models.Plane, importer.import_plane, import_options
-            ),
-            ImportSpec(
-                "sections.json", models.Section, importer.import_section, import_options
-            ),
+            ImportSpec("spells.json", models.Spell, importer.import_spell),
+            ImportSpec("monsters.json", models.Monster, importer.import_monster),
+            ImportSpec("planes.json", models.Plane, importer.import_plane),
+            ImportSpec("sections.json", models.Section, importer.import_section),
             ImportSpec(
                 "races.json",
                 models.Race,
                 importer.import_race,
-                import_options,
-                sub_spec=ImportSpec(
-                    None, models.Subrace, importer.import_subrace, import_options
-                ),
+                sub_spec=ImportSpec(None, models.Subrace, importer.import_subrace),
             ),
-            ImportSpec(
-                "weapons.json", models.Weapon, importer.import_weapon, import_options
-            ),
-            ImportSpec(
-                "armor.json", models.Armor, importer.import_armor, import_options
-            ),
+            ImportSpec("weapons.json", models.Weapon, importer.import_weapon),
+            ImportSpec("armor.json", models.Armor, importer.import_armor),
         ]
 
         for import_spec in import_specs:
@@ -166,7 +144,7 @@ class Command(BaseCommand):
             if not filepath.exists():
                 continue
             md5_hash = _get_md5_hash(filepath)
-            importer.ManifestImporter(self.options, filepath, md5_hash)
+            importer.ManifestImporter(filepath, md5_hash)
             with open(filepath, encoding="utf-8") as json_file:
                 json_data = json.load(json_file)
             report = importer.import_models_from_json(import_spec, json_data)

@@ -40,8 +40,6 @@ class ImportSpec(NamedTuple):
     # second argument, and return an ImportResult specifying whether a model
     # was skipped, added, or updated.
     import_func: Callable[[Dict, Dict], "ImportResult"]
-    # import_options contains standard options to toggle during import.
-    options: ImportOptions
     # Some imports have a hierarchical nature, such as Race>Subrace.
     # In those cases, importing the higher model should include a spec to
     # import the lower model.
@@ -60,8 +58,9 @@ class ImportResult(enum.Enum):
 
 
 class Importer:
-    def __init__(self):
+    def __init__(self, options: ImportOptions):
         self._last_document_imported: Optional[models.Document] = None
+        self.options = options
 
     def create_monster_spell_relationship(self, monster_slug, spell_slug):
         """Create a many-to-many relationship between Monsters and Spells."""
@@ -69,7 +68,7 @@ class Importer:
         db_spell = models.Spell.objects.get(slug=spell_slug)
         models.MonsterSpell.objects.create(spell=db_spell, monster=db_monster)
 
-    def ManifestImporter(self, options, filepath: str, filehash: str) -> None:
+    def ManifestImporter(self, filepath: str, filehash: str) -> None:
         skipped, added, updated = (0, 0, 0)
 
         new = False
@@ -99,7 +98,7 @@ class Importer:
     ) -> str:
         """Import a list of models from a source JSON file."""
         skipped, added, updated = (0, 0, 0)
-        if import_spec.options.flush:
+        if self.options.flush:
             import_spec.model_class.objects.all().delete()
             if import_spec.sub_spec:
                 import_spec.sub_spec.model_class.objects.all().delete()
@@ -138,7 +137,7 @@ class Importer:
         i.url = document_json["url"]
         i.copyright = document_json["copyright"]
         self._last_document_imported = i
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -171,7 +170,7 @@ class Importer:
             i.feature_desc = background_json["feature-desc"]
         if "suggested-characteristics" in background_json:
             i.suggested_characteristics = background_json["suggested-characteristics"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -215,7 +214,7 @@ class Importer:
         if "desc" in class_json["features"]:
             i.desc = class_json["features"]["desc"]
         # Must save model before Archetypes can point to it
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         for subclass in class_json.get("subtypes", []):
@@ -240,7 +239,7 @@ class Importer:
         i.slug = slug
         if "desc" in archetype_json:
             i.desc = archetype_json["desc"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -259,7 +258,7 @@ class Importer:
         i.slug = slug
         if "desc" in condition_json:
             i.desc = condition_json["desc"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -280,7 +279,7 @@ class Importer:
             i.desc = feat_json["desc"]
         if "prerequisite" in feat_json:
             i.prerequisite = feat_json["prerequisite"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -305,7 +304,7 @@ class Importer:
             i.rarity = magic_item_json["rarity"]
         if "requires-attunement" in magic_item_json:
             i.requires_attunement = magic_item_json["requires-attunement"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -471,7 +470,7 @@ class Importer:
             i.legendary_actions_json = json.dumps(monster_json["legendary_actions"])
         else:
             i.legendary_actions_json = json.dumps("")
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
             # Spells should have already been defined in import_spell().
@@ -493,7 +492,7 @@ class Importer:
         i.slug = slug
         if "desc" in plane_json:
             i.desc = plane_json["desc"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -537,7 +536,7 @@ class Importer:
         if "traits" in race_json:
             i.traits = race_json["traits"]
         # Race must be saved before sub-races can point to them
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         for subtype in race_json.get("subtypes", []):
@@ -571,7 +570,7 @@ class Importer:
             i.asi_json = json.dumps(subrace_json["asi"])
         if "traits" in subrace_json:
             i.traits = subrace_json["traits"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -592,7 +591,7 @@ class Importer:
             i.desc = section_json["desc"]
         if "parent" in section_json:
             i.parent = section_json["parent"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -641,7 +640,7 @@ class Importer:
             i.archetype = spell_json["archetype"]
         if "circles" in spell_json:
             i.circles = spell_json["circles"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -670,7 +669,7 @@ class Importer:
             i.weight = weapon_json["weight"]
         if "properties" in weapon_json:
             i.properties_json = json.dumps(weapon_json["properties"])
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -707,10 +706,19 @@ class Importer:
             i.plus_max = armor_json["plus_max"]
         if "strength_requirement" in armor_json:
             i.strength_requirement = armor_json["strength_requirement"]
-        result = _determine_import_result(import_spec.options, new, exists)
+        result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
+
+    def _determine_import_result(self, new: bool, exists: bool) -> ImportResult:
+        """Check whether an import resulted in a skip, an add, or an update."""
+        if self.options.testrun or (exists and self.options.append):
+            return ImportResult.SKIPPED
+        elif new:
+            return ImportResult.ADDED
+        else:
+            return ImportResult.UPDATED
 
 
 def _completion_message(
@@ -728,17 +736,3 @@ def _completion_message(
     message = message.ljust(60)
     message += f"Skipped:{skipped}"
     return message
-
-
-def _determine_import_result(
-    options: Dict[str, bool],
-    new: bool,
-    exists: bool,
-) -> ImportResult:
-    """Check whether an import resulted in a skip, an add, or an update."""
-    if options.testrun or (exists and options.append):
-        return ImportResult.SKIPPED
-    elif new:
-        return ImportResult.ADDED
-    else:
-        return ImportResult.UPDATED
