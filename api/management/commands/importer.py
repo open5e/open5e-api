@@ -10,7 +10,7 @@ from api import models
 class Importer:
     
     def __init__(self):
-        self.d  = []
+      self._last_document_imported: Optional[models.Document] = None
 
     def update_monster(self, monster, spell):
         # print(spell) # useful for debugging new lists
@@ -68,7 +68,7 @@ class Importer:
                 i.save()
                 if new: added += 1
                 else: updated += 1
-        self.d = i
+        self._last_document_imported = i
         return _completion_message('Document', added, updated, skipped)
 
     def BackgroundImporter(self, options, json_object):
@@ -82,7 +82,7 @@ class Importer:
                 i = models.Background.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Background(document = self.d)
+                i = models.Background(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -124,7 +124,7 @@ class Importer:
                 i = models.CharClass.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.CharClass(document = self.d)
+                i = models.CharClass(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -176,7 +176,7 @@ class Importer:
                 i = models.Archetype.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Archetype(document = self.d, char_class=char_class)
+                i = models.Archetype(document = self._last_document_imported, char_class=char_class)
                 if 'name' in o:
                     i.name = o['name']
                     i.slug = slugify(o['name'])
@@ -201,7 +201,7 @@ class Importer:
                 i = models.Condition.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Condition(document = self.d)
+                i = models.Condition(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -228,7 +228,7 @@ class Importer:
                 i = models.Feat.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Feat(document = self.d)
+                i = models.Feat(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -257,7 +257,7 @@ class Importer:
                 i = models.MagicItem.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.MagicItem(document = self.d)
+                i = models.MagicItem(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -292,7 +292,7 @@ class Importer:
                 i = models.Monster.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Monster(document = self.d)
+                i = models.Monster(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -468,7 +468,7 @@ class Importer:
                 i = models.Plane.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Plane(document = self.d)
+                i = models.Plane(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -496,7 +496,7 @@ class Importer:
                 i = models.Race.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Race(document = self.d)
+                i = models.Race(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -545,7 +545,7 @@ class Importer:
                 i = models.Subrace.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Subrace(document = self.d, parent_race=parent_race)
+                i = models.Subrace(document = self._last_document_imported, parent_race=parent_race)
                 new = True
                 if 'name' in o:
                     i.name = o['name']
@@ -578,7 +578,7 @@ class Importer:
                 i = models.Section.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Section(document = self.d)
+                i = models.Section(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -607,7 +607,7 @@ class Importer:
                 i = models.Spell.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Spell(document = self.d)
+                i = models.Spell(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -664,7 +664,7 @@ class Importer:
                 i = models.Weapon.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Weapon(document = self.d)
+                i = models.Weapon(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
@@ -701,7 +701,7 @@ class Importer:
                 i = models.Armor.objects.get(slug=slugify(o['name']))
                 exists = True
             else:
-                i = models.Armor(document = self.d)
+                i = models.Armor(document = self._last_document_imported)
                 new = True
             if 'name' in o:
                 i.name = o['name']
