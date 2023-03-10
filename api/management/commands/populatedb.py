@@ -18,12 +18,12 @@ def get_hash(filepath):
 
 class Command(BaseCommand):
 
-    help = 'Loads all properly formatted data into the database from the given directory.'
+    help = 'Loads all properly formatted data into the database from the given directories.'
     document = ''
 
     def add_arguments(self, parser):
         #Positional Arguments.
-        parser.add_argument('directory', nargs='+', type=str, help='Directory that contains %model_name%.json files to be loaded.')
+        parser.add_argument('directories', nargs='+', type=str, help='Directories that contains %model_name%.json files to be loaded.')
 
         # Named (optional) arguments
 
@@ -36,7 +36,7 @@ class Command(BaseCommand):
         parser.add_argument('--testrun', action='store_true', help="Do not commit changes.")
 
     def handle(self, *args, **options):
-        dir = options['directory']
+        directories = options['directories']
         if options['flush']:
             self.stdout.write(self.style.WARNING('Flushing existing database.'))
         elif options['update'] and not options['append']:
@@ -47,107 +47,112 @@ class Command(BaseCommand):
             self.stdout.write(self.style.WARNING('Inserting new items into the database. Skipping conflicts (if any).'))
         else:
             raise ValueError('Invalid options combination.')
-        self.stdout.write(self.style.SUCCESS('Reading in files from {0}'.format(dir)))
+        self.stdout.write(self.style.SUCCESS(f'Reading in files from {0}'.format(options['directories'])))
 
         self.options = options
 
-        if bool(options['flush']): Manifest.objects.all().delete()
-        for dir in options['directory']:
-            importer = Importer()
-            with open(dir+'document.json', encoding="utf-8") as doc_data:
-                docs = json.load(doc_data)
-                self.stdout.write(self.style.SUCCESS(importer.DocumentImporter(options, docs)))
-            
-            bgs_file = Path(dir+'backgrounds.json')
-            if bgs_file.exists():
-                bgs_hash = get_hash(bgs_file)
-                importer.ManifestImporter(options, bgs_file, bgs_hash)
-                with open(bgs_file, encoding="utf-8") as bg_data:
-                    bgs = json.load(bg_data)
-                    self.stdout.write(self.style.SUCCESS(importer.BackgroundImporter(options, bgs)))
+        if bool(options['flush']):
+            Manifest.objects.all().delete()
 
-            cls_file = Path(dir+'classes.json')
-            if cls_file.exists():
-                cls_hash = get_hash(cls_file)
-                importer.ManifestImporter(options, cls_file, cls_hash)
-                with open(cls_file, encoding="utf-8") as cls_data:
-                    cls = json.load(cls_data)
-                    self.stdout.write(self.style.SUCCESS(importer.ClassImporter(options, cls)))
+        for directory in options['directories']:
+            self._populate_from_directory(Path(directory))
 
-            con_file = Path(dir+'conditions.json')
-            if con_file.exists():
-                con_hash = get_hash(con_file)
-                importer.ManifestImporter(options, con_file, con_hash)
-                with open(con_file, encoding="utf-8") as con_data:
-                    con = json.load(con_data)
-                    self.stdout.write(self.style.SUCCESS(importer.ConditionImporter(options, con)))
+    def _populate_from_directory(self, directory: Path) -> None:
+        importer = Importer()
+        with open(directory / 'document.json', encoding="utf-8") as doc_data:
+            docs = json.load(doc_data)
+            self.stdout.write(self.style.SUCCESS(importer.DocumentImporter(self.options, docs)))
+        
+        bgs_file = Path(directory / 'backgrounds.json')
+        if bgs_file.exists():
+            bgs_hash = get_hash(bgs_file)
+            importer.ManifestImporter(self.options, bgs_file, bgs_hash)
+            with open(bgs_file, encoding="utf-8") as bg_data:
+                bgs = json.load(bg_data)
+                self.stdout.write(self.style.SUCCESS(importer.BackgroundImporter(self.options, bgs)))
 
-            fea_file = Path(dir+'feats.json')
-            if fea_file.exists():
-                fea_hash = get_hash(fea_file)
-                importer.ManifestImporter(options, fea_file, fea_hash)
-                with open(fea_file, encoding="utf-8") as fea_data:
-                    fea = json.load(fea_data)
-                    self.stdout.write(self.style.SUCCESS(importer.FeatImporter(options, fea)))
+        cls_file = Path(directory / 'classes.json')
+        if cls_file.exists():
+            cls_hash = get_hash(cls_file)
+            importer.ManifestImporter(self.options, cls_file, cls_hash)
+            with open(cls_file, encoding="utf-8") as cls_data:
+                cls = json.load(cls_data)
+                self.stdout.write(self.style.SUCCESS(importer.ClassImporter(self.options, cls)))
 
-            mag_file = Path(dir+'magicitems.json')
-            if mag_file.exists():
-                mag_hash = get_hash(mag_file)
-                importer.ManifestImporter(options, mag_file, mag_hash)
-                with open(mag_file, encoding="utf-8") as mag_data:
-                    mag = json.load(mag_data)
-                    self.stdout.write(self.style.SUCCESS(importer.MagicItemImporter(options, mag)))
+        con_file = Path(directory / 'conditions.json')
+        if con_file.exists():
+            con_hash = get_hash(con_file)
+            importer.ManifestImporter(self.options, con_file, con_hash)
+            with open(con_file, encoding="utf-8") as con_data:
+                con = json.load(con_data)
+                self.stdout.write(self.style.SUCCESS(importer.ConditionImporter(self.options, con)))
 
-            spl_file = Path(dir+'spells.json')
-            if spl_file.exists():
-                spl_hash = get_hash(spl_file)
-                importer.ManifestImporter(options, spl_file, spl_hash)
-                with open(spl_file, encoding="utf-8") as spl_data:
-                    spl = json.load(spl_data)
-                    self.stdout.write(self.style.SUCCESS(importer.SpellImporter(options, spl)))
+        fea_file = Path(directory / 'feats.json')
+        if fea_file.exists():
+            fea_hash = get_hash(fea_file)
+            importer.ManifestImporter(self.options, fea_file, fea_hash)
+            with open(fea_file, encoding="utf-8") as fea_data:
+                fea = json.load(fea_data)
+                self.stdout.write(self.style.SUCCESS(importer.FeatImporter(self.options, fea)))
 
-            mon_file = Path(dir+'monsters.json')
-            if mon_file.exists():
-                mon_hash = get_hash(mon_file)
-                importer.ManifestImporter(options, mon_file, mon_hash)
-                with open(mon_file, encoding="utf-8") as mon_data:
-                    mon = json.load(mon_data)
-                    self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(options, mon)))
+        mag_file = Path(directory / 'magicitems.json')
+        if mag_file.exists():
+            mag_hash = get_hash(mag_file)
+            importer.ManifestImporter(self.options, mag_file, mag_hash)
+            with open(mag_file, encoding="utf-8") as mag_data:
+                mag = json.load(mag_data)
+                self.stdout.write(self.style.SUCCESS(importer.MagicItemImporter(self.options, mag)))
 
-            pln_file = Path(dir+'planes.json')
-            if pln_file.exists():
-                pln_hash = get_hash(pln_file)
-                importer.ManifestImporter(options, pln_file, pln_hash)
-                with open(pln_file, encoding="utf-8") as pln_data:
-                    pln = json.load(pln_data)
-                    self.stdout.write(self.style.SUCCESS(importer.PlaneImporter(options, pln)))
+        spl_file = Path(directory / 'spells.json')
+        if spl_file.exists():
+            spl_hash = get_hash(spl_file)
+            importer.ManifestImporter(self.options, spl_file, spl_hash)
+            with open(spl_file, encoding="utf-8") as spl_data:
+                spl = json.load(spl_data)
+                self.stdout.write(self.style.SUCCESS(importer.SpellImporter(self.options, spl)))
 
-            sec_file = Path(dir+'sections.json')
-            if sec_file.exists():
-                sec_hash = get_hash(sec_file)
-                importer.ManifestImporter(options, sec_file, sec_hash)
-                with open(sec_file, encoding="utf-8") as sec_data:
-                    sec = json.load(sec_data)
-                    self.stdout.write(self.style.SUCCESS(importer.SectionImporter(options, sec)))
+        mon_file = Path(directory / 'monsters.json')
+        if mon_file.exists():
+            mon_hash = get_hash(mon_file)
+            importer.ManifestImporter(self.options, mon_file, mon_hash)
+            with open(mon_file, encoding="utf-8") as mon_data:
+                mon = json.load(mon_data)
+                self.stdout.write(self.style.SUCCESS(importer.MonsterImporter(self.options, mon)))
 
-            rac_file = Path(dir+'races.json')
-            if rac_file.exists():
-                rac_hash = get_hash(rac_file)
-                importer.ManifestImporter(options, rac_file, rac_hash)
-                with open(rac_file, encoding="utf-8") as rac_data:
-                    rac = json.load(rac_data)
-                    self.stdout.write(self.style.SUCCESS(importer.RaceImporter(options, rac)))
+        pln_file = Path(directory / 'planes.json')
+        if pln_file.exists():
+            pln_hash = get_hash(pln_file)
+            importer.ManifestImporter(self.options, pln_file, pln_hash)
+            with open(pln_file, encoding="utf-8") as pln_data:
+                pln = json.load(pln_data)
+                self.stdout.write(self.style.SUCCESS(importer.PlaneImporter(self.options, pln)))
 
-            wea_file = Path(dir+'weapons.json')
-            if wea_file.exists():
-                wea_hash = get_hash(wea_file)
-                importer.ManifestImporter(options, wea_file, wea_hash)
-                with open(wea_file, encoding="utf-8") as wea_data:
-                    wea = json.load(wea_data)
-                    self.stdout.write(self.style.SUCCESS(importer.WeaponImporter(options, wea)))
+        sec_file = Path(directory / 'sections.json')
+        if sec_file.exists():
+            sec_hash = get_hash(sec_file)
+            importer.ManifestImporter(self.options, sec_file, sec_hash)
+            with open(sec_file, encoding="utf-8") as sec_data:
+                sec = json.load(sec_data)
+                self.stdout.write(self.style.SUCCESS(importer.SectionImporter(self.options, sec)))
 
-            arm_file = Path(dir+'armor.json')
-            if arm_file.exists():
-                with open(arm_file, encoding="utf-8") as arm_data:
-                    arm = json.load(arm_data)
-                    self.stdout.write(self.style.SUCCESS(importer.ArmorImporter(options, arm)))
+        rac_file = Path(directory / 'races.json')
+        if rac_file.exists():
+            rac_hash = get_hash(rac_file)
+            importer.ManifestImporter(self.options, rac_file, rac_hash)
+            with open(rac_file, encoding="utf-8") as rac_data:
+                rac = json.load(rac_data)
+                self.stdout.write(self.style.SUCCESS(importer.RaceImporter(self.options, rac)))
+
+        wea_file = Path(directory / 'weapons.json')
+        if wea_file.exists():
+            wea_hash = get_hash(wea_file)
+            importer.ManifestImporter(self.options, wea_file, wea_hash)
+            with open(wea_file, encoding="utf-8") as wea_data:
+                wea = json.load(wea_data)
+                self.stdout.write(self.style.SUCCESS(importer.WeaponImporter(self.options, wea)))
+
+        arm_file = Path(directory / 'armor.json')
+        if arm_file.exists():
+            with open(arm_file, encoding="utf-8") as arm_data:
+                arm = json.load(arm_data)
+                self.stdout.write(self.style.SUCCESS(importer.ArmorImporter(self.options, arm)))
