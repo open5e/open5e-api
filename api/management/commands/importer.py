@@ -3,6 +3,7 @@ from django.template.defaultfilters import slugify
 import json
 from pathlib import Path
 from django.core.management.base import BaseCommand, CommandError
+from fractions import Fraction
 
 class Importer:
     
@@ -412,6 +413,7 @@ class Importer:
                 i.languages = o['languages']
             if 'challenge_rating' in o:
                 i.challenge_rating = o['challenge_rating']
+                i.cr = float(Fraction(i.challenge_rating))
             if 'actions' in o:
                 for idx, z in enumerate(o['actions']):
                     if 'attack_bonus' in z:
