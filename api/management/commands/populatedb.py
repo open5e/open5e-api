@@ -110,7 +110,13 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, mag_file, mag_hash)
             with open(mag_file, encoding="utf-8") as mag_data:
                 mag = json.load(mag_data)
-                self.stdout.write(self.style.SUCCESS(importer.import_models_from_json(models.MagicItem, mag, importer.import_magic_item, self.options)))
+            report = importer.import_models_from_json(
+                models.MagicItem,
+                mag,
+                importer.import_magic_item,
+                self.options
+            )
+            self.stdout.write(self.style.SUCCESS(report))
 
         spl_file = Path(directory / 'spells.json')
         if spl_file.exists():
@@ -126,7 +132,13 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, mon_file, mon_hash)
             with open(mon_file, encoding="utf-8") as mon_data:
                 mon = json.load(mon_data)
-                self.stdout.write(self.style.SUCCESS(importer.import_models_from_json(models.Monster, mon, importer.import_monster, self.options)))
+            report = importer.import_models_from_json(
+                models.Monster,
+                mon,
+                importer.import_monster,
+                self.options
+            )
+            self.stdout.write(self.style.SUCCESS(report))
 
         pln_file = Path(directory / 'planes.json')
         if pln_file.exists():
@@ -134,7 +146,13 @@ class Command(BaseCommand):
             importer.ManifestImporter(self.options, pln_file, pln_hash)
             with open(pln_file, encoding="utf-8") as pln_data:
                 pln = json.load(pln_data)
-                self.stdout.write(self.style.SUCCESS(importer.PlaneImporter(self.options, pln)))
+            report = importer.import_models_from_json(
+                models.Plane,
+                pln,
+                importer.import_plane,
+                self.options
+            )
+            self.stdout.write(self.style.SUCCESS(report))
 
         sec_file = Path(directory / 'sections.json')
         if sec_file.exists():

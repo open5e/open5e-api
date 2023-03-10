@@ -270,7 +270,7 @@ class Importer:
         return _completion_message(
             model_class.plural_str(), added, updated, skipped)
 
-    def import_feat(self, feat_json, options):
+    def import_feat(self, feat_json, options) -> ImportResult:
         new = False
         exists = False
         if models.Feat.objects.filter(slug=slugify(feat_json['name'])).exists():
@@ -291,7 +291,7 @@ class Importer:
             i.save()
         return result
 
-    def import_magic_item(self, magic_item_json, options):
+    def import_magic_item(self, magic_item_json, options) -> ImportResult:
         new = False
         exists = False
         if models.MagicItem.objects.filter(slug=slugify(magic_item_json['name'])).exists():
@@ -486,32 +486,24 @@ class Importer:
                     self.update_monster(i.slug, spell)
         return result
 
-    def PlaneImporter(self, options, json_object):
-        skipped, added, updated = (0, 0, 0)
-        if bool(options['flush']): models.Plane.objects.all().delete()
-
-        for o in json_object:
-            new = False
-            exists = False
-            if models.Plane.objects.filter(slug=slugify(o['name'])).exists():
-                i = models.Plane.objects.get(slug=slugify(o['name']))
-                exists = True
-            else:
-                i = models.Plane(document = self._last_document_imported)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = slugify(o['name'])
-            if 'desc' in o:
-                i.desc = o['desc']
-            if bool(options['testrun']) or (exists and options['append']):
-               skipped += 1
-            else:
-                i.save()
-                if new: added += 1
-                else: updated += 1
-
-        return _completion_message('Planes', added, updated, skipped)
+    def import_plane(self, plane_json, options) -> ImportResult:
+        new = False
+        exists = False
+        if models.Plane.objects.filter(slug=slugify(plane_json['name'])).exists():
+            i = models.Plane.objects.get(slug=slugify(plane_json['name']))
+            exists = True
+        else:
+            i = models.Plane(document = self._last_document_imported)
+            new = True
+        if 'name' in plane_json:
+            i.name = plane_json['name']
+            i.slug = slugify(plane_json['name'])
+        if 'desc' in plane_json:
+            i.desc = plane_json['desc']
+        result = _determine_import_result(options, new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
 
     def RaceImporter(self, options, json_object):
         skipped, added, updated = (0, 0, 0)
