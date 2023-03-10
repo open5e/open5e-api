@@ -4,7 +4,7 @@ from pathlib import Path
 
 from django.core.management.base import BaseCommand, CommandError
 
-from api.management.commands.importer import Importer, ImportSpec
+from api.management.commands.importer import Importer, ImportOptions, ImportSpec
 from api import models
 
 
@@ -61,6 +61,12 @@ class Command(BaseCommand):
             self._populate_from_directory(Path(directory))
 
     def _populate_from_directory(self, directory: Path) -> None:
+        import_options = ImportOptions(
+            flush = self.options['flush'],
+            update = self.options['update'],
+            testrun = self.options['testrun'],
+            append = self.options['append'],
+        )
         importer = Importer()
         with open(directory / 'document.json', encoding="utf-8") as doc_data:
             docs = json.load(doc_data)
@@ -97,9 +103,8 @@ class Command(BaseCommand):
             with open(fea_file, encoding="utf-8") as fea_data:
                 fea = json.load(fea_data)
             report = importer.import_models_from_json(
-                ImportSpec(models.Feat, importer.import_feat),
+                ImportSpec(models.Feat, importer.import_feat, import_options),
                 fea,
-                self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
 
@@ -110,9 +115,8 @@ class Command(BaseCommand):
             with open(mag_file, encoding="utf-8") as mag_data:
                 mag = json.load(mag_data)
             report = importer.import_models_from_json(
-                ImportSpec(models.MagicItem, importer.import_magic_item),
+                ImportSpec(models.MagicItem, importer.import_magic_item, import_options),
                 mag,
-                self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
 
@@ -123,9 +127,8 @@ class Command(BaseCommand):
             with open(spl_file, encoding="utf-8") as spl_data:
                 spl = json.load(spl_data)
             report = importer.import_models_from_json(
-                ImportSpec(models.Spell, importer.import_spell),
+                ImportSpec(models.Spell, importer.import_spell, import_options),
                 spl,
-                self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
 
@@ -136,9 +139,8 @@ class Command(BaseCommand):
             with open(mon_file, encoding="utf-8") as mon_data:
                 mon = json.load(mon_data)
             report = importer.import_models_from_json(
-                ImportSpec(models.Monster, importer.import_monster),
+                ImportSpec(models.Monster, importer.import_monster, import_options),
                 mon,
-                self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
 
@@ -149,9 +151,8 @@ class Command(BaseCommand):
             with open(pln_file, encoding="utf-8") as pln_data:
                 pln = json.load(pln_data)
             report = importer.import_models_from_json(
-                ImportSpec(models.Plane, importer.import_plane),
+                ImportSpec(models.Plane, importer.import_plane, import_options),
                 pln,
-                self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
 
@@ -162,9 +163,8 @@ class Command(BaseCommand):
             with open(sec_file, encoding="utf-8") as sec_data:
                 sec = json.load(sec_data)
             report = importer.import_models_from_json(
-                ImportSpec(models.Section, importer.import_section),
+                ImportSpec(models.Section, importer.import_section, import_options),
                 sec,
-                self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
 
@@ -183,9 +183,8 @@ class Command(BaseCommand):
             with open(wea_file, encoding="utf-8") as wea_data:
                 wea = json.load(wea_data)
             report = importer.import_models_from_json(
-                ImportSpec(models.Weapon, importer.import_weapon),
+                ImportSpec(models.Weapon, importer.import_weapon, import_options),
                 wea,
-                self.options
             )
             self.stdout.write(self.style.SUCCESS(report))
 
@@ -194,8 +193,7 @@ class Command(BaseCommand):
             with open(arm_file, encoding="utf-8") as arm_data:
                 arm = json.load(arm_data)
             report = importer.import_models_from_json(
-                ImportSpec(models.Armor, importer.import_armor),
+                ImportSpec(models.Armor, importer.import_armor, import_options),
                 arm,
-                self.options
             )
             self.stdout.write(self.style.SUCCESS(report))

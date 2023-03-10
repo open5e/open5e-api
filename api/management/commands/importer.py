@@ -14,8 +14,20 @@ from api import models
 MONSTERS_IMG_DIR = pathlib.Path('.', 'static', 'img', 'monsters').absolute()
 
 
+class ImportOptions(NamedTuple):
+    """Standard options to affect import behavior."""
+    # Whether to delete all existing models before importing.
+    flush: bool
+    # Whether to change existing models with the same unique ID.
+    update: bool
+    # Whether to skip saving any imports.
+    testrun: bool
+    # Whether to insert new imports to the db (skipping conflicts).
+    append: bool
+
+
 class ImportSpec(NamedTuple):
-    """Helper class to specify how to import a type of model."""
+    """Specifications for how to import a particular type of model."""
     # model_class is the type of model to create.
     model_class: django_models.Model
     # import_func is the function that creates a model based on JSON.
@@ -23,6 +35,8 @@ class ImportSpec(NamedTuple):
     # second argument, and return an ImportResult specifying whether a model
     # was skipped, added, or updated.
     import_func: Callable[[Dict, Dict], "ImportResult"]
+    # import_options contains standard options to toggle during import.
+    options: ImportOptions
 
 
 class ImportResult(enum.Enum):
@@ -247,14 +261,13 @@ class Importer:
         self,
         import_spec: ImportSpec,
         models_json: List[Dict],
-        options: Dict[str, bool]
     ) -> str:
         """Import a list of models from a source JSON file."""
         skipped, added, updated = (0, 0, 0)
-        if options['flush']:
+        if import_spec.options.flush:
             import_spec.model_class.objects.all().delete()
         for model_json in models_json:
-            import_result = import_spec.import_func(model_json, options)
+            import_result = import_spec.import_func(model_json, import_spec)
             if import_result is ImportResult.SKIPPED:
                 skipped += 1
             elif import_result is ImportResult.ADDED:
@@ -266,7 +279,7 @@ class Importer:
         return _completion_message(
             import_spec.model_class.plural_str(), added, updated, skipped)
 
-    def import_feat(self, feat_json, options) -> ImportResult:
+    def import_feat(self, feat_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Feat.objects.filter(slug=slugify(feat_json['name'])).exists():
@@ -282,12 +295,12 @@ class Importer:
             i.desc = feat_json['desc']
         if 'prerequisite' in feat_json:
             i.prerequisite = feat_json['prerequisite']
-        result = _determine_import_result(options, new, exists)
+        result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
 
-    def import_magic_item(self, magic_item_json, options) -> ImportResult:
+    def import_magic_item(self, magic_item_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.MagicItem.objects.filter(slug=slugify(magic_item_json['name'])).exists():
@@ -307,12 +320,12 @@ class Importer:
             i.rarity = magic_item_json['rarity']
         if 'requires-attunement' in magic_item_json:
             i.requires_attunement = magic_item_json['requires-attunement']
-        result = _determine_import_result(options, new, exists)
+        result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
 
-    def import_monster(self, monster_json, options) -> ImportResult:
+    def import_monster(self, monster_json, import_spec) -> ImportResult:
         new = False
         exists = False
         slug_name = slugify(['name'])
@@ -474,7 +487,7 @@ class Importer:
             i.legendary_actions_json = json.dumps(monster_json['legendary_actions'])
         else:
             i.legendary_actions_json = json.dumps("")
-        result = _determine_import_result(options, new, exists)
+        result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
             if 'spells' in monster_json:
@@ -482,7 +495,7 @@ class Importer:
                     self.update_monster(i.slug, spell)
         return result
 
-    def import_plane(self, plane_json, options) -> ImportResult:
+    def import_plane(self, plane_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Plane.objects.filter(slug=slugify(plane_json['name'])).exists():
@@ -496,7 +509,7 @@ class Importer:
             i.slug = slugify(plane_json['name'])
         if 'desc' in plane_json:
             i.desc = plane_json['desc']
-        result = _determine_import_result(options, new, exists)
+        result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -584,7 +597,7 @@ class Importer:
 
         return _completion_message('Subraces', added, updated, skipped)
 
-    def import_section(self, section_json, options) -> ImportResult:
+    def import_section(self, section_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Section.objects.filter(slug=slugify(section_json['name'])).exists():
@@ -600,12 +613,12 @@ class Importer:
             i.desc = section_json['desc']
         if 'parent' in section_json:
             i.parent = section_json['parent']
-        result = _determine_import_result(options, new, exists)
+        result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
 
-    def import_spell(self, spell_json, options) -> ImportResult:
+    def import_spell(self, spell_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Spell.objects.filter(slug=slugify(spell_json['name'])).exists():
@@ -649,12 +662,12 @@ class Importer:
             i.archetype = spell_json['archetype']
         if 'circles' in spell_json:
             i.circles = spell_json['circles']
-        result = _determine_import_result(options, new, exists)
+        result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
 
-    def import_weapon(self, weapon_json, options) -> ImportResult:
+    def import_weapon(self, weapon_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Weapon.objects.filter(slug=slugify(weapon_json['name'])).exists():
@@ -678,12 +691,12 @@ class Importer:
             i.weight = weapon_json['weight']
         if 'properties' in weapon_json:
             i.properties_json = json.dumps(weapon_json['properties'])
-        result = _determine_import_result(options, new, exists)
+        result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
 
-    def import_armor(self, armor_json, options) -> ImportResult:
+    def import_armor(self, armor_json, import_spec) -> ImportResult:
         new = False
         exists = False
         if models.Armor.objects.filter(slug=slugify(armor_json['name'])).exists():
@@ -715,7 +728,7 @@ class Importer:
             i.plus_max = armor_json['plus_max']
         if 'strength_requirement' in armor_json:
             i.strength_requirement = armor_json['strength_requirement']
-        result = _determine_import_result(options, new, exists)
+        result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
         return result
@@ -742,7 +755,7 @@ def _determine_import_result(
     exists: bool,
 ) -> ImportResult:
     """Check whether an import resulted in a skip, an add, or an update."""
-    if options['testrun'] or (exists and options['append']):
+    if options.testrun or (exists and options.append):
         return ImportResult.SKIPPED
     elif new:
         return ImportResult.ADDED
