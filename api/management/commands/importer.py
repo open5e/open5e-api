@@ -11,7 +11,7 @@ from fractions import Fraction
 from api import models
 
 # MONSTERS_IMG_DIR is the path in this repo for static monster images.
-MONSTERS_IMG_DIR = pathlib.Path('.', 'static', 'img', 'monsters').absolute()
+MONSTERS_IMG_DIR = pathlib.Path('.', 'static', 'img', 'monsters')
 
 
 class ImportOptions(NamedTuple):
@@ -58,11 +58,11 @@ class Importer:
     def __init__(self):
       self._last_document_imported: Optional[models.Document] = None
 
-    def update_monster(self, monster, spell):
-        # print(spell) # useful for debugging new lists
+    def create_monster_spell_relationship(self, monster, spell):
+        """Create a many-to-many relationship between Monsters and Spells."""
         db_monster = models.Monster.objects.get(slug=monster)
         db_spell = models.Spell.objects.get(slug=slugify(spell))
-        models.MonsterSpell.objects.create(spell=db_spell, monster=db_monster)  # <----- Create m2m relation
+        models.MonsterSpell.objects.create(spell=db_spell, monster=db_monster)
 
     def ManifestImporter(self, options, filepath: str, filehash: str) -> None:
         skipped, added, updated = (0, 0, 0)
@@ -478,9 +478,9 @@ class Importer:
         result = _determine_import_result(import_spec.options, new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
-            if 'spells' in monster_json:
-                for spell in monster_json['spells']:
-                    self.update_monster(i.slug, spell)
+            # Spells should have already been defined in import_spell().
+            for spell in monster_json.get('spells', []):
+                self.create_monster_spell_relationship(i.slug, spell)
         return result
 
     def import_plane(self, plane_json, import_spec) -> ImportResult:
