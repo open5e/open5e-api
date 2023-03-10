@@ -22,10 +22,6 @@ class Importer:
         message += 'Skipped:{0}'.format(skipped)
         return message
 
-    def displayer(self, object_type, name):
-        message= 'loading... ' + name + '. '
-        return message
-
     def update_monster(self, monster, spell):
         # print(spell) # useful for debugging new lists
         db_monster = models.Monster.objects.get(slug=monster)
