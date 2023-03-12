@@ -300,16 +300,21 @@ class Importer:
             new = False
             exists = False
             # print(o['name]) # useful for debugging new lists
-            if Monster.objects.filter(slug=slugify(o['name'])).exists():
-                i = Monster.objects.get(slug=slugify(o['name']))
+            monsterSlug = ''
+            if 'slug' in o:
+                monsterSlug = o['slug']
+            else:
+                monsterSlug = slugify(o['name'])
+            if Monster.objects.filter(slug=monsterSlug).exists():
+                i = Monster.objects.get(slug=monsterSlug)
                 exists = True
             else:
                 i = Monster(document = self.d)
                 new = True
             if 'name' in o:
                 i.name = o['name']
-                i.slug = slugify(o['name'])
-            img_file = Path(img_dir + slugify(o['name']) + '.png')
+                i.slug = monsterSlug
+            img_file = Path(img_dir + monsterSlug + '.png')
             if img_file.exists():
                 i.img_main = img_file
             if 'size' in o:
