@@ -323,32 +323,30 @@ class Importer:
             i.save()
         return result
 
-    def MonsterImporter(self, options, json_object, skip_flush=False):
-        skipped,added,updated = (0,0,0) #Count for all of the different results.
-        if bool(options['flush']) and not skip_flush: Monster.objects.all().delete()
-        img_dir='./static/img/monsters/'
 
-        for o in json_object:
-            new = False
-            exists = False
-            # print(o['name]) # useful for debugging new lists
-            monsterSlug = ''
-            if 'slug' in o:
-                monsterSlug = o['slug']
-            else:
-                monsterSlug = slugify(o['name'])
-            if Monster.objects.filter(slug=monsterSlug).exists():
-                i = Monster.objects.get(slug=monsterSlug)
-                exists = True
-            else:
-                i = Monster(document = self.d)
-                new = True
-            if 'name' in o:
-                i.name = o['name']
-                i.slug = monsterSlug
-            img_file = Path(img_dir + monsterSlug + '.png')
-            if img_file.exists():
-                i.img_main = img_file
+    def import_monster(self, monster_json, import_spec) -> ImportResult:
+        """Create or update a single Monster model from a JSON object.
+        Note: This should be called AFTER importing spells, because some
+        Monsters can reference existing Spells.
+        """
+        new = False
+        exists = False
+        slug = ''
+        if 'slug' in monster_json:
+            slug = monster_json['slug']
+        else:
+            slug = slugify(monster_json['name'])
+        if models.Monster.objects.filter(slug=slug).exists():
+            i = models.Monster.objects.get(slug=slug)
+            exists = True
+        else:
+            i = models.Monster(document=self._last_document_imported)
+            new = True
+        i.name = monster_json["name"]
+        i.slug = slug
+        img_file = MONSTERS_IMG_DIR / f"{slug}.png"
+        if img_file.exists():
+            i.img_main = img_file
         if "size" in monster_json:
             i.size = monster_json["size"]
         if "type" in monster_json:
