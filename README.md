@@ -65,3 +65,7 @@ export SERVER_NAME=whatever.yourdomain.com
 cd open5e-api/
 docker-compose up
 ```
+
+## Building the OAS file
+
+Once you have everything set up, you should be able to run `pipenv run ./manage.py generateschema > openapi-schema.yml` and regenerate the OAS file.

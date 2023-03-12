@@ -16,14 +16,16 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
         # Instantiate the superclass normally
         super(DynamicFieldsModelSerializer, self).__init__(*args, **kwargs)
 
-        fields = self.context['request'].query_params.get('fields')
-        if fields:
-            fields = fields.split(',')
-            # Drop any fields that are not specified in the `fields` argument.
-            allowed = set(fields)
-            existing = set(self.fields.keys())
-            for field_name in existing - allowed:
-                self.fields.pop(field_name)
+        # The request doesn't exist when generating an OAS file, so we have to check that first
+        if self.context['request']:
+            fields = self.context['request'].query_params.get('fields')
+            if fields:
+                fields = fields.split(',')
+                # Drop any fields that are not specified in the `fields` argument.
+                allowed = set(fields)
+                existing = set(self.fields.keys())
+                for field_name in existing - allowed:
+                    self.fields.pop(field_name)
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -34,8 +36,8 @@ class DocumentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
             model = Document
             fields = (
-                'title', 
-                'slug', 
+                'title',
+                'slug',
                 'url',
                 'license',
                 'desc',
@@ -53,7 +55,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'name')
 
 class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer, serializers.ModelSerializer):
-    
+
     img_main = serializers.SerializerMethodField()
 
     def get_img_main(self, monster):
@@ -64,7 +66,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             return ('http://{domain}/{path}'.format(domain=domain, path=img_url))
         else:
              return None
-            
+
     class Meta:
         model = Monster
         fields = (
@@ -327,11 +329,11 @@ class ArmorSerializer(serializers.HyperlinkedModelSerializer):
 class AggregateSerializer(HighlighterMixin, HaystackSerializer):
 
     class Meta:
-        index_classes = [MonsterIndex, 
-            SpellIndex, 
-            SectionIndex, 
-            ConditionIndex, 
-            CharClassIndex, 
+        index_classes = [MonsterIndex,
+            SpellIndex,
+            SectionIndex,
+            ConditionIndex,
+            CharClassIndex,
             RaceIndex,
             MagicItemIndex,]
         fields = ['name',
@@ -359,4 +361,3 @@ class AggregateSerializer(HighlighterMixin, HaystackSerializer):
             'document_slug',
             'document_title'
         ]
-        
