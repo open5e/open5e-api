@@ -1,16 +1,33 @@
-import os
+"""Helper command to fully set up the API."""
+
+import subprocess
 
 from django.core.management.base import BaseCommand
 
+from api.management.commands import quickload
+
 class Command(BaseCommand):
-  def handle(self, *args, **options):
+    """Implementation for the `manage.py quicksetup` subcommand."""
 
-    migrations = 'python manage.py makemigrations && pipenv run python manage.py migrate'
-    collect_static = 'python manage.py collectstatic --noinput'
-    populate_db= 'pipenv run python manage.py populatedb --flush ./data/open5e_original/ && pipenv run python manage.py populatedb --append ./data/WOTC_5e_SRD_v5.1/ && pipenv run python manage.py populatedb --append ./data/tome_of_beasts/ && pipenv run python manage.py populatedb --append ./data/creature_codex/ && pipenv run python manage.py populatedb --append ./data/tome_of_beasts_2/ && pipenv run python manage.py populatedb --append ./data/deep_magic/ && pipenv run python manage.py populatedb --append ./data/menagerie/ && pipenv run python manage.py populatedb --append ./data/tome_of_beasts_3/'
-    rebuild_index= 'pipenv run python manage.py update_index --remove'
+    def handle(self, *args, **options):
+        """Main logic."""
+        migrate_db()
+        collect_static()
+        quickload.populate_db()
+        rebuild_index()
 
-    os.system(migrations)
-    os.system(collect_static)
-    os.system(populate_db)
-    os.system(rebuild_index)
+
+def migrate_db() -> None:
+    """Migrate the local database as needed to incorporate new model updates."""
+    subprocess.run(['pipenv', 'run', 'python', 'manage.py', 'makemigrations'])
+    subprocess.run(['pipenv', 'run', 'python', 'manage.py', 'python', 'migrate'])
+
+
+def collect_static() -> None:
+    """Collect static files in a single location."""
+    subprocess.run(['pipenv', 'run', 'python', 'manage.py', 'collectstatic', '--noinput'])
+
+
+def rebuild_index() -> None:
+    """Freshen the search indexes."""
+    subprocess.run(['pipenv', 'run', 'python', 'manage.py', 'update_index', '--remove'])
