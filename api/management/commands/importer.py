@@ -26,8 +26,6 @@ MONSTERS_IMG_DIR = pathlib.Path(".", "static", "img", "monsters")
 class ImportOptions(NamedTuple):
     """Standard options to affect import behavior."""
 
-    # Whether to delete all existing models before importing.
-    flush: bool
     # Whether to change existing models with the same unique ID.
     update: bool
     # Whether to skip saving any imports.
@@ -101,10 +99,6 @@ class Importer:
     ) -> str:
         """Import a list of models from a source JSON list."""
         skipped, added, updated = (0, 0, 0)
-        if self.options.flush:
-            import_spec.model_class.objects.all().delete()
-            if import_spec.sub_spec:
-                import_spec.sub_spec.model_class.objects.all().delete()
         for model_json in models_json:
             import_result = import_spec.import_func(model_json, import_spec)
             if import_result is ImportResult.SKIPPED:
