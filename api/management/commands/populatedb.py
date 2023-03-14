@@ -19,6 +19,7 @@ import hashlib
 import json
 from pathlib import Path
 
+import django.apps
 from django.core.management.base import BaseCommand, CommandError
 
 from api.management.commands.importer import Importer, ImportOptions, ImportSpec
@@ -81,6 +82,7 @@ class Command(BaseCommand):
         directories = options["directories"]
         if options["flush"]:
             self.stdout.write(self.style.WARNING("Flushing existing database."))
+            flush_db()
         elif options["update"] and not options["append"]:
             self.stdout.write(
                 self.style.WARNING(
@@ -100,9 +102,6 @@ class Command(BaseCommand):
 
         self.options = options
 
-        if bool(options["flush"]):
-            models.Manifest.objects.all().delete()
-
         for directory in options["directories"]:
             self._populate_from_directory(Path(directory))
 
@@ -111,7 +110,6 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS(f"Reading in files from {directory}"))
 
         import_options = ImportOptions(
-            flush=self.options["flush"],
             update=self.options["update"],
             testrun=self.options["testrun"],
             append=self.options["append"],
@@ -171,3 +169,9 @@ class Command(BaseCommand):
                 json_data = json.load(json_file)
             report = importer.import_models_from_json(import_spec, json_data)
             self.stdout.write(self.style.SUCCESS(report))
+
+def flush_db() -> None:
+    """Delete all models existing in the database."""
+    all_models = django.apps.apps.get_models()
+    for model in all_models:
+        model.objects.all().delete()
