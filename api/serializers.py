@@ -318,6 +318,7 @@ class ArmorSerializer(serializers.HyperlinkedModelSerializer):
             'document__title',
             'document__license_url',
             'ac_string',
+            'base_ac',
             'strength_requirement',
             'cost',
             'weight',
