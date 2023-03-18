@@ -8,10 +8,22 @@ from api import serializers
 
 
 class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint that allows viewing of Manifests.
+
+    For each data source file, there is a corresponding Manifest containing an
+    md5 hash of the data inside that file. When we update our data files, the
+    corresponding Manifest's hash will change. If you host a service that
+    automatically downloads data from open5e, then you can periodically check
+    the Manifests to see whether your data is out-of-date.
+    """
     queryset = models.Manifest.objects.all()
     serializer_class = serializers.ManifestSerializer
 
 class SearchView(HaystackViewSet):
+    """
+    API endpoint that allows searching our database.
+    """
 
     # `index_models` is an optional list of which models you would like to include
     # in the search result. You might have several models indexed, and this provides
@@ -34,6 +46,9 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.GroupSerializer
 
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint that allows viewing of Documents.
+    """
     queryset = models.Document.objects.all()
     serializer_class = serializers.DocumentSerializer
     filter_fields = (
@@ -64,7 +79,7 @@ class SpellFilter(django_filters.FilterSet):
 
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of spells.
+    API endpoint that allows viewing of Spells.
     """
     queryset = models.Spell.objects.all()
     filter_class=SpellFilter
@@ -88,7 +103,7 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
 
 class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of monsters.
+    API endpoint that allows viewing of Monsters.
     """
     queryset = models.Monster.objects.all()
     serializer_class = serializers.MonsterSerializer
@@ -155,7 +170,7 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Backgrounds.
+    API endpoint that allows viewing of Conditions.
     """
     queryset = models.Condition.objects.all()
     serializer_class = serializers.ConditionSerializer
@@ -210,7 +225,7 @@ class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
 
 class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Archetypes.
+    API endpoint that allows viewing of Magic Items.
     """
     queryset = models.MagicItem.objects.all()
     serializer_class = serializers.MagicItemSerializer
@@ -222,7 +237,7 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
 
 class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Archetypes.
+    API endpoint that allows viewing of Weapons.
     """
     queryset = models.Weapon.objects.all()
     serializer_class = serializers.WeaponSerializer
@@ -234,7 +249,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Archetypes.
+    API endpoint that allows viewing of Armor.
     """
     queryset = models.Armor.objects.all()
     serializer_class = serializers.ArmorSerializer
