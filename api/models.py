@@ -46,6 +46,15 @@ class GameContent(models.Model):
     desc = models.TextField()
     document = models.ForeignKey(Document, on_delete=models.CASCADE) # Like the System Reference Document
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
+
+    # If the source is a physical book (possibly with a digital version), 
+    # then page_no is the page number in the physical book, even if the PDF
+    # page number is different due to additional cover pages.
+    # If the source is only digital, then of course just the PDF page number.
+    # This field may be hard to populate across-the-board, so leave as None
+    # unless explicitly populated.
+    page_no = models.IntegerField(null=True)
+
     def document__slug(self):
         return self.document.slug
     def document__title(self):

@@ -108,6 +108,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'legendary_actions',
             'special_abilities',
             'spell_list',
+            'page_no',
             'img_main',
             'document__slug',
             'document__title',
