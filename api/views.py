@@ -114,6 +114,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
         'armor_class',
         'type',
         'name',
+        'page_no',
         'document',
         'document__slug',
     )

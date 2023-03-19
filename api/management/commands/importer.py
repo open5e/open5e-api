@@ -472,6 +472,8 @@ class Importer:
             i.reactions_json = json.dumps("")
         if "legendary_desc" in monster_json:
             i.legendary_desc = monster_json["legendary_desc"]
+        if "page_no" in monster_json:
+            i.page_no = monster_json["page_no"]
         # import spells array
         if "spells" in monster_json:
             i.spells_json = json.dumps(monster_json["spells"])
