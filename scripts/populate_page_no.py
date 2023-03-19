@@ -7,18 +7,15 @@ import csv
 import json
 import pathlib
 import sys
-from typing import Dict, List, Tuple
-
-
-monster_to_page_no: Dict[str, int] = {}
+from typing import Dict, List
 
 
 def main():
-    src_path, dest_path = parse_args()
+    opts = parse_args()
 
     # Parse input
-    monster_to_page_no = get_monster_to_page_no(src_path)
-    with open(dest_path) as dest_file:
+    monster_to_page_no = get_monster_to_page_no(opts.src_path)
+    with open(opts.dest_path) as dest_file:
         monsters_json = json.load(dest_file)
 
     # Process JSON dict in memory
@@ -27,23 +24,25 @@ def main():
         monster['page_no'] = page_no
 
     # Write output
-    with open(dest_path, 'w') as dest_file:
-        json.dump(monsters_json, dest_file, indent=4)
+    with open(opts.dest_path, 'w') as dest_file:
+        json.dump(monsters_json, dest_file, indent=opts.indent)
 
 
-def parse_args() -> Tuple[pathlib.Path, pathlib.Path]:
+def parse_args() -> argparse.Namespace:
     """Determine the source CSV and dest JSON from the CLI args."""
     parser = argparse.ArgumentParser()
-    parser.add_argument('src', type=pathlib.Path)
-    parser.add_argument('dest', type=pathlib.Path)
+    parser.add_argument('src_path', type=pathlib.Path)
+    parser.add_argument('dest_path', type=pathlib.Path)
+    parser.add_argument('--indent', type=int, default=4)
     opts = parser.parse_args(sys.argv[1:])
-    assert opts.src.exists(), f'Source file "{opts.src}" not found.'
-    assert opts.dest.exists(), f'Destination file "{opts.dest}" not found.'
-    return opts.src, opts.dest
+    assert opts.src_path.exists(), f'Source file "{opts.src_path}" not found.'
+    assert opts.dest_path.exists(), f'Destination "{opts.dest_path}" not found.'
+    return opts
 
 
 def get_monster_to_page_no(source_csv_path: pathlib.Path) -> Dict[str, int]:
     """From the source file, return a dict of {monster name: page #}."""
+    monster_to_page_no: Dict[str, int] = {}
     with open(source_csv_path) as csvfile:
         reader = csv.DictReader(csvfile)
         for line in reader:
