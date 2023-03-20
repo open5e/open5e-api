@@ -21,6 +21,7 @@ from pathlib import Path
 
 import django.apps
 from django.core.management.base import BaseCommand, CommandError
+from django.db import transaction
 
 from api.management.commands.importer import Importer, ImportOptions, ImportSpec
 from api import models
@@ -105,6 +106,7 @@ class Command(BaseCommand):
         for directory in options["directories"]:
             self._populate_from_directory(Path(directory))
 
+    @transaction.atomic
     def _populate_from_directory(self, directory: Path) -> None:
         """Import models from all the .json files in a single directory."""
         self.stdout.write(self.style.SUCCESS(f"Reading in files from {directory}"))
