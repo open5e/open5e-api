@@ -286,6 +286,8 @@ class Importer:
             i.desc = feat_json["desc"]
         if "prerequisite" in feat_json:
             i.prerequisite = feat_json["prerequisite"]
+        if "effects_desc" in feat_json:
+            i.effects_desc_json = json.dumps(feat_json["effects_desc"])
         result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()

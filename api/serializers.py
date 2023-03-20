@@ -187,6 +187,7 @@ class FeatSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'name',
             'desc',
             'prerequisite',
+            'effects_desc',
             'document__slug',
             'document__title'
         )
