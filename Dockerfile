@@ -41,6 +41,9 @@ RUN pipenv run python manage.py populatedb --append ./data/tome_of_beasts_3/
 #add monstrous menegerie
 RUN pipenv run python manage.py populatedb --append ./data/menagerie/
 
+#add monstrous menegerie
+RUN pipenv run python manage.py populatedb --append ./data/a5e_srd/
+
 #build the search index
 RUN pipenv run python manage.py update_index --remove
 
