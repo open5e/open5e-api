@@ -10,7 +10,7 @@ COPY . /opt/services/open5e-api
 
 RUN pipenv install
 
-# migrate the db
+# migrate the db, load content, and index it
 RUN pipenv run python manage.py quicksetup
 
 # Create the self-signed certs for gunicorn.
