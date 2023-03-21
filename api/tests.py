@@ -1,10 +1,9 @@
 from rest_framework.test import APITestCase
-from .models import Manifest
 
 # Create your tests here.
 
 class APIRootTest(APITestCase):
-    def test_get_root_view(self):
+    def test_get_root_view_headers(self):
         response = self.client.get(f'/?format=json')
         # Assert basic headers
         self.assertEqual(response.status_code, 200)
@@ -14,7 +13,9 @@ class APIRootTest(APITestCase):
         self.assertEqual(response.headers['X-Content-Type-Options'],'nosniff')
         self.assertEqual(response.headers['Referrer-Policy'],'same-origin')
         
-        # Check the response for each fot he known endpoints. Two results, one for the name, one for the link.
+    def test_get_root_view_endpoint_list(self):
+        response = self.client.get(f'/?format=json')
+        # Check the response for each of the known endpoints. Two results, one for the name, one for the link.
         self.assertContains(response,'manifest',count=2)
         self.assertContains(response,'spells',count=2)
         self.assertContains(response,'monsters',count=2)
@@ -31,12 +32,15 @@ class APIRootTest(APITestCase):
         self.assertContains(response,'armor',count=2)
         self.assertContains(response,'search',count=2)
 
-    def test_options_root_view(self):
+    def test_options_root_view_headers(self):
         response = self.client.get(f'/?format=json', REQUEST_METHOD='OPTIONS')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers['allow'],'GET, HEAD, OPTIONS')
         self.assertEqual(response.headers['content-type'],'application/json')
-        
+    
+    def test_options_root_view_data(self):
+        # Testing the actual content of the response data.
+        response = self.client.get(f'/?format=json', REQUEST_METHOD='OPTIONS')
         self.assertEqual(response.json()['name'],'Api Root')
         self.assertEqual(response.json()['description'],'The default basic root view for DefaultRouter')
         self.assertEqual(response.json()['renders'],["application/json","text/html"])
