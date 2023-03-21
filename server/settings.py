@@ -29,6 +29,10 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('OPEN5E_DEBUG', '') != 'False'
 
+# Added as part of the migration from django 2 to django 3.
+# Not likely to apply in the short term. https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 ## Always allow connections from localhost, and the SERVER_NAME if it's there in the .env file.
 ALLOWED_HOSTS = ['localhost', os.environ.get('SERVER_NAME', ''), '0.0.0.0', 'api.open5e.com', 'api-beta.open5e.com']
 
