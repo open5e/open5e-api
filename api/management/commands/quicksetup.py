@@ -1,15 +1,41 @@
-import os
+"""Helper command to fully set up the API."""
+
+from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
+from api.management.commands import quickload
+
 class Command(BaseCommand):
-  def handle(self, *args, **options):
+    """Implementation for the `manage.py quicksetup` subcommand."""
 
-    migrations = 'python manage.py makemigrations && pipenv run python manage.py migrate'
-    collect_static = 'python manage.py collectstatic --noinput'
-    populate_db= 'pipenv run python manage.py populatedb --flush ./data/open5e_original/ && pipenv run python manage.py populatedb --append ./data/WOTC_5e_SRD_v5.1/ && pipenv run python manage.py populatedb --append ./data/tome_of_beasts/ && pipenv run python manage.py populatedb --append ./data/creature_codex/ && pipenv run python manage.py populatedb --append ./data/tome_of_beasts_2/ && pipenv run python manage.py populatedb --append ./data/deep_magic/'
-    rebuild_index= 'pipenv run python manage.py update_index --remove'
+    def handle(self, *args, **options):
+        """Main logic."""
+        self.stdout.write('Migrating the database...')
+        migrate_db()
 
-    os.system(migrations)
-    os.system(collect_static)
-    os.system(populate_db)
-    os.system(rebuild_index)
+        self.stdout.write('Collecting static files...')
+        collect_static()
+
+        self.stdout.write('Populating the database...')
+        quickload.populate_db()
+
+        self.stdout.write('Rebuilding the search index...')
+        rebuild_index()
+
+        self.stdout.write(self.style.SUCCESS('API setup complete.'))
+
+
+def migrate_db() -> None:
+    """Migrate the local database as needed to incorporate new model updates."""
+    call_command('makemigrations')
+    call_command('migrate')
+
+
+def collect_static() -> None:
+    """Collect static files in a single location."""
+    call_command('collectstatic', '--noinput')
+
+
+def rebuild_index() -> None:
+    """Freshen the search indexes."""
+    call_command('update_index', '--remove')

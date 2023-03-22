@@ -1,4 +1,6 @@
-import re, urllib, sys
+import re
+import sys
+import urllib
 
 def split_monsters(lines, target):
   letter_re = re.compile(r'^Monsters \(([A-Z])\)')

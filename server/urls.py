@@ -15,9 +15,10 @@ Including another URLconf
 """
 
 from django.conf.urls import url, include
-from rest_framework import routers
-from api import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from rest_framework import routers
+
+from api import views
 
 router = routers.DefaultRouter()
 #router.register(r'users', views.UserViewSet)

@@ -1,16 +1,21 @@
-import os, sys
-root_path = os.environ['OPEN_5E_ROOT']
-sys.path.append(root_path)
+import json
+import os
+import sys
+
 import django
 from django.template.defaultfilters import slugify
+
+from api import models
+
+
+root_path = os.environ['OPEN_5E_ROOT']
+sys.path.append(root_path)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
 django.setup()
-from api.models import *
-import json
 
 data_directory = root_path + ('' if root_path.endswith('/') else '/') + '../data/'
 
-#Speccing out the location of each of the json files with the root data.
+# Speccing out the location of each of the json files with the root data.
 json_file={
     'spells':data_directory + 'spells/5e-SRD-Spells.json',
     'monsters' : data_directory + 'monsters/5e-SRD-Monsters.json',
@@ -27,7 +32,7 @@ json_file={
 def importSRDDocument():
     #### Load SRD as a Document ####
     print('Building the SRD as a document.')
-    srd = Document(
+    srd = models.Document(
         title="Systems Reference Document",
         slug=slugify("Systems Reference Document"),
         desc = "Dungeons and Dragons 5th Edition Systems Reference Document by Wizards of the Coast",
@@ -37,8 +42,8 @@ def importSRDDocument():
         version = "5.1",
         url="http://dnd.wizards.com/articles/features/systems-reference-document-srd"
         )
-    #Check to see if the SRD exists.
-    if Document.objects.filter(title="Systems Reference Document").exists():
+    # Check to see if the SRD exists.
+    if models.Document.objects.filter(title="Systems Reference Document").exists():
         print ("SRD Document already exists. Not applying changes.")
     else: 
         print ("Saving SRD document.")
@@ -53,11 +58,10 @@ def loadSpells():
         fail_count = 0
 
         for spell in spells:
-            if Spell.objects.filter(name=spell['name']).exists():
-                #print ("Spell {0} already loaded, skipping.".format(spell['name']))
+            if models.Spell.objects.filter(name=spell['name']).exists():
                 fail_count+=1
             else:
-                s = Spell(document = Document.objects.get(title="Systems Reference Document"))
+                s = models.Spell(document = models.Document.objects.get(title="Systems Reference Document"))
                 if 'name' in spell:
                     s.name = spell['name']
                     s.slug = slugify(spell['name'])
@@ -104,11 +108,10 @@ def loadMonsters():
         fail_count = 0
         
         for mob in monsters:
-            if Monster.objects.filter(name=mob['name']).exists():
-                #print ("Monster {0} already loaded, skipping.".format(mob['name']))
+            if models.Monster.objects.filter(name=mob['name']).exists():
                 fail_count+=1
             else:
-                m = Monster(document = Document.objects.get(title="Systems Reference Document"))
+                m = models.Monster(document = models.Document.objects.get(title="Systems Reference Document"))
                 if 'name' in mob:
                     m.name = mob['name']
                     m.slug = slugify(mob['name'])
@@ -193,11 +196,11 @@ def loadBackgrounds():
             fail_count = 0
             
             for background in backgrounds:
-                if Background.objects.filter(name=background['name']).exists():
+                if models.Background.objects.filter(name=background['name']).exists():
                     print ("Background {0} already loaded, skipping.".format(background['name']))
                     fail_count+=1
                 else:
-                    b = Background(document = Document.objects.get(title="Systems Reference Document"))
+                    b = models.Background(document = models.Document.objects.get(title="Systems Reference Document"))
                     if 'name' in background:
                         b.name = background['name']
                         b.slug = slugify(background['name'])
@@ -229,11 +232,10 @@ def loadClasses():
         fail_count = 0
         
         for charclass in charclasses:
-            if CharClass.objects.filter(name=charclass['name']).exists():
-                #print ("Race {0} already loaded, skipping.".format(race['name']))
+            if models.CharClass.objects.filter(name=charclass['name']).exists():
                 fail_count+=1
             else:
-                c = CharClass(document = Document.objects.get(title="Systems Reference Document"))
+                c = models.CharClass(document = models.Document.objects.get(title="Systems Reference Document"))
                 if 'name' in charclass:
                     c.name = charclass['name']
                     c.slug = slugify(charclass['name'])
@@ -266,7 +268,7 @@ def loadClasses():
                 c.save()
                 if 'subtypes' in charclass:
                     for archetype in charclass['subtypes']:
-                        a = Archetype(document = Document.objects.get(title="Systems Reference Document"),char_class=c)
+                        a = models.Archetype(document = models.Document.objects.get(title="Systems Reference Document"),char_class=c)
                         if 'name' in archetype:
                             a.name = archetype['name']
                             a.slug = slugify(archetype['name'])
@@ -289,11 +291,10 @@ def loadConditions():
         fail_count = 0
         
         for condition in conditions:
-            if Condition.objects.filter(name=condition['name']).exists():
-                #print ("Condition {0} already loaded, skipping.".format(condition['name']))
+            if models.Condition.objects.filter(name=condition['name']).exists():
                 fail_count+=1
             else:
-                c = Condition(document = Document.objects.get(title="Systems Reference Document"))
+                c = models.Condition(document = models.Document.objects.get(title="Systems Reference Document"))
                 if 'name' in condition:
                     c.name = condition['name']
                     c.slug = slugify(condition['name'])
@@ -312,11 +313,10 @@ def loadFeats():
         fail_count = 0
         
         for feat in feats:
-            if Feat.objects.filter(name=feat['name']).exists():
-                #print ("Feat {0} already loaded, skipping.".format(feat['name']))
+            if models.Feat.objects.filter(name=feat['name']).exists():
                 fail_count+=1
             else:
-                f = Feat(document = Document.objects.get(title="Systems Reference Document"))
+                f = models.Feat(document = models.Document.objects.get(title="Systems Reference Document"))
                 if 'name' in feat:
                     f.name = feat['name']
                     f.slug = slugify(feat['name'])
@@ -337,11 +337,10 @@ def loadPlanes():
         fail_count = 0
         
         for plane in planes:
-            if Plane.objects.filter(name=plane['name']).exists():
-                #print ("Plane {0} already loaded, skipping.".format(plane['name']))
+            if models.Plane.objects.filter(name=plane['name']).exists():
                 fail_count+=1
             else:
-                p = Plane(document = Document.objects.get(title="Systems Reference Document"))
+                p = models.Plane(document = models.Document.objects.get(title="Systems Reference Document"))
                 if 'name' in plane:
                     p.name = plane['name']
                     p.slug = slugify(plane['name'])
@@ -360,11 +359,10 @@ def loadRaces():
         fail_count = 0
         
         for race in races:
-            if Race.objects.filter(name=race['name']).exists():
-                #print ("Race {0} already loaded, skipping.".format(race['name']))
+            if models.Race.objects.filter(name=race['name']).exists():
                 fail_count+=1
             else:
-                r = Race(document = Document.objects.get(title="Systems Reference Document"))
+                r = models.Race(document = models.Document.objects.get(title="Systems Reference Document"))
                 if 'name' in race:
                     r.name = race['name']
                     r.slug = slugify(race['name'])
@@ -393,7 +391,7 @@ def loadRaces():
                 r.save()
                 if 'subtypes' in race:
                     for subrace in race['subtypes']:
-                        s = Subrace(document = Document.objects.get(title="Systems Reference Document"), parent_race=r)
+                        s = models.Subrace(document = models.Document.objects.get(title="Systems Reference Document"), parent_race=r)
                         if 'name' in subrace:
                             s.name = subrace['name']
                             s.slug = slugify(subrace['name'])
@@ -423,11 +421,10 @@ def loadSections():
         fail_count = 0
         
         for section in sections:
-            if Section.objects.filter(name=section['name']).exists():
-                #print ("Section {0} already loaded, skipping.".format(section['name']))
+            if models.Section.objects.filter(name=section['name']).exists():
                 fail_count+=1
             else:
-                s = Section(document = Document.objects.get(title="Systems Reference Document"))
+                s = models.Section(document = models.Document.objects.get(title="Systems Reference Document"))
                 if 'name' in section:
                     s.name = section['name']
                     s.slug = slugify(section['name'])
@@ -447,10 +444,10 @@ def loadMagicItems():
         fail_count = 0
 
         for item in magicItems:
-            if MagicItem.objects.filter(name=item['name']).exists():
+            if models.MagicItem.objects.filter(name=item['name']).exists():
                 fail_count+=1
             else:
-                i = MagicItem(document = Document.objects.get(title="Systems Reference Document"))
+                i = models.MagicItem(document = models.Document.objects.get(title="Systems Reference Document"))
                 if 'name' in item:
                     i.name = item['name']
                     i.slug = slugify(item['name'])
