@@ -21,7 +21,7 @@ class CustomSchema(AutoSchema):
     def get_operation(self, path, method):
         # add extra_info to the operation
         oldOperation = super().get_operation(path, method)
-        oldOperation['title'] = self.extra_info['title']
+        oldOperation['title'] = self.extra_info['title'][path]
         return oldOperation
 
 class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
@@ -83,7 +83,10 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows viewing of spells.
     """
     schema = CustomSchema(
-        title='View Spells'
+        title={
+			'/spells/': 'View Spells',
+			'/spells/{slug}/': 'View Spell',
+		}
     )
     queryset = Spell.objects.all()
     filter_class=SpellFilter
