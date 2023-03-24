@@ -1,7 +1,10 @@
 openapi: 3.0.2
 info:
-  title: ''
+  title: Open 5e
   version: ''
+  description: The Open5e API includes all monsters and spells from the SRD and other
+    OGL sources as well as a search API, so you can easily access any part of the
+    SRD from your app or website.
 paths:
   /manifest/:
     get:
@@ -81,6 +84,9 @@ paths:
                       - type
                       - hash
           description: ''
+      summary: View Manifests
+      tags: &id001
+      - Manifest
   /manifest/{id}/:
     get:
       operationId: retrieveManifest
@@ -139,6 +145,8 @@ paths:
                 - type
                 - hash
           description: ''
+      summary: View Manifest
+      tags: *id001
   /spells/:
     get:
       operationId: listSpells
@@ -451,7 +459,9 @@ paths:
                       - archetype
                       - circles
           description: ''
-      title: View Spells
+      summary: View Spells
+      tags: &id002
+      - Spells
   /spells/{slug}/:
     get:
       operationId: retrieveSpell
@@ -744,7 +754,8 @@ paths:
                 - archetype
                 - circles
           description: ''
-      title: View Spell
+      summary: View Spell
+      tags: *id002
   /monsters/:
     get:
       operationId: listMonsters
@@ -974,7 +985,9 @@ paths:
                       - challenge_rating
                       - legendary_desc
           description: ''
-      title: View Monsters
+      summary: View Monsters
+      tags: &id003
+      - Monsters
   /monsters/{slug}/:
     get:
       operationId: retrieveMonster
@@ -1184,7 +1197,8 @@ paths:
                 - challenge_rating
                 - legendary_desc
           description: ''
-      title: View Monster
+      summary: View Monster
+      tags: *id003
   /documents/:
     get:
       operationId: listDocuments
@@ -1301,6 +1315,9 @@ paths:
                       - organization
                       - version
           description: ''
+      summary: View Documents
+      tags: &id004
+      - Spells
   /documents/{id}/:
     get:
       operationId: retrieveDocument
@@ -1397,6 +1414,8 @@ paths:
                 - organization
                 - version
           description: ''
+      summary: View Document
+      tags: *id004
   /backgrounds/:
     get:
       operationId: listBackgrounds
@@ -1511,7 +1530,9 @@ paths:
                       - feature_desc
                       - suggested_characteristics
           description: ''
-      title: View Backgrounds
+      summary: View Backgrounds
+      tags: &id005
+      - Backgrounds
   /backgrounds/{slug}/:
     get:
       operationId: retrieveBackground
@@ -1606,7 +1627,8 @@ paths:
                 - feature_desc
                 - suggested_characteristics
           description: ''
-      title: View Background
+      summary: View Background
+      tags: *id005
   /planes/:
     get:
       operationId: listPlanes
@@ -1685,7 +1707,9 @@ paths:
                       - name
                       - desc
           description: ''
-      title: View planess
+      summary: View planess
+      tags: &id006
+      - Planes
   /planes/{slug}/:
     get:
       operationId: retrievePlane
@@ -1744,7 +1768,8 @@ paths:
                 - name
                 - desc
           description: ''
-      title: View Plane
+      summary: View Plane
+      tags: *id006
   /sections/:
     get:
       operationId: listSections
@@ -1835,7 +1860,9 @@ paths:
                       - name
                       - desc
           description: ''
-      title: View Sections
+      summary: View Sections
+      tags: &id007
+      - Sections
   /sections/{slug}/:
     get:
       operationId: retrieveSection
@@ -1906,7 +1933,8 @@ paths:
                 - name
                 - desc
           description: ''
-      title: View Section
+      summary: View Section
+      tags: *id007
   /feats/:
     get:
       operationId: listFeats
@@ -1997,7 +2025,9 @@ paths:
                       - name
                       - desc
           description: ''
-      title: View Feats
+      summary: View Feats
+      tags: &id008
+      - Feats
   /feats/{slug}/:
     get:
       operationId: retrieveFeat
@@ -2068,7 +2098,8 @@ paths:
                 - name
                 - desc
           description: ''
-      title: View Feat
+      summary: View Feat
+      tags: *id008
   /conditions/:
     get:
       operationId: listConditions
@@ -2147,7 +2178,9 @@ paths:
                       - name
                       - desc
           description: ''
-      title: View Conditions
+      summary: View Conditions
+      tags: &id009
+      - Conditions
   /conditions/{slug}/:
     get:
       operationId: retrieveCondition
@@ -2206,7 +2239,8 @@ paths:
                 - name
                 - desc
           description: ''
-      title: View Condition
+      summary: View Condition
+      tags: *id009
   /races/:
     get:
       operationId: listRaces
@@ -2348,7 +2382,9 @@ paths:
                       - vision
                       - traits
           description: ''
-      title: View Races
+      summary: View Races
+      tags: &id010
+      - Races
   /races/{slug}/:
     get:
       operationId: retrieveRace
@@ -2470,7 +2506,8 @@ paths:
                 - vision
                 - traits
           description: ''
-      title: View Race
+      summary: View Race
+      tags: *id010
   /classes/:
     get:
       operationId: listCharClass
@@ -2612,7 +2649,9 @@ paths:
                       - spellcasting_ability
                       - subtypes_name
           description: ''
-      title: View Classes
+      summary: View Classes
+      tags: &id011
+      - Classes
   /classes/{slug}/:
     get:
       operationId: retrieveCharClass
@@ -2734,7 +2773,8 @@ paths:
                 - spellcasting_ability
                 - subtypes_name
           description: ''
-      title: View Classe
+      summary: View Classe
+      tags: *id011
   /magicitems/:
     get:
       operationId: listMagicItems
@@ -2822,7 +2862,9 @@ paths:
                       - rarity
                       - requires_attunement
           description: ''
-      title: View Magic Items
+      summary: View Magic Items
+      tags: &id012
+      - Magic Items
   /magicitems/{slug}/:
     get:
       operationId: retrieveMagicItem
@@ -2890,7 +2932,8 @@ paths:
                 - rarity
                 - requires_attunement
           description: ''
-      title: View Magic Item
+      summary: View Magic Item
+      tags: *id012
   /weapons/:
     get:
       operationId: listWeapons
@@ -2987,7 +3030,9 @@ paths:
                       - damage_type
                       - weight
           description: ''
-      title: View Weapons
+      summary: View Weapons
+      tags: &id013
+      - Weapons
   /weapons/{slug}/:
     get:
       operationId: retrieveWeapon
@@ -3064,7 +3109,8 @@ paths:
                 - damage_type
                 - weight
           description: ''
-      title: View Weapon
+      summary: View Weapon
+      tags: *id013
   /armor/:
     get:
       operationId: listArmors
@@ -3161,7 +3207,9 @@ paths:
                       - weight
                       - stealth_disadvantage
           description: ''
-      title: View Armor
+      summary: View Armor
+      tags: &id014
+      - Armor
   /armor/{slug}/:
     get:
       operationId: retrieveArmor
@@ -3238,7 +3286,8 @@ paths:
                 - weight
                 - stealth_disadvantage
           description: ''
-      title: View Armor
+      summary: View Armor
+      tags: *id014
   /search/:
     get:
       operationId: listAggregates
@@ -3447,6 +3496,9 @@ paths:
                       - _MagicItemIndex__rarity
                       - _MagicItemIndex__requires_attunement
           description: ''
+      summary: Search
+      tags: &id015
+      - Search
   /search/{id}/:
     get:
       operationId: retrieveAggregate
@@ -3635,3 +3687,8 @@ paths:
                 - _MagicItemIndex__rarity
                 - _MagicItemIndex__requires_attunement
           description: ''
+      summary: Search
+      tags: *id015
+servers:
+- url: https://api.open5e.com/
+  description: Open 5e
