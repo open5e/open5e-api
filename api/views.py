@@ -5,10 +5,24 @@ from api.models import *
 from api.serializers import *
 from drf_haystack.serializers import HaystackSerializer
 from drf_haystack.viewsets import HaystackViewSet
+from rest_framework.schemas.openapi import AutoSchema
 
 from api.models import Monster
 from api.search_indexes import MonsterIndex
 
+class CustomSchema(AutoSchema):
+    def __init__(self, **kwargs):
+        self.extra_info = {
+            "title": kwargs.pop("title")
+        }
+
+        super().__init__(**kwargs)
+
+    def get_operation(self, path, method):
+        # add extra_info to the operation
+        oldOperation = super().get_operation(path, method)
+        oldOperation['title'] = self.extra_info['title']
+        return oldOperation
 
 class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Manifest.objects.all()
@@ -64,11 +78,13 @@ class SpellFilter(django_filters.FilterSet):
             'document__slug': ['iexact', 'exact', 'in', ],
         }
 
-
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows viewing of spells.
     """
+    schema = CustomSchema(
+        title='View Spells'
+    )
     queryset = Spell.objects.all()
     filter_class=SpellFilter
     serializer_class = SpellSerializer

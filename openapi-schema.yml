@@ -429,6 +429,7 @@ paths:
                       - archetype
                       - circles
           description: ''
+      title: View Spells
   /spells/{slug}/:
     get:
       operationId: retrieveSpell
@@ -721,6 +722,7 @@ paths:
                 - archetype
                 - circles
           description: ''
+      title: View Spells
   /monsters/:
     get:
       operationId: listMonsters
