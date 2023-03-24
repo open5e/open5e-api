@@ -6,7 +6,18 @@ paths:
   /manifest/:
     get:
       operationId: listManifests
-      description: ''
+      description: 'API endpoint that allows viewing of Manifests.
+
+
+        For each data source file, there is a corresponding Manifest containing an
+
+        md5 hash of the data inside that file. When we update our data files, the
+
+        corresponding Manifest''s hash will change. If you host a service that
+
+        automatically downloads data from open5e, then you can periodically check
+
+        the Manifests to see whether your data is out-of-date.'
       parameters:
       - name: page
         required: false
@@ -73,7 +84,18 @@ paths:
   /manifest/{id}/:
     get:
       operationId: retrieveManifest
-      description: ''
+      description: 'API endpoint that allows viewing of Manifests.
+
+
+        For each data source file, there is a corresponding Manifest containing an
+
+        md5 hash of the data inside that file. When we update our data files, the
+
+        corresponding Manifest''s hash will change. If you host a service that
+
+        automatically downloads data from open5e, then you can periodically check
+
+        the Manifests to see whether your data is out-of-date.'
       parameters:
       - name: id
         in: path
@@ -120,7 +142,7 @@ paths:
   /spells/:
     get:
       operationId: listSpells
-      description: API endpoint that allows viewing of spells.
+      description: API endpoint that allows viewing of Spells.
       parameters:
       - name: page
         required: false
@@ -433,7 +455,7 @@ paths:
   /spells/{slug}/:
     get:
       operationId: retrieveSpell
-      description: API endpoint that allows viewing of spells.
+      description: API endpoint that allows viewing of Spells.
       parameters:
       - name: slug
         in: path
@@ -722,11 +744,11 @@ paths:
                 - archetype
                 - circles
           description: ''
-      title: View Spells
+      title: View Spell
   /monsters/:
     get:
       operationId: listMonsters
-      description: API endpoint that allows viewing of monsters.
+      description: API endpoint that allows viewing of Monsters.
       parameters:
       - name: page
         required: false
@@ -762,6 +784,12 @@ paths:
         required: false
         in: query
         description: name
+        schema:
+          type: string
+      - name: page_no
+        required: false
+        in: query
+        description: page_no
         schema:
           type: string
       - name: document
@@ -915,6 +943,9 @@ paths:
                           items:
                             type: string
                           readOnly: true
+                        page_no:
+                          type: integer
+                          nullable: true
                         img_main:
                           type: string
                           readOnly: true
@@ -943,10 +974,11 @@ paths:
                       - challenge_rating
                       - legendary_desc
           description: ''
+      title: View Monsters
   /monsters/{slug}/:
     get:
       operationId: retrieveMonster
-      description: API endpoint that allows viewing of monsters.
+      description: API endpoint that allows viewing of Monsters.
       parameters:
       - name: slug
         in: path
@@ -976,6 +1008,12 @@ paths:
         required: false
         in: query
         description: name
+        schema:
+          type: string
+      - name: page_no
+        required: false
+        in: query
+        description: page_no
         schema:
           type: string
       - name: document
@@ -1115,6 +1153,9 @@ paths:
                     items:
                       type: string
                     readOnly: true
+                  page_no:
+                    type: integer
+                    nullable: true
                   img_main:
                     type: string
                     readOnly: true
@@ -1143,10 +1184,11 @@ paths:
                 - challenge_rating
                 - legendary_desc
           description: ''
+      title: View Monster
   /documents/:
     get:
       operationId: listDocuments
-      description: ''
+      description: API endpoint that allows viewing of Documents.
       parameters:
       - name: page
         required: false
@@ -1262,7 +1304,7 @@ paths:
   /documents/{id}/:
     get:
       operationId: retrieveDocument
-      description: ''
+      description: API endpoint that allows viewing of Documents.
       parameters:
       - name: id
         in: path
@@ -1469,6 +1511,7 @@ paths:
                       - feature_desc
                       - suggested_characteristics
           description: ''
+      title: View Backgrounds
   /backgrounds/{slug}/:
     get:
       operationId: retrieveBackground
@@ -1563,6 +1606,7 @@ paths:
                 - feature_desc
                 - suggested_characteristics
           description: ''
+      title: View Background
   /planes/:
     get:
       operationId: listPlanes
@@ -1641,6 +1685,7 @@ paths:
                       - name
                       - desc
           description: ''
+      title: View planess
   /planes/{slug}/:
     get:
       operationId: retrievePlane
@@ -1699,6 +1744,7 @@ paths:
                 - name
                 - desc
           description: ''
+      title: View Plane
   /sections/:
     get:
       operationId: listSections
@@ -1789,6 +1835,7 @@ paths:
                       - name
                       - desc
           description: ''
+      title: View Sections
   /sections/{slug}/:
     get:
       operationId: retrieveSection
@@ -1859,6 +1906,7 @@ paths:
                 - name
                 - desc
           description: ''
+      title: View Section
   /feats/:
     get:
       operationId: listFeats
@@ -1935,6 +1983,10 @@ paths:
                           type: string
                         prerequisite:
                           type: string
+                          nullable: true
+                        effects_desc:
+                          type: string
+                          readOnly: true
                         document__slug:
                           type: string
                           readOnly: true
@@ -1944,8 +1996,8 @@ paths:
                       required:
                       - name
                       - desc
-                      - prerequisite
           description: ''
+      title: View Feats
   /feats/{slug}/:
     get:
       operationId: retrieveFeat
@@ -2002,6 +2054,10 @@ paths:
                     type: string
                   prerequisite:
                     type: string
+                    nullable: true
+                  effects_desc:
+                    type: string
+                    readOnly: true
                   document__slug:
                     type: string
                     readOnly: true
@@ -2011,12 +2067,12 @@ paths:
                 required:
                 - name
                 - desc
-                - prerequisite
           description: ''
+      title: View Feat
   /conditions/:
     get:
       operationId: listConditions
-      description: API endpoint that allows viewing of Backgrounds.
+      description: API endpoint that allows viewing of Conditions.
       parameters:
       - name: page
         required: false
@@ -2091,10 +2147,11 @@ paths:
                       - name
                       - desc
           description: ''
+      title: View Conditions
   /conditions/{slug}/:
     get:
       operationId: retrieveCondition
-      description: API endpoint that allows viewing of Backgrounds.
+      description: API endpoint that allows viewing of Conditions.
       parameters:
       - name: slug
         in: path
@@ -2149,6 +2206,7 @@ paths:
                 - name
                 - desc
           description: ''
+      title: View Condition
   /races/:
     get:
       operationId: listRaces
@@ -2290,6 +2348,7 @@ paths:
                       - vision
                       - traits
           description: ''
+      title: View Races
   /races/{slug}/:
     get:
       operationId: retrieveRace
@@ -2411,6 +2470,7 @@ paths:
                 - vision
                 - traits
           description: ''
+      title: View Race
   /classes/:
     get:
       operationId: listCharClass
@@ -2552,6 +2612,7 @@ paths:
                       - spellcasting_ability
                       - subtypes_name
           description: ''
+      title: View Classes
   /classes/{slug}/:
     get:
       operationId: retrieveCharClass
@@ -2673,10 +2734,11 @@ paths:
                 - spellcasting_ability
                 - subtypes_name
           description: ''
+      title: View Classe
   /magicitems/:
     get:
       operationId: listMagicItems
-      description: API endpoint that allows viewing of Archetypes.
+      description: API endpoint that allows viewing of Magic Items.
       parameters:
       - name: page
         required: false
@@ -2760,10 +2822,11 @@ paths:
                       - rarity
                       - requires_attunement
           description: ''
+      title: View Magic Items
   /magicitems/{slug}/:
     get:
       operationId: retrieveMagicItem
-      description: API endpoint that allows viewing of Archetypes.
+      description: API endpoint that allows viewing of Magic Items.
       parameters:
       - name: slug
         in: path
@@ -2827,10 +2890,11 @@ paths:
                 - rarity
                 - requires_attunement
           description: ''
+      title: View Magic Item
   /weapons/:
     get:
       operationId: listWeapons
-      description: API endpoint that allows viewing of Archetypes.
+      description: API endpoint that allows viewing of Weapons.
       parameters:
       - name: page
         required: false
@@ -2923,10 +2987,11 @@ paths:
                       - damage_type
                       - weight
           description: ''
+      title: View Weapons
   /weapons/{slug}/:
     get:
       operationId: retrieveWeapon
-      description: API endpoint that allows viewing of Archetypes.
+      description: API endpoint that allows viewing of Weapons.
       parameters:
       - name: slug
         in: path
@@ -2999,10 +3064,11 @@ paths:
                 - damage_type
                 - weight
           description: ''
+      title: View Weapon
   /armor/:
     get:
       operationId: listArmors
-      description: API endpoint that allows viewing of Archetypes.
+      description: API endpoint that allows viewing of Armor.
       parameters:
       - name: page
         required: false
@@ -3095,10 +3161,11 @@ paths:
                       - weight
                       - stealth_disadvantage
           description: ''
+      title: View Armor
   /armor/{slug}/:
     get:
       operationId: retrieveArmor
-      description: API endpoint that allows viewing of Archetypes.
+      description: API endpoint that allows viewing of Armor.
       parameters:
       - name: slug
         in: path
@@ -3171,10 +3238,11 @@ paths:
                 - weight
                 - stealth_disadvantage
           description: ''
+      title: View Armor
   /search/:
     get:
       operationId: listAggregates
-      description: ''
+      description: API endpoint that allows searching our database.
       parameters:
       - name: page
         required: false
@@ -3382,7 +3450,7 @@ paths:
   /search/{id}/:
     get:
       operationId: retrieveAggregate
-      description: ''
+      description: API endpoint that allows searching our database.
       parameters:
       - name: id
         in: path
