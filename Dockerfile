@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.11-alpine
 
 RUN mkdir -p /opt/services/open5e-api
 WORKDIR /opt/services/open5e-api
@@ -14,6 +14,7 @@ RUN pipenv install
 RUN pipenv run python manage.py quicksetup
 
 # Create the self-signed certs for gunicorn.
+RUN apk add openssl
 RUN pipenv run sh ./scripts/generate_self_signed_cert.sh
 
 #run gunicorn.
