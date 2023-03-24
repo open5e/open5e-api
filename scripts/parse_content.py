@@ -1,7 +1,10 @@
-import json, os, sys
-#import pypandoc
+import json
+import os
+import sys
 import re
+
 from django.template.defaultfilters import slugify
+
 
 data_directory = '../data/WOTC_5e_SRD_v5.1/'
 

@@ -1,4 +1,7 @@
-import re, urllib, sys, os
+import os
+import re
+import sys
+import urllib
 
 
 def split_spells(lines, target):

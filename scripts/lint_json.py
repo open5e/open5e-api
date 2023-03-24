@@ -1,7 +1,7 @@
-import os
-import sys
 import glob
 import json
+import os
+import sys
 
 root_path = os.environ['OPEN_5E_ROOT']
 sys.path.append(root_path)

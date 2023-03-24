@@ -2,37 +2,34 @@
 
 import subprocess
 
+from django.core.management import call_command
 from django.core.management.base import BaseCommand
+
+# SOURCE_DIRS contains every data directory full of JSON to import.
+SOURCE_DIRS = [
+    './data/open5e_original/',
+    './data/WOTC_5e_SRD_v5.1/',
+    './data/tome_of_beasts/',
+    './data/creature_codex/',
+    './data/tome_of_beasts_2/',
+    './data/deep_magic/',
+    './data/menagerie/',
+    './data/tome_of_beasts_3/',
+    './data/a5e_srd/'
+]
 
 class Command(BaseCommand):
     """Implementation for the `manage.py quickload` subcommand."""
 
+    help = 'Load all data sources by running `populatedb` for each source dir.'
+
     def handle(self, *args, **options) -> None:
         """Main logic."""
+        self.stdout.write('Loading data from all sources...')
         populate_db()
+        self.stdout.write(self.style.SUCCESS('Data loading complete.'))
 
 
 def populate_db() -> None:
     """Run `manage.py populatedb` for all data sources."""
-    source_dirs = (
-        './data/open5e_original/',
-        './data/WOTC_5e_SRD_v5.1/',
-        './data/tome_of_beasts/',
-        './data/creature_codex/',
-        './data/tome_of_beasts_2/',
-        './data/deep_magic/',
-        './data/menagerie/',
-        './data/tome_of_beasts_3/',
-    )
-    # Flush the DB on the first pass.
-    # Then append so that we don't flush what we made the first time.
-    is_first_round = True
-    for source_dir in source_dirs:
-        cmd = ['pipenv', 'run', 'python', 'manage.py', 'populatedb']
-        if is_first_round:
-            cmd.append('--flush')
-            is_first_round = False
-        else:
-            cmd.append('--append')
-        cmd.append(source_dir)
-        subprocess.run(cmd)
+    call_command('populatedb', '--flush', *SOURCE_DIRS)

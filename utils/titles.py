@@ -1,4 +1,6 @@
-import sys, os, re
+import os
+import re
+import sys
 
 DRYRUN = False
 

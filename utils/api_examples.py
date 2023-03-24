@@ -1,5 +1,7 @@
+import os
+import pickle
+
 import docutils.nodes
-import os, pickle
 
 def alltitles():
   '''Returns all titles in all pages

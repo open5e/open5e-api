@@ -1,6 +1,5 @@
-from rest_framework.pagination import PageNumberPagination
 from haystack.utils import Highlighter
-import markdown2 as mkdn
+from rest_framework.pagination import PageNumberPagination
 
 class StandardResultsSetPagination(PageNumberPagination):
     page_size = 50

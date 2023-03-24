@@ -1,14 +1,26 @@
-import uuid
-from django.db import models
-from jsonfield import JSONField
 import json
+import uuid
+
+from django.db import models
 
 
 class Manifest(models.Model):
+    """A Manifest contains a hash based on the contents of a file.
+
+    This is intended for folks who process and store content from our API.
+    When they download content, they also download the corresponding manifest.
+    Periodically, they check back in to see whether any manifests have changed.
+    If so, then they know to re-download that source.
+    """
     filename = models.CharField(max_length=255, unique=True)
     type = models.CharField(max_length=25)
     hash = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Manifests"
 
 class Document(models.Model):
     slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1)
@@ -23,12 +35,26 @@ class Document(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     license_url= models.TextField(default="http://open5e.com/legal")
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Documents"
+
 class GameContent(models.Model):
     slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1, primary_key=True) # dispel-evil-and-good
     name = models.TextField()
     desc = models.TextField()
     document = models.ForeignKey(Document, on_delete=models.CASCADE) # Like the System Reference Document
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
+
+    # If the source is a physical book (possibly with a digital version), 
+    # then page_no is the page number in the physical book, even if the PDF
+    # page number is different due to additional cover pages.
+    # If the source is only digital, then of course just the PDF page number.
+    # This field may be hard to populate across-the-board, so leave as None
+    # unless explicitly populated.
+    page_no = models.IntegerField(null=True)
+
     def document__slug(self):
         return self.document.slug
     def document__title(self):
@@ -37,6 +63,11 @@ class GameContent(models.Model):
         return self.document.license_url
     class Meta:
         abstract=True
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "GameContents"
 
 class Spell(GameContent):
     higher_level = models.TextField()
@@ -55,6 +86,11 @@ class Spell(GameContent):
     archetype = models.TextField()
     circles = models.TextField()
     route = models.TextField(default="spells/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Spells"
 
 class Monster(GameContent):
     size = models.TextField()
@@ -111,9 +147,19 @@ class Monster(GameContent):
     route = models.TextField(default="monsters/") 
     img_main = models.URLField(null=True)
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Monsters"
+
 class MonsterSpell(models.Model):
     spell = models.ForeignKey(Spell, on_delete=models.CASCADE)
     monster = models.ForeignKey(Monster, on_delete=models.CASCADE)
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "MonsterSpells"
 
 class CharClass(GameContent):
     hit_dice = models.TextField()
@@ -130,9 +176,19 @@ class CharClass(GameContent):
     subtypes_name = models.TextField()
     route = models.TextField(default="classes/")
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "CharClasses"
+
 class Archetype(GameContent):
     char_class = models.ForeignKey(CharClass, related_name='archetypes', on_delete=models.CASCADE, null=True)
     route = models.TextField(default="archetypes/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Archetypes"
 
 class Race(GameContent):
     asi_desc = models.TextField()
@@ -151,6 +207,11 @@ class Race(GameContent):
     traits = models.TextField()
     route = models.TextField(default="races/")
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Races"
+
 class Subrace(GameContent):
     asi_desc = models.TextField()
     asi_json = models.TextField()
@@ -160,22 +221,51 @@ class Subrace(GameContent):
     parent_race = models.ForeignKey(Race, related_name='subraces', on_delete=models.CASCADE, null=True)
     route = models.TextField(default="subraces/")
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Subraces"
+
 class Plane(GameContent):
     pass
     route = models.TextField(default="planes/") 
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Planes"
+
 class Section(GameContent):
     parent = models.TextField(null=True)
     route = models.TextField(default="sections/") 
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Sections"
     
 class Feat(GameContent):
-        
-    prerequisite = models.TextField()
-    route = models.TextField(default="conditions/") 
+    prerequisite = models.TextField(null=True)
+    # desc
+    route = models.TextField(default="feats/")
+    effects_desc_json = models.TextField()
+    def effects_desc(self):
+        if self.effects_desc_json:
+            return json.loads(self.effects_desc_json)
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Feats"
 
 class Condition(GameContent):
     pass
     route = models.TextField(default="conditions/") 
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Conditions"
 
 class Background(GameContent):
     skill_proficiencies = models.TextField(null=True)
@@ -187,11 +277,21 @@ class Background(GameContent):
     suggested_characteristics = models.TextField()
     route = models.TextField(default="backgrounds/") 
 
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Backgrounds"
+
 class MagicItem(GameContent):
     type = models.TextField()
     rarity = models.TextField()
     requires_attunement = models.TextField()
     route = models.TextField(default="magicitems/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "MagicItems"
 
 class Weapon(GameContent):
     category = models.TextField()
@@ -204,6 +304,11 @@ class Weapon(GameContent):
         if self.properties_json:
             return json.loads(self.properties_json)
     route = models.TextField(default="weapons/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Weapons"
 
 class Armor(GameContent):
     category = models.TextField()
@@ -228,3 +333,8 @@ class Armor(GameContent):
     strength_requirement = models.IntegerField(null=True)
 
     route = models.TextField(default="armor/")
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "Armors"
