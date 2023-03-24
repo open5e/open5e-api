@@ -183,7 +183,7 @@ class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/planes/': 'View planess',
+			'/planes/': 'View planes',
 			'/planes/{slug}/': 'View Plane',
 		},
         tags=['Planes']
