@@ -20,8 +20,8 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/manifest/': 'View Manifests',
-			'/manifest/{id}/': 'View Manifest',
+			'/manifest/': 'List Manifests',
+			'/manifest/{id}/': 'Retrieve Manifest',
 		},
         tags=['Manifest']
     )
@@ -65,8 +65,8 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/documents/': 'View Documents',
-			'/documents/{id}/': 'View Document',
+			'/documents/': 'List Documents',
+			'/documents/{id}/': 'Retrieve Document',
 		},
         tags=['Spells']
     )
@@ -103,8 +103,8 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/spells/': 'View Spells',
-			'/spells/{slug}/': 'View Spell',
+			'/spells/': 'List Spells',
+			'/spells/{slug}/': 'Retrieve Spell',
 		},
         tags=['Spells']
     )
@@ -134,8 +134,8 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/monsters/': 'View Monsters',
-			'/monsters/{slug}/': 'View Monster',
+			'/monsters/': 'List Monsters',
+			'/monsters/{slug}/': 'Retrieve Monster',
 		},
         tags=['Monsters']
     )
@@ -160,8 +160,8 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/backgrounds/': 'View Backgrounds',
-			'/backgrounds/{slug}/': 'View Background',
+			'/backgrounds/': 'List Backgrounds',
+			'/backgrounds/{slug}/': 'Retrieve Background',
 		},
         tags=['Backgrounds']
     )
@@ -183,8 +183,8 @@ class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/planes/': 'View planes',
-			'/planes/{slug}/': 'View Plane',
+			'/planes/': 'List Planes',
+			'/planes/{slug}/': 'Retrieve Plane',
 		},
         tags=['Planes']
     )
@@ -201,8 +201,8 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/sections/': 'View Sections',
-			'/sections/{slug}/': 'View Section',
+			'/sections/': 'List Sections',
+			'/sections/{slug}/': 'Retrieve Section',
 		},
         tags=['Sections']
     )
@@ -222,8 +222,8 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/feats/': 'View Feats',
-			'/feats/{slug}/': 'View Feat',
+			'/feats/': 'List Feats',
+			'/feats/{slug}/': 'Retrieve Feat',
 		},
         tags=['Feats']
     )
@@ -241,8 +241,8 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/conditions/': 'View Conditions',
-			'/conditions/{slug}/': 'View Condition',
+			'/conditions/': 'List Conditions',
+			'/conditions/{slug}/': 'Retrieve Condition',
 		},
         tags=['Conditions']
     )
@@ -259,8 +259,8 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/races/': 'View Races',
-			'/races/{slug}/': 'View Race',
+			'/races/': 'List Races',
+			'/races/{slug}/': 'Retrieve Race',
 		},
         tags=['Races']
     )
@@ -277,8 +277,8 @@ class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/subraces/': 'View Subraces',
-			'/subraces/{slug}/': 'View Subrace',
+			'/subraces/': 'List Subraces',
+			'/subraces/{slug}/': 'Retrieve Subrace',
 		},
         tags=['Subraces']
     )
@@ -295,8 +295,8 @@ class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/classes/': 'View Classes',
-			'/classes/{slug}/': 'View Classe',
+			'/classes/': 'List Classes',
+			'/classes/{slug}/': 'Retrieve Class',
 		},
         tags=['Classes']
     )
@@ -313,8 +313,8 @@ class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/archetypes/': 'View Archetypes',
-			'/archetypes/{slug}/': 'View Archetype',
+			'/archetypes/': 'List Archetypes',
+			'/archetypes/{slug}/': 'Retrieve Archetype',
 		},
         tags=['Archetypes']
     )
@@ -331,8 +331,8 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/magicitems/': 'View Magic Items',
-			'/magicitems/{slug}/': 'View Magic Item',
+			'/magicitems/': 'List Magic Items',
+			'/magicitems/{slug}/': 'Retrieve Magic Item',
 		},
 		tags=['Magic Items']
     )
@@ -350,8 +350,8 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/weapons/': 'View Weapons',
-			'/weapons/{slug}/': 'View Weapon',
+			'/weapons/': 'List Weapons',
+			'/weapons/{slug}/': 'Retrieve Weapon',
 		},
 		tags=['Weapons']
     )
@@ -369,8 +369,8 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/armor/': 'View Armor',
-			'/armor/{slug}/': 'View Armor',
+			'/armor/': 'List Armor',
+			'/armor/{slug}/': 'Retrieve Armor',
 		},
 		tags=['Armor']
     )
