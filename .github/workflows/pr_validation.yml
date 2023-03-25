@@ -15,4 +15,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: false
-          tags: eepmoody/open5e-api:${{ env.GITHUB_REF_NAME }}
+          tags: open5e-api:${{ github.ref_name }}
