@@ -245,9 +245,13 @@ class Section(GameContent):
         return "Sections"
     
 class Feat(GameContent):
-        
-    prerequisite = models.TextField()
-    route = models.TextField(default="conditions/") 
+    prerequisite = models.TextField(null=True)
+    # desc
+    route = models.TextField(default="feats/")
+    effects_desc_json = models.TextField()
+    def effects_desc(self):
+        if self.effects_desc_json:
+            return json.loads(self.effects_desc_json)
 
     @staticmethod
     def plural_str() -> str:

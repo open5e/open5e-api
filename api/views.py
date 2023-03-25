@@ -51,7 +51,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Document.objects.all()
     serializer_class = serializers.DocumentSerializer
-    filter_fields = (
+    filterset_fields = (
         'slug',
         'title',
         'organization',
@@ -82,7 +82,7 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     API endpoint that allows viewing of Spells.
     """
     queryset = models.Spell.objects.all()
-    filter_class=SpellFilter
+    filterset_class=SpellFilter
     serializer_class = serializers.SpellSerializer
     search_fields = ['dnd_class', 'name']
     ordering_fields = '__all__'
@@ -109,7 +109,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.MonsterSerializer
     ordering_fields = '__all__'
     ordering = ['name']
-    filter_fields = (
+    filterset_fields = (
         'challenge_rating',
         'armor_class',
         'type',
@@ -128,7 +128,7 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.BackgroundSerializer
     ordering_fields = '__all__'
     ordering=['name']
-    filter_fields=(
+    filterset_fields=(
         'name',
         'skill_proficiencies',
         'languages',
@@ -142,7 +142,7 @@ class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Plane.objects.all()
     serializer_class = serializers.PlaneSerializer
-    filter_fields=(
+    filterset_fields=(
         'name',
         'document__slug',
     )
@@ -155,7 +155,7 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.SectionSerializer
     ordering_fields = '__all__'
     ordering=['name']
-    filter_fields=(
+    filterset_fields=(
         'name',
         'parent',
         'document__slug',
@@ -167,7 +167,11 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Feat.objects.all()
     serializer_class = serializers.FeatSerializer
-    filter_fields=('name','prerequisite', 'document__slug',)
+    filterset_fields=(
+        'name',
+        'prerequisite', 
+        'document__slug',
+        )
 
 class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -175,7 +179,7 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Condition.objects.all()
     serializer_class = serializers.ConditionSerializer
-    filter_fields=(
+    filterset_fields=(
         'name',
         'document__slug',
     )
@@ -186,7 +190,7 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Race.objects.all()
     serializer_class = serializers.RaceSerializer
-    filter_fields=(
+    filterset_fields=(
         'name',
         'document__slug',
     )
@@ -197,7 +201,7 @@ class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Subrace.objects.all()
     serializer_class = serializers.SubraceSerializer
-    filter_fields=(
+    filterset_fields=(
         'name',
         'document__slug',
     )
@@ -208,7 +212,7 @@ class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.CharClass.objects.all()
     serializer_class = serializers.CharClassSerializer
-    filter_fields=(
+    filterset_fields=(
         'name',
         'document__slug',
     )
@@ -219,7 +223,7 @@ class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Archetype.objects.all()
     serializer_class = serializers.ArchetypeSerializer
-    filter_fields=(
+    filterset_fields=(
         'name',
         'document__slug',
     )
@@ -230,7 +234,7 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.MagicItem.objects.all()
     serializer_class = serializers.MagicItemSerializer
-    filter_fields=(
+    filterset_fields=(
         'name',        
         'document__slug',
     )
@@ -242,7 +246,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Weapon.objects.all()
     serializer_class = serializers.WeaponSerializer
-    filter_fields=(
+    filterset_fields=(
         'name',        
         'document__slug',
     )
@@ -254,7 +258,7 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Armor.objects.all()
     serializer_class = serializers.ArmorSerializer
-    filter_fields=(
+    filterset_fields=(
         'name',        
         'document__slug',
     )

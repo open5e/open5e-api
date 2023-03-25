@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.11-alpine
 
 RUN mkdir -p /opt/services/open5e-api
 WORKDIR /opt/services/open5e-api
@@ -10,41 +10,10 @@ COPY . /opt/services/open5e-api
 
 RUN pipenv install
 
-# migrate the db
-RUN pipenv run python manage.py makemigrations
-RUN pipenv run python manage.py migrate
+# migrate the db, load content, and index it
+RUN pipenv run python manage.py quicksetup
 
-# collect the static files
-RUN pipenv run python manage.py collectstatic --noinput
-
-#add original open5e content
-RUN pipenv run python manage.py populatedb --flush ./data/open5e_original/
-
-#populate the db
-RUN pipenv run python manage.py populatedb --append ./data/WOTC_5e_SRD_v5.1/
-
-#add the tome of beasts
-RUN pipenv run python manage.py populatedb --append ./data/tome_of_beasts/
-
-#add the creature codex
-RUN pipenv run python manage.py populatedb --append ./data/creature_codex/
-
-#add the tome of beasts 2
-RUN pipenv run python manage.py populatedb --append ./data/tome_of_beasts_2/
-
-#add deep magic
-RUN pipenv run python manage.py populatedb --append ./data/deep_magic/
-
-#add deep magic
-RUN pipenv run python manage.py populatedb --append ./data/tome_of_beasts_3/
-
-#add monstrous menegerie
-RUN pipenv run python manage.py populatedb --append ./data/menagerie/
-
-#build the search index
-RUN pipenv run python manage.py update_index --remove
-
-#remove .env file (sent your env vars via docker-compose.yml or your hosting provider)
+# remove .env file (set your env vars via docker-compose.yml or your hosting provider)
 RUN rm .env
 
 #run gunicorn.
