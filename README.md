@@ -54,7 +54,7 @@ And your server should be available at http://localhost:8000.
 
 ## Starting up a droplet
 
-This deployment has been tested using DigitalOcean with Docker.
+This deployment has been tested using DigitalOcean Apps with Docker Hub.
 
 To start up the server from scratch on a droplet:
 
