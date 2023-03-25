@@ -40,9 +40,9 @@ jobs:
       - name: Set Digital Ocean app id
         run: |
           if [[ $GITHUB_REF == refs/heads/main ]]; then
-            echo "DIGITALOCEAN_APP_ID=476726eb-3be5-4b53-abeb-fba6db77786e" >> $GITHUB_ENV
+            echo "DIGITALOCEAN_APP_ID=${{ secrets.MAIN_APP_ID }}" >> $GITHUB_ENV
           elif [[ $GITHUB_REF == refs/heads/staging ]]; then
-            echo "DIGITALOCEAN_APP_ID=todo" >> $GITHUB_ENV
+            echo "DIGITALOCEAN_APP_ID=${{ secrets.STAGING_APP_ID }}" >> $GITHUB_ENV
           fi
       - name: Deploy to Digital Ocean
         env:
