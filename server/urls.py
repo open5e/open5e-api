@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.conf.urls import url, include
+from django.conf.urls import re_path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework import routers
 
@@ -45,7 +45,7 @@ router.register('search', views.SearchView, basename="global-search")
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    url(r'^', include(router.urls)),
+    re_path(r'^', include(router.urls)),
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^search/', include('haystack.urls')),
+    re_path(r'^search/', include('haystack.urls')),
 ]

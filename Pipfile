@@ -4,23 +4,23 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==2.1.11"
-djangorestframework = "==3.11.2"
+django = "3"
+djangorestframework = "*"
 django-filter = "*"
 django-cors-headers = "*"
-django-haystack = "==2.8.1"
-drf-haystack = "==1.8.4"
+django-haystack = "*"
+drf-haystack = "*"
 gunicorn = "*"
 jsonfield = "*"
 markdown = "*"
 "markdown2" = "*"
 pylint = "*"
-python-decouple = "==3.1"
-setuptools = "==58.2.0"
+python-decouple = "*"
+setuptools = "*"
 whitenoise = "*"
 whoosh = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "3.11"
