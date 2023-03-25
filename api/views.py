@@ -23,7 +23,7 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
 			'/manifest/': 'List Manifests',
 			'/manifest/{id}/': 'Retrieve Manifest',
 		},
-        tags=['Manifest']
+        tags=['Manifests']
     )
     queryset = models.Manifest.objects.all()
     serializer_class = serializers.ManifestSerializer
@@ -68,7 +68,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
 			'/documents/': 'List Documents',
 			'/documents/{id}/': 'Retrieve Document',
 		},
-        tags=['Spells']
+        tags=['Documents']
     )
     queryset = models.Document.objects.all()
     serializer_class = serializers.DocumentSerializer
@@ -231,7 +231,7 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.FeatSerializer
     filterset_fields=(
         'name',
-        'prerequisite', 
+        'prerequisite',
         'document__slug',
         )
 
@@ -339,7 +339,7 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.MagicItem.objects.all()
     serializer_class = serializers.MagicItemSerializer
     filterset_fields=(
-        'name',        
+        'name',
         'document__slug',
     )
     search_fields = ['name']
@@ -358,7 +358,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Weapon.objects.all()
     serializer_class = serializers.WeaponSerializer
     filterset_fields=(
-        'name',        
+        'name',
         'document__slug',
     )
     search_fields = ['name']
@@ -377,7 +377,7 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Armor.objects.all()
     serializer_class = serializers.ArmorSerializer
     filterset_fields=(
-        'name',        
+        'name',
         'document__slug',
     )
     search_fields = ['name']

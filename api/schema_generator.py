@@ -35,4 +35,6 @@ class Open5eSchemaGenerator(SchemaGenerator):
 			"description": "Open 5e"
 			}
 		]
+        # This isn't a real endpoint, so we remove it from the schema
+        schema['paths'].pop('/search/{id}/')
         return schema

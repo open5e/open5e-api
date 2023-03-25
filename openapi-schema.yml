@@ -3,8 +3,8 @@ info:
   title: Open 5e
   version: ''
   description: The Open5e API includes all monsters and spells from the SRD and other
-    OGL sources as well as a search API, so you can easily access any part of the
-    SRD from your app or website.
+    OGL sources as well as a search API, so you can access any part of the SRD from
+    your app or website.
 paths:
   /manifest/:
     get:
@@ -84,9 +84,9 @@ paths:
                       - type
                       - hash
           description: ''
-      summary: View Manifests
+      summary: List Manifests
       tags: &id001
-      - Manifest
+      - Manifests
   /manifest/{id}/:
     get:
       operationId: retrieveManifest
@@ -145,7 +145,7 @@ paths:
                 - type
                 - hash
           description: ''
-      summary: View Manifest
+      summary: Retrieve Manifest
       tags: *id001
   /spells/:
     get:
@@ -459,7 +459,7 @@ paths:
                       - archetype
                       - circles
           description: ''
-      summary: View Spells
+      summary: List Spells
       tags: &id002
       - Spells
   /spells/{slug}/:
@@ -754,7 +754,7 @@ paths:
                 - archetype
                 - circles
           description: ''
-      summary: View Spell
+      summary: Retrieve Spell
       tags: *id002
   /monsters/:
     get:
@@ -985,7 +985,7 @@ paths:
                       - challenge_rating
                       - legendary_desc
           description: ''
-      summary: View Monsters
+      summary: List Monsters
       tags: &id003
       - Monsters
   /monsters/{slug}/:
@@ -1197,7 +1197,7 @@ paths:
                 - challenge_rating
                 - legendary_desc
           description: ''
-      summary: View Monster
+      summary: Retrieve Monster
       tags: *id003
   /documents/:
     get:
@@ -1315,9 +1315,9 @@ paths:
                       - organization
                       - version
           description: ''
-      summary: View Documents
+      summary: List Documents
       tags: &id004
-      - Spells
+      - Documents
   /documents/{id}/:
     get:
       operationId: retrieveDocument
@@ -1414,7 +1414,7 @@ paths:
                 - organization
                 - version
           description: ''
-      summary: View Document
+      summary: Retrieve Document
       tags: *id004
   /backgrounds/:
     get:
@@ -1530,7 +1530,7 @@ paths:
                       - feature_desc
                       - suggested_characteristics
           description: ''
-      summary: View Backgrounds
+      summary: List Backgrounds
       tags: &id005
       - Backgrounds
   /backgrounds/{slug}/:
@@ -1627,7 +1627,7 @@ paths:
                 - feature_desc
                 - suggested_characteristics
           description: ''
-      summary: View Background
+      summary: Retrieve Background
       tags: *id005
   /planes/:
     get:
@@ -1707,7 +1707,7 @@ paths:
                       - name
                       - desc
           description: ''
-      summary: View planes
+      summary: List Planes
       tags: &id006
       - Planes
   /planes/{slug}/:
@@ -1768,7 +1768,7 @@ paths:
                 - name
                 - desc
           description: ''
-      summary: View Plane
+      summary: Retrieve Plane
       tags: *id006
   /sections/:
     get:
@@ -1860,7 +1860,7 @@ paths:
                       - name
                       - desc
           description: ''
-      summary: View Sections
+      summary: List Sections
       tags: &id007
       - Sections
   /sections/{slug}/:
@@ -1933,7 +1933,7 @@ paths:
                 - name
                 - desc
           description: ''
-      summary: View Section
+      summary: Retrieve Section
       tags: *id007
   /feats/:
     get:
@@ -2025,7 +2025,7 @@ paths:
                       - name
                       - desc
           description: ''
-      summary: View Feats
+      summary: List Feats
       tags: &id008
       - Feats
   /feats/{slug}/:
@@ -2098,7 +2098,7 @@ paths:
                 - name
                 - desc
           description: ''
-      summary: View Feat
+      summary: Retrieve Feat
       tags: *id008
   /conditions/:
     get:
@@ -2178,7 +2178,7 @@ paths:
                       - name
                       - desc
           description: ''
-      summary: View Conditions
+      summary: List Conditions
       tags: &id009
       - Conditions
   /conditions/{slug}/:
@@ -2239,7 +2239,7 @@ paths:
                 - name
                 - desc
           description: ''
-      summary: View Condition
+      summary: Retrieve Condition
       tags: *id009
   /races/:
     get:
@@ -2382,7 +2382,7 @@ paths:
                       - vision
                       - traits
           description: ''
-      summary: View Races
+      summary: List Races
       tags: &id010
       - Races
   /races/{slug}/:
@@ -2506,7 +2506,7 @@ paths:
                 - vision
                 - traits
           description: ''
-      summary: View Race
+      summary: Retrieve Race
       tags: *id010
   /classes/:
     get:
@@ -2649,7 +2649,7 @@ paths:
                       - spellcasting_ability
                       - subtypes_name
           description: ''
-      summary: View Classes
+      summary: List Classes
       tags: &id011
       - Classes
   /classes/{slug}/:
@@ -2773,7 +2773,7 @@ paths:
                 - spellcasting_ability
                 - subtypes_name
           description: ''
-      summary: View Classe
+      summary: Retrieve Class
       tags: *id011
   /magicitems/:
     get:
@@ -2862,7 +2862,7 @@ paths:
                       - rarity
                       - requires_attunement
           description: ''
-      summary: View Magic Items
+      summary: List Magic Items
       tags: &id012
       - Magic Items
   /magicitems/{slug}/:
@@ -2932,7 +2932,7 @@ paths:
                 - rarity
                 - requires_attunement
           description: ''
-      summary: View Magic Item
+      summary: Retrieve Magic Item
       tags: *id012
   /weapons/:
     get:
@@ -3030,7 +3030,7 @@ paths:
                       - damage_type
                       - weight
           description: ''
-      summary: View Weapons
+      summary: List Weapons
       tags: &id013
       - Weapons
   /weapons/{slug}/:
@@ -3109,7 +3109,7 @@ paths:
                 - damage_type
                 - weight
           description: ''
-      summary: View Weapon
+      summary: Retrieve Weapon
       tags: *id013
   /armor/:
     get:
@@ -3207,7 +3207,7 @@ paths:
                       - weight
                       - stealth_disadvantage
           description: ''
-      summary: View Armor
+      summary: List Armor
       tags: &id014
       - Armor
   /armor/{slug}/:
@@ -3286,7 +3286,7 @@ paths:
                 - weight
                 - stealth_disadvantage
           description: ''
-      summary: View Armor
+      summary: Retrieve Armor
       tags: *id014
   /search/:
     get:
@@ -3497,198 +3497,8 @@ paths:
                       - _MagicItemIndex__requires_attunement
           description: ''
       summary: Search
-      tags: &id015
+      tags:
       - Search
-  /search/{id}/:
-    get:
-      operationId: retrieveAggregate
-      description: API endpoint that allows searching our database.
-      parameters:
-      - name: id
-        in: path
-        required: true
-        description: ''
-        schema:
-          type: string
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                properties:
-                  _MonsterIndex__text:
-                    type: string
-                  _MonsterIndex__name:
-                    type: string
-                  _MonsterIndex__route:
-                    type: string
-                  _MonsterIndex__slug:
-                    type: string
-                    maxLength: 255
-                  _MonsterIndex__armor_class:
-                    type: string
-                  _MonsterIndex__hit_points:
-                    type: string
-                    nullable: true
-                  _MonsterIndex__hit_dice:
-                    type: string
-                  _MonsterIndex__strength:
-                    type: string
-                    nullable: true
-                  _MonsterIndex__dexterity:
-                    type: string
-                    nullable: true
-                  _MonsterIndex__constitution:
-                    type: string
-                    nullable: true
-                  _MonsterIndex__intelligence:
-                    type: string
-                    nullable: true
-                  _MonsterIndex__wisdom:
-                    type: string
-                    nullable: true
-                  _MonsterIndex__charisma:
-                    type: string
-                    nullable: true
-                  _MonsterIndex__challenge_rating:
-                    type: string
-                  _MonsterIndex__document_slug:
-                    type: string
-                  _MonsterIndex__document_title:
-                    type: string
-                  _SpellIndex__document_slug:
-                    type: string
-                  _SpellIndex__document_title:
-                    type: string
-                  _SpellIndex__text:
-                    type: string
-                  _SpellIndex__name:
-                    type: string
-                  _SpellIndex__route:
-                    type: string
-                  _SpellIndex__slug:
-                    type: string
-                    maxLength: 255
-                  _SpellIndex__ritual:
-                    type: string
-                  _SpellIndex__level:
-                    type: string
-                  _SpellIndex__school:
-                    type: string
-                  _SpellIndex__dnd_class:
-                    type: string
-                  _SectionIndex__document_slug:
-                    type: string
-                  _SectionIndex__document_title:
-                    type: string
-                  _SectionIndex__text:
-                    type: string
-                  _SectionIndex__name:
-                    type: string
-                  _SectionIndex__route:
-                    type: string
-                  _SectionIndex__slug:
-                    type: string
-                    maxLength: 255
-                  _ConditionIndex__document_slug:
-                    type: string
-                  _ConditionIndex__document_title:
-                    type: string
-                  _ConditionIndex__text:
-                    type: string
-                  _ConditionIndex__name:
-                    type: string
-                  _ConditionIndex__route:
-                    type: string
-                  _ConditionIndex__slug:
-                    type: string
-                    maxLength: 255
-                  _CharClassIndex__document_slug:
-                    type: string
-                  _CharClassIndex__document_title:
-                    type: string
-                  _CharClassIndex__text:
-                    type: string
-                  _CharClassIndex__name:
-                    type: string
-                  _CharClassIndex__route:
-                    type: string
-                  _CharClassIndex__slug:
-                    type: string
-                    maxLength: 255
-                  _RaceIndex__document_slug:
-                    type: string
-                  _RaceIndex__document_title:
-                    type: string
-                  _RaceIndex__text:
-                    type: string
-                  _RaceIndex__name:
-                    type: string
-                  _RaceIndex__route:
-                    type: string
-                  _RaceIndex__slug:
-                    type: string
-                    maxLength: 255
-                  _MagicItemIndex__document_slug:
-                    type: string
-                  _MagicItemIndex__document_title:
-                    type: string
-                  _MagicItemIndex__text:
-                    type: string
-                  _MagicItemIndex__name:
-                    type: string
-                  _MagicItemIndex__route:
-                    type: string
-                  _MagicItemIndex__slug:
-                    type: string
-                    maxLength: 255
-                  _MagicItemIndex__type:
-                    type: string
-                  _MagicItemIndex__rarity:
-                    type: string
-                  _MagicItemIndex__requires_attunement:
-                    type: string
-                required:
-                - _MonsterIndex__text
-                - _MonsterIndex__name
-                - _MonsterIndex__hit_dice
-                - _MonsterIndex__challenge_rating
-                - _MonsterIndex__document_slug
-                - _MonsterIndex__document_title
-                - _SpellIndex__document_slug
-                - _SpellIndex__document_title
-                - _SpellIndex__text
-                - _SpellIndex__name
-                - _SpellIndex__ritual
-                - _SpellIndex__level
-                - _SpellIndex__school
-                - _SpellIndex__dnd_class
-                - _SectionIndex__document_slug
-                - _SectionIndex__document_title
-                - _SectionIndex__text
-                - _SectionIndex__name
-                - _ConditionIndex__document_slug
-                - _ConditionIndex__document_title
-                - _ConditionIndex__text
-                - _ConditionIndex__name
-                - _CharClassIndex__document_slug
-                - _CharClassIndex__document_title
-                - _CharClassIndex__text
-                - _CharClassIndex__name
-                - _RaceIndex__document_slug
-                - _RaceIndex__document_title
-                - _RaceIndex__text
-                - _RaceIndex__name
-                - _MagicItemIndex__document_slug
-                - _MagicItemIndex__document_title
-                - _MagicItemIndex__text
-                - _MagicItemIndex__name
-                - _MagicItemIndex__type
-                - _MagicItemIndex__rarity
-                - _MagicItemIndex__requires_attunement
-          description: ''
-      summary: Search
-      tags: *id015
 servers:
 - url: https://api.open5e.com/
   description: Open 5e
