@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  title: Open 5e
+  title: Open5e
   version: ''
   description: The Open5e API includes all monsters and spells from the SRD and other
     OGL sources as well as a search API, so you can access any part of the SRD from
@@ -9,18 +9,18 @@ paths:
   /manifest/:
     get:
       operationId: listManifests
-      description: 'API endpoint that allows viewing of Manifests.
+      description: 'API endpoint for returning a list of of manifests.
 
 
-        For each data source file, there is a corresponding Manifest containing an
+        For each data source file, there is a corresponding manifest containing an
 
-        md5 hash of the data inside that file. When we update our data files, the
+        MD5 hash of the data inside that file. When we update our data files, the
 
-        corresponding Manifest''s hash will change. If you host a service that
+        corresponding manifest''s hash changes. If you host a service that
 
-        automatically downloads data from open5e, then you can periodically check
+        automatically downloads data from Open5e, you can periodically check
 
-        the Manifests to see whether your data is out-of-date.'
+        the manifests to determine whether your data is out of date.'
       parameters:
       - name: page
         required: false
@@ -90,18 +90,18 @@ paths:
   /manifest/{id}/:
     get:
       operationId: retrieveManifest
-      description: 'API endpoint that allows viewing of Manifests.
+      description: 'API endpoint for returning a list of of manifests.
 
 
-        For each data source file, there is a corresponding Manifest containing an
+        For each data source file, there is a corresponding manifest containing an
 
-        md5 hash of the data inside that file. When we update our data files, the
+        MD5 hash of the data inside that file. When we update our data files, the
 
-        corresponding Manifest''s hash will change. If you host a service that
+        corresponding manifest''s hash changes. If you host a service that
 
-        automatically downloads data from open5e, then you can periodically check
+        automatically downloads data from Open5e, you can periodically check
 
-        the Manifests to see whether your data is out-of-date.'
+        the manifests to determine whether your data is out of date.'
       parameters:
       - name: id
         in: path
@@ -150,7 +150,7 @@ paths:
   /spells/:
     get:
       operationId: listSpells
-      description: API endpoint that allows viewing of Spells.
+      description: API endpoint for returning a list of spells.
       parameters:
       - name: page
         required: false
@@ -465,7 +465,7 @@ paths:
   /spells/{slug}/:
     get:
       operationId: retrieveSpell
-      description: API endpoint that allows viewing of Spells.
+      description: API endpoint for returning a list of spells.
       parameters:
       - name: slug
         in: path
@@ -759,7 +759,7 @@ paths:
   /monsters/:
     get:
       operationId: listMonsters
-      description: API endpoint that allows viewing of Monsters.
+      description: API endpoint for returning a list of monsters.
       parameters:
       - name: page
         required: false
@@ -991,7 +991,7 @@ paths:
   /monsters/{slug}/:
     get:
       operationId: retrieveMonster
-      description: API endpoint that allows viewing of Monsters.
+      description: API endpoint for returning a list of monsters.
       parameters:
       - name: slug
         in: path
@@ -1202,7 +1202,7 @@ paths:
   /documents/:
     get:
       operationId: listDocuments
-      description: API endpoint that allows viewing of Documents.
+      description: API endpoint for returning a list of documents.
       parameters:
       - name: page
         required: false
@@ -1321,7 +1321,7 @@ paths:
   /documents/{id}/:
     get:
       operationId: retrieveDocument
-      description: API endpoint that allows viewing of Documents.
+      description: API endpoint for returning a list of documents.
       parameters:
       - name: id
         in: path
@@ -1419,7 +1419,7 @@ paths:
   /backgrounds/:
     get:
       operationId: listBackgrounds
-      description: API endpoint that allows viewing of Backgrounds.
+      description: API endpoint for returning a list of backgrounds.
       parameters:
       - name: page
         required: false
@@ -1536,7 +1536,7 @@ paths:
   /backgrounds/{slug}/:
     get:
       operationId: retrieveBackground
-      description: API endpoint that allows viewing of Backgrounds.
+      description: API endpoint for returning a list of backgrounds.
       parameters:
       - name: slug
         in: path
@@ -1632,7 +1632,7 @@ paths:
   /planes/:
     get:
       operationId: listPlanes
-      description: API endpoint that allows viewing of Planes.
+      description: API endpoint for returning a list of planes.
       parameters:
       - name: page
         required: false
@@ -1713,7 +1713,7 @@ paths:
   /planes/{slug}/:
     get:
       operationId: retrievePlane
-      description: API endpoint that allows viewing of Planes.
+      description: API endpoint for returning a list of planes.
       parameters:
       - name: slug
         in: path
@@ -1773,7 +1773,7 @@ paths:
   /sections/:
     get:
       operationId: listSections
-      description: API endpoint that allows viewing of Sections.
+      description: API endpoint for returning a list of sections.
       parameters:
       - name: page
         required: false
@@ -1866,7 +1866,7 @@ paths:
   /sections/{slug}/:
     get:
       operationId: retrieveSection
-      description: API endpoint that allows viewing of Sections.
+      description: API endpoint for returning a list of sections.
       parameters:
       - name: slug
         in: path
@@ -1938,7 +1938,7 @@ paths:
   /feats/:
     get:
       operationId: listFeats
-      description: API endpoint that allows viewing of Feats.
+      description: API endpoint for returning a list of feats.
       parameters:
       - name: page
         required: false
@@ -2031,7 +2031,7 @@ paths:
   /feats/{slug}/:
     get:
       operationId: retrieveFeat
-      description: API endpoint that allows viewing of Feats.
+      description: API endpoint for returning a list of feats.
       parameters:
       - name: slug
         in: path
@@ -2103,7 +2103,7 @@ paths:
   /conditions/:
     get:
       operationId: listConditions
-      description: API endpoint that allows viewing of Conditions.
+      description: API endpoint for returning a list of conditions.
       parameters:
       - name: page
         required: false
@@ -2184,7 +2184,7 @@ paths:
   /conditions/{slug}/:
     get:
       operationId: retrieveCondition
-      description: API endpoint that allows viewing of Conditions.
+      description: API endpoint for returning a list of conditions.
       parameters:
       - name: slug
         in: path
@@ -2244,7 +2244,7 @@ paths:
   /races/:
     get:
       operationId: listRaces
-      description: API endpoint that allows viewing of Races and Subraces.
+      description: API endpoint for returning a list of races and subraces.
       parameters:
       - name: page
         required: false
@@ -2388,7 +2388,7 @@ paths:
   /races/{slug}/:
     get:
       operationId: retrieveRace
-      description: API endpoint that allows viewing of Races and Subraces.
+      description: API endpoint for returning a list of races and subraces.
       parameters:
       - name: slug
         in: path
@@ -2511,7 +2511,7 @@ paths:
   /classes/:
     get:
       operationId: listCharClass
-      description: API endpoint that allows viewing of Classes and Archetypes.
+      description: API endpoint for returning a list of classes and archetypes.
       parameters:
       - name: page
         required: false
@@ -2655,7 +2655,7 @@ paths:
   /classes/{slug}/:
     get:
       operationId: retrieveCharClass
-      description: API endpoint that allows viewing of Classes and Archetypes.
+      description: API endpoint for returning a list of classes and archetypes.
       parameters:
       - name: slug
         in: path
@@ -2778,7 +2778,7 @@ paths:
   /magicitems/:
     get:
       operationId: listMagicItems
-      description: API endpoint that allows viewing of Magic Items.
+      description: API endpoint for returning a list of magic items.
       parameters:
       - name: page
         required: false
@@ -2868,7 +2868,7 @@ paths:
   /magicitems/{slug}/:
     get:
       operationId: retrieveMagicItem
-      description: API endpoint that allows viewing of Magic Items.
+      description: API endpoint for returning a list of magic items.
       parameters:
       - name: slug
         in: path
@@ -2937,7 +2937,7 @@ paths:
   /weapons/:
     get:
       operationId: listWeapons
-      description: API endpoint that allows viewing of Weapons.
+      description: API endpoint for returning a list of weapons.
       parameters:
       - name: page
         required: false
@@ -3036,7 +3036,7 @@ paths:
   /weapons/{slug}/:
     get:
       operationId: retrieveWeapon
-      description: API endpoint that allows viewing of Weapons.
+      description: API endpoint for returning a list of weapons.
       parameters:
       - name: slug
         in: path
@@ -3114,7 +3114,7 @@ paths:
   /armor/:
     get:
       operationId: listArmors
-      description: API endpoint that allows viewing of Armor.
+      description: API endpoint for returning a list of armor.
       parameters:
       - name: page
         required: false
@@ -3213,7 +3213,7 @@ paths:
   /armor/{slug}/:
     get:
       operationId: retrieveArmor
-      description: API endpoint that allows viewing of Armor.
+      description: API endpoint for returning a list of armor.
       parameters:
       - name: slug
         in: path
@@ -3291,7 +3291,8 @@ paths:
   /search/:
     get:
       operationId: listAggregates
-      description: API endpoint that allows searching our database.
+      description: API endpoint for returning a list of search results from the Open5e
+        database.
       parameters:
       - name: page
         required: false

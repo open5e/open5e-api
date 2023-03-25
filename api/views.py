@@ -10,13 +10,13 @@ from api.schema_generator import CustomSchema
 
 class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Manifests.
+    API endpoint for returning a list of of manifests.
 
-    For each data source file, there is a corresponding Manifest containing an
-    md5 hash of the data inside that file. When we update our data files, the
-    corresponding Manifest's hash will change. If you host a service that
-    automatically downloads data from open5e, then you can periodically check
-    the Manifests to see whether your data is out-of-date.
+    For each data source file, there is a corresponding manifest containing an
+    MD5 hash of the data inside that file. When we update our data files, the
+    corresponding manifest's hash changes. If you host a service that
+    automatically downloads data from Open5e, you can periodically check
+    the manifests to determine whether your data is out of date.
     """
     schema = CustomSchema(
         summary={
@@ -30,7 +30,7 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
 
 class SearchView(HaystackViewSet):
     """
-    API endpoint that allows searching our database.
+    API endpoint for returning a list of search results from the Open5e database.
     """
     schema = CustomSchema(
         summary={
@@ -61,7 +61,7 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Documents.
+    API endpoint for returning a list of documents.
     """
     schema = CustomSchema(
         summary={
@@ -99,7 +99,7 @@ class SpellFilter(django_filters.FilterSet):
 
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Spells.
+    API endpoint for returning a list of spells.
     """
     schema = CustomSchema(
         summary={
@@ -130,7 +130,7 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
 
 class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Monsters.
+    API endpoint for returning a list of monsters.
     """
     schema = CustomSchema(
         summary={
@@ -156,7 +156,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
 
 class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Backgrounds.
+    API endpoint for returning a list of backgrounds.
     """
     schema = CustomSchema(
         summary={
@@ -179,7 +179,7 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
 
 class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Planes.
+    API endpoint for returning a list of planes.
     """
     schema = CustomSchema(
         summary={
@@ -197,7 +197,7 @@ class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
 
 class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Sections.
+    API endpoint for returning a list of sections.
     """
     schema = CustomSchema(
         summary={
@@ -218,7 +218,7 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
 
 class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Feats.
+    API endpoint for returning a list of feats.
     """
     schema = CustomSchema(
         summary={
@@ -237,7 +237,7 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Conditions.
+    API endpoint for returning a list of conditions.
     """
     schema = CustomSchema(
         summary={
@@ -255,7 +255,7 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
 
 class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Races and Subraces.
+    API endpoint for returning a list of races and subraces.
     """
     schema = CustomSchema(
         summary={
@@ -291,7 +291,7 @@ class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
 
 class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Classes and Archetypes.
+    API endpoint for returning a list of classes and archetypes.
     """
     schema = CustomSchema(
         summary={
@@ -327,7 +327,7 @@ class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
 
 class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Magic Items.
+    API endpoint for returning a list of magic items.
     """
     schema = CustomSchema(
         summary={
@@ -346,7 +346,7 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
 
 class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Weapons.
+    API endpoint for returning a list of weapons.
     """
     schema = CustomSchema(
         summary={
@@ -365,7 +365,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Armor.
+    API endpoint for returning a list of armor.
     """
     schema = CustomSchema(
         summary={

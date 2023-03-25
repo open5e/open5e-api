@@ -22,7 +22,7 @@ class CustomSchema(AutoSchema):
 class Open5eSchemaGenerator(SchemaGenerator):
     def __init__(self, **kwargs):
         super().__init__(
-            'Open 5e',
+            'Open5e',
             None,
             'The Open5e API includes all monsters and spells from the SRD and other OGL sources as well as a search API, so you can access any part of the SRD from your app or website.'
         )
