@@ -8,6 +8,15 @@ on:
       - main
 
 jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Pipenv
+        run: pip install --user pipenv
+      - name: Install Dependencies
+        run: pipenv install
+      - name: Run Tests
+        run: pipenv run python manage.py test
   build:
     runs-on: ubuntu-latest
     steps:
