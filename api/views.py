@@ -10,7 +10,15 @@ from api.schema_generator import CustomSchema
 
 class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of of manifests.
+    list: API endpoint for returning a list of of manifests.
+
+    For each data source file, there is a corresponding manifest containing an
+    MD5 hash of the data inside that file. When we update our data files, the
+    corresponding manifest's hash changes. If you host a service that
+    automatically downloads data from Open5e, you can periodically check
+    the manifests to determine whether your data is out of date.
+
+    retrieve: API endpoint for returning a particular manifest.
 
     For each data source file, there is a corresponding manifest containing an
     MD5 hash of the data inside that file. When we update our data files, the
@@ -20,23 +28,23 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
     """
     schema = CustomSchema(
         summary={
-			'/manifest/': 'List Manifests',
-			'/manifest/{id}/': 'Retrieve Manifest',
-		},
-        tags=['Manifests']
+            '/manifest/': 'List Manifests',
+            '/manifest/{id}/': 'Retrieve Manifest',
+        },
+        tags=['Manifests'],
     )
     queryset = models.Manifest.objects.all()
     serializer_class = serializers.ManifestSerializer
 
 class SearchView(HaystackViewSet):
     """
-    API endpoint for returning a list of search results from the Open5e database.
+    list: API endpoint for returning a list of search results from the Open5e database.
     """
     schema = CustomSchema(
         summary={
-			'/search/': 'Search',
-			'/search/{id}/': 'Search', # I doubt this is a real endpoint
-		},
+            '/search/': 'Search',
+            '/search/{id}/': 'Search', # I doubt this is a real endpoint
+        },
         tags=['Search']
     )
     # `index_models` is an optional list of which models you would like to include
@@ -61,13 +69,14 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of documents.
+    list: API endpoint for returning a list of documents.
+    retrieve: API endpoint for returning a particular document.
     """
     schema = CustomSchema(
         summary={
-			'/documents/': 'List Documents',
-			'/documents/{id}/': 'Retrieve Document',
-		},
+            '/documents/': 'List Documents',
+            '/documents/{id}/': 'Retrieve Document',
+        },
         tags=['Documents']
     )
     queryset = models.Document.objects.all()
@@ -99,13 +108,14 @@ class SpellFilter(django_filters.FilterSet):
 
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of spells.
+    list: API endpoint for returning a list of spells.
+    retrieve: API endpoint for returning a particular spell.
     """
     schema = CustomSchema(
         summary={
-			'/spells/': 'List Spells',
-			'/spells/{slug}/': 'Retrieve Spell',
-		},
+            '/spells/': 'List Spells',
+            '/spells/{slug}/': 'Retrieve Spell',
+        },
         tags=['Spells']
     )
     queryset = models.Spell.objects.all()
@@ -130,13 +140,14 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
 
 class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of monsters.
+    list: API endpoint for returning a list of monsters.
+    retrieve: API endpoint for returning a particular monster.
     """
     schema = CustomSchema(
         summary={
-			'/monsters/': 'List Monsters',
-			'/monsters/{slug}/': 'Retrieve Monster',
-		},
+            '/monsters/': 'List Monsters',
+            '/monsters/{slug}/': 'Retrieve Monster',
+        },
         tags=['Monsters']
     )
     queryset = models.Monster.objects.all()
@@ -156,13 +167,14 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
 
 class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of backgrounds.
+    list: API endpoint for returning a list of backgrounds.
+    retrieve: API endpoint for returning a particular background.
     """
     schema = CustomSchema(
         summary={
-			'/backgrounds/': 'List Backgrounds',
-			'/backgrounds/{slug}/': 'Retrieve Background',
-		},
+            '/backgrounds/': 'List Backgrounds',
+            '/backgrounds/{slug}/': 'Retrieve Background',
+        },
         tags=['Backgrounds']
     )
     queryset = models.Background.objects.all()
@@ -179,13 +191,14 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
 
 class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of planes.
+    list: API endpoint for returning a list of planes.
+    retrieve: API endpoint for returning a particular plane.
     """
     schema = CustomSchema(
         summary={
-			'/planes/': 'List Planes',
-			'/planes/{slug}/': 'Retrieve Plane',
-		},
+            '/planes/': 'List Planes',
+            '/planes/{slug}/': 'Retrieve Plane',
+        },
         tags=['Planes']
     )
     queryset = models.Plane.objects.all()
@@ -197,13 +210,14 @@ class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
 
 class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of sections.
+    list: API endpoint for returning a list of sections.
+    retrieve: API endpoint for returning a particular section.
     """
     schema = CustomSchema(
         summary={
-			'/sections/': 'List Sections',
-			'/sections/{slug}/': 'Retrieve Section',
-		},
+            '/sections/': 'List Sections',
+            '/sections/{slug}/': 'Retrieve Section',
+        },
         tags=['Sections']
     )
     queryset = models.Section.objects.all()
@@ -218,13 +232,14 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
 
 class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of feats.
+    list: API endpoint for returning a list of feats.
+    retrieve: API endpoint for returning a particular feat.
     """
     schema = CustomSchema(
         summary={
-			'/feats/': 'List Feats',
-			'/feats/{slug}/': 'Retrieve Feat',
-		},
+            '/feats/': 'List Feats',
+            '/feats/{slug}/': 'Retrieve Feat',
+        },
         tags=['Feats']
     )
     queryset = models.Feat.objects.all()
@@ -237,13 +252,14 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of conditions.
+    list: API endpoint for returning a list of conditions.
+    retrieve: API endpoint for returning a particular condition.
     """
     schema = CustomSchema(
         summary={
-			'/conditions/': 'List Conditions',
-			'/conditions/{slug}/': 'Retrieve Condition',
-		},
+            '/conditions/': 'List Conditions',
+            '/conditions/{slug}/': 'Retrieve Condition',
+        },
         tags=['Conditions']
     )
     queryset = models.Condition.objects.all()
@@ -255,13 +271,14 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
 
 class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of races and subraces.
+    list: API endpoint for returning a list of races.
+    retrieve: API endpoint for returning a particular race.
     """
     schema = CustomSchema(
         summary={
-			'/races/': 'List Races',
-			'/races/{slug}/': 'Retrieve Race',
-		},
+            '/races/': 'List Races',
+            '/races/{slug}/': 'Retrieve Race',
+        },
         tags=['Races']
     )
     queryset = models.Race.objects.all()
@@ -273,13 +290,14 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
 
 class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Races and Subraces.
+    list: API endpoint that allows viewing of Subraces.
+    retrieve: API endpoint for returning a particular subrace.
     """
     schema = CustomSchema(
         summary={
-			'/subraces/': 'List Subraces',
-			'/subraces/{slug}/': 'Retrieve Subrace',
-		},
+            '/subraces/': 'List Subraces',
+            '/subraces/{slug}/': 'Retrieve Subrace',
+        },
         tags=['Subraces']
     )
     queryset = models.Subrace.objects.all()
@@ -291,13 +309,14 @@ class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
 
 class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of classes and archetypes.
+    list: API endpoint for returning a list of classes and archetypes.
+    retrieve: API endpoint for returning a particular class or archetype.
     """
     schema = CustomSchema(
         summary={
-			'/classes/': 'List Classes',
-			'/classes/{slug}/': 'Retrieve Class',
-		},
+            '/classes/': 'List Classes',
+            '/classes/{slug}/': 'Retrieve Class',
+        },
         tags=['Classes']
     )
     queryset = models.CharClass.objects.all()
@@ -309,13 +328,14 @@ class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows viewing of Archetypes.
+    list: API endpoint that allows viewing of Archetypes.
+    retrieve: API endpoint for returning a particular archetype.
     """
     schema = CustomSchema(
         summary={
-			'/archetypes/': 'List Archetypes',
-			'/archetypes/{slug}/': 'Retrieve Archetype',
-		},
+            '/archetypes/': 'List Archetypes',
+            '/archetypes/{slug}/': 'Retrieve Archetype',
+        },
         tags=['Archetypes']
     )
     queryset = models.Archetype.objects.all()
@@ -327,14 +347,15 @@ class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
 
 class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of magic items.
+    list: API endpoint for returning a list of magic items.
+    retrieve: API endpoint for returning a particular magic item.
     """
     schema = CustomSchema(
         summary={
-			'/magicitems/': 'List Magic Items',
-			'/magicitems/{slug}/': 'Retrieve Magic Item',
-		},
-		tags=['Magic Items']
+            '/magicitems/': 'List Magic Items',
+            '/magicitems/{slug}/': 'Retrieve Magic Item',
+        },
+        tags=['Magic Items']
     )
     queryset = models.MagicItem.objects.all()
     serializer_class = serializers.MagicItemSerializer
@@ -346,14 +367,15 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
 
 class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of weapons.
+    list: API endpoint for returning a list of weapons.
+    retrieve: API endpoint for returning a particular weapon.
     """
     schema = CustomSchema(
         summary={
-			'/weapons/': 'List Weapons',
-			'/weapons/{slug}/': 'Retrieve Weapon',
-		},
-		tags=['Weapons']
+            '/weapons/': 'List Weapons',
+            '/weapons/{slug}/': 'Retrieve Weapon',
+        },
+        tags=['Weapons']
     )
     queryset = models.Weapon.objects.all()
     serializer_class = serializers.WeaponSerializer
@@ -365,14 +387,15 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint for returning a list of armor.
+    list: API endpoint for returning a list of armor.
+    retrieve: API endpoint for returning a particular armor.
     """
     schema = CustomSchema(
         summary={
-			'/armor/': 'List Armor',
-			'/armor/{slug}/': 'Retrieve Armor',
-		},
-		tags=['Armor']
+            '/armor/': 'List Armor',
+            '/armor/{slug}/': 'Retrieve Armor',
+        },
+        tags=['Armor']
     )
     queryset = models.Armor.objects.all()
     serializer_class = serializers.ArmorSerializer
