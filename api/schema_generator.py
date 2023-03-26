@@ -30,11 +30,11 @@ class Open5eSchemaGenerator(SchemaGenerator):
     def get_schema(self, *args, **kwargs):
         schema = super().get_schema(*args, **kwargs)
         schema['servers'] =[
-			{
-			"url": "https://api.open5e.com/",
-			"description": "Open 5e"
-			}
-		]
+            {
+            "url": "https://api.open5e.com/",
+            "description": "Open5e"
+            }
+        ]
         # This isn't a real endpoint, so we remove it from the schema
         schema['paths'].pop('/search/{id}/')
         return schema
