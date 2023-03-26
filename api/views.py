@@ -68,7 +68,13 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
 			'/documents/': 'List Documents',
 			'/documents/{id}/': 'Retrieve Document',
 		},
-        tags=['Documents']
+        tags=['Documents'],
+        query={
+			'slug': 'A short, human readable string uniquely identifying this document',
+			'title': 'A short descriptive title of this document',
+			'organization': 'The organization that published the document',
+			'license': 'The license under which the document is published',
+		}
     )
     queryset = models.Document.objects.all()
     serializer_class = serializers.DocumentSerializer
@@ -114,7 +120,7 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     search_fields = ['dnd_class', 'name']
     ordering_fields = '__all__'
     ordering=['name']
-    filter_fields = (
+    filterset_fields = (
         'slug',
         'name',
         'level',

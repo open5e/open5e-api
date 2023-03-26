@@ -932,6 +932,7 @@ paths:
                           type: string
                         challenge_rating:
                           type: string
+                          description: Monster challenge rating.
                         cr:
                           type: number
                           nullable: true
@@ -1144,6 +1145,7 @@ paths:
                     type: string
                   challenge_rating:
                     type: string
+                    description: Monster challenge rating.
                   cr:
                     type: number
                     nullable: true
@@ -1219,25 +1221,25 @@ paths:
       - name: slug
         required: false
         in: query
-        description: slug
+        description: A short, human readable string uniquely identifying this document
         schema:
           type: string
       - name: title
         required: false
         in: query
-        description: title
+        description: A short descriptive title of this document
         schema:
           type: string
       - name: organization
         required: false
         in: query
-        description: organization
+        description: The organization that published the document
         schema:
           type: string
       - name: license
         required: false
         in: query
-        description: license
+        description: The license under which the document is published
         schema:
           type: string
       - name: ordering
@@ -1332,25 +1334,25 @@ paths:
       - name: slug
         required: false
         in: query
-        description: slug
+        description: A short, human readable string uniquely identifying this document
         schema:
           type: string
       - name: title
         required: false
         in: query
-        description: title
+        description: A short descriptive title of this document
         schema:
           type: string
       - name: organization
         required: false
         in: query
-        description: organization
+        description: The organization that published the document
         schema:
           type: string
       - name: license
         required: false
         in: query
-        description: license
+        description: The license under which the document is published
         schema:
           type: string
       - name: ordering
@@ -3362,6 +3364,7 @@ paths:
                           nullable: true
                         _MonsterIndex__challenge_rating:
                           type: string
+                          description: Monster challenge rating.
                         _MonsterIndex__document_slug:
                           type: string
                         _MonsterIndex__document_title:
