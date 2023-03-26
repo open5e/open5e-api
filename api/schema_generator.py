@@ -55,7 +55,7 @@ class Open5eSchemaGenerator(SchemaGenerator):
         schema['servers'] =[
             {
             "url": "https://api.open5e.com/",
-            "description": "Open 5e"
+            "description": "Open5e"
             }
         ]
         # This isn't a real endpoint, so we remove it from the schema
