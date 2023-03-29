@@ -27,13 +27,13 @@ class Document(models.Model):
     title = models.TextField(help_text='Title of the document.') # System Reference Document
     desc = models.TextField(help_text='Description of the document.')
     license = models.TextField(help_text='The license of the content within the document.') # Open Gaming License
-    author = models.TextField(help_text='Author or authors') # Mike Mearls, Jeremy Crawford, Chris Perkins, Rodney Thompson, Peter Lee, James Wyatt, Robert J. Schwalb, Bruce R. Cordell, Chris Sims, and Steve Townshend, based on original material by E. Gary Gygax and Dave Arneson.
+    author = models.TextField(help_text='Author or authors.') # Mike Mearls, Jeremy Crawford, Chris Perkins, Rodney Thompson, Peter Lee, James Wyatt, Robert J. Schwalb, Bruce R. Cordell, Chris Sims, and Steve Townshend, based on original material by E. Gary Gygax and Dave Arneson.
     organization = models.TextField(help_text='Publishing organization.') # Wizards of the Coast
     version = models.TextField(help_text='Document version.') # 5.1
-    url = models.URLField(help_text='URL Reference to get the document.') # http://dnd.wizards.com/articles/features/systems-reference-document-srd
+    url = models.URLField(help_text='URL reference to get the document.') # http://dnd.wizards.com/articles/features/systems-reference-document-srd
     copyright = models.TextField( null = True, help_text='Copyright statement.') # Copyright 2025 open5e
-    created_at = models.DateTimeField(auto_now_add=True,help_text='Date it was added to the database.')
-    license_url= models.TextField(default="http://open5e.com/legal", help_text='URL Reference for the license.')
+    created_at = models.DateTimeField(auto_now_add=True,help_text='Date that this object was added to the database.')
+    license_url= models.TextField(default="http://open5e.com/legal", help_text='URL reference for the license.')
 
     @staticmethod
     def plural_str() -> str:
@@ -41,9 +41,9 @@ class Document(models.Model):
         return "Documents"
 
 class GameContent(models.Model):
-    slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1, primary_key=True) # dispel-evil-and-good
-    name = models.TextField()
-    desc = models.TextField()
+    slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1, primary_key=True, help_text='Short name for the game content item.') # dispel-evil-and-good
+    name = models.TextField(help_text='Name of the game content item.')
+    desc = models.TextField(help_text='Description of the game content item. Markdown.')
     document = models.ForeignKey(Document, on_delete=models.CASCADE) # Like the System Reference Document
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
@@ -70,20 +70,20 @@ class GameContent(models.Model):
         return "GameContents"
 
 class Spell(GameContent):
-    higher_level = models.TextField()
-    page = models.TextField()
-    range = models.TextField()
-    components = models.TextField()
-    material = models.TextField()
-    ritual = models.TextField()
-    duration = models.TextField()
-    concentration = models.TextField()
-    casting_time = models.TextField()
-    level = models.TextField()
-    level_int = models.IntegerField(null=True)
-    school = models.TextField()
-    dnd_class = models.TextField()
-    archetype = models.TextField()
+    higher_level = models.TextField(help_text='What happens if you cast this at a higher level.')
+    page = models.TextField(help_text='Page number reference for the document.')
+    range = models.TextField(help_text='Text description of the range.')
+    components = models.TextField(help_text='Single-character list of V, S, M for Verbal, Somatic, or Material based on the spell requirements.')
+    material = models.TextField(help_text='Description of the material required.')
+    ritual = models.TextField(help_text='"yes" or "no" based on whether or not a ritual is required.')
+    duration = models.TextField(help_text='Description of the duration such as "instantaneous" or "Up to 1 minute"')
+    concentration = models.TextField(help_text='"yes" or "no" based on whether the spell requires concentration.')
+    casting_time = models.TextField(help_text='Amount of time it takes to cast the spell, such as "1 bonus action" or "4 hours".')
+    level = models.TextField(help_text='Description of the level of the spell, such as "4th-level".')
+    level_int = models.IntegerField(null=True, help_text='Integer representing the level of the spell. Cantrip is 0.')
+    school = models.TextField(help_text='Representation of the school of magic, such as "illusion" or "evocation".')
+    dnd_class = models.TextField('List of classes (comma separated) that can learn this spell.')
+    archetype = models.TextField('Archetype that can learn this spell. If empty, assume all archetypes.')
     circles = models.TextField()
     route = models.TextField(default="spells/")
 
@@ -294,12 +294,12 @@ class MagicItem(GameContent):
         return "MagicItems"
 
 class Weapon(GameContent):
-    category = models.TextField()
-    cost = models.TextField()
-    damage_dice = models.TextField()
-    damage_type = models.TextField()
-    weight = models.TextField()
-    properties_json = models.TextField()
+    category = models.TextField(help_text='Category of the weapon, such as "Martial Melee Weapons"')
+    cost = models.TextField(help_text='Suggested cost of the weapon, such as "100 gp"')
+    damage_dice = models.TextField(help_text='Dice string of the weapon damage, such as "1d8".')
+    damage_type = models.TextField(help_text='Damage type of the weapon, such as "bludgeoning".')
+    weight = models.TextField(help_text='Weight of the item, such as "1 lb.".')
+    properties_json = models.TextField(help_text='List of properties that the weapon has.')
     def properties(self):
         if self.properties_json:
             return json.loads(self.properties_json)
@@ -311,10 +311,10 @@ class Weapon(GameContent):
         return "Weapons"
 
 class Armor(GameContent):
-    category = models.TextField()
-    cost=models.TextField()
-    weight = models.TextField()
-    stealth_disadvantage=models.BooleanField()
+    category = models.TextField(help_text='Category of the armor, such as "Heavy Armor"')
+    cost=models.TextField(help_text='Suggested cost of the weapon, such as "100 gp"')
+    weight = models.TextField(help_text='Apparently an empty string.')
+    stealth_disadvantage=models.BooleanField('Boolean representing whether wearing the armor results in stealth disadvantage for the wearer.')
     base_ac = models.IntegerField()
     plus_dex_mod = models.BooleanField(null=True)
     plus_con_mod = models.BooleanField(null=True)
