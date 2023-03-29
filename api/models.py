@@ -12,10 +12,10 @@ class Manifest(models.Model):
     Periodically, they check back in to see whether any manifests have changed.
     If so, then they know to re-download that source.
     """
-    filename = models.CharField(max_length=255, unique=True)
-    type = models.CharField(max_length=25)
-    hash = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True)
+    filename = models.CharField(max_length=255, unique=True, help_text='Input file name.')
+    type = models.CharField(max_length=25, help_text='Type of file (maps to a model).')
+    hash = models.CharField(max_length=255, help_text='md5 hash of the file contents.')
+    created_at = models.DateTimeField(auto_now_add=True, help_text='Date that this object was added to the database.')
 
     @staticmethod
     def plural_str() -> str:
@@ -24,16 +24,16 @@ class Manifest(models.Model):
 
 class Document(models.Model):
     slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1)
-    title = models.TextField() # System Reference Document
-    desc = models.TextField()
-    license = models.TextField() # Open Gaming License
-    author = models.TextField() # Mike Mearls, Jeremy Crawford, Chris Perkins, Rodney Thompson, Peter Lee, James Wyatt, Robert J. Schwalb, Bruce R. Cordell, Chris Sims, and Steve Townshend, based on original material by E. Gary Gygax and Dave Arneson.
-    organization = models.TextField() # Wizards of the Coast
-    version = models.TextField() # 5.1
-    url = models.URLField() # http://dnd.wizards.com/articles/features/systems-reference-document-srd
-    copyright = models.TextField( null = True ) # Copyright 2025 open5e
-    created_at = models.DateTimeField(auto_now_add=True)
-    license_url= models.TextField(default="http://open5e.com/legal")
+    title = models.TextField(help_text='Title of the document.') # System Reference Document
+    desc = models.TextField(help_text='Description of the document.')
+    license = models.TextField(help_text='The license of the content within the document.') # Open Gaming License
+    author = models.TextField(help_text='Author or authors') # Mike Mearls, Jeremy Crawford, Chris Perkins, Rodney Thompson, Peter Lee, James Wyatt, Robert J. Schwalb, Bruce R. Cordell, Chris Sims, and Steve Townshend, based on original material by E. Gary Gygax and Dave Arneson.
+    organization = models.TextField(help_text='Publishing organization.') # Wizards of the Coast
+    version = models.TextField(help_text='Document version.') # 5.1
+    url = models.URLField(help_text='URL Reference to get the document.') # http://dnd.wizards.com/articles/features/systems-reference-document-srd
+    copyright = models.TextField( null = True, help_text='Copyright statement.') # Copyright 2025 open5e
+    created_at = models.DateTimeField(auto_now_add=True,help_text='Date it was added to the database.')
+    license_url= models.TextField(default="http://open5e.com/legal", help_text='URL Reference for the license.')
 
     @staticmethod
     def plural_str() -> str:
