@@ -90,7 +90,7 @@ paths:
   /manifest/{id}/:
     get:
       operationId: retrieveManifest
-      description: 'API endpoint for returning a list of of manifests.
+      description: 'API endpoint for returning a particular manifest.
 
 
         For each data source file, there is a corresponding manifest containing an
@@ -465,7 +465,7 @@ paths:
   /spells/{slug}/:
     get:
       operationId: retrieveSpell
-      description: API endpoint for returning a list of spells.
+      description: API endpoint for returning a particular spell.
       parameters:
       - name: slug
         in: path
@@ -932,6 +932,7 @@ paths:
                           type: string
                         challenge_rating:
                           type: string
+                          description: Monster challenge rating.
                         cr:
                           type: number
                           nullable: true
@@ -991,7 +992,7 @@ paths:
   /monsters/{slug}/:
     get:
       operationId: retrieveMonster
-      description: API endpoint for returning a list of monsters.
+      description: API endpoint for returning a particular monster.
       parameters:
       - name: slug
         in: path
@@ -1144,6 +1145,7 @@ paths:
                     type: string
                   challenge_rating:
                     type: string
+                    description: Monster challenge rating.
                   cr:
                     type: number
                     nullable: true
@@ -1219,25 +1221,25 @@ paths:
       - name: slug
         required: false
         in: query
-        description: slug
+        description: A short, human readable string uniquely identifying this document
         schema:
           type: string
       - name: title
         required: false
         in: query
-        description: title
+        description: A short descriptive title of this document
         schema:
           type: string
       - name: organization
         required: false
         in: query
-        description: organization
+        description: The organization that published the document
         schema:
           type: string
       - name: license
         required: false
         in: query
-        description: license
+        description: The license under which the document is published
         schema:
           type: string
       - name: ordering
@@ -1321,7 +1323,7 @@ paths:
   /documents/{id}/:
     get:
       operationId: retrieveDocument
-      description: API endpoint for returning a list of documents.
+      description: API endpoint for returning a particular document.
       parameters:
       - name: id
         in: path
@@ -1332,25 +1334,25 @@ paths:
       - name: slug
         required: false
         in: query
-        description: slug
+        description: A short, human readable string uniquely identifying this document
         schema:
           type: string
       - name: title
         required: false
         in: query
-        description: title
+        description: A short descriptive title of this document
         schema:
           type: string
       - name: organization
         required: false
         in: query
-        description: organization
+        description: The organization that published the document
         schema:
           type: string
       - name: license
         required: false
         in: query
-        description: license
+        description: The license under which the document is published
         schema:
           type: string
       - name: ordering
@@ -1536,7 +1538,7 @@ paths:
   /backgrounds/{slug}/:
     get:
       operationId: retrieveBackground
-      description: API endpoint for returning a list of backgrounds.
+      description: API endpoint for returning a particular background.
       parameters:
       - name: slug
         in: path
@@ -1713,7 +1715,7 @@ paths:
   /planes/{slug}/:
     get:
       operationId: retrievePlane
-      description: API endpoint for returning a list of planes.
+      description: API endpoint for returning a particular plane.
       parameters:
       - name: slug
         in: path
@@ -1866,7 +1868,7 @@ paths:
   /sections/{slug}/:
     get:
       operationId: retrieveSection
-      description: API endpoint for returning a list of sections.
+      description: API endpoint for returning a particular section.
       parameters:
       - name: slug
         in: path
@@ -2031,7 +2033,7 @@ paths:
   /feats/{slug}/:
     get:
       operationId: retrieveFeat
-      description: API endpoint for returning a list of feats.
+      description: API endpoint for returning a particular feat.
       parameters:
       - name: slug
         in: path
@@ -2184,7 +2186,7 @@ paths:
   /conditions/{slug}/:
     get:
       operationId: retrieveCondition
-      description: API endpoint for returning a list of conditions.
+      description: API endpoint for returning a particular condition.
       parameters:
       - name: slug
         in: path
@@ -2244,7 +2246,7 @@ paths:
   /races/:
     get:
       operationId: listRaces
-      description: API endpoint for returning a list of races and subraces.
+      description: API endpoint for returning a list of races.
       parameters:
       - name: page
         required: false
@@ -2388,7 +2390,7 @@ paths:
   /races/{slug}/:
     get:
       operationId: retrieveRace
-      description: API endpoint for returning a list of races and subraces.
+      description: API endpoint for returning a particular race.
       parameters:
       - name: slug
         in: path
@@ -2655,7 +2657,7 @@ paths:
   /classes/{slug}/:
     get:
       operationId: retrieveCharClass
-      description: API endpoint for returning a list of classes and archetypes.
+      description: API endpoint for returning a particular class or archetype.
       parameters:
       - name: slug
         in: path
@@ -2868,7 +2870,7 @@ paths:
   /magicitems/{slug}/:
     get:
       operationId: retrieveMagicItem
-      description: API endpoint for returning a list of magic items.
+      description: API endpoint for returning a particular magic item.
       parameters:
       - name: slug
         in: path
@@ -3036,7 +3038,7 @@ paths:
   /weapons/{slug}/:
     get:
       operationId: retrieveWeapon
-      description: API endpoint for returning a list of weapons.
+      description: API endpoint for returning a particular weapon.
       parameters:
       - name: slug
         in: path
@@ -3213,7 +3215,7 @@ paths:
   /armor/{slug}/:
     get:
       operationId: retrieveArmor
-      description: API endpoint for returning a list of armor.
+      description: API endpoint for returning a particular armor.
       parameters:
       - name: slug
         in: path
@@ -3362,6 +3364,7 @@ paths:
                           nullable: true
                         _MonsterIndex__challenge_rating:
                           type: string
+                          description: Monster challenge rating.
                         _MonsterIndex__document_slug:
                           type: string
                         _MonsterIndex__document_title:
@@ -3502,4 +3505,4 @@ paths:
       - Search
 servers:
 - url: https://api.open5e.com/
-  description: Open 5e
+  description: Open5e
