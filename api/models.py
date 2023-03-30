@@ -25,7 +25,7 @@ class Manifest(models.Model):
 class Document(models.Model):
     slug = models.CharField(max_length=255, unique=True, default=uuid.uuid1)
     title = models.TextField() # System Reference Document
-    desc = models.TextField()
+    desc = models.TextField() 
     license = models.TextField() # Open Gaming License
     author = models.TextField() # Mike Mearls, Jeremy Crawford, Chris Perkins, Rodney Thompson, Peter Lee, James Wyatt, Robert J. Schwalb, Bruce R. Cordell, Chris Sims, and Steve Townshend, based on original material by E. Gary Gygax and Dave Arneson.
     organization = models.TextField() # Wizards of the Coast
@@ -47,7 +47,7 @@ class GameContent(models.Model):
     document = models.ForeignKey(Document, on_delete=models.CASCADE) # Like the System Reference Document
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
-    # If the source is a physical book (possibly with a digital version),
+    # If the source is a physical book (possibly with a digital version), 
     # then page_no is the page number in the physical book, even if the PDF
     # page number is different due to additional cover pages.
     # If the source is only digital, then of course just the PDF page number.
@@ -127,7 +127,7 @@ class Monster(GameContent):
     condition_immunities = models.TextField()
     senses = models.TextField()
     languages = models.TextField()
-    challenge_rating = models.TextField(help_text='Monster challenge rating.')
+    challenge_rating = models.TextField()
     cr = models.FloatField(null=True)
     actions_json = models.TextField() #a list of actions in json text.
     def actions(self):
@@ -144,7 +144,7 @@ class Monster(GameContent):
         return json.loads(self.legendary_actions_json)
     spells_json = models.TextField()
     spell_list = models.ManyToManyField(Spell, related_name='monsters', symmetrical=True, through="monsterSpell")
-    route = models.TextField(default="monsters/")
+    route = models.TextField(default="monsters/") 
     img_main = models.URLField(null=True)
 
     @staticmethod
@@ -228,7 +228,7 @@ class Subrace(GameContent):
 
 class Plane(GameContent):
     pass
-    route = models.TextField(default="planes/")
+    route = models.TextField(default="planes/") 
 
     @staticmethod
     def plural_str() -> str:
@@ -237,13 +237,13 @@ class Plane(GameContent):
 
 class Section(GameContent):
     parent = models.TextField(null=True)
-    route = models.TextField(default="sections/")
+    route = models.TextField(default="sections/") 
 
     @staticmethod
     def plural_str() -> str:
         """Return a string specifying the plural name of this model."""
         return "Sections"
-
+    
 class Feat(GameContent):
     prerequisite = models.TextField(null=True)
     # desc
@@ -260,7 +260,7 @@ class Feat(GameContent):
 
 class Condition(GameContent):
     pass
-    route = models.TextField(default="conditions/")
+    route = models.TextField(default="conditions/") 
 
     @staticmethod
     def plural_str() -> str:
@@ -275,7 +275,7 @@ class Background(GameContent):
     feature = models.TextField()
     feature_desc = models.TextField()
     suggested_characteristics = models.TextField()
-    route = models.TextField(default="backgrounds/")
+    route = models.TextField(default="backgrounds/") 
 
     @staticmethod
     def plural_str() -> str:
@@ -320,7 +320,7 @@ class Armor(GameContent):
     plus_con_mod = models.BooleanField(null=True)
     plus_wis_mod = models.BooleanField(null=True)
     plus_flat_mod = models.IntegerField(null=True) #Build a shield this way.
-    plus_max = models.IntegerField(null=True)
+    plus_max = models.IntegerField(null=True) 
     def ac_string(self):
         ac = str(self.base_ac)
         if self.plus_dex_mod: ac += (" + Dex modifier")

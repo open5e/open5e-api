@@ -54,7 +54,7 @@ And your server should be available at http://localhost:8000.
 
 ## Starting up a droplet
 
-This deployment has been tested using DigitalOcean Apps with Docker Hub.
+This deployment has been tested using DigitalOcean with Docker.
 
 To start up the server from scratch on a droplet:
 
@@ -65,7 +65,3 @@ export SERVER_NAME=whatever.yourdomain.com
 cd open5e-api/
 docker-compose up
 ```
-
-## Building the OAS file
-
-Once you have everything set up, run `pipenv run ./manage.py generateschema --generator_class api.schema_generator.Open5eSchemaGenerator > openapi-schema.yml` to build the OAS file.
