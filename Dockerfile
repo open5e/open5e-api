@@ -13,8 +13,9 @@ RUN pipenv install
 # migrate the db, load content, and index it
 RUN pipenv run python manage.py quicksetup
 
-# remove .env file (set your env vars via docker-compose.yml or your hosting provider)
-RUN rm .env
+# Create the self-signed certs for gunicorn.
+RUN apk add openssl
+RUN pipenv run sh ./scripts/generate_self_signed_cert.sh
 
 #run gunicorn.
-CMD ["pipenv", "run", "gunicorn","-b", ":8888", "server.wsgi:application"]
+CMD ["pipenv", "run", "gunicorn","--certfile=${CERTFILE}", "--keyfile=${KEYFILE}","-b", ":8888", "server.wsgi:application"]
