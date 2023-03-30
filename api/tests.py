@@ -67,7 +67,7 @@ class ManifestTestCase(APITestCase):
     def test_options_manifest_data(self):
         response = self.client.get(f'/manifest/?format=json', REQUEST_METHOD='OPTIONS')
         self.assertEqual(response.json()['name'],'Manifest List')
-        self.assertIn('API endpoint that allows viewing of Manifests.',response.json()['description'])
+        self.assertIn('API endpoint for returning a list of of manifests.',response.json()['description'])
         self.assertEqual(response.json()['renders'],["application/json","text/html"])
         self.assertEqual(response.json()['parses'],["application/json","application/x-www-form-urlencoded","multipart/form-data"])
 

@@ -34,7 +34,7 @@ DEBUG = os.environ.get('OPEN5E_DEBUG', '') != 'False'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ## Always allow connections from localhost, and the SERVER_NAME if it's there in the .env file.
-ALLOWED_HOSTS = ['localhost', os.environ.get('SERVER_NAME', ''), '0.0.0.0', 'api.open5e.com', 'api-beta.open5e.com']
+ALLOWED_HOSTS = ['localhost', os.environ.get('SERVER_NAME', ''), '0.0.0.0', 'api.open5e.com', 'api-beta.open5e.com', '127.0.0.1']
 
 
 # Application definition
