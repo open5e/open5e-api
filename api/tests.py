@@ -1,6 +1,13 @@
 import json
 
+from pathlib import Path
+
 from rest_framework.test import APITestCase
+
+from api.management.commands.importer import Importer
+from api.management.commands.importer import ImportSpec
+from api.management.commands.importer import ImportOptions
+
 
 # Create your tests here.
 
@@ -75,10 +82,6 @@ class ManifestTestCase(APITestCase):
 
 class MonstersTestCase(APITestCase):
     def setUp(self):
-        from api.management.commands.importer import Importer
-        from api.management.commands.importer import ImportSpec
-        from api.management.commands.importer import ImportOptions
-        from pathlib import Path
 
         self.test_document_json = """
             {
@@ -213,3 +216,46 @@ class MonstersTestCase(APITestCase):
         self.assertEqual([], out_goblin['spell_list']) #Empty list
 
         self.assertEqual(in_goblin['page_no'], out_goblin['page_no'])
+
+class DocumentsTestCase(APITestCase):
+    def setUp(self):
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(json.loads(self.test_document_json),ImportSpec("test_filename","test_model_class","import_document"))
+
+    def test_get_documents(self):
+        response = self.client.get(f'/documents/?format=json')
+        # Confirm the basic elements show up.
+        self.assertContains(response,'count',count=1)
+        self.assertContains(response,'next',count=1)
+        self.assertContains(response,'previous',count=1)
+        self.assertContains(response,'results',count=1)   
+
+    def test_get_document_data(self):
+        response = self.client.get(f'/documents/?format=json')        
+
+        in_document = json.loads(self.test_document_json)
+        out_document = response.json()['results'][0]
+
+        self.assertEqual(in_document['title'], out_document['title'])
+        self.assertEqual(in_document['slug'], out_document['slug'])
+        self.assertEqual(in_document['url'], out_document['url'])
+        self.assertEqual(in_document['license'], out_document['license'])
+        self.assertEqual(in_document['desc'], out_document['desc'])
+        self.assertEqual(in_document['author'], out_document['author'])
+        self.assertEqual(in_document['organization'], out_document['organization'])
+        self.assertEqual(in_document['version'], out_document['version'])
+        self.assertEqual(in_document['copyright'], out_document['copyright'])
