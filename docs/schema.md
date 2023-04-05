@@ -1,3 +1,5 @@
+
+```mermaid
 erDiagram
 
   api_document {
@@ -381,3 +383,4 @@ erDiagram
   api_spell ||--o{ api_monsterspell : "foreign key"
   auth_permission ||--o{ auth_group_permissions : "foreign key"
   auth_permission ||--o{ auth_user_user_permissions : "foreign key"
+```
