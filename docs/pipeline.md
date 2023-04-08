@@ -1,5 +1,5 @@
 ## Pipelines and Infrastructure
-This document describes the pipelines and infrastructure of the open5e api. It's intended to a good primer on the actual hosting and delivery mechanisms. It's not intended to be documentation of the api or it's code structure.
+This document describes the pipelines and infrastructure of the open5e api. It's intended to a good primer on the actual hosting and delivery mechanisms. It's not intended to be documentation of the api or its code structure.
 
 ## Infrastructure
 
@@ -10,7 +10,7 @@ There are two A records related to open5e api, one for each environment.
 | api.open5e.com | Production API | Cloudflare | Clouflare | 
 | api-beta.open5e.com | Beta API | DigitalOcean and Cloudflare? | Cloudflare | 
 
-Cloudflare provides certificates for requests that terminate on its edge. These records all resolve on cloudflares edge proxies and are forwarded on to the backend servers. The certificates auto-renew.
+Cloudflare provides certificates for requests that terminate on its edge. These records all resolve on cloudflare's edge proxies and are forwarded onto the backend servers. The certificates auto-renew.
 
 Cloudflare also caches requests. More information about caching should go here.
 
