@@ -130,6 +130,7 @@ class Importer:
         i.slug = slug
         i.desc = document_json["desc"]
         i.author = document_json["author"]
+        i.organization = document_json["organization"] #Fixing issue identified in testing.
         i.license = document_json["license"]
         i.version = document_json["version"]
         i.url = document_json["url"]
