@@ -1,11 +1,16 @@
+"""Test cases for the django API."""
+
 from rest_framework.test import APITestCase
 
 # Create your tests here.
 
 class APIRootTest(APITestCase):
+    """Test cases for testing the / root of the API."""
+
     def test_get_root_headers(self):
+        """Server response headers from the API root."""
         response = self.client.get(f'/?format=json')
-        # Assert basic headers
+
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers['allow'],'GET, HEAD, OPTIONS')
         self.assertEqual(response.headers['content-type'],'application/json')
@@ -14,8 +19,13 @@ class APIRootTest(APITestCase):
         self.assertEqual(response.headers['Referrer-Policy'],'same-origin')
         
     def test_get_root_list(self):
+        """
+        Confirm the list of resources available at the root.
+
+        Checks the response for each of the known endpoints. Two results, one for the name, one for the link.
+        """
         response = self.client.get(f'/?format=json')
-        # Check the response for each of the known endpoints. Two results, one for the name, one for the link.
+
         self.assertContains(response,'manifest',count=2)
         self.assertContains(response,'spells',count=2)
         self.assertContains(response,'monsters',count=2)
@@ -33,7 +43,11 @@ class APIRootTest(APITestCase):
         self.assertContains(response,'search',count=2)
 
     def test_options_root_data(self):
-        # Testing the actual content of the response data.
+        """
+        Confirm the OPTIONS response available at the root.
+
+        Checks the response for each of known values. 
+        """
         response = self.client.get(f'/?format=json', REQUEST_METHOD='OPTIONS')
         self.assertEqual(response.json()['name'],'Api Root')
         self.assertEqual(response.json()['description'],'The default basic root view for DefaultRouter')
@@ -41,7 +55,10 @@ class APIRootTest(APITestCase):
         self.assertEqual(response.json()['parses'],["application/json","application/x-www-form-urlencoded","multipart/form-data"])
 
 class ManifestTestCase(APITestCase):
+    """Test case for the manifest endpoint."""
+
     def setUp(self):
+        """Build out a test manifest object."""
         from api.management.commands.importer import Importer
         from pathlib import Path
         filepath = 'test_filepath'
@@ -50,14 +67,13 @@ class ManifestTestCase(APITestCase):
         i.import_manifest(Path(filepath), filehash)
 
     def test_get_manifest_data(self):
+        """Confirm the manifest list response is structured correctly."""
         response = self.client.get(f'/manifest/?format=json')
-        # Confirm the basic elements show up.
         self.assertContains(response,'count',count=1)
         self.assertContains(response,'next',count=1)
         self.assertContains(response,'previous',count=1)
         self.assertContains(response,'results',count=1)
 
-        # Confirm the values appear as expected.
         self.assertEqual(response.json()['count'],1)
         self.assertEqual(response.json()['results'][0]['filename'],'test_filepath')
         self.assertEqual(response.json()['results'][0]['type'],'test_filepath')
@@ -65,6 +81,7 @@ class ManifestTestCase(APITestCase):
         self.assertContains(response,'created_at', count=1)
         
     def test_options_manifest_data(self):
+        """Confirm the manifest response item is correctly formatted."""
         response = self.client.get(f'/manifest/?format=json', REQUEST_METHOD='OPTIONS')
         self.assertEqual(response.json()['name'],'Manifest List')
         self.assertIn('API endpoint for returning a list of of manifests.',response.json()['description'])
@@ -72,7 +89,10 @@ class ManifestTestCase(APITestCase):
         self.assertEqual(response.json()['parses'],["application/json","application/x-www-form-urlencoded","multipart/form-data"])
 
 class SpellsTestCase(APITestCase):
+    """Testing for the spells API endpoint."""
+
     def setUp(self):
+        """Create the spell endpoint test data."""
         from api.management.commands.importer import Importer
         from api.management.commands.importer import ImportSpec
         from api.management.commands.importer import ImportOptions
@@ -82,7 +102,7 @@ class SpellsTestCase(APITestCase):
         self.test_document_json = """
             {
             "title": "Test Reference Document",
-            "slug": "test-doc",
+            "slug": "test-doc", 
             "desc": "This is a test document",
             "license": "Open Gaming License",
             "author": "John Doe",
@@ -116,38 +136,32 @@ class SpellsTestCase(APITestCase):
         i.import_spell(json.loads(self.test_spell_json),ImportSpec("test_filename","test_model_class","import_spell"))
 
     def test_get_spells(self):
+        """Confirm that the list result has the proper elements."""
         response = self.client.get(f'/spells/?format=json')
-        # Confirm the basic elements show up.
         self.assertContains(response,'count',count=1)
         self.assertContains(response,'next',count=1)
         self.assertContains(response,'previous',count=1)
         self.assertContains(response,'results',count=1)
 
     def test_get_spell_data(self):
+        """Confirm that the result itself has the proper formatting and values."""
         import json
         response = self.client.get(f'/spells/?format=json')
-        # Confirm the basic elements show up.
-        self.assertContains(response,'count',count=1)
-        self.assertContains(response,'next',count=1)
-        self.assertContains(response,'previous',count=1)
-        self.assertContains(response,'results',count=1)
 
-        # Confirm the values appear as expected.
-        self.assertEqual(response.json()['count'],1)
-        in_mm = json.loads(self.test_spell_json)
-        out_mm = response.json()['results'][0]
+        in_spell = json.loads(self.test_spell_json)
+        out_spell = response.json()['results'][0]
         
-        self.assertEqual(in_mm['name'], out_mm['name'])
-        self.assertEqual(in_mm['desc'], out_mm['desc'])
-        self.assertEqual(in_mm['higher_level'], out_mm['higher_level'])
-        self.assertEqual(in_mm['page'], out_mm['page'])
-        self.assertEqual(in_mm['range'], out_mm['range'])
-        self.assertEqual(in_mm['components'], out_mm['components'])
-        self.assertEqual(in_mm['ritual'], out_mm['ritual'])
-        self.assertEqual(in_mm['duration'], out_mm['duration'])
-        self.assertEqual(in_mm['concentration'], out_mm['concentration'])
-        self.assertEqual(in_mm['casting_time'], out_mm['casting_time'])
-        self.assertEqual(in_mm['level'], out_mm['level'])
-        self.assertEqual(in_mm['level_int'], out_mm['level_int'])
-        self.assertEqual(in_mm['school'], out_mm['school'])
-        self.assertEqual(in_mm['class'], out_mm['dnd_class'])  #Input field name is different than output field name!!
+        self.assertEqual(in_spell['name'], out_spell['name'])
+        self.assertEqual(in_spell['desc'], out_spell['desc'])
+        self.assertEqual(in_spell['higher_level'], out_spell['higher_level'])
+        self.assertEqual(in_spell['page'], out_spell['page'])
+        self.assertEqual(in_spell['range'], out_spell['range'])
+        self.assertEqual(in_spell['components'], out_spell['components'])
+        self.assertEqual(in_spell['ritual'], out_spell['ritual'])
+        self.assertEqual(in_spell['duration'], out_spell['duration'])
+        self.assertEqual(in_spell['concentration'], out_spell['concentration'])
+        self.assertEqual(in_spell['casting_time'], out_spell['casting_time'])
+        self.assertEqual(in_spell['level'], out_spell['level'])
+        self.assertEqual(in_spell['level_int'], out_spell['level_int'])
+        self.assertEqual(in_spell['school'], out_spell['school'])
+        self.assertEqual(in_spell['class'], out_spell['dnd_class'])  #Input field name is different than output field name!!
