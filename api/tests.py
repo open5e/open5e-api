@@ -151,20 +151,12 @@ class SpellsTestCase(APITestCase):
         in_spell = json.loads(self.test_spell_json)
         out_spell = response.json()['results'][0]
 
-        # Equal Fields
-        self.assertEqual(in_spell['name'], out_spell['name'])
-        self.assertEqual(in_spell['desc'], out_spell['desc'])
-        self.assertEqual(in_spell['higher_level'], out_spell['higher_level'])
-        self.assertEqual(in_spell['page'], out_spell['page'])
-        self.assertEqual(in_spell['range'], out_spell['range'])
-        self.assertEqual(in_spell['components'], out_spell['components'])
-        self.assertEqual(in_spell['ritual'], out_spell['ritual'])
-        self.assertEqual(in_spell['duration'], out_spell['duration'])
-        self.assertEqual(in_spell['concentration'], out_spell['concentration'])
-        self.assertEqual(in_spell['casting_time'], out_spell['casting_time'])
-        self.assertEqual(in_spell['level'], out_spell['level'])
-        self.assertEqual(in_spell['level_int'], 10)
-        self.assertEqual(in_spell['school'], out_spell['school'])
+        equal_fields = ['name','desc','higher_level','page','range','components','ritual','duration','concentration','casting_time','level','level_int','school']
+        unequal_fields = [('class','dnd_class')]
 
-        # Unequal Fields
-        self.assertEqual(in_spell['class'], out_spell['dnd_class'])
+        for field_name in equal_fields:
+            self.assertEqual(in_spell[field_name], out_spell[field_name], f'Mismatched value of: {field_name}')
+
+        for field_names in unequal_fields:
+            self.assertEqual(in_spell[field_names[0]], out_spell[field_names[1]], f'Mismatched value of unequal field: {field_names}')
+
