@@ -150,7 +150,8 @@ class SpellsTestCase(APITestCase):
 
         in_spell = json.loads(self.test_spell_json)
         out_spell = response.json()['results'][0]
-        
+
+        # Equal Fields
         self.assertEqual(in_spell['name'], out_spell['name'])
         self.assertEqual(in_spell['desc'], out_spell['desc'])
         self.assertEqual(in_spell['higher_level'], out_spell['higher_level'])
@@ -162,6 +163,8 @@ class SpellsTestCase(APITestCase):
         self.assertEqual(in_spell['concentration'], out_spell['concentration'])
         self.assertEqual(in_spell['casting_time'], out_spell['casting_time'])
         self.assertEqual(in_spell['level'], out_spell['level'])
-        self.assertEqual(in_spell['level_int'], out_spell['level_int'])
+        self.assertEqual(in_spell['level_int'], 10)
         self.assertEqual(in_spell['school'], out_spell['school'])
-        self.assertEqual(in_spell['class'], out_spell['dnd_class'])  #Input field name is different than output field name!!
+
+        # Unequal Fields
+        self.assertEqual(in_spell['class'], out_spell['dnd_class'])
