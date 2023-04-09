@@ -16,38 +16,48 @@ class APIRootTest(APITestCase):
         response = self.client.get(f'/?format=json')
         # Assert basic headers
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.headers['allow'],'GET, HEAD, OPTIONS')
-        self.assertEqual(response.headers['content-type'],'application/json')
-        self.assertEqual(response.headers['X-Frame-Options'],'DENY')
-        self.assertEqual(response.headers['X-Content-Type-Options'],'nosniff')
-        self.assertEqual(response.headers['Referrer-Policy'],'same-origin')
-        
+        self.assertEqual(response.headers['allow'], 'GET, HEAD, OPTIONS')
+        self.assertEqual(response.headers['content-type'], 'application/json')
+        self.assertEqual(response.headers['X-Frame-Options'], 'DENY')
+        self.assertEqual(response.headers['X-Content-Type-Options'], 'nosniff')
+        self.assertEqual(response.headers['Referrer-Policy'], 'same-origin')
+
     def test_get_root_list(self):
         response = self.client.get(f'/?format=json')
-        # Check the response for each of the known endpoints. Two results, one for the name, one for the link.
-        self.assertContains(response,'manifest',count=2)
-        self.assertContains(response,'spells',count=2)
-        self.assertContains(response,'monsters',count=2)
-        self.assertContains(response,'documents',count=2)
-        self.assertContains(response,'backgrounds',count=2)
-        self.assertContains(response,'planes',count=2)
-        self.assertContains(response,'sections',count=2)
-        self.assertContains(response,'feats',count=2)
-        self.assertContains(response,'conditions',count=2)
-        self.assertContains(response,'races',count=2)
-        self.assertContains(response,'classes',count=2)
-        self.assertContains(response,'magicitems',count=2)
-        self.assertContains(response,'weapons',count=2)
-        self.assertContains(response,'armor',count=2)
-        self.assertContains(response,'search',count=2)
+        # Check the response for each of the known endpoints. Two results, one
+        # for the name, one for the link.
+        self.assertContains(response, 'manifest', count=2)
+        self.assertContains(response, 'spells', count=2)
+        self.assertContains(response, 'monsters', count=2)
+        self.assertContains(response, 'documents', count=2)
+        self.assertContains(response, 'backgrounds', count=2)
+        self.assertContains(response, 'planes', count=2)
+        self.assertContains(response, 'sections', count=2)
+        self.assertContains(response, 'feats', count=2)
+        self.assertContains(response, 'conditions', count=2)
+        self.assertContains(response, 'races', count=2)
+        self.assertContains(response, 'classes', count=2)
+        self.assertContains(response, 'magicitems', count=2)
+        self.assertContains(response, 'weapons', count=2)
+        self.assertContains(response, 'armor', count=2)
+        self.assertContains(response, 'search', count=2)
 
     def test_options_root_data(self):
         # Testing the actual content of the response data.
         response = self.client.get(f'/?format=json', REQUEST_METHOD='OPTIONS')
-        self.assertEqual(response.json()['name'],'Api Root')
-        self.assertEqual(response.json()['description'],'The default basic root view for DefaultRouter')
-        self.assertEqual(response.json()['renders'],["application/json","text/html"])
-        self.assertEqual(response.json()['parses'],["application/json","application/x-www-form-urlencoded","multipart/form-data"])
+        self.assertEqual(response.json()['name'], 'Api Root')
+        self.assertEqual(
+            response.json()['description'],
+            'The default basic root view for DefaultRouter')
+        self.assertEqual(
+            response.json()['renders'], [
+                "application/json", "text/html"])
+        self.assertEqual(
+            response.json()['parses'], [
+                "application/json",
+                "application/x-www-form-urlencoded",
+                "multipart/form-data"])
+
 
 class ManifestTestCase(APITestCase):
     def setUp(self):
@@ -61,28 +71,45 @@ class ManifestTestCase(APITestCase):
     def test_get_manifest_data(self):
         response = self.client.get(f'/manifest/?format=json')
         # Confirm the basic elements show up.
-        self.assertContains(response,'count',count=1)
-        self.assertContains(response,'next',count=1)
-        self.assertContains(response,'previous',count=1)
-        self.assertContains(response,'results',count=1)
+        self.assertContains(response, 'count', count=1)
+        self.assertContains(response, 'next', count=1)
+        self.assertContains(response, 'previous', count=1)
+        self.assertContains(response, 'results', count=1)
 
         # Confirm the values appear as expected.
-        self.assertEqual(response.json()['count'],1)
-        self.assertEqual(response.json()['results'][0]['filename'],'test_filepath')
-        self.assertEqual(response.json()['results'][0]['type'],'test_filepath')
-        self.assertEqual(response.json()['results'][0]['hash'],'test_hash')
-        self.assertContains(response,'created_at', count=1)
-        
+        self.assertEqual(response.json()['count'], 1)
+        self.assertEqual(
+            response.json()['results'][0]['filename'],
+            'test_filepath')
+        self.assertEqual(
+            response.json()['results'][0]['type'],
+            'test_filepath')
+        self.assertEqual(response.json()['results'][0]['hash'], 'test_hash')
+        self.assertContains(response, 'created_at', count=1)
+
     def test_options_manifest_data(self):
-        response = self.client.get(f'/manifest/?format=json', REQUEST_METHOD='OPTIONS')
-        self.assertEqual(response.json()['name'],'Manifest List')
-        self.assertIn('API endpoint for returning a list of of manifests.',response.json()['description'])
-        self.assertEqual(response.json()['renders'],["application/json","text/html"])
-        self.assertEqual(response.json()['parses'],["application/json","application/x-www-form-urlencoded","multipart/form-data"])
+        response = self.client.get(
+            f'/manifest/?format=json',
+            REQUEST_METHOD='OPTIONS')
+        self.assertEqual(response.json()['name'], 'Manifest List')
+        self.assertIn(
+            'API endpoint for returning a list of of manifests.',
+            response.json()['description'])
+        self.assertEqual(
+            response.json()['renders'], [
+                "application/json", "text/html"])
+        self.assertEqual(
+            response.json()['parses'], [
+                "application/json",
+                "application/x-www-form-urlencoded",
+                "multipart/form-data"])
+
 
 class MonstersTestCase(APITestCase):
-    def setUp(self):
+    """Test case for the monster API endpoint."""
 
+    def setUp(self):
+        """Create a test document and monster."""
         self.test_document_json = """
             {
             "title": "Test Reference Document",
@@ -154,71 +181,109 @@ class MonstersTestCase(APITestCase):
         }
         """
         i = Importer(ImportOptions(update=True, append=False, testrun=False))
-        i.import_document(json.loads(self.test_document_json),ImportSpec("test_filename","test_model_class","import_monster"))
-        i.import_monster(json.loads(self.test_monster_json),ImportSpec("test_filename","test_model_class","import_monster"))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_monster"))
+        i.import_monster(
+            json.loads(
+                self.test_monster_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_monster"))
 
     def test_get_monsters(self):
+        """Testing the monster list API endpoint."""
         response = self.client.get(f'/monsters/?format=json')
         # Confirm the basic elements show up.
-        self.assertContains(response,'count',count=1)
-        self.assertContains(response,'next',count=1)
-        self.assertContains(response,'previous',count=1)
-        self.assertContains(response,'results',count=1)        
+        self.assertContains(response, 'count', count=1)
+        self.assertContains(response, 'next', count=1)
+        self.assertContains(response, 'previous', count=1)
+        self.assertContains(response, 'results', count=1)
 
     def test_get_monster_data(self):
-        response = self.client.get(f'/monsters/?format=json')        
-        self.assertEqual(response.json()['count'],1)
-        in_goblin = json.loads(self.test_monster_json)
-        out_goblin = response.json()['results'][0]
+        """Testing the individual monster object response."""
+        response = self.client.get(f'/monsters/?format=json')
+        self.assertEqual(response.json()['count'], 1)
 
-        self.assertEqual(in_goblin['name'], out_goblin['name'])
-        self.assertEqual(in_goblin['size'], out_goblin['size'])
-        self.assertEqual(in_goblin['type'], out_goblin['type'])
-        self.assertEqual(in_goblin['subtype'], out_goblin['subtype'])
-        self.assertEqual(in_goblin['group'], out_goblin['group']) #Not in original goblin
-        self.assertEqual(in_goblin['alignment'], out_goblin['alignment'])
-        self.assertEqual(in_goblin['armor_class'], out_goblin['armor_class'])
-        self.assertEqual(in_goblin['armor_desc'], out_goblin['armor_desc'])
-        self.assertEqual(in_goblin['hit_points'], out_goblin['hit_points'])
-        self.assertEqual(in_goblin['hit_dice'], out_goblin['hit_dice'])
-        self.assertEqual(in_goblin['speed_json'], out_goblin['speed']) #INPUT IS FORCED TO SPEED_JSON
-        
-        self.assertEqual(in_goblin['strength'], out_goblin['strength'])
-        self.assertEqual(in_goblin['dexterity'], out_goblin['dexterity'])
-        self.assertEqual(in_goblin['constitution'], out_goblin['constitution'])
-        self.assertEqual(in_goblin['intelligence'], out_goblin['intelligence'])
-        self.assertEqual(in_goblin['wisdom'], out_goblin['wisdom'])
-        self.assertEqual(in_goblin['charisma'], out_goblin['charisma'])
-        
-        self.assertEqual(None, out_goblin['strength_save'])
-        self.assertEqual(None, out_goblin['dexterity_save'])
-        self.assertEqual(None, out_goblin['constitution_save'])
-        self.assertEqual(None, out_goblin['intelligence_save'])
-        self.assertEqual(None, out_goblin['wisdom_save'])
-        self.assertEqual(None, out_goblin['charisma_save'])
+        in_monster = json.loads(self.test_monster_json)
+        out_monster = response.json()['results'][0]
 
-        self.assertEqual(None, out_goblin['perception'])
-        self.assertEqual(in_goblin['stealth'], out_goblin['skills']['stealth']) # MISALIGNED
-        self.assertEqual(in_goblin['damage_vulnerabilities'], out_goblin['damage_vulnerabilities'])
-        self.assertEqual(in_goblin['damage_resistances'], out_goblin['damage_resistances'])
-        self.assertEqual(in_goblin['condition_immunities'], out_goblin['condition_immunities'])
-        self.assertEqual(in_goblin['senses'], out_goblin['senses'])
-        self.assertEqual(in_goblin['languages'], out_goblin['languages'])
-        
-        self.assertEqual(in_goblin['challenge_rating'], out_goblin['challenge_rating'])
+        equal_fields = [
+            'name',
+            'size',
+            'type',
+            'subtype',
+            'group',
+            'alignment',
+            'armor_class',
+            'armor_desc',
+            'hit_points',
+            'hit_dice',
+            'strength',
+            'dexterity',
+            'constitution',
+            'intelligence',
+            'wisdom',
+            'charisma',
+            'damage_vulnerabilities',
+            'damage_resistances',
+            'condition_immunities',
+            'senses',
+            'languages',
+            'challenge_rating',
+            'actions',
+            'page_no']
 
-        self.assertEqual(in_goblin['actions'], out_goblin['actions'])
-        self.assertEqual("", out_goblin['reactions']) #Empty string?
-        self.assertEqual("", out_goblin['legendary_desc']) #Empty string?
-        self.assertEqual("", out_goblin['legendary_actions'])#Empty string?
-        self.assertEqual(in_goblin['special_abilities'][0]['name'], out_goblin['special_abilities'][0]['name'])
-        self.assertEqual(in_goblin['special_abilities'][0]['desc'], out_goblin['special_abilities'][0]['desc'])
-        self.assertEqual([], out_goblin['spell_list']) #Empty list
+        unequal_fields = [
+            ('speed_json', 'speed')]
 
-        self.assertEqual(in_goblin['page_no'], out_goblin['page_no'])
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_monster[field_name],
+                out_monster[field_name],
+                f'Mismatched value of: {field_name}')
+
+        for field_names in unequal_fields:
+            self.assertEqual(
+                in_monster[field_names[0]],
+                out_monster[field_names[1]],
+                f'Mismatched value of unequal field: {field_names}'
+            )
+
+        # Various one-offs that could probably all get bugfixed.
+        self.assertEqual(None, out_monster['strength_save'])
+        self.assertEqual(None, out_monster['dexterity_save'])
+        self.assertEqual(None, out_monster['constitution_save'])
+        self.assertEqual(None, out_monster['intelligence_save'])
+        self.assertEqual(None, out_monster['wisdom_save'])
+        self.assertEqual(None, out_monster['charisma_save'])
+        self.assertEqual(None, out_monster['perception'])
+
+        self.assertEqual(
+            in_monster['stealth'],
+            out_monster['skills']['stealth'])  # MISALIGNED
+        self.assertEqual("", out_monster['reactions'])  # Empty string?
+        self.assertEqual("", out_monster['legendary_desc'])  # Empty string?
+        self.assertEqual("", out_monster['legendary_actions'])  # Empty string?
+        self.assertEqual(
+            in_monster['special_abilities'][0]['name'],
+            out_monster['special_abilities'][0]['name'])
+        self.assertEqual(
+            in_monster['special_abilities'][0]['desc'],
+            out_monster['special_abilities'][0]['desc'])
+        self.assertEqual([], out_monster['spell_list'])  # Empty list
+
 
 class DocumentsTestCase(APITestCase):
+    """Test case for documents presented by the API."""
+
     def setUp(self):
+        """Create a test document."""
         self.test_document_json = """
             {
             "title": "Test Reference Document",
@@ -234,34 +299,53 @@ class DocumentsTestCase(APITestCase):
         """
 
         i = Importer(ImportOptions(update=True, append=False, testrun=False))
-        i.import_document(json.loads(self.test_document_json),ImportSpec("test_filename","test_model_class","import_document"))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_document"))
 
     def test_get_documents(self):
+        """Test the list of documents response."""
         response = self.client.get(f'/documents/?format=json')
         # Confirm the basic elements show up.
-        self.assertContains(response,'count',count=1)
-        self.assertContains(response,'next',count=1)
-        self.assertContains(response,'previous',count=1)
-        self.assertContains(response,'results',count=1)   
+        self.assertContains(response, 'count', count=1)
+        self.assertContains(response, 'next', count=1)
+        self.assertContains(response, 'previous', count=1)
+        self.assertContains(response, 'results', count=1)
 
     def test_get_document_data(self):
-        response = self.client.get(f'/documents/?format=json')        
+        """Test and individual document object's response."""
+        response = self.client.get(f'/documents/?format=json')
 
         in_document = json.loads(self.test_document_json)
         out_document = response.json()['results'][0]
 
-        self.assertEqual(in_document['title'], out_document['title'])
-        self.assertEqual(in_document['slug'], out_document['slug'])
-        self.assertEqual(in_document['url'], out_document['url'])
-        self.assertEqual(in_document['license'], out_document['license'])
-        self.assertEqual(in_document['desc'], out_document['desc'])
-        self.assertEqual(in_document['author'], out_document['author'])
-        self.assertEqual(in_document['organization'], out_document['organization'])
-        self.assertEqual(in_document['version'], out_document['version'])
-        self.assertEqual(in_document['copyright'], out_document['copyright'])
+        equal_fields = [
+            'title',
+            'slug',
+            'url',
+            'license',
+            'desc',
+            'author',
+            'organization',
+            'version',
+            'copyright']
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_document[field_name],
+                out_document[field_name],
+                f'Mismatched value of: {field_name}')
+
 
 class CharClassTestCase(APITestCase):
+    """Test case to confirm that CharClass and Archetype are displayed."""
+
     def setUp(self):
+        """Create a document, charclass and related archetype."""
         from api.models import Archetype
 
         self.test_document_json = """
@@ -305,49 +389,78 @@ class CharClassTestCase(APITestCase):
         """
 
         i = Importer(ImportOptions(update=True, append=False, testrun=False))
-        i.import_document(json.loads(self.test_document_json),ImportSpec("test_filename","test_model_class","import_monster"))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_monster"))
         i.import_class(
-            json.loads(self.test_charclass_json,strict=False),
+            json.loads(self.test_charclass_json, strict=False),
             ImportSpec(
                 "test_filename",
                 "test_model_class",
                 "import_class",
                 sub_spec=ImportSpec(
-                    "test_filename", 
+                    "test_filename",
                     Archetype,
                     i.import_archetype
-                    )
                 )
             )
+        )
 
     def test_get_classes(self):
+        """Get a list of classes and test the list object."""
         response = self.client.get(f'/classes/?format=json')
 
         # Confirm the basic elements show up.
-        self.assertContains(response,'count',count=4)
-        self.assertContains(response,'next',count=3)
-        self.assertContains(response,'previous',count=1)
-        self.assertContains(response,'results',count=1) 
+        self.assertContains(response, 'count', count=4)
+        self.assertContains(response, 'next', count=3)
+        self.assertContains(response, 'previous', count=1)
+        self.assertContains(response, 'results', count=1)
 
     def test_get_class_data(self):
+        """Get an individual object and test values."""
         response = self.client.get(f'/classes/?format=json')
 
-        in_class =  json.loads(self.test_charclass_json, strict=False)
+        in_class = json.loads(self.test_charclass_json, strict=False)
         out_class = response.json()['results'][0]
 
         self.assertEqual(in_class['name'], out_class['name'])
-        self.assertEqual(in_class['features']['desc'], out_class['desc']) #The Features key is not duplicated in the api
-        self.assertEqual(in_class['features']['hit-dice'], out_class['hit_dice']) # dashes on entry, underscores out.
-        self.assertEqual(in_class['features']['hp-at-1st-level'], out_class['hp_at_1st_level'])
-        self.assertEqual(in_class['features']['prof-armor'], out_class['prof_armor'])
-        self.assertEqual(in_class['features']['prof-weapons'], out_class['prof_weapons'])
-        self.assertEqual(in_class['features']['prof-saving-throws'], out_class['prof_saving_throws'])
-        self.assertEqual(in_class['features']['prof-skills'], out_class['prof_skills'])
-        self.assertEqual(in_class['features']['equipment'], out_class['equipment'])
+        # The Features key is not duplicated in the api
+        self.assertEqual(in_class['features']['desc'], out_class['desc'])
+        # dashes on entry, underscores out.
+        self.assertEqual(
+            in_class['features']['hit-dice'],
+            out_class['hit_dice'])
+        self.assertEqual(
+            in_class['features']['hp-at-1st-level'],
+            out_class['hp_at_1st_level'])
+        self.assertEqual(
+            in_class['features']['prof-armor'],
+            out_class['prof_armor'])
+        self.assertEqual(
+            in_class['features']['prof-weapons'],
+            out_class['prof_weapons'])
+        self.assertEqual(
+            in_class['features']['prof-saving-throws'],
+            out_class['prof_saving_throws'])
+        self.assertEqual(
+            in_class['features']['prof-skills'],
+            out_class['prof_skills'])
+        self.assertEqual(
+            in_class['features']['equipment'],
+            out_class['equipment'])
         self.assertEqual(in_class['features']['table'], out_class['table'])
-        self.assertEqual(in_class['features']['spellcasting-ability'], out_class['spellcasting_ability'])
+        self.assertEqual(
+            in_class['features']['spellcasting-ability'],
+            out_class['spellcasting_ability'])
         self.assertEqual(in_class['subtypes-name'], out_class['subtypes_name'])
 
-
-        self.assertEqual(in_class['subtypes'][0]['name'], out_class['archetypes'][0]['name'])
-        self.assertEqual(in_class['subtypes'][0]['desc'], out_class['archetypes'][0]['desc'])
+        self.assertEqual(
+            in_class['subtypes'][0]['name'],
+            out_class['archetypes'][0]['name'])
+        self.assertEqual(
+            in_class['subtypes'][0]['desc'],
+            out_class['archetypes'][0]['desc'])
