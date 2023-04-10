@@ -31,7 +31,8 @@ class APIRootTest(APITestCase):
         """
         Confirm the list of resources available at the root.
 
-        Checks the response for each of the known endpoints. Two results, one for the name, one for the link.
+        Checks the response for each of the known endpoints.
+        Two results, one for the name, one for the link.
         """
         response = self.client.get(f'/?format=json')
 
@@ -72,7 +73,6 @@ class APIRootTest(APITestCase):
                 "multipart/form-data"])
 
 
-
 class ManifestTestCase(APITestCase):
     """Test case for the manifest endpoint."""
 
@@ -93,7 +93,6 @@ class ManifestTestCase(APITestCase):
         self.assertContains(response, 'next', count=1)
         self.assertContains(response, 'previous', count=1)
         self.assertContains(response, 'results', count=1)
-
 
         self.assertEqual(response.json()['count'], 1)
         self.assertEqual(
@@ -123,6 +122,7 @@ class ManifestTestCase(APITestCase):
                 "application/x-www-form-urlencoded",
                 "multipart/form-data"])
 
+
 class SpellsTestCase(APITestCase):
     """Testing for the spells API endpoint."""
 
@@ -146,7 +146,7 @@ class SpellsTestCase(APITestCase):
             "copyright": "",
             "url": "http://example.com"
             }
-
+        """
         self.test_spell_json = """
             {
             "name": "Magic Missile",
