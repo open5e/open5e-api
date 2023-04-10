@@ -9,6 +9,7 @@ from api.management.commands.importer import Importer
 from api.management.commands.importer import ImportSpec
 from api.management.commands.importer import ImportOptions
 
+from api.models import Subrace
 
 # Create your tests here.
 
@@ -641,6 +642,7 @@ class BackgroundsTestCase(APITestCase):
                 "import_background"))
 
     def test_get_background_data(self):
+        """Run the API response test for background."""
         response = self.client.get("/backgrounds/?format=json")
 
         in_background = json.loads(self.test_background_json)
@@ -715,6 +717,7 @@ class PlanesTestCase(APITestCase):
                 "import_plane"))
 
     def test_get_plane_data(self):
+        """Run the API response test for plane."""
         response = self.client.get("/planes/?format=json")
 
         in_plane = json.loads(self.test_plane_json)
@@ -730,6 +733,7 @@ class PlanesTestCase(APITestCase):
                 in_plane[field_name],
                 out_plane[field_name],
                 f'Mismatched value of: {field_name}')
+
 
 class SectionsTestCase(APITestCase):
     """Test case for Section API objects."""
@@ -775,6 +779,7 @@ class SectionsTestCase(APITestCase):
                 "import_section"))
 
     def test_get_section_data(self):
+        """Run the API response test for section."""
         response = self.client.get("/sections/?format=json")
 
         in_section = json.loads(self.test_section_json, strict=False)
@@ -790,6 +795,7 @@ class SectionsTestCase(APITestCase):
                 in_section[field_name],
                 out_section[field_name],
                 f'Mismatched value of: {field_name}')
+
 
 class FeatsTestCase(APITestCase):
     """Test case for Feat API objects."""
@@ -839,6 +845,7 @@ class FeatsTestCase(APITestCase):
                 "import_feat"))
 
     def test_get_feat_data(self):
+        """Run the API response test for feat."""
         response = self.client.get("/feats/?format=json")
 
         in_feat = json.loads(self.test_feat_json, strict=False)
@@ -901,6 +908,7 @@ class ConditionsTestCase(APITestCase):
                 "import_condition"))
 
     def test_get_condition_data(self):
+        """Run the API response test for condition."""
         response = self.client.get("/conditions/?format=json")
 
         in_condition = json.loads(self.test_condition_json)
@@ -915,4 +923,334 @@ class ConditionsTestCase(APITestCase):
             self.assertEqual(
                 in_condition[field_name],
                 out_condition[field_name],
+                f'Mismatched value of: {field_name}')
+
+
+class RacesTestCase(APITestCase):
+    """Test case for Race API objects."""
+
+    def setUp(self):
+        """Create a document and race for testing."""
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        self.test_race_json = """
+            {
+            "name": "Dwarf",
+            "desc": "## Dwarf Traits\nYour dwarf character has an assortment of inborn abilities, part and parcel of dwarven nature.",
+            "asi-desc": "**_Ability Score Increase._** Your Constitution score increases by 2.",
+            "asi": [
+                {
+                    "attributes": [
+                        "Constitution"
+                    ],
+                    "value": 2
+                }
+            ],
+            "age": "**_Age._** Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",
+            "alignment": "**_Alignment._** Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.",
+            "size": "**_Size._** Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium.",
+            "speed": {
+                "walk": 25
+            },
+            "speed-desc": "**_Speed._** Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor.",
+            "languages": "**_Languages._** You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak.",
+            "vision": "**_Darkvision._** Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+            "traits": "**_Dwarven Resilience._** You have advantage on saving throws against poison, and you have resistance against poison damage.\n\n**_Dwarven Combat Training._** You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.\n\n**_Tool Proficiency._** You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.\n\n**_Stonecunning._** Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.",
+            "subtypes": [
+                {
+                    "name": "Hill Dwarf",
+                    "desc": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.",
+                    "asi-desc": "**_Ability Score Increase._** Your Wisdom score increases by 1",
+                    "asi": [
+                        {
+                            "attributes": [
+                                "Wisdom"
+                            ],
+                            "value": 1
+                        }
+                    ],
+                    "traits": "**_Dwarven Toughness._** Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+                }
+            ]
+        }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_race"))
+        i.import_race(
+            json.loads(
+                self.test_race_json, strict=False),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_race",
+                sub_spec=ImportSpec(
+                    "test_filename",
+                    Subrace,
+                    i.import_subrace)))
+
+    def test_get_race_data(self):
+        """Run the API response test for race."""
+        response = self.client.get("/races/?format=json")
+
+        in_race = json.loads(self.test_race_json, strict=False)
+        out_race = response.json()['results'][0]
+
+        equal_fields = [
+            'name',
+            'desc',
+            'asi',
+            'age',
+            'alignment',
+            'speed',
+            'languages',
+            'vision',
+            'traits'
+        ]
+
+        unequal_fields = [
+            ('asi-desc', 'asi_desc'),
+            ('speed-desc', 'speed_desc'),
+        ]
+
+        # TODO: Create tests for subraces.
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_race[field_name],
+                out_race[field_name],
+                f'Mismatched value of: {field_name}')
+        for field_names in unequal_fields:
+            self.assertEqual(
+                in_race[field_names[0]],
+                out_race[field_names[1]],
+                f'Mismatched value of unequal field: {field_names}'
+            )
+
+
+class MagicItemsTestCase(APITestCase):
+    """Test case for MagicItem API objects."""
+
+    def setUp(self):
+        """Create a document and MagicItem for testing."""
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        self.test_magicitem_json = """
+            {
+            "name": "Arrow of Slaying",
+            "desc": "An _arrow of slaying_ is a magic weapon meant to slay a particular kind of creature. Some are more focused than others; for example, there are both _arrows of dragon slaying_ and _arrows of blue dragon slaying_. If a creature belonging to the type, race, or group associated with an _arrow of slaying_ takes damage from the arrow, the creature must make a DC 17 Constitution saving throw, taking an extra 6d10 piercing damage on a failed save, or half as much extra damage on a successful one.\n\nOnce an _arrow of slaying_ deals its extra damage to a creature, it becomes a nonmagical arrow.\n\nOther types of magic ammunition of this kind exist, such as _bolts of slaying_ meant for a crossbow, though arrows are most common.",
+            "type": "Weapon (arrow)",
+            "rarity": "very rare"
+            }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_magicitem"))
+        i.import_magic_item(
+            json.loads(
+                self.test_magicitem_json, strict=False),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_magicitem"))
+
+    def test_get_magicitem_data(self):
+        """Run the API response test for magicitem."""
+        response = self.client.get("/magicitems/?format=json")
+
+        in_magicitem = json.loads(self.test_magicitem_json, strict=False)
+        out_magicitem = response.json()['results'][0]
+
+        equal_fields = [
+            'name',
+            'desc',
+            'type',
+            'rarity'
+        ]
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_magicitem[field_name],
+                out_magicitem[field_name],
+                f'Mismatched value of: {field_name}')
+
+
+class WeaponsTestCase(APITestCase):
+    """Test case for weapon API objects."""
+
+    def setUp(self):
+        """Create a document and weapon for testing."""
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        self.test_weapon_json = """
+        {
+        "name": "Crossbow, heavy",
+        "category": "Martial Ranged Weapons",
+        "cost": "50 gp",
+        "damage_dice": "1d10",
+        "damage_type": "piercing",
+        "weight": "18 lb.",
+        "properties": [
+            "ammunition (range 100/400)",
+            "heavy",
+            "loading",
+            "two-handed"
+        ]
+        }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_weapon"))
+        i.import_weapon(
+            json.loads(
+                self.test_weapon_json, strict=False),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_weapon"))
+
+    def test_get_weapon_data(self):
+        """Run the API response test for weapon."""
+        response = self.client.get("/weapons/?format=json")
+
+        in_weapon = json.loads(self.test_weapon_json, strict=False)
+        out_weapon = response.json()['results'][0]
+
+        equal_fields = [
+            'name',
+            'category',
+            'cost',
+            'damage_dice',
+            'damage_type',
+            'weight',
+            'properties'
+        ]
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_weapon[field_name],
+                out_weapon[field_name],
+                f'Mismatched value of: {field_name}')
+
+
+class ArmorTestCase(APITestCase):
+    """Test case for armor API objects."""
+
+    def setUp(self):
+        """Create a document and armor for testing."""
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        self.test_armor_json = """
+        {
+        "name": "Leather",
+        "category": "Light Armor",
+        "rarity": "Standard",
+        "base_ac": 11,
+		"plus_dex_mod": true,
+        "cost": "10 gp",
+        "weight": "10 lb.",
+        "stealth_disadvantage": false
+    }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_armor"))
+        i.import_armor(
+            json.loads(
+                self.test_armor_json, strict=False),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_armor"))
+
+    def test_get_armor_data(self):
+        """Run the API response test for armor."""
+        response = self.client.get("/armor/?format=json")
+
+        in_armor = json.loads(self.test_armor_json, strict=False)
+        out_armor = response.json()['results'][0]
+
+        equal_fields = [
+            'name',
+            'category',
+            'cost',
+            'stealth_disadvantage'
+        ]
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_armor[field_name],
+                out_armor[field_name],
                 f'Mismatched value of: {field_name}')
