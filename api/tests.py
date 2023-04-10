@@ -591,3 +591,328 @@ class CharClassTestCase(APITestCase):
             in_class['subtypes'][0]['desc'],
             out_class['archetypes'][0]['desc'])
 
+
+class BackgroundsTestCase(APITestCase):
+    """Test case for Background API objects."""
+
+    def setUp(self):
+        """Create a document and background for testing."""
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        self.test_background_json = r"""
+            {
+            "name": "Acolyte",
+            "desc": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric-performing sacred rites is not the same thing as channeling divine power.\n\nChoose a god, a pantheon of gods, or some other quasi-divine being from among those listed in \"Fantasy-Historical Pantheons\" or those specified by your GM, and work with your GM to detail the nature of your religious service. Were you a lesser functionary in a temple, raised from childhood to assist the priests in the sacred rites? Or were you a high priest who suddenly experienced a call to serve your god in a different way? Perhaps you were the leader of a small cult outside of any established temple structure, or even an occult group that served a fiendish master that you now deny.",
+            "skill-proficiencies": "Insight, Religion",
+            "languages": "Two of your choice",
+            "equipment": "A holy symbol (a gift to you when you entered the priesthood), a prayer book or prayer wheel, 5 sticks of incense, vestments, a set of common clothes, and a pouch containing 15 gp",
+            "feature-name": "Shelter of the Faithful",
+            "feature-desc": "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.\n\nYou might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple.",
+            "suggested-characteristics": "Acolytes are shaped by their experience in temples or other religious communities. Their study of the history and tenets of their faith and their relationships to temples, shrines, or hierarchies affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy or heretical idea, or an ideal or bond taken to an extreme.\n\n**Suggested Acolyte Characteristics (table)**\n\n| d8 | Personality Trait                                                                                                  |\n|----|--------------------------------------------------------------------------------------------------------------------|\n| 1  | I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.                  |\n| 2  | I can find common ground between the fiercest enemies, empathizing with them and always working toward peace.      |\n| 3  | I see omens in every event and action. The gods try to speak to us, we just need to listen                         |\n| 4  | Nothing can shake my optimistic attitude.                                                                          |\n| 5  | I quote (or misquote) sacred texts and proverbs in almost every situation.                                         |\n| 6  | I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods.                  |\n| 7  | I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me.                |\n| 8  | I've spent so long in the temple that I have little practical experience dealing with people in the outside world. |\n\n| d6 | Ideal                                                                                                                  |\n|----|------------------------------------------------------------------------------------------------------------------------|\n| 1  | Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld. (Lawful)                      |\n| 2  | Charity. I always try to help those in need, no matter what the personal cost. (Good)                                  |\n| 3  | Change. We must help bring about the changes the gods are constantly working in the world. (Chaotic)                   |\n| 4  | Power. I hope to one day rise to the top of my faith's religious hierarchy. (Lawful)                                   |\n| 5  | Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well. (Lawful)    |\n| 6  | Aspiration. I seek to prove myself worthy of my god's favor by matching my actions against his or her teachings. (Any) |\n\n| d6 | Bond                                                                                     |\n|----|------------------------------------------------------------------------------------------|\n| 1  | I would die to recover an ancient relic of my faith that was lost long ago.              |\n| 2  | I will someday get revenge on the corrupt temple hierarchy who branded me a heretic.     |\n| 3  | I owe my life to the priest who took me in when my parents died.                         |\n| 4  | Everything I do is for the common people.                                                |\n| 5  | I will do anything to protect the temple where I served.                                 |\n| 6  | I seek to preserve a sacred text that my enemies consider heretical and seek to destroy. |\n\n| d6 | Flaw                                                                                          |\n|----|-----------------------------------------------------------------------------------------------|\n| 1  | I judge others harshly, and myself even more severely.                                        |\n| 2  | I put too much trust in those who wield power within my temple's hierarchy.                   |\n| 3  | My piety sometimes leads me to blindly trust those that profess faith in my god.              |\n| 4  | I am inflexible in my thinking.                                                               |\n| 5  | I am suspicious of strangers and expect the worst of them.                                    |\n| 6  | Once I pick a goal, I become obsessed with it to the detriment of everything else in my life. |"
+            }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_background"))
+        i.import_background(
+            json.loads(
+                self.test_background_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_background"))
+
+    def test_get_background_data(self):
+        response = self.client.get("/backgrounds/?format=json")
+
+        in_background = json.loads(self.test_background_json)
+        out_background = response.json()['results'][0]
+
+        equal_fields = [
+            'name',
+            'desc',
+            'languages',
+            'equipment'
+        ]
+
+        unequal_fields = [
+            ('skill-proficiencies', 'skill_proficiencies'),
+            ('feature-name', 'feature'),
+            ('feature-desc', 'feature_desc'),
+            ('suggested-characteristics', 'suggested_characteristics')
+        ]
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_background[field_name],
+                out_background[field_name],
+                f'Mismatched value of: {field_name}')
+
+        for field_names in unequal_fields:
+            self.assertEqual(in_background[field_names[0]],
+                             out_background[field_names[1]],
+                             f'Mismatched value of unequal field: {field_names}')
+
+
+class PlanesTestCase(APITestCase):
+    """Test case for Plane API objects."""
+
+    def setUp(self):
+        """Create a document and plane for testing."""
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        self.test_plane_json = r"""
+        {
+        "name": "The Material Plane",
+        "desc": "The Material Plane is the nexus where the philosophical and elemental forces that define the other planes collide in the jumbled existence of mortal life and mundane matter. All fantasy gaming worlds exist within the Material Plane, making it the starting point for most campaigns and adventures. The rest of the multiverse is defined in relation to the Material Plane.\nThe worlds of the Material Plane are infinitely diverse, for they reflect the creative imagination of the GMs who set their games there, as well as the players whose heroes adventure there. They include magic-wasted desert planets and island-dotted water worlds, worlds where magic combines with advanced technology and others trapped in an endless Stone Age, worlds where the gods walk and places they have abandoned."
+        }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_plane"))
+        i.import_plane(
+            json.loads(
+                self.test_plane_json, strict=False),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_plane"))
+
+    def test_get_plane_data(self):
+        response = self.client.get("/planes/?format=json")
+
+        in_plane = json.loads(self.test_plane_json)
+        out_plane = response.json()['results'][0]
+
+        equal_fields = [
+            'name',
+            'desc'
+        ]
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_plane[field_name],
+                out_plane[field_name],
+                f'Mismatched value of: {field_name}')
+
+class SectionsTestCase(APITestCase):
+    """Test case for Section API objects."""
+
+    def setUp(self):
+        """Create a document and section for testing."""
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        self.test_section_json = """
+            {
+            "name": "Traps",
+            "desc": "Traps can be found almost anywhere. One wrong step in an ancient tomb might trigger a series of scything blades, which cleave through armor and bone. The seemingly innocuous vines that hang over a cave entrance might grasp and choke anyone who pushes through them. A net hidden among the trees might drop on travelers who pass underneath. In a fantasy game, unwary adventurers can fall to their deaths, be burned alive, or fall under a fusillade of poisoned darts.\n\nA trap can be either mechanical or magical in nature. **Mechanical traps** include pits, arrow traps, falling blocks, water-filled rooms, whirling blades, and anything else that depends on a mechanism to operate. **Magic traps** are either magical device traps or spell traps. Magical device traps initiate spell effects when activated. Spell traps are spells such as _glyph of warding_ and _symbol_ that function as traps.\n\n## Traps in Play\n\nWhen adventurers come across a trap, you need to know how the trap is triggered and what it does, as well as the possibility for the characters to detect the trap and to disable or avoid it.\n\n### Triggering a Trap\n\nMost traps are triggered when a creature goes somewhere or touches something that the trap's creator wanted to protect. Common triggers include stepping on a pressure plate or a false section of floor, pulling a trip wire, turning a doorknob, and using the wrong key in a lock. Magic traps are often set to go off when a creature enters an area or touches an object. Some magic traps (such as the _glyph of warding_ spell) have more complicated trigger conditions, including a password that prevents the trap from activating.\n\n### Detecting and Disabling a Trap\n\nUsually, some element of a trap is visible to careful inspection. Characters might notice an uneven flagstone that conceals a pressure plate, spot the gleam of light off a trip wire, notice small holes in the walls from which jets of flame will erupt, or otherwise detect something that points to a trap's presence.\n\nA trap's description specifies the checks and DCs needed to detect it, disable it, or both. A character actively looking for a trap can attempt a Wisdom (Perception) check against the trap's DC. You can also compare the DC to detect the trap with each character's passive Wisdom (Perception) score to determine whether anyone in the party notices the trap in passing. If the adventurers detect a trap before triggering it, they might be able to disarm it, either permanently or long enough to move past it. You might call for an Intelligence (Investigation) check for a character to deduce what needs to be done, followed by a Dexterity check using thieves' tools to perform the necessary sabotage.\n\nAny character can attempt an Intelligence (Arcana) check to detect or disarm a magic trap, in addition to any other checks noted in the trap's description. The DCs are the same regardless of the check used. In addition, _dispel magic_ has a chance of disabling most magic traps. A magic trap's description provides the DC for the ability check made when you use _dispel magic_.\n\nIn most cases, a trap's description is clear enough that you can adjudicate whether a character's actions locate or foil the trap. As with many situations, you shouldn't allow die rolling to override clever play and good planning. Use your common sense, drawing on the trap's description to determine what happens. No trap's design can anticipate every possible action that the characters might attempt.\n\nYou should allow a character to discover a trap without making an ability check if an action would clearly reveal the trap's presence. For example, if a character lifts a rug that conceals a pressure plate, the character has found the trigger and no check is required.\n\nFoiling traps can be a little more complicated. Consider a trapped treasure chest. If the chest is opened without first pulling on the two handles set in its sides, a mechanism inside fires a hail of poison needles toward anyone in front of it. After inspecting the chest and making a few checks, the characters are still unsure if it's trapped. Rather than simply open the chest, they prop a shield in front of it and push the chest open at a distance with an iron rod. In this case, the trap still triggers, but the hail of needles fires harmlessly into the shield.\n\nTraps are often designed with mechanisms that allow them to be disarmed or bypassed. Intelligent monsters that place traps in or around their lairs need ways to get past those traps without harming themselves. Such traps might have hidden levers that disable their triggers, or a secret door might conceal a passage that goes around the trap.\n\n### Trap Effects\n\nThe effects of traps can range from inconvenient to deadly, making use of elements such as arrows, spikes, blades, poison, toxic gas, blasts of fire, and deep pits. The deadliest traps combine multiple elements to kill, injure, contain, or drive off any creature unfortunate enough to trigger them. A trap's description specifies what happens when it is triggered.\n\nThe attack bonus of a trap, the save DC to resist its effects, and the damage it deals can vary depending on the trap's severity. Use the Trap Save DCs and Attack Bonuses table and the Damage Severity by Level table for suggestions based on three levels of trap severity.\n\nA trap intended to be a **setback** is unlikely to kill or seriously harm characters of the indicated levels, whereas a **dangerous** trap is likely to seriously injure (and potentially kill) characters of the indicated levels. A **deadly** trap is likely to kill characters of the indicated levels.\n\n**Trap Save DCs and Attack Bonuses (table)**\n| Trap Danger | Save DC | Attack Bonus |\n|-------------|---------|--------------|\n| Setback     | 10-11   | +3 to +5     |\n| Dangerous   | 12-15   | +6 to +8     |\n| Deadly      | 16-20   | +9 to +12    |\n**Damage Severity by Level (table)**\n| Character Level | Setback | Dangerous | Deadly |\n|-----------------|---------|-----------|--------|\n| 1st-4th         | 1d10    | 2d10      | 4d10   |\n| 5th-10th        | 2d10    | 4d10      | 10d10  |\n| 11th-16th       | 4d10    | 10d10     | 18d10  |\n| 17th-20th       | 10d10   | 18d10     | 24d10  |\n\n### Complex Traps\n\nComplex traps work like standard traps, except once activated they execute a series of actions each round. A complex trap turns the process of dealing with a trap into something more like a combat encounter.\n\nWhen a complex trap activates, it rolls initiative. The trap's description includes an initiative bonus. On its turn, the trap activates again, often taking an action. It might make successive attacks against intruders, create an effect that changes over time, or otherwise produce a dynamic challenge. Otherwise, the complex trap can be detected and disabled or bypassed in the usual ways.\n\nFor example, a trap that causes a room to slowly flood works best as a complex trap. On the trap's turn, the water level rises. After several rounds, the room is completely flooded.\n\n## Sample Traps\n\nThe magical and mechanical traps presented here vary in deadliness and are presented in alphabetical order.\n\n### Collapsing Roof\n\n_Mechanical trap_\n\nThis trap uses a trip wire to collapse the supports keeping an unstable section of a ceiling in place.\n\nThe trip wire is 3 inches off the ground and stretches between two support beams. The DC to spot the trip wire is 10. A successful DC 15 Dexterity check using thieves' tools disables the trip wire harmlessly. A character without thieves' tools can attempt this check with disadvantage using any edged weapon or edged tool. On a failed check, the trap triggers.\n\nAnyone who inspects the beams can easily determine that they are merely wedged in place. As an action, a character can knock over a beam, causing the trap to trigger.\n\nThe ceiling above the trip wire is in bad repair, and anyone who can see it can tell that it's in danger of collapse.\n\nWhen the trap is triggered, the unstable ceiling collapses. Any creature in the area beneath the unstable section must succeed on a DC 15 Dexterity saving throw, taking 22 (4d10) bludgeoning damage on a failed save, or half as much damage on a successful one. Once the trap is triggered, the floor of the area is filled with rubble and becomes difficult terrain.\n\n### Falling Net\n\n_Mechanical trap_\n\nThis trap uses a trip wire to release a net suspended from the ceiling.\n\nThe trip wire is 3 inches off the ground and stretches between two columns or trees. The net is hidden by cobwebs or foliage. The DC to spot the trip wire and net is 10. A successful DC 15 Dexterity check using thieves' tools breaks the trip wire harmlessly. A character without thieves' tools can attempt this check with disadvantage using any edged weapon or edged tool. On a failed check, the trap triggers.\n\nWhen the trap is triggered, the net is released, covering a 10-foot-square area. Those in the area are trapped under the net and restrained, and those that fail a DC 10 Strength saving throw are also knocked prone. A creature can use its action to make a DC 10\n\nStrength check, freeing itself or another creature within its reach on a success. The net has AC 10 and 20 hit points. Dealing 5 slashing damage to the net (AC 10) destroys a 5-foot-square section of it, freeing any creature trapped in that section.\n\n### Fire-Breathing Statue\n\n_Magic trap_\n\nThis trap is activated when an intruder steps on a hidden pressure plate, releasing a magical gout of flame from a nearby statue. The statue can be of anything, including a dragon or a wizard casting a spell.\n\nThe DC is 15 to spot the pressure plate, as well as faint scorch marks on the floor and walls. A spell or other effect that can sense the presence of magic, such as _detect magic_, reveals an aura of evocation magic around the statue.\n\nThe trap activates when more than 20 pounds of weight is placed on the pressure plate, causing the statue to release a 30-foot cone of fire. Each creature in the fire must make a DC 13 Dexterity saving throw, taking 22 (4d10) fire damage on a failed save, or half as much damage on a successful one.\n\nWedging an iron spike or other object under the pressure plate prevents the trap from activating. A successful _dispel magic_ (DC 13) cast on the statue destroys the trap.\n\n### Pits\n\n_Mechanical trap_\n\nFour basic pit traps are presented here.\n\n**_Simple Pit_**. A simple pit trap is a hole dug in the ground. The hole is covered by a large cloth anchored on the pit's edge and camouflaged with dirt and debris.\n\nThe DC to spot the pit is 10. Anyone stepping on the cloth falls through and pulls the cloth down into the pit, taking damage based on the pit's depth (usually 10 feet, but some pits are deeper).\n\n**_Hidden Pit_**. This pit has a cover constructed from material identical to the floor around it.\n\nA successful DC 15 Wisdom (Perception) check discerns an absence of foot traffic over the section of floor that forms the pit's cover. A successful DC 15 Intelligence (Investigation) check is necessary to confirm that the trapped section of floor is actually the cover of a pit.\n\nWhen a creature steps on the cover, it swings open like a trapdoor, causing the intruder to spill into the pit below. The pit is usually 10 or 20 feet deep but can be deeper.\n\nOnce the pit trap is detected, an iron spike or similar object can be wedged between the pit's cover and the surrounding floor in such a way as to prevent the cover from opening, thereby making it safe to cross. The cover can also be magically held shut using the _arcane lock_ spell or similar magic.\n\n**_Locking Pit_**. This pit trap is identical to a hidden pit trap, with one key exception: the trap door that covers the pit is spring-loaded. After a creature falls into the pit, the cover snaps shut to trap its victim inside.\n\nA successful DC 20 Strength check is necessary to pry the cover open. The cover can also be smashed open. A character in the pit can also attempt to disable the spring mechanism from the inside with a DC 15 Dexterity check using thieves' tools, provided that the mechanism can be reached and the character can see. In some cases, a mechanism (usually hidden behind a secret door nearby) opens the pit.\n\n**_Spiked Pit_**. This pit trap is a simple, hidden, or locking pit trap with sharpened wooden or iron spikes at the bottom. A creature falling into the pit takes 11 (2d10) piercing damage from the spikes, in addition to any falling damage. Even nastier versions have poison smeared on the spikes. In that case, anyone taking piercing damage from the spikes must also make a DC 13 Constitution saving throw, taking an 22 (4d10) poison damage on a failed save, or half as much damage on a successful one.\n\n### Poison Darts\n\n_Mechanical trap_\n\nWhen a creature steps on a hidden pressure plate, poison-tipped darts shoot from spring-loaded or pressurized tubes cleverly embedded in the surrounding walls. An area might include multiple pressure plates, each one rigged to its own set of darts.\n\nThe tiny holes in the walls are obscured by dust and cobwebs, or cleverly hidden amid bas-reliefs, murals, or frescoes that adorn the walls. The DC to spot them is 15. With a successful DC 15 Intelligence (Investigation) check, a character can deduce the presence of the pressure plate from variations in the mortar and stone used to create it, compared to the surrounding floor. Wedging an iron spike or other object under the pressure plate prevents the trap from activating. Stuffing the holes with cloth or wax prevents the darts contained within from launching.\n\nThe trap activates when more than 20 pounds of weight is placed on the pressure plate, releasing four darts. Each dart makes a ranged attack with a +8\n\nbonus against a random target within 10 feet of the pressure plate (vision is irrelevant to this attack roll). (If there are no targets in the area, the darts don't hit anything.) A target that is hit takes 2 (1d4) piercing damage and must succeed on a DC 15 Constitution saving throw, taking 11 (2d10) poison damage on a failed save, or half as much damage on a successful one.\n\n### Poison Needle\n\n_Mechanical trap_\n\nA poisoned needle is hidden within a treasure chest's lock, or in something else that a creature might open. Opening the chest without the proper key causes the needle to spring out, delivering a dose of poison.\n\nWhen the trap is triggered, the needle extends 3 inches straight out from the lock. A creature within range takes 1 piercing damage and 11\n\n(2d10) poison damage, and must succeed on a DC 15 Constitution saving throw or be poisoned for 1 hour.\n\nA successful DC 20 Intelligence (Investigation) check allows a character to deduce the trap's presence from alterations made to the lock to accommodate the needle. A successful DC 15 Dexterity check using thieves' tools disarms the trap, removing the needle from the lock. Unsuccessfully attempting to pick the lock triggers the trap.\n\n### Rolling Sphere\n\n_Mechanical trap_\n\nWhen 20 or more pounds of pressure are placed on this trap's pressure plate, a hidden trapdoor in the ceiling opens, releasing a 10-foot-diameter rolling sphere of solid stone.\n\nWith a successful DC 15 Wisdom (Perception) check, a character can spot the trapdoor and pressure plate. A search of the floor accompanied by a successful DC 15 Intelligence (Investigation) check reveals variations in the mortar and stone that betray the pressure plate's presence. The same check made while inspecting the ceiling notes variations in the stonework that reveal the trapdoor. Wedging an iron spike or other object under the pressure plate prevents the trap from activating.\n\nActivation of the sphere requires all creatures present to roll initiative. The sphere rolls initiative with a +8 bonus. On its turn, it moves 60 feet in a straight line. The sphere can move through creatures' spaces, and creatures can move through its space, treating it as difficult terrain. Whenever the sphere enters a creature's space or a creature enters its space while it's rolling, that creature must succeed on a DC 15 Dexterity saving throw or take 55 (10d10) bludgeoning damage and be knocked prone.\n\nThe sphere stops when it hits a wall or similar barrier. It can't go around corners, but smart dungeon builders incorporate gentle, curving turns into nearby passages that allow the sphere to keep moving.\n\nAs an action, a creature within 5 feet of the sphere can attempt to slow it down with a DC 20 Strength check. On a successful check, the sphere's speed is reduced by 15 feet. If the sphere's speed drops to 0, it stops moving and is no longer a threat.\n\n### Sphere of Annihilation\n\n_Magic trap_\n\nMagical, impenetrable darkness fills the gaping mouth of a stone face carved into a wall. The mouth is 2 feet in diameter and roughly circular. No sound issues from it, no light can illuminate the inside of it, and any matter that enters it is instantly obliterated.\n\nA successful DC 20 Intelligence (Arcana) check reveals that the mouth contains a _sphere of annihilation_ that can't be controlled or moved. It is otherwise identical to a normal _sphere of annihilation_.\n\nSome versions of the trap include an enchantment placed on the stone face, such that specified creatures feel an overwhelming urge to approach it and crawl inside its mouth. This effect is otherwise like the _sympathy_ aspect of the _antipathy/sympathy_ spell. A successful _dispel magic_ (DC 18) removes this enchantment.",
+            "parent": "Rules"
+            }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_section"))
+        i.import_section(
+            json.loads(
+                self.test_section_json, strict=False),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_section"))
+
+    def test_get_section_data(self):
+        response = self.client.get("/sections/?format=json")
+
+        in_section = json.loads(self.test_section_json, strict=False)
+        out_section = response.json()['results'][0]
+
+        equal_fields = [
+            'name',
+            'desc'
+        ]
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_section[field_name],
+                out_section[field_name],
+                f'Mismatched value of: {field_name}')
+
+class FeatsTestCase(APITestCase):
+    """Test case for Feat API objects."""
+
+    def setUp(self):
+        """Create a document and feat for testing."""
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        self.test_feat_json = """
+            {
+            "name": "Grappler",
+            "prerequisite": "Strength 13 or higher",
+            "desc": "You've developed the skills necessary to hold your own in close-quarters grappling. You gain the following benefits:",
+            "effects_desc": [
+                "- You have advantage on attack rolls against a creature you are grappling.",
+                "- You can use your action to try to pin a creature grappled by you. To do so, make another grapple check. If you succeed, you and the creature are both restrained until the grapple ends."
+            ]
+            }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_feat"))
+        i.import_feat(
+            json.loads(
+                self.test_feat_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_feat"))
+
+    def test_get_feat_data(self):
+        response = self.client.get("/feats/?format=json")
+
+        in_feat = json.loads(self.test_feat_json, strict=False)
+        out_feat = response.json()['results'][0]
+
+        equal_fields = [
+            'name',
+            'desc',
+            'prerequisite',
+            'effects_desc'
+        ]
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_feat[field_name],
+                out_feat[field_name],
+                f'Mismatched value of: {field_name}')
+
+
+class ConditionsTestCase(APITestCase):
+    """Test case for Condition API objects."""
+
+    def setUp(self):
+        """Create a document and condition for testing."""
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+
+        self.test_condition_json = r"""
+            {
+            "name": "Petrified",
+            "desc": "* A petrified creature is transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging.\n* The creature is incapacitated (see the condition), can't move or speak, and is unaware of its surroundings.\n* Attack rolls against the creature have advantage.\n* The creature automatically fails Strength and Dexterity saving throws.\n* The creature has resistance to all damage.\n* The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized."
+            }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_condition"))
+        i.import_condition(
+            json.loads(
+                self.test_condition_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_condition"))
+
+    def test_get_condition_data(self):
+        response = self.client.get("/conditions/?format=json")
+
+        in_condition = json.loads(self.test_condition_json)
+        out_condition = response.json()['results'][0]
+
+        equal_fields = [
+            'name',
+            'desc'
+        ]
+
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_condition[field_name],
+                out_condition[field_name],
+                f'Mismatched value of: {field_name}')
