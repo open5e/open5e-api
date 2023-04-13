@@ -124,7 +124,7 @@ class Monster(GameContent):
     damage_vulnerabilities = models.TextField(help_text='Comma separated list of damage types the monster is vulnerable to.')
     damage_resistances = models.TextField(help_text='Comma separated list of damage types the monster is resistant to.')
     damage_immunities = models.TextField(help_text='Comma separated list of damage types the monster is immune to.')
-    condition_immunities = models.TextField(help_text='Comma separated list of conditions the monster is immune to.)
+    condition_immunities = models.TextField(help_text='Comma separated list of conditions the monster is immune to.')
     senses = models.TextField('Comma separated list of senses, such as "blindsight 60ft."')
     languages = models.TextField('Comma separated list of languages that the monster speaks.')
     challenge_rating = models.TextField(help_text='Monster challenge rating.')
