@@ -245,7 +245,7 @@ class Section(GameContent):
         return "Sections"
 
 class Feat(GameContent):
-    prerequisite = models.TextField(null=True)
+    prerequisite = models.TextField(null=True, help_text='Description of a prerequisite for the character.')
     # desc
     route = models.TextField(default="feats/")
     effects_desc_json = models.TextField()
