@@ -268,13 +268,13 @@ class Condition(GameContent):
         return "Conditions"
 
 class Background(GameContent):
-    skill_proficiencies = models.TextField(null=True)
-    tool_proficiencies=models.TextField(null=True)
-    languages = models.TextField(null=True)
-    equipment = models.TextField()
-    feature = models.TextField()
-    feature_desc = models.TextField()
-    suggested_characteristics = models.TextField()
+    skill_proficiencies = models.TextField(null=True, help_text='Description of the skills that the background provides proficiency with.')
+    tool_proficiencies=models.TextField(null=True, help_text='Description of the tools that the background provides is proficiency with.')
+    languages = models.TextField(null=True, help_text='Description of the languages that the background provides knowledge of.')
+    equipment = models.TextField(help_text='Markdown description of equipment held by characters with this background.')
+    feature = models.TextField(help_text='Title of a feature this background grants.')
+    feature_desc = models.TextField(help_text='Description of the related background feature.')
+    suggested_characteristics = models.TextField(help_text='Currently not implemented.')
     route = models.TextField(default="backgrounds/")
 
     @staticmethod
