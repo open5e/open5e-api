@@ -283,9 +283,9 @@ class Background(GameContent):
         return "Backgrounds"
 
 class MagicItem(GameContent):
-    type = models.TextField()
-    rarity = models.TextField()
-    requires_attunement = models.TextField()
+    type = models.TextField(help_text='Description of the item type, such as "Armor (light)".')
+    rarity = models.TextField(help_text='Description of the rarity, such as "rare".')
+    requires_attunement = models.TextField('The word "requires attunement" or blank.')
     route = models.TextField(default="magicitems/")
 
     @staticmethod
