@@ -191,20 +191,20 @@ class Archetype(GameContent):
         return "Archetypes"
 
 class Race(GameContent):
-    asi_desc = models.TextField()
+    asi_desc = models.TextField(help_text='Markdown description of ability score changes for this race.')
     asi_json = models.TextField()
     def asi(self):
         return json.loads(self.asi_json)
-    age = models.TextField()
-    alignment = models.TextField()
-    size = models.TextField()
+    age = models.TextField(help_text='Markdown description of how this race ages.')
+    alignment = models.TextField(help_text='Markdown description of the alignment tendencies of the race.')
+    size = models.TextField(help_text='Markdown description of the size category of the race.')
     speed_json = models.TextField()
     def speed(self):
         return json.loads(self.speed_json)
-    speed_desc = models.TextField()
-    languages = models.TextField()
-    vision = models.TextField()
-    traits = models.TextField()
+    speed_desc = models.TextField(help_text='Markdown description of the speed of the race.')
+    languages = models.TextField(help_text='Markdown description of the languages known by the race.')
+    vision = models.TextField(help_text='Markdown description of any vision features the race has.')
+    traits = models.TextField(help_text='Markdown description of special traits thr race has.')
     route = models.TextField(default="races/")
 
     @staticmethod
