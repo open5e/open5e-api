@@ -213,11 +213,11 @@ class Race(GameContent):
         return "Races"
 
 class Subrace(GameContent):
-    asi_desc = models.TextField()
+    asi_desc = models.TextField(help_text='Markdown description of ability score changes for this subrace.')
     asi_json = models.TextField()
     def asi(self):
         return json.loads(self.asi_json)
-    traits = models.TextField()
+    traits = models.TextField(help_text='Markdown description of special traits thr race has.')
     parent_race = models.ForeignKey(Race, related_name='subraces', on_delete=models.CASCADE, null=True)
     route = models.TextField(default="subraces/")
 
