@@ -162,18 +162,18 @@ class MonsterSpell(models.Model):
         return "MonsterSpells"
 
 class CharClass(GameContent):
-    hit_dice = models.TextField()
-    hp_at_1st_level = models.TextField()
-    hp_at_higher_levels = models.TextField()
-    prof_armor = models.TextField()
-    prof_weapons = models.TextField()
-    prof_tools = models.TextField()
-    prof_saving_throws = models.TextField()
-    prof_skills = models.TextField()
-    equipment = models.TextField()
-    table = models.TextField()
-    spellcasting_ability = models.TextField()
-    subtypes_name = models.TextField()
+    hit_dice = models.TextField(help_text='Description of dice for each level such as "1d12 per barbarian level"')
+    hp_at_1st_level = models.TextField(help_text='Description of the Hit Points at level 1, such as "12 + your Constitution modifier"')
+    hp_at_higher_levels = models.TextField(help_text='Desciption of increases in Hit Points per level.')
+    prof_armor = models.TextField(help_text='Comma-separated list of armor types that the class is proficient with.')
+    prof_weapons = models.TextField(help_text='Comma-separated list of weapons that the class is proficient with.')
+    prof_tools = models.TextField(help_text='Description of tools the class is proficient with.')
+    prof_saving_throws = models.TextField(help_text='Comma separated list of saving throw abilities that the class is proficient with.')
+    prof_skills = models.TextField(help_text='Description of the skills that the class is proficient with.')
+    equipment = models.TextField(help_text='Markdown description of starting equipment.')
+    table = models.TextField(help_text='Table describing class growth by level.')
+    spellcasting_ability = models.TextField(help_text='Ability used for casting spells.')
+    subtypes_name = models.TextField(help_text='Preferred name for class subtypes, such as "Domains" (for Cleric).')
     route = models.TextField(default="classes/")
 
     @staticmethod
