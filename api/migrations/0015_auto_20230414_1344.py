@@ -10,10 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='spell',
-            name='ritual',
-        ),
         migrations.AlterField(
             model_name='spell',
             name='can_be_cast_as_ritual',
