@@ -7,6 +7,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('api', '0011_auto_20230320_2130'),
+        ('api', '0012_auto_20230413_0149')
     ]
 
     operations = [
