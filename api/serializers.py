@@ -130,6 +130,7 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'components',
             'material',
             'ritual',
+            'can_be_cast_as_ritual',
             'duration',
             'concentration',
             'casting_time',

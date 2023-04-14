@@ -70,7 +70,53 @@ class GameContent(models.Model):
         return "GameContents"
 
 class Spell(GameContent):
+    spell_levels = [
+        (0, 'Cantrip'),
+        (1, '1st'),
+        (2, '2nd'),
+        (3, '3rd'),
+        (4, '4th'),
+        (5, '5th'),
+        (6, '6th'),
+        (7, '7th'),
+        (8, '8th'),
+        (9, '9th')
+    ]
+
+    school_options = [
+        'abjuration',
+        'conjuration',
+        'divination',
+        'enchantment',
+        'evocation',
+        'illusion',
+        'necromancy',
+        'transmutation'
+    ]
+
+    area_of_effect_shape_options = [
+        'cone',
+        'cube',
+        'cylinder',
+        'line',
+        'sphere'
+    ]
+
+    damage_types = [
+        'acid',
+        'cold',
+        'fire',
+        'force',
+        'lightning',
+        'necrotic',
+        'poison',
+        'psychic',
+        'radiant',
+        'thunder'
+    ]
+    
     higher_level = models.TextField()
+    can_be_cast_as_ritual = models.BooleanField()
     page = models.TextField()
     range = models.TextField()
     components = models.TextField()
