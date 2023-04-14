@@ -670,8 +670,11 @@ class Importer:
             i.casting_time = spell_json["casting_time"]
         if "level" in spell_json:
             i.level = spell_json["level"]
+        
+        # Model field is renamed to spell_level
         if "level_int" in spell_json:
-            i.level_int = spell_json["level_int"]
+            i.spell_level = spell_json["level_int"]
+        
         if "school" in spell_json:
             i.school = spell_json["school"]
         if "class" in spell_json:
