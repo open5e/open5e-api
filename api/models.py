@@ -117,11 +117,18 @@ class Spell(GameContent):
     
     higher_level = models.TextField()
     can_be_cast_as_ritual = models.BooleanField()
+    #ritual = models.TextField()
+    def v1_ritual(self):
+        if self.can_be_cast_as_ritual:
+            return "yes"
+        else:
+            return "no"
+        
     page = models.TextField()
     range = models.TextField()
     components = models.TextField()
     material = models.TextField()
-    ritual = models.TextField()
+    
     duration = models.TextField()
     concentration = models.TextField()
     casting_time = models.TextField()

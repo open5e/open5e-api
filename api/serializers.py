@@ -118,6 +118,9 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
+
+    ritual = serializers.CharField(source='v1_ritual')
+
     class Meta:
         model = models.Spell
         fields = (
@@ -129,8 +132,8 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'range',
             'components',
             'material',
-            'ritual',
             'can_be_cast_as_ritual',
+            'ritual',
             'duration',
             'concentration',
             'casting_time',
