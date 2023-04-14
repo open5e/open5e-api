@@ -179,7 +179,6 @@ class Spell(GameContent):
     level = models.TextField(
         help_text='Description of the level of the spell, such as "4th-level".')
     level_int = models.IntegerField(
-        null=True,
         help_text='Integer representing the level of the spell. Cantrip is 0.')
     school = models.TextField(
         help_text='Representation of the school of magic, such as "illusion" or "evocation".')
