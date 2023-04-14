@@ -651,8 +651,17 @@ class Importer:
             i.components = spell_json["components"]
         if "material" in spell_json:
             i.material = spell_json["material"]
+
+        # Logic to set boolean based on v1 file import spec.
+        i.can_be_cast_as_ritual = False        
         if "ritual" in spell_json:
-            i.ritual = spell_json["ritual"]
+            # Default is false
+            if str(spell_json["ritual"]).lower() == 'yes':
+                i.can_be_cast_as_ritual = True
+            
+            if str(spell_json["ritual"]).lower() == 'no':
+                continue  # Already set as False through default.
+
         if "duration" in spell_json:
             i.duration = spell_json["duration"]
         if "concentration" in spell_json:
