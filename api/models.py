@@ -104,7 +104,7 @@ class GameContent(models.Model):
 
 class Spell(GameContent):
 
-     spell_levels = [
+    spell_levels = [
         'Cantrip',
         '1st-level',
         '2nd-level',
@@ -163,7 +163,7 @@ class Spell(GameContent):
     can_be_cast_as_ritual = models.BooleanField(help_text='Whether or not the spell can be cast as a ritual.')
     #ritual = models.TextField(
     #    help_text='"yes" or "no" based on whether or not a ritual is required.')
-    
+
     def v1_ritual(self):
         if self.can_be_cast_as_ritual:
             return "yes"
