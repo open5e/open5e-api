@@ -95,6 +95,9 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
 
 class SpellFilter(django_filters.FilterSet):
     # TODO the filter for level_int was lost in the modelfield rename, replace this.
+    
+    level_int = django_filters.NumberFilter(field_name='spell_level')
+
     class Meta:
         model = models.Spell
         fields = {
@@ -110,6 +113,7 @@ class SpellFilter(django_filters.FilterSet):
             'dnd_class': ['iexact', 'exact', 'in', 'icontains'],
             'document__slug': ['iexact', 'exact', 'in', ],
         }
+
 
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
