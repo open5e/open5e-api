@@ -104,7 +104,7 @@ class GameContent(models.Model):
 
 class Spell(GameContent):
 
-    spell_level_lookup = [
+    spell_level_name_lookup = [
         'Cantrip',
         '1st-level',
         '2nd-level',
@@ -156,33 +156,40 @@ class Spell(GameContent):
     range = models.TextField(help_text='Text description of the range.')
     components = models.TextField(
         help_text='Single-character list of V, S, M for Verbal, Somatic, or Material based on the spell requirements.')
-    
     material = models.TextField(
         help_text='Description of the material required.')
     
-    can_be_cast_as_ritual = models.BooleanField(help_text='Whether or not the spell can be cast as a ritual.')
-    #ritual = models.TextField(
-    #    help_text='"yes" or "no" based on whether or not a ritual is required.')
-
+    can_be_cast_as_ritual = models.BooleanField(
+        help_text='Whether or not the spell can be cast as a ritual.')
+    # Maintaining compatibility with the old "ritual" string field.
     def v1_ritual(self):
         if self.can_be_cast_as_ritual:
             return "yes"
         else:
             return "no"
     
-
-
     duration = models.TextField(
         help_text='Description of the duration such as "instantaneous" or "Up to 1 minute"')
-    concentration = models.TextField(
-        help_text='"yes" or "no" based on whether the spell requires concentration.')
+    
+    requires_concentration = models.BooleanField(
+        help_text='Whether the spell requires concentration')
+    # Maintaining compatibility with the old "concentration" string field
+    def v1_concentration(self):
+        if self.requires_concentration:
+            return "yes"
+        else:
+            return "no"
+
     casting_time = models.TextField(
         help_text='Amount of time it takes to cast the spell, such as "1 bonus action" or "4 hours".')
-    def v1_level(self):
-        return self.spell_level_lookup[self.spell_level]
-
+    
+    
     spell_level = models.IntegerField(
         help_text='Integer representing the level of the spell. Cantrip is 0.')
+    # Maintaining compatibility with the old string field.
+    def v1_level(self):
+        return self.spell_level_name_lookup[self.spell_level]
+
     school = models.TextField(
         help_text='Representation of the school of magic, such as "illusion" or "evocation".')
     dnd_class = models.TextField(

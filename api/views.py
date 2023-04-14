@@ -97,6 +97,7 @@ class SpellFilter(django_filters.FilterSet):
     # TODO the filter for level_int was lost in the modelfield rename, replace this.
     
     level_int = django_filters.NumberFilter(field_name='spell_level')
+    concentration = django_filters.CharFilter(field_name='concentration')
 
     class Meta:
         model = models.Spell
@@ -107,7 +108,7 @@ class SpellFilter(django_filters.FilterSet):
             'school': ['iexact', 'exact', 'in', ],
             'duration': ['iexact', 'exact', 'in', ],
             'components': ['iexact', 'exact', 'in', ],
-            'concentration': ['iexact', 'exact', 'in', ],
+            'requires_concentration': ['exact'],
             'casting_time': ['iexact', 'exact', 'in', ],
             'dnd_class': ['iexact', 'exact', 'in', 'icontains'],
             'document__slug': ['iexact', 'exact', 'in', ],

@@ -664,8 +664,17 @@ class Importer:
 
         if "duration" in spell_json:
             i.duration = spell_json["duration"]
+
+        # Logic to set a boolean based on v1 file import spec (a string).
+        i.requires_concentration = True
         if "concentration" in spell_json:
-            i.concentration = spell_json["concentration"]
+            # Default is true
+            if str(spell_json['concentration']).lower() == 'no':
+                i.requires_concentration = False
+            
+            if str(spell_json["concentration"]).lower() == 'yes':
+                pass #Already set to True through default.
+            
         if "casting_time" in spell_json:
             i.casting_time = spell_json["casting_time"]
         if "level" in spell_json:
