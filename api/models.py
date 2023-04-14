@@ -71,16 +71,16 @@ class GameContent(models.Model):
 
 class Spell(GameContent):
     spell_levels = [
-        (0, 'Cantrip'),
-        (1, '1st'),
-        (2, '2nd'),
-        (3, '3rd'),
-        (4, '4th'),
-        (5, '5th'),
-        (6, '6th'),
-        (7, '7th'),
-        (8, '8th'),
-        (9, '9th')
+        'Cantrip',
+        '1st-level',
+        '2nd-level',
+        '3rd-level',
+        '4th-level',
+        '5th-level',
+        '6th-level',
+        '7th-level',
+        '8th-level',
+        '9th-level'
     ]
 
     school_options = [
