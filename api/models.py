@@ -104,7 +104,7 @@ class GameContent(models.Model):
 
 class Spell(GameContent):
 
-    spell_levels = [
+    spell_level_lookup = [
         'Cantrip',
         '1st-level',
         '2nd-level',
@@ -169,15 +169,18 @@ class Spell(GameContent):
             return "yes"
         else:
             return "no"
-            
+    
+
+
     duration = models.TextField(
         help_text='Description of the duration such as "instantaneous" or "Up to 1 minute"')
     concentration = models.TextField(
         help_text='"yes" or "no" based on whether the spell requires concentration.')
     casting_time = models.TextField(
         help_text='Amount of time it takes to cast the spell, such as "1 bonus action" or "4 hours".')
-    level = models.TextField(
-        help_text='Description of the level of the spell, such as "4th-level".')
+    def v1_level(self):
+        return self.spell_level_lookup[self.spell_level]
+
     spell_level = models.IntegerField(
         help_text='Integer representing the level of the spell. Cantrip is 0.')
     school = models.TextField(

@@ -121,6 +121,7 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
 
     ritual = serializers.CharField(source='v1_ritual')
     level_int = serializers.IntegerField(source='spell_level')
+    level = serializers.CharField(source='v1_level')
 
     class Meta:
         model = models.Spell

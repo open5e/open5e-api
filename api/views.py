@@ -103,7 +103,6 @@ class SpellFilter(django_filters.FilterSet):
         fields = {
             'slug': ['in', 'iexact', 'exact', 'in', ],
             'name': ['iexact', 'exact'],
-            'level': ['iexact', 'exact', 'in', ],
             'spell_level': ['iexact', 'exact', 'range'],
             'school': ['iexact', 'exact', 'in', ],
             'duration': ['iexact', 'exact', 'in', ],
