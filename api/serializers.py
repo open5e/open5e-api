@@ -140,6 +140,7 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'casting_time',
             'level',
             'level_int',
+            'spell_level',
             'school',
             'dnd_class',
             'archetype',
