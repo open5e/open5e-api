@@ -76,7 +76,7 @@ class Spell(GameContent):
         if self.requires_material_components:
             components_list.append("M")
         
-        return ','.join(components_list)
+        return ', '.join(components_list)
 
 
     material = models.TextField(
