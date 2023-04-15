@@ -1,3 +1,9 @@
+"""
+The model for a spell.
+
+Also includes importing and some presentation logic.
+"""
+
 from django.db import models
 from django.template.defaultfilters import slugify
 
@@ -5,6 +11,7 @@ from .models import GameContent
 
 
 class Spell(GameContent):
+    """The model for a spell."""
 
     spell_level_name_lookup = [
         'Cantrip',
@@ -68,6 +75,7 @@ class Spell(GameContent):
         help_text='Casting this spell requires material components.')
 
     def v1_components(self):
+        """Presents the components in a standard list like "V, S, M."""
         components_list = []
         if self.requires_verbal_components:
             components_list.append("V")
@@ -75,9 +83,8 @@ class Spell(GameContent):
             components_list.append("S")
         if self.requires_material_components:
             components_list.append("M")
-        
-        return ', '.join(components_list)
 
+        return ', '.join(components_list)
 
     material = models.TextField(
         help_text='Description of the material required.')
@@ -87,6 +94,7 @@ class Spell(GameContent):
     # Maintaining compatibility with the old "ritual" string field.
 
     def v1_ritual(self):
+        """Field calculated and presented to maintain compatibility with original API."""
         if self.can_be_cast_as_ritual:
             return "yes"
         else:
@@ -100,6 +108,7 @@ class Spell(GameContent):
     # Maintaining compatibility with the old "concentration" string field
 
     def v1_concentration(self):
+        """Field calculated and presented to maintain compatibility with original API."""
         if self.requires_concentration:
             return "yes"
         else:
@@ -113,6 +122,7 @@ class Spell(GameContent):
     # Maintaining compatibility with the old string field.
 
     def v1_level(self):
+        """Presents the spell level in a friendly format."""
         return self.spell_level_name_lookup[self.spell_level]
 
     school = models.TextField(
@@ -126,6 +136,7 @@ class Spell(GameContent):
     route = models.TextField(default="spells/")
 
     def import_from_json_v1(self, json):
+        """Logic to import from the v1 file spec."""
         self.name = json["name"]
         self.slug = slugify(json["name"])
         if "desc" in json:
@@ -177,7 +188,8 @@ class Spell(GameContent):
 
             self.range = json["range"]
         if "components" in json:
-            # Set defaults to False, and then set to true based on string of "V, S, M"
+            # Set defaults to False, and then set to true based on string of
+            # "V, S, M"
             self.requires_verbal_components = False
             self.requires_somatic_components = False
             self.requires_material_components = False
