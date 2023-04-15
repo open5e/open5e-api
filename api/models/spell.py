@@ -62,6 +62,14 @@ class Spell(GameContent):
 
     components = models.TextField(
         help_text='Single-character list of V, S, M for Verbal, Somatic, or Material based on the spell requirements.')
+    
+    requires_verbal_components = models.BooleanField(
+        help_text='Casting this spell requires verbal components.')
+    requires_somatic_components = models.BooleanField(
+        help_text='Casting this spell requires somatic components.')
+    requires_material_components = models.BooleanField(
+        help_text='Casting this spell requires material components.')
+
     material = models.TextField(
         help_text='Description of the material required.')
 
