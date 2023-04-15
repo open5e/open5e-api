@@ -645,7 +645,45 @@ class Importer:
             i.higher_level = spell_json["higher_level"]
         if "page" in spell_json:
             i.page = spell_json["page"]
+        # Logic to set an integer based on v1 file import spec (a string).
         if "range" in spell_json:
+            # If the spell range includes an effect description like "(10 ft cube)", remove.
+            range_trimmed = str(spell_json['range'].split(" (")[0]).lower()
+            
+            # Set target range sort based on the following rules:
+            # Self = 0
+            # Touch = 1
+            # Any other distance is recorded in feet.
+            # "Sight" is recorded as 9999
+            # Unlimited (same-plane) is recorded as 99990
+            # Unlimited (multi-plane) is recorded as 99999
+            
+            if 'self' in range_trimmed:
+                # Various spells in deep magic include effect shape.
+                i.target_range_sort = 0
+            if range_trimmed == 'touch':
+                i.target_range_sort = 1
+            
+            if range_trimmed == 'sight':
+                i.target_range_sort = 9999
+
+            if range_trimmed == 'unlimited':
+                i.target_range_sort = 99999
+
+            if range_trimmed == 'special':
+                # For now, assume it's single plane
+                i.target_range_sort = 99990
+                            
+            if range_trimmed.endswith('miles') or range_trimmed.endswith('mile'):
+                # Assume it's in the format "xx Miles"
+                miles = int(spell_json['range'].split(" ")[0])
+                i.target_range_sort = miles * 5280
+
+            if range_trimmed.endswith('feet') or range_trimmed.endswith('ft.'):
+                # Assume it's in the format "xx Miles"
+                feet = int(range_trimmed.split(" ")[0])
+                i.target_range_sort = feet
+
             i.range = spell_json["range"]
         if "components" in spell_json:
             i.components = spell_json["components"]

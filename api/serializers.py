@@ -133,7 +133,7 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'higher_level',
             'page',
             'range',
-            'target_range_in_feet',
+            'target_range_sort',
             'components',
             'material',
             'can_be_cast_as_ritual',

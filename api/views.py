@@ -105,7 +105,7 @@ class SpellFilter(django_filters.FilterSet):
             'slug': ['in', 'iexact', 'exact', 'in', ],
             'name': ['iexact', 'exact'],
             'spell_level': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
-            'target_range_in_feet': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
+            'target_range_sort': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'school': ['iexact', 'exact', 'in', ],
             'duration': ['iexact', 'exact', 'in', ],
             'components': ['iexact', 'exact', 'in', ],
