@@ -98,6 +98,7 @@ class SpellFilter(django_filters.FilterSet):
     
     level_int = django_filters.NumberFilter(field_name='spell_level')
     concentration = django_filters.CharFilter(field_name='concentration')
+    components = django_filters.CharFilter(field_name='components')
 
     class Meta:
         model = models.Spell
@@ -108,7 +109,6 @@ class SpellFilter(django_filters.FilterSet):
             'target_range_sort': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'school': ['iexact', 'exact', 'in', ],
             'duration': ['iexact', 'exact', 'in', ],
-            'components': ['iexact', 'exact', 'in', ],
             'requires_concentration': ['exact'],
             'casting_time': ['iexact', 'exact', 'in', ],
             'dnd_class': ['iexact', 'exact', 'in', 'icontains'],

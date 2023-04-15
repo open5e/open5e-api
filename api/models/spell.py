@@ -60,15 +60,24 @@ class Spell(GameContent):
     target_range_sort = models.IntegerField(
         help_text='Sortable distance ranking to the target.')
 
-    components = models.TextField(
-        help_text='Single-character list of V, S, M for Verbal, Somatic, or Material based on the spell requirements.')
-    
     requires_verbal_components = models.BooleanField(
         help_text='Casting this spell requires verbal components.')
     requires_somatic_components = models.BooleanField(
         help_text='Casting this spell requires somatic components.')
     requires_material_components = models.BooleanField(
         help_text='Casting this spell requires material components.')
+
+    def v1_components(self):
+        components_list = []
+        if self.requires_verbal_components:
+            components_list.append("V")
+        if self.requires_somatic_components:
+            components_list.append("S")
+        if self.requires_material_components:
+            components_list.append("M")
+        
+        return ','.join(components_list)
+
 
     material = models.TextField(
         help_text='Description of the material required.')
@@ -168,7 +177,17 @@ class Spell(GameContent):
 
             self.range = json["range"]
         if "components" in json:
-            self.components = json["components"]
+            # Set defaults to False, and then set to true based on string of "V, S, M"
+            self.requires_verbal_components = False
+            self.requires_somatic_components = False
+            self.requires_material_components = False
+            if 'v' in json['components'].lower():
+                self.requires_verbal_components = True
+            if 's' in json['components'].lower():
+                self.requires_somatic_components = True
+            if 'm' in json['components'].lower():
+                self.requires_material_components = True
+
         if "material" in json:
             self.material = json["material"]
 
