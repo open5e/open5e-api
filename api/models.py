@@ -153,7 +153,10 @@ class Spell(GameContent):
         help_text='What happens if you cast this at a higher level.')
     page = models.TextField(
         help_text='Page number reference for the document.')
+    
     range = models.TextField(help_text='Text description of the range.')
+    target_range_in_feet = models.IntegerField(help_text='Distance from the caster to the target in feet.')
+
     components = models.TextField(
         help_text='Single-character list of V, S, M for Verbal, Somatic, or Material based on the spell requirements.')
     material = models.TextField(
