@@ -10,6 +10,7 @@ from django.core.validators import MinValueValidator
 from django.core.validators import MaxValueValidator
 
 from .models import GameContent
+from ..validators import spell_school_validator
 
 
 class Spell(GameContent):
@@ -27,12 +28,25 @@ class Spell(GameContent):
         help_text='List of classes (comma separated) that can learn this spell.')
 
     school = models.TextField(
+        validators = [spell_school_validator],
         help_text='Representation of the school of magic, such as "illusion" or "evocation".')
 
     # Computed metadata about the spell
     def v1_level(self):
         """Presents the spell level in a friendly format."""
-        return self.spell_level_name_lookup[self.spell_level]
+        spell_level_name_lookup = [
+            'Cantrip',
+            '1st-level',
+            '2nd-level',
+            '3rd-level',
+            '4th-level',
+            '5th-level',
+            '6th-level',
+            '7th-level',
+            '8th-level',
+            '9th-level'
+        ]
+        return spell_level_name_lookup[self.spell_level]
 
     # Stored data about casting the spell
     casting_time = models.TextField(
@@ -93,30 +107,6 @@ class Spell(GameContent):
             return "yes"
         else:
             return "no"
-
-    spell_level_name_lookup = [
-        'Cantrip',
-        '1st-level',
-        '2nd-level',
-        '3rd-level',
-        '4th-level',
-        '5th-level',
-        '6th-level',
-        '7th-level',
-        '8th-level',
-        '9th-level'
-    ]
-
-    school_options = [
-        'abjuration',
-        'conjuration',
-        'divination',
-        'enchantment',
-        'evocation',
-        'illusion',
-        'necromancy',
-        'transmutation'
-    ]
 
     area_of_effect_shape_options = [
         'cone',
