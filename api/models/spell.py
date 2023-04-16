@@ -108,27 +108,6 @@ class Spell(GameContent):
         else:
             return "no"
 
-    area_of_effect_shape_options = [
-        'cone',
-        'cube',
-        'cylinder',
-        'line',
-        'sphere'
-    ]
-
-    damage_types = [
-        'acid',
-        'cold',
-        'fire',
-        'force',
-        'lightning',
-        'necrotic',
-        'poison',
-        'psychic',
-        'radiant',
-        'thunder'
-    ]
-
     archetype = models.TextField(
         help_text='Archetype that can learn this spell. If empty, assume all archetypes.')
     circles = models.TextField(
