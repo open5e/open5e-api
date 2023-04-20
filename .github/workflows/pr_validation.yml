@@ -8,6 +8,19 @@ on:
       - main
 
 jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Python 3.11
+        run: sudo apt install python3.11
+      - name: Install Pipenv
+        run: pip install --user pipenv
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: pipenv install
+      - name: Run Tests
+        run: pipenv run python3.11 manage.py test
   build:
     runs-on: ubuntu-latest
     steps:
