@@ -127,7 +127,7 @@ class Monster(GameContent):
     condition_immunities = models.TextField()
     senses = models.TextField()
     languages = models.TextField()
-    challenge_rating = models.TextField(help_text='Monster challenge rating.')
+    challenge_rating = models.TextField()
     cr = models.FloatField(null=True)
     actions_json = models.TextField() #a list of actions in json text.
     def actions(self):
