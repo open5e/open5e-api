@@ -56,7 +56,7 @@ class Spell(GameContent):
 
     target_range_sort = models.IntegerField(
         validators=[MinValueValidator(0)],
-        help_text='Sortable distance ranking to the target.')
+        help_text='Sortable distance ranking to the target. 0 for self, 1 for touch, sight is 9999, unlimited (same plane) is 99990, unlimited any plane is 99999. All other values in feet.')
 
     requires_verbal_components = models.BooleanField(
         help_text='Casting this spell requires verbal components.',
