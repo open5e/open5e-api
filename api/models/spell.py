@@ -59,11 +59,14 @@ class Spell(GameContent):
         help_text='Sortable distance ranking to the target.')
 
     requires_verbal_components = models.BooleanField(
-        help_text='Casting this spell requires verbal components.')
+        help_text='Casting this spell requires verbal components.',
+        default=False)
     requires_somatic_components = models.BooleanField(
-        help_text='Casting this spell requires somatic components.')
+        help_text='Casting this spell requires somatic components.',
+        default=False)
     requires_material_components = models.BooleanField(
-        help_text='Casting this spell requires material components.')
+        help_text='Casting this spell requires material components.',
+        default=False)
 
     material = models.TextField(
         help_text='Description of the material required.')
@@ -72,7 +75,8 @@ class Spell(GameContent):
         help_text='What happens if you cast this at a higher level.')
 
     can_be_cast_as_ritual = models.BooleanField(
-        help_text='Whether or not the spell can be cast as a ritual.')
+        help_text='Whether or not the spell can be cast as a ritual.',
+        default=False)
 
     # Computed data about casting the spell
     def v1_components(self):
@@ -99,7 +103,8 @@ class Spell(GameContent):
         help_text='Description of the duration such as "instantaneous" or "Up to 1 minute"')
 
     requires_concentration = models.BooleanField(
-        help_text='Whether the spell requires concentration')
+        help_text='Whether the spell requires concentration',
+        default=False)
 
     def v1_concentration(self):
         """Field calculated and presented to maintain compatibility with original API."""
@@ -167,11 +172,8 @@ class Spell(GameContent):
 
             self.range = json["range"]
         if "components" in json:
-            # Set defaults to False, and then set to true based on string of
+            # These fields default to False, and then set to true based on string of
             # "V, S, M"
-            self.requires_verbal_components = False
-            self.requires_somatic_components = False
-            self.requires_material_components = False
             if 'v' in json['components'].lower():
                 self.requires_verbal_components = True
             if 's' in json['components'].lower():
@@ -183,7 +185,6 @@ class Spell(GameContent):
             self.material = json["material"]
 
         # Logic to set boolean based on v1 file import spec (a string).
-        self.can_be_cast_as_ritual = False
         if "ritual" in json:
             # Default is false
             if str(json["ritual"]).lower() == 'yes':
@@ -196,14 +197,9 @@ class Spell(GameContent):
             self.duration = json["duration"]
 
         # Logic to set a boolean based on v1 file import spec (a string).
-        self.requires_concentration = True
         if "concentration" in json:
-            # Default is true
-            if str(json['concentration']).lower() == 'no':
-                self.requires_concentration = False
-
             if str(json["concentration"]).lower() == 'yes':
-                pass  # Already set to True through default.
+                self.requires_concentration = True
 
         if "casting_time" in json:
             self.casting_time = json["casting_time"]
