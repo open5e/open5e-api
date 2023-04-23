@@ -3,6 +3,7 @@ import uuid
 
 from django.db import models
 
+
 class Manifest(models.Model):
     """A Manifest contains a hash based on the contents of a file.
 
@@ -11,6 +12,7 @@ class Manifest(models.Model):
     Periodically, they check back in to see whether any manifests have changed.
     If so, then they know to re-download that source.
     """
+    
     filename = models.CharField(
         max_length=255,
         unique=True,
@@ -99,8 +101,6 @@ class GameContent(models.Model):
     def plural_str() -> str:
         """Return a string specifying the plural name of this model."""
         return "GameContents"
-
-
 
 
 class CharClass(GameContent):
