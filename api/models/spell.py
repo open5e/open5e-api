@@ -76,7 +76,7 @@ class Spell(GameContent):
 
     # Computed data about casting the spell
     def v1_components(self):
-        """Presents the components in a standard list like "V, S, M."""
+        """Presents the components in a standard list like "V, S, M" """
         components_list = []
         if self.requires_verbal_components:
             components_list.append("V")
