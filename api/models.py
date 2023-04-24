@@ -93,6 +93,9 @@ class GameContent(models.Model):
     def document__license_url(self):
         return self.document.license_url
 
+    def document__url(self):
+        return self.document.url
+
     class Meta:
         abstract = True
 
