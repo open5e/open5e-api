@@ -51,7 +51,6 @@ def main():
 
             keyword_list = [' sphere', ' line', ' cone', ' cube', ' cylinder'] # leading space works in context, but trailing does not.
             context_word_list = ['feet', 'foot', 'radius']
-            anti_context_word_list = ['lineage', 'sight']
             attribute_name = 'shape'
 
             modified_items = []
@@ -61,7 +60,7 @@ def main():
 
                     analysis = find_keyword_in_string(item['desc'], keyword)
                     if analysis[0]==True:
-                        context_exists = find_keyword_context_in_string(item['desc'], keyword, 3,context_word_list, anti_context_word_list)
+                        context_exists = find_keyword_context_in_string(item['desc'], keyword, 3,context_word_list)
                         if context_exists:
                             choice='1'
                         else:
@@ -75,8 +74,8 @@ def main():
 
                 modified_items.append(item)
 
-                sister_file = file.parentfile.stem + "_modified" + file.suffix
-                with open(sister_file_name, 'w', encoding='utf-8') as s:
+                sister_file = str(file.parent)+"/"+file.stem + "_modified" + file.suffix
+                with open(sister_file, 'w', encoding='utf-8') as s:
                     s.write(json.dumps(modified_items, ensure_ascii=False, indent=4))
                 
     except Exception as e:
@@ -90,12 +89,8 @@ def find_keyword_in_string(string, keyword):
     else:
         return (False, None)
 
-def find_keyword_context_in_string(string, keyword, distance, cwl, acwl):
+def find_keyword_context_in_string(string, keyword, distance, cwl):
     context = string[string.index(keyword)-40:string.index(keyword)+40]
-    for anti_context_word in context:
-        if anti_context_word in context:
-            return False
-
     for context_word in cwl:
         if context_word in context:
             return True
