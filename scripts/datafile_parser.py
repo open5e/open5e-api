@@ -49,9 +49,9 @@ def main():
             print("Opening and parsing {}".format(file.name))
             file_json = json.load(file.open())
 
-            keyword_list = [' sphere', ' line', ' cone', ' cube', ' cylinder'] # leading space works in context, but trailing does not.
-            context_word_list = ['feet', 'foot', 'radius']
-            attribute_name = 'shape'
+            keyword_list = ['spell attack'] # leading space works in context, but trailing does not.
+            context_word_list = ['melee','ranged']
+            attribute_name = 'rolls-attack'
 
             modified_items = []
             for item in file_json:
@@ -68,7 +68,7 @@ def main():
                             choice = input('1: Tag it\n2: Skip\n'.format(attribute_name, keyword, slugify(item['name'])))
                         if choice == '1':
                             print(slugify(item['name']) + " tagged with " + keyword)
-                            item[attribute_name]=keyword
+                            item[attribute_name]=True
                         if choice == '2':
                             print("skipping")
 
