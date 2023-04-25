@@ -49,15 +49,14 @@ def main():
             print("Opening and parsing {}".format(file.name))
             file_json = json.load(file.open())
 
-            keyword_list = ['spell attack'] # leading space works in context, but trailing does not.
-            context_word_list = ['melee','ranged']
-            attribute_name = 'rolls-attack'
+            keyword_list = ['acid','bludgeoning','cold','fire','force','lightning','necrotic','piercing','poison','psychic','radiant','slashing','thunder']
+            context_word_list = ['damage']
+            attribute_name = 'damage_type'
 
             modified_items = []
             for item in file_json:
                 #The ability to interact with objects is here!
                 for keyword in keyword_list:
-
                     analysis = find_keyword_in_string(item['desc'], keyword)
                     if analysis[0]==True:
                         context_exists = find_keyword_context_in_string(item['desc'], keyword, 3,context_word_list)
@@ -67,8 +66,11 @@ def main():
                             print('\n\n'+slugify(item['name']) + "     " + keyword + "     " + analysis[1])
                             choice = input('1: Tag it\n2: Skip\n'.format(attribute_name, keyword, slugify(item['name'])))
                         if choice == '1':
-                            print(slugify(item['name']) + " tagged with " + keyword)
-                            item[attribute_name]=True
+                            if item.get(attribute_name)==None:
+                                print(slugify(item['name']) + " tagged with " + keyword)
+                                item[attribute_name]=[keyword]
+                            else:
+                                item[attribute_name].append(keyword)
                         if choice == '2':
                             print("skipping")
 
