@@ -18,6 +18,8 @@ def main():
             help='Filename to parse. This will determine expected structure.')
         parser.add_argument('-r', '--recursive', action='store_true',
             help='Find filename recursively below datadir.')
+        parser.add_argument('-o', '--output',
+            help='Output json file name.')
 
         args = parser.parse_args()
 
@@ -46,34 +48,36 @@ def main():
         for file in in_scope_files:
             print("Opening and parsing {}".format(file.name))
             file_json = json.load(file.open())
-            keyword_list = ['sphere', 'line', 'cone', 'cube', 'cylinder']
-            context_word_list = ['feet', 'foot']
+
+            keyword_list = [' sphere', ' line', ' cone', ' cube', ' cylinder'] # leading space works in context, but trailing does not.
+            context_word_list = ['feet', 'foot', 'radius']
+            anti_context_word_list = ['lineage', 'sight']
             attribute_name = 'shape'
-            results = []
+
+            modified_items = []
             for item in file_json:
-                result={"name":slugify(item['name']),"keywordfound":False,"modified":False}
-                
                 #The ability to interact with objects is here!
                 for keyword in keyword_list:
-                    #print("Keyword: {}".format(keyword))
-                    analysis = find_keyword_in_string(item['desc'], keyword)
 
-                    result['keywordfound']=analysis[0]
-                    if result['keywordfound']==True:
-                        context_exists = find_keyword_context_in_string(item['desc'], keyword, 3,context_word_list)
-                        print(slugify(item['name']) + "     " + keyword + "     " + analysis[1])
+                    analysis = find_keyword_in_string(item['desc'], keyword)
+                    if analysis[0]==True:
+                        context_exists = find_keyword_context_in_string(item['desc'], keyword, 3,context_word_list, anti_context_word_list)
                         if context_exists:
                             choice='1'
                         else:
+                            print('\n\n'+slugify(item['name']) + "     " + keyword + "     " + analysis[1])
                             choice = input('1: Tag it\n2: Skip\n'.format(attribute_name, keyword, slugify(item['name'])))
                         if choice == '1':
                             print(slugify(item['name']) + " tagged with " + keyword)
-                            result['modified']=True
-                            result['shape']=keyword
+                            item[attribute_name]=keyword
                         if choice == '2':
                             print("skipping")
-                results.append(result)
-        print(results)
+
+                modified_items.append(item)
+
+                sister_file = file.parentfile.stem + "_modified" + file.suffix
+                with open(sister_file_name, 'w', encoding='utf-8') as s:
+                    s.write(json.dumps(modified_items, ensure_ascii=False, indent=4))
                 
     except Exception as e:
         print(e)
@@ -86,8 +90,12 @@ def find_keyword_in_string(string, keyword):
     else:
         return (False, None)
 
-def find_keyword_context_in_string(string, keyword, distance, cwl):
+def find_keyword_context_in_string(string, keyword, distance, cwl, acwl):
     context = string[string.index(keyword)-40:string.index(keyword)+40]
+    for anti_context_word in context:
+        if anti_context_word in context:
+            return False
+
     for context_word in cwl:
         if context_word in context:
             return True
