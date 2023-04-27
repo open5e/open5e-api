@@ -119,6 +119,13 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
+
+    ritual = serializers.CharField(source='v1_ritual')
+    level_int = serializers.IntegerField(source='spell_level')
+    level = serializers.CharField(source='v1_level')
+    concentration = serializers.CharField(source='v1_concentration')
+    components = serializers.CharField(source='v1_components')
+
     class Meta:
         model = models.Spell
         fields = (
@@ -128,14 +135,21 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'higher_level',
             'page',
             'range',
+            'target_range_sort',
             'components',
+            'requires_verbal_components',
+            'requires_somatic_components',
+            'requires_material_components',
             'material',
+            'can_be_cast_as_ritual',
             'ritual',
             'duration',
             'concentration',
+            'requires_concentration',
             'casting_time',
             'level',
             'level_int',
+            'spell_level',
             'school',
             'dnd_class',
             'archetype',

@@ -4,6 +4,7 @@ erDiagram
 
   api_document {
     INTEGER id
+    VARCHAR slug
     TEXT title
     TEXT desc
     TEXT license
@@ -14,7 +15,6 @@ erDiagram
     DATETIME created_at
     TEXT license_url
     TEXT copyright
-    VARCHAR slug
   }
 
   api_manifest {
@@ -256,21 +256,23 @@ erDiagram
     TEXT higher_level
     TEXT page
     TEXT range
-    TEXT components
     TEXT material
-    TEXT ritual
     TEXT duration
-    TEXT concentration
     TEXT casting_time
-    TEXT level
-    INTEGER level_int
     TEXT school
     TEXT dnd_class
     TEXT archetype
     TEXT circles
     TEXT route
-    INTEGER document_id
+    BIGINT document_id
     INTEGER page_no
+    BOOL can_be_cast_as_ritual
+    INTEGER spell_level
+    BOOL requires_concentration
+    INTEGER target_range_sort
+    BOOL requires_material_components
+    BOOL requires_somatic_components
+    BOOL requires_verbal_components
   }
 
   api_weapon {
