@@ -115,6 +115,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'document__slug',
             'document__title',
             'document__license_url',
+            'document__url'
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -156,6 +157,7 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'document__slug',
             'document__title',
             'document__license_url',
+            'document__url'
         )
 
 class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -175,12 +177,13 @@ class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.Hyperlinked
             'document__slug',
             'document__title',
             'document__license_url',
+            'document__url'
         )
 
 class PlaneSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Plane
-        fields = ('slug','name','desc','document__slug', 'document__title')
+        fields = ('slug','name','desc','document__slug', 'document__title', 'document__url')
 
 class SectionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -192,6 +195,7 @@ class SectionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'document__slug',
             'document__title',
             'document__license_url',
+            'document__url',
             'parent'
         )
 
@@ -205,7 +209,8 @@ class FeatSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'prerequisite',
             'effects_desc',
             'document__slug',
-            'document__title'
+            'document__title',
+            'document__url'
         )
 
 class ConditionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -216,7 +221,8 @@ class ConditionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedM
             'name',
             'desc',
             'document__slug',
-            'document__title'
+            'document__title',
+            'document__url'
         )
 
 class SubraceSerializer(serializers.HyperlinkedModelSerializer):
@@ -229,7 +235,8 @@ class SubraceSerializer(serializers.HyperlinkedModelSerializer):
         'traits',
         'asi_desc',
         'document__slug',
-        'document__title'
+        'document__title',
+        'document__url'
     )
 
 
@@ -255,6 +262,7 @@ class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'document__slug',
             'document__title',
             'document__license_url',
+            'document__url'
         )
 
 class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
@@ -267,6 +275,7 @@ class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
             'document__slug',
             'document__title',
             'document__license_url',
+            'document__url'
         )
 
 class CharClassSerializer(serializers.HyperlinkedModelSerializer):
@@ -293,6 +302,7 @@ class CharClassSerializer(serializers.HyperlinkedModelSerializer):
             'document__slug',
             'document__title',
             'document__license_url',
+            'document__url'
         )
 
 class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
@@ -306,7 +316,8 @@ class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedM
             'rarity',
             'requires_attunement',
             'document__slug',
-            'document__title'
+            'document__title',
+            'document__url'
         )
 
 class WeaponSerializer(serializers.HyperlinkedModelSerializer):
@@ -319,6 +330,7 @@ class WeaponSerializer(serializers.HyperlinkedModelSerializer):
             'document__slug',
             'document__title',
             'document__license_url',
+            'document__url',
             'cost',
             'damage_dice',
             'damage_type',
@@ -335,6 +347,7 @@ class ArmorSerializer(serializers.HyperlinkedModelSerializer):
             'document__slug',
             'document__title',
             'document__license_url',
+            'document__url',
             'ac_string',
             'strength_requirement',
             'cost',
