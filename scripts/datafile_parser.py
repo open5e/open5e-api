@@ -18,8 +18,6 @@ def main():
             help='Filename to parse. This will determine expected structure.')
         parser.add_argument('-r', '--recursive', action='store_true',
             help='Find filename recursively below datadir.')
-        parser.add_argument('-o', '--output',
-            help='Output json file name.')
 
         args = parser.parse_args()
 
@@ -49,9 +47,9 @@ def main():
             print("Opening and parsing {}".format(file.name))
             file_json = json.load(file.open())
 
-            keyword_list = ['acid','bludgeoning','cold','fire','force','lightning','necrotic','piercing','poison','psychic','radiant','slashing','thunder']
-            context_word_list = ['damage']
-            attribute_name = 'damage_type'
+            keyword_list = ['strength','dexterity','constitution','intelligence','wisdom','charisma', 'Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma']
+            context_word_list = ['must make a', 'makes a successful', 'must succeed on a', 'halves']
+            attribute_name = 'saving_throw_ability'
 
             modified_items = []
             for item in file_json:
@@ -70,7 +68,7 @@ def main():
                                 print(slugify(item['name']) + " tagged with " + keyword)
                                 item[attribute_name]=[keyword]
                             else:
-                                item[attribute_name].append(keyword)
+                                item[attribute_name].append(keyword.lower())
                         if choice == '2':
                             print("skipping")
 
