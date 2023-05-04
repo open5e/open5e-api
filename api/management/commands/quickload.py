@@ -18,7 +18,8 @@ SOURCE_DIRS = [
     './data/a5e_srd/',
     './data/kobold_press/',
     './data/deep_magic_extended/',
-    './data/warlock/'
+    './data/warlock/',
+    './data/vault_of_magic'
 ]
 
 class Command(BaseCommand):

@@ -94,22 +94,28 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
         )
 
 class SpellFilter(django_filters.FilterSet):
+    level_int = django_filters.NumberFilter(field_name='spell_level')
+    concentration = django_filters.CharFilter(field_name='concentration')
+    components = django_filters.CharFilter(field_name='components')
 
     class Meta:
         model = models.Spell
         fields = {
             'slug': ['in', 'iexact', 'exact', 'in', ],
             'name': ['iexact', 'exact'],
-            'level': ['iexact', 'exact', 'in', ],
-            'level_int': ['iexact', 'exact', 'range'],
+            'spell_level': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
+            'target_range_sort': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'school': ['iexact', 'exact', 'in', ],
             'duration': ['iexact', 'exact', 'in', ],
-            'components': ['iexact', 'exact', 'in', ],
-            'concentration': ['iexact', 'exact', 'in', ],
+            'requires_concentration': ['exact'],
+            'requires_verbal_components': ['exact'],
+            'requires_somatic_components': ['exact'],
+            'requires_material_components': ['exact'],
             'casting_time': ['iexact', 'exact', 'in', ],
             'dnd_class': ['iexact', 'exact', 'in', 'icontains'],
-            'document__slug': ['iexact', 'exact', 'in', ],
+            'document__slug': ['iexact', 'exact', 'in', ]
         }
+
 
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """

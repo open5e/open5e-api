@@ -12,6 +12,7 @@ class Manifest(models.Model):
     Periodically, they check back in to see whether any manifests have changed.
     If so, then they know to re-download that source.
     """
+    
     filename = models.CharField(
         max_length=255,
         unique=True,
@@ -93,6 +94,9 @@ class GameContent(models.Model):
     def document__license_url(self):
         return self.document.license_url
 
+    def document__url(self):
+        return self.document.url
+
     class Meta:
         abstract = True
 
@@ -100,158 +104,6 @@ class GameContent(models.Model):
     def plural_str() -> str:
         """Return a string specifying the plural name of this model."""
         return "GameContents"
-
-
-class Spell(GameContent):
-    higher_level = models.TextField(
-        help_text='What happens if you cast this at a higher level.')
-    page = models.TextField(
-        help_text='Page number reference for the document.')
-    range = models.TextField(help_text='Text description of the range.')
-    components = models.TextField(
-        help_text='Single-character list of V, S, M for Verbal, Somatic, or Material based on the spell requirements.')
-    material = models.TextField(
-        help_text='Description of the material required.')
-    ritual = models.TextField(
-        help_text='"yes" or "no" based on whether or not a ritual is required.')
-    duration = models.TextField(
-        help_text='Description of the duration such as "instantaneous" or "Up to 1 minute"')
-    concentration = models.TextField(
-        help_text='"yes" or "no" based on whether the spell requires concentration.')
-    casting_time = models.TextField(
-        help_text='Amount of time it takes to cast the spell, such as "1 bonus action" or "4 hours".')
-    level = models.TextField(
-        help_text='Description of the level of the spell, such as "4th-level".')
-    level_int = models.IntegerField(
-        null=True,
-        help_text='Integer representing the level of the spell. Cantrip is 0.')
-    school = models.TextField(
-        help_text='Representation of the school of magic, such as "illusion" or "evocation".')
-    dnd_class = models.TextField(
-        help_text='List of classes (comma separated) that can learn this spell.')
-    archetype = models.TextField(
-        help_text='Archetype that can learn this spell. If empty, assume all archetypes.')
-    circles = models.TextField(
-        help_text='Druid Archetypes that can learn this spell.')
-    route = models.TextField(default="spells/")
-
-    @staticmethod
-    def plural_str() -> str:
-        """Return a string specifying the plural name of this model."""
-        return "Spells"
-
-
-class Monster(GameContent):
-    size = models.TextField(help_text='Monster size category.')
-    type = models.TextField(
-        help_text='The type of the monster, such as "aberration"')
-    subtype = models.TextField(
-        help_text='If applicable, the subtype of the monster, such as "shapechanger"')
-    group = models.TextField(
-        null=True,
-        help_text='Used to group similar creatures at different stages. "Green Dragon"')
-    alignment = models.TextField(
-        help_text='Short description of the creature alignment, such as "lawful good"')
-    armor_class = models.IntegerField(
-        default=12, help_text='Integer representing the armor class.')
-    armor_desc = models.TextField(
-        null=True, help_text='Description of the armor or armor type.')
-    hit_points = models.IntegerField(
-        null=True, help_text='Integer of the hit points.')
-    hit_dice = models.TextField(
-        help_text='Dice string representing a way to calculate hit points.')
-    speed_json = models.TextField()
-
-    def speed(self):
-        return json.loads(self.speed_json)
-    strength = models.IntegerField(
-        null=True, help_text='Integer representing the strength score.')
-    dexterity = models.IntegerField(
-        null=True, help_text='Integer represeting the dexterity score.')
-    constitution = models.IntegerField(
-        null=True, help_text='Integer representing the constitution score.')
-    intelligence = models.IntegerField(
-        null=True, help_text='Integer representing the intelligence score.')
-    wisdom = models.IntegerField(
-        null=True, help_text='Integer representing the wisdom score.')
-    charisma = models.IntegerField(
-        null=True, help_text='Integer representing the charisma score.')
-    strength_save = models.IntegerField(
-        null=True, help_text='Integer representing the strength save.')
-    dexterity_save = models.IntegerField(
-        null=True, help_text='Integer representing the dexterity save.')
-    constitution_save = models.IntegerField(
-        null=True, help_text='Integer representing the constitution save.')
-    intelligence_save = models.IntegerField(
-        null=True, help_text='Integer representing the intelligence save')
-    wisdom_save = models.IntegerField(
-        null=True, help_text='Integer representing the wisdom save.')
-    charisma_save = models.IntegerField(
-        null=True, help_text='Integer representing the charisma save.')
-    perception = models.IntegerField(
-        null=True, help_text='Integer representing the passive perception score.')
-    skills_json = models.TextField()
-
-    def skills(self):
-        return json.loads(self.skills_json)
-    damage_vulnerabilities = models.TextField(
-        help_text='Comma separated list of damage types the monster is vulnerable to.')
-    damage_resistances = models.TextField(
-        help_text='Comma separated list of damage types the monster is resistant to.')
-    damage_immunities = models.TextField(
-        help_text='Comma separated list of damage types the monster is immune to.')
-    condition_immunities = models.TextField(
-        help_text='Comma separated list of conditions the monster is immune to.')
-    senses = models.TextField(
-        'Comma separated list of senses, such as "blindsight 60ft."')
-    languages = models.TextField(
-        'Comma separated list of languages that the monster speaks.')
-    challenge_rating = models.TextField(help_text='Monster challenge rating.')
-    cr = models.FloatField(
-        null=True,
-        help_text='Monster challenge rating as a float.')
-    actions_json = models.TextField()  # a list of actions in json text.
-
-    def actions(self):
-        return json.loads(self.actions_json)
-    # A list of special abilities in json text.
-    special_abilities_json = models.TextField()
-
-    def special_abilities(self):
-        return json.loads(self.special_abilities_json)
-    reactions_json = models.TextField()  # A list of reactions in json text.
-
-    def reactions(self):
-        return json.loads(self.reactions_json)
-    legendary_desc = models.TextField()
-    # a list of legendary actions in json.
-    legendary_actions_json = models.TextField()
-
-    def legendary_actions(self):
-        return json.loads(self.legendary_actions_json)
-    spells_json = models.TextField()
-    spell_list = models.ManyToManyField(
-        Spell,
-        related_name='monsters',
-        symmetrical=True,
-        through="monsterSpell")
-    route = models.TextField(default="monsters/")
-    img_main = models.URLField(null=True)
-
-    @staticmethod
-    def plural_str() -> str:
-        """Return a string specifying the plural name of this model."""
-        return "Monsters"
-
-
-class MonsterSpell(models.Model):
-    spell = models.ForeignKey(Spell, on_delete=models.CASCADE)
-    monster = models.ForeignKey(Monster, on_delete=models.CASCADE)
-
-    @staticmethod
-    def plural_str() -> str:
-        """Return a string specifying the plural name of this model."""
-        return "MonsterSpells"
 
 
 class CharClass(GameContent):
