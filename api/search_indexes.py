@@ -40,8 +40,6 @@ class SpellIndex(indexes.SearchIndex, indexes.Indexable):
   name = indexes.EdgeNgramField(model_attr='name', )
   route = indexes.CharField(model_attr='route', indexed=False)
   slug = indexes.CharField(model_attr='slug', indexed=False)
-  ritual = indexes.CharField(model_attr='ritual', indexed=False)
-  level = indexes.CharField(model_attr='level', indexed=False)
   school = indexes.CharField(model_attr='school', indexed=False)
   dnd_class = indexes.CharField(model_attr='dnd_class', indexed=False)
 

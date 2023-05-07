@@ -130,6 +130,7 @@ class Importer:
         i.slug = slug
         i.desc = document_json["desc"]
         i.author = document_json["author"]
+        i.organization = document_json["organization"] #Fixing issue identified in testing.
         i.license = document_json["license"]
         i.version = document_json["version"]
         i.url = document_json["url"]
@@ -636,40 +637,9 @@ class Importer:
         else:
             i = models.Spell(document=self._last_document_imported)
             new = True
-        i.name = spell_json["name"]
-        i.slug = slug
-        if "desc" in spell_json:
-            i.desc = spell_json["desc"]
-        if "higher_level" in spell_json:
-            i.higher_level = spell_json["higher_level"]
-        if "page" in spell_json:
-            i.page = spell_json["page"]
-        if "range" in spell_json:
-            i.range = spell_json["range"]
-        if "components" in spell_json:
-            i.components = spell_json["components"]
-        if "material" in spell_json:
-            i.material = spell_json["material"]
-        if "ritual" in spell_json:
-            i.ritual = spell_json["ritual"]
-        if "duration" in spell_json:
-            i.duration = spell_json["duration"]
-        if "concentration" in spell_json:
-            i.concentration = spell_json["concentration"]
-        if "casting_time" in spell_json:
-            i.casting_time = spell_json["casting_time"]
-        if "level" in spell_json:
-            i.level = spell_json["level"]
-        if "level_int" in spell_json:
-            i.level_int = spell_json["level_int"]
-        if "school" in spell_json:
-            i.school = spell_json["school"]
-        if "class" in spell_json:
-            i.dnd_class = spell_json["class"]
-        if "archetype" in spell_json:
-            i.archetype = spell_json["archetype"]
-        if "circles" in spell_json:
-            i.circles = spell_json["circles"]
+
+        i.import_from_json_v1(json=spell_json)
+
         result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()

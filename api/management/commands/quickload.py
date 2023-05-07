@@ -15,7 +15,8 @@ SOURCE_DIRS = [
     './data/deep_magic/',
     './data/menagerie/',
     './data/tome_of_beasts_3/',
-    './data/a5e_srd/'
+    './data/a5e_srd/',
+    './data/vault_of_magic'
 ]
 
 class Command(BaseCommand):
