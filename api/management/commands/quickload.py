@@ -16,6 +16,9 @@ SOURCE_DIRS = [
     './data/menagerie/',
     './data/tome_of_beasts_3/',
     './data/a5e_srd/',
+    './data/kobold_press/',
+    './data/deep_magic_extended/',
+    './data/warlock/',
     './data/vault_of_magic'
 ]
 
