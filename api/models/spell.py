@@ -239,7 +239,7 @@ class SpellList(GameContent):
             self.desc = json["desc"]
 
         for spell_slug in json["spell_list"]:
-            spell_obj = Spells.objects.filter(slug=spell_slug)
+            spell_obj = Spell.objects.filter(slug=spell_slug)
             self.spells.add(spell_obj)
 
 

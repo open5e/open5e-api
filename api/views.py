@@ -116,7 +116,6 @@ class SpellFilter(django_filters.FilterSet):
             'document__slug': ['iexact', 'exact', 'in', ]
         }
 
-
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of spells.
@@ -148,6 +147,21 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
         'dnd_class',
         'document__slug',
     )
+
+class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of spell lists.
+    retrieve: API endpoint for returning a particular spell list.
+    """
+    schema = CustomSchema(
+        summary={
+            '/spelllist/': 'List Spell Lists',
+            '/spelllist/{slug}/': 'Retrieve Spell List',
+        },
+        tags=['SpellList']
+    )
+    queryset = models.SpellList.objects.all()
+    serializer_class = serializers.SpellListSerializer
 
 class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     """

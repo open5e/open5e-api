@@ -276,9 +276,8 @@ class SpellListTestCase(APITestCase):
             "magic-missile"
         ]
         }
-        
-        
         """
+
         i = Importer(ImportOptions(update=True, append=False, testrun=False))
         i.import_document(
             json.loads(
@@ -294,8 +293,29 @@ class SpellListTestCase(APITestCase):
                 "test_filename",
                 "test_model_class",
                 "import_spell"))
+        i.import_spell_list(
+            json.loads(
+                self.test_spell_list_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_spell_list")
+        )
 
-    
+    def test_get_spell_lists(self):
+        """Confirm that the list result has the proper elements."""
+        response = self.client.get(f'/spelllist/?format=json')
+        self.assertContains(response, 'count', count=1)
+        self.assertContains(response, 'next', count=1)
+        self.assertContains(response, 'previous', count=1)
+        self.assertContains(response, 'results', count=1)
+
+    def test_get_spell_list_data(self):
+        """Confirm that the result itself has the proper formatting and values."""
+        import json
+        response = self.client.get(f'/spelllist/?format=json')
+        pass
+
 
 class MonstersTestCase(APITestCase):
     """Test case for the monster API endpoint."""

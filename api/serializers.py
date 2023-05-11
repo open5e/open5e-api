@@ -160,6 +160,19 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'document__url'
         )
 
+class SpellListSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.SpellList
+        fields = (
+            'slug',
+            'name',
+            'desc',
+            'document__slug',
+            'document__title',
+            'document__license_url',
+            'document__url'
+        )
+
 class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Background
@@ -238,7 +251,6 @@ class SubraceSerializer(serializers.HyperlinkedModelSerializer):
         'document__title',
         'document__url'
     )
-
 
 class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     subraces = SubraceSerializer(many=True,read_only=True)
@@ -353,7 +365,6 @@ class ArmorSerializer(serializers.HyperlinkedModelSerializer):
             'cost',
             'weight',
             'stealth_disadvantage')
-
 
 class AggregateSerializer(HighlighterMixin, HaystackSerializer):
 
