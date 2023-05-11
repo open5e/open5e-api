@@ -226,6 +226,77 @@ class SpellsTestCase(APITestCase):
                              f'Mismatched value of unequal field: {field_names}')
 
 
+class SpellListTestCase(APITestCase):
+    """Testing for the spell list API endpoint."""
+
+    def setUp(self):
+        """Create the spell endpoint test data."""
+        from api.management.commands.importer import Importer
+        from api.management.commands.importer import ImportSpec
+        from api.management.commands.importer import ImportOptions
+        from pathlib import Path
+        import json
+
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+        self.test_spell_json = """
+            {
+            "name": "Magic Missile",
+            "desc": "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.",
+            "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
+            "page": "phb 257",
+            "range": "120 feet",
+            "components": "V, S",
+            "ritual": "no",
+            "duration": "Instantaneous",
+            "concentration": "no",
+            "casting_time": "1 action",
+            "level": "1st-level",
+            "level_int": 1,
+            "school": "Evocation",
+            "class": "Sorcerer, Wizard"
+            }
+        """
+
+        self.test_spell_list_json = """
+        {
+        "name":"wizard",
+        "spell_list":[
+            "magic-missile"
+        ]
+        }
+        
+        
+        """
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_spell"))
+        i.import_spell(
+            json.loads(
+                self.test_spell_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_spell"))
+
+    
+
 class MonstersTestCase(APITestCase):
     """Test case for the monster API endpoint."""
 
