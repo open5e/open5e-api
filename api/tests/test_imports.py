@@ -314,7 +314,15 @@ class SpellListTestCase(APITestCase):
         """Confirm that the result itself has the proper formatting and values."""
         import json
         response = self.client.get(f'/spelllist/?format=json')
-        pass
+        in_spell_list = json.loads(self.test_spell_list_json)
+        out_spell_list = response.json()['results'][0]
+        equal_fields = [
+            'name']
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_spell_list[field_name],
+                out_spell_list[field_name],
+                f'Mismatched value of: {field_name}')
 
 
 class MonstersTestCase(APITestCase):
