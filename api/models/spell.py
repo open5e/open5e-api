@@ -223,3 +223,27 @@ class Spell(GameContent):
     def plural_str() -> str:
         """Return a string specifying the plural name of this model."""
         return "Spells"
+
+class SpellList(GameContent):
+    """ A list of spells to be referenced by classes and subclasses"""
+    
+    spells = models.ManyToManyField(Spell,
+        related_name="spell_lists",
+        help_text='The set of spells.')
+
+    def import_from_json_v1(self, json):
+        """Log to import a single object from a standard json structure."""
+        self.name = json["name"]
+        self.slug = slugify(json["name"])
+        if "desc" in json:
+            self.desc = json["desc"]
+
+        for spell_slug in json["spell_list"]:
+            spell_obj = Spells.objects.filter(slug=spell_slug)
+            self.spells.add(spell_obj)
+
+
+    @staticmethod
+    def plural_str() -> str:
+        """Return a string specifying the plural name of this model."""
+        return "SpellLists"
