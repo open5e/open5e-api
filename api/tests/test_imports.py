@@ -323,6 +323,17 @@ class SpellListTestCase(APITestCase):
                 in_spell_list[field_name],
                 out_spell_list[field_name],
                 f'Mismatched value of: {field_name}')
+    
+    def test_get_spell_list_contents(self):
+        """Make sure that the response data is the same as the original spell data."""
+        import json
+        response = self.client.get(f'/spelllist/?format=json')
+        in_spell_list = json.loads(self.test_spell_list_json)
+        in_spell = json.loads(self.test_spell_json)
+        out_spell_list = response.json()['results'][0]
+
+        self.assertEqual(in_spell['name'], out_spell_list['spells'][0]['name'])
+
 
 
 class MonstersTestCase(APITestCase):
