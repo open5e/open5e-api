@@ -39,6 +39,7 @@ class APIRootTest(APITestCase):
 
         self.assertContains(response, 'manifest', count=2)
         self.assertContains(response, 'spells', count=2)
+        self.assertContains(response, 'spelllist', count=2)
         self.assertContains(response, 'monsters', count=2)
         self.assertContains(response, 'documents', count=2)
         self.assertContains(response, 'backgrounds', count=2)
@@ -333,7 +334,6 @@ class SpellListTestCase(APITestCase):
         out_spell_list = response.json()['results'][0]
 
         self.assertEqual(in_spell['name'], out_spell_list['spells'][0]['name'])
-
 
 
 class MonstersTestCase(APITestCase):
