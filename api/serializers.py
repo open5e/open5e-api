@@ -152,6 +152,7 @@ class SpellSerializer(DynamicFieldsModelSerializer):
             'spell_level',
             'school',
             'dnd_class',
+            'spell_lists',
             'archetype',
             'circles',
             'document__slug',
