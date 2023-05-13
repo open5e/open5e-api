@@ -9,6 +9,8 @@ from api.management.commands.importer import Importer
 from api.management.commands.importer import ImportSpec
 from api.management.commands.importer import ImportOptions
 
+from django.template.defaultfilters import slugify
+
 from api.models import Subrace
 
 # Create your tests here.
@@ -232,11 +234,6 @@ class SpellListTestCase(APITestCase):
 
     def setUp(self):
         """Create the spell endpoint test data."""
-        from api.management.commands.importer import Importer
-        from api.management.commands.importer import ImportSpec
-        from api.management.commands.importer import ImportOptions
-        from pathlib import Path
-        import json
 
         self.test_document_json = """
             {
@@ -333,7 +330,7 @@ class SpellListTestCase(APITestCase):
         in_spell = json.loads(self.test_spell_json)
         out_spell_list = response.json()['results'][0]
 
-        self.assertEqual(in_spell['name'], out_spell_list['spells'][0]['name'])
+        self.assertEqual(slugify(in_spell['name']), out_spell_list['spells'][0])
 
 
 class MonstersTestCase(APITestCase):
