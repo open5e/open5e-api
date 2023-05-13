@@ -161,7 +161,7 @@ class SpellSerializer(DynamicFieldsModelSerializer):
         )
 
 class SpellListSerializer(DynamicFieldsModelSerializer):
-    spells = SpellSerializer(many=True, read_only=True, context={'request': ''}) #Passing a blank request.
+    #spells = SpellSerializer(many=True, read_only=True, context={'request': ''}) #Passing a blank request.
     class Meta:
         model = models.SpellList
         fields = (
