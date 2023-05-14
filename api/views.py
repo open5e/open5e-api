@@ -97,6 +97,7 @@ class SpellFilter(django_filters.FilterSet):
     level_int = django_filters.NumberFilter(field_name='spell_level')
     concentration = django_filters.CharFilter(field_name='concentration')
     components = django_filters.CharFilter(field_name='components')
+    spell_lists_not = django_filters.CharFilter(field_name='spell_lists', exclude=True)
 
     class Meta:
         model = models.Spell
