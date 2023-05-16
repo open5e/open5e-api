@@ -149,7 +149,6 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
         'dnd_class',
         'document__slug',
     )
-
 class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of spell lists.
@@ -164,6 +163,22 @@ class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.SpellList.objects.all()
     serializer_class = serializers.SpellListSerializer
+    
+
+class MonsterFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Monster
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'cr': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
+            'armor_class': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
+            'type': ['iexact', 'exact', 'in', 'icontains'],
+            'name': ['iexact', 'exact'],
+            'page_no': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
 
 class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -178,18 +193,8 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
         tags=['Monsters']
     )
     queryset = models.Monster.objects.all()
+    filterset_class = MonsterFilter
     serializer_class = serializers.MonsterSerializer
-    ordering_fields = '__all__'
-    ordering = ['name']
-    filterset_fields = (
-        'challenge_rating',
-        'armor_class',
-        'type',
-        'name',
-        'page_no',
-        'document',
-        'document__slug',
-    )
     search_fields = ['name']
 
 class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
