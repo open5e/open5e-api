@@ -630,7 +630,11 @@ class Importer:
         """Create or update a single Spell model from a JSON object."""
         new = False
         exists = False
-        slug = slugify(spell_json["name"])
+        slug = ''
+        if 'slug' in spell_json:
+            slug = spell_json['slug']
+        else:
+            slug = slugify(spell_json['name'])
         if models.Spell.objects.filter(slug=slug).exists():
             i = models.Spell.objects.get(slug=slug)
             exists = True
