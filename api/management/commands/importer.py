@@ -645,6 +645,25 @@ class Importer:
             i.save()
         return result
 
+    def import_spell_list(self, spell_list_json, import_spec) -> ImportResult:
+        """ Create or update a spell list. Spells must be present before importing the list."""
+        new = False
+        exists = False
+        slug = slugify(spell_list_json["name"])
+        if models.SpellList.objects.filter(slug=slug).exists():
+            i = models.SpellList.objects.get(slug=slug)
+            exists = True
+        else:
+            i = models.SpellList(document=self._last_document_imported)
+            new = True
+
+        i.import_from_json_v1(json=spell_list_json)
+
+        result = self._determine_import_result(new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
+
     def import_weapon(self, weapon_json, import_spec) -> ImportResult:
         """Create or update a single Weapon model from a JSON object."""
         new = False

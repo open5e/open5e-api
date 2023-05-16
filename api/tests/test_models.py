@@ -1,7 +1,8 @@
 from django.test import TestCase
 from api.models import Spell
+from api.models import SpellList
 from api.models import Document
-
+from django.template.defaultfilters import slugify
 
 class SpellModelTestCase(TestCase):
     def setUp(self):
@@ -54,3 +55,46 @@ class SpellModelTestCase(TestCase):
         self.test_spell.requires_verbal_components = False
         self.test_spell.requires_somatic_components = True
         self.assertEqual(self.test_spell.v1_components(), 'S')
+
+class SpellListModelTestCase(TestCase):
+    def setUp(self):
+        self.test_doc = Document.objects.create(title="test", slug="test")
+
+        self.test_spell_1 = Spell.objects.create(
+            name='Test Spell 1',
+            can_be_cast_as_ritual=True,
+            requires_concentration=True,
+            spell_level=0,
+            target_range_sort=10,
+            requires_verbal_components=True,
+            requires_somatic_components=True,
+            requires_material_components=True,
+            document=self.test_doc)
+        
+        self.test_spell_2 = Spell.objects.create(
+            name='Test Spell 2',
+            can_be_cast_as_ritual=True,
+            requires_concentration=True,
+            spell_level=3,
+            target_range_sort=10,
+            requires_verbal_components=True,
+            requires_somatic_components=True,
+            requires_material_components=True,
+            document=self.test_doc)
+        list_name = 'Test List'
+        self.test_spell_list = SpellList.objects.create(
+            name=list_name, slug=slugify(list_name), document=self.test_doc)
+        self.test_spell_list.spells.set([self.test_spell_1, self.test_spell_2])
+    
+    def test_length(self):
+        self.assertEqual(2,len(self.test_spell_list.spells.all()))
+
+    def test_reverse_relationship_length(self):
+        self.assertEqual(1,len(self.test_spell_1.spell_lists.all()))
+        self.assertEqual(1,len(self.test_spell_2.spell_lists.all()))
+
+    def test_slug(self):
+        self.assertEqual('test-list',self.test_spell_list.slug)
+
+    def test_reverse_slug(self):
+        self.assertEqual('test-list',self.test_spell_1.spell_lists.all()[0].slug)

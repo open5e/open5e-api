@@ -97,6 +97,7 @@ class SpellFilter(django_filters.FilterSet):
     level_int = django_filters.NumberFilter(field_name='spell_level')
     concentration = django_filters.CharFilter(field_name='concentration')
     components = django_filters.CharFilter(field_name='components')
+    spell_lists_not = django_filters.CharFilter(field_name='spell_lists', exclude=True)
 
     class Meta:
         model = models.Spell
@@ -113,9 +114,9 @@ class SpellFilter(django_filters.FilterSet):
             'requires_material_components': ['exact'],
             'casting_time': ['iexact', 'exact', 'in', ],
             'dnd_class': ['iexact', 'exact', 'in', 'icontains'],
+            'spell_lists' : ['exact'],
             'document__slug': ['iexact', 'exact', 'in', ]
         }
-
 
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -148,6 +149,21 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
         'dnd_class',
         'document__slug',
     )
+
+class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of spell lists.
+    retrieve: API endpoint for returning a particular spell list.
+    """
+    schema = CustomSchema(
+        summary={
+            '/spelllist/': 'List Spell Lists',
+            '/spelllist/{slug}/': 'Retrieve Spell List',
+        },
+        tags=['SpellList']
+    )
+    queryset = models.SpellList.objects.all()
+    serializer_class = serializers.SpellListSerializer
 
 class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     """
