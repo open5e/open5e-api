@@ -66,6 +66,15 @@ cd open5e-api/
 docker-compose up
 ```
 
+## Deploying on Railway.app
+1. Create a fork on Github.com This is used to automatically deploy when you make a change.
+2. Login with your Github account on [Railway.app](https://railway.app) and give it access to manage your forked repository.
+3. Create a new Project and choose 'Deploy from GitHub repo'. Select your fork in the list.
+4. Keep all settings default and deploy. Accept when Railway asks to copy variables existing variables from the repository.
+5. Add the variable `PORT` with the value `8888`.
+6. Add the variable `SERVER_NAME` with the [Railway-provided domain](https://docs.railway.app/deploy/exposing-your-app#railway-provided-domain) or add your own. 
+7. Push a commit to Github and watch your open5e-api redeploy in minutes!
+
 ## Building the OAS file
 
 Once you have everything set up, run `pipenv run ./manage.py generateschema --generator_class api.schema_generator.Open5eSchemaGenerator > openapi-schema.yml` to build the OAS file.

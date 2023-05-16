@@ -16,7 +16,8 @@
         "school": "Evocation",
         "class": "Druid, Wizard",
         "archetype": "Druid: Swamp",
-        "circles": "Swamp"
+        "circles": "Swamp",
+        "rolls-attack": true
     },
     {
         "name": "Acid Splash",
@@ -31,7 +32,10 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Conjuration",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Aid",
@@ -64,7 +68,8 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Abjuration",
-        "class": "Ranger, Ritual Caster, Wizard"
+        "class": "Ranger, Ritual Caster, Wizard",
+        "shape": " cube"
     },
     {
         "name": "Alter Self",
@@ -96,7 +101,10 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Enchantment",
-        "class": "Bard, Druid, Ranger, Ritual Caster"
+        "class": "Bard, Druid, Ranger, Ritual Caster",
+        "saving_throw_ability": [
+            "Wisdom"
+        ]
     },
     {
         "name": "Animal Messenger",
@@ -192,7 +200,8 @@
         "level": "8th-level",
         "level_int": 8,
         "school": "Abjuration",
-        "class": "Cleric, Wizard"
+        "class": "Cleric, Wizard",
+        "shape": " sphere"
     },
     {
         "name": "Antipathy/Sympathy",
@@ -208,7 +217,10 @@
         "level": "8th-level",
         "level_int": 8,
         "school": "Enchantment",
-        "class": "Druid, Wizard"
+        "class": "Druid, Wizard",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Arcane Eye",
@@ -243,7 +255,8 @@
         "level": "5th-level",
         "level_int": 5,
         "school": "Evocation",
-        "class": "Wizard"
+        "class": "Wizard",
+        "rolls-attack": true
     },
     {
         "name": "Arcane Lock",
@@ -275,7 +288,8 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Evocation",
-        "class": "Bard, Wizard"
+        "class": "Bard, Wizard",
+        "rolls-attack": true
     },
     {
         "name": "Arcanist's Magic Aura",
@@ -359,7 +373,10 @@
         "school": "Enchantment",
         "class": "Bard, Cleric, Paladin",
         "archetype": "Paladin: Vengeance",
-        "oaths": "Vengeance"
+        "oaths": "Vengeance",
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Banishment",
@@ -377,7 +394,10 @@
         "level_int": 4,
         "school": "Abjuration",
         "class": "Cleric, Paladin, Sorcerer, Warlock, Wizard",
-        "oaths": "Vengeance"
+        "oaths": "Vengeance",
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Barkskin",
@@ -430,7 +450,10 @@
         "level": "3rd-level",
         "level_int": 3,
         "school": "Necromancy",
-        "class": "Bard, Cleric, Wizard"
+        "class": "Bard, Cleric, Wizard",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Black Tentacles",
@@ -448,7 +471,11 @@
         "school": "Conjuration",
         "class": "Warlock, Wizard",
         "archetype": "Warlock: Great Old One",
-        "patrons": "Great Old One"
+        "patrons": "Great Old One",
+        "saving_throw_ability": [
+            "Strength",
+            "dexterity"
+        ]
     },
     {
         "name": "Blade Barrier",
@@ -463,7 +490,10 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Evocation",
-        "class": "Cleric"
+        "class": "Cleric",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Bless",
@@ -498,7 +528,10 @@
         "level_int": 4,
         "school": "Necromancy",
         "class": "Druid, Sorcerer, Warlock, Wizard",
-        "circles": "Desert"
+        "circles": "Desert",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Blindness/Deafness",
@@ -516,7 +549,10 @@
         "school": "Necromancy",
         "class": "Bard, Cleric, Sorcerer, Warlock, Wizard",
         "archetype": "Warlock: Fiend",
-        "patrons": "Fiend"
+        "patrons": "Fiend",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Blink",
@@ -586,7 +622,11 @@
         "class": "Cleric, Sorcerer, Warlock, Wizard",
         "archetype": "Cleric: Light, Warlock: Fiend",
         "domains": "Light",
-        "patrons": "Fiend"
+        "patrons": "Fiend",
+        "shape": " cone",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Call Lightning",
@@ -605,7 +645,11 @@
         "class": "Cleric, Druid",
         "archetype": "Cleric: Tempest",
         "domains": "Tempest",
-        "circles": "Forest"
+        "circles": "Forest",
+        "shape": " cylinder",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Calm Emotions",
@@ -622,7 +666,11 @@
         "school": "Enchantment",
         "class": "Bard, Cleric, Warlock",
         "archetype": "Warlock: Archfey",
-        "patrons": "Archfey"
+        "patrons": "Archfey",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Chain Lightning",
@@ -639,7 +687,10 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Evocation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Charm Person",
@@ -657,7 +708,10 @@
         "school": "Enchantment",
         "class": "Bard, Cleric, Druid, Sorcerer, Warlock, Wizard",
         "archetype": "Cleric: Trickery",
-        "domains": "Trickery"
+        "domains": "Trickery",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Chill Touch",
@@ -672,7 +726,8 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Necromancy",
-        "class": "Sorcerer, Warlock, Wizard"
+        "class": "Sorcerer, Warlock, Wizard",
+        "rolls-attack": true
     },
     {
         "name": "Circle of Death",
@@ -689,7 +744,11 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Necromancy",
-        "class": "Sorcerer, Warlock, Wizard"
+        "class": "Sorcerer, Warlock, Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Clairvoyance",
@@ -741,7 +800,11 @@
         "school": "Conjuration",
         "class": "Druid, Sorcerer, Wizard",
         "archetype": "Druid: Underdark",
-        "circles": "Underdark"
+        "circles": "Underdark",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Color Spray",
@@ -758,7 +821,8 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Illusion",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "shape": " cone"
     },
     {
         "name": "Command",
@@ -777,7 +841,10 @@
         "class": "Cleric, Paladin, Warlock",
         "archetype": "Warlock: Fiend",
         "domains": "Knowledge",
-        "patrons": "Fiend"
+        "patrons": "Fiend",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Commune",
@@ -845,7 +912,10 @@
         "level_int": 4,
         "school": "Enchantment",
         "class": "Bard",
-        "domains": "Order"
+        "domains": "Order",
+        "saving_throw_ability": [
+            "Wisdom"
+        ]
     },
     {
         "name": "Cone of Cold",
@@ -864,7 +934,11 @@
         "school": "Evocation",
         "class": "Druid, Sorcerer, Wizard",
         "archetype": "Druid: Arctic",
-        "circles": "Arctic"
+        "circles": "Arctic",
+        "shape": " cone",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Confusion",
@@ -883,7 +957,11 @@
         "school": "Enchantment",
         "class": "Bard, Cleric, Druid, Sorcerer, Wizard",
         "archetype": "Cleric: Knowledge",
-        "domains": "Knowledge"
+        "domains": "Knowledge",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "Wisdom"
+        ]
     },
     {
         "name": "Conjure Animals",
@@ -933,7 +1011,8 @@
         "level_int": 5,
         "school": "Conjuration",
         "class": "Druid, Wizard",
-        "circles": "Coast"
+        "circles": "Coast",
+        "shape": " cube"
     },
     {
         "name": "Conjure Fey",
@@ -1012,7 +1091,11 @@
         "level": "5th-level",
         "level_int": 5,
         "school": "Necromancy",
-        "class": "Cleric, Druid"
+        "class": "Cleric, Druid",
+        "rolls-attack": true,
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Contingency",
@@ -1060,7 +1143,12 @@
         "level": "4th-level",
         "level_int": 4,
         "school": "Transmutation",
-        "class": "Cleric, Druid, Wizard"
+        "class": "Cleric, Druid, Wizard",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "strength",
+            "strength"
+        ]
     },
     {
         "name": "Control Weather",
@@ -1130,7 +1218,8 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Transmutation",
-        "class": "Cleric, Druid"
+        "class": "Cleric, Druid",
+        "shape": " cube"
     },
     {
         "name": "Create Undead",
@@ -1164,7 +1253,8 @@
         "level": "5th-level",
         "level_int": 5,
         "school": "Illusion",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "shape": " cube"
     },
     {
         "name": "Cure Wounds",
@@ -1215,7 +1305,8 @@
         "school": "Evocation",
         "class": "Druid, Sorcerer, Warlock, Wizard",
         "archetype": "Druid: Swamp",
-        "circles": "Swamp"
+        "circles": "Swamp",
+        "shape": " sphere"
     },
     {
         "name": "Darkvision",
@@ -1248,7 +1339,8 @@
         "school": "Evocation",
         "class": "Cleric, Druid, Paladin, Ranger, Sorcerer",
         "domains": "Light",
-        "circles": "Grassland"
+        "circles": "Grassland",
+        "shape": " sphere"
     },
     {
         "name": "Death Ward",
@@ -1281,7 +1373,11 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Evocation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Demiplane",
@@ -1360,7 +1456,10 @@
         "school": "Divination",
         "class": "Bard, Sorcerer, Warlock, Wizard",
         "archetype": "Warlock: Great Old One",
-        "patrons": "Great Old One"
+        "patrons": "Great Old One",
+        "saving_throw_ability": [
+            "Wisdom"
+        ]
     },
     {
         "name": "Dimension Door",
@@ -1395,7 +1494,10 @@
         "school": "Illusion",
         "class": "Bard, Cleric, Sorcerer, Wizard",
         "archetype": "Cleric: Trickery",
-        "domains": "Trickery"
+        "domains": "Trickery",
+        "saving_throw_ability": [
+            "Intelligence"
+        ]
     },
     {
         "name": "Disintegrate",
@@ -1412,7 +1514,10 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Transmutation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Dispel Evil and Good",
@@ -1428,7 +1533,11 @@
         "level": "5th-level",
         "level_int": 5,
         "school": "Abjuration",
-        "class": "Cleric, Paladin"
+        "class": "Cleric, Paladin",
+        "rolls-attack": true,
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Dispel Magic",
@@ -1497,7 +1606,10 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Evocation",
-        "class": "Cleric"
+        "class": "Cleric",
+        "saving_throw_ability": [
+            "Charisma"
+        ]
     },
     {
         "name": "Dominate Beast",
@@ -1516,7 +1628,10 @@
         "class": "Cleric, Druid, Sorcerer, Warlock",
         "archetype": "Cleric: Nature, Warlock: Archfey, Great Old One",
         "domains": "Nature",
-        "patrons": "Archfey, Great Old One"
+        "patrons": "Archfey, Great Old One",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Dominate Monster",
@@ -1532,7 +1647,10 @@
         "level": "8th-level",
         "level_int": 8,
         "school": "Enchantment",
-        "class": "Bard, Sorcerer, Warlock, Wizard"
+        "class": "Bard, Sorcerer, Warlock, Wizard",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Dominate Person",
@@ -1551,7 +1669,10 @@
         "class": "Bard, Cleric, Sorcerer, Warlock, Wizard",
         "archetype": "Cleric: Trickery, Warlock: Archfey, Great Old One",
         "domains": "Trickery",
-        "patrons": "Archfey, Great Old One"
+        "patrons": "Archfey, Great Old One",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Dream",
@@ -1569,7 +1690,10 @@
         "school": "Illusion",
         "class": "Bard, Druid, Warlock, Wizard",
         "archetype": "Druid: Grassland",
-        "circles": "Grassland"
+        "circles": "Grassland",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Druidcraft",
@@ -1584,7 +1708,8 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Transmutation",
-        "class": "Druid"
+        "class": "Druid",
+        "shape": " cube"
     },
     {
         "name": "Earthquake",
@@ -1600,7 +1725,12 @@
         "level": "8th-level",
         "level_int": 8,
         "school": "Evocation",
-        "class": "Cleric, Druid, Sorcerer"
+        "class": "Cleric, Druid, Sorcerer",
+        "saving_throw_ability": [
+            "dexterity",
+            "constitution",
+            "strength"
+        ]
     },
     {
         "name": "Eldritch Blast",
@@ -1615,7 +1745,8 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Evocation",
-        "class": "Warlock"
+        "class": "Warlock",
+        "rolls-attack": true
     },
     {
         "name": "Enhance Ability",
@@ -1648,7 +1779,10 @@
         "level": "2nd-level",
         "level_int": 2,
         "school": "Transmutation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "saving_throw_ability": [
+            "Constitution"
+        ]
     },
     {
         "name": "Entangle",
@@ -1663,7 +1797,11 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Conjuration",
-        "class": "Druid"
+        "class": "Druid",
+        "saving_throw_ability": [
+            "strength",
+            "strength"
+        ]
     },
     {
         "name": "Enthrall",
@@ -1678,7 +1816,10 @@
         "level": "2nd-level",
         "level_int": 2,
         "school": "Enchantment",
-        "class": "Bard, Warlock"
+        "class": "Bard, Warlock",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Etherealness",
@@ -1724,7 +1865,10 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Necromancy",
-        "class": "Bard, Sorcerer, Warlock, Wizard"
+        "class": "Bard, Sorcerer, Warlock, Wizard",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Fabricate",
@@ -1739,7 +1883,8 @@
         "level": "4th-level",
         "level_int": 4,
         "school": "Transmutation",
-        "class": "Wizard"
+        "class": "Wizard",
+        "shape": " cube"
     },
     {
         "name": "Faerie Fire",
@@ -1757,7 +1902,11 @@
         "class": "Bard, Cleric, Druid, Warlock",
         "archetype": "Cleric: Light, Warlock: Archfey",
         "domains": "Light",
-        "patrons": "Archfey"
+        "patrons": "Archfey",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Faithful Hound",
@@ -1806,7 +1955,11 @@
         "level": "3rd-level",
         "level_int": 3,
         "school": "Illusion",
-        "class": "Bard, Sorcerer, Warlock, Wizard"
+        "class": "Bard, Sorcerer, Warlock, Wizard",
+        "shape": " cone",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Feather Fall",
@@ -1838,7 +1991,10 @@
         "level": "8th-level",
         "level_int": 8,
         "school": "Enchantment",
-        "class": "Bard, Druid, Warlock, Wizard"
+        "class": "Bard, Druid, Warlock, Wizard",
+        "saving_throw_ability": [
+            "intelligence"
+        ]
     },
     {
         "name": "Find Familiar",
@@ -1915,7 +2071,10 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Necromancy",
-        "class": "Sorcerer, Warlock, Wizard"
+        "class": "Sorcerer, Warlock, Wizard",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Fireball",
@@ -1932,10 +2091,14 @@
         "level": "3rd-level",
         "level_int": 3,
         "school": "Evocation",
-        "class": "Cleric, Sorcerer, Warlock, Wizard",
+        "class": "Sorcerer, Wizard",
         "archetype": "Cleric: Light, Warlock: Fiend",
         "domains": "Light",
-        "patrons": "Fiend"
+        "patrons": "Fiend",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Fire Bolt",
@@ -1950,7 +2113,8 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Evocation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "rolls-attack": true
     },
     {
         "name": "Fire Shield",
@@ -1983,7 +2147,11 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Evocation",
-        "class": "Cleric, Druid, Sorcerer"
+        "class": "Cleric, Druid, Sorcerer",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Flame Blade",
@@ -2000,7 +2168,8 @@
         "level": "2nd-level",
         "level_int": 2,
         "school": "Evocation",
-        "class": "Druid"
+        "class": "Druid",
+        "rolls-attack": true
     },
     {
         "name": "Flame Strike",
@@ -2021,7 +2190,11 @@
         "archetype": "Paladin: Devotion, Warlock: Fiend",
         "domains": "Light, War",
         "oaths": "Devotion",
-        "patrons": "Fiend"
+        "patrons": "Fiend",
+        "shape": " cylinder",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Flaming Sphere",
@@ -2040,7 +2213,11 @@
         "school": "Conjuration",
         "class": "Cleric, Druid, Wizard",
         "archetype": "Cleric: Light",
-        "domains": "Light"
+        "domains": "Light",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Flesh to Stone",
@@ -2056,7 +2233,10 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Transmutation",
-        "class": "Warlock, Wizard"
+        "class": "Warlock, Wizard",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Floating Disk",
@@ -2107,7 +2287,8 @@
         "school": "Conjuration",
         "class": "Cleric, Druid, Ranger, Sorcerer, Wizard",
         "archetype": "Cleric: Tempest",
-        "domains": "Tempest"
+        "domains": "Tempest",
+        "shape": " sphere"
     },
     {
         "name": "Forbiddance",
@@ -2139,7 +2320,11 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Evocation",
-        "class": "Bard, Warlock, Wizard"
+        "class": "Bard, Warlock, Wizard",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Foresight",
@@ -2192,7 +2377,12 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Evocation",
-        "class": "Wizard"
+        "class": "Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "constitution",
+            "strength"
+        ]
     },
     {
         "name": "Gaseous Form",
@@ -2210,7 +2400,10 @@
         "school": "Transmutation",
         "class": "Druid, Sorcerer, Warlock, Wizard",
         "archetype": "Druid: Underdark",
-        "circles": "Underdark"
+        "circles": "Underdark",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Gate",
@@ -2242,7 +2435,10 @@
         "level": "5th-level",
         "level_int": 5,
         "school": "Enchantment",
-        "class": "Bard, Cleric, Druid, Paladin, Wizard"
+        "class": "Bard, Cleric, Druid, Paladin, Wizard",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Gentle Repose",
@@ -2322,7 +2518,12 @@
         "level": "3rd-level",
         "level_int": 3,
         "school": "Abjuration",
-        "class": "Bard, Cleric, Wizard"
+        "class": "Bard, Cleric, Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "Dexterity",
+            "intelligence"
+        ]
     },
     {
         "name": "Goodberry",
@@ -2354,7 +2555,10 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Conjuration",
-        "class": "Wizard"
+        "class": "Wizard",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Greater Invisibility",
@@ -2405,7 +2609,10 @@
         "school": "Conjuration",
         "class": "Cleric",
         "domains": "Life, Light",
-        "oaths": "Devotion, Crown"
+        "oaths": "Devotion, Crown",
+        "saving_throw_ability": [
+            "Dexterity"
+        ]
     },
     {
         "name": "Guards and Wards",
@@ -2452,7 +2659,8 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Evocation",
-        "class": "Cleric"
+        "class": "Cleric",
+        "rolls-attack": true
     },
     {
         "name": "Gust of Wind",
@@ -2470,7 +2678,11 @@
         "school": "Evocation",
         "class": "Cleric, Druid, Sorcerer, Wizard",
         "archetype": "Cleric: Tempest",
-        "domains": "Tempest"
+        "domains": "Tempest",
+        "shape": " line",
+        "saving_throw_ability": [
+            "strength"
+        ]
     },
     {
         "name": "Hallow",
@@ -2488,7 +2700,10 @@
         "school": "Evocation",
         "class": "Cleric, Warlock",
         "archetype": "Warlock: Fiend",
-        "patrons": "Fiend"
+        "patrons": "Fiend",
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Hallucinatory Terrain",
@@ -2505,7 +2720,11 @@
         "level_int": 4,
         "school": "Illusion",
         "class": "Bard, Druid, Warlock, Wizard",
-        "circles": "Desert"
+        "circles": "Desert",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "Intelligence"
+        ]
     },
     {
         "name": "Harm",
@@ -2520,7 +2739,10 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Necromancy",
-        "class": "Cleric"
+        "class": "Cleric",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Haste",
@@ -2588,7 +2810,10 @@
         "level": "2nd-level",
         "level_int": 2,
         "school": "Transmutation",
-        "class": "Bard, Druid"
+        "class": "Bard, Druid",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Hellish Rebuke",
@@ -2605,7 +2830,10 @@
         "level_int": 1,
         "school": "Evocation",
         "class": "Paladin, Warlock",
-        "archetype": "Paladin: Oathbreaker"
+        "archetype": "Paladin: Oathbreaker",
+        "saving_throw_ability": [
+            "Dexterity"
+        ]
     },
     {
         "name": "Heroes' Feast",
@@ -2654,7 +2882,10 @@
         "school": "Enchantment",
         "class": "Bard, Warlock, Wizard",
         "archetype": "Warlock: Great Old One",
-        "patrons": "Great Old One"
+        "patrons": "Great Old One",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Hold Monster",
@@ -2674,7 +2905,10 @@
         "class": "Bard, Cleric, Paladin, Sorcerer, Warlock, Wizard",
         "archetype": "Cleric: War, Paladin: Vengeance",
         "domains": "War",
-        "oaths": "Vengeance"
+        "oaths": "Vengeance",
+        "saving_throw_ability": [
+            "Wisdom"
+        ]
     },
     {
         "name": "Hold Person",
@@ -2694,7 +2928,10 @@
         "class": "Bard, Cleric, Druid, Paladin, Sorcerer, Warlock, Wizard",
         "archetype": "Paladin: Vengeance",
         "circles": "Arctic",
-        "oaths": "Vengeance"
+        "oaths": "Vengeance",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Holy Aura",
@@ -2710,7 +2947,10 @@
         "level": "8th-level",
         "level_int": 8,
         "school": "Abjuration",
-        "class": "Cleric"
+        "class": "Cleric",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Hunter's Mark",
@@ -2744,7 +2984,11 @@
         "level": "3rd-level",
         "level_int": 3,
         "school": "Illusion",
-        "class": "Bard, Sorcerer, Warlock, Wizard"
+        "class": "Bard, Sorcerer, Warlock, Wizard",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Ice Storm",
@@ -2765,7 +3009,11 @@
         "archetype": "Cleric: Tempest, Paladin: Ancients",
         "domains": "Tempest",
         "circles": "Arctic",
-        "oaths": "Ancients"
+        "oaths": "Ancients",
+        "shape": " cylinder",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Identify",
@@ -2815,7 +3063,11 @@
         "level": "9th-level",
         "level_int": 9,
         "school": "Abjuration",
-        "class": "Warlock, Wizard"
+        "class": "Warlock, Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Incendiary Cloud",
@@ -2830,7 +3082,11 @@
         "level": "8th-level",
         "level_int": 8,
         "school": "Conjuration",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Inflict Wounds",
@@ -2846,7 +3102,8 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Necromancy",
-        "class": "Cleric"
+        "class": "Cleric",
+        "rolls-attack": true
     },
     {
         "name": "Insect Plague",
@@ -2865,7 +3122,11 @@
         "school": "Conjuration",
         "class": "Cleric, Druid, Sorcerer",
         "domains": "Nature, Tempest",
-        "circles": "Desert, Grassland, Swamp, Underdark"
+        "circles": "Desert, Grassland, Swamp, Underdark",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Instant Summons",
@@ -2915,7 +3176,10 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Enchantment",
-        "class": "Bard, Wizard"
+        "class": "Bard, Wizard",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Jump",
@@ -2996,7 +3260,10 @@
         "level": "2nd-level",
         "level_int": 2,
         "school": "Transmutation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Light",
@@ -3012,7 +3279,10 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Evocation",
-        "class": "Bard, Cleric, Sorcerer, Wizard"
+        "class": "Bard, Cleric, Sorcerer, Wizard",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Lightning Bolt",
@@ -3031,7 +3301,11 @@
         "school": "Evocation",
         "class": "Druid, Sorcerer, Wizard",
         "archetype": "Druid: Mountain",
-        "circles": "Mountain"
+        "circles": "Mountain",
+        "shape": " line",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Locate Animals or Plants",
@@ -3145,7 +3419,11 @@
         "level": "3rd-level",
         "level_int": 3,
         "school": "Abjuration",
-        "class": "Cleric, Paladin, Warlock, Wizard"
+        "class": "Cleric, Paladin, Warlock, Wizard",
+        "shape": " cylinder",
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Magic Jar",
@@ -3161,7 +3439,10 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Necromancy",
-        "class": "Wizard"
+        "class": "Wizard",
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Magic Missile",
@@ -3227,7 +3508,8 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Conjuration",
-        "class": "Bard, Wizard"
+        "class": "Bard, Wizard",
+        "shape": " cube"
     },
     {
         "name": "Major Image",
@@ -3244,7 +3526,11 @@
         "level": "3rd-level",
         "level_int": 3,
         "school": "Illusion",
-        "class": "Bard, Sorcerer, Warlock, Wizard"
+        "class": "Bard, Sorcerer, Warlock, Wizard",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "Intelligence"
+        ]
     },
     {
         "name": "Mass Cure Wounds",
@@ -3261,7 +3547,8 @@
         "level_int": 5,
         "school": "Conjuration",
         "class": "Bard, Cleric, Druid",
-        "domains": "Life"
+        "domains": "Life",
+        "shape": " sphere"
     },
     {
         "name": "Mass Heal",
@@ -3309,7 +3596,10 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Enchantment",
-        "class": "Bard, Sorcerer, Warlock, Wizard"
+        "class": "Bard, Sorcerer, Warlock, Wizard",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Maze",
@@ -3388,7 +3678,11 @@
         "level": "9th-level",
         "level_int": 9,
         "school": "Evocation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Mind Blank",
@@ -3419,7 +3713,11 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Illusion",
-        "class": "Bard, Sorcerer, Warlock, Wizard"
+        "class": "Bard, Sorcerer, Warlock, Wizard",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "Intelligence"
+        ]
     },
     {
         "name": "Mirage Arcane",
@@ -3503,7 +3801,10 @@
         "school": "Enchantment",
         "class": "Bard, Cleric, Wizard",
         "archetype": "Cleric: Trickery",
-        "domains": "Trickery"
+        "domains": "Trickery",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Moonbeam",
@@ -3522,7 +3823,11 @@
         "school": "Evocation",
         "class": "Druid, Paladin",
         "archetype": "Paladin: Ancients",
-        "oaths": "Ancients"
+        "oaths": "Ancients",
+        "shape": " cylinder",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Move Earth",
@@ -3609,7 +3914,10 @@
         "level": "4th-level",
         "level_int": 4,
         "school": "Illusion",
-        "class": "Wizard"
+        "class": "Wizard",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Phantom Steed",
@@ -3656,7 +3964,10 @@
         "level": "5th-level",
         "level_int": 5,
         "school": "Abjuration",
-        "class": "Bard, Cleric, Druid, Wizard"
+        "class": "Bard, Cleric, Druid, Wizard",
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Plane Shift",
@@ -3672,7 +3983,11 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Conjuration",
-        "class": "Cleric, Sorcerer, Warlock, Wizard"
+        "class": "Cleric, Sorcerer, Warlock, Wizard",
+        "rolls-attack": true,
+        "saving_throw_ability": [
+            "charisma"
+        ]
     },
     {
         "name": "Plant Growth",
@@ -3707,7 +4022,10 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Conjuration",
-        "class": "Druid, Sorcerer, Warlock, Wizard"
+        "class": "Druid, Sorcerer, Warlock, Wizard",
+        "saving_throw_ability": [
+            "Constitution"
+        ]
     },
     {
         "name": "Polymorph",
@@ -3725,7 +4043,10 @@
         "school": "Transmutation",
         "class": "Bard, Cleric, Druid, Sorcerer, Wizard",
         "archetype": "Cleric: Trickery",
-        "domains": "Trickery"
+        "domains": "Trickery",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Power Word Kill",
@@ -3755,7 +4076,10 @@
         "level": "8th-level",
         "level_int": 8,
         "school": "Enchantment",
-        "class": "Bard, Sorcerer, Warlock, Wizard"
+        "class": "Bard, Sorcerer, Warlock, Wizard",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Prayer of Healing",
@@ -3801,7 +4125,13 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Evocation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "shape": " cone",
+        "saving_throw_ability": [
+            "dexterity",
+            "constitution",
+            "wisdom"
+        ]
     },
     {
         "name": "Prismatic Wall",
@@ -3816,7 +4146,13 @@
         "level": "9th-level",
         "level_int": 9,
         "school": "Abjuration",
-        "class": "Wizard"
+        "class": "Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "dexterity",
+            "constitution",
+            "wisdom"
+        ]
     },
     {
         "name": "Private Sanctum",
@@ -3833,7 +4169,8 @@
         "level": "4th-level",
         "level_int": 4,
         "school": "Abjuration",
-        "class": "Wizard"
+        "class": "Wizard",
+        "shape": " cube"
     },
     {
         "name": "Produce Flame",
@@ -3848,7 +4185,8 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Conjuration",
-        "class": "Druid"
+        "class": "Druid",
+        "rolls-attack": true
     },
     {
         "name": "Programmed Illusion",
@@ -3864,7 +4202,11 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Illusion",
-        "class": "Bard, Wizard"
+        "class": "Bard, Wizard",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "Intelligence"
+        ]
     },
     {
         "name": "Project Image",
@@ -3880,7 +4222,10 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Illusion",
-        "class": "Bard, Wizard"
+        "class": "Bard, Wizard",
+        "saving_throw_ability": [
+            "Intelligence"
+        ]
     },
     {
         "name": "Protection from Energy",
@@ -3945,7 +4290,8 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Transmutation",
-        "class": "Cleric, Druid, Paladin, Ritual Caster"
+        "class": "Cleric, Druid, Paladin, Ritual Caster",
+        "shape": " sphere"
     },
     {
         "name": "Raise Dead",
@@ -3977,7 +4323,11 @@
         "level": "2nd-level",
         "level_int": 2,
         "school": "Necromancy",
-        "class": "Warlock, Wizard"
+        "class": "Warlock, Wizard",
+        "rolls-attack": true,
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Ray of Frost",
@@ -3992,7 +4342,8 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Evocation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "rolls-attack": true
     },
     {
         "name": "Regenerate",
@@ -4055,7 +4406,11 @@
         "level": "4th-level",
         "level_int": 4,
         "school": "Evocation",
-        "class": "Wizard"
+        "class": "Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Resistance",
@@ -4103,7 +4458,11 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Transmutation",
-        "class": "Druid, Sorcerer, Wizard"
+        "class": "Druid, Sorcerer, Wizard",
+        "shape": " cylinder",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Revivify",
@@ -4151,7 +4510,10 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Evocation",
-        "class": "Cleric"
+        "class": "Cleric",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Sanctuary",
@@ -4169,7 +4531,10 @@
         "school": "Abjuration",
         "class": "Cleric, Paladin",
         "archetype": "Paladin: Devotion",
-        "oaths": "Devotion"
+        "oaths": "Devotion",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Scorching Ray",
@@ -4188,7 +4553,8 @@
         "class": "Cleric, Sorcerer, Warlock, Wizard",
         "archetype": "Cleric: Light, Warlock: Fiend",
         "domains": "Light",
-        "patrons": "Fiend"
+        "patrons": "Fiend",
+        "rolls-attack": true
     },
     {
         "name": "Scrying",
@@ -4208,7 +4574,10 @@
         "archetype": "Paladin: Vengeance",
         "domains": "Knowledge, Light",
         "circles": "Coast, Swamp",
-        "oaths": "Vengeance"
+        "oaths": "Vengeance",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Secret Chest",
@@ -4257,7 +4626,11 @@
         "school": "Illusion",
         "class": "Bard, Sorcerer, Warlock, Wizard",
         "archetype": "Warlock: Archfey",
-        "patrons": "Archfey"
+        "patrons": "Archfey",
+        "saving_throw_ability": [
+            "charisma",
+            "intelligence"
+        ]
     },
     {
         "name": "Sending",
@@ -4326,7 +4699,11 @@
         "school": "Evocation",
         "class": "Bard, Cleric, Sorcerer, Warlock, Wizard",
         "archetype": "Cleric: Tempest",
-        "domains": "Tempest"
+        "domains": "Tempest",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "Constitution"
+        ]
     },
     {
         "name": "Shield",
@@ -4389,7 +4766,8 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Evocation",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "rolls-attack": true
     },
     {
         "name": "Silence",
@@ -4406,7 +4784,8 @@
         "school": "Illusion",
         "class": "Bard, Cleric, Druid, Ranger, Ritual Caster",
         "archetype": "Druid: Desert",
-        "circles": "Desert"
+        "circles": "Desert",
+        "shape": " sphere"
     },
     {
         "name": "Silent Image",
@@ -4422,7 +4801,11 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Illusion",
-        "class": "Bard, Sorcerer, Wizard"
+        "class": "Bard, Sorcerer, Wizard",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "Intelligence"
+        ]
     },
     {
         "name": "Simulacrum",
@@ -4476,7 +4859,12 @@
         "class": "Cleric, Druid, Sorcerer, Wizard",
         "archetype": "Cleric: Tempest",
         "domains": "Tempest",
-        "circles": "Arctic"
+        "circles": "Arctic",
+        "shape": " cylinder",
+        "saving_throw_ability": [
+            "dexterity",
+            "constitution"
+        ]
     },
     {
         "name": "Slow",
@@ -4494,7 +4882,11 @@
         "school": "Transmutation",
         "class": "Druid, Sorcerer, Wizard",
         "archetype": "Druid: Arctic",
-        "circles": "Arctic"
+        "circles": "Arctic",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Spare the Dying",
@@ -4596,7 +4988,10 @@
         "class": "Cleric, Druid, Ranger",
         "archetype": "Cleric: Nature",
         "domains": "Nature",
-        "circles": "Arctic, Mountain"
+        "circles": "Arctic, Mountain",
+        "saving_throw_ability": [
+            "Wisdom"
+        ]
     },
     {
         "name": "Spirit Guardians",
@@ -4614,7 +5009,10 @@
         "level_int": 3,
         "school": "Conjuration",
         "class": "Cleric",
-        "domains": "War"
+        "domains": "War",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Spiritual Weapon",
@@ -4631,7 +5029,8 @@
         "level_int": 2,
         "school": "Evocation",
         "class": "Cleric",
-        "domains": "Life, War"
+        "domains": "Life, War",
+        "rolls-attack": true
     },
     {
         "name": "Stinking Cloud",
@@ -4650,7 +5049,11 @@
         "class": "Bard, Druid, Sorcerer, Warlock, Wizard",
         "archetype": "Druid: Swamp, Underdark, Warlock: Fiend",
         "circles": "Swamp, Underdark",
-        "patrons": "Fiend"
+        "patrons": "Fiend",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Stone Shape",
@@ -4702,7 +5105,11 @@
         "level": "9th-level",
         "level_int": 9,
         "school": "Conjuration",
-        "class": "Druid"
+        "class": "Druid",
+        "saving_throw_ability": [
+            "dexterity",
+            "constitution"
+        ]
     },
     {
         "name": "Suggestion",
@@ -4720,7 +5127,10 @@
         "school": "Enchantment",
         "class": "Bard, Cleric, Sorcerer, Warlock, Wizard",
         "archetype": "Cleric: Knowledge",
-        "domains": "Knowledge"
+        "domains": "Knowledge",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Sunbeam",
@@ -4736,7 +5146,11 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Evocation",
-        "class": "Druid, Sorcerer, Wizard"
+        "class": "Druid, Sorcerer, Wizard",
+        "shape": " line",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Sunburst",
@@ -4752,7 +5166,10 @@
         "level": "8th-level",
         "level_int": 8,
         "school": "Evocation",
-        "class": "Druid, Sorcerer, Wizard"
+        "class": "Druid, Sorcerer, Wizard",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Symbol",
@@ -4768,7 +5185,15 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Abjuration",
-        "class": "Bard, Cleric, Wizard"
+        "class": "Bard, Cleric, Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "constitution",
+            "intelligence",
+            "wisdom",
+            "charisma",
+            "intelligence"
+        ]
     },
     {
         "name": "Telekinesis",
@@ -4816,7 +5241,8 @@
         "level": "7th-level",
         "level_int": 7,
         "school": "Conjuration",
-        "class": "Bard, Sorcerer, Wizard"
+        "class": "Bard, Sorcerer, Wizard",
+        "shape": " cube"
     },
     {
         "name": "Teleportation Circle",
@@ -4865,7 +5291,11 @@
         "school": "Evocation",
         "class": "Bard, Cleric, Druid, Sorcerer, Wizard",
         "archetype": "Cleric: Tempest",
-        "domains": "Tempest"
+        "domains": "Tempest",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "constitution"
+        ]
     },
     {
         "name": "Time Stop",
@@ -4962,7 +5392,10 @@
         "level": "9th-level",
         "level_int": 9,
         "school": "Transmutation",
-        "class": "Bard, Warlock, Wizard"
+        "class": "Bard, Warlock, Wizard",
+        "saving_throw_ability": [
+            "Wisdom"
+        ]
     },
     {
         "name": "True Resurrection",
@@ -5041,7 +5474,8 @@
         "level": "3rd-level",
         "level_int": 3,
         "school": "Necromancy",
-        "class": "Warlock, Wizard"
+        "class": "Warlock, Wizard",
+        "rolls-attack": true
     },
     {
         "name": "Vicious Mockery",
@@ -5056,7 +5490,10 @@
         "level": "Cantrip",
         "level_int": 0,
         "school": "Enchantment",
-        "class": "Bard"
+        "class": "Bard",
+        "saving_throw_ability": [
+            "Wisdom"
+        ]
     },
     {
         "name": "Wall of Fire",
@@ -5076,7 +5513,10 @@
         "class": "Cleric, Druid, Sorcerer, Warlock, Wizard",
         "archetype": "Cleric: Light, Warlock: Fiend",
         "domains": "Light",
-        "patrons": "Fiend"
+        "patrons": "Fiend",
+        "saving_throw_ability": [
+            "Dexterity"
+        ]
     },
     {
         "name": "Wall of Force",
@@ -5092,7 +5532,8 @@
         "level": "5th-level",
         "level_int": 5,
         "school": "Evocation",
-        "class": "Wizard"
+        "class": "Wizard",
+        "shape": " sphere"
     },
     {
         "name": "Wall of Ice",
@@ -5109,7 +5550,12 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Evocation",
-        "class": "Wizard"
+        "class": "Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "dexterity",
+            "constitution"
+        ]
     },
     {
         "name": "Wall of Stone",
@@ -5126,7 +5572,10 @@
         "level_int": 5,
         "school": "Evocation",
         "class": "Druid, Sorcerer, Wizard",
-        "circles": "Desert, Mountain"
+        "circles": "Desert, Mountain",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Wall of Thorns",
@@ -5143,7 +5592,11 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Conjuration",
-        "class": "Druid"
+        "class": "Druid",
+        "shape": " line",
+        "saving_throw_ability": [
+            "dexterity"
+        ]
     },
     {
         "name": "Warding Bond",
@@ -5210,7 +5663,12 @@
         "school": "Conjuration",
         "class": "Druid, Sorcerer, Wizard",
         "archetype": "Druid: Underdark",
-        "circles": "Underdark"
+        "circles": "Underdark",
+        "shape": " cube",
+        "saving_throw_ability": [
+            "dexterity",
+            "strength"
+        ]
     },
     {
         "name": "Weird",
@@ -5225,7 +5683,11 @@
         "level": "9th-level",
         "level_int": 9,
         "school": "Illusion",
-        "class": "Wizard"
+        "class": "Wizard",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "wisdom"
+        ]
     },
     {
         "name": "Wind Walk",
@@ -5259,7 +5721,10 @@
         "school": "Evocation",
         "class": "Cleric, Druid, Ranger",
         "archetype": "Cleric: Nature",
-        "domains": "Nature"
+        "domains": "Nature",
+        "saving_throw_ability": [
+            "strength"
+        ]
     },
     {
         "name": "Wish",
@@ -5305,6 +5770,10 @@
         "level_int": 2,
         "school": "Enchantment",
         "class": "Bard, Cleric, Paladin",
-        "oaths": "Devotion"
+        "oaths": "Devotion",
+        "shape": " sphere",
+        "saving_throw_ability": [
+            "Charisma"
+        ]
     }
 ]

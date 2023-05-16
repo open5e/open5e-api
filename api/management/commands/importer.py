@@ -641,40 +641,28 @@ class Importer:
         else:
             i = models.Spell(document=self._last_document_imported)
             new = True
-        i.name = spell_json["name"]
-        i.slug = slug
-        if "desc" in spell_json:
-            i.desc = spell_json["desc"]
-        if "higher_level" in spell_json:
-            i.higher_level = spell_json["higher_level"]
-        if "page" in spell_json:
-            i.page = spell_json["page"]
-        if "range" in spell_json:
-            i.range = spell_json["range"]
-        if "components" in spell_json:
-            i.components = spell_json["components"]
-        if "material" in spell_json:
-            i.material = spell_json["material"]
-        if "ritual" in spell_json:
-            i.ritual = spell_json["ritual"]
-        if "duration" in spell_json:
-            i.duration = spell_json["duration"]
-        if "concentration" in spell_json:
-            i.concentration = spell_json["concentration"]
-        if "casting_time" in spell_json:
-            i.casting_time = spell_json["casting_time"]
-        if "level" in spell_json:
-            i.level = spell_json["level"]
-        if "level_int" in spell_json:
-            i.level_int = spell_json["level_int"]
-        if "school" in spell_json:
-            i.school = spell_json["school"]
-        if "class" in spell_json:
-            i.dnd_class = spell_json["class"]
-        if "archetype" in spell_json:
-            i.archetype = spell_json["archetype"]
-        if "circles" in spell_json:
-            i.circles = spell_json["circles"]
+
+        i.import_from_json_v1(json=spell_json)
+
+        result = self._determine_import_result(new, exists)
+        if result is not ImportResult.SKIPPED:
+            i.save()
+        return result
+
+    def import_spell_list(self, spell_list_json, import_spec) -> ImportResult:
+        """ Create or update a spell list. Spells must be present before importing the list."""
+        new = False
+        exists = False
+        slug = slugify(spell_list_json["name"])
+        if models.SpellList.objects.filter(slug=slug).exists():
+            i = models.SpellList.objects.get(slug=slug)
+            exists = True
+        else:
+            i = models.SpellList(document=self._last_document_imported)
+            new = True
+
+        i.import_from_json_v1(json=spell_list_json)
+
         result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()

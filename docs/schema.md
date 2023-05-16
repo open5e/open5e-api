@@ -1,9 +1,9 @@
-
 ```mermaid
 erDiagram
 
   api_document {
     INTEGER id
+    VARCHAR slug
     TEXT title
     TEXT desc
     TEXT license
@@ -14,7 +14,6 @@ erDiagram
     DATETIME created_at
     TEXT license_url
     TEXT copyright
-    VARCHAR slug
   }
 
   api_manifest {
@@ -256,21 +255,32 @@ erDiagram
     TEXT higher_level
     TEXT page
     TEXT range
-    TEXT components
     TEXT material
-    TEXT ritual
     TEXT duration
-    TEXT concentration
     TEXT casting_time
-    TEXT level
-    INTEGER level_int
     TEXT school
     TEXT dnd_class
     TEXT archetype
     TEXT circles
     TEXT route
-    INTEGER document_id
+    BIGINT document_id
     INTEGER page_no
+    BOOL can_be_cast_as_ritual
+    INTEGER spell_level
+    BOOL requires_concentration
+    INTEGER target_range_sort
+    BOOL requires_material_components
+    BOOL requires_somatic_components
+    BOOL requires_verbal_components
+  }
+
+  api_spelllist {
+    VARCHAR slug
+    TEXT name
+    TEXT desc
+    DATETIME created_at
+    INTEGER page_no
+    BIGINT document_id
   }
 
   api_weapon {
@@ -330,6 +340,12 @@ erDiagram
     VARCHAR spell_id
   }
 
+  api_spelllist_spells {
+    INTEGER id
+    VARCHAR spelllist_id
+    VARCHAR spell_id
+  }
+
   api_subrace {
     VARCHAR slug
     TEXT name
@@ -368,6 +384,7 @@ erDiagram
   api_document ||--o{ api_race : "foreign key"
   api_document ||--o{ api_section : "foreign key"
   api_document ||--o{ api_spell : "foreign key"
+  api_document ||--o{ api_spelllist : "foreign key"
   api_document ||--o{ api_subrace : "foreign key"
   api_document ||--o{ api_weapon : "foreign key"
   auth_group ||--o{ auth_group_permissions : "foreign key"
@@ -381,6 +398,8 @@ erDiagram
   api_monster ||--o{ api_monsterspell : "foreign key"
   api_race ||--o{ api_subrace : "foreign key"
   api_spell ||--o{ api_monsterspell : "foreign key"
+  api_spell ||--o{ api_spelllist_spells : "foreign key"
+  api_spelllist ||--o{ api_spelllist_spells : "foreign key"
   auth_permission ||--o{ auth_group_permissions : "foreign key"
   auth_permission ||--o{ auth_user_user_permissions : "foreign key"
 ```

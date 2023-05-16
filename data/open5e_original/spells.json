@@ -12,7 +12,11 @@
         "level": "1st-level",
         "level_int": 1,
         "school": "Necromancy",
-        "class": "Sorcerer, Wizard"
+        "class": "Sorcerer, Wizard",
+        "rolls-attack": true,
+        "damage_type": [
+            "poison"
+        ]
     },
     {
         "name": "Eye bite",
@@ -26,6 +30,9 @@
         "level": "6th-level",
         "level_int": 6,
         "school": "Necromancy",
-        "class": "Bard, Sorcerer, Warlock, Wizard"
+        "class": "Bard, Sorcerer, Warlock, Wizard",
+        "saving_throw_ability": [
+            "Wisdom"
+        ]
     }
 ]

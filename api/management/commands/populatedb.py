@@ -147,6 +147,7 @@ class Command(BaseCommand):
                 importer.import_magic_item,
             ),
             ImportSpec("spells.json", models.Spell, importer.import_spell),
+            ImportSpec("spelllist.json", models.SpellList, importer.import_spell_list),
             ImportSpec("monsters.json", models.Monster, importer.import_monster),
             ImportSpec("planes.json", models.Plane, importer.import_plane),
             ImportSpec("sections.json", models.Section, importer.import_section),
