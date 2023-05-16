@@ -9,6 +9,8 @@ from api.management.commands.importer import Importer
 from api.management.commands.importer import ImportSpec
 from api.management.commands.importer import ImportOptions
 
+from django.template.defaultfilters import slugify
+
 from api.models import Subrace
 
 # Create your tests here.
@@ -39,6 +41,7 @@ class APIRootTest(APITestCase):
 
         self.assertContains(response, 'manifest', count=2)
         self.assertContains(response, 'spells', count=2)
+        self.assertContains(response, 'spelllist', count=2)
         self.assertContains(response, 'monsters', count=2)
         self.assertContains(response, 'documents', count=2)
         self.assertContains(response, 'backgrounds', count=2)
@@ -224,6 +227,110 @@ class SpellsTestCase(APITestCase):
             self.assertEqual(in_spell[field_names[0]],
                              out_spell[field_names[1]],
                              f'Mismatched value of unequal field: {field_names}')
+
+
+class SpellListTestCase(APITestCase):
+    """Testing for the spell list API endpoint."""
+
+    def setUp(self):
+        """Create the spell endpoint test data."""
+
+        self.test_document_json = """
+            {
+            "title": "Test Reference Document",
+            "slug": "test-doc",
+            "desc": "This is a test document",
+            "license": "Open Gaming License",
+            "author": "John Doe",
+            "organization": "Open5e Test Org",
+            "version": "9.9",
+            "copyright": "",
+            "url": "http://example.com"
+            }
+        """
+        self.test_spell_json = """
+            {
+            "name": "Magic Missile",
+            "desc": "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.",
+            "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
+            "page": "phb 257",
+            "range": "120 feet",
+            "components": "V, S",
+            "ritual": "no",
+            "duration": "Instantaneous",
+            "concentration": "no",
+            "casting_time": "1 action",
+            "level": "1st-level",
+            "level_int": 1,
+            "school": "Evocation",
+            "class": "Sorcerer, Wizard"
+            }
+        """
+
+        self.test_spell_list_json = """
+        {
+        "name":"wizard",
+        "spell_list":[
+            "magic-missile"
+        ]
+        }
+        """
+
+        i = Importer(ImportOptions(update=True, append=False, testrun=False))
+        i.import_document(
+            json.loads(
+                self.test_document_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_spell"))
+        i.import_spell(
+            json.loads(
+                self.test_spell_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_spell"))
+        i.import_spell_list(
+            json.loads(
+                self.test_spell_list_json),
+            ImportSpec(
+                "test_filename",
+                "test_model_class",
+                "import_spell_list")
+        )
+
+    def test_get_spell_lists(self):
+        """Confirm that the list result has the proper elements."""
+        response = self.client.get(f'/spelllist/?format=json')
+        self.assertContains(response, 'count', count=1)
+        self.assertContains(response, 'next', count=1)
+        self.assertContains(response, 'previous', count=1)
+        self.assertContains(response, 'results', count=1)
+
+    def test_get_spell_list_data(self):
+        """Confirm that the result itself has the proper formatting and values."""
+        import json
+        response = self.client.get(f'/spelllist/?format=json')
+        in_spell_list = json.loads(self.test_spell_list_json)
+        out_spell_list = response.json()['results'][0]
+        equal_fields = [
+            'name']
+        for field_name in equal_fields:
+            self.assertEqual(
+                in_spell_list[field_name],
+                out_spell_list[field_name],
+                f'Mismatched value of: {field_name}')
+    
+    def test_get_spell_list_contents(self):
+        """Make sure that the response data is the same as the original spell data."""
+        import json
+        response = self.client.get(f'/spelllist/?format=json')
+        in_spell_list = json.loads(self.test_spell_list_json)
+        in_spell = json.loads(self.test_spell_json)
+        out_spell_list = response.json()['results'][0]
+
+        self.assertEqual(slugify(in_spell['name']), out_spell_list['spells'][0])
 
 
 class MonstersTestCase(APITestCase):

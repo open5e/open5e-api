@@ -118,7 +118,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'document__url'
         )
 
-class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
+class SpellSerializer(DynamicFieldsModelSerializer):
 
     ritual = serializers.CharField(source='v1_ritual')
     level_int = serializers.IntegerField(source='spell_level')
@@ -152,8 +152,24 @@ class SpellSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModel
             'spell_level',
             'school',
             'dnd_class',
+            'spell_lists',
             'archetype',
             'circles',
+            'document__slug',
+            'document__title',
+            'document__license_url',
+            'document__url'
+        )
+
+class SpellListSerializer(DynamicFieldsModelSerializer):
+    #spells = SpellSerializer(many=True, read_only=True, context={'request': ''}) #Passing a blank request.
+    class Meta:
+        model = models.SpellList
+        fields = (
+            'slug',
+            'name',
+            'desc',
+            'spells',
             'document__slug',
             'document__title',
             'document__license_url',
@@ -238,7 +254,6 @@ class SubraceSerializer(serializers.HyperlinkedModelSerializer):
         'document__title',
         'document__url'
     )
-
 
 class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     subraces = SubraceSerializer(many=True,read_only=True)
@@ -353,7 +368,6 @@ class ArmorSerializer(serializers.HyperlinkedModelSerializer):
             'cost',
             'weight',
             'stealth_disadvantage')
-
 
 class AggregateSerializer(HighlighterMixin, HaystackSerializer):
 
