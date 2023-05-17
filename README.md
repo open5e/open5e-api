@@ -52,6 +52,13 @@ At that point, you will be able to run the django server normally (within the pi
 
 And your server should be available at http://localhost:8000.
 
+## Tests
+
+To run the test suite:
+```
+pipenv run pytest
+```
+
 ## Starting up a droplet
 
 This deployment has been tested using DigitalOcean Apps with Docker Hub.
