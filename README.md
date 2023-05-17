@@ -20,7 +20,7 @@ The Django API uses Django REST Framework for its browsability and ease of use w
     are on the [pipenv website](https://pipenv.readthedocs.io/en/latest/).
 
 1.  Once pipenv is installed, you can install all of the project dependencies
-    defined in the Pipfile via `pipenv install`.
+    defined in the Pipfile via `pipenv install --dev`.
 
 ## Quick Setup
 
