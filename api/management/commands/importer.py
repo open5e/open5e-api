@@ -340,6 +340,8 @@ class Importer:
             i = models.Monster(document=self._last_document_imported)
             new = True
         i.name = monster_json["name"]
+        if 'desc' in monster_json:
+            i.desc = monster_json["desc"]
         i.slug = slug
         img_file = MONSTERS_IMG_DIR / f"{slug}.png"
         if img_file.exists():
