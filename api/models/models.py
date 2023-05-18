@@ -329,11 +329,11 @@ class Armor(GameContent):
     stealth_disadvantage = models.BooleanField(
         'Boolean representing whether wearing the armor results in stealth disadvantage for the wearer.')
     base_ac = models.IntegerField()
-    plus_dex_mod = models.BooleanField(null=True)
-    plus_con_mod = models.BooleanField(null=True)
-    plus_wis_mod = models.BooleanField(null=True)
-    plus_flat_mod = models.IntegerField(null=True)  # Build a shield this way.
-    plus_max = models.IntegerField(null=True)
+    plus_dex_mod = models.BooleanField(default=False)
+    plus_con_mod = models.BooleanField(default=False)
+    plus_wis_mod = models.BooleanField(default=False)
+    plus_flat_mod = models.IntegerField(default=False)  # Build a shield this way.
+    plus_max = models.IntegerField(default=0)
 
     def ac_string(self):
         ac = str(self.base_ac)

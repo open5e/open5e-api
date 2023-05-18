@@ -55,6 +55,7 @@ def main():
             for item in file_json:
                 #The ability to interact with objects is here!
                 for keyword in keyword_list:
+
                     analysis = find_keyword_in_string(item['desc'], keyword)
                     if analysis[0]==True:
                         context_exists = find_keyword_context_in_string(item['desc'], keyword, 3,context_word_list)

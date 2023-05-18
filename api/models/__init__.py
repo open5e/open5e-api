@@ -17,5 +17,6 @@ from .models import MagicItem
 from .models import Weapon
 from .models import Armor
 from .spell import Spell
+from .spell import SpellList
 from .monster import Monster
 from .monster import MonsterSpell

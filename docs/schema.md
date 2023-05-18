@@ -1,4 +1,3 @@
-
 ```mermaid
 erDiagram
 
@@ -275,6 +274,15 @@ erDiagram
     BOOL requires_verbal_components
   }
 
+  api_spelllist {
+    VARCHAR slug
+    TEXT name
+    TEXT desc
+    DATETIME created_at
+    INTEGER page_no
+    BIGINT document_id
+  }
+
   api_weapon {
     VARCHAR slug
     TEXT name
@@ -332,6 +340,12 @@ erDiagram
     VARCHAR spell_id
   }
 
+  api_spelllist_spells {
+    INTEGER id
+    VARCHAR spelllist_id
+    VARCHAR spell_id
+  }
+
   api_subrace {
     VARCHAR slug
     TEXT name
@@ -370,6 +384,7 @@ erDiagram
   api_document ||--o{ api_race : "foreign key"
   api_document ||--o{ api_section : "foreign key"
   api_document ||--o{ api_spell : "foreign key"
+  api_document ||--o{ api_spelllist : "foreign key"
   api_document ||--o{ api_subrace : "foreign key"
   api_document ||--o{ api_weapon : "foreign key"
   auth_group ||--o{ auth_group_permissions : "foreign key"
@@ -383,6 +398,8 @@ erDiagram
   api_monster ||--o{ api_monsterspell : "foreign key"
   api_race ||--o{ api_subrace : "foreign key"
   api_spell ||--o{ api_monsterspell : "foreign key"
+  api_spell ||--o{ api_spelllist_spells : "foreign key"
+  api_spelllist ||--o{ api_spelllist_spells : "foreign key"
   auth_permission ||--o{ auth_group_permissions : "foreign key"
   auth_permission ||--o{ auth_user_user_permissions : "foreign key"
 ```
