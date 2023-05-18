@@ -179,3 +179,5 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') #This setting allows the header from NGINX to tell us that the request is secured.
+
+MIGRATE=None
