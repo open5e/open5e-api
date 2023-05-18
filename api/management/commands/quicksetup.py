@@ -5,6 +5,7 @@ from django.core.management.base import BaseCommand
 
 from api.management.commands import quickload
 
+
 class Command(BaseCommand):
     """Implementation for the `manage.py quicksetup` subcommand."""
 
@@ -28,7 +29,7 @@ class Command(BaseCommand):
 def migrate_db() -> None:
     """Migrate the local database as needed to incorporate new model updates."""
     call_command('makemigrations')
-    call_command('migrate')
+    call_command('migrate', '--run-syncdb')
 
 
 def collect_static() -> None:
