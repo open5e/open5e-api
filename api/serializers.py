@@ -71,6 +71,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
         model = models.Monster
         fields = (
             'slug',
+            'desc',
             'name',
             'size',
             'type',

@@ -93,10 +93,18 @@
             "swim": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 261
+        "page_no": 261,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Caverns",
+            "Plane of Water",
+            "Water"
+        ]
     },
     {
         "name": "Acolyte",
+        "desc": "**Acolytes** are junior members of a clergy, usually answerable to a priest. They perform a variety of functions in a temple and are granted minor spellcasting power by their deities.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -123,7 +131,7 @@
         "special_abilities": [
             {
                 "name": "Spellcasting",
-                "desc": "The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:\n\n• Cantrips (at will): light, sacred flame, thaumaturgy\n• 1st level (3 slots): bless, cure wounds, sanctuary",
+                "desc": "The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:\n\n\u2022 Cantrips (at will): light, sacred flame, thaumaturgy\n\u2022 1st level (3 slots): bless, cure wounds, sanctuary",
                 "attack_bonus": 0
             }
         ],
@@ -146,7 +154,14 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 395
+        "page_no": 395,
+        "environments": [
+            "Temple",
+            "Desert",
+            "urban",
+            "Hills",
+            "Settlement"
+        ]
     },
     {
         "name": "Adult Black Dragon",
@@ -253,7 +268,11 @@
         },
         "group": "Black Dragon",
         "armor_desc": "natural armor",
-        "page_no": 281
+        "page_no": 281,
+        "environments": [
+            "swamp",
+            "Swamp"
+        ]
     },
     {
         "name": "Adult Blue Dragon",
@@ -355,7 +374,12 @@
         },
         "group": "Blue Dragon",
         "armor_desc": "natural armor",
-        "page_no": 283
+        "page_no": 283,
+        "environments": [
+            "Desert",
+            "desert",
+            "coastal"
+        ]
     },
     {
         "name": "Adult Brass Dragon",
@@ -459,7 +483,10 @@
         },
         "group": "Brass Dragon",
         "armor_desc": "natural armor",
-        "page_no": 291
+        "page_no": 291,
+        "environments": [
+            "Desert"
+        ]
     },
     {
         "name": "Adult Bronze Dragon",
@@ -572,7 +599,12 @@
         },
         "group": "Bronze Dragon",
         "armor_desc": "natural armor",
-        "page_no": 294
+        "page_no": 294,
+        "environments": [
+            "desert",
+            "coastal",
+            "Water"
+        ]
     },
     {
         "name": "Adult Copper Dragon",
@@ -675,7 +707,12 @@
         },
         "group": "Copper Dragon",
         "armor_desc": "natural armor",
-        "page_no": 296
+        "page_no": 296,
+        "environments": [
+            "hill",
+            "Hills",
+            "Mountains"
+        ]
     },
     {
         "name": "Adult Gold Dragon",
@@ -789,7 +826,15 @@
         },
         "group": "Gold Dragon",
         "armor_desc": "natural armor",
-        "page_no": 299
+        "page_no": 299,
+        "environments": [
+            "Astral Plane",
+            "grassland",
+            "Water",
+            "Grassland",
+            "Ruin",
+            "forest"
+        ]
     },
     {
         "name": "Adult Green Dragon",
@@ -899,7 +944,12 @@
         },
         "group": "Green Dragon",
         "armor_desc": "natural armor",
-        "page_no": 285
+        "page_no": 285,
+        "environments": [
+            "Jungle",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Adult Red Dragon",
@@ -1001,7 +1051,12 @@
         },
         "group": "Red Dragon",
         "armor_desc": "natural armor",
-        "page_no": 287
+        "page_no": 287,
+        "environments": [
+            "hill",
+            "Mountains",
+            "mountain"
+        ]
     },
     {
         "name": "Adult Silver Dragon",
@@ -1109,7 +1164,13 @@
         },
         "group": "Silver Dragon",
         "armor_desc": "natural armor",
-        "page_no": 302
+        "page_no": 302,
+        "environments": [
+            "urban",
+            "Feywild",
+            "Mountains",
+            "mountain"
+        ]
     },
     {
         "name": "Adult White Dragon",
@@ -1217,7 +1278,11 @@
         },
         "group": "White Dragon",
         "armor_desc": "natural armor",
-        "page_no": 289
+        "page_no": 289,
+        "environments": [
+            "Tundra",
+            "arctic"
+        ]
     },
     {
         "name": "Air Elemental",
@@ -1274,7 +1339,12 @@
             "fly": 90
         },
         "group": "Elementals",
-        "page_no": 305
+        "page_no": 305,
+        "environments": [
+            "Plane of Air",
+            "Laboratory",
+            "mountain"
+        ]
     },
     {
         "name": "Ancient Black Dragon",
@@ -1380,7 +1450,11 @@
         },
         "group": "Black Dragon",
         "armor_desc": "natural armor",
-        "page_no": 280
+        "page_no": 280,
+        "environments": [
+            "swamp",
+            "Swamp"
+        ]
     },
     {
         "name": "Ancient Blue Dragon",
@@ -1482,7 +1556,12 @@
         },
         "group": "Blue Dragon",
         "armor_desc": "natural armor",
-        "page_no": 282
+        "page_no": 282,
+        "environments": [
+            "Desert",
+            "desert",
+            "coastal"
+        ]
     },
     {
         "name": "Ancient Brass Dragon",
@@ -1591,7 +1670,10 @@
         },
         "group": "Brass Dragon",
         "armor_desc": "natural armor",
-        "page_no": 290
+        "page_no": 290,
+        "environments": [
+            "Desert"
+        ]
     },
     {
         "name": "Ancient Bronze Dragon",
@@ -1704,7 +1786,12 @@
         },
         "group": "Bronze Dragon",
         "armor_desc": "natural armor",
-        "page_no": 293
+        "page_no": 293,
+        "environments": [
+            "desert",
+            "coastal",
+            "Water"
+        ]
     },
     {
         "name": "Ancient Copper Dragon",
@@ -1812,7 +1899,12 @@
         },
         "group": "Copper Dragon",
         "armor_desc": "natural armor",
-        "page_no": 295
+        "page_no": 295,
+        "environments": [
+            "hill",
+            "Hills",
+            "Mountains"
+        ]
     },
     {
         "name": "Ancient Gold Dragon",
@@ -1926,7 +2018,15 @@
         },
         "group": "Gold Dragon",
         "armor_desc": "natural armor",
-        "page_no": 298
+        "page_no": 298,
+        "environments": [
+            "Astral Plane",
+            "grassland",
+            "Water",
+            "Grassland",
+            "Ruin",
+            "forest"
+        ]
     },
     {
         "name": "Ancient Green Dragon",
@@ -2036,7 +2136,12 @@
         },
         "group": "Green Dragon",
         "armor_desc": "natural armor",
-        "page_no": 284
+        "page_no": 284,
+        "environments": [
+            "Jungle",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Ancient Red Dragon",
@@ -2138,7 +2243,12 @@
         },
         "group": "Red Dragon",
         "armor_desc": "natural armor",
-        "page_no": 286
+        "page_no": 286,
+        "environments": [
+            "hill",
+            "Mountains",
+            "mountain"
+        ]
     },
     {
         "name": "Ancient Silver Dragon",
@@ -2246,7 +2356,13 @@
         },
         "group": "Silver Dragon",
         "armor_desc": "natural armor",
-        "page_no": 301
+        "page_no": 301,
+        "environments": [
+            "urban",
+            "Feywild",
+            "Mountains",
+            "mountain"
+        ]
     },
     {
         "name": "Ancient White Dragon",
@@ -2354,7 +2470,11 @@
         },
         "group": "White Dragon",
         "armor_desc": "natural armor",
-        "page_no": 288
+        "page_no": 288,
+        "environments": [
+            "Tundra",
+            "arctic"
+        ]
     },
     {
         "name": "Androsphinx",
@@ -2399,7 +2519,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared:\n\n• Cantrips (at will): sacred flame, spare the dying, thaumaturgy\n• 1st level (4 slots): command, detect evil and good, detect magic\n• 2nd level (3 slots): lesser restoration, zone of truth\n• 3rd level (3 slots): dispel magic, tongues\n• 4th level (3 slots): banishment, freedom of movement\n• 5th level (2 slots): flame strike, greater restoration\n• 6th level (1 slot): heroes' feast",
+                "desc": "The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared:\n\n\u2022 Cantrips (at will): sacred flame, spare the dying, thaumaturgy\n\u2022 1st level (4 slots): command, detect evil and good, detect magic\n\u2022 2nd level (3 slots): lesser restoration, zone of truth\n\u2022 3rd level (3 slots): dispel magic, tongues\n\u2022 4th level (3 slots): banishment, freedom of movement\n\u2022 5th level (2 slots): flame strike, greater restoration\n\u2022 6th level (1 slot): heroes' feast",
                 "attack_bonus": 0
             }
         ],
@@ -2463,7 +2583,11 @@
         },
         "group": "Sphinxes",
         "armor_desc": "natural armor",
-        "page_no": 347
+        "page_no": 347,
+        "environments": [
+            "desert",
+            "ruins"
+        ]
     },
     {
         "name": "Animated Armor",
@@ -2519,7 +2643,12 @@
         },
         "group": "Animated Objects",
         "armor_desc": "natural armor",
-        "page_no": 263
+        "page_no": 263,
+        "environments": [
+            "Temple",
+            "Ruin",
+            "Laboratory"
+        ]
     },
     {
         "name": "Ankheg",
@@ -2564,7 +2693,15 @@
             "burrow": 10
         },
         "armor_desc": "14 (natural armor), 11 while prone",
-        "page_no": 264
+        "page_no": 264,
+        "environments": [
+            "Desert",
+            "Hills",
+            "grassland",
+            "Grassland",
+            "Settlement",
+            "forest"
+        ]
     },
     {
         "name": "Ape",
@@ -2616,10 +2753,16 @@
             "walk": 30,
             "climb": 30
         },
-        "page_no": 366
+        "page_no": 366,
+        "environments": [
+            "Jungle",
+            "jungle",
+            "forest"
+        ]
     },
     {
         "name": "Archmage",
+        "desc": "**Archmages** are powerful (and usually quite old) spellcasters dedicated to the study of the arcane arts. Benevolent ones counsel kings and queens, while evil ones rule as tyrants and pursue lichdom. Those who are neither good nor evil sequester themselves in remote towers to practice their magic without interruption.\nAn archmage typically has one or more apprentice mages, and an archmage's abode has numerous magical wards and guardians to discourage interlopers.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -2653,7 +2796,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:\n\n• Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp\n• 1st level (4 slots): detect magic, identify, mage armor*, magic missile\n• 2nd level (3 slots): detect thoughts, mirror image, misty step\n• 3rd level (3 slots): counterspell,fly, lightning bolt\n• 4th level (3 slots): banishment, fire shield, stoneskin*\n• 5th level (3 slots): cone of cold, scrying, wall of force\n• 6th level (1 slot): globe of invulnerability\n• 7th level (1 slot): teleport\n• 8th level (1 slot): mind blank*\n• 9th level (1 slot): time stop\n* The archmage casts these spells on itself before combat.",
+                "desc": "The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp\n\u2022 1st level (4 slots): detect magic, identify, mage armor*, magic missile\n\u2022 2nd level (3 slots): detect thoughts, mirror image, misty step\n\u2022 3rd level (3 slots): counterspell,fly, lightning bolt\n\u2022 4th level (3 slots): banishment, fire shield, stoneskin*\n\u2022 5th level (3 slots): cone of cold, scrying, wall of force\n\u2022 6th level (1 slot): globe of invulnerability\n\u2022 7th level (1 slot): teleport\n\u2022 8th level (1 slot): mind blank*\n\u2022 9th level (1 slot): time stop\n* The archmage casts these spells on itself before combat.",
                 "attack_bonus": 0
             }
         ],
@@ -2687,10 +2830,17 @@
             "walk": 30
         },
         "armor_desc": "15 with _mage armor_",
-        "page_no": 395
+        "page_no": 395,
+        "environments": [
+            "Settlement",
+            "Forest",
+            "Laboratory",
+            "urban"
+        ]
     },
     {
         "name": "Assassin",
+        "desc": "Trained in the use of poison, **assassins** are remorseless killers who work for nobles, guildmasters, sovereigns, and anyone else who can afford them." ,
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -2761,10 +2911,18 @@
             "walk": 30
         },
         "armor_desc": "studded leather",
-        "page_no": 396
+        "page_no": 396,
+        "environments": [
+            "urban",
+            "Desert",
+            "Sewer",
+            "Forest",
+            "Settlement"
+        ]
     },
     {
         "name": "Awakened Shrub",
+        "desc": "An **awakened shrub** is an ordinary shrub given sentience and mobility by the awaken spell or similar magic.",
         "size": "Small",
         "type": "plant",
         "subtype": "",
@@ -2805,10 +2963,18 @@
         "speed_json": {
             "walk": 20
         },
-        "page_no": 366
+        "page_no": 366,
+        "environments": [
+            "Jungle",
+            "Swamp",
+            "Forest",
+            "Laboratory",
+            "forest"
+        ]
     },
     {
         "name": "Awakened Tree",
+        "desc": "An **awakened tree** is an ordinary tree given sentience and mobility by the awaken spell or similar magic.",
         "size": "Huge",
         "type": "plant",
         "subtype": "",
@@ -2850,10 +3016,17 @@
             "walk": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 366
+        "page_no": 366,
+        "environments": [
+            "Jungle",
+            "Forest",
+            "Swamp",
+            "forest"
+        ]
     },
     {
         "name": "Axe Beak",
+        "desc": "An **axe beak** is a tall flightless bird with strong legs and a heavy, wedge-shaped beak. It has a nasty disposition and tends to attack any unfamiliar creature that wanders too close.",
         "size": "Large",
         "type": "beast",
         "subtype": "",
@@ -2887,7 +3060,15 @@
         "speed_json": {
             "walk": 50
         },
-        "page_no": 366
+        "page_no": 366,
+        "environments": [
+            "hill",
+            "jungle",
+            "Swamp",
+            "grassland",
+            "Forest",
+            "Grassland"
+        ]
     },
     {
         "name": "Azer",
@@ -2944,7 +3125,11 @@
             "walk": 30
         },
         "armor_desc": "natural armor, shield",
-        "page_no": 265
+        "page_no": 265,
+        "environments": [
+            "Plane of Fire",
+            "Caverns"
+        ]
     },
     {
         "name": "Baboon",
@@ -2989,7 +3174,14 @@
             "walk": 30,
             "climb": 30
         },
-        "page_no": 367
+        "page_no": 367,
+        "environments": [
+            "hill",
+            "Jungle",
+            "jungle",
+            "Grassland",
+            "forest"
+        ]
     },
     {
         "name": "Badger",
@@ -3033,7 +3225,12 @@
             "walk": 20,
             "burrow": 5
         },
-        "page_no": 367
+        "page_no": 367,
+        "environments": [
+            "Forest",
+            "Grassland",
+            "forest"
+        ]
     },
     {
         "name": "Balor",
@@ -3123,10 +3320,14 @@
         },
         "group": "Demons",
         "armor_desc": "natural armor",
-        "page_no": 270
+        "page_no": 270,
+        "environments": [
+            "Abyss"
+        ]
     },
     {
         "name": "Bandit",
+        "desc": "**Bandits** rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry. \n**Pirates** are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -3168,10 +3369,32 @@
             "walk": 30
         },
         "armor_desc": "leather armor",
-        "page_no": 396
+        "page_no": 396,
+        "environments": [
+            "hill",
+            "Desert",
+            "Mountains",
+            "coastal",
+            "Tundra",
+            "Grassland",
+            "Ruin",
+            "Laboratory",
+            "Swamp",
+            "desert",
+            "Settlement",
+            "urban",
+            "Sewer",
+            "Forest",
+            "forest",
+            "arctic",
+            "Jungle",
+            "Hills",
+            "Caverns"
+        ]
     },
     {
         "name": "Bandit Captain",
+        "desc": "It takes a strong personality, ruthless cunning, and a silver tongue to keep a gang of bandits in line. The **bandit captain** has these qualities in spades. \nIn addition to managing a crew of selfish malcontents, the **pirate captain** is a variation of the bandit captain, with a ship to protect and command. To keep the crew in line, the captain must mete out rewards and punishment on a regular basis. \nMore than treasure, a bandit captain or pirate captain craves infamy. A prisoner who appeals to the captain's vanity or ego is more likely to be treated fairly than a prisoner who does not or claims not to know anything of the captain's colorful reputation.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -3230,7 +3453,28 @@
             "walk": 30
         },
         "armor_desc": "studded leather",
-        "page_no": 397
+        "page_no": 397,
+        "environments": [
+            "hill",
+            "Desert",
+            "Mountains",
+            "coastal",
+            "Tundra",
+            "Grassland",
+            "Ruin",
+            "Laboratory",
+            "Swamp",
+            "desert",
+            "Settlement",
+            "urban",
+            "Sewer",
+            "Forest",
+            "forest",
+            "arctic",
+            "Jungle",
+            "Hills",
+            "Caverns"
+        ]
     },
     {
         "name": "Barbed Devil",
@@ -3312,7 +3556,10 @@
         },
         "group": "Devils",
         "armor_desc": "natural armor",
-        "page_no": 274
+        "page_no": 274,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Basilisk",
@@ -3357,7 +3604,17 @@
             "walk": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 265
+        "page_no": 265,
+        "environments": [
+            "Desert",
+            "Mountains",
+            "Ruin",
+            "Jungle",
+            "Hills",
+            "mountain",
+            "Caverns",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Bat",
@@ -3406,7 +3663,11 @@
             "walk": 5,
             "fly": 30
         },
-        "page_no": 367
+        "page_no": 367,
+        "environments": [
+            "Forest",
+            "Caverns"
+        ]
     },
     {
         "name": "Bearded Devil",
@@ -3477,7 +3738,10 @@
         },
         "group": "Devils",
         "armor_desc": "natural armor",
-        "page_no": 274
+        "page_no": 274,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Behir",
@@ -3542,10 +3806,17 @@
             "climb": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 265
+        "page_no": 265,
+        "environments": [
+            "underdark",
+            "Ruin",
+            "Plane of Earth",
+            "Caverns"
+        ]
     },
     {
         "name": "Berserker",
+        "desc":"Hailing from uncivilized lands, unpredictable **berserkers** come together in war parties and seek conflict wherever they can find it.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -3587,7 +3858,23 @@
             "walk": 30
         },
         "armor_desc": "hide armor",
-        "page_no": 397
+        "page_no": 397,
+        "environments": [
+            "hill",
+            "Desert",
+            "Mountains",
+            "coastal",
+            "Tundra",
+            "Forest",
+            "Grassland",
+            "forest",
+            "arctic",
+            "Jungle",
+            "Hills",
+            "Swamp",
+            "mountain",
+            "desert"
+        ]
     },
     {
         "name": "Black Bear",
@@ -3645,7 +3932,12 @@
             "climb": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 367
+        "page_no": 367,
+        "environments": [
+            "Forest",
+            "forest",
+            "Mountains"
+        ]
     },
     {
         "name": "Black Dragon Wyrmling",
@@ -3705,7 +3997,10 @@
         },
         "group": "Black Dragon",
         "armor_desc": "natural armor",
-        "page_no": 282
+        "page_no": 282,
+        "environments": [
+            "Swamp"
+        ]
     },
     {
         "name": "Black Pudding",
@@ -3769,10 +4064,18 @@
             "climb": 20
         },
         "group": "Oozes",
-        "page_no": 337
+        "page_no": 337,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Caverns",
+            "Ruin",
+            "Water"
+        ]
     },
     {
         "name": "Blink Dog",
+        "desc": "A **blink dog** takes its name from its ability to blink in and out of existence, a talent it uses to aid its attacks and to avoid harm.",
         "size": "Medium",
         "type": "fey",
         "subtype": "",
@@ -3820,10 +4123,18 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 368
+        "page_no": 368,
+        "environments": [
+            "Jungle",
+            "Feywild",
+            "Forest",
+            "Grassland",
+            "forest"
+        ]
     },
     {
         "name": "Blood Hawk",
+        "desc": "Taking its name from its crimson feathers and aggressive nature, the **blood hawk** fearlessly attacks almost any animal, stabbing it with its daggerlike beak. Blood hawks flock together in large numbers, attacking as a pack to take down prey.",
         "size": "Small",
         "type": "beast",
         "subtype": "",
@@ -3871,7 +4182,16 @@
             "walk": 10,
             "fly": 60
         },
-        "page_no": 368
+        "page_no": 368,
+        "environments": [
+            "hill",
+            "grassland",
+            "coastal",
+            "mountain",
+            "forest",
+            "desert",
+            "arctic"
+        ]
     },
     {
         "name": "Blue Dragon Wyrmling",
@@ -3924,7 +4244,10 @@
         },
         "group": "Blue Dragon",
         "armor_desc": "natural armor",
-        "page_no": 284
+        "page_no": 284,
+        "environments": [
+            "Desert"
+        ]
     },
     {
         "name": "Boar",
@@ -3975,7 +4298,13 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 368
+        "page_no": 368,
+        "environments": [
+            "hill",
+            "Forest",
+            "grassland",
+            "forest"
+        ]
     },
     {
         "name": "Bone Devil",
@@ -4004,7 +4333,7 @@
         "condition_immunities": "poisoned",
         "senses": "darkvision 120 ft., passive Perception 9",
         "languages": "Infernal, telepathy 120 ft.",
-        "challenge_rating": "12",
+        "challenge_rating": "9",
         "special_abilities": [
             {
                 "name": "Devil's Sight",
@@ -4044,7 +4373,10 @@
         },
         "group": "Devils",
         "armor_desc": "natural armor",
-        "page_no": 275
+        "page_no": 275,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Brass Dragon Wyrmling",
@@ -4097,7 +4429,10 @@
         },
         "group": "Brass Dragon",
         "armor_desc": "natural armor",
-        "page_no": 292
+        "page_no": 292,
+        "environments": [
+            "Desert"
+        ]
     },
     {
         "name": "Bronze Dragon Wyrmling",
@@ -4157,7 +4492,10 @@
         },
         "group": "Bronze Dragon",
         "armor_desc": "natural armor",
-        "page_no": 295
+        "page_no": 295,
+        "environments": [
+            "Water"
+        ]
     },
     {
         "name": "Brown Bear",
@@ -4216,7 +4554,15 @@
             "climb": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 369
+        "page_no": 369,
+        "environments": [
+            "hill",
+            "Feywild",
+            "Mountains",
+            "Forest",
+            "forest",
+            "arctic"
+        ]
     },
     {
         "name": "Bugbear",
@@ -4276,7 +4622,19 @@
             "walk": 30
         },
         "armor_desc": "hide armor, shield",
-        "page_no": 266
+        "page_no": 266,
+        "environments": [
+            "underdark",
+            "Desert",
+            "Mountains",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "forest",
+            "Jungle",
+            "Hills",
+            "Swamp"
+        ]
     },
     {
         "name": "Bulette",
@@ -4328,7 +4686,20 @@
             "burrow": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 266
+        "page_no": 266,
+        "environments": [
+            "hill",
+            "Desert",
+            "Mountains",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "Ruin",
+            "Hills",
+            "mountain",
+            "Settlement",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Camel",
@@ -4364,7 +4735,11 @@
         "speed_json": {
             "walk": 50
         },
-        "page_no": 369
+        "page_no": 369,
+        "environments": [
+            "Desert",
+            "Settlement"
+        ]
     },
     {
         "name": "Cat",
@@ -4410,7 +4785,13 @@
             "walk": 40,
             "climb": 30
         },
-        "page_no": 369
+        "page_no": 369,
+        "environments": [
+            "urban",
+            "forest",
+            "Settlement",
+            "grassland"
+        ]
     },
     {
         "name": "Centaur",
@@ -4477,7 +4858,14 @@
         "speed_json": {
             "walk": 50
         },
-        "page_no": 267
+        "page_no": 267,
+        "environments": [
+            "Feywild",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "forest"
+        ]
     },
     {
         "name": "Chain Devil",
@@ -4545,7 +4933,10 @@
         },
         "group": "Devils",
         "armor_desc": "natural armor",
-        "page_no": 275
+        "page_no": 275,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Chimera",
@@ -4610,7 +5001,23 @@
             "fly": 60
         },
         "armor_desc": "natural armor",
-        "page_no": 267
+        "page_no": 267,
+        "environments": [
+            "hill",
+            "Desert",
+            "underdark",
+            "Sewer",
+            "Mountains",
+            "grassland",
+            "Tundra",
+            "Forest",
+            "Grassland",
+            "Hills",
+            "Feywild",
+            "Swamp",
+            "Water",
+            "mountain"
+        ]
     },
     {
         "name": "Chuul",
@@ -4672,7 +5079,13 @@
             "swim": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 267
+        "page_no": 267,
+        "environments": [
+            "underdark",
+            "Plane of Water",
+            "Water",
+            "Caverns"
+        ]
     },
     {
         "name": "Clay Golem",
@@ -4748,7 +5161,10 @@
         },
         "group": "Golems",
         "armor_desc": "natural armor",
-        "page_no": 315
+        "page_no": 315,
+        "environments": [
+            "any"
+        ]
     },
     {
         "name": "Cloaker",
@@ -4827,7 +5243,13 @@
             "fly": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 268
+        "page_no": 268,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Laboratory",
+            "Caverns"
+        ]
     },
     {
         "name": "Cloud Giant",
@@ -4906,7 +5328,12 @@
         },
         "group": "Giants",
         "armor_desc": "natural armor",
-        "page_no": 312
+        "page_no": 312,
+        "environments": [
+            "Plane of Air",
+            "Mountains",
+            "mountain"
+        ]
     },
     {
         "name": "Cockatrice",
@@ -4944,10 +5371,21 @@
             "walk": 20,
             "fly": 40
         },
-        "page_no": 268
+        "page_no": 268,
+        "environments": [
+            "Desert",
+            "Mountains",
+            "grassland",
+            "Grassland",
+            "Ruin",
+            "Jungle",
+            "Hills",
+            "Swamp"
+        ]
     },
     {
         "name": "Commoner",
+        "desc": "**Commoners** include peasants, serfs, slaves, servants, pilgrims, merchants, artisans, and hermits.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -4980,7 +5418,17 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 398
+        "page_no": 398,
+        "environments": [
+            "hill",
+            "urban",
+            "grassland",
+            "coastal",
+            "forest",
+            "arctic",
+            "desert",
+            "Settlement"
+        ]
     },
     {
         "name": "Constrictor Snake",
@@ -5025,7 +5473,15 @@
             "walk": 30,
             "swim": 30
         },
-        "page_no": 369
+        "page_no": 369,
+        "environments": [
+            "underwater",
+            "swamp",
+            "Jungle",
+            "jungle",
+            "Swamp",
+            "forest"
+        ]
     },
     {
         "name": "Copper Dragon Wyrmling",
@@ -5078,7 +5534,11 @@
         },
         "group": "Copper Dragon",
         "armor_desc": "natural armor",
-        "page_no": 298
+        "page_no": 298,
+        "environments": [
+            "Hills",
+            "Mountains"
+        ]
     },
     {
         "name": "Couatl",
@@ -5164,7 +5624,15 @@
             "fly": 90
         },
         "armor_desc": "natural armor",
-        "page_no": 269
+        "page_no": 269,
+        "environments": [
+            "urban",
+            "Desert",
+            "Jungle",
+            "Astral Plane",
+            "grassland",
+            "forest"
+        ]
     },
     {
         "name": "Crab",
@@ -5210,7 +5678,12 @@
             "swim": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 370
+        "page_no": 370,
+        "environments": [
+            "desert",
+            "coastal",
+            "Water"
+        ]
     },
     {
         "name": "Crocodile",
@@ -5257,10 +5730,17 @@
             "swim": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 370
+        "page_no": 370,
+        "environments": [
+            "urban",
+            "swamp",
+            "Swamp",
+            "Water"
+        ]
     },
     {
         "name": "Cult Fanatic",
+        "desc": "**Fanatics** are often part of a cult's leadership, using their charisma and dogma to influence and prey on those of weak will. Most are interested in personal power above all else.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -5293,7 +5773,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The fanatic is a 4th-level spellcaster. Its spell casting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared:\n\nCantrips (at will): light, sacred flame, thaumaturgy\n• 1st level (4 slots): command, inflict wounds, shield of faith\n• 2nd level (3 slots): hold person, spiritual weapon",
+                "desc": "The fanatic is a 4th-level spellcaster. Its spell casting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared:\n\nCantrips (at will): light, sacred flame, thaumaturgy\n\u2022 1st level (4 slots): command, inflict wounds, shield of faith\n\u2022 2nd level (3 slots): hold person, spiritual weapon",
                 "attack_bonus": 0
             }
         ],
@@ -5325,10 +5805,22 @@
             "walk": 30
         },
         "armor_desc": "leather armor",
-        "page_no": 398
+        "page_no": 398,
+        "environments": [
+            "Temple",
+            "Desert",
+            "urban",
+            "Sewer",
+            "Forest",
+            "Ruin",
+            "Jungle",
+            "Hills",
+            "Settlement"
+        ]
     },
     {
         "name": "Cultist",
+        "desc": "**Cultists** swear allegiance to dark powers such as elemental princes, demon lords, or archdevils. Most conceal their loyalties to avoid being ostracized, imprisoned, or executed for their beliefs. Unlike evil acolytes, cultists often show signs of insanity in their beliefs and practices.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -5372,7 +5864,18 @@
             "walk": 30
         },
         "armor_desc": "leather armor",
-        "page_no": 398
+        "page_no": 398,
+        "environments": [
+            "Temple",
+            "Desert",
+            "urban",
+            "Sewer",
+            "Forest",
+            "Ruin",
+            "Jungle",
+            "Hills",
+            "Settlement"
+        ]
     },
     {
         "name": "Darkmantle",
@@ -5428,10 +5931,16 @@
             "walk": 10,
             "fly": 30
         },
-        "page_no": 269
+        "page_no": 269,
+        "environments": [
+            "underdark",
+            "Shadowfell",
+            "Caverns"
+        ]
     },
     {
         "name": "Death Dog",
+        "desc": "A **death dog** is an ugly two-headed hound that roams plains, and deserts. Hate burns in a death dog's heart, and a taste for humanoid flesh drives it to attack travelers and explorers. Death dog saliva carries a foul disease that causes a victim's flesh to slowly rot off the bone.",
         "size": "Medium",
         "type": "monstrosity",
         "subtype": "",
@@ -5479,7 +5988,14 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 370
+        "page_no": 370,
+        "environments": [
+            "Desert",
+            "Abyss",
+            "Shadowfell",
+            "Grassland",
+            "Hell"
+        ]
     },
     {
         "name": "Deep Gnome (Svirfneblin)",
@@ -5550,7 +6066,11 @@
             "walk": 20
         },
         "armor_desc": "chain shirt",
-        "page_no": 315
+        "page_no": 315,
+        "environments": [
+            "underdark",
+            "caves"
+        ]
     },
     {
         "name": "Deer",
@@ -5586,7 +6106,14 @@
         "speed_json": {
             "walk": 50
         },
-        "page_no": 370
+        "page_no": 370,
+        "environments": [
+            "Feywild",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "forest"
+        ]
     },
     {
         "name": "Deva",
@@ -5667,7 +6194,11 @@
         },
         "group": "Angels",
         "armor_desc": "natural armor",
-        "page_no": 261
+        "page_no": 261,
+        "environments": [
+            "Temple",
+            "Astral Plane"
+        ]
     },
     {
         "name": "Dire Wolf",
@@ -5719,7 +6250,17 @@
             "walk": 50
         },
         "armor_desc": "natural armor",
-        "page_no": 371
+        "page_no": 371,
+        "environments": [
+            "hill",
+            "Mountains",
+            "Tundra",
+            "Forest",
+            "Grassland",
+            "forest",
+            "Hills",
+            "Feywild"
+        ]
     },
     {
         "name": "Djinni",
@@ -5802,7 +6343,13 @@
         },
         "group": "Genies",
         "armor_desc": "natural armor",
-        "page_no": 310
+        "page_no": 310,
+        "environments": [
+            "Desert",
+            "desert",
+            "Plane of Air",
+            "coastal"
+        ]
     },
     {
         "name": "Doppelganger",
@@ -5869,7 +6416,20 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 279
+        "page_no": 279,
+        "environments": [
+            "underdark",
+            "urban",
+            "Sewer",
+            "Forest",
+            "Grassland",
+            "Ruin",
+            "Laboratory",
+            "Hills",
+            "Shadowfell",
+            "Caverns",
+            "Settlement"
+        ]
     },
     {
         "name": "Draft Horse",
@@ -5906,7 +6466,11 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 371
+        "page_no": 371,
+        "environments": [
+            "urban",
+            "Settlement"
+        ]
     },
     {
         "name": "Dragon Turtle",
@@ -5980,7 +6544,14 @@
             "swim": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 303
+        "page_no": 303,
+        "environments": [
+            "underwater",
+            "coastal",
+            "Plane of Water",
+            "desert",
+            "Water"
+        ]
     },
     {
         "name": "Dretch",
@@ -6034,7 +6605,10 @@
         },
         "group": "Demons",
         "armor_desc": "natural armor",
-        "page_no": 270
+        "page_no": 270,
+        "environments": [
+            "Abyss"
+        ]
     },
     {
         "name": "Drider",
@@ -6126,7 +6700,12 @@
             "climb": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 304
+        "page_no": 304,
+        "environments": [
+            "underdark",
+            "Ruin",
+            "Feywild"
+        ]
     },
     {
         "name": "Drow",
@@ -6195,10 +6774,14 @@
             "walk": 30
         },
         "armor_desc": "chain shirt",
-        "page_no": 307
+        "page_no": 307,
+        "environments": [
+            "underdark"
+        ]
     },
     {
         "name": "Druid",
+        "desc": "**Druids** dwell in forests and other secluded wilderness locations, where they protect the natural world from monsters and the encroachment of civilization. Some are **tribal shamans** who heal the sick, pray to animal spirits, and provide spiritual guidance.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -6226,7 +6809,7 @@
         "special_abilities": [
             {
                 "name": "Spellcasting",
-                "desc": "The druid is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). It has the following druid spells prepared:\n\n• Cantrips (at will): druidcraft, produce flame, shillelagh\n• 1st level (4 slots): entangle, longstrider, speak with animals, thunderwave\n• 2nd level (3 slots): animal messenger, barkskin",
+                "desc": "The druid is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). It has the following druid spells prepared:\n\n\u2022 Cantrips (at will): druidcraft, produce flame, shillelagh\n\u2022 1st level (4 slots): entangle, longstrider, speak with animals, thunderwave\n\u2022 2nd level (3 slots): animal messenger, barkskin",
                 "attack_bonus": 0
             }
         ],
@@ -6253,7 +6836,26 @@
             "walk": 30
         },
         "armor_desc": "16 with _barkskin_",
-        "page_no": 398
+        "page_no": 398,
+        "environments": [
+            "hill",
+            "Desert",
+            "underdark",
+            "Mountains",
+            "coastal",
+            "Tundra",
+            "grassland",
+            "Grassland",
+            "swamp",
+            "Swamp",
+            "mountain",
+            "desert",
+            "Forest",
+            "forest",
+            "arctic",
+            "Jungle",
+            "Hills"
+        ]
     },
     {
         "name": "Dryad",
@@ -6327,7 +6929,12 @@
             "walk": 30
         },
         "armor_desc": "16 with _barkskin_",
-        "page_no": 304
+        "page_no": 304,
+        "environments": [
+            "Jungle",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Duergar",
@@ -6394,7 +7001,10 @@
             "walk": 25
         },
         "armor_desc": "scale mail, shield",
-        "page_no": 305
+        "page_no": 305,
+        "environments": [
+            "underdark"
+        ]
     },
     {
         "name": "Dust Mephit",
@@ -6460,7 +7070,13 @@
             "fly": 30
         },
         "group": "Mephits",
-        "page_no": 330
+        "page_no": 330,
+        "environments": [
+            "Desert",
+            "Plane of Air",
+            "Plane of Earth",
+            "Mountains"
+        ]
     },
     {
         "name": "Eagle",
@@ -6506,7 +7122,16 @@
             "walk": 10,
             "fly": 60
         },
-        "page_no": 371
+        "page_no": 371,
+        "environments": [
+            "hill",
+            "Hills",
+            "grassland",
+            "Mountains",
+            "mountain",
+            "desert",
+            "coastal"
+        ]
     },
     {
         "name": "Earth Elemental",
@@ -6563,7 +7188,12 @@
         },
         "group": "Elementals",
         "armor_desc": "natural armor",
-        "page_no": 306
+        "page_no": 306,
+        "environments": [
+            "underdark",
+            "Laboratory",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Efreeti",
@@ -6645,7 +7275,12 @@
         },
         "group": "Genies",
         "armor_desc": "natural armor",
-        "page_no": 310
+        "page_no": 310,
+        "environments": [
+            "Desert",
+            "Plane of Fire",
+            "Mountains"
+        ]
     },
     {
         "name": "Elephant",
@@ -6697,7 +7332,14 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 371
+        "page_no": 371,
+        "environments": [
+            "Desert",
+            "Jungle",
+            "grassland",
+            "Forest",
+            "Grassland"
+        ]
     },
     {
         "name": "Elk",
@@ -6745,7 +7387,14 @@
         "speed_json": {
             "walk": 50
         },
-        "page_no": 372
+        "page_no": 372,
+        "environments": [
+            "hill",
+            "grassland",
+            "Tundra",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Erinyes",
@@ -6825,7 +7474,10 @@
         },
         "group": "Devils",
         "armor_desc": "plate",
-        "page_no": 276
+        "page_no": 276,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Ettercap",
@@ -6908,7 +7560,13 @@
             "climb": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 308
+        "page_no": 308,
+        "environments": [
+            "Jungle",
+            "Forest",
+            "Swamp",
+            "forest"
+        ]
     },
     {
         "name": "Ettin",
@@ -6971,7 +7629,14 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 308
+        "page_no": 308,
+        "environments": [
+            "hill",
+            "underdark",
+            "Hills",
+            "mountain",
+            "Ruin"
+        ]
     },
     {
         "name": "Fire Elemental",
@@ -7032,7 +7697,11 @@
             "walk": 50
         },
         "group": "Elementals",
-        "page_no": 306
+        "page_no": 306,
+        "environments": [
+            "Plane of Fire",
+            "Laboratory"
+        ]
     },
     {
         "name": "Fire Giant",
@@ -7088,7 +7757,15 @@
         },
         "group": "Giants",
         "armor_desc": "plate",
-        "page_no": 312
+        "page_no": 312,
+        "environments": [
+            "underdark",
+            "Desert",
+            "Mountains",
+            "mountain",
+            "Plane of Fire",
+            "Settlement"
+        ]
     },
     {
         "name": "Flesh Golem",
@@ -7163,10 +7840,14 @@
             "walk": 30
         },
         "group": "Golems",
-        "page_no": 316
+        "page_no": 316,
+        "environments": [
+            "any"
+        ]
     },
     {
         "name": "Flying Snake",
+        "desc": "A **flying snake** is a brightly colored, winged serpent found in remote jungles. Tribespeople and cultists sometimes domesticate flying snakes to serve as messengers that deliver scrolls wrapped in their coils.",
         "size": "Tiny",
         "type": "beast",
         "subtype": "",
@@ -7208,7 +7889,17 @@
             "fly": 60,
             "swim": 30
         },
-        "page_no": 372
+        "page_no": 372,
+        "environments": [
+            "urban",
+            "Desert",
+            "grassland",
+            "forest",
+            "Jungle",
+            "jungle",
+            "Swamp",
+            "Feywild"
+        ]
     },
     {
         "name": "Flying Sword",
@@ -7262,10 +7953,15 @@
         },
         "group": "Animated Objects",
         "armor_desc": "natural armor",
-        "page_no": 264
+        "page_no": 264,
+        "environments": [
+            "Ruin",
+            "Laboratory"
+        ]
     },
     {
         "name": "Frog",
+        "desc": "A **frog** has no effective attacks. It feeds on small insects and typically dwells near water, in trees, or underground. The frog’s statistics can also be used to represent a **toad**.",
         "size": "Tiny",
         "type": "beast",
         "subtype": "",
@@ -7305,7 +8001,11 @@
             "walk": 20,
             "swim": 20
         },
-        "page_no": 372
+        "page_no": 372,
+        "environments": [
+            "Jungle",
+            "Swamp"
+        ]
     },
     {
         "name": "Frost Giant",
@@ -7361,7 +8061,14 @@
         },
         "group": "Giants",
         "armor_desc": "patchwork armor",
-        "page_no": 313
+        "page_no": 313,
+        "environments": [
+            "Shadowfell",
+            "Mountains",
+            "mountain",
+            "Tundra",
+            "arctic"
+        ]
     },
     {
         "name": "Gargoyle",
@@ -7419,7 +8126,19 @@
             "fly": 60
         },
         "armor_desc": "natural armor",
-        "page_no": 309
+        "page_no": 309,
+        "environments": [
+            "Temple",
+            "underdark",
+            "urban",
+            "Mountains",
+            "Ruin",
+            "Laboratory",
+            "Tomb",
+            "Hills",
+            "Settlement",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Gelatinous Cube",
@@ -7473,7 +8192,15 @@
             "walk": 15
         },
         "group": "Oozes",
-        "page_no": 337
+        "page_no": 337,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Caverns",
+            "Plane of Water",
+            "Ruin",
+            "Water"
+        ]
     },
     {
         "name": "Ghast",
@@ -7530,7 +8257,26 @@
             "walk": 30
         },
         "group": "Ghouls",
-        "page_no": 311
+        "page_no": 311,
+        "environments": [
+            "Temple",
+            "Desert",
+            "underdark",
+            "Mountains",
+            "Tundra",
+            "Grassland",
+            "Ruin",
+            "swamp",
+            "Swamp",
+            "urban",
+            "Sewer",
+            "Abyss",
+            "Forest",
+            "Tomb",
+            "Hills",
+            "Shadowfell",
+            "Caverns"
+        ]
     },
     {
         "name": "Ghost",
@@ -7596,7 +8342,26 @@
             "walk": 0,
             "fly": 40
         },
-        "page_no": 311
+        "page_no": 311,
+        "environments": [
+            "Temple",
+            "Desert",
+            "underdark",
+            "Mountains",
+            "Tundra",
+            "Grassland",
+            "Ruin",
+            "Swamp",
+            "Water",
+            "Settlement",
+            "urban",
+            "Forest",
+            "Ethereal Plane",
+            "Tomb",
+            "Jungle",
+            "Hills",
+            "Shadowfell"
+        ]
     },
     {
         "name": "Ghoul",
@@ -7639,7 +8404,27 @@
             "walk": 30
         },
         "group": "Ghouls",
-        "page_no": 312
+        "page_no": 312,
+        "environments": [
+            "Temple",
+            "Desert",
+            "underdark",
+            "Mountains",
+            "Tundra",
+            "Grassland",
+            "Ruin",
+            "swamp",
+            "Swamp",
+            "urban",
+            "Sewer",
+            "Abyss",
+            "Forest",
+            "Tomb",
+            "jungle",
+            "Hills",
+            "Shadowfell",
+            "Caverns"
+        ]
     },
     {
         "name": "Giant Ape",
@@ -7691,7 +8476,13 @@
             "walk": 40,
             "climb": 40
         },
-        "page_no": 373
+        "page_no": 373,
+        "environments": [
+            "Jungle",
+            "Forest",
+            "jungle",
+            "forest"
+        ]
     },
     {
         "name": "Giant Badger",
@@ -7748,7 +8539,12 @@
             "walk": 30,
             "burrow": 10
         },
-        "page_no": 373
+        "page_no": 373,
+        "environments": [
+            "Forest",
+            "Grassland",
+            "forest"
+        ]
     },
     {
         "name": "Giant Bat",
@@ -7798,7 +8594,12 @@
             "walk": 10,
             "fly": 60
         },
-        "page_no": 373
+        "page_no": 373,
+        "environments": [
+            "underdark",
+            "forest",
+            "Caverns"
+        ]
     },
     {
         "name": "Giant Boar",
@@ -7849,7 +8650,15 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 373
+        "page_no": 373,
+        "environments": [
+            "hill",
+            "jungle",
+            "Feywild",
+            "grassland",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Giant Centipede",
@@ -7888,7 +8697,13 @@
             "climb": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 374
+        "page_no": 374,
+        "environments": [
+            "underdark",
+            "Ruin",
+            "urban",
+            "Caverns"
+        ]
     },
     {
         "name": "Giant Constrictor Snake",
@@ -7934,7 +8749,16 @@
             "walk": 30,
             "swim": 30
         },
-        "page_no": 374
+        "page_no": 374,
+        "environments": [
+            "underdark",
+            "underwater",
+            "swamp",
+            "Jungle",
+            "jungle",
+            "Swamp",
+            "forest"
+        ]
     },
     {
         "name": "Giant Crab",
@@ -7981,7 +8805,12 @@
             "swim": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 374
+        "page_no": 374,
+        "environments": [
+            "desert",
+            "coastal",
+            "Water"
+        ]
     },
     {
         "name": "Giant Crocodile",
@@ -8040,10 +8869,16 @@
             "swim": 50
         },
         "armor_desc": "natural armor",
-        "page_no": 374
+        "page_no": 374,
+        "environments": [
+            "swamp",
+            "Swamp",
+            "Water"
+        ]
     },
     {
         "name": "Giant Eagle",
+        "desc": "A **giant eagle** is a noble creature that speaks its own language and understands speech in the Common tongue. A mated pair of giant eagles typically has up to four eggs or young in their nest (treat the young as normal eagles).",
         "size": "Large",
         "type": "beast",
         "subtype": "",
@@ -8098,10 +8933,21 @@
             "walk": 10,
             "fly": 80
         },
-        "page_no": 375
+        "page_no": 375,
+        "environments": [
+            "hill",
+            "Mountains",
+            "coastal",
+            "grassland",
+            "Hills",
+            "Feywild",
+            "mountain",
+            "desert"
+        ]
     },
     {
         "name": "Giant Elk",
+        "desc": "The majestic **giant elk** is rare to the point that its appearance is often taken as a foreshadowing of an important event, such as the birth of a king. Legends tell of gods that take the form of giant elk when visiting the Material Plane. Many cultures therefore believe that to hunt these creatures is to invite divine wrath.",
         "size": "Huge",
         "type": "beast",
         "subtype": "",
@@ -8152,10 +8998,19 @@
             "walk": 60
         },
         "armor_desc": "natural armor",
-        "page_no": 375
+        "page_no": 375,
+        "environments": [
+            "hill",
+            "grassland",
+            "mountain",
+            "Tundra",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Giant Fire Beetle",
+        "desc": "A **giant fire beetle** is a nocturnal creature that takes its name from a pair of glowing glands that give off light. Miners and adventurers prize these creatures, for a giant fire beetle's glands continue to shed light for 1d6 days after the beetle dies. Giant fire beetles are most commonly found underground and in dark forests.",
         "size": "Small",
         "type": "beast",
         "subtype": "",
@@ -8197,7 +9052,11 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 375
+        "page_no": 375,
+        "environments": [
+            "underdark",
+            "Caverns"
+        ]
     },
     {
         "name": "Giant Frog",
@@ -8254,7 +9113,15 @@
             "walk": 30,
             "swim": 30
         },
-        "page_no": 376
+        "page_no": 376,
+        "environments": [
+            "swamp",
+            "Jungle",
+            "jungle",
+            "Swamp",
+            "Water",
+            "forest"
+        ]
     },
     {
         "name": "Giant Goat",
@@ -8305,7 +9172,14 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 376
+        "page_no": 376,
+        "environments": [
+            "hill",
+            "Hills",
+            "grassland",
+            "Mountains",
+            "mountain"
+        ]
     },
     {
         "name": "Giant Hyena",
@@ -8350,10 +9224,20 @@
         "speed_json": {
             "walk": 50
         },
-        "page_no": 376
+        "page_no": 376,
+        "environments": [
+            "hill",
+            "Desert",
+            "Shadowfell",
+            "grassland",
+            "Grassland",
+            "Ruin",
+            "forest"
+        ]
     },
     {
         "name": "Giant Lizard",
+        "desc": "A **giant lizard** can be ridden or used as a draft animal. Lizardfolk also keep them as pets, and subterranean giant lizards are used as mounts and pack animals by drow, duergar, and others.",
         "size": "Large",
         "type": "beast",
         "subtype": "",
@@ -8401,7 +9285,20 @@
             "climb": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 377
+        "page_no": 377,
+        "environments": [
+            "underdark",
+            "Desert",
+            "coastal",
+            "Grassland",
+            "forest",
+            "Ruin",
+            "swamp",
+            "Jungle",
+            "jungle",
+            "Swamp",
+            "desert"
+        ]
     },
     {
         "name": "Giant Octopus",
@@ -8463,10 +9360,15 @@
             "walk": 10,
             "swim": 60
         },
-        "page_no": 377
+        "page_no": 377,
+        "environments": [
+            "underwater",
+            "Water"
+        ]
     },
     {
         "name": "Giant Owl",
+        "desc": "**Giant owls** often befriend fey and other sylvan creatures and are guardians of their woodland realms.",
         "size": "Large",
         "type": "beast",
         "subtype": "",
@@ -8515,7 +9417,14 @@
             "walk": 5,
             "fly": 60
         },
-        "page_no": 377
+        "page_no": 377,
+        "environments": [
+            "hill",
+            "Feywild",
+            "Forest",
+            "forest",
+            "arctic"
+        ]
     },
     {
         "name": "Giant Poisonous Snake",
@@ -8554,7 +9463,27 @@
             "walk": 30,
             "swim": 30
         },
-        "page_no": 378
+        "page_no": 378,
+        "environments": [
+            "underdark",
+            "Desert",
+            "Mountains",
+            "grassland",
+            "Grassland",
+            "Ruin",
+            "swamp",
+            "Swamp",
+            "Water",
+            "urban",
+            "Sewer",
+            "Forest",
+            "forest",
+            "Tomb",
+            "Jungle",
+            "Hills",
+            "jungle",
+            "Caverns"
+        ]
     },
     {
         "name": "Giant Rat",
@@ -8603,7 +9532,19 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 378
+        "page_no": 378,
+        "environments": [
+            "underdark",
+            "urban",
+            "Sewer",
+            "Forest",
+            "forest",
+            "Ruin",
+            "swamp",
+            "Swamp",
+            "Caverns",
+            "Settlement"
+        ]
     },
     {
         "name": "Giant Rat (Diseased)",
@@ -8640,7 +9581,15 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 378
+        "page_no": 378,
+        "environments": [
+            "Sewer",
+            "Swamp",
+            "Caverns",
+            "Forest",
+            "Ruin",
+            "Settlement"
+        ]
     },
     {
         "name": "Giant Scorpion",
@@ -8690,10 +9639,16 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 378
+        "page_no": 378,
+        "environments": [
+            "Desert",
+            "jungle",
+            "Shadowfell"
+        ]
     },
     {
         "name": "Giant Sea Horse",
+        "desc": "Like their smaller kin, **giant sea horses** are shy, colorful fish with elongated bodies and curled tails. Aquatic elves train them as mounts.",
         "size": "Large",
         "type": "beast",
         "subtype": "",
@@ -8742,10 +9697,14 @@
             "swim": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 378
+        "page_no": 378,
+        "environments": [
+            "underwater"
+        ]
     },
     {
         "name": "Giant Shark",
+        "desc": "A **giant shark** is 30 feet long and normally found in deep oceans. Utterly fearless, it preys on anything that crosses its path, including whales and ships.",
         "size": "Huge",
         "type": "beast",
         "subtype": "",
@@ -8793,10 +9752,16 @@
             "swim": 50
         },
         "armor_desc": "natural armor",
-        "page_no": 379
+        "page_no": 379,
+        "environments": [
+            "underwater",
+            "Plane of Water",
+            "Water"
+        ]
     },
     {
         "name": "Giant Spider",
+        "desc": "To snare its prey, a **giant spider** spins elaborate webs or shoots sticky strands of webbing from its abdomen. Giant spiders are most commonly found underground, making their lairs on ceilings or in dark, web-filled crevices. Such lairs are often festooned with web cocoons holding past victims.",
         "size": "Large",
         "type": "beast",
         "subtype": "",
@@ -8855,7 +9820,20 @@
             "climb": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 379
+        "page_no": 379,
+        "environments": [
+            "underdark",
+            "urban",
+            "Forest",
+            "forest",
+            "Ruin",
+            "swamp",
+            "Jungle",
+            "Feywild",
+            "Shadowfell",
+            "Caverns",
+            "Swamp"
+        ]
     },
     {
         "name": "Giant Toad",
@@ -8910,7 +9888,17 @@
             "walk": 20,
             "swim": 40
         },
-        "page_no": 380
+        "page_no": 380,
+        "environments": [
+            "underdark",
+            "coastal",
+            "forest",
+            "swamp",
+            "Jungle",
+            "Swamp",
+            "Water",
+            "desert"
+        ]
     },
     {
         "name": "Giant Vulture",
@@ -8973,7 +9961,11 @@
             "walk": 10,
             "fly": 60
         },
-        "page_no": 380
+        "page_no": 380,
+        "environments": [
+            "Desert",
+            "grassland"
+        ]
     },
     {
         "name": "Giant Wasp",
@@ -9011,7 +10003,16 @@
             "walk": 10,
             "fly": 50
         },
-        "page_no": 380
+        "page_no": 380,
+        "environments": [
+            "urban",
+            "jungle",
+            "Hills",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "forest"
+        ]
     },
     {
         "name": "Giant Weasel",
@@ -9057,10 +10058,18 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 381
+        "page_no": 381,
+        "environments": [
+            "hill",
+            "Feywild",
+            "grassland",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Giant Wolf Spider",
+        "desc": "Smaller than a giant spider, a **giant wolf spider** hunts prey across open ground or hides in a burrow or crevice, or in a hidden cavity beneath debris.",
         "size": "Medium",
         "type": "beast",
         "subtype": "",
@@ -9114,7 +10123,18 @@
             "walk": 40,
             "climb": 40
         },
-        "page_no": 381
+        "page_no": 381,
+        "environments": [
+            "hill",
+            "Desert",
+            "grassland",
+            "coastal",
+            "Grassland",
+            "forest",
+            "Ruin",
+            "Feywild",
+            "desert"
+        ]
     },
     {
         "name": "Gibbering Mouther",
@@ -9173,7 +10193,14 @@
             "walk": 10,
             "swim": 10
         },
-        "page_no": 314
+        "page_no": 314,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Astral Plane",
+            "Caverns",
+            "Laboratory"
+        ]
     },
     {
         "name": "Glabrezu",
@@ -9253,10 +10280,14 @@
         },
         "group": "Demons",
         "armor_desc": "natural armor",
-        "page_no": 271
+        "page_no": 271,
+        "environments": [
+            "Abyss"
+        ]
     },
     {
         "name": "Gladiator",
+        "desc": "**Gladiators** battle for the entertainment of raucous crowds. Some gladiators are brutal pit fighters who treat each match as a life-or-death struggle, while others are professional duelists who command huge fees but rarely fight to the death.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -9327,7 +10358,11 @@
             "walk": 30
         },
         "armor_desc": "studded leather, shield",
-        "page_no": 399
+        "page_no": 399,
+        "environments": [
+            "urban",
+            "Settlement"
+        ]
     },
     {
         "name": "Gnoll",
@@ -9386,7 +10421,19 @@
             "walk": 30
         },
         "armor_desc": "hide armor, shield",
-        "page_no": 314
+        "page_no": 314,
+        "environments": [
+            "hill",
+            "Desert",
+            "Abyss",
+            "Mountains",
+            "grassland",
+            "Grassland",
+            "forest",
+            "Jungle",
+            "Hills",
+            "Settlement"
+        ]
     },
     {
         "name": "Goat",
@@ -9436,7 +10483,16 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 381
+        "page_no": 381,
+        "environments": [
+            "hill",
+            "urban",
+            "Hills",
+            "Mountains",
+            "grassland",
+            "mountain",
+            "Settlement"
+        ]
     },
     {
         "name": "Goblin",
@@ -9489,7 +10545,27 @@
             "walk": 30
         },
         "armor_desc": "leather armor, shield",
-        "page_no": 315
+        "page_no": 315,
+        "environments": [
+            "hill",
+            "Desert",
+            "underdark",
+            "Mountains",
+            "grassland",
+            "Tundra",
+            "Grassland",
+            "Ruin",
+            "Feywild",
+            "Swamp",
+            "Settlement",
+            "Sewer",
+            "Forest",
+            "forest",
+            "Jungle",
+            "Hills",
+            "jungle",
+            "Caverns"
+        ]
     },
     {
         "name": "Gold Dragon Wyrmling",
@@ -9549,7 +10625,13 @@
         },
         "group": "Gold Dragon",
         "armor_desc": "natural armor",
-        "page_no": 300
+        "page_no": 300,
+        "environments": [
+            "Grassland",
+            "Astral Plane",
+            "Ruin",
+            "Water"
+        ]
     },
     {
         "name": "Gorgon",
@@ -9607,7 +10689,17 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 317
+        "page_no": 317,
+        "environments": [
+            "hill",
+            "Desert",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "forest",
+            "Hills",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Gray Ooze",
@@ -9664,7 +10756,16 @@
             "climb": 10
         },
         "group": "Oozes",
-        "page_no": 338
+        "page_no": 338,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Mountains",
+            "Caverns",
+            "Ruin",
+            "Plane of Earth",
+            "Water"
+        ]
     },
     {
         "name": "Green Dragon Wyrmling",
@@ -9724,7 +10825,11 @@
         },
         "group": "Green Dragon",
         "armor_desc": "natural armor",
-        "page_no": 286
+        "page_no": 286,
+        "environments": [
+            "Jungle",
+            "Forest"
+        ]
     },
     {
         "name": "Green Hag",
@@ -9776,7 +10881,7 @@
             },
             {
                 "name": "Shared Spellcasting (Coven Only)",
-                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n• 1st level (4 slots): identify, ray of sickness\n• 2nd level (3 slots): hold person, locate object\n• 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n• 4th level (3 slots): phantasmal killer, polymorph\n• 5th level (2 slots): contact other plane, scrying\n• 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
+                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n\u2022 1st level (4 slots): identify, ray of sickness\n\u2022 2nd level (3 slots): hold person, locate object\n\u2022 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n\u2022 4th level (3 slots): phantasmal killer, polymorph\n\u2022 5th level (2 slots): contact other plane, scrying\n\u2022 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
                 "attack_bonus": 0
             },
             {
@@ -9826,7 +10931,20 @@
         },
         "group": "Hags",
         "armor_desc": "natural armor",
-        "page_no": 319
+        "page_no": 319,
+        "environments": [
+            "hill",
+            "Forest",
+            "forest",
+            "Ruin",
+            "swamp",
+            "Jungle",
+            "Feywild",
+            "Shadowfell",
+            "Caverns",
+            "Swamp",
+            "Settlement"
+        ]
     },
     {
         "name": "Grick",
@@ -9884,7 +11002,17 @@
             "climb": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 318
+        "page_no": 318,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Mountains",
+            "forest",
+            "Ruin",
+            "Tomb",
+            "Caverns",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Griffon",
@@ -9942,7 +11070,20 @@
             "walk": 30,
             "fly": 80
         },
-        "page_no": 318
+        "page_no": 318,
+        "environments": [
+            "hill",
+            "Desert",
+            "Mountains",
+            "coastal",
+            "grassland",
+            "Grassland",
+            "arctic",
+            "Hills",
+            "Plane of Air",
+            "mountain",
+            "desert"
+        ]
     },
     {
         "name": "Grimlock",
@@ -9999,10 +11140,20 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 318
+        "page_no": 318,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Shadowfell",
+            "Caverns",
+            "Ruin",
+            "Plane of Earth",
+            "Tomb"
+        ]
     },
     {
         "name": "Guard",
+        "desc": "**Guards** include members of a city watch, sentries in a citadel or fortified town, and the bodyguards of merchants and nobles.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -10038,7 +11189,22 @@
             "walk": 30
         },
         "armor_desc": "chain shirt, shield",
-        "page_no": 399
+        "page_no": 399,
+        "environments": [
+            "hill",
+            "Desert",
+            "urban",
+            "Mountains",
+            "coastal",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "forest",
+            "Hills",
+            "mountain",
+            "desert",
+            "Settlement"
+        ]
     },
     {
         "name": "Guardian Naga",
@@ -10076,7 +11242,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared:\n\n• Cantrips (at will): mending, sacred flame, thaumaturgy\n• 1st level (4 slots): command, cure wounds, shield of faith\n• 2nd level (3 slots): calm emotions, hold person\n• 3rd level (3 slots): bestow curse, clairvoyance\n• 4th level (3 slots): banishment, freedom of movement\n• 5th level (2 slots): flame strike, geas\n• 6th level (1 slot): true seeing",
+                "desc": "The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared:\n\n\u2022 Cantrips (at will): mending, sacred flame, thaumaturgy\n\u2022 1st level (4 slots): command, cure wounds, shield of faith\n\u2022 2nd level (3 slots): calm emotions, hold person\n\u2022 3rd level (3 slots): bestow curse, clairvoyance\n\u2022 4th level (3 slots): banishment, freedom of movement\n\u2022 5th level (2 slots): flame strike, geas\n\u2022 6th level (1 slot): true seeing",
                 "attack_bonus": 0
             }
         ],
@@ -10117,7 +11283,18 @@
         },
         "group": "Nagas",
         "armor_desc": "natural armor",
-        "page_no": 336
+        "page_no": 336,
+        "environments": [
+            "Temple",
+            "Desert",
+            "Astral Plane",
+            "Mountains",
+            "Forest",
+            "forest",
+            "Ruin",
+            "Jungle",
+            "Caverns"
+        ]
     },
     {
         "name": "Gynosphinx",
@@ -10159,7 +11336,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following wizard spells prepared:\n\n• Cantrips (at will): mage hand, minor illusion, prestidigitation\n• 1st level (4 slots): detect magic, identify, shield\n• 2nd level (3 slots): darkness, locate object, suggestion\n• 3rd level (3 slots): dispel magic, remove curse, tongues\n• 4th level (3 slots): banishment, greater invisibility\n• 5th level (1 slot): legend lore",
+                "desc": "The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): mage hand, minor illusion, prestidigitation\n\u2022 1st level (4 slots): detect magic, identify, shield\n\u2022 2nd level (3 slots): darkness, locate object, suggestion\n\u2022 3rd level (3 slots): dispel magic, remove curse, tongues\n\u2022 4th level (3 slots): banishment, greater invisibility\n\u2022 5th level (1 slot): legend lore",
                 "attack_bonus": 0
             }
         ],
@@ -10218,7 +11395,11 @@
         },
         "group": "Sphinxes",
         "armor_desc": "natural armor",
-        "page_no": 348
+        "page_no": 348,
+        "environments": [
+            "desert",
+            "ruins"
+        ]
     },
     {
         "name": "Half-Red Dragon Veteran",
@@ -10281,7 +11462,15 @@
             "walk": 30
         },
         "armor_desc": "plate",
-        "page_no": 321
+        "page_no": 321,
+        "environments": [
+            "Desert",
+            "Hills",
+            "Mountains",
+            "Plane of Fire",
+            "Ruin",
+            "Settlement"
+        ]
     },
     {
         "name": "Harpy",
@@ -10336,7 +11525,22 @@
             "walk": 20,
             "fly": 40
         },
-        "page_no": 321
+        "page_no": 321,
+        "environments": [
+            "hill",
+            "Desert",
+            "Mountains",
+            "coastal",
+            "Tundra",
+            "Forest",
+            "Grassland",
+            "forest",
+            "Jungle",
+            "Hills",
+            "Swamp",
+            "mountain",
+            "desert"
+        ]
     },
     {
         "name": "Hawk",
@@ -10381,7 +11585,13 @@
             "walk": 10,
             "fly": 60
         },
-        "page_no": 382
+        "page_no": 382,
+        "environments": [
+            "Settlement",
+            "Forest",
+            "Grassland",
+            "Mountains"
+        ]
     },
     {
         "name": "Hell Hound",
@@ -10438,7 +11648,18 @@
             "walk": 50
         },
         "armor_desc": "natural armor",
-        "page_no": 321
+        "page_no": 321,
+        "environments": [
+            "underdark",
+            "Desert",
+            "Astral Plane",
+            "Mountains",
+            "Plane of Fire",
+            "Laboratory",
+            "Shadowfell",
+            "mountain",
+            "Hell"
+        ]
     },
     {
         "name": "Hezrou",
@@ -10509,7 +11730,10 @@
         },
         "group": "Demons",
         "armor_desc": "natural armor",
-        "page_no": 271
+        "page_no": 271,
+        "environments": [
+            "Abyss"
+        ]
     },
     {
         "name": "Hill Giant",
@@ -10561,7 +11785,15 @@
         },
         "group": "Giants",
         "armor_desc": "natural armor",
-        "page_no": 313
+        "page_no": 313,
+        "environments": [
+            "hill",
+            "Feywild",
+            "Mountains",
+            "Forest",
+            "Ruin",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Hippogriff",
@@ -10619,7 +11851,17 @@
             "walk": 40,
             "fly": 60
         },
-        "page_no": 322
+        "page_no": 322,
+        "environments": [
+            "hill",
+            "Mountains",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "Hills",
+            "Plane of Air",
+            "mountain"
+        ]
     },
     {
         "name": "Hobgoblin",
@@ -10672,7 +11914,19 @@
             "walk": 30
         },
         "armor_desc": "chain mail, shield",
-        "page_no": 322
+        "page_no": 322,
+        "environments": [
+            "hill",
+            "Desert",
+            "underdark",
+            "Mountains",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "forest",
+            "Hills",
+            "Caverns"
+        ]
     },
     {
         "name": "Homunculus",
@@ -10717,7 +11971,10 @@
             "fly": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 322
+        "page_no": 322,
+        "environments": [
+            "Laboratory"
+        ]
     },
     {
         "name": "Horned Devil",
@@ -10791,10 +12048,14 @@
         },
         "group": "Devils",
         "armor_desc": "natural armor",
-        "page_no": 276
+        "page_no": 276,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Hunter Shark",
+        "desc": "Smaller than a giant shark but larger and fiercer than a reef shark, a **hunter shark** haunts deep waters. It usually hunts alone, but multiple hunter sharks might feed in the same area. A fully grown hunter shark is 15 to 20 feet long.",
         "size": "Large",
         "type": "beast",
         "subtype": "",
@@ -10842,7 +12103,11 @@
             "swim": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 382
+        "page_no": 382,
+        "environments": [
+            "underwater",
+            "Water"
+        ]
     },
     {
         "name": "Hydra",
@@ -10909,7 +12174,14 @@
             "swim": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 323
+        "page_no": 323,
+        "environments": [
+            "swamp",
+            "Swamp",
+            "Caverns",
+            "Plane of Water",
+            "Water"
+        ]
     },
     {
         "name": "Hyena",
@@ -10953,7 +12225,16 @@
         "speed_json": {
             "walk": 50
         },
-        "page_no": 382
+        "page_no": 382,
+        "environments": [
+            "hill",
+            "Desert",
+            "Shadowfell",
+            "grassland",
+            "Grassland",
+            "Ruin",
+            "forest"
+        ]
     },
     {
         "name": "Ice Devil",
@@ -11032,7 +12313,10 @@
         },
         "group": "Devils",
         "armor_desc": "natural armor",
-        "page_no": 277
+        "page_no": 277,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Ice Mephit",
@@ -11104,7 +12388,14 @@
             "fly": 30
         },
         "group": "Mephits",
-        "page_no": 331
+        "page_no": 331,
+        "environments": [
+            "Plane of Air",
+            "Mountains",
+            "Tundra",
+            "Plane of Water",
+            "arctic"
+        ]
     },
     {
         "name": "Imp",
@@ -11174,7 +12465,10 @@
             "fly": 40
         },
         "group": "Devils",
-        "page_no": 277
+        "page_no": 277,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Invisible Stalker",
@@ -11232,7 +12526,16 @@
             "walk": 50,
             "fly": 50
         },
-        "page_no": 323
+        "page_no": 323,
+        "environments": [
+            "Temple",
+            "urban",
+            "Plane of Air",
+            "Swamp",
+            "Settlement",
+            "Grassland",
+            "Laboratory"
+        ]
     },
     {
         "name": "Iron Golem",
@@ -11311,7 +12614,10 @@
         },
         "group": "Golems",
         "armor_desc": "natural armor",
-        "page_no": 317
+        "page_no": 317,
+        "environments": [
+            "any"
+        ]
     },
     {
         "name": "Jackal",
@@ -11361,7 +12667,14 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 382
+        "page_no": 382,
+        "environments": [
+            "Desert",
+            "Shadowfell",
+            "grassland",
+            "Grassland",
+            "Ruin"
+        ]
     },
     {
         "name": "Killer Whale",
@@ -11415,10 +12728,15 @@
             "swim": 60
         },
         "armor_desc": "natural armor",
-        "page_no": 383
+        "page_no": 383,
+        "environments": [
+            "underwater",
+            "Water"
+        ]
     },
     {
         "name": "Knight",
+        "desc": "**Knights** are warriors who pledge service to rulers, religious orders, and noble causes. A knight's alignment determines the extent to which a pledge is honored. Whether undertaking a quest or patrolling a realm, a knight often travels with an entourage that includes squires and hirelings who are commoners.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -11485,7 +12803,15 @@
             "walk": 30
         },
         "armor_desc": "plate",
-        "page_no": 400
+        "page_no": 400,
+        "environments": [
+            "Temple",
+            "urban",
+            "Hills",
+            "Mountains",
+            "Grassland",
+            "Settlement"
+        ]
     },
     {
         "name": "Kobold",
@@ -11541,7 +12867,29 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 324
+        "page_no": 324,
+        "environments": [
+            "hill",
+            "underdark",
+            "Mountains",
+            "coastal",
+            "Tundra",
+            "Grassland",
+            "Ruin",
+            "swamp",
+            "Swamp",
+            "mountain",
+            "desert",
+            "Settlement",
+            "urban",
+            "Forest",
+            "forest",
+            "arctic",
+            "Jungle",
+            "Hills",
+            "Caverns",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Kraken",
@@ -11643,7 +12991,12 @@
             "swim": 60
         },
         "armor_desc": "natural armor",
-        "page_no": 324
+        "page_no": 324,
+        "environments": [
+            "underwater",
+            "Plane of Water",
+            "Water"
+        ]
     },
     {
         "name": "Lamia",
@@ -11717,7 +13070,13 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 325
+        "page_no": 325,
+        "environments": [
+            "Desert",
+            "Grassland",
+            "Hills",
+            "Abyss"
+        ]
     },
     {
         "name": "Lemure",
@@ -11766,7 +13125,10 @@
             "walk": 15
         },
         "group": "Devils",
-        "page_no": 278
+        "page_no": 278,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Lich",
@@ -11811,7 +13173,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:\n\n• Cantrips (at will): mage hand, prestidigitation, ray of frost\n• 1st level (4 slots): detect magic, magic missile, shield, thunderwave\n• 2nd level (3 slots): detect thoughts, invisibility, acid arrow, mirror image\n• 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball\n• 4th level (3 slots): blight, dimension door\n• 5th level (3 slots): cloudkill, scrying\n• 6th level (1 slot): disintegrate, globe of invulnerability\n• 7th level (1 slot): finger of death, plane shift\n• 8th level (1 slot): dominate monster, power word stun\n• 9th level (1 slot): power word kill",
+                "desc": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): mage hand, prestidigitation, ray of frost\n\u2022 1st level (4 slots): detect magic, magic missile, shield, thunderwave\n\u2022 2nd level (3 slots): detect thoughts, invisibility, acid arrow, mirror image\n\u2022 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball\n\u2022 4th level (3 slots): blight, dimension door\n\u2022 5th level (3 slots): cloudkill, scrying\n\u2022 6th level (1 slot): disintegrate, globe of invulnerability\n\u2022 7th level (1 slot): finger of death, plane shift\n\u2022 8th level (1 slot): dominate monster, power word stun\n\u2022 9th level (1 slot): power word kill",
                 "attack_bonus": 0
             },
             {
@@ -11884,7 +13246,13 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 325
+        "page_no": 325,
+        "environments": [
+            "Shadowfell",
+            "Ruin",
+            "Laboratory",
+            "Tomb"
+        ]
     },
     {
         "name": "Lion",
@@ -11952,7 +13320,15 @@
         "speed_json": {
             "walk": 50
         },
-        "page_no": 383
+        "page_no": 383,
+        "environments": [
+            "hill",
+            "Desert",
+            "grassland",
+            "mountain",
+            "Forest",
+            "Grassland"
+        ]
     },
     {
         "name": "Lizard",
@@ -11989,7 +13365,15 @@
             "walk": 20,
             "climb": 20
         },
-        "page_no": 383
+        "page_no": 383,
+        "environments": [
+            "Desert",
+            "Jungle",
+            "jungle",
+            "Swamp",
+            "Grassland",
+            "Ruin"
+        ]
     },
     {
         "name": "Lizardfolk",
@@ -12064,10 +13448,18 @@
             "swim": 30
         },
         "armor_desc": "natural armor, shield",
-        "page_no": 326
+        "page_no": 326,
+        "environments": [
+            "swamp",
+            "Jungle",
+            "jungle",
+            "Swamp",
+            "forest"
+        ]
     },
     {
         "name": "Mage",
+        "desc": "**Mages** spend their lives in the study and practice of magic. Good-aligned mages offer counsel to nobles and others in power, while evil mages dwell in isolated sites to perform unspeakable experiments without interference.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -12096,7 +13488,7 @@
         "special_abilities": [
             {
                 "name": "Spellcasting",
-                "desc": "The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:\n\n• Cantrips (at will): fire bolt, light, mage hand, prestidigitation\n• 1st level (4 slots): detect magic, mage armor, magic missile, shield\n• 2nd level (3 slots): misty step, suggestion\n• 3rd level (3 slots): counterspell, fireball, fly\n• 4th level (3 slots): greater invisibility, ice storm\n• 5th level (1 slot): cone of cold",
+                "desc": "The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): fire bolt, light, mage hand, prestidigitation\n\u2022 1st level (4 slots): detect magic, mage armor, magic missile, shield\n\u2022 2nd level (3 slots): misty step, suggestion\n\u2022 3rd level (3 slots): counterspell, fireball, fly\n\u2022 4th level (3 slots): greater invisibility, ice storm\n\u2022 5th level (1 slot): cone of cold",
                 "attack_bonus": 0
             }
         ],
@@ -12131,7 +13523,21 @@
             "walk": 30
         },
         "armor_desc": "15 with _mage armor_",
-        "page_no": 400
+        "page_no": 400,
+        "environments": [
+            "urban",
+            "Desert",
+            "Mountains",
+            "Forest",
+            "Ruin",
+            "Laboratory",
+            "Jungle",
+            "Hills",
+            "Feywild",
+            "Shadowfell",
+            "Swamp",
+            "Settlement"
+        ]
     },
     {
         "name": "Magma Mephit",
@@ -12202,7 +13608,14 @@
             "fly": 30
         },
         "group": "Mephits",
-        "page_no": 331
+        "page_no": 331,
+        "environments": [
+            "underdark",
+            "Mountains",
+            "Caverns",
+            "Plane of Fire",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Magmin",
@@ -12252,10 +13665,18 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 329
+        "page_no": 329,
+        "environments": [
+            "Desert",
+            "Mountains",
+            "Caverns",
+            "Plane of Fire",
+            "Laboratory"
+        ]
     },
     {
         "name": "Mammoth",
+        "desc": "A **mammoth** is an elephantine creature with thick fur and long tusks. Stockier and fiercer than normal elephants, mammoths inhabit a wide range of climes, from subarctic to subtropical.",
         "size": "Huge",
         "type": "beast",
         "subtype": "",
@@ -12304,7 +13725,11 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 384
+        "page_no": 384,
+        "environments": [
+            "Tundra",
+            "arctic"
+        ]
     },
     {
         "name": "Manticore",
@@ -12369,7 +13794,22 @@
             "fly": 50
         },
         "armor_desc": "natural armor",
-        "page_no": 329
+        "page_no": 329,
+        "environments": [
+            "hill",
+            "Desert",
+            "Mountains",
+            "coastal",
+            "Tundra",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "arctic",
+            "Jungle",
+            "Hills",
+            "mountain",
+            "desert"
+        ]
     },
     {
         "name": "Marilith",
@@ -12458,10 +13898,14 @@
         },
         "group": "Demons",
         "armor_desc": "natural armor",
-        "page_no": 272
+        "page_no": 272,
+        "environments": [
+            "Abyss"
+        ]
     },
     {
         "name": "Mastiff",
+        "desc": "**Mastiffs** are impressive hounds prized by humanoids for their loyalty and keen senses. Mastiffs can be trained as guard dogs, hunting dogs, and war dogs. Halflings and other Small humanoids ride them as mounts.",
         "size": "Medium",
         "type": "beast",
         "subtype": "",
@@ -12503,7 +13947,13 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 384
+        "page_no": 384,
+        "environments": [
+            "hill",
+            "forest",
+            "Settlement",
+            "urban"
+        ]
     },
     {
         "name": "Medusa",
@@ -12570,7 +14020,17 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 330
+        "page_no": 330,
+        "environments": [
+            "Desert",
+            "Mountains",
+            "Tundra",
+            "Forest",
+            "Jungle",
+            "Caverns",
+            "Settlement",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Merfolk",
@@ -12615,7 +14075,13 @@
             "walk": 10,
             "swim": 40
         },
-        "page_no": 332
+        "page_no": 332,
+        "environments": [
+            "underwater",
+            "desert",
+            "coastal",
+            "Water"
+        ]
     },
     {
         "name": "Merrow",
@@ -12680,7 +14146,14 @@
             "swim": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 332
+        "page_no": 332,
+        "environments": [
+            "underwater",
+            "Swamp",
+            "coastal",
+            "desert",
+            "Water"
+        ]
     },
     {
         "name": "Mimic",
@@ -12748,7 +14221,15 @@
             "walk": 15
         },
         "armor_desc": "natural armor",
-        "page_no": 332
+        "page_no": 332,
+        "environments": [
+            "underdark",
+            "Desert",
+            "urban",
+            "Caverns",
+            "Ruin",
+            "Laboratory"
+        ]
     },
     {
         "name": "Minotaur",
@@ -12812,7 +14293,13 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 333
+        "page_no": 333,
+        "environments": [
+            "underdark",
+            "Abyss",
+            "Plane of Earth",
+            "Caverns"
+        ]
     },
     {
         "name": "Minotaur Skeleton",
@@ -12866,7 +14353,10 @@
         },
         "group": "Skeletons",
         "armor_desc": "natural armor",
-        "page_no": 346
+        "page_no": 346,
+        "environments": [
+            "underdark"
+        ]
     },
     {
         "name": "Mule",
@@ -12915,7 +14405,13 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 384
+        "page_no": 384,
+        "environments": [
+            "hill",
+            "Grassland",
+            "Settlement",
+            "urban"
+        ]
     },
     {
         "name": "Mummy",
@@ -12965,7 +14461,14 @@
         },
         "group": "Mummies",
         "armor_desc": "natural armor",
-        "page_no": 333
+        "page_no": 333,
+        "environments": [
+            "Temple",
+            "Desert",
+            "Shadowfell",
+            "Ruin",
+            "Tomb"
+        ]
     },
     {
         "name": "Mummy Lord",
@@ -13009,7 +14512,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:\n\n• Cantrips (at will): sacred flame, thaumaturgy\n• 1st level (4 slots): command, guiding bolt, shield of faith\n• 2nd level (3 slots): hold person, silence, spiritual weapon\n• 3rd level (3 slots): animate dead, dispel magic\n• 4th level (3 slots): divination, guardian of faith\n• 5th level (2 slots): contagion, insect plague\n• 6th level (1 slot): harm",
+                "desc": "The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:\n\n\u2022 Cantrips (at will): sacred flame, thaumaturgy\n\u2022 1st level (4 slots): command, guiding bolt, shield of faith\n\u2022 2nd level (3 slots): hold person, silence, spiritual weapon\n\u2022 3rd level (3 slots): animate dead, dispel magic\n\u2022 4th level (3 slots): divination, guardian of faith\n\u2022 5th level (2 slots): contagion, insect plague\n\u2022 6th level (1 slot): harm",
                 "attack_bonus": 0
             }
         ],
@@ -13082,7 +14585,14 @@
         },
         "group": "Mummies",
         "armor_desc": "natural armor",
-        "page_no": 334
+        "page_no": 334,
+        "environments": [
+            "Temple",
+            "Desert",
+            "Shadowfell",
+            "Ruin",
+            "Tomb"
+        ]
     },
     {
         "name": "Nalfeshnee",
@@ -13160,7 +14670,10 @@
         },
         "group": "Demons",
         "armor_desc": "natural armor",
-        "page_no": 272
+        "page_no": 272,
+        "environments": [
+            "Abyss"
+        ]
     },
     {
         "name": "Night Hag",
@@ -13212,7 +14725,7 @@
             },
             {
                 "name": "Shared Spellcasting (Coven Only)",
-                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n• 1st level (4 slots): identify, ray of sickness\n• 2nd level (3 slots): hold person, locate object\n• 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n• 4th level (3 slots): phantasmal killer, polymorph\n• 5th level (2 slots): contact other plane, scrying\n• 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
+                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n\u2022 1st level (4 slots): identify, ray of sickness\n\u2022 2nd level (3 slots): hold person, locate object\n\u2022 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n\u2022 4th level (3 slots): phantasmal killer, polymorph\n\u2022 5th level (2 slots): contact other plane, scrying\n\u2022 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
                 "attack_bonus": 0
             },
             {
@@ -13269,7 +14782,19 @@
         },
         "group": "Hags",
         "armor_desc": "natural armor",
-        "page_no": 319
+        "page_no": 319,
+        "environments": [
+            "Forest",
+            "Ruin",
+            "Jungle",
+            "jungle",
+            "Feywild",
+            "Shadowfell",
+            "Caverns",
+            "Swamp",
+            "Settlement",
+            "Hell"
+        ]
     },
     {
         "name": "Nightmare",
@@ -13325,10 +14850,16 @@
             "fly": 90
         },
         "armor_desc": "natural armor",
-        "page_no": 336
+        "page_no": 336,
+        "environments": [
+            "Abyss",
+            "Shadowfell",
+            "Hell"
+        ]
     },
     {
         "name": "Noble",
+        "desc": "**Nobles** wield great authority and influence as members of the upper class, possessing wealth and connections that can make them as powerful as monarchs and generals. A noble often travels in the company of guards, as well as servants who are commoners.\nThe noble's statistics can also be used to represent **courtiers** who aren't of noble birth.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -13373,7 +14904,13 @@
             "walk": 30
         },
         "armor_desc": "breastplate",
-        "page_no": 401
+        "page_no": 401,
+        "environments": [
+            "urban",
+            "Grassland",
+            "Hills",
+            "Settlement"
+        ]
     },
     {
         "name": "Ochre Jelly",
@@ -13431,7 +14968,14 @@
             "climb": 10
         },
         "group": "Oozes",
-        "page_no": 338
+        "page_no": 338,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Caverns",
+            "Ruin",
+            "Water"
+        ]
     },
     {
         "name": "Octopus",
@@ -13492,7 +15036,10 @@
             "walk": 5,
             "swim": 30
         },
-        "page_no": 384
+        "page_no": 384,
+        "environments": [
+            "Water"
+        ]
     },
     {
         "name": "Ogre",
@@ -13537,7 +15084,29 @@
             "walk": 40
         },
         "armor_desc": "hide armor",
-        "page_no": 336
+        "page_no": 336,
+        "environments": [
+            "hill",
+            "Desert",
+            "underdark",
+            "grassland",
+            "Mountains",
+            "coastal",
+            "Tundra",
+            "Grassland",
+            "Ruin",
+            "swamp",
+            "Feywild",
+            "Swamp",
+            "mountain",
+            "desert",
+            "Forest",
+            "forest",
+            "arctic",
+            "Jungle",
+            "Hills",
+            "Caverns"
+        ]
     },
     {
         "name": "Ogre Zombie",
@@ -13583,7 +15152,13 @@
             "walk": 30
         },
         "group": "Zombies",
-        "page_no": 357
+        "page_no": 357,
+        "environments": [
+            "Temple",
+            "Ruin",
+            "Shadowfell",
+            "Tomb"
+        ]
     },
     {
         "name": "Oni",
@@ -13671,7 +15246,11 @@
             "fly": 30
         },
         "armor_desc": "chain mail",
-        "page_no": 336
+        "page_no": 336,
+        "environments": [
+            "urban",
+            "forest"
+        ]
     },
     {
         "name": "Orc",
@@ -13724,7 +15303,16 @@
             "walk": 30
         },
         "armor_desc": "hide armor",
-        "page_no": 339
+        "page_no": 339,
+        "environments": [
+            "hill",
+            "underdark",
+            "swamp",
+            "grassland",
+            "mountain",
+            "forest",
+            "arctic"
+        ]
     },
     {
         "name": "Otyugh",
@@ -13787,7 +15375,15 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 339
+        "page_no": 339,
+        "environments": [
+            "underdark",
+            "Sewer",
+            "Swamp",
+            "Caverns",
+            "Ruin",
+            "Laboratory"
+        ]
     },
     {
         "name": "Owl",
@@ -13838,7 +15434,12 @@
             "walk": 5,
             "fly": 60
         },
-        "page_no": 385
+        "page_no": 385,
+        "environments": [
+            "Forest",
+            "forest",
+            "arctic"
+        ]
     },
     {
         "name": "Owlbear",
@@ -13896,7 +15497,15 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 339
+        "page_no": 339,
+        "environments": [
+            "Jungle",
+            "Hills",
+            "Feywild",
+            "Mountains",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Panther",
@@ -13955,7 +15564,14 @@
             "walk": 50,
             "climb": 40
         },
-        "page_no": 385
+        "page_no": 385,
+        "environments": [
+            "hill",
+            "Jungle",
+            "grassland",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Pegasus",
@@ -13997,10 +15613,21 @@
             "walk": 60,
             "fly": 90
         },
-        "page_no": 340
+        "page_no": 340,
+        "environments": [
+            "hill",
+            "Astral Plane",
+            "Mountains",
+            "grassland",
+            "Forest",
+            "forest",
+            "Hills",
+            "Feywild"
+        ]
     },
     {
         "name": "Phase Spider",
+        "desc": "A **phase spider** possesses the magical ability to phase in and out of the Ethereal Plane. It seems to appear out of nowhere and quickly vanishes after attacking. Its movement on the Ethereal Plane before coming back to the Material Plane makes it seem like it can teleport.",
         "size": "Large",
         "type": "monstrosity",
         "subtype": "",
@@ -14054,7 +15681,22 @@
             "climb": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 385
+        "page_no": 385,
+        "environments": [
+            "hill",
+            "underdark",
+            "urban",
+            "Astral Plane",
+            "Mountains",
+            "grassland",
+            "Grassland",
+            "forest",
+            "Ruin",
+            "Ethereal Plane",
+            "Feywild",
+            "Shadowfell",
+            "Caverns"
+        ]
     },
     {
         "name": "Pit Fiend",
@@ -14151,7 +15793,10 @@
         },
         "group": "Devils",
         "armor_desc": "natural armor",
-        "page_no": 278
+        "page_no": 278,
+        "environments": [
+            "Hell"
+        ]
     },
     {
         "name": "Planetar",
@@ -14238,7 +15883,11 @@
         },
         "group": "Angels",
         "armor_desc": "natural armor",
-        "page_no": 262
+        "page_no": 262,
+        "environments": [
+            "Temple",
+            "Astral Plane"
+        ]
     },
     {
         "name": "Plesiosaurus",
@@ -14287,7 +15936,14 @@
         },
         "group": "Dinosaurs",
         "armor_desc": "natural armor",
-        "page_no": 279
+        "page_no": 279,
+        "environments": [
+            "underwater",
+            "coastal",
+            "Plane of Water",
+            "desert",
+            "Water"
+        ]
     },
     {
         "name": "Poisonous Snake",
@@ -14324,7 +15980,28 @@
             "walk": 30,
             "swim": 30
         },
-        "page_no": 386
+        "page_no": 386,
+        "environments": [
+            "hill",
+            "Desert",
+            "grassland",
+            "Mountains",
+            "coastal",
+            "Grassland",
+            "Ruin",
+            "swamp",
+            "Swamp",
+            "Water",
+            "desert",
+            "Sewer",
+            "Forest",
+            "forest",
+            "Tomb",
+            "Jungle",
+            "jungle",
+            "Hills",
+            "Caverns"
+        ]
     },
     {
         "name": "Polar Bear",
@@ -14383,7 +16060,12 @@
             "swim": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 386
+        "page_no": 386,
+        "environments": [
+            "Tundra",
+            "underdark",
+            "arctic"
+        ]
     },
     {
         "name": "Pony",
@@ -14420,10 +16102,16 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 386
+        "page_no": 386,
+        "environments": [
+            "urban",
+            "Settlement",
+            "Mountains"
+        ]
     },
     {
         "name": "Priest",
+        "desc": "**Priests** bring the teachings of their gods to the common folk. They are the spiritual leaders of temples and shrines and often hold positions of influence in their communities. Evil priests might work openly under a tyrant, or they might be the leaders of religious sects hidden in the shadows of good society, overseeing depraved rites. \nA priest typically has one or more acolytes to help with religious ceremonies and other sacred duties.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -14457,7 +16145,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 13, +5 to hit with spell attacks). The priest has the following cleric spells prepared:\n\n• Cantrips (at will): light, sacred flame, thaumaturgy\n• 1st level (4 slots): cure wounds, guiding bolt, sanctuary\n• 2nd level (3 slots): lesser restoration, spiritual weapon\n• 3rd level (2 slots): dispel magic, spirit guardians",
+                "desc": "The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 13, +5 to hit with spell attacks). The priest has the following cleric spells prepared:\n\n\u2022 Cantrips (at will): light, sacred flame, thaumaturgy\n\u2022 1st level (4 slots): cure wounds, guiding bolt, sanctuary\n\u2022 2nd level (3 slots): lesser restoration, spiritual weapon\n\u2022 3rd level (2 slots): dispel magic, spirit guardians",
                 "attack_bonus": 0
             }
         ],
@@ -14485,7 +16173,14 @@
             "walk": 25
         },
         "armor_desc": "chain shirt",
-        "page_no": 401
+        "page_no": 401,
+        "environments": [
+            "Temple",
+            "Desert",
+            "urban",
+            "Hills",
+            "Settlement"
+        ]
     },
     {
         "name": "Pseudodragon",
@@ -14555,7 +16250,20 @@
             "fly": 60
         },
         "armor_desc": "natural armor",
-        "page_no": 340
+        "page_no": 340,
+        "environments": [
+            "hill",
+            "Desert",
+            "urban",
+            "Mountains",
+            "coastal",
+            "Forest",
+            "forest",
+            "Jungle",
+            "Swamp",
+            "mountain",
+            "desert"
+        ]
     },
     {
         "name": "Purple Worm",
@@ -14615,7 +16323,12 @@
             "burrow": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 340
+        "page_no": 340,
+        "environments": [
+            "underdark",
+            "Mountains",
+            "Caverns"
+        ]
     },
     {
         "name": "Quasit",
@@ -14681,10 +16394,14 @@
             "walk": 40
         },
         "group": "Demons",
-        "page_no": 273
+        "page_no": 273,
+        "environments": [
+            "Abyss"
+        ]
     },
     {
         "name": "Quipper",
+        "desc": "A **quipper** is a carnivorous fish with sharp teeth. Quippers can adapt to any aquatic environment, including cold subterranean lakes. They frequently gather in swarms; the statistics for a swarm of quippers appear later in this appendix.",
         "size": "Tiny",
         "type": "beast",
         "subtype": "",
@@ -14729,7 +16446,12 @@
         "speed_json": {
             "swim": 40
         },
-        "page_no": 387
+        "page_no": 387,
+        "environments": [
+            "underwater",
+            "Sewer",
+            "Water"
+        ]
     },
     {
         "name": "Rakshasa",
@@ -14801,7 +16523,19 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 341
+        "page_no": 341,
+        "environments": [
+            "urban",
+            "Desert",
+            "Abyss",
+            "Forest",
+            "Grassland",
+            "Jungle",
+            "Hills",
+            "Swamp",
+            "Settlement",
+            "Hell"
+        ]
     },
     {
         "name": "Rat",
@@ -14844,7 +16578,17 @@
         "speed_json": {
             "walk": 20
         },
-        "page_no": 387
+        "page_no": 387,
+        "environments": [
+            "urban",
+            "Sewer",
+            "Forest",
+            "Ruin",
+            "swamp",
+            "Swamp",
+            "Caverns",
+            "Settlement"
+        ]
     },
     {
         "name": "Raven",
@@ -14888,7 +16632,14 @@
             "walk": 10,
             "fly": 50
         },
-        "page_no": 387
+        "page_no": 387,
+        "environments": [
+            "hill",
+            "urban",
+            "swamp",
+            "Swamp",
+            "Forest"
+        ]
     },
     {
         "name": "Red Dragon Wyrmling",
@@ -14941,10 +16692,14 @@
         },
         "group": "Red Dragon",
         "armor_desc": "natural armor",
-        "page_no": 288
+        "page_no": 288,
+        "environments": [
+            "Mountains"
+        ]
     },
     {
         "name": "Reef Shark",
+        "desc": "Smaller than giant sharks and hunter sharks, **reef sharks** inhabit shallow waters and coral reefs, gathering in small packs to hunt. A full-grown specimen measures 6 to 10 feet long.",
         "size": "Medium",
         "type": "beast",
         "subtype": "",
@@ -14992,7 +16747,11 @@
             "swim": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 387
+        "page_no": 387,
+        "environments": [
+            "underwater",
+            "Water"
+        ]
     },
     {
         "name": "Remorhaz",
@@ -15044,7 +16803,12 @@
             "burrow": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 341
+        "page_no": 341,
+        "environments": [
+            "Tundra",
+            "Mountains",
+            "arctic"
+        ]
     },
     {
         "name": "Rhinoceros",
@@ -15090,7 +16854,12 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 388
+        "page_no": 388,
+        "environments": [
+            "Desert",
+            "Grassland",
+            "grassland"
+        ]
     },
     {
         "name": "Riding Horse",
@@ -15127,7 +16896,12 @@
         "speed_json": {
             "walk": 60
         },
-        "page_no": 388
+        "page_no": 388,
+        "environments": [
+            "urban",
+            "Settlement",
+            "grassland"
+        ]
     },
     {
         "name": "Roc",
@@ -15190,7 +16964,18 @@
             "fly": 120
         },
         "armor_desc": "natural armor",
-        "page_no": 342
+        "page_no": 342,
+        "environments": [
+            "hill",
+            "Mountains",
+            "coastal",
+            "Grassland",
+            "arctic",
+            "Hills",
+            "mountain",
+            "Water",
+            "desert"
+        ]
     },
     {
         "name": "Roper",
@@ -15263,7 +17048,11 @@
             "climb": 10
         },
         "armor_desc": "natural armor",
-        "page_no": 342
+        "page_no": 342,
+        "environments": [
+            "underdark",
+            "Caverns"
+        ]
     },
     {
         "name": "Rug of Smothering",
@@ -15318,7 +17107,11 @@
             "walk": 10
         },
         "group": "Animated Objects",
-        "page_no": 264
+        "page_no": 264,
+        "environments": [
+            "Ruin",
+            "Laboratory"
+        ]
     },
     {
         "name": "Rust Monster",
@@ -15373,7 +17166,11 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 343
+        "page_no": 343,
+        "environments": [
+            "underdark",
+            "Caverns"
+        ]
     },
     {
         "name": "Saber-Toothed Tiger",
@@ -15431,7 +17228,15 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 388
+        "page_no": 388,
+        "environments": [
+            "Jungle",
+            "Mountains",
+            "mountain",
+            "Tundra",
+            "Forest",
+            "arctic"
+        ]
     },
     {
         "name": "Sahuagin",
@@ -15507,7 +17312,13 @@
             "swim": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 343
+        "page_no": 343,
+        "environments": [
+            "underwater",
+            "desert",
+            "coastal",
+            "Water"
+        ]
     },
     {
         "name": "Salamander",
@@ -15570,7 +17381,12 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 344
+        "page_no": 344,
+        "environments": [
+            "underdark",
+            "Plane of Fire",
+            "Caverns"
+        ]
     },
     {
         "name": "Satyr",
@@ -15637,7 +17453,14 @@
             "walk": 40
         },
         "armor_desc": "leather armor",
-        "page_no": 344
+        "page_no": 344,
+        "environments": [
+            "Jungle",
+            "Hills",
+            "Feywild",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Scorpion",
@@ -15674,10 +17497,15 @@
             "walk": 10
         },
         "armor_desc": "natural armor",
-        "page_no": 388
+        "page_no": 388,
+        "environments": [
+            "Desert",
+            "Grassland"
+        ]
     },
     {
         "name": "Scout",
+        "desc": "**Scouts** are skilled hunters and trackers who offer their services for a fee. Most hunt wild game, but a few work as bounty hunters, serve as guides, or provide military reconnaissance.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -15735,7 +17563,29 @@
             "walk": 30
         },
         "armor_desc": "leather armor",
-        "page_no": 401
+        "page_no": 401,
+        "environments": [
+            "hill",
+            "Desert",
+            "underdark",
+            "grassland",
+            "Mountains",
+            "coastal",
+            "Tundra",
+            "Grassland",
+            "swamp",
+            "Feywild",
+            "Swamp",
+            "mountain",
+            "desert",
+            "Forest",
+            "forest",
+            "arctic",
+            "Jungle",
+            "jungle",
+            "Hills",
+            "Caverns"
+        ]
     },
     {
         "name": "Sea Hag",
@@ -15778,7 +17628,7 @@
             },
             {
                 "name": "Shared Spellcasting (Coven Only)",
-                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n• 1st level (4 slots): identify, ray of sickness\n• 2nd level (3 slots): hold person, locate object\n• 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n• 4th level (3 slots): phantasmal killer, polymorph\n• 5th level (2 slots): contact other plane, scrying\n• 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
+                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n\u2022 1st level (4 slots): identify, ray of sickness\n\u2022 2nd level (3 slots): hold person, locate object\n\u2022 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n\u2022 4th level (3 slots): phantasmal killer, polymorph\n\u2022 5th level (2 slots): contact other plane, scrying\n\u2022 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
                 "attack_bonus": 0
             },
             {
@@ -15826,7 +17676,15 @@
         },
         "group": "Hags",
         "armor_desc": "natural armor",
-        "page_no": 320
+        "page_no": 320,
+        "environments": [
+            "underwater",
+            "Feywild",
+            "coastal",
+            "Plane of Water",
+            "desert",
+            "Water"
+        ]
     },
     {
         "name": "Sea Horse",
@@ -15861,7 +17719,13 @@
         "speed_json": {
             "swim": 20
         },
-        "page_no": 389
+        "page_no": 389,
+        "environments": [
+            "ocean",
+            "lake",
+            "water",
+            "Plane of Water"
+        ]
     },
     {
         "name": "Shadow",
@@ -15916,7 +17780,15 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 344
+        "page_no": 344,
+        "environments": [
+            "underdark",
+            "urban",
+            "Shadowfell",
+            "Caverns",
+            "Ruin",
+            "Tomb"
+        ]
     },
     {
         "name": "Shambling Mound",
@@ -15973,7 +17845,15 @@
             "swim": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 345
+        "page_no": 345,
+        "environments": [
+            "swamp",
+            "Jungle",
+            "Swamp",
+            "Feywild",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Shield Guardian",
@@ -16040,7 +17920,14 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 345
+        "page_no": 345,
+        "environments": [
+            "Temple",
+            "urban",
+            "Ruin",
+            "Laboratory",
+            "Tomb"
+        ]
     },
     {
         "name": "Shrieker",
@@ -16083,7 +17970,13 @@
             "walk": 0
         },
         "group": "Fungi",
-        "page_no": 309
+        "page_no": 309,
+        "environments": [
+            "underdark",
+            "Forest",
+            "Swamp",
+            "Caverns"
+        ]
     },
     {
         "name": "Silver Dragon Wyrmling",
@@ -16135,7 +18028,11 @@
         },
         "group": "Silver Dragon",
         "armor_desc": "natural armor",
-        "page_no": 303
+        "page_no": 303,
+        "environments": [
+            "Feywild",
+            "Mountains"
+        ]
     },
     {
         "name": "Skeleton",
@@ -16181,7 +18078,14 @@
         },
         "group": "Skeletons",
         "armor_desc": "armor scraps",
-        "page_no": 346
+        "page_no": 346,
+        "environments": [
+            "Temple",
+            "urban",
+            "Shadowfell",
+            "Ruin",
+            "Tomb"
+        ]
     },
     {
         "name": "Solar",
@@ -16296,7 +18200,11 @@
         },
         "group": "Angels",
         "armor_desc": "natural armor",
-        "page_no": 262
+        "page_no": 262,
+        "environments": [
+            "Temple",
+            "Astral Plane"
+        ]
     },
     {
         "name": "Specter",
@@ -16346,7 +18254,14 @@
             "walk": 0,
             "fly": 50
         },
-        "page_no": 346
+        "page_no": 346,
+        "environments": [
+            "underdark",
+            "urban",
+            "Shadowfell",
+            "Ruin",
+            "Tomb"
+        ]
     },
     {
         "name": "Spider",
@@ -16401,7 +18316,12 @@
             "walk": 20,
             "climb": 20
         },
-        "page_no": 389
+        "page_no": 389,
+        "environments": [
+            "jungle",
+            "Ruin",
+            "Caverns"
+        ]
     },
     {
         "name": "Spirit Naga",
@@ -16438,7 +18358,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:\n\n• Cantrips (at will): mage hand, minor illusion, ray of frost\n• 1st level (4 slots): charm person, detect magic, sleep\n• 2nd level (3 slots): detect thoughts, hold person\n• 3rd level (3 slots): lightning bolt, water breathing\n• 4th level (3 slots): blight, dimension door\n• 5th level (2 slots): dominate person",
+                "desc": "The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): mage hand, minor illusion, ray of frost\n\u2022 1st level (4 slots): charm person, detect magic, sleep\n\u2022 2nd level (3 slots): detect thoughts, hold person\n\u2022 3rd level (3 slots): lightning bolt, water breathing\n\u2022 4th level (3 slots): blight, dimension door\n\u2022 5th level (2 slots): dominate person",
                 "attack_bonus": 0
             }
         ],
@@ -16471,7 +18391,18 @@
         },
         "group": "Nagas",
         "armor_desc": "natural armor",
-        "page_no": 335
+        "page_no": 335,
+        "environments": [
+            "Temple",
+            "Desert",
+            "underdark",
+            "Astral Plane",
+            "Mountains",
+            "Forest",
+            "Ruin",
+            "Jungle",
+            "Caverns"
+        ]
     },
     {
         "name": "Sprite",
@@ -16527,10 +18458,17 @@
             "fly": 40
         },
         "armor_desc": "leather armor",
-        "page_no": 348
+        "page_no": 348,
+        "environments": [
+            "Swamp",
+            "Forest",
+            "Feywild",
+            "forest"
+        ]
     },
     {
         "name": "Spy",
+        "desc": "Rulers, nobles, merchants, guildmasters, and other wealthy individuals use **spies** to gain the upper hand in a world of cutthroat politics. A spy is trained to secretly gather information. Loyal spies would rather die than divulge information that could compromise them or their employers.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -16595,7 +18533,13 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 402
+        "page_no": 402,
+        "environments": [
+            "urban",
+            "Sewer",
+            "Ruin",
+            "Settlement"
+        ]
     },
     {
         "name": "Steam Mephit",
@@ -16659,7 +18603,16 @@
             "fly": 30
         },
         "group": "Mephits",
-        "page_no": 331
+        "page_no": 331,
+        "environments": [
+            "underwater",
+            "Jungle",
+            "Caverns",
+            "Plane of Water",
+            "Plane of Fire",
+            "Settlement",
+            "Water"
+        ]
     },
     {
         "name": "Stirge",
@@ -16698,7 +18651,23 @@
             "fly": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 349
+        "page_no": 349,
+        "environments": [
+            "hill",
+            "Desert",
+            "underdark",
+            "urban",
+            "grassland",
+            "coastal",
+            "forest",
+            "swamp",
+            "jungle",
+            "Hills",
+            "Swamp",
+            "mountain",
+            "Caverns",
+            "desert"
+        ]
     },
     {
         "name": "Stone Giant",
@@ -16768,7 +18737,15 @@
         },
         "group": "Giants",
         "armor_desc": "natural armor",
-        "page_no": 313
+        "page_no": 313,
+        "environments": [
+            "hill",
+            "underdark",
+            "Hills",
+            "Mountains",
+            "mountain",
+            "Plane of Earth"
+        ]
     },
     {
         "name": "Stone Golem",
@@ -16834,7 +18811,10 @@
         },
         "group": "Golems",
         "armor_desc": "natural armor",
-        "page_no": 317
+        "page_no": 317,
+        "environments": [
+            "any"
+        ]
     },
     {
         "name": "Storm Giant",
@@ -16920,7 +18900,15 @@
         },
         "group": "Giants",
         "armor_desc": "scale mail",
-        "page_no": 313
+        "page_no": 313,
+        "environments": [
+            "Plane of Air",
+            "Mountains",
+            "coastal",
+            "Plane of Water",
+            "desert",
+            "Water"
+        ]
     },
     {
         "name": "Succubus/Incubus",
@@ -16993,7 +18981,11 @@
             "fly": 60
         },
         "armor_desc": "natural armor",
-        "page_no": 349
+        "page_no": 349,
+        "environments": [
+            "any",
+            "Hell"
+        ]
     },
     {
         "name": "Swarm of Bats",
@@ -17047,7 +19039,18 @@
             "walk": 0,
             "fly": 30
         },
-        "page_no": 389
+        "page_no": 389,
+        "environments": [
+            "hill",
+            "underdark",
+            "urban",
+            "Mountains",
+            "Tomb",
+            "jungle",
+            "Shadowfell",
+            "mountain",
+            "Caverns"
+        ]
     },
     {
         "name": "Swarm of Beetles",
@@ -17093,7 +19096,12 @@
             "climb": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 391
+        "page_no": 391,
+        "environments": [
+            "desert",
+            "caves",
+            "underdark"
+        ]
     },
     {
         "name": "Swarm of Centipedes",
@@ -17138,7 +19146,14 @@
             "climb": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 391
+        "page_no": 391,
+        "environments": [
+            "ruins",
+            "caves",
+            "underdark",
+            "Forest",
+            "any"
+        ]
     },
     {
         "name": "Swarm of Insects",
@@ -17183,7 +19198,18 @@
             "climb": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 389
+        "page_no": 389,
+        "environments": [
+            "hill",
+            "underdark",
+            "urban",
+            "grassland",
+            "forest",
+            "swamp",
+            "Jungle",
+            "jungle",
+            "Swamp"
+        ]
     },
     {
         "name": "Swarm of Poisonous Snakes",
@@ -17227,7 +19253,24 @@
             "walk": 30,
             "swim": 30
         },
-        "page_no": 390
+        "page_no": 390,
+        "environments": [
+            "Desert",
+            "Sewer",
+            "Mountains",
+            "Forest",
+            "Grassland",
+            "Ruin",
+            "forest",
+            "Tomb",
+            "swamp",
+            "Jungle",
+            "Hills",
+            "jungle",
+            "Swamp",
+            "Caverns",
+            "Water"
+        ]
     },
     {
         "name": "Swarm of Quippers",
@@ -17281,7 +19324,12 @@
             "walk": 0,
             "swim": 40
         },
-        "page_no": 390
+        "page_no": 390,
+        "environments": [
+            "underwater",
+            "Sewer",
+            "Water"
+        ]
     },
     {
         "name": "Swarm of Rats",
@@ -17329,7 +19377,17 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 390
+        "page_no": 390,
+        "environments": [
+            "urban",
+            "Sewer",
+            "Forest",
+            "Ruin",
+            "swamp",
+            "Swamp",
+            "Caverns",
+            "Settlement"
+        ]
     },
     {
         "name": "Swarm of Ravens",
@@ -17373,7 +19431,14 @@
             "walk": 10,
             "fly": 50
         },
-        "page_no": 391
+        "page_no": 391,
+        "environments": [
+            "hill",
+            "urban",
+            "swamp",
+            "Forest",
+            "forest"
+        ]
     },
     {
         "name": "Swarm of Spiders",
@@ -17433,7 +19498,14 @@
             "climb": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 391
+        "page_no": 391,
+        "environments": [
+            "ruins",
+            "caves",
+            "underdark",
+            "Forest",
+            "any"
+        ]
     },
     {
         "name": "Swarm of Wasps",
@@ -17478,7 +19550,11 @@
             "fly": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 391
+        "page_no": 391,
+        "environments": [
+            "any",
+            "Forest"
+        ]
     },
     {
         "name": "Tarrasque",
@@ -17595,10 +19671,16 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 350
+        "page_no": 350,
+        "environments": [
+            "urban",
+            "Hills",
+            "Settlement"
+        ]
     },
     {
         "name": "Thug",
+        "desc": "**Thugs** are ruthless enforcers skilled at intimidation and violence. They work for money and have few scruples.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -17652,7 +19734,11 @@
             "walk": 30
         },
         "armor_desc": "leather armor",
-        "page_no": 402
+        "page_no": 402,
+        "environments": [
+            "urban",
+            "Settlement"
+        ]
     },
     {
         "name": "Tiger",
@@ -17708,7 +19794,14 @@
         "speed_json": {
             "walk": 40
         },
-        "page_no": 391
+        "page_no": 391,
+        "environments": [
+            "Jungle",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "forest"
+        ]
     },
     {
         "name": "Treant",
@@ -17775,10 +19868,17 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 351
+        "page_no": 351,
+        "environments": [
+            "Jungle",
+            "Forest",
+            "Swamp",
+            "forest"
+        ]
     },
     {
         "name": "Tribal Warrior",
+        "desc": "**Tribal warriors** live beyond civilization, most often subsisting on fishing and hunting. Each tribe acts in accordance with the wishes of its chief, who is the greatest or oldest warrior of the tribe or a tribe member blessed by the gods.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -17820,7 +19920,19 @@
             "walk": 30
         },
         "armor_desc": "hide armor",
-        "page_no": 402
+        "page_no": 402,
+        "environments": [
+            "hill",
+            "underdark",
+            "grassland",
+            "coastal",
+            "forest",
+            "arctic",
+            "swamp",
+            "jungle",
+            "mountain",
+            "desert"
+        ]
     },
     {
         "name": "Triceratops",
@@ -17873,7 +19985,15 @@
         },
         "group": "Dinosaurs",
         "armor_desc": "natural armor",
-        "page_no": 279
+        "page_no": 279,
+        "environments": [
+            "Jungle",
+            "jungle",
+            "Swamp",
+            "grassland",
+            "Mountains",
+            "Grassland"
+        ]
     },
     {
         "name": "Troll",
@@ -17941,7 +20061,25 @@
             "walk": 30
         },
         "armor_desc": "natural armor",
-        "page_no": 351
+        "page_no": 351,
+        "environments": [
+            "hill",
+            "underdark",
+            "Mountains",
+            "Grassland",
+            "Ruin",
+            "swamp",
+            "Feywild",
+            "Swamp",
+            "mountain",
+            "Forest",
+            "forest",
+            "arctic",
+            "Jungle",
+            "Hills",
+            "jungle",
+            "Caverns"
+        ]
     },
     {
         "name": "Tyrannosaurus Rex",
@@ -17993,7 +20131,15 @@
         },
         "group": "Dinosaurs",
         "armor_desc": "natural armor",
-        "page_no": 279
+        "page_no": 279,
+        "environments": [
+            "Jungle",
+            "jungle",
+            "Swamp",
+            "grassland",
+            "Mountains",
+            "Grassland"
+        ]
     },
     {
         "name": "Unicorn",
@@ -18101,7 +20247,13 @@
         "speed_json": {
             "walk": 50
         },
-        "page_no": 351
+        "page_no": 351,
+        "environments": [
+            "Jungle",
+            "Forest",
+            "Feywild",
+            "forest"
+        ]
     },
     {
         "name": "Vampire",
@@ -18217,7 +20369,17 @@
         },
         "group": "Vampires",
         "armor_desc": "natural armor",
-        "page_no": 352
+        "page_no": 352,
+        "environments": [
+            "urban",
+            "Mountains",
+            "Forest",
+            "Ruin",
+            "Tomb",
+            "Hills",
+            "Shadowfell",
+            "Settlement"
+        ]
     },
     {
         "name": "Vampire Spawn",
@@ -18287,10 +20449,22 @@
         },
         "group": "Vampires",
         "armor_desc": "natural armor",
-        "page_no": 354
+        "page_no": 354,
+        "environments": [
+            "underdark",
+            "urban",
+            "Mountains",
+            "Forest",
+            "Ruin",
+            "Tomb",
+            "Hills",
+            "Shadowfell",
+            "Settlement"
+        ]
     },
     {
         "name": "Veteran",
+        "desc": "**Veterans** are professional fighters that take up arms for pay or to protect something they believe in or value. Their ranks include soldiers retired from long service and warriors who never served anyone but themselves.",
         "size": "Medium",
         "type": "humanoid",
         "subtype": "any race",
@@ -18346,7 +20520,24 @@
             "walk": 30
         },
         "armor_desc": "splint",
-        "page_no": 403
+        "page_no": 403,
+        "environments": [
+            "hill",
+            "Desert",
+            "underdark",
+            "urban",
+            "Mountains",
+            "coastal",
+            "grassland",
+            "Forest",
+            "Grassland",
+            "forest",
+            "arctic",
+            "Hills",
+            "mountain",
+            "desert",
+            "Settlement"
+        ]
     },
     {
         "name": "Violet Fungus",
@@ -18395,7 +20586,13 @@
             "walk": 5
         },
         "group": "Fungi",
-        "page_no": 309
+        "page_no": 309,
+        "environments": [
+            "underdark",
+            "Forest",
+            "Swamp",
+            "Caverns"
+        ]
     },
     {
         "name": "Vrock",
@@ -18472,7 +20669,10 @@
         },
         "group": "Demons",
         "armor_desc": "natural armor",
-        "page_no": 273
+        "page_no": 273,
+        "environments": [
+            "Abyss"
+        ]
     },
     {
         "name": "Vulture",
@@ -18522,7 +20722,12 @@
             "walk": 10,
             "fly": 50
         },
-        "page_no": 392
+        "page_no": 392,
+        "environments": [
+            "hill",
+            "Desert",
+            "grassland"
+        ]
     },
     {
         "name": "Warhorse",
@@ -18566,7 +20771,11 @@
         "speed_json": {
             "walk": 60
         },
-        "page_no": 392
+        "page_no": 392,
+        "environments": [
+            "urban",
+            "Settlement"
+        ]
     },
     {
         "name": "Warhorse Skeleton",
@@ -18605,7 +20814,11 @@
         },
         "group": "Skeletons",
         "armor_desc": "barding scraps",
-        "page_no": 346
+        "page_no": 346,
+        "environments": [
+            "ruins",
+            "any"
+        ]
     },
     {
         "name": "Water Elemental",
@@ -18667,7 +20880,16 @@
         },
         "group": "Elementals",
         "armor_desc": "natural armor",
-        "page_no": 307
+        "page_no": 307,
+        "environments": [
+            "underwater",
+            "swamp",
+            "coastal",
+            "Plane of Water",
+            "desert",
+            "Laboratory",
+            "Water"
+        ]
     },
     {
         "name": "Weasel",
@@ -18712,7 +20934,10 @@
         "speed_json": {
             "walk": 30
         },
-        "page_no": 392
+        "page_no": 392,
+        "environments": [
+            "Forest"
+        ]
     },
     {
         "name": "Werebear",
@@ -18784,7 +21009,19 @@
         },
         "group": "Lycanthropes",
         "armor_desc": "10 in humanoid form, 11 (natural armor) in bear and hybrid form",
-        "page_no": 326
+        "page_no": 326,
+        "environments": [
+            "hill",
+            "Mountains",
+            "Tundra",
+            "Forest",
+            "forest",
+            "arctic",
+            "Hills",
+            "Feywild",
+            "Shadowfell",
+            "Settlement"
+        ]
     },
     {
         "name": "Wereboar",
@@ -18855,7 +21092,18 @@
         },
         "group": "Lycanthropes",
         "armor_desc": "10 in humanoid form, 11 (natural armor) in boar or hybrid form",
-        "page_no": 327
+        "page_no": 327,
+        "environments": [
+            "hill",
+            "grassland",
+            "Forest",
+            "forest",
+            "jungle",
+            "Hills",
+            "Shadowfell",
+            "Feywild",
+            "Settlement"
+        ]
     },
     {
         "name": "Wererat",
@@ -18926,7 +21174,18 @@
             "walk": 30
         },
         "group": "Lycanthropes",
-        "page_no": 327
+        "page_no": 327,
+        "environments": [
+            "urban",
+            "Sewer",
+            "Forest",
+            "forest",
+            "Ruin",
+            "Feywild",
+            "Shadowfell",
+            "Caverns",
+            "Settlement"
+        ]
     },
     {
         "name": "Weretiger",
@@ -19010,7 +21269,12 @@
             "walk": 30
         },
         "group": "Lycanthropes",
-        "page_no": 328
+        "page_no": 328,
+        "environments": [
+            "forest",
+            "jungle",
+            "grassland"
+        ]
     },
     {
         "name": "Werewolf",
@@ -19082,7 +21346,11 @@
         },
         "group": "Lycanthropes",
         "armor_desc": "11 in humanoid form, 12 (natural armor) in wolf or hybrid form",
-        "page_no": 328
+        "page_no": 328,
+        "environments": [
+            "hill",
+            "forest"
+        ]
     },
     {
         "name": "White Dragon Wyrmling",
@@ -19136,7 +21404,12 @@
         },
         "group": "White Dragon",
         "armor_desc": "natural armor",
-        "page_no": 290
+        "page_no": 290,
+        "environments": [
+            "Tundra",
+            "Mountains",
+            "ice"
+        ]
     },
     {
         "name": "Wight",
@@ -19202,7 +21475,12 @@
             "walk": 30
         },
         "armor_desc": "studded leather",
-        "page_no": 354
+        "page_no": 354,
+        "environments": [
+            "underdark",
+            "swamp",
+            "urban"
+        ]
     },
     {
         "name": "Will-o'-Wisp",
@@ -19267,10 +21545,16 @@
             "walk": 0,
             "fly": 50
         },
-        "page_no": 355
+        "page_no": 355,
+        "environments": [
+            "urban",
+            "swamp",
+            "forest"
+        ]
     },
     {
         "name": "Winter Wolf",
+        "desc": "The arctic-dwelling **winter wolf** is as large as a dire wolf but has snow-white fur and pale blue eyes. Frost giants use these evil creatures as guards and hunting companions, putting the wolves'deadly breath weapon to use against their foes. Winter wolves communicate with one another using growls and barks, but they speak Common and Giant well enough to follow simple conversations.",
         "size": "Large",
         "type": "monstrosity",
         "subtype": "",
@@ -19330,7 +21614,10 @@
             "walk": 50
         },
         "armor_desc": "natural armor",
-        "page_no": 392
+        "page_no": 392,
+        "environments": [
+            "arctic"
+        ]
     },
     {
         "name": "Wolf",
@@ -19382,10 +21669,16 @@
             "walk": 40
         },
         "armor_desc": "natural armor",
-        "page_no": 393
+        "page_no": 393,
+        "environments": [
+            "hill",
+            "forest",
+            "grassland"
+        ]
     },
     {
         "name": "Worg",
+        "desc": "A **worg** is an evil predator that delights in hunting and devouring creatures weaker than itself. Cunning and malevolent, worgs roam across the remote wilderness or are raised by goblins and hobgoblins. Those creatures use worgs as mounts, but a worg will turn on its rider if it feels mistreated or malnourished. Worgs speak in their own language and Goblin, and a few learn to speak Common as well.",
         "size": "Large",
         "type": "monstrosity",
         "subtype": "",
@@ -19428,7 +21721,12 @@
             "walk": 50
         },
         "armor_desc": "natural armor",
-        "page_no": 393
+        "page_no": 393,
+        "environments": [
+            "hill",
+            "forest",
+            "grassland"
+        ]
     },
     {
         "name": "Wraith",
@@ -19484,7 +21782,10 @@
             "walk": 0,
             "fly": 60
         },
-        "page_no": 355
+        "page_no": 355,
+        "environments": [
+            "underdark"
+        ]
     },
     {
         "name": "Wyvern",
@@ -19543,7 +21844,11 @@
             "fly": 80
         },
         "armor_desc": "natural armor",
-        "page_no": 356
+        "page_no": 356,
+        "environments": [
+            "hill",
+            "mountain"
+        ]
     },
     {
         "name": "Xorn",
@@ -19613,7 +21918,10 @@
             "burrow": 20
         },
         "armor_desc": "natural armor",
-        "page_no": 356
+        "page_no": 356,
+        "environments": [
+            "underdark"
+        ]
     },
     {
         "name": "Young Black Dragon",
@@ -19685,7 +21993,10 @@
         },
         "group": "Black Dragon",
         "armor_desc": "natural armor",
-        "page_no": 281
+        "page_no": 281,
+        "environments": [
+            "swamp"
+        ]
     },
     {
         "name": "Young Blue Dragon",
@@ -19750,7 +22061,11 @@
         },
         "group": "Blue Dragon",
         "armor_desc": "natural armor",
-        "page_no": 283
+        "page_no": 283,
+        "environments": [
+            "desert",
+            "coastal"
+        ]
     },
     {
         "name": "Young Brass Dragon",
@@ -19816,7 +22131,12 @@
         },
         "group": "Brass Dragon",
         "armor_desc": "natural armor",
-        "page_no": 292
+        "page_no": 292,
+        "environments": [
+            "desert",
+            "volcano",
+            "any"
+        ]
     },
     {
         "name": "Young Bronze Dragon",
@@ -19889,7 +22209,11 @@
         },
         "group": "Bronze Dragon",
         "armor_desc": "natural armor",
-        "page_no": 295
+        "page_no": 295,
+        "environments": [
+            "desert",
+            "coastal"
+        ]
     },
     {
         "name": "Young Copper Dragon",
@@ -19955,7 +22279,10 @@
         },
         "group": "Copper Dragon",
         "armor_desc": "natural armor",
-        "page_no": 297
+        "page_no": 297,
+        "environments": [
+            "hill"
+        ]
     },
     {
         "name": "Young Gold Dragon",
@@ -20029,7 +22356,11 @@
         },
         "group": "Gold Dragon",
         "armor_desc": "natural armor",
-        "page_no": 300
+        "page_no": 300,
+        "environments": [
+            "forest",
+            "grassland"
+        ]
     },
     {
         "name": "Young Green Dragon",
@@ -20102,7 +22433,10 @@
         },
         "group": "Green Dragon",
         "armor_desc": "natural armor",
-        "page_no": 285
+        "page_no": 285,
+        "environments": [
+            "forest"
+        ]
     },
     {
         "name": "Young Red Dragon",
@@ -20167,7 +22501,11 @@
         },
         "group": "Red Dragon",
         "armor_desc": "natural armor",
-        "page_no": 288
+        "page_no": 288,
+        "environments": [
+            "hill",
+            "mountain"
+        ]
     },
     {
         "name": "Young Silver Dragon",
@@ -20233,7 +22571,11 @@
         },
         "group": "Silver Dragon",
         "armor_desc": "natural armor",
-        "page_no": 303
+        "page_no": 303,
+        "environments": [
+            "urban",
+            "mountain"
+        ]
     },
     {
         "name": "Young White Dragon",
@@ -20306,7 +22648,10 @@
         },
         "group": "White Dragon",
         "armor_desc": "natural armor",
-        "page_no": 290
+        "page_no": 290,
+        "environments": [
+            "arctic"
+        ]
     },
     {
         "name": "Zombie",
@@ -20352,6 +22697,10 @@
             "walk": 20
         },
         "group": "Zombies",
-        "page_no": 356
+        "page_no": 356,
+        "environments": [
+            "urban",
+            "jungle"
+        ]
     }
 ]

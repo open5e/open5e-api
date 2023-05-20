@@ -172,6 +172,7 @@ class MonsterFilter(django_filters.FilterSet):
         fields = {
             'slug': ['in', 'iexact', 'exact', 'in', ],
             'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
             'cr': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'armor_class': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'type': ['iexact', 'exact', 'in', 'icontains'],

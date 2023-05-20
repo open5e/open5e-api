@@ -340,6 +340,8 @@ class Importer:
             i = models.Monster(document=self._last_document_imported)
             new = True
         i.name = monster_json["name"]
+        if 'desc' in monster_json:
+            i.desc = monster_json["desc"]
         i.slug = slug
         img_file = MONSTERS_IMG_DIR / f"{slug}.png"
         if img_file.exists():
@@ -630,7 +632,11 @@ class Importer:
         """Create or update a single Spell model from a JSON object."""
         new = False
         exists = False
-        slug = slugify(spell_json["name"])
+        slug = ''
+        if 'slug' in spell_json:
+            slug = spell_json['slug']
+        else:
+            slug = slugify(spell_json['name'])
         if models.Spell.objects.filter(slug=slug).exists():
             i = models.Spell.objects.get(slug=slug)
             exists = True
