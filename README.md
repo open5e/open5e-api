@@ -54,7 +54,17 @@ And your server should be available at http://localhost:8000.
 
 ## Tests
 
-To run the test suite:
+### To run the test suite:
+
+First, install the prerequisites as described above
+
+Then, install dev requirements:
+
+```
+pipenv install --dev
+```
+
+Then, run the test suite:
 ```
 pipenv run pytest
 ```
