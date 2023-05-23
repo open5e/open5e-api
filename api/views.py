@@ -149,6 +149,7 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
         'dnd_class',
         'document__slug',
     )
+
 class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of spell lists.
@@ -163,7 +164,6 @@ class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.SpellList.objects.all()
     serializer_class = serializers.SpellListSerializer
-    
 
 class MonsterFilter(django_filters.FilterSet):
 
@@ -198,6 +198,22 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.MonsterSerializer
     search_fields = ['name']
 
+class BackgroundFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Background
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'skill_proficiencies': ['iexact', 'exact', 'icontains'],
+            'tool_proficiencies': ['iexact', 'exact', 'icontains'],
+            'languages': ['iexact', 'exact', 'icontains'],
+            'feature': ['iexact', 'exact', 'icontains'],
+            'feature_desc': ['iexact', 'exact', 'icontains'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
+
 class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of backgrounds.
@@ -213,14 +229,20 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Background.objects.all()
     serializer_class = serializers.BackgroundSerializer
     ordering_fields = '__all__'
-    ordering=['name']
-    filterset_fields=(
-        'name',
-        'skill_proficiencies',
-        'languages',
-        'document__slug',
-    )
+    ordering = ['name']
+    filterset_class = BackgroundFilter
     search_fields = ['name']
+
+class PlaneFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Plane
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
 
 class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -236,10 +258,19 @@ class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.Plane.objects.all()
     serializer_class = serializers.PlaneSerializer
-    filterset_fields=(
-        'name',
-        'document__slug',
-    )
+    filterset_class=PlaneFilter
+
+class SectionFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Section
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'parent' : ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
 
 class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -257,11 +288,18 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.SectionSerializer
     ordering_fields = '__all__'
     ordering=['name']
-    filterset_fields=(
-        'name',
-        'parent',
-        'document__slug',
-    )
+    filterset_class = SectionFilter
+
+class FeatFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Feat
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in']
+        }
 
 class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -277,11 +315,18 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.Feat.objects.all()
     serializer_class = serializers.FeatSerializer
-    filterset_fields=(
-        'name',
-        'prerequisite',
-        'document__slug',
-        )
+    filterset_class = FeatFilter
+
+class ConditionFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Condition
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
 
 class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -302,6 +347,25 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
         'document__slug',
     )
 
+class RaceFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Race
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in'],
+            'asi_desc': ['iexact', 'exact', 'icontains'],
+            'age': ['iexact', 'exact', 'icontains'],
+            'alignment': ['iexact', 'exact', 'icontains'],
+            'size': ['iexact', 'exact', 'icontains'],
+            'speed_desc':['iexact', 'exact', 'icontains'],
+            'languages': ['iexact', 'exact', 'icontains'],
+            'vision': ['iexact', 'exact', 'icontains'],
+            'traits': ['iexact', 'exact', 'icontains']
+        }
+
 class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of races.
@@ -316,10 +380,18 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.Race.objects.all()
     serializer_class = serializers.RaceSerializer
-    filterset_fields=(
-        'name',
-        'document__slug',
-    )
+    filterset_class = RaceFilter
+
+class SubraceFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Subrace
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
 
 class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -340,6 +412,17 @@ class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
         'document__slug',
     )
 
+class CharClassFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.CharClass
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
+
 class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of classes and archetypes.
@@ -359,6 +442,17 @@ class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
         'document__slug',
     )
 
+class ArchetypeFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Archetype
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
+
 class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint that allows viewing of Archetypes.
@@ -377,6 +471,17 @@ class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
         'name',
         'document__slug',
     )
+
+class MagicItemFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.MagicItem
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
 
 class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -398,6 +503,17 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     )
     search_fields = ['name']
 
+class WeaponFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Weapon
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
+
 class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of weapons.
@@ -417,6 +533,17 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
         'document__slug',
     )
     search_fields = ['name']
+
+class ArmorFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.Armor
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
 
 class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     """
