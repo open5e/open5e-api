@@ -150,6 +150,18 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
         'document__slug',
     )
 
+class SpellListFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.SpellList
+        fields = {
+            'slug': ['in', 'iexact', 'exact', 'in', ],
+            'name': ['iexact', 'exact'],
+            'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'document__slug': ['iexact', 'exact', 'in', ]
+        }
+
+
 class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of spell lists.
@@ -164,6 +176,7 @@ class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.SpellList.objects.all()
     serializer_class = serializers.SpellListSerializer
+    filterset_class = SpellListFilter
 
 class MonsterFilter(django_filters.FilterSet):
 
