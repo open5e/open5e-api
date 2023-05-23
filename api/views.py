@@ -383,7 +383,7 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = RaceFilter
 
 class SubraceFilter(django_filters.FilterSet):
-
+    # Unused, but could be implemented later.
     class Meta:
         model = models.Subrace
         fields = {
@@ -394,6 +394,7 @@ class SubraceFilter(django_filters.FilterSet):
         }
 
 class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
+    # Unused, but could be implemented later.
     """
     list: API endpoint that allows viewing of Subraces.
     retrieve: API endpoint for returning a particular subrace.
@@ -420,6 +421,16 @@ class CharClassFilter(django_filters.FilterSet):
             'slug': ['in', 'iexact', 'exact', 'in', ],
             'name': ['iexact', 'exact'],
             'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'hit_dice': ['iexact', 'exact', 'in'],
+            'hp_at_1st_level': ['iexact', 'exact', 'icontains'],
+            'hp_at_higher_levels': ['iexact', 'exact', 'icontains'],
+            'prof_armor': ['iexact', 'exact', 'icontains'],
+            'prof_weapons': ['iexact', 'exact', 'icontains'],
+            'prof_tools': ['iexact', 'exact', 'icontains'],
+            'prof_skills': ['iexact', 'exact', 'icontains'],
+            'equipment': ['iexact', 'exact', 'icontains'],
+            'spellcasting_ability': ['iexact', 'exact', 'icontains'],
+            'subtypes_name': ['iexact', 'exact', 'icontains'],
             'document__slug': ['iexact', 'exact', 'in', ]
         }
 
@@ -437,10 +448,7 @@ class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.CharClass.objects.all()
     serializer_class = serializers.CharClassSerializer
-    filterset_fields=(
-        'name',
-        'document__slug',
-    )
+    filterset_class = CharClassFilter
 
 class ArchetypeFilter(django_filters.FilterSet):
 
