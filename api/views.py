@@ -451,7 +451,7 @@ class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = CharClassFilter
 
 class ArchetypeFilter(django_filters.FilterSet):
-
+    # Unused but could be implemented later.
     class Meta:
         model = models.Archetype
         fields = {
@@ -462,6 +462,7 @@ class ArchetypeFilter(django_filters.FilterSet):
         }
 
 class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
+    # Unused but could be implemented later.
     """
     list: API endpoint that allows viewing of Archetypes.
     retrieve: API endpoint for returning a particular archetype.
@@ -488,6 +489,9 @@ class MagicItemFilter(django_filters.FilterSet):
             'slug': ['in', 'iexact', 'exact', 'in', ],
             'name': ['iexact', 'exact'],
             'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'type': ['iexact', 'exact', 'icontains'],
+            'rarity': ['iexact', 'exact', 'icontains'],
+            'requires_attunement': ['iexact', 'exact'],
             'document__slug': ['iexact', 'exact', 'in', ]
         }
 
@@ -505,10 +509,7 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.MagicItem.objects.all()
     serializer_class = serializers.MagicItemSerializer
-    filterset_fields=(
-        'name',
-        'document__slug',
-    )
+    filterset_class = MagicItemFilter
     search_fields = ['name']
 
 class WeaponFilter(django_filters.FilterSet):
@@ -519,6 +520,10 @@ class WeaponFilter(django_filters.FilterSet):
             'slug': ['in', 'iexact', 'exact', 'in', ],
             'name': ['iexact', 'exact'],
             'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'cost': ['iexact', 'exact', 'icontains'],
+            'damage_dice': ['iexact', 'exact', 'icontains'],
+            'damage_type': ['iexact', 'exact', 'icontains'],
+            'weight': ['iexact', 'exact', 'icontains'],
             'document__slug': ['iexact', 'exact', 'in', ]
         }
 
@@ -536,10 +541,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.Weapon.objects.all()
     serializer_class = serializers.WeaponSerializer
-    filterset_fields=(
-        'name',
-        'document__slug',
-    )
+    filterset_class = WeaponFilter
     search_fields = ['name']
 
 class ArmorFilter(django_filters.FilterSet):
@@ -550,6 +552,8 @@ class ArmorFilter(django_filters.FilterSet):
             'slug': ['in', 'iexact', 'exact', 'in', ],
             'name': ['iexact', 'exact'],
             'desc': ['iexact', 'exact', 'in', 'icontains'],
+            'cost': ['iexact', 'exact', 'icontains'],
+            'weight': ['iexact', 'exact', 'icontains'],
             'document__slug': ['iexact', 'exact', 'in', ]
         }
 
@@ -567,8 +571,5 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.Armor.objects.all()
     serializer_class = serializers.ArmorSerializer
-    filterset_fields=(
-        'name',
-        'document__slug',
-    )
+    filterset_class = ArmorFilter
     search_fields = ['name']
