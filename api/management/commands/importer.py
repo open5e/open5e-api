@@ -194,30 +194,31 @@ class Importer:
         i.slug = slug
         if "subtypes-name" in class_json:
             i.subtypes_name = class_json["subtypes-name"]
-        if "hit-dice" in class_json["features"]:
-            i.hit_dice = class_json["features"]["hit-dice"]
-        if "hp-at-1st-level" in class_json["features"]:
-            i.hp_at_1st_level = class_json["features"]["hp-at-1st-level"]
-        if "hp-at-higher-levels" in class_json["features"]:
-            i.hp_at_higher_levels = class_json["features"]["hp-at-higher-levels"]
-        if "prof-armor" in class_json["features"]:
-            i.prof_armor = class_json["features"]["prof-armor"]
-        if "prof-weapons" in class_json["features"]:
-            i.prof_weapons = class_json["features"]["prof-weapons"]
-        if "prof-tools" in class_json["features"]:
-            i.prof_tools = class_json["features"]["prof-tools"]
-        if "prof-saving-throws" in class_json["features"]:
-            i.prof_saving_throws = class_json["features"]["prof-saving-throws"]
-        if "prof-skills" in class_json["features"]:
-            i.prof_skills = class_json["features"]["prof-skills"]
-        if "equipment" in class_json["features"]:
-            i.equipment = class_json["features"]["equipment"]
-        if "table" in class_json["features"]:
-            i.table = class_json["features"]["table"]
-        if "spellcasting-ability" in class_json["features"]:
-            i.spellcasting_ability = class_json["features"]["spellcasting-ability"]
-        if "desc" in class_json["features"]:
-            i.desc = class_json["features"]["desc"]
+        if class_json.get("features") is not None:
+            if "hit-dice" in class_json["features"]:
+                i.hit_dice = class_json["features"]["hit-dice"]
+            if "hp-at-1st-level" in class_json["features"]:
+                i.hp_at_1st_level = class_json["features"]["hp-at-1st-level"]
+            if "hp-at-higher-levels" in class_json["features"]:
+                i.hp_at_higher_levels = class_json["features"]["hp-at-higher-levels"]
+            if "prof-armor" in class_json["features"]:
+                i.prof_armor = class_json["features"]["prof-armor"]
+            if "prof-weapons" in class_json["features"]:
+                i.prof_weapons = class_json["features"]["prof-weapons"]
+            if "prof-tools" in class_json["features"]:
+                i.prof_tools = class_json["features"]["prof-tools"]
+            if "prof-saving-throws" in class_json["features"]:
+                i.prof_saving_throws = class_json["features"]["prof-saving-throws"]
+            if "prof-skills" in class_json["features"]:
+                i.prof_skills = class_json["features"]["prof-skills"]
+            if "equipment" in class_json["features"]:
+                i.equipment = class_json["features"]["equipment"]
+            if "table" in class_json["features"]:
+                i.table = class_json["features"]["table"]
+            if "spellcasting-ability" in class_json["features"]:
+                i.spellcasting_ability = class_json["features"]["spellcasting-ability"]
+            if "desc" in class_json["features"]:
+                i.desc = class_json["features"]["desc"]
         # Must save model before Archetypes can point to it
         result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
