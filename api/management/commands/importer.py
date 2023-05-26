@@ -449,8 +449,8 @@ class Importer:
             i.challenge_rating = monster_json["challenge_rating"]
             i.cr = float(Fraction(i.challenge_rating))
         if "environments" in monster_json:
-            environments_str = ', '.join(monster_json["environments"])
-            i.environments = environments_str
+            environments_str = json.dumps(monster_json['environments'])
+            i.environments_json = environments_str
         if "actions" in monster_json:
             for idx, z in enumerate(monster_json["actions"]):
                 if "attack_bonus" in z:
