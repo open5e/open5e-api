@@ -195,6 +195,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.Monster.objects.all()
     filterset_class = MonsterFilter
+    
     serializer_class = serializers.MonsterSerializer
     search_fields = ['name']
 
