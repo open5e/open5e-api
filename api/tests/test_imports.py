@@ -411,7 +411,24 @@ class MonstersTestCase(APITestCase):
                 "walk": 30
             },
             "armor_desc": "leather armor, shield",
-            "page_no": 315
+            "page_no": 315,
+            "environments": [
+                "Hill",
+                "Desert",
+                "Underdark",
+                "Mountains",
+                "Grassland",
+                "Tundra",
+                "Ruin",
+                "Feywild",
+                "Swamp",
+                "Settlement",
+                "Sewer",
+                "Forest",
+                "Jungle",
+                "Hills",
+                "Caverns"
+            ]
         }
         """
         i = Importer(ImportOptions(update=True, append=False, testrun=False))
@@ -471,7 +488,8 @@ class MonstersTestCase(APITestCase):
             'languages',
             'challenge_rating',
             'actions',
-            'page_no']
+            'page_no',
+            'environments']
 
         unequal_fields = [
             ('speed_json', 'speed')]
