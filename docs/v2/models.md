@@ -79,6 +79,8 @@ Lots more API calls: This will result in a request for EACH feature in a given F
 ## Unanswered questions:
 Features often modify fields of a related Object. How is this modification of fields specified?
 
+Features or featuresets often have a pre-requisite. How do we communicate that pre-requisite to the client?
+
 A spell can be cast at a bunch of different levels. Is each casting option a different interaction? What about cantrips? How can the different damage rolls be represented?
 
 What does the data importing model look like? It will almost certainly deviate pretty significantly from what we've done already.
