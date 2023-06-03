@@ -41,12 +41,12 @@ graph TD;
     Item1-->ItemSet;
     Item2-->ItemSet;
     Item3-->ItemSet;
-    Feature1--FeatureSet;
-    Feature2--FeatureSet;
-    Feature3--FeatureSet;
-    Interaction1--InteractionSet;
-    Interaction2--InteractionSet;
-    Interaction3--InteractionSet;
+    Feature1-->FeatureSet;
+    Feature2-->FeatureSet;
+    Feature3-->FeatureSet;
+    Interaction1-->InteractionSet;
+    Interaction2-->InteractionSet;
+    Interaction3-->InteractionSet;
 ```
 
 Here is an example featureSet, in rough JSON representation.
