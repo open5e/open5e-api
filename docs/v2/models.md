@@ -33,9 +33,21 @@ Here is an example simple feature, in rough JSON representation.
 ## Sets
 Some of the leaf nodes has a Set model as well. These are implemented as a GameContent item, but it's basically just a list of other objects with a small amount of added metadata. For example, Character Class and Subclass would be implemented as a FeatureSet. Additionally Race, Subrace, and Feats would be implemented as a FeatureSet.
 
-* CharacterSet
-* ItemSet
-* FeatureSet
+```mermaid
+graph TD;
+    Character1-->CharacterSet;
+    Character2-->CharacterSet;
+    Character3-->CharacterSet;
+    Item1-->ItemSet;
+    Item2-->ItemSet;
+    Item3-->ItemSet;
+    Feature1--FeatureSet;
+    Feature2--FeatureSet;
+    Feature3--FeatureSet;
+    Interaction1--InteractionSet;
+    Interaction2--InteractionSet;
+    Interaction3--InteractionSet;
+```
 
 Here is an example featureSet, in rough JSON representation.
 
