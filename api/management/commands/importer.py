@@ -452,6 +452,7 @@ class Importer:
         if "environments" in monster_json:
             environments_str = json.dumps(monster_json['environments'])
             i.environments_json = environments_str
+        else: i.environments_json = []
         if "actions" in monster_json:
             for idx, z in enumerate(monster_json["actions"]):
                 if "attack_bonus" in z:
