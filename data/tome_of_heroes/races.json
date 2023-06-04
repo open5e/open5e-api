@@ -52,33 +52,35 @@
         "traits": "***Cat's Claws.*** Your sharp claws can cut with ease. Your claws are natural melee weapons, which you can use to make unarmed strikes. When you hit with a claw, your claw deals slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.\n\n***Hunter's Senses.*** You have proficiency in the Perception and Stealth skills.",
         "subtypes": [
             {
-                "name": "Malkin",
-                "desc": "It's often said curiosity killed the cat, and this applies with equal frequency to catfolk. As a malkin catfolk you are adept at finding clever solutions to escape difficult situations, even (or perhaps especially) situations of your own making. Your diminutive size also gives you an uncanny nimbleness that helps you avoid the worst consequences of your intense inquisitiveness. Most often found in densely populated regions, these catfolk are as curious about the comings and goings of other humanoids as they are about natural or magical phenomena and artifacts. While malkins are sometimes referred to as \"housecats\" by other humanoids and even by other catfolk, doing so in a malkin's hearing is a surefire way to get a face full of claws....",
-                "size": "***Size.*** Malkins are between 3 and 4 feet tall and average about 50 pounds. Your size is Small rather than Medium.",
-                "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Intelligence"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Curiously Clever.*** You have proficiency in the Investigation skill.\n\n***Charmed Curiosity.*** When you roll a 1 on the d20 for a Dexterity check or saving throw, you can reroll the die and must use the new roll."
+              "name": "Malkin",
+              "desc": "It's often said curiosity killed the cat, and this applies with equal frequency to catfolk. As a malkin catfolk you are adept at finding clever solutions to escape difficult situations, even (or perhaps especially) situations of your own making. Your diminutive size also gives you an uncanny nimbleness that helps you avoid the worst consequences of your intense inquisitiveness. Most often found in densely populated regions, these catfolk are as curious about the comings and goings of other humanoids as they are about natural or magical phenomena and artifacts. While malkins are sometimes referred to as \"housecats\" by other humanoids and even by other catfolk, doing so in a malkin's hearing is a surefire way to get a face full of claws....",
+              "size": "***Size.*** Malkins are between 3 and 4 feet tall and average about 50 pounds. Your size is Small rather than Medium.",
+              "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 1.",
+              "speed": {
+                "walk": 30
+              },
+              "asi": [
+                {
+                  "attributes": ["Intelligence"],
+                  "value": 1
+                }
+              ],
+              "traits": "***Curiously Clever.*** You have proficiency in the Investigation skill.\n\n***Charmed Curiosity.*** When you roll a 1 on the d20 for a Dexterity check or saving throw, you can reroll the die and must use the new roll."
             },
             {
-                "name": "Pantheran",
-                "desc": "Pantheran catfolk are a wise, observant, and patient people who pride themselves on being resourceful and self-sufficient. Less social than many others of their kind, these catfolk typically dwell in small, close-knit family groups in the forests, jungles, and grasslands of the world, away from larger population centers or cities. Their family clans teach the importance of living off of and protecting the natural world, and pantherans act swiftly and mercilessly when their forest homes are threatened by outside forces. Conversely, pantherans can be the most fierce and loyal of neighbors to villages who respect nature and who take from the land and forest no more than they need. As a pantheran, you value nature and kinship, and your allies know they can count on your wisdom and, when necessary, your claws.",
-                "asi-desc": "***Ability Score Increase.*** Your Wisdom score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Wisdom"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Hunter's Charge.*** Once per turn, if you move at least 10 feet toward a target and hit it with a melee weapon attack in the same turn, you can use a bonus action to attack that creature with your Cat's Claws. You can use this trait a number of times per day equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.\n\n***One With the Wilds.*** You have proficiency in one of the following skills of your choice: Insight, Medicine, Nature, or Survival."
+              "name": "Pantheran",
+              "desc": "Pantheran catfolk are a wise, observant, and patient people who pride themselves on being resourceful and self-sufficient. Less social than many others of their kind, these catfolk typically dwell in small, close-knit family groups in the forests, jungles, and grasslands of the world, away from larger population centers or cities. Their family clans teach the importance of living off of and protecting the natural world, and pantherans act swiftly and mercilessly when their forest homes are threatened by outside forces. Conversely, pantherans can be the most fierce and loyal of neighbors to villages who respect nature and who take from the land and forest no more than they need. As a pantheran, you value nature and kinship, and your allies know they can count on your wisdom and, when necessary, your claws.",
+              "speed": {
+                "walk": 30
+              },
+              "asi-desc": "***Ability Score Increase.*** Your Wisdom score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Wisdom"],
+                  "value": 1
+                }
+              ],
+              "traits": "***Hunter's Charge.*** Once per turn, if you move at least 10 feet toward a target and hit it with a melee weapon attack in the same turn, you can use a bonus action to attack that creature with your Cat's Claws. You can use this trait a number of times per day equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.\n\n***One With the Wilds.*** You have proficiency in one of the following skills of your choice: Insight, Medicine, Nature, or Survival."
             }
         ]
     },
@@ -86,12 +88,14 @@
       "name": "Darakhul",
       "desc": "## Darakhul Traits\nYour darakhul character has certain characteristics in common with all other darakhul.",
       "asi-desc": "***Ability Score Increase.*** Your Constitution score increases by 1.",
-      "asi": [
-        {
-          "attributes": ["Constitution"],
-          "value": 1
-        }
-      ],
+        "asi": [
+            {
+                "attributes": [
+                    "Constitution"
+                ],
+                "value": 1
+            }
+        ],
       "age": "***Age.*** An upper limit of darakhul age has never been discovered; most darakhul die violently.",
       "alignment": "***Alignment.*** Your alignment does not change when you become a darakhul, but most darakhul have a strong draw toward evil.",
       "size": "***Size.*** Your size is determined by your Heritage Subrace.",
@@ -345,47 +349,50 @@
         "traits": "***Eldritch Resilience.*** You have advantage on Constitution saving throws against spells.\n\n***Sunlight Sensitivity.*** You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.",
         "subtypes": [
             {
-                "name": "Far-Touched",
-                "desc": "You grew up firmly ensconced in the mad traditions of the derro, your mind touched by the raw majesty and power of your society's otherworldly deities. Your abilities in other areas have made you more than a typical derro, of course. But no matter how well-trained and skilled you get in other magical or martial arts, the voices of your gods forever reverberate in your ears, driving you forward to do great or terrible things.",
-                "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Charisma"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Insanity.*** You have advantage on saving throws against being charmed or frightened. In addition, you can read and understand Void Speech, but you can speak only a few words of the dangerous and maddening language—the words necessary for using the spells in your Mad Fervor trait.\n\n***Mad Fervor.*** The driving force behind your insanity has blessed you with a measure of its power. You know the vicious mockery cantrip. When you reach 3rd level, you can cast the enthrall spell with this trait, and starting at 5th level, you can cast the fear spell with it. Once you cast a non-cantrip spell with this trait, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for these spells. If you are using Deep Magic for 5th Edition, these spells are instead crushing curse, maddening whispers, and alone, respectively."
+              "name": "Far-Touched",
+              "desc": "You grew up firmly ensconced in the mad traditions of the derro, your mind touched by the raw majesty and power of your society's otherworldly deities. Your abilities in other areas have made you more than a typical derro, of course. But no matter how well-trained and skilled you get in other magical or martial arts, the voices of your gods forever reverberate in your ears, driving you forward to do great or terrible things.",
+              "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Charisma"],
+                  "value": 1
+                }
+              ],
+              "traits": "***Insanity.*** You have advantage on saving throws against being charmed or frightened. In addition, you can read and understand Void Speech, but you can speak only a few words of the dangerous and maddening language—the words necessary for using the spells in your Mad Fervor trait.\n\n***Mad Fervor.*** The driving force behind your insanity has blessed you with a measure of its power. You know the vicious mockery cantrip. When you reach 3rd level, you can cast the enthrall spell with this trait, and starting at 5th level, you can cast the fear spell with it. Once you cast a non-cantrip spell with this trait, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for these spells. If you are using Deep Magic for 5th Edition, these spells are instead crushing curse, maddening whispers, and alone, respectively.",
+              "speed": {
+                "walk": 30
+              }
             },
             {
-                "name": "Mutated",
-                "desc": "Most derro go through the process of indoctrination into their society and come out of it with visions and delusion, paranoia and mania. You, on the other hand, were not affected as much mentally as you were physically. The connection to the dark deities of your people made you stronger and gave you a physical manifestation of their gift that other derro look upon with envy and awe.",
-                "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 1. ",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Strength"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Athletic Training.*** You have proficiency in the Athletics skill, and you are proficient with two martial weapons of your choice.\n\n***Otherworldly Influence.*** Your close connection to the strange powers that your people worship has mutated your form. Choose one of the following:\n* **Alien Appendage.** You have a tentacle-like growth on your body. This tentacle is a natural melee weapon, which you can use to make unarmed strikes. When you hit with it, your tentacle deals bludgeoning damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike. This tentacle has a reach of 5 feet and can lift a number of pounds equal to double your Strength score. The tentacle can't wield weapons or shields or perform tasks that require manual precision, such as performing the somatic components of a spell, but it can perform simple tasks, such as opening an unlocked door or container, stowing or retrieving an object, or pouring the contents out of a vial.\n* **Tainted Blood.** Your blood is tainted by your connection with otherworldly entities. When you take piercing or slashing damage, you can use your reaction to force your blood to spray out of the wound. You and each creature within 5 feet of you take necrotic damage equal to your level. Once you use this trait, you can't use it again until you finish a short or long rest.\n* **Tenebrous Flesh.** Your skin is rubbery and tenebrous, granting you a +1 bonus to your Armor Class."
+              "name": "Mutated",
+              "desc": "Most derro go through the process of indoctrination into their society and come out of it with visions and delusion, paranoia and mania. You, on the other hand, were not affected as much mentally as you were physically. The connection to the dark deities of your people made you stronger and gave you a physical manifestation of their gift that other derro look upon with envy and awe.",
+              "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 1. ",
+              "asi": [
+                {
+                  "attributes": ["Strength"],
+                  "value": 1
+                }
+              ],
+              "traits": "***Athletic Training.*** You have proficiency in the Athletics skill, and you are proficient with two martial weapons of your choice.\n\n***Otherworldly Influence.*** Your close connection to the strange powers that your people worship has mutated your form. Choose one of the following:\n* **Alien Appendage.** You have a tentacle-like growth on your body. This tentacle is a natural melee weapon, which you can use to make unarmed strikes. When you hit with it, your tentacle deals bludgeoning damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike. This tentacle has a reach of 5 feet and can lift a number of pounds equal to double your Strength score. The tentacle can't wield weapons or shields or perform tasks that require manual precision, such as performing the somatic components of a spell, but it can perform simple tasks, such as opening an unlocked door or container, stowing or retrieving an object, or pouring the contents out of a vial.\n* **Tainted Blood.** Your blood is tainted by your connection with otherworldly entities. When you take piercing or slashing damage, you can use your reaction to force your blood to spray out of the wound. You and each creature within 5 feet of you take necrotic damage equal to your level. Once you use this trait, you can't use it again until you finish a short or long rest.\n* **Tenebrous Flesh.** Your skin is rubbery and tenebrous, granting you a +1 bonus to your Armor Class.",
+              "speed": {
+                "walk": 30
+              }
             },
             {
-                "name": "Uncorrupted",
-                "desc": "Someone in your past failed to do their job of driving you to the brink of insanity. It might have been a doting parent that decided to buck tradition. It might have been a touched seer who had visions of your future without the connections to the mad gods your people serve. It might have been a whole outcast community of derro rebels who refused to serve the madness of your ancestors. Whatever happened in your past, you are quite sane—or at least quite sane for a derro.",
-                "asi-desc": "***Ability Score Increase.*** Your Wisdom score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Wisdom"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "languages": "***Extra Language.*** You can speak, read, and write one extra language of your choice.",
-                "traits": "***Psychic Barrier.*** Your time among your less sane brethren has inured you to their madness. You have resistance to psychic damage, and you have advantage on ability checks and saving throws made against effects that inflict insanity, such as spells like contact other plane and symbol, and effects that cause short-term, long-term, or indefinite madness.\n\n***Studied Insight.*** You are skilled at discerning other creature's motives and intentions. You have proficiency in the Insight skill, and, if you study a creature for at least 1 minute, you have advantage on any initiative checks in combat against that creature for the next hour."
+              "name": "Uncorrupted",
+              "desc": "Someone in your past failed to do their job of driving you to the brink of insanity. It might have been a doting parent that decided to buck tradition. It might have been a touched seer who had visions of your future without the connections to the mad gods your people serve. It might have been a whole outcast community of derro rebels who refused to serve the madness of your ancestors. Whatever happened in your past, you are quite sane—or at least quite sane for a derro.",
+              "asi-desc": "***Ability Score Increase.*** Your Wisdom score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Wisdom"],
+                  "value": 1
+                }
+              ],
+              "languages": "***Extra Language.*** You can speak, read, and write one extra language of your choice.",
+              "traits": "***Psychic Barrier.*** Your time among your less sane brethren has inured you to their madness. You have resistance to psychic damage, and you have advantage on ability checks and saving throws made against effects that inflict insanity, such as spells like contact other plane and symbol, and effects that cause short-term, long-term, or indefinite madness.\n\n***Studied Insight.*** You are skilled at discerning other creature's motives and intentions. You have proficiency in the Insight skill, and, if you study a creature for at least 1 minute, you have advantage on any initiative checks in combat against that creature for the next hour.",
+              "speed": {
+                "walk": 30
+              }
             }
         ]
     },
@@ -413,123 +420,53 @@
         "traits": "***Fey Ancestry.*** You have advantage on saving throws against being charmed, and magic can't put you to sleep.\n\n***Mind of Steel.*** You understand the complexities of minds, as well as the magic that can affect them. You have advantage on Wisdom, Intelligence, and Charisma saving throws against spells.\n\n***Sunlight Sensitivity.*** You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.",
         "subtypes": [
             {
-                "name": "Delver",
-                "desc": "You are one of the workers whose labors prop up most of drow society. You were trained from birth to follow orders and serve the collective. You learned your trade well, whether it was building or fighting or erecting the traps that protected passages to your population centers.",
-                "asi-desc": "***Ability Score Increase.*** Your Strength or Dexterity score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Strength"
-                        ],
-                        "value": 1
-                    },
-                    {
-                        "attributes": [
-                            "Dexterity"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Rapport with Insects.*** Your caste's years of working alongside the giant spiders and beetles that your people utilized in building and defending cities has left your caste with an innate affinity with the creatures. You can communicate simple ideas with insect-like beasts with an Intelligence of 3 or lower, such as spiders, beetles, wasps, scorpions, and centipedes. You can understand them in return, though this understanding is often limited to knowing the creature's current or most recent state, such as “hungry,” “content,” or “in danger.” Delver drow often keep such creatures as pets, mounts, or beasts of burden.\n\n***Specialized Training.*** You are proficient in one skill and one tool of your choice.\n\n***Martial Excellence.*** You are proficient with one martial weapon of your choice and with light armor."
+              "name": "Delver",
+              "desc": "You are one of the workers whose labors prop up most of drow society. You were trained from birth to follow orders and serve the collective. You learned your trade well, whether it was building or fighting or erecting the traps that protected passages to your population centers.",
+              "asi-desc": "***Ability Score Increase.*** Your Strength or Dexterity score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Strength"],
+                  "value": 1
+                },
+                {
+                  "attributes": ["Dexterity"],
+                  "value": 1
+                }
+              ],
+              "traits": "***Rapport with Insects.*** Your caste's years of working alongside the giant spiders and beetles that your people utilized in building and defending cities has left your caste with an innate affinity with the creatures. You can communicate simple ideas with insect-like beasts with an Intelligence of 3 or lower, such as spiders, beetles, wasps, scorpions, and centipedes. You can understand them in return, though this understanding is often limited to knowing the creature's current or most recent state, such as “hungry,” “content,” or “in danger.” Delver drow often keep such creatures as pets, mounts, or beasts of burden.\n\n***Specialized Training.*** You are proficient in one skill and one tool of your choice.\n\n***Martial Excellence.*** You are proficient with one martial weapon of your choice and with light armor.",
+              "speed": {
+                "walk": 30
+              }
             },
             {
-                "name": "Fever-Bit",
-                "desc": "You were once a typical drow, then you fell victim to the ravaging claws and teeth of a darakhul. The deadly darakhul fever almost took your life, but, when you were on the verge of succumbing, you rallied and survived. You were changed, however, in ways that even the greatest healers of your people can't fathom. But now that you are immune to darakhul fever, your commanders have a job for you.",
-                "asi-desc": "***Ability Score Increase.*** Your Constitution score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Constitution"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Deathly Resilience.*** Your long exposure to the life-sapping energies of darakhul fever has made you more resilient. You have resistance to necrotic damage, and advantage on death saving throws.\n\n***Iron Constitution.*** You are immune to disease.\n\n***Near-Death Experience.*** Your brush with death has made you more stalwart in the face of danger. You have advantage on saving throws against being frightened."
+              "name": "Fever-Bit",
+              "desc": "You were once a typical drow, then you fell victim to the ravaging claws and teeth of a darakhul. The deadly darakhul fever almost took your life, but, when you were on the verge of succumbing, you rallied and survived. You were changed, however, in ways that even the greatest healers of your people can't fathom. But now that you are immune to darakhul fever, your commanders have a job for you.",
+              "asi-desc": "***Ability Score Increase.*** Your Constitution score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Constitution"],
+                  "value": 1
+                }
+              ],
+              "traits": "***Deathly Resilience.*** Your long exposure to the life-sapping energies of darakhul fever has made you more resilient. You have resistance to necrotic damage, and advantage on death saving throws.\n\n***Iron Constitution.*** You are immune to disease.\n\n***Near-Death Experience.*** Your brush with death has made you more stalwart in the face of danger. You have advantage on saving throws against being frightened.",
+              "speed": {
+                "walk": 30
+              }
             },
             {
-                "name": "Purified",
-                "desc": "You were born into the caste that produces the leaders and planners, the priests and wizards, the generals and officers of drow society. Your people, it is believed, were tested by the beneficent powers you worship, and you passed those tests to become something more. Your innate magic proves your superiority over your fellows.",
-                "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Charisma"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Innate Spellcasting.*** You know the poison spray cantrip. When you reach 3rd level, you can cast suggestion once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the tongues spell once and regain the ability to do so when you finish a long rest. Intelligence is your spellcasting ability for these spells.\n\n***Born Leader.*** You gain proficiency with two of the following skills of your choice: History, Insight, Performance, and Persuasion."
-            }
-        ]
-    },
-    {
-        "name": "Dwarf",
-        "desc": "Fireforge dwarves live near volcanos and interact closely with entities from the Plane of Fire. Spindrift dwarves are dwarves who have taken to the high seas, preferring the open ocean to dark caverns.",
-        "vision": "***Sailor's Eyes.*** Accustomed to the harsh glare of sunlight on the sea, you don't have darkvision, unlike other dwarves.",
-        "subtypes": [
-            {
-                "name": "Fireforge Dwarf",
-                "desc": "Your dwarven heritage coupled with your affinity for the fires of the earth grant you the following traits.",
-                "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Intelligence"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "languages": "***Friend to the Azer.*** You can speak, read, and write Ignan.",
-                "vision": "***Burned Vision.*** Accustomed to the constant glow of magma, you don't have darkvision, unlike other dwarves.",
-                "traits": "***Expert Artisan.*** You gain proficiency with glassblower's tools or smith's tools. Choose one of those tools. Your proficiency bonus is doubled for any ability check you make that uses the chosen tool.\n\n***Forgeborn.*** You have resistance to fire damage.\n\n***Reforge.*** You have an innate connection with elemental fire and can repair forged items with a touch. You know the *mending* cantrip, and you can cast it as an action. However, you can use this trait to repair only objects made of metal, such as reconnecting two halves of a broken sword."
-            },
-            {
-                "name": "Spindrift Dwarf",
-                "desc": "Your love of the open water grants you the following traits. Some of these traits replace traits found in the base dwarf rules, as noted in each trait's entry.",
-                "asi-desc": "***Ability Score Increase.*** Your Dexterity score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Dexterity"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "vision": "***Sailor's Eyes.*** Accustomed to the harsh glare of sunlight on the sea, you don't have darkvision, unlike other dwarves.",
-                "traits": "***Dwarven Marine Training.*** You have proficiency with the club, handaxe, hand crossbow, net, rapier, and scimitar. This trait replaces the Dwarven Combat Training trait.\n\n***Nautical Proficiency.*** You gain proficiency with one of the following: carpenter's tools, navigator's tools, or woodcarver's tools. In addition, you gain proficiency with vehicles (water). This trait replaces the Tool Proficiency trait.\n\n***Rigger.*** When you are not wearing heavy armor or using a shield, you have a climbing speed equal to your base walking speed.\n\n***Shipwright.*** Whenever you make an Intelligence (Investigation) check related to the seaworthiness or quality of craftsmanship of a sailing vessel, you are considered proficient in the Investigation skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus. This trait replaces the Stonecunning trait. \n\n***Spindrift Step.*** As a bonus action (or a reaction when you are submerged in water), you can magically step across water. You can walk across the surface of water as if it were solid ground for a number of rounds equal to your level or until your concentration ends (as if concentrating on a spell). If you are submerged in water when you activate this trait, you are carried to the surface of the water at a rate of 60 feet per round. You can't use this trait again until you finish a short or long rest."
-            }
-        ]
-    },
-    {
-        "name": "Elf",
-        "desc": "Dunewalker elves live in small communities in the most remove deserts, appearing and disappearing as quickly as a mirage. The tenacious frostfell elves make their homes in the coldest parts of the world.",
-        "subtypes": [
-            {
-                "name": "Dunewalker Elf",
-                "desc": "You are adapted to life in deserts and badlands, and your innate magic allows you to create a minor mirage around yourself.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Wisdom"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Desert Dweller.*** You are adapted to life in the desert. You suffer no ill effects from high temperatures, and you require no additional water in such conditions. You have proficiency in the Survival skill.\n\n***Desert Mirage.*** While outdoors in a sunny area with an ambient temperature warmer than freezing, you can use a bonus action to create a minor natural phenomenon that surrounds you and up to a number of allies within 10 feet of you equal to your proficiency bonus. The mirage lightly obscures each of you from the view of any creature more than 30 feet away from you for 1 minute. For the duration, each target can attempt to hide even if a target is obscured only by this mirage. You can't use this trait again until you finish a short or long rest.\n\n***Dunewalker Elf Weapon Training.*** You have proficiency with the longbow, scimitar, shortbow, and spear.\n\n***Sand Spirit.*** Difficult terrain comprised of sand or similar desert environs doesn't cost you extra movement."
-            },
-            {
-                "name": "Frostfell Elf",
-                "desc": "You are adapted to the frozen reaches of the world and have learned to shape the ice and snow around you into useful tools.",
-                "asi-desc": "***Ability Score Increase.*** Your Constitution increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Constitution"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Cold Dweller.*** You have resistance to cold damage.\n\n***Elf Weapon Training.*** You have proficiency with the longsword, shortsword, shortbow, and longbow.\n\n***Ice Crafting.*** You can magically form an item from nearby water, ice, or snow. The crafting takes 1 minute, and you can form any nonmagical object without moving parts weighing up to 10 pounds. Though made of ice, the object functions as a similar item made of standard materials. The object has AC 13, hit points equal to a resilient object of appropriate size, and is immune to cold damage but vulnerable to fire damage. If the ambient temperature is warmer than freezing, the object lasts 1 minute. As long as the ambient temperature remains at freezing or colder, the object lasts for 24 hours or until destroyed. Once you have crafted an object using this trait, you can't do so again until you have completed a short or long rest.\n\n***Snow Step.*** Difficult terrain composed of snow or ice doesn't cost you extra movement."
+              "name": "Purified",
+              "desc": "You were born into the caste that produces the leaders and planners, the priests and wizards, the generals and officers of drow society. Your people, it is believed, were tested by the beneficent powers you worship, and you passed those tests to become something more. Your innate magic proves your superiority over your fellows.",
+              "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Charisma"],
+                  "value": 1
+                }
+              ],
+              "traits": "***Innate Spellcasting.*** You know the poison spray cantrip. When you reach 3rd level, you can cast suggestion once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the tongues spell once and regain the ability to do so when you finish a long rest. Intelligence is your spellcasting ability for these spells.\n\n***Born Leader.*** You gain proficiency with two of the following skills of your choice: History, Insight, Performance, and Persuasion.",
+              "speed": {
+                "walk": 30
+              }
             }
         ]
     },
@@ -560,10 +497,23 @@
         "name": "Gearforged",
         "desc": "## Gearforged Traits\nThe range of gearforged anatomy in all its variants is remarkable, but all gearforged share some common parts.",
         "asi-desc": "***Ability Score Increase.*** Two different ability scores of your choice increase by 1.",
+        "asi":[
+            {
+                "attributes": ["Any"],
+                "value": 1
+            },
+            {
+                "attributes": ["Any"],
+                "value": 1
+            }
+        ],
         "age": "***Age.*** The soul inhabiting a gearforged can be any age. As long as its new body is kept in good repair, there is no known limit to how long it can function.",
         "alignment": "***Alignment.*** No single alignment typifies gearforged, but most gearforged maintain the alignment they had before becoming gearforged.",
         "size": "***Size.*** Your size is determined by your Race Chassis.",
         "speed-desc": "***Speed.*** Your base walking speed is determined by your Race Chassis.",
+        "speed":{
+            "walk": 30
+        },
         "languages": "***Languages.*** You can speak, read, and write Common, Machine Speech (a whistling, clicking language that's incomprehensible to non-gearforged), and a language associated with your Race Chassis.",
         "traits": "***Construct Resilience.*** Your body is constructed, which frees you from some of the limits of fleshand- blood creatures. You have resistance to poison damage, you are immune to disease, and you have advantage on saving throws against being poisoned.\n\n***Construct Vitality.*** You don't need to eat, drink, or breathe, and you don't sleep the way most creatures do. Instead, you enter a dormant state where you resemble a statue and remain semiconscious for 6 hours a day. During this time, the magic in your soul gem and everwound springs slowly repairs the day's damage to your mechanical body. While in this dormant state, you have disadvantage on Wisdom (Perception) checks. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.\n\n***Living Construct.*** Your consciousness and soul reside within a soul gem to animate your mechanical body. As such, you are a living creature with some of the benefits and drawbacks of a construct. Though you can regain hit points from spells like cure wounds, you can also be affected by game effects that specifically target constructs, such as the shatter spell. As long as your soul gem remains intact, game effects that raise a creature from the dead work on you as normal, repairing the damaged pieces of your mechanical body (restoring lost sections only if the spell normally restores lost limbs) and returning you to life as a gearforged. Alternatively, if your body is destroyed but your soul gem and memory gears are intact, they can be installed into a new body with a ritual that takes one day and 10,000 gp worth of materials. If your soul gem is destroyed, only a wish spell can restore you to life, and you return as a fully living member of your original race.\n\n***Race Chassis.*** Four races are known to create unique gearforged, building mechanical bodies similar in size and shape to their people: dwarf, gnome, human, and kobold. Choose one of these forms.",
         "subtypes": [
@@ -610,17 +560,23 @@
                 "traits": "***Mental Fortitude.*** When creating their first gearforged, gnome engineers put their efforts toward ensuring that the gnomish mind remained a mental fortress, though they were unable to fully replicate the gnomish mind's resilience once transferred to a soul gem. Choose Intelligence, Wisdom, or Charisma. You have advantage on saving throws made with that ability score against magic.\n\n***Quick Fix.*** When you are below half your hit point maximum, you can use a bonus action to apply a quick patch up to your damaged body. You gain temporary hit points equal to your proficiency bonus. You can't use this trait again until you finish a short or long rest."
             },
             {
-                "name": "Human Chassis",
-                "desc": "## Human Chassis Traits\nAs humans invented the first gearforged, it should be no surprise that the human chassis remains the one that is most frequently encountered. However, it would be a mistake to assume that simply because the original chassis is more commonplace that there is anything common about them. While dwarves, gnomes, and kobolds have made clever additions and changes to the base model, the human chassis remains extremely versatile and is battle-proven.",
-                "asi-desc": "***Ability Score Increase.*** One ability score of your choice increases by 1.",
-                "size": "***Size.*** Gearforged humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, you average 250 to 300 pounds. Your size is Medium.",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
-                "languages": "***Languages.*** You can speak, read, and write one language of your choice.",
-                "vision": "***Darkvision.*** You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
-                "traits": "***Adaptable Acumen.*** You gain proficiency in two skills or tools of your choice. Choose one of those skills or tools or another skill or tool proficiency you have. Your proficiency bonus is doubled for any ability check you make that uses the chosen skill or tool.\n\n***Inspired Ingenuity.*** When you roll a 9 or lower on the d20 for an ability check, you can use a reaction to change the roll to a 10. You can't use this trait again until you finish a short or long rest."
+              "name": "Human Chassis",
+              "desc": "## Human Chassis Traits\nAs humans invented the first gearforged, it should be no surprise that the human chassis remains the one that is most frequently encountered. However, it would be a mistake to assume that simply because the original chassis is more commonplace that there is anything common about them. While dwarves, gnomes, and kobolds have made clever additions and changes to the base model, the human chassis remains extremely versatile and is battle-proven.",
+              "asi-desc": "***Ability Score Increase.*** One ability score of your choice increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Any"],
+                  "value": 1
+                }
+              ],
+              "size": "***Size.*** Gearforged humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, you average 250 to 300 pounds. Your size is Medium.",
+              "speed": {
+                "walk": 30
+              },
+              "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
+              "languages": "***Languages.*** You can speak, read, and write one language of your choice.",
+              "vision": "***Darkvision.*** You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+              "traits": "***Adaptable Acumen.*** You gain proficiency in two skills or tools of your choice. Choose one of those skills or tools or another skill or tool proficiency you have. Your proficiency bonus is doubled for any ability check you make that uses the chosen skill or tool.\n\n***Inspired Ingenuity.*** When you roll a 9 or lower on the d20 for an ability check, you can use a reaction to change the roll to a 10. You can't use this trait again until you finish a short or long rest."
             },
             {
                 "name": "Kobold Chassis",
@@ -642,122 +598,6 @@
                 "languages": "***Languages.*** You can speak, read, and write Draconic.",
                 "vision": "***Darkvision.*** You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
                 "traits": "***Clutch Aide.*** Kobolds spend their lives alongside their clutchmates, both those hatched around the same time as them and those they choose later in life, and you retain much of this group-oriented intuition. You can take the Help action as a bonus action.\n\n***Resourceful.*** If you have at least one set of tools, you can cobble together one set of makeshift tools of a different type with 1 minute of work. For example, if you have cook's utensils, you can use them to create a temporary set of thieves' tools. The makeshift tools last for 10 minutes then collapse into their component parts, returning your tools to their normal forms. While the makeshift tools exist, you can't use the set of tools you used to create the makeshift tools. At the GM's discretion, you might not be able to replicate some tools, such as an alchemist's alembic or a disguise kit's cosmetics. A creature other than you that uses the makeshift tools has disadvantage on the check."
-            }
-        ]
-    },
-    {
-        "name": "Gnome",
-        "desc": "Here we present two new subraces of gnomes: shoal and wyrd. Shoal gnomes live in coastal waters, making their homes within or alongside coral reefs. Wyrd gnomes come about from a minor genetic mutation in other gnomes that produces gnomes with natural prescience.",
-        "subtypes": [
-            {
-                "name": "Shoal Gnome",
-                "desc": "You are adapted to life along coastlines and underwater.",
-                "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Charisma"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Amphibious.*** You can breathe air and water.\n\n***Aquatic Beast Affinity.*** Using sounds and gestures, you can communicate simple ideas with dolphins and sea turtles and with beasts that can breathe water.\n\n***Swimmer.*** You have a swimming speed of 25 feet."
-            },
-            {
-                "name": "Wyrd Gnome",
-                "desc": "You are a gnome with a natural prescience that sets you apart from most other gnomes.",
-                "asi-desc": "***Ability Score Increase.*** Your Wisdom score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Wisdom"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Natural Diviner.*** You have an innate knack for understanding the world and can catch glimpses of the mysteries of the universe. You know the guidance cantrip. When you reach 3rd level, you can cast the identify spell with this trait, requiring no material components, and starting at 5th level you can cast the augury spell with it. Once you cast a non-cantrip spell with this trait, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for these spells.\n\n***Prescience.*** When you finish a long rest, roll a d20 and record the number rolled. Before your next long rest, you can replace one attack roll, saving throw, or ability check made by you or a creature that you can see with this prescient roll. You must choose to do so before the roll. If 20 wyrd gnomes are present within a half-mile of you when you make the prescience roll, you can add 1 to the result. Every time the number of nearby wyrd gnomes is doubled, you gain an additional bonus of 1 to the roll (+2 for 40 gnomes, +3 for 80, etc.) to a maximum bonus of +5."
-            }
-        ]
-    },
-    {
-        "name": "Halfling",
-        "desc": "## Halfling Traits\nYour darakhul character has certain characteristics in common with all other darakhul.",
-        "subtypes": [
-            {
-                "name": "Courtfolk",
-                "desc": "You are a halfling raised in a life of service or raised by parents who spent a life in service. Though you no longer serve another, you inherited some magical talents from your family's ancestral patrons.",
-                "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Charisma"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "age": "***Age.*** Courtfolk are the longest-lived of the halfling subraces, perhaps owing to their close association with elves. Courtfolk are elderly by their second century but enjoy relatively pleasant and unhindered old age up to 350, a century longer than most halflings.",
-                "traits": "***Boon Companion.*** You are quick to step in and help your friends, and you have a knack for knowing exactly how best to do it. When you work with an ally to complete a task or take the Help action in combat, your ally adds a d4 to their check or attack roll.\n\n***Wee Glamour.*** You are—ever so slightly—imbued with a bit of elven magic. You move with grace, your laugh is always pleasant, and colors are more vibrant on you. You have advantage on saving throws against being charmed and on saving throws against spells of the enchantment school."
-            },
-            {
-                "name": "Hinterfolk",
-                "desc": "You are a halfling raised far from civilization and adapted to life in the wilderness.",
-                "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Strength"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "alignment": "Most riverfolk are free spirits, independent-minded, and chafe beneath the rules and restrictions others place on them. They tend toward chaotic alignments.",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "Your base walking speed is 30 feet.",
-                "traits": "***Highly Mobile.*** Your base walking speed is 30 feet. When wearing light or no armor, you have a climbing speed of 20 feet and a swimming speed of 20 feet.\n\n***Hunter and Gatherer.*** You have proficiency in the Survival skill."
-            },
-            {
-                "name": "Riverfolk",
-                "desc": "You are a halfling who grew up on docks, fishing boats, or a patchwork of river barges, and you are more at home on a temperamental river than on solid ground.",
-                "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Strength"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***River's Child.*** You have advantage on Strength (Athletics) checks made to swim and on Wisdom (Animal Handling) checks when interacting with animals native to rivers or riverbanks. In addition, you have proficiency with the barge pole (see the Adventuring Gear chapter).\n\n***Sure-Footed.*** You are adept at maintaining your balance on wet decks. You have advantage on Dexterity (Acrobatics) checks to keep your balance. In addition, difficult terrain composed of slippery surfaces, such as a wet deck, the surface of a frozen lake, or an oilcovered dock, doesn't cost you extra movement."
-            },
-            {
-                "name": "Urban Halfling",
-                "desc": "You are a halfling adapted to life in urban centers, particularly in large cities.",
-                "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Intelligence"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Family Business.*** You gain proficiency with one type of tool of your choice, or you have proficiency in one of the following skills: Acrobatics, Animal Handling, Medicine, Performance, or Persuasion.\n\n***Lost in the Crowd.*** If you are in a crowded area, such as a city street or a gathering of at least 10 humanoids, you can attempt to hide, blending in with the people around you.\n\n***Street Cant.*** You grew up learning a second, secret language shared by your people. The cant is a halfling-based creole mixed with Common and select words taken from other languages, using specific dialects and jargon. This language is never taught to outsiders and is used by urban halflings to communicate directly to one another for privacy and protection. Only another creature that knows Street Cant understands the language when you speak it, though listeners who don't know it can understand your conversation with the use of magic."
-            },
-            {
-                "name": "Winterfolk",
-                "desc": "Your people are cunning survivors who revere the old gods of the world and are at home in hardship.",
-                "asi-desc": "***Ability Score Increase.*** Your Constitution score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Constitution"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Hardened.*** You have spent your life surviving in the cold and wild places of the world. You recover from all levels of exhaustion at the end of a long rest, and you have advantage on saving throws against the effects of being in a cold environment, such as frostbite or hypothermia.\n\n***Old Soul.*** You have a deep connection with the ancient gods and spirits of the world. You can use your Wisdom modifier instead of Intelligence when making History and Religion checks."
             }
         ]
     },
@@ -791,44 +631,43 @@
         "traits": "***Natural Attacks.*** Your horns are sturdy and sharp. Your horns are a natural melee weapon, which you can use to make unarmed strikes. When you hit with your horns, they deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.\n\n***Charge.*** Once per turn, if you move at least 10 feet toward a target and hit it with a horn attack in the same turn, you deal an extra 1d6 piercing damage and you can shove the target up to 5 feet as a bonus action. At 11th level, when you shove a creature with Charge, you can push it up to 10 feet instead. You can use this trait a number of times per day equal to your Constitution modifier (minimum of once), and you regain all expended uses when you finish a long rest.\n\n***Labyrinth Sense.*** You can retrace without error any path you have previously taken, with no ability check.",
         "subtypes": [
             {
-                "name": "Bhain Kwai",
-                "desc": "You are a minotaur adapted to life in the bogs and wetlands of the world.",
-                "asi-desc": "***Ability Score Increase.*** Your Constitution score increases by 2, and your Strength score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Constitution"
-                        ],
-                        "value": 2
-                    },
-                    {
-                        "attributes": [
-                            "Strength"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Strong Back.*** Your carrying capacity is your Strength score multiplied by 20, instead of by 15.\n\n***Wetland Dweller.*** You are adapted to your home terrain. Difficult terrain composed of mud or from wading through water up to waist deep doesn't cost you extra movement. You have a swimming speed of 25 feet."
+              "name": "Bhain Kwai",
+              "desc": "You are a minotaur adapted to life in the bogs and wetlands of the world.",
+              "asi-desc": "***Ability Score Increase.*** Your Constitution score increases by 2, and your Strength score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Constitution"],
+                  "value": 2
+                },
+                {
+                  "attributes": ["Strength"],
+                  "value": 1
+                }
+              ],
+              "traits": "***Strong Back.*** Your carrying capacity is your Strength score multiplied by 20, instead of by 15.\n\n***Wetland Dweller.*** You are adapted to your home terrain. Difficult terrain composed of mud or from wading through water up to waist deep doesn't cost you extra movement. You have a swimming speed of 25 feet.",
+              "speed": {
+                "walk": 30,
+                "swim": 25
+              }
             },
             {
-                "name": "Boghaid",
-                "desc": "You are a minotaur adapted to life in cold climates and high altitudes.",
-                "asi-desc": "***Ability Score Increase.*** Your Wisdom score increases by 2, and your Constitution score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Wisdom"
-                        ],
-                        "value": 2
-                    },
-                    {
-                        "attributes": [
-                            "Constitution"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "traits": "***Highlander.*** You are adapted to life at high altitudes, and you suffer no ill effects or penalties from elevations above 8,000 feet.\n\n***Storied Culture.*** You have proficiency in the Performance skill, and you gain proficiency with one of the following musical instruments: bagpipes, drum, horn, or shawm.\n\n***Wooly.*** Your thick, wooly coat of hair keeps you warm, allowing you to function in cold weather without special clothing or gear. You have advantage on saving throws against spells and other effects that deal cold damage."
+              "name": "Boghaid",
+              "desc": "You are a minotaur adapted to life in cold climates and high altitudes.",
+              "asi-desc": "***Ability Score Increase.*** Your Wisdom score increases by 2, and your Constitution score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Wisdom"],
+                  "value": 2
+                },
+                {
+                  "attributes": ["Constitution"],
+                  "value": 1
+                }
+              ],
+              "traits": "***Highlander.*** You are adapted to life at high altitudes, and you suffer no ill effects or penalties from elevations above 8,000 feet.\n\n***Storied Culture.*** You have proficiency in the Performance skill, and you gain proficiency with one of the following musical instruments: bagpipes, drum, horn, or shawm.\n\n***Wooly.*** Your thick, wooly coat of hair keeps you warm, allowing you to function in cold weather without special clothing or gear. You have advantage on saving throws against spells and other effects that deal cold damage.",
+              "speed": {
+                "walk": 30
+              }
             }
         ]
     },
@@ -856,34 +695,36 @@
         "traits": "***Fungoid Form.*** You are a humanoid, though the fungal nature of your body and your unique diet of decayed vegetable and animal matter marks you with some plant-like characteristics. You have advantage on saving throws against poison, and you have resistance to poison damage. In addition, you are immune to disease.\n\n***Hardy Survivor.*** Your upbringing in mushroomfolk society has taught you how to defend yourself and find food. You have proficiency in the Survival skill.\n\n***Subrace.*** Three subraces of mushroomfolk are known to wander the world: acid cap, favored, and morel. Choose one of these subraces.",
         "subtypes": [
             {
-                "name": "Acid Cap",
-                "desc": "You were one of the warriors and guardians of your clan, using your strength and acid spores to protect your clanmates and your territory.",
-                "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Strength"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "size": "Your size is Medium.",
-                "traits": "***Acid Cap Resistance.*** You have resistance to acid damage.\n\n***Acid Spores.*** When you are hit by a melee weapon attack within 5 feet of you, you can use your reaction to emit acidic spores. If you do, the attacker takes acid damage equal to half your level (rounded up). You can use your acid spores a number of times equal to your Constitution modifier (a minimum of once). You regain any expended uses when you finish a long rest.\n\n***Clan Athlete.*** You have proficiency in the Athletics skill."
+              "name": "Acid Cap",
+              "desc": "You were one of the warriors and guardians of your clan, using your strength and acid spores to protect your clanmates and your territory.",
+              "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Strength"],
+                  "value": 1
+                }
+              ],
+              "size": "Your size is Medium.",
+              "traits": "***Acid Cap Resistance.*** You have resistance to acid damage.\n\n***Acid Spores.*** When you are hit by a melee weapon attack within 5 feet of you, you can use your reaction to emit acidic spores. If you do, the attacker takes acid damage equal to half your level (rounded up). You can use your acid spores a number of times equal to your Constitution modifier (a minimum of once). You regain any expended uses when you finish a long rest.\n\n***Clan Athlete.*** You have proficiency in the Athletics skill.",
+              "speed": {
+                "walk": 30
+              }
             },
             {
-                "name": "Favored",
-                "desc": "A few special mushroomfolk grow to become shamans, generals, and other types of leaders. Your spores invite cooperation, peace, and healing among your allies. Others look to you for guidance and succor in the harsh underground environs.",
-                "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Charisma"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "size": "Your size is Medium.",
-                "traits": "***Blessed Help.*** Your intuition and connection to your allies allows you to assist and protect them. You know the spare the dying cantrip. When you reach 3rd level, you can cast the bless spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.\n\n***Clan Leader.*** You have proficiency in the Persuasion skill.\n\n***Restful Spores.*** If you or any friendly creatures within 30 feet of you regain hit points at the end of a short rest by spending one or more Hit Dice, each of those creatures regains additional hit points equal to your proficiency bonus. Once a creature benefits from your restful spores, it can't do so again until it finishes a long rest."
+              "name": "Favored",
+              "desc": "A few special mushroomfolk grow to become shamans, generals, and other types of leaders. Your spores invite cooperation, peace, and healing among your allies. Others look to you for guidance and succor in the harsh underground environs.",
+              "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
+              "asi": [
+                {
+                  "attributes": ["Charisma"],
+                  "value": 1
+                }
+              ],
+              "size": "Your size is Medium.",
+              "traits": "***Blessed Help.*** Your intuition and connection to your allies allows you to assist and protect them. You know the spare the dying cantrip. When you reach 3rd level, you can cast the bless spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.\n\n***Clan Leader.*** You have proficiency in the Persuasion skill.\n\n***Restful Spores.*** If you or any friendly creatures within 30 feet of you regain hit points at the end of a short rest by spending one or more Hit Dice, each of those creatures regains additional hit points equal to your proficiency bonus. Once a creature benefits from your restful spores, it can't do so again until it finishes a long rest.",
+              "speed": {
+                "walk": 30
+              }
             },
             {
                 "name": "Morel",
@@ -936,23 +777,24 @@
         "traits": "***A Friend to Death.*** You have resistance to necrotic damage.\n\n***Keeper of Secrets.*** You have proficiency in the Arcana skill, and you have advantage on Intelligence (Arcana) checks related to the planes and planar travel. In addition, you have proficiency in one of the following skills of your choice: History, Insight, and Religion.\n\n***Carrier of Rot.*** You can use your action to inflict rot on a creature you can see within 10 feet of you. The creature must make a Constitution saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 1d4 necrotic damage on a failed save, and half as much damage on a successful one. A creature that fails the saving throw also rots for 1 minute. A rotting creature takes 1d4 necrotic damage at the end of each of its turns. The target or a creature within 5 feet of it can use an action to excise the rot with a successful Wisdom (Medicine) check. The DC for the check equals the rot's Constitution saving throw DC. The rot also disappears if the target receives magical healing. The damage for the initial action and the rotting increases to 2d4 at 6th level, 3d4 at 11th level, and 4d4 at 16th level. After you use your Carrier of Rot trait, you can't use it again until you complete a short or long rest."
     },
     {
-        "name": "Shade",
-        "desc": "## Shade Traits\nYour shade character has a number of traits that arise from being a shade as well as a few drawn from life.",
-        "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1, and one other ability score of your choice increases by 1. Choose one ability score that is increased by your Living Origin or by one of its subraces. That ability score increases by 1.",
-        "asi": [
-            {
-                "attributes": [
-                    "Charisma"
-                ],
-                "value": 1
-            }
-        ],
-        "age": "***Age.*** Shades appear as the age they were when they died. They potentially have no limit to their lifespan, but, realistically, ancient shades grow weary and lose their hold on their memories, fading away near 750 years old.",
-        "alignment": "***Alignment.*** Shades come from all walks of life but tend toward neutrality. Shades that lack contact with other people grow more selfish over time and slip toward evil.",
-        "size": "***Size.*** Your size is determined by your Living Origin.",
-        "speed-desc": "***Speed.*** Your speed is determined by your Living Origin.",
-        "languages": "***Languages.*** You can speak, read, and write Common and one other language spoken by your Living Origin.",
-        "vision": "***Darkvision.*** Your existence beyond death makes you at home in the dark. You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
-        "traits": "***Ghostly Flesh.*** Starting at 3rd level, you can use your action to dissolve your physical body into the ephemeral stuff of spirits. You become translucent and devoid of color, and the air around you grows cold. Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you have a flying speed of 30 feet with the ability to hover, and you have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks that aren't made with silvered weapons. In addition, you have advantage on ability checks and saving throws made to escape a grapple or against being restrained, and you can move through creatures and solid objects as if they were difficult terrain. If you end your turn inside an object, you take 1d10 force damage. Once you use this trait, you can't use it again until you finish a long rest.\n\n***Imperfect Undeath.*** You are a humanoid, but your partial transition into undeath makes you susceptible to effects that target undead. Though you can regain hit points from spells like cure wounds, you can also be affected by game effects that specifically target undead, such as a cleric's Turn Undead feature. Game effects that raise a creature from the dead work on you as normal, but they return you to life as a shade. A true resurrection or wish spell can restore you to life as a fully living member of your original race.\n\n***Life Drain.*** When you damage a creature with an attack or a spell, you can choose to deal extra necrotic damage to the target equal to your level. If the creature's race matches your Living Origin, you gain temporary hit points equal to the necrotic damage dealt. Once you use this trait, you can't use it again until you finish a short or long rest.\n\n***Spectral Resilience.*** You have advantage on saving throws against poison and disease, and you have resistance to necrotic damage.\n\n***Living Origin.*** As living echoes of who they once were, shades maintain some of the traits they bore in life. Choose another race as your Living Origin. This is the race you were in life. Your size and speed are those of your Living Origin, and you know one language spoken by your Living Origin."
+      "name": "Shade",
+      "desc": "## Shade Traits\nYour shade character has a number of traits that arise from being a shade as well as a few drawn from life.",
+      "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1, and one other ability score of your choice increases by 1. Choose one ability score that is increased by your Living Origin or by one of its subraces. That ability score increases by 1.",
+      "asi": [
+        {
+          "attributes": ["Charisma"],
+          "value": 1
+        }
+      ],
+      "age": "***Age.*** Shades appear as the age they were when they died. They potentially have no limit to their lifespan, but, realistically, ancient shades grow weary and lose their hold on their memories, fading away near 750 years old.",
+      "alignment": "***Alignment.*** Shades come from all walks of life but tend toward neutrality. Shades that lack contact with other people grow more selfish over time and slip toward evil.",
+      "size": "***Size.*** Your size is determined by your Living Origin.",
+      "speed-desc": "***Speed.*** Your speed is determined by your Living Origin.",
+      "speed": {
+        "walk": 30
+      },
+      "languages": "***Languages.*** You can speak, read, and write Common and one other language spoken by your Living Origin.",
+      "vision": "***Darkvision.*** Your existence beyond death makes you at home in the dark. You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+      "traits": "***Ghostly Flesh.*** Starting at 3rd level, you can use your action to dissolve your physical body into the ephemeral stuff of spirits. You become translucent and devoid of color, and the air around you grows cold. Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you have a flying speed of 30 feet with the ability to hover, and you have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks that aren't made with silvered weapons. In addition, you have advantage on ability checks and saving throws made to escape a grapple or against being restrained, and you can move through creatures and solid objects as if they were difficult terrain. If you end your turn inside an object, you take 1d10 force damage. Once you use this trait, you can't use it again until you finish a long rest.\n\n***Imperfect Undeath.*** You are a humanoid, but your partial transition into undeath makes you susceptible to effects that target undead. Though you can regain hit points from spells like cure wounds, you can also be affected by game effects that specifically target undead, such as a cleric's Turn Undead feature. Game effects that raise a creature from the dead work on you as normal, but they return you to life as a shade. A true resurrection or wish spell can restore you to life as a fully living member of your original race.\n\n***Life Drain.*** When you damage a creature with an attack or a spell, you can choose to deal extra necrotic damage to the target equal to your level. If the creature's race matches your Living Origin, you gain temporary hit points equal to the necrotic damage dealt. Once you use this trait, you can't use it again until you finish a short or long rest.\n\n***Spectral Resilience.*** You have advantage on saving throws against poison and disease, and you have resistance to necrotic damage.\n\n***Living Origin.*** As living echoes of who they once were, shades maintain some of the traits they bore in life. Choose another race as your Living Origin. This is the race you were in life. Your size and speed are those of your Living Origin, and you know one language spoken by your Living Origin."
     }
 ]
