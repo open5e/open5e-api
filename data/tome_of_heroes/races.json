@@ -83,258 +83,243 @@
         ]
     },
     {
-        "name": "Darakhul",
-        "desc": "## Darakhul Traits\nYour darakhul character has certain characteristics in common with all other darakhul.",
-        "asi-desc": "***Ability Score Increase.*** Your Constitution score increases by 1.",
-        "asi": [
+      "name": "Darakhul",
+      "desc": "## Darakhul Traits\nYour darakhul character has certain characteristics in common with all other darakhul.",
+      "asi-desc": "***Ability Score Increase.*** Your Constitution score increases by 1.",
+      "asi": [
+        {
+          "attributes": ["Constitution"],
+          "value": 1
+        }
+      ],
+      "age": "***Age.*** An upper limit of darakhul age has never been discovered; most darakhul die violently.",
+      "alignment": "***Alignment.*** Your alignment does not change when you become a darakhul, but most darakhul have a strong draw toward evil.",
+      "size": "***Size.*** Your size is determined by your Heritage Subrace.",
+      "speed-desc": "***Speed.*** Your base walking speed is determined by your Heritage Subrace.",
+      "speed": {
+        "walk": 30
+      },
+      "languages": "***Languages.*** You can speak, read, and write Common, Darakhul, and a language associated with your Heritage Subrace.",
+      "vision": "***Darkvision.*** You can see in dim light within 60 feet as though it were bright light and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+      "traits": "***Hunger for Flesh.*** You must consume 1 pound of raw meat each day or suffer the effects of starvation. If you go 24 hours without such a meal, you gain one level of exhaustion. While you have any levels of exhaustion from this trait, you can't regain hit points or remove levels of exhaustion until you spend at least 1 hour consuming 10 pounds of raw meat.\n\n***Imperfect Undeath.*** You transitioned into undeath, but your transition was imperfect. Though you are a humanoid, you are susceptible to effects that target undead. You can regain hit points from spells like cure wounds, but you can also be affected by game effects that specifically target undead, such as a cleric's Turn Undead feature. Game effects that raise a creature from the dead work on you as normal, but they return you to life as a darakhul. A true resurrection or wish spell can restore you to life as a fully living member of your original race.\n\n***Powerful Jaw.*** Your heavy jaw is powerful enough to crush bones to powder. Your bite is a natural melee weapon, which you can use to make unarmed strikes. When you hit with it, your bite deals piercing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.\n\n***Sunlight Sensitivity.*** You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.\n\n***Undead Resilience.*** You are infused with the dark energy of undeath, which frees you from some frailties that plague most creatures. You have resistance to necrotic damage and poison damage, you are immune to disease, and you have advantage on saving throws against being charmed or poisoned. When you finish a short rest, you can reduce your exhaustion level by 1, provided you have ingested at least 1 pound of raw meat in the last 24 hours (see Hunger for Flesh).\n\n***Undead Vitality.*** You don't need to breathe, and you don't sleep the way most creatures do. Instead, you enter a dormant state that resembles death, remaining semiconscious, for 6 hours a day. While dormant, you have disadvantage on Wisdom (Perception) checks. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.\n\n***Heritage Subrace.*** You were something else before you became a darakhul. This heritage determines some of your traits. Choose one Heritage Subrace below and apply the listed traits.",
+      "subtypes": [
+        {
+          "name": "Derro Heritage",
+          "desc": "Your darakhul character was a derro before transforming into a darakhul. For you, the quieting of the otherworldly voices did not bring peace and tranquility. The impulses simply became more focused, and the desire to feast on flesh overwhelmed other urges. The darkness is still there; it just has a new, clearer form.",
+          "size": "",
+          "speed": {
+            "walk": 30
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
+          "languages": "You can speak, read, and write Dwarvish.",
+          "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 2.",
+          "asi": [
             {
-                "attributes": [
-                    "Constitution"
-                ],
-                "value": 1
+              "attributes": ["Charisma"],
+              "value": 2
             }
-        ],
-        "age": "***Age.*** An upper limit of darakhul age has never been discovered; most darakhul die violently.",
-        "alignment": "***Alignment.*** Your alignment does not change when you become a darakhul, but most darakhul have a strong draw toward evil.",
-        "size": "***Size.*** Your size is determined by your Heritage Subrace.",
-        "speed-desc": "***Speed.*** Your base walking speed is determined by your Heritage Subrace.",
-        "languages": "***Languages.*** You can speak, read, and write Common, Darakhul, and a language associated with your Heritage Subrace.",
-        "vision": "***Darkvision.*** You can see in dim light within 60 feet as though it were bright light and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
-        "traits": "***Hunger for Flesh.*** You must consume 1 pound of raw meat each day or suffer the effects of starvation. If you go 24 hours without such a meal, you gain one level of exhaustion. While you have any levels of exhaustion from this trait, you can't regain hit points or remove levels of exhaustion until you spend at least 1 hour consuming 10 pounds of raw meat.\n\n***Imperfect Undeath.*** You transitioned into undeath, but your transition was imperfect. Though you are a humanoid, you are susceptible to effects that target undead. You can regain hit points from spells like cure wounds, but you can also be affected by game effects that specifically target undead, such as a cleric's Turn Undead feature. Game effects that raise a creature from the dead work on you as normal, but they return you to life as a darakhul. A true resurrection or wish spell can restore you to life as a fully living member of your original race.\n\n***Powerful Jaw.*** Your heavy jaw is powerful enough to crush bones to powder. Your bite is a natural melee weapon, which you can use to make unarmed strikes. When you hit with it, your bite deals piercing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.\n\n***Sunlight Sensitivity.*** You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.\n\n***Undead Resilience.*** You are infused with the dark energy of undeath, which frees you from some frailties that plague most creatures. You have resistance to necrotic damage and poison damage, you are immune to disease, and you have advantage on saving throws against being charmed or poisoned. When you finish a short rest, you can reduce your exhaustion level by 1, provided you have ingested at least 1 pound of raw meat in the last 24 hours (see Hunger for Flesh).\n\n***Undead Vitality.*** You don't need to breathe, and you don't sleep the way most creatures do. Instead, you enter a dormant state that resembles death, remaining semiconscious, for 6 hours a day. While dormant, you have disadvantage on Wisdom (Perception) checks. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.\n\n***Heritage Subrace.*** You were something else before you became a darakhul. This heritage determines some of your traits. Choose one Heritage Subrace below and apply the listed traits.",
-        "subtypes": [
+          ],
+          "traits": "***Calculating Insanity.*** The insanity of your race was compressed into a cold, hard brilliance when you took on your darakhul form. These flashes of brilliance come to you at unexpected moments. You know the true strike cantrip. Charisma is your spellcasting ability for it. You can cast true strike as a bonus action a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest."
+        },
+        {
+          "name": "Dragonborn Heritage",
+          "desc": "Your darakhul character was a dragonborn before transforming into a darakhul. The dark power of undeath overwhelmed your elemental nature, replacing it with the foul energy and strength of the undead. Occasionally, your draconic heritage echoes a peal of raw power through your form, but it is quickly converted into necrotic waves.",
+          "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 2.",
+          "asi": [
             {
-                "name": "Derro Heritage",
-                "desc": "Your darakhul character was a derro before transforming into a darakhul. For you, the quieting of the otherworldly voices did not bring peace and tranquility. The impulses simply became more focused, and the desire to feast on flesh overwhelmed other urges. The darkness is still there; it just has a new, clearer form.",
-                "size": "",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
-                "languages": "You can speak, read, and write Dwarvish.",
-                "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Charisma"
-                        ],
-                        "value": 2
-                    }
-                ],
-                "traits": "***Calculating Insanity.*** The insanity of your race was compressed into a cold, hard brilliance when you took on your darakhul form. These flashes of brilliance come to you at unexpected moments. You know the true strike cantrip. Charisma is your spellcasting ability for it. You can cast true strike as a bonus action a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest."
-            },
-            {
-                "name": "Dragonborn Heritage",
-                "desc": "Your darakhul character was a dragonborn before transforming into a darakhul. The dark power of undeath overwhelmed your elemental nature, replacing it with the foul energy and strength of the undead. Occasionally, your draconic heritage echoes a peal of raw power through your form, but it is quickly converted into necrotic waves.",
-                "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Strength"
-                        ],
-                        "value": 2
-                    }
-                ],
-                "size": "Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds. Your size is Medium. ",
-                "speed": {
-                    "walk": 25
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 25 feet, and you are not slowed by wearing heavy armor. ",
-                "languages": "You can speak, read, and write Draconic.",
-                "traits": "***Corrupted Bite.*** The inherent breath weapon of your draconic heritage is corrupted by the necrotic energy of your new darakhul form. Instead of forming a line or cone, your breath weapon now oozes out of your ghoulish maw. As a bonus action, you breathe necrotic energy onto your fangs and make one bite attack. If the attack hits, it deals extra necrotic damage equal to your level. You can't use this trait again until you finish a long rest."
-            },
-            {
-                "name": "Drow Heritage",
-                "desc": "Your darakhul character was a drow before transforming into a darakhul. Your place within the highly regimented drow society doesn't feel that much different from your new place in the darakhul empires. But an uncertainty buzzes in your mind, and a hunger gnaws at your gut. You are now what you once hated and feared. Does it feel right, or is it something you fight against?",
-                "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Intelligence"
-                        ],
-                        "value": 2
-                    }
-                ],
-                "size": "Drow are slightly shorter and slimmer than humans. Your size is Medium.",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
-                "languages": "You can speak, read, and write Elvish.",
-                "traits": "***Poison Bite.*** When you hit with your bite attack, you can release venom into your foe. If you do, your bite deals an extra 1d6 poison damage. The damage increases to 3d6 at 11th level. After you release this venom into a creature, you can't do so again until you finish a short or long rest."
-            },
-            {
-                "name": "Dwarf Heritage",
-                "desc": "Your darakhul character was a dwarf before transforming into a darakhul. The hum of the earth, the tranquility of the stone and the dust, drained from you as the darakhul fever overwhelmed your once-resilient body. The stone is still there, but its touch has gone from a welcome embrace to a cold grip of death. But it's all the same to you now. ",
-                "asi-desc": "***Ability Score Increase.*** Your Wisdon score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Wisdom"
-                        ],
-                        "value": 2
-                    }
-                ],
-                "size": "Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium.",
-                "speed": {
-                    "walk": 25
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 25 feet, and your speed is not reduced by wearing heavy armor. ",
-                "languages": "You can speak, read, and write Dwarvish.",
-                "traits": "***Dwarven Stoutness.*** Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
-            },
-            {
-                "name": "Elf/Shadow Fey Heritage",
-                "desc": "Your darakhul character was an elf or shadow fey (see *Midgard Heroes Handbook*) before transforming into a darakhul. The deathly power coursing through you reminds you of the lithe beauty and magic of your former body. If you just use your imagination, the blood tastes like wine once did. The smell of rotting flesh has the bouquet of wildflowers. The moss beneath the surface feels like the leaves of the forest.",
-                "asi-desc": "***Ability Score Increase.*** Your Dexterity score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Dexterity"
-                        ],
-                        "value": 2
-                    }
-                ],
-                "size": "Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
-                "languages": "You can speak, read, and write Elvish (if you were an elf) or Umbral (if you were a shadow fey).",
-                "traits": "***Supernatural Senses.*** Your keen elven senses are honed even more by the power of undeath and the hunger within you. You can now smell when blood is in the air. You have proficiency in the Perception skill, and you have advantage on Wisdom (Perception) checks to notice or find a creature within 30 feet of you that doesn't have all of its hit points."
-            },
-            {
-                "name": "Gnome Heritage",
-                "desc": "Your darakhul character was a gnome before transforming into a darakhul. The spark of magic that drove you before your transformation still burns inside of you, but now it is a constant ache instead of a source of creation and inspiration. This ache is twisted by your hunger, making you hunger for magic itself. ",
-                "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Intelligence"
-                        ],
-                        "value": 2
-                    }
-                ],
-                "size": "Gnomes are between 3 and 4 feet tall and average about 40 pounds. Your size is Small.",
-                "speed": {
-                    "walk": 25
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 25 feet.",
-                "languages": "You can speak, read, and write Gnomish. ",
-                "traits": "***Magical Hunger.*** When a creature you can see within 30 feet of you casts a spell, you can use your reaction to consume the spell's residual magic. Your consumption doesn't counter or otherwise affect the spell or the spellcaster. When you consume this residual magic, you gain temporary hit points (minimum of 1) equal to your Constitution modifier, and you can't use this trait again until you finish a short or long rest."
-            },
-            {
-                "name": "Halfling Heritage",
-                "desc": "Your darakhul character was a halfling before transforming into a darakhul. Everything you loved as a halfling—food, drink, exploration, adventure— still drives you in your undead form; it is simply a more ghoulish form of those pleasures now: raw flesh instead of stew, warm blood instead of cold mead. You still want to explore the dark corners of the world, but now you seek something different. ",
-                "asi-desc": "***Ability Score Increase.*** Your Dexterity score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Dexterity"
-                        ],
-                        "value": 2
-                    }
-                ],
-                "size": "Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small",
-                "speed": {
-                    "walk": 25
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 25 feet.",
-                "languages": "You can speak, read, and write Halfling.",
-                "traits": "***Ill Fortune.*** Your uncanny halfling luck has taken a dark turn since your conversion to an undead creature. When a creature rolls a 20 on the d20 for an attack roll against you, the creature must reroll the attack and use the new roll. If the second attack roll misses you, the attacking creature takes necrotic damage equal to twice your Constitution modifier (minimum of 2)."
-            },
-            {
-                "name": "Human/Half-Elf Heritage",
-                "desc": "Your darakhul character was a human or half-elf before transforming into a darakhul. Where there was once light there is now darkness. Where there was once love there is now hunger. You know if the darkness and hunger become all-consuming, you are truly lost. But the powers of your new form are strangely comfortable. How much of your old self is still there, and what can this new form give you that your old one couldn't? ",
-                "asi-desc": "***Ability Score Increase.*** One ability score of your choice, other than Constitution, increases by 2.",
-                "size": "Humans and half-elves vary widely in height and build, from barely 5 feet to well over 6 feet tall. Your size is Medium.",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
-                "languages": "You can speak, read, and write one language of your choice.",
-                "traits": "***Versatility.*** The training and experience of your early years was not lost when you became a darakhul. You have proficiency in two skills and one tool of your choice.."
-            },
-            {
-                "name": "Kobold Heritage",
-                "desc": "Your darakhul character was a kobold before transforming into a darakhul. The dark, although it was often your home, generally held terrors that you needed to survive. Now you are the dark, and its pull on your soul is strong. You fight to keep a grip on the intellect and cunning that sustained you in your past life. Sometimes it is easy, but often the driving hunger inside you makes it hard to think as clearly as you once did.",
-                "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Intelligence"
-                        ],
-                        "value": 12
-                    }
-                ],
-                "size": "Kobolds stand between 3 and 4 feet tall and weigh around 40 pounds. Your size is Small.",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
-                "languages": "You can speak, read, and write Draconic. ",
-                "traits": "***Devious Bite.*** When you hit a creature with your bite attack and you have advantage on the attack roll, your bite deals an extra 1d4 piercing damage."
-            },
-            {
-                "name": "Ravenfolk",
-                "desc": "Your darakhul character was a ravenfolk (see Midgard Heroes Handbook) before transforming into a darakhul. Your new form feels different. It is more powerful and less fidgety, and your beak has become razor sharp. There is still room for trickery, of course. But with your new life comes a disconnection from the All Father. Does this loss gnaw at you like your new hunger or do you feel freed from the destiny of your people?",
-                "asi-desc": "***Ability Score Increase.*** Your Dexterity score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Dexterity"
-                        ],
-                        "value": 2
-                    }
-                ],
-                "size": "Ravenfolk are slighter and shorter than humans, ranging from 4 feet to just shy of 6 feet tall. Your size is Medium.",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
-                "languages": "You can speak, read, and write Huginn's Speech.",
-                "traits": "***Sudden Bite and Flight.*** If you surprise a creature during the first round of combat, you can make a bite attack as a bonus action. If it hits, you can immediately take the Dodge action as a reaction."
-            },
-            {
-                "name": "Tiefling Heritage",
-                "desc": "Your darakhul character was a tiefling before transforming into a darakhul. You are no stranger to the pull of powerful forces raging through your blood. You have traded one dark pull for another, and this one seems much stronger. Is that a good feeling, or do you miss your old one?",
-                "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Charisma"
-                        ],
-                        "value": 1
-                    }
-                ],
-                "size": "Tieflings are about the same size and build as humans. Your size is Medium",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
-                "languages": "You can speak, read, and write Infernal.",
-                "traits": "***Necrotic Rebuke.*** When you are hit by a weapon attack, you can use a reaction to envelop the attacker in shadowy flames. The attacker takes necrotic damage equal to your Charisma modifier (minimum of 1), and it has disadvantage on attack rolls until the end of its next turn. You must finish a long rest before you can use this feature again.."
-            },
-            {
-                "name": "Trollkin Heritage",
-                "desc": "Your darakhul character was a trollkin (see *Midgard Heroes Handbook*) before transforming into a darakhul. Others saw you as a monster because of your ancestry. You became inured to the fearful looks and hurried exits of those around you. If only they could see you now. Does your new state make you seek revenge on them, or are you able to maintain your self-control despite the new urges you feel?",
-                "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 2.",
-                "asi": [
-                    {
-                        "attributes": [
-                            "Strength"
-                        ],
-                        "value": 2
-                    }
-                ],
-                "size": "Trollkin stand over 6 feet tall and are more solidly built than humans, weighing around 200 pounds. Your size is Medium.",
-                "speed": {
-                    "walk": 30
-                },
-                "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
-                "languages": "You can speak, read, and write Trollkin.",
-                "traits": "***Regenerative Bite.*** The regenerative powers of your trollkin heritage are less potent than they were in life and need a little help. As an action, you can make a bite attack against a creature that isn't undead or a construct. On a hit, you regain hit points (minimum of 1) equal to half the amount of damage dealt. Once you use this trait, you can't use it again until you finish a long rest.."
+              "attributes": ["Strength"],
+              "value": 2
             }
-        ]
+          ],
+          "size": "Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds. Your size is Medium. ",
+          "speed": {
+            "walk": 25
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 25 feet, and you are not slowed by wearing heavy armor. ",
+          "languages": "You can speak, read, and write Draconic.",
+          "traits": "***Corrupted Bite.*** The inherent breath weapon of your draconic heritage is corrupted by the necrotic energy of your new darakhul form. Instead of forming a line or cone, your breath weapon now oozes out of your ghoulish maw. As a bonus action, you breathe necrotic energy onto your fangs and make one bite attack. If the attack hits, it deals extra necrotic damage equal to your level. You can't use this trait again until you finish a long rest."
+        },
+        {
+          "name": "Drow Heritage",
+          "desc": "Your darakhul character was a drow before transforming into a darakhul. Your place within the highly regimented drow society doesn't feel that much different from your new place in the darakhul empires. But an uncertainty buzzes in your mind, and a hunger gnaws at your gut. You are now what you once hated and feared. Does it feel right, or is it something you fight against?",
+          "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 2.",
+          "asi": [
+            {
+              "attributes": ["Intelligence"],
+              "value": 2
+            }
+          ],
+          "size": "Drow are slightly shorter and slimmer than humans. Your size is Medium.",
+          "speed": {
+            "walk": 30
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
+          "languages": "You can speak, read, and write Elvish.",
+          "traits": "***Poison Bite.*** When you hit with your bite attack, you can release venom into your foe. If you do, your bite deals an extra 1d6 poison damage. The damage increases to 3d6 at 11th level. After you release this venom into a creature, you can't do so again until you finish a short or long rest."
+        },
+        {
+          "name": "Dwarf Heritage",
+          "desc": "Your darakhul character was a dwarf before transforming into a darakhul. The hum of the earth, the tranquility of the stone and the dust, drained from you as the darakhul fever overwhelmed your once-resilient body. The stone is still there, but its touch has gone from a welcome embrace to a cold grip of death. But it's all the same to you now. ",
+          "asi-desc": "***Ability Score Increase.*** Your Wisdon score increases by 2.",
+          "asi": [
+            {
+              "attributes": ["Wisdom"],
+              "value": 2
+            }
+          ],
+          "size": "Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium.",
+          "speed": {
+            "walk": 25
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 25 feet, and your speed is not reduced by wearing heavy armor. ",
+          "languages": "You can speak, read, and write Dwarvish.",
+          "traits": "***Dwarven Stoutness.*** Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+        },
+        {
+          "name": "Elf/Shadow Fey Heritage",
+          "desc": "Your darakhul character was an elf or shadow fey (see *Midgard Heroes Handbook*) before transforming into a darakhul. The deathly power coursing through you reminds you of the lithe beauty and magic of your former body. If you just use your imagination, the blood tastes like wine once did. The smell of rotting flesh has the bouquet of wildflowers. The moss beneath the surface feels like the leaves of the forest.",
+          "asi-desc": "***Ability Score Increase.*** Your Dexterity score increases by 2.",
+          "asi": [
+            {
+              "attributes": ["Dexterity"],
+              "value": 2
+            }
+          ],
+          "size": "Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.",
+          "speed": {
+            "walk": 30
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
+          "languages": "You can speak, read, and write Elvish (if you were an elf) or Umbral (if you were a shadow fey).",
+          "traits": "***Supernatural Senses.*** Your keen elven senses are honed even more by the power of undeath and the hunger within you. You can now smell when blood is in the air. You have proficiency in the Perception skill, and you have advantage on Wisdom (Perception) checks to notice or find a creature within 30 feet of you that doesn't have all of its hit points."
+        },
+        {
+          "name": "Gnome Heritage",
+          "desc": "Your darakhul character was a gnome before transforming into a darakhul. The spark of magic that drove you before your transformation still burns inside of you, but now it is a constant ache instead of a source of creation and inspiration. This ache is twisted by your hunger, making you hunger for magic itself. ",
+          "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 2.",
+          "asi": [
+            {
+              "attributes": ["Intelligence"],
+              "value": 2
+            }
+          ],
+          "size": "Gnomes are between 3 and 4 feet tall and average about 40 pounds. Your size is Small.",
+          "speed": {
+            "walk": 25
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 25 feet.",
+          "languages": "You can speak, read, and write Gnomish. ",
+          "traits": "***Magical Hunger.*** When a creature you can see within 30 feet of you casts a spell, you can use your reaction to consume the spell's residual magic. Your consumption doesn't counter or otherwise affect the spell or the spellcaster. When you consume this residual magic, you gain temporary hit points (minimum of 1) equal to your Constitution modifier, and you can't use this trait again until you finish a short or long rest."
+        },
+        {
+          "name": "Halfling Heritage",
+          "desc": "Your darakhul character was a halfling before transforming into a darakhul. Everything you loved as a halfling—food, drink, exploration, adventure— still drives you in your undead form; it is simply a more ghoulish form of those pleasures now: raw flesh instead of stew, warm blood instead of cold mead. You still want to explore the dark corners of the world, but now you seek something different. ",
+          "asi-desc": "***Ability Score Increase.*** Your Dexterity score increases by 2.",
+          "asi": [
+            {
+              "attributes": ["Dexterity"],
+              "value": 2
+            }
+          ],
+          "size": "Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small",
+          "speed": {
+            "walk": 25
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 25 feet.",
+          "languages": "You can speak, read, and write Halfling.",
+          "traits": "***Ill Fortune.*** Your uncanny halfling luck has taken a dark turn since your conversion to an undead creature. When a creature rolls a 20 on the d20 for an attack roll against you, the creature must reroll the attack and use the new roll. If the second attack roll misses you, the attacking creature takes necrotic damage equal to twice your Constitution modifier (minimum of 2)."
+        },
+        {
+          "name": "Human/Half-Elf Heritage",
+          "desc": "Your darakhul character was a human or half-elf before transforming into a darakhul. Where there was once light there is now darkness. Where there was once love there is now hunger. You know if the darkness and hunger become all-consuming, you are truly lost. But the powers of your new form are strangely comfortable. How much of your old self is still there, and what can this new form give you that your old one couldn't? ",
+          "asi-desc": "***Ability Score Increase.*** One ability score of your choice, other than Constitution, increases by 2.",
+          "asi": [
+            {
+              "attributes": ["Any"],
+              "value": 2
+            }
+          ],
+          "size": "Humans and half-elves vary widely in height and build, from barely 5 feet to well over 6 feet tall. Your size is Medium.",
+          "speed": {
+            "walk": 30
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
+          "languages": "You can speak, read, and write one language of your choice.",
+          "traits": "***Versatility.*** The training and experience of your early years was not lost when you became a darakhul. You have proficiency in two skills and one tool of your choice.."
+        },
+        {
+          "name": "Kobold Heritage",
+          "desc": "Your darakhul character was a kobold before transforming into a darakhul. The dark, although it was often your home, generally held terrors that you needed to survive. Now you are the dark, and its pull on your soul is strong. You fight to keep a grip on the intellect and cunning that sustained you in your past life. Sometimes it is easy, but often the driving hunger inside you makes it hard to think as clearly as you once did.",
+          "asi-desc": "***Ability Score Increase.*** Your Intelligence score increases by 2.",
+          "asi": [
+            {
+              "attributes": ["Intelligence"],
+              "value": 2
+            }
+          ],
+          "size": "Kobolds stand between 3 and 4 feet tall and weigh around 40 pounds. Your size is Small.",
+          "speed": {
+            "walk": 30
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
+          "languages": "You can speak, read, and write Draconic. ",
+          "traits": "***Devious Bite.*** When you hit a creature with your bite attack and you have advantage on the attack roll, your bite deals an extra 1d4 piercing damage."
+        },
+        {
+          "name": "Ravenfolk",
+          "desc": "Your darakhul character was a ravenfolk (see Midgard Heroes Handbook) before transforming into a darakhul. Your new form feels different. It is more powerful and less fidgety, and your beak has become razor sharp. There is still room for trickery, of course. But with your new life comes a disconnection from the All Father. Does this loss gnaw at you like your new hunger or do you feel freed from the destiny of your people?",
+          "asi-desc": "***Ability Score Increase.*** Your Dexterity score increases by 2.",
+          "asi": [
+            {
+              "attributes": ["Dexterity"],
+              "value": 2
+            }
+          ],
+          "size": "Ravenfolk are slighter and shorter than humans, ranging from 4 feet to just shy of 6 feet tall. Your size is Medium.",
+          "speed": {
+            "walk": 30
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
+          "languages": "You can speak, read, and write Huginn's Speech.",
+          "traits": "***Sudden Bite and Flight.*** If you surprise a creature during the first round of combat, you can make a bite attack as a bonus action. If it hits, you can immediately take the Dodge action as a reaction."
+        },
+        {
+          "name": "Tiefling Heritage",
+          "desc": "Your darakhul character was a tiefling before transforming into a darakhul. You are no stranger to the pull of powerful forces raging through your blood. You have traded one dark pull for another, and this one seems much stronger. Is that a good feeling, or do you miss your old one?",
+          "asi-desc": "***Ability Score Increase.*** Your Charisma score increases by 1.",
+          "asi": [
+            {
+              "attributes": ["Charisma"],
+              "value": 1
+            }
+          ],
+          "size": "Tieflings are about the same size and build as humans. Your size is Medium",
+          "speed": {
+            "walk": 30
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
+          "languages": "You can speak, read, and write Infernal.",
+          "traits": "***Necrotic Rebuke.*** When you are hit by a weapon attack, you can use a reaction to envelop the attacker in shadowy flames. The attacker takes necrotic damage equal to your Charisma modifier (minimum of 1), and it has disadvantage on attack rolls until the end of its next turn. You must finish a long rest before you can use this feature again.."
+        },
+        {
+          "name": "Trollkin Heritage",
+          "desc": "Your darakhul character was a trollkin (see *Midgard Heroes Handbook*) before transforming into a darakhul. Others saw you as a monster because of your ancestry. You became inured to the fearful looks and hurried exits of those around you. If only they could see you now. Does your new state make you seek revenge on them, or are you able to maintain your self-control despite the new urges you feel?",
+          "asi-desc": "***Ability Score Increase.*** Your Strength score increases by 2.",
+          "asi": [
+            {
+              "attributes": ["Strength"],
+              "value": 2
+            }
+          ],
+          "size": "Trollkin stand over 6 feet tall and are more solidly built than humans, weighing around 200 pounds. Your size is Medium.",
+          "speed": {
+            "walk": 30
+          },
+          "speed-desc": "***Speed.*** Your base walking speed is 30 feet.",
+          "languages": "You can speak, read, and write Trollkin.",
+          "traits": "***Regenerative Bite.*** The regenerative powers of your trollkin heritage are less potent than they were in life and need a little help. As an action, you can make a bite attack against a creature that isn't undead or a construct. On a hit, you regain hit points (minimum of 1) equal to half the amount of damage dealt. Once you use this trait, you can't use it again until you finish a long rest.."
+        }
+      ]
     },
     {
         "name": "Derro",
@@ -710,7 +695,7 @@
                         "value": 1
                     }
                 ],
-                "age": "***Age.*** Courtfolk are the longest-lived of the halfling subraces, perhaps owing to their close association with elves. Courtfolk are elderly by their second century but enjoy relatively pleasant and unhindered old age up to 350, a century longer than most halflings.",              
+                "age": "***Age.*** Courtfolk are the longest-lived of the halfling subraces, perhaps owing to their close association with elves. Courtfolk are elderly by their second century but enjoy relatively pleasant and unhindered old age up to 350, a century longer than most halflings.",
                 "traits": "***Boon Companion.*** You are quick to step in and help your friends, and you have a knack for knowing exactly how best to do it. When you work with an ally to complete a task or take the Help action in combat, your ally adds a d4 to their check or attack roll.\n\n***Wee Glamour.*** You are—ever so slightly—imbued with a bit of elven magic. You move with grace, your laugh is always pleasant, and colors are more vibrant on you. You have advantage on saving throws against being charmed and on saving throws against spells of the enchantment school."
             },
             {
