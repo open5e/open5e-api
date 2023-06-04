@@ -50,4 +50,8 @@ urlpatterns = [
     re_path(r'^', include(router.urls)),
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     re_path(r'^search/', include('haystack.urls')),
+
+    # Versioned API routes (above routes default to v1)
+    re_path(r'^v1/', include(router.urls)),
+    re_path(r'^v1/search/', include('haystack.urls')),
 ]
