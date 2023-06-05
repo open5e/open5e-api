@@ -1,4 +1,5 @@
 """Helper command to fully set up the API."""
+import argparse
 
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
@@ -7,6 +8,16 @@ from api.management.commands import quickload
 
 class Command(BaseCommand):
     """Implementation for the `manage.py quicksetup` subcommand."""
+
+    def add_arguments(self, parser: argparse.ArgumentParser):
+        """Define arguments for the `manage.py quicksetup` subcommand."""
+
+        # Named (optional) arguments.
+        parser.add_argument(
+            "--noindex",
+            action="store_true",
+            help="Flushes all existing database data before adding new objects.",
+        )
 
     def handle(self, *args, **options):
         """Main logic."""
@@ -19,8 +30,11 @@ class Command(BaseCommand):
         self.stdout.write('Populating the database...')
         quickload.populate_db()
 
-        self.stdout.write('Rebuilding the search index...')
-        rebuild_index()
+        if options["noindex"]:
+            self.stdout.write('Skipping search index rebuild due to --noindex...')
+        else:
+            self.stdout.write('Rebuilding the search index...')
+            rebuild_index()
 
         self.stdout.write(self.style.SUCCESS('API setup complete.'))
 
