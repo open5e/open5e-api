@@ -42,7 +42,7 @@ class Object(GameContent):
         max_digits=10,
         decimal_places=3,
         validators=[MinValueValidator(0)],
-        help_text='Integer representing the weight of the object.')
+        help_text='Number representing the weight of the object.')
 
     armor_class = models.IntegerField(
         null=True,  # Allow an unspecified armor_class.
