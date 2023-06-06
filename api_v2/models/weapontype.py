@@ -1,6 +1,8 @@
 """The model for a type of weapon."""
 
 from django.db import models
+from django.core.validators import MinValueValidator
+
 from api.models import GameContent
 
 
@@ -16,7 +18,7 @@ class WeaponType(GameContent):
     damage_type = models.TextField(
         null=False,
         default='bludgeoning',
-        validators=[damage_type_validator],
+#        validators=[damage_type_validator],
         help_text='The damage type dealt by attacks with the weapon.')
 
     damage_dice = models.TextField(

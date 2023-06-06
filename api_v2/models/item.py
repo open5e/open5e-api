@@ -1,9 +1,12 @@
 """The model for an item."""
 
 from django.db import models
+from django.core.validators import MinValueValidator
+
 from api.models import GameContent
 from .weapontype import WeaponType
 from .armortype import ArmorType
+from .object import Object
 
 
 class Item(Object):
@@ -27,10 +30,12 @@ class Item(Object):
 
     weapon_type = models.ForeignKey(
         WeaponType,
+        on_delete=models.CASCADE,
         null=True)
 
     armor_type = models.ForeignKey(
         ArmorType,
+        on_delete=models.CASCADE,
         null=True)
 
     def is_weapon(self):

@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
     # apps
     'api',
+    'api_v2',
 
     # downloaded modules
     'rest_framework',

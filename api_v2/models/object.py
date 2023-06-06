@@ -3,6 +3,8 @@ The model for an object.
 """
 
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 from api.models import GameContent
 
 
@@ -60,20 +62,20 @@ class Object(GameContent):
 
     damage_immunities = models.JSONField(
         null=False,  # Force an empty list if unspecified.
-        default=[],
-        validators=[damage_type_validator],
+        default=list,
+        #validators=[damage_type_validator],
         help_text='List of damage types that this is immune to.')
 
     damage_resistances = models.JSONField(
         null=False,  # Force an empty list if unspecified.
-        default=[],
-        validators=[damage_type_validator],
+        default=list,
+        #validators=[damage_type_validator],
         help_text='List of damage types that this is resistant to.')
 
     damage_vulnerabilities = models.JSONField(
         null=False,  # Force an empty list if unspecified.
-        default=[],
-        validators=[damage_type_validator],
+        default=list,
+        #validators=[damage_type_validator],
         help_text='List of damage types that this is vulnerable to.')
 
     class Meta:
