@@ -2,13 +2,15 @@
 
 from django.db import models
 from api.models import GameContent
+from .weapontype import WeaponType
+from .armortype import ArmorType
 
 
 class Item(Object):
     """
     This is the model for an Item, which is an object that can be used.
 
-    This extends the object model, but adds other concepts.
+    This extends the object model, but adds cost, and is_magical.
     """
 
     cost = models.DecimalField(
@@ -22,3 +24,17 @@ class Item(Object):
         null=False,
         default=False,  # An item is not magical unless specified.
         help_text='If the item is a magical item.')
+
+    is_weapon = models.BooleanField(
+        null=False,
+        default=False,  # An item is not a weapon unless specified.
+        help_text='If the item is a weapon.')
+    
+    weapon_type = models.ManyToManyField(WeaponType)
+
+    is_armor = models.BooleanField(
+        null=False,
+        default=False,  # An item is not armor unless specified.
+        help_text='If the item is armor.')
+
+    armor_type = models.ManyToManyField(ArmorType)
