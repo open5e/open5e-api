@@ -1,109 +1,166 @@
-
+"""The model for a type of weapon."""
 
 from django.db import models
 from api.models import GameContent
 
+
 class WeaponType(GameContent):
+    """
+    This model represents types of weapons.
 
-#"range":{"normal":30,"long":120}
+    This does not represent a weapon itself, because that would be an item.
+    Only the unique attributes of a weapon are here. An item that is a weapon
+    would link to this model instance.
+    """
 
-#"damage":{"dice":"","type":""}
-
-    def properties_display(self):
-        # Append in order
-        special
-        finesse
-        ammunition / range
-        light
-        heavy
-        thrown
-        loading
-        two-handed
-        versatile
-        reach
-        
-        # capitalize first letter
-        
-        # return a dash if nothing
-
-        return properties_list
-
-    light = models.BooleanField(
+    damage_type = models.TextField(
         null=False,
-        default=False,
-        help_text='If the weapon is light.')
+        default='bludgeoning',
+        validators=[damage_type_validator],
+        help_text='The damage type dealt by attacks with the weapon.')
 
-    finesse = models.BooleanField(
+    damage_dice = models.TextField(
+        null=True,
+        help_text='The damage dice when used making an attack.')
+
+    versatile_dice = models.TextField(
+        null=True,
+        help_text='The damage dice when attacking using versatile.')
+
+    range_reach = models.IntegerField(
+        null=False,
+        default=5,
+        validators=[MinValueValidator(0)],
+        help_text='The range of the weapon when making a melee attack.')
+
+    is_finesse = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is finesse.')
 
-    thrown = models.BooleanField(
+    is_thrown = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is thrown.')
 
-    two-handed = models.BooleanField(
+    is_two_handed = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is two-handed.')
 
-    versatile = models.BooleanField(
+    is_versatile = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is versatile.')
 
-    ammunition = models.BooleanField(
+    requires_ammunition = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon requires ammunition.')
 
-    loading = models.BooleanField(
+    requires_loading = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon requires loading.')
 
-    heavy = models.BooleanField(
+    is_heavy = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is heavy.')
 
-    light = models.BooleanField(
+    is_light = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is light.')
 
-    reach = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon grants reach.')
-
-    lance = models.BooleanField(
+    is_lance = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is a lance.')
 
-    net = models.BooleanField(
+    is_net = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is a net.')
 
-    simple = models.BooleanField(
+    is_simple = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon category is simple.')
 
-    martial = models.BooleanField(
+    is_martial = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is category is martial.')
 
-    silvered = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon has been silvered.')
-
-    improvised = models.BooleanField(
+    is_improvised = models.BooleanField(
         null=False,
         default=False,
         help_text='If the weapon is improvised.')
+
+    range_normal = models.IntegerField(
+        null=True,
+        validators=[MinValueValidator(0)],
+        help_text='The normal range of a ranged weapon attack.')
+
+    range_long = models.IntegerField(
+        null=True,
+        validators=[MinValueValidator(0)],
+        help_text='The long range of a ranged weapon attack.')
+
+    def melee_attack_possible(self):
+        # All weapons can be used to make a melee attack.
+        return True 
+
+    def melee_attack_is_improvised(self):
+        # Ammunition weapons can only be used as improvised melee weapons.
+        return self.ammunition 
+
+    def ranged_attack_possible(self):
+        # Only ammunition or throw weapons can make ranged attacks.
+        return self.ammunition or self.thrown 
+
+    def range_melee(self):
+        return self.range_reach
+    
+    def is_reach(self):
+        # A weapon with a longer reach than the default has the reach property.
+        return self.range_reach > 5 
+
+    def properties_display(self):
+        properties = []
+        
+        range_desc = "(range {}/{})".format(
+            str(self.range_normal()),
+            str(self.range_long()))
+
+        versatile_desc = "({})".format(self.versatile_dice)
+
+        if self.special:
+            properties.append("special")
+        if self.finesse:
+            properties.append("finesse")
+        if self.ammunition:
+            properties.append("ammuntion {}".format(range_desc))
+        if self.light:
+            properties.append("light")
+        if self.heavy:
+            properties.append("heavy")
+        if self.thrown:
+            properties.append("thrown {}".format(range_desc))
+        if self.loading:
+            properties.append("loading")
+        if self.two-handed:
+            properties.append("two-handed")
+        if self.versatile:
+            properties.append("versatile {}".format(versatile_desc))
+        if self.reach:
+            properties.append("reach")
+
+        if len(properties) > 0:
+            # Capitalize the first letter of the first property.
+            properties[0][0] = properties[0][0].upper()
+            return properties
+
+        else:
+            return ["-"]

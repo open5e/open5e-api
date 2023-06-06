@@ -1,52 +1,69 @@
+"""The model for a type of armor."""
 
 
 from django.db import models
 from api.models import GameContent
 
-class ArmorType(GameContent):
 
-    light = models.BooleanField(
+class ArmorType(GameContent):
+    """
+    This is the model for an armortype.
+    
+    This does not represent the armor set itself, because that would be an
+    item. Only the unique attributes of a type of armor are here. An item
+    that is armor would link to this model instance.
+    """
+
+    is_light = models.BooleanField(
         null=False,
         default=False,
         help_text='If the armor is light.')
 
-    medium = models.BooleanField(
+    is_medium = models.BooleanField(
         null=False,
         default=False,
         help_text='If the armor is medium.')
 
-    heavy = models.BooleanField(
+    is_heavy = models.BooleanField(
         null=False,
         default=False,
         help_text='If the armor is heavy.')
 
-    stealth_disadvantage = models.BooleanField(
+    grants_stealth_disadvantage = models.BooleanField(
         null=False,
         default=False,
         help_text='If the armor results in disadvantage on stealth checks.')
 
-    strength = models.IntegerField(
+    strength_score_required = models.IntegerField(
         null=True,
-        help_text='Strength score required to wear the armor without penalty.'
-    )
-
-    def strength_display(self):
-        return strength_display
+        help_text='Strength score required to wear the armor without penalty.')
 
     ac_base = models.IntegerField(
         null=False,
-        help_text='Integer representing the flat armor class without modifiers.'
-    )
+        help_text='Integer representing the armor class without modifiers.')
 
     ac_add_dexmod = models.BooleanField(
         null=False,
         default=False,
-        help_text='If the final armor class takes the dexterity modifier into account.')
+        help_text='If the final armor class includes dexterity modifier.')
 
     ac_cap_dexmod = models.IntegerField(
         null=True,
-        help_text='Integer representing the maximum of the added dexterity modifier.'
-    )
+        help_text='Integer representing the dexterity modifier cap.')
 
     def ac_display(self):
-        return ac
+        ac_string = str(self.ac_base)
+
+        if self.ac_add_dexmod:
+            ac_string += " + Dex modifier"
+
+        if self.ac_cap_dexmod is not None:
+            ac_string += " (max {})".format(self.ac_cap_dexmod)
+
+        return ac_string
+
+    def strength_display(self):
+        if self.strength_score_required is None:
+            return "-"
+        else:
+            return "Str {}".format(self.strength_score_required)

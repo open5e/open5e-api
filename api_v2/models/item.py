@@ -25,16 +25,16 @@ class Item(Object):
         default=False,  # An item is not magical unless specified.
         help_text='If the item is a magical item.')
 
-    is_weapon = models.BooleanField(
-        null=False,
-        default=False,  # An item is not a weapon unless specified.
-        help_text='If the item is a weapon.')
-    
-    weapon_type = models.ManyToManyField(WeaponType)
+    weapon_type = models.ForeignKey(
+        WeaponType,
+        null=True)
 
-    is_armor = models.BooleanField(
-        null=False,
-        default=False,  # An item is not armor unless specified.
-        help_text='If the item is armor.')
+    armor_type = models.ForeignKey(
+        ArmorType,
+        null=True)
 
-    armor_type = models.ManyToManyField(ArmorType)
+    def is_weapon(self):
+        return self.weapon_type is not None
+
+    def is_armor(self):
+        return self.armor_type is not None

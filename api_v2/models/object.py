@@ -35,7 +35,7 @@ class Object(GameContent):
         validators=[
             MinValueValidator(1),
             MaxValueValidator(6)],
-        help_text='Integer representing the hit size of the object. 1 is Tiny, 6 is Gargantuan')
+        help_text='Integer representing the size of the object.')
 
     weight = models.DecimalField(
         null=True,  # Allow an unspecified weight.
