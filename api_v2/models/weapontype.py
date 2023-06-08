@@ -90,11 +90,6 @@ class WeaponType(GameContent):
         default=False,
         help_text='If the weapon category is simple.')
 
-    is_martial = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon is category is martial.')
-
     is_improvised = models.BooleanField(
         null=False,
         default=False,
@@ -113,6 +108,9 @@ class WeaponType(GameContent):
     def melee_attack_possible(self):
         # All weapons can be used to make a melee attack.
         return True 
+
+    def is_martial(self):
+        return not self.is_simple
 
     def melee_attack_is_improvised(self):
         # Ammunition weapons can only be used as improvised melee weapons.
