@@ -16,6 +16,11 @@ Including another URLconf
 
 from django.conf.urls import re_path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+from django.contrib import admin
+from django.urls import path
+from django.conf import settings
+
 from rest_framework import routers
 
 from api import views
@@ -62,3 +67,6 @@ urlpatterns = [
     re_path(r'^v2/', include(router_v2.urls))
 
 ]
+
+if settings.DEBUG==True:
+    urlpatterns.append(path('admin/', admin.site.urls))
