@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.core.validators import MinValueValidator
+from django.urls import reverse
 
 from api.models import GameContent
 from .weapontype import WeaponType
@@ -37,9 +38,11 @@ class Item(Object):
         ArmorType,
         on_delete=models.CASCADE,
         null=True)
-
+    
+    @property
     def is_weapon(self):
         return self.weapon_type is not None
 
+    @property
     def is_armor(self):
         return self.armor_type is not None

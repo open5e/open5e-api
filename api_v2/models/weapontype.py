@@ -18,7 +18,6 @@ class WeaponType(GameContent):
     damage_type = models.TextField(
         null=False,
         default='bludgeoning',
-#        validators=[damage_type_validator],
         help_text='The damage type dealt by attacks with the weapon.')
 
     damage_dice = models.TextField(
@@ -104,63 +103,59 @@ class WeaponType(GameContent):
         null=True,
         validators=[MinValueValidator(0)],
         help_text='The long range of a ranged weapon attack.')
-
-    def melee_attack_possible(self):
-        # All weapons can be used to make a melee attack.
-        return True 
-
+    
+    @property
     def is_martial(self):
         return not self.is_simple
 
-    def melee_attack_is_improvised(self):
+    @property
+    def is_melee(self):
         # Ammunition weapons can only be used as improvised melee weapons.
-        return self.ammunition 
+        return not self.ammunition
 
+    @property
     def ranged_attack_possible(self):
         # Only ammunition or throw weapons can make ranged attacks.
         return self.ammunition or self.thrown 
 
+    @property
     def range_melee(self):
         return self.range_reach
     
+    @property
     def is_reach(self):
         # A weapon with a longer reach than the default has the reach property.
         return self.range_reach > 5 
 
-    def properties_display(self):
+    @property
+    def properties(self):
         properties = []
         
         range_desc = "(range {}/{})".format(
-            str(self.range_normal()),
-            str(self.range_long()))
+            str(self.range_normal),
+            str(self.range_long))
 
         versatile_desc = "({})".format(self.versatile_dice)
 
-        if self.special:
+        if self.is_net or self.is_lance:
             properties.append("special")
-        if self.finesse:
+        if self.is_finesse:
             properties.append("finesse")
-        if self.ammunition:
+        if self.requires_ammunition:
             properties.append("ammuntion {}".format(range_desc))
-        if self.light:
+        if self.is_light:
             properties.append("light")
-        if self.heavy:
+        if self.is_heavy:
             properties.append("heavy")
-        if self.thrown:
+        if self.is_thrown:
             properties.append("thrown {}".format(range_desc))
-        if self.loading:
+        if self.requires_loading:
             properties.append("loading")
-        if self.two-handed:
+        if self.is_two_handed:
             properties.append("two-handed")
-        if self.versatile:
+        if self.is_versatile:
             properties.append("versatile {}".format(versatile_desc))
-        if self.reach:
+        if self.is_reach:
             properties.append("reach")
-
-        if len(properties) > 0:
-            # Capitalize the first letter of the first property.
-            properties[0][0] = properties[0][0].upper()
-            return properties
-
-        else:
-            return ["-"]
+       
+        return properties

@@ -1,12 +1,16 @@
-from django.shortcuts import render
+import django_filters
+from rest_framework import viewsets
 
+from api_v2 import models
+from api_v2 import serializers
+from api.schema_generator import CustomSchema
 # Create your views here.
 class ItemFilter(django_filters.FilterSet):
 
     class Meta:
-        model = models.Race
+        model = models.Item
         fields = {
-            '__all__'
+            'name'
         }
 
 class ItemViewSet(viewsets.ReadOnlyModelViewSet):

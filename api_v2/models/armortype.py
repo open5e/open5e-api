@@ -51,6 +51,7 @@ class ArmorType(GameContent):
         null=True,
         help_text='Integer representing the dexterity modifier cap.')
 
+    @property
     def ac_display(self):
         ac_string = str(self.ac_base)
 
@@ -61,9 +62,3 @@ class ArmorType(GameContent):
             ac_string += " (max {})".format(self.ac_cap_dexmod)
 
         return ac_string
-
-    def strength_display(self):
-        if self.strength_score_required is None:
-            return "-"
-        else:
-            return "Str {}".format(self.strength_score_required)
