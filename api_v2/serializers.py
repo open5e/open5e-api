@@ -24,10 +24,20 @@ class WeaponTypeSerializer(serializers.ModelSerializer):
             'name',
             'properties']
 
+class MagicItemTypeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.MagicItemType
+        fields = [
+            'slug',
+            'name',
+            'rarity',
+            'requires_attunement']
 
 class ItemSerializer(serializers.ModelSerializer):
     weapon_type = WeaponTypeSerializer()
-    armor_type = ArmorTypeSerializer() 
+    armor_type = ArmorTypeSerializer()
+    magic_item_type = MagicItemTypeSerializer()
     
     class Meta:
         model = models.Item
@@ -39,7 +49,8 @@ class ItemSerializer(serializers.ModelSerializer):
             'weapon_type',
             'is_armor',
             'armor_type',
-            'is_magical',
+            'is_magic_item',
+            'magic_item_type',
             'cost'
             ]
 

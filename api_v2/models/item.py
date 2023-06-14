@@ -7,6 +7,7 @@ from django.urls import reverse
 from api.models import GameContent
 from .weapontype import WeaponType
 from .armortype import ArmorType
+from .magicitemtype import MagicItemType
 from .object import Object
 
 
@@ -24,11 +25,6 @@ class Item(Object):
         validators=[MinValueValidator(0)],
         help_text='Number representing the cost of the object.')
 
-    is_magical = models.BooleanField(
-        null=False,
-        default=False,  # An item is not magical unless specified.
-        help_text='If the item is a magical item.')
-
     weapon_type = models.ForeignKey(
         WeaponType,
         on_delete=models.CASCADE,
@@ -39,6 +35,11 @@ class Item(Object):
         on_delete=models.CASCADE,
         null=True)
     
+    magic_item_type = models.ForeignKey(
+        MagicItemType,
+        on_delete=models.CASCADE,
+        null=True)
+
     @property
     def is_weapon(self):
         return self.weapon_type is not None
@@ -46,3 +47,7 @@ class Item(Object):
     @property
     def is_armor(self):
         return self.armor_type is not None
+
+    @property 
+    def is_magic_item(self):
+        return self.magic_item_type is not None

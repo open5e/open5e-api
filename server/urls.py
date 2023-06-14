@@ -53,7 +53,6 @@ router.register('search', views.SearchView, basename="global-search")
 router_v2 = routers.DefaultRouter()
 router_v2.register(r'items',views_v2.ItemViewSet)
 
-
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
@@ -65,7 +64,6 @@ urlpatterns = [
     re_path(r'^v1/', include(router.urls)),
     re_path(r'^v1/search/', include('haystack.urls')),
     re_path(r'^v2/', include(router_v2.urls))
-
 ]
 
 if settings.DEBUG==True:

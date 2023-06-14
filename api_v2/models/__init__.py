@@ -11,3 +11,5 @@ from .itemset import ItemQuantity
 from .armortype import ArmorType
 
 from .weapontype import WeaponType
+
+from .magicitemtype import MagicItemType
