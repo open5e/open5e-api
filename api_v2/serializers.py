@@ -7,8 +7,7 @@ class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Document
         fields = [
-            'slug',
-            'abbr',
+            'key',
             'name',
             'license',
             'organization',
@@ -60,7 +59,7 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Item
         fields = [
-            'slug',
+            'key',
             'name',
             'weight',
             'is_weapon',

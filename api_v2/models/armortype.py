@@ -14,21 +14,6 @@ class ArmorType(HasName, FromDocument):
     that is armor would link to this model instance.
     """
 
-    is_light = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the armor is light.')
-
-    is_medium = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the armor is medium.')
-
-    is_heavy = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the armor is heavy.')
-
     grants_stealth_disadvantage = models.BooleanField(
         null=False,
         default=False,

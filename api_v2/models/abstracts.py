@@ -8,25 +8,13 @@ from django.template.defaultfilters import slugify
 
 
 class HasName(models.Model):
-    name = models.TextField(
+
+    name = models.CharField(
+        max_length=100,
         help_text='Name of the item.')
 
-    @property 
-    def slug(self):
-        return slugify(self.name)
-
-    @property
-    def abbr(self):
-        if ' ' in self.name:
-            # Name contains space or spaces.
-            words = self.name.split()
-            letters = [word[0] for word in words]
-            return "".join(letters)
-        else:
-            return self.slug
-
     def __str__(self):
-        return self.slug
+        return self.name
 
     class Meta:
         abstract = True

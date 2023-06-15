@@ -4,6 +4,13 @@ from .abstracts import HasName, HasDescription
 
 
 class Document(HasName, HasDescription):
+
+    key = models.CharField(
+        primary_key=True,
+        max_length=100,
+        help_text="Unique key for the Document."
+    )
+
     license = models.ForeignKey(
         "License",
         on_delete=models.CASCADE,
@@ -27,10 +34,20 @@ class Document(HasName, HasDescription):
 
 
 class License(HasName, HasDescription):
+    key = models.CharField(
+        primary_key=True,
+        max_length=100,
+        help_text="Unique key for the License."
+    )
     pass
 
 
 class Organization(HasName):
+    key = models.CharField(
+        primary_key=True,
+        max_length=100,
+        help_text="Unique key for the Organization."
+    )
     pass
 
 
