@@ -2,7 +2,11 @@
 The initialization for models for open5e's api v2.
 """
 
-from .object import Object
+from .abstracts import HasName
+from .abstracts import HasDescription
+from .abstracts import FromDocument
+from .abstracts import Object
+
 from .item import Item
 
 from .itemset import ItemSet

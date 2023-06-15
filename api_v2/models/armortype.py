@@ -2,10 +2,9 @@
 
 
 from django.db import models
-from api.models import GameContent
+from abstracts import HasName, HasDescription, FromDocument
 
-
-class ArmorType(GameContent):
+class ArmorType(HasName, FromDocument):
     """
     This is the model for an armortype.
     

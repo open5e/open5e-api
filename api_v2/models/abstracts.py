@@ -5,10 +5,30 @@ The model for an object.
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-from api.models import GameContent
+class HasName(models.Model):
+    name = models.TextField(
+        help_text='Name of the item.')
 
+    @property 
+    def slug(self):
+        return slugify(self.name)
 
-class Object(GameContent):
+    class Meta:
+        abstract = True
+
+class HasDescription(models.Model):
+    desc = models.TextField(
+        help_text='Description of the game content item. Markdown.')
+    class Meta:
+        abstract = True
+
+class FromDocument(models.Model):
+    document = models.ForeignKey(Document, on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True
+
+class Object(HasName):
     """
     This is the definition of the Object abstract base class.
 

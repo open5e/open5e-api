@@ -3,10 +3,10 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 
-from api.models import GameContent
+from .abstracts import HasName, FromDocument
 
 
-class WeaponType(GameContent):
+class WeaponType(HasName, FromDocument):
     """
     This model represents types of weapons.
 

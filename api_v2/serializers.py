@@ -2,7 +2,6 @@ from rest_framework import serializers
 
 from api_v2 import models
 
-
 class ArmorTypeSerializer(serializers.ModelSerializer):
 
     class Meta:

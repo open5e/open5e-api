@@ -1,11 +1,11 @@
 """A set of items."""
 
 from django.db import models
-from api.models import GameContent
+from .abstracts import HasDescription, HasName, FromDocument
 from .item import Item
 
 
-class ItemSet(GameContent):
+class ItemSet(HasName, HasDescription, FromDocument):
     """A set of items to be referenced."""
 
     items = models.ManyToManyField(Item, through='ItemQuantity')

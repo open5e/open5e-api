@@ -8,10 +8,10 @@ from api.models import GameContent
 from .weapontype import WeaponType
 from .armortype import ArmorType
 from .magicitemtype import MagicItemType
-from .object import Object
+from .abstracts import Object
 
 
-class Item(Object):
+class Item(Object, HasDescription, FromDocument):
     """
     This is the model for an Item, which is an object that can be used.
 

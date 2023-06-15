@@ -68,6 +68,11 @@ INSTALLED_APPS = [
     "markdown2",
 ]
 
+FIXTURE_DIRS = [
+    'data/v2/wotc-srd'
+]
+
+
 MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
