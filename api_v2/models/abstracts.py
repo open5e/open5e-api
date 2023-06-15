@@ -4,6 +4,8 @@ The model for an object.
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.template.defaultfilters import slugify
+
 
 class HasName(models.Model):
     name = models.TextField(
@@ -13,8 +15,22 @@ class HasName(models.Model):
     def slug(self):
         return slugify(self.name)
 
+    @property
+    def abbr(self):
+        if ' ' in self.name:
+            # Name contains space or spaces.
+            words = self.name.split()
+            letters = [word[0] for word in words]
+            return "".join(letters)
+        else:
+            return self.slug
+
+    def __str__(self):
+        return self.slug
+
     class Meta:
         abstract = True
+
 
 class HasDescription(models.Model):
     desc = models.TextField(
@@ -22,11 +38,6 @@ class HasDescription(models.Model):
     class Meta:
         abstract = True
 
-class FromDocument(models.Model):
-    document = models.ForeignKey(Document, on_delete=models.CASCADE)
-
-    class Meta:
-        abstract = True
 
 class Object(HasName):
     """

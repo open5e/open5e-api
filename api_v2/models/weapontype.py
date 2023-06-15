@@ -3,7 +3,8 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 
-from .abstracts import HasName, FromDocument
+from .abstracts import HasName
+from .document import FromDocument
 
 
 class WeaponType(HasName, FromDocument):

@@ -8,7 +8,9 @@ from api.models import GameContent
 from .weapontype import WeaponType
 from .armortype import ArmorType
 from .magicitemtype import MagicItemType
-from .abstracts import Object
+from .abstracts import Object, HasDescription
+from .document import FromDocument
+
 
 
 class Item(Object, HasDescription, FromDocument):

@@ -26,3 +26,7 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Item.objects.all()
     serializer_class = serializers.ItemSerializer
     filterset_class = ItemFilter
+
+class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.Document.objects.all()
+    serializer_class = serializers.DocumentSerializer

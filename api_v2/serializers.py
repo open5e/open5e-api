@@ -2,6 +2,22 @@ from rest_framework import serializers
 
 from api_v2 import models
 
+
+class DocumentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Document
+        fields = [
+            'slug',
+            'abbr',
+            'name',
+            'license',
+            'organization',
+            'author',
+            'published_at',
+            'permalink'
+        ]
+
+
 class ArmorTypeSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -14,6 +30,7 @@ class ArmorTypeSerializer(serializers.ModelSerializer):
             'grants_stealth_disadvantage'
         ]
 
+
 class WeaponTypeSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -22,6 +39,7 @@ class WeaponTypeSerializer(serializers.ModelSerializer):
             'slug',
             'name',
             'properties']
+
 
 class MagicItemTypeSerializer(serializers.ModelSerializer):
 
@@ -32,6 +50,7 @@ class MagicItemTypeSerializer(serializers.ModelSerializer):
             'name',
             'rarity',
             'requires_attunement']
+
 
 class ItemSerializer(serializers.ModelSerializer):
     weapon_type = WeaponTypeSerializer()

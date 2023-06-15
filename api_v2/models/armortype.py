@@ -2,7 +2,8 @@
 
 
 from django.db import models
-from abstracts import HasName, HasDescription, FromDocument
+from .abstracts import HasName, HasDescription
+from .document import FromDocument
 
 class ArmorType(HasName, FromDocument):
     """
