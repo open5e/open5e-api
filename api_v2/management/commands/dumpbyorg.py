@@ -1,3 +1,5 @@
+
+
 import os
 import json
 import time
@@ -17,39 +19,58 @@ class Command(BaseCommand):
     """Implementation for the `manage.py `dumpbyorg` subcommand."""
 
     help = 'Dump all data in structured directory.'
-    
-    def add_arguments(self, parser):
-        parser.add_argument("-d", "--dir", type=str,
-            help="Directory to write files to.")
 
+    def add_arguments(self, parser):
+        parser.add_argument("-d",
+                            "--dir",
+                            type=str,
+                            help="Directory to write files to.")
 
     def handle(self, *args, **options) -> None:
-        """Main logic."""
         self.stdout.write('Checking if directory exists.')
         if os.path.exists(options['dir']) and os.path.isdir(options['dir']):
             self.stdout.write('Directory {} exists.'.format(options['dir']))
         else:
-            self.stdout.write(self.style.ERROR('Directory {} does not exist.'.format(options['dir'])))
+            self.stdout.write(self.style.ERROR(
+                'Directory {} does not exist.'.format(options['dir'])))
             exit(0)
 
+        # Create a folder and Organization fixture for each organization.
         for org in Organization.objects.order_by('key'):
             orgq = Organization.objects.filter(key=org.key)
             orgdir = options['dir'] + "/{}".format(org.key)
             write_queryset_data(orgdir, orgq, "Organization.json")
 
+            # Create a Document fixture for each document.
             for doc in Document.objects.filter(organization=org):
                 docq = Document.objects.filter(key=doc.key)
                 docdir = orgdir + "/{}".format(doc.key)
                 write_queryset_data(docdir, docq, "Document.json")
 
-                # This is where we loop through the models and write them out.
-                app_models = apps.get_models()
-                for model in app_models:
-                    if model.__name__ not in ['LogEntry', 'Organization', 'Document', 'License','User', 'Session','ContentType','Permission']:
-                        modelq = model.objects.all()
-                        write_queryset_data(docdir, modelq, model.__name__+".json")
+                # Create a fixture for each nonblank model tied to a document.
+                SKIPPED_MODEL_NAMES = [
+                    'LogEntry',
+                    'Organization',
+                    'Document',
+                    'License',
+                    'User',
+                    'Session',
+                    'ContentType',
+                    'Permission']
 
-                self.stdout.write(self.style.SUCCESS('Wrote {} to {}'.format(doc.key, docdir)))
+                app_models = apps.get_models()
+
+                for model in app_models:
+                    if model.__name__ not in SKIPPED_MODEL_NAMES:
+
+                        modelq = model.objects.all()
+                        write_queryset_data(
+                            docdir,
+                            modelq,
+                            model.__name__+".json")
+
+                self.stdout.write(self.style.SUCCESS(
+                    'Wrote {} to {}'.format(doc.key, docdir)))
 
         self.stdout.write(self.style.SUCCESS('Data dumping complete.'))
 
@@ -60,7 +81,5 @@ def write_queryset_data(filepath, queryset, filename):
             os.makedirs(filepath)
 
         output_filepath = filepath + "/" + filename
-        #data = 
         with open(output_filepath, 'w', encoding='utf-8') as f:
-            #json.dump(data, f)
             serializers.serialize("json", queryset, indent=2, stream=f)
