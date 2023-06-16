@@ -45,9 +45,9 @@ class Command(BaseCommand):
                 # This is where we loop through the models and write them out.
                 app_models = apps.get_models()
                 for model in app_models:
-                    #(Need to skip a bunch of models based on certain criteria)
-                    modelq = model.objects.all()
-                    write_queryset_data(docdir, modelq, str(model)+".json")
+                    if model.__name__ not in ['LogEntry', 'Organization', 'Document', 'License','User', 'Session','ContentType','Permission']:
+                        modelq = model.objects.all()
+                        write_queryset_data(docdir, modelq, model.__name__+".json")
 
                 self.stdout.write(self.style.SUCCESS('Wrote {} to {}'.format(doc.key, docdir)))
 
