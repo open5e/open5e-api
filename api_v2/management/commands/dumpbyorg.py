@@ -60,6 +60,7 @@ def write_queryset_data(filepath, queryset, filename):
             os.makedirs(filepath)
 
         output_filepath = filepath + "/" + filename
-        data = serializers.serialize("json", queryset)
+        #data = 
         with open(output_filepath, 'w', encoding='utf-8') as f:
-            json.dump(data, f)
+            #json.dump(data, f)
+            serializers.serialize("json", queryset, indent=2, stream=f)
