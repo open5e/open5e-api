@@ -12,7 +12,14 @@ from api_v2.models import Organization
 
 # Register your models here.
 
-admin.site.register(WeaponType)
+class FromDocumentModelAdmin(admin.ModelAdmin):
+    list_display = ['key','__str__']
+
+admin.site.register(WeaponType, admin_class=FromDocumentModelAdmin)
+#class WeaponTypeAdmin(admin.ModelAdmin):
+
+
+
 admin.site.register(ArmorType)
 admin.site.register(MagicItemType)
 

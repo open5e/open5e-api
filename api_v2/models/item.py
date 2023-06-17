@@ -20,11 +20,6 @@ class Item(Object, HasDescription, FromDocument):
     This extends the object model, but adds cost, and is_magical.
     """
 
-    key = models.CharField(
-        primary_key=True,
-        max_length=100,
-        help_text="Unique key for the Item.")
-
     cost = models.DecimalField(
         null=True,  # Allow an unspecified cost.
         max_digits=10,

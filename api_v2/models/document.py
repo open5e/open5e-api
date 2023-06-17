@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from .abstracts import HasName, HasDescription
 
@@ -53,6 +54,14 @@ class Organization(HasName):
 
 class FromDocument(models.Model):
     document = models.ForeignKey(Document, on_delete=models.CASCADE)
+
+    key = models.CharField(
+        primary_key=True,
+        max_length=100,
+        help_text="Unique key for the Item.")
+
+    def get_absolute_url(self):
+        return reverse(self.__name__, kwargs={"pk": self.pk})
 
     class Meta:
         abstract = True

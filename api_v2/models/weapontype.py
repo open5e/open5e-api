@@ -15,25 +15,48 @@ class WeaponType(HasName, FromDocument):
     Only the unique attributes of a weapon are here. An item that is a weapon
     would link to this model instance.
     """
+    DAMAGE_TYPE_CHOICES = [
+    ("bludgeoning", "bludgeoning"),
+    ("piercing", "piercing"),
+    ("slashing", "slashing")]
 
-    damage_type = models.TextField(
+    damage_type = models.CharField(
         null=False,
-        default='bludgeoning',
+        choices=DAMAGE_TYPE_CHOICES,
+        max_length=100,
         help_text='The damage type dealt by attacks with the weapon.')
 
-    damage_dice = models.TextField(
-        null=True,
+    damage_dice = models.CharField(
+        null=False,
+        max_length=100,
         help_text='The damage dice when used making an attack.')
 
-    versatile_dice = models.TextField(
-        null=True,
-        help_text='The damage dice when attacking using versatile.')
+    versatile_dice = models.CharField(
+        null=False,
+        default=0,
+        max_length=100,
+        help_text="""The damage dice when attacking using versatile.
+A value of 0 means that the weapon does not have the versatile property.""")
 
     range_reach = models.IntegerField(
         null=False,
         default=5,
         validators=[MinValueValidator(0)],
         help_text='The range of the weapon when making a melee attack.')
+
+    range_normal = models.IntegerField(
+        null=False,
+        default=0,
+        validators=[MinValueValidator(0)],
+        help_text="""The normal range of a ranged weapon attack.
+A value of 0 means that the weapon cannot be used for a ranged attack.""")
+
+    range_long = models.IntegerField(
+        null=False,
+        default=0,
+        validators=[MinValueValidator(0)],
+        help_text="""The long range of a ranged weapon attack.
+A value of 0 means that the weapon cannot be used for a long ranged attack.""")
 
     is_finesse = models.BooleanField(
         null=False,
@@ -49,11 +72,6 @@ class WeaponType(HasName, FromDocument):
         null=False,
         default=False,
         help_text='If the weapon is two-handed.')
-
-    is_versatile = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon is versatile.')
 
     requires_ammunition = models.BooleanField(
         null=False,
@@ -94,17 +112,11 @@ class WeaponType(HasName, FromDocument):
         null=False,
         default=False,
         help_text='If the weapon is improvised.')
-
-    range_normal = models.IntegerField(
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text='The normal range of a ranged weapon attack.')
-
-    range_long = models.IntegerField(
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text='The long range of a ranged weapon attack.')
     
+    @property
+    def is_versatile(self):
+        return self.versatile_dice != 0
+
     @property
     def is_martial(self):
         return not self.is_simple
