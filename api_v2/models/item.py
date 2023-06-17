@@ -22,6 +22,7 @@ class Item(Object, HasDescription, FromDocument):
 
     cost = models.DecimalField(
         null=True,  # Allow an unspecified cost.
+        default=None,
         max_digits=10,
         decimal_places=2,  # Only track down to 2 decimal places.
         validators=[MinValueValidator(0)],
@@ -30,16 +31,22 @@ class Item(Object, HasDescription, FromDocument):
     weapon_type = models.ForeignKey(
         WeaponType,
         on_delete=models.CASCADE,
+        default=None,
+        blank=True,
         null=True)
 
     armor_type = models.ForeignKey(
         ArmorType,
         on_delete=models.CASCADE,
+        default=None,
+        blank=True,
         null=True)
     
     magic_item_type = models.ForeignKey(
         MagicItemType,
         on_delete=models.CASCADE,
+        default=None,
+        blank=True,
         null=True)
 
     @property

@@ -115,7 +115,7 @@ A value of 0 means that the weapon cannot be used for a long ranged attack.""")
     
     @property
     def is_versatile(self):
-        return self.versatile_dice != 0
+        return self.versatile_dice != str(0)
 
     @property
     def is_martial(self):

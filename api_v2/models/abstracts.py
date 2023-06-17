@@ -51,7 +51,8 @@ class Object(HasName):
     HIT_POINT_MAXIMUM = 10000
 
     size = models.IntegerField(
-        null=True,  # Allow an unspecified size.
+        default=1,
+        null=False,  # Allow an unspecified size.
         choices=SIZE_CHOICES,
         validators=[
             MinValueValidator(1),
@@ -59,43 +60,28 @@ class Object(HasName):
         help_text='Integer representing the size of the object.')
 
     weight = models.DecimalField(
-        null=True,  # Allow an unspecified weight.
+        default=0,
+        null=False,  # Allow an unspecified weight.
         max_digits=10,
         decimal_places=3,
         validators=[MinValueValidator(0)],
         help_text='Number representing the weight of the object.')
 
     armor_class = models.IntegerField(
-        null=True,  # Allow an unspecified armor_class.
+        default=0,
+        null=False,  # Allow an unspecified armor_class.
         validators=[
             MinValueValidator(0),
             MaxValueValidator(ARMOR_CLASS_MAXIMUM)],
         help_text='Integer representing the armor class of the object.')
 
     hit_points = models.IntegerField(
-        null=True,  # Allow an unspecified hit point value.
+        default=0,
+        null=False,  # Allow an unspecified hit point value.
         validators=[
             MinValueValidator(0),
             MaxValueValidator(HIT_POINT_MAXIMUM)],
         help_text='Integer representing the hit points of the object.')
-
-    damage_immunities = models.JSONField(
-        null=False,  # Force an empty list if unspecified.
-        default=list,
-        #validators=[damage_type_validator],
-        help_text='List of damage types that this is immune to.')
-
-    damage_resistances = models.JSONField(
-        null=False,  # Force an empty list if unspecified.
-        default=list,
-        #validators=[damage_type_validator],
-        help_text='List of damage types that this is resistant to.')
-
-    damage_vulnerabilities = models.JSONField(
-        null=False,  # Force an empty list if unspecified.
-        default=list,
-        #validators=[damage_type_validator],
-        help_text='List of damage types that this is vulnerable to.')
 
     class Meta:
         abstract = True

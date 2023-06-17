@@ -17,10 +17,16 @@ class Document(HasName, HasDescription):
         on_delete=models.CASCADE,
         help_text="License that the content was released under.")
 
-    organization = models.ForeignKey(
-        "Organization",
+    publisher = models.ForeignKey(
+        "Publisher",
         on_delete=models.CASCADE,
         help_text="Organization which has written the game content document.")
+
+    ruleset = models.ForeignKey(
+        "Ruleset",
+        on_delete=models.CASCADE,
+        help_text="The document's game system that it was published for."
+    )
 
     author = models.TextField(
         help_text='Author or authors.')
@@ -40,16 +46,28 @@ class License(HasName, HasDescription):
         max_length=100,
         help_text="Unique key for the License."
     )
-    pass
 
 
-class Organization(HasName):
+class Publisher(HasName):
     key = models.CharField(
         primary_key=True,
         max_length=100,
-        help_text="Unique key for the Organization."
+        help_text="Unique key for the publishing organization."
     )
-    pass
+
+
+class Ruleset(HasName, HasDescription):
+    key = models.CharField(
+        primary_key=True,
+        max_length=100,
+        help_text="Unique key for the ruleset the document was published for."
+    )
+
+    content_prefix = models.CharField(
+        max_length=10,
+        blank=True,
+        help_text="Short code prepended to content keys."
+    )
 
 
 class FromDocument(models.Model):
