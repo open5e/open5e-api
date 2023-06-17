@@ -35,6 +35,9 @@ class Command(BaseCommand):
                 'Directory {} does not exist.'.format(options['dir'])))
             exit(0)
 
+        licenses = License.objects.all()
+        write_queryset_data(options['dir'], licenses, "Licenses.json")
+
         # Create a folder and Organization fixture for each organization.
         for org in Organization.objects.order_by('key'):
             orgq = Organization.objects.filter(key=org.key)
