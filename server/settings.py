@@ -59,13 +59,19 @@ INSTALLED_APPS = [
     "haystack",
     
     # apps
-    "api",
-    
+    'api',
+    'api_v2',
+
     # downloaded modules
     "rest_framework",
     "django_filters",
     "markdown2",
 ]
+
+FIXTURE_DIRS = [
+    'data/v2/wotc-srd'
+]
+
 
 MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
