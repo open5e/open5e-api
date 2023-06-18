@@ -2,7 +2,6 @@ from django.contrib import admin
 
 from api_v2.models import Weapon
 from api_v2.models import Armor
-from api_v2.models import MagicItemType
 from api_v2.models import Item
 
 from api_v2.models import Document
@@ -19,7 +18,6 @@ class FromDocumentModelAdmin(admin.ModelAdmin):
 
 admin.site.register(Weapon, admin_class=FromDocumentModelAdmin)
 admin.site.register(Armor, admin_class=FromDocumentModelAdmin)
-admin.site.register(MagicItemType)
 
 admin.site.register(Item, admin_class=FromDocumentModelAdmin)
 

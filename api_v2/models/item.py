@@ -1,13 +1,12 @@
 """The model for an item."""
 
 from django.db import models
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.urls import reverse
 
 from api.models import GameContent
 from .weapon import Weapon
 from .armor import Armor
-from .magicitemtype import MagicItemType
 from .abstracts import Object, HasDescription
 from .document import FromDocument
 

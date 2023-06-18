@@ -59,7 +59,6 @@ class WeaponSerializer(serializers.ModelSerializer):
 class ItemSerializer(serializers.ModelSerializer):
     weapon = WeaponSerializer()
     armor = ArmorSerializer()
-    magic_item_type = MagicItemTypeSerializer()
 
     document = serializers.HyperlinkedRelatedField(
         view_name='document-detail',
@@ -79,5 +78,6 @@ class ItemSerializer(serializers.ModelSerializer):
             'is_armor',
             'armor',
             'is_magic_item',
-            'magic_item_type',
+            'requires_attunement',
+            'rarity',
             'cost']

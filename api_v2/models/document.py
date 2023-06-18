@@ -12,10 +12,8 @@ class Document(HasName, HasDescription):
         help_text="Unique key for the Document."
     )
 
-    license = models.ForeignKey(
-        "License",
-        on_delete=models.CASCADE,
-        help_text="License that the content was released under.")
+    licenses = models.ManyToManyField(
+        help_text="Licenses that the content has been released under.")
 
     publisher = models.ForeignKey(
         "Publisher",
