@@ -10,6 +10,7 @@ from api.schema_generator import CustomSchema
 class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of items.
+    retrieve: API endpoint for returning a particular item.
     """
     queryset = models.Item.objects.all().order_by('-pk')
     serializer_class = serializers.ItemSerializer
@@ -17,30 +18,50 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of documents.
+    retrieve: API endpoint for returning a particular document.
+    """
     queryset = models.Document.objects.all().order_by('-pk')
     serializer_class = serializers.DocumentSerializer
     filterset_fields = '__all__'
 
 
 class PublisherViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of publishers.
+    retrieve: API endpoint for returning a particular publisher.
+    """
     queryset = models.Publisher.objects.all().order_by('-pk')
     serializer_class = serializers.PublisherSerializer
     filterset_fields = '__all__'
 
 
 class LicenseViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of licenses.
+    retrieve: API endpoint for returning a particular license.
+    """
     queryset = models.License.objects.all().order_by('-pk')
     serializer_class = serializers.LicenseSerializer
     filterset_fields = '__all__'
 
 
 class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of weapons.
+    retrieve: API endpoint for returning a particular weapon.
+    """
     queryset = models.Weapon.objects.all().order_by('-pk')
     serializer_class = serializers.WeaponSerializer
     filterset_fields = '__all__'
 
 
 class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of armor.
+    retrieve: API endpoint for returning a particular armor.
+    """
     queryset = models.Armor.objects.all().order_by('-pk')
     serializer_class = serializers.ArmorSerializer
     filterset_fields = '__all__'
