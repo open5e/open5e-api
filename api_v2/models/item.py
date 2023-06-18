@@ -40,13 +40,28 @@ class Item(Object, HasDescription, FromDocument):
         default=None,
         blank=True,
         null=True)
-    
-    magic_item_type = models.ForeignKey(
-        MagicItemType,
-        on_delete=models.CASCADE,
-        default=None,
+
+    RARITY_CHOICES = [
+        (1,'common'),
+        (2,'uncommon'),
+        (3,'rare'),
+        (4,'very rare'),
+        (5,'legendary')
+    ]
+
+    requires_attunement = models.BooleanField(
+        null=False,
+        default=False,  # An item is not magical unless specified.
+        help_text='If the item requires attunement.')
+
+    rarity = models.IntegerField(
+        null=True,  # Allow an unspecified size.
         blank=True,
-        null=True)
+        choices=RARITY_CHOICES,
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(5)],
+        help_text='Integer representing the rarity of the object.')
 
     @property
     def is_weapon(self):
@@ -58,4 +73,4 @@ class Item(Object, HasDescription, FromDocument):
 
     @property 
     def is_magic_item(self):
-        return self.magic_item_type is not None
+        return self.rarity is not None
