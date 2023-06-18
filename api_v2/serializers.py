@@ -25,7 +25,7 @@ class DocumentSerializer(serializers.ModelSerializer):
             'desc',
             'publisher',
             'ruleset',
-            'license',
+            'licenses',
             'author',
             'published_at',
             'permalink'
