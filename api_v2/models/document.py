@@ -13,6 +13,7 @@ class Document(HasName, HasDescription):
     )
 
     licenses = models.ManyToManyField(
+        "License",
         help_text="Licenses that the content has been released under.")
 
     publisher = models.ForeignKey(
