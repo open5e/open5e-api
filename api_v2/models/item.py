@@ -5,8 +5,8 @@ from django.core.validators import MinValueValidator
 from django.urls import reverse
 
 from api.models import GameContent
-from .weapontype import WeaponType
-from .armortype import ArmorType
+from .weapon import Weapon
+from .armor import Armor
 from .magicitemtype import MagicItemType
 from .abstracts import Object, HasDescription
 from .document import FromDocument
@@ -28,15 +28,15 @@ class Item(Object, HasDescription, FromDocument):
         validators=[MinValueValidator(0)],
         help_text='Number representing the cost of the object.')
 
-    weapon_type = models.ForeignKey(
-        WeaponType,
+    weapon = models.ForeignKey(
+        Weapon,
         on_delete=models.CASCADE,
         default=None,
         blank=True,
         null=True)
 
-    armor_type = models.ForeignKey(
-        ArmorType,
+    armor = models.ForeignKey(
+        Armor,
         on_delete=models.CASCADE,
         default=None,
         blank=True,
@@ -51,11 +51,11 @@ class Item(Object, HasDescription, FromDocument):
 
     @property
     def is_weapon(self):
-        return self.weapon_type is not None
+        return self.weapon is not None
 
     @property
     def is_armor(self):
-        return self.armor_type is not None
+        return self.armor is not None
 
     @property 
     def is_magic_item(self):

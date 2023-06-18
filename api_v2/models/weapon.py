@@ -7,7 +7,7 @@ from .abstracts import HasName
 from .document import FromDocument
 
 
-class WeaponType(HasName, FromDocument):
+class Weapon(HasName, FromDocument):
     """
     This model represents types of weapons.
 

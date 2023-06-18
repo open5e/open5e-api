@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='ArmorType',
+            name='Armor',
             fields=[
                 ('name', models.CharField(help_text='Name of the item.', max_length=100)),
                 ('key', models.CharField(help_text='Unique key for the Item.', max_length=100, primary_key=True, serialize=False)),
@@ -76,7 +76,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='WeaponType',
+            name='Weapon',
             fields=[
                 ('name', models.CharField(help_text='Name of the item.', max_length=100)),
                 ('key', models.CharField(help_text='Unique key for the Item.', max_length=100, primary_key=True, serialize=False)),
@@ -127,10 +127,10 @@ class Migration(migrations.Migration):
                 ('hit_points', models.IntegerField(default=0, help_text='Integer representing the hit points of the object.', validators=[django.core.validators.MinValueValidator(0), django.core.validators.MaxValueValidator(10000)])),
                 ('key', models.CharField(help_text='Unique key for the Item.', max_length=100, primary_key=True, serialize=False)),
                 ('cost', models.DecimalField(decimal_places=2, default=None, help_text='Number representing the cost of the object.', max_digits=10, null=True, validators=[django.core.validators.MinValueValidator(0)])),
-                ('armor_type', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='api_v2.armortype')),
+                ('armor', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='api_v2.armor')),
                 ('document', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api_v2.document')),
                 ('magic_item_type', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='api_v2.magicitemtype')),
-                ('weapon_type', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='api_v2.weapontype')),
+                ('weapon_type', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='api_v2.weapon')),
             ],
             options={
                 'abstract': False,
@@ -152,7 +152,7 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(help_text="The document's game system that it was published for.", on_delete=django.db.models.deletion.CASCADE, to='api_v2.ruleset'),
         ),
         migrations.AddField(
-            model_name='armortype',
+            model_name='armor',
             name='document',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api_v2.document'),
         ),

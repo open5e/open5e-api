@@ -5,9 +5,9 @@ from django.db import models
 from .abstracts import HasName, HasDescription
 from .document import FromDocument
 
-class ArmorType(HasName, FromDocument):
+class Armor(HasName, FromDocument):
     """
-    This is the model for an armortype.
+    This is the model for an armor.
     
     This does not represent the armor set itself, because that would be an
     item. Only the unique attributes of a type of armor are here. An item

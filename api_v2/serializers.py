@@ -32,10 +32,10 @@ class DocumentSerializer(serializers.ModelSerializer):
         ]
 
 
-class ArmorTypeSerializer(serializers.ModelSerializer):
+class ArmorSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = models.ArmorType
+        model = models.Armor
         fields = [
             'key',
             'name',
@@ -45,10 +45,10 @@ class ArmorTypeSerializer(serializers.ModelSerializer):
         ]
 
 
-class WeaponTypeSerializer(serializers.ModelSerializer):
+class WeaponSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = models.WeaponType
+        model = models.Weapon
         fields = [
             'key',
             'url',
@@ -68,8 +68,8 @@ class MagicItemTypeSerializer(serializers.ModelSerializer):
 
 
 class ItemSerializer(serializers.ModelSerializer):
-    weapon_type = WeaponTypeSerializer()
-    armor_type = ArmorTypeSerializer()
+    weapon = WeaponSerializer()
+    armor = ArmorSerializer()
     magic_item_type = MagicItemTypeSerializer()
 
     document = serializers.HyperlinkedRelatedField(
@@ -86,9 +86,9 @@ class ItemSerializer(serializers.ModelSerializer):
             'document',
             'weight',
             'is_weapon',
-            'weapon_type',
+            'weapon',
             'is_armor',
-            'armor_type',
+            'armor',
             'is_magic_item',
             'magic_item_type',
             'cost']

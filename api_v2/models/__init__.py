@@ -8,9 +8,9 @@ from .abstracts import Object
 
 from .item import Item
 
-from .armortype import ArmorType
+from .armor import Armor
 
-from .weapontype import WeaponType
+from .weapon import Weapon
 
 from .magicitemtype import MagicItemType
 

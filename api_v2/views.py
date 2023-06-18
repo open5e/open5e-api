@@ -28,11 +28,11 @@ class LicenseViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.LicenseSerializer
 
 
-class WeaponTypeViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.WeaponType.objects.all()
-    serializer_class = serializers.WeaponTypeSerializer
+class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.Weapon.objects.all()
+    serializer_class = serializers.WeaponSerializer
 
 
-class ArmorTypeViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.ArmorType.objects.all()
-    serializer_class = serializers.ArmorTypeSerializer
+class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.Armor.objects.all()
+    serializer_class = serializers.ArmorSerializer
