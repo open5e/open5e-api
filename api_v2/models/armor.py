@@ -21,6 +21,7 @@ class Armor(HasName, FromDocument):
         help_text='If the armor results in disadvantage on stealth checks.')
 
     strength_score_required = models.IntegerField(
+        blank=True,
         null=True,
         help_text='Strength score required to wear the armor without penalty.')
 
@@ -34,6 +35,7 @@ class Armor(HasName, FromDocument):
         help_text='If the final armor class includes dexterity modifier.')
 
     ac_cap_dexmod = models.IntegerField(
+        blank=True,
         null=True,
         help_text='Integer representing the dexterity modifier cap.')
 
