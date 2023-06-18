@@ -23,6 +23,7 @@ class HasName(models.Model):
 class HasDescription(models.Model):
     desc = models.TextField(
         help_text='Description of the game content item. Markdown.')
+    
     class Meta:
         abstract = True
 

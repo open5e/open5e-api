@@ -5,6 +5,7 @@ from django.db import models
 from .abstracts import HasName, HasDescription
 from .document import FromDocument
 
+
 class Armor(HasName, FromDocument):
     """
     This is the model for an armor.

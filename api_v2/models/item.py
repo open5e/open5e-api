@@ -12,7 +12,6 @@ from .abstracts import Object, HasDescription
 from .document import FromDocument
 
 
-
 class Item(Object, HasDescription, FromDocument):
     """
     This is the model for an Item, which is an object that can be used.
