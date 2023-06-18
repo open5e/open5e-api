@@ -41,11 +41,11 @@ class Item(Object, HasDescription, FromDocument):
         null=True)
 
     RARITY_CHOICES = [
-        (1,'common'),
-        (2,'uncommon'),
-        (3,'rare'),
-        (4,'very rare'),
-        (5,'legendary')
+        (1, 'common'),
+        (2, 'uncommon'),
+        (3, 'rare'),
+        (4, 'very rare'),
+        (5, 'legendary')
     ]
 
     requires_attunement = models.BooleanField(

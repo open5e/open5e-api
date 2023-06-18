@@ -38,6 +38,7 @@ class ArmorSerializer(serializers.ModelSerializer):
         model = models.Armor
         fields = [
             'key',
+            'url',
             'name',
             'ac_display',
             'strength_score_required',
