@@ -35,25 +35,29 @@ class Command(BaseCommand):
                 'Directory {} does not exist.'.format(options['dir'])))
             exit(0)
 
+        rulesets = Ruleset.objects.all()
+        write_queryset_data(options['dir'], rulesets, "Rulesets.json")
+
         licenses = License.objects.all()
         write_queryset_data(options['dir'], licenses, "Licenses.json")
 
-        # Create a folder and Organization fixture for each organization.
-        for org in Organization.objects.order_by('key'):
-            orgq = Organization.objects.filter(key=org.key)
-            orgdir = options['dir'] + "/{}".format(org.key)
-            write_queryset_data(orgdir, orgq, "Organization.json")
+        # Create a folder and Publisher fixture for each pubishing org.
+        for pub in Publisher.objects.order_by('key'):
+            pubq = Publisher.objects.filter(key=pub.key)
+            pubdir = options['dir'] + "/{}".format(pub.key)
+            write_queryset_data(pubdir, pubq, "Publisher.json")
 
             # Create a Document fixture for each document.
-            for doc in Document.objects.filter(organization=org):
+            for doc in Document.objects.filter(publisher=pub):
                 docq = Document.objects.filter(key=doc.key)
-                docdir = orgdir + "/{}".format(doc.key)
+                docdir = pubdir + "/{}".format(doc.key)
                 write_queryset_data(docdir, docq, "Document.json")
 
                 # Create a fixture for each nonblank model tied to a document.
                 SKIPPED_MODEL_NAMES = [
                     'LogEntry',
-                    'Organization',
+                    'Ruleset',
+                    'Publisher',
                     'Document',
                     'License',
                     'User',

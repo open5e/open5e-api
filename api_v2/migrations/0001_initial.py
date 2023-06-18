@@ -144,7 +144,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='document',
             name='publisher',
-            field=models.ForeignKey(help_text='Organization which has written the game content document.', on_delete=django.db.models.deletion.CASCADE, to='api_v2.publisher'),
+            field=models.ForeignKey(help_text='Publisher which has written the game content document.', on_delete=django.db.models.deletion.CASCADE, to='api_v2.publisher'),
         ),
         migrations.AddField(
             model_name='document',

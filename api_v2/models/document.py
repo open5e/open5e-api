@@ -20,7 +20,7 @@ class Document(HasName, HasDescription):
     publisher = models.ForeignKey(
         "Publisher",
         on_delete=models.CASCADE,
-        help_text="Organization which has written the game content document.")
+        help_text="Publisher which has written the game content document.")
 
     ruleset = models.ForeignKey(
         "Ruleset",
