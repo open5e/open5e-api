@@ -1,10 +1,29 @@
+from django_filters import FilterSet
+from django_filters import BooleanFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 
 from api_v2 import models
 from api_v2 import serializers
 from api.schema_generator import CustomSchema
-# Create your views here.
+
+
+class ItemFilterSet(FilterSet):
+    is_weapon = BooleanFilter(field_name='weapon', lookup_expr='isnull', exclude=True)
+    is_armor = BooleanFilter(field_name='armor', lookup_expr='isnull', exclude=True)
+    is_magic_item = BooleanFilter(field_name='rarity', lookup_expr='isnull', exclude=True)
+
+    class Meta:
+        model = models.Item
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact'],
+            'desc': ['icontains'],
+            'cost': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
+            'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
+            'rarity': ['exact', 'in', ],
+            'requires_attunement': ['exact'],
+        }
 
 
 class ItemViewSet(viewsets.ReadOnlyModelViewSet):
@@ -14,7 +33,7 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Item.objects.all().order_by('-pk')
     serializer_class = serializers.ItemSerializer
-    filterset_fields = '__all__'
+    filterset_class = ItemFilterSet
 
 
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
