@@ -56,7 +56,6 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 
 class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer, serializers.ModelSerializer):
     
-    img_main = serializers.SerializerMethodField()
     speed = serializers.SerializerMethodField()
     environments = serializers.SerializerMethodField()
     skills = serializers.SerializerMethodField()
