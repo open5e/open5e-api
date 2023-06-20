@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 import os
 import newrelic.agent
 
-newrelic.agent.initialize('newrelic.ini', os.getenv('NEW_RELIC_ENVIRONMENT', 'development')
+newrelic.agent.initialize('newrelic.ini', os.getenv('NEW_RELIC_ENVIRONMENT', 'development'))
 
 from django.core.wsgi import get_wsgi_application
 
