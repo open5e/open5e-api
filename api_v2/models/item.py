@@ -62,14 +62,6 @@ class Item(Object, HasDescription, FromDocument):
             MaxValueValidator(5)],
         help_text='Integer representing the rarity of the object.')
 
-    @property
-    def is_weapon(self):
-        return self.weapon is not None
-
-    @property
-    def is_armor(self):
-        return self.armor is not None
-
     @property 
     def is_magic_item(self):
         return self.rarity is not None

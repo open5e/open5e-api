@@ -9,8 +9,6 @@ from api.schema_generator import CustomSchema
 
 
 class ItemFilterSet(FilterSet):
-    is_weapon = BooleanFilter(field_name='weapon', lookup_expr='isnull', exclude=True)
-    is_armor = BooleanFilter(field_name='armor', lookup_expr='isnull', exclude=True)
     is_magic_item = BooleanFilter(field_name='rarity', lookup_expr='isnull', exclude=True)
 
     class Meta:
