@@ -18,7 +18,7 @@ from api_v2.models import *
 class Command(BaseCommand):
     """Implementation for the `manage.py `dumpbyorg` subcommand."""
 
-    help = 'Dump all data in structured directory.'
+    help = 'Export all v2 model data in structured directory.'
 
     def add_arguments(self, parser):
         parser.add_argument("-d",
@@ -69,6 +69,7 @@ class Command(BaseCommand):
 
                 for model in app_models:
                     if model.__name__ not in SKIPPED_MODEL_NAMES:
+                        fixdir = docdir + "/{}".format("fixtures")
 
                         modelq = model.objects.all()
                         write_queryset_data(
