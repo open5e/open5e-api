@@ -71,5 +71,5 @@ urlpatterns = [
     re_path(r'^v2/', include(router_v2.urls))
 ]
 
-if settings.DEBUG==True:
+if settings.DEBUG is True:
     urlpatterns.append(path('admin/', admin.site.urls))
