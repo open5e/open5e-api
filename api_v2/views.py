@@ -1,17 +1,12 @@
-<<<<<<< HEAD
 from django_filters import FilterSet
 from django_filters import BooleanFilter
 from django_filters.rest_framework import DjangoFilterBackend
-=======
 import django_filters
->>>>>>> staging
 from rest_framework import viewsets
 
 from api_v2 import models
 from api_v2 import serializers
 from api.schema_generator import CustomSchema
-<<<<<<< HEAD
-
 
 class ItemFilterSet(FilterSet):
     is_magic_item = BooleanFilter(field_name='rarity', lookup_expr='isnull', exclude=True)
@@ -27,10 +22,7 @@ class ItemFilterSet(FilterSet):
             'rarity': ['exact', 'in', ],
             'requires_attunement': ['exact'],
         }
-=======
 # Create your views here.
->>>>>>> staging
-
 
 class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -91,33 +83,3 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Armor.objects.all().order_by('-pk')
     serializer_class = serializers.ArmorSerializer
     filterset_fields = '__all__'
-=======
-    """
-    queryset = models.Item.objects.all().order_by('-pk')
-    serializer_class = serializers.ItemSerializer
-
-
-class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.Document.objects.all()
-    serializer_class = serializers.DocumentSerializer
-
-
-class PublisherViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.Publisher.objects.all()
-    serializer_class = serializers.PublisherSerializer
-
-
-class LicenseViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.License.objects.all()
-    serializer_class = serializers.LicenseSerializer
-
-
-class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.Weapon.objects.all()
-    serializer_class = serializers.WeaponSerializer
-
-
-class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.Armor.objects.all()
-    serializer_class = serializers.ArmorSerializer
->>>>>>> staging
