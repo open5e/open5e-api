@@ -55,7 +55,14 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'name')
 
 class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer, serializers.ModelSerializer):
-
+    
+    speed = serializers.SerializerMethodField()
+    environments = serializers.SerializerMethodField()
+    skills = serializers.SerializerMethodField()
+    actions = serializers.SerializerMethodField()
+    reactions = serializers.SerializerMethodField()
+    legendary_actions = serializers.SerializerMethodField()
+    special_abilities = serializers.SerializerMethodField()
     img_main = serializers.SerializerMethodField()
 
     def get_img_main(self, monster):
@@ -67,10 +74,33 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
         else:
              return None
 
+    def get_speed(self, monster):
+        return monster.speed()
+
+    def get_environments(self, monster):
+        return monster.environments()
+
+    def get_skills(self, monster):
+        return monster.skills()
+
+    def get_actions(self, monster):
+        return monster.actions()
+
+    def get_reactions(self, monster):
+        return monster.reactions()
+
+    def get_legendary_actions(self, monster):
+        return monster.legendary_actions()
+
+    def get_special_abilities(self, monster):
+        return monster.special_abilities()
+
+
     class Meta:
         model = models.Monster
         fields = (
             'slug',
+            'desc',
             'name',
             'size',
             'type',
@@ -111,6 +141,7 @@ class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedMod
             'special_abilities',
             'spell_list',
             'page_no',
+            'environments',
             'img_main',
             'document__slug',
             'document__title',

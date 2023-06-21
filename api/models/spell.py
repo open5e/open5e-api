@@ -122,7 +122,7 @@ class Spell(GameContent):
     def import_from_json_v1(self, json):
         """Logic to import from the v1 file spec."""
         self.name = json["name"]
-        self.slug = slugify(json["name"])
+        self.slug = json.get("slug", slugify(json["name"]))
         if "desc" in json:
             self.desc = json["desc"]
         if "higher_level" in json:

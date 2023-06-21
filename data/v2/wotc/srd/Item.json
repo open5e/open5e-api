@@ -1,0 +1,902 @@
+[
+{
+  "model": "api_v2.item",
+  "pk": "club",
+  "fields": {
+    "name": "Club",
+    "desc": "A club",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "0.10",
+    "weapon": "club",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "dagger",
+  "fields": {
+    "name": "Dagger",
+    "desc": "A dagger.",
+    "size": 1,
+    "weight": "1.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "2.00",
+    "weapon": "dagger",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "greatclub",
+  "fields": {
+    "name": "Greatclub",
+    "desc": "A greatclub.",
+    "size": 1,
+    "weight": "10.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "0.20",
+    "weapon": "greatclub",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "handaxe",
+  "fields": {
+    "name": "Handaxe",
+    "desc": "A handaxe.",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "5.00",
+    "weapon": "handaxe",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "javelin",
+  "fields": {
+    "name": "Javelin",
+    "desc": "A javelin",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "0.50",
+    "weapon": "javelin",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "light-hammer",
+  "fields": {
+    "name": "Light hammer",
+    "desc": "A light hammer.",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "2.00",
+    "weapon": "light-hammer",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "mace",
+  "fields": {
+    "name": "Mace",
+    "desc": "A mace.",
+    "size": 1,
+    "weight": "4.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "5.00",
+    "weapon": "mace",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "quaterstaff",
+  "fields": {
+    "name": "Quarterstaff",
+    "desc": "A quarterstaff.",
+    "size": 1,
+    "weight": "4.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "0.20",
+    "weapon": "quarterstaff",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "sickle",
+  "fields": {
+    "name": "Sickle",
+    "desc": "A sickle.",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "1.00",
+    "weapon": "sickle",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "spear",
+  "fields": {
+    "name": "Spear",
+    "desc": "A spear.",
+    "size": 1,
+    "weight": "3.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "1.00",
+    "weapon": "spear",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "crossbow-light",
+  "fields": {
+    "name": "Crossbow, light",
+    "desc": "A light crossbow.",
+    "size": 1,
+    "weight": "5.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "25.00",
+    "weapon": "crossbow-light",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "dart",
+  "fields": {
+    "name": "Dart",
+    "desc": "A dart.",
+    "size": 1,
+    "weight": "0.250",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "0.05",
+    "weapon": "dart",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "shortbow",
+  "fields": {
+    "name": "Shortbow",
+    "desc": "A shortbow",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "25.00",
+    "weapon": "shortbow",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "sling",
+  "fields": {
+    "name": "Sling",
+    "desc": "A sling.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "0.10",
+    "weapon": "sling",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "battleaxe",
+  "fields": {
+    "name": "Battleaxe",
+    "desc": "A battleaxe.",
+    "size": 1,
+    "weight": "4.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10.00",
+    "weapon": "battleaxe",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "flail",
+  "fields": {
+    "name": "Flail",
+    "desc": "A flail.",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10.00",
+    "weapon": "flail",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "glaive",
+  "fields": {
+    "name": "Glaive",
+    "desc": "A glaive.",
+    "size": 1,
+    "weight": "6.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "20.00",
+    "weapon": "glaive",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "greataxe",
+  "fields": {
+    "name": "Greataxe",
+    "desc": "A greataxe.",
+    "size": 1,
+    "weight": "7.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "30.00",
+    "weapon": "greataxe",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "greatsword",
+  "fields": {
+    "name": "Greatsword",
+    "desc": "A great sword.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "50.00",
+    "weapon": "greatsword",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "halberd",
+  "fields": {
+    "name": "Halberd",
+    "desc": "A halberd.",
+    "size": 1,
+    "weight": "6.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "20.00",
+    "weapon": "halberd",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "lance",
+  "fields": {
+    "name": "Lance",
+    "desc": "A lance.\r\n\r\nYou have disadvantage when you use a lance to attack a target within 5 feet of you. Also, a lance requires two hands to wield when you aren't mounted.",
+    "size": 1,
+    "weight": "6.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10.00",
+    "weapon": "lance",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "longsword",
+  "fields": {
+    "name": "Longsword",
+    "desc": "A longsword",
+    "size": 1,
+    "weight": "3.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "15.00",
+    "weapon": "longsword",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "maul",
+  "fields": {
+    "name": "Maul",
+    "desc": "A maul.",
+    "size": 1,
+    "weight": "10.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10.00",
+    "weapon": "maul",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "morningstar",
+  "fields": {
+    "name": "Morningstar",
+    "desc": "A morningstar",
+    "size": 1,
+    "weight": "4.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "15.00",
+    "weapon": "morningstar",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "pike",
+  "fields": {
+    "name": "Pike",
+    "desc": "A pike.",
+    "size": 1,
+    "weight": "18.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "5.00",
+    "weapon": "pike",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "rapier",
+  "fields": {
+    "name": "Rapier",
+    "desc": "A rapier.",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "25.00",
+    "weapon": "rapier",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "scimitar",
+  "fields": {
+    "name": "Scimitar",
+    "desc": "A scimitar.",
+    "size": 1,
+    "weight": "3.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "25.00",
+    "weapon": "scimitar",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "shortsword",
+  "fields": {
+    "name": "Shortsword",
+    "desc": "A short sword.",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10.00",
+    "weapon": "shortsword",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "trident",
+  "fields": {
+    "name": "Trident",
+    "desc": "A trident.",
+    "size": 1,
+    "weight": "4.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "5.00",
+    "weapon": "trident",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "war-pick",
+  "fields": {
+    "name": "War pick",
+    "desc": "A war pick.",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "5.00",
+    "weapon": "warpick",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "warhammer",
+  "fields": {
+    "name": "Warhammer",
+    "desc": "A warhammer.",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "15.00",
+    "weapon": "warhammer",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "whip",
+  "fields": {
+    "name": "Whip",
+    "desc": "A whip.",
+    "size": 1,
+    "weight": "3.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "2.00",
+    "weapon": "whip",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "blowgun",
+  "fields": {
+    "name": "Blowgun",
+    "desc": "A blowgun.",
+    "size": 1,
+    "weight": "1.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10.00",
+    "weapon": "blowgun",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "crossbow-hand",
+  "fields": {
+    "name": "Crossbow, hand",
+    "desc": "A hand crossbow.",
+    "size": 1,
+    "weight": "3.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "75.00",
+    "weapon": "crossbow-hand",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "crossbow-heavy",
+  "fields": {
+    "name": "Crossbow, heavy",
+    "desc": "A heavy crossbow",
+    "size": 1,
+    "weight": "18.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "50.00",
+    "weapon": "crossbow-heavy",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "longbow",
+  "fields": {
+    "name": "Longbow",
+    "desc": "A longbow.",
+    "size": 1,
+    "weight": "2.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "50.00",
+    "weapon": "longbow",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "net",
+  "fields": {
+    "name": "Net",
+    "desc": "A net.\r\n\r\nA Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on creatures that are formless, or creatures that are Huge or larger. A creature can use its action to make a DC 10 Strength check, freeing itself or another creature within its reach on a success. Dealing 5 slashing damage to the net (AC 10) also frees the creature without harming it, ending the effect and destroying the net.\r\n\r\nWhen you use an action, bonus action, or reaction to attack with a net, you can make only one attack regardless of the number of attacks you can normally make.",
+    "size": 1,
+    "weight": "3.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "1.00",
+    "weapon": "net",
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "padded-armor",
+  "fields": {
+    "name": "Padded Armor",
+    "desc": "Padded armor consists of quilted layers of cloth and batting.",
+    "size": 1,
+    "weight": "8.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "5.00",
+    "weapon": null,
+    "armor": "padded",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "leather-armor",
+  "fields": {
+    "name": "Leather Armor",
+    "desc": "The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by being boiled in oil. The rest of the armor is made of softer and more flexible materials.",
+    "size": 1,
+    "weight": "10.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10.00",
+    "weapon": null,
+    "armor": "leather",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "studded-leather-armor",
+  "fields": {
+    "name": "Studded Leather Armor",
+    "desc": "Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
+    "size": 1,
+    "weight": "13.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "45.00",
+    "weapon": null,
+    "armor": "studded-leather",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "hide-armor",
+  "fields": {
+    "name": "Hide Armor",
+    "desc": "This crude armor consists of thick furs and pelts. It is commonly worn by barbarian tribes, evil humanoids, and other folk who lack access to the tools and materials needed to create better armor.",
+    "size": 1,
+    "weight": "12.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10.00",
+    "weapon": null,
+    "armor": "hide",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "chain-shirt",
+  "fields": {
+    "name": "Chain shirt",
+    "desc": "Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather. This armor offers modest protection to the wearer's upper body and allows the sound of the rings rubbing against one another to be muffled by outer layers.",
+    "size": 1,
+    "weight": "20.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "50.00",
+    "weapon": null,
+    "armor": "chain-shirt",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "scale-mail",
+  "fields": {
+    "name": "Scale mail",
+    "desc": "This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish. The suit includes gauntlets.",
+    "size": 1,
+    "weight": "45.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "50.00",
+    "weapon": null,
+    "armor": "scale-mail",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "breastplate",
+  "fields": {
+    "name": "Breastplate",
+    "desc": "This armor consists of a fitted metal chest piece worn with supple leather. Although it leaves the legs and arms relatively unprotected, this armor provides good protection for the wearer's vital organs while leaving the wearer relatively unencumbered.",
+    "size": 1,
+    "weight": "20.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "400.00",
+    "weapon": null,
+    "armor": "breastplate",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "half-plate",
+  "fields": {
+    "name": "Half plate",
+    "desc": "Half plate consists of shaped metal plates that cover most of the wearer's body. It does not include leg protection beyond simple greaves that are attached with leather straps.",
+    "size": 1,
+    "weight": "40.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "750.00",
+    "weapon": null,
+    "armor": "half-plate",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "ring-mail",
+  "fields": {
+    "name": "Ring mail",
+    "desc": "This armor is leather armor with heavy rings sewn into it. The rings help reinforce the armor against blows from swords and axes. Ring mail is inferior to chain mail, and it's usually worn only by those who can't afford better armor.",
+    "size": 1,
+    "weight": "40.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "30.00",
+    "weapon": null,
+    "armor": "ring-mail",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "chain-mail",
+  "fields": {
+    "name": "Chain mail",
+    "desc": "Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets.",
+    "size": 1,
+    "weight": "55.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "75.00",
+    "weapon": null,
+    "armor": "chain-mail",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "splint-armor",
+  "fields": {
+    "name": "Splint Armor",
+    "desc": "This armor is made of narrow vertical strips of metal riveted to a backing of leather that is worn over cloth padding. Flexible chain mail protects the joints.",
+    "size": 1,
+    "weight": "60.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "200.00",
+    "weapon": null,
+    "armor": "splint",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "plate-armor",
+  "fields": {
+    "name": "Plate Armor",
+    "desc": "Plate consists of shaped, interlocking metal plates to cover the entire body. A suit of plate includes gauntlets, heavy leather boots, a visored helmet, and thick layers of padding underneath the armor. Buckles and straps distribute the weight over the body.",
+    "size": 1,
+    "weight": "65.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "1500.00",
+    "weapon": null,
+    "armor": "plate",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.",
+    "size": 1,
+    "weight": "6.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10.00",
+    "weapon": null,
+    "armor": null,
+    "requires_attunement": false,
+    "rarity": null
+  }
+}
+]
