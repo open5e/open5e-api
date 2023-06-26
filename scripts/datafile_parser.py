@@ -47,38 +47,73 @@ def main():
             print("Opening and parsing {}".format(file.name))
             file_json = json.load(file.open())
 
-            keyword_list = ['strength','dexterity','constitution','intelligence','wisdom','charisma', 'Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma']
-            context_word_list = ['must make a', 'makes a successful', 'must succeed on a', 'halves']
-            attribute_name = 'saving_throw_ability'
+            #item_model={"mode":"api_v2.item","fields":{}}
 
             modified_items = []
+            unprocessed_items = []
             for item in file_json:
-                #The ability to interact with objects is here!
-                for keyword in keyword_list:
 
-                    analysis = find_keyword_in_string(item['desc'], keyword)
-                    if analysis[0]==True:
-                        context_exists = find_keyword_context_in_string(item['desc'], keyword, 3,context_word_list)
-                        if context_exists:
-                            choice='1'
-                        else:
-                            print('\n\n'+slugify(item['name']) + "     " + keyword + "     " + analysis[1])
-                            choice = input('1: Tag it\n2: Skip\n'.format(attribute_name, keyword, slugify(item['name'])))
-                        if choice == '1':
-                            if item.get(attribute_name)==None:
-                                print(slugify(item['name']) + " tagged with " + keyword)
-                                item[attribute_name]=[keyword]
-                            else:
-                                item[attribute_name].append(keyword.lower())
-                        if choice == '2':
-                            print("skipping")
+                armor_keys = ['studded-leather','splint','scale-mail','ring-mail','plate','padded','leather','hide','half-plate','chain-shirt','chain-mail','breastplate']
+                weapon_keys = []
 
-                modified_items.append(item)
+                if item['type'] not in ["Wondrous item","Rod","Staff","Potion","Scroll","Wand","Ring","Armor (shield)",
+                    "Armor (scale mail)"]:
+                    unprocessed_items.append(item)
+                    continue
 
-                sister_file = str(file.parent)+"/"+file.stem + "_modified" + file.suffix
-                with open(sister_file, 'w', encoding='utf-8') as s:
-                    s.write(json.dumps(modified_items, ensure_ascii=False, indent=4))
-                
+                if item['type'] == "Wondrous item":
+                    item['type']='wondrous'
+
+                if item['type'] == "Armor (plate)":
+                    item['type']='armor'
+
+                item_model={"model":"api_v2.item","fields":{}}
+                item_model['fields']['armor']='scale-mail'
+                item_model['pk']=slugify(item["name"])
+                item_model['fields']['name']=item["name"]
+                item_model['fields']['desc']=item["desc"]
+                item_model['fields']['category']=item['type'].lower()
+                item_model['fields']['size']=1
+                item_model['fields']['weight']=0.0
+                item_model['fields']['armor_class']=0
+                item_model['fields']['hit_points']=0
+                item_model['fields']['document']="srd"
+                item_model['fields']['cost']=None
+                item_model['fields']['weapon']=None
+                #item_model['fields']['armor']=None
+                item_model['fields']['requires_attunement']=False
+                if "requires-attunement" in item:
+                    if item["requires-attunement"]=="requires attunement":
+                        item_model['fields']['requires_attunement']=True
+                if item["rarity"] not in ['common','uncommon','rare','very rare','legendary']:
+                    #print(item['name'], item['rarity'])
+                    unprocessed_items.append(item)
+                    continue
+                else:
+                    if item["rarity"] == 'common':
+                        item_model['fields']['rarity'] = 1
+                    if item["rarity"] == 'uncommon':
+                        item_model['fields']['rarity'] = 2
+                    if item["rarity"] == 'rare':
+                        item_model['fields']['rarity'] = 3
+                    if item["rarity"] == 'very rare':
+                        item_model['fields']['rarity'] = 4
+                    if item["rarity"] == 'legendary':
+                        item_model['fields']['rarity'] = 5
+ 
+                modified_items.append(item_model)
+
+            print("Unprocessed count:{}".format(len(unprocessed_items)))
+
+            sister_file = str(file.parent)+"/"+file.stem + "_modified" + file.suffix
+            with open(sister_file, 'w', encoding='utf-8') as s:
+                s.write(json.dumps(modified_items, ensure_ascii=False, indent=4))
+            
+            unprocced = str(file.parent)+"/"+file.stem + "_unprocessed" + file.suffix
+            with open(unprocced, 'w', encoding='utf-8') as s:
+                s.write(json.dumps(unprocessed_items, ensure_ascii=False, indent=4))
+            
+
     except Exception as e:
         print(e)
 

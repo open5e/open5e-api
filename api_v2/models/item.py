@@ -40,6 +40,39 @@ class Item(Object, HasDescription, FromDocument):
         blank=True,
         null=True)
 
+    CATEGORY_CHOICES = [
+        ('staff', 'Staff'),
+        ('rod', 'Rod'),
+        ('scroll', 'Scroll'),
+        ('potion', 'Potion'),
+        ('wand', 'Wand'),
+        ('wondrous-item', 'Wondrous item'),
+        ('ring', 'Ring'),
+        ('ammunition', 'Ammunition'),
+        ('weapon', 'Weapon'),
+        ('armor', 'Armor'),
+        ('gem', 'Gem'),
+        ('jewelry', 'Jewelry'),
+        ('art', 'Art'),
+        ('trade-good', 'Trade Good'),
+        ('shield', 'Shield'),
+        ('poison', 'Poison')
+    ]
+
+    category = models.CharField(
+        null=False,
+        choices=CATEGORY_CHOICES,
+        max_length=100,
+        help_text='The category of the magic item.')
+    # Magic item types that should probably be filterable: 
+    # Staff, Rod, Scroll, Ring, Potion, Ammunition, Wand = category
+
+    requires_attunement = models.BooleanField(
+        null=False,
+        default=False,  # An item is not magical unless specified.
+        help_text='If the item requires attunement.')
+
+
     RARITY_CHOICES = [
         (1, 'common'),
         (2, 'uncommon'),
@@ -47,11 +80,6 @@ class Item(Object, HasDescription, FromDocument):
         (4, 'very rare'),
         (5, 'legendary')
     ]
-
-    requires_attunement = models.BooleanField(
-        null=False,
-        default=False,  # An item is not magical unless specified.
-        help_text='If the item requires attunement.')
 
     rarity = models.IntegerField(
         null=True,  # Allow an unspecified size.

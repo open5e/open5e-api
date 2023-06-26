@@ -1,0 +1,97 @@
+[
+    {
+        "model": "api_v2.item",
+        "fields": {
+            "armor": "plate",
+            "name": "Armor of Invulnerability",
+            "desc": "You have resistance to nonmagical damage while you wear this armor. Additionally, you can use an action to make yourself immune to nonmagical damage for 10 minutes or until you are no longer wearing the armor. Once this special action is used, it can't be used again until the next dawn.",
+            "category": "armor",
+            "size": 1,
+            "weight": 0.0,
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "srd",
+            "cost": null,
+            "weapon": null,
+            "requires_attunement": true,
+            "rarity": 5
+        },
+        "pk": "armor-of-invulnerability"
+    },
+    {
+        "model": "api_v2.item",
+        "fields": {
+            "armor": "plate",
+            "name": "Armor of Vulnerability",
+            "desc": "While wearing this armor, you have resistance to one of the following damage types: bludgeoning, piercing, or slashing. The GM chooses the type or determines it randomly.\n\n**_Curse_**. This armor is cursed, a fact that is revealed only when an _identify_ spell is cast on the armor or you attune to it. Attuning to the armor curses you until you are targeted by the _remove curse_ spell or similar magic; removing the armor fails to end the curse. While cursed, you have vulnerability to two of the three damage types associated with the armor (not the one to which it grants resistance).",
+            "category": "armor",
+            "size": 1,
+            "weight": 0.0,
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "srd",
+            "cost": null,
+            "weapon": null,
+            "requires_attunement": true,
+            "rarity": 3
+        },
+        "pk": "armor-of-vulnerability"
+    },
+    {
+        "model": "api_v2.item",
+        "fields": {
+            "armor": "plate",
+            "name": "Demon Armor",
+            "desc": "While wearing this armor, you gain a +1 bonus to AC, and you can understand and speak Abyssal. In addition, the armor's clawed gauntlets turn unarmed strikes with your hands into magic weapons that deal slashing damage, with a +1 bonus to attack rolls and damage rolls and a damage die of 1d8.\n\n**_Curse_**. Once you don this cursed armor, you can't doff it unless you are targeted by the _remove curse_ spell or similar magic. While wearing the armor, you have disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+            "category": "armor",
+            "size": 1,
+            "weight": 0.0,
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "srd",
+            "cost": null,
+            "weapon": null,
+            "requires_attunement": true,
+            "rarity": 4
+        },
+        "pk": "demon-armor"
+    },
+    {
+        "model": "api_v2.item",
+        "fields": {
+            "armor": "plate",
+            "name": "Dwarven Plate",
+            "desc": "While wearing this armor, you gain a +2 bonus to AC. In addition, if an effect moves you against your will along the ground, you can use your reaction to reduce the distance you are moved by up to 10 feet.",
+            "category": "armor",
+            "size": 1,
+            "weight": 0.0,
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "srd",
+            "cost": null,
+            "weapon": null,
+            "requires_attunement": false,
+            "rarity": 4
+        },
+        "pk": "dwarven-plate"
+    },
+    {
+        "model": "api_v2.item",
+        "fields": {
+            "armor": "plate",
+            "name": "Plate Armor of Etherealness",
+            "desc": "While you're wearing this armor, you can speak its command word as an action to gain the effect of the _etherealness_ spell, which last for 10 minutes or until you remove the armor or use an action to speak the command word again. This property of the armor can't be used again until the next dawn.",
+            "category": "armor",
+            "size": 1,
+            "weight": 0.0,
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "srd",
+            "cost": null,
+            "weapon": null,
+            "requires_attunement": true,
+            "rarity": 5
+        },
+        "pk": "plate-armor-of-etherealness"
+    }
+]
