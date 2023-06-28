@@ -1,3 +1,5 @@
+![API status](https://img.shields.io/website?down_message=Down&label=Open5e%20API&up_message=Up&url=https%3A%2F%2Fapi.open5e.com)
+
 Open5e is a community project driven by a small number of volunteers in their spare time. We welcome any and all contributions! Please join our Discord to help out: https://discord.gg/9RNE2rY or check out the issue board if you'd like to see what's being worked on!
 
 The Django API uses Django REST Framework for its browsability and ease of use when developing CRUD endpoints.  It uses django's default SQLite database, and pulls the data from the /data directory.
@@ -20,7 +22,7 @@ The Django API uses Django REST Framework for its browsability and ease of use w
     are on the [pipenv website](https://pipenv.readthedocs.io/en/latest/).
 
 1.  Once pipenv is installed, you can install all of the project dependencies
-    defined in the Pipfile via `pipenv install`.
+    defined in the Pipfile via `pipenv install --dev`.
 
 ## Quick Setup
 
@@ -51,6 +53,23 @@ At that point, you will be able to run the django server normally (within the pi
 > pipenv run python manage.py runserver
 
 And your server should be available at http://localhost:8000.
+
+## Tests
+
+### To run the test suite:
+
+First, install the prerequisites as described above
+
+Then, install dev requirements:
+
+```
+pipenv install --dev
+```
+
+Then, run the test suite:
+```
+pipenv run pytest
+```
 
 ## Starting up a droplet
 

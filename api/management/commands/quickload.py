@@ -19,7 +19,8 @@ SOURCE_DIRS = [
     './data/kobold_press/',
     './data/deep_magic_extended/',
     './data/warlock/',
-    './data/vault_of_magic'
+    './data/vault_of_magic',
+    './data/tome_of_heroes/'
 ]
 
 class Command(BaseCommand):

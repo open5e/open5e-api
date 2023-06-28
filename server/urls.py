@@ -16,9 +16,15 @@ Including another URLconf
 
 from django.conf.urls import re_path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+from django.contrib import admin
+from django.urls import path
+from django.conf import settings
+
 from rest_framework import routers
 
 from api import views
+from api_v2 import views as views_v2
 
 router = routers.DefaultRouter()
 #router.register(r'users', views.UserViewSet)
@@ -41,8 +47,16 @@ router.register(r'magicitems',views.MagicItemViewSet)
 router.register(r'weapons',views.WeaponViewSet)
 router.register(r'armor',views.ArmorViewSet)
 
-
 router.register('search', views.SearchView, basename="global-search")
+
+
+router_v2 = routers.DefaultRouter()
+router_v2.register(r'items',views_v2.ItemViewSet)
+router_v2.register(r'documents',views_v2.DocumentViewSet)
+router_v2.register(r'licenses',views_v2.LicenseViewSet)
+router_v2.register(r'publishers',views_v2.PublisherViewSet)
+router_v2.register(r'weapons',views_v2.WeaponViewSet)
+router_v2.register(r'armors',views_v2.ArmorViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -50,4 +64,12 @@ urlpatterns = [
     re_path(r'^', include(router.urls)),
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     re_path(r'^search/', include('haystack.urls')),
+
+    # Versioned API routes (above routes default to v1)
+    re_path(r'^v1/', include(router.urls)),
+    re_path(r'^v1/search/', include('haystack.urls')),
+    # re_path(r'^v2/', include(router_v2.urls))
 ]
+
+if settings.DEBUG==True:
+    urlpatterns.append(path('admin/', admin.site.urls))

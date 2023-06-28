@@ -30,6 +30,14 @@ class Monster(GameContent):
 
     def speed(self):
         return json.loads(self.speed_json)
+
+    environments_json = models.TextField(
+        null=True,
+        help_text='String list of environments that the monster can be found in.')
+
+    def environments(self):
+        return json.loads(self.environments_json)
+
     strength = models.IntegerField(
         null=True, help_text='Integer representing the strength score.')
     dexterity = models.IntegerField(
