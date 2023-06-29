@@ -4,25 +4,21 @@ Open5e is a community project driven by a small number of volunteers in their sp
 
 The Django API uses Django REST Framework for its browsability and ease of use when developing CRUD endpoints.  It uses django's default SQLite database, and pulls the data from the /data directory.
 
-# Install Prerequisites
+# Installation
 
-1.  Install the sqlite3 development package. On Ubuntu, the package is called
-    `sqlite3-devel`. On Debian-based systems, it's called `libsqlite3-dev`.
+## Requirements
 
-1.  This project currently uses python3.8 configured with loadable sqlite
-    extensions. If you don't have python3.8, or if you aren't sure that your
-    python3.8 installation has loadable sqlite extensions enabled, download and
-    install the python3.8 source
-    [here](https://www.python.org/downloads/release/python-3816/). Installation
-    instructions are in the README found in the source tarball. When you
-    configure it, be sure to to use
-    `./configure --enable-loadable-sqlite-extensions`.
+- [Python 3.11](https://www.python.org/downloads/)
 
-1.  We use pipenv to manage our Python dependencies. Installation instructions
-    are on the [pipenv website](https://pipenv.readthedocs.io/en/latest/).
+- [Pipenv](https://pipenv.pypa.io/en/latest/installation/)
 
-1.  Once pipenv is installed, you can install all of the project dependencies
-    defined in the Pipfile via `pipenv install --dev`.
+## Modules
+
+Use pipenv to install all required packages from the `Pipfile` at the project root.
+
+```
+pipenv install --dev`
+```
 
 ## Quick Setup
 
