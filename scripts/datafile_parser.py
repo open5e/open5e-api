@@ -46,72 +46,110 @@ def main():
         for file in in_scope_files:
             print("Opening and parsing {}".format(file.name))
             file_json = json.load(file.open())
-
+            print("File Loaded")
             #item_model={"mode":"api_v2.item","fields":{}}
 
             modified_items = []
             unprocessed_items = []
             for item in file_json:
+                #print(item['type'])
 
-                armor_keys = ['studded-leather','splint','scale-mail','ring-mail','plate','padded','leather','hide','half-plate','chain-shirt','chain-mail','breastplate']
-                weapon_keys = []
+                any_armor = ['studded-leather','splint','scale-mail','ring-mail','plate','padded','leather','hide','half-plate','chain-shirt','chain-mail','breastplate']
+                any_sword_slashing = ['shortsword','longsword','greatsword', 'scimitar']
+                any_axe = ['handaxe','battleaxe','greataxe']
+                any_weapon = [
+                    'club',
+                    'dagger',
+                    'greatclub',
+                    'handaxe',
+                    'javelin',
+                    'light-hammer',
+                    'mace',
+                    'quarterstaff',
+                    'sickle',
+                    'spear',
+                    'crossbow-light',
+                    'dart',
+                    'shortbow',
+                    'sling',
+                    'battleaxe',
+                    'flail',
+                    'glaive',
+                    'greataxe',
+                    'greatsword',
+                    'halberd',
+                    'lance',
+                    'longsword',
+                    'maul',
+                    'morningstar',
+                    'pike'
+                    'rapier',
+                    'scimitar',
+                    'shortsword',
+                    'trident',
+                    'warpick',
+                    'warhammer',
+                    'whip',
+                    'blowgun',
+                    'crossbow-hand',
+                    'crossbow-heavy',
+                    'longbow',
+                    'net']
+                #any_sword_slashing = ['shortsword','longsword','greatsword']
 
-                if item['type'] not in ["Wondrous item","Rod","Staff","Potion","Scroll","Wand","Ring","Armor (shield)",
-                    "Armor (scale mail)"]:
-                    unprocessed_items.append(item)
-                    continue
-
-                if item['type'] == "Wondrous item":
-                    item['type']='wondrous'
-
-                if item['type'] == "Armor (plate)":
-                    item['type']='armor'
-
-                item_model={"model":"api_v2.item","fields":{}}
-                item_model['fields']['armor']='scale-mail'
-                item_model['pk']=slugify(item["name"])
-                item_model['fields']['name']=item["name"]
+                item_model={"model":"api_v2.item"}
+                item_model['fields'] = dict({})
+                #item_model['pk']=slugify(item["name"])
+                #item_model['fields']['name']=item["name"]
                 item_model['fields']['desc']=item["desc"]
-                item_model['fields']['category']=item['type'].lower()
+                item_model['fields']['category']="weapon"
                 item_model['fields']['size']=1
                 item_model['fields']['weight']=0.0
                 item_model['fields']['armor_class']=0
                 item_model['fields']['hit_points']=0
                 item_model['fields']['document']="srd"
                 item_model['fields']['cost']=None
-                item_model['fields']['weapon']=None
-                #item_model['fields']['armor']=None
+                #item_model['fields']['weapon']=None
+                item_model['fields']['armor']=None
                 item_model['fields']['requires_attunement']=False
                 if "requires-attunement" in item:
                     if item["requires-attunement"]=="requires attunement":
                         item_model['fields']['requires_attunement']=True
-                if item["rarity"] not in ['common','uncommon','rare','very rare','legendary']:
+                #if item["rarity"] not in ['common','uncommon','rare','very rare','legendary']:
                     #print(item['name'], item['rarity'])
+                    #unprocessed_items.append(item)
+                    #continue
+                if item['type'] != "Weapon (any)":
                     unprocessed_items.append(item)
                     continue
-                else:
-                    if item["rarity"] == 'common':
-                        item_model['fields']['rarity'] = 1
-                    if item["rarity"] == 'uncommon':
-                        item_model['fields']['rarity'] = 2
-                    if item["rarity"] == 'rare':
-                        item_model['fields']['rarity'] = 3
-                    if item["rarity"] == 'very rare':
-                        item_model['fields']['rarity'] = 4
-                    if item["rarity"] == 'legendary':
-                        item_model['fields']['rarity'] = 5
- 
-                modified_items.append(item_model)
+                
+                for sword in any_weapon:
+                    for x,rar in enumerate(['uncommon','rare','very rare']):
+                        item_model['fields']['weapon'] = sword
+                        item_model['fields']['rarity'] = x+2
+                        item_model['fields']['name']= "{} (+{})".format(sword.title(),str(x+1))
+                        item_model['pk'] = slugify(item_model['fields']["name"])
+                        print_item = json.loads(json.dumps(item_model))
+                        modified_items.append(print_item)
+                        #print("Just added:{}".format(item_model['fields']['rarity']))
+                        print("Counter:{}".format(len(modified_items)))
+
+                item_model = {}
+
+
 
             print("Unprocessed count:{}".format(len(unprocessed_items)))
-
-            sister_file = str(file.parent)+"/"+file.stem + "_modified" + file.suffix
-            with open(sister_file, 'w', encoding='utf-8') as s:
-                s.write(json.dumps(modified_items, ensure_ascii=False, indent=4))
+            print("Processed count:  {}".format(len(modified_items)))
             
-            unprocced = str(file.parent)+"/"+file.stem + "_unprocessed" + file.suffix
-            with open(unprocced, 'w', encoding='utf-8') as s:
-                s.write(json.dumps(unprocessed_items, ensure_ascii=False, indent=4))
+           
+            if True:
+                sister_file = str(file.parent)+"/"+file.stem + "_modified" + file.suffix
+                with open(sister_file, 'w', encoding='utf-8') as s:
+                    s.write(json.dumps(modified_items, ensure_ascii=False, indent=4))
+                
+                unprocced = str(file.parent)+"/"+file.stem + "_unprocessed" + file.suffix
+                with open(unprocced, 'w', encoding='utf-8') as s:
+                    s.write(json.dumps(unprocessed_items, ensure_ascii=False, indent=4))
             
 
     except Exception as e:
