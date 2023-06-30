@@ -55,6 +55,8 @@ def main():
                 #print(item['type'])
 
                 any_armor = ['studded-leather','splint','scale-mail','ring-mail','plate','padded','leather','hide','half-plate','chain-shirt','chain-mail','breastplate']
+                light = ['studded-leather','padded','leather']
+                armor_med_heavy = ['splint','scale-mail','ring-mail','plate','hide','half-plate','chain-shirt','chain-mail','breastplate']
                 any_sword_slashing = ['shortsword','longsword','greatsword', 'scimitar']
                 any_axe = ['handaxe','battleaxe','greataxe']
                 any_weapon = [
@@ -102,37 +104,37 @@ def main():
                 #item_model['pk']=slugify(item["name"])
                 #item_model['fields']['name']=item["name"]
                 item_model['fields']['desc']=item["desc"]
-                item_model['fields']['category']="weapon"
+                item_model['fields']['category']="armor"
                 item_model['fields']['size']=1
                 item_model['fields']['weight']=0.0
                 item_model['fields']['armor_class']=0
                 item_model['fields']['hit_points']=0
                 item_model['fields']['document']="srd"
                 item_model['fields']['cost']=None
-                #item_model['fields']['weapon']=None
+                item_model['fields']['weapon']=None
                 item_model['fields']['armor']=None
                 item_model['fields']['requires_attunement']=False
                 if "requires-attunement" in item:
                     if item["requires-attunement"]=="requires attunement":
                         item_model['fields']['requires_attunement']=True
-                #if item["rarity"] not in ['common','uncommon','rare','very rare','legendary']:
+                if item["rarity"] not in ['common','uncommon','rare','very rare','legendary']:
                     #print(item['name'], item['rarity'])
-                    #unprocessed_items.append(item)
-                    #continue
-                if item['type'] != "Weapon (any)":
+                    unprocessed_items.append(item)
+                    continue
+                if item['type'] != "Armor (studded leather)":
                     unprocessed_items.append(item)
                     continue
                 
-                for sword in any_weapon:
-                    for x,rar in enumerate(['uncommon','rare','very rare']):
-                        item_model['fields']['weapon'] = sword
-                        item_model['fields']['rarity'] = x+2
-                        item_model['fields']['name']= "{} (+{})".format(sword.title(),str(x+1))
-                        item_model['pk'] = slugify(item_model['fields']["name"])
-                        print_item = json.loads(json.dumps(item_model))
-                        modified_items.append(print_item)
-                        #print("Just added:{}".format(item_model['fields']['rarity']))
-                        print("Counter:{}".format(len(modified_items)))
+                for armor in ['studded-leather']:
+                   # for x,rar in enumerate(['uncommon','rare','very rare']):
+                    item_model['fields']['armor'] = armor
+                    item_model['fields']['rarity'] = 3
+                    item_model['fields']['name']= "{}".format(item['name'])
+                    item_model['pk'] = slugify(item_model['fields']["name"])
+                    print_item = json.loads(json.dumps(item_model))
+                    modified_items.append(print_item)
+                    #print("Just added:{}".format(item_model['fields']['rarity']))
+                    print("Counter:{}".format(len(modified_items)))
 
                 item_model = {}
 

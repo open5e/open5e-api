@@ -78,7 +78,8 @@ class Item(Object, HasDescription, FromDocument):
         (2, 'uncommon'),
         (3, 'rare'),
         (4, 'very rare'),
-        (5, 'legendary')
+        (5, 'legendary'),
+        (6, 'artifact')
     ]
 
     rarity = models.IntegerField(
@@ -87,7 +88,7 @@ class Item(Object, HasDescription, FromDocument):
         choices=RARITY_CHOICES,
         validators=[
             MinValueValidator(1),
-            MaxValueValidator(5)],
+            MaxValueValidator(6)],
         help_text='Integer representing the rarity of the object.')
 
     @property 
