@@ -1,11 +1,11 @@
 [
 {
   "model": "api_v2.armor",
-  "pk": "scale-mail",
+  "pk": "breastplate",
   "fields": {
-    "name": "Scale mail",
+    "name": "Breastplate",
     "document": "srd",
-    "grants_stealth_disadvantage": true,
+    "grants_stealth_disadvantage": false,
     "strength_score_required": null,
     "ac_base": 14,
     "ac_add_dexmod": true,
@@ -14,54 +14,15 @@
 },
 {
   "model": "api_v2.armor",
-  "pk": "padded",
+  "pk": "chain-mail",
   "fields": {
-    "name": "Padded",
+    "name": "Chain mail",
     "document": "srd",
     "grants_stealth_disadvantage": true,
-    "strength_score_required": null,
-    "ac_base": 11,
-    "ac_add_dexmod": true,
+    "strength_score_required": 13,
+    "ac_base": 16,
+    "ac_add_dexmod": false,
     "ac_cap_dexmod": null
-  }
-},
-{
-  "model": "api_v2.armor",
-  "pk": "leather",
-  "fields": {
-    "name": "Leather",
-    "document": "srd",
-    "grants_stealth_disadvantage": false,
-    "strength_score_required": null,
-    "ac_base": 11,
-    "ac_add_dexmod": true,
-    "ac_cap_dexmod": null
-  }
-},
-{
-  "model": "api_v2.armor",
-  "pk": "studded-leather",
-  "fields": {
-    "name": "Studded leather",
-    "document": "srd",
-    "grants_stealth_disadvantage": false,
-    "strength_score_required": null,
-    "ac_base": 12,
-    "ac_add_dexmod": true,
-    "ac_cap_dexmod": null
-  }
-},
-{
-  "model": "api_v2.armor",
-  "pk": "hide",
-  "fields": {
-    "name": "Hide",
-    "document": "srd",
-    "grants_stealth_disadvantage": false,
-    "strength_score_required": null,
-    "ac_base": 12,
-    "ac_add_dexmod": true,
-    "ac_cap_dexmod": 2
   }
 },
 {
@@ -73,19 +34,6 @@
     "grants_stealth_disadvantage": false,
     "strength_score_required": null,
     "ac_base": 13,
-    "ac_add_dexmod": true,
-    "ac_cap_dexmod": 2
-  }
-},
-{
-  "model": "api_v2.armor",
-  "pk": "breastplate",
-  "fields": {
-    "name": "Breastplate",
-    "document": "srd",
-    "grants_stealth_disadvantage": false,
-    "strength_score_required": null,
-    "ac_base": 14,
     "ac_add_dexmod": true,
     "ac_cap_dexmod": 2
   }
@@ -105,6 +53,58 @@
 },
 {
   "model": "api_v2.armor",
+  "pk": "hide",
+  "fields": {
+    "name": "Hide",
+    "document": "srd",
+    "grants_stealth_disadvantage": false,
+    "strength_score_required": null,
+    "ac_base": 12,
+    "ac_add_dexmod": true,
+    "ac_cap_dexmod": 2
+  }
+},
+{
+  "model": "api_v2.armor",
+  "pk": "leather",
+  "fields": {
+    "name": "Leather",
+    "document": "srd",
+    "grants_stealth_disadvantage": false,
+    "strength_score_required": null,
+    "ac_base": 11,
+    "ac_add_dexmod": true,
+    "ac_cap_dexmod": null
+  }
+},
+{
+  "model": "api_v2.armor",
+  "pk": "padded",
+  "fields": {
+    "name": "Padded",
+    "document": "srd",
+    "grants_stealth_disadvantage": true,
+    "strength_score_required": null,
+    "ac_base": 11,
+    "ac_add_dexmod": true,
+    "ac_cap_dexmod": null
+  }
+},
+{
+  "model": "api_v2.armor",
+  "pk": "plate",
+  "fields": {
+    "name": "Plate",
+    "document": "srd",
+    "grants_stealth_disadvantage": true,
+    "strength_score_required": 15,
+    "ac_base": 18,
+    "ac_add_dexmod": false,
+    "ac_cap_dexmod": null
+  }
+},
+{
+  "model": "api_v2.armor",
   "pk": "ring-mail",
   "fields": {
     "name": "Ring mail",
@@ -118,15 +118,15 @@
 },
 {
   "model": "api_v2.armor",
-  "pk": "chain-mail",
+  "pk": "scale-mail",
   "fields": {
-    "name": "Chain mail",
+    "name": "Scale mail",
     "document": "srd",
     "grants_stealth_disadvantage": true,
-    "strength_score_required": 13,
-    "ac_base": 16,
-    "ac_add_dexmod": false,
-    "ac_cap_dexmod": null
+    "strength_score_required": null,
+    "ac_base": 14,
+    "ac_add_dexmod": true,
+    "ac_cap_dexmod": 2
   }
 },
 {
@@ -144,14 +144,14 @@
 },
 {
   "model": "api_v2.armor",
-  "pk": "plate",
+  "pk": "studded-leather",
   "fields": {
-    "name": "Plate",
+    "name": "Studded leather",
     "document": "srd",
-    "grants_stealth_disadvantage": true,
-    "strength_score_required": 15,
-    "ac_base": 18,
-    "ac_add_dexmod": false,
+    "grants_stealth_disadvantage": false,
+    "strength_score_required": null,
+    "ac_base": 12,
+    "ac_add_dexmod": true,
     "ac_cap_dexmod": null
   }
 }
