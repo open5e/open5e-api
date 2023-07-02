@@ -116,6 +116,6 @@ class ItemSerializerFull(GameContentSerializer):
 
     class Meta:
         model = models.Item
-        fields = ['url','name','cost','weight','weapon','armor','document','category',
+        fields = ['url','name','desc','cost','weight','weapon','armor','document','category',
             'requires_attunement','rarity','is_magic_item',
             'itemsets']
