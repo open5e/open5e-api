@@ -154,7 +154,6 @@ class ArmorFilterSet(FilterSet):
         }
 
 
-
 class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of armor.
