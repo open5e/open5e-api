@@ -2,6 +2,29 @@ from rest_framework import serializers
 
 from api_v2 import models
 
+from rest_framework import serializers
+
+class GameContentSerializer(serializers.HyperlinkedModelSerializer):
+    # Add all properties as read only to fields
+    # Adding dynamic "fields" qs parameter.
+    def __init__(self, *args, **kwargs):
+        # Instantiate the superclass normally
+        super(GameContentSerializer, self).__init__(*args, **kwargs)
+
+        # The request doesn't exist when generating an OAS file, so we have to check that first
+        if self.context['request']:
+            fields = self.context['request'].query_params.get('fields')
+            if fields:
+                fields = fields.split(',')
+                # Drop any fields that are not specified in the `fields` argument.
+                allowed = set(fields)
+                existing = set(self.fields.keys())
+                for field_name in existing - allowed:
+                    self.fields.pop(field_name)
+
+    class Meta:
+        abstract = True
+
 
 class LicenseSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,7 +57,6 @@ class ArmorSerializerSimple(serializers.ModelSerializer):
     class Meta:
         model = models.Armor
         fields = [
-            'key',
             'url',
             'name',
             'ac_display',
@@ -43,7 +65,7 @@ class ArmorSerializerSimple(serializers.ModelSerializer):
         ]
 
 
-class ArmorSerializerFull(serializers.ModelSerializer):
+class ArmorSerializerFull(GameContentSerializer):
     ac_display = serializers.ReadOnlyField()
 
     class Meta:
@@ -56,13 +78,12 @@ class WeaponSerializerSimple(serializers.ModelSerializer):
     class Meta:
         model = models.Weapon
         fields = [
-            'key',
             'url',
             'name',
             'properties']
 
 
-class WeaponSerializerFull(serializers.ModelSerializer):
+class WeaponSerializerFull(GameContentSerializer):
     is_versatile = serializers.ReadOnlyField()
     is_martial = serializers.ReadOnlyField()
     is_melee = serializers.ReadOnlyField()
@@ -76,20 +97,21 @@ class WeaponSerializerFull(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class ItemSerializerFull(serializers.ModelSerializer):
+class ItemSetSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.ItemSet
+        fields = "__all__"
+
+
+class ItemSerializerFull(GameContentSerializer):
     weapon = WeaponSerializerSimple()
     armor = ArmorSerializerSimple()
-    document = DocumentSerializerSimple()
 
     is_magic_item = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Item
-        fields = "__all__"
-
-
-class ItemSetSerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model = models.ItemSet
-        fields = "__all__"
+        fields = ['url','cost','weapon','armor','document','category',
+            'requires_attunement','rarity','is_magic_item',
+            'itemsets']

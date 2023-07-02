@@ -99,4 +99,4 @@ class Item(Object, HasDescription, FromDocument):
 class ItemSet(HasName, HasDescription, FromDocument):
     """A set of items to be referenced."""
 
-    items = models.ManyToManyField(Item, help_text="The set of items.")
+    items = models.ManyToManyField(Item, related_name="itemsets",help_text="The set of items.")

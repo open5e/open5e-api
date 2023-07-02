@@ -57,7 +57,7 @@ router_v2.register(r'documents',views_v2.DocumentViewSet)
 router_v2.register(r'licenses',views_v2.LicenseViewSet)
 router_v2.register(r'publishers',views_v2.PublisherViewSet)
 router_v2.register(r'weapons',views_v2.WeaponViewSet)
-router_v2.register(r'armors',views_v2.ArmorViewSet)
+router_v2.register(r'armor',views_v2.ArmorViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

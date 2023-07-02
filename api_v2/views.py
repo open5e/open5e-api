@@ -77,6 +77,10 @@ class LicenseViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_fields = '__all__'
 
 
+class WeaponFilterSet(FilterSet):
+    pass
+
+
 class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of weapons.
