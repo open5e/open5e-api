@@ -27,12 +27,21 @@ class ItemFilterSet(FilterSet):
 class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of items.
-<<<<<<< HEAD
+
     retrieve: API endpoint for returning a particular item.
     """
     queryset = models.Item.objects.all().order_by('-pk')
     serializer_class = serializers.ItemSerializer
     filterset_class = ItemFilterSet
+
+class ItemSetViewSet(viewsets.ReadOnlyModelViewSet):
+    """"
+    list: API Endpoint for returning a set of itemsets.
+
+    retrieve: API endpoint for return a particular itemset.
+    """
+    queryset = models.ItemSet.objects.all().order_by('-pk')
+    serializer_class = serializers.ItemSetSerializer
 
 
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
@@ -41,7 +50,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     retrieve: API endpoint for returning a particular document.
     """
     queryset = models.Document.objects.all().order_by('-pk')
-    serializer_class = serializers.DocumentSerializer
+    serializer_class = serializers.DocumentSerializerFull
     filterset_fields = '__all__'
 
 
@@ -71,7 +80,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     retrieve: API endpoint for returning a particular weapon.
     """
     queryset = models.Weapon.objects.all().order_by('-pk')
-    serializer_class = serializers.WeaponSerializer
+    serializer_class = serializers.WeaponSerializerFull
     filterset_fields = '__all__'
 
 
@@ -81,5 +90,5 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     retrieve: API endpoint for returning a particular armor.
     """
     queryset = models.Armor.objects.all().order_by('-pk')
-    serializer_class = serializers.ArmorSerializer
+    serializer_class = serializers.ArmorSerializerFull
     filterset_fields = '__all__'

@@ -52,6 +52,7 @@ router.register('search', views.SearchView, basename="global-search")
 
 router_v2 = routers.DefaultRouter()
 router_v2.register(r'items',views_v2.ItemViewSet)
+router_v2.register(r'itemsets',views_v2.ItemSetViewSet)
 router_v2.register(r'documents',views_v2.DocumentViewSet)
 router_v2.register(r'licenses',views_v2.LicenseViewSet)
 router_v2.register(r'publishers',views_v2.PublisherViewSet)

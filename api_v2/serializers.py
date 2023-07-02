@@ -14,25 +14,21 @@ class PublisherSerializer(serializers.ModelSerializer):
         model = models.Publisher
         fields = '__all__'
 
-
-class DocumentSerializer(serializers.ModelSerializer):
+class DocumentSerializerSimple(serializers.ModelSerializer):
     class Meta:
         model = models.Document
         fields = [
             'key',
-            'url',
-            'name',
-            'desc',
-            'publisher',
-            'ruleset',
-            'licenses',
-            'author',
-            'published_at',
-            'permalink'
-        ]
+            'url']
 
 
-class ArmorSerializer(serializers.ModelSerializer):
+class DocumentSerializerFull(serializers.ModelSerializer):
+    class Meta:
+        model = models.Document
+        fields = "__all__"
+
+
+class ArmorSerializerSimple(serializers.ModelSerializer):
 
     class Meta:
         model = models.Armor
@@ -46,7 +42,15 @@ class ArmorSerializer(serializers.ModelSerializer):
         ]
 
 
-class WeaponSerializer(serializers.ModelSerializer):
+class ArmorSerializerFull(serializers.ModelSerializer):
+    ac_display = serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.Armor
+        fields = "__all__"
+
+
+class WeaponSerializerSimple(serializers.ModelSerializer):
 
     class Meta:
         model = models.Weapon
@@ -58,18 +62,23 @@ class WeaponSerializer(serializers.ModelSerializer):
 
 
 class WeaponSerializerFull(serializers.ModelSerializer):
+    is_versatile = serializers.ReadOnlyField()
+    is_martial = serializers.ReadOnlyField()
+    is_melee = serializers.ReadOnlyField()
+    ranged_attack_possible = serializers.ReadOnlyField()
+    range_melee = serializers.ReadOnlyField()
+    is_reach = serializers.ReadOnlyField()
+    properties = serializers.ReadOnlyField()
+
     class Meta:
         model = models.Weapon
         fields = "__all__"
 
 
 class ItemSerializer(serializers.ModelSerializer):
-    weapon = WeaponSerializer()
-    armor = ArmorSerializer()
-
-    document = serializers.HyperlinkedRelatedField(
-        view_name='document-detail',
-        read_only=True)
+    weapon = WeaponSerializerSimple()
+    armor = ArmorSerializerSimple()
+    document = DocumentSerializerSimple()
 
     class Meta:
         model = models.Item
@@ -85,4 +94,11 @@ class ItemSerializer(serializers.ModelSerializer):
             'is_magic_item',
             'requires_attunement',
             'rarity',
-            'cost']
+            'cost',
+            'itemset_set']
+
+
+class ItemSetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.ItemSet
+        fields = "__all__"
