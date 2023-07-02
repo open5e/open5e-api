@@ -2,8 +2,6 @@ from rest_framework import serializers
 
 from api_v2 import models
 
-from rest_framework import serializers
-
 class GameContentSerializer(serializers.HyperlinkedModelSerializer):
     # Add all properties as read only to fields
     # Adding dynamic "fields" qs parameter.
@@ -26,13 +24,19 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
         abstract = True
 
 
-class LicenseSerializer(serializers.ModelSerializer):
+class RulesetSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.Ruleset
+        fields = '__all__'
+
+
+class LicenseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.License
         fields = '__all__'
 
 
-class PublisherSerializer(serializers.ModelSerializer):
+class PublisherSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Publisher
         fields = '__all__'
@@ -46,7 +50,7 @@ class DocumentSerializerSimple(serializers.ModelSerializer):
             'url']
 
 
-class DocumentSerializerFull(serializers.ModelSerializer):
+class DocumentSerializerFull(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Document
         fields = "__all__"
@@ -97,7 +101,7 @@ class WeaponSerializerFull(GameContentSerializer):
         fields = "__all__"
 
 
-class ItemSetSerializer(serializers.ModelSerializer):
+class ItemSetSerializer(GameContentSerializer):
 
     class Meta:
         model = models.ItemSet
@@ -112,6 +116,6 @@ class ItemSerializerFull(GameContentSerializer):
 
     class Meta:
         model = models.Item
-        fields = ['url','cost','weapon','armor','document','category',
+        fields = ['url','cost','weight','weapon','armor','document','category',
             'requires_attunement','rarity','is_magic_item',
             'itemsets']

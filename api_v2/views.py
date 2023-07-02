@@ -47,6 +47,16 @@ class ItemSetViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.ItemSetSerializer
 
 
+class RulesetViewSet(viewsets.ReadOnlyModelViewSet):
+    """"
+    list: API Endpoint for returning a set of rulesets.
+
+    retrieve: API endpoint for return a particular ruleset.
+    """
+    queryset = models.Ruleset.objects.all().order_by('pk')
+    serializer_class = serializers.RulesetSerializer
+
+
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of documents.
