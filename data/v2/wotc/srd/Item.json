@@ -723,6 +723,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "assassins-blood",
+  "fields": {
+    "name": "Assassin's Blood",
+    "desc": "A creature subjected to this poison must make a DC 10 Constitution saving throw. On a failed save, it takes 6 (1d12) poison damage and is poisoned for 24 hours. On a successful save, the creature takes half damage and isn't poisoned.\\n\\n\r\n\r\n**_Ingested._** A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "150.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "bag-of-beans",
   "fields": {
     "name": "Bag of Beans",
@@ -1331,6 +1350,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "burnt-othur-fumes",
+  "fields": {
+    "name": "Burnt othur fumes",
+    "desc": "A creature subjected to this poison must succeed on a DC 13 Constitution saving throw or take 10 (3d6) poison damage, and must repeat the saving throw at the start of each of its turns. On each successive failed save, the character takes 3 (1d6) poison damage. After three successful saves, the poison ends.\\n\\n**_Inhaled._** These poisons are powders or gases that take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "500.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "candle-of-invocation",
   "fields": {
     "name": "Candle of Invocation",
@@ -1705,6 +1743,25 @@
     "weapon": null,
     "armor": null,
     "category": "trade-good",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "crawler-mucus",
+  "fields": {
+    "name": "Crawler mucus",
+    "desc": "This poison must be harvested from a dead or incapacitated crawler. A creature subjected to this poison must succeed on a DC 13 Constitution saving throw or be poisoned for 1 minute. The poisoned creature is paralyzed. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\\n\\n\r\n**_Contact._** Contact poison can be smeared on an object and remains potent until it is touched or washed off. A creature that touches contact poison with exposed skin suffers its effects.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "200.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
     "requires_attunement": false,
     "rarity": null
   }
@@ -2566,6 +2623,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "drow-poison",
+  "fields": {
+    "name": "Drow poison",
+    "desc": "This poison is typically made only by the drow, and only in a place far removed from sunlight. A creature subjected to this poison must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the creature is also unconscious while poisoned in this way. The creature wakes up if it takes damage or if another creature takes an action to shake it awake.\r\n\\n\\n**_Injury._** Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "200.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "dust-of-disappearance",
   "fields": {
     "name": "Dust of Disappearance",
@@ -2733,6 +2809,25 @@
     "category": "armor",
     "requires_attunement": false,
     "rarity": 3
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "essence-of-ether",
+  "fields": {
+    "name": "Essense of either",
+    "desc": "A creature subjected to this poison must succeed on a DC 15 Constitution saving throw or become poisoned for 8 hours. The poisoned creature is unconscious. The creature wakes up if it takes damage or if another creature takes an action to shake it awake.\\n\\n**_Inhaled._** These poisons are powders or gases that take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "300.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
   }
 },
 {
@@ -5378,6 +5473,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "malice",
+  "fields": {
+    "name": "Malice",
+    "desc": "A creature subjected to this poison must succeed on a DC 15 Constitution saving throw or become poisoned for 1 hour. The poisoned creature is blinded.\\n\\n**_Inhaled._** These poisons are powders or gases that take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "250.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "mantle-of-spell-resistance",
   "fields": {
     "name": "Mantle of Spell Resistance",
@@ -5583,6 +5697,25 @@
     "category": "wondrous",
     "requires_attunement": true,
     "rarity": 2
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "midnight-tears",
+  "fields": {
+    "name": "Midnight tears",
+    "desc": "A creature that ingests this poison suffers no effect until the stroke of midnight. If the poison has not been neutralized before then, the creature must succeed on a DC 17 Constitution saving throw, taking 31 (9d6) poison damage on a failed save, or half as much damage on a successful one.\\n\\n **_Ingested._** A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "1500.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
   }
 },
 {
@@ -6138,6 +6271,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "oil-of-taggit",
+  "fields": {
+    "name": "Oil of taggit",
+    "desc": "A creature subjected to this poison must succeed on a DC 13 Constitution saving throw or become poisoned for 24 hours. The poisoned creature is unconscious. The creature wakes up if it takes damage.\\n\\n **_Contact._** Contact poison can be smeared on an object and remains potent until it is touched or washed off. A creature that touches contact poison with exposed skin suffers its effects.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "400.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "orb-of-dragonkind",
   "fields": {
     "name": "Orb of Dragonkind",
@@ -6189,6 +6341,25 @@
     "weapon": null,
     "armor": "padded",
     "category": "armor",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "pale-tincture",
+  "fields": {
+    "name": "Pale tincture",
+    "desc": "A creature subjected to this poison must succeed on a DC 16 Constitution saving throw or take 3 (1d6) poison damage and become poisoned. The poisoned creature must repeat the saving throw every 24 hours, taking 3 (1d6) poison damage on a failed save. Until this poison ends, the damage the poison deals can't be healed by any means. After seven successful saving throws, the effect ends and the creature can heal normally. \\n\\n **_Ingested._** A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "250.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
     "requires_attunement": false,
     "rarity": null
   }
@@ -6932,6 +7103,25 @@
     "category": "potion",
     "requires_attunement": false,
     "rarity": 2
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "purple-worm-poison",
+  "fields": {
+    "name": "Purple worm poison",
+    "desc": "This poison must be harvested from a dead or incapacitated purple worm. A creature subjected to this poison must make a DC 19 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one.\r\n\\n\\n\r\n**_Injury._** Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "2000.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
   }
 },
 {
@@ -7900,6 +8090,25 @@
     "armor": null,
     "category": "weapon",
     "requires_attunement": true,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "serpent-venom",
+  "fields": {
+    "name": "Serpent venom",
+    "desc": "This poison must be harvested from a dead or incapacitated giant poisonous snake. A creature subjected to this poison must succeed on a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.\r\n\\n\\n\r\n**_Injury._** Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "200.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
     "rarity": null
   }
 },
@@ -9273,6 +9482,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "torpor",
+  "fields": {
+    "name": "Torpor",
+    "desc": "A creature subjected to this poison must succeed on a DC 15 Constitution saving throw or become poisoned for 4d6 hours. The poisoned creature is incapacitated.\r\n\\n\\n\r\n**_Ingested._** A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "600.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "trident",
   "fields": {
     "name": "Trident",
@@ -9363,6 +9591,25 @@
     "armor": null,
     "category": "weapon",
     "requires_attunement": true,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "truth-serum",
+  "fields": {
+    "name": "Truth serum",
+    "desc": "A creature subjected to this poison must succeed on a DC 11 Constitution saving throw or become poisoned for 1 hour. The poisoned creature can't knowingly speak a lie, as if under the effect of a zone of truth spell.\r\n\\n\\n\r\n**_Ingested._** A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing advantage on the saving throw or dealing only half damage on a failed save.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "150.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
     "rarity": null
   }
 },
@@ -10770,6 +11017,25 @@
     "category": "wondrous",
     "requires_attunement": true,
     "rarity": 3
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "wyvern-poison",
+  "fields": {
+    "name": "Wyvern poison",
+    "desc": "This poison must be harvested from a dead or incapacitated wyvern. A creature subjected to this poison must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.\r\n\\n\\n\r\n**_Injury._** Injury poison can be applied to weapons, ammunition, trap components, and other objects that deal piercing or slashing damage and remains potent until delivered through a wound or washed off. A creature that takes piercing or slashing damage from an object coated with the poison is exposed to its effects.",
+    "size": 1,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "1200.00",
+    "weapon": null,
+    "armor": null,
+    "category": "poison",
+    "requires_attunement": false,
+    "rarity": null
   }
 }
 ]
