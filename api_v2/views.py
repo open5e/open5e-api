@@ -31,7 +31,7 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     retrieve: API endpoint for returning a particular item.
     """
     queryset = models.Item.objects.all().order_by('pk')
-    serializer_class = serializers.ItemSerializer
+    serializer_class = serializers.ItemSerializerFull
     filterset_class = ItemFilterSet
 
 

@@ -14,6 +14,7 @@ class PublisherSerializer(serializers.ModelSerializer):
         model = models.Publisher
         fields = '__all__'
 
+
 class DocumentSerializerSimple(serializers.ModelSerializer):
     class Meta:
         model = models.Document
@@ -75,30 +76,18 @@ class WeaponSerializerFull(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class ItemSerializer(serializers.ModelSerializer):
+class ItemSerializerFull(serializers.ModelSerializer):
     weapon = WeaponSerializerSimple()
     armor = ArmorSerializerSimple()
     document = DocumentSerializerSimple()
 
     class Meta:
         model = models.Item
-        fields = [
-            'key',
-            'url',
-            'name',
-            'desc',
-            'document',
-            'weight',
-            'weapon',
-            'armor',
-            'is_magic_item',
-            'requires_attunement',
-            'rarity',
-            'cost',
-            'itemset_set']
+        fields = "__all__"
 
 
 class ItemSetSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = models.ItemSet
         fields = "__all__"
