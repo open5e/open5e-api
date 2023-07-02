@@ -57,6 +57,12 @@ class WeaponSerializer(serializers.ModelSerializer):
             'properties']
 
 
+class WeaponSerializerFull(serializers.ModelSerializer):
+    class Meta:
+        model = models.Weapon
+        fields = "__all__"
+
+
 class ItemSerializer(serializers.ModelSerializer):
     weapon = WeaponSerializer()
     armor = ArmorSerializer()

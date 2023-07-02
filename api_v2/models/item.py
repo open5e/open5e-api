@@ -7,7 +7,7 @@ from django.urls import reverse
 from api.models import GameContent
 from .weapon import Weapon
 from .armor import Armor
-from .abstracts import Object, HasDescription
+from .abstracts import Object, HasName, HasDescription
 from .document import FromDocument
 
 
@@ -94,3 +94,9 @@ class Item(Object, HasDescription, FromDocument):
     @property 
     def is_magic_item(self):
         return self.rarity is not None
+
+
+class ItemSet(HasName, HasDescription, FromDocument):
+    """A set of items to be referenced."""
+
+    items = models.ManyToManyField(Item, help_text="The set of items.")
