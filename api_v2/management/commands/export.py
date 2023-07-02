@@ -85,8 +85,8 @@ class Command(BaseCommand):
                             base_path=options['dir'])
                         write_queryset_data(model_path, modelq)
 
-                    self.stdout.write(self.style.SUCCESS(
-                        'Wrote {} to {}'.format(doc.key, doc_path)))
+                self.stdout.write(self.style.SUCCESS(
+                    'Wrote {} to {}'.format(doc.key, doc_path)))
 
         self.stdout.write(self.style.SUCCESS('Data for v2 data complete.'))
 
