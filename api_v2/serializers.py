@@ -81,6 +81,8 @@ class ItemSerializerFull(serializers.ModelSerializer):
     armor = ArmorSerializerSimple()
     document = DocumentSerializerSimple()
 
+    is_magic_item = serializers.ReadOnlyField()
+
     class Meta:
         model = models.Item
         fields = "__all__"

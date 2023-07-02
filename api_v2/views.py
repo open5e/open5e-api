@@ -21,6 +21,8 @@ class ItemFilterSet(FilterSet):
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'rarity': ['exact', 'in', ],
             'requires_attunement': ['exact'],
+            'category': ['in', 'iexact', 'exact'],
+            'document__key': ['in','iexact','exact']
         }
 # Create your views here.
 
