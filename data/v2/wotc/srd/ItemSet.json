@@ -1,0 +1,128 @@
+[
+{
+  "model": "api_v2.itemset",
+  "pk": "heavy-armor",
+  "fields": {
+    "name": "Heavy Armor",
+    "desc": "Of all the armor categories, heavy armor offers the best protection. These suits of armor cover the entire body and are designed to stop a wide range of attacks. Only proficient warriors can manage their weight and bulk.\r\n\r\nHeavy armor doesn't let you add your Dexterity modifier to your Armor Class, but it also doesn't penalize you if your Dexterity modifier is negative.",
+    "document": "srd",
+    "items": [
+      "chain-mail",
+      "plate-armor",
+      "ring-mail",
+      "splint-armor"
+    ]
+  }
+},
+{
+  "model": "api_v2.itemset",
+  "pk": "light-armor",
+  "fields": {
+    "name": "Light Armor",
+    "desc": "Made from supple and thin materials, light armor favors agile adventurers since it offers some protection without sacrificing mobility. If you wear light armor, you add your Dexterity modifier to the base number from your armor type to determine your Armor Class.",
+    "document": "srd",
+    "items": [
+      "leather-armor",
+      "padded-armor",
+      "studded-leather-armor"
+    ]
+  }
+},
+{
+  "model": "api_v2.itemset",
+  "pk": "martial-melee-weapons",
+  "fields": {
+    "name": "Martial Melee Weapons",
+    "desc": "Martial weapons, including swords, axes, and polearms, require more specialized training to use effectively. Most warriors use martial weapons because these weapons put their fighting style and training to best use.",
+    "document": "srd",
+    "items": [
+      "battleaxe",
+      "flail",
+      "glaive",
+      "greataxe",
+      "greatsword",
+      "halberd",
+      "lance",
+      "longsword",
+      "maul",
+      "morningstar",
+      "pike",
+      "rapier",
+      "scimitar",
+      "shortsword",
+      "trident",
+      "war-pick",
+      "warhammer",
+      "whip"
+    ]
+  }
+},
+{
+  "model": "api_v2.itemset",
+  "pk": "martial-ranged-weapons",
+  "fields": {
+    "name": "Martial Ranged Weapons",
+    "desc": "Martial weapons, including swords, axes, and polearms, require more specialized training to use effectively. Most warriors use martial weapons because these weapons put their fighting style and training to best use.",
+    "document": "srd",
+    "items": [
+      "blowgun",
+      "crossbow-hand",
+      "crossbow-heavy",
+      "longbow",
+      "net"
+    ]
+  }
+},
+{
+  "model": "api_v2.itemset",
+  "pk": "medium-armor",
+  "fields": {
+    "name": "Medium Armor",
+    "desc": "Medium armor offers more protection than light armor, but it also impairs movement more. If you wear medium armor, you add your Dexterity modifier, to a maximum of +2, to the base number from your armor type to determine your Armor Class.",
+    "document": "srd",
+    "items": [
+      "breastplate",
+      "chain-shirt",
+      "half-plate",
+      "hide-armor",
+      "scale-mail"
+    ]
+  }
+},
+{
+  "model": "api_v2.itemset",
+  "pk": "simple-melee-weapons",
+  "fields": {
+    "name": "Simple Melee Weapons",
+    "desc": "Most people can use simple weapons with proficiency. These weapons include clubs, maces, and other weapons often found in the hands of commoners.",
+    "document": "srd",
+    "items": [
+      "club",
+      "dagger",
+      "greatclub",
+      "handaxe",
+      "javelin",
+      "light-hammer",
+      "mace",
+      "quaterstaff",
+      "sickle",
+      "spear"
+    ]
+  }
+},
+{
+  "model": "api_v2.itemset",
+  "pk": "simple-ranged-weapons",
+  "fields": {
+    "name": "Simple Ranged Weapons",
+    "desc": "Most people can use simple weapons with proficiency.",
+    "document": "srd",
+    "items": [
+      "crossbow-light",
+      "dart",
+      "shortbow",
+      "sling"
+    ]
+  }
+}
+]
