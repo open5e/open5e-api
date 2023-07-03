@@ -57,7 +57,8 @@ class Item(Object, HasDescription, FromDocument):
         ('trade-good', 'Trade Good'),
         ('shield', 'Shield'),
         ('poison', 'Poison'),
-        ('adventuring-gear', 'Adventuring gear')
+        ('adventuring-gear', 'Adventuring gear'),
+        ('tools', 'Tools')
     ]
 
     category = models.CharField(
