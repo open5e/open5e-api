@@ -30,27 +30,43 @@ To do any python development on the django application itself, I would suggest u
 
 If you want to work with existing data sources and just get working you can quickly stand up the server with
 
-> pipenv run python manage.py quicksetup
+```bash
+pipenv run python manage.py quicksetup
+```
 
 followed by
 
-> pipenv run python manage.py runserver
+```bash
+pipenv run python manage.py runserver
+```
 
 This will stand up the server with full content and search index at http://localhost:8000.
 
 ## Manual Setup Steps
 
 If you want to customize your setup, particularly useful if adding new content sources, then you will need to use the built-in django migration function to define your database, making sure to run it within the pipenv environment.
-> pipenv run python manage.py migrate
+
+```bash
+pipenv run python manage.py migrate
+```
 
 You will then need to collect the static files (this makes django-resk-framework look presentable when viewing it in html).
-> pipenv run python manage.py collectstatic --noinput
+
+```bash
+pipenv run python manage.py collectstatic --noinput
+```
 
 Finally, you will need to load the SRD data from the json files in the /data folder.  This is using the custom populatedb command.
-> pipenv run python manage.py populatedb --flush ./data/WOTC_5e_SRD_v5.1/
+
+```bash
+pipenv run python manage.py populatedb --flush ./data/WOTC_5e_SRD_v5.1/
+```
 
 At that point, you will be able to run the django server normally (within the pipenv environment).
-> pipenv run python manage.py runserver
+
+```bash
+pipenv run python manage.py runserver
+```
 
 And your server should be available at http://localhost:8000.
 
@@ -62,12 +78,13 @@ First, install the prerequisites as described above
 
 Then, install dev requirements:
 
-```
+```bash
 pipenv install --dev
 ```
 
 Then, run the test suite:
-```
+
+```bash
 pipenv run pytest
 ```
 
@@ -77,7 +94,7 @@ This deployment has been tested using DigitalOcean Apps with Docker Hub.
 
 To start up the server from scratch on a droplet:
 
-```
+```bash
 git pull https://github.com/open5e/open5e-api
 export SECRET_KEY=a_new_secret_key
 export SERVER_NAME=whatever.yourdomain.com
