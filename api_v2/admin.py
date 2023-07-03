@@ -16,10 +16,13 @@ class FromDocumentModelAdmin(admin.ModelAdmin):
     list_display = ['key', '__str__']
 
 
+class ItemModelAdmin(admin.ModelAdmin):
+    list_display = ['key','category','name']
+
 admin.site.register(Weapon, admin_class=FromDocumentModelAdmin)
 admin.site.register(Armor, admin_class=FromDocumentModelAdmin)
 
-admin.site.register(Item, admin_class=FromDocumentModelAdmin)
+admin.site.register(Item, admin_class=ItemModelAdmin)
 admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
 
 admin.site.register(Document)
