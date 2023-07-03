@@ -26,8 +26,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Sanitize branch name
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF##*/} | tr '/' '-')" >> $GITHUB_ENV
       - name: Build Docker image
         uses: docker/build-push-action@v4
         with:
           push: false
-          tags: open5e-api:${{ github.ref_name }}
+          tags: open5e-api:${{ env.BRANCH_NAME }}
