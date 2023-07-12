@@ -37,7 +37,9 @@
   * [Run](#run)
   * [Building the OAS file](#building-the-oas-file)
 - [Contributing](#contributing)
-  * [Adding data](#adding-data)
+  * [Editing existing sources](#editing-existing-sources)
+  * [Adding a new sorce](#adding-a-new-sorce)
+  * [Change existing models](#change-existing-models)
 - [Tests](#tests)
 - [Deployment](#deployment)
   * [DigitalOcean](#digitalocean)
@@ -115,11 +117,22 @@ pipenv run ./manage.py generateschema --generator_class api.schema_generator.Ope
 
 # Contributing
 
-## Adding data
+Before making any changes, you should fork the Ope5e-api repository. This will make a copy on your account, which can be freely edited. Once your edits are done you can open a Pull Request to have your changes reviewed by a maintainer, which may ask for changes or clarification before approving it. Once merged the changes go live on [Beta Site](https://beta.open5e.com) before being pushed live.
 
-All game data is stored under `data` and is split into source "documents". A Document can be either a packet of content, such as the [WotC 5e SRD 5.1](https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf) or a source book e.g. "Tome of Beasts".
+Smaller edits such as spelling mistakes can be edited directly in Github. For larger edits, it is recommeded that you make changes in a full editor, such as [VS Code](https://code.visualstudio.com) with the [Github Extenstion](https://code.visualstudio.com/docs/sourcecontrol/github).
 
-TODO
+## Editing existing sources
+
+Game Content is stored in the `data` directory. It is first split according to which document/source books it originated from and further into JSON files split by category e.g. "monsters.json", "spells.json". These can be edited directly. You can also add new categories to existing sources by creating the required JSON file. See an existing source, such as the 5.1 SRD to see how these should be structured.
+
+## Adding a new sorce
+
+To add a new source, create new directory inside `data` and a `document.json` file that credits the source and links to the license it was published under. An example of this can be found [here](\data\a5e_srd\document.json). You can then add a json file for each category of content. See an existing source, such as the 5.1 SRD to see how these should be structured.
+
+To load this new source, it must be added to the `SOURCE_DIRS` in [quickload.py](\api\management\commands\quickload.py). Rebuild the project to see the new Game Content.
+## Change existing models
+
+Models such as Monsters and Classes are stored in the [api/models](\api\models) directory. These define fields (hp, str, speed) and how they are output. The import of Game Content from `data` is handled by an [ImportSpec](\api\management\commands\importer.py)
 
 # Tests
 
@@ -135,7 +148,7 @@ The API is normally deployed via [Docker](https://docs.docker.com/get-started/).
 
 ## DigitalOcean
 
-This deployment has been tested using DigitalOcean Apps with Docker Hub.
+This deployment has been tested using [DigitalOcean Apps](https://www.digitalocean.com/go/cloud-hosting) with Docker Hub.
 
 To start up the server from scratch on a droplet:
 
@@ -165,3 +178,5 @@ With docker installed, you can build the project with provided Dockerfile
 ```bash
 docker build
 ```
+
+This docker app can then be deployed with any provider.
