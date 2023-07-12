@@ -24,6 +24,30 @@
 
 <br/>
 
+# Table of contents
+
+- [Table of contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Installation](#installation)
+  * [Requirements](#requirements)
+  * [Modules](#modules)
+- [Development](#development)
+  * [Build](#build)
+    + [Search Indexing](#search-indexing)
+  * [Run](#run)
+  * [Building the OAS file](#building-the-oas-file)
+- [Contributing](#contributing)
+  * [Adding data](#adding-data)
+- [Tests](#tests)
+- [Deployment](#deployment)
+  * [DigitalOcean](#digitalocean)
+  * [Railway.app](#railwayapp)
+  * [Docker](#docker)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+# Introduction
+
 Open5e is a community project driven by a small number of volunteers in their spare time. We welcome any and all contributions! Please join our Discord to help out: https://discord.gg/9RNE2rY or check out the issue board if you'd like to see what's being worked on!
 
 The API uses the Django REST Framework for it's browsability and ease of use when developing CRUD endpoints. It uses django's default SQLite database, and pulls the data from the `/data` directory.
@@ -38,81 +62,81 @@ The API uses the Django REST Framework for it's browsability and ease of use whe
 
 ## Modules
 
-Use pipenv to install all required packages from the `Pipfile` at the project root.
+Pipenv is used to install all required packages from the `Pipfile` at the project root. Use the following command after cloning the project or switching branches.
 
-```
+```sh
 pipenv install --dev`
 ```
 
-## Quick Setup
+# Development
 
-To do any python development on the django application itself, I would suggest using django's built-in server as it allows for various things (such as debug mode and quick reloads).  Here's the general process for getting that up and running.
+## Build
 
-If you want to work with existing data sources and just get working you can quickly stand up the server with
+Crate a local database and import game content. 
+```sh
+pipenv run python manage.py quicksetup --noindex
+```
 
-```bash
+To make sure the API is always using your updated code, this command must be run again if:
+- You add/remove/edit Game Content
+- You edit Python code
+- You switch git branches
+
+
+### Search Indexing
+
+To use the search function, you must build the search index by running the above command without the `--noindex` flag.
+```sh
 pipenv run python manage.py quicksetup
 ```
 
-followed by
 
-```bash
+## Run
+
+Run the server locally. This server is only for development and shall __not__ be used in production. The server will be available at `http://localhost:8000`.
+
+```sh
 pipenv run python manage.py runserver
 ```
 
-This will stand up the server with full content and search index at http://localhost:8000.
+If you need to run the server on another port, add the port number as an argument.
 
-## Manual Setup Steps
-
-If you want to customize your setup, particularly useful if adding new content sources, then you will need to use the built-in django migration function to define your database, making sure to run it within the pipenv environment.
-
-```bash
-pipenv run python manage.py migrate
+```sh
+pipenv run python manage.py runserver $PORT
 ```
 
-You will then need to collect the static files (this makes django-resk-framework look presentable when viewing it in html).
 
-```bash
-pipenv run python manage.py collectstatic --noinput
+## Building the OAS file
+
+After completing a build, you can generate an OAS file to be used by another application.
+```sh
+pipenv run ./manage.py generateschema --generator_class api.schema_generator.Open5eSchemaGenerator > openapi-schema.yml` to build the OAS file.
 ```
 
-Finally, you will need to load the SRD data from the json files in the /data folder.  This is using the custom populatedb command.
+# Contributing
 
-```bash
-pipenv run python manage.py populatedb --flush ./data/WOTC_5e_SRD_v5.1/
-```
+## Adding data
 
-At that point, you will be able to run the django server normally (within the pipenv environment).
+All game data is stored under `data` and is split into source "documents". A Document can be either a packet of content, such as the [WotC 5e SRD 5.1](https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf) or a source book e.g. "Tome of Beasts".
 
-```bash
-pipenv run python manage.py runserver
-```
+# Tests
 
-And your server should be available at http://localhost:8000.
-
-## Tests
-
-### To run the test suite:
-
-First, install the prerequisites as described above
-
-Then, install dev requirements:
-
-```bash
-pipenv install --dev
-```
-
-Then, run the test suite:
-
-```bash
+Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository.
+```sh
 pipenv run pytest
 ```
 
-## Starting up a droplet
+# Deployment
+
+The API is normally deployed via [Docker](https://docs.docker.com/get-started/). You can either build and host it yourself, or use one of the tested providers below:
+
+
+## DigitalOcean
 
 This deployment has been tested using DigitalOcean Apps with Docker Hub.
 
 To start up the server from scratch on a droplet:
+
 
 ```bash
 git pull https://github.com/open5e/open5e-api
@@ -122,8 +146,9 @@ cd open5e-api/
 docker-compose up
 ```
 
-## Deploying on Railway.app
-1. Create a fork on Github.com This is used to automatically deploy when you make a change.
+
+## Railway.app
+1. Create a fork on Github. This is used to automatically deploy whenever you make a change.
 2. Login with your Github account on [Railway.app](https://railway.app) and give it access to manage your forked repository.
 3. Create a new Project and choose 'Deploy from GitHub repo'. Select your fork in the list.
 4. Keep all settings default and deploy. Accept when Railway asks to copy variables existing variables from the repository.
@@ -131,6 +156,11 @@ docker-compose up
 6. Add the variable `SERVER_NAME` with the [Railway-provided domain](https://docs.railway.app/deploy/exposing-your-app#railway-provided-domain) or add your own. 
 7. Push a commit to Github and watch your open5e-api redeploy in minutes!
 
-## Building the OAS file
 
-Once you have everything set up, run `pipenv run ./manage.py generateschema --generator_class api.schema_generator.Open5eSchemaGenerator > openapi-schema.yml` to build the OAS file.
+## Docker
+
+With docker installed, you can build the project with provided Dockerfile
+
+```sh
+docker build
+```
