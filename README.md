@@ -67,7 +67,7 @@ The API uses the Django REST Framework for it's browsability and ease of use whe
 Pipenv is used to install all required packages from the `Pipfile` at the project root. Use the following command after cloning the project or switching branches.
 
 ```bash
-pipenv install --dev`
+pipenv install --dev
 ```
 
 # Development
@@ -127,12 +127,12 @@ Game Content is stored in the `data` directory. It is first split according to w
 
 ## Adding a new sorce
 
-To add a new source, create new directory inside `data` and a `document.json` file that credits the source and links to the license it was published under. An example of this can be found [here](\data\a5e_srd\document.json). You can then add a json file for each category of content. See an existing source, such as the 5.1 SRD to see how these should be structured.
+To add a new source, create new directory inside `data` and a `document.json` file that credits the source and links to the license it was published under. An example of this can be found [here](/data/a5e_srd/document.json). You can then add a json file for each category of content. See an existing source, such as the 5.1 SRD to see how these should be structured.
 
-To load this new source, it must be added to the `SOURCE_DIRS` in [quickload.py](\api\management\commands\quickload.py). Rebuild the project to see the new Game Content.
+To load this new source, it must be added to the `SOURCE_DIRS` in [quickload.py](/api/management/commands/quickload.py). Rebuild the project to see the new Game Content.
 ## Change existing models
 
-Models such as Monsters and Classes are stored in the [api/models](\api\models) directory. These define fields (hp, str, speed) and how they are output. The import of Game Content from `data` is handled by an [ImportSpec](\api\management\commands\importer.py)
+Models such as Monsters and Classes are stored in the [api/models](/api/models) directory. These define fields (hp, str, speed) and how they are output. The import of Game Content from `data` is handled by an [ImportSpec](/api/management/commands/importer.py)
 
 # Tests
 
