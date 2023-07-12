@@ -64,7 +64,7 @@ The API uses the Django REST Framework for it's browsability and ease of use whe
 
 Pipenv is used to install all required packages from the `Pipfile` at the project root. Use the following command after cloning the project or switching branches.
 
-```sh
+```bash
 pipenv install --dev`
 ```
 
@@ -73,7 +73,7 @@ pipenv install --dev`
 ## Build
 
 Crate a local database and import game content. 
-```sh
+```bash
 pipenv run python manage.py quicksetup --noindex
 ```
 
@@ -86,7 +86,7 @@ To make sure the API is always using your updated code, this command must be run
 ### Search Indexing
 
 To use the search function, you must build the search index by running the above command without the `--noindex` flag.
-```sh
+```bash
 pipenv run python manage.py quicksetup
 ```
 
@@ -95,13 +95,13 @@ pipenv run python manage.py quicksetup
 
 Run the server locally. This server is only for development and shall __not__ be used in production. The server will be available at `http://localhost:8000`.
 
-```sh
+```bash
 pipenv run python manage.py runserver
 ```
 
 If you need to run the server on another port, add the port number as an argument.
 
-```sh
+```bash
 pipenv run python manage.py runserver $PORT
 ```
 
@@ -109,7 +109,7 @@ pipenv run python manage.py runserver $PORT
 ## Building the OAS file
 
 After completing a build, you can generate an OAS file to be used by another application.
-```sh
+```bash
 pipenv run ./manage.py generateschema --generator_class api.schema_generator.Open5eSchemaGenerator > openapi-schema.yml` to build the OAS file.
 ```
 
@@ -119,10 +119,12 @@ pipenv run ./manage.py generateschema --generator_class api.schema_generator.Ope
 
 All game data is stored under `data` and is split into source "documents". A Document can be either a packet of content, such as the [WotC 5e SRD 5.1](https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf) or a source book e.g. "Tome of Beasts".
 
+TODO
+
 # Tests
 
 Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository.
-```sh
+```bash
 pipenv run pytest
 ```
 
@@ -137,7 +139,7 @@ This deployment has been tested using DigitalOcean Apps with Docker Hub.
 
 To start up the server from scratch on a droplet:
 
-```sh
+```bash
 git pull https://github.com/open5e/open5e-api
 export SECRET_KEY=a_new_secret_key
 export SERVER_NAME=whatever.yourdomain.com
@@ -160,6 +162,6 @@ docker-compose up
 
 With docker installed, you can build the project with provided Dockerfile
 
-```sh
+```bash
 docker build
 ```
