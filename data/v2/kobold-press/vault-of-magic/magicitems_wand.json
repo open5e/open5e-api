@@ -1,0 +1,572 @@
+[
+    {
+        "model": "api_v2.item",
+        "pk": "ashwood-wand",
+        "fields": {
+            "name": "Ashwood Wand",
+            "desc": "You can use this wand as a spellcasting focus. The wand has 3 charges and regains all expended charges daily at dawn. When you cast a spell that deals fire damage while using this wand as your spellcasting focus, the spell deals 1 extra fire damage. If you expend 1 of the wand's charges during the casting, the spell deals 1d4 + 1 extra fire damage instead.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "blacktooth",
+        "fields": {
+            "name": "Blacktooth",
+            "desc": "This black ivory, rune-carved wand has 7 charges. It regains 1d6 + 1 expended charges daily at dawn. While holding it, you can use an action to expend 1 or more of its charges to cast the guiding bolt spell from it, using an attack bonus of +7. For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 5
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "devils-barb",
+        "fields": {
+            "name": "Devil's Barb",
+            "desc": "This thin wand is fashioned from the fiendish quill of a barbed devil. While attuned to it, you have resistance to cold damage. The wand has 6 charges for the following properties. It regains 1d6 expended charges daily at dusk. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into cinders and is destroyed. Hurl Flame. While holding the wand, you can expend 2 charges as an action to hurl a ball of devilish flame at a target you can see within 150 feet of you. The target must succeed on a DC 15 Dexterity check or take 3d6 fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire. Devil's Sight. While holding the wand, you can expend 1 charge as an action to cast the darkvision spell on yourself. Magical darkness doesn't impede this darkvision.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 3
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "frungilator",
+        "fields": {
+            "name": "Frungilator",
+            "desc": "This strangely-shaped item resembles a melted wand or a strange growth chipped from the arcane trees of elder planes. The wand has 5 charges and regains 1d4 + 1 charges daily at dusk. While holding it, you can use an action to expend 1 of its charges and point it at a target within 60 feet of you. The target must be a creature. When activated, the wand frunges creatures into a chaos matrix, which does…something. Roll a d10 and consult the following table to determine these unpredictable effects (none of them especially good). Most effects can be removed by dispel magic, greater restoration, or more powerful magic. | d10 | Frungilator Effect |\n| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| 1 | Glittering sparkles fly all around. You are surrounded in sparkling light until the end of your next turn as if you were targeted by the faerie fire spell. |\n| 2 | The target is encased in void crystal and immediately begins suffocating. A creature, including the target, can take its action to shatter the void crystal by succeeding on a DC 10 Strength check. Alternatively, the void crystal can be attacked and destroyed (AC 12; hp 4; immunity to poison and psychic damage). |\n| 3 | Crimson void fire engulfs the target. It must make a DC 13 Constitution saving throw, taking 4d6 fire damage on a failed save, or half as much damage on a successful one. |\n| 4 | The target's blood turns to ice. It must make a DC 13 Constitution saving throw, taking 6d6 cold damage on a failed save, or half as much damage on a successful one. |\n| 5 | The target rises vertically to a height of your choice, up to a maximum height of 60 feet. The target remains suspended there until the start of its next turn. When this effect ends, the target floats gently to the ground. |\n| 6 | The target begins speaking in backwards fey speech for 10 minutes. While speaking this way, the target can't verbally communicate with creatures that aren't fey, and the target can't cast spells with verbal components. |\n| 7 | Golden flowers bloom across the target's body. It is blinded until the end of its next turn. |\n| 8 | The target must succeed on a DC 13 Constitution saving throw or it and all its equipment assumes a gaseous form until the end of its next turn. This effect otherwise works like the gaseous form spell. |\n| 9 | The target must succeed on a DC 15 Wisdom saving throw or become enthralled with its own feet or limbs until the end of its next turn. While enthralled, the target is incapacitated. |\n| 10 | A giant ray of force springs out of the frungilator and toward the target. Each creature in a line that is 5 feet wide between you and the target must make a DC 16 Dexterity saving throw, taking 4d12 force damage on a failed save, or half as much damage on a successful one. |",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 2
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "glass-wand-of-leng",
+        "fields": {
+            "name": "Glass Wand of Leng",
+            "desc": "The tip of this twisted clear glass wand is razorsharp. It can be wielded as a magic dagger that grants a +1 bonus to attack and damage rolls made with it. The wand weighs 4 pounds and is roughly 18 inches long. When you tap the wand, it emits a single, loud note which can be heard up to 20 feet away and does not stop sounding until you choose to silence it. This wand has 5 charges and regains 1d4 + 1 charges daily at dawn. While holding it, you can use an action to expend 1 or more of its charges to cast one of the following spells (save DC 17): arcane lock (2 charges), disguise self (1 charge), or tongues (3 charges).",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 3
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "gremlins-paw",
+        "fields": {
+            "name": "Gremlin's Paw",
+            "desc": "This wand is fashioned from the fossilized forearm and claw of a gremlin. The wand has 5 charges. While holding the wand, you can use an action to expend 1 or more of its charges to cast one of the following spells (save DC 15): bane (1 charge), bestow curse (3 charges), or hideous laughter (1 charge). The wand regains 1d4 + 1 expended charges daily at dusk. If you expend the wand's last charge, roll a d20. On a 20, you must succeed on a DC 15 Wisdom saving throw or become afflicted with short-term madness. On a 1, the rod crumbles into ashes and is destroyed.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 3
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "hazelwood-wand",
+        "fields": {
+            "name": "Hazelwood Wand",
+            "desc": "You can use this wand as a spellcasting focus. The wand has 3 charges and regains all expended charges daily at dawn. When you cast the goodberry spell while using this wand as your spellcasting focus, you can expend 1 of the wand's charges to transform the berries into hazelnuts, which restore 2 hit points instead of 1. The spell is otherwise unchanged. In addition, when you cast a spell that deals lightning damage while using this wand as your spellcasting focus, the spell deals 1 extra lightning damage.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "oakwood-wand",
+        "fields": {
+            "name": "Oakwood Wand",
+            "desc": "You can use this wand as a spellcasting focus. The wand has 3 charges and regains 1d3 expended charges daily at dawn. While holding it, you can expend 1 charge as an action to cast the detect poison and disease spell from it. When you cast a spell that deals cold damage while using this wand as your spellcasting focus, the spell deals 1 extra cold damage.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-accompaniment",
+        "fields": {
+            "name": "Wand of Accompaniment",
+            "desc": "Tiny musical notes have been etched into the sides of this otherwise plain, wooden wand. It has 7 charges for the following properties. It regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand disintegrates with a small bang. Dance. While holding the wand, you can use an action to expend 3 charges to cast the irresistible dance spell (save DC 17) from it. If the target is in the area of the Song property of this wand, it has disadvantage on the saving throw. Song. While holding the wand, you can use an action to expend 1 charge to cause the area within a 30-foot radius of you to fill with music for 1 minute. The type of music played is up to you, but it is performed flawlessly. Each creature in the area that can hear the music has advantage on saving throws against being deafened and against spells and effects that deal thunder damage.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 4
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-air-glyphs",
+        "fields": {
+            "name": "Wand of Air Glyphs",
+            "desc": "While holding this thin, metal wand, you can use action to cause the tip to glow. When you wave the glowing wand in the air, it leaves a trail of light behind it, allowing you to write or draw on the air. Whatever letters or images you make hang in the air for 1 minute before fading away.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-bristles",
+        "fields": {
+            "name": "Wand of Bristles",
+            "desc": "This wand is made from the bristles of a giant boar bound together with magical, silver thread. It weighs 1 pound and is 8 inches long. The wand has a strong boar musk scent to it, which is difficult to mask and is noticed by any creature within 10 feet of you that possesses the Keen Smell trait. The wand is comprised of 10 individual bristles, and as long as the wand has 1 bristle, it regrows 2 bristles daily at dawn. While holding the wand, you can use your action to remove bristles to cause one of the following effects. Ghostly Charge (3 bristles). You toss the bristles toward one creature you can see. A phantom giant boar charges 30 feet toward the creature. If the phantom’s path connects with the creature, the target must succeed on a DC 15 Dexterity saving throw or take 2d8 force damage and be knocked prone. Truffle (2 bristles). You plant the bristles in the ground to conjure up a magical truffle. Consuming the mushroom restores 2d8 hit points.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 3
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-depth-detection",
+        "fields": {
+            "name": "Wand of Depth Detection",
+            "desc": "This simple wooden wand has 7 charges and regains 1d6 + 1 expended charges daily at dawn. While holding it, you can use an action to expend 1 charge and point it at a body of water or other liquid. You learn the liquid's deepest point or its average depth (your choice). In addition, you can use an action to expend 1 charge while you are submerged in a liquid to determine how far you are beneath the liquid's surface.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-direction",
+        "fields": {
+            "name": "Wand of Direction",
+            "desc": "This crooked, twisting wand is crafted of polished ebony with a small, silver arrow affixed to its tip. The wand has 3 charges. While holding it, you can expend 1 charge as an action to make the wand remember your path for up to 1,760 feet of movement. You can increase the length of the path the wand remembers by 1,760 feet for each additional charge you expend. When you expend a charge to make the wand remember your current path, the wand forgets the oldest path of up to 1,760 feet that it remembers. If you wish to retrace your steps, you can use a bonus action to activate the wand’s arrow. The arrow guides you, pointing and mentally tugging you in the direction you should go. The wand’s magic allows you to backtrack with complete accuracy despite being lost, unable to see, or similar hindrances against finding your way. The wand can’t counter or dispel magic effects that cause you to become lost or misguided, but it can guide you back in spite of some magic hindrances, such as guiding you through the area of a darkness spell or guiding you if you had activated the wand then forgotten the way due to the effects of the modify memory spell on you. The wand regains all expended charges daily at dawn. If you expend the wand’s last charge, roll a d20. On a roll of 1, the wand straightens and the arrow falls off, rendering it nonmagical.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-drowning",
+        "fields": {
+            "name": "Wand of Drowning",
+            "desc": "This wand appears to be carved from the bones of a large fish, which have been cemented together. The wand has 3 charges and regains 1d3 expended charges daily at dawn. While holding this wand, you can use an action to expend 1 charge to cause a thin stream of seawater to spray toward a creature you can see within 60 feet of you. If the target can breathe only air, it must succeed on a DC 15 Constitution saving throw or its lungs fill with rancid seawater and it begins drowning. A drowning creature chokes for a number of rounds equal to its Constitution modifier (minimum of 1 round). At the start of its turn after its choking ends, the creature drops to 0 hit points and is dying, and it can't regain hit points or be stabilized until it can breathe again. A successful DC 15 Wisdom (Medicine) check removes the seawater from the drowning creature's lungs, ending the effect.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 4
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-extinguishing",
+        "fields": {
+            "name": "Wand of Extinguishing",
+            "desc": "This charred and blackened wooden wand has 3 charges. While holding it, you can use an action to expend 1 of its charges to extinguish a nonmagical flame within 10 feet of you that is no larger than a small campfire. The wand regains all expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand transforms into a wand of ignition.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-fermentation",
+        "fields": {
+            "name": "Wand of Fermentation",
+            "desc": "Fashioned out of oak, this wand appears heavily stained by an unknown liquid. The wand has 7 charges and regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand explodes in a puff of black smoke and is destroyed. While holding the wand, you can use an action and expend 1 or more of its charges to transform nonmagical liquid, such as blood, apple juice, or water, into an alcoholic beverage. For each charge you expend, you transform up to 1 gallon of nonmagical liquid into an equal amount of beer, wine, or other spirit. The alcohol transforms back into its original form if it hasn't been consumed within 24 hours of being transformed.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 2
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-flame-control",
+        "fields": {
+            "name": "Wand of Flame Control",
+            "desc": "This wand is fashioned from a branch of pine, stripped of bark and beaded with hardened resin. The wand has 3 charges. If you use the wand as an arcane focus while casting a spell that deals fire damage, you can expend 1 charge as part of casting the spell to increase the spell's damage by 1d4. In addition, while holding the wand, you can use an action to expend 1 of its charges to cause one of the following effects: - Change the color of any flames within 30 feet.\n- Cause a single flame to burn lower, halving the range of light it sheds but burning twice as long.\n- Cause a single flame to burn brighter, doubling the range of the light it sheds but halving its duration. The wand regains all expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand bursts into flames and burns to ash in seconds.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-giggles",
+        "fields": {
+            "name": "Wand of Giggles",
+            "desc": "This wand is tipped with a feather. The wand has 3 charges. While holding it, you can use an action to expend 1 of its charges and point the wand at a humanoid you can see within 30 feet of you. The target must succeed on a DC 10 Charisma saving throw or be forced to giggle for 1 minute. Giggling doesn't prevent a target from taking actions or moving. The wand regains all expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand transforms into a Wand of Tears.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-guidance",
+        "fields": {
+            "name": "Wand of Guidance",
+            "desc": "This slim, metal wand is topped with a cage shaped like a three-sided pyramid. An eye of glass sits within the pyramid. The wand has 3 charges. While holding it, you can use an action to expend 1 of its charges to cast the guidance spell from it. The wand regains all expended charges at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand transforms into a Wand of Resistance.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-harrowing",
+        "fields": {
+            "name": "Wand of Harrowing",
+            "desc": "The tips of this twisted wooden wand are exceptionally withered. The wand has 7 charges for the following properties. It regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand disintegrates into useless white powder. Affliction. While holding the wand, you can use an action to expend 1 charge to cause a creature you can see within 60 feet of you to become afflicted with unsightly, weeping sores. The target must succeed on a DC 15 Constitution saving throw or have disadvantage on all Dexterity and Charisma checks for 1 minute. An afflicted creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Pain. While holding the wand, you can use an action to expend 3 charges to cause a creature you can see within 60 feet of you to become wracked with terrible pain. The target must succeed on a DC 15 Constitution saving throw or take 4d6 necrotic damage, and its movement speed is halved for 1 minute. A pained creature can repeat the saving throw at the end of each of its turns, ending the effect on itself a success. If the target is also suffering from the Affliction property of this wand, it has disadvantage on the saving throw.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 3
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-ignition",
+        "fields": {
+            "name": "Wand of Ignition",
+            "desc": "The cracks in this charred and blackened wooden wand glow like live coals, but the wand is merely warm to the touch. The wand has 3 charges. While holding it, you can use an action to expend 1 of its charges to set fire to one flammable object or collection of material (a stack of paper, a pile of kindling, or similar) within 10 feet of you that is Small or smaller. The wand regains all expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand transforms into a Wand of Extinguishing.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-plant-destruction",
+        "fields": {
+            "name": "Wand of Plant Destruction",
+            "desc": "This wand of petrified wood has 7 charges. While holding it, you can use an action to expend up to 3 of its charges to harm a plant or plant creature you can see within 30 feet of you. The target must make a DC 15 Constitution saving throw, taking 2d8 necrotic damage for each charge you expended on a failed save, or half as much damage on a successful one. The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand shatters and is destroyed.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 3
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-relieved-burdens",
+        "fields": {
+            "name": "Wand of Relieved Burdens",
+            "desc": "This wand has 7 charges. While holding it, you can use an action to expend 1 of its charges and touch a creature with the wand. If the creature is blinded, charmed, deafened, frightened, paralyzed, poisoned, or stunned, the condition is removed from the creature and transferred to you. You suffer the condition for the remainder of its duration or until it is removed. The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand crumbles to dust and is destroyed.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 2
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-resistance",
+        "fields": {
+            "name": "Wand of Resistance",
+            "desc": "This slim, wooden wand is topped with a small, spherical cage, which holds a pyramid-shaped piece of hematite. The wand has 3 charges. While holding it, you can use an action to expend 1 of its charges to cast the resistance spell. The wand regains all expended charges at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand transforms into a Wand of Guidance .",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-revealing",
+        "fields": {
+            "name": "Wand of Revealing",
+            "desc": "Crystal beads decorate this wand, and a silver hand, index finger extended, caps it. The wand has 3 charges and regains all expended charges daily at dawn. While holding it, you can use an action to expend 1 of the wand's charges to reveal one creature or object within 120 feet of you that is either invisible or ethereal. This works like the see invisibility spell, except it allows you to see only that one creature or object. That creature or object remains visible as long as it remains within 120 feet of you. If more than one invisible or ethereal creature or object is in range when you use the wand, it reveals the nearest creature or object, revealing invisible creatures or objects before ethereal ones.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 2
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-tears",
+        "fields": {
+            "name": "Wand of Tears",
+            "desc": "The top half of this wooden wand is covered in thorns. The wand has 3 charges. While holding it, you can use an action to expend 1 of its charges and point the wand at a humanoid you can see within 30 feet of you. The target must succeed on a DC 10 Charisma saving throw or be forced to cry for 1 minute. Crying doesn't prevent a target from taking actions or moving. The wand regains all expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand transforms into a Wand of Giggles  .",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-treasure-finding",
+        "fields": {
+            "name": "Wand of Treasure Finding",
+            "desc": "This wand is adorned with gold and silver inlay and topped with a faceted crystal. The wand has 7 charges. While holding it, you can use an action and expend 1 charge to speak its command word. For 1 minute, you know the direction and approximate distance of the nearest mass or collection of precious metals or minerals within 60 feet. You can concentrate on a specific metal or mineral, such as silver, gold, or diamonds. If the specific metal or mineral is within 60 feet, you are able to discern all locations in which it is found and the approximate amount in each location. The wand's magic can penetrate most barriers, but it is blocked by 3 feet of wood or dirt, 1 foot of stone, 1 inch of common metal, or a thin sheet of lead. The effect ends if you stop holding the wand. The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand turns to lead and becomes nonmagical.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 3
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-vapors",
+        "fields": {
+            "name": "Wand of Vapors",
+            "desc": "Green gas swirls inside this slender, glass wand. The wand has 7 charges for the following properties. It regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand shatters into hundreds of crystalline fragments, and the gas within it dissipates. Fog Cloud. While holding the wand, you can use an action to expend 1 or more of its charges to cast the fog cloud spell from it. For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend. Gaseous Escape. When you are attacked while holding this wand, you can use your reaction to expend 3 of its charges to transform yourself and everything you are wearing and carrying into a cloud of green mist until the start of your next turn. While you are a cloud of green mist, you have resistance to nonmagical damage, and you can’t be grappled or restrained. While in this form, you also can’t talk or manipulate objects, any objects you were wearing or holding can’t be dropped, used, or otherwise interacted with, and you can’t attack or cast spells.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 3
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-windows",
+        "fields": {
+            "name": "Wand of Windows",
+            "desc": "This clear, crystal wand has 3 charges. You can use an action to expend 1 charge and touch the wand to any nonmagical object. The wand causes a portion of the object, up to 1-foot square and 6 inches deep, to become transparent for 1 minute. The effect ends if you stop holding the wand. The wand regains 1d3 expended charges daily at dawn. If you expend the wand's last charge, roll a 1d20. On a 1, the wand slowly becomes cloudy until it is completely opaque and becomes nonmagical.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": false,
+            "category": "wand",
+            "rarity": 1
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "wand-of-the-timekeeper",
+        "fields": {
+            "name": "Wand of the Timekeeper",
+            "desc": "This smoothly polished wooden wand is perfectly balanced in the hand. Its grip is wrapped with supple leather strips, and its length is decorated with intricate arcane symbols. When you use it while playing a drum, you have advantage on Charisma (Performance) checks. The wand has 5 charges for the following properties. It regains 1d4 + 1 charges daily at dawn. Erratic. While holding the wand, you can use an action to expend 2 charges to force one creature you can see to re-roll its initiative at the end of each of its turns for 1 minute. An unwilling creature that succeeds on a DC 15 Wisdom saving throw is unaffected. Synchronize. While holding the wand, you can use an action to expend 1 charge to choose one creature you can see who has not taken its turn this round. That creature takes its next turn immediately after yours regardless of its turn in the Initiative order. An unwilling creature that succeeds on a DC 15 Wisdom saving throw is unaffected.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": null,
+            "armor": null,
+            "requires_attunement": true,
+            "category": "wand",
+            "rarity": 3
+        }
+    }
+]
