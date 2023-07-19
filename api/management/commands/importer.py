@@ -558,6 +558,8 @@ class Importer:
             i.alignment = race_json["alignment"]
         if "size" in race_json:
             i.size = race_json["size"]
+        if "size-raw" in race_json:
+            i.size_raw = race_json["size-raw"]
         if "speed" in race_json:
             i.speed_json = json.dumps(
                 race_json["speed"]
