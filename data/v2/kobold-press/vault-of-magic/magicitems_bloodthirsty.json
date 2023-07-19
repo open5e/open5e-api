@@ -305,9 +305,9 @@
     },
     {
         "model": "api_v2.item",
-        "pk": "bloodthirsty-pikerapier",
+        "pk": "bloodthirsty-rapier",
         "fields": {
-            "name": "Bloodthirsty Pikerapier",
+            "name": "Bloodthirsty Rapier",
             "desc": "This magic weapon bears long, branching channels inscribed into its blade or head, and it gives off a coppery scent. When you damage a creature that has blood with this weapon, it loses an additional 2d6 hit points from blood loss.",
             "size": 1,
             "weight": "0.0",
@@ -315,7 +315,26 @@
             "hit_points": 0,
             "document": "vault-of-magic",
             "cost": 0,
-            "weapon": "pikerapier",
+            "weapon": "rapier",
+            "armor": null,
+            "requires_attunement": true,
+            "rarity": 3,
+            "category": "weapon"
+        }
+    },
+    {
+        "model": "api_v2.item",
+        "pk": "bloodthirsty-pike",
+        "fields": {
+            "name": "Bloodthirsty Pike",
+            "desc": "This magic weapon bears long, branching channels inscribed into its blade or head, and it gives off a coppery scent. When you damage a creature that has blood with this weapon, it loses an additional 2d6 hit points from blood loss.",
+            "size": 1,
+            "weight": "0.0",
+            "armor_class": 0,
+            "hit_points": 0,
+            "document": "vault-of-magic",
+            "cost": 0,
+            "weapon": "pike",
             "armor": null,
             "requires_attunement": true,
             "rarity": 3,
