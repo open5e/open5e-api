@@ -42,7 +42,7 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
 @api_view()
 def get_version(request):
     import version
-    return Response({"GIT_REF":version.GIT_REF, "BUILD_ID":version.BUILD_ID})
+    return Response({"GITHUB_REF":version.GITHUB_REF, "GITHUB_SHA":version.GITHUB_SHA})
 
 
 class SearchView(HaystackViewSet):
