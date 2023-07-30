@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User, Group
+
 import django_filters
 from drf_haystack.viewsets import HaystackViewSet
 from rest_framework import viewsets
@@ -42,8 +43,7 @@ class SearchView(HaystackViewSet):
     """
     schema = CustomSchema(
         summary={
-            '/search/': 'Search',
-            '/search/{id}/': 'Search', # I doubt this is a real endpoint
+            '/search/': 'Search'
         },
         tags=['Search']
     )
@@ -51,7 +51,16 @@ class SearchView(HaystackViewSet):
     # in the search result. You might have several models indexed, and this provides
     # a way to filter out those of no interest for this particular view.
     # (Translates to `SearchQuerySet().models(*index_models)` behind the scenes.
+
     serializer_class = serializers.AggregateSerializer
+    
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset(*args, **kwargs)
+        if not self.request.GET.get('text'):
+            # Blank text should return results. Improbable query below.
+            return queryset.filter(wisdom="99999")
+        return queryset
+
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
