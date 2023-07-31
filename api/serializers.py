@@ -299,6 +299,7 @@ class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'age',
             'alignment',
             'size',
+            'size_raw',
             'speed',
             'speed_desc',
             'languages',

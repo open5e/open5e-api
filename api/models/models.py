@@ -166,6 +166,8 @@ class Race(GameContent):
         help_text='Markdown description of the alignment tendencies of the race.')
     size = models.TextField(
         help_text='Markdown description of the size category of the race.')
+    size_raw = models.TextField(
+        help_text='Size Category.', default="Medium")
     speed_json = models.TextField()
 
     def speed(self):
