@@ -2,10 +2,16 @@ from rest_framework import serializers
 
 from api_v2 import models
 
+# Default set of fields that almost all gamecontent items will have.
+GAMECONTENT_FIELDS = ['url', 'key', 'name', 'desc', 'document']
+
+
 class GameContentSerializer(serializers.HyperlinkedModelSerializer):
-    # Add all properties as read only to fields
+
     # Adding dynamic "fields" qs parameter.
     def __init__(self, *args, **kwargs):
+        # Add default fields variable.
+
         # Instantiate the superclass normally
         super(GameContentSerializer, self).__init__(*args, **kwargs)
 
@@ -60,13 +66,8 @@ class ArmorSerializerSimple(serializers.ModelSerializer):
 
     class Meta:
         model = models.Armor
-        fields = [
-            'url',
-            'name',
-            'ac_display',
-            'strength_score_required',
-            'grants_stealth_disadvantage'
-        ]
+        fields = ['url','key','name','document'] + [
+            'ac_display']
 
 
 class ArmorSerializerFull(GameContentSerializer):
@@ -74,16 +75,20 @@ class ArmorSerializerFull(GameContentSerializer):
 
     class Meta:
         model = models.Armor
-        fields = "__all__"
+        fields = ['url','key','name','document'] + [
+            'ac_display',
+            'grants_stealth_disadvantage',
+            'strength_score_required',
+            'ac_base',
+            'ac_add_dexmod',
+            'ac_cap_dexmod']
 
 
 class WeaponSerializerSimple(serializers.ModelSerializer):
 
     class Meta:
         model = models.Weapon
-        fields = [
-            'url',
-            'name',
+        fields = ['url','key','name','document'] + [
             'properties']
 
 
@@ -98,14 +103,31 @@ class WeaponSerializerFull(GameContentSerializer):
 
     class Meta:
         model = models.Weapon
-        fields = "__all__"
-
-
-class ItemSetSerializer(GameContentSerializer):
-
-    class Meta:
-        model = models.ItemSet
-        fields = "__all__"
+        fields = ['url','key','name','document'] + [ # Remove the DESC field.
+            'properties',
+            'is_versatile',
+            'is_martial',
+            'is_melee',
+            'range_melee',
+            'ranged_attack_possible',
+            'is_reach',
+            'damage_type',
+            'damage_dice',
+            'versatile_dice',
+            'range_reach',
+            'range_normal',
+            'range_long',
+            'is_finesse',
+            'is_thrown',
+            'is_two_handed',
+            'requires_ammunition',
+            'requires_loading',
+            'is_heavy',
+            'is_light',
+            'is_lance',
+            'is_net',
+            'is_simple',
+            'is_improvised']
 
 
 class ItemSerializerFull(GameContentSerializer):
@@ -116,6 +138,20 @@ class ItemSerializerFull(GameContentSerializer):
 
     class Meta:
         model = models.Item
-        fields = ['url','name','desc','cost','weight','weapon','armor','document','category',
-            'requires_attunement','rarity','is_magic_item',
-            'itemsets']
+        fields = GAMECONTENT_FIELDS + [
+            'category',
+            'cost',
+            'weight',
+            'weapon',
+            'armor',
+            'requires_attunement',
+            'rarity',
+            'is_magic_item']
+
+
+class ItemSetSerializer(GameContentSerializer):
+
+    class Meta:
+        model = models.ItemSet
+        fields = GAMECONTENT_FIELDS + [
+            'items']
