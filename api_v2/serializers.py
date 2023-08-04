@@ -6,8 +6,8 @@ from api_v2 import models
 GAMECONTENT_FIELDS = ['url', 'key', 'name', 'desc', 'document']
 
 
-class GameContentSerializer(serializers.HyperlinkedModelSerializer):
-
+class GameContentSerializer(serializers.ModelSerializer):
+    
     # Adding dynamic "fields" qs parameter.
     def __init__(self, *args, **kwargs):
         # Add default fields variable.
@@ -30,11 +30,15 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
             if depth:
                 try:
                     depth_value = int(depth)
-                    if depth_value > 0:
-                        self.Meta.depth = depth_value
+                    if depth_value == 1:
+                        self.Meta.depth = 1
+                        #This value going above 1 could massively cause performance issues.
+                    else: 
+                        self.Meta.depth = 0
                 except ValueError:
                     pass  # it was a string, not an int.
             else:
+                # Depth does not reset by default on subsequent requests with malformed urls.
                 self.Meta.depth = 0
 
     class Meta:
@@ -117,7 +121,7 @@ class WeaponSerializer(GameContentSerializer):
             'is_improvised']
 
 
-class ItemSerializerFull(GameContentSerializer):
+class ItemSerializer(GameContentSerializer):
 
     is_magic_item = serializers.ReadOnlyField()
 
