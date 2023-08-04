@@ -26,6 +26,17 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
                 for field_name in existing - allowed:
                     self.fields.pop(field_name)
 
+            depth = self.context['request'].query_params.get('depth')
+            if depth:
+                try:
+                    depth_value = int(depth)
+                    if depth_value > 0:
+                        self.Meta.depth = depth_value
+                except ValueError:
+                    pass  # it was a string, not an int.
+            else:
+                self.Meta.depth = 0
+
     class Meta:
         abstract = True
 
@@ -48,29 +59,13 @@ class PublisherSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
-class DocumentSerializerSimple(serializers.ModelSerializer):
-    class Meta:
-        model = models.Document
-        fields = [
-            'key',
-            'url']
-
-
-class DocumentSerializerFull(serializers.HyperlinkedModelSerializer):
+class DocumentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Document
         fields = "__all__"
 
 
-class ArmorSerializerSimple(serializers.ModelSerializer):
-
-    class Meta:
-        model = models.Armor
-        fields = ['url','key','name','document'] + [
-            'ac_display']
-
-
-class ArmorSerializerFull(GameContentSerializer):
+class ArmorSerializer(GameContentSerializer):
     ac_display = serializers.ReadOnlyField()
 
     class Meta:
@@ -84,15 +79,7 @@ class ArmorSerializerFull(GameContentSerializer):
             'ac_cap_dexmod']
 
 
-class WeaponSerializerSimple(serializers.ModelSerializer):
-
-    class Meta:
-        model = models.Weapon
-        fields = ['url','key','name','document'] + [
-            'properties']
-
-
-class WeaponSerializerFull(GameContentSerializer):
+class WeaponSerializer(GameContentSerializer):
     is_versatile = serializers.ReadOnlyField()
     is_martial = serializers.ReadOnlyField()
     is_melee = serializers.ReadOnlyField()
@@ -131,8 +118,6 @@ class WeaponSerializerFull(GameContentSerializer):
 
 
 class ItemSerializerFull(GameContentSerializer):
-    weapon = WeaponSerializerSimple()
-    armor = ArmorSerializerSimple()
 
     is_magic_item = serializers.ReadOnlyField()
 

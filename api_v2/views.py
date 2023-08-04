@@ -8,6 +8,7 @@ from api_v2 import models
 from api_v2 import serializers
 from api.schema_generator import CustomSchema
 
+
 class ItemFilterSet(FilterSet):
     is_magic_item = BooleanFilter(field_name='rarity', lookup_expr='isnull', exclude=True)
 
@@ -75,7 +76,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     retrieve: API endpoint for returning a particular document.
     """
     queryset = models.Document.objects.all().order_by('pk')
-    serializer_class = serializers.DocumentSerializerFull
+    serializer_class = serializers.DocumentSerializer
     filterset_fields = '__all__'
 
 
@@ -133,7 +134,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     retrieve: API endpoint for returning a particular weapon.
     """
     queryset = models.Weapon.objects.all().order_by('pk')
-    serializer_class = serializers.WeaponSerializerFull
+    serializer_class = serializers.WeaponSerializer
     filterset_class = WeaponFilterSet
 
 
@@ -160,5 +161,5 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     retrieve: API endpoint for returning a particular armor.
     """
     queryset = models.Armor.objects.all().order_by('pk')
-    serializer_class = serializers.ArmorSerializerFull
+    serializer_class = serializers.ArmorSerializer
     filterset_class = ArmorFilterSet
