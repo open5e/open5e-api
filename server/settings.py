@@ -29,6 +29,9 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
+# A flag that is True when not production to disallow /v2 api endpoint in production.
+V2_ENABLED = os.environ.get("SERVER_NAME", "") != "api.open5e.com"
+
 # Added as part of the migration from django 2 to django 3.
 # Not likely to apply in the short term. https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
