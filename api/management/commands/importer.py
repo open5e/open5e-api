@@ -488,7 +488,7 @@ class Importer:
         if "spells" in monster_json:
             i.spells_json = json.dumps(monster_json["spells"])
         else:
-            i.spells_json = json.dumps("")
+            i.spells_json = json.dumps(None)
         # import legendary actions array
         if "legendary_actions" in monster_json:
             for idx, z in enumerate(monster_json["legendary_actions"]):
