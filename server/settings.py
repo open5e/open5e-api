@@ -68,10 +68,6 @@ INSTALLED_APPS = [
     "markdown2",
 ]
 
-FIXTURE_DIRS = [
-    'data/v2/wotc-srd'
-]
-
 
 MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -180,7 +176,7 @@ REST_FRAMEWORK = {
     # Versioning
     "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.NamespaceVersioning",
     "DEFAULT_VERSION": "v1",
-    "ALLOWED_VERSIONS": ["v1"],
+    "ALLOWED_VERSIONS": ["v1", "v2"],
 }
 
 
