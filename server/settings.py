@@ -30,7 +30,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
 # A flag that is True when not production to disallow /v2 api endpoint.
-V2_ENABLED = DEBUG
+V2_ENABLED = os.environ.get("NEW_RELIC_ENVIRONMENT") != "production"
 
 
 # Added as part of the migration from django 2 to django 3.
