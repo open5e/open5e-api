@@ -51,14 +51,15 @@ router.register('search', views.SearchView, basename="global-search")
 
 
 router_v2 = routers.DefaultRouter()
-router_v2.register(r'items',views_v2.ItemViewSet)
-router_v2.register(r'itemsets',views_v2.ItemSetViewSet)
-router_v2.register(r'documents',views_v2.DocumentViewSet)
-router_v2.register(r'licenses',views_v2.LicenseViewSet)
-router_v2.register(r'publishers',views_v2.PublisherViewSet)
-router_v2.register(r'weapons',views_v2.WeaponViewSet)
-router_v2.register(r'armor',views_v2.ArmorViewSet)
-router_v2.register(r'rulesets',views_v2.RulesetViewSet)
+if settings.V2_ENABLED:
+    router_v2.register(r'items',views_v2.ItemViewSet)
+    router_v2.register(r'itemsets',views_v2.ItemSetViewSet)
+    router_v2.register(r'documents',views_v2.DocumentViewSet)
+    router_v2.register(r'licenses',views_v2.LicenseViewSet)
+    router_v2.register(r'publishers',views_v2.PublisherViewSet)
+    router_v2.register(r'weapons',views_v2.WeaponViewSet)
+    router_v2.register(r'armor',views_v2.ArmorViewSet)
+    router_v2.register(r'rulesets',views_v2.RulesetViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
