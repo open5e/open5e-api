@@ -5,6 +5,7 @@ from rest_framework import serializers
 from api import models
 from api import search_indexes
 
+
 class ManifestSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Manifest
@@ -26,6 +27,13 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
                 existing = set(self.fields.keys())
                 for field_name in existing - allowed:
                     self.fields.pop(field_name)
+
+class DynamicFieldsHyperlinkedModelSerializer(
+    DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer
+    ):
+    """Abstract base class to be inherited by Serializers that both use
+    dynamic fields as well as hyperlinked relationships."""
+    pass
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
