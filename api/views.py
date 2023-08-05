@@ -143,7 +143,7 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Spell.objects.all()
     filterset_class=SpellFilter
     serializer_class = serializers.SpellSerializer
-    search_fields = ['dnd_class', 'name']
+    search_fields = ['dnd_class', 'name', 'desc']
     ordering_fields = '__all__'
     ordering=['name']
     filterset_fields = (
