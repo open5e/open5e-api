@@ -543,7 +543,7 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.MagicItem.objects.all()
     serializer_class = serializers.MagicItemSerializer
     filterset_class = MagicItemFilter
-    search_fields = ['name']
+    search_fields = ['name', 'desc']
 
 class WeaponFilter(django_filters.FilterSet):
 
