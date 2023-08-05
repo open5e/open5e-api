@@ -40,7 +40,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ('url', 'username', 'email', 'groups')
 
-class DocumentSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class DocumentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
             model = models.Document
             fields = (
@@ -62,7 +62,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ('url', 'name')
 
-class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class MonsterSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer, serializers.ModelSerializer):
     
     speed = serializers.SerializerMethodField()
     environments = serializers.SerializerMethodField()
@@ -215,7 +215,7 @@ class SpellListSerializer(DynamicFieldsModelSerializer):
             'document__url'
         )
 
-class BackgroundSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class BackgroundSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Background
         fields = (
@@ -235,12 +235,12 @@ class BackgroundSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__url'
         )
 
-class PlaneSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class PlaneSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Plane
         fields = ('slug','name','desc','document__slug', 'document__title', 'document__url')
 
-class SectionSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class SectionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Section
         fields = (
@@ -254,7 +254,7 @@ class SectionSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'parent'
         )
 
-class FeatSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class FeatSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Feat
         fields = (
@@ -268,7 +268,7 @@ class FeatSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__url'
         )
 
-class ConditionSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class ConditionSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Condition
         fields = (
@@ -280,7 +280,7 @@ class ConditionSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__url'
         )
 
-class SubraceSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class SubraceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Subrace
         fields = ('name',
@@ -294,7 +294,7 @@ class SubraceSerializer(DynamicFieldsHyperlinkedModelSerializer):
         'document__url'
     )
 
-class RaceSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class RaceSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     subraces = SubraceSerializer(many=True,read_only=True)
     class Meta:
         model = models.Race
@@ -320,7 +320,7 @@ class RaceSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__url'
         )
 
-class ArchetypeSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class ArchetypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Archetype
         fields = (
@@ -333,7 +333,7 @@ class ArchetypeSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__url'
         )
 
-class CharClassSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class CharClassSerializer(serializers.HyperlinkedModelSerializer):
     archetypes = ArchetypeSerializer(many=True,read_only=True)
     class Meta:
         model = models.CharClass
@@ -360,7 +360,7 @@ class CharClassSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__url'
         )
 
-class MagicItemSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class MagicItemSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.MagicItem
         fields = (
@@ -375,7 +375,7 @@ class MagicItemSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__url'
         )
 
-class WeaponSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class WeaponSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Weapon
         fields = (
@@ -392,7 +392,7 @@ class WeaponSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'weight',
             'properties')
 
-class ArmorSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class ArmorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Armor
         fields = (
