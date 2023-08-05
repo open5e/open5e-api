@@ -256,7 +256,7 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     ordering_fields = '__all__'
     ordering = ['name']
     filterset_class = BackgroundFilter
-    search_fields = ['name']
+    search_fields = ['name', 'desc']
 
 class PlaneFilter(django_filters.FilterSet):
 
