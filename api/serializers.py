@@ -18,7 +18,7 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
         super(DynamicFieldsModelSerializer, self).__init__(*args, **kwargs)
 
         # The request doesn't exist when generating an OAS file, so we have to check that first
-        if self.context['request']:
+        if 'request' in self.context:
             fields = self.context['request'].query_params.get('fields')
             if fields:
                 fields = fields.split(',')
@@ -280,7 +280,7 @@ class ConditionSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__url'
         )
 
-class SubraceSerializer(DynamicFieldsHyperlinkedModelSerializer):
+class SubraceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Subrace
         fields = ('name',
