@@ -95,6 +95,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
 		})
     queryset = models.Document.objects.all()
     serializer_class = serializers.DocumentSerializer
+    search_fields = ['title', 'desc']
     filterset_fields = (
         'slug',
         'title',
