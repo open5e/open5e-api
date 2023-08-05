@@ -284,6 +284,7 @@ class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Plane.objects.all()
     serializer_class = serializers.PlaneSerializer
     filterset_class=PlaneFilter
+    search_fields = ['name', 'desc']
 
 class SectionFilter(django_filters.FilterSet):
 
