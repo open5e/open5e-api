@@ -315,6 +315,7 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     ordering_fields = '__all__'
     ordering=['name']
     filterset_class = SectionFilter
+    search_fields = ['name', 'desc']
 
 class FeatFilter(django_filters.FilterSet):
 
