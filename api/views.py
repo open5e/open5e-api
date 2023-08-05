@@ -508,6 +508,7 @@ class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.Archetype.objects.all()
     serializer_class = serializers.ArchetypeSerializer
+    search_fields = ['name', 'desc']
     filterset_fields=(
         'name',
         'document__slug',
