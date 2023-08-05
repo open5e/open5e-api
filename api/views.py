@@ -438,6 +438,7 @@ class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.Subrace.objects.all()
     serializer_class = serializers.SubraceSerializer
+    search_fields = ['name', 'desc']
     filterset_fields=(
         'name',
         'document__slug',
