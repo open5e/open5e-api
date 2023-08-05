@@ -280,7 +280,7 @@ class ConditionSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__url'
         )
 
-class SubraceSerializer(serializers.HyperlinkedModelSerializer):
+class SubraceSerializer(DynamicFieldsHyperlinkedModelSerializer):
     class Meta:
         model = models.Subrace
         fields = ('name',
