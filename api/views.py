@@ -575,7 +575,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Weapon.objects.all()
     serializer_class = serializers.WeaponSerializer
     filterset_class = WeaponFilter
-    search_fields = ['name']
+    search_fields = ['name', 'desc']
 
 class ArmorFilter(django_filters.FilterSet):
 
