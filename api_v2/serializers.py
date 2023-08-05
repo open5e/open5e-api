@@ -12,9 +12,6 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
         # Instantiate the superclass normally
         super(GameContentSerializer, self).__init__(*args, **kwargs)
 
-        # Add all read-only fields.
-       # setattr(self.Meta, 'read_only_fields', [*self.fields])
-
         # The request doesn't exist when generating an OAS file, so we have to check that first
         if self.context['request']:
             fields = self.context['request'].query_params.get('fields')
@@ -31,15 +28,16 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
                 try:
                     depth_value = int(depth)
                     if depth_value > 0 and depth_value < 3:
+                        # This value going above 1 could cause performance issues.
+                        # Limited to 1 and 2 for now.
                         self.Meta.depth = depth_value
-                        #This value going above 1 could massively cause performance issues.
+                        # Depth does not reset by default on subsequent requests with malformed urls.
                     else: 
                         self.Meta.depth = 0
                 except ValueError:
-                    pass  # it was a string, not an int.
+                    pass  # it was not castable to an int.
             else:
-                # Depth does not reset by default on subsequent requests with malformed urls.
-                self.Meta.depth = 0
+                self.Meta.depth = 0 #The default.
 
     class Meta:
         abstract = True
@@ -104,6 +102,9 @@ class WeaponSerializer(GameContentSerializer):
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     is_magic_item = serializers.ReadOnlyField()
+    weapon = WeaponSerializer(read_only=True, context={'request': {}})
+    armor = ArmorSerializer(read_only=True, context={'request': {}})
+
 
     class Meta:
         model = models.Item
@@ -112,6 +113,7 @@ class ItemSerializer(GameContentSerializer):
 
 class ItemSetSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    items = ItemSerializer(many=True, read_only=True, context={'request':{}})
 
     class Meta:
         model = models.ItemSet
