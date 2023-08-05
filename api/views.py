@@ -480,6 +480,7 @@ class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.CharClass.objects.all()
     serializer_class = serializers.CharClassSerializer
     filterset_class = CharClassFilter
+    search_fields = ['name', 'desc']
 
 class ArchetypeFilter(django_filters.FilterSet):
     # Unused but could be implemented later.
