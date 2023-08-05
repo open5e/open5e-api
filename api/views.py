@@ -221,7 +221,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = MonsterFilter
     
     serializer_class = serializers.MonsterSerializer
-    search_fields = ['name']
+    search_fields = ['name', 'desc']
 
 class BackgroundFilter(django_filters.FilterSet):
 
