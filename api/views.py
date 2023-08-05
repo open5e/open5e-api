@@ -410,6 +410,7 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Race.objects.all()
     serializer_class = serializers.RaceSerializer
     filterset_class = RaceFilter
+    search_fields = ['name', 'desc']
 
 class SubraceFilter(django_filters.FilterSet):
     # Unused, but could be implemented later.
