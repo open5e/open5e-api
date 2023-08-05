@@ -343,6 +343,7 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Feat.objects.all()
     serializer_class = serializers.FeatSerializer
     filterset_class = FeatFilter
+    search_fields = ['name', 'desc']
 
 class ConditionFilter(django_filters.FilterSet):
 
