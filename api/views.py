@@ -605,4 +605,4 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Armor.objects.all()
     serializer_class = serializers.ArmorSerializer
     filterset_class = ArmorFilter
-    search_fields = ['name']
+    search_fields = ['name', 'desc']
