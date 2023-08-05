@@ -187,6 +187,7 @@ class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.SpellList.objects.all()
     serializer_class = serializers.SpellListSerializer
     filterset_class = SpellListFilter
+    search_fields = ['name', 'desc']
 
 class MonsterFilter(django_filters.FilterSet):
 
