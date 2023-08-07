@@ -6,6 +6,8 @@ from .abstracts import HasName
 from .abstracts import HasDescription
 from .abstracts import Object
 
+from .abilities import Abilities
+
 from .item import Item
 from .item import ItemSet
 
