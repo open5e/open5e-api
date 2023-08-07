@@ -7,6 +7,7 @@ from .abstracts import HasDescription
 from .abstracts import Object
 
 from .item import Item
+from .item import ItemSet
 
 from .armor import Armor
 

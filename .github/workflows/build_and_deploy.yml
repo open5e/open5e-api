@@ -15,7 +15,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Set Docker image tag
-        run: |
+        run: | 
+        | echo "GITHUB_REF = $GITHUB_REF" > version.py
+        | echo "GITHUB_SHA = $GITHUB_SHA" >> version.py
+        |
           if [[ $GITHUB_REF == refs/heads/main ]]; then
             echo "DOCKER_IMAGE_TAG=latest" >> $GITHUB_ENV
           elif [[ $GITHUB_REF == refs/heads/staging ]]; then
