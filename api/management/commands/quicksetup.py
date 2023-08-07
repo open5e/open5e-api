@@ -27,8 +27,11 @@ class Command(BaseCommand):
         self.stdout.write('Collecting static files...')
         collect_static()
 
-        self.stdout.write('Populating the database...')
+        self.stdout.write('Populating the v1 database...')
         quickload.populate_db()
+
+        self.stdout.write('Populating the v2 database...')
+        import_v2()
 
         if options["noindex"]:
             self.stdout.write('Skipping search index rebuild due to --noindex...')
@@ -37,6 +40,11 @@ class Command(BaseCommand):
             rebuild_index()
 
         self.stdout.write(self.style.SUCCESS('API setup complete.'))
+
+
+def import_v2() -> None:
+    """Import the v2 apps' database models."""
+    call_command('import', '--dir', 'data/v2')
 
 
 def migrate_db() -> None:

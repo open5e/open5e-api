@@ -29,6 +29,10 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
+# A flag that is True when not production to disallow /v2 api endpoint.
+V2_ENABLED = os.environ.get("NEW_RELIC_ENVIRONMENT") != "production"
+
+
 # Added as part of the migration from django 2 to django 3.
 # Not likely to apply in the short term. https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -66,10 +70,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_filters",
     "markdown2",
-]
-
-FIXTURE_DIRS = [
-    'data/v2/wotc-srd'
 ]
 
 
@@ -180,7 +180,7 @@ REST_FRAMEWORK = {
     # Versioning
     "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.NamespaceVersioning",
     "DEFAULT_VERSION": "v1",
-    "ALLOWED_VERSIONS": ["v1"],
+    "ALLOWED_VERSIONS": ["v1", "v2"],
 }
 
 
