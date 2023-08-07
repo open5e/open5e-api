@@ -121,8 +121,73 @@ class ItemSetSerializer(GameContentSerializer):
 
 
 class CreatureSerializer(GameContentSerializer):
+
     key = serializers.ReadOnlyField()
+    ability_scores = serializers.SerializerMethodField()
+    modifiers = serializers.SerializerMethodField()
+    saving_throws = serializers.SerializerMethodField()
+    all_saving_throws = serializers.SerializerMethodField()
+    skill_bonuses = serializers.SerializerMethodField()
+    all_skill_bonuses = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Creature
-        fields = '__all__'
+        fields = [
+            'url',
+            'document',
+            'key',
+            'name',
+            'desc',
+            'size',
+            'armor_class',
+            'ability_scores',
+            'modifiers',
+            'saving_throws',
+            'all_saving_throws',
+            'skill_bonuses',
+            'all_skill_bonuses',
+            'passive_perception',
+        ]
+
+    def get_ability_scores(self, monster):
+        return monster.get_ability_scores()
+
+    def get_modifiers(self, monster):
+        return monster.get_modifiers()
+
+    def get_saving_throws(self, monster):
+        entries = monster.get_saving_throws().items()
+        return { key: value for key, value in entries if value is not None }
+
+    def get_all_saving_throws(self, monster):
+        defaults = monster.get_modifiers()
+        entries = monster.get_saving_throws().items()
+        return { key: (defaults[key] if value is None else value) for key, value in entries }
+
+    def get_skill_bonuses(self, monster):
+        entries = monster.get_skill_bonuses().items()
+        return { key: value for key, value in entries if value is not None }
+
+    def get_all_skill_bonuses(self, monster):
+        defaults = {
+            'acrobatics': monster.modifier_dexterity,
+            'animal_handling': monster.modifier_wisdom,
+            'arcana': monster.modifier_intelligence,
+            'athletics': monster.modifier_strength,
+            'deception': monster.modifier_charisma,
+            'history': monster.modifier_intelligence,
+            'insight': monster.modifier_wisdom,
+            'intimidation': monster.modifier_charisma,
+            'investigation': monster.modifier_intelligence,
+            'medicine': monster.modifier_wisdom,
+            'nature': monster.modifier_intelligence,
+            'perception': monster.modifier_wisdom,
+            'performance': monster.modifier_charisma,
+            'persuasion': monster.modifier_charisma,
+            'religion': monster.modifier_intelligence,
+            'sleight_of_hand': monster.modifier_dexterity,
+            'stealth': monster.modifier_dexterity,
+            'survival': monster.modifier_wisdom,
+        }
+        entries = monster.get_skill_bonuses().items()
+        return { key: (defaults[key] if value is None else value) for key, value in entries }
