@@ -2,6 +2,8 @@ from django.contrib.auth.models import User, Group
 
 from drf_haystack.viewsets import HaystackViewSet
 from rest_framework import viewsets
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from api import models
 from api import serializers
@@ -36,6 +38,12 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
     )
     queryset = models.Manifest.objects.all()
     serializer_class = serializers.ManifestSerializer
+
+
+@api_view()
+def get_version(request):
+    import version
+    return Response({"GITHUB_REF":version.GITHUB_REF, "GITHUB_SHA":version.GITHUB_SHA})
 
 
 class SearchView(HaystackViewSet):
