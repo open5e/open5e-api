@@ -50,3 +50,6 @@ class Armor(HasName, FromDocument):
             ac_string += " (max {})".format(self.ac_cap_dexmod)
 
         return ac_string
+
+    class Meta:
+        verbose_name_plural = "armor"

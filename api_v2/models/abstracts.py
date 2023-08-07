@@ -86,3 +86,4 @@ class Object(HasName):
 
     class Meta:
         abstract = True
+        ordering = ['pk']
