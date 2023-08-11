@@ -13,6 +13,8 @@ from .armor import Armor
 
 from .weapon import Weapon
 
+from .creature import Creature
+
 from .document import Document
 from .document import License
 from .document import Publisher

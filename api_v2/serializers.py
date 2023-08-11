@@ -4,7 +4,7 @@ from api_v2 import models
 
 
 class GameContentSerializer(serializers.HyperlinkedModelSerializer):
-    
+
     # Adding dynamic "fields" qs parameter.
     def __init__(self, *args, **kwargs):
         # Add default fields variable.
@@ -32,7 +32,7 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
                         # Limited to 1 and 2 for now.
                         self.Meta.depth = depth_value
                         # Depth does not reset by default on subsequent requests with malformed urls.
-                    else: 
+                    else:
                         self.Meta.depth = 0
                 except ValueError:
                     pass  # it was not castable to an int.
@@ -117,4 +117,12 @@ class ItemSetSerializer(GameContentSerializer):
 
     class Meta:
         model = models.ItemSet
+        fields = '__all__'
+
+
+class CreatureSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.Creature
         fields = '__all__'

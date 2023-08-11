@@ -163,3 +163,24 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Armor.objects.all().order_by('pk')
     serializer_class = serializers.ArmorSerializer
     filterset_class = ArmorFilterSet
+
+
+class CreatureFilterSet(FilterSet):
+
+    class Meta:
+        model = models.Creature
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact'],
+            'document__key': ['in','iexact','exact'],
+        }
+
+
+class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of creatures.
+    retrieve: API endpoint for returning a particular creature.
+    """
+    queryset = models.Creature.objects.all().order_by('pk')
+    serializer_class = serializers.CreatureSerializer
+    filterset_class = CreatureFilterSet
