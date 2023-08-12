@@ -28,6 +28,15 @@ class HasDescription(models.Model):
         abstract = True
 
 
+class HasPrerequisite(models.Model):
+    prerequisite_desc = models.CharField(
+        max_length=100,
+        help_text='Prerequisite for the game content item.')
+
+    class Meta:
+        abstract = True
+
+
 class Object(HasName):
     """
     This is the definition of the Object abstract base class.
