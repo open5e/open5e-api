@@ -53,4 +53,6 @@ class Armor(HasName, FromDocument):
         return ac_string
 
     class Meta:
+        """To assist with the UI layer."""
+
         verbose_name_plural = "armor"

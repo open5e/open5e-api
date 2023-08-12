@@ -28,3 +28,8 @@ class Race(HasName, HasDescription, FromDocument):
     def is_subrace(self):
         """Returns whether the object is a subrace."""
         return self.parent == null
+
+    class Meta:
+        """To assist with the UI layer."""
+
+        verbose_name_plural = "races"

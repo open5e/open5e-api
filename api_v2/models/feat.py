@@ -13,3 +13,8 @@ class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):
     training, experience, and abilities beyond what a
     class provides.
     """
+
+    class Meta:
+        """To assist with the UI layer."""
+
+        verbose_name_plural = "feats"
