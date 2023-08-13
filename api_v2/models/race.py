@@ -33,6 +33,10 @@ class Race(HasName, HasDescription, FromDocument):
         """Returns whether the object is a subrace."""
         return self.subrace_of != null
 
+    @property
+    def traits(self):
+        return self.trait_set
+
     class Meta:
         """To assist with the UI layer."""
 

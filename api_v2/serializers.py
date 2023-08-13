@@ -128,8 +128,17 @@ class FeatSerializer(GameContentSerializer):
         fields = '__all__'
 
 
+class TraitSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Trait
+        fields = ['name', 'desc']
+
+
 class RaceSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    traits = TraitSerializer(
+        many=True)
 
     class Meta:
         model = models.Race
