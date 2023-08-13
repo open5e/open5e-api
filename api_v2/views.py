@@ -183,3 +183,23 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Feat.objects.all().order_by('pk')
     serializer_class = serializers.FeatSerializer
     filterset_class = FeatFilterSet
+
+
+class RaceFilterSet(FilterSet):
+    class Meta:
+        model = models.Race
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact'],
+            'document__key': ['in','iexact','exact'],
+        }
+
+
+class RaceViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of races.
+    retrieve: API endpoint for returning a particular race.
+    """
+    queryset = models.Race.objects.all().order_by('pk')
+    serializer_class = serializers.RaceSerializer
+    filterset_class = RaceFilterSet

@@ -124,5 +124,13 @@ class FeatSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
 
     class Meta:
-        model = models.feat
+        model = models.Feat
+        fields = '__all__'
+
+
+class RaceSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.Race
         fields = '__all__'
