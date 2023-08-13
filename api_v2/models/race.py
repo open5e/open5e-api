@@ -31,7 +31,7 @@ class Race(HasName, HasDescription, FromDocument):
     @property
     def is_subrace(self):
         """Returns whether the object is a subrace."""
-        return self.subrace_of != null
+        return self.subrace_of != None
 
     @property
     def traits(self):
