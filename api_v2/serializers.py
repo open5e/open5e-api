@@ -118,3 +118,11 @@ class ItemSetSerializer(GameContentSerializer):
     class Meta:
         model = models.ItemSet
         fields = '__all__'
+
+
+class FeatSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.feat
+        fields = '__all__'

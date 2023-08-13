@@ -12,7 +12,7 @@ class Trait(HasName, HasDescription):
     Each trait ties to an individual race or subrace.
     """
 
-    race = models.ForeignKey('Race')
+    race = models.ForeignKey('Race', on_delete=models.CASCADE)
 
 
 class Race(HasName, HasDescription, FromDocument):
@@ -22,12 +22,12 @@ class Race(HasName, HasDescription, FromDocument):
     This model can be used to represent races based on parent=null.
     """
 
-    subrace_of = models.ForeignKey('self', null=True)
+    subrace_of = models.ForeignKey('self', null=True, on_delete=models.CASCADE)
 
     @property
     def is_subrace(self):
         """Returns whether the object is a subrace."""
-        return self.parent == null
+        return self.subrace_of != null
 
     class Meta:
         """To assist with the UI layer."""
