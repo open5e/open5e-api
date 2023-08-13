@@ -19,22 +19,24 @@ class Race(HasName, HasDescription, FromDocument):
     """
     This is the model for a race or subrace.
 
-    This model can be used to represent races based on parent=null.
+    This model can be used to represent races and subraces. Subraces are
+    represented by using a self-relation to the parent race.
     """
 
     subrace_of = models.ForeignKey('self',
-        default=None,
-        blank=True,
-        null=True, 
-        on_delete=models.CASCADE)
+                                   default=None,
+                                   blank=True,
+                                   null=True,
+                                   on_delete=models.CASCADE)
 
     @property
     def is_subrace(self):
         """Returns whether the object is a subrace."""
-        return self.subrace_of != None
+        return self.subrace_of is not None
 
     @property
     def traits(self):
+        """Returns the set of traits that are related to this race."""
         return self.trait_set
 
     class Meta:
