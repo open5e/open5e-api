@@ -22,7 +22,7 @@ class Race(HasName, HasDescription, FromDocument):
     This model can be used to represent races based on parent=null.
     """
 
-    parent = models.ForeignKey('self', null=True)
+    subrace_of = models.ForeignKey('self', null=True)
 
     @property
     def is_subrace(self):
