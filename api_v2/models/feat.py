@@ -18,3 +18,4 @@ class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):
         """To assist with the UI layer."""
 
         verbose_name_plural = "feats"
+
