@@ -138,9 +138,9 @@ class TraitSerializer(serializers.ModelSerializer):
 class RaceSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     is_subrace = serializers.ReadOnlyField()
+    is_selectable = serializers.ReadOnlyField()
     traits = TraitSerializer(
         many=True)
-    
 
     class Meta:
         model = models.Race

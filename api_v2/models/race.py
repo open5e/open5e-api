@@ -34,9 +34,17 @@ class Race(HasName, HasDescription, FromDocument):
         return self.subrace_of is not None
 
     @property
+    def is_selectable(self):
+        """Returns whether or not this is a choosable race or subrace."""
+        # Returns true if this has 0 referencing children.
+        return len(self.race_set.all()) == 0
+
+    @property
     def traits(self):
         """Returns the set of traits that are related to this race."""
         return self.trait_set
+
+
 
     class Meta:
         """To assist with the UI layer."""

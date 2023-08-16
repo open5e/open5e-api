@@ -189,9 +189,9 @@ class RaceFilterSet(FilterSet):
     class Meta:
         model = models.Race
         fields = {
-            'key': ['in', 'iexact', 'exact' ],
+            'key': ['in', 'iexact', 'exact'],
             'name': ['iexact', 'exact'],
-            'document__key': ['in','iexact','exact'],
+            'document__key': ['in', 'iexact', 'exact'],
         }
 
 
