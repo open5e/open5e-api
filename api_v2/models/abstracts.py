@@ -97,3 +97,9 @@ class Object(HasName):
     class Meta:
         abstract = True
         ordering = ['pk']
+
+
+class Benefit(HasName, HasDescription):
+    class Meta:
+        abstract = True
+        ordering = ['pk']

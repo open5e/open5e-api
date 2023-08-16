@@ -2,16 +2,15 @@
 
 from django.db import models
 from .abstracts import HasName, HasDescription, HasPrerequisite
+from .abstracts import Benefit
 from .document import FromDocument
 
 
-class Trait(HasName, HasDescription):
+class Trait(Benefit):
+    """This is the model for a race or subrace trait.
+    
+    It inherits from benefit, which is an abstract concept.
     """
-    This is the model for a racial trait.
-
-    Each trait ties to an individual race or subrace.
-    """
-
     race = models.ForeignKey('Race', on_delete=models.CASCADE)
 
 
