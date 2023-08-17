@@ -29,7 +29,7 @@ class HasDescription(models.Model):
 
 
 class HasPrerequisite(models.Model):
-    prerequisite_desc = models.CharField(
+    prerequisite = models.CharField(
         max_length=200,
         blank=True,
         help_text='Prerequisite for the game content item.')
