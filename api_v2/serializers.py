@@ -122,6 +122,8 @@ class ItemSetSerializer(GameContentSerializer):
 
 class FeatSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    has_prerequisite = serializers.ReadOnlyField()
+    has_asi = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Feat

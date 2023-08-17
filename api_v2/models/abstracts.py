@@ -36,7 +36,7 @@ class HasPrerequisite(models.Model):
 
     @property
     def has_prerequisite(self):
-        return self.prerequisite is not None
+        return self.prerequisite not in ("",None)
 
     class Meta:
         abstract = True

@@ -14,6 +14,10 @@ class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):
     class provides.
     """
 
+    @property
+    def has_asi(self):
+        return "increases by 1" in self.desc
+
     class Meta:
         """To assist with the UI layer."""
 
