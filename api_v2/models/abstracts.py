@@ -34,6 +34,10 @@ class HasPrerequisite(models.Model):
         blank=True,
         help_text='Prerequisite for the game content item.')
 
+    @property
+    def has_prerequisite(self):
+        return self.prerequisite is not None
+
     class Meta:
         abstract = True
 
