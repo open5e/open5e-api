@@ -12,12 +12,25 @@ class FromDocumentModelAdmin(admin.ModelAdmin):
 class ItemModelAdmin(admin.ModelAdmin):
     list_display = ['key', 'category', 'name']
 
+
 class TraitInline(admin.TabularInline):
     model = Trait
+
 
 class RaceAdmin(admin.ModelAdmin):
     inlines = [
         TraitInline,
+    ]
+
+
+class FeatBenefitInline(admin.TabularInline):
+    model = FeatBenefit
+    exclude = ('name',)
+
+
+class FeatAdmin(admin.ModelAdmin):
+    inlines = [
+        FeatBenefitInline,
     ]
 
 admin.site.register(Weapon, admin_class=FromDocumentModelAdmin)
@@ -28,8 +41,7 @@ admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
 
 admin.site.register(Race, admin_class=RaceAdmin)
 
-#admin.site.register(Trait)
-admin.site.register(Feat, admin_class=FromDocumentModelAdmin)
+admin.site.register(Feat, admin_class=FeatAdmin)
 
 admin.site.register(Document)
 admin.site.register(License)

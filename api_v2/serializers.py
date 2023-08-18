@@ -119,11 +119,16 @@ class ItemSetSerializer(GameContentSerializer):
         model = models.ItemSet
         fields = '__all__'
 
+class FeatBenefitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.FeatBenefit
+        fields = ['desc']
 
 class FeatSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     has_prerequisite = serializers.ReadOnlyField()
-    has_asi = serializers.ReadOnlyField()
+    benefits = FeatBenefitSerializer(
+        many=True)
 
     class Meta:
         model = models.Feat

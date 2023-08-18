@@ -1,6 +1,4 @@
-"""
-The model for an object.
-"""
+"""Abstract models to be used in Game Content items."""
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -36,7 +34,7 @@ class HasPrerequisite(models.Model):
 
     @property
     def has_prerequisite(self):
-        return self.prerequisite not in ("",None)
+        return self.prerequisite not in ("", None)
 
     class Meta:
         abstract = True

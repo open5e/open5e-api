@@ -8,9 +8,10 @@ from .document import FromDocument
 
 class Trait(Benefit):
     """This is the model for a race or subrace trait.
-    
+
     It inherits from benefit, which is an abstract concept.
     """
+
     race = models.ForeignKey('Race', on_delete=models.CASCADE)
 
 
@@ -43,8 +44,6 @@ class Race(HasName, HasDescription, FromDocument):
     def traits(self):
         """Returns the set of traits that are related to this race."""
         return self.trait_set
-
-
 
     class Meta:
         """To assist with the UI layer."""
