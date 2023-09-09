@@ -129,6 +129,7 @@ class CreatureSerializer(GameContentSerializer):
     all_saving_throws = serializers.SerializerMethodField()
     skill_bonuses = serializers.SerializerMethodField()
     all_skill_bonuses = serializers.SerializerMethodField()
+    actions = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Creature
@@ -148,6 +149,7 @@ class CreatureSerializer(GameContentSerializer):
             'skill_bonuses',
             'all_skill_bonuses',
             'passive_perception',
+            'actions',
         ]
 
     def get_ability_scores(self, creature):
@@ -192,3 +194,17 @@ class CreatureSerializer(GameContentSerializer):
         }
         entries = creature.get_skill_bonuses().items()
         return { key: (defaults[key] if value is None else value) for key, value in entries }
+
+    def get_actions(self, creature):
+        result = []
+        for action in creature.creatureaction_set.all():
+            item = { 'name': action.name, 'desc': action.desc }
+            match action.uses_type:
+                case 'PER_DAY':
+                    item['uses_per_day'] = action.uses_param
+                case 'RECHARGE_ON_ROLL':
+                    item['recharge_on_roll'] = action.uses_param
+                case 'RECHARGE_AFTER_REST':
+                    item['recharge_after_rest'] = True
+            result.append(item)
+        return result
