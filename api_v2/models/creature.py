@@ -1,11 +1,11 @@
 """The model for a creature."""
 
 from .abilities import Abilities
-from .abstracts import Object, HasDescription
+from .abstracts import Object
 from .document import FromDocument
 
 
-class Creature(Object, HasDescription, Abilities, FromDocument):
+class Creature(Object, Abilities, FromDocument):
     """
     This is the model for a Creature, per the 5e ruleset.
 
