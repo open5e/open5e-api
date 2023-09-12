@@ -7,6 +7,23 @@ from .abstracts import Object, HasDescription, HasName
 from .document import FromDocument
 
 
+MONSTER_TYPES = [
+    ("ABERRATION", "Aberration"),
+    ("BEAST", "Beast"),
+    ("CELESTIAL", "Celestial"),
+    ("CONSTRUCT", "Construct"),
+    ("DRAGON", "Dragon"),
+    ("ELEMENTAL", "Elemental"),
+    ("FEY", "Fey"),
+    ("FIEND", "Fiend"),
+    ("GIANT", "Giant"),
+    ("HUMANOID", "Humanoid"),
+    ("MONSTROSITY", "Monstrosity"),
+    ("OOZE", "Ooze"),
+    ("PLANT", "Plant"),
+    ("UNDEAD", "Undead"),
+]
+
 class Creature(Object, Abilities, FromDocument):
     """
     This is the model for a Creature, per the 5e ruleset.
@@ -14,7 +31,27 @@ class Creature(Object, Abilities, FromDocument):
     This extends the object and abilities models.
     """
 
-    pass
+    category = models.CharField(
+        max_length=100,
+        help_text='What category this creature belongs to.'
+    )
+
+    type = models.CharField(
+        max_length=20,
+        choices=MONSTER_TYPES,
+        help_text='Which type of creature this is.'
+    )
+
+    subtype = models.CharField(
+        null=True,
+        max_length=100,
+        help_text='Which subtype or subtypes this creature has, if any.'
+    )
+
+    alignment = models.CharField(
+        max_length=100,
+        help_text='The creature\'s allowed alignments.'
+    )
 
 
 USES_TYPES = [
