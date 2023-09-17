@@ -13,6 +13,11 @@ from .race import Race
 from .feat import FeatBenefit
 from .feat import Feat
 
+from .background import BackgroundBenefit
+from .background import Characteristics
+from .background import BackgroundFeature
+from .background import Background
+
 from .document import Document
 from .document import License
 from .document import Publisher

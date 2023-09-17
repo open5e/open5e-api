@@ -33,6 +33,28 @@ class FeatAdmin(admin.ModelAdmin):
         FeatBenefitInline,
     ]
 
+
+class BackgroundBenefitInline(admin.TabularInline):
+    model = BackgroundBenefit
+
+
+class BackgroundCharacteristicsInline(admin.StackedInline):
+    model = Characteristics
+
+
+class BackgroundFeatureInline(admin.StackedInline):
+    model = BackgroundFeature
+
+
+class BackgroundAdmin(admin.ModelAdmin):
+    model = Background
+    inlines = [
+        BackgroundBenefitInline,
+        BackgroundFeatureInline,
+        BackgroundCharacteristicsInline
+    ]
+
+
 admin.site.register(Weapon, admin_class=FromDocumentModelAdmin)
 admin.site.register(Armor, admin_class=FromDocumentModelAdmin)
 
@@ -42,6 +64,8 @@ admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
 admin.site.register(Race, admin_class=RaceAdmin)
 
 admin.site.register(Feat, admin_class=FeatAdmin)
+
+admin.site.register(Background, admin_class=BackgroundAdmin)
 
 admin.site.register(Document)
 admin.site.register(License)
