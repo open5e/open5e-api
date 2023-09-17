@@ -203,3 +203,23 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Race.objects.all().order_by('pk')
     serializer_class = serializers.RaceSerializer
     filterset_class = RaceFilterSet
+
+
+class BackgroundFilterSet(FilterSet):
+    class Meta:
+        model = models.Background
+        fields = {
+            'key': ['in', 'iexact', 'exact'],
+            'name': ['iexact', 'exact'],
+            'document__key': ['in', 'iexact', 'exact'],
+        }
+
+
+class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of backgrounds.
+    retrieve: API endpoint for returning a particular background.
+    """
+    queryset = models.Background.objects.all().order_by('pk')
+    serializer_class = serializers.BackgroundSerializer
+    filterset_class = BackgroundFilterSet
