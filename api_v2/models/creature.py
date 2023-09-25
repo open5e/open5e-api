@@ -1,6 +1,7 @@
 """The model for a creature."""
 
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities
 from .abstracts import Object, HasDescription, HasName
 from .document import FromDocument
@@ -41,3 +42,117 @@ class CreatureAction(HasName, HasDescription, FromDocument):
         null=True,
         help_text='The parameter X for if the action is limited.'
     )
+
+
+ATTACK_TYPES = [
+    ("SPELL", "Spell"),
+    ("WEAPON", "Weapon"),
+]
+
+DIE_TYPES = [
+    ("D4", "d4"),
+    ("D6", "d6"),
+    ("D8", "d8"),
+    ("D10", "d10"),
+    ("D12", "d12"),
+    ("D20", "d20"),
+]
+
+DAMAGE_TYPES = [
+    ("ACID", "Acid"),
+    ("BLUDGEONING", "Bludgeoning"),
+    ("COLD", "Cold"),
+    ("FIRE", "Fire"),
+    ("FORCE", "Force"),
+    ("LIGHTNING", "Lightning"),
+    ("NECROTIC", "Necrotic"),
+    ("PIERCING", "Piercing"),
+    ("POISON", "Poison"),
+    ("PSYCHIC", "Psychic"),
+    ("RADIANT", "Radiant"),
+    ("SLASHING", "Slashing"),
+    ("THUNDER", "Thunder"),
+]
+
+def damage_die_count_field():
+    return models.SmallIntegerField(
+        null=True,
+        validators=[MinValueValidator(0)],
+        help_text='The number of dice to roll for damage.'
+    )
+
+def damage_die_type_field():
+    return models.CharField(
+        null=True,
+        max_length=20,
+        choices=DIE_TYPES,
+        help_text='What kind of die to roll for damage.'
+    )
+
+def damage_bonus_field():
+    return models.SmallIntegerField(
+        null=True,
+        validators=[MinValueValidator(-5), MaxValueValidator(20)],
+        help_text='Damage roll modifier.'
+    )
+
+def damage_type_field():
+    return models.CharField(
+        null=True,
+        max_length=20,
+        choices=DAMAGE_TYPES,
+        help_text='What kind of damage this attack deals.'
+    )
+
+class CreatureAttack(HasName, FromDocument):
+
+    creature_action = models.ForeignKey(
+        CreatureAction,
+        on_delete=models.CASCADE,
+        help_text='The creature action to which this attack belongs.'
+    )
+
+    attack_type = models.CharField(
+        max_length=20,
+        choices=ATTACK_TYPES,
+        help_text='Whether this is a Weapon or Spell attack.'
+    )
+
+    to_hit_mod = models.SmallIntegerField(
+        validators=[MinValueValidator(-5), MaxValueValidator(20)],
+        help_text='Attack roll modifier.'
+    )
+
+    reach_ft = models.SmallIntegerField(
+        null=True,
+        validators=[MinValueValidator(0)],
+        help_text='Reach for melee attacks, in feet.'
+    )
+
+    range_ft = models.SmallIntegerField(
+        null=True,
+        validators=[MinValueValidator(0)],
+        help_text='Normal range for ranged attacks, in feet.'
+    )
+
+    long_range_ft = models.SmallIntegerField(
+        null=True,
+        validators=[MinValueValidator(0)],
+        help_text='Long range for ranged attacks, in feet.'
+    )
+
+    target_creature_only = models.BooleanField(
+        help_text='If an attack can target creatures only and not objects.'
+    )
+
+    # Base damage fields
+    damage_die_count = damage_die_count_field()
+    damage_die_type = damage_die_type_field()
+    damage_bonus = damage_bonus_field()
+    damage_type = damage_type_field()
+
+    # Additional damage fields
+    extra_damage_die_count = damage_die_count_field()
+    extra_damage_die_type = damage_die_type_field()
+    extra_damage_bonus = damage_bonus_field()
+    extra_damage_type = damage_type_field()

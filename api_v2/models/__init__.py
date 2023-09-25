@@ -17,6 +17,7 @@ from .weapon import Weapon
 
 from .creature import Creature
 from .creature import CreatureAction
+from .creature import CreatureAttack
 
 from .document import Document
 from .document import License

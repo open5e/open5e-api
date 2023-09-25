@@ -1,4 +1,6 @@
+from math import floor
 from rest_framework import serializers
+from django.core.exceptions import ObjectDoesNotExist
 
 from api_v2 import models
 
@@ -120,6 +122,89 @@ class ItemSetSerializer(GameContentSerializer):
         fields = '__all__'
 
 
+def calc_damage_amount(die_count, die_type, bonus):
+    die_values = {
+        'D4': 2.5,
+        'D6': 3.5,
+        'D8': 4.5,
+        'D10': 5.5,
+        'D12': 6.5,
+        'D20': 10.5,
+    }
+    return floor(die_count * die_values[die_type] + bonus)
+
+def make_damage_obj(die_count, die_type, bonus, damage_type):
+    if die_count:
+        return {
+            'amount': calc_damage_amount(
+                die_count,
+                die_type,
+                bonus
+            ),
+            'die_count': die_count,
+            'die_type': die_type,
+            'bonus': bonus,
+            'type': damage_type,
+        }
+    return {
+        'amount': 1,
+        'type': damage_type,
+    }
+
+def make_attack_obj(attack):
+
+    obj = {
+        'name': attack.name,
+        'attack_type': attack.attack_type,
+        'to_hit_mod': attack.to_hit_mod,
+    }
+
+    if attack.reach_ft:
+        obj['reach_ft'] = attack.reach_ft
+    if attack.range_ft:
+        obj['range_ft'] = attack.range_ft
+    if attack.long_range_ft:
+        obj['long_range_ft'] = attack.long_range_ft
+
+    obj['target_creature_only'] = attack.target_creature_only
+
+    if attack.damage_type:
+        obj['damage'] = make_damage_obj(
+            attack.damage_die_count,
+            attack.damage_die_type,
+            attack.damage_bonus,
+            attack.damage_type
+        )
+
+    if attack.extra_damage_type:
+        obj['extra_damage'] = make_damage_obj(
+            attack.extra_damage_die_count,
+            attack.extra_damage_die_type,
+            attack.extra_damage_bonus,
+            attack.extra_damage_type
+        )
+
+    return obj
+
+def make_action_obj(action):
+
+    obj = { 'name': action.name, 'desc': action.desc }
+
+    match action.uses_type:
+        case 'PER_DAY':
+            obj['uses_per_day'] = action.uses_param
+        case 'RECHARGE_ON_ROLL':
+            obj['recharge_on_roll'] = action.uses_param
+        case 'RECHARGE_AFTER_REST':
+            obj['recharge_after_rest'] = True
+
+    attacks = action.creatureattack_set.all()
+
+    if len(attacks) > 0:
+        obj['attacks'] = [make_attack_obj(attack) for attack in attacks]
+
+    return obj
+
 class CreatureSerializer(GameContentSerializer):
 
     key = serializers.ReadOnlyField()
@@ -198,13 +283,49 @@ class CreatureSerializer(GameContentSerializer):
     def get_actions(self, creature):
         result = []
         for action in creature.creatureaction_set.all():
-            item = { 'name': action.name, 'desc': action.desc }
-            match action.uses_type:
-                case 'PER_DAY':
-                    item['uses_per_day'] = action.uses_param
-                case 'RECHARGE_ON_ROLL':
-                    item['recharge_on_roll'] = action.uses_param
-                case 'RECHARGE_AFTER_REST':
-                    item['recharge_after_rest'] = True
-            result.append(item)
+            # item = { 'name': action.name, 'desc': action.desc }
+            # match action.uses_type:
+            #     case 'PER_DAY':
+            #         item['uses_per_day'] = action.uses_param
+            #     case 'RECHARGE_ON_ROLL':
+            #         item['recharge_on_roll'] = action.uses_param
+            #     case 'RECHARGE_AFTER_REST':
+            #         item['recharge_after_rest'] = True
+            # try:
+            #     attack = models.CreatureAttackAction.objects.get(pk=action.key)
+            #     item['attack_type'] = attack.attack_type
+            #     item['to_hit_mod'] = attack.to_hit_mod
+            #     if attack.reach_ft:
+            #         item['reach_ft'] = attack.reach_ft
+            #     if attack.range_ft:
+            #         item['range_ft'] = attack.range_ft
+            #     if attack.long_range_ft:
+            #         item['long_range_ft'] = attack.long_range_ft
+            #     item['target_creature_only'] = attack.target_creature_only
+            #     if attack.damage_type:
+            #         item['damage'] = make_damage_obj(
+            #             attack.damage_die_count,
+            #             attack.damage_die_type,
+            #             attack.damage_bonus,
+            #             attack.damage_type
+            #         )
+            #     if attack.extra_damage_type:
+            #         item['extra_damage'] = make_damage_obj(
+            #             attack.extra_damage_die_count,
+            #             attack.extra_damage_die_type,
+            #             attack.extra_damage_bonus,
+            #             attack.extra_damage_type
+            #         )
+            #     if attack.versatile_weapon:
+            #         item['two_handed_damage'] = make_damage_obj(
+            #             attack.damage_die_count,
+            #             attack.versatile_weapon,
+            #             attack.damage_bonus,
+            #             attack.damage_type
+            #         )
+            # except ObjectDoesNotExist:
+            #     pass
+            # result.append(item)
+            action_obj = make_action_obj(action)
+            result.append(action_obj)
         return result

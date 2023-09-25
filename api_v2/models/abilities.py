@@ -20,7 +20,7 @@ PASSIVE_SCORE_MAXIMUM = 30
 
 # Define a field representing an ability score
 def ability_score_field(help_text):
-    return models.IntegerField(
+    return models.SmallIntegerField(
         default=0,
         validators=[
             MinValueValidator(0),
@@ -33,7 +33,7 @@ def ability_modifier(score):
 
 # Define a field representing a saving throw
 def saving_throw_field(help_text):
-    return models.IntegerField(
+    return models.SmallIntegerField(
         null=True,
         validators=[
             MinValueValidator(SAVING_THROW_MINIMUM),
@@ -42,7 +42,7 @@ def saving_throw_field(help_text):
 
 # Define a field representing a skill bonus
 def skill_bonus_field(help_text):
-    return models.IntegerField(
+    return models.SmallIntegerField(
         null=True,
         validators=[
             MinValueValidator(SKILL_BONUS_MINIMUM),
@@ -51,7 +51,7 @@ def skill_bonus_field(help_text):
 
 # Define a field representing a passive score
 def passive_score_field(help_text):
-    return models.IntegerField(
+    return models.SmallIntegerField(
         default=0,
         validators=[
             MinValueValidator(0),
