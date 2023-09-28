@@ -12,8 +12,7 @@
         "hit_dice": "16d8+20",
         "speed": "30 ft.",
         "speed_json": {
-            "walk": 0,
-            "swim": 0
+            "walk": 30
         },
         "strength": 8,
         "dexterity": 15,
@@ -28,7 +27,7 @@
         "damage_resistances": "fire",
         "senses": "passive Perception 14",
         "languages": "Common, Druidic, Primordial (Ignan)",
-        "challenge_rating": "7",
+        "challenge_rating": 7,
         "special_abilities": [
             {
                 "name": "Flameform",
@@ -105,7 +104,7 @@
         "condition_immunities": "petrified",
         "senses": "tremorsense 30 ft., passive Perception 12",
         "languages": "Common, Druidic, Primordial (Terran)",
-        "challenge_rating": "7",
+        "challenge_rating": 7,
         "special_abilities": [
             {
                 "name": "Spellcasting",
@@ -177,7 +176,7 @@
         "damage_resistances": "cold",
         "senses": "passive Perception 13",
         "languages": "Common, Druidic, Primordial (Aquan)",
-        "challenge_rating": "4",
+        "challenge_rating": 4,
         "special_abilities": [
             {
                 "name": "Fishform",
@@ -206,7 +205,7 @@
             "animal messenger",
             "enhance ability",
             "lesser restoration",
-            "conjure animals (aquatic beasts only)",
+            "conjure animals",
             "water walk",
             "water breathing",
             "control water"
@@ -251,7 +250,7 @@
         },
         "senses": "passive Perception 16",
         "languages": "Common, Druidic, Primordial (Auran)",
-        "challenge_rating": "5",
+        "challenge_rating": 5,
         "special_abilities": [
             {
                 "name": "Evasion",
@@ -276,8 +275,7 @@
             "fog cloud",
             "entangle",
             "jump",
-            "gust of wind",
-            "skywrite"
+            "gust of wind"
         ],
         "actions": [
             {
@@ -292,6 +290,7 @@
                 "damage_bonus": 4
             }
         ],
+        "bonus_actions": null,
         "reactions": [
             {
                 "name": "Slow Fall",
