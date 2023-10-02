@@ -60,6 +60,7 @@ if settings.V2_ENABLED:
     router_v2.register(r'weapons',views_v2.WeaponViewSet)
     router_v2.register(r'armor',views_v2.ArmorViewSet)
     router_v2.register(r'rulesets',views_v2.RulesetViewSet)
+    router_v2.register(r'creatures',views_v2.CreatureViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

@@ -33,6 +33,7 @@ class APIV2RootTest(APITestCase):
         self.assertContains(response, 'itemsets', count=2)
         self.assertContains(response, 'weapons', count=2)
         self.assertContains(response, 'armor', count=2)
+        self.assertContains(response, 'creatures', count=2)
 
     def test_options_root_data(self):
         """
@@ -53,4 +54,3 @@ class APIV2RootTest(APITestCase):
                 "application/json",
                 "application/x-www-form-urlencoded",
                 "multipart/form-data"])
-
