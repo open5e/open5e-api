@@ -1,6 +1,4 @@
-"""
-The model for an object.
-"""
+"""Abstract models to be used in Game Content items."""
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -24,6 +22,20 @@ class HasDescription(models.Model):
     desc = models.TextField(
         help_text='Description of the game content item. Markdown.')
     
+    class Meta:
+        abstract = True
+
+
+class HasPrerequisite(models.Model):
+    prerequisite = models.CharField(
+        max_length=200,
+        blank=True,
+        help_text='Prerequisite for the game content item.')
+
+    @property
+    def has_prerequisite(self):
+        return self.prerequisite not in ("", None)
+
     class Meta:
         abstract = True
 
@@ -84,6 +96,12 @@ class Object(HasName):
             MaxValueValidator(HIT_POINT_MAXIMUM)],
         help_text='Integer representing the hit points of the object.')
 
+    class Meta:
+        abstract = True
+        ordering = ['pk']
+
+
+class Benefit(HasName, HasDescription):
     class Meta:
         abstract = True
         ordering = ['pk']

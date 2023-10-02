@@ -165,6 +165,26 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = ArmorFilterSet
 
 
+
+class FeatFilterSet(FilterSet):
+    class Meta:
+        model = models.Feat
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact'],
+            'document__key': ['in','iexact','exact'],
+        }
+        
+class FeatViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of feats.
+    retrieve: API endpoint for returning a particular feat.
+    """
+    queryset = models.Feat.objects.all().order_by('pk')
+    serializer_class = serializers.FeatSerializer
+    filterset_class = FeatFilterSet
+
+    
 class CreatureFilterSet(FilterSet):
 
     class Meta:
@@ -173,7 +193,7 @@ class CreatureFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
-            'size': ['exact'],
+             'size': ['exact'],
             'armor_class': ['exact','lt','lte','gt','gte'],
             'ability_score_strength': ['exact','lt','lte','gt','gte'],
             'ability_score_dexterity': ['exact','lt','lte','gt','gte'],
@@ -209,7 +229,6 @@ class CreatureFilterSet(FilterSet):
             'passive_perception': ['exact','lt','lte','gt','gte'],
         }
 
-
 class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creatures.
@@ -218,3 +237,27 @@ class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Creature.objects.all().order_by('pk')
     serializer_class = serializers.CreatureSerializer
     filterset_class = CreatureFilterSet
+
+
+class RaceFilterSet(FilterSet):
+    class Meta:
+        model = models.Race
+        fields = {
+            'key': ['in', 'iexact', 'exact'],
+            'name': ['iexact', 'exact'],
+            'document__key': ['in', 'iexact', 'exact'],
+        }
+
+
+class RaceViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of races.
+    retrieve: API endpoint for returning a particular race.
+    """
+    queryset = models.Race.objects.all().order_by('pk')
+    serializer_class = serializers.RaceSerializer
+    filterset_class = RaceFilterSet
+
+
+
+

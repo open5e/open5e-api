@@ -121,6 +121,39 @@ class ItemSetSerializer(GameContentSerializer):
         model = models.ItemSet
         fields = '__all__'
 
+class FeatBenefitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.FeatBenefit
+        fields = ['desc']
+
+class FeatSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    has_prerequisite = serializers.ReadOnlyField()
+    benefits = FeatBenefitSerializer(
+        many=True)
+
+    class Meta:
+        model = models.Feat
+        fields = '__all__'
+
+
+class TraitSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Trait
+        fields = ['name', 'desc']
+
+
+class RaceSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    is_subrace = serializers.ReadOnlyField()
+    is_selectable = serializers.ReadOnlyField()
+    traits = TraitSerializer(
+        many=True)
+
+    class Meta:
+        model = models.Race
+        fields = '__all__'
 
 def calc_damage_amount(die_count, die_type, bonus):
     die_values = {

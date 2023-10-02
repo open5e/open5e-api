@@ -1,10 +1,4 @@
-"""
-The initialization for models for open5e's api v2.
-"""
-
-from .abstracts import HasName
-from .abstracts import HasDescription
-from .abstracts import Object
+"""The initialization for models for open5e's api v2."""
 
 from .abilities import Abilities
 
@@ -14,6 +8,11 @@ from .item import ItemSet
 from .armor import Armor
 
 from .weapon import Weapon
+
+from .race import Trait
+from .race import Race
+from .feat import FeatBenefit
+from .feat import Feat
 
 from .creature import Creature
 from .creature import CreatureAction
