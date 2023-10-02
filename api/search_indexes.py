@@ -60,6 +60,7 @@ class SectionIndex(indexes.SearchIndex, indexes.Indexable):
   name = indexes.EdgeNgramField(model_attr='name', )
   route = indexes.CharField(model_attr='route', indexed=False)
   slug = indexes.CharField(model_attr='slug', indexed=False)
+  parent = indexes.CharField(model_attr='parent', indexed=False)
 
 
   def get_model(self):

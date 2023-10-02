@@ -448,6 +448,7 @@ class AggregateSerializer(HighlighterMixin, HaystackSerializer):
             'source',
             'requires_attunement',
             'document_slug',
-            'document_title'
+            'document_title',
+            'parent',
         ]
         
