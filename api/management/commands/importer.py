@@ -461,7 +461,7 @@ class Importer:
                 monster_json["actions"][idx] = z
             i.actions_json = json.dumps(monster_json["actions"])
         else:
-            i.actions_json = json.dumps("")
+            i.actions_json = json.dumps(None)
         if "special_abilities" in monster_json:
             for idx, z in enumerate(monster_json["special_abilities"]):
                 if "attack_bonus" in z:
@@ -470,7 +470,7 @@ class Importer:
                 monster_json["special_abilities"][idx] = z
             i.special_abilities_json = json.dumps(monster_json["special_abilities"])
         else:
-            i.special_abilities_json = json.dumps("")
+            i.special_abilities_json = json.dumps(None)
         if "reactions" in monster_json:
             for idx, z in enumerate(monster_json["reactions"]):
                 if "attack_bonus" in z:
@@ -479,7 +479,7 @@ class Importer:
                 monster_json["reactions"][idx] = z
             i.reactions_json = json.dumps(monster_json["reactions"])
         else:
-            i.reactions_json = json.dumps("")
+            i.reactions_json = json.dumps(None)
         if "legendary_desc" in monster_json:
             i.legendary_desc = monster_json["legendary_desc"]
         if "page_no" in monster_json:
@@ -488,7 +488,7 @@ class Importer:
         if "spells" in monster_json:
             i.spells_json = json.dumps(monster_json["spells"])
         else:
-            i.spells_json = json.dumps("")
+            i.spells_json = json.dumps(None)
         # import legendary actions array
         if "legendary_actions" in monster_json:
             for idx, z in enumerate(monster_json["legendary_actions"]):
@@ -498,7 +498,7 @@ class Importer:
                 monster_json["legendary_actions"][idx] = z
             i.legendary_actions_json = json.dumps(monster_json["legendary_actions"])
         else:
-            i.legendary_actions_json = json.dumps("")
+            i.legendary_actions_json = json.dumps(None)
         result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
@@ -558,6 +558,8 @@ class Importer:
             i.alignment = race_json["alignment"]
         if "size" in race_json:
             i.size = race_json["size"]
+        if "size-raw" in race_json:
+            i.size_raw = race_json["size-raw"]
         if "speed" in race_json:
             i.speed_json = json.dumps(
                 race_json["speed"]

@@ -131,7 +131,7 @@
         "special_abilities": [
             {
                 "name": "Spellcasting",
-                "desc": "The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:\n\n\u2022 Cantrips (at will): light, sacred flame, thaumaturgy\n\u2022 1st level (3 slots): bless, cure wounds, sanctuary",
+                "desc": "The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:\n\n* Cantrips (at will): light, sacred flame, thaumaturgy\n* 1st level (3 slots): bless, cure wounds, sanctuary",
                 "attack_bonus": 0
             }
         ],
@@ -161,7 +161,8 @@
             "Urban",
             "Hills",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Adult Black Dragon",
@@ -2511,7 +2512,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared:\n\n\u2022 Cantrips (at will): sacred flame, spare the dying, thaumaturgy\n\u2022 1st level (4 slots): command, detect evil and good, detect magic\n\u2022 2nd level (3 slots): lesser restoration, zone of truth\n\u2022 3rd level (3 slots): dispel magic, tongues\n\u2022 4th level (3 slots): banishment, freedom of movement\n\u2022 5th level (2 slots): flame strike, greater restoration\n\u2022 6th level (1 slot): heroes' feast",
+                "desc": "The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared:\n\n* Cantrips (at will): sacred flame, spare the dying, thaumaturgy\n* 1st level (4 slots): command, detect evil and good, detect magic\n* 2nd level (3 slots): lesser restoration, zone of truth\n* 3rd level (3 slots): dispel magic, tongues\n* 4th level (3 slots): banishment, freedom of movement\n* 5th level (2 slots): flame strike, greater restoration\n* 6th level (1 slot): heroes' feast",
                 "attack_bonus": 0
             }
         ],
@@ -2748,7 +2749,8 @@
         "environments": [
             "Jungle",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Archmage",
@@ -2786,7 +2788,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp\n\u2022 1st level (4 slots): detect magic, identify, mage armor*, magic missile\n\u2022 2nd level (3 slots): detect thoughts, mirror image, misty step\n\u2022 3rd level (3 slots): counterspell,fly, lightning bolt\n\u2022 4th level (3 slots): banishment, fire shield, stoneskin*\n\u2022 5th level (3 slots): cone of cold, scrying, wall of force\n\u2022 6th level (1 slot): globe of invulnerability\n\u2022 7th level (1 slot): teleport\n\u2022 8th level (1 slot): mind blank*\n\u2022 9th level (1 slot): time stop\n* The archmage casts these spells on itself before combat.",
+                "desc": "The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:\n\n* Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp\n* 1st level (4 slots): detect magic, identify, mage armor*, magic missile\n* 2nd level (3 slots): detect thoughts, mirror image, misty step\n* 3rd level (3 slots): counterspell,fly, lightning bolt\n* 4th level (3 slots): banishment, fire shield, stoneskin*\n* 5th level (3 slots): cone of cold, scrying, wall of force\n* 6th level (1 slot): globe of invulnerability\n* 7th level (1 slot): teleport\n* 8th level (1 slot): mind blank*\n* 9th level (1 slot): time stop\n* The archmage casts these spells on itself before combat.",
                 "attack_bonus": 0
             }
         ],
@@ -2826,11 +2828,12 @@
             "Forest",
             "Laboratory",
             "Urban"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Assassin",
-        "desc": "Trained in the use of poison, **assassins** are remorseless killers who work for nobles, guildmasters, sovereigns, and anyone else who can afford them." ,
+        "desc": "Trained in the use of poison, **assassins** are remorseless killers who work for nobles, guildmasters, sovereigns, and anyone else who can afford them.",
         "size": "Medium",
         "type": "Humanoid",
         "subtype": "any race",
@@ -2908,7 +2911,8 @@
             "Sewer",
             "Forest",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Awakened Shrub",
@@ -2959,7 +2963,8 @@
             "Swamp",
             "Forest",
             "Laboratory"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Awakened Tree",
@@ -3010,7 +3015,8 @@
             "Jungle",
             "Forest",
             "Swamp"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Axe Beak",
@@ -3055,7 +3061,8 @@
             "Swamp",
             "Grassland",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Azer",
@@ -3167,7 +3174,8 @@
             "Jungle",
             "Grassland",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Badger",
@@ -3215,7 +3223,8 @@
         "environments": [
             "Forest",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Balor",
@@ -3373,7 +3382,8 @@
             "Jungle",
             "Hills",
             "Caverns"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Bandit Captain",
@@ -3455,7 +3465,8 @@
             "Jungle",
             "Hills",
             "Caverns"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Barbed Devil",
@@ -3648,7 +3659,8 @@
         "environments": [
             "Forest",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Bearded Devil",
@@ -3797,7 +3809,7 @@
     },
     {
         "name": "Berserker",
-        "desc":"Hailing from uncivilized lands, unpredictable **berserkers** come together in war parties and seek conflict wherever they can find it.",
+        "desc": "Hailing from uncivilized lands, unpredictable **berserkers** come together in war parties and seek conflict wherever they can find it.",
         "size": "Medium",
         "type": "Humanoid",
         "subtype": "any race",
@@ -3853,7 +3865,8 @@
             "Hills",
             "Swamp",
             "Mountain"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Black Bear",
@@ -3915,7 +3928,8 @@
         "environments": [
             "Forest",
             "Mountains"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Black Dragon Wyrmling",
@@ -4107,7 +4121,8 @@
             "Feywild",
             "Forest",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Blood Hawk",
@@ -4168,7 +4183,8 @@
             "Forest",
             "Desert",
             "Arctic"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Blue Dragon Wyrmling",
@@ -4280,7 +4296,8 @@
             "Hill",
             "Forest",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Bone Devil",
@@ -4537,7 +4554,8 @@
             "Mountains",
             "Forest",
             "Arctic"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Bugbear",
@@ -4711,7 +4729,8 @@
         "environments": [
             "Desert",
             "Settlement"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Cat",
@@ -4763,7 +4782,8 @@
             "Forest",
             "Settlement",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Centaur",
@@ -5396,7 +5416,8 @@
             "Arctic",
             "Desert",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Constrictor Snake",
@@ -5447,7 +5468,8 @@
             "Swamp",
             "Jungle",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Copper Dragon Wyrmling",
@@ -5649,7 +5671,8 @@
             "Desert",
             "Coastal",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Crocodile",
@@ -5701,7 +5724,8 @@
             "Urban",
             "Swamp",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Cult Fanatic",
@@ -5738,7 +5762,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The fanatic is a 4th-level spellcaster. Its spell casting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared:\n\nCantrips (at will): light, sacred flame, thaumaturgy\n\u2022 1st level (4 slots): command, inflict wounds, shield of faith\n\u2022 2nd level (3 slots): hold person, spiritual weapon",
+                "desc": "The fanatic is a 4th-level spellcaster. Its spell casting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared:\n\nCantrips (at will): light, sacred flame, thaumaturgy\n* 1st level (4 slots): command, inflict wounds, shield of faith\n* 2nd level (3 slots): hold person, spiritual weapon",
                 "attack_bonus": 0
             }
         ],
@@ -5781,7 +5805,8 @@
             "Jungle",
             "Hills",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Cultist",
@@ -5840,7 +5865,8 @@
             "Jungle",
             "Hills",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Darkmantle",
@@ -5960,7 +5986,8 @@
             "Shadowfell",
             "Grassland",
             "Hell"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Deep Gnome (Svirfneblin)",
@@ -6076,7 +6103,8 @@
             "Feywild",
             "Grassland",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Deva",
@@ -6222,7 +6250,8 @@
             "Grassland",
             "Hills",
             "Feywild"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Djinni",
@@ -6431,7 +6460,8 @@
         "environments": [
             "Urban",
             "Settlement"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Dragon Turtle",
@@ -6770,7 +6800,7 @@
         "special_abilities": [
             {
                 "name": "Spellcasting",
-                "desc": "The druid is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). It has the following druid spells prepared:\n\n\u2022 Cantrips (at will): druidcraft, produce flame, shillelagh\n\u2022 1st level (4 slots): entangle, longstrider, speak with animals, thunderwave\n\u2022 2nd level (3 slots): animal messenger, barkskin",
+                "desc": "The druid is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). It has the following druid spells prepared:\n\n* Cantrips (at will): druidcraft, produce flame, shillelagh\n* 1st level (4 slots): entangle, longstrider, speak with animals, thunderwave\n* 2nd level (3 slots): animal messenger, barkskin",
                 "attack_bonus": 0
             }
         ],
@@ -6812,7 +6842,8 @@
             "Arctic",
             "Jungle",
             "Hills"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Dryad",
@@ -7087,7 +7118,8 @@
             "Mountain",
             "Desert",
             "Coastal"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Earth Elemental",
@@ -7294,7 +7326,8 @@
             "Jungle",
             "Grassland",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Elk",
@@ -7348,7 +7381,8 @@
             "Grassland",
             "Tundra",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Erinyes",
@@ -7851,7 +7885,8 @@
             "Jungle",
             "Swamp",
             "Feywild"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Flying Sword",
@@ -7957,7 +7992,8 @@
         "environments": [
             "Jungle",
             "Swamp"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Frost Giant",
@@ -8430,7 +8466,8 @@
         "environments": [
             "Jungle",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Badger",
@@ -8491,7 +8528,8 @@
         "environments": [
             "Forest",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Bat",
@@ -8546,7 +8584,8 @@
             "Underdark",
             "Forest",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Boar",
@@ -8604,7 +8643,8 @@
             "Feywild",
             "Grassland",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Centipede",
@@ -8649,7 +8689,8 @@
             "Ruin",
             "Urban",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Constrictor Snake",
@@ -8702,7 +8743,8 @@
             "Swamp",
             "Jungle",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Crab",
@@ -8754,7 +8796,8 @@
             "Desert",
             "Coastal",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Crocodile",
@@ -8817,7 +8860,8 @@
         "environments": [
             "Swamp",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Eagle",
@@ -8886,7 +8930,8 @@
             "Feywild",
             "Mountain",
             "Desert"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Elk",
@@ -8948,7 +8993,8 @@
             "Mountain",
             "Tundra",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Fire Beetle",
@@ -8998,7 +9044,8 @@
         "environments": [
             "Underdark",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Frog",
@@ -9061,7 +9108,8 @@
             "Jungle",
             "Water",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Goat",
@@ -9119,7 +9167,8 @@
             "Grassland",
             "Mountains",
             "Mountain"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Hyena",
@@ -9172,7 +9221,8 @@
             "Grassland",
             "Ruin",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Lizard",
@@ -9234,7 +9284,8 @@
             "Ruin",
             "Swamp",
             "Jungle"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Octopus",
@@ -9300,7 +9351,8 @@
         "environments": [
             "Underwater",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Owl",
@@ -9359,7 +9411,8 @@
             "Feywild",
             "Forest",
             "Arctic"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Poisonous Snake",
@@ -9414,7 +9467,8 @@
             "Jungle",
             "Hills",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Rat",
@@ -9473,7 +9527,8 @@
             "Swamp",
             "Caverns",
             "Settlement"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Rat (Diseased)",
@@ -9573,7 +9628,8 @@
             "Desert",
             "Jungle",
             "Shadowfell"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Sea Horse",
@@ -9629,7 +9685,8 @@
         "page_no": 378,
         "environments": [
             "Underwater"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Shark",
@@ -9686,7 +9743,8 @@
             "Underwater",
             "Plane Of Water",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Spider",
@@ -9760,7 +9818,8 @@
             "Feywild",
             "Shadowfell",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Toad",
@@ -9824,7 +9883,8 @@
             "Jungle",
             "Water",
             "Desert"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Vulture",
@@ -9891,7 +9951,8 @@
         "environments": [
             "Desert",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Wasp",
@@ -9936,7 +9997,8 @@
             "Hills",
             "Grassland",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Weasel",
@@ -9988,7 +10050,8 @@
             "Feywild",
             "Grassland",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Giant Wolf Spider",
@@ -10055,7 +10118,8 @@
             "Forest",
             "Ruin",
             "Feywild"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Gibbering Mouther",
@@ -10283,7 +10347,8 @@
         "environments": [
             "Urban",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Gnoll",
@@ -10412,7 +10477,8 @@
             "Grassland",
             "Mountain",
             "Settlement"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Goblin",
@@ -10796,7 +10862,7 @@
             },
             {
                 "name": "Shared Spellcasting (Coven Only)",
-                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n\u2022 1st level (4 slots): identify, ray of sickness\n\u2022 2nd level (3 slots): hold person, locate object\n\u2022 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n\u2022 4th level (3 slots): phantasmal killer, polymorph\n\u2022 5th level (2 slots): contact other plane, scrying\n\u2022 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
+                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n* 1st level (4 slots): identify, ray of sickness\n* 2nd level (3 slots): hold person, locate object\n* 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n* 4th level (3 slots): phantasmal killer, polymorph\n* 5th level (2 slots): contact other plane, scrying\n* 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
                 "attack_bonus": 0
             },
             {
@@ -11112,7 +11178,8 @@
             "Hills",
             "Mountain",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Guardian Naga",
@@ -11150,7 +11217,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared:\n\n\u2022 Cantrips (at will): mending, sacred flame, thaumaturgy\n\u2022 1st level (4 slots): command, cure wounds, shield of faith\n\u2022 2nd level (3 slots): calm emotions, hold person\n\u2022 3rd level (3 slots): bestow curse, clairvoyance\n\u2022 4th level (3 slots): banishment, freedom of movement\n\u2022 5th level (2 slots): flame strike, geas\n\u2022 6th level (1 slot): true seeing",
+                "desc": "The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared:\n\n* Cantrips (at will): mending, sacred flame, thaumaturgy\n* 1st level (4 slots): command, cure wounds, shield of faith\n* 2nd level (3 slots): calm emotions, hold person\n* 3rd level (3 slots): bestow curse, clairvoyance\n* 4th level (3 slots): banishment, freedom of movement\n* 5th level (2 slots): flame strike, geas\n* 6th level (1 slot): true seeing",
                 "attack_bonus": 0
             }
         ],
@@ -11243,7 +11310,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): mage hand, minor illusion, prestidigitation\n\u2022 1st level (4 slots): detect magic, identify, shield\n\u2022 2nd level (3 slots): darkness, locate object, suggestion\n\u2022 3rd level (3 slots): dispel magic, remove curse, tongues\n\u2022 4th level (3 slots): banishment, greater invisibility\n\u2022 5th level (1 slot): legend lore",
+                "desc": "The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following wizard spells prepared:\n\n* Cantrips (at will): mage hand, minor illusion, prestidigitation\n* 1st level (4 slots): detect magic, identify, shield\n* 2nd level (3 slots): darkness, locate object, suggestion\n* 3rd level (3 slots): dispel magic, remove curse, tongues\n* 4th level (3 slots): banishment, greater invisibility\n* 5th level (1 slot): legend lore",
                 "attack_bonus": 0
             }
         ],
@@ -11496,7 +11563,8 @@
             "Forest",
             "Grassland",
             "Mountains"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Hell Hound",
@@ -12009,7 +12077,8 @@
         "environments": [
             "Underwater",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Hydra",
@@ -12134,7 +12203,8 @@
             "Grassland",
             "Ruin",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Ice Devil",
@@ -12573,7 +12643,8 @@
             "Shadowfell",
             "Grassland",
             "Ruin"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Killer Whale",
@@ -12631,7 +12702,8 @@
         "environments": [
             "Underwater",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Knight",
@@ -12710,7 +12782,8 @@
             "Mountains",
             "Grassland",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Kobold",
@@ -13070,7 +13143,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): mage hand, prestidigitation, ray of frost\n\u2022 1st level (4 slots): detect magic, magic missile, shield, thunderwave\n\u2022 2nd level (3 slots): detect thoughts, invisibility, acid arrow, mirror image\n\u2022 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball\n\u2022 4th level (3 slots): blight, dimension door\n\u2022 5th level (3 slots): cloudkill, scrying\n\u2022 6th level (1 slot): disintegrate, globe of invulnerability\n\u2022 7th level (1 slot): finger of death, plane shift\n\u2022 8th level (1 slot): dominate monster, power word stun\n\u2022 9th level (1 slot): power word kill",
+                "desc": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:\n\n* Cantrips (at will): mage hand, prestidigitation, ray of frost\n* 1st level (4 slots): detect magic, magic missile, shield, thunderwave\n* 2nd level (3 slots): detect thoughts, invisibility, acid arrow, mirror image\n* 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball\n* 4th level (3 slots): blight, dimension door\n* 5th level (3 slots): cloudkill, scrying\n* 6th level (1 slot): disintegrate, globe of invulnerability\n* 7th level (1 slot): finger of death, plane shift\n* 8th level (1 slot): dominate monster, power word stun\n* 9th level (1 slot): power word kill",
                 "attack_bonus": 0
             },
             {
@@ -13224,7 +13297,8 @@
             "Grassland",
             "Mountain",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Lizard",
@@ -13268,7 +13342,8 @@
             "Swamp",
             "Grassland",
             "Ruin"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Lizardfolk",
@@ -13381,7 +13456,7 @@
         "special_abilities": [
             {
                 "name": "Spellcasting",
-                "desc": "The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): fire bolt, light, mage hand, prestidigitation\n\u2022 1st level (4 slots): detect magic, mage armor, magic missile, shield\n\u2022 2nd level (3 slots): misty step, suggestion\n\u2022 3rd level (3 slots): counterspell, fireball, fly\n\u2022 4th level (3 slots): greater invisibility, ice storm\n\u2022 5th level (1 slot): cone of cold",
+                "desc": "The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:\n\n* Cantrips (at will): fire bolt, light, mage hand, prestidigitation\n* 1st level (4 slots): detect magic, mage armor, magic missile, shield\n* 2nd level (3 slots): misty step, suggestion\n* 3rd level (3 slots): counterspell, fireball, fly\n* 4th level (3 slots): greater invisibility, ice storm\n* 5th level (1 slot): cone of cold",
                 "attack_bonus": 0
             }
         ],
@@ -13430,7 +13505,8 @@
             "Shadowfell",
             "Swamp",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Magma Mephit",
@@ -13622,7 +13698,8 @@
         "environments": [
             "Tundra",
             "Arctic"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Manticore",
@@ -13844,7 +13921,8 @@
             "Forest",
             "Settlement",
             "Urban"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Medusa",
@@ -14302,7 +14380,8 @@
             "Grassland",
             "Settlement",
             "Urban"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Mummy",
@@ -14403,7 +14482,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:\n\n\u2022 Cantrips (at will): sacred flame, thaumaturgy\n\u2022 1st level (4 slots): command, guiding bolt, shield of faith\n\u2022 2nd level (3 slots): hold person, silence, spiritual weapon\n\u2022 3rd level (3 slots): animate dead, dispel magic\n\u2022 4th level (3 slots): divination, guardian of faith\n\u2022 5th level (2 slots): contagion, insect plague\n\u2022 6th level (1 slot): harm",
+                "desc": "The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:\n\n* Cantrips (at will): sacred flame, thaumaturgy\n* 1st level (4 slots): command, guiding bolt, shield of faith\n* 2nd level (3 slots): hold person, silence, spiritual weapon\n* 3rd level (3 slots): animate dead, dispel magic\n* 4th level (3 slots): divination, guardian of faith\n* 5th level (2 slots): contagion, insect plague\n* 6th level (1 slot): harm",
                 "attack_bonus": 0
             }
         ],
@@ -14616,7 +14695,7 @@
             },
             {
                 "name": "Shared Spellcasting (Coven Only)",
-                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n\u2022 1st level (4 slots): identify, ray of sickness\n\u2022 2nd level (3 slots): hold person, locate object\n\u2022 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n\u2022 4th level (3 slots): phantasmal killer, polymorph\n\u2022 5th level (2 slots): contact other plane, scrying\n\u2022 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
+                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n* 1st level (4 slots): identify, ray of sickness\n* 2nd level (3 slots): hold person, locate object\n* 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n* 4th level (3 slots): phantasmal killer, polymorph\n* 5th level (2 slots): contact other plane, scrying\n* 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
                 "attack_bonus": 0
             },
             {
@@ -14800,7 +14879,8 @@
             "Grassland",
             "Hills",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Ochre Jelly",
@@ -14929,7 +15009,8 @@
         "page_no": 384,
         "environments": [
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Ogre",
@@ -15324,7 +15405,8 @@
         "environments": [
             "Forest",
             "Arctic"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Owlbear",
@@ -15454,7 +15536,8 @@
             "Jungle",
             "Grassland",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Pegasus",
@@ -15577,7 +15660,8 @@
             "Feywild",
             "Shadowfell",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Pit Fiend",
@@ -15877,7 +15961,8 @@
             "Jungle",
             "Hills",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Polar Bear",
@@ -15941,7 +16026,8 @@
             "Tundra",
             "Underdark",
             "Arctic"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Pony",
@@ -15983,7 +16069,8 @@
             "Urban",
             "Settlement",
             "Mountains"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Priest",
@@ -16021,7 +16108,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 13, +5 to hit with spell attacks). The priest has the following cleric spells prepared:\n\n\u2022 Cantrips (at will): light, sacred flame, thaumaturgy\n\u2022 1st level (4 slots): cure wounds, guiding bolt, sanctuary\n\u2022 2nd level (3 slots): lesser restoration, spiritual weapon\n\u2022 3rd level (2 slots): dispel magic, spirit guardians",
+                "desc": "The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 13, +5 to hit with spell attacks). The priest has the following cleric spells prepared:\n\n* Cantrips (at will): light, sacred flame, thaumaturgy\n* 1st level (4 slots): cure wounds, guiding bolt, sanctuary\n* 2nd level (3 slots): lesser restoration, spiritual weapon\n* 3rd level (2 slots): dispel magic, spirit guardians",
                 "attack_bonus": 0
             }
         ],
@@ -16056,7 +16143,8 @@
             "Urban",
             "Hills",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Pseudodragon",
@@ -16325,7 +16413,8 @@
             "Underwater",
             "Sewer",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Rakshasa",
@@ -16461,7 +16550,8 @@
             "Swamp",
             "Caverns",
             "Settlement"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Raven",
@@ -16511,7 +16601,8 @@
             "Urban",
             "Swamp",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Red Dragon Wyrmling",
@@ -16623,7 +16714,8 @@
         "environments": [
             "Underwater",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Remorhaz",
@@ -16730,7 +16822,8 @@
         "environments": [
             "Desert",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Riding Horse",
@@ -16772,7 +16865,8 @@
             "Urban",
             "Settlement",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Roc",
@@ -17107,7 +17201,8 @@
             "Tundra",
             "Forest",
             "Arctic"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Sahuagin",
@@ -17371,7 +17466,8 @@
         "environments": [
             "Desert",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Scout",
@@ -17450,7 +17546,8 @@
             "Jungle",
             "Hills",
             "Caverns"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Sea Hag",
@@ -17493,7 +17590,7 @@
             },
             {
                 "name": "Shared Spellcasting (Coven Only)",
-                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n\u2022 1st level (4 slots): identify, ray of sickness\n\u2022 2nd level (3 slots): hold person, locate object\n\u2022 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n\u2022 4th level (3 slots): phantasmal killer, polymorph\n\u2022 5th level (2 slots): contact other plane, scrying\n\u2022 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
+                "desc": "While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:\n\n* 1st level (4 slots): identify, ray of sickness\n* 2nd level (3 slots): hold person, locate object\n* 3rd level (3 slots): bestow curse, counterspell, lightning bolt\n* 4th level (3 slots): phantasmal killer, polymorph\n* 5th level (2 slots): contact other plane, scrying\n* 6th level (1 slot): eye bite\n\nFor casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12+the hag's Intelligence modifier, and the spell attack bonus is 4+the hag's Intelligence modifier.",
                 "attack_bonus": 0
             },
             {
@@ -17590,7 +17687,8 @@
             "Lake",
             "Water",
             "Plane Of Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Shadow",
@@ -18184,7 +18282,8 @@
             "Jungle",
             "Ruin",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Spirit Naga",
@@ -18221,7 +18320,7 @@
             },
             {
                 "name": "Spellcasting",
-                "desc": "The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:\n\n\u2022 Cantrips (at will): mage hand, minor illusion, ray of frost\n\u2022 1st level (4 slots): charm person, detect magic, sleep\n\u2022 2nd level (3 slots): detect thoughts, hold person\n\u2022 3rd level (3 slots): lightning bolt, water breathing\n\u2022 4th level (3 slots): blight, dimension door\n\u2022 5th level (2 slots): dominate person",
+                "desc": "The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:\n\n* Cantrips (at will): mage hand, minor illusion, ray of frost\n* 1st level (4 slots): charm person, detect magic, sleep\n* 2nd level (3 slots): detect thoughts, hold person\n* 3rd level (3 slots): lightning bolt, water breathing\n* 4th level (3 slots): blight, dimension door\n* 5th level (2 slots): dominate person",
                 "attack_bonus": 0
             }
         ],
@@ -18401,7 +18500,8 @@
             "Sewer",
             "Ruin",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Steam Mephit",
@@ -18910,7 +19010,8 @@
             "Shadowfell",
             "Mountain",
             "Caverns"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Swarm of Beetles",
@@ -18961,7 +19062,8 @@
             "Desert",
             "Caves",
             "Underdark"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Swarm of Centipedes",
@@ -19013,7 +19115,8 @@
             "Underdark",
             "Forest",
             "Any"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Swarm of Insects",
@@ -19067,7 +19170,8 @@
             "Forest",
             "Swamp",
             "Jungle"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Swarm of Poisonous Snakes",
@@ -19125,7 +19229,8 @@
             "Hills",
             "Caverns",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Swarm of Quippers",
@@ -19184,7 +19289,8 @@
             "Underwater",
             "Sewer",
             "Water"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Swarm of Rats",
@@ -19241,7 +19347,8 @@
             "Swamp",
             "Caverns",
             "Settlement"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Swarm of Ravens",
@@ -19291,7 +19398,8 @@
             "Urban",
             "Swamp",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Swarm of Spiders",
@@ -19358,7 +19466,8 @@
             "Underdark",
             "Forest",
             "Any"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Swarm of Wasps",
@@ -19407,7 +19516,8 @@
         "environments": [
             "Any",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Tarrasque",
@@ -19591,7 +19701,8 @@
         "environments": [
             "Urban",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Tiger",
@@ -19652,7 +19763,8 @@
             "Jungle",
             "Grassland",
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Treant",
@@ -19782,7 +19894,8 @@
             "Jungle",
             "Mountain",
             "Desert"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Triceratops",
@@ -20376,7 +20489,8 @@
             "Hills",
             "Mountain",
             "Settlement"
-        ]
+        ],
+        "group": "NPCs"
     },
     {
         "name": "Violet Fungus",
@@ -20566,7 +20680,8 @@
             "Hill",
             "Desert",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Warhorse",
@@ -20614,7 +20729,8 @@
         "environments": [
             "Urban",
             "Settlement"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Warhorse Skeleton",
@@ -20776,7 +20892,8 @@
         "page_no": 392,
         "environments": [
             "Forest"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Werebear",
@@ -21453,7 +21570,8 @@
         "page_no": 392,
         "environments": [
             "Arctic"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Wolf",
@@ -21510,7 +21628,8 @@
             "Hill",
             "Forest",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Worg",
@@ -21562,7 +21681,8 @@
             "Hill",
             "Forest",
             "Grassland"
-        ]
+        ],
+        "group": "Miscellaneous Creatures"
     },
     {
         "name": "Wraith",
