@@ -189,7 +189,6 @@ class CreatureFilterSet(FilterSet):
 
     class Meta:
         model = models.Creature
-        staging
         fields = {
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
