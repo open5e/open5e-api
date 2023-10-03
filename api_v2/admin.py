@@ -59,6 +59,7 @@ class FeatAdmin(admin.ModelAdmin):
 class BackgroundBenefitInline(admin.TabularInline):
     model = BackgroundBenefit
 
+
 class BackgroundAdmin(admin.ModelAdmin):
     model = Background
     inlines = [

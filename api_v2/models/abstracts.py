@@ -6,6 +6,7 @@ from django.template.defaultfilters import slugify
 
 
 class HasName(models.Model):
+    """This is the definition of a name."""
 
     name = models.CharField(
         max_length=100,
@@ -19,14 +20,18 @@ class HasName(models.Model):
 
 
 class HasDescription(models.Model):
+    """This is the definition of a description."""
+
     desc = models.TextField(
         help_text='Description of the game content item. Markdown.')
-    
+
     class Meta:
         abstract = True
 
 
 class HasPrerequisite(models.Model):
+    """This is the definition of a prerequisite."""
+
     prerequisite = models.CharField(
         max_length=200,
         blank=True,
@@ -102,15 +107,22 @@ class Object(HasName):
 
 
 class Benefit(HasName, HasDescription):
+    """
+    This is the definition of a Benefit abstract base class.
+
+    A benefit class will be reimplemented from Feat, Race, Background, etc.
+    Basically it describes any sort of modification to a character in 5e.
+    """
+
     BENEFIT_TYPES = [
         ("ability_score_increase", "Ability Score Increase"),
         ("skill_proficiency", "Skill Proficiency"),
         ("tool_proficiency", "Tool Proficiency"),
         ("language", "Language"),
         ("equipment", "Equipment"),
-        ("feature", "Feature"),
-        ("connection", "Connection"),
-        ("memento", "Memento")]
+        ("feature", "Feature"),  # Used in Backgrounds
+        ("connection", "Connection"),  # Used in A5e Backgrounds
+        ("memento", "Memento")]  # Used in A5e Backgrounds
 
     type = models.CharField(
         max_length=200,
