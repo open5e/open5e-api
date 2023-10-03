@@ -1,5 +1,7 @@
 """The initialization for models for open5e's api v2."""
 
+from .abilities import Abilities
+
 from .item import Item
 from .item import ItemSet
 
@@ -17,6 +19,10 @@ from .background import BackgroundBenefit
 from .background import Characteristics
 from .background import BackgroundFeature
 from .background import Background
+
+from .creature import Creature
+from .creature import CreatureAction
+from .creature import CreatureAttack
 
 from .document import Document
 from .document import License

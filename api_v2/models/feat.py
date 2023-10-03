@@ -7,6 +7,9 @@ from .document import FromDocument
 class FeatBenefit(Benefit):
     """This is the model for an individual benefit of a feat."""
 
+    desc = models.TextField(
+        help_text='Text of the individual feat benefit.')
+
     feat = models.ForeignKey('Feat', on_delete=models.CASCADE)
 
 

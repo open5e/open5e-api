@@ -76,9 +76,10 @@ class Command(BaseCommand):
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document']
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
-
-                        modelq = get_model_queryset_by_document(model, doc)
-
+                        if model.__name__ in ['Trait']:
+                            modelq = model.objects.filter(race__document=doc).order_by('pk')
+                        else:
+                            modelq = model.objects.filter(document=doc).order_by('pk')
                         model_path = get_filepath_by_model(
                             model.__name__,
                             model._meta.app_label,
