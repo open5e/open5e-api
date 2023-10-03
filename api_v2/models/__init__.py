@@ -16,8 +16,6 @@ from .feat import FeatBenefit
 from .feat import Feat
 
 from .background import BackgroundBenefit
-from .background import Characteristics
-from .background import BackgroundFeature
 from .background import Background
 
 from .creature import Creature

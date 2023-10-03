@@ -59,21 +59,10 @@ class FeatAdmin(admin.ModelAdmin):
 class BackgroundBenefitInline(admin.TabularInline):
     model = BackgroundBenefit
 
-
-class BackgroundCharacteristicsInline(admin.StackedInline):
-    model = Characteristics
-
-
-class BackgroundFeatureInline(admin.StackedInline):
-    model = BackgroundFeature
-
-
 class BackgroundAdmin(admin.ModelAdmin):
     model = Background
     inlines = [
-        BackgroundBenefitInline,
-        BackgroundFeatureInline,
-        BackgroundCharacteristicsInline
+        BackgroundBenefitInline
     ]
 
 

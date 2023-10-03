@@ -102,6 +102,23 @@ class Object(HasName):
 
 
 class Benefit(HasName, HasDescription):
+    BENEFIT_TYPES = [
+        ("ability_score_increase", "Ability Score Increase"),
+        ("skill_proficiency", "Skill Proficiency"),
+        ("tool_proficiency", "Tool Proficiency"),
+        ("language", "Language"),
+        ("equipment", "Equipment"),
+        ("feature", "Feature"),
+        ("connection", "Connection"),
+        ("memento", "Memento")]
+
+    type = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True,
+        choices=BENEFIT_TYPES,
+        help_text='Benefit type.')
+
     class Meta:
         abstract = True
         ordering = ['pk']

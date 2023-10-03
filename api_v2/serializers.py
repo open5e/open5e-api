@@ -373,29 +373,11 @@ class BackgroundBenefitSerializer(serializers.ModelSerializer):
         model = models.BackgroundBenefit
         fields = ['name','desc']
 
-
-class CharacteristicsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Characteristics
-        fields = ['personality_trait_table',
-                  'ideal_table',
-                  'bond_table',
-                  'flaw_table']
-
-
-class BackgroundFeatureSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.BackgroundFeature
-        fields = ['name','desc']
-
-
 class BackgroundSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     backgroundbenefit_set = BackgroundBenefitSerializer(
         many=True
     )
-    backgroundfeature = BackgroundFeatureSerializer()
-    characteristics = CharacteristicsSerializer()
 
     class Meta:
         model = models.Background
