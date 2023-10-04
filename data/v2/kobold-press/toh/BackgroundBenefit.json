@@ -1,74 +1,122 @@
 [
 {
   "model": "api_v2.backgroundbenefit",
-  "pk": 4,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "History, Insight",
-    "background": "court-servant"
-  }
-},
-{
-  "model": "api_v2.backgroundbenefit",
-  "pk": 5,
-  "fields": {
-    "name": "Tool Proficiencies",
-    "desc": "One artisan's tools set of your choice",
-    "background": "court-servant"
-  }
-},
-{
-  "model": "api_v2.backgroundbenefit",
-  "pk": 6,
-  "fields": {
-    "name": "Languages",
-    "desc": "One of your choice",
-    "background": "court-servant"
-  }
-},
-{
-  "model": "api_v2.backgroundbenefit",
-  "pk": 7,
-  "fields": {
-    "name": "Equipment",
-    "desc": "A set of artisan's tools of your choice, a unique piece of jewelry, a set of fine clothes, a handcrafted pipe, and a belt pouch containing 20 gp",
-    "background": "court-servant"
-  }
-},
-{
-  "model": "api_v2.backgroundbenefit",
-  "pk": 8,
+  "pk": 18,
   "fields": {
     "name": "Skill Proficiencies",
     "desc": "Perception, Survival",
+    "type": "skill_proficiency",
     "background": "desert-runner"
   }
 },
 {
   "model": "api_v2.backgroundbenefit",
-  "pk": 9,
+  "pk": 19,
   "fields": {
     "name": "Tool Proficiencies",
     "desc": "Herbalist kit",
+    "type": "tool_proficiency",
     "background": "desert-runner"
   }
 },
 {
   "model": "api_v2.backgroundbenefit",
-  "pk": 10,
+  "pk": 20,
   "fields": {
     "name": "Languages",
     "desc": "One of your choice",
+    "type": "language",
     "background": "desert-runner"
   }
 },
 {
   "model": "api_v2.backgroundbenefit",
-  "pk": 11,
+  "pk": 21,
   "fields": {
     "name": "Equipment",
     "desc": "Traveler's clothes, herbalist kit, waterskin, pouch with 10 gp",
+    "type": "equipment",
     "background": "desert-runner"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": 22,
+  "fields": {
+    "name": "Nomad",
+    "desc": "Living in the open desert has allowed your body to adapt to a range of environmental conditions. You can survive on 1 gallon of water in hot conditions (or 1/2 gallon in normal conditions) without being forced to make Constitution saving throws, and you are considered naturally adapted to hot climates. While in a desert, you can read the environment to predict natural weather patterns and temperatures for the next 24 hours, allowing you to cross dangerous terrain at the best times. The accuracy of your predictions is up to the GM, but they should be reliable unless affected by magic or unforeseeable events, such as distant earthquakes or volcanic eruptions.",
+    "type": "feature",
+    "background": "desert-runner"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": 23,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "Those raised in the desert can be the friendliest of humanoids—knowing allies are better than enemies in that harsh environment—or territorial and warlike, believing that protecting food and water sources by force is the only way to survive.\r\n\r\n| d8 | Personality Trait |\r\n| --- | --- |\r\n| 1 | I'm much happier sleeping under the stars than in a bed in a stuffy caravanserai. |\r\n| 2 | It's always best to help a traveler in need; one day it might be you. | \r\n| 3 | I am slow to trust strangers, but I'm extremely loyal to my friends. | \r\n| 4 | If there's a camel race, I'm the first to saddle up! | \r\n| 5 | I always have a tale or poem to share at the campfire. | \r\n| 6 | I don't like sleeping in the same place more than two nights in a row. | \r\n| 7 | I've been troubled by dreams for the last month. I am determined to uncover their meaning. | \r\n| 8 | I feel lonelier in a crowded city than I do out on the empty desert sands. |\r\n\r\n| d6 | Ideal |\r\n|---|---|\r\n| 1 | **Greater Good.** The needs of the whole tribe outweigh those of the individuals who are part of it. (Good) |\r\n| 2 | **Nature.** I must do what I can to protect the beautiful wilderness from those who would do it harm. (Neutral) |\r\n| 3 | **Tradition.** I am duty-bound to follow my tribe's age-old route through the desert. (Lawful) |\r\n 4 | **Change.** Things seldom stay the same and we must always be prepared to go with the flow. (Chaotic) |\r\n| 5 | **Honor.** If I behave dishonorably, my actions will bring shame upon the entire tribe. (Lawful) |\r\n| 6 | **Greed.** Seize what you want if no one gives it to you freely. (Evil) |\r\n\r\n| d6 | Bond |\r\n|---|---|\r\n| 1 | I am the last living member of my tribe, and I cannot let their deaths go unavenged. |\r\n| 2 | I follow the spiritual path of my tribe; it will bring me to the best afterlife when the time comes. |\r\n| 3 | My best friend has been sold into slavery to devils, and I need to rescue them before it is too late. |\r\n| 4 | A nature spirit saved my life when I was dying of thirst in the desert. |\r\n| 5 | My takoba sword is my most prized possession; for over two centuries, it's been handed down from generation to generation. |\r\n| 6 | I have sworn revenge on the sheikh who unjustly banished me from the tribe. |\r\n\r\n| d6 | Flaw |\r\n|---|---|\r\n| 1 | I enjoy the company of camels more than people. |\r\n| 2 | I can be loud and boorish after a few wineskins. |\r\n| 3 | If I feel insulted, I'll refuse to speak to anyone for several hours. |\r\n| 4 | I enjoy violence and mayhem a bit too much. |\r\n| 5 | You can't rely on me in a crisis. |\r\n| 6 | I betrayed my brother to cultists to save my own skin. |",
+    "type": "suggested_characteristics",
+    "background": "desert-runner"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": 35,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Skill Proficiencies",
+    "type": "skill_proficiency",
+    "background": "court-servant"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": 36,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "One artisan's tools set of your choice",
+    "type": "tool_proficiency",
+    "background": "court-servant"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": 37,
+  "fields": {
+    "name": "Languages",
+    "desc": "One of your choice",
+    "type": "language",
+    "background": "court-servant"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": 38,
+  "fields": {
+    "name": "Equipment",
+    "desc": "A set of artisan's tools of your choice, a unique piece of jewelry, a set of fine clothes, a handcrafted pipe, and a belt pouch containing 20 gp",
+    "type": "equipment",
+    "background": "court-servant"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": 39,
+  "fields": {
+    "name": "Servant's Invisibility",
+    "desc": "The art of excellent service requires a balance struck between being always available and yet unobtrusive, and you've mastered it. If you don't perform a visible action, speak or be spoken to, or otherwise have attention drawn to you for at least 1 minute, creatures nearby have trouble remembering you are even in the room. Until you speak, perform a visible action, or have someone draw attention to you, creatures must succeed on a Wisdom (Perception) check (DC equal to 8 + your Charisma modifier + your proficiency bonus) to notice you. Otherwise, they conduct themselves as though you aren't present until either attention is drawn to you or one of their actions would take them into or within 5 feet of the space you occupy.",
+    "type": "feature",
+    "background": "court-servant"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": 40,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "Court servants tend to be outwardly quiet and soft-spoken, but their insight into the nuances of conversation and societal happenings is unparalleled. When in crowds or around strangers, most court servants keep to themselves, quietly observing their surroundings and later sharing such observations with those they trust.\r\n\r\n| d8 | Personality Trait |\r\n|---|---|\r\n| 1 | Unless I must speak, I hold my breath while serving others. |\r\n| 2 | It takes all my effort not to show the effusive emotions I feel when I help others. Best to quietly serve. |\r\n| 3 | It's getting harder to tolerate the prejudices of those I serve daily. |\r\n| 4 | Though the old ways are hard to give up, I want to be my own boss. I'll decide my path. |\r\n| 5 | Serving my family and friends is the only thing I truly care about. |\r\n| 6 | City life is killing my soul. I long for the old courtly ways. |\r\n| 7 | It's time for my fellows to wake up and be taken advantage of no longer. |\r\n| 8 | It's the small things that make it all worthwhile. I try to be present in every moment. |\r\n\r\n| d6 | Ideal |\r\n|---|---|\r\n| 1 | Family. My family, whether the one I come from or the one I make, is the thing in this world most worth protecting. (Any) |\r\n| 2 | Service. I am most rewarded when I know I have performed a valuable service for another. (Good) |\r\n| 3 | Sloth. What's the point of helping anyone now that I've been discarded? (Chaotic) |\r\n| 4 | Compassion. I can't resist helping anyone in need. (Good) |\r\n| 5 | Tradition. Life under my master's rule was best, and things should be kept as close to their ideals as possible. (Lawful) |\r\n| 6 | Joy. The pursuit of happiness is the only thing worth serving anymore. (Neutral) |\r\n\r\n| d6 | Bond |\r\n|---|---|\r\n| 1 | My family needs me to provide for them. They mean everything to me, which means I'll do whatever it takes. |\r\n| 2 | My kin have served this holding and its lords and ladies for generations. I serve them faithfully to make my lineage proud. |\r\n| 3 | I can't read the inscriptions on this odd ring, but it's all I have left of my family and our history of loyal service. |\r\n| 4 | I'm with the best friends a person can ask for, so why do I feel so lonesome and homesick? |\r\n| 5 | I've found a profession where my skills are put to good use, and I won't let anyone bring me down. |\r\n| 6 | I found peace in a special garden filled with beautiful life, but I only have this flower to remind me. Someday I'll remember where to find that garden. |\r\n\r\n| d6 | Flaw |\r\n|---|---|\r\n| 1 |\r\n| 2 | I'm afraid of taking risks that might be good for me. |\r\n| 3 | I believe my master's people are superior to all others, and I'm not afraid to share that truth. |\r\n| 4 | I always do as I'm told, even though sometimes I don't think I should. |\r\n| 5 | I know what's best for everyone, and they'd all be better off if they'd follow my advice. |\r\n| 6 | I can't stand seeing ugly or depressing things. I'd much rather think happy thoughts. |",
+    "type": "suggested_characteristics",
+    "background": "court-servant"
   }
 }
 ]

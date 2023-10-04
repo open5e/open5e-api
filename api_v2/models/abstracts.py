@@ -121,6 +121,7 @@ class Benefit(HasName, HasDescription):
         ("language", "Language"),
         ("equipment", "Equipment"),
         ("feature", "Feature"),  # Used in Backgrounds
+        ("suggested_characteristics", "Suggested Characteristics"),  # Used in Backgrounds
         ("connection", "Connection"),  # Used in A5e Backgrounds
         ("memento", "Memento")]  # Used in A5e Backgrounds
 

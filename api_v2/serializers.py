@@ -155,6 +155,7 @@ class RaceSerializer(GameContentSerializer):
         model = models.Race
         fields = '__all__'
 
+
 def calc_damage_amount(die_count, die_type, bonus):
     die_values = {
         'D4': 2.5,
@@ -371,11 +372,12 @@ class CreatureSerializer(GameContentSerializer):
 class BackgroundBenefitSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.BackgroundBenefit
-        fields = ['name','desc']
+        fields = ['name','desc','type']
+
 
 class BackgroundSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    backgroundbenefit_set = BackgroundBenefitSerializer(
+    benefits = BackgroundBenefitSerializer(
         many=True
     )
 

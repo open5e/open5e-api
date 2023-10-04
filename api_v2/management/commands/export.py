@@ -75,9 +75,15 @@ class Command(BaseCommand):
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document']
+                    CHILD_MODEL_NAMES = ['Trait','FeatBenefit','BackgroundBenefit']
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
-                        if model.__name__ in ['Trait']:
-                            modelq = model.objects.filter(race__document=doc).order_by('pk')
+                        if model.__name__ in CHILD_MODEL_NAMES:
+                            if model.__name__ == 'Trait':
+                                modelq = model.objects.filter(race__document=doc).order_by('pk')
+                            if model.__name__ == 'FeatBenefit':
+                                modelq = model.objects.filter(feat__document=doc).order_by('pk')
+                            if model.__name__ == 'BackgroundBenefit':
+                                modelq = model.objects.filter(background__document=doc).order_by('pk')
                         else:
                             modelq = model.objects.filter(document=doc).order_by('pk')
                         model_path = get_filepath_by_model(
