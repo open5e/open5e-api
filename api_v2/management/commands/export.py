@@ -142,7 +142,7 @@ def get_model_queryset_by_document(model, doc):
     if model.__name__ in ['Trait']:
         return model.objects.filter(race__document=doc).order_by('pk')
 
-    if model.__name__ in ['BackgroundBenefit', 'Characteristics', 'BackgroundFeature']:
+    if model.__name__ in ['BackgroundBenefit']:
         return model.objects.filter(background__document=doc).order_by('pk')
 
     if model.__name__ in ['FeatBenefit']:
