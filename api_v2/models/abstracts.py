@@ -122,8 +122,9 @@ class Benefit(HasName, HasDescription):
         ("equipment", "Equipment"),
         ("feature", "Feature"),  # Used in Backgrounds
         ("suggested_characteristics", "Suggested Characteristics"),  # Used in Backgrounds
-        ("connection", "Connection"),  # Used in A5e Backgrounds
-        ("memento", "Memento")]  # Used in A5e Backgrounds
+        ("adventures_and_advancement", "Adventures and Advancement"),  # Used in A5e Backgrounds
+        ("connection_and_memento", "Connection and Memento")]  # Used in A5e Backgrounds
+        
 
     type = models.CharField(
         max_length=200,
