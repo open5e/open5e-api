@@ -74,7 +74,7 @@ class Command(BaseCommand):
                 app_models = apps.get_models()
 
                 for model in app_models:
-                    SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License']
+                    SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher']
                     CHILD_MODEL_NAMES = ['Trait', 'FeatBenefit', 'BackgroundBenefit']
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
                         if model.__name__ in CHILD_MODEL_NAMES:
