@@ -134,8 +134,6 @@ def write_queryset_data(filepath, queryset):
         if not os.path.exists(dir):
             os.makedirs(dir)
 
-        print(filepath, queryset.count())
-
         output_filepath = filepath
         with open(output_filepath, 'w', encoding='utf-8') as f:
             serializers.serialize("json", queryset, indent=2, stream=f)
