@@ -74,8 +74,8 @@ class Command(BaseCommand):
                 app_models = apps.get_models()
 
                 for model in app_models:
-                    SKIPPED_MODEL_NAMES = ['Document']
-                    CHILD_MODEL_NAMES = ['Trait','FeatBenefit','BackgroundBenefit']
+                    SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License']
+                    CHILD_MODEL_NAMES = ['Trait', 'FeatBenefit', 'BackgroundBenefit']
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
                         if model.__name__ in CHILD_MODEL_NAMES:
                             if model.__name__ == 'Trait':
@@ -99,6 +99,7 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS('Data for v2 data complete.'))
 
+
 def get_filepath_by_model(model_name, app_label, pub_key=None, doc_key=None, base_path=None):
 
     if app_label == "api_v2":
@@ -107,13 +108,13 @@ def get_filepath_by_model(model_name, app_label, pub_key=None, doc_key=None, bas
         pub_models = ['Publisher']
 
         if model_name in root_models:
-            return "/".join((base_path,root_folder_name,model_name+".json"))
+            return "/".join((base_path, root_folder_name, model_name+".json"))
 
         if model_name in pub_models:
-            return "/".join((base_path,root_folder_name,pub_key,model_name+".json"))
+            return "/".join((base_path, root_folder_name, pub_key, model_name+".json"))
 
         else:
-            return "/".join((base_path,root_folder_name,pub_key,doc_key,model_name+".json"))
+            return "/".join((base_path, root_folder_name, pub_key, doc_key, model_name+".json"))
 
     if app_label == "api":
         root_folder_name = 'v1'
@@ -121,10 +122,11 @@ def get_filepath_by_model(model_name, app_label, pub_key=None, doc_key=None, bas
         doc_folder_name = doc_key
 
         if model_name in root_models:
-            return "/".join((base_path,root_folder_name, model_name+".json"))
+            return "/".join((base_path, root_folder_name, model_name+".json"))
 
         else:
-            return "/".join((base_path,root_folder_name, doc_key, model_name+".json"))
+            return "/".join((base_path, root_folder_name, doc_key, model_name+".json"))
+
 
 def write_queryset_data(filepath, queryset):
     if queryset.count() > 0:
@@ -132,9 +134,12 @@ def write_queryset_data(filepath, queryset):
         if not os.path.exists(dir):
             os.makedirs(dir)
 
+        print(filepath, queryset.count())
+
         output_filepath = filepath
         with open(output_filepath, 'w', encoding='utf-8') as f:
             serializers.serialize("json", queryset, indent=2, stream=f)
+
 
 def get_model_queryset_by_document(model, doc):
     print("Getting the queryset for: {}".format(model.__name__))
