@@ -58,101 +58,56 @@ def main():
             file_json = json.load(file.open())
             print("File Loaded")
 
-            modified_items = []
+            modified_bgs = []
+            modified_bgbs = []
             unprocessed_items = []
             for item in file_json:
-                any_armor = ['studded-leather','splint','scale-mail','ring-mail','plate','padded','leather','hide','half-plate','chain-shirt','chain-mail','breastplate']
-                light = ['studded-leather','padded','leather']
-                any_med_heavy = ['splint','scale-mail','ring-mail','plate','hide','half-plate','chain-shirt','chain-mail','breastplate']
-                any_heavy = ['splint','ring-mail','plate','chain-mail']
 
-                any_sword_slashing = ['shortsword','longsword','greatsword', 'scimitar']
-                any_axe = ['handaxe','battleaxe','greataxe']
-                any_weapon = [
-                    'club',
-                    'dagger',
-                    'greatclub',
-                    'handaxe',
-                    'javelin',
-                    'light-hammer',
-                    'mace',
-                    'quarterstaff',
-                    'sickle',
-                    'spear',
-                    'battleaxe',
-                    'flail',
-                    'lance',
-                    'longsword',
-                    'morningstar',
-                    'rapier',
-                    'scimitar',
-                    'shortsword',
-                    'trident',
-                    'warpick',
-                    'warhammer',
-                    'whip',
-                    'blowgun',
-                    'net']
-
-                item_model={"model":"api_v2.item"}
-                item_model['pk'] = slugify(item['name'])
-                item_model['fields'] = dict({})
-                item_model['fields']['name'] = item['name']
-                item_model['fields']['desc']=item["desc"]
-                item_model['fields']['size']=1
-                item_model['fields']['weight']=str(0.0)
-                item_model['fields']['armor_class']=0
-                item_model['fields']['hit_points']=0
-                item_model['fields']['document']="vault-of-magic"
-                item_model['fields']['cost']=0
-                item_model['fields']['weapon']=None
-                item_model['fields']['armor']=None
-                item_model['fields']['requires_attunement']=False
-                if "requires-attunement" in item:
-                    if item["requires-attunement"]=="requires attunement":
-                        item_model['fields']['requires_attunement']=True
-                #if item["rarity"] not in ['common','uncommon','rare','very rare','legendary']:
-                #    print(item['name'], item['rarity'])
-                #    unprocessed_items.append(item)
-                #    continue
-
-                if item['rarity'] == 'common':
-                    item_model['fields']['rarity'] = 1
-                if item['rarity'] == 'uncommon':
-                    item_model['fields']['rarity'] = 2
-                if item['rarity'] == 'rare':
-                    item_model['fields']['rarity'] = 3
-                if item['rarity'] == 'very rare':
-                    item_model['fields']['rarity'] = 4
-                if item['rarity'] == 'legendary':
-                    item_model['fields']['rarity'] = 5
-
-                if item['type'] != "Potion":
-                    unprocessed_items.append(item)
-                    continue
+                # Process the main background.
+                background_object = {}
+                background_object['model'] = "api_v2.background"
+                background_object['pk'] = slugify(item['name'])
+                background_object['fields'] = dict({})
+                background_object['fields']['name'] = item['name']
+                background_object['fields']['desc'] = item['desc']
+                background_object['fields']['document'] = ""
                 
-                if 'Unstable Bombard' not in item['name']:
-                    unprocessed_items.append(item)
-                    continue
+                # Process the background benefits.
+                benefit_type_enum = ( 
+                    ('ability-score_increases','ability_score_increase'),
+                    ('skill-proficiencies','skill_proficiency'),
+                    ('languages','language'),
+                    ('tool-proficiencies','tool_proficiency'),
+                    ('equipment','equipment'),
+                    ('feature-name','feature'),
+                    ('suggested-characteristics','suggested_characteristics'),
+                    ('adventures-and-advancement','adventures-and-advancement')
+                )
+                for benefit_type in benefit_type_enum:
+                    benefit_object = {}
+                    benefit_object['model'] = 'api_v2.backgroundbenefit'
+                    if benefit_type[0] in item:
+                        benefit_object['fields'] = dict({})
+                        benefit_object['fields']['type'] = benefit_type[1]
+                        if benefit_type[1] == 'feature':
+                            benefit_object['fields']['name'] = item[benefit_type[0]]
+                            if 'feature-desc' in item:
+                                benefit_object['fields']['desc'] = item['feature-desc']
+                            else: benefit_object['fields']['desc'] = ""
+                        else:
+                            benefit_object['fields']['name'] = benefit_type[0].title().replace("_"," ").replace("-"," ")
+                            benefit_object['fields']['desc'] = item[benefit_type[0]]
+                        benefit_object['fields']['background'] = background_object['pk']
+                    
+                        modified_bgbs.append(benefit_object)
+                modified_bgs.append(background_object)
 
-                item_model['fields']['category']="potion"
-                item_model['fields']['rarity'] = 3
+             #   unprocessed_items.append(item)
 
-                for f in ["mindshatter","murderous","sloughide"]:
-                   # for x,rar in enumerate(['uncommon','rare','very rare']):
-                    item_model['fields']['name']= "{} Bombard".format(f.title())
-                    #item_model['fields']['name'] = item['name']
-                    #item_model['fields']['armor'] = 'leather'
-                    item_model['pk'] = slugify(item_model['fields']["name"])
-                    print_item = json.loads(json.dumps(item_model))
-                    modified_items.append(print_item)
-
-#                modified_items.append(item_model)
-
-            print("Unprocessed count:{}".format(len(unprocessed_items)))
-            print("Processed count:  {}".format(len(modified_items)))
-            
-           
+            #print("Unprocessed count:{}".format(len(unprocessed_items)))
+            print("Background count:  {}".format(len(modified_bgs)))
+            print("Benefit count:  {}".format(len(modified_bgbs)))
+         
             if not args.test:
                 
                 modified_file = str(file.parent)+"/"+file.stem + args.modifiedsuffix + file.suffix
@@ -161,12 +116,21 @@ def main():
                     print("File already exists!")
                     exit(0)
                 with open(modified_file, 'w', encoding='utf-8') as s:
-                    s.write(json.dumps(modified_items, ensure_ascii=False, indent=4))
+                    s.write(json.dumps(modified_bgs, ensure_ascii=False, indent=4))
                 
-                unmodified_file = str(file.parent)+"/"+file.stem + args.unmodifiedsuffix + file.suffix
-                print('Writing unmodified objects to {}.'.format(unmodified_file))
-                with open(unmodified_file, 'w', encoding='utf-8') as s:
-                    s.write(json.dumps(unprocessed_items, ensure_ascii=False, indent=4))
+                modifiedbgb_file = str(file.parent)+"/"+file.stem +"_benefits" + args.modifiedsuffix + file.suffix
+                print('Writing modified objects to {}.'.format(modifiedbgb_file))
+                if(os.path.isfile(modifiedbgb_file)):
+                    print("File already exists!")
+                    exit(0)
+                with open(modifiedbgb_file, 'w', encoding='utf-8') as sbgb:
+                    sbgb.write(json.dumps(modified_bgbs, ensure_ascii=False, indent=4))
+
+
+                #unmodified_file = str(file.parent)+"/"+file.stem + args.unmodifiedsuffix + file.suffix
+                #print('Writing unmodified objects to {}.'.format(unmodified_file))
+                #with open(unmodified_file, 'w', encoding='utf-8') as s:
+                #    s.write(json.dumps(unprocessed_items, ensure_ascii=False, indent=4))
             
 
     except Exception as e:
