@@ -91,8 +91,8 @@ def main():
                         benefit_object['fields']['type'] = benefit_type[1]
                         if benefit_type[1] == 'feature':
                             benefit_object['fields']['name'] = item[benefit_type[0]]
-                            if 'feature-desc' in item:
-                                benefit_object['fields']['desc'] = item['feature-desc']
+                            if 'feature-description' in item:
+                                benefit_object['fields']['desc'] = item['feature-description']
                             else: benefit_object['fields']['desc'] = ""
                         else:
                             benefit_object['fields']['name'] = benefit_type[0].title().replace("_"," ").replace("-"," ")
