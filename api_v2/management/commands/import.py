@@ -17,11 +17,6 @@ class Command(BaseCommand):
                             help="Directory to write files to.")
         parser.add_argument("--noindex", action="store_true", default=False,
                             help="Does not trigger search indexing")
-        parser.add_argument("--nomonsterspell", action="store_true", default=False,
-                            help="Does not trigger v1 monster-spell relationship.")
-
-    def build_v1_monster_spell(self):
-        self.stdout.write('Creating monster-spell relationship.')
 
     def build_index(self):
         self.stdout.write('Building search index.')
@@ -39,8 +34,5 @@ class Command(BaseCommand):
 
         call_command('loaddata', fixture_filepaths)
         
-        if not options['nomonsterspell']:
-            self.build_v1_monster_spell()
-
         if not options['noindex']:
             self.build_index()
