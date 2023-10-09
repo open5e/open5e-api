@@ -53,6 +53,8 @@ class Command(BaseCommand):
                 SKIPPED_MODEL_NAMES = ['Document', 'Manifest','MonsterSpell']
                 if model._meta.app_label == 'api' and model.__name__ not in SKIPPED_MODEL_NAMES:
                     modelq = model.objects.filter(document=v1doc).order_by('pk')
+                if model._meta.app_label == 'api' and model.__name__ == "MonsterSpell":
+                    modelq = model.objects.filter(monster__document=v1doc).order_by('pk')
                 else:
                     continue
                 model_path = get_filepath_by_model(
