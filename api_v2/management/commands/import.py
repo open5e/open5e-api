@@ -20,6 +20,8 @@ class Command(BaseCommand):
 
     def build_index(self):
         self.stdout.write('Building search index.')
+        call_command('update_index', '--remove')
+
 
     def handle(self, *args, **options) -> None:
         self.stdout.write('Checking if directory exists.')
