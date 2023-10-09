@@ -15,12 +15,6 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("-d", "--dir", type=str,
                             help="Directory to write files to.")
-        parser.add_argument("--noindex", action="store_true", default=False,
-                            help="Does not trigger search indexing")
-
-    def build_index(self):
-        self.stdout.write('Building search index.')
-        call_command('update_index', '--remove')
 
 
     def handle(self, *args, **options) -> None:
@@ -35,6 +29,3 @@ class Command(BaseCommand):
         fixture_filepaths = glob.glob(options['dir'] + '/**/*.json', recursive=True)
 
         call_command('loaddata', fixture_filepaths)
-        
-        if not options['noindex']:
-            self.build_index()
