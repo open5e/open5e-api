@@ -41,9 +41,18 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 @api_view()
-def get_version(request):
+def get_version():
+    """
+    API endpoint for data and api versions.
+    """
     import version
-    return Response({"GITHUB_REF":version.GITHUB_REF, "GITHUB_SHA":version.GITHUB_SHA})
+
+    return Response({
+        "DATA_V1":version.DATA_V1_HASH,
+        "DATA_V2":version.DATA_V2_HASH,
+        "API_V1":version.API_V1_HASH,
+        "API_v2":version.API_V2_HASH
+    })
 
 
 class SearchView(HaystackViewSet):

@@ -4,7 +4,7 @@ import argparse
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
-from api.management.commands import quickload
+import version
 
 class Command(BaseCommand):
     """Implementation for the `manage.py quicksetup` subcommand."""
@@ -21,6 +21,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """Main logic."""
+
+        print("V2 HASh", version.DATA_V2_HASH)
         self.stdout.write('Migrating the database...')
         migrate_db()
 
@@ -33,6 +35,9 @@ class Command(BaseCommand):
 
         self.stdout.write('Populating the v2 database...')
         import_v2()
+
+        
+   
 
         if options["noindex"]:
             self.stdout.write('Skipping search index rebuild due to --noindex...')
