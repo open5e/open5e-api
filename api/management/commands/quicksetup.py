@@ -4,7 +4,6 @@ import argparse
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
-from api.management.commands import quickload
 
 class Command(BaseCommand):
     """Implementation for the `manage.py quicksetup` subcommand."""
