@@ -1,5 +1,7 @@
 import hashlib
 import os
+import subprocess
+
 # This file is used to serve data to the /version endpoint of the API.
 # For production (and staging) deploys, this file is overwritten at build time.
 
@@ -22,7 +24,12 @@ def GetHashofDirs(directory):
 
     return digest.hexdigest()
 
+
+def GetGitHash() -> str:
+    return subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
+
 DATA_V1_HASH = GetHashofDirs("./data/v1")
 DATA_V2_HASH = GetHashofDirs("./data/v2")
 API_V1_HASH = GetHashofDirs("./api")
 API_V2_HASH = GetHashofDirs("./api_v2")
+GIT_COMMIT = GetGitHash()
