@@ -41,7 +41,7 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 @api_view()
-def get_version():
+def get_version(_):
     """
     API endpoint for data and api versions.
     """
