@@ -68,6 +68,7 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
     environments = serializers.SerializerMethodField()
     skills = serializers.SerializerMethodField()
     actions = serializers.SerializerMethodField()
+    bonus_actions = serializers.SerializerMethodField()
     reactions = serializers.SerializerMethodField()
     legendary_actions = serializers.SerializerMethodField()
     special_abilities = serializers.SerializerMethodField()
@@ -93,6 +94,9 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
 
     def get_actions(self, monster):
         return monster.actions()
+    
+    def get_bonus_actions(self, monster):
+        return monster.bonus_actions()
 
     def get_reactions(self, monster):
         return monster.reactions()
@@ -143,6 +147,7 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'challenge_rating',
             'cr',
             'actions',
+            'bonus_actions',
             'reactions',
             'legendary_desc',
             'legendary_actions',
