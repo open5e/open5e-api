@@ -51,7 +51,7 @@ def get_version(_):
         "DATA_V1":version.DATA_V1_HASH,
         "DATA_V2":version.DATA_V2_HASH,
         "API_V1":version.API_V1_HASH,
-        "API_v2":version.API_V2_HASH,
+        "API_V2":version.API_V2_HASH,
         "GIT_COMMIT":version.GIT_COMMIT
     })
 
