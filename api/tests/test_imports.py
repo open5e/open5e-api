@@ -5,10 +5,6 @@ from pathlib import Path
 
 from rest_framework.test import APITestCase
 
-from api.management.commands.importer import Importer
-from api.management.commands.importer import ImportSpec
-from api.management.commands.importer import ImportOptions
-
 from django.template.defaultfilters import slugify
 
 from api.models import Subrace
