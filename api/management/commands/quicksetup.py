@@ -10,16 +10,14 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser: argparse.ArgumentParser):
         """Define arguments for the `manage.py quicksetup` subcommand."""
-
-        # Named (optional) arguments.
         parser.add_argument(
             "--noindex",
             action="store_true",
-            help="Flushes all existing database data before adding new objects.",
+            help="Flushes all existing database data before adding objects.",
         )
 
     def handle(self, *args, **options):
-        """Main logic."""
+        """Contents and callouts of the script."""
         self.stdout.write('Migrating the database...')
         migrate_db()
 
@@ -27,14 +25,13 @@ class Command(BaseCommand):
         collect_static()
 
         self.stdout.write('Populating the v1 database...')
-        #quickload.populate_db()
         import_v1()
 
         self.stdout.write('Populating the v2 database...')
         import_v2()
 
         if options["noindex"]:
-            self.stdout.write('Skipping search index rebuild due to --noindex...')
+            self.stdout.write('Skipping search index rebuild due to --noindex')
         else:
             self.stdout.write('Rebuilding the search index...')
             rebuild_index()
@@ -46,13 +43,14 @@ def import_v1() -> None:
     """Import the v1 apps' database models."""
     call_command('import', '--dir', 'data/v1')
 
+
 def import_v2() -> None:
     """Import the v2 apps' database models."""
     call_command('import', '--dir', 'data/v2')
 
 
 def migrate_db() -> None:
-    """Migrate the local database as needed to incorporate new model updates."""
+    """Migrate the local database as needed to incorporate new modelupdates."""
     call_command('makemigrations')
     call_command('migrate')
 
