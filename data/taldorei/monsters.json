@@ -359,4 +359,126 @@
         ],
         "page_no": 130
     }
+    {
+        "name": "Syndicate Cutthroat",
+        "desc": "When the thieves and assassins of a syndicate need to “acquire” additional funds or “relieve” specific people of their possessions, their cutthroats are the first to be called. Syndicate cutthroats can also represent any number of different rogues within the thieves’ guilds of the region.",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "any race",
+        "alignment": "any nonlawful alignment",
+        "armor_class": 14,
+        "armor_desc": "leather",
+        "hit_points": 44,
+        "hit_dice": "8d8 + 8",
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": 30
+        },
+        "strength": 10,
+        "dexterity": 16,
+        "constitution": 12,
+        "intelligence": 8,
+        "wisdom": 14,
+        "charisma": 9,
+        "dexterity_save": 5,
+        "skills": {
+            "deception": 3,
+            "stealth": 7
+        },
+        "senses": "passive Perception 12",
+        "languages": "Common, Thieves’ Cant",
+        "challenge_rating": 3,
+        "special_abilities": [
+            {
+                "name": "Cunning Action",
+                "desc": "On each of its turns, the cutthroat can use a bonus action to take the Dash, Disengage, or Hide action."
+            },
+            {
+                "name": "Sneak Attack (1/Turn)",
+                "desc": "The cutthroat deals an extra 14 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the cutthroat that isn’t incapacitated and the cutthroat doesn’t have disadvantage on the attack roll."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Multiattack",
+                "desc": "The cutthroat makes two shortsword or dagger attacks."
+            },
+            {
+                "name": "Shortsword",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+                "attack_bonus": 6,
+                "damage_dice": "1d6",
+                "damage_bonus": 3
+            },
+            {
+                "name": "Dagger",
+                "desc": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft., range 20/60 ft., one target. Hit: 5 (1d4 + 3) piercing damage.",
+                "attack_bonus": 6,
+                "damage_dice": "1d4",
+                "damage_bonus": 3
+            }
+        ],
+        "reactions": [
+            {
+                "name": "Uncanny Dodge",
+                "desc": "When an attacker that the cutthroat can see hits it with an attack, the cutthroat takes half damage instead."
+            }
+        ],
+        "group": "Syndicate",
+        "page_no": 131
+    },
+    {
+        "name": "Syndicate Enforcer",
+        "desc": "Syndicates prefer to operate within the shadows, but sometimes targets of blackmail need a little “convincing.” Whenever scare tactics and brute force are needed, these musclebound enforcers make quite an impression.",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "any race",
+        "alignment": "any nonlawful alignment",
+        "armor_class": 16,
+        "armor_desc": "half plate",
+        "hit_points": 102,
+        "hit_dice": "12d8 + 48",
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": 30
+        },
+        "strength": 16,
+        "dexterity": 12,
+        "constitution": 18,
+        "intelligence": 8,
+        "wisdom": 11,
+        "charisma": 14,
+        "skills": {
+            "athletics": 6,
+            "intimidation": 8
+        },
+        "senses": "passive Perception 10",
+        "languages": "Common, Thieves’ Cant",
+        "challenge_rating": 5,
+        "special_abilities": [
+            {
+                "name": "Intimidating Presence",
+                "desc": "Whenever the enforcer hits with a melee attack, the target must make a DC 15 Wisdom saving throw. On a failure, the target is frightened of the enforcer until the end of its next turn. The enforcer’s allies have advantage on attack rolls against creatures frightened in this way."
+            },
+            {
+                "name": "Second Wind (Recharges after a Short or Long Rest)",
+                "desc": "As a bonus action, the enforcer can regain 12 hit points."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Multiattack",
+                "desc": "The enforcer makes three warhammer attacks."
+            },
+            {
+                "name": "Warhammer",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) bludgeoning damage.",
+                "attack_bonus": 6,
+                "damage_dice": "1d10",
+                "damage_bonus": 3
+            }
+        ],
+        "group": "Syndicate",
+        "page_no": 131
+    }
 ]
