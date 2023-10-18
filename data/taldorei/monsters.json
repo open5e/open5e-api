@@ -481,4 +481,79 @@
         "group": "Syndicate",
         "page_no": 131
     }
+    {
+        "name": "Cyclops Stormcaller",
+        "desc": "When a cyclops is born beneath a raging storm, the child is sometimes born different. Smaller than the rest, sickly and weak. Most of these stormborn cyclopes are relentlessly bullied and beaten for their tiny stature, and most die before adulthood. Those who survive do so because of the magic the stormlord has bestowed upon them—intentionally or otherwise. As cyclopes are a simple-minded and magically-inert people, the power of a stormcaller awes and terrifies them. They believe that a stormcaller is nothing short of a god.",
+        "size": "Large",
+        "type": "Giant",
+        "alignment": "neutral evil",
+        "armor_class": 18,
+        "armor_desc": "chainmail, _ring of protection_, _cloak of protection_",
+        "hit_points": 119,
+        "hit_dice": "12d10 + 48",
+        "speed": "30 ft., fly 60 ft. (storm only)",
+        "speed_json": {
+            "walk": 30,
+            "fly": 60
+        },
+        "strength": 16,
+        "dexterity": 10,
+        "constitution": 18,
+        "intelligence": 15,
+        "wisdom": 8,
+        "charisma": 20,
+        "strength_save": 4,
+        "dexterity_save": 1,
+        "constitution_save": 5,
+        "intelligence_save": 0,
+        "wisdom_save": 4,
+        "charisma_save": 10,
+        "skills": {
+            "arcana": 6
+        },
+        "senses": "passive Perception 9",
+        "languages": "Common, Elven, Giant",
+        "challenge_rating": 10,
+        "special_abilities": [
+            {
+                "name": "Poor Depth Perception",
+                "desc": "The cyclops has disadvantage on any attack roll against a target more than 30 feet away."
+            },
+            {
+                "name": "Storm Wings",
+                "desc": "While within 1 mile of a storm, the cyclops gains a fly speed of 60 feet."
+            },
+            {
+                "name": "Supernatural Focus",
+                "desc": "The cyclops has advantage on Constitution saving throws made to maintain concentration on a spell, and cannot lose concentration because of turbulent weather."
+            },
+            {
+                "name": "Innate Spellcasting",
+                "desc": "The cyclops’s innate spellcasting ability is Charisma (spell save DC 17). The cyclops can innately cast the following spells, requiring no material components:\n\n* At-will: ray of frost (3d8), water walk\n* 3/day each: ice storm, sleet storm, wind wall\n* 1/day each: control weather, storm of vengeance"
+            }
+        ],
+        "spells": [
+            "ray of frost",
+            "water walk",
+            "ice storm",
+            "sleet storm",
+            "wind wall",
+            "control weather",
+            "storm of vengeance"
+        ],
+        "actions": [
+            {
+                "name": "Multiattack",
+                "desc": "The cyclops makes two ice claws attacks."
+            },
+            {
+                "name": "Ice Claws",
+                "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (3d6 +3) slashing damage plus 3 (1d6) cold damage.",
+                "attack_bonus": 7,
+                "damage_dice": "3d6+1d6",
+                "damage_bonus": 3
+            }
+        ],
+        "page_no": 132
+    }
 ]
