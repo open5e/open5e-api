@@ -522,6 +522,8 @@ class Importer:
         i.slug = slug
         if "desc" in plane_json:
             i.desc = plane_json["desc"]
+        if "parent" in plane_json:
+            i.parent = plane_json["parent"]
         result = self._determine_import_result(new, exists)
         if result is not ImportResult.SKIPPED:
             i.save()
