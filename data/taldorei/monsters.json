@@ -310,7 +310,7 @@
         "armor_class": 15,
         "armor_desc": "natural armor",
         "hit_points": 102,
-        "hit_dice": "12d10 + 36",
+        "hit_dice": "12d10+36",
         "speed": "20 ft., burrow 40 ft.",
         "speed_json": {
             "walk": 20,
@@ -369,7 +369,7 @@
         "armor_class": 14,
         "armor_desc": "leather",
         "hit_points": 44,
-        "hit_dice": "8d8 + 8",
+        "hit_dice": "8d8+8",
         "speed": "30 ft.",
         "speed_json": {
             "walk": 30
@@ -437,7 +437,7 @@
         "armor_class": 16,
         "armor_desc": "half plate",
         "hit_points": 102,
-        "hit_dice": "12d8 + 48",
+        "hit_dice": "12d8+48",
         "speed": "30 ft.",
         "speed_json": {
             "walk": 30
@@ -490,7 +490,7 @@
         "armor_class": 18,
         "armor_desc": "chainmail, _ring of protection_, _cloak of protection_",
         "hit_points": 119,
-        "hit_dice": "12d10 + 48",
+        "hit_dice": "12d10+48",
         "speed": "30 ft., fly 60 ft. (storm only)",
         "speed_json": {
             "walk": 30,
@@ -555,5 +555,127 @@
             }
         ],
         "page_no": 132
+    },
+    {
+        "name": "Goliath Stormborn",
+        "desc": "Countless goliath legends tell of heroes born beneath a raging storm. These stormborn grow to become peerless warriors, blessed with preternatural skill with a blade and the uncanny ability to command lightning itself. As warriors destined to become mythic heroes, stormborn fight with reckless abandon and are often distressingly prideful. Little do they know that destiny is a fickle thing, and that the songs of defeated stormborn (or worse, tyrannical ones) are rarely sung by the bards.",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "goliath",
+        "alignment": "chaotic neutral",
+        "armor_class": 13,
+        "armor_desc": "hide armor",
+        "hit_points": 102,
+        "hit_dice": "12d8+48",
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": 30
+        },
+        "strength": 18,
+        "dexterity": 12,
+        "constitution": 18,
+        "intelligence": 9,
+        "wisdom": 11,
+        "charisma": 9,
+        "constitution_save": 6,
+        "skills": {
+            "athletics": 6,
+            "intimidation": 3
+        },
+        "damage_resistances": "lightning",
+        "senses": "passive Perception 10",
+        "languages": "Common, Giant",
+        "challenge_rating": 4,
+        "special_abilities": [
+            {
+                "name": "Reckless",
+                "desc": "At the start of its turn, the stormborn can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn."
+            },
+            {
+                "name": "Innate Spellcasting",
+                "desc": "The stormborn’s innate spellcasting ability is Charisma (spell save DC 9). The stormborn can innately cast the following spells, requiring no material components:\n\n* 3/day: lightning bolt\n* 1/day: call lightning"
+            }
+        ],
+        "spells": [
+            "lightning bolt",
+            "call lightning"
+        ],
+        "actions": [
+            {
+                "name": "Multiattack",
+                "desc": "The stormborn makes two greataxe attacks."
+            },
+            {
+                "name": "Greataxe",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) slashing damage plus 7 (2d6) lightning damage. Miss: 3 (1d6) lightning damage.",
+                "attack_bonus": 6,
+                "damage_dice": "1d12+2d6",
+                "damage_bonus": 4
+            }
+        ],
+        "reactions": [
+            {
+                "name": "Endurance",
+                "desc": "When the stormborn takes damage, it may reduce the damage by 10 (1d12 + 4). It cannot use this trait again until it completes a short or long rest."
+            }
+        ],
+        "group": "Goliaths",
+        "page_no": 133
+    },
+    {
+        "name": "Goliath Brawler",
+        "desc": "Some prideful goliaths are so assured in their own strength that they refuse to use weapons. Most goliaths learn how to fist-fight from a young age, but goliath brawlers go so far as to eschew weapons even on the battlefield. Goliath brawlers usually lead the charge on the battlefield, using their exceptional speed and brute strength to throw the enemy vanguard into chaos.",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "goliath",
+        "alignment": "chaotic neutral",
+        "armor_class": 15,
+        "hit_points": 65,
+        "hit_dice": "10d8+20",
+        "speed": "40 ft.",
+        "speed_json": {
+            "walk": 40
+        },
+        "strength": 17,
+        "dexterity": 14,
+        "constitution": 15,
+        "intelligence": 9,
+        "wisdom": 16,
+        "charisma": 7,
+        "skills": {
+            "acrobatics": 4,
+            "athletics": 5,
+            "perception": 5
+        },
+        "senses": "passive Perception 15",
+        "languages": "Common, Giant",
+        "challenge_rating": 3,
+        "special_abilities": [
+            {
+                "name": "Unarmored Defense",
+                "desc": "While the brawler is wearing no armor and not wielding a shield, its AC equals 10 + its Dexterity modifier + its Wisdom modifier."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Multiattack",
+                "desc": "The brawler makes three unarmed strikes."
+            },
+            {
+                "name": "Unarmed Strike",
+                "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage. If the target is a creature, the brawler can choose one of the following additional effects:\n\n* Bruise. The target must succeed on a DC 13 Constitution saving throw. On a failure, its speed is reduced by 5 feet until it receives at least 1 point of magical healing. A DC 15 Wisdom (Medicine) check performed as an action can also restore any lost speed.\n* Disarm. The target must succeed on a DC 13 Strength saving throw or drop one item it is holding. The brawler may choose which item is dropped, and may choose to pick it up.\n* Suplex. The target must succeed on a DC 13 Strength saving throw or be knocked prone.",
+                "attack_bonus": 5,
+                "damage_dice": "1d8",
+                "damage_bonus": 3
+            }
+        ],
+        "reactions": [
+            {
+                "name": "Endurance",
+                "desc": "When the stormborn takes damage, it may reduce the damage by 8 (1d12 + 2). It cannot use this trait again until it completes a short or long rest."
+            }
+        ],
+        "group": "Goliaths",
+        "page_no": 134
     }
 ]
