@@ -804,5 +804,152 @@
             }
         ],
         "page_no": 135
+    },
+    {
+        "name": "Orc Slaughter Lord",
+        "desc": "A Slaughter Lord craves combat like it craves food, and leads raids as often as possible, but is frequently forced to remain at its stronghold because of its strict regimen of alchemical treatments. A small army of shamans and alchemists attend to the Slaughter Lords in order to artificially enhance their already-tremendous strength. The blessings and concoctions crafted by the orc-lords’ lackeys grow their muscular forms to mountainous size, sharpen their tactical reasoning, and bestow upon them divine protection.",
+        "size": "Large",
+        "type": "Humanoid",
+        "subtype": "orc",
+        "alignment": "lawful evil",
+        "armor_class": 17,
+        "hit_points": 152,
+        "hit_dice": "16d8+80",
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": 30
+        },
+        "strength": 22,
+        "dexterity": 14,
+        "constitution": 20,
+        "intelligence": 12,
+        "wisdom": 16,
+        "charisma": 16,
+        "strength_save": 10,
+        "constitution_save": 9,
+        "wisdom_save": 7,
+        "skills": {
+            "intimidation": 11,
+            "religion": 5
+        },
+        "senses": "darkvision 60 ft., passive Perception 13",
+        "languages": "Common, Orc",
+        "challenge_rating": 9,
+        "special_abilities": [
+            {
+                "name": "Aggressive",
+                "desc": "As a bonus action, the Slaughter Lord can move up to its speed toward a hostile creature it can see."
+            },
+            {
+                "name": "Blessings of the Ruiner",
+                "desc": "The Slaughter Lord has been showered with a cocktail of divine blessings, and can call upon them at any time. Its innate spellcasting ability is Wisdom (spell save DC 15). The Slaughter Lord can innately cast the following spells, requiring no material components:\n\n* At will: thaumaturgy\n* 3/day each: flame strike, spirit guardians\n* 1/day each: control weather, divine word, fire storm"
+            },
+            {
+                "name": "Legendary Resistance (2/Day)",
+                "desc": "If the Slaughter Lord fails a saving throw, it can choose to succeed instead."
+            },
+            {
+                "name": "Unarmored Defense",
+                "desc": "While the Slaughter Lord is wearing no armor and not wielding a shield, its AC equals 10 + its Dexterity modifier + its Constitution modifier."
+            }
+        ],
+        "spells": [
+            "thaumaturgy",
+            "flame strike",
+            "spirit guardians",
+            "control weather",
+            "divine word",
+            "fire storm"
+        ],
+        "actions": [
+            {
+                "name": "Multiattack",
+                "desc": "The Slaughter Lord makes four attacks with its greatswords or three attacks with its spear."
+            },
+            {
+                "name": "Dual Greatswords",
+                "desc": "Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) piercing damage plus 3 (1d6) fire damage.",
+                "attack_bonus": 10,
+                "damage_dice": "2d6+1d6",
+                "damage_bonus": 6
+            },
+            {
+                "name": "Spear",
+                "desc": "Melee or Ranged Weapon Attack: +10 to hit, range 20/60 ft., one target. Hit: 13 (2d6 + 6) piercing damage plus 3 (1d6) fire damage, or 15 (2d8 + 6) piercing damage plus 3 (1d6) fire damage if used with both hands to make a melee attack.",
+                "attack_bonus": 10,
+                "damage_dice": "2d6+1d6",
+                "damage_bonus": 6
+            }
+        ],
+        "legendary_desc": "The Slaughter Lord can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature’s turn. The Slaughter Lord regains spent legendary actions at the start of its turn.",
+        "legendary_actions": [
+            {
+                "name": "Attack",
+                "desc": "The Slaughter Lord makes a spear or greatsword attack."
+            },
+            {
+                "name": "Move",
+                "desc": "The Slaughter Lord moves up to half its speed."
+            },
+            {
+                "name": "Cast a Spell (Costs 3 Actions)",
+                "desc": "The Slaughter Lord casts an innate spell."
+            }
+        ],
+        "page_no": 137
+    },
+    {
+        "name": "Goblin Stabby-Stabber",
+        "desc": "Goblins that show exceptional skill are brought before their Slaughter Lord and forced to drink a terrible brew the orcs call skullfire. The concoction burns what little reason the goblins had away, turning them into perfectly obedient, flesh-hungry monsters. In battle, stabby-stabbers swarm like rats, eviscerating fleeing innocents and warriors alike in seconds.",
+        "size": "Small",
+        "type": "Humanoid",
+        "subtype": "goblinoid",
+        "alignment": "chaotic evil",
+        "armor_class": 15,
+        "armor_desc": "studded leather",
+        "hit_points": 36,
+        "hit_dice": "8d6+8",
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": 30
+        },
+        "strength": 10,
+        "dexterity": 16,
+        "constitution": 12,
+        "intelligence": 10,
+        "wisdom": 8,
+        "charisma": 7,
+        "wisdom_save": 1,
+        "condition_immunities": "charmed",
+        "senses": "darkvision 60 ft., passive Perception 9",
+        "languages": "Common, Goblin",
+        "challenge_rating": 2,
+        "special_abilities": [
+            {
+                "name": "Nimble Escape",
+                "desc": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+            },
+            {
+                "name": "Stabby Frenzy",
+                "desc": "When the goblin hits with a melee attack, it may attack again. It can continue making additional attacks until it does not hit. The goblin cannot move between attacks made with this trait."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Shortsword",
+                "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+                "attack_bonus": 5,
+                "damage_dice": "1d6",
+                "damage_bonus": 3
+            },
+            {
+                "name": "Dagger",
+                "desc": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft., range 20/60 ft., one target. Hit: 5 (1d4 + 3) piercing damage.",
+                "attack_bonus": 5,
+                "damage_dice": "1d4",
+                "damage_bonus": 3
+            }
+        ],
+        "page_no": 137
     }
 ]
