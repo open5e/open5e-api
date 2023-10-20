@@ -952,4 +952,165 @@
         ],
         "page_no": 137
     }
+    {
+        "name": "One-Eyed Cultist",
+        "desc": "All one-eyed cultists endure horrific rites of initiation that forever shackle them to the will of the cult leaders. Every cultist can feel the presence of their foul god just beyond the fabric of the physical world, and many claim to hear him speaking to them when the rest of the world is silent, urging them to prepare for his resurrection, either by secretly molding society to accept his return, or by concocting rituals that hasten his rebirth.",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "any race",
+        "alignment": "neutral evil",
+        "armor_class": 13,
+        "armor_desc": "16 with mage armor",
+        "hit_points": 60,
+        "hit_dice": "11d8+11",
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": 30
+        },
+        "strength": 10,
+        "dexterity": 16,
+        "constitution": 12,
+        "intelligence": 18,
+        "wisdom": 8,
+        "charisma": 8,
+        "wisdom_save": 3,
+        "skills": {
+            "deception": 7,
+            "stealth": 7
+        },
+        "damage_resistances": "psychic, necrotic",
+        "senses": "passive Perception 9",
+        "languages": "Common, Infernal",
+        "challenge_rating": 7,
+        "special_abilities": [
+            {
+                "name": "Spellcasting",
+                "desc": "The one-eyed cultist is an 11th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). The cultist has the following wizard spells prepared:\n\n* Cantrips (at will): chill touch, message, minor illusion, prestidigitation, ray of frost\n* 1st level (4 slots): detect magic, hideous laughter, mage armor, shield\n* 2nd level (3 slots): detect thoughts, suggestion\n* 3rd level (3 slots): counterspell, fear, vampiric touch\n* 4th level (3 slots): greater invisibility, phantasmal killer\n* 5th level (2 slot): dream, mislead\n* 6th level (1 slot): circle of death"
+            },
+            {
+                "name": "Unknowable Secrets",
+                "desc": "Any attempt to form a mental link with the one-eyed cultist, scry the cultist, or cast speak with dead on a cultist instantly fails, and the creature that initiated the attempt takes 6d6 psychic damage."
+            },
+            {
+                "name": "One-Eyed",
+                "desc": "The cultist has disadvantage on any attack roll made against a target more than 30 feet away."
+            }
+        ],
+        "spells": [
+            "chill touch",
+            "message",
+            "minor illusion",
+            "prestidigitation",
+            "ray of frost",
+            "detect magic",
+            "hideous laughter",
+            "mage armor",
+            "shield",
+            "detect thoughts",
+            "suggestion",
+            "counterspell",
+            "fear",
+            "vampiric touch",
+            "greater invisibility",
+            "phantasmal killer",
+            "dream",
+            "mislead",
+            "circle of death"
+        ],
+        "actions": [
+            {
+                "name": "Dagger of Wounding",
+                "desc": "Melee or Ranged Weapon Attack: +7 to hit, reach 5 ft., range 20/60 ft., one target. Hit: 5 (1d4 + 3) piercing damage. Hit points lost to this weapon’s damage can be regained only through a short or long rest, rather than by regeneration, magic, or any other means.\nOnce per turn, the cultist may choose to wound its target. At the start of each of the wounded creature’s turns, it takes 1d4 necrotic damage for each time the cultist wounded it, and it can then make a DC 15 Constitution saving throw, ending the effect of all such wounds on itself on a success. Alternatively, the wounded creature, or a creature within 5 feet of it, can use an action to make a DC 15 Wisdom (Medicine) check, ending the effect of such wounds on it on a success.",
+                "attack_bonus": 7,
+                "damage_dice": "1d4",
+                "damage_bonus": 3
+            }
+        ],
+        "group": "",
+        "page_no": 139
+    },
+    {
+        "name": "One-Eyed Chosen",
+        "desc": "Every cultist spends hours in silent meditation, hoping to hear their long-dead master whisper a commandment from beyond the veil. For most, this meditation is fruitless. But some do hear the whispers. In the silence of their meditation, the spectral voice worms its way into their emptied minds, filling their heads with words of power. Fragments of ancient arcane might boils within their blood, granting them spells unseen for ages.",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "any race",
+        "alignment": "neutral evil",
+        "armor_class": 12,
+        "armor_desc": "15 with mage armor",
+        "hit_points": 117,
+        "hit_dice": "18d8 + 36",
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": 30
+        },
+        "strength": 10,
+        "dexterity": 14,
+        "constitution": 14,
+        "intelligence": 15,
+        "wisdom": 16,
+        "charisma": 20,
+        "wisdom_save": 6,
+        "charisma_save": 9,
+        "skills": {
+            "arcana": 11,
+            "deception": 9
+        },
+        "damage_resistances": "damage from spells",
+        "damage_immunities": "necrotic",
+        "senses": "truesight 60 ft., passive Perception 13",
+        "languages": "Common, Infernal, Abyssal",
+        "challenge_rating": 12,
+        "special_abilities": [
+            {
+                "name": "All-Seeing Eye",
+                "desc": "As a bonus action, the Chosen may select a creature or object affected by an illusion spell of 4th level or lower. One illusion of the Chosen’s choice affecting that creature is instantly dispelled."
+            },
+            {
+                "name": "Magic Resistance",
+                "desc": "The Chosen has advantage on saving throws against spells and other magical effects."
+            },
+            {
+                "name": "Spellcasting",
+                "desc": "The Chosen is an 18th-level spellcaster. Its spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). The Chosen has the following sorcerer spells prepared:\n\n* Cantrips (at will): chill touch, dancing lights, mage hand, message, shocking grasp\n* 1st level (4 slots): charm person, expeditious retreat, mage armor,* shield\n* 2nd level (3 slots): blindness/deafness, darkness, detect thoughts\n* 3rd level (3 slots): counterspell, fly, hypnotic pattern\n* 4th level (3 slots): confusion, greater invisibility*\n* 5th level (3 slots): dominate person, scrying, seeming\n* 6th level (1 slot): eyebite\n* 7th level (1 slot): finger of death\n* 8th level (1 slot): power word stun\n* 9th level (1 slot): power word kill\n\n*The Chosen typically casts these spells on itself before combat."
+            }
+        ],
+        "spells": [
+            "chill touch",
+            "dancing lights",
+            "mage hand",
+            "message",
+            "shocking grasp",
+            "charm person",
+            "expeditious retreat",
+            "mage armor",
+            "shield",
+            "blindnessdeafness",
+            "darkness",
+            "detect thoughts",
+            "counterspell",
+            "fly",
+            "hypnotic pattern",
+            "confusion",
+            "greater invisibility",
+            "phantasmal killer",
+            "dominate person",
+            "scrying",
+            "seeming",
+            "eyebite",
+            "finger of death",
+            "power word stun",
+            "power word kill"
+        ],
+        "actions": [
+            {
+                "name": "Withered Hand",
+                "desc": "Melee Spell Attack: +6 to hit, reach 5 ft., one target. Hit: 37 (5d6 + 20) force damage. If this damage reduces the target to 0 hit points, it is disintegrated.",
+                "attack_bonus": 6,
+                "damage_dice": "5d6",
+                "damage_bonus": 20
+            }
+        ],
+        "page_no": 139
+    }
 ]
