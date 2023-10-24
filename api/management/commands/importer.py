@@ -462,6 +462,15 @@ class Importer:
             i.actions_json = json.dumps(monster_json["actions"])
         else:
             i.actions_json = json.dumps(None)
+        if monster_json.get("bonus_actions", None):
+            for idx, z in enumerate(monster_json["bonus_actions"]):
+                if "attack_bonus" in z:
+                    if z["attack_bonus"] == 0 and "damage_dice" not in z:
+                        del z["attack_bonus"]
+                monster_json["bonus_actions"][idx] = z
+            i.bonus_actions_json = json.dumps(monster_json["bonus_actions"])
+        else:
+            i.bonus_actions_json = json.dumps(None)
         if "special_abilities" in monster_json:
             for idx, z in enumerate(monster_json["special_abilities"]):
                 if "attack_bonus" in z:
