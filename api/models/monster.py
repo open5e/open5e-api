@@ -88,6 +88,12 @@ class Monster(GameContent):
 
     def actions(self):
         return json.loads(self.actions_json)
+    
+    bonus_actions_json = models.TextField(default=None)
+    
+    def bonus_actions(self):
+        return json.loads(self.bonus_actions_json)
+    
     # A list of special abilities in json text.
     special_abilities_json = models.TextField()
 
