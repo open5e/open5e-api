@@ -1,5 +1,49 @@
 [
     {
+        "name": "Plainscow",
+        "desc": "The hulking plainscow is an exceptionally sturdy beast of burden used for centuries. Though herds of wild plainscows still roam the prairies, domesticated plainscows are now used as mounts, pack animals, and sometimes even livestock. Plainscows are unusually empathetic for beasts, and often bond with a rider for life. Plainscows stand 6 feet tall, weigh about two tons, and live for 70 years. They can be bought for 200 gp and have a carrying capacity of 1,500 pounds.",
+        "size": "Large",
+        "type": "Beast",
+        "alignment": "unaligned",
+        "armor_class": 13,
+        "armor_desc": "natural armor",
+        "hit_points": 42,
+        "hit_dice": "5d10+15",
+        "speed": "40 ft.",
+        "speed_json": {
+            "walk": 40
+        },
+        "strength": 18,
+        "dexterity": 8,
+        "constitution": 16,
+        "intelligence": 2,
+        "wisdom": 10,
+        "charisma": 6,
+        "skills": {
+            "insight": 2
+        },
+        "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical attacks",
+        "senses": "passive Perception 10",
+        "languages": "—",
+        "challenge_rating": 2,
+        "special_abilities": [
+            {
+                "name": "Trampling Charge",
+                "desc": "If the plainscow moves at least 20 feet straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the plainscow can make another attack with its hooves as a bonus action."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Hooves",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
+                "attack_bonus": 6,
+                "damage_dice": "1d6+4d6",
+                "damage_bonus": 2
+            }
+        ],
+        "page_no": 59
+    },
+    {
         "name": "Firetamer",
         "desc": "Firetamers are the elite elementalists of the fire elemental wardens, using their attunement to the primordial forces of the world to not just create fire, not just command it, but tame it to their will. A firetamer is nothing like the manic pyromancers; while the latter recklessly wields fire as a weapon, firetamers use their talent to protect others from fire’s destructive power—or to use that same power to destroy those who threaten their people. Firetamers are almost always accompanied by a salamander, a fire elemental, or a small herd of magma or smoke mephits.",
         "size": "Medium",
@@ -319,7 +363,7 @@
         "strength": 15,
         "dexterity": 12,
         "constitution": 20,
-        "intelligence": 1
+        "intelligence": 1,
         "wisdom": 10,
         "charisma": 3,
         "damage_resistances": "bludgeoning, piercing, and slashing from nonmagical attacks",
