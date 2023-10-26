@@ -100,7 +100,6 @@ class Object(HasName):
         abstract = True
         ordering = ['pk']
 
-
 class Benefit(HasName, HasDescription):
     class Meta:
         abstract = True

@@ -257,7 +257,3 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Race.objects.all().order_by('pk')
     serializer_class = serializers.RaceSerializer
     filterset_class = RaceFilterSet
-
-
-
-
