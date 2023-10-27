@@ -1,0 +1,882 @@
+[
+{
+  "model": "api_v2.feat",
+  "pk": "a-symbol-that-strikes-fear",
+  "fields": {
+    "name": "A Symbol That Strikes Fear",
+    "desc": "Creatures with a CR lower than your alter ego’s Prestige rating are frightened of you while you are in your alter ego. In addition, you become particularly adept at subduing your enemies rather than outright killing them. Whenever you begin a turn grappling a creature, you can attempt to non-lethally subdue it. The grappled creature makes a Constitution saving throw against your maneuver DC. On a failed saving throw, a creature is knocked unconscious for the next hour. A creature with more than 25% of its maximum hit points automatically succeeds on this saving throw.",
+    "prerequisite": "Equipped for Justice feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "a5e-grappler",
+  "fields": {
+    "name": "Grappler",
+    "desc": "* You gain advantage on attack rolls against a creature you are grappling.\r\n* You can use your action to try to pin a creature you are grappling. The creature makes a Strength or Dexterity saving throw against your maneuver DC. On a failure, you and the creature are both restrained  until the grapple ends.",
+    "prerequisite": "Strength 13 or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "ace-driver",
+  "fields": {
+    "name": "Ace Driver",
+    "desc": "You are a virtuoso of driving and piloting vehicles, able to push them beyond their normal limits and maneuver them with fluid grace through hazardous situations. You gain the following benefits:\r\n* You gain an expertise die on ability checks made to drive or pilot a vehicle.\r\n* While piloting a vehicle, you can use your reaction to take the Brake or Maneuver vehicle actions.\r\n* A vehicle you load can carry 25% more cargo than normal.\r\n* Vehicles you are piloting only suffer a malfunction when reduced to 25% of their hit points, not 50%. In addition, when the vehicle does suffer a malfunction, you roll twice on the maneuver table and choose which die to use for the result.\r\n* Vehicles you are piloting gain a bonus to their Armor Class equal to half your proficiency bonus.\r\n* When you Brake, you can choose to immediately stop the vehicle without traveling half of its movement speed directly forward.",
+    "prerequisite": "Proficiency with a type of vehicle",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "arcanum-master",
+  "fields": {
+    "name": "Arcanum Master",
+    "desc": "Whenever you cast a spell that deals damage, you may choose the type of damage that spell deals and the appearance of the spell’s effects.",
+    "prerequisite": "Pure Arcanist feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "arrow-enchanter",
+  "fields": {
+    "name": "Arrow Enchanter",
+    "desc": "Whenever you make a ranged weapon attack, you can choose to expend a 1st-level or higher spell slot to enhance the attack to be empowered or unerring. You cannot enhance more than one attack in a\r\nturn in this way. \r\n**Empowered.** The shot deals an additional 2d6 force damage, and an additional 1d6 force damage for each spell slot level above 1st. \r\n**Unerring.** The shot gains a +2 bonus to the attack roll, and an additional +2 bonus for each spell slot level above 1st.",
+    "prerequisite": "Eldritch Archer feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "athletic",
+  "fields": {
+    "name": "Athletic",
+    "desc": "Your enhanced physical training grants you the following benefits:\r\n\r\n* Your Strength or Dexterity score increases by 1, to a maximum of 20.\r\n* When you are prone, standing up uses only 5 feet of your movement (instead of half).\r\n* Your speed is not halved from climbing.\r\n* You can make a running long jump or a running high jump after moving 5 feet on foot (instead of 10 feet).",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "attentive",
+  "fields": {
+    "name": "Attentive",
+    "desc": "Always aware of your surroundings, you gain the following benefits:\r\n\r\n* When rolling initiative you gain a +5 bonus.\r\n* You can only be surprised if you are unconscious. A creature attacking you does not gain advantage from being hidden from you or unseen by you.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "battle-caster",
+  "fields": {
+    "name": "Battle Caster",
+    "desc": "You're comfortable casting, even in the chaos of battle.\r\n\r\n* You gain a 1d6 expertise die on concentration checks to maintain spells you have cast.\r\n* While wielding weapons and shields, you may cast spells with a seen component.\r\n* Instead of making an opportunity attack with a weapon, you may use your reaction to cast a spell with a casting time of 1 action. The spell must be one that only targets that creature.",
+    "prerequisite": "Requires the ability to cast at least one spell of 1st-level or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "brutal-attack",
+  "fields": {
+    "name": "Brutal Attack",
+    "desc": "After making a melee attack, you may reroll any weapon damage and choose the better result. This feat can be used no more than once per turn.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "bull-rush",
+  "fields": {
+    "name": "Bull Rush",
+    "desc": "Your headlong rush devastates your foes. After dashing (with the Dash Action) at least ten feet towards a foe, you may perform a bonus action to select one of the following options.\r\n**Attack.** Make one melee weapon attack, dealing an extra 5 damage on a hit. \r\n**Shove.** Use the Shove maneuver, pushing the target 10 feet directly away on a success.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "combat-thievery",
+  "fields": {
+    "name": "Combat Thievery",
+    "desc": "You know how to trade blows for more than inflicting harm.\r\n\r\n* You gain proficiency with the Deceptive Stance and Painful Pickpocket maneuvers, and do not have to spend exertion to activate them.\r\n* You gain an expertise die on Sleight of Hand checks.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "covert-training",
+  "fields": {
+    "name": "Covert Training",
+    "desc": "You have absorbed some of the lessons of the world of spies, criminals, and others who operate in the shadows. You gain the following benefits:\r\n\r\n* You gain proficiency with thieves' tools, the poisoner's kit, or a rare weapon with the stealthy property.\r\n* You gain two skill tricks of your choice from the rogue class.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "crafting-expert",
+  "fields": {
+    "name": "Crafting Expert",
+    "desc": "You have devoted time to studying and practicing the art of crafting, gaining the following benefits: This feat can be selected multiple times, choosing a different type of crafted item each time.\r\n\r\n* Choose one of the following types of crafted item: armor, engineered items, potions, rings and rods, staves and wands, weapons, wondrous items. You gain advantage on checks made to craft, maintain, and repair that type of item.\r\n* You gain an expertise die on checks made to craft, maintain, and repair items.\r\n* You gain proficiency with two tools of your choice.\r\n\r\nThis feat can be selected multiple times, choosing a different type of crafted item each time.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "crossbow-expertise",
+  "fields": {
+    "name": "Crossbow Expertise",
+    "desc": "* If proficient with a crossbow, you ignore its loading property.\r\n* You do not have disadvantage on ranged attack rolls from being within 5 feet of a hostile creature.\r\n* When you attack with a one-handed weapon using the Attack action, you can use a bonus action to  \r\nattack with a hand crossbow wielded in your off-hand.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "deadeye",
+  "fields": {
+    "name": "Deadeye",
+    "desc": "Your natural talent or skill makes you lethal with a ranged weapon.\r\n\r\n* You gain proficiency with the Farshot Stance and Ricochet maneuvers, and do not have to spend exertion to activate them. \r\n* Before you make an attack with a ranged weapon you are proficient with, you can choose to take a penalty on the attack roll equal to your proficiency bonus. If the attack hits, you deal extra damage equal to double your proficiency bonus. This extra damage does not double on a critical hit.\r\n* You ignore half cover and three-quarters cover when making a ranged weapon attack.",
+    "prerequisite": "8th level or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "deflector",
+  "fields": {
+    "name": "Deflector",
+    "desc": "When you are wielding a finesse weapon with which you are proficient and would be hit by a melee attack, you can use your reaction to add your proficiency bonus to your Armor Class against that attack.",
+    "prerequisite": "Dexterity 13 or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "destinys-call",
+  "fields": {
+    "name": "Destiny’s Call",
+    "desc": "* An ability score of your choice increases by 1.\r\n* When you gain inspiration through your destiny’s source of inspiration, you can choose one party member within 30 feet of you. That party member gains inspiration if they don’t have it already. Once you inspire a party member in this way, you can’t use this feature again on that party member until you finish a long rest.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "divine-orator",
+  "fields": {
+    "name": "Divine Orator",
+    "desc": "You learn the Divine Inspiration and Persuasive Speech battle hymns. These special battle hymns can only be performed while you are using your voice Art Specialty as a spell focus.\r\n**Divine Inspiration.** When an ally within 15 feet hits a creature with a melee weapon attack, your ally can deliver a Divine Smite just as if you had delivered it yourself using your Divine Smite feature expending one of your uses). If you are able to empower your smites, you may choose to empower it as normal.\r\n**Persuasive Speech.** Hostile creatures within 60 feet take a –1d4 penalty on attack rolls. You can sustain this battle hymn for up to 3 rounds without expending additional uses of Bardic Inspiration. When a hostile creature begins its third consecutive turn within range of this battle hymn it becomes charmed by you and will not attack you or your allies. If this causes combat to end early, the creatures remain charmed\r\nby you for up to 1 minute afterward or until one of them is damaged by you or an ally. For the next 24 hours after the battle hymn ends, you gain an expertise die on Charisma checks made against creatures that were charmed in this way. A creature that either shares your alignment or worships a deity that has\r\nyour alignment becomes charmed on its second consecutive turn instead. Creatures that have an opposite alignment or worship a greater entity that has an opposite alignment cannot be charmed in this way.",
+    "prerequisite": "Proclaimer feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "dual-wielding-expert",
+  "fields": {
+    "name": "Dual-Wielding Expert",
+    "desc": "* While wielding a separate melee weapon in each hand, you gain a +1 bonus to Armor Class.\r\n* You can use two-weapon fighting with any two one-handed melee weapons so long as neither has the heavy property.\r\n* When you would normally draw or sheathe a one-handed weapon, you can instead draw or sheathe two one-handed weapons.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "dungeoneer",
+  "fields": {
+    "name": "Dungeoneer",
+    "desc": "* You have advantage on Investigation and Perception checks made to detect secret doors.\r\n* You have advantage on saving throws made against traps.\r\n* You have resistance to damage dealt by traps.\r\n* You don’t take a −5 penalty on your passive Perception score from traveling at a fast pace.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "eldritch-archer",
+  "fields": {
+    "name": "Eldritch Archer",
+    "desc": "* Whenever you make a ranged weapon attack you can choose to conjure magical ammunition and select one of the following damage types: acid, cold, fire, or lightning. Your ranged weapon attacks using this conjured ammunition deal the chosen damage type instead of whatever damage type they would normally deal, and are considered magical for the purpose of overcoming resistance and immunity. Ammunition conjured in this way disappears at the end of the turn it was fired.\r\n* When you hit a target with a ranged weapon attack, you can use your reaction and choose a spell of 1st-level or higher, casting it through your ammunition. The spell must have a casting time of 1 action, and target a single creature or have a range of Touch. If a spell cast in this way requires an attack roll and targets the same target as the triggering ranged weapon attack, it also hits as part of that attack. You may\r\nchoose not to deal damage with a ranged weapon attack used to cast a spell.",
+    "prerequisite": "3 levels in fighter, 3 levels in wizard, Fighting Style (Archery)",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "eldritch-volley-master",
+  "fields": {
+    "name": "Eldritch Volley Master",
+    "desc": "Whenever you cast a spell with a Cone area, you may additionally make ranged weapon attacks with a ranged weapon you are wielding against targets within that conical area. You may make up to a number of attacks equal to the level of the spell cast, each against a different target. Ranged attacks made in this way ignore the loading quality of weapons and use your conjured magical ammunition.",
+    "prerequisite": "Arrow Enchanter feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "empathic",
+  "fields": {
+    "name": "Empathic",
+    "desc": "* Your Wisdom or Charisma score increases by 1.\r\n* You gain an expertise die on Insight checks made against other creatures.\r\n* When using a social skill and making a Charisma check another creature, you score a critical success on a roll of 19–20.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "equipped-for-justice",
+  "fields": {
+    "name": "Equipped for Justice",
+    "desc": "* You gain proficiency with all types of artisan’s tools and miscellaneous tools. If you already have proficiency with any of these tools, you instead gain an expertise die with those tools.\r\n* You gain proficiency with Engineering and a 1d8 expertise die on Engineering checks. In addition, you build a nonmagical grappling gun that only functions in your hands. Replacing your grappling gun requires 3 days of crafting and 500 gp.\r\n* You may add your Wisdom modifier to the DC of any saving throws used for miscellaneous adventuring gear items and to attack rolls made using miscellaneous adventuring gear items.",
+    "prerequisite": "Vigilante feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "fear-breaker",
+  "fields": {
+    "name": "Fear Breaker",
+    "desc": "* You gain proficiency with the Victory Pose maneuver and do not have to spend exertion to activate it. In addition, you may use this maneuver with up to three different weapons you select instead of just one, and\r\naffect allies within 60 feet. \r\n* An ally affected by your Victory Pose gains an expertise die on their next saving throw against fear, and if they are rattled the condition ends for them.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "fortunate",
+  "fields": {
+    "name": "Fortunate",
+    "desc": "You gain 3 fate points. Whenever you make an attack roll, ability check, or saving throw and do not have disadvantage, you can spend a fate point to roll an additional d20 and choose whichever result you wish. \r\nYou may do this after the initial roll has occurred, but before the outcome is known. If you have disadvantage, you may instead spend a fate point to choose one of the d20 rolls and reroll it.\r\nAlternatively, when you are attacked, you can choose to spend a fate point to force the attacking creature to reroll the attack. The creature resolves the attack with the result you choose. You regain all expended fate points when you finish a long rest.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "guarded-warrior",
+  "fields": {
+    "name": "Guarded Warrior",
+    "desc": "* A creature that takes the Disengage action still provokes opportunity attacks from you. \r\n* You gain proficiency with the Warning Strike maneuver and do not have to spend exertion to activate it.\r\n* You can use your reaction to make a melee weapon attack against a creature within 5 feet that makes an attack against a target other than you if the target does not also have this feat.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "harbinger-of-things-to-come",
+  "fields": {
+    "name": "Harbinger of Things to Come",
+    "desc": "You learn the Preach Despair and Preach Hope battle hymns. These special battle hymns can only be performed while you are using your voice Art Specialty as a spell focus.\r\n**Preach Despair.** A hostile creature within 60 feet of you suffers a level of strife. Creatures with an opposite alignment from yours or that worship a greater entity that has an opposite alignment suffer two levels of strife instead. A creature cannot suffer more than two levels of strife from Preach Despair in the same 24 hours.\r\n**Preach Hope.** Creatures of your choice within 60 feet of you gain advantage on saving throws. When the battle hymn ends, allies within 30 feet of you remove one level of strife. An ally that shares your alignment or worships a greater entity removes two levels of strife instead.",
+    "prerequisite": "Divine Orator feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "hardy-adventurer",
+  "fields": {
+    "name": "Hardy Adventurer",
+    "desc": "* When you take this feat, you gain a number of hit points equal to twice your level. \r\n* Whenever you gain a new level, you gain an additional 2 hit points to your hit point maximum.\r\n* During a short rest, you regain 1 additional hit point per hit die spent to heal.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "heavily-outfitted",
+  "fields": {
+    "name": "Heavily Outfitted",
+    "desc": "* Your Strength score increases by 1, to a maximum of 20.\r\n* You gain proficiency with heavy armor.",
+    "prerequisite": "Proficiency with medium armor",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "heavy-armor-expertise",
+  "fields": {
+    "name": "Heavy Armor Expertise",
+    "desc": "* Your Strength score increases by 1, to a maximum of 20.\r\n* While wearing heavy armor, you reduce all bludgeoning, piercing, and slashing damage from nonmagical weapons by 3.",
+    "prerequisite": "Proficiency with heavy armor",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "heraldic-training",
+  "fields": {
+    "name": "Heraldic Training",
+    "desc": "* You gain proficiency in your choice of one martial weapon, one rare weapon, or shields.\r\n* You gain two divine lessons of your choice from the herald class.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "idealistic-leader",
+  "fields": {
+    "name": "Idealistic Leader",
+    "desc": "* Any stronghold you have or buy that is of frugal quality is automatically upgraded to average quality at no additional cost.\r\n* You gain a new follower for every 50 staff you have in your stronghold, rather than every 100 staff.\r\n* When you fulfill your destiny, choose a number of followers equal to your proficiency bonus. Each is upgraded to their most expensive version.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "intuitive",
+  "fields": {
+    "name": "Intuitive",
+    "desc": "* Your Intelligence or Wisdom score increases by 1, to a maximum of 20. \r\n* Your passive Perception and passive Investigation scores increase by 5.\r\n* If you can see a creature’s mouth while it is speaking a language you know, you can read its lips.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "keen-intellect",
+  "fields": {
+    "name": "Keen Intellect",
+    "desc": "* Your Intelligence score increases by 1, to a maximum of 20.\r\n* You can recall anything you’ve seen or heard within a number of weeks equal to your Intelligence  modifier.\r\n* You know how long it will be before the next sunset or sunrise.\r\n* You know which way is north.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "lightly-outfitted",
+  "fields": {
+    "name": "Lightly Outfitted",
+    "desc": "* Your Strength or Dexterity score increases by 1, to a maximum of 20.\r\n* You gain proficiency with light armor.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "linguistics-expert",
+  "fields": {
+    "name": "Linguistics Expert",
+    "desc": "* Your Intelligence score increases by 1, to a maximum of 20.\r\n* You learn three languages of your choice.\r\n* You can invent ciphers and are able to teach a cipher you create to others. Anyone who knows the cipher can encode and read hidden messages made with it; the apparent text must be at least four times longer than the hidden message. A creature can detect the cipher’s presence if it spends a minute examining it and succeeds on an Investigation check against a DC of 8+ your proficiency bonus + your Intelligence modifier. If the check succeeds by 5 or more, they can read the hidden message.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "living-stampede",
+  "fields": {
+    "name": "Living Stampede",
+    "desc": "Whenever you enter a rage you may choose up to a number of creatures equal to your Wisdom modifier within 60 feet that are beasts, fey, or plants. These chosen creatures gain the following benefits for as long as you rage, but are unable to take the Fall Back reaction:\r\n* Advantage on Strength checks and Strength saving throws.\r\n* Resistance to bludgeoning, piercing, and slashing damage.\r\n* Temporary hit points equal to your level.\r\n* A bonus to damage rolls equal to your proficiency bonus.",
+    "prerequisite": "Untamed feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "martial-scholar",
+  "fields": {
+    "name": "Martial Scholar",
+    "desc": "* You gain proficiency in a combat tradition of your choice. \r\n* You learn two combat maneuvers from a combat tradition you know. If you don’t already know any combat maneuvers, both must be 1st degree. Combat maneuvers gained from this feat do not count toward the maximum number of combat maneuvers you know.\r\n* Your exertion pool increases by 3. If you do not have an exertion pool, you gain an exertion pool with 3 exertion, regaining your exertion whenever you finish a rest.",
+    "prerequisite": "Proficiency with at least one martial weapon",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "medium-armor-expert",
+  "fields": {
+    "name": "Medium Armor Expert",
+    "desc": "* Medium armor doesn’t impose disadvantage on your Dexterity (Stealth) checks.\r\n* When you are wearing medium armor, the maximum Dexterity modifier you can add to your Armor Class increases to 3.",
+    "prerequisite": "Proficiency with medium armor",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "moderately-outfitted",
+  "fields": {
+    "name": "Moderately Outfitted",
+    "desc": "* Your Strength or Dexterity score increases by 1, to a maximum of 20.\r\n* You gain proficiency with medium armor and shields.",
+    "prerequisite": "Proficiency with light armor",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "monster-hunter",
+  "fields": {
+    "name": "Monster Hunter",
+    "desc": "* You gain an expertise die on checks made to learn legends and lore about a creature you can see.\r\n* You learn the altered strike cantrip.\r\n* You gain proficiency with the Douse maneuver and do not have to spend exertion to activate it.\r\n* You gain the tracking skill specialty in Survival.",
+    "prerequisite": "Proficiency with Survival, 8th level or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "mounted-warrior",
+  "fields": {
+    "name": "Mounted Warrior",
+    "desc": "* You gain proficiency with the Lancer Strike maneuver and do not have to spend exertion to activate it.\r\n* When your mount is targeted by an attack, you can instead make yourself the attack’s target.\r\n* When your mount makes a Dexterity saving throw against an effect that deals half damage on a success, it takes no damage on a success and half damage on a failure.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "mystic-arcanist",
+  "fields": {
+    "name": "Mystic Arcanist",
+    "desc": "* Your Wisdom or Charisma score increases by 1, to a maximum of 20. \r\n* When you cast a spell that restores hit points, you restore an additional number of hit points equal to your Charisma modifier.\r\n* You can spend sorcery points to temporarily gain a spell from the cleric or sorcerer spell lists. Gaining a spell in this way costs a number of sorcery points equal to the spell’s level. You cannot gain a spell that has a level higher than your highest level spell slot. When you gain a cleric spell in this way, it is considered prepared for the day. When you gain a sorcerer spell in this way, it is considered a spell you know for the day. You lose all spells gained in this way whenever you finish a long rest.",
+    "prerequisite": "3 levels in cleric, 3 levels in sorcerer",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "mystical-talent",
+  "fields": {
+    "name": "Mystical Talent",
+    "desc": "Choose a class: bard, cleric, druid, herald, sorcerer, warlock, or wizard.\r\n\r\n* You learn two cantrips of your choice from the class’s spell list. \r\n* Choose a 1st-level spell to learn from that spell list. Once between long rests, you can cast this spell without expending a spell slot. You can also cast this spell using a spell slot of the appropriate level (or the appropriate number of spell points if you have warlock levels).\r\n\r\nYour spellcasting ability for these spells is Intelligence for wizard, Wisdom for cleric or druid, Charisma for bard, herald, or sorcerer, or your choice of Intelligence, Wisdom, or Charisma for warlock.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "natural-warrior",
+  "fields": {
+    "name": "Natural Warrior",
+    "desc": "* Your Speed increases by 5 feet.\r\n* When making an Acrobatics or Athletics check during combat, you can choose to use your Strength or Dexterity modifier for either skill.\r\n* You gain proficiency with the Bounding Strike maneuver and do not have to spend exertion to activate it.\r\n* You can roll 1d4 in place of your normal damage for unarmed strikes. When rolling damage for your unarmed strikes, you can choose to deal bludgeoning, piercing, or slashing damage.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "newblood",
+  "fields": {
+    "name": "Newblood",
+    "desc": "You gain resistance to necrotic damage (or if you already have it, immunity to necrotic damage) and  darkvision to a range of 30 feet (or if you already have it, the range of your darkvision increases by 30 feet). You also gain a bite natural weapon and the Charming Gaze feature.\r\n\r\n**Bite.** You gain a bite natural weapon you are proficient with. You are only able to bite grappled,   incapacitated, restrained, or willing creatures. You can use Dexterity instead of Strength for the attack rolls of your bite. On a hit your bite deals piercing damage equal to 1d6 plus your Strength modifier or Dexterity modifier (whichever is highest). In addition, once per turn you can choose for your bite to also deal 1d6\r\nnecrotic damage × your proficiency bonus. You regain hit points equal to the amount of necrotic damage dealt to your target. This necrotic damage can only be increased by a critical hit.\r\n**Charming Gaze.** Once between long rests, you magically target a creature within 30 feet, forcing it to make a Wisdom saving throw (DC 8 + your proficiency bonus + your Charisma modifier). On a failure, the target is charmed by you for a number of hours equal to your proficiency bonus. While charmed it regards you as a trusted friend and is a willing target for your bite. The target repeats the saving throw each time it takes damage, ending the effect on itself on a success. If the target’s saving throw is successful or the effect ends for it, it is immune to your charm for 24 hours.\r\n\r\nAdditionally, you have disadvantage on attack rolls and on Perception checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight. In addition, you cannot use your Charming Gaze while you are in direct sunlight.",
+    "prerequisite": "Must have been bitten by a vampire or taken necrotic damage equal to quadruple your level from a single attack or spell",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "night-master",
+  "fields": {
+    "name": "Night Master",
+    "desc": "You can spend exertion to cast any spells from the air, earth, fear, fire, movement, obscurement, plants, poison, senses, shadow, transformation, unarmed, or water schools at the cost of 2 exertion per spell level. You use your focus save DC for spells cast this way, and your spell attack modifier is equal to your proficiency bonus + your Wisdom modifier.",
+    "prerequisite": "Subtly Skilled feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "nightstalker",
+  "fields": {
+    "name": "Nightstalker",
+    "desc": "* Your Dexterity or Wisdom score increases by 1, to a maximum of 20.\r\n* You can deal Sneak Attack damage when making attacks using unarmed strikes or adept weapons.\r\n* You gain a bonus equal to your Wisdom modifier on Acrobatics, Deception, and Stealth checks.\r\n\r\nIn addition, you gain the following special focus feature:\r\n**Twilight Vanish.** On your turn you can use a reaction and spend 2 exertion to move up to 30 feet with such incredible speed that you seem to disappear: after moving this way you may immediately take the Hide action.",
+    "prerequisite": "3 levels in adept, 3 levels in rogue",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "physician",
+  "fields": {
+    "name": "Physician",
+    "desc": "* When you use a healer’s satchel to stabilize a dying creature, it regains a number of\r\nhit points equal to your Wisdom modifier.\r\n* You can spend an action and one use of a healer’s satchel to tend to a creature. The creature regains 1d6 + 4 hit points, plus one hit point for each of its hit dice. The creature can’t regain hit points from this feat again until it finishes a rest.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "polearm-savant",
+  "fields": {
+    "name": "Polearm Savant",
+    "desc": "* When you attack with a glaive, halberd, quarterstaff, or spear and no other weapon using the Attack action, as a bonus action you can make a melee attack with the weapon’s opposite end. This attack uses the same ability modifier as the primary attack, dealing 1d4 bludgeoning damage on a hit.\r\n* While you are wielding a glaive, halberd, pike, quarterstaff, or spear, a creature that enters your reach provokes an opportunity attack from you. A creature can use its reaction to avoid provoking an opportunity attack from you in this way.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "power-caster",
+  "fields": {
+    "name": "Power Caster",
+    "desc": "* The range is doubled for any spell you cast that requires a spell attack roll.\r\n* You ignore half cover and three-quarters cover when making a ranged spell attack.\r\n* Choose one cantrip that requires an attack roll. The cantrip must be from the bard, cleric, druid, herald, sorcerer, warlock, or wizard spell list. You learn this cantrip and your spellcasting ability for it depends\r\non the spell list you chose from: Intelligence for wizard, Wisdom for cleric or druid, Charisma for bard, herald, or sorcerer, or your choice of Intelligence, Wisdom, or Charisma for warlock.",
+    "prerequisite": "The ability to cast at least one spell",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "powerful-attacker",
+  "fields": {
+    "name": "Powerful Attacker",
+    "desc": "* You gain proficiency with the Cleaving Swing maneuver and do not have to spend exertion to activate it. In addition, you can use Cleaving Swing with a versatile weapon wielded with two hands.\r\n* Before you make a melee attack with a two-handed weapon or versatile weapon wielded with two hands, if you are proficient with the weapon and do not have disadvantage you can declare a powerful attack. A\r\npowerful attack has disadvantage, but on a hit deals 10 extra damage.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "primordial-caster",
+  "fields": {
+    "name": "Primordial Caster",
+    "desc": "Upon gaining this feat, choose one of the following damage types: acid, cold, fire, lightning, or thunder.\r\n* When you cast a spell that deals damage, your spell’s damage ignores damage resistance to the chosen type.\r\n* When you cast a spell that deals damage of the chosen type, you deal 1 additional damage for every damage die with a result of 1.\r\nThis feat can be selected multiple times, choosing a different damage type each time.",
+    "prerequisite": "The ability to cast at least one spell",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "proclaimer",
+  "fields": {
+    "name": "Proclaimer",
+    "desc": "* Whenever the Narrator calls for you to roll for initiative, you may activate a use of your Divine Sense feature to warn yourself and up to a number of creatures equal to your Charisma modifier within 30 feet, granting advantage on the initiative check.\r\n* You can use your voice Art Specialty to cast herald spells.\r\n* You can spend exertion to cast spells from the divination school that you know at a cost of 1 exertion per spell level.\r\n* When you gain this feat, you gain one of the following alignment traits: Chaotic, Evil, Good, or Lawful. Once chosen your alignment trait cannot be changed, but you can gain a second alignment trait that is not opposed.",
+    "prerequisite": "3 levels in bard, 3 levels in herald",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "pure-arcanist",
+  "fields": {
+    "name": "Pure Arcanist",
+    "desc": "You gain the following manifestations:\r\n**Divine (Radiant).** When you cast a spell that deals radiant damage, you can spend 1 sorcery point and choose one creature you can see within 60 feet. That creature regains a number of hit points equal to 1d8 × the spell’s level. \r\n**Pure Arcanum (Force).** When you cast a spell that deals force damage, you can spend 2 sorcery points and choose one creature you can see. After the spell’s damage is resolved, if the creature was damaged by the spell it makes an Intelligence saving throw or becomes stunned until the end of its next turn.",
+    "prerequisite": "Mystic Arcanist feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "rallying-speaker",
+  "fields": {
+    "name": "Rallying Speaker",
+    "desc": "When you spend 10 minutes speaking inspirationally, you can choose up to 6 friendly creatures (including yourself) within 30 feet that can hear and understand you. Each creature gains temporary hit points equal to your level + your Charisma modifier. A creature can’t gain temporary hit points from this feat again until it has finished a rest.",
+    "prerequisite": "Charisma 13 or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "resonant-bond",
+  "fields": {
+    "name": "Resonant Bond",
+    "desc": "You’re able to form a greater bond with magic items. During a short rest, you can focus on a non-consumable magic item and create a unique bond with it called resonance. You can have resonance with\r\nonly one item at a time. Attempting to resonate with another item fails until you end the resonance with your current item. When you resonate with an item, you gain the following benefits.\r\n\r\n* If the resonant item requires attunement and you meet the prerequisites to do so, you become attuned to the item. If you don’t meet the prerequisites, both the attunement and resonance with the item fails. This attunement doesn’t count toward the maximum number of items you can be attuned to. Unlike other\r\nattuned items, your attunement to this item doesn’t end from being more than 100 feet away from it for 24 hours.\r\n* Once per rest, as a bonus action, you can summon a resonant item, which appears instantly in your hand so long as it is located on the same plane of existence. You must have a free hand to use this feature and be able to hold the item. \r\n* If the resonant item is sentient, you have advantage on Charisma checks and saving throws made when resolving a conflict with the item.\r\n* If the resonant item is an artifact, you can ignore the effects of one minor detrimental property.\r\n\r\nYou lose resonance with an item if another creature attunes to it or gains resonance with it. You can also voluntarily end the resonance by focusing on the item during a short rest, or during a long rest if the item is not in your possession.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "revenant",
+  "fields": {
+    "name": "Revenant",
+    "desc": "You may choose to select this feat when you die, replacing your most recently chosen feat other than Vendetta or reducing your ability scores to reverse your last Ability Score Improvement. The next midnight your corpse rises and your soul returns to it. You gain the undead type in addition to being a humanoid, as well as the following benefits:\r\n* Your destiny changes to Revenge.\r\n* You gain resistance to necrotic and psychic damage.\r\n* You gain darkvision to a range of 60 feet (or if you already have it, its range increases by 30 feet).\r\n* You become immune to poison damage and the poisoned condition.\r\n* If your vendetta has not ended, you regain all of your hit points when you finish a short rest or 1 hour after you are reduced to 0 hit points.\r\n* You gain an expertise die on saving throws made against spells and other magical effects, and on saving throws made to resist being charmed, fatigued, frightened, paralyzed, or stunned.\r\n* You gain an expertise die on ability checks made to find or track a creature that is part of your vendetta.",
+    "prerequisite": "Vendetta, one other feat or previous Ability Score Improvement, dead",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "rite-master",
+  "fields": {
+    "name": "Rite Master",
+    "desc": "You gain a ritual book containing spells that you can cast as rituals while holding it.\r\nChoose one of the following classes: bard, cleric, druid, herald, sorcerer, warlock, or wizard. When you acquire this feat, you create a ritual book holding two 1st-level spells of your choice from that class’ spell\r\nlist. These spells must have the ritual tag. The class you choose determines your spellcasting ability for these spells: Intelligence for wizard, Wisdom for cleric or druid, Charisma for bard, herald, or\r\nsorcerer, or your choice of Intelligence, Wisdom, or Charisma for warlock.\r\nIf you come across a written spell with the ritual tag (like on a spell scroll or in a wizard’s spellbook), you can add it to your ritual book if the spell is on the spell list for the class you chose and its level is no higher than half your level (rounded up). Copying the spell into your ritual book costs 50 gold and 2 hours per level of the spell.",
+    "prerequisite": "Intelligence or Wisdom 13 or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "shadow-assassin",
+  "fields": {
+    "name": "Shadow Assassin",
+    "desc": "While you are hidden from a target and are in an area of darkness or dim light, you can apply your Sneak Attack damage to an eldritch blast.",
+    "prerequisite": "Shadowmancer feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "shadowdancer",
+  "fields": {
+    "name": "Shadowdancer",
+    "desc": "* You gain darkvision to a range of 60 feet. Unlike other forms of darkvision you can see color in this way as if you were seeing normally. If you already had darkvision or would gain it later from another feature, its range increases by 30 feet. \r\n* You can use a bonus action and spend 1 spell point to teleport up to 30 feet to an unoccupied area of darkness or dim light you can see. You must currently be in an area of darkness or dim light to teleport in this way. You can bring along objects if their weight doesn’t exceed what you can carry. You can also bring one willing creature of your size or smaller, provided it isn’t carrying gear beyond its carrying capacity and is within 5 feet. You can increase the range of this teleport by 30 additional feet per each additional spell point you spend.",
+    "prerequisite": "3 levels in rogue, 3 levels in warlock",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "shadowmancer",
+  "fields": {
+    "name": "Shadowmancer",
+    "desc": "You gain the following benefits.\r\n* You regain 1 spell point whenever you cast a spell from the shadow school.\r\n* You gain a Stealth skill specialty for hiding while in areas of darkness or dim light, and you have  advantage on Dexterity (Stealth) checks made to hide while in areas of darkness or dim light.\r\n* Whenever you use your Shadowdancer ability to teleport, after teleporting you can use your reaction to take the Dodge action.",
+    "prerequisite": "Shadowdancer feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "shield-focus",
+  "fields": {
+    "name": "Shield Focus",
+    "desc": "You gain the following benefits while wielding a shield:\r\n* When you take the Attack action on your turn, as a bonus action you can make a Shove maneuver against a creature within 5 feet of you.\r\n* When you make a Dexterity saving throw against a spell or harmful effect that only targets you, if you aren’t incapacitated you gain a bonus equal to your shield’s Armor Class bonus.\r\n* When you succeed on a Dexterity saving throw against an effect that deals half damage on a success, you can use your reaction to take no damage by protecting yourself with your shield.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "skillful",
+  "fields": {
+    "name": "Skillful",
+    "desc": "Choose three skills, tools, languages, or any combination of these. You gain proficiency with each of your three choices. If you already have proficiency in a chosen skill, you instead gain a skill specialty with that skill.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "skirmisher",
+  "fields": {
+    "name": "Skirmisher",
+    "desc": "* Your Speed increases by 10 feet.\r\n* You can Dash through difficult terrain without requiring additional movement.\r\n* Whenever you attack a creature, for the rest of your turn you don’t provoke opportunity attacks from that creature.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "spellbreaker",
+  "fields": {
+    "name": "Spellbreaker",
+    "desc": "*You gain proficiency with the Purge Magic maneuver and do not have to spend exertion to activate it.\r\n* When a creature concentrating on a spell is damaged by you, it has disadvantage on its concentration check to maintain the spell it is concentrating on.\r\n* You have advantage on saving throws made against spells cast within 30 feet of you.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "stalwart",
+  "fields": {
+    "name": "Stalwart",
+    "desc": "* Your Constitution score increases by 1, to a maximum of 20.\r\n* You regain an additional number of hit points equal to double your Constitution modifier (minimum 2) whenever you roll a hit die to regain hit points.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "stealth-expert",
+  "fields": {
+    "name": "Stealth Expert",
+    "desc": "* You can try to hide from a creature even while you are only lightly obscured from that creature.\r\n* Your position isn’t revealed when you miss with a ranged weapon attack against a creature you are hidden from.\r\n* Dim light does not impose disadvantage when you make Perception checks.",
+    "prerequisite": "Dexterity 13 or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "street-fighter",
+  "fields": {
+    "name": "Street Fighter",
+    "desc": "* Your Strength or Constitution score increases by 1, to a maximum of 20.\r\n* You can roll 1d4 in place of your normal damage for unarmed strikes.\r\n* You are proficient with improvised weapons.\r\n* You can use a bonus action to make a Grapple maneuver against a target you hit with an unarmed strike or improvised weapon on your turn.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "subtly-skilled",
+  "fields": {
+    "name": "Subtly Skilled",
+    "desc": "You can add your martial arts die as a bonus to Acrobatics, Culture, Deception, Engineering, Intimidation, Investigation, Sleight of Hand, Stealth, Perception, Performance, and Persuasion checks.",
+    "prerequisite": "Nightstalker feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "surgical-combatant",
+  "fields": {
+    "name": "Surgical Combatant",
+    "desc": "* You gain proficiency with the Dangerous Strikes maneuver and do not have to spend exertion to activate it.\r\n* You gain proficiency in Medicine. If you are already proficient, you instead gain an expertise die.\r\n* You gain an expertise die on Medicine checks made to diagnose the cause of or treat wounds.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "survivor",
+  "fields": {
+    "name": "Survivor",
+    "desc": "* When you are reduced to 0 or fewer hit points, you can use your reaction to move up to your Speed before falling unconscious. Moving in this way doesn’t provoke opportunity attacks.\r\n* On the first turn that you start with 0 hit points and must make a death saving throw, you make that saving throw with advantage.\r\n* When you take massive damage that would kill you instantly, you can use your reaction to make a death saving throw. If the saving throw succeeds, you instead fall unconscious and are dying. \r\n* Medicine checks made to stabilize you have advantage. \r\n* Once between long rests, when a creature successfully stabilizes you, at the start of your next turn you regain 1 hit point.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "swift-combatant",
+  "fields": {
+    "name": "Swift Combatant",
+    "desc": "* Your Speed increases by 5 feet. \r\n* You gain proficiency with the Charge, Rapid Drink, and Swift Stance maneuvers, and do not have to spend exertion to activate them.",
+    "prerequisite": "8th level or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "tactical-support",
+  "fields": {
+    "name": "Tactical Support",
+    "desc": "* When using the Help action to aid an ally in attacking a creature, the targeted creature can be up to 30 feet away instead of 5 feet.\r\n* If an ally benefiting from your Help action scores a critical hit on the targeted creature, you can use your reaction to make a single weapon attack against that creature. Your attack scores a critical hit on a roll of 19–20. If you already have a feature that increases the range of your critical hits, your critical hit range\r\nfor that attack is increased by 1 (maximum 17–20). \r\n* When a creature is damaged by an attack that was aided by the use of your Help action, you don’t provoke opportunity attacks from that creature until the end of your next turn.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "tenacious",
+  "fields": {
+    "name": "Tenacious",
+    "desc": "Choose one ability score. The chosen ability score increases by 1, to a maximum of 20, and you gain proficiency in saving throws using it.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "thespian",
+  "fields": {
+    "name": "Thespian",
+    "desc": "* Your Charisma score increases by 1, to a maximum of 20. \r\n* You have advantage on Deception and Performance checks made when attempting to mimic another creature’s looks, mannerisms, or speech.\r\n* You have a natural talent for perfectly mimicking the sounds of other creatures you’ve heard make sound for at least 1 minute. A suspicious listener can see through your perfect mimicry by succeeding on a Wisdom (Insight) check opposed by your Charisma (Deception) check.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "true-revenant",
+  "fields": {
+    "name": "True Revenant",
+    "desc": "One year and one day after you select this feat or when your vendetta has ended, you are doomed. Until then, you gain the following benefits.\r\n* You cannot be charmed, fatigued, frightened, paralyzed, or stunned.\r\n* You have advantage on saving throws against spells and other magical effects.\r\n* You regain all of your hit points after you do not take any damage for 1 minute.\r\nIn addition, you also gain the Fearsome Pursuit and Burning Hatred features. \r\n**Fearsome Pursuit.** You can spend 1 minute focusing on a creature that is part of your vendetta. If the creature is dead or on another plane of existence, you learn that. Otherwise, after focusing, you know the distance and direction to that creature, and so long as you’re moving in pursuit of that creature, you and anyone traveling with you ignore difficult terrain. This effect ends if you take damage or end your turn without moving for any reason.\r\n**Burning Hatred.** You can use an action to target the focus of your Fearsome Pursuit if it is within 30 feet. The creature makes a Wisdom saving throw (DC 8 + your proficiency bonus + your highest mental ability score modifier). On a failure, it takes psychic damage equal to 1d6 × your proficiency bonus and is stunned until the end of its next turn. On a success, it takes half damage and is rattled until the end of its\r\nnext turn. Once you have used this feature a number of times equal to your proficiency bonus, you can’t use it again until you finish a long rest.",
+    "prerequisite": "Revenant feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "untamed",
+  "fields": {
+    "name": "Untamed",
+    "desc": "* Your Strength or Wisdom score increases by 1, to a maximum of 20.\r\n* You may enter a rage and assume a wild shape using the same bonus action.\r\n* While using a wild shape, you can use Furious Critical with attacks made using natural weapons.\r\n* Any temporary hit points you gain from assuming a wild shape while raging become rage hit points instead.\r\n* You may cast and concentrate on druid spells with a range of Self or Touch while raging.",
+    "prerequisite": "Prerequisites: 3 levels in berserker, 3 levels in druid (Skinchanger archetype)",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "vampire-lord",
+  "fields": {
+    "name": "Vampire Lord",
+    "desc": "You gain the following benefits.\r\n* Your Speed increases by 10 feet.\r\n* You gain an expertise die on Stealth checks.\r\n* The range of your darkvision increases to 120 feet.\r\n* Your bite damage increases to 1d10.\r\n* You can use Charming Gaze twice between rests.\r\n* When using Charming Gaze, a target with at least one level of strife makes its saving throw with disadvantage.\r\n\r\nYou also gain the Vampiric Shapechange feature.\r\n\r\n**Vampiric Shapechange.** You can use an action to transform into the shape of a Medium or smaller beast of CR 3 or less, a mist, or back into your true form. While transformed into a beast, you have the beast’s size and movement modes. You can’t use reactions or speak. Otherwise, you use your statistics. Any items you are carrying transform with you. While transformed into a mist, you have a flying speed of 30 feet, can’t speak, can’t take actions or manipulate objects, are immune to nonmagical damage from weapons, and have advantage on saving throws and Stealth checks. You can pass through a space as narrow as 1 inch without squeezing but can’t pass through water. Any items you are carrying transform with you.\r\n\r\nAdditionally, you gain the undead type in addition to being a humanoid, and you take 20 radiant damage when you end your turn in contact with sunlight.",
+    "prerequisite": "Vampire Spawn",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "vampire-spawn",
+  "fields": {
+    "name": "Vampire Spawn",
+    "desc": "Your bite damage increases to 1d8, a creature affected by your Charming Gaze remains charmed for a number of hours equal to your level, and you regain the use of Charming Gaze when you finish any\r\nrest. You also gain the Spider Climb and Vampiric Regeneration features.\r\n\r\n**Spider Climb.** You gain a climb speed equal to your Speed, and you can climb even on difficult surfaces and upside down on ceilings.\r\n**Vampiric Regeneration.** Whenever you start your turn with at least 1 hit point and you haven’t taken radiant damage or entered direct sunlight since the end of your last turn, you gain a number of temporary hit points equal to twice your proficiency bonus. When you end your turn in contact with running water, you take 20 radiant damage.",
+    "prerequisite": "Newblood",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "vendetta",
+  "fields": {
+    "name": "Vendetta",
+    "desc": "Something or someone has had a profound impact on your life—and earned your unending rancor. You gain an expertise die on attack rolls and initiative checks made against creatures that are part of your\r\nvendetta, and when making a saving throw to resist an attack, feature, maneuver, spell, or trait from a creature that is part of your vendetta. Whether or not a creature is part of your vendetta is at the Narrator’s discretion.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "vengeful-protector",
+  "fields": {
+    "name": "Vengeful Protector",
+    "desc": "* You gain proficiency with shields as weapons.\r\n* You gain proficiency with the Double Team maneuver and do not have to spend exertion to activate it.\r\n* When a creature reduces a party member (not including animal companions, familiars, or followers) to 0 hit points, you gain an expertise die on attacks made against it until the end of combat.",
+    "prerequisite": "Proficiency with shields",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "vigilante",
+  "fields": {
+    "name": "Vigilante",
+    "desc": "* Your Wisdom or Dexterity score increases by 1, to a maximum of 20.\r\n* You have an alter ego, an identity associated with a costume or disguise. This alter ego can be as  complicated as a full outfit with a history or legends surrounding it or a simple mask or cowl. You can assume or remove this alter ego as an action and it can be worn with all types of armor. \r\n* You gain a 1d8 expertise die and advantage on Deception checks made regarding your alter ego,  Persuasion checks made to dissuade others from connecting you to your alter ego, and on disguise kit checks.\r\n* Your alter ego has its own Prestige rating that may increase or decrease as you perform deeds while in your alter ego. In addition, while in your alter ego you gain a 1d8 expertise die on Prestige checks.\r\n* While in your alter ego, you may make a Prestige check and use that result in place of any Intimidation or Persuasion check you would otherwise make.",
+    "prerequisite": "3 levels in adept, 3 levels in ranger",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "weapons-specialist",
+  "fields": {
+    "name": "Weapons Specialist",
+    "desc": "* Your Strength or Dexterity score increases by 1, to a maximum of 20.\r\n* You gain proficiency with four weapons of your choice. Three of these must be a simple or a martial weapon. The fourth choice can be a simple, martial, or rare weapon.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "well-heeled",
+  "fields": {
+    "name": "Well-Heeled",
+    "desc": "* You are treated as royalty (or as closely as possible) by most commoners and traders, and as an equal when meeting other authority figures (who make time in their schedule to see you when requested to do so).\r\n* You have passive investments and income that allow you to maintain a high quality of living. You have a rich lifestyle and do not need to pay for it.\r\n* You gain a second Prestige Center. This must be an area where you have spent at least a week of time.",
+    "prerequisite": "Prestige rating of 2 or higher",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "wild-rioter",
+  "fields": {
+    "name": "Wild Rioter",
+    "desc": "While raging, you and any creatures benefiting from your Living Stampede emit 5-foot auras of fury. When a creature other than you or your allies enters a fury aura or starts its turn there it makes a Wisdom saving throw against your druid spell save DC. On a failed save, a creature becomes confused, except instead of rolling to determine their actions as normal for the confused condition, they are always considered to have rolled the 7 or 8 result. At the end of each of a confused creature’s turns it repeats the saving throw, ending the effect on itself on a success. Once a creature successfully saves against this effect, it is  immune to it for the remainder of your rage.",
+    "prerequisite": "Living Stampede feat",
+    "document": "a5esrd"
+  }
+},
+{
+  "model": "api_v2.feat",
+  "pk": "woodcraft-training",
+  "fields": {
+    "name": "Woodcraft Training",
+    "desc": "* You gain proficiency with the herbalism kit, navigator’s kit, a simple ranged weapon, or a martial ranged weapon.\r\n* You gain two exploration knacks of your choice from the ranger class.",
+    "prerequisite": "",
+    "document": "a5esrd"
+  }
+}
+]

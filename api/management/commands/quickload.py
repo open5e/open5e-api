@@ -20,7 +20,8 @@ SOURCE_DIRS = [
     './data/deep_magic_extended/',
     './data/warlock/',
     './data/vault_of_magic',
-    './data/tome_of_heroes/'
+    './data/tome_of_heroes/',
+    './data/taldorei/'
 ]
 
 class Command(BaseCommand):
