@@ -105,7 +105,6 @@ class Object(HasName):
         abstract = True
         ordering = ['pk']
 
-
 class Benefit(HasName, HasDescription):
     """
     This is the definition of a Benefit abstract base class.
