@@ -103,18 +103,6 @@ class Creature(Object, Abilities, FromDocument):
         help_text='What category this creature belongs to.'
     )
 
-    deprecated_type = models.CharField(
-        max_length=20,
-        choices=MONSTER_TYPES,
-        help_text='Which type of creature this is.'
-    )
-
-    subtype = models.CharField(
-        null=True,
-        max_length=100,
-        help_text='Which subtype or subtypes this creature has, if any.'
-    )
-
     alignment = models.CharField(
         max_length=100,
         help_text='The creature\'s allowed alignments.'
