@@ -103,7 +103,7 @@ class Creature(Object, Abilities, FromDocument):
         help_text='What category this creature belongs to.'
     )
 
-    type = models.CharField(
+    deprecated_type = models.CharField(
         max_length=20,
         choices=MONSTER_TYPES,
         help_text='Which type of creature this is.'
