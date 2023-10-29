@@ -194,3 +194,14 @@ class CreatureAttack(HasName, FromDocument):
     extra_damage_die_type = damage_die_type_field()
     extra_damage_bonus = damage_bonus_field()
     extra_damage_type = damage_type_field()
+
+
+class CreatureType(HasName, HasDescription, FromDocument):
+    """The Type of creature, such as Aberration."""
+
+
+class CreatureSet(HasName, FromDocument):
+    """Set that the creature belongs to."""
+
+    creatures = models.ManyToManyField(Creature, related_name="creaturesets",
+                                       help_text="The set of creatures.")
