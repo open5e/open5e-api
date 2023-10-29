@@ -91,12 +91,22 @@ def damage_type_field():
     )
 
 
+class CreatureType(HasName, HasDescription, FromDocument):
+    """The Type of creature, such as Aberration."""
+
+
 class Creature(Object, Abilities, FromDocument):
     """
     This is the model for a Creature, per the 5e ruleset.
 
     This extends the object and abilities models.
     """
+
+    type = models.ForeignKey(
+        CreatureType,
+        on_delete=models.CASCADE,
+        help_text="Type of creature, such as Aberration."
+    )
 
     category = models.CharField(
         max_length=100,
@@ -182,10 +192,6 @@ class CreatureAttack(HasName, FromDocument):
     extra_damage_die_type = damage_die_type_field()
     extra_damage_bonus = damage_bonus_field()
     extra_damage_type = damage_type_field()
-
-
-class CreatureType(HasName, HasDescription, FromDocument):
-    """The Type of creature, such as Aberration."""
 
 
 class CreatureSet(HasName, FromDocument):

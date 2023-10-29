@@ -43,6 +43,10 @@ admin.site.register(Race, admin_class=RaceAdmin)
 
 admin.site.register(Feat, admin_class=FeatAdmin)
 
+admin.site.register(Creature)
+admin.site.register(CreatureType)
+admin.site.register(CreatureSet)
+
 admin.site.register(Document)
 admin.site.register(License)
 admin.site.register(Publisher)
