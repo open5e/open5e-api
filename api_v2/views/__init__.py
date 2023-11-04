@@ -20,3 +20,5 @@ from .item import ArmorFilterSet, ArmorViewSet
 from .item import WeaponFilterSet, WeaponViewSet
 
 from .damagetype import DamageTypeViewSet
+
+from .language import LanguageFilterSet, LanguageViewSet

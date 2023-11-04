@@ -16,6 +16,7 @@ class Language(HasName, HasDescription, FromDocument):
 
     script_language = models.ForeignKey('self',
                                         null=True,
+                                        blank=True,
                                         on_delete=models.CASCADE)
 
     # TODO typical_speakers will be a FK out to a Creature Types table.
@@ -27,11 +28,3 @@ class Language(HasName, HasDescription, FromDocument):
     is_secret = models.BooleanField(
         help_text='Whether or not the language is secret.',
         default=False)
-
-
-class LanguageSet(HasName, HasDescription, FromDocument):
-    """A set of languages to be referenced."""
-
-    languages = models.ManyToManyField(Item,
-                                       related_name="languagesets",
-                                       help_text="The set of languages.")

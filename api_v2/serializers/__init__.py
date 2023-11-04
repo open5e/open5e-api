@@ -23,3 +23,5 @@ from .creature import CreatureSerializer
 from .creature import CreatureTypeSerializer
 
 from .damagetype import DamageTypeSerializer
+
+from .language import LanguageSerializer
