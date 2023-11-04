@@ -13,6 +13,8 @@ class RaceFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact'],
             'name': ['iexact', 'exact'],
             'document__key': ['in', 'iexact', 'exact'],
+            'subrace_of': ['isnull'],
+            'subrace_of__key':['in', 'iexact', 'exact'],
         }
 
 
@@ -24,4 +26,3 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Race.objects.all().order_by('pk')
     serializer_class = serializers.RaceSerializer
     filterset_class = RaceFilterSet
-
