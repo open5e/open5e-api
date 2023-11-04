@@ -1,5 +1,4 @@
 """Serializer for the Item, Itemset, armor, and weapon models"""
-from rest_framework import serializers
 
 from api_v2 import models
 
