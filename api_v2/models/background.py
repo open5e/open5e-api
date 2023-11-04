@@ -1,0 +1,29 @@
+"""The model for a feat."""
+from django.db import models
+from .abstracts import HasName, HasDescription, Benefit
+from .document import FromDocument
+
+
+class BackgroundBenefit(Benefit):
+    """This is the model for an individual benefit of a background."""
+
+    background = models.ForeignKey('Background', on_delete=models.CASCADE)
+
+
+class Background(HasName, HasDescription, FromDocument):
+    """
+    This is the model for a character background.
+
+    Your character's background reveals where you came from, how you became
+    an adventurer, and your place in the world.
+    """
+
+    @property
+    def benefits(self):
+        """Returns the set of benefits that are related to this feat."""
+        return self.backgroundbenefit_set
+
+    class Meta:
+        """To assist with the UI layer."""
+
+        verbose_name_plural = "backgrounds"

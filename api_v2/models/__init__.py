@@ -11,8 +11,12 @@ from .weapon import Weapon
 
 from .race import Trait
 from .race import Race
+
 from .feat import FeatBenefit
 from .feat import Feat
+
+from .background import BackgroundBenefit
+from .background import Background
 
 from .creature import Creature
 from .creature import CreatureAction
