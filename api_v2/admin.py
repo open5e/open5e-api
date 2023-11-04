@@ -66,6 +66,9 @@ class BackgroundAdmin(admin.ModelAdmin):
         BackgroundBenefitInline
     ]
 
+class DamageTypeAdmin(admin.ModelAdmin):
+    model = DamageType
+
 
 admin.site.register(Weapon, admin_class=FromDocumentModelAdmin)
 admin.site.register(Armor, admin_class=FromDocumentModelAdmin)
@@ -87,3 +90,5 @@ admin.site.register(Document)
 admin.site.register(License)
 admin.site.register(Publisher)
 admin.site.register(Ruleset)
+
+admin.site.register(DamageType)
