@@ -24,3 +24,5 @@ from .damagetype import DamageTypeViewSet
 from .language import LanguageFilterSet, LanguageViewSet
 
 from .alignment import AlignmentFilterSet, AlignmentViewSet
+
+from .condition import ConditionViewSet
