@@ -64,6 +64,7 @@ if settings.V2_ENABLED:
     router_v2.register(r'feats',views_v2.FeatViewSet)
     router_v2.register(r'races',views_v2.RaceViewSet)
     router_v2.register(r'creatures',views_v2.CreatureViewSet)
+    router_v2.register(r'creaturetype',views_v2.CreatureTypeViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

@@ -114,7 +114,6 @@ class CreatureSerializer(GameContentSerializer):
             'category',
             'size',
             'type',
-            'subtype',
             'alignment',
             'weight',
             'armor_class',
@@ -223,3 +222,9 @@ class CreatureSerializer(GameContentSerializer):
         return result
 
 
+class CreatureTypeSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.CreatureType
+        fields = '__all__'

@@ -22,3 +22,4 @@ from .race import TraitSerializer
 from .race import RaceSerializer
 
 from .creature import CreatureSerializer
+from .creature import CreatureTypeSerializer
