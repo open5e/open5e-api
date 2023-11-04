@@ -4,7 +4,7 @@ from api_v2 import models
 from api_v2 import serializers
 
 
-class FeatViewSet(viewsets.ReadOnlyModelViewSet):
+class DamageTypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of damage types.
     retrieve: API endpoint for returning a particular damage type.

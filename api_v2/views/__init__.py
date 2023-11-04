@@ -19,3 +19,4 @@ from .item import ItemSetFilterSet, ItemSetViewSet
 from .item import ArmorFilterSet, ArmorViewSet
 from .item import WeaponFilterSet, WeaponViewSet
 
+from .damagetype import DamageTypeViewSet
