@@ -16,6 +16,7 @@ class Language(HasName, HasDescription, FromDocument):
 
     script_language = models.ForeignKey('self',
                                         null=True,
+                                        blank=True,
                                         on_delete=models.CASCADE)
 
     # TODO typical_speakers will be a FK out to a Creature Types table.
