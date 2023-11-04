@@ -8,6 +8,9 @@ from .abstracts import GameContentSerializer
 
 class AlignmentSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    morality = serializers.ReadOnlyField()
+    societal_attitude = serializers.ReadOnlyField()
+    short_name = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Alignment
