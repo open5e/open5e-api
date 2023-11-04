@@ -12,7 +12,12 @@ from .document import RulesetViewSet
 from .document import PublisherViewSet
 from .document import LicenseViewSet
 
+from .feat import FeatFilterSet, FeatViewSet
+
+from .race import RaceFilterSet, RaceViewSet
+
 from .item import ItemFilterSet, ItemViewSet
 from .item import ItemSetFilterSet, ItemSetViewSet
 from .item import ArmorFilterSet, ArmorViewSet
 from .item import WeaponFilterSet, WeaponViewSet
+
