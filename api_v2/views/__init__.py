@@ -4,3 +4,5 @@ from .views import *
 
 from .creature import CreatureFilterSet, CreatureViewSet
 from .creature import CreatureTypeViewSet
+
+from .background import BackgroundFilterSet, BackgroundViewSet
