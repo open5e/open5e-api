@@ -1,5 +1,7 @@
 """Serializers and helper methods for the Creature model."""
 
+from math import floor
+
 from rest_framework import serializers
 
 from api_v2 import models
