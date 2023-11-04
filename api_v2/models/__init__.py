@@ -29,3 +29,5 @@ from .document import License
 from .document import Publisher
 from .document import Ruleset
 from .document import FromDocument
+
+from .damagetype import DamageType
