@@ -1,12 +1,7 @@
 """The model for a language."""
 
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
-from django.urls import reverse
 
-from api.models import GameContent
-from .weapon import Weapon
-from .armor import Armor
 from .abstracts import Object, HasName, HasDescription
 from .document import FromDocument
 

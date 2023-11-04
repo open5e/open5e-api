@@ -98,3 +98,5 @@ admin.site.register(Ruleset)
 admin.site.register(DamageType)
 
 admin.site.register(Language)
+
+admin.site.register(Alignment)
