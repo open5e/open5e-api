@@ -29,6 +29,7 @@ class PublisherSerializer(serializers.HyperlinkedModelSerializer):
 
 class DocumentSerializer(serializers.HyperlinkedModelSerializer):
     key = serializers.ReadOnlyField()
+    stats = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Document
