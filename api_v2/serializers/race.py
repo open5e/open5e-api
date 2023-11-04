@@ -13,11 +13,19 @@ class TraitSerializer(serializers.ModelSerializer):
         model = models.Trait
         fields = ['name', 'desc']
 
+class SubraceSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    traits = TraitSerializer(
+        many=True)
+    class Meta:
+        model = models.Race
+        fields = '__all__'
 
 class RaceSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     is_subrace = serializers.ReadOnlyField()
-    is_selectable = serializers.ReadOnlyField()
+    subraces = SubraceSerializer(many=True, context={'request': {}})
+    
     traits = TraitSerializer(
         many=True)
 

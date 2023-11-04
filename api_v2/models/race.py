@@ -30,15 +30,14 @@ class Race(HasName, HasDescription, FromDocument):
                                    on_delete=models.CASCADE)
 
     @property
+    def subraces(self):
+        """Returns the set of subraces that are related to this race."""
+        return self.race_set.all()
+
+    @property
     def is_subrace(self):
         """Returns whether the object is a subrace."""
         return self.subrace_of is not None
-
-    @property
-    def is_selectable(self):
-        """Returns whether or not this is a choosable race or subrace."""
-        # Returns true if this has 0 referencing children.
-        return len(self.race_set.all()) == 0
 
     @property
     def traits(self):
