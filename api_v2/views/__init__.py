@@ -1,8 +1,6 @@
 """The initialization for views for open5e's api v2."""
 
-from .views import *
-
-from .background import BackgroundFilterSet, BackgroundViewSet
+    from .background import BackgroundFilterSet, BackgroundViewSet
 
 from .creature import CreatureFilterSet, CreatureViewSet
 from .creature import CreatureTypeViewSet
