@@ -64,10 +64,11 @@ if settings.V2_ENABLED:
     router_v2.register(r'feats',views_v2.FeatViewSet)
     router_v2.register(r'races',views_v2.RaceViewSet)
     router_v2.register(r'creatures',views_v2.CreatureViewSet)
-    router_v2.register(r'creaturetype',views_v2.CreatureTypeViewSet)
-    router_v2.register(r'damagetype',views_v2.DamageTypeViewSet)
-    router_v2.register(r'language',views_v2.LanguageViewSet)
-    router_v2.register(r'alignment',views_v2.AlignmentViewSet)
+    router_v2.register(r'creaturetypes',views_v2.CreatureTypeViewSet)
+    router_v2.register(r'damagetypes',views_v2.DamageTypeViewSet)
+    router_v2.register(r'languages',views_v2.LanguageViewSet)
+    router_v2.register(r'alignments',views_v2.AlignmentViewSet)
+    router_v2.register(r'conditions',views_v2.ConditionViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

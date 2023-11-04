@@ -35,3 +35,5 @@ from .damagetype import DamageType
 from .language import Language
 
 from .alignment import Alignment
+
+from .condition import Condition
