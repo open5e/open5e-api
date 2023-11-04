@@ -67,6 +67,7 @@ if settings.V2_ENABLED:
     router_v2.register(r'creaturetype',views_v2.CreatureTypeViewSet)
     router_v2.register(r'damagetype',views_v2.DamageTypeViewSet)
     router_v2.register(r'language',views_v2.LanguageViewSet)
+    router_v2.register(r'alignment',views_v2.AlignmentViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
