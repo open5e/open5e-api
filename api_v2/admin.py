@@ -70,6 +70,10 @@ class DamageTypeAdmin(admin.ModelAdmin):
     model = DamageType
 
 
+class LanguageAdmin(admin.ModelAdmin):
+    model = Language
+
+
 admin.site.register(Weapon, admin_class=FromDocumentModelAdmin)
 admin.site.register(Armor, admin_class=FromDocumentModelAdmin)
 
@@ -92,3 +96,5 @@ admin.site.register(Publisher)
 admin.site.register(Ruleset)
 
 admin.site.register(DamageType)
+
+admin.site.register(Language)

@@ -31,3 +31,5 @@ from .document import Ruleset
 from .document import FromDocument
 
 from .damagetype import DamageType
+
+from .language import Language

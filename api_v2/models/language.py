@@ -27,11 +27,3 @@ class Language(HasName, HasDescription, FromDocument):
     is_secret = models.BooleanField(
         help_text='Whether or not the language is secret.',
         default=False)
-
-
-class LanguageSet(HasName, HasDescription, FromDocument):
-    """A set of languages to be referenced."""
-
-    languages = models.ManyToManyField(Item,
-                                       related_name="languagesets",
-                                       help_text="The set of languages.")
