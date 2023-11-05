@@ -36,7 +36,6 @@ class ItemSerializer(GameContentSerializer):
     weapon = WeaponSerializer(read_only=True, context={'request': {}})
     armor = ArmorSerializer(read_only=True, context={'request': {}})
 
-
     class Meta:
         model = models.Item
         fields = '__all__'
@@ -49,3 +48,12 @@ class ItemSetSerializer(GameContentSerializer):
     class Meta:
         model = models.ItemSet
         fields = '__all__'
+
+
+class ItemCategorySerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    item_set = ItemSerializer(many=True, read_only=True, context={'request':{}})
+
+    class Meta:
+        model = models.ItemCategory
+        fields = "__all__"

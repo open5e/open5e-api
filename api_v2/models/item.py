@@ -43,13 +43,11 @@ class Item(Object, HasDescription, FromDocument):
         blank=True,
         null=True)
 
-
     category = models.ForeignKey(
         ItemCategory,
         on_delete=models.CASCADE,
         null=False
     )
-
 
     requires_attunement = models.BooleanField(
         null=False,

@@ -54,6 +54,7 @@ router_v2 = routers.DefaultRouter()
 if settings.V2_ENABLED:
     router_v2.register(r'items',views_v2.ItemViewSet)
     router_v2.register(r'itemsets',views_v2.ItemSetViewSet)
+    router_v2.register(r'itemcategories',views_v2.ItemCategoryViewSet)
     router_v2.register(r'documents',views_v2.DocumentViewSet)
     router_v2.register(r'licenses',views_v2.LicenseViewSet)
     router_v2.register(r'publishers',views_v2.PublisherViewSet)

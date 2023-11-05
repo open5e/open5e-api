@@ -58,6 +58,18 @@ class ItemSetViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = ItemSetFilterSet
 
 
+class ItemCategoryViewSet(viewsets.ReadOnlyModelViewSet):
+    """"
+    list: API Endpoint for returning a set of item categories.
+
+    retrieve: API endpoint for return a particular item categories.
+    """
+    queryset = models.ItemCategory.objects.all().order_by('pk')
+    serializer_class = serializers.ItemCategorySerializer
+
+
+
+
 class WeaponFilterSet(FilterSet):
 
     class Meta:
