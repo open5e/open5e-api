@@ -13,7 +13,7 @@ from django.apps import apps
 from django.apps import AppConfig
 
 from api_v2.models import *
-
+from api import models as v1
 
 class Command(BaseCommand):
     """Implementation for the `manage.py `export` subcommand."""
@@ -27,6 +27,7 @@ class Command(BaseCommand):
                             help="Directory to write files to.")
 
     def handle(self, *args, **options) -> None:
+
         self.stdout.write('Checking if directory exists.')
         if os.path.exists(options['dir']) and os.path.isdir(options['dir']):
             self.stdout.write('Directory {} exists.'.format(options['dir']))
@@ -34,6 +35,40 @@ class Command(BaseCommand):
             self.stdout.write(self.style.ERROR(
                 'Directory {} does not exist.'.format(options['dir'])))
             exit(0)
+
+        app_models = apps.get_models()
+
+        #Start V1 output.
+        v1documents = v1.Document.objects.all()
+        for v1doc in v1documents:
+            v1docq = v1.Document.objects.filter(slug=v1doc.slug).order_by('pk')
+            v1doc_path = get_filepath_by_model(
+                "Document",
+                "api",
+                doc_key=v1doc.slug,
+                base_path=options['dir'])
+            write_queryset_data(v1doc_path, v1docq)
+
+            for model in app_models:
+                SKIPPED_MODEL_NAMES = ['Document', 'Manifest','MonsterSpell']
+                if model._meta.app_label == 'api' and model.__name__ not in SKIPPED_MODEL_NAMES:
+                    modelq = model.objects.filter(document=v1doc).order_by('pk')
+                if model._meta.app_label == 'api' and model.__name__ == "MonsterSpell":
+                    modelq = model.objects.filter(monster__document=v1doc).order_by('pk')
+                else:
+                    continue
+                model_path = get_filepath_by_model(
+                    model.__name__,
+                    model._meta.app_label,
+                    doc_key=v1doc.slug,
+                    base_path=options['dir'])
+                write_queryset_data(model_path, modelq)
+
+            self.stdout.write(self.style.SUCCESS(
+                'Wrote {} to {}'.format(v1doc.slug, v1doc_path)))
+
+        self.stdout.write(self.style.SUCCESS('Data for v1 data complete.'))
+
 
         # Start V2 output.
         rulesets = Ruleset.objects.all()
@@ -71,7 +106,6 @@ class Command(BaseCommand):
                     base_path=options['dir'])
                 write_queryset_data(doc_path, docq)
 
-                app_models = apps.get_models()
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher']
