@@ -72,6 +72,13 @@ class Item(Object, HasDescription, FromDocument):
     # Magic item types that should probably be filterable: 
     # Staff, Rod, Scroll, Ring, Potion, Ammunition, Wand = category
 
+    category = models.ForeignKey(
+        ItemCategory,
+        on_delete=models.CASCADE,
+        null=True
+    )
+
+
     requires_attunement = models.BooleanField(
         null=False,
         default=False,  # An item is not magical unless specified.
