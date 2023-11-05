@@ -43,39 +43,11 @@ class Item(Object, HasDescription, FromDocument):
         blank=True,
         null=True)
 
-    CATEGORY_CHOICES = [
-        ('staff', 'Staff'),
-        ('rod', 'Rod'),
-        ('scroll', 'Scroll'),
-        ('potion', 'Potion'),
-        ('wand', 'Wand'),
-        ('wondrous-item', 'Wondrous item'),
-        ('ring', 'Ring'),
-        ('ammunition', 'Ammunition'),
-        ('weapon', 'Weapon'),
-        ('armor', 'Armor'),
-        ('gem', 'Gem'),
-        ('jewelry', 'Jewelry'),
-        ('art', 'Art'),
-        ('trade-good', 'Trade Good'),
-        ('shield', 'Shield'),
-        ('poison', 'Poison'),
-        ('adventuring-gear', 'Adventuring gear'),
-        ('tools', 'Tools')
-    ]
-
-    category_text = models.CharField(
-        null=False,
-        choices=CATEGORY_CHOICES,
-        max_length=100,
-        help_text='The category of the magic item.')
-    # Magic item types that should probably be filterable: 
-    # Staff, Rod, Scroll, Ring, Potion, Ammunition, Wand = category
 
     category = models.ForeignKey(
         ItemCategory,
         on_delete=models.CASCADE,
-        null=True
+        null=False
     )
 
 
