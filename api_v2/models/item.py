@@ -10,6 +10,9 @@ from .armor import Armor
 from .abstracts import Object, HasName, HasDescription
 from .document import FromDocument
 
+class ItemCategory(HasName, FromDocument):
+    """A class describing categories of items."""
+    pass
 
 class Item(Object, HasDescription, FromDocument):
     """
@@ -61,7 +64,7 @@ class Item(Object, HasDescription, FromDocument):
         ('tools', 'Tools')
     ]
 
-    category = models.CharField(
+    category_text = models.CharField(
         null=False,
         choices=CATEGORY_CHOICES,
         max_length=100,

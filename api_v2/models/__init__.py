@@ -2,6 +2,7 @@
 
 from .abilities import Abilities
 
+from .item import ItemCategory
 from .item import Item
 from .item import ItemSet
 
