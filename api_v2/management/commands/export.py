@@ -27,7 +27,7 @@ class Command(BaseCommand):
                             help="Directory to write files to.")
 
     def handle(self, *args, **options) -> None:
-
+        
         self.stdout.write('Checking if directory exists.')
         if os.path.exists(options['dir']) and os.path.isdir(options['dir']):
             self.stdout.write('Directory {} exists.'.format(options['dir']))
@@ -38,7 +38,7 @@ class Command(BaseCommand):
 
         app_models = apps.get_models()
 
-        #Start V1 output.
+        # Start v1 output.
         v1documents = v1.Document.objects.all()
         for v1doc in v1documents:
             v1docq = v1.Document.objects.filter(slug=v1doc.slug).order_by('pk')
@@ -50,11 +50,13 @@ class Command(BaseCommand):
             write_queryset_data(v1doc_path, v1docq)
 
             for model in app_models:
-                SKIPPED_MODEL_NAMES = ['Document', 'Manifest','MonsterSpell']
-                if model._meta.app_label == 'api' and model.__name__ not in SKIPPED_MODEL_NAMES:
-                    modelq = model.objects.filter(document=v1doc).order_by('pk')
-                if model._meta.app_label == 'api' and model.__name__ == "MonsterSpell":
-                    modelq = model.objects.filter(monster__document=v1doc).order_by('pk')
+                if model._meta.app_label == 'api':
+                    if model.__name__ == "MonsterSpell":
+                        modelq = model.objects.filter(monster__document=v1doc).order_by('pk')
+                    SKIPPED_MODEL_NAMES = ['Document', 'Manifest','MonsterSpell']
+                    if model.__name__ not in SKIPPED_MODEL_NAMES:
+                        modelq = model.objects.filter(document=v1doc).order_by('pk')
+                    else: continue
                 else:
                     continue
                 model_path = get_filepath_by_model(
@@ -68,7 +70,6 @@ class Command(BaseCommand):
                 'Wrote {} to {}'.format(v1doc.slug, v1doc_path)))
 
         self.stdout.write(self.style.SUCCESS('Data for v1 data complete.'))
-
 
         # Start V2 output.
         rulesets = Ruleset.objects.all()
@@ -105,7 +106,6 @@ class Command(BaseCommand):
                     doc_key=doc.key,
                     base_path=options['dir'])
                 write_queryset_data(doc_path, docq)
-
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher']

@@ -1,0 +1,560 @@
+[
+{
+  "model": "api.weapon",
+  "pk": "axespear",
+  "fields": {
+    "name": "Axespear",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.692",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "25 gp",
+    "damage_dice": "1d8",
+    "damage_type": "slashing",
+    "weight": "8 lb.",
+    "properties_json": "[\"double-headed (1d4)\", \"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "barge-pole",
+  "fields": {
+    "name": "Barge Pole",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.690",
+    "page_no": null,
+    "category": "Simple Melee Weapons",
+    "cost": "1 sp",
+    "damage_dice": "1d6",
+    "damage_type": "bludgeoning",
+    "weight": "5 lb.",
+    "properties_json": "[\"reach\", \"special\", \"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "bladed-scarf",
+  "fields": {
+    "name": "Bladed Scarf",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.692",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "100 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "3 lb.",
+    "properties_json": "[\"finesse\", \"reach\", \"special\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "blunderbuss",
+  "fields": {
+    "name": "Blunderbuss",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.698",
+    "page_no": null,
+    "category": "Martial Ranged Weapons",
+    "cost": "75 gp",
+    "damage_dice": "2d4",
+    "damage_type": "piercing",
+    "weight": "12 lb.",
+    "properties_json": "[\"ammunition\", \"gunpowder\", \"loading\", \"special\", \"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "bolas",
+  "fields": {
+    "name": "Bolas",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.699",
+    "page_no": null,
+    "category": "Martial Ranged Weapons",
+    "cost": "5 gp",
+    "damage_dice": "",
+    "damage_type": "",
+    "weight": "2 lb.",
+    "properties_json": "[\"special\", \"thrown (range 5/15)\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "chain-hook",
+  "fields": {
+    "name": "Chain Hook",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.693",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "15 gp",
+    "damage_dice": "1d6",
+    "damage_type": "slashing",
+    "weight": "3 lb.",
+    "properties_json": "[\"reach\", \"special\", \"thrown (range 10/20)\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "chakram",
+  "fields": {
+    "name": "Chakram",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.693",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "15 gp",
+    "damage_dice": "1d6",
+    "damage_type": "slashing",
+    "weight": "1 lb.",
+    "properties_json": "[\"thrown (range 20/60)\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "climbing-adze",
+  "fields": {
+    "name": "Climbing Adze",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.694",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "6 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "3 lb.",
+    "properties_json": "[\"light\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "clockwork-crossbow",
+  "fields": {
+    "name": "Clockwork Crossbow",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.691",
+    "page_no": null,
+    "category": "Simple Ranged Weapons",
+    "cost": "100 gp",
+    "damage_dice": "1d8",
+    "damage_type": "piercing",
+    "weight": "8 lb.",
+    "properties_json": "[\"ammunition (60/240)\", \"magazine (6)\", \"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "club-shield",
+  "fields": {
+    "name": "Club Shield",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.694",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "25 gp",
+    "damage_dice": "1d4",
+    "damage_type": "bludgeoning",
+    "weight": "2 lb.",
+    "properties_json": "[\"light\", \"special\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "double-axe",
+  "fields": {
+    "name": "Double Axe",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.693",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "50 gp",
+    "damage_dice": "1d8",
+    "damage_type": "slashing",
+    "weight": "10 lb.",
+    "properties_json": "[\"double-headed (1d6)\", \"heavy\", \"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "dwarven-arquebus",
+  "fields": {
+    "name": "Dwarven Arquebus",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.699",
+    "page_no": null,
+    "category": "Martial Ranged Weapons",
+    "cost": "100 gp",
+    "damage_dice": "2d6",
+    "damage_type": "piercing",
+    "weight": "20 lb.",
+    "properties_json": "[\"ammunition (range 25/100)\", \"gunpowder\", \"heavy\", \"loading\", \"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "dwarven-axe",
+  "fields": {
+    "name": "Dwarven Axe",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.695",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "15 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "6 lb.",
+    "properties_json": "[\"special\", \"versatile (1d10)\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "dwarven-revolving-musket",
+  "fields": {
+    "name": "Dwarven Revolving Musket",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.700",
+    "page_no": null,
+    "category": "Martial Ranged Weapons",
+    "cost": "200 gp",
+    "damage_dice": "1d8",
+    "damage_type": "piercing",
+    "weight": "12 lb.",
+    "properties_json": "[\"ammunition (range 80/320)\", \"gunpowder\", \"magazine (8)\", \"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "elven-dueling-blade",
+  "fields": {
+    "name": "Elven Dueling Blade",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.695",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "50 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "4 lb.",
+    "properties_json": "[\"finesse\", \"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "granite-fist",
+  "fields": {
+    "name": "Granite Fist",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.690",
+    "page_no": null,
+    "category": "Simple Melee Weapons",
+    "cost": "25 gp",
+    "damage_dice": "1d4",
+    "damage_type": "bludgeoning",
+    "weight": "5 lb.",
+    "properties_json": "[\"\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "hand-trebuchet",
+  "fields": {
+    "name": "Hand Trebuchet",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.700",
+    "page_no": null,
+    "category": "Martial Ranged Weapons",
+    "cost": "4 gp",
+    "damage_dice": "",
+    "damage_type": "",
+    "weight": "3 lb.",
+    "properties_json": "[\"ammunition (range 60/240)\", \"special\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "joining-dirks",
+  "fields": {
+    "name": "Joining Dirks",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.695",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "50 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "2 lb.",
+    "properties_json": "[\"finesse\", \"light\", \"special\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "khopesh",
+  "fields": {
+    "name": "Khopesh",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.696",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "25 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "4 lb.",
+    "properties_json": "[\"versatile (1d8)\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "light-pick",
+  "fields": {
+    "name": "Light Pick",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.690",
+    "page_no": null,
+    "category": "Simple Melee Weapons",
+    "cost": "3 gp",
+    "damage_dice": "1d4",
+    "damage_type": "piercing",
+    "weight": "2 lb.",
+    "properties_json": "[\"light\", \"thrown (20/60)\", \"\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "musket",
+  "fields": {
+    "name": "Musket",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.700",
+    "page_no": null,
+    "category": "Martial Ranged Weapons",
+    "cost": "50 gp",
+    "damage_dice": "1d10",
+    "damage_type": "piercing",
+    "weight": "10 lb.",
+    "properties_json": "[\"ammunition (range 80/320)\", \"gunpowder\", \"loading\", \"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "pistol",
+  "fields": {
+    "name": "Pistol",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.692",
+    "page_no": null,
+    "category": "Simple Ranged Weapons",
+    "cost": "25 gp",
+    "damage_dice": "1d6",
+    "damage_type": "piercing",
+    "weight": "5 lb.",
+    "properties_json": "[\"ammunition (range 30/120)\", \"gunpowder\", \"light\", \"loading\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "pneumatic-war-pick",
+  "fields": {
+    "name": "Pneumatic War Pick",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.696",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "50 gp",
+    "damage_dice": "1d4",
+    "damage_type": "piercing",
+    "weight": "4 lb.",
+    "properties_json": "[\"special\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "shashka",
+  "fields": {
+    "name": "Shashka",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.696",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "20 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "4 lb.",
+    "properties_json": "[\"special\", \"versatile (1d10)\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "shotel",
+  "fields": {
+    "name": "Shotel",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.697",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "50 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "3 lb.",
+    "properties_json": "[\"finesse\", \"special\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "stone-rake",
+  "fields": {
+    "name": "Stone Rake",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.691",
+    "page_no": null,
+    "category": "Simple Melee Weapons",
+    "cost": "5 gp",
+    "damage_dice": "1d8",
+    "damage_type": "piercing",
+    "weight": "5 lb.",
+    "properties_json": "[\"two-handed\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "temple-sword",
+  "fields": {
+    "name": "Temple Sword",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.697",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "35 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "3 lb.",
+    "properties_json": "[\"finesse\", \"light\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "whipsaw",
+  "fields": {
+    "name": "Whipsaw",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.697",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "15 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "2 lb.",
+    "properties_json": "[\"finesse\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "wormsilk-net",
+  "fields": {
+    "name": "Wormsilk Net",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.701",
+    "page_no": null,
+    "category": "Martial Ranged Weapons",
+    "cost": "60 gp",
+    "damage_dice": "",
+    "damage_type": "",
+    "weight": "2 lb.",
+    "properties_json": "[\"special\", \"thrown (range 10/20)\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "wormsilk-whip",
+  "fields": {
+    "name": "Wormsilk Whip",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.698",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "50 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "3 lb.",
+    "properties_json": "[\"finesse\", \"reach\"]",
+    "route": "weapons/"
+  }
+},
+{
+  "model": "api.weapon",
+  "pk": "wrist-knife",
+  "fields": {
+    "name": "Wrist Knife",
+    "desc": "",
+    "document": 44,
+    "created_at": "2023-11-05T00:01:41.698",
+    "page_no": null,
+    "category": "Martial Melee Weapons",
+    "cost": "4 gp",
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "weight": "1 lb.",
+    "properties_json": "[\"finesse\", \"light\"]",
+    "route": "weapons/"
+  }
+}
+]
