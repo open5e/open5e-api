@@ -16,6 +16,7 @@ from .race import RaceFilterSet, RaceViewSet
 
 from .item import ItemFilterSet, ItemViewSet
 from .item import ItemSetFilterSet, ItemSetViewSet
+from .item import ItemCategoryViewSet
 from .item import ArmorFilterSet, ArmorViewSet
 from .item import WeaponFilterSet, WeaponViewSet
 

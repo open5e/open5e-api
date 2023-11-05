@@ -4,6 +4,7 @@ from .item import ArmorSerializer
 from .item import WeaponSerializer
 from .item import ItemSerializer
 from .item import ItemSetSerializer
+from .item import ItemCategorySerializer
 
 from .background import BackgroundBenefitSerializer
 from .background import BackgroundSerializer
