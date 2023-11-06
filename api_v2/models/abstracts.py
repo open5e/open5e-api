@@ -105,16 +105,17 @@ class Object(HasName):
         abstract = True
         ordering = ['pk']
 
-class Benefit(HasName, HasDescription):
-    """
-    This is the definition of a Benefit abstract base class.
 
-    A benefit class will be reimplemented from Feat, Race, Background, etc.
+class Modification(HasName, HasDescription):
+    """
+    This is the definition of a modification abstract base class.
+
+    A modification class will be reimplemented from Feat, Race, Background, etc.
     Basically it describes any sort of modification to a character in 5e.
     """
 
-    BENEFIT_TYPES = [
-        ("ability_score_increase", "Ability Score Increase"),
+    MODIFICATION_TYPES = [
+        ("ability_score", "Ability Score Increase or Decrease"),
         ("skill_proficiency", "Skill Proficiency"),
         ("tool_proficiency", "Tool Proficiency"),
         ("language", "Language"),
@@ -129,8 +130,8 @@ class Benefit(HasName, HasDescription):
         max_length=200,
         blank=True,
         null=True,
-        choices=BENEFIT_TYPES,
-        help_text='Benefit type.')
+        choices=MODIFICATION_TYPES,
+        help_text='Modification type.')
 
     class Meta:
         abstract = True

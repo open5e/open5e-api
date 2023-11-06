@@ -23,16 +23,16 @@ class RaceAdmin(admin.ModelAdmin):
     ]
 
 
-class FeatBenefitInline(admin.TabularInline):
-    model = FeatBenefit
+class CapabilityInline(admin.TabularInline):
+    model = Capability
     exclude = ('name',)
 
 
 class FeatAdmin(admin.ModelAdmin):
     inlines = [
-        FeatBenefitInline,
+        CapabilityInline,
     ]
-    list_display = ['key', 'category', 'name']
+    list_display = ['key', 'name']
 
 
 class TraitInline(admin.TabularInline):
@@ -45,25 +45,14 @@ class RaceAdmin(admin.ModelAdmin):
     ]
 
 
-class FeatBenefitInline(admin.TabularInline):
-    model = FeatBenefit
-    exclude = ('name',)
-
-
-class FeatAdmin(admin.ModelAdmin):
-    inlines = [
-        FeatBenefitInline,
-    ]
-
-
-class BackgroundBenefitInline(admin.TabularInline):
-    model = BackgroundBenefit
+class BenefitInline(admin.TabularInline):
+    model = Benefit
 
 
 class BackgroundAdmin(admin.ModelAdmin):
     model = Background
     inlines = [
-        BackgroundBenefitInline
+        BenefitInline
     ]
 
 class DamageTypeAdmin(admin.ModelAdmin):

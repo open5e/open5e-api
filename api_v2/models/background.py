@@ -1,10 +1,10 @@
 """The model for a feat."""
 from django.db import models
-from .abstracts import HasName, HasDescription, Benefit
+from .abstracts import HasName, HasDescription, Modification
 from .document import FromDocument
 
 
-class BackgroundBenefit(Benefit):
+class Benefit(Modification):
     """This is the model for an individual benefit of a background."""
 
     background = models.ForeignKey('Background', on_delete=models.CASCADE)
@@ -21,7 +21,7 @@ class Background(HasName, HasDescription, FromDocument):
     @property
     def benefits(self):
         """Returns the set of benefits that are related to this feat."""
-        return self.backgroundbenefit_set
+        return self.benefit_set
 
     class Meta:
         """To assist with the UI layer."""

@@ -6,7 +6,7 @@ from .item import ItemSerializer
 from .item import ItemSetSerializer
 from .item import ItemCategorySerializer
 
-from .background import BackgroundBenefitSerializer
+from .background import BenefitSerializer
 from .background import BackgroundSerializer
 
 from .document import RulesetSerializer
@@ -14,7 +14,7 @@ from .document import LicenseSerializer
 from .document import PublisherSerializer
 from .document import DocumentSerializer
 
-from .feat import FeatBenefitSerializer
+from .feat import CapabilitySerializer
 from .feat import FeatSerializer
 
 from .race import TraitSerializer
