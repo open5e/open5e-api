@@ -57,8 +57,8 @@ class Document(HasName, HasDescription):
 
             CHILD_MODEL_NAMES = [
                 'Trait',
-                'FeatBenefit', 
-                'BackgroundBenefit',
+                'Capability', 
+                'Benefit',
                 'CreatureAction',
                 'CreatureAttack']
             if model.__name__ in CHILD_MODEL_NAMES: continue
