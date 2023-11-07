@@ -89,7 +89,7 @@ class Migration(migrations.Migration):
                 ('creature', models.ForeignKey(help_text='The creature to which this action belongs.', on_delete=django.db.models.deletion.CASCADE, to='api_v2.creature')),
             ],
             options={
-                'abstract': False,
+                'verbose_name_plural': 'armor',
             },
         ),
         migrations.CreateModel(
