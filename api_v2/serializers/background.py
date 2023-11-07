@@ -6,15 +6,15 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 
-class BackgroundBenefitSerializer(serializers.ModelSerializer):
+class BenefitSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.BackgroundBenefit
+        model = models.Benefit
         fields = ['name','desc','type']
 
 
 class BackgroundSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    benefits = BackgroundBenefitSerializer(
+    benefits = BenefitSerializer(
         many=True
     )
 
