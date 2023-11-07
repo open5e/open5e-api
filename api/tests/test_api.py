@@ -5,10 +5,18 @@ from typing import Callable
 
 API_BASE = f"http://localhost:8000"
 
-def scrub_created_at_date(data):
+def scrub_date(data):
     documents: list[dict] = data["results"]
     for doc in documents:
         doc["created_at"] = "2014-07-16T00:00:0.000000"
+
+
+def scrub_img_url(data):
+    """img url is inconsistent across platforms. needs to fixed in the api at a later date."""
+    monsters: list[dict] = data["results"]
+    for mon in monsters:
+        if mon.get("img_main"):
+            mon["img_main"] = mon["img_main"].replace("\\", "/")
 
 class TestAPIRoot:
 
@@ -40,7 +48,7 @@ class TestAPIRoot:
         self._verify("/conditions")
 
     def test_documents(self):
-        self._verify("/documents", scrub_created_at_date)
+        self._verify("/documents", scrub_date)
 
     def test_feats(self):
         self._verify("/feats")
@@ -51,7 +59,7 @@ class TestAPIRoot:
     # /manifest is excluded because it's too volatile
 
     def test_monsters(self):
-        self._verify("/monsters")
+        self._verify("/monsters", scrub_img_url)
 
     def test_planes(self):
         self._verify("/planes")
