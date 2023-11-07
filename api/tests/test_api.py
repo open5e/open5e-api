@@ -1,14 +1,21 @@
 import requests
 
 from approvaltests import verify_as_json, Options,  DiffReporter
+from typing import Callable
 
 API_BASE = f"http://localhost:8000"
 
+def scrub_created_at_date(data):
+    documents: list[dict] = data["results"]
+    for doc in documents:
+        doc["created_at"] = "2014-07-16T00:00:0.000000"
+
 class TestAPIRoot:
 
-    def _verify(self, endpoint: str):
+    def _verify(self, endpoint: str, transformer: Callable[[dict], None] = None):
         response = requests.get(API_BASE + endpoint, allow_redirects=True, headers = {'Accept': 'application/json'}).json()
-
+        if transformer:
+            transformer(response)
         verify_as_json(response, options=Options().with_reporter(DiffReporter()))
 
     def test_root(self):
@@ -33,7 +40,7 @@ class TestAPIRoot:
         self._verify("/conditions")
 
     def test_documents(self):
-        self._verify("/documents")
+        self._verify("/documents", scrub_created_at_date)
 
     def test_feats(self):
         self._verify("/feats")
