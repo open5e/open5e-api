@@ -243,7 +243,7 @@ class BackgroundSerializer(DynamicFieldsHyperlinkedModelSerializer):
 class PlaneSerializer(DynamicFieldsHyperlinkedModelSerializer):
     class Meta:
         model = models.Plane
-        fields = ('slug','name','desc','document__slug', 'document__title', 'document__url')
+        fields = ('slug','name','desc','document__slug', 'document__title', 'document__url','parent')
 
 class SectionSerializer(DynamicFieldsHyperlinkedModelSerializer):
     class Meta:
