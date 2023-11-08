@@ -109,14 +109,14 @@ class Command(BaseCommand):
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher']
-                    CHILD_MODEL_NAMES = ['Trait', 'FeatBenefit', 'BackgroundBenefit']
+                    CHILD_MODEL_NAMES = ['Trait', 'Capability', 'Benefit']
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
                         if model.__name__ in CHILD_MODEL_NAMES:
                             if model.__name__ == 'Trait':
                                 modelq = model.objects.filter(race__document=doc).order_by('pk')
-                            if model.__name__ == 'FeatBenefit':
+                            if model.__name__ == 'Capability':
                                 modelq = model.objects.filter(feat__document=doc).order_by('pk')
-                            if model.__name__ == 'BackgroundBenefit':
+                            if model.__name__ == 'Benefit':
                                 modelq = model.objects.filter(background__document=doc).order_by('pk')
                         else:
                             modelq = model.objects.filter(document=doc).order_by('pk')
