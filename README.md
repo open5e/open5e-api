@@ -136,10 +136,16 @@ Models such as Monsters and Classes are stored in the [api/models](/api/models) 
 
 # Tests
 
-Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository.
+Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository. These tests require that the api is [running](##run) at `http://localhost:8000`.
+
 ```bash
 pipenv run pytest
 ```
+
+## Approval tests
+Approval tests are run against the approved files in `api/tests/approved_files` as `*.approved.*` . If a test fails then the recieved input will be stored in a `*.recieved.*` file. If you wish to approve the changes, replace the old approved file with the recieved file.
+
+Recieved files shall not be included in the git repo.
 
 # Deployment
 
