@@ -34,8 +34,8 @@
             "spell_level": 4,
             "spell_lists": [
                 "bard",
-                "wizard",
-                "sorcerer"
+                "sorcerer",
+                "wizard"
             ],
             "target_range_sort": 60
         },
@@ -169,48 +169,13 @@
             "slug": "accelerate",
             "spell_level": 3,
             "spell_lists": [
-                "bard",
-                "wizard",
-                "sorcerer",
                 "cleric",
-                "druid"
+                "druid",
+                "bard",
+                "sorcerer",
+                "wizard"
             ],
             "target_range_sort": 1
-        },
-        {
-            "archetype": "Druid: Swamp",
-            "can_be_cast_as_ritual": false,
-            "casting_time": "1 action",
-            "circles": "Swamp",
-            "components": "V, S, M",
-            "concentration": "no",
-            "desc": "A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.",
-            "dnd_class": "Druid, Wizard",
-            "document__license_url": "http://open5e.com/legal",
-            "document__slug": "wotc-srd",
-            "document__title": "5e Core Rules",
-            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
-            "duration": "Instantaneous",
-            "higher_level": "When you cast this spell using a spell slot of 3rd level or higher, the damage (both initial and later) increases by 1d4 for each slot level above 2nd.",
-            "level": "2nd-level",
-            "level_int": 2,
-            "material": "Powdered rhubarb leaf and an adder's stomach.",
-            "name": "Acid Arrow",
-            "page": "phb 259",
-            "range": "90 feet",
-            "requires_concentration": false,
-            "requires_material_components": true,
-            "requires_somatic_components": true,
-            "requires_verbal_components": true,
-            "ritual": "no",
-            "school": "Evocation",
-            "slug": "acid-arrow",
-            "spell_level": 2,
-            "spell_lists": [
-                "wizard",
-                "druid"
-            ],
-            "target_range_sort": 90
         },
         {
             "archetype": "",
@@ -243,6 +208,41 @@
             "spell_level": 2,
             "spell_lists": [],
             "target_range_sort": 120
+        },
+        {
+            "archetype": "Druid: Swamp",
+            "can_be_cast_as_ritual": false,
+            "casting_time": "1 action",
+            "circles": "Swamp",
+            "components": "V, S, M",
+            "concentration": "no",
+            "desc": "A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.",
+            "dnd_class": "Druid, Wizard",
+            "document__license_url": "http://open5e.com/legal",
+            "document__slug": "wotc-srd",
+            "document__title": "5e Core Rules",
+            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
+            "duration": "Instantaneous",
+            "higher_level": "When you cast this spell using a spell slot of 3rd level or higher, the damage (both initial and later) increases by 1d4 for each slot level above 2nd.",
+            "level": "2nd-level",
+            "level_int": 2,
+            "material": "Powdered rhubarb leaf and an adder's stomach.",
+            "name": "Acid Arrow",
+            "page": "phb 259",
+            "range": "90 feet",
+            "requires_concentration": false,
+            "requires_material_components": true,
+            "requires_somatic_components": true,
+            "requires_verbal_components": true,
+            "ritual": "no",
+            "school": "Evocation",
+            "slug": "acid-arrow",
+            "spell_level": 2,
+            "spell_lists": [
+                "druid",
+                "wizard"
+            ],
+            "target_range_sort": 90
         },
         {
             "archetype": "",
@@ -306,46 +306,11 @@
             "slug": "acid-rain",
             "spell_level": 5,
             "spell_lists": [
-                "wizard",
                 "sorcerer",
-                "warlock"
+                "warlock",
+                "wizard"
             ],
             "target_range_sort": 150
-        },
-        {
-            "archetype": "",
-            "can_be_cast_as_ritual": false,
-            "casting_time": "1 action",
-            "circles": "",
-            "components": "V, S",
-            "concentration": "no",
-            "desc": "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a dexterity saving throw or take 1d6 acid damage.",
-            "dnd_class": "Sorcerer, Wizard",
-            "document__license_url": "http://open5e.com/legal",
-            "document__slug": "wotc-srd",
-            "document__title": "5e Core Rules",
-            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
-            "duration": "Instantaneous",
-            "higher_level": "This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
-            "level": "Cantrip",
-            "level_int": 0,
-            "material": "",
-            "name": "Acid Splash",
-            "page": "phb 211",
-            "range": "60 feet",
-            "requires_concentration": false,
-            "requires_material_components": false,
-            "requires_somatic_components": true,
-            "requires_verbal_components": true,
-            "ritual": "no",
-            "school": "Conjuration",
-            "slug": "acid-splash",
-            "spell_level": 0,
-            "spell_lists": [
-                "wizard",
-                "sorcerer"
-            ],
-            "target_range_sort": 60
         },
         {
             "archetype": "",
@@ -384,6 +349,41 @@
             "can_be_cast_as_ritual": false,
             "casting_time": "1 action",
             "circles": "",
+            "components": "V, S",
+            "concentration": "no",
+            "desc": "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a dexterity saving throw or take 1d6 acid damage.",
+            "dnd_class": "Sorcerer, Wizard",
+            "document__license_url": "http://open5e.com/legal",
+            "document__slug": "wotc-srd",
+            "document__title": "5e Core Rules",
+            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
+            "duration": "Instantaneous",
+            "higher_level": "This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+            "level": "Cantrip",
+            "level_int": 0,
+            "material": "",
+            "name": "Acid Splash",
+            "page": "phb 211",
+            "range": "60 feet",
+            "requires_concentration": false,
+            "requires_material_components": false,
+            "requires_somatic_components": true,
+            "requires_verbal_components": true,
+            "ritual": "no",
+            "school": "Conjuration",
+            "slug": "acid-splash",
+            "spell_level": 0,
+            "spell_lists": [
+                "sorcerer",
+                "wizard"
+            ],
+            "target_range_sort": 60
+        },
+        {
+            "archetype": "",
+            "can_be_cast_as_ritual": false,
+            "casting_time": "1 action",
+            "circles": "",
             "components": "V",
             "concentration": "no",
             "desc": "You adjust the location of an ally to a better tactical position. You move one willing creature within range 5 feet. This movement does not provoke opportunity attacks. The creature moves bodily through the intervening space (as opposed to teleporting), so there can be no physical obstacle (such as a wall or a door) in the path.",
@@ -409,10 +409,10 @@
             "slug": "adjust-position",
             "spell_level": 1,
             "spell_lists": [
-                "bard",
-                "wizard",
                 "cleric",
-                "warlock"
+                "bard",
+                "warlock",
+                "wizard"
             ],
             "target_range_sort": 30
         },
@@ -446,9 +446,9 @@
             "slug": "afflict-line",
             "spell_level": 9,
             "spell_lists": [
-                "wizard",
                 "cleric",
-                "warlock"
+                "warlock",
+                "wizard"
             ],
             "target_range_sort": 5280
         },
@@ -482,14 +482,46 @@
             "slug": "agonizing-mark",
             "spell_level": 1,
             "spell_lists": [
-                "bard",
-                "wizard",
-                "sorcerer",
                 "cleric",
                 "druid",
-                "ranger"
+                "ranger",
+                "bard",
+                "sorcerer",
+                "wizard"
             ],
             "target_range_sort": 90
+        },
+        {
+            "archetype": "",
+            "can_be_cast_as_ritual": false,
+            "casting_time": "1 action",
+            "circles": "",
+            "components": "V, S, M",
+            "concentration": "no",
+            "desc": "You draw upon divine power, imbuing the targets with fortitude. Until the spell ends, each target increases its hit point maximum and current hit points by 5.",
+            "dnd_class": "Cleric, Herald",
+            "document__license_url": "http://open5e.com/legal",
+            "document__slug": "a5e",
+            "document__title": "Level Up Advanced 5e",
+            "document__url": "https://a5esrd.com/a5esrd",
+            "duration": "8 hours",
+            "higher_level": "The granted hit points increase by an additional 5 for each slot level above 2nd.",
+            "level": "2nd-level",
+            "level_int": 2,
+            "material": "",
+            "name": "Aid",
+            "page": "",
+            "range": "60 feet",
+            "requires_concentration": false,
+            "requires_material_components": true,
+            "requires_somatic_components": true,
+            "requires_verbal_components": true,
+            "ritual": "no",
+            "school": "Abjuration",
+            "slug": "aid-a5e",
+            "spell_level": 2,
+            "spell_lists": [],
+            "target_range_sort": 60
         },
         {
             "archetype": "",
@@ -530,38 +562,6 @@
             "can_be_cast_as_ritual": false,
             "casting_time": "1 action",
             "circles": "",
-            "components": "V, S, M",
-            "concentration": "no",
-            "desc": "You draw upon divine power, imbuing the targets with fortitude. Until the spell ends, each target increases its hit point maximum and current hit points by 5.",
-            "dnd_class": "Cleric, Herald",
-            "document__license_url": "http://open5e.com/legal",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "duration": "8 hours",
-            "higher_level": "The granted hit points increase by an additional 5 for each slot level above 2nd.",
-            "level": "2nd-level",
-            "level_int": 2,
-            "material": "",
-            "name": "Aid",
-            "page": "",
-            "range": "60 feet",
-            "requires_concentration": false,
-            "requires_material_components": true,
-            "requires_somatic_components": true,
-            "requires_verbal_components": true,
-            "ritual": "no",
-            "school": "Abjuration",
-            "slug": "aid-a5e",
-            "spell_level": 2,
-            "spell_lists": [],
-            "target_range_sort": 60
-        },
-        {
-            "archetype": "",
-            "can_be_cast_as_ritual": false,
-            "casting_time": "1 action",
-            "circles": "",
             "components": "V",
             "concentration": "no",
             "desc": "Your deft weapon swing sends a wave of cutting air to assault a creature within range. Make a melee weapon attack against the target. If you are wielding one weapon in each hand, your attack deals an additional 1d6 damage. Regardless of the weapon you are wielding, your attack deals slashing damage.",
@@ -596,41 +596,6 @@
             "circles": "",
             "components": "V, S, M",
             "concentration": "no",
-            "desc": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. \n\nWhen you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible. A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping. An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
-            "dnd_class": "Ranger, Ritual Caster, Wizard",
-            "document__license_url": "http://open5e.com/legal",
-            "document__slug": "wotc-srd",
-            "document__title": "5e Core Rules",
-            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
-            "duration": "8 hours",
-            "higher_level": "",
-            "level": "1st-level",
-            "level_int": 1,
-            "material": "A tiny bell and a piece of fine silver wire.",
-            "name": "Alarm",
-            "page": "phb 211",
-            "range": "30 feet",
-            "requires_concentration": false,
-            "requires_material_components": true,
-            "requires_somatic_components": true,
-            "requires_verbal_components": true,
-            "ritual": "yes",
-            "school": "Abjuration",
-            "slug": "alarm",
-            "spell_level": 1,
-            "spell_lists": [
-                "wizard",
-                "ranger"
-            ],
-            "target_range_sort": 30
-        },
-        {
-            "archetype": "",
-            "can_be_cast_as_ritual": true,
-            "casting_time": "1 minute",
-            "circles": "",
-            "components": "V, S, M",
-            "concentration": "no",
             "desc": "You set an alarm against unwanted intrusion that alerts you whenever a creature of size Tiny or larger touches or enters the warded area. When you cast the spell, choose any number of creatures. These creatures don't set off the alarm.\n\nChoose whether the alarm is silent or audible. The silent alarm is heard in your mind if you are within 1 mile of the warded area and it awakens you if you are sleeping. An audible alarm produces a loud noise of your choosing for 10 seconds within 60 feet.",
             "dnd_class": "Artificer, Wizard",
             "document__license_url": "http://open5e.com/legal",
@@ -655,6 +620,41 @@
             "spell_level": 1,
             "spell_lists": [],
             "target_range_sort": 60
+        },
+        {
+            "archetype": "",
+            "can_be_cast_as_ritual": true,
+            "casting_time": "1 minute",
+            "circles": "",
+            "components": "V, S, M",
+            "concentration": "no",
+            "desc": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. \n\nWhen you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible. A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping. An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
+            "dnd_class": "Ranger, Ritual Caster, Wizard",
+            "document__license_url": "http://open5e.com/legal",
+            "document__slug": "wotc-srd",
+            "document__title": "5e Core Rules",
+            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
+            "duration": "8 hours",
+            "higher_level": "",
+            "level": "1st-level",
+            "level_int": 1,
+            "material": "A tiny bell and a piece of fine silver wire.",
+            "name": "Alarm",
+            "page": "phb 211",
+            "range": "30 feet",
+            "requires_concentration": false,
+            "requires_material_components": true,
+            "requires_somatic_components": true,
+            "requires_verbal_components": true,
+            "ritual": "yes",
+            "school": "Abjuration",
+            "slug": "alarm",
+            "spell_level": 1,
+            "spell_lists": [
+                "ranger",
+                "wizard"
+            ],
+            "target_range_sort": 30
         },
         {
             "archetype": "",
@@ -718,9 +718,9 @@
             "slug": "ale-dritch-blast",
             "spell_level": 0,
             "spell_lists": [
+                "druid",
                 "bard",
-                "wizard",
-                "druid"
+                "wizard"
             ],
             "target_range_sort": 60
         },
@@ -754,10 +754,10 @@
             "slug": "ally-aegis",
             "spell_level": 6,
             "spell_lists": [
+                "cleric",
                 "bard",
-                "wizard",
                 "sorcerer",
-                "cleric"
+                "wizard"
             ],
             "target_range_sort": 60
         },
@@ -791,10 +791,10 @@
             "slug": "alone",
             "spell_level": 3,
             "spell_lists": [
-                "wizard",
-                "sorcerer",
                 "cleric",
-                "warlock"
+                "sorcerer",
+                "warlock",
+                "wizard"
             ],
             "target_range_sort": 30
         },
@@ -828,49 +828,14 @@
             "slug": "alter-arrows-fortune",
             "spell_level": 1,
             "spell_lists": [
-                "bard",
-                "wizard",
-                "sorcerer",
                 "cleric",
                 "druid",
-                "ranger"
+                "ranger",
+                "bard",
+                "sorcerer",
+                "wizard"
             ],
             "target_range_sort": 100
-        },
-        {
-            "archetype": "",
-            "can_be_cast_as_ritual": false,
-            "casting_time": "1 action",
-            "circles": "",
-            "components": "V, S",
-            "concentration": "yes",
-            "desc": "You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.\n\n**Aquatic Adaptation.** You adapt your body to an aquatic environment, sprouting gills and growing webbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed.\n\n**Change Appearance.** You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another race, though none of your statistics change. You also can't appear as a creature of a different size than you, and your basic shape stays the same; if you're bipedal, you can't use this spell to become quadrupedal, for instance. At any time for the duration of the spell, you can use your action to change your appearance in this way again.\n\n**Natural Weapons.** You grow claws, fangs, spines, horns, or a different natural weapon of your choice. Your unarmed strikes deal 1d6 bludgeoning, piercing, or slashing damage, as appropriate to the natural weapon you chose, and you are proficient with your unarmed strikes. Finally, the natural weapon is magic and you have a +1 bonus to the attack and damage rolls you make using it.",
-            "dnd_class": "Sorcerer, Wizard",
-            "document__license_url": "http://open5e.com/legal",
-            "document__slug": "wotc-srd",
-            "document__title": "5e Core Rules",
-            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
-            "duration": "Up to 1 hour",
-            "higher_level": "",
-            "level": "2nd-level",
-            "level_int": 2,
-            "material": "",
-            "name": "Alter Self",
-            "page": "phb 211",
-            "range": "Self",
-            "requires_concentration": true,
-            "requires_material_components": false,
-            "requires_somatic_components": true,
-            "requires_verbal_components": true,
-            "ritual": "no",
-            "school": "Transmutation",
-            "slug": "alter-self",
-            "spell_level": 2,
-            "spell_lists": [
-                "wizard",
-                "sorcerer"
-            ],
-            "target_range_sort": 0
         },
         {
             "archetype": "",
@@ -902,6 +867,41 @@
             "slug": "alter-self-a5e",
             "spell_level": 2,
             "spell_lists": [],
+            "target_range_sort": 0
+        },
+        {
+            "archetype": "",
+            "can_be_cast_as_ritual": false,
+            "casting_time": "1 action",
+            "circles": "",
+            "components": "V, S",
+            "concentration": "yes",
+            "desc": "You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.\n\n**Aquatic Adaptation.** You adapt your body to an aquatic environment, sprouting gills and growing webbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed.\n\n**Change Appearance.** You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another race, though none of your statistics change. You also can't appear as a creature of a different size than you, and your basic shape stays the same; if you're bipedal, you can't use this spell to become quadrupedal, for instance. At any time for the duration of the spell, you can use your action to change your appearance in this way again.\n\n**Natural Weapons.** You grow claws, fangs, spines, horns, or a different natural weapon of your choice. Your unarmed strikes deal 1d6 bludgeoning, piercing, or slashing damage, as appropriate to the natural weapon you chose, and you are proficient with your unarmed strikes. Finally, the natural weapon is magic and you have a +1 bonus to the attack and damage rolls you make using it.",
+            "dnd_class": "Sorcerer, Wizard",
+            "document__license_url": "http://open5e.com/legal",
+            "document__slug": "wotc-srd",
+            "document__title": "5e Core Rules",
+            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
+            "duration": "Up to 1 hour",
+            "higher_level": "",
+            "level": "2nd-level",
+            "level_int": 2,
+            "material": "",
+            "name": "Alter Self",
+            "page": "phb 211",
+            "range": "Self",
+            "requires_concentration": true,
+            "requires_material_components": false,
+            "requires_somatic_components": true,
+            "requires_verbal_components": true,
+            "ritual": "no",
+            "school": "Transmutation",
+            "slug": "alter-self",
+            "spell_level": 2,
+            "spell_lists": [
+                "sorcerer",
+                "wizard"
+            ],
             "target_range_sort": 0
         },
         {
@@ -966,8 +966,8 @@
             "slug": "altheas-travel-tent",
             "spell_level": 2,
             "spell_lists": [
-                "wizard",
-                "sorcerer"
+                "sorcerer",
+                "wizard"
             ],
             "target_range_sort": 1
         },
@@ -1001,9 +1001,9 @@
             "slug": "ambush",
             "spell_level": 1,
             "spell_lists": [
-                "wizard",
                 "druid",
-                "ranger"
+                "ranger",
+                "wizard"
             ],
             "target_range_sort": 0
         },
@@ -1069,9 +1069,9 @@
             "slug": "amplify-gravity",
             "spell_level": 7,
             "spell_lists": [
-                "wizard",
                 "sorcerer",
-                "warlock"
+                "warlock",
+                "wizard"
             ],
             "target_range_sort": 100
         },
@@ -1105,9 +1105,9 @@
             "slug": "amplify-ley-field",
             "spell_level": 5,
             "spell_lists": [
-                "wizard",
                 "druid",
-                "warlock"
+                "warlock",
+                "wizard"
             ],
             "target_range_sort": 0
         },
@@ -1142,8 +1142,8 @@
             "spell_level": 1,
             "spell_lists": [
                 "bard",
-                "wizard",
-                "sorcerer"
+                "sorcerer",
+                "wizard"
             ],
             "target_range_sort": 1
         },
@@ -1212,9 +1212,9 @@
             "slug": "anchoring-rope",
             "spell_level": 1,
             "spell_lists": [
-                "bard",
                 "druid",
-                "ranger"
+                "ranger",
+                "bard"
             ],
             "target_range_sort": 30
         },
@@ -1248,8 +1248,8 @@
             "slug": "ancient-shade",
             "spell_level": 5,
             "spell_lists": [
-                "wizard",
-                "cleric"
+                "cleric",
+                "wizard"
             ],
             "target_range_sort": 10
         },
@@ -1315,45 +1315,9 @@
             "slug": "angelic-guardian",
             "spell_level": 1,
             "spell_lists": [
-                "wizard",
                 "cleric",
-                "warlock"
-            ],
-            "target_range_sort": 30
-        },
-        {
-            "archetype": "",
-            "can_be_cast_as_ritual": false,
-            "casting_time": "1 action",
-            "circles": "",
-            "components": "V, S, M",
-            "concentration": "no",
-            "desc": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spells ends.",
-            "dnd_class": "Bard, Druid, Ranger, Ritual Caster",
-            "document__license_url": "http://open5e.com/legal",
-            "document__slug": "wotc-srd",
-            "document__title": "5e Core Rules",
-            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
-            "duration": "24 hours",
-            "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional beast for each slot level above 1st.",
-            "level": "1st-level",
-            "level_int": 1,
-            "material": "A morsel of food.",
-            "name": "Animal Friendship",
-            "page": "phb 212",
-            "range": "30 feet",
-            "requires_concentration": false,
-            "requires_material_components": true,
-            "requires_somatic_components": true,
-            "requires_verbal_components": true,
-            "ritual": "no",
-            "school": "Enchantment",
-            "slug": "animal-friendship",
-            "spell_level": 1,
-            "spell_lists": [
-                "bard",
-                "druid",
-                "ranger"
+                "warlock",
+                "wizard"
             ],
             "target_range_sort": 30
         },
@@ -1391,37 +1355,37 @@
         },
         {
             "archetype": "",
-            "can_be_cast_as_ritual": true,
+            "can_be_cast_as_ritual": false,
             "casting_time": "1 action",
             "circles": "",
             "components": "V, S, M",
             "concentration": "no",
-            "desc": "By means of this spell, you use an animal to deliver a message. Choose a Tiny beast you can see within range, such as a squirrel, a blue jay, or a bat. You specify a location, which you must have visited, and a recipient who matches a general description, such as \"a man or woman dressed in the uniform of the town guard\" or \"a red-haired dwarf wearing a pointed hat.\" You also speak a message of up to twenty-five words. The target beast travels for the duration of the spell toward the specified location, covering about 50 miles per 24 hours for a flying messenger, or 25 miles for other animals. \n\nWhen the messenger arrives, it delivers your message to the creature that you described, replicating the sound of your voice. The messenger speaks only to a creature matching the description you gave. If the messenger doesn't reach its destination before the spell ends, the message is lost, and the beast makes its way back to where you cast this spell.",
+            "desc": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spells ends.",
             "dnd_class": "Bard, Druid, Ranger, Ritual Caster",
             "document__license_url": "http://open5e.com/legal",
             "document__slug": "wotc-srd",
             "document__title": "5e Core Rules",
             "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
             "duration": "24 hours",
-            "higher_level": "If you cast this spell using a spell slot of 3nd level or higher, the duration of the spell increases by 48 hours for each slot level above 2nd.",
-            "level": "2nd-level",
-            "level_int": 2,
+            "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional beast for each slot level above 1st.",
+            "level": "1st-level",
+            "level_int": 1,
             "material": "A morsel of food.",
-            "name": "Animal Messenger",
+            "name": "Animal Friendship",
             "page": "phb 212",
             "range": "30 feet",
             "requires_concentration": false,
             "requires_material_components": true,
             "requires_somatic_components": true,
             "requires_verbal_components": true,
-            "ritual": "yes",
+            "ritual": "no",
             "school": "Enchantment",
-            "slug": "animal-messenger",
-            "spell_level": 2,
+            "slug": "animal-friendship",
+            "spell_level": 1,
             "spell_lists": [
-                "bard",
                 "druid",
-                "ranger"
+                "ranger",
+                "bard"
             ],
             "target_range_sort": 30
         },
@@ -1459,35 +1423,37 @@
         },
         {
             "archetype": "",
-            "can_be_cast_as_ritual": false,
+            "can_be_cast_as_ritual": true,
             "casting_time": "1 action",
             "circles": "",
-            "components": "V, S",
-            "concentration": "yes",
-            "desc": "Your magic turns others into beasts. Choose any number of willing creatures that you can see within range. You transform each target into the form of a Large or smaller beast with a challenge rating of 4 or lower. On subsequent turns, you can use your action to transform affected creatures into new forms. \n\nThe transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies. You can choose a different form for each target. A target's game statistics are replaced by the statistics of the chosen beast, though the target retains its alignment and Intelligence, Wisdom, and Charisma scores. The target assumes the hit points of its new form, and when it reverts to its normal form, it returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn't reduce the creature's normal form to 0 hit points, it isn't knocked unconscious. The creature is limited in the actions it can perform by the nature of its new form, and it can't speak or cast spells. \n\nThe target's gear melds into the new form. The target can't activate, wield, or otherwise benefit from any of its equipment.",
-            "dnd_class": "Druid",
+            "components": "V, S, M",
+            "concentration": "no",
+            "desc": "By means of this spell, you use an animal to deliver a message. Choose a Tiny beast you can see within range, such as a squirrel, a blue jay, or a bat. You specify a location, which you must have visited, and a recipient who matches a general description, such as \"a man or woman dressed in the uniform of the town guard\" or \"a red-haired dwarf wearing a pointed hat.\" You also speak a message of up to twenty-five words. The target beast travels for the duration of the spell toward the specified location, covering about 50 miles per 24 hours for a flying messenger, or 25 miles for other animals. \n\nWhen the messenger arrives, it delivers your message to the creature that you described, replicating the sound of your voice. The messenger speaks only to a creature matching the description you gave. If the messenger doesn't reach its destination before the spell ends, the message is lost, and the beast makes its way back to where you cast this spell.",
+            "dnd_class": "Bard, Druid, Ranger, Ritual Caster",
             "document__license_url": "http://open5e.com/legal",
             "document__slug": "wotc-srd",
             "document__title": "5e Core Rules",
             "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
-            "duration": "Up to 24 hours",
-            "higher_level": "",
-            "level": "8th-level",
-            "level_int": 8,
-            "material": "",
-            "name": "Animal Shapes",
+            "duration": "24 hours",
+            "higher_level": "If you cast this spell using a spell slot of 3nd level or higher, the duration of the spell increases by 48 hours for each slot level above 2nd.",
+            "level": "2nd-level",
+            "level_int": 2,
+            "material": "A morsel of food.",
+            "name": "Animal Messenger",
             "page": "phb 212",
             "range": "30 feet",
-            "requires_concentration": true,
-            "requires_material_components": false,
+            "requires_concentration": false,
+            "requires_material_components": true,
             "requires_somatic_components": true,
             "requires_verbal_components": true,
-            "ritual": "no",
-            "school": "Transmutation",
-            "slug": "animal-shapes",
-            "spell_level": 8,
+            "ritual": "yes",
+            "school": "Enchantment",
+            "slug": "animal-messenger",
+            "spell_level": 2,
             "spell_lists": [
-                "druid"
+                "druid",
+                "ranger",
+                "bard"
             ],
             "target_range_sort": 30
         },
@@ -1521,6 +1487,40 @@
             "slug": "animal-shapes-a5e",
             "spell_level": 8,
             "spell_lists": [],
+            "target_range_sort": 30
+        },
+        {
+            "archetype": "",
+            "can_be_cast_as_ritual": false,
+            "casting_time": "1 action",
+            "circles": "",
+            "components": "V, S",
+            "concentration": "yes",
+            "desc": "Your magic turns others into beasts. Choose any number of willing creatures that you can see within range. You transform each target into the form of a Large or smaller beast with a challenge rating of 4 or lower. On subsequent turns, you can use your action to transform affected creatures into new forms. \n\nThe transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies. You can choose a different form for each target. A target's game statistics are replaced by the statistics of the chosen beast, though the target retains its alignment and Intelligence, Wisdom, and Charisma scores. The target assumes the hit points of its new form, and when it reverts to its normal form, it returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn't reduce the creature's normal form to 0 hit points, it isn't knocked unconscious. The creature is limited in the actions it can perform by the nature of its new form, and it can't speak or cast spells. \n\nThe target's gear melds into the new form. The target can't activate, wield, or otherwise benefit from any of its equipment.",
+            "dnd_class": "Druid",
+            "document__license_url": "http://open5e.com/legal",
+            "document__slug": "wotc-srd",
+            "document__title": "5e Core Rules",
+            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
+            "duration": "Up to 24 hours",
+            "higher_level": "",
+            "level": "8th-level",
+            "level_int": 8,
+            "material": "",
+            "name": "Animal Shapes",
+            "page": "phb 212",
+            "range": "30 feet",
+            "requires_concentration": true,
+            "requires_material_components": false,
+            "requires_somatic_components": true,
+            "requires_verbal_components": true,
+            "ritual": "no",
+            "school": "Transmutation",
+            "slug": "animal-shapes",
+            "spell_level": 8,
+            "spell_lists": [
+                "druid"
+            ],
             "target_range_sort": 30
         },
         {
@@ -1564,41 +1564,6 @@
             "circles": "",
             "components": "V, S, M",
             "concentration": "no",
-            "desc": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the DM has the creature's game statistics). \n\nOn each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete. \n\nThe creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.",
-            "dnd_class": "Cleric, Wizard",
-            "document__license_url": "http://open5e.com/legal",
-            "document__slug": "wotc-srd",
-            "document__title": "5e Core Rules",
-            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
-            "duration": "Instantaneous",
-            "higher_level": "When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones.",
-            "level": "3rd-level",
-            "level_int": 3,
-            "material": "A drop of blood, a piece of flesh, and a pinch of bone dust.",
-            "name": "Animate Dead",
-            "page": "phb 212",
-            "range": "10 feet",
-            "requires_concentration": false,
-            "requires_material_components": true,
-            "requires_somatic_components": true,
-            "requires_verbal_components": true,
-            "ritual": "no",
-            "school": "Necromancy",
-            "slug": "animate-dead",
-            "spell_level": 3,
-            "spell_lists": [
-                "wizard",
-                "cleric"
-            ],
-            "target_range_sort": 10
-        },
-        {
-            "archetype": "",
-            "can_be_cast_as_ritual": false,
-            "casting_time": "1 minute",
-            "circles": "",
-            "components": "V, S, M",
-            "concentration": "no",
             "desc": "You animate a mortal's remains to become your undead servant.\n\nIf the spell is cast upon bones you create a skeleton, and if cast upon a corpse you choose to create a skeleton or a zombie. The Narrator has the undead's statistics.\n\nWhile it is within 60 feet you can use a bonus action to mentally command the undead. When you command multiple undead using this spell, you must give them all the same command. You may decide the action the undead takes and where it moves during its next turn, or you can issue a general command, such as guarding an area. If not given a command, the undead only defends itself. The undead continues to follow a command until its task is complete.\n\nThe undead is under your control for 24 hours, after which it stops obeying any commands. You must cast this spell on the undead before the spell ends to maintain control of it for another 24 hours.\n\nCasting the spell in this way reasserts control over up to 4 of your previously-animated undead instead of animating a new one.",
             "dnd_class": "Cleric, Wizard",
             "document__license_url": "http://open5e.com/legal",
@@ -1623,6 +1588,41 @@
             "spell_level": 3,
             "spell_lists": [],
             "target_range_sort": 1
+        },
+        {
+            "archetype": "",
+            "can_be_cast_as_ritual": false,
+            "casting_time": "1 minute",
+            "circles": "",
+            "components": "V, S, M",
+            "concentration": "no",
+            "desc": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the DM has the creature's game statistics). \n\nOn each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete. \n\nThe creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.",
+            "dnd_class": "Cleric, Wizard",
+            "document__license_url": "http://open5e.com/legal",
+            "document__slug": "wotc-srd",
+            "document__title": "5e Core Rules",
+            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
+            "duration": "Instantaneous",
+            "higher_level": "When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones.",
+            "level": "3rd-level",
+            "level_int": 3,
+            "material": "A drop of blood, a piece of flesh, and a pinch of bone dust.",
+            "name": "Animate Dead",
+            "page": "phb 212",
+            "range": "10 feet",
+            "requires_concentration": false,
+            "requires_material_components": true,
+            "requires_somatic_components": true,
+            "requires_verbal_components": true,
+            "ritual": "no",
+            "school": "Necromancy",
+            "slug": "animate-dead",
+            "spell_level": 3,
+            "spell_lists": [
+                "cleric",
+                "wizard"
+            ],
+            "target_range_sort": 10
         },
         {
             "archetype": "",
@@ -1654,9 +1654,9 @@
             "slug": "animate-ghoul",
             "spell_level": 2,
             "spell_lists": [
-                "wizard",
+                "cleric",
                 "sorcerer",
-                "cleric"
+                "wizard"
             ],
             "target_range_sort": 1
         },
@@ -1690,8 +1690,8 @@
             "slug": "animate-greater-undead",
             "spell_level": 6,
             "spell_lists": [
-                "wizard",
-                "cleric"
+                "cleric",
+                "wizard"
             ],
             "target_range_sort": 15
         },
@@ -1702,19 +1702,19 @@
             "circles": "",
             "components": "V, S",
             "concentration": "yes",
-            "desc": "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, Large targets count as four objects, Huge targets count as eight objects. You can't animate any object larger than Huge. Each target animates and becomes a creature under your control until the spell ends or until reduced to 0 hit points. \nAs a bonus action, you can mentally command any creature you made with this spell if the creature is within 500 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.\n### Animated Object Statistics \n| Size | HP | AC | Attack | Str | Dex |\n|--------|----|----|----------------------------|-----|-----|\n| Tiny | 20 | 18 | +8 to hit, 1d4 + 4 damage | 4 | 18 |\n| Small | 25 | 16 | +6 to hit, 1d8 + 2 damage | 6 | 14 |\n| Medium | 40 | 13 | +5 to hit, 2d6 + 1 damage | 10 | 12 |\n| Large | 50 | 10 | +6 to hit, 2d10 + 2 damage | 14 | 10 |\n| Huge | 80 | 10 | +8 to hit, 2d12 + 4 damage | 18 | 6 | \n\nAn animated object is a construct with AC, hit points, attacks, Strength, and Dexterity determined by its size. Its Constitution is 10 and its Intelligence and Wisdom are 3, and its Charisma is 1. Its speed is 30 feet; if the object lacks legs or other appendages it can use for locomotion, it instead has a flying speed of 30 feet and can hover. If the object is securely attached to a surface or a larger object, such as a chain bolted to a wall, its speed is 0. It has blindsight with a radius of 30 feet and is blind beyond that distance. When the animated object drops to 0 hit points, it reverts to its original object form, and any remaining damage carries over to its original object form. If you command an object to attack, it can make a single melee attack against a creature within 5 feet of it. It makes a slam attack with an attack bonus and bludgeoning damage determined by its size. The DM might rule that a specific object inflicts slashing or piercing damage based on its form.",
-            "dnd_class": "Bard, Sorcerer, Wizard",
+            "desc": "Objects come to life at your command just like you dreamt of when you were an apprentice! Choose up to 6 unattended nonmagical Small or Tiny objects. You may also choose larger objects; treat Medium objects as 2 objects, Large objects as 3 objects, and Huge objects as 6 objects. You can't animate objects larger than Huge.\n\nUntil the spell ends or a target is reduced to 0 hit points, you animate the targets and turn them into constructs under your control.\n\nEach construct has Constitution 10, Intelligence 3, Wisdom 3, and Charisma 1, as well as a flying speed of 30 feet and the ability to hover (if securely fastened to something larger, it has a Speed of 0), and blindsight to a range of 30 feet (blind beyond that distance). Otherwise a construct's statistics are determined by its size.\n\nIf you animate 4 or more Small or Tiny objects, instead of controlling each construct individually they function as a construct swarm. Add together all swarm's total hit points. Attacks against a construct swarm deal half damage. The construct swarm reverts to individual constructs when it is reduced to 15 hit points or less.\n\nYou can use a bonus action to mentally command any construct made with this spell while it is within 500 feet. When you command multiple constructs using this spell, you may simultaneously give them all the same command. You decide the action the construct takes and where it moves during its next turn, or you can issue a general command, such as guarding an area. Without commands the construct only defends itself. The construct continues to follow a command until its task is complete.\n\nWhen you command a construct to attack, it makes a single slam melee attack against a creature within 5 feet of it. On a hit the construct deals bludgeoning, piercing, or slashing damage appropriate to its shape.\n\nWhen the construct drops to 0 hit points, any excess damage carries over to its normal object form.",
+            "dnd_class": "Artificer, Bard, Sorcerer, Wizard",
             "document__license_url": "http://open5e.com/legal",
-            "document__slug": "wotc-srd",
-            "document__title": "5e Core Rules",
-            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
+            "document__slug": "a5e",
+            "document__title": "Level Up Advanced 5e",
+            "document__url": "https://a5esrd.com/a5esrd",
             "duration": "Up to 1 minute",
-            "higher_level": "If you cast this spell using a spell slot of 6th level or higher, you can animate two additional objects for each slot level above 5th.",
+            "higher_level": "You can animate 2 additional Small or Tiny objects for each slot level above 5th.",
             "level": "5th-level",
             "level_int": 5,
             "material": "",
             "name": "Animate Objects",
-            "page": "phb 213",
+            "page": "",
             "range": "120 feet",
             "requires_concentration": true,
             "requires_material_components": false,
@@ -1722,13 +1722,9 @@
             "requires_verbal_components": true,
             "ritual": "no",
             "school": "Transmutation",
-            "slug": "animate-objects",
+            "slug": "animate-objects-a5e",
             "spell_level": 5,
-            "spell_lists": [
-                "bard",
-                "wizard",
-                "sorcerer"
-            ],
+            "spell_lists": [],
             "target_range_sort": 120
         }
     ]

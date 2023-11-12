@@ -36,7 +36,7 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Manifests'],
     )
-    queryset = models.Manifest.objects.all()
+    queryset = models.Manifest.objects.all().order_by("pk")
     serializer_class = serializers.ManifestSerializer
 
 
@@ -114,7 +114,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
 			'organization': 'The organization that published the document',
 			'license': 'The license under which the document is published',
 		})
-    queryset = models.Document.objects.all()
+    queryset = models.Document.objects.all().order_by("pk")
     serializer_class = serializers.DocumentSerializer
     search_fields = ['title', 'desc']
     filterset_fields = (
@@ -137,7 +137,7 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Spells']
     )
-    queryset = models.Spell.objects.all()
+    queryset = models.Spell.objects.all().order_by("pk")
     filterset_class=filters.SpellFilter
     serializer_class = serializers.SpellSerializer
     search_fields = ['dnd_class', 'name', 'desc']
@@ -170,7 +170,7 @@ class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['SpellList']
     )
-    queryset = models.SpellList.objects.all()
+    queryset = models.SpellList.objects.all().order_by("pk")
     serializer_class = serializers.SpellListSerializer
     filterset_class = filters.SpellListFilter
     search_fields = ['name', 'desc']
@@ -188,7 +188,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Monsters']
     )
-    queryset = models.Monster.objects.all()
+    queryset = models.Monster.objects.all().order_by("pk")
     filterset_class = filters.MonsterFilter
     
     serializer_class = serializers.MonsterSerializer
@@ -206,7 +206,7 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Backgrounds']
     )
-    queryset = models.Background.objects.all()
+    queryset = models.Background.objects.all().order_by("pk")
     serializer_class = serializers.BackgroundSerializer
     ordering_fields = '__all__'
     ordering = ['name']
@@ -226,7 +226,7 @@ class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Planes']
     )
-    queryset = models.Plane.objects.all()
+    queryset = models.Plane.objects.all().order_by("pk")
     serializer_class = serializers.PlaneSerializer
     filterset_class = filters.PlaneFilter
     search_fields = ['name', 'desc']
@@ -244,7 +244,7 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Sections']
     )
-    queryset = models.Section.objects.all()
+    queryset = models.Section.objects.all().order_by("pk")
     serializer_class = serializers.SectionSerializer
     ordering_fields = '__all__'
     ordering=['name']
@@ -264,7 +264,7 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Feats']
     )
-    queryset = models.Feat.objects.all()
+    queryset = models.Feat.objects.all().order_by("pk")
     serializer_class = serializers.FeatSerializer
     filterset_class = filters.FeatFilter
     search_fields = ['name', 'desc']
@@ -282,7 +282,7 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Conditions']
     )
-    queryset = models.Condition.objects.all()
+    queryset = models.Condition.objects.all().order_by("pk")
     serializer_class = serializers.ConditionSerializer
     search_fields = ['name', 'desc']
     filterset_fields=(
@@ -303,7 +303,7 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Races']
     )
-    queryset = models.Race.objects.all()
+    queryset = models.Race.objects.all().order_by("pk")
     serializer_class = serializers.RaceSerializer
     filterset_class = filters.RaceFilter
     search_fields = ['name', 'desc']
@@ -322,7 +322,7 @@ class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Subraces']
     )
-    queryset = models.Subrace.objects.all()
+    queryset = models.Subrace.objects.all().order_by("pk")
     serializer_class = serializers.SubraceSerializer
     search_fields = ['name', 'desc']
     filterset_fields=(
@@ -343,7 +343,7 @@ class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Classes']
     )
-    queryset = models.CharClass.objects.all()
+    queryset = models.CharClass.objects.all().order_by("pk")
     serializer_class = serializers.CharClassSerializer
     filterset_class = filters.CharClassFilter
     search_fields = ['name', 'desc']
@@ -362,7 +362,7 @@ class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Archetypes']
     )
-    queryset = models.Archetype.objects.all()
+    queryset = models.Archetype.objects.all().order_by("pk")
     serializer_class = serializers.ArchetypeSerializer
     search_fields = ['name', 'desc']
     filterset_fields=(
@@ -383,7 +383,7 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Magic Items']
     )
-    queryset = models.MagicItem.objects.all()
+    queryset = models.MagicItem.objects.all().order_by("pk")
     serializer_class = serializers.MagicItemSerializer
     filterset_class = filters.MagicItemFilter
     search_fields = ['name', 'desc']
@@ -401,7 +401,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Weapons']
     )
-    queryset = models.Weapon.objects.all()
+    queryset = models.Weapon.objects.all().order_by("pk")
     serializer_class = serializers.WeaponSerializer
     filterset_class = filters.WeaponFilter
     search_fields = ['name', 'desc']
@@ -419,7 +419,7 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Armor']
     )
-    queryset = models.Armor.objects.all()
+    queryset = models.Armor.objects.all().order_by("pk")
     serializer_class = serializers.ArmorSerializer
     filterset_class = filters.ArmorFilter
     search_fields = ['name', 'desc']
