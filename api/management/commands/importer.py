@@ -299,7 +299,11 @@ class Importer:
         """Create or update a single MagicItem model from a JSON object."""
         new = False
         exists = False
-        slug = slugify(magic_item_json["name"])
+        slug = ""
+        if "slug" in magic_item_json:
+            slug = magic_item_json["slug"]
+        else:
+            slug = slugify(magic_item_json["name"])
         if models.MagicItem.objects.filter(slug=slug).exists():
             i = models.MagicItem.objects.get(slug=slug)
             exists = True
