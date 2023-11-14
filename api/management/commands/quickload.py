@@ -21,7 +21,8 @@ SOURCE_DIRS = [
     './data/warlock/',
     './data/vault_of_magic',
     './data/tome_of_heroes/',
-    './data/taldorei/'
+    './data/taldorei/',
+    './data/black_flag_srd/'
 ]
 
 class Command(BaseCommand):

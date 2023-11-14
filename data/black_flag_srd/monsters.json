@@ -1,0 +1,2953 @@
+[
+    {
+        "name": "Animated Armor",
+        "slug": "animated-armor-blackflag",
+        "challenge_rating": "1",
+        "size": "Medium",
+        "type": "Construct",
+        "subtype": "",
+        "armor_class": 18,
+        "armor_desc": "(natural armor)",
+        "hit_points": 34,
+        "speed": "25 ft.",
+        "speed_json": {
+            "walk": "25"
+        },
+        "damage_vulnerabilities": "acid",
+        "damage_resistances": "slashing",
+        "damage_immunities": "",
+        "condition_immunities": "Construct Resilience",
+        "strength": 18,
+        "dexterity": 10,
+        "constitution": 12,
+        "intelligence": 0,
+        "wisdom": 6,
+        "charisma": 0,
+        "stealth": 10,
+        "special_abilites": [
+            {
+                "name": "Antimagic Susceptibility",
+                "desc": "The armor is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the armor must succeed on a CON save against the caster’s spell save DC or fall unconscious for 1 minute."
+            },
+            {
+                "name": "Construct Nature",
+                "desc": "The armor doesn’t require air, food, drink, or sleep. Construct Resilience. The armor is immune to poison and psychic damage, and it is immune to exhaustion and the charmed, frightened, paralyzed, petrified, and poisoned conditions."
+            },
+            {
+                "name": "False Appearance",
+                "desc": "While the armor remains motionless, it is indistinguishable from a normal suit of armor."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Multiattack",
+                "desc": "The animated armor makes two Slam attacks. Slam. Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) bludgeoning damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Helmet Bash (19 HP or Fewer)",
+                "desc": "The animated armor slams its helmet into a creature it can sense within 5 feet of it. The target must succeed on a DC 13 STR save or take 4 (1d4 + 2) bludgeoning damage and be knocked prone."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Flying Sword",
+        "slug": "flying-sword-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Small",
+        "type": "Construct",
+        "subtype": "",
+        "armor_class": 16,
+        "armor_desc": "(natural armor)",
+        "hit_points": 11,
+        "speed": "0 ft., fly 50 ft. (hover)",
+        "speed_json": {
+            "walk": "0",
+            "fly": "50"
+        },
+        "damage_vulnerabilities": "acid",
+        "damage_resistances": "piercing",
+        "damage_immunities": "",
+        "condition_immunities": "prone, Construct Resilience",
+        "strength": 12,
+        "dexterity": 16,
+        "constitution": 10,
+        "intelligence": 0,
+        "wisdom": 4,
+        "charisma": 0,
+        "stealth": 13,
+        "special_abilites": [
+            {
+                "name": "Antimagic Susceptibility",
+                "desc": "The sword is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the sword must succeed on a CON save against the caster’s spell save DC or fall unconscious for 1 minute."
+            },
+            {
+                "name": "Construct Nature",
+                "desc": "The sword doesn’t require air, food, drink, or sleep. Construct Resilience. The sword is immune to poison and psychic damage, and it is immune to exhaustion and the charmed, frightened, paralyzed, petrified, and poisoned conditions."
+            },
+            {
+                "name": "False Appearance",
+                "desc": "While the sword remains motionless and isn’t flying, it is indistinguishable from a normal sword."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Slash",
+                "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Whirling Blade (6 HP or Fewer)",
+                "desc": "The flying sword makes a Slash attack against a target it can sense within 5 feet of it."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Crimson Jelly",
+        "slug": "crimson-jelly-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Tiny",
+        "type": "Ooze",
+        "subtype": "",
+        "armor_class": 12,
+        "armor_desc": "",
+        "hit_points": 20,
+        "speed": "0 ft., fly 60 ft. (hover), swim 30 ft.",
+        "speed_json": {
+            "walk": "0",
+            "fly": "60",
+            "swim": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "necrotic",
+        "condition_immunities": "Ooze Resilience",
+        "strength": 2,
+        "dexterity": 18,
+        "constitution": 10,
+        "intelligence": 0,
+        "wisdom": 10,
+        "charisma": 8,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "Amorphous",
+                "desc": "The crimson jelly can move through space as narrow as 1 inch wide without squeezing."
+            },
+            {
+                "name": "Blood Sense",
+                "desc": "The crimson jelly can pinpoint, by scent, the location of creatures that aren’t Constructs or Undead and that don’t have all of their HP within 60 feet of it and can sense the general direction of such creatures within 1 mile of it."
+            },
+            {
+                "name": "Ooze Nature",
+                "desc": "The crimson jelly doesn’t require sleep."
+            },
+            {
+                "name": "Ooze Resilience",
+                "desc": "The crimson jelly is resistant to the grappled and restrained conditions, and it is immune to exhaustion and to the blinded, charmed, deafened, frightened, and prone conditions."
+            },
+            {
+                "name": "Tainted Attacks",
+                "desc": "A creature that is reduced to 0 HP by a crimson jelly must succeed on a DC 9 CHA save or suffer one level of exhaustion. While a creature suffers from this exhaustion, it loses most of its memories aside from basic information about itself, such as its name and its capabilities, and it is wracked with nightmarish visions that include a crimson rune."
+            },
+            {
+                "name": "Transparent",
+                "desc": "While in an area of dim or bright light, the crimson jelly is invisible. While in darkness, creatures without darkvision can see the jelly’s faint crimson glow."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Feeding Paddles",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) necrotic damage. The crimson jelly gains temporary HP equal to the necrotic damage dealt, and it attaches to the target. If the jelly had advantage on this attack, it attaches to the target’s face, leaving the target unable to breathe or speak while the jelly is attached. While attached, the crimson jelly can use only the Feeding Paddles action, and it moves with the target whenever the target moves, requiring none of the jelly’s movement. The Crimson jelly can detach itself by spending 5 feet of its movement. A creature, including the target, can take its action to detach the jelly by succeeding on a DC 12 STR check."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Reproduce (Requires Temporary HP)",
+                "desc": "While the crimson jelly has 1 or more temporary HP, it can split part of itself off into a new crimson jelly with HP equal to the original crimson jelly’s temporary HP. The original crimson jelly then loses any temporary HP it has. The new crimson jelly otherwise has all the same statistics as its parent, except the new jelly can’t gain temporary HP from Feeding Paddles attacks until it finishes a long rest."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Husk Demon",
+        "slug": "husk-demon-blackflag",
+        "challenge_rating": "4",
+        "size": "Medium",
+        "type": "Fiend",
+        "subtype": "Demon",
+        "armor_class": 15,
+        "armor_desc": "",
+        "hit_points": 82,
+        "speed": "40 ft., fly 25 ft.",
+        "speed_json": {
+            "walk": "40",
+            "fly": "25"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "necrotic",
+        "condition_immunities": "exhaustion, prone, Demonic Resilience",
+        "strength": 12,
+        "dexterity": 20,
+        "constitution": 16,
+        "intelligence": 6,
+        "wisdom": 8,
+        "charisma": 4,
+        "stealth": 15,
+        "special_abilites": [
+            {
+                "name": "Amorphous",
+                "desc": "The husk demon can move through a space as narrow as 1 inch wide without squeezing."
+            },
+            {
+                "name": "Demonic Resilience",
+                "desc": "The husk demon is resistant to cold, fire, and lightning damage. In addition, it is immune to poison damage and to the poisoned condition."
+            },
+            {
+                "name": "Magic Resistance",
+                "desc": "The husk demon has advantage on saving throws against spells and other magical effects."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Multiattack",
+                "desc": "The husk demon makes two Life Drain attacks. Life Drain. Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 7 (1d8 + 3) slashing damage plus 9 (2d8) necrotic damage, and the husk demon regain HP equal to half the necrotic damage dealt. The target must succeed on a DC 15 CON save or its HP maximum is reduced by an amount equal to the necrotic damage taken. This reduction lasts until the creatures finishes a long rest. The target dies if this effect reduces its HP maximum to 0."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Happiness Feast",
+                "desc": "The husk demon feasts on the target’s happiness, causing the target to become crestfallen. The target has disadvantage on attack rolls until the end of its next turn.Hope Feast. The husk demon feasts on the target’s hope, causing the target to become despondent. The target has disadvantage on saves until the end of its next turn.Motivation Feast. The husk demon feasts on the target’s motivation, causing the target to lose its ambitions and become apathetic. The target’s speed is halved until the end of its next turn."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Quasit",
+        "slug": "quasit-blackflag",
+        "challenge_rating": "1",
+        "size": "Tiny",
+        "type": "Fiend",
+        "subtype": "Demon",
+        "armor_class": 13,
+        "armor_desc": "",
+        "hit_points": 35,
+        "speed": "40 ft.",
+        "speed_json": {
+            "walk": "40"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "Demonic Resilience",
+        "strength": 4,
+        "dexterity": 20,
+        "constitution": 10,
+        "intelligence": 6,
+        "wisdom": 10,
+        "charisma": 10,
+        "stealth": 15,
+        "special_abilites": [
+            {
+                "name": "Demonic Resilience",
+                "desc": "The quasit is resistant to cold, fire, and lightning damage. In addition, it is immune to poison damage and to the poisoned condition."
+            },
+            {
+                "name": "Magic Resistance",
+                "desc": "The quasit has advantage on saving throws against spells and other magical effects."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Claws (True Form Only)",
+                "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must succeed on a DC 13 CON save or take 5 (2d4) poison damage and become poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Slam (Beast Form Only). Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning, piercing, or slashing damage (based on the type of damage dealt by the Beast form’s primary attack, such as Bite). Invisibility (True Form Only). The quasit magically turns invisible until it attacks, uses Scare, or uses Change Shape, or until its concentration ends (as if concentrating on a spell). Any equipment the quasit wears or carries is invisible with it."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Change Shape",
+                "desc": "The quasit magically transforms into a Medium or smaller Beast that has a CR no higher than its own or back into its true form, which is a Fiend. Its statistics, other than its size and speed, are the same in each form. Any equipment it is wearing or carrying transforms with it. It reverts to its true form if it dies. Scare (1/Day; True Form Only). One creature of the quasit’s choice within 20 feet of it must succeed on a DC 13 WIS save or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Tyrannosaurus Rex",
+        "slug": "tyrannosaurus-rex-blackflag",
+        "challenge_rating": "8",
+        "size": "Huge",
+        "type": "Beast",
+        "subtype": "",
+        "armor_class": 13,
+        "armor_desc": "(natural armor)",
+        "hit_points": 184,
+        "speed": "50 ft.",
+        "speed_json": {
+            "walk": "50"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 26,
+        "dexterity": 10,
+        "constitution": 18,
+        "intelligence": 2,
+        "wisdom": 12,
+        "charisma": 8,
+        "stealth": 10,
+        "special_abilites": [],
+        "actions": [],
+        "bonus_actions": [
+            {
+                "name": "Rending Shake",
+                "desc": "While grappling a creature, the tyrannosaurus shakes its head, tearing at the creature. The grappled creature must succeed on a DC 16 STR save or take 6 (1d12) slashing damage and be thrown up to 20 feet in a random direction and knocked prone. If the thrown target strikes a solid surface, the target takes 3 (1d6) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC 16 DEX save or take the same damage and be knocked prone."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Velociraptor",
+        "slug": "velociraptor-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Small",
+        "type": "Beast",
+        "subtype": "",
+        "armor_class": 13,
+        "armor_desc": "(natural armor)",
+        "hit_points": 25,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 6,
+        "dexterity": 18,
+        "constitution": 12,
+        "intelligence": 4,
+        "wisdom": 12,
+        "charisma": 6,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "Pack Tactics",
+                "desc": "The velociraptor has advantage on attack rolls against a creature if at least one of its allies is within 5 feet of the target and the ally isn’t incapacitated."
+            },
+            {
+                "name": "Multiattack",
+                "desc": "The velociraptor makes one Bite attack and one Claws attack."
+            },
+            {
+                "name": "Bite",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage. If the target is a Medium or smaller creature, it is grappled (escape DC 12). Until this grapple ends, the target is restrained, and the velociraptor can’t Bite another target."
+            },
+            {
+                "name": "Claws",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage."
+            },
+            {
+                "name": "Maul",
+                "desc": "The velociraptor uses its claws to rip into one creature it is grappling. The target must make a DC 12 STR save, taking 10 (4d4) slashing damage on a failed save, or half as much damage on a successful one."
+            }
+        ],
+        "actions": [],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Black Dragon Wyrmling",
+        "slug": "black-dragon-wyrmling-blackflag",
+        "challenge_rating": "2",
+        "size": "Medium",
+        "type": "Dragon",
+        "subtype": "",
+        "armor_class": 17,
+        "armor_desc": "(natural armor)",
+        "hit_points": 51,
+        "speed": "30 ft., fly 60 ft., swim 30 ft.",
+        "speed_json": {
+            "walk": "30",
+            "fly": "60",
+            "swim": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "acid",
+        "condition_immunities": "",
+        "strength": 16,
+        "dexterity": 18,
+        "constitution": 16,
+        "intelligence": 10,
+        "wisdom": 14,
+        "charisma": 16,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "Amphibious",
+                "desc": "The black dragon can breathe air and water. Pounce. If the dragon moves at least 15 feet straight toward a creature and then hits it with a Claw attack on the same turn, that target must succeed on a DC 13 STR save or be knocked prone. If the target is prone, the dragon can make one Claw attack against it as a bonus action."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Claw",
+                "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage. Acid Breath (Recharge 5–6). The dragon exhales acid in a 15-foot line that is 5 feet wide. Each creature in that line must make a DC 11 DEX save, taking 22 (5d8) acid damage on a failed save, or half as much damage on a successful one."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Young Black Dragon",
+        "slug": "young-black-dragon-blackflag",
+        "challenge_rating": "7",
+        "size": "Large",
+        "type": "Dragon",
+        "subtype": "",
+        "armor_class": 18,
+        "armor_desc": "(natural armor)",
+        "hit_points": 136,
+        "speed": "40 ft., fly 80 ft., swim 40 ft.",
+        "speed_json": {
+            "walk": "40",
+            "fly": "80",
+            "swim": "40"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "acid",
+        "condition_immunities": "",
+        "strength": 18,
+        "dexterity": 20,
+        "constitution": 22,
+        "intelligence": 12,
+        "wisdom": 16,
+        "charisma": 20,
+        "stealth": 15,
+        "special_abilites": [
+            {
+                "name": "Acidic Vapors",
+                "desc": "After the black dragon uses its Acid Breath, acid clings to its mouth, throat, and nostrils for a time, evaporating as the dragon breathes. While the dragon’s Acid Breath is unavailable, acidic vapors surround it, and each creature that starts its turn within 10 feet of the dragon must succeed on a DC 15 CON save or be poisoned until the start of its next turn."
+            },
+            {
+                "name": "Amphibious",
+                "desc": "The dragon can breathe air and water."
+            },
+            {
+                "name": "Multiattack",
+                "desc": "The dragon makes one Bite attack and two Claw attacks."
+            },
+            {
+                "name": "Bite",
+                "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage."
+            },
+            {
+                "name": "Claw",
+                "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage. Acid Breath (Recharge 5–6). The dragon exhales acid in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 15 DEX save, taking 49 (11d8) acid damage on a failed save, or half as much damage on a successful one."
+            }
+        ],
+        "actions": [],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Red Dragon Wyrmling",
+        "slug": "red-dragon-wyrmling-blackflag",
+        "challenge_rating": "4",
+        "size": "Medium",
+        "type": "Dragon",
+        "subtype": "",
+        "armor_class": 17,
+        "armor_desc": "(natural armor)",
+        "hit_points": 85,
+        "speed": "30 ft., climb 30 ft., fly 60 ft.",
+        "speed_json": {
+            "walk": "30",
+            "climb": "30",
+            "fly": "60"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "fire",
+        "condition_immunities": "",
+        "strength": 18,
+        "dexterity": 14,
+        "constitution": 20,
+        "intelligence": 12,
+        "wisdom": 14,
+        "charisma": 18,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Pounce",
+                "desc": "If the dragon moves at least 15 feet straight toward a creature and then hits it with a Claw attack on the same turn, that target must succeed on a DC 14 STR save or be knocked prone. If the target is prone, the dragon can make one Claw attack against it as a bonus action."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Bite",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage plus 3 (1d6) fire damage. Claw. Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) slashing damage. Fire Breath (Recharge 5–6). The dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 DEX save, taking 28 (8d6) fire damage on a failed save, or half as much damage on a successful one."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Young Red Dragon",
+        "slug": "young-red-dragon-blackflag",
+        "challenge_rating": "10",
+        "size": "Large",
+        "type": "Dragon",
+        "subtype": "",
+        "armor_class": 18,
+        "armor_desc": "(natural armor)",
+        "hit_points": 193,
+        "speed": "40 ft., climb 40 ft., fly 80 ft.",
+        "speed_json": {
+            "walk": "40",
+            "climb": "40",
+            "fly": "80"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "fire",
+        "condition_immunities": "",
+        "strength": 22,
+        "dexterity": 18,
+        "constitution": 28,
+        "intelligence": 14,
+        "wisdom": 18,
+        "charisma": 26,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "Boil Over",
+                "desc": "When the red dragon hasn’t unleashed its Fire Breath, the heat builds and rolls outward from it. While the dragon’s Fire Breath is available, it emits immense heat, and each creature that starts its turn within 10 feet of the dragon must succeed on a DC 17 CON save or take 7 (2d6) fire damage."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Bite",
+                "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 3 (1d6) fire damage. Claw. Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage. Fire Breath (Recharge 5–6). The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 DEX save, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Adult Red Dragon",
+        "slug": "adult-red-dragon-blackflag",
+        "challenge_rating": "17",
+        "size": "Huge",
+        "type": "Dragon",
+        "subtype": "",
+        "armor_class": 19,
+        "armor_desc": "(natural armor)",
+        "hit_points": 301,
+        "speed": "40 ft., climb 40 ft., fly 80 ft.",
+        "speed_json": {
+            "walk": "40",
+            "climb": "40",
+            "fly": "80"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "fire",
+        "condition_immunities": "",
+        "strength": 26,
+        "dexterity": 22,
+        "constitution": 12,
+        "intelligence": 16,
+        "wisdom": 16,
+        "charisma": 24,
+        "stealth": 16,
+        "special_abilites": [
+            {
+                "name": "Boil Over",
+                "desc": "When the red dragon hasn’t unleashed its Fire Breath, the heat builds and rolls outward from it. While the dragon’s Fire Breath is available, it emits immense heat, and each creature that starts its turn within 20 feet of the dragon must succeed on a DC 21 CON save or take 7 (2d6) fire damage. A creature that fails this save by 5 or more also suffers one level of exhaustion. Legendary Resistance (3/Day). If the dragon fails a save, it can choose to succeed instead."
+            }
+        ],
+        "actions": [
+            {
+                "name": "60-foot cone",
+                "desc": "Each creature in that area must make a DC 21 DEX save, taking 63 (18d6) fire damage on a failed save, or half as much damage on a successful one."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Fire Elemental",
+        "slug": "fire-elemental-blackflag",
+        "challenge_rating": "5",
+        "size": "Large",
+        "type": "Elemental",
+        "subtype": "",
+        "armor_class": 13,
+        "armor_desc": "",
+        "hit_points": 110,
+        "speed": "50 ft.",
+        "speed_json": {
+            "walk": "50"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "fire",
+        "condition_immunities": "Elemental Resilience",
+        "strength": 10,
+        "dexterity": 16,
+        "constitution": 16,
+        "intelligence": 6,
+        "wisdom": 10,
+        "charisma": 6,
+        "stealth": 13,
+        "special_abilites": [
+            {
+                "name": "Elemental Nature",
+                "desc": "The fire elemental doesn’t require air, food, drink, or sleep. Elemental Resilience. The fire elemental is resistant to bludgeoning, piercing, and slashing damage from nonmagical attacks. In addition, it is immune to poison damage, to exhaustion, and to the grappled, paralyzed, petrified, poisoned, prone, restrained, and       unconscious conditions."
+            },
+            {
+                "name": "Fire Form",
+                "desc": "The elemental can move through a space as narrow as 1 inch wide without squeezing. A creature that touches the elemental or hits it with a melee attack while within 5 feet of it takes 5 (1d10) fire damage. In addition, the elemental can enter a hostile creature’s space and stop there. The first time it enters a creature’s space on a turn, that creature takes 5 (1d10) fire damage and catches fire; until a creature takes an action to douse the fire, the burning creature takes 5 (1d10) fire damage at the start of each of its turns."
+            },
+            {
+                "name": "Illumination",
+                "desc": "The elemental sheds bright light in a 30-foot radius and dim light for an additional 30 feet. Water Susceptibility. For every 5 feet the elemental moves in water, or for every gallon of water splashed on it, it takes 1 cold damage."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Spit Fire",
+                "desc": "Ranged Weapon Attack: +6 to hit, range 30/120 ft., one target. Hit: 12 (2d8 + 3) fire damage."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Gelatinous Cube",
+        "slug": "gelatinous-cube-blackflag",
+        "challenge_rating": "2",
+        "size": "Large",
+        "type": "Ooze",
+        "subtype": "",
+        "armor_class": 6,
+        "armor_desc": "",
+        "hit_points": 75,
+        "speed": "15 ft.",
+        "speed_json": {
+            "walk": "15"
+        },
+        "damage_vulnerabilities": "cold",
+        "damage_resistances": "",
+        "damage_immunities": "acid, piercing",
+        "condition_immunities": "Ooze Resilience",
+        "strength": 16,
+        "dexterity": 4,
+        "constitution": 20,
+        "intelligence": 0,
+        "wisdom": 6,
+        "charisma": 0,
+        "stealth": 7,
+        "special_abilites": [
+            {
+                "name": "Ooze Cube",
+                "desc": "The cube takes up its entire space. Other creatures can enter the space, but a creature that does so is subjected to the cube’s Engulf and has disadvantage on the save. Creatures inside the cube can be seen but have total cover. A creature within 5 feet of the cube can take an action to pull a creature or object out of the cube. Doing so requires a successful DC 12 STR check, and the creature making the attempt takes 10 (3d6) acid damage. The cube can hold only one Large creature or up to four Medium or smaller creatures inside it at a time."
+            },
+            {
+                "name": "Ooze Nature",
+                "desc": "The cube doesn’t require sleep."
+            },
+            {
+                "name": "Ooze Resilience",
+                "desc": "The cube is resistant to the grappled and restrained conditions, and it is immune to exhaustion and to the blinded, charmed, deafened, frightened, and prone conditions."
+            },
+            {
+                "name": "Transparent",
+                "desc": "While motionless, the cube’s Stealth is 15, even when the cube is in plain sight."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Engulf",
+                "desc": "The cube moves up to its speed. While doing so, it can enter a Large or smaller creature’s space. When the cube enters a creature’s space, the creature must make a DC 13 DEX save. On a success, the creature can choose to be pushed 5 feet back or to the side of the cube. A creature that chooses not to be pushed suffers the consequences of a failed save. On a failed save, the cube enters the creature’s space, the creature takes 10 (3d6) acid damage, and is engulfed. The engulfed creature can’t breathe, is restrained, and takes 21 (6d6) acid damage at the start of each of the cube’s turns. When the cube moves, the engulfed creature moves with it. An engulfed creature can try to escape by taking an action to make a DC 13 STR check. On a success, the creature escapes and enters a space of its choice within 5 feet of the cube."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": [
+            {
+                "name": "Skewer Prey",
+                "desc": "When the gelatinous cube is subjected to piercing damage, it can move a random creature engulfed by it to intercept the attack. The creature takes the piercing damage as if it were the target."
+            }
+        ]
+    },
+    {
+        "name": "Ghoul",
+        "slug": "ghoul-blackflag",
+        "challenge_rating": "1",
+        "size": "Medium",
+        "type": "Undead",
+        "subtype": "",
+        "armor_class": 12,
+        "armor_desc": "",
+        "hit_points": 32,
+        "speed": "30 ft., climb 30 ft.",
+        "speed_json": {
+            "walk": "30",
+            "climb": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "charmed, Undead Resilience",
+        "strength": 12,
+        "dexterity": 14,
+        "constitution": 10,
+        "intelligence": 6,
+        "wisdom": 14,
+        "charisma": 6,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "Ghoul Hunger",
+                "desc": "A disease spread by ghouls, ghoul hunger instills a despicable hunger for Humanoid flesh in the creature suffering it. Until the disease is cured, the infected creature is poisoned. This effect can be suppressed for 1 hour if the infected creature consumes any amount of Humanoid flesh. Every 12 hours that elapse, the infected creature must succeed on a DC 13 CON save or its HP maximum is reduced by 7 (2d6). The creature has disadvantage on this save if it consumed any amount of Humanoid flesh while diseased. This reduction lasts until the creature finishes a long rest after the disease is cured. The creature dies if this effect reduces its HP maximum to 0. If the infected creature fails two of these saves or dies while infected, it becomes a ghoul, or a ghast if its PB is +4 or higher, in a flesh-rending transformation. Only a wish spell or similarly powerful magic can reverse the transformation. A creature that succeeds on two saves recovers from the disease."
+            },
+            {
+                "name": "Hungry Dead Nature",
+                "desc": "The ghoul doesn’t require air or sleep. In addition, it must consume at least 2 pounds of raw meat every 24 hours, or it loses its immunity to exhaustion and risks starvation until it does so. While it has any levels of exhaustion from starvation, the ghoul can’t remove levels of exhaustion until it consumes at least 4 pounds of raw meat."
+            },
+            {
+                "name": "Spider Climb",
+                "desc": "The ghoul can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+            },
+            {
+                "name": "Undead Resilience",
+                "desc": "The ghoul is immune to poison damage, to exhaustion, and to the poisoned condition."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Claws",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage. If the target is a creature other than an elf, Construct, or Undead, it must succeed on a DC 13 CON save or be paralyzed for 1 minute. The target can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Bugbear",
+        "slug": "bugbear-blackflag",
+        "challenge_rating": "1",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "",
+        "armor_class": 14,
+        "armor_desc": "(hide armor)",
+        "hit_points": 40,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": null,
+        "dexterity": null,
+        "constitution": null,
+        "intelligence": 20,
+        "wisdom": 14,
+        "charisma": 12,
+        "stealth": 16,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Spiked Club",
+                "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 12 (2d8 + 3) piercing damage. A surprised target takes an extra 4 (1d8) piercing damage and must succeed on a DC 13 CON save or be stunned until the end of its next turn."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Bugbear Champion",
+        "slug": "bugbear-champion-blackflag",
+        "challenge_rating": "4",
+        "size": "Javelin. Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 10 (2d6 + 3) piercing damage in melee or",
+        "type": "5",
+        "subtype": "1d6 + 2 piercing damage at range.Medium Humanoid",
+        "armor_class": 18,
+        "armor_desc": "(breastplate, shield)",
+        "hit_points": 85,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 22,
+        "dexterity": 14,
+        "constitution": 14,
+        "intelligence": 12,
+        "wisdom": 12,
+        "charisma": 10,
+        "stealth": 16,
+        "special_abilites": [
+            {
+                "name": "Languages Common, Gobli",
+                "desc": "Languages Common, Goblin"
+            }
+        ],
+        "actions": [
+            {
+                "name": "Delight in Thievery",
+                "desc": "Goblin culture considers stealing a delightful challenge. A goblin who can’t guard a possession doesn’t deserve it. Every goblin appreciates a good robbery, even if they are the victim. However, this peculiarity ofien leads to friction between goblins and other peoples."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Goblin",
+        "slug": "goblin-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Small",
+        "type": "Humanoid",
+        "subtype": "",
+        "armor_class": 15,
+        "armor_desc": "(leather armor, shield)",
+        "hit_points": 12,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 8,
+        "dexterity": 18,
+        "constitution": 10,
+        "intelligence": 10,
+        "wisdom": 8,
+        "charisma": 8,
+        "stealth": 14,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Gang Up (1/Day)",
+                "desc": "The goblin moves up to half its speed toward a creature it can see. Each friendly goblin within 30 feet of the goblin can use its reaction to join the gang up and move up to half its speed toward the same target. This movement doesn’t provoke opportunity attacks. If the initiating goblin is within 5 feet of the target, the target must make a DC 12 DEX save, taking 5 (2d4) bludgeoning damage on a failed save, or half as much damage on a successful one. For each goblin after the first that participated in the gang up and that is within 10 feet of the target, the damage increases by 1 as arrows, knives, sharp pocket scraps, and similar “weapons” fly at the target from all angles. Afterwards, each goblin after the first that participated in the gang up can’t use Gang Up until it finishes a short or long rest."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Nimble Escape",
+                "desc": "The goblin takes the Disengage or Hide action."
+            }
+        ],
+        "reactions": [
+            {
+                "name": "Stubborn Attacker (Recharge 5–6)",
+                "desc": "When the champion misses with an attack, it can change that miss to a hit."
+            }
+        ]
+    },
+    {
+        "name": "Goblin Captain",
+        "slug": "goblin-captain-blackflag",
+        "challenge_rating": "1",
+        "size": "Small",
+        "type": "Humanoid",
+        "subtype": "",
+        "armor_class": 17,
+        "armor_desc": "(chain shirt, shield)",
+        "hit_points": 32,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 10,
+        "dexterity": 18,
+        "constitution": 10,
+        "intelligence": 12,
+        "wisdom": 12,
+        "charisma": 10,
+        "stealth": 14,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Shortbow",
+                "desc": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Get That One! The goblin captain points at a target and calls out to a friendly goblin it can see within 30 feet of it",
+                "desc": "The"
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Hobgoblin",
+        "slug": "hobgoblin-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "",
+        "armor_class": 18,
+        "armor_desc": "(chain mail, shield)",
+        "hit_points": 18,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 12,
+        "dexterity": 12,
+        "constitution": 12,
+        "intelligence": 10,
+        "wisdom": 10,
+        "charisma": 8,
+        "stealth": 8,
+        "special_abilites": [
+            {
+                "name": "chosen goblin can use its reaction to move up to half its   speed and make one melee attack against the target",
+                "desc": ""
+            }
+        ],
+        "actions": [
+            {
+                "name": "Nimble Escape",
+                "desc": "The goblin takes the Disengage or Hide action."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Tactical Analysis",
+                "desc": "The hobgoblin briefly studies one creature it can see within 30 feet of it. It has advantage on the next attack roll it makes against that creature before the start of the its next turn."
+            }
+        ],
+        "reactions": [
+            {
+                "name": "Longbow",
+                "desc": "Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5 (1d8 + 1) piercing damage."
+            }
+        ]
+    },
+    {
+        "name": "Hobgoblin Commander",
+        "slug": "hobgoblin-commander-blackflag",
+        "challenge_rating": "3",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "",
+        "armor_class": 17,
+        "armor_desc": "(half plate)",
+        "hit_points": 72,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 14,
+        "dexterity": 14,
+        "constitution": 14,
+        "intelligence": 12,
+        "wisdom": 10,
+        "charisma": 14,
+        "stealth": 9,
+        "special_abilites": [
+            {
+                "name": "Languages Common, Gobli",
+                "desc": "Languages Common, Goblin"
+            },
+            {
+                "name": "Unshakable Command",
+                "desc": "Each friendly creature within 30 feet of the hobgoblin commander can’t be charmed or frightened while the commander isn’t incapacitated. arcane devices. Grimlock shamans use complicated oral traditions to pass down knowledge of how to maintain these machines, though few grimlocks know how to construct them. nis doesn’t stop grimlocks from pocketing baubles cast off from these devices, and many grimlocks have found the baubles to be effective at repelling or disorienting intruders."
+            },
+            {
+                "name": "Echosense",
+                "desc": "Grimlocks speak and understand the language of the subterranean world, though they prefer to speak their own dialect of Dwarvish. ne clicking sounds that form most of their words also serve as a form of echolocation."
+            },
+            {
+                "name": "Sensitive Hearing",
+                "desc": "Relying on hearing and scent, grimlocks thrive in dark environments. However, their sensitive ears are particularly vulnerable to loud sounds."
+            }
+        ],
+        "actions": [],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Grimlock",
+        "slug": "grimlock-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Multiattack. The hobgoblin commander makes three Greatsword or Longbow attacks.Greatsword. Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage.Longbow. Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.BONUS ACTIONSMartial Tactics. The hobgoblin commander employs one of the following tactics:Emboldening Shout. One friendly creature within 30 feet of the hobgoblin commander that it can see gains",
+        "type": "7",
+        "subtype": "2d6 temporary HP until the start of the commander’s next turn.Pressing Advance. The commander moves up to half its speed and commands one friendly creature it can see within 30 feet of it to also move. The target can use its reaction to move up to half its speed in the direction of the commander’s choosing. This movement for both creatures is unaffected by difficult terrain and doesn’t provoke opportunity attacks.Flashing Rock. The grimlock throws a scintillating rock at the target that bursts with a myriad of colors. The target must succeed on a DC 11 DEX save or be blinded until the end of its next turn.Illusory Dancer. The grimlock throws a small disk that emits a blurry, fractured illusion of a graceful, humanoid dancer. The target must succeed on a DC 11 CHA save or be incapacitated until the end of its next turn as it is mesmerized by the dance.Whirling Death. The grimlock throws a small, bladed gear that grows larger and larger as it travels toward the target, threatening to slice the target into pieces. The target must succeed on a DC 11 WIS save or be frightened until the end of its next turn. On a success, the target realizes the gear’s growth was a magical, illusory effect and that the gear never increased in size.",
+        "armor_class": 0,
+        "armor_desc": "",
+        "hit_points": 0,
+        "speed": "",
+        "speed_json": {
+            "walk": ""
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": null,
+        "dexterity": null,
+        "constitution": null,
+        "intelligence": null,
+        "wisdom": null,
+        "charisma": null,
+        "stealth": null,
+        "special_abilites": [],
+        "actions": [],
+        "bonus_actions": [
+            {
+                "name": "Emboldening Shout",
+                "desc": "One friendly creature within 30 feet of the hobgoblin commander that it can see gains 7 (2d6) temporary HP until the start of the commander’s next turn.Pressing Advance. The commander moves up to half its speed and commands one friendly creature it can see within 30 feet of it to also move. The target can use its reaction to move up to half its speed in the direction of the commander’s choosing. This movement for both creatures is unaffected by difficult terrain and doesn’t provoke opportunity attacks.Flashing Rock. The grimlock throws a scintillating rock at the target that bursts with a myriad of colors. The target must succeed on a DC 11 DEX save or be blinded until the end of its next turn.Illusory Dancer. The grimlock throws a small disk that emits a blurry, fractured illusion of a graceful, humanoid dancer. The target must succeed on a DC 11 CHA save or be incapacitated until the end of its next turn as it is mesmerized by the dance.Whirling Death. The grimlock throws a small, bladed gear that grows larger and larger as it travels toward the target, threatening to slice the target into pieces. The target must succeed on a DC 11 WIS save or be frightened until the end of its next turn. On a success, the target realizes the gear’s growth was a magical, illusory effect and that the gear never increased in size."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Harpy",
+        "slug": "harpy-blackflag",
+        "challenge_rating": "1",
+        "size": "Medium",
+        "type": "Monstrosity",
+        "subtype": "",
+        "armor_class": 13,
+        "armor_desc": "",
+        "hit_points": 38,
+        "speed": "20 ft., fly 40 ft.",
+        "speed_json": {
+            "walk": "20",
+            "fly": "40"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 12,
+        "dexterity": 16,
+        "constitution": 12,
+        "intelligence": 6,
+        "wisdom": 10,
+        "charisma": 12,
+        "stealth": 13,
+        "special_abilites": [
+            {
+                "name": "Monstrosity Resilience",
+                "desc": "The harpy is resistant to exhaustion and to the frightened condition."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Screech",
+                "desc": "Ranged Spell Attack: +4 to hit, range 30/120 ft., one target. Hit: 8 (2d6 + 1) thunder damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Luring Song",
+                "desc": "The harpy sings a magical melody. Every Humanoid and Giant within 300 feet of the harpy that can hear the song must succeed on a DC 11 WIS save or be charmed until the song ends. The harpy must use a bonus action on its subsequent turns to continue singing. It can stop singing at any time. The song ends if the harpy is incapacitated. While charmed by the harpy, a target is incapacitated and ignores the songs of other harpies. If the charmed target is more than 5 feet away from the harpy, the target must move on its turn toward the harpy by the most direct route, trying to get within 5 feet. It doesn’t avoid opportunity attacks, but before moving into damaging terrain, such as lava or a pit, and whenever it takes damage from a source other than the harpy, the target can repeat the save. A charmed target can also repeat the save at the end of each of its turns. If the save is successful, the effect ends on it. A target that successfully saves is immune to this harpy’s song for the next 24 hours."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Hell Hound",
+        "slug": "hell-hound-blackflag",
+        "challenge_rating": "3",
+        "size": "Medium",
+        "type": "Fiend",
+        "subtype": "Outsider",
+        "armor_class": 15,
+        "armor_desc": "(natural armor)",
+        "hit_points": 76,
+        "speed": "50 ft.",
+        "speed_json": {
+            "walk": "50"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "fire",
+        "condition_immunities": "charmed, frightened",
+        "strength": 20,
+        "dexterity": 12,
+        "constitution": 14,
+        "intelligence": 6,
+        "wisdom": 16,
+        "charisma": 6,
+        "stealth": 11,
+        "special_abilites": [
+            {
+                "name": "Pack Tactics",
+                "desc": "The hound has advantage on an attack roll against a creature if at least one of the hound’s allies is within 5 feet of the creature and the ally isn’t incapacitated."
+            },
+            {
+                "name": "Prey Sense",
+                "desc": "The hound can pinpoint, by scent, the location of Medium and smaller creatures within 30 feet of it."
+            }
+        ],
+        "actions": [
+            {
+                "name": "15-foot cone",
+                "desc": "Each creature in that area must make a DC 13 DEX save, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Hippogriff",
+        "slug": "hippogriff-blackflag",
+        "challenge_rating": "1",
+        "size": "Large",
+        "type": "Monstrosity",
+        "subtype": "Animal",
+        "armor_class": 11,
+        "armor_desc": "",
+        "hit_points": 44,
+        "speed": "40 ft., fly 60 ft.",
+        "speed_json": {
+            "walk": "40",
+            "fly": "60"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": null,
+        "dexterity": null,
+        "constitution": null,
+        "intelligence": null,
+        "wisdom": null,
+        "charisma": null,
+        "stealth": 10,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Claws",
+                "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Dive (Recharge 5–6)",
+                "desc": "While flying, the hippogriff dives onto a creature below it. The hippogriff moves at least 20 feet in a straight line toward a creature it can see. The target must succeed on a DC 13 STR save or take 7 (2d6) bludgeoning damage and be knocked prone."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Kobold",
+        "slug": "kobold-blackflag",
+        "challenge_rating": "1/8",
+        "size": "Small",
+        "type": "Humanoid",
+        "subtype": "",
+        "armor_class": 12,
+        "armor_desc": "",
+        "hit_points": 9,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 16,
+        "dexterity": 12,
+        "constitution": 12,
+        "intelligence": 2,
+        "wisdom": 16,
+        "charisma": 8,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "against a creature if at least one of the kobold’s allies is within 5 feet of the creature and the ally isn’t incapacitated",
+                "desc": "Sunlight Sensitivity. While in sunlight, the kobold has disadvantage on attack rolls, and its Perception is 3 when perceiving by sight."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Sling",
+                "desc": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Scurry",
+                "desc": "The kobold moves up to 15 feet without provoking opportunity attacks. If the kobold is aware of traps in the area, the kobold can choose if this movement triggers any of them."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Mimic",
+        "slug": "mimic-blackflag",
+        "challenge_rating": "2",
+        "size": "Medium",
+        "type": "Monstrosity",
+        "subtype": "Shapechanger",
+        "armor_class": 12,
+        "armor_desc": "(natural armor)",
+        "hit_points": 58,
+        "speed": "20 ft.",
+        "speed_json": {
+            "walk": "20"
+        },
+        "damage_vulnerabilities": "cold",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 16,
+        "dexterity": 12,
+        "constitution": 14,
+        "intelligence": 4,
+        "wisdom": 12,
+        "charisma": 8,
+        "stealth": 13,
+        "special_abilites": [
+            {
+                "name": "Adhesive (Object Form Only)",
+                "desc": "The mimic adheres to anything that touches it. A Huge or smaller creature adhered to the mimic is also grappled by it (escape DC 13). Ability checks made to escape this grapple have disadvantage. False Appearance (Object Form Only). While the mimic remains motionless, it is indistinguishable from an ordinary object."
+            },
+            {
+                "name": "Grappler",
+                "desc": "The mimic has advantage on attack rolls against any creature grappled by it. Monstrosity Resilience. The mimic is resistant to exhaustion and to the frightened condition."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Pseudopod",
+                "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage. If the mimic is in object form, the target is subjected to its Adhesive trait."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Change Shape",
+                "desc": "The mimic transforms into a Large or smaller object or back into its true, amorphous form, which is a Monstrosity. Its statistics are the same in each form. Any equipment it is wearing or carrying isn’t transformed. It reverts to its true form if it dies."
+            }
+        ],
+        "reactions": [
+            {
+                "name": "Prey Shield",
+                "desc": "When a creature the mimic can see hits it with an attack while it is grappling a creature, the mimic can roll the grappled creature in front of the blow, forcing the grappled creature to take the damage instead."
+            }
+        ]
+    },
+    {
+        "name": "Mycolid Commoner",
+        "slug": "mycolid-commoner-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Small",
+        "type": "Plant",
+        "subtype": "",
+        "armor_class": 12,
+        "armor_desc": "",
+        "hit_points": 22,
+        "speed": "15 ft.",
+        "speed_json": {
+            "walk": "15"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "poison",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": null,
+        "dexterity": null,
+        "constitution": null,
+        "intelligence": null,
+        "wisdom": null,
+        "charisma": null,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "themselves be eaten to kill massive or dangerous creatures and add fertilizer to the colony",
+                "desc": "Mycolids spores are a powerful defense mechanism as well, and older mycolids have more powerful spores. Even newborn commoner mycolid spores can addle the mind of most beasts."
+            },
+            {
+                "name": "Shared Memory",
+                "desc": "Each mycolid is a clone of a single progenitor called a spore lord. A family of like mycolids, the spawn of an individual spore lord, is called a “ring,” and each ring shares a collective pool of memories and consciousness connected to a mycelial network. As such, mycolids remember their own births as though they tended to their younger selves personally and can recall every birth and death since the ring began. nough all members of a ring look identical, no two rings are exactly alike. Separate rings cannot share thoughts or memories, but all mycolids can communicate telepathically over short distances."
+            },
+            {
+                "name": "Spore Lord",
+                "desc": "When a safe area of rich, damp fertilizer can be secured, a commoner mycolid may undergo a rapid change into a more powerful form capable of using its spores to create a near-endless supply of identical offspring. nis form, called a spore lord, does not rule over other mycolids. But while commoners tend to the health of mushrooms and mycolid sprouts, spore lords protect the colony from threats and supply it with a stream of clones. A single spore lord might create dozens or hundreds of clones of itself in its lifetime, and a dozen spore lords from different colonies may amass in a single fertile location without conflict."
+            },
+            {
+                "name": "Magic Channelers",
+                "desc": "Upon transformation, a spore lord is made larger, stronger, and smarter by the primal magic that spawned it. Spore lords instinctively know how to manipulate the environment through cultivation and magic."
+            },
+            {
+                "name": "Communal Knowledge",
+                "desc": "All members of a spore lord’s ring share its memories, but commoners lack the capacity to understand how and why the spore lord is different, though they recognize it. Only when separated from the colony can a commoner reach such an understanding, usually moments before it changes into a spore lord itself."
+            },
+            {
+                "name": "Fungal Toxicity",
+                "desc": "A creature that hits the mycolid with a melee attack while within 5 feet of it must succeed on a DC 13 CON save or become poisoned for 1 hour. If the poison isn’t neutralized before 1 hour has passed, the creature must succeed on a DC 13 CON save, taking 5 (2d4) poison damage on a failed save, or half as much damage on a successful one."
+            },
+            {
+                "name": "Mycolid Connection",
+                "desc": "The mycolid can pinpoint the location of each friendly mycolid within 120 feet of it. In addition, its telepathy range increases to 120 feet when communicating with other mycolids."
+            },
+            {
+                "name": "Plant Resilience",
+                "desc": "The mycolid is resistant to exhaustion and to the paralyzed, petrified, and unconscious conditions."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Gardening Pick",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage plus 5 (2d4) poison damage. Slowing Spores (Recharge 5–6). The mycolid ejects slowing spores from its body. Each creature that isn’t a mycolid within 5 feet of the mycolid must make a DC 13 WIS save. On a failure, a creature takes 5 (2d4) poison damage and is slowed until the end of its next turn. On a success, a creature takes half the damage and isn’t slowed. A slowed creature’s speed is halved, and it can’t take reactions."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Fetid Feast",
+                "desc": "The mycolid draws sustenance from a Medium or larger pile of carrion or rotting vegetation within 5 feet of it. It regains 5 (2d4) HP. The mycolid can’t use Fetid Feast on a pile of carrion or vegetation if it or another mycolid has already used Fetid Feast on that pile."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Mycolid Spore Lord",
+        "slug": "mycolid-spore-lord-blackflag",
+        "challenge_rating": "3",
+        "size": "Medium",
+        "type": "Plant",
+        "subtype": "",
+        "armor_class": 14,
+        "armor_desc": "(natural armor)",
+        "hit_points": 72,
+        "speed": "15 ft.",
+        "speed_json": {
+            "walk": "15"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "poison",
+        "condition_immunities": "",
+        "strength": 16,
+        "dexterity": 14,
+        "constitution": 12,
+        "intelligence": 8,
+        "wisdom": 18,
+        "charisma": 8,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Fungal Toxicity",
+                "desc": "A creature that hits the mycolid with a melee attack while within 5 feet of it must succeed on a DC 13 CON save or become poisoned for 5 hours. If the poison isn’t neutralized before 5 hour have passed, the creature must succeed on a DC 14 CON save, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one."
+            },
+            {
+                "name": "Mycolid Connection",
+                "desc": "The spore lord can pinpoint the location of each friendly mycolid within 1 mile of it. In addition, its telepathy range increases to 1 mile when communicating with other mycolids."
+            },
+            {
+                "name": "Plant Resilience",
+                "desc": "The mycolid is resistant to exhaustion and to the paralyzed, petrified, and unconscious conditions."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Hurl Sap",
+                "desc": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 11 (2d8 + 2) poison damage, and the sap sticks to the target. While the sap is stuck, the target takes 4 (1d8) poison damage at the start of each of its turns. A creature can use an action to scrape away the sap, ending the effect. Mushroom Ring (Recharge 5–6). The spore lord causes fungal growth to erupt from a point on the ground it can sense within 120 feet of it. A ring of mushrooms sprouts in a 15-foot radius around that point. Each creature that isn’t a mycolid within that ring must make a DC 14 CON save, taking 13 (3d8) poison damage on a failed save, or half as much damage on a successful one. Each mycolid within that ring gains 5 (2d4) temporary HP. Slumber Spores (Recharge 5–6). The spore lord ejects sleep-inducing spores from its body. Each creature that isn’t a mycolid within 10 feet of the spore lord must make a DC 14 WIS save. On a failure, a creature takes 9 (2d8) poison damage and falls unconscious for 1 minute. On a success, a creature takes half the damage and doesn’t fall unconscious. The unconscious creature wakes if it takes damage or if a creature uses an action to wake it."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Fetid Feast",
+                "desc": "The spore lord draws sustenance from a Medium or larger pile of carrion or rotting vegetation within 5 feet of it. It regains 7 (2d6) HP. The spore lord can’t use Fetid Feast on a pile of carrion or vegetation if it or another mycolid has already used Fetid Feast on that pile."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Orc",
+        "slug": "orc-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "",
+        "armor_class": 13,
+        "armor_desc": "(hide armor)",
+        "hit_points": 25,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 16,
+        "dexterity": 12,
+        "constitution": 16,
+        "intelligence": 6,
+        "wisdom": 10,
+        "charisma": 10,
+        "stealth": 11,
+        "special_abilites": [
+            {
+                "name": "Relentless (Recharges after a Short or Long Rest)",
+                "desc": "If the orc takes 10 damage or less that would reduce it to 0 HP, it is reduced to 1 HP instead."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Javelin",
+                "desc": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 6 (1d6 + 3) piercing damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Aggressive",
+                "desc": "The orc can move up to its speed toward a hostile creature that it can see."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Otyugh",
+        "slug": "otyugh-blackflag",
+        "challenge_rating": "5",
+        "size": "Large",
+        "type": "Aberration",
+        "subtype": "",
+        "armor_class": 14,
+        "armor_desc": "(natural armor)",
+        "hit_points": 108,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "poison",
+        "condition_immunities": "poisoned",
+        "strength": 16,
+        "dexterity": 10,
+        "constitution": 24,
+        "intelligence": 6,
+        "wisdom": 12,
+        "charisma": 6,
+        "stealth": 10,
+        "special_abilites": [
+            {
+                "name": "Aberrant Resilience",
+                "desc": "The otyugh is resistant to the charmed, frightened, paralyzed, and stunned conditions, and it has advantage on saves against spells or effects that would alter its form."
+            },
+            {
+                "name": "Limited Telepathy",
+                "desc": "The otyugh can magically transmit simple messages and images to any creature within 120 feet of it that can understand a language. This form of telepathy doesn’t allow the receiving creature to telepathically respond."
+            },
+            {
+                "name": "Stench",
+                "desc": "Each creature that starts its turn within 10 feet of the otyugh must succeed on a DC 15 CON save or be poisoned until the start of its next turn."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Tentacle Slam",
+                "desc": "The otyugh slams creatures grappled by it into each other or into a solid surface. Each creature must make a DC 15 STR save. On a failure, a creature takes 14 (4d6) bludgeoning damage and is stunned until the end of its next turn. On a success, a creature takes half the damage and isn’t stunned."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Owlbear",
+        "slug": "owlbear-blackflag",
+        "challenge_rating": "3",
+        "size": "Large",
+        "type": "Monstrosity",
+        "subtype": "Animal",
+        "armor_class": 14,
+        "armor_desc": "(natural armor)",
+        "hit_points": 80,
+        "speed": "40 ft.",
+        "speed_json": {
+            "walk": "40"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 20,
+        "dexterity": 12,
+        "constitution": 16,
+        "intelligence": 2,
+        "wisdom": 12,
+        "charisma": 6,
+        "stealth": 11,
+        "special_abilites": [
+            {
+                "name": "Glide",
+                "desc": "The owlbear has long, sturdy feathers along its forelimbs and sides that expand while falling to slow its rate of descent to 60 feet per round, landing on its feet and taking no falling damage. It can move up to 5 feet horizontally for every 1 foot it falls. The owlbear can’t gain height with its gliding feathers alone. If subjected to a strong wind or lift of any kind, it can use the updraft to glide farther. Heightened Sight and Smell. The owlbear’s Perception is 18 when perceiving by sight or smell. Monstrosity Resilience. The owlbear is resistant to exhaustion and to the frightened condition."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Claws",
+                "desc": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage. Vicious Bound (44 HP or Fewer). The owlbear roars and barrels through creatures. It moves up to 20 feet in a straight line and can move through the space of any Medium or smaller creature. The first time it enters a creature’s space during this move, that creature must make a DC 15 STR save. On a failure, a creature takes 18 (4d8) bludgeoning damage and is knocked prone. On a success, a creature takes half the damage and isn’t knocked prone."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Rend",
+                "desc": "The owlbear violently wrenches a Medium or smaller creature it is currently grappling. The target must make a DC 15 STR save, taking 9 (2d8) slashing damage on a failed save, or half as much damage on a successful one."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Pegasus",
+        "slug": "pegasus-blackflag",
+        "challenge_rating": "2",
+        "size": "Large",
+        "type": "Celestial",
+        "subtype": "Animal",
+        "armor_class": 12,
+        "armor_desc": "",
+        "hit_points": 57,
+        "speed": "60 ft., fly 90 ft.",
+        "speed_json": {
+            "walk": "60",
+            "fly": "90"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "charmed",
+        "strength": 18,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 10,
+        "wisdom": 14,
+        "charisma": 12,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Celestial Resilience",
+                "desc": "The pegasus is resistant to radiant damage."
+            },
+            {
+                "name": "Diving Pounce",
+                "desc": "If the pegasus is flying and moves at least 20 feet straight toward a creature and then hits it with a Hooves attack on the same turn, that target must succeed on a DC 14 STR save or be knocked prone. If the target is prone, the pegasus can make one Hooves attack against it as a bonus action."
+            },
+            {
+                "name": "Magic Resistance",
+                "desc": "The pegasus has advantage on saving throws against spells and other magical effects."
+            },
+            {
+                "name": "Magic Weapons",
+                "desc": "The pegasus’s weapon attacks are magical."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Multiattack",
+                "desc": "The pegasus makes two Hooves attacks. Hooves. Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": [
+            {
+                "name": "Catch Rider",
+                "desc": "If the pegasus’s rider fails a check or save to remain in the saddle or is subjected to an effect that would dismount it, the pegasus can shift to catch the falling rider, preventing the rider from being dismounted."
+            }
+        ]
+    },
+    {
+        "name": "Purple Worm",
+        "slug": "purple-worm-blackflag",
+        "challenge_rating": "15",
+        "size": "Gargantuan",
+        "type": "Monstrosity",
+        "subtype": "",
+        "armor_class": 18,
+        "armor_desc": "(natural armor)",
+        "hit_points": 255,
+        "speed": "50 ft., burrow 30 ft.",
+        "speed_json": {
+            "walk": "50",
+            "burrow": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "prone",
+        "strength": 28,
+        "dexterity": 6,
+        "constitution": 12,
+        "intelligence": 12,
+        "wisdom": 20,
+        "charisma": 18,
+        "stealth": 8,
+        "special_abilites": [
+            {
+                "name": "Monstrosity Resilience",
+                "desc": "The purple worm is resistant to exhaustion and to the frightened condition."
+            },
+            {
+                "name": "Tunneler",
+                "desc": "A purple worm can burrow through solid rock at half its burrow speed. Doing so creates a 10-foot-diameter tunnel behind it."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Tail Stinger",
+                "desc": "Melee Weapon Attack: +14 to hit, reach 10 ft., one creature. Hit: 19 (3d6 + 9) piercing damage, and the target must make a DC 19 CON save, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one. Thrash (Recharge 5–6). The purple worm convulses its large body, smashing everything around it. Each creature within 20 feet of the worm must make a DC 19 STR save. On a failure, a creature takes 54 (12d8) bludgeoning damage and is stunned until the end of its next turn. On a success, a creature takes half the damage and isn’t stunned."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Rapid Digestion",
+                "desc": "The purple worm’s digestive system absorbs some of the already digested material from creatures it has swallowed. If the purple worm has at least one swallowed creature inside it, the purple worm regains 9 (2d8) HP. This healing increases by 4 (1d8) for each creature currently inside the purple worm, to a maximum of 10d8."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Rust Monster",
+        "slug": "rust-monster-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Medium",
+        "type": "Monstrosity",
+        "subtype": "",
+        "armor_class": 14,
+        "armor_desc": "(natural armor)",
+        "hit_points": 25,
+        "speed": "40 ft.",
+        "speed_json": {
+            "walk": "40"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 12,
+        "dexterity": 12,
+        "constitution": 12,
+        "intelligence": 2,
+        "wisdom": 12,
+        "charisma": 6,
+        "stealth": 13,
+        "special_abilites": [
+            {
+                "name": "Iron Scent",
+                "desc": "The rust monster can pinpoint, by scent, the location of ferrous metal within 30 feet of it. Monstrosity Resilience. The rust monster is resistant to exhaustion and to the frightened condition."
+            },
+            {
+                "name": "Rust Metal",
+                "desc": "Any nonmagical weapon made of metal that hits the rust monster corrodes. After dealing damage, the weapon takes a permanent and cumulative −1 penalty to damage rolls. If its penalty drops to −5, the weapon is destroyed. Nonmagical ammunition made of metal that hits the rust monster is destroyed after dealing damage."
+            },
+            {
+                "name": "Spider Climb",
+                "desc": "The rust monster can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Moldering Bodies",
+                "desc": "nough dried strands of tendon or wisps of stubborn hair may cling to a skeleton, magic alone is responsible for its movement. Piercing weapons and arrows may skip from the skeleton’s hardened bone, but heavy blows shaner them."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Skeleton",
+        "slug": "skeleton-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Medium",
+        "type": "Undead",
+        "subtype": "",
+        "armor_class": 13,
+        "armor_desc": "(armor scraps)",
+        "hit_points": 14,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "piercing",
+        "damage_immunities": "",
+        "condition_immunities": "Undead Resilience",
+        "strength": 10,
+        "dexterity": 14,
+        "constitution": 14,
+        "intelligence": 6,
+        "wisdom": 8,
+        "charisma": 4,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "False Appearance",
+                "desc": "While the skeleton remains motionless and prone, it is indistinguishable from an inanimate Humanoid skeleton."
+            },
+            {
+                "name": "Undead Nature",
+                "desc": "The skeleton doesn’t require air, food, drink, or sleep."
+            },
+            {
+                "name": "Undead Resilience",
+                "desc": "The skeleton is immune to poison damage, to exhaustion, and to the poisoned condition."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Shortbow",
+                "desc": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": [
+            {
+                "name": "Counterattack (Recharge 6)",
+                "desc": "When a creature the skeleton can see hits it with an attack, the skeleton can make one Shortsword or Shortbow attack against the attacker."
+            }
+        ]
+    },
+    {
+        "name": "Warhorse Skeleton",
+        "slug": "warhorse-skeleton-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Large",
+        "type": "Undead",
+        "subtype": "",
+        "armor_class": 13,
+        "armor_desc": "(barding scraps)",
+        "hit_points": 25,
+        "speed": "60 ft.",
+        "speed_json": {
+            "walk": "60"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "piercing",
+        "damage_immunities": "",
+        "condition_immunities": "Undead Resilience",
+        "strength": 18,
+        "dexterity": 12,
+        "constitution": 14,
+        "intelligence": 2,
+        "wisdom": 12,
+        "charisma": 4,
+        "stealth": 13,
+        "special_abilites": [
+            {
+                "name": "False Appearance",
+                "desc": "While the warhorse skeleton remains motionless and prone, it is indistinguishable from an inanimate warhorse skeleton."
+            },
+            {
+                "name": "Undead Nature",
+                "desc": "The skeleton doesn’t require air, food, drink, or sleep."
+            },
+            {
+                "name": "Undead Resilience",
+                "desc": "The skeleton is immune to poison damage, to exhaustion, and to the poisoned condition."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Hooves",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Counterattack (Recharge 6)",
+                "desc": "When a creature the warhorse skeleton can see hits it with a melee attack while within 5 feet of it, the skeleton can make one Hooves attack against the attacker."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Skullbloom",
+        "slug": "skullbloom-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Medium",
+        "type": "Plant",
+        "subtype": "",
+        "armor_class": 11,
+        "armor_desc": "(natural armor)",
+        "hit_points": 23,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 14,
+        "dexterity": 10,
+        "constitution": 14,
+        "intelligence": 2,
+        "wisdom": 8,
+        "charisma": 4,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Heightened Hearing",
+                "desc": "The skullbloom’s Perception is 16 while perceiving by hearing."
+            },
+            {
+                "name": "Plant Resilience",
+                "desc": "The skullbloom is resistant to exhaustion and to the paralyzed, petrified, and unconscious conditions."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Bite",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage plus 4 (1d8) poison damage. If the target is a Humanoid, it must succeed on a DC 12 CON save or become infected with apocalyptic fungus (see sidebar)."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Instinct to Pursue",
+                "desc": "The skullboom takes the Dash action toward an uninfected Humanoid it can see or sense."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Bloatblossom",
+        "slug": "bloatblossom-blackflag",
+        "challenge_rating": "2",
+        "size": "Medium",
+        "type": "Plant",
+        "subtype": "",
+        "armor_class": 15,
+        "armor_desc": "(natural armor)",
+        "hit_points": 60,
+        "speed": "20 ft.",
+        "speed_json": {
+            "walk": "20"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": null,
+        "dexterity": null,
+        "constitution": null,
+        "intelligence": 16,
+        "wisdom": 10,
+        "charisma": 16,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Heightened Hearing",
+                "desc": "The bloatblossom’s Perception is 16 while perceiving by hearing."
+            },
+            {
+                "name": "Plant Resilience",
+                "desc": "The bloatblossom is resistant to exhaustion and to the paralyzed, petrified, and unconscious conditions."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Toxic Nodule",
+                "desc": "Ranged Weapon Attack: +5 to hit, range 30/60 ft., one target. Hit: 12 (2d8 + 3) poison damage, and the target must succeed on a DC 13 CON save or be poisoned until the end of its next turn."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Stern Protectors",
+                "desc": "Unlike many fey, sprites are serious, even-tempered, and intent on doing as linle harm as possible. nose they judge worthy might find themselves protected within the sprites’ territory, while those found wanting could walk headlong into ambushes, traps, and enraged beasts. Sprites refrain from tricks and mischief but suffer no evil within their domains."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Sprite",
+        "slug": "sprite-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Tiny",
+        "type": "Fey",
+        "subtype": "",
+        "armor_class": 14,
+        "armor_desc": "(leather armor)",
+        "hit_points": 13,
+        "speed": "10 ft., fly 40 ft.",
+        "speed_json": {
+            "walk": "10",
+            "fly": "40"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 2,
+        "dexterity": 16,
+        "constitution": 10,
+        "intelligence": 14,
+        "wisdom": 12,
+        "charisma": 10,
+        "stealth": 17,
+        "special_abilites": [
+            {
+                "name": "Fey Resilience",
+                "desc": "The sprite is resistant to the charmed and unconscious conditions. Speak with Beasts and Plants. The sprite can communicate with Beasts and Plants as if they shared a language."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Invisibility",
+                "desc": "The sprite magically turns invisible until it attacks or casts a spell, or until its concentration ends (as if concentrating on a spell). Any equipment the sprite wears or carries is invisible with it."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Swift Flight",
+                "desc": "The sprite moves up to half its speed without provoking opportunity attacks."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Star Crow",
+        "slug": "star-crow-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Tiny",
+        "type": "Aberration",
+        "subtype": "",
+        "armor_class": 15,
+        "armor_desc": "(natural armor)",
+        "hit_points": 12,
+        "speed": "20 ft., fly 60 ft. (hover)",
+        "speed_json": {
+            "walk": "20",
+            "fly": "60"
+        },
+        "damage_vulnerabilities": "poison",
+        "damage_resistances": "",
+        "damage_immunities": "psychic, radiant",
+        "condition_immunities": "blinded, exhaustion, prone",
+        "strength": null,
+        "dexterity": null,
+        "constitution": null,
+        "intelligence": null,
+        "wisdom": null,
+        "charisma": null,
+        "stealth": 15,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Thought Share",
+                "desc": "The star crow learns some of the attached target’s memories, and the attached target experiences a rapid sequence of memories from other creatures the star crow has encountered. The target takes 5 (2d4) psychic damage and must succeed on a DC 13 CHA save or be stunned until the end of its next turn."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Blinding Burst (Recharge 5–6)",
+                "desc": "The star crow dims then suddenly bursts with blinding light. Each creature within 30 feet of the star crow must succeed on a DC 13 CON save or be blinded until the end of its next turn."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Troll",
+        "slug": "troll-blackflag",
+        "challenge_rating": "5",
+        "size": "Large",
+        "type": "Giant",
+        "subtype": "",
+        "armor_class": 15,
+        "armor_desc": "(natural armor)",
+        "hit_points": 94,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 18,
+        "dexterity": 12,
+        "constitution": 20,
+        "intelligence": 6,
+        "wisdom": 8,
+        "charisma": 6,
+        "stealth": 13,
+        "special_abilites": [
+            {
+                "name": "Giant Attributes",
+                "desc": "The troll is resistant to the stunned condition, and it is vulnerable to the prone condition. Heightened Smell. The troll’s Perception is 17 while perceiving by smell."
+            },
+            {
+                "name": "Regeneration",
+                "desc": "The troll regains 10 HP at the start of its turn. If the troll takes acid or fire damage, this trait doesn’t function at the start of the troll’s next turn. The troll dies only if it ferocious than any natural beast."
+            },
+            {
+                "name": "Warren Dweller",
+                "desc": "Worgs ofien shelter in warrens, tunnels, and caves in which they can travel quickly to prey and away from predators. Such places are fetid, vile places full of half-eaten corpses that the worg seems to have gorged itself on without consequence."
+            },
+            {
+                "name": "Willing Mounts",
+                "desc": "While many beasts of burden must be trained to hold a rider, worgs tend to willingly carry goblins, who share a great number of similarities to the worg, and use the smaller creatures to find more bountiful humanoid prey. Possessing surprising intelligence, worgs have learned to speak Goblin as well as their own gunural language. On rare occasions, worgs have even learned to speak and understand Common or Elvish."
+            }
+        ],
+        "actions": [],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Worg",
+        "slug": "worg-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Large",
+        "type": "Monstrosity",
+        "subtype": "Animal",
+        "armor_class": 13,
+        "armor_desc": "(natural armor)",
+        "hit_points": 25,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 16,
+        "dexterity": 12,
+        "constitution": 12,
+        "intelligence": 6,
+        "wisdom": 10,
+        "charisma": 8,
+        "stealth": 13,
+        "special_abilites": [
+            {
+                "name": "starts its turn with 0 HP and doesn’t regenerate",
+                "desc": ""
+            }
+        ],
+        "actions": [
+            {
+                "name": "Claw",
+                "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 11 (2d6 + 4) piercing damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Frenzy (52 HP or Fewer)",
+                "desc": "Desperate for a meal as its injuries mount, the troll moves up to half its speed and makes one Bite attack against a creature it can see within range. The troll then regains HP equal to half the damage dealt."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Zombie",
+        "slug": "zombie-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Medium",
+        "type": "Undead",
+        "subtype": "",
+        "armor_class": 8,
+        "armor_desc": "",
+        "hit_points": 16,
+        "speed": "20 ft.",
+        "speed_json": {
+            "walk": "20"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "Undead ResilienceUndead Fortitude. If damage reduces the zombie to 0 HP, itmust make a CON save with a DC equal to 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 HP instead.Undead Nature. The zombie doesn’t require air, food, drink, or sleep.Undead Resilience. The zombie is immune to poison damage, to exhaustion, and to the poisoned condition.ACTIONSSlam. Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage. The target is grappled (escape DC 12) if it is a Medium or smaller creature, and the zombie doesn’t already have a creature grappled.BONUS ACTIONSRotten Hold. The zombie gnaws idly on the creature grappled by it. The target must succeed on a DC 12 CON save or take 2 (1d4) poison damage. A Humanoid slain by this bonus action rises 24 hours later as a zombie, unless the Humanoid is restored to life or its body is destroyed.",
+        "strength": null,
+        "dexterity": null,
+        "constitution": null,
+        "intelligence": null,
+        "wisdom": null,
+        "charisma": null,
+        "stealth": 8,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Slam",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage. The target is grappled (escape DC 12) if it is a Medium or smaller creature, and the zombie doesn’t already have a creature grappled."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Rotten Hold",
+                "desc": "The zombie gnaws idly on the creature grappled by it. The target must succeed on a DC 12 CON save or take 2 (1d4) poison damage. A Humanoid slain by this bonus action rises 24 hours later as a zombie, unless the Humanoid is restored to life or its body is destroyed."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Ogre Zombie",
+        "slug": "ogre-zombie-blackflag",
+        "challenge_rating": "2",
+        "size": "Large",
+        "type": "Undead",
+        "subtype": "",
+        "armor_class": 8,
+        "armor_desc": "",
+        "hit_points": 72,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "Undead Resilience",
+        "strength": 18,
+        "dexterity": 6,
+        "constitution": 18,
+        "intelligence": 2,
+        "wisdom": 6,
+        "charisma": 4,
+        "stealth": 8,
+        "special_abilites": [
+            {
+                "name": "Undead Fortitude",
+                "desc": "If damage reduces the zombie to 0 HP, it must make a CON save with a DC equal to 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 HP instead."
+            },
+            {
+                "name": "Undead Nature",
+                "desc": "The zombie doesn’t require air, food, drink, or sleep."
+            },
+            {
+                "name": "Undead Resilience",
+                "desc": "The zombie is immune to poison damage, to exhaustion, and to the poisoned condition."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Morningstar",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage. Lumbering Charge (Recharge 5–6). The ogre shoulders its weapon and charges forward, shoving into creatures on its way. It moves up to 20 feet in a straight line and can move through the space of any Medium or smaller creature. The first time it enters a creature’s space during this move, that creature must make a DC 14 STR save. On a failure, a creature takes 14 (4d6) bludgeoning damage and is knocked prone. On a success, a creature takes half the damage and isn’t knocked prone."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Insect, Scorpion",
+        "slug": "insect-scorpion-blackflag",
+        "challenge_rating": "0",
+        "size": "Tiny",
+        "type": "Beast",
+        "subtype": "",
+        "armor_class": 11,
+        "armor_desc": "(natural armor)",
+        "hit_points": 8,
+        "speed": "10 ft.",
+        "speed_json": {
+            "walk": "10"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "poison",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 2,
+        "dexterity": 10,
+        "constitution": 8,
+        "intelligence": 0,
+        "wisdom": 8,
+        "charisma": 2,
+        "stealth": 12,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Sting",
+                "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must make a DC 9 CON save, taking 4 (1d8) poison damage on a failed save, or half as much damage on a successful one"
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Mastiff",
+        "slug": "mastiff-blackflag",
+        "challenge_rating": "1/8",
+        "size": "Medium",
+        "type": "Beast",
+        "subtype": "",
+        "armor_class": 12,
+        "armor_desc": "",
+        "hit_points": 9,
+        "speed": "40 ft.",
+        "speed_json": {
+            "walk": "40"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 12,
+        "dexterity": 14,
+        "constitution": 12,
+        "intelligence": 2,
+        "wisdom": 12,
+        "charisma": 6,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Heightened Hearing and Smell",
+                "desc": "The mastiff’s Perception 16 while perceiving by hearing or smell."
+            },
+            {
+                "name": "Bite",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 12 STR save or be knocked prone."
+            }
+        ],
+        "actions": [],
+        "bonus_actions": [],
+        "reactions": [
+            {
+                "name": "Protect Friend",
+                "desc": "When a friendly Humanoid the mastiff can see is hit by an attack from a creature within 5 feet of the mastiff, the mastiff can make one Bite attack against that attacking creature."
+            }
+        ]
+    },
+    {
+        "name": "Rat, Giant",
+        "slug": "rat-giant-blackflag",
+        "challenge_rating": "1/8",
+        "size": "Small",
+        "type": "Beast",
+        "subtype": "",
+        "armor_class": 12,
+        "armor_desc": "",
+        "hit_points": 9,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 6,
+        "dexterity": 14,
+        "constitution": 10,
+        "intelligence": 2,
+        "wisdom": 10,
+        "charisma": 4,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "Heightened Smell",
+                "desc": "The rat’s Perception is 15 while perceiving by smell."
+            },
+            {
+                "name": "Pack Tactics",
+                "desc": "The rat has advantage on attack rolls against a creature if at least one of the rat’s allies is within 5 feet of the creature and the ally isn’t incapacitated."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Bite",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a creature, it must make a DC 10 CON save. On a failure, the target contracts the rat plague disease (see sidebar) or is poisoned until the end of its next turn (the GM’s choice)."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Rat, Swarm of Rats",
+        "slug": "rat-swarm-of-rats-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Medium Swarm of Tiny",
+        "type": "Beasts",
+        "subtype": "",
+        "armor_class": 10,
+        "armor_desc": "",
+        "hit_points": 14,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "Swarm Resilience",
+        "strength": 8,
+        "dexterity": 10,
+        "constitution": 8,
+        "intelligence": 2,
+        "wisdom": 10,
+        "charisma": 2,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Heightened Smell",
+                "desc": "The swarm’s Perception is 15 when perceiving by smell."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Swarm Resilience",
+                "desc": "The swarm is resistant to bludgeoning, piercing, and slashing damage, and it is immune to the charmed, frightened, grappled, paralyzed, petrified, prone, restrained, and stunned conditions."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Wolf",
+        "slug": "wolf-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Medium",
+        "type": "Beast",
+        "subtype": "",
+        "armor_class": 13,
+        "armor_desc": "(natural armor)",
+        "hit_points": 14,
+        "speed": "40 ft.",
+        "speed_json": {
+            "walk": "40"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 12,
+        "dexterity": 14,
+        "constitution": 12,
+        "intelligence": 2,
+        "wisdom": 12,
+        "charisma": 6,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "Heightened Hearing and Smell",
+                "desc": "The wolf’s Perception is 16 while perceiving by hearing or smell."
+            },
+            {
+                "name": "Pack Tactics",
+                "desc": "The wolf has advantage on attack rolls against a creature if at least one of the wolf’s allies is within 5 feet of the creature and the ally isn’t incapacitated."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Bite",
+                "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 12 STR save or be knocked prone."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Raven",
+        "slug": "raven-blackflag",
+        "challenge_rating": "0",
+        "size": "Tiny",
+        "type": "Beast",
+        "subtype": "",
+        "armor_class": 12,
+        "armor_desc": "",
+        "hit_points": 7,
+        "speed": "10 ft., fly 50 ft.",
+        "speed_json": {
+            "walk": "10",
+            "fly": "50"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 2,
+        "dexterity": 14,
+        "constitution": 8,
+        "intelligence": 2,
+        "wisdom": 12,
+        "charisma": 6,
+        "stealth": 14,
+        "special_abilites": [
+            {
+                "name": "Carrion Sense",
+                "desc": "The raven can pinpoint, by scent, the location of carrion, dead creatures, and Undead without the Incorporeal Movement trait within 60 feet of it."
+            },
+            {
+                "name": "Mimicry",
+                "desc": "The raven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal"
+            }
+        ],
+        "actions": [],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Acolyte",
+        "slug": "acolyte-blackflag",
+        "challenge_rating": "1/4",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 10,
+        "armor_desc": "",
+        "hit_points": 15,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 10,
+        "dexterity": 10,
+        "constitution": 10,
+        "intelligence": 10,
+        "wisdom": 18,
+        "charisma": 10,
+        "stealth": 10,
+        "special_abilites": [
+            {
+                "name": "Divine Providence",
+                "desc": "Each friendly creature within 20 feet of the acolyte that isn’t a Construct or Undead has advantage on death saves."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Spellcasting",
+                "desc": "The acolyte casts one of the following spells using WIS as the spellcasting ability (spell save DC 13). At will: light, thaumaturgy 3/day each: bless, cure wounds, sanctuary"
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Steal Item",
+                "desc": "The bandit steals an object from one creature it can see within 5 feet of it. The target must succeed on a DC 11 DEX save or lose one object it is wearing or carrying of the bandit’s choice. The object must weigh no more than 10 pounds, can’t be a weapon, and can’t be wrapped around or firmly attached to the target, such as a shirt or armor."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Bandit Captain",
+        "slug": "bandit-captain-blackflag",
+        "challenge_rating": "2",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 16,
+        "armor_desc": "(studded leather)",
+        "hit_points": 51,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 14,
+        "dexterity": 18,
+        "constitution": 14,
+        "intelligence": 14,
+        "wisdom": 10,
+        "charisma": 14,
+        "stealth": 16,
+        "special_abilites": [
+            {
+                "name": "Opportunist",
+                "desc": "The bandit captain has advantage on opportunity attacks."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Scimitar",
+                "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) slashing damage."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Bandit",
+        "slug": "bandit-blackflag",
+        "challenge_rating": "1/8",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 12,
+        "armor_desc": "(leather armor)",
+        "hit_points": 9,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 10,
+        "dexterity": 12,
+        "constitution": 12,
+        "intelligence": 10,
+        "wisdom": 10,
+        "charisma": 10,
+        "stealth": 13,
+        "special_abilites": [
+            {
+                "name": "Opportunist",
+                "desc": "The bandit has advantage on opportunity attacks. Reposition Forces (Recharge 5–6). Each friendly bandit and thug under the bandit captain’s command moves up to half its speed in a direction of the captain’s choice. This movement doesn’t provoke opportunity attacks."
+            }
+        ],
+        "actions": [],
+        "bonus_actions": [],
+        "reactions": [
+            {
+                "name": "Parry",
+                "desc": "The bandit captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon."
+            }
+        ]
+    },
+    {
+        "name": "Commoner",
+        "slug": "commoner-blackflag",
+        "challenge_rating": "0",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 10,
+        "armor_desc": "",
+        "hit_points": 8,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 10,
+        "dexterity": 10,
+        "constitution": 10,
+        "intelligence": 10,
+        "wisdom": 10,
+        "charisma": 10,
+        "stealth": 10,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Angry Mob (1/Day)",
+                "desc": "The commoner moves up to half its speed toward a creature it can see. Each friendly commoner within 30 feet of the commoner can use its reaction to join the angry mob and move up to half its speed toward the same target. This movement doesn’t provoke opportunity attacks. If the initiating commoner is within 5 feet of the target, the target must make a DC 10 DEX save, taking 2 (1d4) bludgeoning damage on a failed save, or half as much damage on a successful one. For each commoner after the first that participated in the angry mob and that is within 10 feet of the target, the damage increases by 1 as stones, clubs, sticks, and similar “weapons” fly at the target from all angles. Afterwards, each commoner after the first that participated in the mob can’t use Angry Mob until it finishes a short or long rest."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Cultist",
+        "slug": "cultist-blackflag",
+        "challenge_rating": "1/8",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 13,
+        "armor_desc": "(studded leather)",
+        "hit_points": 9,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 10,
+        "dexterity": 12,
+        "constitution": 12,
+        "intelligence": 10,
+        "wisdom": 12,
+        "charisma": 14,
+        "stealth": 11,
+        "special_abilites": [
+            {
+                "name": "Dark Devotion",
+                "desc": "The cultist is resistant to the charmed and frightened conditions. For the Cause! When a friendly creature the cultist can see within 5 feet of it is hit by an attack that would reduce that creature to 0 HP, the cultist can leap in front of the attack, taking the damage instead."
+            }
+        ],
+        "actions": [],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Cultist, Fanatic",
+        "slug": "cultist-fanatic-blackflag",
+        "challenge_rating": "2",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 14,
+        "armor_desc": "(studded leather)",
+        "hit_points": 60,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 10,
+        "dexterity": 14,
+        "constitution": 12,
+        "intelligence": 10,
+        "wisdom": 16,
+        "charisma": 16,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Dark Devotion",
+                "desc": "The fanatic is resistant to the charmed and frightened conditions."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Spellcasting",
+                "desc": "The fanatic casts one of the following spells, using WIS as the spellcasting ability (spell save DC 13): At will: light, thaumaturgy 3/day each: command, inflict wounds 2/day: hold person"
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Unholy Brand (Recharge 5–6)",
+                "desc": "One creature the fanatic can see within 30 feet of it must succeed on a DC 13 CHA save or be marked with an unholy brand until the start of the fanatic’s next turn. While the creature is branded, Fiends and cultists have advantage on attack rolls against it."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Druid",
+        "slug": "druid-blackflag",
+        "challenge_rating": "2",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 11,
+        "armor_desc": "(16 with barkskin)",
+        "hit_points": 66,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 10,
+        "dexterity": 12,
+        "constitution": 12,
+        "intelligence": 12,
+        "wisdom": 16,
+        "charisma": 10,
+        "stealth": 11,
+        "special_abilites": [
+            {
+                "name": "Languages Druidic plus any two language",
+                "desc": "Languages Druidic plus any two languages"
+            },
+            {
+                "name": "Spear",
+                "desc": "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack."
+            }
+        ],
+        "actions": [],
+        "bonus_actions": [],
+        "reactions": [
+            {
+                "name": "Protector’s Parry",
+                "desc": "When a friendly creature the guard can see within 5 feet of it is the target of an attack, the guard can interpose its weapon between the creature and the attacker. The friendly creature adds 2 to its AC against that attack. To use this reaction, the guard must be able to see the attacker and be wielding a melee weapon."
+            }
+        ]
+    },
+    {
+        "name": "Knight",
+        "slug": "knight-blackflag",
+        "challenge_rating": "3",
+        "size": "Multiattack. The druid makes two Flowering Quarterstaff orPoison Bolt attacks.Flowering Quarterstaff. Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage plus 5 (2d4) poison damage.Poison Bolt. Ranged Spell Attack: +5 to hit, range 60 ft., one target. Hit: 10 (3d4 + 3) poison damage.Spellcasting. The druid casts one of the following spells, using WIS as the spellcasting",
+        "type": "ability",
+        "subtype": "spell save DC 13:At will: druidcraft, speak with animals3/day each: entangle, cure wounds, thunderwave2/day each: barkskin, spike growthBONUS ACTIONSChange Shape. The druid magically transforms into a Medium or smaller Beast that has a challenge rating no higher than its own, or back into its true form, which is Humanoid. Any equipment it is wearing or carrying transforms with it. It reverts to its true form if it dies. In a new form, the druid retains its HP, HD, ability to speak, proficiencies, and INT, WIS, and CHA scores, as well as this bonus action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.",
+        "armor_class": 0,
+        "armor_desc": "",
+        "hit_points": 0,
+        "speed": "",
+        "speed_json": {
+            "walk": ""
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": null,
+        "dexterity": null,
+        "constitution": null,
+        "intelligence": null,
+        "wisdom": null,
+        "charisma": null,
+        "stealth": null,
+        "special_abilites": [],
+        "actions": [],
+        "bonus_actions": [
+            {
+                "name": "Change Shape",
+                "desc": "The druid magically transforms into a Medium or smaller Beast that has a challenge rating no higher than its own, or back into its true form, which is Humanoid. Any equipment it is wearing or carrying transforms with it. It reverts to its true form if it dies. In a new form, the druid retains its HP, HD, ability to speak, proficiencies, and INT, WIS, and CHA scores, as well as this bonus action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Guard",
+        "slug": "guard-blackflag",
+        "challenge_rating": "1/8",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 14,
+        "armor_desc": "(chain shirt)",
+        "hit_points": 8,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 12,
+        "dexterity": 12,
+        "constitution": 12,
+        "intelligence": 10,
+        "wisdom": 12,
+        "charisma": 10,
+        "stealth": 11,
+        "special_abilites": [
+            {
+                "name": "Medium Humanoid (Any Lineage) Armor Class 18 (plate) Hit Points 6",
+                "desc": "Medium Humanoid (Any Lineage) Armor Class 18 (plate) Hit Points 68"
+            },
+            {
+                "name": "Speed 30 ft",
+                "desc": "Perception 13    Stealth 5 (10 without heavy armor) Resistant charmed, frightened Senses — Languages Common and one other language"
+            },
+            {
+                "name": "Chivalrous Presence",
+                "desc": "The knight exudes a powerful presence. At the start of each of the knight’s turns, it chooses one of the following presences, which lasts until the start of the knight’s next turn."
+            },
+            {
+                "name": "Empowering Presence",
+                "desc": "Each friendly creature that starts its turn within 15 feet of the knight has advantage on the first attack roll it makes before this presence ends.Protective Presence. Hostile creatures have disadvantage on attack rolls against friendly creatures within 5 feet of the knight.Unwavering Presence. Each friendly creature within 15 feet of the knight is resistant to the charmed and frightened conditions."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Heavy Crossbow",
+                "desc": "Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5 (1d10) piercing damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Champion’s Challenge",
+                "desc": "The knight challenges one creature it can see within 30 feet of it. The target must succeed on a DC 13 CHA save or have disadvantage on attack rolls against creatures that aren’t the knight until the end of its next turn."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Mage",
+        "slug": "mage-blackflag",
+        "challenge_rating": "6",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 12,
+        "armor_desc": "(15 with mage armor)",
+        "hit_points": 133,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 8,
+        "dexterity": 14,
+        "constitution": 10,
+        "intelligence": 24,
+        "wisdom": 12,
+        "charisma": 10,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Arcane Weapons",
+                "desc": "The mage’s weapon attacks are magical. When the mage hits with any weapon, the weapon deals an extra 3d6 force damage (included in the attack)."
+            },
+            {
+                "name": "Magic Resistance",
+                "desc": "The mage has advantage on saves against spells and other magical effects."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Spellcasting",
+                "desc": "The mage casts one of the following spells, using INT as the spellcasting ability (spell save DC 15). At will: detect magic, light, mage hand, prestidigitation 3/day each: fly, mage armor, mirror image 2/day each: fireball, haste, slow 1/day each: cone of cold, greater invisibility"
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Spy",
+        "slug": "spy-blackflag",
+        "challenge_rating": "1",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 12,
+        "armor_desc": "",
+        "hit_points": 42,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 10,
+        "dexterity": 20,
+        "constitution": 10,
+        "intelligence": 12,
+        "wisdom": 14,
+        "charisma": 16,
+        "stealth": 17,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Cunning Action",
+                "desc": "The spy takes the Dash, Disengage, or Hide action. Feint (Recharge 4–6). The spy makes a feint at one creature within 5 feet of it, pretending to go in for an attack in one direction only to change it up at the last moment. The target must succeed on a DC 13 WIS save or the spy has advantage on the next attack roll it makes against the target."
+            }
+        ],
+        "bonus_actions": [],
+        "reactions": []
+    },
+    {
+        "name": "Thug",
+        "slug": "thug-blackflag",
+        "challenge_rating": "1/2",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 11,
+        "armor_desc": "(leather armor)",
+        "hit_points": 25,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 14,
+        "dexterity": 10,
+        "constitution": 14,
+        "intelligence": 10,
+        "wisdom": 10,
+        "charisma": 10,
+        "stealth": 12,
+        "special_abilites": [
+            {
+                "name": "Brutal",
+                "desc": "A melee weapon deals one extra die of its damage when the thug hits with it (included in the attack)."
+            },
+            {
+                "name": "Pack Tactics",
+                "desc": "The thug has advantage on attack rolls against a creature if at least one of the thug’s allies is within 5 feet of the creature and the ally isn’t incapacitated."
+            }
+        ],
+        "actions": [
+            {
+                "name": "Heavy Crossbow",
+                "desc": "Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5 (1d10) piercing damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Sucker Punch",
+                "desc": "The thug employs unscrupulous tactics to hit its opponent in a vulnerable spot. One creature the thug can see within 5 feet of it must make a DC 12 DEX save. On a failure, the target takes 2 (1d4) bludgeoning damage."
+            }
+        ],
+        "reactions": []
+    },
+    {
+        "name": "Veteran",
+        "slug": "veteran-blackflag",
+        "challenge_rating": "3",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Any Lineage",
+        "armor_class": 17,
+        "armor_desc": "(breastplate)",
+        "hit_points": 64,
+        "speed": "30 ft.",
+        "speed_json": {
+            "walk": "30"
+        },
+        "damage_vulnerabilities": "",
+        "damage_resistances": "",
+        "damage_immunities": "",
+        "condition_immunities": "",
+        "strength": 20,
+        "dexterity": 14,
+        "constitution": 14,
+        "intelligence": 10,
+        "wisdom": 10,
+        "charisma": 10,
+        "stealth": 14,
+        "special_abilites": [],
+        "actions": [
+            {
+                "name": "Heavy Crossbow",
+                "desc": "Ranged Weapon Attack: +4 to hit, range 100/400 ft., one target. Hit: 7 (1d10 + 2) piercing damage."
+            }
+        ],
+        "bonus_actions": [
+            {
+                "name": "Shoulder",
+                "desc": "The veteran shoves a creature it can see within 5 feet of it. The target must succeed on a DC 13 STR save or be knocked prone."
+            }
+        ],
+        "reactions": [
+            {
+                "name": "Parry",
+                "desc": "The veteran adds 2 to its AC against one melee attack that would hit it. To do so, the veteran must see the attacker and be wielding a melee weapon. APPEVDIX: COVDITIOVS"
+            }
+        ]
+    }
+]
