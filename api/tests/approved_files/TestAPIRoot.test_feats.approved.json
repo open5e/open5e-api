@@ -4,19 +4,6 @@
     "previous": null,
     "results": [
         {
-            "desc": "You've developed the skills necessary to hold your own in close-quarters grappling. You gain the following benefits:",
-            "document__slug": "wotc-srd",
-            "document__title": "5e Core Rules",
-            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
-            "effects_desc": [
-                "You have advantage on attack rolls against a creature you are grappling.",
-                "You can use your action to try to pin a creature grappled by you. The creature makes a Strength or Dexterity saving throw against your maneuver DC. On a failure, you and the creature are both restrained until the grapple ends."
-            ],
-            "name": "Grappler",
-            "prerequisite": "Prerequisite: Strength 13 or higher",
-            "slug": "grappler"
-        },
-        {
             "desc": "You are a virtuoso of driving and piloting vehicles, able to push them beyond their normal limits and maneuver them with fluid grace through hazardous situations. You gain the following benefits:",
             "document__slug": "a5e",
             "document__title": "Level Up Advanced 5e",
@@ -74,6 +61,19 @@
             "name": "Battle Caster",
             "prerequisite": "Requires the ability to cast at least one spell of 1st-level or higher",
             "slug": "battle-caster"
+        },
+        {
+            "desc": "You have learned to harness your inner vitality to replenish your ki. You gain the following benefits:",
+            "document__slug": "toh",
+            "document__title": "Tome of Heroes",
+            "document__url": "https://koboldpress.com/kpstore/product/tome-of-heroes-for-5th-edition/",
+            "effects_desc": [
+                "* Increase your Wisdom score by 1, to a maximum of 20.",
+                "* When you start your turn and have no ki points remaining, you can use a reaction to spend one Hit Die. Roll the die and add your Constitution modifier to it. You regain expended ki points equal to up to half the total (minimum of 1). You can never have more ki points than the maximum for your level. Hit Dice spent using this feat can't be used to regain hit points during a short rest. You regain spent Hit Dice as normal."
+            ],
+            "name": "Boundless Reserves",
+            "prerequisite": "*Wisdom 13 or higher and the Ki class feature*",
+            "slug": "boundless-reserves"
         },
         {
             "desc": "After making a melee attack, you may reroll any weapon damage and choose the better result. This feat can be used no more than once per turn.",
@@ -187,6 +187,20 @@
             "slug": "destinys-call"
         },
         {
+            "desc": "You are difficult to wear down and kill. You gain the following benefits:",
+            "document__slug": "toh",
+            "document__title": "Tome of Heroes",
+            "document__url": "https://koboldpress.com/kpstore/product/tome-of-heroes-for-5th-edition/",
+            "effects_desc": [
+                "* Increase your Constitution score by 1, up to a maximum of 20.",
+                "* You have advantage on saving throws against effects that cause you to suffer a level of exhaustion.",
+                "* You have advantage on death saving throws."
+            ],
+            "name": "Diehard",
+            "prerequisite": "*Constitution 13 or higher*",
+            "slug": "diehard"
+        },
+        {
             "desc": "You are a whirlwind of steel.",
             "document__slug": "a5e",
             "document__title": "Level Up Advanced 5e",
@@ -242,6 +256,35 @@
             "slug": "fear-breaker"
         },
         {
+            "desc": "You have studied the secret language of Floriography. You gain the following benefits:",
+            "document__slug": "toh",
+            "document__title": "Tome of Heroes",
+            "document__url": "https://koboldpress.com/kpstore/product/tome-of-heroes-for-5th-edition/",
+            "effects_desc": [
+                "* Increase your Intelligence or Wisdom score by 1, to a maximum of 20.",
+                "* You learn Floriography, the language of flowers. Similar to Druidic and Thieves' Cant, Floriography is a secret language often used to communicate subtle ideas, symbolic meaning, and even basic messages. Floriography is conveyed through the combinations of colors, styles, and even types of flowers in bouquets, floral arrangements, and floral illustrations, often with a gift-giving component.",
+                "* Your fluency with the subtle messages in floral displays gives you a keen eye for discerning subtle or hidden messages elsewhere. You have advantage on Intelligence (Investigation) and Wisdom (Insight) checks to notice and discern hidden messages of a visual nature, such as the runes of a magic trap or the subtle hand signals passing between two individuals."
+            ],
+            "name": "Floriographer",
+            "prerequisite": "*Proficiency in one of the following skills: Arcana, History, or Nature*",
+            "slug": "floriographer"
+        },
+        {
+            "desc": "You are familiar with the ways of the forest. You gain the following benefits:",
+            "document__slug": "toh",
+            "document__title": "Tome of Heroes",
+            "document__url": "https://koboldpress.com/kpstore/product/tome-of-heroes-for-5th-edition/",
+            "effects_desc": [
+                "* Increase your Wisdom score by 1, to a maximum of 20.",
+                "* You can discern if a plant or fungal growth is safe to eat.",
+                "* You learn to speak, read, and write Sylvan.",
+                "* You have advantage on Strength (Athletics) and Dexterity (Acrobatics) checks you make to escape from being grappled or restrained as long as you are being grappled or restrained by nonmagical vegetation or a beast's action such as a giant frog's bite or a spider's web."
+            ],
+            "name": "Forest Denizen",
+            "prerequisite": "*N/A*",
+            "slug": "forest-denizen"
+        },
+        {
             "desc": "Be it the gods, fate, or dumb luck, something is looking out for you.\nYou may choose to invoke your luck to do the following:\nMultiple creatures with the Fortunate feat may invoke luck. If this occurs, the result is resolved as normal.\nYou may invoke your luck up to three times per long rest.",
             "document__slug": "a5e",
             "document__title": "Level Up Advanced 5e",
@@ -253,6 +296,47 @@
             "name": "Fortunate",
             "prerequisite": null,
             "slug": "fortunate"
+        },
+        {
+            "desc": "After spending some time in forests, you have attuned yourself to the ways of the woods and the creatures in it.  ",
+            "document__slug": "toh",
+            "document__title": "Tome of Heroes",
+            "document__url": "https://koboldpress.com/kpstore/product/tome-of-heroes-for-5th-edition/",
+            "effects_desc": [
+                "* You learn the *treeheal* (see the Magic and Spells chapter) cantrip and two other druid cantrips of your choice.",
+                "* You also learn the *speak with animals* spell and can cast it once without expending a spell slot. Once you cast it, you must finish a short or long rest before you can cast it in this way again. Your spellcasting ability for these spells is Wisdom."
+            ],
+            "name": "Friend of the Forest",
+            "prerequisite": "*N/A*",
+            "slug": "friend-of-the-forest"
+        },
+        {
+            "desc": "Your experience fighting giants, such as ogres, trolls, and frost giants, has taught you how to avoid their deadliest blows and how to wield mighty weapons to better combat them. You gain the following benefits:",
+            "document__slug": "toh",
+            "document__title": "Tome of Heroes",
+            "document__url": "https://koboldpress.com/kpstore/product/tome-of-heroes-for-5th-edition/",
+            "effects_desc": [
+                "* Increase your Strength score by 1, to a maximum of 20.",
+                "* If you normally have disadvantage on attack rolls made with weapons with the Heavy property due to your size, you don't have disadvantage on those attack rolls.",
+                "* When a giant attacks you, any critical hit from it against you becomes a normal hit.",
+                "* Whenever you make an Intelligence (History) check related to the culture or origins of a giant, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+            ],
+            "name": "Giant Foe",
+            "prerequisite": "*A Small or smaller race*",
+            "slug": "giant-foe"
+        },
+        {
+            "desc": "You've developed the skills necessary to hold your own in close-quarters grappling. You gain the following benefits:",
+            "document__slug": "wotc-srd",
+            "document__title": "5e Core Rules",
+            "document__url": "http://dnd.wizards.com/articles/features/systems-reference-document-srd",
+            "effects_desc": [
+                "You have advantage on attack rolls against a creature you are grappling.",
+                "You can use your action to try to pin a creature grappled by you. The creature makes a Strength or Dexterity saving throw against your maneuver DC. On a failure, you and the creature are both restrained until the grapple ends."
+            ],
+            "name": "Grappler",
+            "prerequisite": "Prerequisite: Strength 13 or higher",
+            "slug": "grappler"
         },
         {
             "desc": "You punish foes that try to target your allies.",
@@ -280,6 +364,19 @@
             "name": "Hardy Adventurer",
             "prerequisite": null,
             "slug": "hardy-adventurer"
+        },
+        {
+            "desc": "You have learned to maximize the strategic impact of your misty step. You appear in a flash and, while your foe is disoriented, attack with deadly precision. You gain the following benefits:",
+            "document__slug": "toh",
+            "document__title": "Tome of Heroes",
+            "document__url": "https://koboldpress.com/kpstore/product/tome-of-heroes-for-5th-edition/",
+            "effects_desc": [
+                "* Increase your Strength or Dexterity score by 1, to a maximum of 20.",
+                "* When you use your Shadow Traveler trait or cast misty step, you have advantage on the next attack you make before the end of your turn."
+            ],
+            "name": "Harrier",
+            "prerequisite": "*The Shadow Traveler shadow fey trait or the ability to cast the* misty step *spell*",
+            "slug": "harrier"
         },
         {
             "desc": "You have learned to fight in heavy armor",
@@ -333,6 +430,20 @@
             "name": "Idealistic Leader",
             "prerequisite": null,
             "slug": "idealistic-leader"
+        },
+        {
+            "desc": "Your internal discipline gives you access to a small pool of ki points. You gain the following benefits:",
+            "document__slug": "toh",
+            "document__title": "Tome of Heroes",
+            "document__url": "https://koboldpress.com/kpstore/product/tome-of-heroes-for-5th-edition/",
+            "effects_desc": [
+                "* Increase your Wisdom score by 1, to a maximum of 20",
+                "* You have 3 ki points, which you can spend to fuel the Patient Defense or Step of the Wind features from the monk class. When you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points",
+                "* If you already have ki points, your ki point maximum increases by 3 instead."
+            ],
+            "name": "Inner Resilience",
+            "prerequisite": "*Wisdom 13 or higher*",
+            "slug": "inner-resilience"
         },
         {
             "desc": "You've trained your powers of observation to nearly superhuman levels.",
@@ -489,6 +600,19 @@
             "slug": "natural-warrior"
         },
         {
+            "desc": "Wolves are never seen to be far from your side and consider you to be a packmate. You gain the following benefits:",
+            "document__slug": "toh",
+            "document__title": "Tome of Heroes",
+            "document__url": "https://koboldpress.com/kpstore/product/tome-of-heroes-for-5th-edition/",
+            "effects_desc": [
+                "* Through growls, barks, and gestures, you can communicate simple ideas with canines. For the purposes of this feat, a \"canine\" is any beast with dog or wolf-like features. You can understand them in return, though this is often limited to knowing the creature's current or most recent state, such as \"hungry\", \"content\", or \"in danger.\"",
+                "* As an action, you can howl to summon a wolf to assist you. The wolf appears in 1d4 rounds and remains within 50 feet of you until 1 hour elapses or until it dies, whichever occurs first. You can't control the wolf, but it doesn't attack you or your companions. It acts on its own initiative, and it attacks creatures attacking you or your companions. If you are 5th level or higher, your howl summons a number of wolves equal to your proficiency bonus. When your howl summons multiple wolves, you have a 50 percent chance that one of the wolves is a dire wolf instead. Your summoned pack can have no more than one dire wolf. While at least one wolf is with you, you have advantage on Wisdom (Survival) checks to hunt for food or to find shelter. At the GM's discretion, you may not be able to summon a wolf or multiple wolves if you are indoors or in a region where wolves aren't native, such as the middle of the sea. Once you have howled to summon a wolf or wolves with this feat, you must finish a long rest before you can do so again."
+            ],
+            "name": "Part of the Pact",
+            "prerequisite": "*Proficiency in the Animal Handling skill*",
+            "slug": "part-of-the-pact"
+        },
+        {
             "desc": "Your mastery of mundane healing arts borders on the mystical.",
             "document__slug": "a5e",
             "document__title": "Level Up Advanced 5e",
@@ -553,120 +677,6 @@
             "name": "Primordial Caster",
             "prerequisite": "Requires the ability to cast one spell.",
             "slug": "primordial-caster"
-        },
-        {
-            "desc": "Your words can set even the coldest hearts ablaze.\nYou may deliver a rousing oratory that bolsters your allies. After speaking for ten minutes, you may grant temporary hit points equal to your level + your charisma modifier to up to 6 friendly creatures (including yourself) that hear and understand you within 30 feet. A creature can only gain the benefits of this feat once per long rest.",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "effects_desc": [],
-            "name": "Rallying Speaker",
-            "prerequisite": "Requires Charisma 13",
-            "slug": "rallying-speaker"
-        },
-        {
-            "desc": "You lose resonance with an item if another creature attunes to it or gains resonance with it. You can also voluntarily end the resonance by focusing on the item during a short rest, or during a long rest if the item is not in your possession.",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "effects_desc": [
-                "If the resonant item requires attunement and you meet the prerequisites to do so, you become attuned to the item. If you don't meet the prerequisites, both the attunement and resonance with the item fails. This attunement doesn't count toward the maximum number of items you can be attuned to. Unlike other attuned items, your attunement to this item doesn't end from being more than 100 feet away from it for 24 hours.",
-                "As a bonus action, you can summon a resonant item, which appears instantly in your hand so long as it is located on the same plane of existence. You must have a free hand to use this feature and be able to hold the item. Once you summon the item in this way, you can't do so again until you finish a short or long rest.",
-                "If the resonant item is sentient, you have advantage on Charisma checks and saving throws made when resolving a conflict with the item.",
-                "If the resonant item is an artifact, you can ignore the effects of one minor detrimental property."
-            ],
-            "name": "Resonant Bond",
-            "prerequisite": "You're able to form a greater bond with magic items. During a short rest, you can focus on a non-consumable magic item and create a unique bond with it called resonance. You can have resonance with only one item at a time. Attempting to resonate with another item fails until you end the resonance with your current item. When you resonate with an item, you gain the following benefits:",
-            "slug": "resonant-bond"
-        },
-        {
-            "desc": "You have delved into ancient mysteries.\nWhen you acquire this feat, select from the bard, cleric, druid, herald, sorcerer, warlock, or wizard spell list and choose two 1st level spells with the ritual tag, which are entered into your ritual book. These spells use the same casting attribute as the list from which they were drawn.\nWhen you discover spells in written form from your chosen spell list, you may add them to you your ritual book by spending 50 gp and two hours per level of the spell. In order to copy spells in this manner, they cannot be greater than half your character level, rounding up.\nYou may cast any spells in your ritual book as rituals so long as the book is in your possession.",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "effects_desc": [],
-            "name": "Rite Master",
-            "prerequisite": "Requires intelligence or Wisdom 13 or higher",
-            "slug": "rite-master"
-        },
-        {
-            "desc": "A shield is a nearly impassable barrier in your hands.",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "effects_desc": [
-                "Using your shield, you may expend your bonus action to make a shove maneuver against an adjacent creature when you take the attack action.",
-                "When you have a shield in your hand, you may apply its AC bonus to dexterity saves made against effects that target you.",
-                "While wielding a shield, you may expend your reaction following a successful Dexterity saving throw to take no damage from a spell or effect."
-            ],
-            "name": "Shield Focus",
-            "prerequisite": null,
-            "slug": "shield-focus"
-        },
-        {
-            "desc": "Your versatility makes you an asset in nearly any situation.\nLearn three skills, languages, or tool proficiencies in any combination. If you already have proficiency in a chosen skill, you instead gain a skill specialty with that skill.",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "effects_desc": [],
-            "name": "Skillful",
-            "prerequisite": null,
-            "slug": "skillful"
-        },
-        {
-            "desc": "You are as swift and elusive as the wind.",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "effects_desc": [
-                "Any form of movement you possess is increased by 10 feet.",
-                "Difficult terrain does not impede your movement when you have taken the dash action.",
-                "Your attacks prevent creatures from making opportunity attacks against you."
-            ],
-            "name": "Skirmisher",
-            "prerequisite": null,
-            "slug": "skirmisher"
-        },
-        {
-            "desc": "You are a terrifying foe to enemy spellcasters.",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "effects_desc": [
-                "You gain proficiency with the Purge Magic maneuver and do not have to spend exertion to activate it.",
-                "Targets forced to make concentration checks as a result of damage you deal suffer disadvantage.",
-                "You gain magic resistance against all spells cast within 30 feet of you."
-            ],
-            "name": "Spellbreaker",
-            "prerequisite": null,
-            "slug": "spellbreaker"
-        },
-        {
-            "desc": "You can quickly recover from injuries that leave lesser creatures broken.",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "effects_desc": [
-                "Raise your Constitution attribute by 1, up to the attribute cap of 20.",
-                "You regain an additional number of hit points equal to double your Constitution modifier (minimum 2) whenever you roll a hit die to regain hit points."
-            ],
-            "name": "Stalwart",
-            "prerequisite": null,
-            "slug": "stalwart"
-        },
-        {
-            "desc": "The shadows embrace you as if you were born to them.",
-            "document__slug": "a5e",
-            "document__title": "Level Up Advanced 5e",
-            "document__url": "https://a5esrd.com/a5esrd",
-            "effects_desc": [
-                "When lightly obscured, you may attempt the hide action.",
-                "You remain hidden after missing a ranged attack.",
-                "Your Wisdom (Perception) checks are not adversely affected by dim light."
-            ],
-            "name": "Stealth Expert",
-            "prerequisite": "Requires Dexterity 13 or higher",
-            "slug": "stealth-expert"
         }
     ]
 }

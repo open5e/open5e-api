@@ -1,0 +1,66 @@
+[
+{
+  "model": "api.subrace",
+  "pk": "high-elf",
+  "fields": {
+    "name": "High Elf",
+    "desc": "As a high elf, you have a keen mind and a mastery of at least the basics of magic. In many fantasy gaming worlds, there are two kinds of high elves. One type is haughty and reclusive, believing themselves to be superior to non-elves and even other elves. The other type is more common and more friendly, and often encountered among humans and other races.",
+    "document": 32,
+    "created_at": "2023-11-05T00:01:39.025",
+    "page_no": null,
+    "asi_desc": "**_Ability Score Increase._** Your Intelligence score increases by 1.",
+    "asi_json": "[{\"attributes\": [\"Intelligence\"], \"value\": 1}]",
+    "traits": "**_Elf Weapon Training._** You have proficiency with the longsword, shortsword, shortbow, and longbow.\n\n**_Cantrip._** You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.\n\n**_Extra Language._** You can speak, read, and write one extra language of your choice.",
+    "parent_race": "elf",
+    "route": "subraces/"
+  }
+},
+{
+  "model": "api.subrace",
+  "pk": "hill-dwarf",
+  "fields": {
+    "name": "Hill Dwarf",
+    "desc": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.",
+    "document": 32,
+    "created_at": "2023-11-05T00:01:39.024",
+    "page_no": null,
+    "asi_desc": "**_Ability Score Increase._** Your Wisdom score increases by 1",
+    "asi_json": "[{\"attributes\": [\"Wisdom\"], \"value\": 1}]",
+    "traits": "**_Dwarven Toughness._** Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
+    "parent_race": "dwarf",
+    "route": "subraces/"
+  }
+},
+{
+  "model": "api.subrace",
+  "pk": "lightfoot",
+  "fields": {
+    "name": "Lightfoot",
+    "desc": "As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You're inclined to be affable and get along well with others.\nLightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life.",
+    "document": 32,
+    "created_at": "2023-11-05T00:01:39.027",
+    "page_no": null,
+    "asi_desc": "**_Ability Score Increase._** Your Charisma score increases by 1.",
+    "asi_json": "[{\"attributes\": [\"Charisma\"], \"value\": 1}]",
+    "traits": "**_Naturally Stealthy._** You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.",
+    "parent_race": "halfling",
+    "route": "subraces/"
+  }
+},
+{
+  "model": "api.subrace",
+  "pk": "rock-gnome",
+  "fields": {
+    "name": "Rock Gnome",
+    "desc": "As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes.",
+    "document": 32,
+    "created_at": "2023-11-05T00:01:39.028",
+    "page_no": null,
+    "asi_desc": "**_Ability Score Increase._** Your Constitution score increases by 1.",
+    "asi_json": "[{\"attributes\": [\"Constitution\"], \"value\": 1}]",
+    "traits": "**_Artificer's Lore._** Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.\n\n**_Tinker._** You have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.\nWhen you create a device, choose one of the following options:\n* _Clockwork Toy._ This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.\n* _Fire Starter._ The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action.\n* _Music Box._ When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed.",
+    "parent_race": "gnome",
+    "route": "subraces/"
+  }
+}
+]

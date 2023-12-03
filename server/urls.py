@@ -54,15 +54,22 @@ router_v2 = routers.DefaultRouter()
 if settings.V2_ENABLED:
     router_v2.register(r'items',views_v2.ItemViewSet)
     router_v2.register(r'itemsets',views_v2.ItemSetViewSet)
+    router_v2.register(r'itemcategories',views_v2.ItemCategoryViewSet)
     router_v2.register(r'documents',views_v2.DocumentViewSet)
     router_v2.register(r'licenses',views_v2.LicenseViewSet)
     router_v2.register(r'publishers',views_v2.PublisherViewSet)
     router_v2.register(r'weapons',views_v2.WeaponViewSet)
     router_v2.register(r'armor',views_v2.ArmorViewSet)
     router_v2.register(r'rulesets',views_v2.RulesetViewSet)
+    router_v2.register(r'backgrounds',views_v2.BackgroundViewSet)
     router_v2.register(r'feats',views_v2.FeatViewSet)
     router_v2.register(r'races',views_v2.RaceViewSet)
     router_v2.register(r'creatures',views_v2.CreatureViewSet)
+    router_v2.register(r'creaturetypes',views_v2.CreatureTypeViewSet)
+    router_v2.register(r'damagetypes',views_v2.DamageTypeViewSet)
+    router_v2.register(r'languages',views_v2.LanguageViewSet)
+    router_v2.register(r'alignments',views_v2.AlignmentViewSet)
+    router_v2.register(r'conditions',views_v2.ConditionViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

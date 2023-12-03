@@ -1,0 +1,2392 @@
+[
+{
+  "model": "api_v2.benefit",
+  "pk": 24,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Religion, and either Insight or Persuasion.",
+    "type": "skill_proficiency",
+    "background": "a5e-acolyte"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 25,
+  "fields": {
+    "name": "Languages",
+    "desc": "One of your choice.",
+    "type": "language",
+    "background": "a5e-acolyte"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 26,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Holy symbol (amulet or reliquary), common clothes, robe, and a prayer book, prayer wheel, or prayer beads.",
+    "type": "equipment",
+    "background": "a5e-acolyte"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 27,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Wisdom and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "a5e-acolyte"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 28,
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "In small settlements without other resources, your authority may extend to such matters as settling disputes and punishing criminals. You might also be expected to deal with local outbreaks of supernatural dangers such as fiendish possessions, cults, and the unquiet dead. \r\nIf you solve several problems brought to you by members of your faith, you may be promoted (or reinstated) within the hierarchy of your order. You gain the free service of up to 4 acolytes, and direct access to your order’s leaders.",
+    "type": "adventures_and_advancement",
+    "background": "a5e-acolyte"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 29,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Acolyte Connections**\r\n\r\n1. A beloved high priest or priestess awaiting your return to the temple once you resolve your crisis of faith.\r\n2. A former priest—exposed by you as a heretic—who swore revenge before fleeing.\r\n3. The wandering herald who rescued you as an orphan and sponsored your entry into your temple.\r\n4. The inquisitor who rooted out your heresy (or framed you) and had you banished from your temple.\r\n5. The fugitive charlatan or cult leader whom you once revered as a holy person.\r\n6. Your scandalous friend, a fellow acolyte who fled the temple in search of worldly pleasures.\r\n7. The high priest who discredited your temple and punished the others of your order.\r\n8. The wandering adventurer whose tales of glory enticed you from your temple.\r\n9. The leader of your order, a former adventurer who sends you on quests to battle your god’s enemies.\r\n10. The former leader of your order who inexplicably retired to a life of isolation and penance.\r\n\r\n### **Acolyte Memento**\r\n\r\n1. The timeworn holy symbol bequeathed to you by your beloved mentor on their deathbed.\r\n2. A precious holy relic secretly passed on to you in a moment of great danger.\r\n3. A prayer book which contains strange and sinister deviations from the accepted liturgy.\r\n4.  A half-complete book of prophecies which seems to hint at danger for your faith—if only the other half could be found!\r\n5.  A gift from a mentor: a book of complex theology which you don’t yet understand.\r\n6.  Your only possession when you entered the temple as a child: a signet ring bearing a coat of arms.\r\n7.  A strange candle which never burns down.\r\n8.  The true name of a devil that you glimpsed while tidying up papers for a sinister visitor.\r\n9.  A weapon (which seems to exhibit no magical properties) given to you with great solemnity by your mentor.\r\n10. A much-thumbed and heavily underlined prayer book given to you by the fellow acolyte you admire most.",
+    "type": "connection_and_memento",
+    "background": "a5e-acolyte"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 43,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "One type of artisan’s tools or smith’s tools.",
+    "type": "tool_proficiency",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 47,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Artisan Connections**\r\n\r\n1. The cruel master who worked you nearly to death and now does the same to other apprentices.\r\n2. The kind master who taught you the trade.\r\n3. The powerful figure who refused to pay for your finest work.\r\n4. The jealous rival who made a fortune after stealing your secret technique.\r\n5. The corrupt rival who framed and imprisoned your mentor.\r\n6. The bandit leader who destroyed your mentor’s shop and livelihood.\r\n7. The crime boss who bankrupted your mentor.\r\n8. The shady alchemist who always needs dangerous ingredients to advance the state of your art.\r\n9. Your apprentice who went missing.\r\n10. The patron who supports your work.\r\n\r\n### **Artisan Mementos**\r\n\r\n1. *Jeweler:* A 10,000 gold commission for a ruby ring (now all you need is a ruby worth 5,000 gold).\r\n2. *Smith:* Your blacksmith's hammer (treat as a light hammer).\r\n3. *Cook:* A well-seasoned skillet (treat as a mace).\r\n4. *Alchemist:* A formula with exotic ingredients that will produce...something.\r\n5. *Leatherworker:* An exotic monster hide which could be turned into striking-looking leather armor.\r\n6. *Mason:* Your trusty sledgehammer (treat as a warhammer).\r\n7. *Potter:* Your secret technique for vivid colors which is sure to disrupt Big Pottery.\r\n8. *Weaver:* A set of fine clothes (your own work).\r\n9. *Woodcarver:* A longbow, shortbow, or crossbow (your own work).\r\n10. *Calligrapher:* Strange notes you copied from a rambling manifesto. Do they mean something?",
+    "type": "connection_and_memento",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 48,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 49,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Deception, and either Culture, Insight, or Sleight of Hand.",
+    "type": "skill_proficiency",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 50,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Disguise kit, forgery kit.",
+    "type": "tool_proficiency",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 51,
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "Common clothes, disguise kit, forgery kit.",
+    "type": "equipment",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 52,
+  "fields": {
+    "name": "Many Identities",
+    "desc": "You have a bundle of forged papers of all kinds—property deeds, identification papers, love letters, arrest warrants, and letters of recommendation—all requiring only a few signatures and flourishes to meet the current need. When you encounter a new document or letter, you can add a forged and modified copy to your bundle. If your bundle is lost, you can recreate it with a forgery kit and a day’s work.",
+    "type": "feature",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 53,
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "If you pull off a long-standing impersonation or false identity with exceptional success, you may eventually legally become that person. If you’re impersonating a real person, they might be considered the impostor. You gain any property and servants associated with your identity.",
+    "type": "adventures_and_advancement",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 54,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Charlatan Connections**\r\n\r\n1. A relentless pursuer: an inspector who you once made a fool of.\r\n2. A relentless pursuer: a mark you once cheated.\r\n3. A relentless pursuer: a former partner just out of jail who blames you for everything.\r\n4. A former partner now gone straight who couldn’t possibly be coaxed out of retirement.\r\n5. A respected priest or tavernkeeper who tips you off about rich potential marks.\r\n6. The elusive former partner who ratted you out and sent you to jail.\r\n7. A famous noble or politician who through sheer luck happens to bear a striking resemblance to you.\r\n8. The crook who taught you everything and just can’t stay out of trouble.\r\n9. A gullible noble who knows you by one of your former aliases, and who always seems to pop up at inconvenient times.\r\n10. A prominent noble who knows you only under your assumed name and who trusts you as their spiritual advisor, tutor, long-lost relative, or the like.\r\n\r\n### **Charlatan Mementos**\r\n\r\n1.  A die that always comes up 6.\r\n2. A dozen brightly-colored “potions”.\r\n3. A magical staff that emits a harmless shower of sparks when vigorously thumped.\r\n4. A set of fine clothes suitable for nobility.\r\n5. A genuine document allowing its holder one free release from prison for a non-capital crime.\r\n6. A genuine deed to a valuable property that is, unfortunately, quite haunted.\r\n7. An ornate harlequin mask.\r\n8. Counterfeit gold coins or costume jewelry apparently worth 100 gold (DC 15 Investigation check to notice\r\nthey’re fake).\r\n9. A sword that appears more magical than it really is (its blade is enchanted with continual flame and it is a mundane weapon).\r\n10. A nonmagical crystal ball.",
+    "type": "connection_and_memento",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 187,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 188,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Persuasion, and either Culture, Deception, or Insight.",
+    "type": "skill_proficiency",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 189,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Traveler's clothes, abacus, merchant's scale.",
+    "type": "equipment",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 191,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Trader Connections**\r\n\r\n1. The parent or relative who wants you to carry on the family business.\r\n2. The sibling who inherited the other half of the family business.\r\n3. The trading company to which you are indentured until you pay off a debt.\r\n4. The powerful merchant who will never forgive the business coup you pulled off.\r\n5. The noble whose horse trampled your poor family’s vegetable stall, injuring or killing a relative you\r\ndearly loved.\r\n6. The parent or elder sibling who squandered your family fortune.\r\n7. The business partner who cheated you.\r\n8. The customs agent who has sworn to catch you red-handed with illicit goods.\r\n9. The crime boss to whom you wouldn’t pay protection money.\r\n10. The smuggler who will pay well for certain commodities.\r\n\r\n### **Trader Mementos**\r\n\r\n1. The first gold piece you earned.\r\n2. Thousands of shares in a failed venture.\r\n3. A letter of introduction to a rich merchant in a distant city.\r\n4. A sample of an improved version of a common tool.\r\n5. Scars from a wound sustained when you tried to collect a debt from a vicious noble.\r\n6. A love letter from the heir of a rival trading family.\r\n7. A signet ring bearing your family crest, which is famous in the mercantile world.\r\n8. A contract binding you to a particular trading company for the next few years.\r\n9. A letter from a friend imploring you to invest in an opportunity that can't miss.\r\n10. A trusted family member's travel journals that mix useful geographical knowledge with tall tales.",
+    "type": "connection_and_memento",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 192,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Because of your commercial contacts you may be offered money to lead or escort trade caravans. You'll receive a fee from each trader that reaches their destination safely.",
+    "type": "adventures_and_advancement",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 245,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Hermit Connections**\r\n1. The high priest who banished you to the wilderness until you repent your heresy.\r\n2. The inquisitor who hunts you even through the most solitary wildlands.\r\n3. The supernatural patron whose temptations and gifts you seek to reject.\r\n4. The inner voice you only hear in solitude.\r\n5. The mentor who trained you in silent contemplation—until they mysteriously turned their back on their own teachings.\r\n6. The villain who destroyed the shreds of your original, worldly life. \r\n7. The noble relatives who seek to return you to the life you rejected.\r\n8. The religious superior whose blasphemies scandalized you into fleeing your religious order.\r\n9. The angel who delivered you a prophecy.\r\n10. The mysterious person you glimpsed several times from a distance—unless it was a hallucination.\r\n\r\n### **Hermit Mementos**\r\n\r\n1. The (possibly unhinged) manifesto, encyclopedia, or theoretical work that you spent so much time on.\r\n2. The faded set of fine clothes you preserved for so many years.\r\n3. The signet ring bearing the family crest that you were ashamed of for so long.\r\n4. The book of forbidden secrets that led you to your isolated refuge.\r\n5. The beetle, mouse, or other small creature which was your only companion for so long.\r\n6. The seemingly nonmagical item that your inner voice says is important.\r\n7. The magic-defying clay tablets you spent years translating.\r\n8. The holy relic you were duty bound to protect.\r\n9. The meteor metal you found in a crater the day you first heard your inner voice.\r\n10. Your ridiculous-looking sun hat.",
+    "type": "connection_and_memento",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 259,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Dexterity and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 260,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Sleight of Hand, and either Deception or Stealth.",
+    "type": "skill_proficiency",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 261,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, disguise kit.",
+    "type": "equipment",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 264,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": ".Street kids are among a settlement's most vulnerable people, especially in cities with lycanthropes, vampires, and other supernatural threats. After you help out a few urchins in trouble, word gets out and you'll be able to consult the street network to gather information. If you roll lower than a 15 on an Investigation check to gather information in a city or town, your roll is treated as a 15.",
+    "type": "adventures_and_advancement",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 265,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Dexterity and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 266,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Stealth, and either Deception or Intimidation.",
+    "type": "skill_proficiency",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 267,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, dark cloak, thieves' tools.",
+    "type": "equipment",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 268,
+  "fields": {
+    "name": "Thieves' Cant",
+    "desc": "You know thieves' cant: a set of slang, hand signals, and code terms used by professional criminals. A creature that knows thieves' cant can hide a short message within a seemingly innocent statement. A listener who knows thieves' cant understands the message.",
+    "type": "feature",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 269,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Criminal Connections**\r\n\r\n1. The master criminal who inducted you into your first gang.\r\n2. The cleric or herald who convinced you to use your skills for good (and who may be legally responsible for your continued good behavior).\r\n3. Your sibling or other relative—who also happens to be a representative of the law.\r\n4. The gang of rascals and pickpockets who once called you their leader.\r\n5. The bounty hunter who has sworn to bring you to justice.\r\n6. Your former partner who made off with all the loot after a big score.\r\n7. The masked courier who occasionally gives you jobs.\r\n8. The crime boss to whom you have sworn loyalty (or to whom you owe an enormous debt).\r\n9. The master thief who once stole something precious from you. \r\n10. The corrupt noble who ruined your once-wealthy family.\r\n\r\n### **Criminal Mementos**\r\n\r\n1. A golden key to which you haven't discovered the lock.\r\n2. A brand that was burned into your shoulder as punishment for a crime.\r\n3. A scar for which you have sworn revenge.\r\n4. The distinctive mask that gives you your nickname (for instance, the Black Mask or the Red Fox).\r\n5. A gold coin which reappears in your possession a week after you've gotten rid of it.\r\n6. The stolen symbol of a sinister organization; not even your fence will take it off your hands.\r\n7. Documents that incriminate a dangerous noble or politician.\r\n8. The floor plan of a palace.\r\n9. The calling cards you leave after (or before) you strike.\r\n10. A manuscript written by your mentor: *Secret Exits of the World's Most Secure Prisons*.",
+    "type": "connection_and_memento",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 270,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "If you pull off several successful jobs or heists, you may be promoted (or reinstated) as a leader in your gang. You may gain the free service of up to 8",
+    "type": "adventures_and_advancement",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 271,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Wisdom and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 272,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Nature, and either Animal Handling or Survival.",
+    "type": "skill_proficiency",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 273,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, shovel, mule with saddlebags, 5 Supply.",
+    "type": "equipment",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 274,
+  "fields": {
+    "name": "Bit and Bridle",
+    "desc": "You know how to stow and transport food. You and one animal under your care can each carry additional",
+    "type": "feature",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 275,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Farmer Connections**\r\n\r\n1. The landowner who foreclosed on your family land.\r\n2. The thugs who burned your village.\r\n3. The parents who wait for your return.\r\n4. The strange witch to whom your family owes a debt.\r\n5. The retired adventurer who trained you.\r\n6. The druid who—according to the villagers—laid a drought curse on your land.\r\n7. The village bully who threatened to kill you if you ever returned.\r\n8. The evil wizard who will stop at nothing to take your family heirloom.\r\n9. Your elder sibling who left searching for adventure before you did.\r\n10. The dragon whose foul reek has spoiled your countryside.\r\n\r\n### **Farmer Mementos**\r\n\r\n1. A strange item you dug up in a field: a key, a lump of unmeltable metal, a glass dagger.\r\n2. The bag of beans your mother warned you not to plant.\r\n3. The shovel, pickaxe, pitchfork, or other tool you used for labor. For you it's a one-handed simple melee weapon that deals 1d6 piercing, slashing, or bludgeoning damage.\r\n4. A debt you must pay.\r\n5. A mastiff.\r\n6. Your trusty fishing pole.\r\n7. A corncob pipe.\r\n8. A dried flower from your family garden.\r\n9. Half of a locket given to you by a missing sweetheart.\r\n10. A family weapon said to have magic powers, though it exhibits none at the moment.",
+    "type": "connection_and_memento",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 276,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "You left the farm for a reason but you still have an eye for land. If you acquire farming property, estates, or domains, you can earn twice as much as you otherwise would from their harvests, or be supported by your lands at a lifestyle one level higher than you otherwise would be.",
+    "type": "adventures_and_advancement",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 277,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Constitution and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 278,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either Athletics or Intimidation.",
+    "type": "skill_proficiency",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 279,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Traveler's clothes, waterskin, healer's kit, 7 days rations.",
+    "type": "equipment",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 280,
+  "fields": {
+    "name": "Trader",
+    "desc": "If you're in or near the wilderness and have a trading relationship with a tribe, settlement, or other nearby group, you can maintain a moderate lifestyle for yourself and your companions by trading the products of your hunting and gathering.",
+    "type": "feature",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 281,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Outlander Connections**\r\n1. A tribal chief who owes a favor.\r\n2. The chief of a band of marauders who has a grudge against you.\r\n3. A hag to whom you owe a favor.\r\n4. An alchemist or wizard who frequently gives you requests for rare herbs or trophies.\r\n5. A unicorn you’ve glimpsed but never been able to approach.\r\n6. Another outlander: your former best friend who is now a bitter rival.\r\n7. A wise oracle who knows most of what happens in the wilderness and will reveal it for a price.\r\n8. A zany prospector who knows the wild lands almost as well as you.\r\n9. A circus or arena owner who will pay for live animals not yet in their menagerie.\r\n10. A highly civilized poet or painter who has paid you to guide them to wild and inspiring locales.\r\n\r\n### **Outlander Mementos**\r\n\r\n1. A trophy from the hunt of a mighty beast, such as an phase monster-horn helmet.\r\n2. A trophy from a battle against a fierce monster, such as a still-wriggling troll finger.\r\n3. A stone from a holy druidic shrine.\r\n4. Tools appropriate to your home terrain, such as pitons or snowshoes.\r\n5. Hand-crafted leather armor, hide armor, or clothing.\r\n6. The handaxe you made yourself.\r\n7. A gift from a dryad or faun.\r\n8. Trading goods worth 30 gold, such as furs or rare herbs.\r\n9. A tiny whistle given to you by a sprite.\r\n10. An incomplete map.",
+    "type": "connection_and_memento",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 282,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "During your travels, wilderness dwellers may come to you for help battling monsters and other dangers. If you succeed in several such adventures, you may earn the freely given aid of up to 8",
+    "type": "adventures_and_advancement",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 286,
+  "fields": {
+    "name": "Supply and Demand",
+    "desc": "When you buy a trade good and sell it elsewhere to a community in need of that good, you gain a 10% bonus to its sale price for every 100 miles between the buy and sell location (maximum of 50%).",
+    "type": "feature",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 289,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Intelligence and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 290,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Persuasion, and either Insight or History.",
+    "type": "skill_proficiency",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 291,
+  "fields": {
+    "name": "Equipment",
+    "desc": "One set of artisan's tools, traveler's clothes.",
+    "type": "equipment",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 292,
+  "fields": {
+    "name": "Trade Mark",
+    "desc": "* When in a city or town, you have access to a fully-stocked workshop with everything you need to ply your trade. Furthermore, you can expect to earn full price when you sell items you have crafted (though there is no guarantee of a buyer).",
+    "type": "feature",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 294,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "If you participate in the creation of a magic item (a “master work”), you will gain the services of up to 8 commoner apprentices with the appropriate tool proficiency.",
+    "type": null,
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 295,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 296,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Performance, and either Acrobatics, Culture, or Persuasion.",
+    "type": "skill_proficiency",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 297,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Lute or other musical instrument, costume.",
+    "type": "equipment",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 298,
+  "fields": {
+    "name": "Pay the Piper",
+    "desc": "In any settlement in which you haven't made yourself unpopular, your performances can earn enough money to support yourself and your companions: the bigger the settlement, the higher your standard of living, up to a moderate lifestyle in a city.",
+    "type": "feature",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 299,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Entertainer Connections**\r\n1. Your rival, an equally talented performer.\r\n2. The cruel ringleader of the sinister circus where you learned your trade.\r\n3. A noble who wants vengeance for the song you wrote about him.\r\n4. The actor who says that there’s always room in their troupe for you and your companions.\r\n5. The noble who owes you a favor for penning the love poems that won their spouse.\r\n6. Your former partner, a slumming noble with a good ear and bad judgment.\r\n7. The rival who became successful and famous by taking credit for your best work.\r\n8. The highly-placed courtier who is always trying to further your career.\r\n9. A jilted lover who wants revenge. \r\n10. The many tavernkeepers and tailors to whom you owe surprisingly large sums.\r\n\r\n### **Entertainer Mementos**\r\n\r\n1. Your unfinished masterpiece—if you can find inspiration to overcome your writer's block.\r\n2. Fine clothing suitable for a noble and some reasonably convincing costume jewelry.\r\n3. A love letter from a rich admirer.\r\n4. A broken instrument of masterwork quality—if repaired, what music you could make on it!\r\n5. A stack of slim poetry volumes you just can't sell.\r\n6. Jingling jester's motley.\r\n7. A disguise kit.\r\n8. Water-squirting wands, knotted scarves, trick handcuffs, and other tools of a bizarre new entertainment trend: a nonmagical magic show.\r\n9. A stage dagger.\r\n10. A letter of recommendation from your mentor to a noble or royal court.",
+    "type": "connection_and_memento",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 300,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": ".Some of your admirers will pay you to plead a cause or smear an enemy. If you succeed at several such quests, your fame will grow. You will be welcome at royal courts, which will support you at a rich lifestyle.",
+    "type": "adventures_and_advancement",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 301,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Constitution and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 302,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Two of your choice.",
+    "type": "skill_proficiency",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 303,
+  "fields": {
+    "name": "Equipment",
+    "desc": "One set of artisan's tools or one instrument, traveler's clothes, guild badge.",
+    "type": "equipment",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 304,
+  "fields": {
+    "name": "Guild Business",
+    "desc": "While in a city or town, you can maintain a moderate lifestyle by plying your trade. Furthermore, the guild occasionally informs you of jobs that need doing. Completing such a job might require performing a downtime activity, or it might require a full adventure. The guild provides a modest reward if you're successful.",
+    "type": "feature",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 305,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Guildmember Connections**\r\n\r\n1. Your guild master who occasionally has secret missions for groups which can keep their mouths shut.\r\n2. Members of a rival guild who might or might not stoop to violence.\r\n3. The master who, recognizing your talent, risked all to teach you dangerous guild secrets.\r\n4. The agent of a rival guild who is trying to steal secrets.\r\n5. The jealous teacher who took credit for your work and got you expelled from the guild.\r\n6. The guild quartermaster who stocks goods of dubious legality.\r\n7. The friendly guild officer who always saves you the most interesting assignments.\r\n8. The rivals who always compete for the same guild jobs.\r\n9. The noble who owes you big.\r\n10. Your guild master’s ambitious second-in-command who is recruiting allies for a coup.\r\n\r\n### **Guildmember Mementos**\r\n\r\n1. *Artisans Guild:* An incomplete masterpiece which your mentor never finished.\r\n2. *Entertainers Guild:* An incomplete masterpiece which your mentor never finished.\r\n3. *Explorers Guild:* A roll of incomplete maps each with a reward for completion.\r\n4. *Laborers Guild:* A badge entitling you to a free round of drinks at most inns and taverns.\r\n5. *Adventurers Guild:* A request from a circus to obtain live exotic animals.\r\n6. *Bounty Hunters Guild:* A set of manacles and a bounty on a fugitive who has already eluded you once.\r\n7. *Mages Guild:* The name of a wizard who has created a rare version of a spell that the guild covets.\r\n8. *Monster Hunters Guild:* A bounty, with no time limit, on a monster far beyond your capability.\r\n9. *Archaeologists Guild:* A map marking the entrance of a distant dungeon.\r\n10. *Thieves Guild:* Blueprints of a bank, casino, mint, or other rich locale.",
+    "type": "connection_and_memento",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 306,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Once you have completed several quests or endeavors advancing guild business, you may be promoted to guild officer. You gain access to more lucrative contracts. In addition, the guild supports you at a moderate lifestyle without you having to work.",
+    "type": "adventures_and_advancement",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 307,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Intelligence and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 308,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "History, and either Arcana, Culture, Engineering, or Religion.",
+    "type": "skill_proficiency",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 309,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Bottle of ink, pen, 50 sheets of parchment, common clothes.",
+    "type": "equipment",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 310,
+  "fields": {
+    "name": "Library Privileges",
+    "desc": "As a fellow or friend of several universities you have visiting access to the great libraries, most of which are off-limits to the general public. With enough time spent in a library, you can uncover most of the answers you seek (any question answerable with a DC 20 Arcana, Culture, Engineering, History, Nature, or Religion check).",
+    "type": "feature",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 311,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Sage Connections**\r\n\r\n1. Your rival who always seems to be one step ahead of you in the research race.\r\n2. The college dean who banished you for conduct unbefitting a research fellow.\r\n3. A former student of yours who has become a dangerous wizard.\r\n4. The professor who took credit for your research.\r\n5. The rival sage whose cruel nickname for you has made you a laughingstock.\r\n6. The alchemist who will pay for bizarre monster trophies and other ingredients—no questions asked.\r\n7. The peer with a competing cosmological theory that causes endless friendly bickering.\r\n8. The noble who recognized your intelligence at a young age and sponsored your entrance into academia.\r\n9. A talented apprentice who ran away after mastering magical power but not the theoretical foundation to control it.\r\n10. The invading general who burned the library that was once your home.\r\n\r\n### **Sage Mementos**\r\n\r\n1. A letter from a colleague asking for research help.\r\n2. Your incomplete manuscript.\r\n3. An ancient scroll in a language that no magic can decipher.\r\n4. A copy of your highly unorthodox theoretical work that got you in so much trouble.\r\n5. A list of the forbidden books that may answer your equally forbidden question.\r\n6. A formula for a legendary magic item for which you have no ingredients.\r\n7. An ancient manuscript of a famous literary work believed to have been lost; only you believe that it is genuine.\r\n8. Your mentor's incomplete bestiary, encyclopedia, or other work that you vowed to complete.\r\n9. Your prize possession: a magic quill pen that takes dictation.\r\n10. The name of a book you need for your research that seems to be missing from every library you've visited.",
+    "type": "connection_and_memento",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 312,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "When you visit libraries and universities you tend to be asked for help in your role as a comparatively rough-and-tumble adventurer. After fetching a few bits of esoteric knowledge and settling a few academic disputes, you may be granted access to the restricted areas of the library (which contain darker secrets and deeper mysteries, such as those answerable with a DC 25 Arcana, Culture, Engineering, History, Nature, or Religion check).",
+    "type": "adventures_and_advancement",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 313,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Constitution and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 314,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either Animal Handling or Nature.",
+    "type": "skill_proficiency",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 315,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Any artisan's tools except alchemist's supplies, common clothes.",
+    "type": "equipment",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 316,
+  "fields": {
+    "name": "Local Fame",
+    "desc": "Unless you conceal your identity, you're universally recognized and admired near the site of your exploits. You and your companions are treated to a moderate lifestyle in any settlement within 100 miles of your Prestige Center.",
+    "type": "feature",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 317,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Folk Hero Connections**\r\n\r\n1. The bard whose song made you legendary and who wants a sequel.\r\n2. Your friend, a traveling merchant whose caravan spreads your fame.\r\n3. A deadly enemy: the heir of the oppressive noble you killed.\r\n4. A deadly enemy: the mother of the monster you killed.\r\n5. A deadly enemy: the leader of the bandits you defeated.\r\n6. A deadly enemy: the tyrant you robbed.\r\n7. A kid who wants to follow your footsteps into danger.\r\n8. The jealous rival who wants to best your monster-slaying prowess, daring deeds, prize pie recipe, or whatever else made your famous.\r\n9. A secret admirer: the heir or heiress of the oppressive noble you defeated.\r\n10. The retired adventurer who trained you and is now in a bit of trouble.\r\n\r\n### **Folk Hero Mementos**\r\n\r\n1. The mask you used to conceal your identity while fighting oppression (you are only recognized as a folk hero while wearing the mask).\r\n2. A necklace bearing a horn, tooth, or claw from the monster you defeated.\r\n3. A ring given to you by the dead relative whose death you avenged.\r\n4. The weapon you wrestled from the leader of the raid on your village.\r\n5. The trophy, wrestling belt, silver pie plate, or other prize marking you as the county champion.\r\n6. The famous scar you earned in your struggle against your foe.\r\n7. The signature weapon which provides you with your nickname.\r\n8. The injury or physical difference by which your admirers and foes recognize you.\r\n9. The signal whistle or instrument which you used to summon allies and spook enemies.\r\n10. Copies of the ballads and poems written in your honor.",
+    "type": "connection_and_memento",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 318,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Common folk come to you with all sorts of problems. If you fought an oppressive regime, they bring you tales of injustice. If you fought a monster, they seek you out with monster problems. If you solve many such predicaments, you become universally famous, gaining the benefits of your Local Fame feature in every settled land.",
+    "type": "adventures_and_advancement",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 325,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 326,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Deception, and either Insight or Sleight of Hand.",
+    "type": "skill_proficiency",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 327,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Fine clothes, dice set, playing card set.",
+    "type": "equipment",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 328,
+  "fields": {
+    "name": "Lady Luck",
+    "desc": "Each week you may attempt a “lucky throw” to support yourself by gambling. Roll a d6 to determine the lifestyle you can afford with your week's winnings (1–2: poor, 3–5: moderate, 6: rich).",
+    "type": "feature",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 329,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Gambler Connections**\r\n1. The mentor you have now surpassed.\r\n2. The duelist who will never forgive you for fleecing them.\r\n3. The legendary gambler you aspire to beat.\r\n4. The friendly rival who always keeps you on your toes.\r\n5. The noble who publicly accused you of cheating.\r\n6. An ink-stained academic who wants you to test a risky theory about how to beat the house.\r\n7. The gang leader who would rather kill you than pay up.\r\n8. The kid who strives to emulate you. \r\n9. The cardsharp rival who cheats to win.\r\n10. The rival who won something from you that you want back.\r\n\r\n### **Gambler Mementos**\r\n\r\n1. Gambling debts owed you by someone who's gone missing.\r\n2. Your lucky coin that you've always won back after gambling it away.\r\n3. The deeds to a monster-infested copper mine, a castle on another plane of existence, and several other valueless properties.\r\n4. A pawn shop ticket for a valuable item—if you can gather enough money to redeem it.\r\n5. The hard-to-sell heirloom that someone really wants back.\r\n6. Loaded dice or marked cards. They grant advantage on gambling checks when used, but can be discovered when carefully examined by someone with the appropriate tool proficiency (dice or cards).\r\n7. An invitation to an annual high-stakes game to which you can't even afford the ante.\r\n8. A two-faced coin.\r\n9. A torn half of a card—a long-lost relative is said to hold the other half.\r\n10. An ugly trinket that its former owner claimed had hidden magical powers.",
+    "type": "connection_and_memento",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 330,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Once you've had more than your fair share of lucky throws, you attract the attention of richer opponents. You add +1 to all your lucky throws. Additionally, you and your friends may be invited to exclusive games with more at stake than money.",
+    "type": "adventures_and_advancement",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 331,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Dexterity and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 332,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either Intimidation or Stealth.",
+    "type": "skill_proficiency",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 333,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Traveler's clothes, signal whistle, tent (one person).",
+    "type": "equipment",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 334,
+  "fields": {
+    "name": "Secret Ways",
+    "desc": "When you navigate while traveling, pursuers have",
+    "type": "feature",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 335,
+  "fields": {
+    "name": "Connection and Memeento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Marauder Connections**\r\n1. Your nemesis: a naval captain or captain of the guard who thwarted you on several occasions.\r\n2. Your mentor: a charismatic pirate captain.\r\n3. The stylish highway robber who taught you the trade.\r\n4. The local noble who pursues you obsessively.\r\n5. The three outlaws who hold the other three pieces of your treasure map.\r\n6. The marauder chief who betrayed you and the rest of the gang in exchange for freedom.\r\n7. The child you became an outlaw to protect.\r\n8. The cleric who converted you to a life of law and faith.\r\n9. The scholarly old bandit whose inventions gave you an edge against the pursuing authorities.\r\n10. Your best friend—who is serving a life sentence for your shared crime.\r\n\r\n### **Marauder Mementos**\r\n\r\n1. The eerie mask by which your victims know you.\r\n2. The one item that you wish you hadn't stolen.\r\n3. A signet ring marking you as heir to a seized estate.\r\n4. A locket containing a picture of the one who betrayed you.\r\n5. A broken compass.\r\n6. A love token from the young heir to a fortune.\r\n7. Half of a torn officer's insignia.\r\n8. The hunter's horn which members of your band use to call allies.\r\n9. A wanted poster bearing your face.\r\n10. Your unfinished thesis from your previous life as an honest scholar.",
+    "type": "connection_and_memento",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 336,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Allies and informants occasionally give you tips about the whereabouts of poorly-guarded loot. After a few such scores, you may gain the free service of up to 8",
+    "type": "adventures_and_advancement",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 337,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Wisdom and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 338,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Religion, and either Medicine or Survival.",
+    "type": "skill_proficiency",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 339,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Healer's satchel, herbalism kit, common clothes, 7 days rations, and a prayer book, prayer wheel, or prayer beads.",
+    "type": "equipment",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 340,
+  "fields": {
+    "name": "Inner Voice",
+    "desc": "You occasionally hear a voice—perhaps your conscience, perhaps a higher power—which you have come to trust. It told you to go into seclusion, and then it advised you when to rejoin the world. You think it is leading you to your destiny (consult with your Narrator about this feature.)",
+    "type": "feature",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 342,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Your inner voice may occasionally prompt you to accept certain adventure opportunities or to avoid certain actions. You are free to obey or disobey this voice. Eventually however it may lead you to a special revelation, adventure, or treasure.",
+    "type": "adventures_and_advancement",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 343,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Constitution and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 344,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Athletics, and either Acrobatics or Perception.",
+    "type": "skill_proficiency",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 345,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, navigator's tools, 50 feet of rope.",
+    "type": "equipment",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 346,
+  "fields": {
+    "name": "Sea Salt",
+    "desc": "Your nautical jargon and rolling gait mark you unmistakably as a mariner. You can easily enter into shop talk with any sailors that are not hostile to you, learning nautical gossip and ships' comings and goings. You also recognize most large ships by sight and by name, and can make a History orCulturecheck to recall their most recent captain and allegiance.",
+    "type": "feature",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 347,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Sailor Mementos**\r\n\r\n1. A dagger with a handle carved from a dragon turtle's tooth.\r\n2. A scroll tube filled with nautical charts.\r\n3. A harpoon (treat as a javelin with its butt end fastened to a rope).\r\n4. A scar with a famous tale behind it.\r\n5. A treasure map.\r\n6. A codebook which lets you decipher a certain faction's signal flags.\r\n7. A necklace bearing a scale, shell, tooth, or other nautical trinket.\r\n8. Several bottles of alcohol.\r\n9. A tale of an eerie encounter with a strange monster, a ghost ship, or other mystery.\r\n10. A half-finished manuscript outlining an untested theory about how to rerig a ship to maximize speed.\r\n\r\n### **Sailor Mementos**\r\n\r\n1. A dagger with a handle carved from a dragon turtle’s tooth.\r\n2. A scroll tube filled with nautical charts.\r\n3. A harpoon (treat as a javelin with its butt end fastened to a rope).\r\n4. A scar with a famous tale behind it. \r\n5. A treasure map.\r\n6. A codebook which lets you decipher a certain faction’s signal flags.\r\n7. A necklace bearing a scale, shell, tooth, or other nautical trinket.\r\n8. Several bottles of alcohol. \r\n9. A tale of an eerie encounter with a strange monster, a ghost ship, or other mystery.\r\n10. A half-finished manuscript outlining an untested theory about how to rerig a ship to maximize speed.",
+    "type": "connection_and_memento",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 348,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": ".You and your companions will be able to take passage for free on nearly any commercial ship in exchange for occasional ship duties when all hands are called. In addition, after you have a few naval exploits under your belt your fame makes sailors eager to sail under you. You can hire a ship's crew at half the usual price.",
+    "type": "adventures_and_advancement",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 349,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Wisdom and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 350,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either History or Performance.",
+    "type": "skill_proficiency",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 351,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Traveler's clothes, 10 days rations.",
+    "type": "equipment",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 352,
+  "fields": {
+    "name": "Fellow Traveler",
+    "desc": "You gain an expertise die on Persuasion checks against others who are away from their land of birth.",
+    "type": "feature",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 353,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Exile Connections**\r\n1. The companions who shared your exile.\r\n2. The kindly local who taught you Common.\r\n3. The shopkeeper or innkeeper who took you in and gave you work.\r\n4. The hunters from your native land who pursue you.\r\n5. The distant ruler who banished you until you redeem yourself.\r\n6. The community of fellow exiles who have banded together in a city neighborhood.\r\n7. The acting or carnival troupe which took you in.\r\n8. The suspicious authorities who were convinced you were a spy.\r\n9. Your first friend after your exile: a grizzled adventurer who traveled with you.\r\n10. A well-connected and unscrupulous celebrity who hails from your homeland.\r\n\r\n### **Exile Mementos**\r\n\r\n1. A musical instrument which was common in your homeland.\r\n2. A memorized collection of poems or sagas.\r\n3. A locket containing a picture of your betrothed from whom you are separated.\r\n4. Trade, state, or culinary secrets from your native land.\r\n5. A piece of jewelry given to you by someone you will never see again.\r\n6. An inaccurate, ancient map of the land you now live in.\r\n7. Your incomplete travel journals.\r\n8. A letter from a relative directing you to someone who might be able to help you.\r\n9. A precious cultural artifact you must protect.\r\n10. An arrow meant for the heart of your betrayer.",
+    "type": "connection_and_memento",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 354,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "You may occasionally meet others from your native land. Some may be friends, and some dire enemies; few will be indifferent to you. After a few such encounters, you may become the leader of a faction of exiles. Your followers include up to three NPCs of Challenge Rating ½ or less, such as scouts.",
+    "type": "adventures_and_advancement",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 358,
+  "fields": {
+    "name": "Guttersnipe",
+    "desc": "When you're in a town or city, you can provide a poor lifestyle for yourself and your companions. Also, you know how to get anywhere in town without being spotted by gangs, gossips, or guard patrols.",
+    "type": "feature",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 361,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "### **Urchin Connections**\r\n\r\n1. The disreputable thief who taught you thieving skills.\r\n2. The saintly orphanage matron who’s so proud of how you’ve grown.\r\n3. The miserly and cruel orphanage administrator who rounds up urchins and runaways.\r\n4. The drunken thief who shared with you what little they could steal. \r\n5. The fellow urchin who has some power to make “bad stuff” happen to their enemies.\r\n6. The thieves’ guild contact who will pay well for small folk to wriggle through a window or chimney to unlock a front door.\r\n7. The philanthropist (or charlatan?) who took you in, dressed you properly, and tried to teach you upper-class manners.\r\n8. The spymaster or detective who sent you on investigation missions.\r\n9. The noble whose horse trampled you or a friend.\r\n10. The rich family you ran away from.\r\n\r\n### **Urchin Mementos**\r\n\r\n1. A locket containing pictures of your parents.\r\n2. A set of (stolen?) fine clothes.\r\n3. A small trained animal, such as a mouse, parrot, or monkey.\r\n4. A map of the sewers.\r\n5. The key or signet ring that was around your neck when you were discovered as a foundling.\r\n6. A battered one-eyed doll.\r\n7. A portfolio of papers given to you by a fleeing, wounded courier.\r\n8. A gold tooth (not yours, and not in your mouth).\r\n9. The flowers or trinkets that you sell.\r\n10. A dangerous secret overheard while at play.",
+    "type": "connection_and_memento",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 362,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "One Vehicle",
+    "type": "tool_proficiency",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 363,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Disguise kit, thieves’ tools.",
+    "type": "tool_proficiency",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 364,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Strength and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "soldier"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 365,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Athletics, and either Animal Handling or Intimidation.",
+    "type": "skill_proficiency",
+    "background": "soldier"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 366,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "One type of gaming set.",
+    "type": "tool_proficiency",
+    "background": "soldier"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 367,
+  "fields": {
+    "name": "Languages",
+    "desc": "One of your choice.",
+    "type": "language",
+    "background": "soldier"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 368,
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "Uniform, common clothes, 7 days rations.",
+    "type": "equipment",
+    "background": "soldier"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 369,
+  "fields": {
+    "name": "Military Bearing",
+    "desc": "Soldiers recognize their own. Off duty soldiers are usually willing to trade tales and gossip with you. On duty soldiers, while not obeying your orders, are likely to answer your questions and treat you respectfully on the off chance that you’re an unfamiliar officer who can get them in trouble.",
+    "type": "feature",
+    "background": "soldier"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 370,
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "You will occasionally run into old comrades, some of whom may need favors. If you perform a few celebrated martial deeds your old military outfit (or a new one) is likely to offer you an officer’s rank. You gain the free service of up to 8 guards. Your new commanders will occasionally give you objectives: you will be expected to act independently in order to achieve these objectives.",
+    "type": "adventures_and_advancement",
+    "background": "soldier"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 371,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Soldier Connections**\r\n\r\n1. Your old commanding officer who still wants you to rejoin.\r\n2. The commander who callously sent your unit into a slaughter.\r\n3. Your shady war buddy who can get their hands on anything with no questions asked.\r\n4. Your best friend who went missing on the battlefield. \r\n5. The comrade who saved your life at the risk of their own.\r\n6. The ghost who haunts you. \r\n7. The superior officer you punched (for abusing civilians? For insulting your honor? For preventing you from looting?)\r\n8. The scary experimental war construct you accompanied on a dangerous mission.\r\n9. The golden-armored knight with ridiculously good teeth who was always giving inspiring speeches.\r\n10. The enemy officer who captured you.\r\n\r\n### **Soldier Mementos**\r\n\r\n1. A broken horn, tooth, or other trophy salvaged from a monster’s corpse.\r\n2. A trophy won in a battle (a tattered banner, a ceremonial sword, or similar).\r\n3. A gaming set.\r\n4. A letter from your sweetheart.\r\n5. An old wound that twinges in bad weather.\r\n6. A letter you’re supposed to deliver to a dead comrade’s family.\r\n7. A horrifying memory you can’t escape.\r\n8. A horned or plumed helmet.\r\n9. The sword you broke over your knee rather than fight for those bastards another day.\r\n10. A medal for valor.",
+    "type": "connection_and_memento",
+    "background": "soldier"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 372,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Navigator’s tools, water vehicles.",
+    "type": "tool_proficiency",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 373,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Strength and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "noble"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 374,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Culture, History, and either Animal Handling or Persuasion.",
+    "type": "skill_proficiency",
+    "background": "noble"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 375,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "One gaming set.",
+    "type": "tool_proficiency",
+    "background": "noble"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 376,
+  "fields": {
+    "name": "Languages",
+    "desc": "One of your choice.",
+    "type": "language",
+    "background": "noble"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 377,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Fine clothes, signet ring, writ detailing your family tree.",
+    "type": "equipment",
+    "background": "noble"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 378,
+  "fields": {
+    "name": "High Society",
+    "desc": "You know of—or personally know—most of the noble families for hundreds of miles. In most settled areas you (and possibly your companions, if well-behaved) can find a noble host who will feed you, shelter you, and  offer you a rich lifestyle.",
+    "type": "feature",
+    "background": "noble"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 379,
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "Your family may ask you for one or two little favors: convince this relative to marry a family-approved spouse, slay that family foe in a duel, serve under a liege lord in a battle. If you advance your family’s fortunes, you may earn a knighthood along with the free service of a retinue of servants and up to 8 guards",
+    "type": "adventures_and_advancement",
+    "background": "noble"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 380,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Noble Connections**\r\n1. Your perfect elder sibling to whom you never seem to measure up.\r\n2. The treacherous noble who slaughtered or scattered your family and is now living in your ancestral home.\r\n3. Your family servant, a retired adventurer who taught you more about battle than any fancy dueling master.\r\n4. The foppish friend you carouse with.\r\n5. The common-born sweetheart that your family forbid you from seeing again.\r\n6. The fugitive head of your family whose rebellion caused your family’s lands to be seized and titles to be redistributed.\r\n7. Your foe, the heir of a rival house, with whom you have dueled twice.\r\n8. The crime boss to whom your family is in massive debt.\r\n9. The scion of an allied family to whom you were betrothed from birth.\r\n10. The eccentric knight for whom you trained as a squire or page.\r\n\r\n### **Noble Mementos**\r\n1. A shield or tabard bearing your coat of arms.\r\n2. A keepsake or love letter from a high-born sweetheart.\r\n3. An heirloom weapon—though it’s not magical, it has a name and was used for mighty deeds.\r\n4. A letter of recommendation to a royal court.\r\n5. Perfumed handkerchiefs suitable for blocking the smell of commoners.\r\n6. An extremely fashionable and excessively large hat.\r\n7. A visible scar earned in battle or in a duel.\r\n8. A set of common clothes and a secret commoner identity.\r\n9. IOUs of dubious value that were earned in games of chance against other nobles.\r\n10. A letter from a friend begging for help.",
+    "type": "connection_and_memento",
+    "background": "noble"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 381,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "One type of artisan’s tools or vehicle.",
+    "type": "tool_proficiency",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 382,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Herbalism kit.",
+    "type": "tool_proficiency",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 383,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Either one type of artisan’s tools, musical instrument, or vehicle.",
+    "type": "tool_proficiency",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 384,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Strength and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "guard"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 385,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Intimidation, and either Athletics or Investigation.",
+    "type": "skill_proficiency",
+    "background": "guard"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 386,
+  "fields": {
+    "name": "Languages",
+    "desc": "One of your choice.",
+    "type": "language",
+    "background": "guard"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 387,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, halberd, uniform.",
+    "type": "equipment",
+    "background": "guard"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 388,
+  "fields": {
+    "name": "Natural Authority",
+    "desc": "Commoners and civilians sometimes assume you are part of a local constabulary force and defer to you.",
+    "type": "feature",
+    "background": "guard"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 389,
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "When you visit the city or countryside you once patrolled you’re sure to get embroiled in the same politics  that drove you out. Should you stick around righting wrongs, you might accidentally find yourself in a  position of responsibility.",
+    "type": "adventures_and_advancement",
+    "background": "guard"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 390,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Guard Connections**\r\n1. The corrupt guard captain who framed you.\r\n2. The by-the-book guard captain who found you in violation of a regulation.\r\n3. The mighty guard captain who taught you all you know. \r\n4. The informant who tipped you off about criminal activity.\r\n5. The noble or merchant you protected.\r\n6. The comrade or superior officer you admired.\r\n7. The villain who kidnapped the person you were charged to protect.\r\n8. Your betrayer, the one person you didn’t think to mistrust.\r\n9. The noble or merchant who had everyone in their pocket.\r\n10. The diviner wizard who could usually provide you with the missing piece of a puzzle.\r\n\r\n### **Guard Mementos**\r\n1. Your badge of office, a symbol of an ideal few could live up to.\r\n2. Your badge of office, a symbol of a corrupt system you could no longer stomach.\r\n3. The arrow-damaged prayer book or playing card deck that saved your life.\r\n4. The whiskey flask that stood you in good stead on many cold patrols. \r\n5. Notes about a series of disappearances you would have liked to put a stop to. \r\n6. A broken sword, torn insignia, or other symbol of your disgrace and banishment.\r\n7. A tattoo or insignia marking you as part of an organization of which you are the last member.\r\n8. The fellow guard’s last words which you will never forget. \r\n9. A letter you were asked to deliver. \r\n10. A bloodstained duty roster.",
+    "type": "connection_and_memento",
+    "background": "guard"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 391,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "One type of artisan’s tools, one vehicle.",
+    "type": "tool_proficiency",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 392,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Land vehicles.",
+    "type": "tool_proficiency",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 393,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Intelligence and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "cultist"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 394,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Religion, and either Arcana or Deception.",
+    "type": "skill_proficiency",
+    "background": "cultist"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 395,
+  "fields": {
+    "name": "Languages",
+    "desc": "One of your choice.",
+    "type": "language",
+    "background": "cultist"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 396,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Holy symbol (amulet or reliquary), common clothes, robes, 5 torches.",
+    "type": "equipment",
+    "background": "cultist"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 397,
+  "fields": {
+    "name": "Forbidden Lore",
+    "desc": "When you fail an Arcana or Religion check, you know what being or book holds the knowledge you seek finding the book or paying the being’s price is another matter.",
+    "type": "feature",
+    "background": "cultist"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 398,
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "Members of your former order may be hunting you for reenlistment, punishment, or both.\r\nAdditionally, your cult still seeks to open a portal, effect an apotheosis, or otherwise cause catastrophe. Eventually you may have to face the leader of your cult and perhaps even the being you once worshiped.",
+    "type": "adventures_and_advancement",
+    "background": "cultist"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 399,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Cultist Connections\r\n1. The cult leader whom you left for dead.\r\n2. The cleric or herald who showed you the error of your ways.\r\n3. The voice which still speaks to you in dreams.\r\n4. The charismatic cultist whose honeyed words and promises first tempted you.\r\n5. The friend or loved one still in the cult.\r\n6. Your former best friend who now hunts you for your desertion of the cult.\r\n7. The relentless inquisitor who hunts you for your past heresy.\r\n8. The demon which you and your compatriots accidentally unleashed.\r\n9. The self-proclaimed deity who barely escaped from their angry disciples after their magic tricks and fakeries were revealed.\r\n10. The masked cult leader whose identity you never learned, but whose cruel voice you would recognize anywhere.\r\n\r\n### **Cultist Mementos**\r\n1. The sinister tattoo which occasionally speaks to you.\r\n2. The cursed holy symbol which appears in your possession each morning no matter how you try to rid yourself of it.\r\n3. The scar on your palm which aches with pain when you disobey the will of your former master.\r\n4. The curved dagger that carries a secret enchantment able only to destroy the being you once worshiped.\r\n5. The amulet which is said to grant command of a powerful construct. \r\n6. A forbidden tome which your cult would kill to retrieve. \r\n7. An incriminating letter to your cult leader from their master (a noted noble or politician).\r\n8. A compass which points to some distant location or object.\r\n9. A talisman which is said to open a gateway to the realm of a forgotten god.\r\n10. The birthmark which distinguishes you as the chosen vessel of a reborn god.",
+    "type": "connection_and_memento",
+    "background": "cultist"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 400,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Gaming set, thieves' tools.",
+    "type": "tool_proficiency",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 401,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Dexterity and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 402,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Stealth, and either Deception or Intimidation.",
+    "type": "skill_proficiency",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 403,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, dark cloak, thieves' tools.",
+    "type": "equipment",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 404,
+  "fields": {
+    "name": "Thieves' Cant",
+    "desc": "You know thieves' cant: a set of slang, hand signals, and code terms used by professional criminals. A creature that knows thieves' cant can hide a short message within a seemingly innocent statement. A listener who knows thieves' cant understands the message.",
+    "type": "feature",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 405,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Criminal Mementos**\n\n1. A golden key to which you haven't discovered the lock.\n2. A brand that was burned into your shoulder as punishment for a crime.\n3. A scar for which you have sworn revenge.\n4. The distinctive mask that gives you your nickname (for instance, the Black Mask or the Red Fox).\n5. A gold coin which reappears in your possession a week after you've gotten rid of it.\n6. The stolen symbol of a sinister organization; not even your fence will take it off your hands.\n7. Documents that incriminate a dangerous noble or politician.\n8. The floor plan of a palace.\n9. The calling cards you leave after (or before) you strike.\n10. A manuscript written by your mentor: *Secret Exits of the World's Most Secure Prisons*.",
+    "type": "suggested_characteristics",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 406,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "If you pull off several successful jobs or heists, you may be promoted (or reinstated) as a leader in your gang. You may gain the free service of up to 8",
+    "type": "adventures-and-advancement",
+    "background": "criminal"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 407,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Wisdom and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 408,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Nature, and either Animal Handling or Survival.",
+    "type": "skill_proficiency",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 409,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, shovel, mule with saddlebags, 5 Supply.",
+    "type": "equipment",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 410,
+  "fields": {
+    "name": "Bit and Bridle",
+    "desc": "You know how to stow and transport food. You and one animal under your care can each carry additional",
+    "type": "feature",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 411,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Farmer Mementos**\n\n1. A strange item you dug up in a field: a key, a lump of unmeltable metal, a glass dagger.\n2. The bag of beans your mother warned you not to plant.\n3. The shovel, pickaxe, pitchfork, or other tool you used for labor. For you it's a one-handed simple melee weapon that deals 1d6 piercing, slashing, or bludgeoning damage.\n4. A debt you must pay.\n5. A mastiff.\n6. Your trusty fishing pole.\n7. A corncob pipe.\n8. A dried flower from your family garden.\n9. Half of a locket given to you by a missing sweetheart.\n10. A family weapon said to have magic powers, though it exhibits none at the moment.",
+    "type": "suggested_characteristics",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 412,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "You left the farm for a reason but you still have an eye for land. If you acquire farming property, estates, or domains, you can earn twice as much as you otherwise would from their harvests, or be supported by your lands at a lifestyle one level higher than you otherwise would be.",
+    "type": "adventures-and-advancement",
+    "background": "farmer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 413,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Constitution and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 414,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either Athletics or Intimidation.",
+    "type": "skill_proficiency",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 415,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Traveler's clothes, waterskin, healer's kit, 7 days rations.",
+    "type": "equipment",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 416,
+  "fields": {
+    "name": "Trader",
+    "desc": "If you're in or near the wilderness and have a trading relationship with a tribe, settlement, or other nearby group, you can maintain a moderate lifestyle for yourself and your companions by trading the products of your hunting and gathering.",
+    "type": "feature",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 417,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Outlander Mementos**\n\n1. A trophy from the hunt of a mighty beast, such as an phase monster-horn helmet.\n2. A trophy from a battle against a fierce monster, such as a still-wriggling troll finger.\n3. A stone from a holy druidic shrine.\n4. Tools appropriate to your home terrain, such as pitons or snowshoes.\n5. Hand-crafted leather armor, hide armor, or clothing.\n6. The handaxe you made yourself.\n7. A gift from a dryad or faun.\n8. Trading goods worth 30 gold, such as furs or rare herbs.\n9. A tiny whistle given to you by a sprite.\n10. An incomplete map.",
+    "type": "suggested_characteristics",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 418,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "During your travels, wilderness dwellers may come to you for help battling monsters and other dangers. If you succeed in several such adventures, you may earn the freely given aid of up to 8",
+    "type": "adventures-and-advancement",
+    "background": "outlander"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 419,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 420,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Persuasion, and either Culture, Deception, or Insight.",
+    "type": "skill_proficiency",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 421,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Traveler's clothes, abacus, merchant's scale.",
+    "type": "equipment",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 422,
+  "fields": {
+    "name": "Supply and Demand",
+    "desc": "When you buy a trade good and sell it elsewhere to a community in need of that good, you gain a 10% bonus to its sale price for every 100 miles between the buy and sell location (maximum of 50%).",
+    "type": "feature",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 423,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Trader Mementos**\n\n1. The first gold piece you earned.\n2. Thousands of shares in a failed venture.\n3. A letter of introduction to a rich merchant in a distant city.\n4. A sample of an improved version of a common tool.\n5. Scars from a wound sustained when you tried to collect a debt from a vicious noble.\n6. A love letter from the heir of a rival trading family.\n7. A signet ring bearing your family crest, which is famous in the mercantile world.\n8. A contract binding you to a particular trading company for the next few years.\n9. A letter from a friend imploring you to invest in an opportunity that can't miss.\n10. A trusted family member's travel journals that mix useful geographical knowledge with tall tales.",
+    "type": "suggested_characteristics",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 424,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Because of your commercial contacts you may be offered money to lead or escort trade caravans. You'll receive a fee from each trader that reaches their destination safely.",
+    "type": "adventures-and-advancement",
+    "background": "trader"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 425,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Intelligence and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 426,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Persuasion, and either Insight or History.",
+    "type": "skill_proficiency",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 427,
+  "fields": {
+    "name": "Equipment",
+    "desc": "One set of artisan's tools, traveler's clothes.",
+    "type": "equipment",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 428,
+  "fields": {
+    "name": "Trade Mark",
+    "desc": "* When in a city or town, you have access to a fully-stocked workshop with everything you need to ply your trade. Furthermore, you can expect to earn full price when you sell items you have crafted (though there is no guarantee of a buyer).",
+    "type": "feature",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 429,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Artisan Mementos**\n\n1. *Jeweler:* A 10,000 gold commission for a ruby ring (now all you need is a ruby worth 5,000 gold).\n2. *Smith:* Your blacksmith's hammer (treat as a light hammer).\n3. *Cook:* A well-seasoned skillet (treat as a mace).\n4. *Alchemist:* A formula with exotic ingredients that will produce...something.\n5. *Leatherworker:* An exotic monster hide which could be turned into striking-looking leather armor.\n6. *Mason:* Your trusty sledgehammer (treat as a warhammer).\n7. *Potter:* Your secret technique for vivid colors which is sure to disrupt Big Pottery.\n8. *Weaver:* A set of fine clothes (your own work).\n9. *Woodcarver:* A longbow, shortbow, or crossbow (your own work).\n10. *Calligrapher:* Strange notes you copied from a rambling manifesto. Do they mean something?",
+    "type": "suggested_characteristics",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 430,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "If you participate in the creation of a magic item (a “master work”), you will gain the services of up to 8 commoner apprentices with the appropriate tool proficiency.",
+    "type": "adventures-and-advancement",
+    "background": "artisan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 431,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 432,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Performance, and either Acrobatics, Culture, or Persuasion.",
+    "type": "skill_proficiency",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 433,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Lute or other musical instrument, costume.",
+    "type": "equipment",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 434,
+  "fields": {
+    "name": "Pay the Piper",
+    "desc": "In any settlement in which you haven't made yourself unpopular, your performances can earn enough money to support yourself and your companions: the bigger the settlement, the higher your standard of living, up to a moderate lifestyle in a city.",
+    "type": "feature",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 435,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Entertainer Mementos**\n\n1. Your unfinished masterpiece—if you can find inspiration to overcome your writer's block.\n2. Fine clothing suitable for a noble and some reasonably convincing costume jewelry.\n3. A love letter from a rich admirer.\n4. A broken instrument of masterwork quality—if repaired, what music you could make on it!\n5. A stack of slim poetry volumes you just can't sell.\n6. Jingling jester's motley.\n7. A disguise kit.\n8. Water-squirting wands, knotted scarves, trick handcuffs, and other tools of a bizarre new entertainment trend: a nonmagical magic show.\n9. A stage dagger.\n10. A letter of recommendation from your mentor to a noble or royal court.",
+    "type": "suggested_characteristics",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 436,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": ".Some of your admirers will pay you to plead a cause or smear an enemy. If you succeed at several such quests, your fame will grow. You will be welcome at royal courts, which will support you at a rich lifestyle.",
+    "type": "adventures-and-advancement",
+    "background": "entertainer"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 437,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Constitution and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 438,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Two of your choice.",
+    "type": "skill_proficiency",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 439,
+  "fields": {
+    "name": "Equipment",
+    "desc": "One set of artisan's tools or one instrument, traveler's clothes, guild badge.",
+    "type": "equipment",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 440,
+  "fields": {
+    "name": "Guild Business",
+    "desc": "While in a city or town, you can maintain a moderate lifestyle by plying your trade. Furthermore, the guild occasionally informs you of jobs that need doing. Completing such a job might require performing a downtime activity, or it might require a full adventure. The guild provides a modest reward if you're successful.",
+    "type": "feature",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 441,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Guildmember Mementos**\n\n1. *Artisans Guild:* An incomplete masterpiece which your mentor never finished.\n2. *Entertainers Guild:* An incomplete masterpiece which your mentor never finished.\n3. *Explorers Guild:* A roll of incomplete maps each with a reward for completion.\n4. *Laborers Guild:* A badge entitling you to a free round of drinks at most inns and taverns.\n5. *Adventurers Guild:* A request from a circus to obtain live exotic animals.\n6. *Bounty Hunters Guild:* A set of manacles and a bounty on a fugitive who has already eluded you once.\n7. *Mages Guild:* The name of a wizard who has created a rare version of a spell that the guild covets.\n8. *Monster Hunters Guild:* A bounty, with no time limit, on a monster far beyond your capability.\n9. *Archaeologists Guild:* A map marking the entrance of a distant dungeon.\n10. *Thieves Guild:* Blueprints of a bank, casino, mint, or other rich locale.",
+    "type": "suggested_characteristics",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 442,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Once you have completed several quests or endeavors advancing guild business, you may be promoted to guild officer. You gain access to more lucrative contracts. In addition, the guild supports you at a moderate lifestyle without you having to work.",
+    "type": "adventures-and-advancement",
+    "background": "guildmember"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 443,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Intelligence and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 444,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "History, and either Arcana, Culture, Engineering, or Religion.",
+    "type": "skill_proficiency",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 445,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Bottle of ink, pen, 50 sheets of parchment, common clothes.",
+    "type": "equipment",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 446,
+  "fields": {
+    "name": "Library Privileges",
+    "desc": "As a fellow or friend of several universities you have visiting access to the great libraries, most of which are off-limits to the general public. With enough time spent in a library, you can uncover most of the answers you seek (any question answerable with a DC 20 Arcana, Culture, Engineering, History, Nature, or Religion check).",
+    "type": "feature",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 447,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Sage Mementos**\n\n1. A letter from a colleague asking for research help.\n2. Your incomplete manuscript.\n3. An ancient scroll in a language that no magic can decipher.\n4. A copy of your highly unorthodox theoretical work that got you in so much trouble.\n5. A list of the forbidden books that may answer your equally forbidden question.\n6. A formula for a legendary magic item for which you have no ingredients.\n7. An ancient manuscript of a famous literary work believed to have been lost; only you believe that it is genuine.\n8. Your mentor's incomplete bestiary, encyclopedia, or other work that you vowed to complete.\n9. Your prize possession: a magic quill pen that takes dictation.\n10. The name of a book you need for your research that seems to be missing from every library you've visited.",
+    "type": "suggested_characteristics",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 448,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "When you visit libraries and universities you tend to be asked for help in your role as a comparatively rough-and-tumble adventurer. After fetching a few bits of esoteric knowledge and settling a few academic disputes, you may be granted access to the restricted areas of the library (which contain darker secrets and deeper mysteries, such as those answerable with a DC 25 Arcana, Culture, Engineering, History, Nature, or Religion check).",
+    "type": "adventures-and-advancement",
+    "background": "sage"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 449,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Constitution and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 450,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either Animal Handling or Nature.",
+    "type": "skill_proficiency",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 451,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Any artisan's tools except alchemist's supplies, common clothes.",
+    "type": "equipment",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 452,
+  "fields": {
+    "name": "Local Fame",
+    "desc": "Unless you conceal your identity, you're universally recognized and admired near the site of your exploits. You and your companions are treated to a moderate lifestyle in any settlement within 100 miles of your Prestige Center.",
+    "type": "feature",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 453,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Folk Hero Mementos**\n\n1. The mask you used to conceal your identity while fighting oppression (you are only recognized as a folk hero while wearing the mask).\n2. A necklace bearing a horn, tooth, or claw from the monster you defeated.\n3. A ring given to you by the dead relative whose death you avenged.\n4. The weapon you wrestled from the leader of the raid on your village.\n5. The trophy, wrestling belt, silver pie plate, or other prize marking you as the county champion.\n6. The famous scar you earned in your struggle against your foe.\n7. The signature weapon which provides you with your nickname.\n8. The injury or physical difference by which your admirers and foes recognize you.\n9. The signal whistle or instrument which you used to summon allies and spook enemies.\n10. Copies of the ballads and poems written in your honor.",
+    "type": "suggested_characteristics",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 454,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Common folk come to you with all sorts of problems. If you fought an oppressive regime, they bring you tales of injustice. If you fought a monster, they seek you out with monster problems. If you solve many such predicaments, you become universally famous, gaining the benefits of your Local Fame feature in every settled land.",
+    "type": "adventures-and-advancement",
+    "background": "folk-hero"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 455,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 456,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Deception, and either Culture, Insight, or Sleight of Hand.",
+    "type": "skill_proficiency",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 457,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, disguise kit, forgery kit.",
+    "type": "equipment",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 458,
+  "fields": {
+    "name": "Many Identities",
+    "desc": "You have a bundle of forged papers of all kinds—property deeds, identification papers, love letters, arrest warrants, and letters of recommendation—all needing only a few signatures and flourishes to meet the current need. When you encounter a new document or letter, you can add a forged and modified copy to your bundle. If your bundle is lost, you can recreate it with a forgery kit and a day's work.",
+    "type": "feature",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 459,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Charlatan Mementos**\n\n1. A die that always comes up 6.\n2. A dozen brightly-colored “potions”.\n3. A magical staff that emits a harmless shower of sparks when vigorously thumped.\n4. A set of fine clothes suitable for nobility.\n5. A genuine document allowing its holder one free release from prison for a non-capital crime.\n6. A genuine deed to a valuable property that is, unfortunately, quite haunted.\n7. An ornate harlequin mask.\n8. Counterfeit gold coins or costume jewelry apparently worth 100 gold (DC 15Investigationcheck to notice they're fake).\n9. A sword that appears more magical than it really is (its blade is enchanted with *continual flame* and it is a mundane weapon).\n10. A nonmagical crystal ball.",
+    "type": "suggested_characteristics",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 460,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "If you pull off a long-standing impersonation or false identity with exceptional success, you may eventually legally become that person. If you're impersonating a real person, they might be considered the impostor. You gain any property and servants associated with your identity.",
+    "type": "adventures-and-advancement",
+    "background": "charlatan"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 461,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 462,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Deception, and either Insight or Sleight of Hand.",
+    "type": "skill_proficiency",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 463,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Fine clothes, dice set, playing card set.",
+    "type": "equipment",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 464,
+  "fields": {
+    "name": "Lady Luck",
+    "desc": "Each week you may attempt a “lucky throw” to support yourself by gambling. Roll a d6 to determine the lifestyle you can afford with your week's winnings (1–2: poor, 3–5: moderate, 6: rich).",
+    "type": "feature",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 465,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Gambler Mementos**\n\n1. Gambling debts owed you by someone who's gone missing.\n2. Your lucky coin that you've always won back after gambling it away.\n3. The deeds to a monster-infested copper mine, a castle on another plane of existence, and several other valueless properties.\n4. A pawn shop ticket for a valuable item—if you can gather enough money to redeem it.\n5. The hard-to-sell heirloom that someone really wants back.\n6. Loaded dice or marked cards. They grant advantage on gambling checks when used, but can be discovered when carefully examined by someone with the appropriate tool proficiency (dice or cards).\n7. An invitation to an annual high-stakes game to which you can't even afford the ante.\n8. A two-faced coin.\n9. A torn half of a card—a long-lost relative is said to hold the other half.\n10. An ugly trinket that its former owner claimed had hidden magical powers.",
+    "type": "suggested_characteristics",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 466,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Once you've had more than your fair share of lucky throws, you attract the attention of richer opponents. You add +1 to all your lucky throws. Additionally, you and your friends may be invited to exclusive games with more at stake than money.",
+    "type": "adventures-and-advancement",
+    "background": "gambler"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 467,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Dexterity and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 468,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either Intimidation or Stealth.",
+    "type": "skill_proficiency",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 469,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Traveler's clothes, signal whistle, tent (one person).",
+    "type": "equipment",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 470,
+  "fields": {
+    "name": "Secret Ways",
+    "desc": "When you navigate while traveling, pursuers have",
+    "type": "feature",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 471,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Marauder Mementos**\n\n1. The eerie mask by which your victims know you.\n2. The one item that you wish you hadn't stolen.\n3. A signet ring marking you as heir to a seized estate.\n4. A locket containing a picture of the one who betrayed you.\n5. A broken compass.\n6. A love token from the young heir to a fortune.\n7. Half of a torn officer's insignia.\n8. The hunter's horn which members of your band use to call allies.\n9. A wanted poster bearing your face.\n10. Your unfinished thesis from your previous life as an honest scholar.",
+    "type": "suggested_characteristics",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 472,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Allies and informants occasionally give you tips about the whereabouts of poorly-guarded loot. After a few such scores, you may gain the free service of up to 8",
+    "type": "adventures-and-advancement",
+    "background": "marauder"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 473,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Wisdom and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 474,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Religion, and either Medicine or Survival.",
+    "type": "skill_proficiency",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 475,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Healer's satchel, herbalism kit, common clothes, 7 days rations, and a prayer book, prayer wheel, or prayer beads.",
+    "type": "equipment",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 476,
+  "fields": {
+    "name": "Inner Voice",
+    "desc": "You occasionally hear a voice—perhaps your conscience, perhaps a higher power—which you have come to trust. It told you to go into seclusion, and then it advised you when to rejoin the world. You think it is leading you to your destiny (consult with your Narrator about this feature.)",
+    "type": "feature",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 477,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Hermit Mementos**\n\n1. The (possibly unhinged) manifesto, encyclopedia, or theoretical work that you spent so much time on.\n2. The faded set of fine clothes you preserved for so many years.\n3. The signet ring bearing the family crest that you were ashamed of for so long.\n4. The book of forbidden secrets that led you to your isolated refuge.\n5. The beetle, mouse, or other small creature which was your only companion for so long.\n6. The seemingly nonmagical item that your inner voice says is important.\n7. The magic-defying clay tablets you spent years translating.\n8. The holy relic you were duty bound to protect.\n9. The meteor metal you found in a crater the day you first heard your inner voice.\n10. Your ridiculous-looking sun hat.",
+    "type": "suggested_characteristics",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 478,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "Your inner voice may occasionally prompt you to accept certain adventure opportunities or to avoid certain actions. You are free to obey or disobey this voice. Eventually however it may lead you to a special revelation, adventure, or treasure.",
+    "type": "adventures-and-advancement",
+    "background": "hermit"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 479,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Constitution and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 480,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Athletics, and either Acrobatics or Perception.",
+    "type": "skill_proficiency",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 481,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, navigator's tools, 50 feet of rope.",
+    "type": "equipment",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 482,
+  "fields": {
+    "name": "Sea Salt",
+    "desc": "Your nautical jargon and rolling gait mark you unmistakably as a mariner. You can easily enter into shop talk with any sailors that are not hostile to you, learning nautical gossip and ships' comings and goings. You also recognize most large ships by sight and by name, and can make a History orCulturecheck to recall their most recent captain and allegiance.",
+    "type": "feature",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 483,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Sailor Mementos**\n\n1. A dagger with a handle carved from a dragon turtle's tooth.\n2. A scroll tube filled with nautical charts.\n3. A harpoon (treat as a javelin with its butt end fastened to a rope).\n4. A scar with a famous tale behind it.\n5. A treasure map.\n6. A codebook which lets you decipher a certain faction's signal flags.\n7. A necklace bearing a scale, shell, tooth, or other nautical trinket.\n8. Several bottles of alcohol.\n9. A tale of an eerie encounter with a strange monster, a ghost ship, or other mystery.\n10. A half-finished manuscript outlining an untested theory about how to rerig a ship to maximize speed.",
+    "type": "suggested_characteristics",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 484,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": ".You and your companions will be able to take passage for free on nearly any commercial ship in exchange for occasional ship duties when all hands are called. In addition, after you have a few naval exploits under your belt your fame makes sailors eager to sail under you. You can hire a ship's crew at half the usual price.",
+    "type": "adventures-and-advancement",
+    "background": "sailor"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 485,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Wisdom and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 486,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either History or Performance.",
+    "type": "skill_proficiency",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 487,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Traveler's clothes, 10 days rations.",
+    "type": "equipment",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 488,
+  "fields": {
+    "name": "Fellow Traveler",
+    "desc": "You gain an",
+    "type": "feature",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 489,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Exile Mementos**\n\n1. A musical instrument which was common in your homeland.\n2. A memorized collection of poems or sagas.\n3. A locket containing a picture of your betrothed from whom you are separated.\n4. Trade, state, or culinary secrets from your native land.\n5. A piece of jewelry given to you by someone you will never see again.\n6. An inaccurate, ancient map of the land you now live in.\n7. Your incomplete travel journals.\n8. A letter from a relative directing you to someone who might be able to help you.\n9. A precious cultural artifact you must protect.\n10. An arrow meant for the heart of your betrayer.",
+    "type": "suggested_characteristics",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 490,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": "You may occasionally meet others from your native land. Some may be friends, and some dire enemies; few will be indifferent to you. After a few such encounters, you may become the leader of a faction of exiles. Your followers include up to three NPCs of Challenge Rating ½ or less, such as",
+    "type": "adventures-and-advancement",
+    "background": "exile"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 491,
+  "fields": {
+    "name": "Ability Score Increases",
+    "desc": "+1 to Dexterity and one other ability score.",
+    "type": "ability_score_increase",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 492,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Sleight of Hand, and either Deception or Stealth.",
+    "type": "skill_proficiency",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 493,
+  "fields": {
+    "name": "Equipment",
+    "desc": "Common clothes, disguise kit.",
+    "type": "equipment",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 494,
+  "fields": {
+    "name": "Guttersnipe",
+    "desc": "When you're in a town or city, you can provide a poor lifestyle for yourself and your companions. Also, you know how to get anywhere in town without being spotted by gangs, gossips, or guard patrols.",
+    "type": "feature",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 495,
+  "fields": {
+    "name": "Suggested Characteristics",
+    "desc": "### **Urchin Mementos**\n\n1. A locket containing pictures of your parents.\n2. A set of (stolen?) fine clothes.\n3. A small trained animal, such as a mouse, parrot, or monkey.\n4. A map of the sewers.\n5. The key or signet ring that was around your neck when you were discovered as a foundling.\n6. A battered one-eyed doll.\n7. A portfolio of papers given to you by a fleeing, wounded courier.\n8. A gold tooth (not yours, and not in your mouth).\n9. The flowers or trinkets that you sell.\n10. A dangerous secret overheard while at play.",
+    "type": "suggested_characteristics",
+    "background": "urchin"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 496,
+  "fields": {
+    "name": "Adventures And Advancement",
+    "desc": ".Street kids are among a settlement's most vulnerable people, especially in cities with lycanthropes, vampires, and other supernatural threats. After you help out a few urchins in trouble, word gets out and you'll be able to consult the street network to gather information. If you roll lower than a 15 on an Investigation check to gather information in a city or town, your roll is treated as a 15.",
+    "type": "adventures-and-advancement",
+    "background": "urchin"
+  }
+}
+]
