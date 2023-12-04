@@ -24,6 +24,75 @@
 },
 {
   "model": "api.race",
+  "pk": "dwarf",
+  "fields": {
+    "name": "Dwarf",
+    "desc": "## Dwarf Traits\nYour dwarf character has an assortment of inborn abilities, part and parcel of dwarven nature.",
+    "document": 32,
+    "created_at": "2023-11-05T00:01:38.197",
+    "page_no": null,
+    "asi_desc": "**_Ability Score Increase._** Your Constitution score increases by 2.",
+    "asi_json": "[{\"attributes\": [\"Constitution\"], \"value\": 2}]",
+    "age": "**_Age._** Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",
+    "alignment": "**_Alignment._** Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.",
+    "size": "**_Size._** Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium.",
+    "size_raw": "Medium",
+    "speed_json": "{\"walk\": 25}",
+    "speed_desc": "**_Speed._** Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor.",
+    "languages": "**_Languages._** You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak.",
+    "vision": "**_Darkvision._** Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+    "traits": "**_Dwarven Resilience._** You have advantage on saving throws against poison, and you have resistance against poison damage.\n\n**_Dwarven Combat Training._** You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.\n\n**_Tool Proficiency._** You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.\n\n**_Stonecunning._** Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.",
+    "route": "races/"
+  }
+},
+{
+  "model": "api.race",
+  "pk": "elf",
+  "fields": {
+    "name": "Elf",
+    "desc": "## Elf Traits\nYour elf character has a variety of natural abilities, the result of thousands of years of elven refinement.",
+    "document": 32,
+    "created_at": "2023-11-05T00:01:38.197",
+    "page_no": null,
+    "asi_desc": "**_Ability Score Increase._** Your Dexterity score increases by 2.",
+    "asi_json": "[{\"attributes\": [\"Dexterity\"], \"value\": 2}]",
+    "age": "**_Age._** Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
+    "alignment": "**_Alignment._** Elves love freedom, variety, and self- expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own, and they are more often good than not. The drow are an exception; their exile has made them vicious and dangerous. Drow are more often evil than not.",
+    "size": "**_Size._** Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.",
+    "size_raw": "Medium",
+    "speed_json": "{\"walk\": 30}",
+    "speed_desc": "**_Speed._** Your base walking speed is 30 feet.",
+    "languages": "**_Languages._** You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires.",
+    "vision": "**_Darkvision._** Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+    "traits": "**_Keen Senses._** You have proficiency in the Perception skill.\n\n**_Fey Ancestry._** You have advantage on saving throws against being charmed, and magic can't put you to sleep.\n\n**_Trance._** Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice.\nAfter resting in this way, you gain the same benefit that a human does from 8 hours of sleep.",
+    "route": "races/"
+  }
+},
+{
+  "model": "api.race",
+  "pk": "halfling",
+  "fields": {
+    "name": "Halfling",
+    "desc": "## Halfling Traits\nYour halfling character has a number of traits in common with all other halflings.",
+    "document": 32,
+    "created_at": "2023-11-05T00:01:38.198",
+    "page_no": null,
+    "asi_desc": "**_Ability Score Increase._** Your Dexterity score increases by 2.",
+    "asi_json": "[{\"attributes\": [\"Dexterity\"], \"value\": 2}]",
+    "age": "**_Age._** A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
+    "alignment": "**_Alignment._** Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.",
+    "size": "**_Size._** Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.",
+    "size_raw": "Small",
+    "speed_json": "{\"walk\": 25}",
+    "speed_desc": "**_Speed._** Your base walking speed is 25 feet.",
+    "languages": "**_Languages._** You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling.",
+    "vision": "",
+    "traits": "**_Lucky._** When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.\n\n**_Brave._** You have advantage on saving throws against being frightened.\n\n**_Halfling Nimbleness._** You can move through the space of any creature that is of a size larger than yours.",
+    "route": "races/"
+  }
+},
+{
+  "model": "api.race",
   "pk": "gnome",
   "fields": {
     "name": "Gnome",
