@@ -38,7 +38,7 @@
   * [Building the OAS file](#building-the-oas-file)
 - [Contributing](#contributing)
   * [Editing existing sources](#editing-existing-sources)
-  * [Adding a new sorce](#adding-a-new-sorce)
+  * [Adding a new source](#adding-a-new-source)
   * [Change existing models](#change-existing-models)
 - [Tests](#tests)
 - [Deployment](#deployment)
@@ -129,6 +129,10 @@ Game Content is stored in the `data` directory. It is first split according `v1`
 
 To add a new source, create new directory inside `data/v1` and a `Document.json` file that credits the source and links to the license it was published under. An example of this can be found [here](/data/v1/wotc-srd/Document.json). You can then add a json file for each Model Fixture of content. See an existing source, such as the 5.1 SRD to see how these should be structured.
 
+A PK (or Primay Key) is text based slug for all game content, and it's used in the URL for getting that item. In the majority of cases, the PK should be the slugified version of the name. In the cases where an object PK would conflict with an existing PK, prepend a clear identifier to the PK.
+
+**TODO SET CONVENTIONS FOR WHAT THE IDENTIFIER IS**
+
 ## Change existing models
 
 Models such as Monsters and Classes are stored in the [api/models](/api/models) directory. These define fields (hp, str, speed) and how they are output. The import of Game Content from `data` is handled by django's built-in [loaddata](https://docs.djangoproject.com/en/4.2/ref/django-admin/#django-admin-loaddata).
@@ -145,6 +149,8 @@ pipenv run pytest
 Approval tests are run against the approved files in `api/tests/approved_files` as `*.approved.*` . If a test fails then the recieved input will be stored in a `*.recieved.*` file. If you wish to approve the changes, replace the old approved file with the recieved file.
 
 Recieved files shall not be included in the git repo.
+
+# Deployment
 
 ## DigitalOcean
 
