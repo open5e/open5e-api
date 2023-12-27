@@ -1,8 +1,11 @@
 from django.db import models
 from django.urls import reverse
+from django.apps import apps
+
 
 from .abstracts import HasName, HasDescription
 
+from api_v2 import models as v2_models
 
 class Document(HasName, HasDescription):
 
@@ -37,6 +40,33 @@ class Document(HasName, HasDescription):
     permalink = models.URLField(
         help_text="Link to the document."
     )
+
+    @property
+    def stats(self):
+        stats = {}
+        for model in apps.get_models():
+            # Filter out api_v1.
+            if model._meta.app_label != 'api_v2': continue
+
+            SKIPPED_MODEL_NAMES = [
+                'Document',
+                'Ruleset',
+                'License',
+                'Publisher']
+            if model.__name__ in SKIPPED_MODEL_NAMES: continue
+
+            CHILD_MODEL_NAMES = [
+                'Trait',
+                'Capability', 
+                'Benefit',
+                'CreatureAction',
+                'CreatureAttack']
+            if model.__name__ in CHILD_MODEL_NAMES: continue
+
+
+            object_count = model.objects.filter(document=self.key).count()
+            stats[model.__name__.lower()]=object_count
+        return stats
 
 
 class License(HasName, HasDescription):

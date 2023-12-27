@@ -1,0 +1,60 @@
+[
+{
+  "model": "api.spell",
+  "pk": "eye-bite",
+  "fields": {
+    "name": "Eye bite",
+    "desc": "For the spell's Duration, your eyes turn black and veins of dark energy lace your cheeks. One creature of your choice within 60 feet of you that you can see must succeed on a Wisdom saving throw or be affected by one of the listed Effects of your choice for the Duration. On each of your turns until the spell ends, you can use your action to target another creature but can't target a creature again if it has succeeded on a saving throw against this casting of Eyebite.\n\nAsleep: The target is rendered Unconscious. It wakes up if it takes any damage or if another creature uses its action to jostle the sleeper awake.\n\nPanicked: The target is Frightened of you. On each of its turns, the Frightened creature must take the Dash action and move away from you by the safest and shortest possible route, unless there is no place to move. If the target is at least 60 feet away from you and can no longer see you, this effect ends.\n\nSickened: The target has disadvantage on Attack rolls and Ability Checks. At the end of each of its turns, it can make another Wisdom saving throw. If it succeeds, the effect ends.\n\n*(This Open5e spell replaces a like-named non-SRD spell from an official source.*",
+    "document": 31,
+    "created_at": "2023-11-05T00:01:38.193",
+    "page_no": null,
+    "page": "",
+    "spell_level": 6,
+    "dnd_class": "Bard, Sorcerer, Warlock, Wizard",
+    "school": "Necromancy",
+    "casting_time": "1 action",
+    "range": "self",
+    "target_range_sort": 0,
+    "requires_verbal_components": true,
+    "requires_somatic_components": true,
+    "requires_material_components": false,
+    "material": "",
+    "higher_level": "",
+    "can_be_cast_as_ritual": false,
+    "duration": "up to 1 minute",
+    "requires_concentration": true,
+    "archetype": "",
+    "circles": "",
+    "route": "spells/"
+  }
+},
+{
+  "model": "api.spell",
+  "pk": "ray-of-sickness",
+  "fields": {
+    "name": "Ray of Sickness",
+    "desc": "A ray of green light appears at your fingertip, arcing towards a target within range.\n\nMake a ranged spell attack against the target. On a hit, the target takes 2d8 poison damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.\n\n*(This Open5e spell replaces a like-named non-SRD spell from an official source.*",
+    "document": 31,
+    "created_at": "2023-11-05T00:01:38.192",
+    "page_no": null,
+    "page": "",
+    "spell_level": 1,
+    "dnd_class": "Sorcerer, Wizard",
+    "school": "Necromancy",
+    "casting_time": "1 action",
+    "range": "60 feet",
+    "target_range_sort": 60,
+    "requires_verbal_components": true,
+    "requires_somatic_components": true,
+    "requires_material_components": false,
+    "material": "",
+    "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+    "can_be_cast_as_ritual": false,
+    "duration": "Instantaneous",
+    "requires_concentration": false,
+    "archetype": "",
+    "circles": "",
+    "route": "spells/"
+  }
+}
+]
