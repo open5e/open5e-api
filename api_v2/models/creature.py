@@ -24,63 +24,6 @@ MONSTER_TYPES = [
     ("UNDEAD", "Undead"),
 ]
 
-class Creature(Object, Abilities, FromDocument):
-    """
-    This is the model for a Creature, per the 5e ruleset.
-
-    This extends the object and abilities models.
-    """
-
-    category = models.CharField(
-        max_length=100,
-        help_text='What category this creature belongs to.'
-    )
-
-    type = models.CharField(
-        max_length=20,
-        choices=MONSTER_TYPES,
-        help_text='Which type of creature this is.'
-    )
-
-    subtype = models.CharField(
-        null=True,
-        max_length=100,
-        help_text='Which subtype or subtypes this creature has, if any.'
-    )
-
-    alignment = models.CharField(
-        max_length=100,
-        help_text='The creature\'s allowed alignments.'
-    )
-
-
-USES_TYPES = [
-    ("PER_DAY", "X/Day"),
-    ("RECHARGE_ON_ROLL", "Recharge X-6"),
-    ("RECHARGE_AFTER_REST", "Recharge after a Short or Long rest"),
-]
-
-class CreatureAction(HasName, HasDescription, FromDocument):
-
-    creature = models.ForeignKey(
-        Creature,
-        on_delete=models.CASCADE,
-        help_text='The creature to which this action belongs.'
-    )
-
-    uses_type = models.CharField(
-        null=True,
-        max_length=20,
-        choices=USES_TYPES,
-        help_text='How use of the action is limited, if at all.'
-    )
-
-    uses_param = models.SmallIntegerField(
-        null=True,
-        help_text='The parameter X for if the action is limited.'
-    )
-
-
 ATTACK_TYPES = [
     ("SPELL", "Spell"),
     ("WEAPON", "Weapon"),
@@ -109,6 +52,12 @@ DAMAGE_TYPES = [
     ("RADIANT", "Radiant"),
     ("SLASHING", "Slashing"),
     ("THUNDER", "Thunder"),
+]
+
+USES_TYPES = [
+    ("PER_DAY", "X/Day"),
+    ("RECHARGE_ON_ROLL", "Recharge X-6"),
+    ("RECHARGE_AFTER_REST", "Recharge after a Short or Long rest"),
 ]
 
 def damage_die_count_field():
@@ -140,6 +89,56 @@ def damage_type_field():
         choices=DAMAGE_TYPES,
         help_text='What kind of damage this attack deals.'
     )
+
+
+class CreatureType(HasName, HasDescription, FromDocument):
+    """The Type of creature, such as Aberration."""
+
+
+class Creature(Object, Abilities, FromDocument):
+    """
+    This is the model for a Creature, per the 5e ruleset.
+
+    This extends the object and abilities models.
+    """
+
+    type = models.ForeignKey(
+        CreatureType,
+        on_delete=models.CASCADE,
+        help_text="Type of creature, such as Aberration."
+    )
+
+    category = models.CharField(
+        max_length=100,
+        help_text='What category this creature belongs to.'
+    )
+
+    alignment = models.CharField(
+        max_length=100,
+        help_text='The creature\'s allowed alignments.'
+    )
+
+
+class CreatureAction(HasName, HasDescription, FromDocument):
+
+    creature = models.ForeignKey(
+        Creature,
+        on_delete=models.CASCADE,
+        help_text='The creature to which this action belongs.'
+    )
+
+    uses_type = models.CharField(
+        null=True,
+        max_length=20,
+        choices=USES_TYPES,
+        help_text='How use of the action is limited, if at all.'
+    )
+
+    uses_param = models.SmallIntegerField(
+        null=True,
+        help_text='The parameter X for if the action is limited.'
+    )
+
 
 class CreatureAttack(HasName, FromDocument):
 
@@ -193,3 +192,10 @@ class CreatureAttack(HasName, FromDocument):
     extra_damage_die_type = damage_die_type_field()
     extra_damage_bonus = damage_bonus_field()
     extra_damage_type = damage_type_field()
+
+
+class CreatureSet(HasName, FromDocument):
+    """Set that the creature belongs to."""
+
+    creatures = models.ManyToManyField(Creature, related_name="creaturesets",
+                                       help_text="The set of creatures.")
