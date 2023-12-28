@@ -4,8 +4,6 @@ import argparse
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
-from api.management.commands import quickload
-
 class Command(BaseCommand):
     """Implementation for the `manage.py quicksetup` subcommand."""
 
@@ -28,7 +26,7 @@ class Command(BaseCommand):
         collect_static()
 
         self.stdout.write('Populating the v1 database...')
-        quickload.populate_db()
+        import_v1()
 
         self.stdout.write('Populating the v2 database...')
         import_v2()
@@ -40,6 +38,10 @@ class Command(BaseCommand):
             rebuild_index()
 
         self.stdout.write(self.style.SUCCESS('API setup complete.'))
+
+def import_v1() -> None:
+    """Import the v1 apps' database models."""
+    call_command('import', '--dir', 'data/v1')
 
 
 def import_v2() -> None:

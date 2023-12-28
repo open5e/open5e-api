@@ -1,0 +1,828 @@
+[
+{
+  "model": "api.feat",
+  "pk": "ace-driver",
+  "fields": {
+    "name": "Ace Driver",
+    "desc": "You are a virtuoso of driving and piloting vehicles, able to push them beyond their normal limits and maneuver them with fluid grace through hazardous situations. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.643",
+    "page_no": null,
+    "prerequisite": "Prerequisite: Proficiency with a type of vehicle",
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain an expertise die on ability checks made to drive or pilot a vehicle.\", \"While piloting a vehicle, you can use your reaction to take the Brake or Maneuver vehicle actions.\", \"A vehicle you load can carry 25% more cargo than normal.\", \"Vehicles you are piloting only suffer a malfunction when reduced to 25% of their hit points, not 50%. In addition, when the vehicle does suffer a malfunction, you roll twice on the maneuver table and choose which die to use for the result.\", \"Vehicles you are piloting gain a bonus to their Armor Class equal to half your proficiency bonus.\", \"When you Brake, you can choose to immediately stop the vehicle without traveling half of its movement speed directly forward.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "athletic",
+  "fields": {
+    "name": "Athletic",
+    "desc": "Your enhanced physical training grants you the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.644",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Your Strength or Dexterity score increases by 1, to a maximum of 20.\", \"When you are prone, standing up uses only 5 feet of your movement (instead of half).\", \"Your speed is not halved from climbing.\", \"You can make a running long jump or a running high jump after moving 5 feet on foot (instead of 10 feet).\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "attentive",
+  "fields": {
+    "name": "Attentive",
+    "desc": "Always aware of your surroundings, you gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.644",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"When rolling initiative you gain a +5 bonus.\", \"You can only be surprised if you are unconscious. A creature attacking you does not gain advantage from being hidden from you or unseen by you.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "battle-caster",
+  "fields": {
+    "name": "Battle Caster",
+    "desc": "You're comfortable casting, even in the chaos of battle.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.644",
+    "page_no": null,
+    "prerequisite": "Requires the ability to cast at least one spell of 1st-level or higher",
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain a 1d6 expertise die on concentration checks to maintain spells you have cast.\", \"While wielding weapons and shields, you may cast spells with a seen component.\", \"Instead of making an opportunity attack with a weapon, you may use your reaction to cast a spell with a casting time of 1 action. The spell must be one that only targets that creature.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "brutal-attack",
+  "fields": {
+    "name": "Brutal Attack",
+    "desc": "After making a melee attack, you may reroll any weapon damage and choose the better result. This feat can be used no more than once per turn.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.645",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "bull-rush",
+  "fields": {
+    "name": "Bull Rush",
+    "desc": "Your headlong rush devastates your foes.\nAfter dashing (with the Dash Action) at least ten feet towards a foe, you may perform a bonus action to select one of the following options.\nAttack. Make one melee weapon attack, dealing an extra 5 damage on a hit.\nShove. Use the Shove maneuver, pushing the target 10 feet directly away on a success.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.645",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "combat-thievery",
+  "fields": {
+    "name": "Combat Thievery",
+    "desc": "You know how to trade blows for more than inflicting harm.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.645",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency with the Deceptive Stance and Painful Pickpocket maneuvers, and do not have to spend exertion to activate them.\", \"You gain an expertise die on Sleight of Hand checks.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "covert-training",
+  "fields": {
+    "name": "Covert Training",
+    "desc": "You have absorbed some of the lessons of the world of spies, criminals, and others who operate in the shadows. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.646",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency with thieves' tools, the poisoner's kit, or a rare weapon with the stealthy property.\", \"You gain two skill tricks of your choice from the rogue class.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "crafting-expert",
+  "fields": {
+    "name": "Crafting Expert",
+    "desc": "You have devoted time to studying and practicing the art of crafting, gaining the following benefits:\nThis feat can be selected multiple times, choosing a different type of crafted item each time.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.646",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Choose one of the following types of crafted item: armor, engineered items, potions, rings and rods, staves and wands, weapons, wondrous items. You gain advantage on checks made to craft, maintain, and repair that type of item.\", \"You gain an expertise die on checks made to craft, maintain, and repair items.\", \"You gain proficiency with two tools of your choice.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "crossbow-expertise",
+  "fields": {
+    "name": "Crossbow Expertise",
+    "desc": "Crossbows are lethal in your hands.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.646",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Crossbows you wield do not have the loading quality.\", \"You do not suffer disadvantage when attacking creatures adjacent to you.\", \"If you take the attack action while wielding a hand crossbow in your off-hand, you may use your bonus action to attack with it.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "deadeye",
+  "fields": {
+    "name": "Deadeye",
+    "desc": "Your natural talent or skill makes you lethal with a ranged weapon.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.647",
+    "page_no": null,
+    "prerequisite": "Prerequisite: 8th level or higher",
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency with the Farshot Stance and Ricochet maneuvers, and do not have to spend exertion to activate them.\", \"Cover does not grant your targets an AC bonus when you make attacks against them with a ranged weapon.\", \"Before making an attack with a ranged weapon you are proficient with, you may choose to forgo your proficiency bonus on the attack roll, applying twice your proficiency bonus to damage instead.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "deflector",
+  "fields": {
+    "name": "Deflector",
+    "desc": "Your lightning reflexes make you hard to hit.\nYou may expend your reaction to increase your AC by an amount equal to your proficiency bonus against an attack targeting you in melee.\nThis feat can only be used while holding a finesse weapon that you're proficient with.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.647",
+    "page_no": null,
+    "prerequisite": "Prerequisite: Dexterity 13 or higher",
+    "route": "feats/",
+    "effects_desc_json": "[]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "destinys-call",
+  "fields": {
+    "name": "Destiny's Call",
+    "desc": "You are more in tune with the nature of who you truly are and what you can become.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.647",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"An ability score of your choice increases by 1.\", \"When you gain inspiration through your destiny's source of inspiration, you can choose one party member within 30 feet of you. That party member gains inspiration if they don't have it already. Once you inspire a party member in this way, you can't use this feature again on that party member until you finish a long rest.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "dual-wielding-expert",
+  "fields": {
+    "name": "Dual-Wielding Expert",
+    "desc": "You are a whirlwind of steel.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.647",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Wielding a weapon in each hand grants you a +1 bonus to AC.\", \"You may dual-wield any two weapons without the two-handed quality.\", \"You can sheathe or unsheathe two weapons as part of your movement action.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "dungeoneer",
+  "fields": {
+    "name": "Dungeoneer",
+    "desc": "You've honed your senses to subterranean danger and opportunity.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.648",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You have advantage on checks made to detect hidden openings, passages, or doors.\", \"You have advantage on saving throws made against traps and resistance to any damage they inflict.\", \"Your travel speed does not adversely affect your passive perception score.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "empathic",
+  "fields": {
+    "name": "Empathic",
+    "desc": "You have a heightened awareness of the feelings and motivations of those around you.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.648",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Your Wisdom or Charisma score increases by 1.\", \"You gain an expertise die on Insight checks made against other creatures.\", \"When using a social skill and making a Charisma check against another creature, you score a critical success on a roll of 19\\u201320.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "fear-breaker",
+  "fields": {
+    "name": "Fear Breaker",
+    "desc": "You have a habit of snatching victory from the jaws of defeat. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.648",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency with the Victory Pose maneuver and do not have to spend exertion to activate it. In addition, you may use this maneuver with up to three different weapons you select instead of just one, and affect allies within 60 feet.\", \"An ally affected by your Victory Pose gains an expertise die on their next saving throw against fear, and if they are rattled the condition ends for them.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "fortunate",
+  "fields": {
+    "name": "Fortunate",
+    "desc": "Be it the gods, fate, or dumb luck, something is looking out for you.\nYou may choose to invoke your luck to do the following:\nMultiple creatures with the Fortunate feat may invoke luck. If this occurs, the result is resolved as normal.\nYou may invoke your luck up to three times per long rest.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.649",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Before determining the result of an attack roll, an ability check, or a saving throw, roll a second d20 and select which die to use. If you have disadvantage, you may instead spend a fate point to choose one of the d20 rolls and reroll it.\", \"Before determining the result of an attack made against you, roll a second d20 and select which die to use.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "guarded-warrior",
+  "fields": {
+    "name": "Guarded Warrior",
+    "desc": "You punish foes that try to target your allies.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.650",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Your successful opportunity attacks reduce a creature's speed to 0 until the end of the turn.\", \"You may use your reaction to make a melee attack against a foe that targets one of your allies with an attack.\", \"You may make attacks of opportunity against creatures that have taken the disengage action when they leave your threatened area.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "hardy-adventurer",
+  "fields": {
+    "name": "Hardy Adventurer",
+    "desc": "You can endure punishment that would break lesser beings.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.650",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Your maximum hitpoint total gains a bonus equal to twice your character level, increasing by 2 for each level you gain after taking this feat.\", \"During a short rest, you regain 1 additional hit point per hit die spent to heal.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "heavily-outfitted",
+  "fields": {
+    "name": "Heavily Outfitted",
+    "desc": "You have learned to fight in heavy armor",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.650",
+    "page_no": null,
+    "prerequisite": "Requires proficiency with medium armor",
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Strength attribute by 1, up to the attribute cap of 20.\", \"Learn the heavy armor proficiency.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "heavy-armor-expertise",
+  "fields": {
+    "name": "Heavy Armor Expertise",
+    "desc": "Plate and chain are your fortress.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.651",
+    "page_no": null,
+    "prerequisite": "Requires proficiency with heavy armor",
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Strength attribute by 1, up to the attribute cap of 20.\", \"You reduce incoming physical (piercing, slashing, or bludgeoning) damage by 3 so long as you are wearing heavy armor. This bonus is negated if the damage is dealt by a magical weapon.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "heraldic-training",
+  "fields": {
+    "name": "Heraldic Training",
+    "desc": "You have studied the specialized techniques used by the divine agents known as heralds. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.651",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency in your choice of one martial weapon, one rare weapon, or shields.\", \"You gain two divine lessons of your choice from the herald class.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "idealistic-leader",
+  "fields": {
+    "name": "Idealistic Leader",
+    "desc": "The strength of your principles inspires others to follow you with impressive dedication that makes up for whatever your stronghold lacks. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.651",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Any stronghold you have or buy that is of frugal quality is automatically upgraded to average quality at no additional cost.\", \"You gain a new follower for every 50 staff you have in your stronghold, rather than every 100 staff.\", \"When you fulfill your destiny, choose a number of followers equal to your proficiency bonus. Each is upgraded to their most expensive version.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "intuitive",
+  "fields": {
+    "name": "Intuitive",
+    "desc": "You've trained your powers of observation to nearly superhuman levels.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.652",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Intelligence or Wisdom attribute by 1, up to the attribute cap of 20.\", \"You can read lips. You understand what a creature is saying If you are able to see its vocal apparatus while it speaks in a language you know.\", \"Increase your passive perception and investigation scores by +5.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "keen-intellect",
+  "fields": {
+    "name": "Keen Intellect",
+    "desc": "Your mind is a formidable weapon.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.652",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Intelligence attribute by 1, up to the attribute cap of 20.\", \"With perfect clarity, you can recall anything that you've seen, read, or heard in the past, as far back as 1 week per point of your intelligence modifier.\", \"You can instantly locate true north.\", \"You precisely know the time without the need for a clock.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "lightly-outfitted",
+  "fields": {
+    "name": "Lightly Outfitted",
+    "desc": "You've learned to fight in light armor.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.652",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Strength or Dexterity Attribute by 1, up to the attribute cap of 20.\", \"Learn the light armor proficiency.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "linguistics-expert",
+  "fields": {
+    "name": "Linguistics Expert",
+    "desc": "Your gift for languages borders on the supernatural.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.653",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Intelligence attribute by 1, up to the attribute cap of 20.\", \"Select three languages and gain the ability to read, write, and speak them.\", \"By spending an hour, you can develop a cipher that you are able to teach to others. Anyone who knows the cipher can encode and read hidden messages made with it; the apparent text must be at least four times longer than the hidden message. Other creatures can detect the presence of the cipher if they spend a minute examining it and succeed on an Investigation check against a DC equal to 8 + your proficiency bonus + your Intelligence modifier. If the check succeeds by 5 or more, they can read the hidden message.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "martial-scholar",
+  "fields": {
+    "name": "Martial Scholar",
+    "desc": "You have taken the time to learn some advanced combat techniques. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.653",
+    "page_no": null,
+    "prerequisite": "Prerequisite: Proficiency with at least one martial weapon",
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency in a combat tradition of your choice.\", \"You learn two combat maneuvers from a combat tradition you know. If you don't already know any combat maneuvers, both must be 1st degree. Combat maneuvers gained from this feat do not count toward the maximum number of combat maneuvers you know.\", \"Your exertion pool increases by 3. If you do not have an exertion pool, you gain an exertion pool with 3 exertion, regaining your exertion whenever you finish a short or long rest.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "medium-armor-expert",
+  "fields": {
+    "name": "Medium Armor Expert",
+    "desc": "Medium armor is like a second skin for you.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.653",
+    "page_no": null,
+    "prerequisite": "Requires proficiency with medium armor.",
+    "route": "feats/",
+    "effects_desc_json": "[\"You do not suffer disadvantage on stealth checks while wearing medium armor.\", \"The maximum Dexterity modifier you can add to your Armor Class increases from 2 to 3 when you are wearing medium armor.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "moderately-outfitted",
+  "fields": {
+    "name": "Moderately Outfitted",
+    "desc": "",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.654",
+    "page_no": null,
+    "prerequisite": "Requires proficiency with light armor",
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Strength or Dexterity Attribute by 1, up to the attribute cap of 20.\", \"Learn the medium armor and shield proficiencies.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "monster-hunter",
+  "fields": {
+    "name": "Monster Hunter",
+    "desc": "You are a peerless slayer of beasts most foul. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.654",
+    "page_no": null,
+    "prerequisite": "Prerequisite: Proficiency with Survival, 8th level or higher",
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain an expertise die on checks made to learn information about the Legends and Lore of a creature you can see.\", \"You learn the altered strike cantrip.\", \"You gain proficiency with the Douse maneuver and do not have to spend exertion to activate it.\", \"You gain the tracking skill specialty in Survival.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "mounted-warrior",
+  "fields": {
+    "name": "Mounted Warrior",
+    "desc": "You fight as if you were born to the saddle.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.654",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency with the Lancer Strike maneuver and do not have to spend exertion to activate it.\", \"Attacks targeting your mount target you instead, if you choose.\", \"Your mount gains Evasion, as per the 7th level rogue class feature, while you are riding it.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "mystical-talent",
+  "fields": {
+    "name": "Mystical Talent",
+    "desc": "You've learned to channel the spark of magic in you.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.655",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Select a spell list and learn 2 of its cantrips.\", \"From the same list, select a 1st level spell. Without expending a spell slot, you may cast this spell once per long rest. Additionally, you may cast this spell using spell slots of the same level.\", \"The spellcasting ability for these spells is the same as the spellcasting class from which the spells are drawn.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "natural-warrior",
+  "fields": {
+    "name": "Natural Warrior",
+    "desc": "The urge to fight runs hot in your veins and you take to battle naturally. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.655",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Your Speed increases by 5 feet.\", \"When making an Acrobatics or Athletics check during combat, you can choose to use your Strength or Dexterity modifier for either skill.\", \"You gain proficiency with the Bounding Strike maneuver and do not have to spend exertion to activate it.\", \"You can roll 1d4 in place of your normal damage for unarmed strikes. When rolling damage for your unarmed strikes, you can choose to deal bludgeoning, piercing, or slashing damage.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "physician",
+  "fields": {
+    "name": "Physician",
+    "desc": "Your mastery of mundane healing arts borders on the mystical.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.655",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"A dying creature regains hit points equal to your Wisdom modifier when you stabilize it using a healing satchel.\", \"You may grant an adjacent creature hit points equal to their highest hit die plus 1d6+4 as an action. A creature may only benefit from this ability once per long rest.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "polearm-savant",
+  "fields": {
+    "name": "Polearm Savant",
+    "desc": "You've honed fighting with hafted weapons, including glaives, halberds, pikes, quarterstaffs, or any other similar weapons.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.656",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Creatures entering your threatened area provoke attacks of opportunity while you are wielding a hafted weapon.\", \"You may expend your bonus action to make a haft attack after taking the attack action with a hafted weapon. This attack uses the same attribute modifier as the primary attack and inflicts a d4 bludgeoning damage.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "power-caster",
+  "fields": {
+    "name": "Power Caster",
+    "desc": "",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.656",
+    "page_no": null,
+    "prerequisite": "Requires the ability to cast one spell",
+    "route": "feats/",
+    "effects_desc_json": "[\"Double the range on any spells you cast requiring an attack roll.\", \"Cover does not grant your targets an AC bonus when you make attacks against them with a ranged spell.\", \"Select and learn one cantrip requiring an attack roll from any spell list. The spellcasting ability for these spells is the same as the spellcasting class from which the spell is drawn.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "powerful-attacker",
+  "fields": {
+    "name": "Powerful Attacker",
+    "desc": "You reap a bloody harvest with a two-handed weapon.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.656",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency with the Cleaving Swing maneuver and do not have to spend exertion to activate it\", \"Before you make an attack with a heavy weapon you are proficient with, you can choose to make the attack roll with disadvantage. If the attack hits, you deal 10 extra damage.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "primordial-caster",
+  "fields": {
+    "name": "Primordial Caster",
+    "desc": "Your blood seethes with elemental power.\nSelect an elemental damage type (acid, cold, fire, lightning, or thunder).\nThis feat can be selected multiple times, choosing a different damage type each time.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.657",
+    "page_no": null,
+    "prerequisite": "Requires the ability to cast one spell.",
+    "route": "feats/",
+    "effects_desc_json": "[\"Your spells dealing that damage type ignore any damage resistance possessed by the target.\", \"When you cast a spell that deals damage of the chosen type, you deal 1 additional damage for every damage die with a result of 1.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "rallying-speaker",
+  "fields": {
+    "name": "Rallying Speaker",
+    "desc": "Your words can set even the coldest hearts ablaze.\nYou may deliver a rousing oratory that bolsters your allies. After speaking for ten minutes, you may grant temporary hit points equal to your level + your charisma modifier to up to 6 friendly creatures (including yourself) that hear and understand you within 30 feet. A creature can only gain the benefits of this feat once per long rest.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.657",
+    "page_no": null,
+    "prerequisite": "Requires Charisma 13",
+    "route": "feats/",
+    "effects_desc_json": "[]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "resonant-bond",
+  "fields": {
+    "name": "Resonant Bond",
+    "desc": "You lose resonance with an item if another creature attunes to it or gains resonance with it. You can also voluntarily end the resonance by focusing on the item during a short rest, or during a long rest if the item is not in your possession.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.657",
+    "page_no": null,
+    "prerequisite": "You're able to form a greater bond with magic items. During a short rest, you can focus on a non-consumable magic item and create a unique bond with it called resonance. You can have resonance with only one item at a time. Attempting to resonate with another item fails until you end the resonance with your current item. When you resonate with an item, you gain the following benefits:",
+    "route": "feats/",
+    "effects_desc_json": "[\"If the resonant item requires attunement and you meet the prerequisites to do so, you become attuned to the item. If you don't meet the prerequisites, both the attunement and resonance with the item fails. This attunement doesn't count toward the maximum number of items you can be attuned to. Unlike other attuned items, your attunement to this item doesn't end from being more than 100 feet away from it for 24 hours.\", \"As a bonus action, you can summon a resonant item, which appears instantly in your hand so long as it is located on the same plane of existence. You must have a free hand to use this feature and be able to hold the item. Once you summon the item in this way, you can't do so again until you finish a short or long rest.\", \"If the resonant item is sentient, you have advantage on Charisma checks and saving throws made when resolving a conflict with the item.\", \"If the resonant item is an artifact, you can ignore the effects of one minor detrimental property.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "rite-master",
+  "fields": {
+    "name": "Rite Master",
+    "desc": "You have delved into ancient mysteries.\nWhen you acquire this feat, select from the bard, cleric, druid, herald, sorcerer, warlock, or wizard spell list and choose two 1st level spells with the ritual tag, which are entered into your ritual book. These spells use the same casting attribute as the list from which they were drawn.\nWhen you discover spells in written form from your chosen spell list, you may add them to you your ritual book by spending 50 gp and two hours per level of the spell. In order to copy spells in this manner, they cannot be greater than half your character level, rounding up.\nYou may cast any spells in your ritual book as rituals so long as the book is in your possession.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.658",
+    "page_no": null,
+    "prerequisite": "Requires intelligence or Wisdom 13 or higher",
+    "route": "feats/",
+    "effects_desc_json": "[]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "shield-focus",
+  "fields": {
+    "name": "Shield Focus",
+    "desc": "A shield is a nearly impassable barrier in your hands.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.658",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Using your shield, you may expend your bonus action to make a shove maneuver against an adjacent creature when you take the attack action.\", \"When you have a shield in your hand, you may apply its AC bonus to dexterity saves made against effects that target you.\", \"While wielding a shield, you may expend your reaction following a successful Dexterity saving throw to take no damage from a spell or effect.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "skillful",
+  "fields": {
+    "name": "Skillful",
+    "desc": "Your versatility makes you an asset in nearly any situation.\nLearn three skills, languages, or tool proficiencies in any combination. If you already have proficiency in a chosen skill, you instead gain a skill specialty with that skill.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.658",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "skirmisher",
+  "fields": {
+    "name": "Skirmisher",
+    "desc": "You are as swift and elusive as the wind.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.659",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Any form of movement you possess is increased by 10 feet.\", \"Difficult terrain does not impede your movement when you have taken the dash action.\", \"Your attacks prevent creatures from making opportunity attacks against you.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "spellbreaker",
+  "fields": {
+    "name": "Spellbreaker",
+    "desc": "You are a terrifying foe to enemy spellcasters.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.659",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency with the Purge Magic maneuver and do not have to spend exertion to activate it.\", \"Targets forced to make concentration checks as a result of damage you deal suffer disadvantage.\", \"You gain magic resistance against all spells cast within 30 feet of you.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "stalwart",
+  "fields": {
+    "name": "Stalwart",
+    "desc": "You can quickly recover from injuries that leave lesser creatures broken.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.659",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Constitution attribute by 1, up to the attribute cap of 20.\", \"You regain an additional number of hit points equal to double your Constitution modifier (minimum 2) whenever you roll a hit die to regain hit points.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "stealth-expert",
+  "fields": {
+    "name": "Stealth Expert",
+    "desc": "The shadows embrace you as if you were born to them.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.660",
+    "page_no": null,
+    "prerequisite": "Requires Dexterity 13 or higher",
+    "route": "feats/",
+    "effects_desc_json": "[\"When lightly obscured, you may attempt the hide action.\", \"You remain hidden after missing a ranged attack.\", \"Your Wisdom (Perception) checks are not adversely affected by dim light.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "street-fighter",
+  "fields": {
+    "name": "Street Fighter",
+    "desc": "You've left a trail of broken opponents in the back alleys and barrooms of your home.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.660",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Strength or Constitution attribute by 1, up to the attribute cap of 20.\", \"You can roll 1d4 in place of your normal damage for unarmed strikes.\", \"Learn the improvised weapons proficiency.\", \"You may expend your bonus action to attempt the Grapple maneuver on an enemy you've hit with an unarmed or improvised weapon attack.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "surgical-combatant",
+  "fields": {
+    "name": "Surgical Combatant",
+    "desc": "Your knowledge of anatomy and physiology is a boon to your allies and a bane to your foes. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.660",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency with the Dangerous Strikes maneuver and do not have to spend exertion to activate it.\", \"You gain proficiency in Medicine. If you are already proficient, you instead gain an expertise die.\", \"You gain an expertise die on Medicine checks made to diagnose the cause of or treat wounds.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "survivor",
+  "fields": {
+    "name": "Survivor",
+    "desc": "You use every last ounce of energy to survive, even in the worst of circumstances.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.661",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"When you are reduced to 0 or fewer hit points, you can use your reaction to move up to your Speed before falling unconscious. Moving in this way doesn't provoke opportunity attacks.\", \"On the first turn that you start with 0 hit points and must make a death saving throw, you make that saving throw with advantage.\", \"When you take massive damage that would kill you instantly, you can use your reaction to make a death saving throw. If the saving throw succeeds, you instead fall unconscious and are dying.\", \"Medicine checks made to stabilize you have advantage.\", \"When a creature successfully stabilizes you, at the start of your next turn you regain 1 hit point. Once you have used this feature, you can't use it again until you finish a long rest.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "swift-combatant",
+  "fields": {
+    "name": "Swift Combatant",
+    "desc": "You are naturally quick and use that to your advantage in battle. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.661",
+    "page_no": null,
+    "prerequisite": "Prerequisite: 8th level or higher",
+    "route": "feats/",
+    "effects_desc_json": "[\"Your Speed increases by 5 feet.\", \"You gain proficiency with the Charge, Rapid Drink, and Swift Stance maneuvers, and do not have to spend exertion to activate them.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "tactical-support",
+  "fields": {
+    "name": "Tactical Support",
+    "desc": "Your tactical expertise gives your allies an edge in combat.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.661",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"When using the Help action to aid an ally in attacking a creature, the targeted creature can be up to 30 feet away instead of 5 feet.\", \"If an ally benefiting from your Help action scores a critical hit on the targeted creature, you can use your reaction to make a single weapon attack against that creature. Your attack scores a critical hit on a roll of 19\\u201320. If you already have a feature that increases the range of your critical hits, your critical hit range for that attack is increased by 1 (maximum 17\\u201320).\", \"When a creature is damaged by an attack that was aided by the use of your Help action, you don't provoke opportunity attacks from that creature until the end of your next turn.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "tenacious",
+  "fields": {
+    "name": "Tenacious",
+    "desc": "",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.662",
+    "page_no": null,
+    "prerequisite": "Choose an attribute and raise it by 1, up to the attribute cap of 20, and become proficient with saving throws using the selected attribute.",
+    "route": "feats/",
+    "effects_desc_json": "[]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "thespian",
+  "fields": {
+    "name": "Thespian",
+    "desc": "Your mastery of the dramatic arts is useful both on and off the stage.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.662",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Charisma attribute by 1, up to the attribute cap of 20.\", \"When adopting another persona, gain advantage on Deception and Performance checks.\", \"You may perfectly mimic the voice or sounds of another creature. A creature with a reason to be suspicious may attempt a Wisdom (Insight) check opposed by your Charisma (Deception) to see through your ruse.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "weapons-specialist",
+  "fields": {
+    "name": "Weapons Specialist",
+    "desc": "Nearly any weapon is lethal in your hands.",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.662",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"Raise your Strength or Dexterity Attribute by 1, to the attribute cap of 20.\", \"Select and learn any four weapon proficiencies. Three of these must be a simple or martial weapons. The fourth choice can be a simple, martial, or rare weapon.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "well-heeled",
+  "fields": {
+    "name": "Well-Heeled",
+    "desc": "You can maneuver effortlessly through the corridors of power and prestige. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.662",
+    "page_no": null,
+    "prerequisite": "Prerequisite: Prestige rating of 2 or higher",
+    "route": "feats/",
+    "effects_desc_json": "[\"You are treated as royalty (or as closely as possible) by most commoners and traders, and as an equal when meeting other authority figures (who make time in their schedule to see you when requested to do so).\", \"You have passive investments and income that allow you to maintain a high quality of living. You have a rich lifestyle and do not need to pay for it.\", \"You gain a second Prestige Center. This must be an area where you have spent at least a week of time.\"]"
+  }
+},
+{
+  "model": "api.feat",
+  "pk": "woodcraft-training",
+  "fields": {
+    "name": "Woodcraft Training",
+    "desc": "You have learned to survive in the wilds, a useful skill for almost any adventurer. You gain the following benefits:",
+    "document": 39,
+    "created_at": "2023-11-05T00:01:40.663",
+    "page_no": null,
+    "prerequisite": null,
+    "route": "feats/",
+    "effects_desc_json": "[\"You gain proficiency with the herbalism kit, navigator's kit, a simple ranged weapon, or a martial ranged weapon.\", \"You gain two exploration knacks of your choice from the ranger class.\"]"
+  }
+}
+]

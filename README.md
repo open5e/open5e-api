@@ -38,7 +38,7 @@
   * [Building the OAS file](#building-the-oas-file)
 - [Contributing](#contributing)
   * [Editing existing sources](#editing-existing-sources)
-  * [Adding a new sorce](#adding-a-new-sorce)
+  * [Adding a new source](#adding-a-new-source)
   * [Change existing models](#change-existing-models)
 - [Tests](#tests)
 - [Deployment](#deployment)
@@ -125,7 +125,7 @@ Smaller edits such as spelling mistakes can be edited directly in Github. For la
 
 Game Content is stored in the `data` directory. It is first split according to which document/source books it originated from and further into JSON files split by category e.g. "monsters.json", "spells.json". These can be edited directly. You can also add new categories to existing sources by creating the required JSON file. See an existing source, such as the 5.1 SRD to see how these should be structured.
 
-## Adding a new sorce
+## Adding a new source
 
 To add a new source, create new directory inside `data` and a `document.json` file that credits the source and links to the license it was published under. An example of this can be found [here](/data/a5e_srd/document.json). You can then add a json file for each category of content. See an existing source, such as the 5.1 SRD to see how these should be structured.
 
@@ -136,10 +136,16 @@ Models such as Monsters and Classes are stored in the [api/models](/api/models) 
 
 # Tests
 
-Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository.
+Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository. These tests require that the api is [running](##run) at `http://localhost:8000`.
+
 ```bash
 pipenv run pytest
 ```
+
+## Approval tests
+Approval tests are run against the approved files in `api/tests/approved_files` as `*.approved.*` . If a test fails then the recieved input will be stored in a `*.recieved.*` file. If you wish to approve the changes, replace the old approved file with the recieved file.
+
+Recieved files shall not be included in the git repo.
 
 # Deployment
 
