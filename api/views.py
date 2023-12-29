@@ -45,7 +45,7 @@ def get_version(_):
     """
     API endpoint for data and api versions.
     """
-    import version
+    import server.version as version
 
     return Response({
         "DATA_V1":version.DATA_V1_HASH,
