@@ -115,6 +115,7 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'desc',
             'name',
             'size',
+            "size_rating",
             'type',
             'subtype',
             'group',

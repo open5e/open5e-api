@@ -9,6 +9,7 @@ from .spell import Spell
 
 class Monster(GameContent):
     size = models.TextField(help_text='Monster size category.')
+    size_rating = models.IntegerField(help_text='Monster size category as number 0 is tiny, 1 is small, 2 is large, 3 is huge, 4 is gargantuan and 5 is titanic. default is -1 which is unknown',default=-1)
     type = models.TextField(
         help_text='The type of the monster, such as "aberration"')
     subtype = models.TextField(
