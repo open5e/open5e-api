@@ -19,6 +19,9 @@ class Feature(HasName, HasDescription, FromDocument):
     character_class = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
 
+    def levels(self):
+        return self.featureitem_set
+
 
 class CharacterClass(HasName, FromDocument):
     """The model for a character class or subclass."""
@@ -34,13 +37,16 @@ class CharacterClass(HasName, FromDocument):
         return self.subclass_of is not None
 
     @property
-    def levels(self):
-        """Returns basically the class table."""
-        # For each feature, get the set of related featureitem levels
-        """"""
-        return None
-
-    @property
     def features(self):
         """Returns the set of features that are related to this class."""
         return self.feature_set
+
+    def features_by_levels(self):
+        by_level = dict.fromkeys(range(1,21),set([]))
+
+        for feature in self.feature_set.all():
+            for fl in feature.featureitem_set.all():
+                if fl.level == 1:
+                    by_level[1].add(feature.key)
+
+        return by_level
