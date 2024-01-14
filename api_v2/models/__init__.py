@@ -38,3 +38,7 @@ from .language import Language
 from .alignment import Alignment
 
 from .condition import Condition
+
+from .characterclass import FeatureItem
+from .characterclass import Feature
+from .characterclass import CharacterClass

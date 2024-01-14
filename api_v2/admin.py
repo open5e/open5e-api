@@ -92,3 +92,7 @@ admin.site.register(Language)
 admin.site.register(Alignment)
 
 admin.site.register(Condition)
+
+admin.site.register(FeatureItem)
+admin.site.register(Feature)
+admin.site.register(CharacterClass)
