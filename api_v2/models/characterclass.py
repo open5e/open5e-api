@@ -5,7 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from .abstracts import HasName, HasDescription, Modification
 from .document import FromDocument
 
-class FeatureItem(Modification):
+class FeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
     feature. The name field is unused."""
 
@@ -42,11 +42,12 @@ class CharacterClass(HasName, FromDocument):
         return self.feature_set
 
     def features_by_levels(self):
-        by_level = dict.fromkeys(range(1,21),set([]))
+        by_level = dict()
 
         for feature in self.feature_set.all():
             for fl in feature.featureitem_set.all():
-                if fl.level == 1:
-                    by_level[1].add(feature.key)
-
+                if (str(fl.level)) not in by_level:
+                    by_level[str(fl.level)] = []
+                
+                by_level[str(fl.level)].append(fl.feature.key)
         return by_level
