@@ -66,3 +66,9 @@ class CharacterClass(HasName, FromDocument):
         # Consider as part of enums
         p = [0,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6]
         return p[player_level]
+    
+    def __str__(self):
+        if self.is_subclass:
+            return "{} [{}]".format(self.subclass_of.name, self.name)
+        else:
+            return self.name
