@@ -28,6 +28,15 @@
 },
 {
   "model": "api_v2.characterclass",
+  "pk": "college-of-lore",
+  "fields": {
+    "name": "College of Lore",
+    "document": "srd",
+    "subclass_of": "bard"
+  }
+},
+{
+  "model": "api_v2.characterclass",
   "pk": "druid",
   "fields": {
     "name": "Druid",
@@ -42,6 +51,15 @@
     "name": "Fighter",
     "document": "srd",
     "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "life-domain",
+  "fields": {
+    "name": "Life Domain",
+    "document": "srd",
+    "subclass_of": "cleric"
   }
 },
 {

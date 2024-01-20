@@ -1,6 +1,16 @@
 [
 {
   "model": "api_v2.feature",
+  "pk": "additional-magical-secrets",
+  "fields": {
+    "name": "Additional Magical Secrets",
+    "desc": "At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don't count against the number of bard spells you know.",
+    "document": "srd",
+    "character_class": "college-of-lore"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "barbarian-ability-score-improvement",
   "fields": {
     "name": "Ability Score Improvement",
@@ -31,6 +41,76 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "bard-ability-score-improvement",
+  "fields": {
+    "name": "Ability Score Improvement",
+    "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "bard-college",
+  "fields": {
+    "name": "Bard College",
+    "desc": "At 3rd level, you delve into the advanced techniques of a bard college of your choice: the College of Lore or the College of Valor, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th and 14th level.",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "bard-expertise",
+  "fields": {
+    "name": "Expertise",
+    "desc": "At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.\r\n\r\nAt 10th level, you can choose another two skill proficiencies to gain this benefit.",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "bard-spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "desc": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music.\r\n\r\nYour spells are part of your vast repertoire, magic that you can tune to different situations.\r\n\r\n###Cantrips\r\n\r\nYou know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Bard table.\r\n\r\n###Spell Slots\r\n\r\nThe Bard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nFor example, if you know the 1st-level spell cure wounds and have a 1st-level and a 2nd-level spell slot available, you can cast cure wounds using either slot.\r\n\r\n###Spells Known of 1st Level and Higher\r\n\r\nYou know four 1st-level spells of your choice from the bard spell list.\r\n\r\nThe Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\r\n\r\nAdditionally, when you gain a level in this class, you can choose one of the bard spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots.\r\n\r\n###Spellcasting Ability\r\n\r\nCharisma is your spellcasting ability for your bard spells. Your magic comes from the heart and soul you pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a bard spell you cast and when making an attack roll with one.\r\n\r\n*Spell save DC* = 8 + your proficiency bonus + your Charisma modifier\r\n\r\n*Spell attack modifier* = your proficiency bonus + your Charisma modifier\r\n\r\n###Ritual Casting\r\n\r\nYou can cast any bard spell you know as a ritual if that spell has the ritual tag.\r\n\r\n###Spellcasting Focus\r\n\r\nYou can use a musical instrument (see chapter 5, “Equipment”) as a spellcasting focus for your bard spells.",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "bardic-inspiration",
+  "fields": {
+    "name": "Bardic Inspiration",
+    "desc": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\r\n\r\nOnce within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\r\n\r\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.\r\n\r\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "blessed-healer",
+  "fields": {
+    "name": "Blessed Healer",
+    "desc": "Beginning at 6th level, the healing spells you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level.",
+    "document": "srd",
+    "character_class": "life-domain"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "bonus-proficiencies",
+  "fields": {
+    "name": "Bonus Proficiencies",
+    "desc": "When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice.",
+    "document": "srd",
+    "character_class": "college-of-lore"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "brutal-critical",
   "fields": {
     "name": "Brutal Critical",
@@ -41,12 +121,122 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "channel-divinity-preserve-life",
+  "fields": {
+    "name": "Channel Divinity: Preserve Life",
+    "desc": "Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.\r\n\r\nAs an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct.",
+    "document": "srd",
+    "character_class": "life-domain"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "cleric-ability-score-improvement",
+  "fields": {
+    "name": "Ability Score Improvement",
+    "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+    "document": "srd",
+    "character_class": "cleric"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "cleric-channel-divinity",
+  "fields": {
+    "name": "Channel Divinity",
+    "desc": "At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.\r\n\r\nWhen you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.\r\n\r\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.\r\n\r\nBeginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.\r\n\r\n### Channel Divinity: Turn Undead\r\n\r\nAs an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.\r\n\r\nA turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.",
+    "document": "srd",
+    "character_class": "cleric"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "cleric-spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "desc": "As a conduit for divine power, you can cast cleric spells.\r\n\r\n###Cantrips\r\n\r\nAt 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table.\r\nPreparing and Casting Spells\r\n\r\nThe Cleric table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nYou prepare the list of cleric spells that are available for you to cast, choosing from the cleric spell list. When you do so, choose a number of cleric spells equal to your Wisdom modifier + your cleric level (minimum of one spell). The spells must be of a level for which you have spell slots.\r\n\r\nFor example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\r\n\r\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\r\n\r\n###Spellcasting Ability\r\n\r\nWisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.\r\n\r\n*Spell save DC* = 8 + your proficiency bonus + your Wisdom modifier\r\n\r\n*Spell attack modifier* = your proficiency bonus + your Wisdom modifier\r\n\r\n###Ritual Casting\r\n\r\nYou can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.\r\n\r\n###Spellcasting Focus\r\n\r\nYou can use a holy symbol (see chapter 5, “Equipment”) as a spellcasting focus for your cleric spells.",
+    "document": "srd",
+    "character_class": "cleric"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "countercharm",
+  "fields": {
+    "name": "Countercharm",
+    "desc": "At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit. The performance ends early if you are incapacitated or silenced or if you voluntarily end it (no action required).",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "cutting-words",
+  "fields": {
+    "name": "Cutting Words",
+    "desc": "Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can't hear you or if it's immune to being charmed.",
+    "document": "srd",
+    "character_class": "college-of-lore"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "danger-sense",
   "fields": {
     "name": "Danger Sense",
     "desc": "At 2nd level, you gain an uncanny sense of when things nearby aren’t as they should be, giving you an edge when you dodge away from danger.\r\n\r\nYou have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can’t be blinded, deafened, or incapacitated.",
     "document": "srd",
     "character_class": "barbarian"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "destroy-undead",
+  "fields": {
+    "name": "Destroy Undead",
+    "desc": "Starting at 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table. \r\n\r\n### Destroy Undead (table)\r\n\r\n| Cleric Level | Destroys Undead of CR... | \r\n|---|---|\r\n| 5th | 1/2 or lower |\r\n| 8th | 1 or lower |\r\n| 11th | 2 or lower |\r\n| 14th | 3 or lower | \r\n| 17th | 4 or lower |",
+    "document": "srd",
+    "character_class": "cleric"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "disciple-of-life",
+  "fields": {
+    "name": "Disciple of Life",
+    "desc": "Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level.",
+    "document": "srd",
+    "character_class": "life-domain"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "divine-domain",
+  "fields": {
+    "name": "Divine Domain",
+    "desc": "Choose one domain related to your deity, such as  Life. Each domain is detailed at the end of the class  description, and each one provides examples of gods  associated with it. Your choice grants you domain  spells and other features when you choose it at 1st  level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd  level, and additional benefits at 6th, 8th, and 17th  levels.\r\n\r\n### Domain Spells\r\nEach domain has a list of spells—its domain spells—that you gain at the cleric levels noted in the domain  description. Once you gain a domain spell, you always have it prepared, and it doesn’t count against the number of spells you can prepare each day. \r\nIf you have a domain spell that doesn’t appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+    "document": "srd",
+    "character_class": "cleric"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "divine-intervention",
+  "fields": {
+    "name": "Divine Intervention",
+    "desc": "Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great.\r\n\r\nImploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.\r\n\r\nIf your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.\r\n\r\nAt 20th level, your call for intervention succeeds automatically, no roll required.",
+    "document": "srd",
+    "character_class": "cleric"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "divine-strike",
+  "fields": {
+    "name": "Divine Strike",
+    "desc": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8.",
+    "document": "srd",
+    "character_class": "life-domain"
   }
 },
 {
@@ -67,6 +257,16 @@
     "desc": "By 7th level, your instincts are so honed that you have advantage on initiative rolls.\r\n\r\nAdditionally, if you are surprised at the beginning of combat and aren’t incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn.",
     "document": "srd",
     "character_class": "barbarian"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "font-of-inspiration",
+  "fields": {
+    "name": "Font of Inspiration",
+    "desc": "Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you finish a short or long rest.",
+    "document": "srd",
+    "character_class": "bard"
   }
 },
 {
@@ -101,12 +301,62 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "jack-of-all-trades",
+  "fields": {
+    "name": "Jack of All Trades",
+    "desc": "Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus.",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "life-bonus-proficiency",
+  "fields": {
+    "name": "Bonus Proficiency",
+    "desc": "When you choose this domain at 1st level, you gain proficiency with heavy armor.",
+    "document": "srd",
+    "character_class": "life-domain"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "life-domain-spells",
+  "fields": {
+    "name": "Life Domain Spells (table)",
+    "desc": "Cleric Level | Spells |\r\n|---|---|\r\n| 1st | bless, cure wounds | \r\n| 3rd | lesser restoration, spiritual weapon |\r\n| 5th | beacon of hope, revivify |\r\n| 7th | death ward, guardian of faith |\r\n| 9th | mass cure wounds, raise dead |",
+    "document": "srd",
+    "character_class": "life-domain"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "magical-secrets",
+  "fields": {
+    "name": "Magical Secrets",
+    "desc": "By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.\r\n\r\nThe chosen spells count as bard spells for you and are included in the number in the Spells Known column of the Bard table.\r\n\r\nYou learn two additional spells from any class at 14th level and again at 18th level.",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "mindless-rage",
   "fields": {
     "name": "Mindless Rage",
     "desc": "Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage.",
     "document": "srd",
     "character_class": "path-of-the-berserker"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "peerless-skill",
+  "fields": {
+    "name": "Peerless Skill",
+    "desc": "Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.",
+    "document": "srd",
+    "character_class": "college-of-lore"
   }
 },
 {
@@ -177,6 +427,36 @@
     "desc": "Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.",
     "document": "srd",
     "character_class": "path-of-the-berserker"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "song-of-rest",
+  "fields": {
+    "name": "Song of Rest",
+    "desc": "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points.\r\n\r\nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level.",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "superior-inspiration",
+  "fields": {
+    "name": "Superior Inspiration",
+    "desc": "At 20th level, when you roll initiative and have no uses of Bardic Inspiration left, you regain one use.",
+    "document": "srd",
+    "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "supreme-healing",
+  "fields": {
+    "name": "Supreme Healing",
+    "desc": "Starting at 17th level, when you would normally roll one or more dice to restore hit points with a spell, you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12.",
+    "document": "srd",
+    "character_class": "life-domain"
   }
 }
 ]
