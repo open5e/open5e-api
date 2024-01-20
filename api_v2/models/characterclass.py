@@ -13,6 +13,11 @@ class FeatureItem(models.Model):
     feature = models.ForeignKey('Feature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
 
+    def __str__(self):
+        return "{} {} ({})".format(
+                                 self.feature.character_class.name,
+                                 str(self.level),
+                                 self.feature.name)
 
 class Feature(HasName, HasDescription, FromDocument):
     """This class represents an individual class feature, such as Rage, or Extra
@@ -20,6 +25,9 @@ class Feature(HasName, HasDescription, FromDocument):
 
     character_class = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{} ({})".format(self.name,self.character_class.name)
 
 
 class CharacterClass(HasName, FromDocument):
