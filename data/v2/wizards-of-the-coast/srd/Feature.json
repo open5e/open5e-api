@@ -1,6 +1,16 @@
 [
 {
   "model": "api_v2.feature",
+  "pk": "action-surge",
+  "fields": {
+    "name": "Action Surge",
+    "desc": "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.\r\n\r\nOnce you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.",
+    "document": "srd",
+    "character_class": "fighter"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "additional-magical-secrets",
   "fields": {
     "name": "Additional Magical Secrets",
@@ -331,6 +341,36 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "fighter-ability-score-improvement",
+  "fields": {
+    "name": "Ability Score Improvement",
+    "desc": "When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+    "document": "srd",
+    "character_class": "fighter"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "fighter-extra-attack",
+  "fields": {
+    "name": "Extra Attack",
+    "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.\r\n\r\nThe number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class.",
+    "document": "srd",
+    "character_class": "fighter"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "fighting-style",
+  "fields": {
+    "name": "Fighting Style",
+    "desc": "You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\r\n\r\n###Archery\r\n\r\nYou gain a +2 bonus to attack rolls you make with ranged weapons.\r\n\r\n###Defense\r\n\r\nWhile you are wearing armor, you gain a +1 bonus to AC.\r\n\r\n###Dueling\r\n\r\nWhen you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.\r\n\r\n###Great Weapon Fighting\r\n\r\nWhen you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit.\r\n\r\n###Protection\r\n\r\nWhen a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.\r\n\r\n###Two-Weapon Fighting\r\n\r\nWhen you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.",
+    "document": "srd",
+    "character_class": "fighter"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "font-of-inspiration",
   "fields": {
     "name": "Font of Inspiration",
@@ -347,6 +387,16 @@
     "desc": "Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion (as described in appendix A).",
     "document": "srd",
     "character_class": "path-of-the-berserker"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "indomitable",
+  "fields": {
+    "name": "Indomitable",
+    "desc": "Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.\r\n\r\nYou can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.",
+    "document": "srd",
+    "character_class": "fighter"
   }
 },
 {
@@ -427,6 +477,16 @@
     "desc": "By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.\r\n\r\nThe chosen spells count as bard spells for you and are included in the number in the Spells Known column of the Bard table.\r\n\r\nYou learn two additional spells from any class at 14th level and again at 18th level.",
     "document": "srd",
     "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "martial-archetype",
+  "fields": {
+    "name": "Martial Archetype",
+    "desc": "At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques, such as Champion. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level.",
+    "document": "srd",
+    "character_class": "fighter"
   }
 },
 {
@@ -547,6 +607,16 @@
     "desc": "Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.",
     "document": "srd",
     "character_class": "path-of-the-berserker"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "second-wind",
+  "fields": {
+    "name": "Second Wind",
+    "desc": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.",
+    "document": "srd",
+    "character_class": "fighter"
   }
 },
 {
