@@ -73,6 +73,15 @@
 },
 {
   "model": "api_v2.characterclass",
+  "pk": "hunter",
+  "fields": {
+    "name": "Hunter",
+    "document": "srd",
+    "subclass_of": "ranger"
+  }
+},
+{
+  "model": "api_v2.characterclass",
   "pk": "life-domain",
   "fields": {
     "name": "Life Domain",
@@ -114,6 +123,15 @@
     "name": "Path of the Berserker",
     "document": "srd",
     "subclass_of": "barbarian"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "ranger",
+  "fields": {
+    "name": "Ranger",
+    "document": "srd",
+    "subclass_of": null
   }
 },
 {
