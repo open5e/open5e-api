@@ -1,6 +1,16 @@
 [
 {
   "model": "api_v2.feature",
+  "pk": "Aura of Protection",
+  "fields": {
+    "name": "Aura of Protection",
+    "desc": "Starting at 6th level, whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus.\r\n\r\nAt 18th level, the range of this aura increases to 30 feet.",
+    "document": "srd",
+    "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "action-surge",
   "fields": {
     "name": "Action Surge",
@@ -37,6 +47,26 @@
     "desc": "At 20th level, you can use your Wild Shape an unlimited number of times.\r\n\r\nAdditionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren't consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape.",
     "document": "srd",
     "character_class": "druid"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "aura-of-courage",
+  "fields": {
+    "name": "Aura of Courage",
+    "desc": "Starting at 10th level, you and friendly creatures within 10 feet of you can't be frightened while you are conscious.\r\n\r\nAt 18th level, the range of this aura increases to 30 feet.",
+    "document": "srd",
+    "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "aura-of-devotion",
+  "fields": {
+    "name": "Aura of Devotion",
+    "desc": "Starting at 7th level, you and friendly creatures within 10 feet of you can't be charmed while you are conscious.\r\n\r\nAt 18th level, the range of this aura increases to 30 feet.",
+    "document": "srd",
+    "character_class": "oath-of-devotion"
   }
 },
 {
@@ -181,6 +211,16 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "cleansing-touch",
+  "fields": {
+    "name": "Cleansing Touch",
+    "desc": "Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch.\r\n\r\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest.",
+    "document": "srd",
+    "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "cleric-ability-score-improvement",
   "fields": {
     "name": "Ability Score Improvement",
@@ -204,7 +244,7 @@
   "pk": "cleric-spellcasting",
   "fields": {
     "name": "Spellcasting",
-    "desc": "As a conduit for divine power, you can cast cleric spells.\r\n\r\n###Cantrips\r\n\r\nAt 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table.\r\nPreparing and Casting Spells\r\n\r\nThe Cleric table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nYou prepare the list of cleric spells that are available for you to cast, choosing from the cleric spell list. When you do so, choose a number of cleric spells equal to your Wisdom modifier + your cleric level (minimum of one spell). The spells must be of a level for which you have spell slots.\r\n\r\nFor example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\r\n\r\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\r\n\r\n###Spellcasting Ability\r\n\r\nWisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.\r\n\r\n*Spell save DC* = 8 + your proficiency bonus + your Wisdom modifier\r\n\r\n*Spell attack modifier* = your proficiency bonus + your Wisdom modifier\r\n\r\n###Ritual Casting\r\n\r\nYou can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.\r\n\r\n###Spellcasting Focus\r\n\r\nYou can use a holy symbol (see chapter 5, “Equipment”) as a spellcasting focus for your cleric spells.",
+    "desc": "As a conduit for divine power, you can cast cleric spells.\r\n\r\n###Cantrips\r\n\r\nAt 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table.\r\nPreparing and Casting Spells\r\n\r\nThe Cleric table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nYou prepare the list of cleric spells that are available for you to cast, choosing from the cleric spell list. When you do so, choose a number of cleric spells equal to your Wisdom modifier + your cleric level (minimum of one spell). The spells must be of a level for which you have spell slots.\r\n\r\nFor example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\r\n\r\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\r\n\r\n###Spellcasting Ability\r\n\r\nWisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier\r\n\r\n###Ritual Casting\r\n\r\nYou can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.\r\n\r\n###Spellcasting Focus\r\n\r\nYou can use a holy symbol (see chapter 5, “Equipment”) as a spellcasting focus for your cleric spells.",
     "document": "srd",
     "character_class": "cleric"
   }
@@ -261,6 +301,26 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "devotion-channel-divinity",
+  "fields": {
+    "name": "Channel Divinity",
+    "desc": "When you take this oath at 3rd level, you gain the following two Channel Divinity options.\r\n\r\n**Sacred Weapon.** As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.\r\n\r\nYou can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends.\r\n\r\n**Turn the Unholy.** As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.\r\n\r\nA turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.",
+    "document": "srd",
+    "character_class": "oath-of-devotion"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "devotion-oath-spells",
+  "fields": {
+    "name": "Oath Spells",
+    "desc": "You gain oath spells at the paladin levels listed.\r\n\r\n### Oath of Devotion Spells\r\n| Paladin Level | Spells |\r\n| --- | --- |\r\n| 3rd | protection from evil and good, sanctuary |\r\n| 5th | lesser restoration, zone of truth |\r\n| 9th | beacon of hope, dispel magic |\r\n| 13th | freedom of movement, guardian of faith |\r\n| 17th | commune, flame strike |",
+    "document": "srd",
+    "character_class": "oath-of-devotion"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "diamond-soul",
   "fields": {
     "name": "Diamond Soul",
@@ -291,12 +351,42 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "divine-health",
+  "fields": {
+    "name": "Divine Health",
+    "desc": "By 3rd level, the divine magic flowing through you makes you immune to disease.",
+    "document": "srd",
+    "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "divine-intervention",
   "fields": {
     "name": "Divine Intervention",
     "desc": "Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great.\r\n\r\nImploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.\r\n\r\nIf your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.\r\n\r\nAt 20th level, your call for intervention succeeds automatically, no roll required.",
     "document": "srd",
     "character_class": "cleric"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "divine-sense",
+  "fields": {
+    "name": "Divine Sense",
+    "desc": "The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell.\r\n\r\nYou can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses.",
+    "document": "srd",
+    "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "divine-smite",
+  "fields": {
+    "name": "Divine Smite",
+    "desc": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend.",
+    "document": "srd",
+    "character_class": "paladin"
   }
 },
 {
@@ -334,7 +424,7 @@
   "pk": "druid-spellcasting",
   "fields": {
     "name": "Spellcasting",
-    "desc": "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will.\r\n\r\n###Cantrips\r\n\r\nAt 1st level, you know two cantrips of your choice from the druid spell list. You learn additional druid cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Druid table.\r\n\r\n###Preparing and Casting Spells\r\n\r\nThe Druid table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these druid spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nYou prepare the list of druid spells that are available for you to cast, choosing from the druid spell list. When you do so, choose a number of druid spells equal to your Wisdom modifier + your druid level (minimum of one spell). The spells must be of a level for which you have spell slots.\r\n\r\nFor example, if you are a 3rd-level druid, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\r\n\r\nYou can also change your list of prepared spells when you finish a long rest. Preparing a new list of druid spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\r\n\r\n###Spellcasting Ability\r\n\r\nWisdom is your spellcasting ability for your druid spells, since your magic draws upon your devotion and attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a druid spell you cast and when making an attack roll with one.\r\n\r\nSpell save DC = 8 + your proficiency bonus + your Wisdom modifier\r\n\r\nSpell attack modifier = your proficiency bonus + your Wisdom modifier\r\n\r\n###Ritual Casting\r\n\r\nYou can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared.\r\n\r\n###Spellcasting Focus\r\n\r\nYou can use a druidic focus (see chapter 5, “Equipment”) as a spellcasting focus for your druid spells.",
+    "desc": "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will.\r\n\r\n###Cantrips\r\n\r\nAt 1st level, you know two cantrips of your choice from the druid spell list. You learn additional druid cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Druid table.\r\n\r\n###Preparing and Casting Spells\r\n\r\nThe Druid table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these druid spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nYou prepare the list of druid spells that are available for you to cast, choosing from the druid spell list. When you do so, choose a number of druid spells equal to your Wisdom modifier + your druid level (minimum of one spell). The spells must be of a level for which you have spell slots.\r\n\r\nFor example, if you are a 3rd-level druid, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\r\n\r\nYou can also change your list of prepared spells when you finish a long rest. Preparing a new list of druid spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\r\n\r\n###Spellcasting Ability\r\n\r\nWisdom is your spellcasting ability for your druid spells, since your magic draws upon your devotion and attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a druid spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier\r\n\r\n###Ritual Casting\r\n\r\nYou can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared.\r\n\r\n###Spellcasting Focus\r\n\r\nYou can use a druidic focus (see chapter 5, “Equipment”) as a spellcasting focus for your druid spells.",
     "document": "srd",
     "character_class": "druid"
   }
@@ -441,12 +531,32 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "holy-nimbus",
+  "fields": {
+    "name": "Holy Nimbus",
+    "desc": "At 20th level, as an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that.\r\n\r\nWhenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage.\r\n\r\nIn addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.\r\n\r\nOnce you use this feature, you can't use it again until you finish a long rest.",
+    "document": "srd",
+    "character_class": "oath-of-devotion"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "improved-critical",
   "fields": {
     "name": "Improved Critical",
     "desc": "Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20.",
     "document": "srd",
     "character_class": "champion"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "improved-divine-smite",
+  "fields": {
+    "name": "Improved Divine Smite",
+    "desc": "By 11th level, you are so suffused with righteous might that all your melee weapon strikes carry divine power with them. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 radiant damage. If you also use your Divine Smite with an attack, you add this damage to the extra damage of your Divine Smite.",
+    "document": "srd",
+    "character_class": "paladin"
   }
 },
 {
@@ -527,6 +637,16 @@
     "desc": "Starting at 6th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.\r\n\r\nIn addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the entangle spell.",
     "document": "srd",
     "character_class": "circle-of-the-land"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "lay-on-hands",
+  "fields": {
+    "name": "Lay on Hands",
+    "desc": "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to your paladin level × 5.\r\n\r\nAs an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount remaining in your pool.\r\n\r\nAlternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one.\r\n\r\nThis feature has no effect on undead and constructs.",
+    "document": "srd",
+    "character_class": "paladin"
   }
 },
 {
@@ -691,6 +811,46 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "paladin-ability-score-improvement",
+  "fields": {
+    "name": "Ability Score Improvement",
+    "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+    "document": "srd",
+    "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "paladin-extra-attack",
+  "fields": {
+    "name": "Extra Attack",
+    "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.",
+    "document": "srd",
+    "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "paladin-fighting-style",
+  "fields": {
+    "name": "Fighting Style",
+    "desc": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\r\n\r\n### Defense\r\n\r\nWhile you are wearing armor, you gain a +1 bonus to AC.\r\n\r\n### Dueling\r\n\r\nWhen you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.\r\n\r\n### Great Weapon Fighting\r\n\r\nWhen you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll. The weapon must have the two-handed or versatile property for you to gain this benefit.\r\n\r\n### Protection\r\n\r\nWhen a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.",
+    "document": "srd",
+    "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "paladin-spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "desc": "By 2nd level, you have learned to draw on divine magic through meditation and prayer to cast spells as a cleric does.\r\n\r\n### Preparing and Casting Spells\r\n\r\nThe Paladin table shows how many spell slots you have to cast your spells. To cast one of your paladin spells of 1st level or higher, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nYou prepare the list of paladin spells that are available for you to cast, choosing from the paladin spell list. When you do so, choose a number of paladin spells equal to your Charisma modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.\r\n\r\nFor example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots. With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd- level slot. Casting the spell doesn't remove it from your list of prepared spells.\r\n\r\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of paladin spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\r\n\r\n### Spellcasting Ability\r\n\r\nCharisma is your spellcasting ability for your paladin spells, since their power derives from the strength of your convictions. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a paladin spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC** = 8 + your proficiency bonus + your Charisma modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\r\nSpellcasting Focus\r\n\r\nYou can use a holy symbol as a spellcasting focus for your paladin spells.",
+    "document": "srd",
+    "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "peerless-skill",
   "fields": {
     "name": "Peerless Skill",
@@ -751,6 +911,16 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "purity-of-spirit",
+  "fields": {
+    "name": "Purity of Spirit",
+    "desc": "Beginning at 15th level, you are always under the effects of a *protection from evil and good* spell.",
+    "document": "srd",
+    "character_class": "oath-of-devotion"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "quivering-palm",
   "fields": {
     "name": "Quivering Palm",
@@ -807,6 +977,16 @@
     "desc": "Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.",
     "document": "srd",
     "character_class": "path-of-the-berserker"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "sacred-oath",
+  "fields": {
+    "name": "Sacred Oath",
+    "desc": "When you reach 3rd level, you swear the oath that binds you as a paladin forever. Up to this time you have been in a preparatory stage, committed to the path but not yet sworn to it. Now you choose the Oath of Devotion, the Oath of the Ancients, or the Oath of Vengeance, all detailed at the end of the class description.\r\n\r\nYour choice grants you features at 3rd level and again at 7th, 15th, and 20th level. Those features include oath spells and the Channel Divinity feature.\r\n\r\n### Oath Spells\r\n\r\nEach oath has a list of associated spells. You gain access to these spells at the levels specified in the oath description. Once you gain access to an oath spell, you always have it prepared. Oath spells don't count against the number of spells you can prepare each day.\r\n\r\nIf you gain an oath spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.\r\n\r\n### Channel Divinity\r\n\r\nYour oath allows you to channel divine energy to fuel magical effects. Each Channel Divinity option provided by your oath explains how to use it.\r\n\r\nWhen you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.\r\n\r\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC.",
+    "document": "srd",
+    "character_class": "paladin"
   }
 },
 {
@@ -897,6 +1077,16 @@
     "desc": "At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points.",
     "document": "srd",
     "character_class": "champion"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "tenets-of-devotion",
+  "fields": {
+    "name": "Tenets of Devotion",
+    "desc": "Though the exact words and strictures of the Oath of Devotion vary, paladins of this oath share these tenets.\r\n\r\n*Honesty.* Don't lie or cheat. Let your word be your promise.\r\n\r\n*Courage.* Never fear to act, though caution is wise.\r\n\r\n*Compassion.* Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom.\r\n\r\n*Honor.* Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.\r\n\r\n*Duty.* Be responsible for your actions and their consequences, protect those entrusted to your care, and obey those who have just authority over you.",
+    "document": "srd",
+    "character_class": "oath-of-devotion"
   }
 },
 {
