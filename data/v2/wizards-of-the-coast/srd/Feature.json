@@ -11,6 +11,16 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "Stroke of Luck",
+  "fields": {
+    "name": "Stroke of Luck",
+    "desc": "At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.\r\n\r\nOnce you use this feature, you can't use it again until you finish a short or long rest.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "action-surge",
   "fields": {
     "name": "Action Surge",
@@ -171,6 +181,16 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "blindsense",
+  "fields": {
+    "name": "Blindsense",
+    "desc": "Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "bonus-cantrip",
   "fields": {
     "name": "Bonus Cantrip",
@@ -257,6 +277,16 @@
     "desc": "At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit. The performance ends early if you are incapacitated or silenced or if you voluntarily end it (no action required).",
     "document": "srd",
     "character_class": "bard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "cunning-action",
+  "fields": {
+    "name": "Cunning Action",
+    "desc": "Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.",
+    "document": "srd",
+    "character_class": "rogue"
   }
 },
 {
@@ -461,12 +491,32 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "elusive",
+  "fields": {
+    "name": "Elusive",
+    "desc": "Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "empty-body",
   "fields": {
     "name": "Empty Body",
     "desc": "Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.\r\n\r\nAdditionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can't take any other creatures with you.",
     "document": "srd",
     "character_class": "monk"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "fast-hands",
+  "fields": {
+    "name": "Fast Hands",
+    "desc": "Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools to disarm a trap or open a lock, or take the Use an Object action.",
+    "document": "srd",
+    "character_class": "thief"
   }
 },
 {
@@ -1111,6 +1161,16 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "reliable-talent",
+  "fields": {
+    "name": "Reliable Talent",
+    "desc": "By 11th level, you have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "remarkable-athlete",
   "fields": {
     "name": "Remarkable Athlete",
@@ -1131,12 +1191,62 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "rogue-ability-score-improvement",
+  "fields": {
+    "name": "Ability Score Improvement",
+    "desc": "When you reach 4th level, and again at 8th, 10th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "rogue-evasion",
+  "fields": {
+    "name": "Evasion",
+    "desc": "Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or an ice storm spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "rogue-expertise",
+  "fields": {
+    "name": "Expertise",
+    "desc": "At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.\r\n\r\nAt 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "roguish-archetype",
+  "fields": {
+    "name": "Roguish Archetype",
+    "desc": "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities: Thief, Assassin, or Arcane Trickster, all detailed at the end of the class description. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "sacred-oath",
   "fields": {
     "name": "Sacred Oath",
     "desc": "When you reach 3rd level, you swear the oath that binds you as a paladin forever. Up to this time you have been in a preparatory stage, committed to the path but not yet sworn to it. Now you choose the Oath of Devotion, the Oath of the Ancients, or the Oath of Vengeance, all detailed at the end of the class description.\r\n\r\nYour choice grants you features at 3rd level and again at 7th, 15th, and 20th level. Those features include oath spells and the Channel Divinity feature.\r\n\r\n### Oath Spells\r\n\r\nEach oath has a list of associated spells. You gain access to these spells at the levels specified in the oath description. Once you gain access to an oath spell, you always have it prepared. Oath spells don't count against the number of spells you can prepare each day.\r\n\r\nIf you gain an oath spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.\r\n\r\n### Channel Divinity\r\n\r\nYour oath allows you to channel divine energy to fuel magical effects. Each Channel Divinity option provided by your oath explains how to use it.\r\n\r\nWhen you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.\r\n\r\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC.",
     "document": "srd",
     "character_class": "paladin"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "second-story-work",
+  "fields": {
+    "name": "Second-Story Work",
+    "desc": "When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement.\r\n\r\nIn addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.",
+    "document": "srd",
+    "character_class": "thief"
   }
 },
 {
@@ -1151,12 +1261,32 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "slippery-mind",
+  "fields": {
+    "name": "Slippery Mind",
+    "desc": "By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "slow-fall",
   "fields": {
     "name": "Slow Fall",
     "desc": "Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level.",
     "document": "srd",
     "character_class": "monk"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "sneak-attack",
+  "fields": {
+    "name": "Sneak Attack",
+    "desc": "Beginning at 1st level, you know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\r\n\r\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.\r\n\r\nThe amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table.",
+    "document": "srd",
+    "character_class": "rogue"
   }
 },
 {
@@ -1231,6 +1361,16 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "supreme-sneak",
+  "fields": {
+    "name": "Supreme Sneak",
+    "desc": "Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn.",
+    "document": "srd",
+    "character_class": "thief"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "survivor",
   "fields": {
     "name": "Survivor",
@@ -1247,6 +1387,26 @@
     "desc": "Though the exact words and strictures of the Oath of Devotion vary, paladins of this oath share these tenets.\r\n\r\n*Honesty.* Don't lie or cheat. Let your word be your promise.\r\n\r\n*Courage.* Never fear to act, though caution is wise.\r\n\r\n*Compassion.* Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom.\r\n\r\n*Honor.* Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.\r\n\r\n*Duty.* Be responsible for your actions and their consequences, protect those entrusted to your care, and obey those who have just authority over you.",
     "document": "srd",
     "character_class": "oath-of-devotion"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "thiefs-reflexes",
+  "fields": {
+    "name": "Thief's Reflexes",
+    "desc": "When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised.",
+    "document": "srd",
+    "character_class": "thief"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "thieves-cant",
+  "fields": {
+    "name": "Thieves' Cant",
+    "desc": "During your rogue training you learned thieves' cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves' cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.\r\n\r\nIn addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run.",
+    "document": "srd",
+    "character_class": "rogue"
   }
 },
 {
@@ -1277,6 +1437,26 @@
     "desc": "Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.\r\n\r\nAt 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.",
     "document": "srd",
     "character_class": "monk"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "uncanny-dodge",
+  "fields": {
+    "name": "Uncanny Dodge",
+    "desc": "Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.",
+    "document": "srd",
+    "character_class": "rogue"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "use-magic-device",
+  "fields": {
+    "name": "Use Magic Device",
+    "desc": "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items.",
+    "document": "srd",
+    "character_class": "thief"
   }
 },
 {
