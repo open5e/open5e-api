@@ -51,6 +51,26 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "arcane-recovery",
+  "fields": {
+    "name": "Arcane Recovery",
+    "desc": "You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.\r\n\r\nFor example, if you're a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots.",
+    "document": "srd",
+    "character_class": "wizard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "arcane-tradition",
+  "fields": {
+    "name": "Arcane Tradition",
+    "desc": "When you reach 2nd level, you choose an arcane tradition, shaping your practice of magic through one of eight schools: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation, all detailed at the end of the class description.\r\n\r\nYour choice grants you features at 2nd level and again at 6th, 10th, and 14th level.",
+    "document": "srd",
+    "character_class": "wizard"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "archdruid",
   "fields": {
     "name": "Archdruid",
@@ -311,6 +331,26 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "dark-ones-blessing",
+  "fields": {
+    "name": "Dark One's Blessing",
+    "desc": "Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1).",
+    "document": "srd",
+    "character_class": "the-fiend"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "dark-ones-own-luck",
+  "fields": {
+    "name": "Dark One's Own Luck",
+    "desc": "Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll's effects occur.\r\n\r\nOnce you use this feature, you can't use it again until you finish a short or long rest.",
+    "document": "srd",
+    "character_class": "the-fiend"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "defensive-tactics",
   "fields": {
     "name": "Defensive Tactics",
@@ -531,6 +571,36 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "eldritch-invocation-list",
+  "fields": {
+    "name": "Eldritch Invocation List",
+    "desc": "If an eldritch invocation has prerequisites, you must meet them to learn it. You can learn the invocation at the same time that you meet its prerequisites. A level prerequisite refers to your level in this class.\r\n\r\n### Agonizing Blast\r\n\r\nPrerequisite: eldritch blast cantrip\r\n\r\nWhen you cast eldritch blast, add your Charisma modifier to the damage it deals on a hit.\r\nArmor of Shadows\r\n\r\nYou can cast mage armor on yourself at will, without expending a spell slot or material components.\r\n\r\n### Ascendant Step\r\n\r\nPrerequisite: 9th level\r\n\r\nYou can cast levitate on yourself at will, without expending a spell slot or material components.\r\n\r\n### Beast Speech\r\n\r\nYou can cast speak with animals at will, without expending a spell slot.\r\n\r\n### Beguiling Influence\r\n\r\nYou gain proficiency in the Deception and Persuasion skills.\r\n\r\n### Bewitching Whispers\r\n\r\nPrerequisite: 7th level\r\n\r\nYou can cast compulsion once using a warlock spell slot. You can't do so again until you finish a long rest.\r\n\r\n### Book of Ancient Secrets\r\n\r\nPrerequisite: Pact of the Tome feature\r\n\r\nYou can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list (the two needn't be from the same list). The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag.\r\n\r\nOn your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.\r\n\r\n### Chains of Carceri\r\n\r\nPrerequisite: 15th level, Pact of the Chain feature\r\n\r\nYou can cast hold monster at will-targeting a celestial, fiend, or elemental-without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.\r\n\r\n### Devil's Sight\r\n\r\nYou can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.\r\n\r\n### Dreadful Word\r\n\r\nPrerequisite: 7th level\r\n\r\nYou can cast confusion once using a warlock spell slot. You can't do so again until you finish a long rest.\r\n\r\n### Eldritch Sight\r\n\r\nYou can cast detect magic at will, without expending a spell slot.\r\n\r\n### Eldritch Spear\r\n\r\nPrerequisite: eldritch blast cantrip\r\n\r\nWhen you cast eldritch blast, its range is 300 feet.\r\n\r\n### Eyes of the Rune Keeper\r\n\r\nYou can read all writing.\r\n\r\n### Fiendish Vigor\r\n\r\nYou can cast false life on yourself at will as a 1st-level spell, without expending a spell slot or material components.\r\n\r\n### Gaze of Two Minds\r\n\r\nYou can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.\r\n\r\n### Lifedrinker\r\n\r\nPrerequisite: 12th level, Pact of the Blade feature\r\n\r\nWhen you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum 1).\r\n\r\n### Mask of Many Faces\r\n\r\nYou can cast disguise self at will, without expending a spell slot.\r\n\r\n### Master of Myriad Forms\r\n\r\nPrerequisite: 15th level\r\n\r\nYou can cast alter self at will, without expending a spell slot.\r\n\r\n### Minions of Chaos\r\n\r\nPrerequisite: 9th level\r\n\r\nYou can cast conjure elemental once using a warlock spell slot. You can't do so again until you finish a long rest.\r\n\r\n### Mire the Mind\r\n\r\nPrerequisite: 5th level\r\n\r\nYou can cast slow once using a warlock spell slot. You can't do so again until you finish a long rest.\r\n\r\n### Misty Visions\r\n\r\nYou can cast silent image at will, without expending a spell slot or material components.\r\n\r\n### One with Shadows\r\n\r\nPrerequisite: 5th level\r\n\r\nWhen you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction.\r\n\r\n### Otherworldly Leap\r\n\r\nPrerequisite: 9th level\r\n\r\nYou can cast jump on yourself at will, without expending a spell slot or material components.\r\n\r\n### Repelling Blast\r\n\r\nPrerequisite: eldritch blast cantrip\r\n\r\nWhen you hit a creature with eldritch blast, you can push the creature up to 10 feet away from you in a straight line.\r\n\r\n### Sculptor of Flesh\r\n\r\nPrerequisite: 7th level\r\n\r\nYou can cast polymorph once using a warlock spell slot. You can't do so again until you finish a long rest.\r\n\r\n### Sign of Ill Omen\r\n\r\nPrerequisite: 5th level\r\n\r\nYou can cast bestow curse once using a warlock spell slot. You can't do so again until you finish a long rest.\r\n\r\n### Thief of Five Fates\r\n\r\nYou can cast bane once using a warlock spell slot. You can't do so again until you finish a long rest.\r\n\r\n### Thirsting Blade\r\n\r\nPrerequisite: 5th level, Pact of the Blade feature\r\n\r\nYou can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.\r\n\r\n### Visions of Distant Realms\r\n\r\nPrerequisite: 15th level\r\n\r\nYou can cast arcane eye at will, without expending a spell slot.\r\n\r\n### Voice of the Chain Master\r\n\r\nPrerequisite: Pact of the Chain feature\r\n\r\nYou can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.\r\n\r\n### Whispers of the Grave\r\n\r\nPrerequisite: 9th level\r\n\r\nYou can cast speak with dead at will, without expending a spell slot.\r\n\r\n### Witch Sight\r\n\r\nPrerequisite: 15th level\r\n\r\nYou can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.",
+    "document": "srd",
+    "character_class": "warlock"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "eldritch-invocations",
+  "fields": {
+    "name": "Eldritch Invocations",
+    "desc": "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability.\r\n\r\nAt 2nd level, you gain two eldritch invocations of your choice. Your invocation options are detailed at the end of the class description. When you gain certain warlock levels, you gain additional invocations of your choice, as shown in the Invocations Known column of the Warlock table.\r\n\r\nAdditionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level.",
+    "document": "srd",
+    "character_class": "warlock"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "eldritch-master",
+  "fields": {
+    "name": "Eldritch Master",
+    "desc": "At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.",
+    "document": "srd",
+    "character_class": "warlock"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "elemental-affinity",
   "fields": {
     "name": "Elemental Affinity",
@@ -551,12 +621,42 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "empowered-evocation",
+  "fields": {
+    "name": "Empowered Evocation",
+    "desc": "Beginning at 10th level, you can add your Intelligence modifier to one damage roll of any wizard evocation spell you cast.",
+    "document": "srd",
+    "character_class": "school-of-evocation"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "empty-body",
   "fields": {
     "name": "Empty Body",
     "desc": "Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.\r\n\r\nAdditionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can't take any other creatures with you.",
     "document": "srd",
     "character_class": "monk"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "evocation-savant",
+  "fields": {
+    "name": "Evocation Savant",
+    "desc": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an evocation spell into your spellbook is halved.",
+    "document": "srd",
+    "character_class": "school-of-evocation"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "expanded-spell-list",
+  "fields": {
+    "name": "Expanded Spell List",
+    "desc": "The Fiend lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.\r\n\r\n### Fiend Expanded Spells (table)\r\n| Spell Level | Spells |\r\n| --- | --- |\r\n| 1st | burning hands, command |\r\n| 2nd | blindness/deafness, scorching ray |\r\n| 3rd | fireball, stinking cloud |\r\n| 4th | fire shield, wall of fire |\r\n| 5th | flame strike, hallow |",
+    "document": "srd",
+    "character_class": "the-fiend"
   }
 },
 {
@@ -607,6 +707,16 @@
     "desc": "At 18th level, you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against it.\r\n\r\nYou are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn't hidden from you and you aren't blinded or deafened.",
     "document": "srd",
     "character_class": "ranger"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "fiendish-resilience",
+  "fields": {
+    "name": "Fiendish Resilience",
+    "desc": "Starting at 10th level, you can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons or silver weapons ignores this resistance.",
+    "document": "srd",
+    "character_class": "the-fiend"
   }
 },
 {
@@ -707,6 +817,16 @@
     "desc": "At 3rd level, you gain one of the following features of your choice.\r\n\r\n***Colossus Slayer.*** Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it's below its hit point maximum. You can deal this extra damage only once per turn.\r\n\r\n***Giant Killer.*** When a Large or larger creature within 5 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature.\r\n\r\n***Horde Breaker.*** Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.",
     "document": "srd",
     "character_class": "hunter"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "hurl-through-hell",
+  "fields": {
+    "name": "Hurl Through Hell",
+    "desc": "Starting at 14th level, when you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears and hurtles through a nightmare landscape.\r\n\r\nAt the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes 10d10 psychic damage as it reels from its horrific experience.\r\n\r\nOnce you use this feature, you can't use it again until you finish a long rest.",
+    "document": "srd",
+    "character_class": "the-fiend"
   }
 },
 {
@@ -961,6 +1081,16 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "mystic-arcanum",
+  "fields": {
+    "name": "Mystic Arcanum",
+    "desc": "At 11th level, your patron bestows upon you a magical secret called an arcanum. Choose one 6th- level spell from the warlock spell list as this arcanum.\r\n\r\nYou can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.\r\n\r\nAt higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th- level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.",
+    "document": "srd",
+    "character_class": "warlock"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "natural-explorer",
   "fields": {
     "name": "Natural Explorer",
@@ -1007,6 +1137,46 @@
     "desc": "Starting when you choose this tradition at 3rd level, you can manipulate your enemy's ki when you harness your own. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target:\r\n\r\n* It must succeed on a Dexterity saving throw or be knocked prone.\r\n* It must make a Strength saving throw. If it fails, you can push it up to 15 feet away from you.\r\n* It can't take reactions until the end of your next turn.",
     "document": "srd",
     "character_class": "way-of-the-open-hand"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "otherworldly-patron",
+  "fields": {
+    "name": "Otherworldly Patron",
+    "desc": "At 1st level, you have struck a bargain with an otherworldly being of your choice: the Archfey, the Fiend, or the Great Old One, each of which is detailed at the end of the class description. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level.",
+    "document": "srd",
+    "character_class": "warlock"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "overchannel",
+  "fields": {
+    "name": "Overchannel",
+    "desc": "Starting at 14th level, you can increase the power of your simpler spells. When you cast a wizard spell of 1st through 5th level that deals damage, you can deal maximum damage with that spell.\r\n\r\nThe first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take 2d12 necrotic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by 1d12. This damage ignores resistance and immunity.",
+    "document": "srd",
+    "character_class": "school-of-evocation"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "pact-boon",
+  "fields": {
+    "name": "Pact Boon",
+    "desc": "At 3rd level, your otherworldly patron bestows a gift upon you for your loyal service. You gain one of the following features of your choice.\r\n\r\n### Pact of the Chain\r\n\r\nYou learn the find familiar spell and can cast it as a ritual. The spell doesn't count against your number of spells known.\r\n\r\nWhen you cast the spell, you can choose one of the normal forms for your familiar or one of the following special forms: imp, pseudodragon, quasit, or sprite.\r\n\r\nAdditionally, when you take the Attack action, you can forgo one of your own attacks to allow your familiar to make one attack of its own with its reaction.\r\n\r\n### Pact of the Blade\r\n\r\nYou can use your action to create a pact weapon in your empty hand. You can choose the form that this melee weapon takes each time you create it. You are proficient with it while you wield it. This weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.\r\n\r\nYour pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.\r\n\r\nYou can transform one magic weapon into your pact weapon by performing a special ritual while you hold the weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. You can then dismiss the weapon, shunting it into an extradimensional space, and it appears whenever you create your pact weapon thereafter. You can't affect an artifact or a sentient weapon in this way. The weapon ceases being your pact weapon if you die, if you perform the 1-hour ritual on a different weapon, or if you use a 1-hour ritual to break your bond to it. The weapon appears at your feet if it is in the extradimensional space when the bond breaks.\r\n\r\n### Pact of the Tome\r\n\r\nYour patron gives you a grimoire called a Book of Shadows. When you gain this feature, choose three cantrips from any class's spell list (the three needn't be from the same list). While the book is on your person, you can cast those cantrips at will. They don't count against your number of cantrips known. If they don't appear on the warlock spell list, they are nonetheless warlock spells for you.\r\n\r\nIf you lose your Book of Shadows, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and it destroys the previous book. The book turns to ash when you die.",
+    "document": "srd",
+    "character_class": "warlock"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "pact-magic",
+  "fields": {
+    "name": "Pact Magic",
+    "desc": "Your arcane research and the magic bestowed on you by your patron have given you facility with spells.\r\n\r\n### Cantrips\r\n\r\nYou know two cantrips of your choice from the warlock spell list. You learn additional warlock cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Warlock table.\r\nSpell Slots\r\n\r\nThe Warlock table shows how many spell slots you have. The table also shows what the level of those slots is; all of your spell slots are the same level. To cast one of your warlock spells of 1st level or higher, you must expend a spell slot. You regain all expended spell slots when you finish a short or long rest.\r\n\r\nFor example, when you are 5th level, you have two 3rd-level spell slots. To cast the 1st-level spell thunderwave, you must spend one of those slots, and you cast it as a 3rd-level spell.\r\n\r\n### Spells Known of 1st Level and Higher\r\n\r\nAt 1st level, you know two 1st-level spells of your choice from the warlock spell list.\r\n\r\nThe Spells Known column of the Warlock table shows when you learn more warlock spells of your choice of 1st level and higher. A spell you choose must be of a level no higher than what's shown in the table's Slot Level column for your level. When you reach 6th level, for example, you learn a new warlock spell, which can be 1st, 2nd, or 3rd level.\r\n\r\nAdditionally, when you gain a level in this class, you can choose one of the warlock spells you know and replace it with another spell from the warlock spell list, which also must be of a level for which you have spell slots.\r\n\r\n### Spellcasting Ability\r\n\r\nCharisma is your spellcasting ability for your warlock spells, so you use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a warlock spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC** = 8 + your proficiency bonus + your Charisma modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\r\n\r\n### Spellcasting Focus\r\n\r\nYou can use an arcane focus as a spellcasting focus for your warlock spells.",
+    "document": "srd",
+    "character_class": "warlock"
   }
 },
 {
@@ -1077,6 +1247,16 @@
     "desc": "Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if you choose to end it.",
     "document": "srd",
     "character_class": "barbarian"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "potent-cantrip",
+  "fields": {
+    "name": "Potent Cantrip",
+    "desc": "Starting at 6th level, your damaging cantrips affect even creatures that avoid the brunt of the effect. When a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip.",
+    "document": "srd",
+    "character_class": "school-of-evocation"
   }
 },
 {
@@ -1311,6 +1491,16 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "sculpt-spells",
+  "fields": {
+    "name": "Sculpt Spells",
+    "desc": "Beginning at 2nd level, you can create pockets of relative safety within the effects of your evocation spells. When you cast an evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 + the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save.",
+    "document": "srd",
+    "character_class": "school-of-evocation"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "second-story-work",
   "fields": {
     "name": "Second-Story Work",
@@ -1327,6 +1517,16 @@
     "desc": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.",
     "document": "srd",
     "character_class": "fighter"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "signature-spells",
+  "fields": {
+    "name": "Signature Spells",
+    "desc": "When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don't count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest.\r\n\r\nIf you want to cast either spell at a higher level, you must expend a spell slot as normal.",
+    "document": "srd",
+    "character_class": "wizard"
   }
 },
 {
@@ -1407,6 +1607,16 @@
     "desc": "At 20th level, you regain 4 expended sorcery points whenever you finish a short rest.",
     "document": "srd",
     "character_class": "sorcerer"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "spell-mastery",
+  "fields": {
+    "name": "Spell Mastery",
+    "desc": "At 18th level, you have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. If you want to cast either spell at a higher level, you must expend a spell slot as normal.\r\n\r\nBy spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels.",
+    "document": "srd",
+    "character_class": "wizard"
   }
 },
 {
@@ -1581,6 +1791,16 @@
 },
 {
   "model": "api_v2.feature",
+  "pk": "warlock-ability-score-improvement",
+  "fields": {
+    "name": "Ability Score Improvement",
+    "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+    "document": "srd",
+    "character_class": "warlock"
+  }
+},
+{
+  "model": "api_v2.feature",
   "pk": "wholeness-of-body",
   "fields": {
     "name": "Wholeness of Body",
@@ -1597,6 +1817,26 @@
     "desc": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.\r\n\r\nYour druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.\r\n\r\n| Level | Max. CR | Limitations | Example |\r\n| --- | --- | --- | --- |\r\n| 2nd | 1/4 | No flying or swimming speed | Wolf |\r\n| 4th | 1/2 | No flying speed | Crocodile |\r\n| 8th | 1 | - | Giant Eagle |\r\n\r\nYou can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.\r\n\r\nWhile you are transformed, the following rules apply:\r\nYour game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.\r\n\r\nWhen you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.\r\n\r\nYou can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you've already cast.\r\n\r\nYou retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.\r\n\r\nYou choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the GM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form.",
     "document": "srd",
     "character_class": "druid"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "wizard-ability-score-improvement",
+  "fields": {
+    "name": "Ability Score Improvement",
+    "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+    "document": "srd",
+    "character_class": "wizard"
+  }
+},
+{
+  "model": "api_v2.feature",
+  "pk": "wizard-spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "desc": "As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power.\r\n\r\n### Cantrips\r\n\r\nAt 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.\r\n\r\n### Spellbook\r\n\r\nAt 1st level, you have a spellbook containing six 1st- level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind.\r\n\r\n### Preparing and Casting Spells\r\n\r\nThe Wizard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nYou prepare the list of wizard spells that are available for you to cast. To do so, choose a number of wizard spells from your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.\r\n\r\nFor example, if you're a 3rd-level wizard, you have four 1st-level and two 2nd-level spell slots. With an Intelligence of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination, chosen from your spellbook. If you prepare the 1st-level spell magic missile, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\r\n\r\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of wizard spells requires time spent studying your spellbook and memorizing the incantations and gestures you must make to cast the spell: at least 1 minute per spell level for each spell on your list.\r\n\r\n### Spellcasting Ability\r\n\r\nIntelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC** = 8 + your proficiency bonus + your Intelligence modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Intelligence modifier\r\n\r\n### Ritual Casting\r\n\r\nYou can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don't need to have the spell prepared.\r\n\r\n### Spellcasting Focus\r\n\r\nYou can use an arcane focus as a spellcasting focus for your wizard spells.\r\n\r\n### Learning Spells of 1st Level and Higher\r\n\r\nEach time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook (see the “Your Spellbook” sidebar).",
+    "document": "srd",
+    "character_class": "wizard"
   }
 }
 ]
