@@ -4,11 +4,13 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 from .abstracts import HasName, HasDescription, Modification
 from .document import FromDocument
+from .enums import DICE_SET_CHOICES
 
 class FeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
     feature. The name field is unused."""
     # Somewhere in here is where you'd define a field that would eventually display as "Rage Damage +2"
+    # Also spell slots...?
 
     feature = models.ForeignKey('Feature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
@@ -18,6 +20,7 @@ class FeatureItem(models.Model):
                                  self.feature.character_class.name,
                                  str(self.level),
                                  self.feature.name)
+
 
 class Feature(HasName, HasDescription, FromDocument):
     """This class represents an individual class feature, such as Rage, or Extra
@@ -38,6 +41,15 @@ class CharacterClass(HasName, FromDocument):
                                    null=True,
                                    on_delete=models.CASCADE)
     
+    hit_dice = models.CharField(
+        max_length=100,
+        default=None,
+        blank=True,
+        null=True,
+        choices=DICE_SET_CHOICES,
+        help_text='Dice notation hit dice option.')
+
+
     @property
     def is_subclass(self):
         """Returns whether the object is a subclass."""
