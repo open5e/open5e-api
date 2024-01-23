@@ -23,6 +23,7 @@ class CharacterClassSerializer(GameContentSerializer):
     features = FeatureSerializer(
         many=True, context={'request': {}})
     levels = serializers.ReadOnlyField()
+    hit_points = serializers.ReadOnlyField()
 
     class Meta:
         model = models.CharacterClass
