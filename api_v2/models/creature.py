@@ -5,60 +5,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities
 from .abstracts import Object, HasDescription, HasName
 from .document import FromDocument
+from .enums import MONSTER_TYPES, ATTACK_TYPES, DIE_TYPES, DAMAGE_TYPES, USES_TYPES
 
-
-MONSTER_TYPES = [
-    ("ABERRATION", "Aberration"),
-    ("BEAST", "Beast"),
-    ("CELESTIAL", "Celestial"),
-    ("CONSTRUCT", "Construct"),
-    ("DRAGON", "Dragon"),
-    ("ELEMENTAL", "Elemental"),
-    ("FEY", "Fey"),
-    ("FIEND", "Fiend"),
-    ("GIANT", "Giant"),
-    ("HUMANOID", "Humanoid"),
-    ("MONSTROSITY", "Monstrosity"),
-    ("OOZE", "Ooze"),
-    ("PLANT", "Plant"),
-    ("UNDEAD", "Undead"),
-]
-
-ATTACK_TYPES = [
-    ("SPELL", "Spell"),
-    ("WEAPON", "Weapon"),
-]
-
-DIE_TYPES = [
-    ("D4", "d4"),
-    ("D6", "d6"),
-    ("D8", "d8"),
-    ("D10", "d10"),
-    ("D12", "d12"),
-    ("D20", "d20"),
-]
-
-DAMAGE_TYPES = [
-    ("ACID", "Acid"),
-    ("BLUDGEONING", "Bludgeoning"),
-    ("COLD", "Cold"),
-    ("FIRE", "Fire"),
-    ("FORCE", "Force"),
-    ("LIGHTNING", "Lightning"),
-    ("NECROTIC", "Necrotic"),
-    ("PIERCING", "Piercing"),
-    ("POISON", "Poison"),
-    ("PSYCHIC", "Psychic"),
-    ("RADIANT", "Radiant"),
-    ("SLASHING", "Slashing"),
-    ("THUNDER", "Thunder"),
-]
-
-USES_TYPES = [
-    ("PER_DAY", "X/Day"),
-    ("RECHARGE_ON_ROLL", "Recharge X-6"),
-    ("RECHARGE_AFTER_REST", "Recharge after a Short or Long rest"),
-]
 
 def damage_die_count_field():
     return models.SmallIntegerField(

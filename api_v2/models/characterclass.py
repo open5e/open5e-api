@@ -4,7 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 from .abstracts import HasName, HasDescription, Modification
 from .document import FromDocument
-from .enums import DICE_SET_CHOICES
+from .enums import DIE_TYPES
 
 class FeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
@@ -26,7 +26,7 @@ class Feature(HasName, HasDescription, FromDocument):
     """This class represents an individual class feature, such as Rage, or Extra
     Attack."""
 
-    character_class = models.ForeignKey('CharacterClass',
+    characterclass = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
 
     def __str__(self):
@@ -46,7 +46,7 @@ class CharacterClass(HasName, FromDocument):
         default=None,
         blank=True,
         null=True,
-        choices=DICE_SET_CHOICES,
+        choices=DIE_TYPES,
         help_text='Dice notation hit dice option.')
 
     @property
