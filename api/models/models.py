@@ -211,7 +211,7 @@ class Subrace(GameContent):
 
 
 class Plane(GameContent):
-    pass
+    parent = models.TextField(null=True)
     route = models.TextField(default="planes/")
 
     @staticmethod

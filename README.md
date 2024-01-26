@@ -38,7 +38,7 @@
   * [Building the OAS file](#building-the-oas-file)
 - [Contributing](#contributing)
   * [Editing existing sources](#editing-existing-sources)
-  * [Adding a new sorce](#adding-a-new-sorce)
+  * [Adding a new source](#adding-a-new-source)
   * [Change existing models](#change-existing-models)
 - [Tests](#tests)
 - [Deployment](#deployment)
@@ -123,28 +123,34 @@ Smaller edits such as spelling mistakes can be edited directly in Github. For la
 
 ## Editing existing sources
 
-Game Content is stored in the `data` directory. It is first split according to which document/source books it originated from and further into JSON files split by category e.g. "monsters.json", "spells.json". These can be edited directly. You can also add new categories to existing sources by creating the required JSON file. See an existing source, such as the 5.1 SRD to see how these should be structured.
+Game Content is stored in the `data` directory. It is first split according `v1` and `v2`, which are distinct API versions. As of 2023-12-06, `v1` is the dataset exclusively used in production, but it's a good idea to check for the same data inside of v2. We use [fixtures](https://docs.djangoproject.com/en/4.2/topics/db/fixtures/) as our primary way of populating the database because of strong built-in support. Each fixture in v1 has been split out by Document Slug, and then Model. Find the one you'd like to edit inside of the appropriate ModelName.json file.
 
-## Adding a new sorce
+## Adding a new source
 
-To add a new source, create new directory inside `data` and a `document.json` file that credits the source and links to the license it was published under. An example of this can be found [here](/data/a5e_srd/document.json). You can then add a json file for each category of content. See an existing source, such as the 5.1 SRD to see how these should be structured.
+To add a new source, create new directory inside `data/v1` and a `Document.json` file that credits the source and links to the license it was published under. An example of this can be found [here](/data/v1/wotc-srd/Document.json). You can then add a json file for each Model Fixture of content. See an existing source, such as the 5.1 SRD to see how these should be structured.
 
-To load this new source, it must be added to the `SOURCE_DIRS` in [quickload.py](/api/management/commands/quickload.py). Rebuild the project to see the new Game Content.
+A PK (or Primay Key) is text based slug for all game content, and it's used in the URL for getting that item. In the majority of cases, the PK should be the slugified version of the name. In the cases where an object PK would conflict with an existing PK, prepend a clear identifier to the PK.
+
+**TODO SET CONVENTIONS FOR WHAT THE IDENTIFIER IS**
+
 ## Change existing models
 
-Models such as Monsters and Classes are stored in the [api/models](/api/models) directory. These define fields (hp, str, speed) and how they are output. The import of Game Content from `data` is handled by an [ImportSpec](/api/management/commands/importer.py)
+Models such as Monsters and Classes are stored in the [api/models](/api/models) directory. These define fields (hp, str, speed) and how they are output. The import of Game Content from `data` is handled by django's built-in [loaddata](https://docs.djangoproject.com/en/4.2/ref/django-admin/#django-admin-loaddata).
 
 # Tests
 
-Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository.
+Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository. These tests require that the api is [running](##run) at `http://localhost:8000`.
+
 ```bash
 pipenv run pytest
 ```
 
+## Approval tests
+Approval tests are run against the approved files in `api/tests/approved_files` as `*.approved.*` . If a test fails then the recieved input will be stored in a `*.recieved.*` file. If you wish to approve the changes, replace the old approved file with the recieved file.
+
+Recieved files shall not be included in the git repo.
+
 # Deployment
-
-The API is normally deployed via [Docker](https://docs.docker.com/get-started/). You can either build and host it yourself, or use one of the tested providers below:
-
 
 ## DigitalOcean
 
@@ -159,7 +165,6 @@ export SERVER_NAME=whatever.yourdomain.com
 cd open5e-api/
 docker-compose up
 ```
-
 
 ## Railway.app
 1. Create a fork on Github. This is used to automatically deploy whenever you make a change.
