@@ -8,28 +8,32 @@ from django.core.validators import MaxValueValidator
 
 from .abstracts import HasName, HasDescription, FromDocument
 
-from .enum import TARGET_TYPE_CHOICES, TARGET_RANGE_CHOICES, EFFECT_SHAPE_CHOICES
+from .enums import TARGET_TYPE_CHOICES, TARGET_RANGE_CHOICES, EFFECT_SHAPE_CHOICES, CASTING_TIME_CHOICES
 
 class Spell(HasName, HasDescription, FromDocument):
+    version = 'default'
 
-    # Casting options and requirements of a spell instance
+   # Casting options and requirements of a spell instance
     level = models.IntegerField(
         validators=[MinValueValidator(0), MaxValueValidator(9)],
         help_text='Integer representing the minimum slot level required by the spell. Cantrip is 0.')
 
     # Casting target requirements of the spell instance
-    target = models.TextField(
+    target_type = models.TextField(
+        choices = TARGET_TYPE_CHOICES,
         help_text='Choices for spell targets.')
     
     range = models.TextField(
         choices = TARGET_RANGE_CHOICES,
         help_text='Choices for spell targets.')
-    
 
-class SpellCasting(models.Model):
     ritual = models.BooleanField(
         help_text='Whether or not the spell can be cast as a ritual.',
         default=False)
+
+    casting_time = models.TextField(
+        choices = CASTING_TIME_CHOICES,
+        help_text = "Casting time name, such as '1 action'")
 
     verbal = models.BooleanField(
         help_text='Whether or not casting the spell requires a verbal component.',
@@ -57,8 +61,8 @@ class SpellCasting(models.Model):
     def components(self):
         return ["v","s","m"]
 
+    target_count = models.TextField()
 
-class SpellEffect(models.Model):
     saving_throw_ability = models.TextField(
         #
     )
@@ -87,8 +91,5 @@ class SpellEffect(models.Model):
         help_text='Whether the effect requires concentration to be maintained.',
         default=False)
 
-
-class SpellSet(HasName, FromDocument):
-    spells = models.ManyToManyField(Spell,
-                                    help_text="The set of spells.")
-
+    def versions(self):
+        return ["default":{}]
