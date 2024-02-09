@@ -3,10 +3,12 @@ The model for a spell.
 """
 
 from django.db import models
-from django.core.validators import MinValueValidator
-from django.core.validators import MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 
-from .abstracts import HasName, HasDescription, FromDocument
+
+from .abstracts import HasName, HasDescription
+from .document import FromDocument
+
 
 from .enums import TARGET_TYPE_CHOICES, TARGET_RANGE_CHOICES, EFFECT_SHAPE_CHOICES, CASTING_TIME_CHOICES
 
@@ -80,7 +82,7 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text = 'The shape of the area of effect.'
     )
     shape_magnitude = models.IntegerField(
-        validators[MinValueValidator(0)],
+        validators=[MinValueValidator(0)],
         help_text = 'The magnitude of the shape (without units).'
     )
     @property
@@ -91,5 +93,5 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text='Whether the effect requires concentration to be maintained.',
         default=False)
 
-    def versions(self):
-        return ["default":{}]
+    #def versions(self):
+        #return ["default":{}]
