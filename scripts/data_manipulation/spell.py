@@ -2,13 +2,25 @@ from api import models as v1
 from api_v2 import models as v2
 
 
+
+
 def spellmigrate(save=False):
     success_count=0
     fail_list=[]
     failed=False
     for v1_spell in v1.Spell.objects.all():
-        map1to2(v1_spell)
-        success_count+=1
+
+        #map1to2(v1_spell)
+        try:
+            map1to2(v1_spell)
+
+            success_count+=1
+        except Exception as e:
+            failed=True
+            print("Failed importing of: : {}".format(v1_spell.pk))
+            print(e)
+            
+            exit(1)
         if failed:
             print("{} failed to map.".format(v1_spell.slug))
 
@@ -29,19 +41,20 @@ def map1to2(v1_spell):
         desc=v1_spell.desc,
         document=doc1to2(v1_spell.document),
         level=v1_spell.spell_level,
-        range=v1_spell.range.lower(), 
+        range=get_range(v1_spell.range.lower(), v1_spell.pk),
         verbal=v1_spell.requires_verbal_components,
         somatic=v1_spell.requires_somatic_components,
         material=v1_spell.requires_material_components,
-        material_specified=get_material_specified(v1_spell.material),
+        material_specified=v1_spell.material,
         material_cost=get_material_cost(v1_spell.material),
         ritual=v1_spell.can_be_cast_as_ritual,
         casting_time=get_casting_time(v1_spell.casting_time),
-        target_type=get_target(v1_spell.desc)[0],
-        target_count=get_target(v1_spell.desc)[1],
+        target_type=get_target(v1_spell.desc,v1_spell.slug,v1_spell.range)[0],
+        target_count=get_target(v1_spell.desc,v1_spell.slug,v1_spell.range)[1],
         saving_throw_ability=get_saving_throw_ability(v1_spell.desc),
-        damage_roll="",
-        duration="",
+        damage_roll=get_damage(v1_spell.desc)[0],
+        damage_types=["hi"],
+        duration=v1_spell.duration.lower(),
         shape_type="cone",
         shape_magnitude=10
     ).clean_fields()
@@ -53,12 +66,13 @@ def doc1to2(v1_doc):
         "toh":"toh",
         "vom":"vault-of-magic",
         "taldorei":"taldorei",
-        "o5e":"a5esrd"}
+        "a5e":"a5esrd",
+        "dmag":"deep-magic"}
 
     return v2.Document.objects.get(pk=doc_map[v1_doc.slug])
 
 
-def get_target(desc):
+def get_target(desc, v1_pk, v1_range):
     # Returns one of "point", 
 
     types=['creature','object','point','area']
@@ -77,7 +91,7 @@ def get_target(desc):
     
     for i, word in enumerate(desc.split(" ")):
         target_count=1
-        word = word.lower()
+        word = word.lower().strip(".").strip(",")
         prevword = desc.split(" ")[i-1]
         if word.endswith("s"):
             word=word[:-1]
@@ -86,6 +100,59 @@ def get_target(desc):
                     target_count=idx
         if word in types:
             return (word, target_count)
+        if word == "weapon" and prevword == "nonmagical":
+            return ("object", target_count)
+    
+    creature_exception_list = ["While casting this spell, you must engage your target in conversation", "Make a ranged spell attack", "Make a melee spell attack","Make a ranged spell attack against the target"]
+    creature2_exception_list = ["A stinking bubble of acid is conjured out of thin air to fly at the targets, dealing 1d6 acid damage"]
+    for sentence in desc.split("."):
+        if sentence.strip() in creature_exception_list:
+            return("creature",1)
+        if sentence.strip() in creature2_exception_list:
+            return("creature",2)
+
+    # Creature opt-ins
+    if v1_range == "self" or v1_range == "Self":
+        return("creature",1)
+    if v1_pk in ["animal-friendship-a5e", "arcane-muscles-a5e", "aspect-of-the-moon-a5e","continual-flame-a5e","chain-lightning-a5e","charm-monster-a5e","charm-person-a5e","clone-a5e",'darkvision-a5e','detect-magic-a5e','freedom-of-movement-a5e','greater-invisibility-a5e','guidance-a5e',"hideous-laughter-a5e",'hold-monster-a5e','hold-person-a5e']:
+        return("creature",1)
+    if v1_pk in ['longstrider-a5e','mage-armor-a5e','mind-blank-a5e','phantasmal-killer-a5e',"mindshield-a5e","planar-binding-a5e","protection-from-energy-a5e","protection-from-poison-a5e","reincarnate-a5e","resistance-a5e"]:
+        return("creature",1)
+    if v1_pk in ['sacred-flame-a5e','spare-the-dying-a5e','speak-with-dead-a5e','spider-climb-a5e','stoneskin-a5e','true-seeing-a5e',"vicious-mockery-a5e"]:
+        return("creature",1)
+    if v1_pk in ["afflict-line"]:
+        return("creature",1)
+    if v1_pk in ["bane-a5e","bless-a5e",'magic-missile-a5e',"scorching-ray-a5e"]:
+        return("creature",3)
+    if v1_pk in ["barkskin-a5e","bestow-curse-a5e","blindnessdeafness-a5e","finger-of-death-a5e","fly-a5e",'geas-a5e',"gentle-repose-a5e","inflict-wounds-a5e","invigorated-strikes-a5e","irresistible-dance-a5e","jump-a5e","lesser-restoration-a5e",'sending-a5e','shield-of-faith-a5e',"shocking-grasp-a5e"]:
+        return("creature",1)
+    if v1_pk in ["feather-fall-a5e"]:
+        return ("creature",5)
+    if v1_pk in ["word-of-recall-a5e"]:
+        return ("creature",5)
+    if v1_pk in ["plane-shift-a5e",'telepathic-bond-a5e']:
+        return ("creature",8)
+    if v1_pk in ["water-breathing-a5e","water-walk-a5e"]:
+        return ("creature",10)
+    if v1_pk in ["wormway-a5e"]:
+        return ("creature",51)
+    if v1_pk in ["battlecry-ballad-a5e"]:
+        return ("creature","any number")
+
+    # Object opt-ins.
+    if v1_pk in ["altered-strike-a5e","create-food-and-water-a5e","grapevine-a5e","identify-a5e","light-a5e","magic-weapon-a5e","shillelagh-a5e",'stone-shape-a5e']:
+        return("object",1)
+
+    # Point
+    if v1_pk in ["arcane-eye-a5e","arcane-sword-a5e","darkvision-a5e","druidcraft-a5e","earth-barrier-a5e","find-the-path-a5e","floating-disk-a5e"]:
+        return ("point",1)
+    if v1_pk in ["dancing-lights-a5e","dispel-magic-a5e","friends-a5e","misty-step-a5e","purify-food-and-drink-a5e","unseen-servant-a5e"]:
+        return ("point",1)
+
+    # Area
+    if v1_pk in ["confusion-a5e","find-traps-a5e", "forest-army-a5e","locate-animals-or-plants-a5e",'slow-a5e']:
+        return ("area",1)
+ 
     
     return (None, None)
 
@@ -94,7 +161,7 @@ def get_casting_time(v1_casting_time):
     for CTC in v2.enums.CASTING_TIME_CHOICES:
         if v1_casting_time.split(" ")[1] == CTC[1].lower():
             return CTC[0]
-    print(v1_casting_time)
+    return "action"
 
 
 def get_material_cost(v1_material):
@@ -125,9 +192,28 @@ def get_saving_throw_ability(desc):
                 return prevword.lower()
     return ""
 
+def get_range(v1_range, v1_pk):
+    # 30 feet
+    # Self (30-feet radius)
+    trimmed_range = v1_range.split(" (")[0].lower()
+    for range in v2.enums.TARGET_RANGE_CHOICES:
+        if trimmed_range == range[1].lower():
+            return range[0]
+    
+    if v1_pk in ["locate-animals-or-plants-a5e"]:
+        return "5miles"
 
-def get_damage_roll(desc):
-    return None
+    if v1_pk in ["locate-creature-a5e"]:
+        return "1000"
+    if v1_pk in ["sending-a5e"]:
+        return "unlimited"
+
+def get_damage(desc):
+    #takes dn cold damage
+    #take dn damage
+    #base damage
+
+    return ("",[])
 
 def get_shape(desc):
     

@@ -92,9 +92,11 @@ TARGET_RANGE_CHOICES = [
     ('self',"Self"),
     ('touch',"Touch"),
     ('special',"special"),
+    ('5',"5 feet"),
     ('10',"10 feet"),
     ('25',"25 feet"),
     ('30',"30 feet"),
+    ('40',"40 feet"),
     ('60',"60 feet"),
     ('90',"90 feet"),
     ('100',"100 feet"),
@@ -103,9 +105,13 @@ TARGET_RANGE_CHOICES = [
     ('180',"180 feet"),
     ('300',"300 feet"),
     ('500',"500 feet"),    
+    ('1000',"1000 feet"),
     ('1mile',"1 mile"),
+    ('5miles',"5 miles"),
     ('100miles',"100 miles"),
+    ('150miles',"150 miles"),
     ('sight',"Sight"),
+    ('unlimited',"Unlimited"),
 ]
 
 EFFECT_SHAPE_CHOICES = [

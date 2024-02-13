@@ -50,6 +50,7 @@ class Spell(HasName, HasDescription, FromDocument):
         default=False)
 
     material_specified = models.TextField(
+        blank=True,
         help_text ='A short description of the material required for the spell.')
 
     material_cost = models.TextField(
@@ -63,16 +64,25 @@ class Spell(HasName, HasDescription, FromDocument):
     def components(self):
         return ["v","s","m"]
 
-    target_count = models.TextField()
+    target_count = models.TextField(
+        help_text=''
+    )
 
     saving_throw_ability = models.TextField(
-        #
+        blank=True,
+        help_text = 'Given the spell requires a saving throw, which ability is targeted. Empty string if no saving throw.'
     )
     attack_roll = models.BooleanField(
-        help_text='Whether or not the spell effect requires an attack roll.',
-        default=False)
+        default=False,
+        help_text='Whether or not the spell effect requires an attack roll.')
 
-    damage_roll = models.TextField()
+    damage_roll = models.TextField(
+        blank=True,
+        help_text="The damage roll for the field in dice notaion. Empty string if no roll.")
+
+    damage_types = models.JSONField(
+        default=list,
+        help_text="The types of damage done by the spell in a list.")
 
     duration = models.TextField(
         help_text='Description of the duration of the effect such as "instantaneous" or "Up to 1 minute"')
