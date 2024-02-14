@@ -17,7 +17,8 @@ def spellmigrate(save=False):
             success_count+=1
         except Exception as e:
             failed=True
-            print("Failed importing of: : {}".format(v1_spell.pk))
+            print("Failed importing of: : '{}'".format(v1_spell.pk))
+            print("Try link: : https://open5e.com/spells/{}".format(v1_spell.pk))
             print(e)
             
             exit(1)
@@ -67,7 +68,8 @@ def doc1to2(v1_doc):
         "vom":"vault-of-magic",
         "taldorei":"taldorei",
         "a5e":"a5esrd",
-        "dmag":"deep-magic"}
+        "dmag":"deep-magic",
+        "warlock":"warlock"}
 
     return v2.Document.objects.get(pk=doc_map[v1_doc.slug])
 
@@ -118,14 +120,16 @@ def get_target(desc, v1_pk, v1_range):
         return("creature",1)
     if v1_pk in ['longstrider-a5e','mage-armor-a5e','mind-blank-a5e','phantasmal-killer-a5e',"mindshield-a5e","planar-binding-a5e","protection-from-energy-a5e","protection-from-poison-a5e","reincarnate-a5e","resistance-a5e"]:
         return("creature",1)
-    if v1_pk in ['sacred-flame-a5e','spare-the-dying-a5e','speak-with-dead-a5e','spider-climb-a5e','stoneskin-a5e','true-seeing-a5e',"vicious-mockery-a5e"]:
+    if v1_pk in ['sacred-flame-a5e','spare-the-dying-a5e','speak-with-dead-a5e','spider-climb-a5e','stoneskin-a5e','true-seeing-a5e',"vicious-mockery-a5e",'broken-charge']:
         return("creature",1)
-    if v1_pk in ["afflict-line"]:
+    if v1_pk in ["afflict-line","alter-arrows-fortune",'arcane-sight','black-goats-blessing','black-hand',"candles-insight",'claws-of-the-earth-dragon','curse-of-the-grave','distracting-divination']:
         return("creature",1)
-    if v1_pk in ["bane-a5e","bless-a5e",'magic-missile-a5e',"scorching-ray-a5e"]:
+    if v1_pk in ["bane-a5e","bless-a5e",'magic-missile-a5e',"scorching-ray-a5e",'darkbolt','thunderous-stampede']:
         return("creature",3)
-    if v1_pk in ["barkskin-a5e","bestow-curse-a5e","blindnessdeafness-a5e","finger-of-death-a5e","fly-a5e",'geas-a5e',"gentle-repose-a5e","inflict-wounds-a5e","invigorated-strikes-a5e","irresistible-dance-a5e","jump-a5e","lesser-restoration-a5e",'sending-a5e','shield-of-faith-a5e',"shocking-grasp-a5e"]:
+    if v1_pk in ["barkskin-a5e","bestow-curse-a5e","blindnessdeafness-a5e","finger-of-death-a5e","fly-a5e",'geas-a5e',"gentle-repose-a5e","inflict-wounds-a5e","invigorated-strikes-a5e","irresistible-dance-a5e","jump-a5e","lesser-restoration-a5e",'sending-a5e','shield-of-faith-a5e',"shocking-grasp-a5e",'greater-maze','harry','insightful-maneuver','lesser-maze']:
         return("creature",1)
+    if v1_pk in ['maddening-whispers','monstrous-empathy','outflanking-boon','shiver',"spiteful-weapon",'stanch','starry-vision','throes-of-ecstasy','time-jump','twist-the-skein','wind-lash']:
+        return ("creature",1)
     if v1_pk in ["feather-fall-a5e"]:
         return ("creature",5)
     if v1_pk in ["word-of-recall-a5e"]:
@@ -140,17 +144,19 @@ def get_target(desc, v1_pk, v1_range):
         return ("creature","any number")
 
     # Object opt-ins.
-    if v1_pk in ["altered-strike-a5e","create-food-and-water-a5e","grapevine-a5e","identify-a5e","light-a5e","magic-weapon-a5e","shillelagh-a5e",'stone-shape-a5e']:
+    if v1_pk in ["altered-strike-a5e","create-food-and-water-a5e","grapevine-a5e","identify-a5e","light-a5e","magic-weapon-a5e","shillelagh-a5e",'stone-shape-a5e','analyze-device','ancient-shade','animate-greater-undead','blade-of-my-brother','brimstone-infusion','doom-of-the-cracked-shield','douse-light','fire-darts','fire-under-the-tongue','freeze-potion','hoarfrost','sand-ship','scribe','vital-mark']:
         return("object",1)
+    if v1_pk in ['comprehend-wild-shape']:
+        return("object",2)
 
     # Point
-    if v1_pk in ["arcane-eye-a5e","arcane-sword-a5e","darkvision-a5e","druidcraft-a5e","earth-barrier-a5e","find-the-path-a5e","floating-disk-a5e"]:
+    if v1_pk in ["arcane-eye-a5e","arcane-sword-a5e","darkvision-a5e","druidcraft-a5e","earth-barrier-a5e","find-the-path-a5e","floating-disk-a5e",'impending-ally','searing-sun','time-in-a-bottle']:
         return ("point",1)
     if v1_pk in ["dancing-lights-a5e","dispel-magic-a5e","friends-a5e","misty-step-a5e","purify-food-and-drink-a5e","unseen-servant-a5e"]:
         return ("point",1)
 
     # Area
-    if v1_pk in ["confusion-a5e","find-traps-a5e", "forest-army-a5e","locate-animals-or-plants-a5e",'slow-a5e']:
+    if v1_pk in ["confusion-a5e","find-traps-a5e", "forest-army-a5e","locate-animals-or-plants-a5e",'slow-a5e','mosquito-bane']:
         return ("area",1)
  
     
@@ -207,6 +213,8 @@ def get_range(v1_range, v1_pk):
         return "1000"
     if v1_pk in ["sending-a5e"]:
         return "unlimited"
+    if v1_pk in ['shiver']:
+        return "30"
 
 def get_damage(desc):
     #takes dn cold damage
