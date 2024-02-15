@@ -55,7 +55,7 @@ def map1to2(v1_spell):
         target_count=get_target(v1_spell.desc,v1_spell.slug,v1_spell.range)[1],
         saving_throw_ability=get_saving_throw_ability(v1_spell.desc),
         damage_roll=get_damage(v1_spell.desc)[0],
-        damage_types=["hi"],
+        damage_types=get_damage(v1_spell.desc)[1],
         duration=v1_spell.duration.lower(),
         shape_type="cone",
         shape_magnitude=10
@@ -232,7 +232,6 @@ def get_damage(desc):
     #takes 2d8 cold damage
     #takes 8d6 fire damage
     damage_roll_list=[]
-    old_roll_list_len = 0
     damage_types = []
     half_damage = False
     for sentence in desc.split("."):
@@ -282,11 +281,20 @@ def get_damage(desc):
                 break #Adding this in so that only the first sentence which has damage gets added into the list.
 
 
+    # Adding some deduping logic here:
+    if damage_roll_list!=[]:
+        if damage_roll_list.count(damage_roll_list[0])==len(damage_types):
+           damage_roll_list=[damage_roll_list[0]]
+
     damage_roll = "".join(damage_roll_list)
-    print("dmg: {},{}".format(damage_roll,damage_types))
+
+    #print("dmg: {},{}".format(damage_roll,damage_types))
+
+    return (damage_roll,damage_types)
 
 
-    return ("",[])
+def get_attack_roll(desc):
+    return False
 
 def get_shape(desc):
     
