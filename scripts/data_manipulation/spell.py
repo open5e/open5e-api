@@ -1,8 +1,8 @@
 from api import models as v1
 from api_v2 import models as v2
 
-
-
+# Run this by:
+#$  python manage.py shell -c 'from scripts.data_manipulation.spell import spellmigrate; spellmigrate()'
 
 def spellmigrate(save=False):
     success_count=0
@@ -204,6 +204,7 @@ def get_saving_throw_ability(desc):
                 return prevword.lower()
     return ""
 
+
 def get_range(v1_range, v1_pk):
     # 30 feet
     # Self (30-feet radius)
@@ -228,9 +229,62 @@ def get_range(v1_range, v1_pk):
 
 
 def get_damage(desc):
-    #takes dn cold damage
-    #take dn damage
-    #base damage
+    #takes 2d8 cold damage
+    #takes 8d6 fire damage
+    damage_roll_list=[]
+    old_roll_list_len = 0
+    damage_types = []
+    half_damage = False
+    for sentence in desc.split("."):
+
+        if sentence.find("takes")>0:
+            if sentence.find("damage")>0:
+                dmg=sentence.split("takes")[1].split("damage")[0]
+                if dmg.strip() == "": # Exclude just the phrase "takes damage"
+                    continue
+                if dmg.find("any")>0: # Exclude the phrase "takes any damage"
+                    continue
+                if dmg.find("no")>0: # Exclude the phrase "takes no damage"
+                    continue
+                if dmg.find("the")>0: # Exclude the phrase "takes the damage"
+                    continue
+                if dmg.find("half")>0: # Note that there's a mention of "takes half damage" in the spell.
+                    half_damage = True # Not used.
+                    continue
+                
+                for damage_type in v2.enums.DAMAGE_TYPES:
+                    if dmg.lower().find(damage_type[0].lower())>0:
+                        if len(dmg.strip().split(" "))==1:
+                            # Only the damage type, exclude
+                            continue
+                        damage_types.append(damage_type[0].lower())
+                        if len(dmg.strip().split(" "))>1:
+                            #print("Found: dn={}".format(dn))
+                            for word in dmg.strip().split(" "):
+                                isnumber=False
+                                if word.strip()=="+":
+                                    damage_roll_list.append(word)
+                                try: 
+                                    num=int(word.strip())
+                                    isnumber=True
+                                    damage_roll_list.append(word.strip())
+                                except: 
+                                    pass
+                                if len(word.strip().split("d"))==2:
+                                    dn=True
+                                    for n in word.strip().split("d"):
+                                        try: 
+                                            int(n.strip())
+                                        except: 
+                                            dn=False
+                                    if dn:
+                                        damage_roll_list.append(word.strip())
+                break #Adding this in so that only the first sentence which has damage gets added into the list.
+
+
+    damage_roll = "".join(damage_roll_list)
+    print("dmg: {},{}".format(damage_roll,damage_types))
+
 
     return ("",[])
 
