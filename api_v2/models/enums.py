@@ -113,8 +113,10 @@ TARGET_RANGE_CHOICES = [
     ('1000',"1000 feet"),
     ('1mile',"1 mile"),
     ('5miles',"5 miles"),
+    ('10miles',"10 miles"),
     ('100miles',"100 miles"),
     ('150miles',"150 miles"),
+    ('500miles',"500 miles"),
     ('sight',"Sight"),
     ('unlimited',"Unlimited"),
 ]
