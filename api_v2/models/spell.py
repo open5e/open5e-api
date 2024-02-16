@@ -88,10 +88,12 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text='Description of the duration of the effect such as "instantaneous" or "Up to 1 minute"')
     
     shape_type = models.TextField(
+        null=True,
         choices = EFFECT_SHAPE_CHOICES,
         help_text = 'The shape of the area of effect.'
     )
     shape_magnitude = models.IntegerField(
+        null=True,
         validators=[MinValueValidator(0)],
         help_text = 'The magnitude of the shape (without units).'
     )
