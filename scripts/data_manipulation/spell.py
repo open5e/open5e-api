@@ -54,12 +54,13 @@ def map1to2(v1_spell):
         target_type=get_target(v1_spell.desc,v1_spell.slug,v1_spell.range)[0],
         target_count=get_target(v1_spell.desc,v1_spell.slug,v1_spell.range)[1],
         saving_throw_ability=get_saving_throw_ability(v1_spell.desc),
+        attack_roll=get_attack_roll(v1_spell.desc),
         damage_roll=get_damage(v1_spell.desc)[0],
         damage_types=get_damage(v1_spell.desc)[1],
         duration=v1_spell.duration.lower(),
-        shape_type="cone",
-        shape_magnitude=10
-    ).clean_fields()
+        shape_type=get_shape(v1_spell.desc)[0],
+        shape_magnitude=get_shape(v1_spell.desc)[1]
+    ).save()
 
 
 def doc1to2(v1_doc):
@@ -294,8 +295,47 @@ def get_damage(desc):
 
 
 def get_attack_roll(desc):
+    keyphrases = ["Make a ranged spell attack", "Make a melee spell attack"]
+    for keyphrase in keyphrases:
+        keyphrase = keyphrase.lower()
+        desc = desc.lower()
+        if desc.find(keyphrase)>0:
+            return True
     return False
 
 def get_shape(desc):
-    
-    return (None, None)
+    shape=None
+    magnitude=None
+
+    for sentence_unclean in desc.split("."):
+        sentence = sentence_unclean.strip().lower()
+
+        for shape_choice in v2.enums.EFFECT_SHAPE_CHOICES:
+            s = " "+shape_choice[0].lower() # Prepending a space because it's always used in a sentence.
+            if sentence.find(s)>0:
+                if sentence.find ("foot-radius")>0: # Good for sphere, and cylinder
+                    for word in sentence.split(" "):
+                        if word.endswith("foot-radius"):
+                            try:
+                                magnitude = int(word.split("-")[0])
+                                shape=shape_choice[0]
+                            except:
+            
+                                continue
+                
+                if sentence.find("-foot")>0: # Good for cube:
+                    for word in sentence.split(" "):
+                        if word.endswith("-foot"):
+                            try:
+                                magnitude = int(word.split("-")[0])
+                                shape=shape_choice[0]
+                            except:
+                                continue
+                        
+
+
+        if magnitude is not None: # Tend towards returning the first good result (in a sentence) rather than the last.
+            #print("mag:{} shape:{}".format(magnitude,shape))
+            return (shape, magnitude)
+
+    return (shape, magnitude)
