@@ -70,6 +70,7 @@ if settings.V2_ENABLED:
     router_v2.register(r'languages',views_v2.LanguageViewSet)
     router_v2.register(r'alignments',views_v2.AlignmentViewSet)
     router_v2.register(r'conditions',views_v2.ConditionViewSet)
+    router_v2.register(r'spells',views_v2.SpellViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

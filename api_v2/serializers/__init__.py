@@ -31,3 +31,5 @@ from .language import LanguageSerializer
 from .alignment import AlignmentSerializer
 
 from .condition import ConditionSerializer
+
+from .spell import SpellSerializer

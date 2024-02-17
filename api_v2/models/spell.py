@@ -122,8 +122,21 @@ class Spell(HasName, HasDescription, FromDocument):
     @property
     def casting_options(self):
         casting_options=[]
+        # Consider adding an empty default?
         if self.ritual:
             casting_options.append(
-                {"ritual":{"casting_time":"10 minutes and ".format(self.casting_time)},
-                "slot_expended":False})
+                {"ritual":{"casting_time":"10 minutes and {}".format(self.get_casting_time_display()),
+                "slot_expended":False}})
+        if self.level==0 and self.higher_level!="":
+            for player_level in range(1,21):
+                casting_options.append(
+                    {"player_level_{}".format(player_level):{}}
+                )
+
+        if self.level>0 and self.higher_level!="":
+            for slot_level in range(self.level+1,11):
+                casting_options.append(
+                    {"slot_level_{}".format(slot_level):{}}
+                )
+
         return casting_options

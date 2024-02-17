@@ -134,8 +134,8 @@ SPELL_EFFECT_SHAPE_CHOICES = [
 
 SPELL_CASTING_TIME_CHOICES = [
     ('reaction',"Reaction"),
-    ('bonus-action',"Bonus Action"),
-    ('action',"Action"),
+    ('bonus-action',"1 Bonus Action"),
+    ('action',"1 Action"),
     ('1minute',"1 Minute"),
     ('5minutes',"5 Minutes"),
     ('10minutes',"10 Minutes"),

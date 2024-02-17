@@ -61,7 +61,7 @@ def map1to2(v1_spell):
         shape_magnitude=get_shape(v1_spell.desc)[1],
         school=v1_spell.school,
         higher_level=v1_spell.higher_level
-    ).clean()
+    ).save()
 
 
 def doc1to2(v1_doc):

@@ -27,3 +27,5 @@ from .language import LanguageFilterSet, LanguageViewSet
 from .alignment import AlignmentFilterSet, AlignmentViewSet
 
 from .condition import ConditionViewSet
+
+from .spell import SpellViewSet
