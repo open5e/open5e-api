@@ -1,9 +1,21 @@
 from api import models as v1
 from api_v2 import models as v2
 
+
+# Run this by:
+#$  python manage.py shell -c 'from scripts.data_manipulation.spell import casting_option_generate; casting_option_generate()'
+def casting_option_generate():
+    success_spell_count=0
+    success_option_count=0
+    for v2_spell in v2.Spell.objects.all():
+        success_option_count += generate_casting_options(v2_spell)
+        success_spell_count += 1
+
+
+    print("Generated {} options for {} spells.".format(success_option_count, success_spell_count))
+
 # Run this by:
 #$  python manage.py shell -c 'from scripts.data_manipulation.spell import spellmigrate; spellmigrate()'
-
 def spellmigrate(save=False):
     success_count=0
     fail_list=[]
@@ -35,7 +47,7 @@ def map1to2(v1_spell):
     # Select target type.
 
     # Fit Action into the correct size.
-    print(v1_spell.higher_level)
+    #print(v1_spell.higher_level)
 
     v2.Spell(
         key=v1_spell.slug,
@@ -63,7 +75,6 @@ def map1to2(v1_spell):
         school=v1_spell.school,
         higher_level=v1_spell.higher_level
     ).clean()
-
 
 
 def doc1to2(v1_doc):
@@ -343,3 +354,124 @@ def get_shape(desc):
             return (shape, magnitude)
 
     return (shape, magnitude)
+
+
+def generate_casting_options(v2_spell):
+    options_count=0
+    # Create Default option.
+    v2.CastingOption(
+        spell=v2_spell,
+        type='default'
+    ).clean()
+    options_count+=1
+    
+    # Generate the ritual version.
+    if v2_spell.ritual:
+        v2.CastingOption(
+            spell=v2_spell,
+            type='ritual'
+        ).clean()
+        options_count+=1
+
+    if v2_spell.higher_level!="":
+        #Options exist at higher levels (player OR slot)
+        if v2_spell.level==0:
+            # We need to generate some player-leveled cantrips.
+            for player_level in range(1,21): #end number is not included
+                cantrip_option = get_cantrip_options(v2_spell, player_level)
+                cantrip_option.clean()
+                options_count +=1
+        if v2_spell.level>0:
+            for slot_level in range(v2_spell.level, 11): #end number is not included
+                get_spell_options(v2_spell, slot_level)
+            # We need to generate some slot-leveled options.
+
+    return options_count
+
+
+def get_cantrip_options(v2_spell,player_level):
+    # Unique Options:
+    # Altered Strike a5e
+    # Eldritch Blast
+
+
+    if v2_spell.pk in ["altered-strike-a5e",'pestilence-a5e','ale-dritch-blast','biting-arrow','clockwork-bolt','shadow-bite','starburst']:
+        # SKIP THESE, need to be hand-converted. They are damage scaling, but don't match the formatting below.
+        option = v2.CastingOption(
+            spell=v2_spell,
+            type="player_level_".format(player_level),
+        )
+        return option
+
+    if v2_spell.pk in ['animated-scroll','blood-tide','shiver','obfuscate-object']:
+    # duration or other-based, needs to be hand-converted.
+        option = v2.CastingOption(
+            spell=v2_spell,
+            type="player_level_".format(player_level),
+        )
+        return option
+
+    damage_roll_changes = False
+
+    higher_levels_text_implies_damage = False
+    if v2_spell.higher_level.startswith("This spell's damage increases"): 
+        higher_levels_text_implies_damage = True
+    if v2_spell.higher_level.startswith("This spell’s damage increases"): 
+        higher_levels_text_implies_damage = True
+    if v2_spell.higher_level.startswith("The spell's damage increases by"):
+        higher_levels_text_implies_damage = True
+    if v2_spell.higher_level.startswith("The spell’s damage increases by"):
+        higher_levels_text_implies_damage = True
+    if v2_spell.higher_level.startswith("The damage increases when you reach higher"):
+        higher_levels_text_implies_damage = True
+
+    if higher_levels_text_implies_damage:
+
+        damage_roll_changes = True
+        if player_level < 5:
+            damage_roll=v2_spell.damage_roll
+        if player_level >= 5 and player_level < 11 :
+            for phrase in v2_spell.higher_level.split(','):
+                if phrase.find("5th level")>0:
+                    damage_roll = phrase.split("5th level")[1].strip().split("(")[1].split(")")[0]
+        if player_level >=11 and player_level < 17:
+            for phrase in v2_spell.higher_level.split(','): 
+                if phrase.find("11th level")>0:
+                    damage_roll = phrase.split("11th level")[1].strip().split("(")[1].split(")")[0]
+        if player_level >=17:
+            for phrase in v2_spell.higher_level.split(','):
+                if phrase.find("17th level")>0:
+                    damage_roll = phrase.split("17th level")[1].strip().split("(")[1].split(")")[0]
+        option = v2.CastingOption(
+            spell=v2_spell,
+            type="player_level_".format(player_level),
+            damage_roll=damage_roll
+        )
+        return option
+
+    targets_scale=False
+    if v2_spell.pk.startswith("eldritch-blast"):
+        targets_scale=True
+        option = v2.CastingOption(
+            spell=v2_spell,
+            type="player_level_".format(player_level),
+            target_count=2
+        )
+        return option
+    
+
+    if v2_spell.higher_level.startswith("The duration of this spell increases when you reach"):
+        option = v2.CastingOption(
+            spell=v2_spell,
+            type="player_level_".format(player_level),
+            duration="10minutes" # Hardcoded, need to fix.
+        )
+        return option
+    
+    print(v2_spell.pk)
+
+    return None
+
+
+def get_spell_options(v2_spell,slot_level):
+    pass

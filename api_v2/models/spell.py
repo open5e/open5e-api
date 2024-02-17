@@ -10,7 +10,7 @@ from .abstracts import HasName, HasDescription
 from .document import FromDocument
 
 
-from .enums import SPELL_TARGET_TYPE_CHOICES, SPELL_TARGET_RANGE_CHOICES, SPELL_EFFECT_SHAPE_CHOICES, SPELL_CASTING_TIME_CHOICES, SPELL_SCHOOL_CHOICES
+from .enums import *
 
 class Spell(HasName, HasDescription, FromDocument):
     version = 'default'
@@ -27,7 +27,7 @@ class Spell(HasName, HasDescription, FromDocument):
     higher_level = models.TextField(
         help_text = "Description of casting the spell at a different level.'")
 
-    # Casting target requirements of the spell instance
+    # Casting target requirements of the spell instance SHOULD BE A LIST
     target_type = models.TextField(
         choices = SPELL_TARGET_TYPE_CHOICES,
         help_text='Choices for spell targets.')
@@ -67,10 +67,6 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text='Whether or the material component is consumed during the casting.',
         default=False)
 
-    @property
-    def components(self):
-        return ["v","s","m"]
-
     target_count = models.TextField(
         help_text=''
     )
@@ -85,7 +81,7 @@ class Spell(HasName, HasDescription, FromDocument):
 
     damage_roll = models.TextField(
         blank=True,
-        help_text="The damage roll for the field in dice notaion. Empty string if no roll.")
+        help_text="The damage roll for the field in dice notation. Empty string if no roll.")
 
     damage_types = models.JSONField(
         default=list,
@@ -119,66 +115,20 @@ class Spell(HasName, HasDescription, FromDocument):
         else:
             return True
 
-    @property
-    def casting_options(self):
-        casting_options=[]
-        # Consider adding an empty default?
-        if self.ritual:
-            casting_options.append(
-                {"ritual":{"casting_time":"10 minutes and {}".format(self.get_casting_time_display()),
-                "slot_expended":False}})
-        if self.level==0 and self.higher_level!="":
-            for player_level in range(1,21):
-                casting_options.append(
-                    {"player_level_{}".format(player_level):{
-                        "damage_roll":self.get_damage_at_level(player_level)
-                    }}
-                )
 
-        if self.level>0 and self.higher_level!="":
-            for slot_level in range(self.level+1,11):
-                casting_options.append(
-                    {"slot_level_{}".format(slot_level):{}}
-                )
-
-        return casting_options
+class CastingOption(models.Model):
+    spell = models.ForeignKey("Spell",on_delete=models.CASCADE)
     
-    def get_damage_at_level(self, level):
-        damage_at_level = []
-        cantrip_prefix="This spell's damage increases by"
-        spell_prefix="When you cast this spell using a spell slot of"
-        spell_prefix2="If you cast this spell using a spell slot of"
+    type = models.TextField(
+        choices=CASTING_OPTION_TYPES,
+        help_text="")
 
-        if self.higher_level.startswith(cantrip_prefix):
-            if level < 5:
-                return self.damage_roll
-            if level >= 5 and level < 11 :
-                for phrase in self.higher_level.split(','):
-                    if phrase.find("5th level")>0:
-                        damage_roll_5 = phrase.split("5th level")[1].strip().split("(")[1].split(")")[0]
-                        return damage_roll_5
-            if level >=11 and level < 17:
-                for phrase in self.higher_level.split(','): 
-                    if phrase.find("11th level")>0:
-                        damage_roll_11 = phrase.split("11th level")[1].strip().split("(")[1].split(")")[0]
-                        return damage_roll_11
-            if level >=17:
-                for phrase in self.higher_level.split(','):
-                    if phrase.find("17th level")>0:
-                        damage_roll_17 = phrase.split("17th level")[1].strip().split("(")[1].split(")")[0]
-                        return damage_roll_17
-            
-            '''for player_level in range(1,21):
-                if player_level <5:
-                    damage_at_level.append((player_level,self.damage_roll))
-                if player_level <11 and player_level>=5 :
-                    damage_at_level.append((player_level,self.damage_roll_5))
-                if player_level <17 and player_level>=11:
-                    damage_at_level.append((player_level,self.damage_roll_11))
-                if player_level <21 and player_level>=17:
-                    damage_at_level.append((player_level,self.damage_roll_17))
-            return damage_at_level[level]'''
+    damage_roll = models.TextField(
+        null=True,
+        help_text="The damage roll for the field in dice notation. Null if options don't affect damage roll.")
 
-        if self.higher_level.startswith(spell_prefix) or self.higher_level.startswith(spell_prefix2):
-            pass
-
+    target_count = models.TextField(
+        help_text=''
+    )
+    duration = models.TextField(
+        help_text='Description of the duration of the effect such as "instantaneous" or "Up to 1 minute"')
