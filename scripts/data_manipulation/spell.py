@@ -35,6 +35,7 @@ def map1to2(v1_spell):
     # Select target type.
 
     # Fit Action into the correct size.
+    print(v1_spell.higher_level)
 
     v2.Spell(
         key=v1_spell.slug,
@@ -61,7 +62,8 @@ def map1to2(v1_spell):
         shape_magnitude=get_shape(v1_spell.desc)[1],
         school=v1_spell.school,
         higher_level=v1_spell.higher_level
-    ).save()
+    ).clean()
+
 
 
 def doc1to2(v1_doc):

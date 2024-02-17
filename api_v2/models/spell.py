@@ -130,7 +130,9 @@ class Spell(HasName, HasDescription, FromDocument):
         if self.level==0 and self.higher_level!="":
             for player_level in range(1,21):
                 casting_options.append(
-                    {"player_level_{}".format(player_level):{}}
+                    {"player_level_{}".format(player_level):{
+                        "damage_roll":self.get_damage_at_level(player_level)
+                    }}
                 )
 
         if self.level>0 and self.higher_level!="":
@@ -140,3 +142,43 @@ class Spell(HasName, HasDescription, FromDocument):
                 )
 
         return casting_options
+    
+    def get_damage_at_level(self, level):
+        damage_at_level = []
+        cantrip_prefix="This spell's damage increases by"
+        spell_prefix="When you cast this spell using a spell slot of"
+        spell_prefix2="If you cast this spell using a spell slot of"
+
+        if self.higher_level.startswith(cantrip_prefix):
+            if level < 5:
+                return self.damage_roll
+            if level >= 5 and level < 11 :
+                for phrase in self.higher_level.split(','):
+                    if phrase.find("5th level")>0:
+                        damage_roll_5 = phrase.split("5th level")[1].strip().split("(")[1].split(")")[0]
+                        return damage_roll_5
+            if level >=11 and level < 17:
+                for phrase in self.higher_level.split(','): 
+                    if phrase.find("11th level")>0:
+                        damage_roll_11 = phrase.split("11th level")[1].strip().split("(")[1].split(")")[0]
+                        return damage_roll_11
+            if level >=17:
+                for phrase in self.higher_level.split(','):
+                    if phrase.find("17th level")>0:
+                        damage_roll_17 = phrase.split("17th level")[1].strip().split("(")[1].split(")")[0]
+                        return damage_roll_17
+            
+            '''for player_level in range(1,21):
+                if player_level <5:
+                    damage_at_level.append((player_level,self.damage_roll))
+                if player_level <11 and player_level>=5 :
+                    damage_at_level.append((player_level,self.damage_roll_5))
+                if player_level <17 and player_level>=11:
+                    damage_at_level.append((player_level,self.damage_roll_11))
+                if player_level <21 and player_level>=17:
+                    damage_at_level.append((player_level,self.damage_roll_17))
+            return damage_at_level[level]'''
+
+        if self.higher_level.startswith(spell_prefix) or self.higher_level.startswith(spell_prefix2):
+            pass
+
