@@ -10,7 +10,7 @@ from .abstracts import HasName, HasDescription
 from .document import FromDocument
 
 
-from .enums import TARGET_TYPE_CHOICES, TARGET_RANGE_CHOICES, EFFECT_SHAPE_CHOICES, CASTING_TIME_CHOICES
+from .enums import SPELL_TARGET_TYPE_CHOICES, SPELL_TARGET_RANGE_CHOICES, SPELL_EFFECT_SHAPE_CHOICES, SPELL_CASTING_TIME_CHOICES, SPELL_SCHOOL_CHOICES
 
 class Spell(HasName, HasDescription, FromDocument):
     version = 'default'
@@ -20,13 +20,20 @@ class Spell(HasName, HasDescription, FromDocument):
         validators=[MinValueValidator(0), MaxValueValidator(9)],
         help_text='Integer representing the minimum slot level required by the spell. Cantrip is 0.')
 
+    school = models.TextField(
+        choices = SPELL_SCHOOL_CHOICES,
+        help_text = "Spell school, such as 'Evocation'")
+
+    higher_level = models.TextField(
+        help_text = "Description of casting the spell at a different level.'")
+
     # Casting target requirements of the spell instance
     target_type = models.TextField(
-        choices = TARGET_TYPE_CHOICES,
+        choices = SPELL_TARGET_TYPE_CHOICES,
         help_text='Choices for spell targets.')
     
     range = models.TextField(
-        choices = TARGET_RANGE_CHOICES,
+        choices = SPELL_TARGET_RANGE_CHOICES,
         help_text='Choices for spell targets.')
 
     ritual = models.BooleanField(
@@ -34,7 +41,7 @@ class Spell(HasName, HasDescription, FromDocument):
         default=False)
 
     casting_time = models.TextField(
-        choices = CASTING_TIME_CHOICES,
+        choices = SPELL_CASTING_TIME_CHOICES,
         help_text = "Casting time name, such as '1 action'")
 
     verbal = models.BooleanField(
@@ -89,7 +96,7 @@ class Spell(HasName, HasDescription, FromDocument):
     
     shape_type = models.TextField(
         null=True,
-        choices = EFFECT_SHAPE_CHOICES,
+        choices = SPELL_EFFECT_SHAPE_CHOICES,
         help_text = 'The shape of the area of effect.'
     )
     shape_magnitude = models.IntegerField(
@@ -105,5 +112,18 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text='Whether the effect requires concentration to be maintained.',
         default=False)
 
-    #def versions(self):
-        #return ["default":{}]
+    @property
+    def slot_expended(self):
+        if self.level==0:
+            return False
+        else:
+            return True
+
+    @property
+    def casting_options(self):
+        casting_options=[]
+        if self.ritual:
+            casting_options.append(
+                {"ritual":{"casting_time":"10 minutes and ".format(self.casting_time)},
+                "slot_expended":False})
+        return casting_options

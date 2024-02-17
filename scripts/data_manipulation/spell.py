@@ -36,7 +36,6 @@ def map1to2(v1_spell):
 
     # Fit Action into the correct size.
 
-
     v2.Spell(
         key=v1_spell.slug,
         name=v1_spell.name,
@@ -59,8 +58,10 @@ def map1to2(v1_spell):
         damage_types=get_damage(v1_spell.desc)[1],
         duration=v1_spell.duration.lower(),
         shape_type=get_shape(v1_spell.desc)[0],
-        shape_magnitude=get_shape(v1_spell.desc)[1]
-    ).save()
+        shape_magnitude=get_shape(v1_spell.desc)[1],
+        school=v1_spell.school,
+        higher_level=v1_spell.higher_level
+    ).clean()
 
 
 def doc1to2(v1_doc):
@@ -171,7 +172,7 @@ def get_target(desc, v1_pk, v1_range):
 
 
 def get_casting_time(v1_casting_time):
-    for CTC in v2.enums.CASTING_TIME_CHOICES:
+    for CTC in v2.enums.SPELL_CASTING_TIME_CHOICES:
         if v1_casting_time.split(" ")[1] == CTC[1].lower():
             return CTC[0]
     return "action"
@@ -210,7 +211,7 @@ def get_range(v1_range, v1_pk):
     # 30 feet
     # Self (30-feet radius)
     trimmed_range = v1_range.split(" (")[0].lower()
-    for range in v2.enums.TARGET_RANGE_CHOICES:
+    for range in v2.enums.SPELL_TARGET_RANGE_CHOICES:
         if trimmed_range == range[1].lower():
             return range[0]
     
@@ -303,6 +304,7 @@ def get_attack_roll(desc):
             return True
     return False
 
+
 def get_shape(desc):
     shape=None
     magnitude=None
@@ -310,7 +312,7 @@ def get_shape(desc):
     for sentence_unclean in desc.split("."):
         sentence = sentence_unclean.strip().lower()
 
-        for shape_choice in v2.enums.EFFECT_SHAPE_CHOICES:
+        for shape_choice in v2.enums.SPELL_EFFECT_SHAPE_CHOICES:
             s = " "+shape_choice[0].lower() # Prepending a space because it's always used in a sentence.
             if sentence.find(s)>0:
                 if sentence.find ("foot-radius")>0: # Good for sphere, and cylinder

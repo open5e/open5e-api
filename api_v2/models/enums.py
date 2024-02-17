@@ -9,8 +9,25 @@ DIE_TYPES = [
     ("D20", "d20"),
 ]
 
+# List of damage types possible in 5e.
+DAMAGE_TYPES = [
+    ("ACID", "Acid"),
+    ("BLUDGEONING", "Bludgeoning"),
+    ("COLD", "Cold"),
+    ("FIRE", "Fire"),
+    ("FORCE", "Force"),
+    ("LIGHTNING", "Lightning"),
+    ("NECROTIC", "Necrotic"),
+    ("PIERCING", "Piercing"),
+    ("POISON", "Poison"),
+    ("PSYCHIC", "Psychic"),
+    ("RADIANT", "Radiant"),
+    ("SLASHING", "Slashing"),
+    ("THUNDER", "Thunder"),
+]
+
 # Enumerating sizes, so they are sortable.
-SIZE_CHOICES = [
+OBJECT_SIZE_CHOICES = [
     (1, "Tiny"),
     (2, "Small"),
     (3, "Medium"),
@@ -19,13 +36,13 @@ SIZE_CHOICES = [
     (6, "Gargantuan")]
 
 # Setting a reasonable maximum for AC.
-ARMOR_CLASS_MAXIMUM = 100
+OBJECT_ARMOR_CLASS_MAXIMUM = 100
 
 # Setting a reasonable maximum for HP.
-HIT_POINT_MAXIMUM = 10000
+OBJECT_HIT_POINT_MAXIMUM = 10000
 
 # Types of monsters, and their name spelling.
-MONSTER_TYPES = [
+CREATURE_MONSTER_TYPES = [
     ("ABERRATION", "Aberration"),
     ("BEAST", "Beast"),
     ("CELESTIAL", "Celestial"),
@@ -43,36 +60,21 @@ MONSTER_TYPES = [
 ]
 
 # Type of creature attacks.
-ATTACK_TYPES = [
+CREATURE_ATTACK_TYPES = [
     ("SPELL", "Spell"),
     ("WEAPON", "Weapon"),
 ]
 
-DAMAGE_TYPES = [
-    ("ACID", "Acid"),
-    ("BLUDGEONING", "Bludgeoning"),
-    ("COLD", "Cold"),
-    ("FIRE", "Fire"),
-    ("FORCE", "Force"),
-    ("LIGHTNING", "Lightning"),
-    ("NECROTIC", "Necrotic"),
-    ("PIERCING", "Piercing"),
-    ("POISON", "Poison"),
-    ("PSYCHIC", "Psychic"),
-    ("RADIANT", "Radiant"),
-    ("SLASHING", "Slashing"),
-    ("THUNDER", "Thunder"),
-]
 
 # Monster action uses description.
-USES_TYPES = [
+CREATURE_USES_TYPES = [
     ("PER_DAY", "X/Day"),
     ("RECHARGE_ON_ROLL", "Recharge X-6"),
     ("RECHARGE_AFTER_REST", "Recharge after a Short or Long rest"),
 ]
 
 # Item Rarity
-RARITY_CHOICES = [
+ITEM_RARITY_CHOICES = [
     (1, 'common'),
     (2, 'uncommon'),
     (3, 'rare'),
@@ -81,14 +83,15 @@ RARITY_CHOICES = [
     (6, 'artifact')
 ]
 
-TARGET_TYPE_CHOICES = [
+# Spell options
+SPELL_TARGET_TYPE_CHOICES = [
     ('creature',"Creature"),
     ('object',"Object"),
     ('point',"Point"),
     ('area',"Area")
 ]
 
-TARGET_RANGE_CHOICES = [
+SPELL_TARGET_RANGE_CHOICES = [
     ('self',"Self"),
     ('touch',"Touch"),
     ('special',"special"),
@@ -121,7 +124,7 @@ TARGET_RANGE_CHOICES = [
     ('unlimited',"Unlimited"),
 ]
 
-EFFECT_SHAPE_CHOICES = [
+SPELL_EFFECT_SHAPE_CHOICES = [
     ('cone',"Cone"),
     ('cube',"Cube"),
     ('cylinder',"Cylinder"),
@@ -129,7 +132,7 @@ EFFECT_SHAPE_CHOICES = [
     ('sphere',"sphere"),
 ]
 
-CASTING_TIME_CHOICES = [
+SPELL_CASTING_TIME_CHOICES = [
     ('reaction',"Reaction"),
     ('bonus-action',"Bonus Action"),
     ('action',"Action"),
@@ -138,4 +141,15 @@ CASTING_TIME_CHOICES = [
     ('10minutes',"10 Minutes"),
     ('1hour',"1 Hour"),
     ('8hours',"8 Hours"),
+]
+
+SPELL_SCHOOL_CHOICES = [
+    ('abjuration','Abjuration'),
+    ('conjuration','Conjuration'),
+    ('divination','Divination'),
+    ('enchantment','Enchantment'),
+    ('evocation','Evocation'),
+    ('illusion','Illusion'),
+    ('necromancy','Necromancy'),
+    ('transmutation','Transmutaion'),
 ]
