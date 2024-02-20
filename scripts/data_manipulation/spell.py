@@ -74,7 +74,7 @@ def map1to2(v1_spell):
         shape_magnitude=get_shape(v1_spell.desc)[1],
         school=v1_spell.school,
         higher_level=v1_spell.higher_level
-    ).clean()
+    ).save()
 
 
 def doc1to2(v1_doc):
@@ -299,7 +299,11 @@ def get_damage(desc):
     # Adding some deduping logic here:
     if damage_roll_list!=[]:
         if damage_roll_list.count(damage_roll_list[0])==len(damage_types):
-           damage_roll_list=[damage_roll_list[0]]
+            if "+" in damage_roll_list:
+                pass
+
+            else:
+                damage_roll_list=[damage_roll_list[0]]
 
     damage_roll = "".join(damage_roll_list)
 
@@ -521,10 +525,14 @@ def get_spell_options(v2_spell,slot_level):
         multiplier = (slot_level - v2_spell.level)//slope
         additional_dice_number = (int(increase.split('d')[0])*multiplier)
         
-        final_damage = (int(damage_roll.split('d')[0])+additional_dice_number,int(damage_roll.split('d')[1]))
+        #("10d6+40")
+        final_damage = (int(damage_roll.split('d')[0])+additional_dice_number,int(damage_roll.split('d')[1].split('+')[0]))
+        
         final_damage_str = str(final_damage[0]) + "d" + str(final_damage[1])
-        #if v2_spell.pk == 'disintegrate':
-        #    print("Name: {} Slot Level:{} Damage Roll:{} Final Roll:{}".format(v2_spell.pk, slot_level, damage_roll, final_damage_str))
+        if "+" in damage_roll:
+            final_damage_str += "+"+damage_roll.split("+")[1]
+        if v2_spell.pk == 'disintegrate':
+            print("Name: {} Slot Level:{} Damage Roll:{} Final Roll:{}".format(v2_spell.pk, slot_level, damage_roll, final_damage_str))
         
         option = v2.CastingOption(
             spell=v2_spell,
