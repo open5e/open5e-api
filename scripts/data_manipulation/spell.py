@@ -382,8 +382,10 @@ def generate_casting_options(v2_spell):
                 cantrip_option.clean()
                 options_count +=1
         if v2_spell.level>0:
-            for slot_level in range(v2_spell.level, 11): #end number is not included
-                get_spell_options(v2_spell, slot_level)
+            for slot_level in range(v2_spell.level, 10): #end number is not included
+                spell_option = get_spell_options(v2_spell, slot_level)
+                spell_option.clean()
+                options_count+=1
             # We need to generate some slot-leveled options.
 
     return options_count
@@ -391,9 +393,6 @@ def generate_casting_options(v2_spell):
 
 def get_cantrip_options(v2_spell,player_level):
     # Unique Options:
-    # Altered Strike a5e
-    # Eldritch Blast
-
 
     if v2_spell.pk in ["altered-strike-a5e",'pestilence-a5e','ale-dritch-blast','biting-arrow','clockwork-bolt','shadow-bite','starburst']:
         # SKIP THESE, need to be hand-converted. They are damage scaling, but don't match the formatting below.
@@ -474,4 +473,65 @@ def get_cantrip_options(v2_spell,player_level):
 
 
 def get_spell_options(v2_spell,slot_level):
-    pass
+    option = v2.CastingOption(
+        spell=v2_spell,
+        type="slot_level_".format(slot_level)
+        )
+    
+    skipped_from_damage_parsing = ['muted-foe','repulsing-wall','blade-barrier-a5e','blight-a5e','call-lightning-a5e','circle-of-death-a5e','cobras-spit-a5e','finger-of-death-a5e','fire-storm-a5e','flame-blade-a5e','flaming-sphere-a5e','freezing-sphere-a5e',"glyph-of-warding-a5e",'guiding-bolt-a5e',"glyph-of-warding-a5e",'ice-storm-a5e','inescapable-malady-a5e','inflict-wounds-a5e','insect-plague-a5e','moonbeam-a5e','shatter-a5e','spiritual-weapon-a5e','thunderwave-a5e','vampiric-touch-a5e','venomous-succor-a5e','wall-of-fire-a5e','whirlwind-kick-a5e','wind-wall-a5e','booster-shot','dragon-breath','elemental-horns','essence-instability','fire-darts','frozen-razors','freezing-fog','flame-wave','ectoplasm','earworm-melody','destructive-resonance','death-gods-touch','consult-the-storm','clash-of-glaciers','chains-of-torment','catapult','boiling-oil','bloodshot','blade-of-wrath','acid-rain','abhorrent-apparition']
+    skipped_from_damage_parsing += ['wall-of-flesh-a5e','legion-of-rabid-squirrels','life-drain','nether-weapon','poisoned-volley','reaver-spirit','reverberate','steam-blast','branding-smite','delayed-blast-fireball','phantasmal-killer','spiritual-weapon']
+    #skipped=[]
+    if v2_spell.pk in skipped_from_damage_parsing:
+
+    # SKIP THESE, need to be hand-converted. They don't match formatting.
+
+        return option
+
+    
+    every_slot = False
+    every_other_slot = False
+    if v2_spell.higher_level.find("for each slot level above")>0: 
+        every_slot=True
+
+    if v2_spell.higher_level.find("for every two slot levels above")>0:
+        every_other_slot = True
+
+    # get every or every-other slot
+    higher_levels_text_implies_damage = False
+    if v2_spell.higher_level.find("damage increases by")>0: 
+        higher_levels_text_implies_damage = True
+    if v2_spell.higher_level.find("damage (your choice) increases")>0:
+        higher_levels_text_implies_damage = True
+
+    if higher_levels_text_implies_damage:
+        
+        erroroneous_higher_level="When you cast this spell using a spell slot of 5th level or higher, the damage increases by your choice of 1d6 cold damage or 1d6 piercing damage"
+        if v2_spell.higher_level.startswith(erroroneous_higher_level):
+            #error, should be fixed soon.
+            return option
+        increase = v2_spell.higher_level.split("increases by")[1].split(" ")[1].strip()
+
+        # dice notation addition time
+        damage_roll = v2_spell.damage_roll
+        
+        slope = 1
+        if every_slot == True: slope = 1
+        if every_other_slot == True: slope = 2
+
+        multiplier = (slot_level - v2_spell.level)//slope
+        additional_dice_number = (int(increase.split('d')[0])*multiplier)
+        
+        final_damage = (int(damage_roll.split('d')[0])+additional_dice_number,int(damage_roll.split('d')[1]))
+        final_damage_str = str(final_damage[0]) + "d" + str(final_damage[1])
+        #if v2_spell.pk == 'disintegrate':
+        #    print("Name: {} Slot Level:{} Damage Roll:{} Final Roll:{}".format(v2_spell.pk, slot_level, damage_roll, final_damage_str))
+        
+        option = v2.CastingOption(
+            spell=v2_spell,
+            type="slot_level_".format(slot_level),
+            damage_roll = final_damage_str
+        )
+
+        
+
+    return option
