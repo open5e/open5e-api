@@ -115,6 +115,8 @@ class Spell(HasName, HasDescription, FromDocument):
         else:
             return True
 
+    def casting_options(self):
+        return self.castingoption_set
 
 class CastingOption(models.Model):
     spell = models.ForeignKey("Spell",on_delete=models.CASCADE)
