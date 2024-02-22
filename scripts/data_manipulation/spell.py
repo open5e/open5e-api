@@ -366,7 +366,7 @@ def generate_casting_options(v2_spell):
     v2.CastingOption(
         spell=v2_spell,
         type='default'
-    ).clean()
+    ).save()
     options_count+=1
     
     # Generate the ritual version.
@@ -374,7 +374,7 @@ def generate_casting_options(v2_spell):
         v2.CastingOption(
             spell=v2_spell,
             type='ritual'
-        ).clean()
+        ).save()
         options_count+=1
 
     if v2_spell.higher_level!="":
@@ -383,12 +383,12 @@ def generate_casting_options(v2_spell):
             # We need to generate some player-leveled cantrips.
             for player_level in range(1,21): #end number is not included
                 cantrip_option = get_cantrip_options(v2_spell, player_level)
-                cantrip_option.clean()
+                cantrip_option.save()
                 options_count +=1
         if v2_spell.level>0:
             for slot_level in range(v2_spell.level, 10): #end number is not included
                 spell_option = get_spell_options(v2_spell, slot_level)
-                spell_option.clean()
+                spell_option.save()
                 options_count+=1
             # We need to generate some slot-leveled options.
 
@@ -402,7 +402,7 @@ def get_cantrip_options(v2_spell,player_level):
         # SKIP THESE, need to be hand-converted. They are damage scaling, but don't match the formatting below.
         option = v2.CastingOption(
             spell=v2_spell,
-            type="player_level_".format(player_level),
+            type="player_level_{}".format(player_level),
         )
         return option
 
@@ -410,7 +410,7 @@ def get_cantrip_options(v2_spell,player_level):
     # duration or other-based, needs to be hand-converted.
         option = v2.CastingOption(
             spell=v2_spell,
-            type="player_level_".format(player_level),
+            type="player_level_{}".format(player_level),
         )
         return option
 
@@ -447,7 +447,7 @@ def get_cantrip_options(v2_spell,player_level):
                     damage_roll = phrase.split("17th level")[1].strip().split("(")[1].split(")")[0]
         option = v2.CastingOption(
             spell=v2_spell,
-            type="player_level_".format(player_level),
+            type="player_level_{}".format(player_level),
             damage_roll=damage_roll
         )
         return option
@@ -457,7 +457,7 @@ def get_cantrip_options(v2_spell,player_level):
         targets_scale=True
         option = v2.CastingOption(
             spell=v2_spell,
-            type="player_level_".format(player_level),
+            type="player_level_{}".format(player_level),
             target_count=2
         )
         return option
@@ -466,7 +466,7 @@ def get_cantrip_options(v2_spell,player_level):
     if v2_spell.higher_level.startswith("The duration of this spell increases when you reach"):
         option = v2.CastingOption(
             spell=v2_spell,
-            type="player_level_".format(player_level),
+            type="player_level_{}".format(player_level),
             duration="10minutes" # Hardcoded, need to fix.
         )
         return option
@@ -480,7 +480,7 @@ def get_spell_options(v2_spell,slot_level):
     
     option = v2.CastingOption(
         spell=v2_spell,
-        type="slot_level_".format(slot_level)
+        type="slot_level_{}".format(slot_level)
         )
 
     erroroneous_higher_level="When you cast this spell using a spell slot of 5th level or higher, the damage increases by your choice of 1d6 cold damage or 1d6 piercing damage"
@@ -509,12 +509,20 @@ def get_spell_options(v2_spell,slot_level):
     if v2_spell.higher_level.find("duration")>0:
         if v2_spell.higher_level.find("spell's duration")<0:
             # These appear to be the spells who's duration is impacted at higher levels.
-            pass
+            option = v2.CastingOption(
+                spell=v2_spell,
+                type="slot_level_{}".format(slot_level),
+                duration="0=FIXME"
+                )
 
     if v2_spell.higher_level.find("range")>0:
         if v2_spell.higher_level.find("ranged")<0:
             # These appear to be the spells whose range scales.
-            pass
+            option = v2.CastingOption(
+                spell=v2_spell,
+                type="slot_level_{}".format(slot_level),
+                range="FIXME"
+                )
 
     # get every or every-other slot
     higher_levels_text_implies_damage = False
@@ -548,10 +556,14 @@ def get_spell_options(v2_spell,slot_level):
         
         option = v2.CastingOption(
             spell=v2_spell,
-            type="slot_level_".format(slot_level),
+            type="slot_level_{}".format(slot_level),
             damage_roll = final_damage_str
         )
 
         
 
     return option
+
+def delete_casting_options():
+    for co in v2.CastingOption.objects.all():
+        co.delete()

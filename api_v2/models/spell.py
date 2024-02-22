@@ -132,3 +132,6 @@ class CastingOption(models.Model):
     )
     duration = models.TextField(
         help_text='Description of the duration of the effect such as "instantaneous" or "Up to 1 minute"')
+
+    range = models.TextField(
+        help_text='asdf')
