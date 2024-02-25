@@ -108,13 +108,6 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text='Whether the effect requires concentration to be maintained.',
         default=False)
 
-    @property
-    def slot_expended(self):
-        if self.level==0:
-            return False
-        else:
-            return True
-
     def casting_options(self):
         return self.castingoption_set
 
@@ -126,14 +119,17 @@ class CastingOption(models.Model):
         help_text="")
 
     damage_roll = models.TextField(
-        null=True,
+        null=True, # Null values mean this value is unchanged from the default casting option.
         help_text="The damage roll for the field in dice notation. Null if options don't affect damage roll.")
 
     target_count = models.TextField(
-        help_text=''
+        null=True, # Null values mean this value is unchanged from the default casting option.
+        help_text='The count of targets for this casting of the spell.'
     )
     duration = models.TextField(
+        null=True, # Null values mean this value is unchanged from the default casting option.
         help_text='Description of the duration of the effect such as "instantaneous" or "Up to 1 minute"')
 
     range = models.TextField(
+        null=True, # Null values mean this value is unchanged from the default casting option.
         help_text='asdf')

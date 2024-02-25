@@ -72,7 +72,7 @@ def map1to2(v1_spell):
         duration=v1_spell.duration.lower(),
         shape_type=get_shape(v1_spell.desc)[0],
         shape_magnitude=get_shape(v1_spell.desc)[1],
-        school=v1_spell.school,
+        school=v1_spell.school.lower(),
         higher_level=v1_spell.higher_level
     ).save()
 
@@ -512,7 +512,7 @@ def get_spell_options(v2_spell,slot_level):
             option = v2.CastingOption(
                 spell=v2_spell,
                 type="slot_level_{}".format(slot_level),
-                duration="0=FIXME"
+                duration="0"
                 )
 
     if v2_spell.higher_level.find("range")>0:
@@ -521,7 +521,7 @@ def get_spell_options(v2_spell,slot_level):
             option = v2.CastingOption(
                 spell=v2_spell,
                 type="slot_level_{}".format(slot_level),
-                range="FIXME"
+                range="0"
                 )
 
     # get every or every-other slot
