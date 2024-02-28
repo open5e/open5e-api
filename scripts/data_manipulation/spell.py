@@ -40,6 +40,23 @@ def spellmigrate(save=False):
 
     print("{} spells mapped all fields successfully.".format(success_count))
     
+def cost_refactor():
+    
+    for v2_spell in v2.Spell.objects.all():
+        amount=None
+        consumed = False
+        v1_spell=v1.Spell.objects.get(pk=v2_spell.pk)
+        if len(v1_spell.material.split("worth at least"))>1:
+            amount=v1_spell.material.split("worth at least")[1].split("gp")[0].replace(",","")
+            consumed = v1_spell.material.find("consume")>0
+            print(amount, consumed)
+        v2_spell.material_cost = amount
+        v2_spell.material_consumed = consumed
+        v2_spell.save()
+
+    #print("Generated {} options for {} spells.".format(success_option_count, success_spell_count))
+
+
 
 def map1to2(v1_spell):
     # Get documents, and map them.

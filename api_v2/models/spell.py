@@ -63,8 +63,13 @@ class Spell(HasName, HasDescription, FromDocument):
         blank=True,
         help_text ='Description of the material specified for the spell.')
 
-    material_cost = models.TextField( # NEEDS REFACTOR to align with item.cost
-        help_text ="Cost of the material. Null if no cost specified")
+    material_cost = models.DecimalField(
+        null=True,  # Allow an unspecified cost.
+        default=None,
+        max_digits=10,
+        decimal_places=2,  # Only track down to 2 decimal places.
+        validators=[MinValueValidator(0)],
+        help_text='Number representing the cost of the materials of the spell.')
 
     material_consumed = models.BooleanField(
         help_text='Whether or the material component is consumed during the casting.',
