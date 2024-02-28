@@ -76,13 +76,11 @@ class Spell(HasName, HasDescription, FromDocument):
         default=False)
 
     target_count = models.TextField( # Consider not naming it count if it's not a number?
-        help_text="Description "
-    )
+        help_text="Description ")
 
     saving_throw_ability = models.TextField(
         blank=True,
-        help_text = 'Given the spell requires a saving throw, which ability is targeted. Empty string if no saving throw.'
-    )
+        help_text = 'Given the spell requires a saving throw, which ability is targeted. Empty string if no saving throw.')
     attack_roll = models.BooleanField(
         default=False,
         help_text='Whether or not the spell effect requires an attack roll.')
@@ -101,14 +99,12 @@ class Spell(HasName, HasDescription, FromDocument):
     shape_type = models.TextField(
         null=True,
         choices = SPELL_EFFECT_SHAPE_CHOICES,
-        help_text = 'The shape of the area of effect.'
-    )
+        help_text = 'The shape of the area of effect.')
 
     shape_magnitude = models.IntegerField(
         null=True,
         validators=[MinValueValidator(0)],
-        help_text = 'The magnitude of the shape (without units).'
-    )
+        help_text = 'The magnitude of the shape (without units).')
 
     concentration = models.BooleanField(
         help_text='Whether the effect requires concentration to be maintained.',
@@ -133,12 +129,12 @@ class CastingOption(models.Model):
 
     target_count = models.TextField(
         null=True, # Null values mean this value is unchanged from the default casting option.
-        help_text='The count of targets for this casting of the spell.'
-    )
+        help_text='The count of targets for this casting of the spell.')
+
     duration = models.TextField(
         null=True, # Null values mean this value is unchanged from the default casting option.
         help_text='Description of the duration of the effect such as "instantaneous" or "Up to 1 minute"')
 
     range = models.TextField(
         null=True, # Null values mean this value is unchanged from the default casting option.
-        help_text='asdf')
+        help_text='Description of the range of the spell.')
