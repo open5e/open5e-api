@@ -1,5 +1,5 @@
 """
-The model for a spell.
+The model for a spell, and supporting objects.
 """
 
 from django.db import models
@@ -10,31 +10,34 @@ from .abstracts import HasName, HasDescription
 from .document import FromDocument
 
 
-from .enums import *
+from .enums import SPELL_SCHOOL_CHOICES, SPELL_TARGET_TYPE_CHOICES
+from .enums import SPELL_TARGET_RANGE_CHOICES, SPELL_CASTING_TIME_CHOICES
+from .enums import SPELL_EFFECT_SHAPE_CHOICES, CASTING_OPTION_TYPES
 
 class Spell(HasName, HasDescription, FromDocument):
+    """The model for a spell object."""
     version = 'default'
 
    # Casting options and requirements of a spell instance
     level = models.IntegerField(
         validators=[MinValueValidator(0), MaxValueValidator(9)],
-        help_text='Integer representing the minimum slot level required by the spell. Cantrip is 0.')
+        help_text='Integer representing the default slot level required by the spell.')
 
     school = models.TextField(
         choices = SPELL_SCHOOL_CHOICES,
-        help_text = "Spell school, such as 'Evocation'")
+        help_text = "Spell school key, such as 'evocation'")
 
     higher_level = models.TextField(
-        help_text = "Description of casting the spell at a different level.'")
+        help_text = "Description of casting the spell at a different level.")
 
     # Casting target requirements of the spell instance SHOULD BE A LIST
     target_type = models.TextField(
         choices = SPELL_TARGET_TYPE_CHOICES,
-        help_text='Choices for spell targets.')
-    
+        help_text='Spell target type key.')
+
     range = models.TextField(
         choices = SPELL_TARGET_RANGE_CHOICES,
-        help_text='Choices for spell targets.')
+        help_text='Spell target range key.')
 
     ritual = models.BooleanField(
         help_text='Whether or not the spell can be cast as a ritual.',
@@ -42,7 +45,7 @@ class Spell(HasName, HasDescription, FromDocument):
 
     casting_time = models.TextField(
         choices = SPELL_CASTING_TIME_CHOICES,
-        help_text = "Casting time name, such as '1 action'")
+        help_text = "Casting time key, such as 'action'")
 
     verbal = models.BooleanField(
         help_text='Whether or not casting the spell requires a verbal component.',
@@ -58,17 +61,17 @@ class Spell(HasName, HasDescription, FromDocument):
 
     material_specified = models.TextField(
         blank=True,
-        help_text ='A short description of the material required for the spell.')
+        help_text ='Description of the material specified for the spell.')
 
-    material_cost = models.TextField(
-        help_text ='The cost of the material.')
+    material_cost = models.TextField( # NEEDS REFACTOR to align with item.cost
+        help_text ="Cost of the material. Null if no cost specified")
 
     material_consumed = models.BooleanField(
         help_text='Whether or the material component is consumed during the casting.',
         default=False)
 
-    target_count = models.TextField(
-        help_text=''
+    target_count = models.TextField( # Consider not naming it count if it's not a number?
+        help_text="Description "
     )
 
     saving_throw_ability = models.TextField(
@@ -87,33 +90,34 @@ class Spell(HasName, HasDescription, FromDocument):
         default=list,
         help_text="The types of damage done by the spell in a list.")
 
-    duration = models.TextField(
+    duration = models.TextField( # Is this based on a choice?
         help_text='Description of the duration of the effect such as "instantaneous" or "Up to 1 minute"')
-    
+
     shape_type = models.TextField(
         null=True,
         choices = SPELL_EFFECT_SHAPE_CHOICES,
         help_text = 'The shape of the area of effect.'
     )
+
     shape_magnitude = models.IntegerField(
         null=True,
         validators=[MinValueValidator(0)],
         help_text = 'The magnitude of the shape (without units).'
     )
-    @property
-    def shape_size(self):
-        return "{}-foot".format(self.shape_magnitude)
 
     concentration = models.BooleanField(
         help_text='Whether the effect requires concentration to be maintained.',
         default=False)
 
     def casting_options(self):
+        """Options for casting the spell."""
         return self.castingoption_set
 
 class CastingOption(models.Model):
+    """An object representing an alternative way to cast a spell."""
+
     spell = models.ForeignKey("Spell",on_delete=models.CASCADE)
-    
+
     type = models.TextField(
         choices=CASTING_OPTION_TYPES,
         help_text="")
