@@ -114,6 +114,7 @@ class Spell(HasName, HasDescription, FromDocument):
         """Options for casting the spell."""
         return self.castingoption_set
 
+
 class CastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
 
