@@ -47,10 +47,11 @@ def durationer():
         v1_spell = v1.Spell.objects.get(pk=v2_spell.pk)
         if v1_spell.requires_concentration:
             duration = "".join(v2_spell.duration.split("up to "))
+            v2_spell.concentration=True
         else:
             duration = v2_spell.duration
 
-        v2_spell.duration=duration
+        #v2_spell.duration=duration
         v2_spell.save()
         print(v2_spell.key, v2_spell.duration)
 
