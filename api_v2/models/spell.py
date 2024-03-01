@@ -75,12 +75,15 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text='Whether or the material component is consumed during the casting.',
         default=False)
 
-    target_count = models.TextField( # Consider not naming it count if it's not a number?
-        help_text="Description ")
+    target_count = models.IntegerField(
+        null=True,  # Allow an unspecified count of targets.
+        validators=[MinValueValidator(0)],
+        help_text='Integer representing the count of targets.')
 
     saving_throw_ability = models.TextField(
         blank=True,
         help_text = 'Given the spell requires a saving throw, which ability is targeted. Empty string if no saving throw.')
+
     attack_roll = models.BooleanField(
         default=False,
         help_text='Whether or not the spell effect requires an attack roll.')
