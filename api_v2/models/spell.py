@@ -128,12 +128,14 @@ class CastingOption(models.Model):
         help_text="")
 
     damage_roll = models.TextField(
-        null=True, # Null values mean this value is unchanged from the default casting option.
-        help_text="The damage roll for the field in dice notation. Null if options don't affect damage roll.")
+        null=True,
+        blank=True,
+        help_text="The damage roll for the field in dice notation. Empty string if no roll.")
 
-    target_count = models.TextField(
-        null=True, # Null values mean this value is unchanged from the default casting option.
-        help_text='The count of targets for this casting of the spell.')
+    target_count = models.IntegerField(
+        null=True,  # Null values mean this value is unchanged from the default casting option.
+        validators=[MinValueValidator(0)],
+        help_text='Integer representing the count of targets.')
 
     duration = models.TextField(
         null=True, # Null values mean this value is unchanged from the default casting option.

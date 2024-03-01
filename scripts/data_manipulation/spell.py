@@ -39,7 +39,8 @@ def spellmigrate(save=False):
             print("{} failed to map.".format(v1_spell.slug))
 
     print("{} spells mapped all fields successfully.".format(success_count))
-    
+
+
 def cost_refactor():
     
     for v2_spell in v2.Spell.objects.all():
@@ -56,6 +57,35 @@ def cost_refactor():
 
     #print("Generated {} options for {} spells.".format(success_option_count, success_spell_count))
 
+
+def target_counter():
+    for v2_spell in v2.Spell.objects.all():
+        if targets_scale(v2_spell):
+            every_slot = False
+            every_other_slot = False
+            if v2_spell.higher_level.find("for each slot level above")>0: 
+                every_slot=True
+
+            if v2_spell.higher_level.find("for every two slot levels above")>0:
+                every_other_slot = True
+
+            slope = 1
+            if every_slot == True: slope = 1
+            if every_other_slot == True: slope = 2
+
+            for co in v2_spell.casting_options().all():
+                if co.type=="default":
+                    continue
+                if co.type=="ritual":
+                    continue
+                if co.type.startswith("slot_level"):
+                    slot_level = int(co.type.split("_")[2])
+                    multiplier = (slot_level - v2_spell.level)//slope
+                    final_targets = v2_spell.target_count + multiplier
+                    print("At level {} {} should have {} targets.".format(slot_level,v2_spell.pk,final_targets))
+
+                    co.target_count = final_targets
+                    co.save()
 
 
 def map1to2(v1_spell):
@@ -378,8 +408,8 @@ def get_shape(desc):
 
 
 def generate_casting_options(v2_spell):
-    options_count=0
-    # Create Default option.
+    #options_count=0
+    ## Create Default option.
     v2.CastingOption(
         spell=v2_spell,
         type='default'
@@ -400,7 +430,7 @@ def generate_casting_options(v2_spell):
             # We need to generate some player-leveled cantrips.
             for player_level in range(1,21): #end number is not included
                 cantrip_option = get_cantrip_options(v2_spell, player_level)
-                cantrip_option.save()
+                cantrip_option.check()
                 options_count +=1
         if v2_spell.level>0:
             for slot_level in range(v2_spell.level, 10): #end number is not included
@@ -584,3 +614,23 @@ def get_spell_options(v2_spell,slot_level):
 def delete_casting_options():
     for co in v2.CastingOption.objects.all():
         co.delete()
+
+
+
+def targets_scale(v2_spell):
+    targets_scale=False
+    if v2_spell.pk in ['magic-missile', 'scorching-ray']:
+        targets_scale=True
+    if v2_spell.higher_level.find("target one additional")>0:
+        targets_scale=True
+    if v2_spell.higher_level.find("Target one additional")>=0:
+        targets_scale=True
+    if v2_spell.higher_level.find("targets one additional")>0:
+        targets_scale=True
+    if v2_spell.higher_level.find("create one additional")>0:
+        targets_scale=True
+    if v2_spell.higher_level.find("target up to one additional")>0:
+        targets_scale=True
+    if v2_spell.higher_level.find("affect one additional")>0:
+        targets_scale=True
+    return targets_scale
