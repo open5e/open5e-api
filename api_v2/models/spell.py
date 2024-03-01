@@ -12,7 +12,8 @@ from .document import FromDocument
 
 from .enums import SPELL_SCHOOL_CHOICES, SPELL_TARGET_TYPE_CHOICES
 from .enums import SPELL_TARGET_RANGE_CHOICES, SPELL_CASTING_TIME_CHOICES
-from .enums import SPELL_EFFECT_SHAPE_CHOICES, CASTING_OPTION_TYPES
+from .enums import SPELL_EFFECT_SHAPE_CHOICES, SPELL_EFFECT_DURATIONS
+from .enums import CASTING_OPTION_TYPES
 
 class Spell(HasName, HasDescription, FromDocument):
     """The model for a spell object."""
@@ -65,6 +66,7 @@ class Spell(HasName, HasDescription, FromDocument):
 
     material_cost = models.DecimalField(
         null=True,  # Allow an unspecified cost.
+        blank=True,
         default=None,
         max_digits=10,
         decimal_places=2,  # Only track down to 2 decimal places.
@@ -96,8 +98,9 @@ class Spell(HasName, HasDescription, FromDocument):
         default=list,
         help_text="The types of damage done by the spell in a list.")
 
-    duration = models.TextField( # Is this based on a choice?
-        help_text='Description of the duration of the effect such as "instantaneous" or "Up to 1 minute"')
+    duration = models.TextField(
+        choices = SPELL_EFFECT_DURATIONS,
+        help_text='Description of the duration of the effect such as "instantaneous" or "1 minute"')
 
     shape_type = models.TextField(
         null=True,

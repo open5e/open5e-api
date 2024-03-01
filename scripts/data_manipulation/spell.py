@@ -41,6 +41,19 @@ def spellmigrate(save=False):
     print("{} spells mapped all fields successfully.".format(success_count))
 
 
+def durationer():
+    durations=[]
+    for v2_spell in v2.Spell.objects.all():
+        v1_spell = v1.Spell.objects.get(pk=v2_spell.pk)
+        if v1_spell.requires_concentration:
+            duration = "".join(v2_spell.duration.split("up to "))
+        else:
+            duration = v2_spell.duration
+
+        v2_spell.duration=duration
+        v2_spell.save()
+        print(v2_spell.key, v2_spell.duration)
+
 def cost_refactor():
     
     for v2_spell in v2.Spell.objects.all():
