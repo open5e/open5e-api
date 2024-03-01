@@ -37,7 +37,7 @@ class Spell(HasName, HasDescription, FromDocument):
 
     range = models.TextField(
         choices = SPELL_TARGET_RANGE_CHOICES,
-        help_text='Spell target range key.')
+        help_text='Spell target range.')
 
     ritual = models.BooleanField(
         help_text='Whether or not the spell can be cast as a ritual.',

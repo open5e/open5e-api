@@ -57,6 +57,13 @@ def cost_refactor():
 
     #print("Generated {} options for {} spells.".format(success_option_count, success_spell_count))
 
+def range_setter():
+    for v2_spell in v2.Spell.objects.all():
+        for rc in v2.enums.SPELL_TARGET_RANGE_CHOICES:
+            if v2_spell.range == rc[0]:
+                print("Changing from {} to {}".format(v2_spell.range,rc[1]))
+                v2_spell.range=rc[1]
+                v2_spell.save()
 
 def target_counter():
     for v2_spell in v2.Spell.objects.all():
