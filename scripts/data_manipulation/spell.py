@@ -40,6 +40,19 @@ def spellmigrate(save=False):
 
     print("{} spells mapped all fields successfully.".format(success_count))
 
+def casting_option_cleanup():
+    for v2_spell in v2.Spell.objects.all():
+        has_ritual_co = False
+        for co in v2_spell.casting_options().all():
+            if co.type.find("slot")>=0:
+                if int(co.type.split("_")[2])==v2_spell.level:
+                    print("Deleting CO {} for {}".format(co.type, v2_spell.pk))
+                    co.delete()
+            if co.type=="ritual":
+                has_ritual_co = True
+        if v2_spell.ritual != has_ritual_co:
+            # This spell needs a ritual
+            print("Adding ritual CO for {}".format(v2_spell.pk))
 
 def durationer():
     durations=[]
