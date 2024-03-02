@@ -126,9 +126,9 @@ def range_scaled():
     spell_count = 0
     for v2_spell in v2.Spell.objects.all():
         if v2_spell.higher_level is not None:
-            if v2_spell.higher_level.find(" range")>=0:
+            if v2_spell.higher_level.find(" duration")>=0:
                 spell_count+=1
-                print("https://open5e.com/spells/{} may scale with range.".format(v2_spell.key))
+                print("https://open5e.com/spells/{} may scale with duration.".format(v2_spell.key))
                 #print(v2_spell.key, v2_spell.higher_level)
 
 
