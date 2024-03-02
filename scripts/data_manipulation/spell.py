@@ -122,6 +122,18 @@ def target_counter():
                     co.save()
 
 
+def range_scaled():
+    spell_count = 0
+    for v2_spell in v2.Spell.objects.all():
+        if v2_spell.higher_level is not None:
+            if v2_spell.higher_level.find(" range")>=0:
+                spell_count+=1
+                print("https://open5e.com/spells/{} may scale with range.".format(v2_spell.key))
+                #print(v2_spell.key, v2_spell.higher_level)
+
+
+    print("found {} spells that might scale with range".format(spell_count))
+
 def map1to2(v1_spell):
     # Get documents, and map them.
 
