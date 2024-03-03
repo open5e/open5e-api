@@ -1920,6 +1920,44 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "carriage",
+  "fields": {
+    "name": "Carriage",
+    "desc": "Drawn vehicle.",
+    "size": 5,
+    "weight": "600.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "100.00",
+    "weapon": null,
+    "armor": null,
+    "category": "drawn-vehicle",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "cart",
+  "fields": {
+    "name": "Cart",
+    "desc": "Drawn vehicle",
+    "size": 4,
+    "weight": "200.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "15.00",
+    "weapon": null,
+    "armor": null,
+    "category": "drawn-vehicle",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "cartographers-tools",
   "fields": {
     "name": "Cartographer's Tools",
@@ -2066,6 +2104,25 @@
     "weapon": null,
     "armor": null,
     "category": "adventuring-gear",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "chariot",
+  "fields": {
+    "name": "Chariot",
+    "desc": "Drawn vehicle.",
+    "size": 4,
+    "weight": "100.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "250.00",
+    "weapon": null,
+    "armor": null,
+    "category": "drawn-vehicle",
     "requires_attunement": false,
     "rarity": null
   }
@@ -4371,6 +4428,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "galley",
+  "fields": {
+    "name": "Galley",
+    "desc": "A waterborne vehicle. Speed 4 mph",
+    "size": 6,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "30000.00",
+    "weapon": null,
+    "armor": null,
+    "category": "waterborne-vehicle",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "gauntlets-of-ogre-power",
   "fields": {
     "name": "Gauntlets of Ogre Power",
@@ -6233,6 +6309,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "keelboat",
+  "fields": {
+    "name": "Keelboat",
+    "desc": "Waterborne vehicle. Speed is 1mph.",
+    "size": 6,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "3000.00",
+    "weapon": null,
+    "armor": null,
+    "category": "waterborne-vehicle",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "ladder-10",
   "fields": {
     "name": "Ladder (10-foot)",
@@ -6628,6 +6723,25 @@
     "category": "weapon",
     "requires_attunement": false,
     "rarity": 4
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "longship",
+  "fields": {
+    "name": "Longship",
+    "desc": "Waterborne vehicle. Speed 3mph.",
+    "size": 6,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10000.00",
+    "weapon": null,
+    "armor": null,
+    "category": "waterborne-vehicle",
+    "requires_attunement": false,
+    "rarity": null
   }
 },
 {
@@ -10014,6 +10128,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "rowboat",
+  "fields": {
+    "name": "Rowboat",
+    "desc": "Waterborne vehicle. Speed 1.5mph",
+    "size": 4,
+    "weight": "100.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "50.00",
+    "weapon": null,
+    "armor": null,
+    "category": "waterborne-vehicle",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "sack",
   "fields": {
     "name": "Sack",
@@ -10027,6 +10160,25 @@
     "weapon": null,
     "armor": null,
     "category": "adventuring-gear",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "sailing-ship",
+  "fields": {
+    "name": "Sailing Ship",
+    "desc": "Waterborne vehicle. Speed 2mph",
+    "size": 6,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "10000.00",
+    "weapon": null,
+    "armor": null,
+    "category": "waterborne-vehicle",
     "requires_attunement": false,
     "rarity": null
   }
@@ -10578,6 +10730,25 @@
     "weapon": null,
     "armor": null,
     "category": "ring",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "sled",
+  "fields": {
+    "name": "Sled",
+    "desc": "Drawn vehicle",
+    "size": 4,
+    "weight": "300.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "20.00",
+    "weapon": null,
+    "armor": null,
+    "category": "drawn-vehicle",
     "requires_attunement": false,
     "rarity": null
   }
@@ -12921,6 +13092,25 @@
 },
 {
   "model": "api_v2.item",
+  "pk": "wagon",
+  "fields": {
+    "name": "Wagon",
+    "desc": "Drawn vehicle.",
+    "size": 4,
+    "weight": "400.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "35.00",
+    "weapon": null,
+    "armor": null,
+    "category": "drawn-vehicle",
+    "requires_attunement": false,
+    "rarity": null
+  }
+},
+{
+  "model": "api_v2.item",
   "pk": "wand",
   "fields": {
     "name": "Wand",
@@ -13392,6 +13582,25 @@
     "category": "weapon",
     "requires_attunement": false,
     "rarity": 4
+  }
+},
+{
+  "model": "api_v2.item",
+  "pk": "warship",
+  "fields": {
+    "name": "Warship",
+    "desc": "Waterborne vehicle. Speed 2.5mph",
+    "size": 6,
+    "weight": "0.000",
+    "armor_class": 0,
+    "hit_points": 0,
+    "document": "srd",
+    "cost": "25000.00",
+    "weapon": null,
+    "armor": null,
+    "category": "waterborne-vehicle",
+    "requires_attunement": false,
+    "rarity": null
   }
 },
 {
