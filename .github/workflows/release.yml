@@ -17,9 +17,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Build distribution
-        run: python -m build
-
       - name: Create ZIP archive
         run: |
           cd dist
