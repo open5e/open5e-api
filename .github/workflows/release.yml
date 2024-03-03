@@ -17,18 +17,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install build
-          python -m pip install wheel
-
       - name: Build distribution
         run: python -m build
 
       - name: Create ZIP archive
         run: |
           cd dist
-          zip -r ../codebase.zip .
+          zip -r ../open5e-api-${{ github.ref }}.zip .
         working-directory: ${{ github.workspace }}
 
       - name: Upload release asset
@@ -41,6 +36,6 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
           body_path: CHANGELOG.md # Optional: Path to a file containing release notes
-          draft: false # Set to true for draft releases
+          draft: true # Set to true for draft releases
           prerelease: ${{ contains(github.ref, '-alpha') || contains(github.ref, '-beta') }} # Set to true for pre-releases with specific tags
-          assets: ${{ github.workspace }}/codebase.zip
+          assets: ${{ github.workspace }}/open5e-api-${{ github.ref }}.zip
