@@ -52,7 +52,7 @@ class CharacterClass(HasName, FromDocument):
     @property
     def hit_points(self):
         hit_dice_name = "1{} per {} level".format(self.hit_dice, self.name)
-        split_dice = self.hit_dice.split("d")[1]
+        split_dice = self.hit_dice.lower().split("d")[1]
         hit_points_at_1st_level = "{} + your Constitution modifier".format(split_dice)
         half_plus_one = str(int(split_dice)/2 + 1)
         hit_points_at_higher_levels = "1{} (or {}) + your Constitution modifier per {} level after 1st".format(self.hit_dice, half_plus_one, self.name.lower())
