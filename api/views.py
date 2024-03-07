@@ -181,6 +181,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of monsters.
     retrieve: API endpoint for returning a particular monster.
     """
+   
     schema = CustomSchema(
         summary={
             '/monsters/': 'List Monsters',
@@ -188,6 +189,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
         },
         tags=['Monsters']
     )
+    
     queryset = models.Monster.objects.all().order_by("pk")
     filterset_class = filters.MonsterFilter
     
