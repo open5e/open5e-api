@@ -57,6 +57,7 @@ class Document(HasName, HasDescription):
 
             CHILD_MODEL_NAMES = [
                 'Trait',
+                'FeatureItem',
                 'Capability', 
                 'Benefit',
                 'CreatureAction',

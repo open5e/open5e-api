@@ -4,6 +4,8 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.template.defaultfilters import slugify
 
+from .enums import SIZE_CHOICES, ARMOR_CLASS_MAXIMUM, HIT_POINT_MAXIMUM
+
 
 class HasName(models.Model):
     """This is the definition of a name."""
@@ -52,21 +54,6 @@ class Object(HasName):
     The Object class will be inherited from by Item, Weapon, Character, etc.
     Basically it describes any sort of matter in the 5e world.
     """
-
-    # Enumerating sizes, so they are sortable.
-    SIZE_CHOICES = [
-        (1, "Tiny"),
-        (2, "Small"),
-        (3, "Medium"),
-        (4, "Large"),
-        (5, "Huge"),
-        (6, "Gargantuan")]
-
-    # Setting a reasonable maximum for AC.
-    ARMOR_CLASS_MAXIMUM = 100
-
-    # Setting a reasonable maximum for HP.
-    HIT_POINT_MAXIMUM = 10000
 
     size = models.IntegerField(
         default=1,

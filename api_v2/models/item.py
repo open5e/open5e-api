@@ -9,10 +9,12 @@ from .weapon import Weapon
 from .armor import Armor
 from .abstracts import Object, HasName, HasDescription
 from .document import FromDocument
+from .enums import RARITY_CHOICES
 
 class ItemCategory(HasName, FromDocument):
     """A class describing categories of items."""
     pass
+
 
 class Item(Object, HasDescription, FromDocument):
     """
@@ -53,16 +55,6 @@ class Item(Object, HasDescription, FromDocument):
         null=False,
         default=False,  # An item is not magical unless specified.
         help_text='If the item requires attunement.')
-
-
-    RARITY_CHOICES = [
-        (1, 'common'),
-        (2, 'uncommon'),
-        (3, 'rare'),
-        (4, 'very rare'),
-        (5, 'legendary'),
-        (6, 'artifact')
-    ]
 
     rarity = models.IntegerField(
         null=True,  # Allow an unspecified size.
