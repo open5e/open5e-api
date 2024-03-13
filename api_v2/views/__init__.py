@@ -28,4 +28,6 @@ from .alignment import AlignmentFilterSet, AlignmentViewSet
 
 from .condition import ConditionViewSet
 
+from .spell import SpellViewSet
+
 from .characterclass import CharacterClassViewSet

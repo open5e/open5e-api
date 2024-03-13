@@ -39,6 +39,9 @@ from .alignment import Alignment
 
 from .condition import Condition
 
+from .spell import Spell
+from .spell import CastingOption
+
 from .characterclass import FeatureItem
 from .characterclass import Feature
 from .characterclass import CharacterClass

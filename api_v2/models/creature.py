@@ -5,7 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities
 from .abstracts import Object, HasDescription, HasName
 from .document import FromDocument
-from .enums import MONSTER_TYPES, ATTACK_TYPES, DIE_TYPES, DAMAGE_TYPES, USES_TYPES
+from .enums import CREATURE_MONSTER_TYPES, CREATURE_ATTACK_TYPES, DIE_TYPES, DAMAGE_TYPES, CREATURE_USES_TYPES
 
 
 def damage_die_count_field():
@@ -78,7 +78,7 @@ class CreatureAction(HasName, HasDescription, FromDocument):
     uses_type = models.CharField(
         null=True,
         max_length=20,
-        choices=USES_TYPES,
+        choices=CREATURE_USES_TYPES,
         help_text='How use of the action is limited, if at all.'
     )
 
@@ -98,7 +98,7 @@ class CreatureAttack(HasName, FromDocument):
 
     attack_type = models.CharField(
         max_length=20,
-        choices=ATTACK_TYPES,
+        choices=CREATURE_ATTACK_TYPES,
         help_text='Whether this is a Weapon or Spell attack.'
     )
 
