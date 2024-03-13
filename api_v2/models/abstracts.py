@@ -4,7 +4,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.template.defaultfilters import slugify
 
-from .enums import SIZE_CHOICES, ARMOR_CLASS_MAXIMUM, HIT_POINT_MAXIMUM
+from .enums import OBJECT_SIZE_CHOICES, OBJECT_ARMOR_CLASS_MAXIMUM, OBJECT_HIT_POINT_MAXIMUM
 
 
 class HasName(models.Model):
@@ -58,7 +58,7 @@ class Object(HasName):
     size = models.IntegerField(
         default=1,
         null=False,  # Allow an unspecified size.
-        choices=SIZE_CHOICES,
+        choices=OBJECT_SIZE_CHOICES,
         validators=[
             MinValueValidator(1),
             MaxValueValidator(6)],
@@ -77,7 +77,7 @@ class Object(HasName):
         null=False,  # Allow an unspecified armor_class.
         validators=[
             MinValueValidator(0),
-            MaxValueValidator(ARMOR_CLASS_MAXIMUM)],
+            MaxValueValidator(OBJECT_ARMOR_CLASS_MAXIMUM)],
         help_text='Integer representing the armor class of the object.')
 
     hit_points = models.IntegerField(
@@ -85,7 +85,7 @@ class Object(HasName):
         null=False,  # Allow an unspecified hit point value.
         validators=[
             MinValueValidator(0),
-            MaxValueValidator(HIT_POINT_MAXIMUM)],
+            MaxValueValidator(OBJECT_HIT_POINT_MAXIMUM)],
         help_text='Integer representing the hit points of the object.')
 
     class Meta:

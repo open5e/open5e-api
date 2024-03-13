@@ -9,7 +9,7 @@ from .weapon import Weapon
 from .armor import Armor
 from .abstracts import Object, HasName, HasDescription
 from .document import FromDocument
-from .enums import RARITY_CHOICES
+from .enums import ITEM_RARITY_CHOICES
 
 class ItemCategory(HasName, FromDocument):
     """A class describing categories of items."""
@@ -59,7 +59,7 @@ class Item(Object, HasDescription, FromDocument):
     rarity = models.IntegerField(
         null=True,  # Allow an unspecified size.
         blank=True,
-        choices=RARITY_CHOICES,
+        choices=ITEM_RARITY_CHOICES,
         validators=[
             MinValueValidator(1),
             MaxValueValidator(6)],
