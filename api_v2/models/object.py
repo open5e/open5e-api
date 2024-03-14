@@ -21,15 +21,6 @@ class Object(HasName):
         null=True,
         on_delete=models.CASCADE)
 
-    size_integer = models.IntegerField(
-        default=1,
-        null=False,  # Allow an unspecified size.
-        choices=OBJECT_SIZE_CHOICES,
-        validators=[
-            MinValueValidator(1),
-            MaxValueValidator(6)],
-        help_text='Integer representing the size of the object.')
-
     weight = models.DecimalField(
         default=0,
         null=False,  # Allow an unspecified weight.

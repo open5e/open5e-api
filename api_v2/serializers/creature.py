@@ -112,7 +112,7 @@ class CreatureSerializer(GameContentSerializer):
             'key',
             'name',
             'category',
-            'size_integer',
+            'size',
             'type',
             'alignment',
             'weight',
