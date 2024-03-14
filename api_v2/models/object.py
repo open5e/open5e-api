@@ -18,7 +18,6 @@ class Object(HasName):
 
     size = models.ForeignKey(
         "Size",
-        null=True,
         on_delete=models.CASCADE)
 
     weight = models.DecimalField(
