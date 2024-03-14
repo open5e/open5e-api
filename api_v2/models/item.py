@@ -56,15 +56,14 @@ class Item(Object, HasDescription, FromDocument):
     category = models.ForeignKey(
         ItemCategory,
         on_delete=models.CASCADE,
-        null=False
-    )
+        null=False)
 
     requires_attunement = models.BooleanField(
         null=False,
         default=False,  # An item is not magical unless specified.
         help_text='If the item requires attunement.')
 
-    rarity = models.IntegerField(
+    rarity_integer = models.IntegerField(
         null=True,  # Allow an unspecified size.
         blank=True,
         choices=ITEM_RARITY_CHOICES,

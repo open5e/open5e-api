@@ -18,7 +18,7 @@ class ItemFilterSet(FilterSet):
             'desc': ['icontains'],
             'cost': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
-            'rarity': ['exact', 'in', ],
+#            'rarity': ['exact', 'in', ],
             'requires_attunement': ['exact'],
             #'category': ['in', 'iexact', 'exact'],
             'document__key': ['in','iexact','exact']
