@@ -31,6 +31,12 @@ class WeaponSerializer(GameContentSerializer):
         model = models.Weapon
         fields = '__all__'
 
+class ItemRaritySerializer(GameContentSerializer):
+    key=serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.ItemRarity
+        fields = '__all__'
 
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
@@ -38,17 +44,12 @@ class ItemSerializer(GameContentSerializer):
     weapon = WeaponSerializer(read_only=True, context={'request': {}})
     size = SizeSerializer(read_only=True, context={'request': {}})
     armor = ArmorSerializer(read_only=True, context={'request': {}})
+    rarity = ItemRaritySerializer(read_only=True, context={'request': {}})
 
     class Meta:
         model = models.Item
         fields = '__all__'
 
-class ItemRaritySerializer(GameContentSerializer):
-    key=serializers.ReadOnlyField()
-
-    class Meta:
-        model = models.ItemRarity
-        fields = '__all__'
 
 class ItemSetSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
