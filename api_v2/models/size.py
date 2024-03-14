@@ -2,8 +2,9 @@ from django.db import models
 from django.core.validators import MinValueValidator
 
 from .abstracts import HasName
+from .document import FromDocument
 
-class Size(HasName):
+class Size(HasName, FromDocument):
     """
     This is the definition of the Size class.
 
@@ -13,8 +14,7 @@ class Size(HasName):
 
     rank = models.IntegerField(
         unique=True,
-        help_text='Ranking of the size, smallest has the lowest values.'
-    )
+        help_text='Ranking of the size, smallest has the lowest values.')
 
     space_diameter = models.DecimalField(
         default=0,

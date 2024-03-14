@@ -73,6 +73,8 @@ admin.site.register(ItemRarity)
 admin.site.register(Item, admin_class=ItemModelAdmin)
 admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
 
+admin.site.register(SpellSchool)
+
 admin.site.register(Race, admin_class=RaceAdmin)
 
 admin.site.register(Feat, admin_class=FeatAdmin)

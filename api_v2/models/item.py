@@ -12,7 +12,7 @@ from .document import FromDocument
 from .enums import ITEM_RARITY_CHOICES
 
 
-class ItemRarity(HasName):
+class ItemRarity(HasName, FromDocument):
     """A class describing the rarity of items."""
     rank = models.IntegerField(
         unique=True,

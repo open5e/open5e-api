@@ -15,7 +15,7 @@ from .enums import SPELL_TARGET_RANGE_CHOICES, SPELL_CASTING_TIME_CHOICES
 from .enums import SPELL_EFFECT_SHAPE_CHOICES, SPELL_EFFECT_DURATIONS
 from .enums import CASTING_OPTION_TYPES
 
-class SpellSchool(HasName, HasDescription):
+class SpellSchool(HasName, HasDescription, FromDocument):
     """The model for a spell school object."""
 
 
