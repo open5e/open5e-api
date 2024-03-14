@@ -36,6 +36,17 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = ItemFilterSet
 
 
+class ItemRarityViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of item rarities.
+
+    retrieve: API endpoint for returning a particular item rarity.
+    """
+    queryset = models.ItemRarity.objects.all().order_by('pk')
+    serializer_class = serializers.ItemRaritySerializer
+
+
+
 class ItemSetFilterSet(FilterSet):
 
     class Meta:
@@ -66,8 +77,6 @@ class ItemCategoryViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.ItemCategory.objects.all().order_by('pk')
     serializer_class = serializers.ItemCategorySerializer
-
-
 
 
 class WeaponFilterSet(FilterSet):

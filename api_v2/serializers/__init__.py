@@ -3,6 +3,7 @@
 from .item import ArmorSerializer
 from .item import WeaponSerializer
 from .item import ItemSerializer
+from .item import ItemRaritySerializer
 from .item import ItemSetSerializer
 from .item import ItemCategorySerializer
 

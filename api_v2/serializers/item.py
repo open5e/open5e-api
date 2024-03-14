@@ -40,6 +40,12 @@ class ItemSerializer(GameContentSerializer):
         model = models.Item
         fields = '__all__'
 
+class ItemRaritySerializer(GameContentSerializer):
+    key=serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.ItemRarity
+        fields = '__all__'
 
 class ItemSetSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
