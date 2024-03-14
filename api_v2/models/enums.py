@@ -10,6 +10,7 @@ DIE_TYPES = [
 ]
 
 # List of damage types possible in 5e.
+# Used by creature "damage_type" and "extra_damage_type", as well as spell "damage_types"
 DAMAGE_TYPES = [
     ("ACID", "Acid"),
     ("BLUDGEONING", "Bludgeoning"),
@@ -40,24 +41,6 @@ OBJECT_ARMOR_CLASS_MAXIMUM = 100
 
 # Setting a reasonable maximum for HP.
 OBJECT_HIT_POINT_MAXIMUM = 10000
-
-# Types of monsters, and their name spelling.
-CREATURE_MONSTER_TYPES = [
-    ("ABERRATION", "Aberration"),
-    ("BEAST", "Beast"),
-    ("CELESTIAL", "Celestial"),
-    ("CONSTRUCT", "Construct"),
-    ("DRAGON", "Dragon"),
-    ("ELEMENTAL", "Elemental"),
-    ("FEY", "Fey"),
-    ("FIEND", "Fiend"),
-    ("GIANT", "Giant"),
-    ("HUMANOID", "Humanoid"),
-    ("MONSTROSITY", "Monstrosity"),
-    ("OOZE", "Ooze"),
-    ("PLANT", "Plant"),
-    ("UNDEAD", "Undead"),
-]
 
 # Type of creature attacks.
 CREATURE_ATTACK_TYPES = [
