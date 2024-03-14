@@ -55,7 +55,7 @@ class Object(HasName):
     Basically it describes any sort of matter in the 5e world.
     """
 
-    size = models.IntegerField(
+    size_integer = models.IntegerField(
         default=1,
         null=False,  # Allow an unspecified size.
         choices=OBJECT_SIZE_CHOICES,
