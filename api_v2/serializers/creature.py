@@ -7,6 +7,7 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .size import SizeSerializer
 
 
 
@@ -103,6 +104,7 @@ class CreatureSerializer(GameContentSerializer):
     skill_bonuses = serializers.SerializerMethodField()
     all_skill_bonuses = serializers.SerializerMethodField()
     actions = serializers.SerializerMethodField()
+    size = SizeSerializer(read_only=True, context={'request': {}})
 
     class Meta:
         model = models.Creature
@@ -111,8 +113,8 @@ class CreatureSerializer(GameContentSerializer):
             'document',
             'key',
             'name',
-            'category',
             'size',
+            'category',
             'type',
             'alignment',
             'weight',

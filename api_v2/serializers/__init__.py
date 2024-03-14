@@ -38,3 +38,5 @@ from .spell import SpellSerializer
 from .characterclass import CharacterClassSerializer
 from .characterclass import FeatureSerializer
 from .characterclass import FeatureItemSerializer
+
+from .size import SizeSerializer
