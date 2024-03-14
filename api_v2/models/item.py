@@ -63,15 +63,6 @@ class Item(Object, HasDescription, FromDocument):
         default=False,  # An item is not magical unless specified.
         help_text='If the item requires attunement.')
 
-    rarity_integer = models.IntegerField(
-        null=True,  # Allow an unspecified size.
-        blank=True,
-        choices=ITEM_RARITY_CHOICES,
-        validators=[
-            MinValueValidator(1),
-            MaxValueValidator(6)],
-        help_text='Integer representing the rarity of the object.')
-
     rarity = models.ForeignKey(
         "ItemRarity",
         null=True,
