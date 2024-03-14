@@ -7,7 +7,8 @@ from django.urls import reverse
 from api.models import GameContent
 from .weapon import Weapon
 from .armor import Armor
-from .abstracts import Object, HasName, HasDescription
+from .abstracts import HasName, HasDescription
+from .object import Object
 from .document import FromDocument
 from .enums import ITEM_RARITY_CHOICES
 

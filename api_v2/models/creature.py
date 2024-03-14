@@ -3,7 +3,8 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities
-from .abstracts import Object, HasDescription, HasName
+from .abstracts import HasDescription, HasName
+from .object import Object
 from .document import FromDocument
 from .enums import CREATURE_ATTACK_TYPES, DIE_TYPES, DAMAGE_TYPES, CREATURE_USES_TYPES
 
