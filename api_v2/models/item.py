@@ -72,6 +72,12 @@ class Item(Object, HasDescription, FromDocument):
             MaxValueValidator(6)],
         help_text='Integer representing the rarity of the object.')
 
+    rarity = models.ForeignKey(
+        "ItemRarity",
+        null=True,
+        on_delete=models.CASCADE,
+        help_text="Rarity object.")
+
     @property 
     def is_magic_item(self):
         return self.rarity is not None

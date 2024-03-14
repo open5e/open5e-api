@@ -7,10 +7,10 @@ from api_v2 import models as v2
 def remaprarity():
     print("REMAPPING RARITY FOR ITEMS")
     for item in v2.Item.objects.all():
-        if item.rarity is not None:
+        if item.rarity_integer is not None:
             for rarity in v2.ItemRarity.objects.all():
-                if item.rarity == rarity.rank:
+                if item.rarity_integer == rarity.rank:
                     mapped_rarity = rarity
             print("key:{} size_int:{} mapped_size:{}".format(item.key, item.rarity, mapped_rarity.name))
-        #item.size = mapped_size
-        #item.save()
+            item.rarity = mapped_rarity
+            item.save()
