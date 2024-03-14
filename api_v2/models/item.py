@@ -11,9 +11,16 @@ from .abstracts import Object, HasName, HasDescription
 from .document import FromDocument
 from .enums import ITEM_RARITY_CHOICES
 
+
+class ItemRarity(HasName):
+    """A class describing the rarity of items."""
+    rank = models.IntegerField(
+        unique=True,
+        help_text='Ranking of the rarity, most common has the lowest values.')
+
+
 class ItemCategory(HasName, FromDocument):
     """A class describing categories of items."""
-    pass
 
 
 class Item(Object, HasDescription, FromDocument):

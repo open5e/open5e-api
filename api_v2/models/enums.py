@@ -11,6 +11,7 @@ DIE_TYPES = [
 
 # List of damage types possible in 5e.
 # Used by creature "damage_type" and "extra_damage_type", as well as spell "damage_types"
+# Replaced by the Damagetype model
 DAMAGE_TYPES = [
     ("ACID", "Acid"),
     ("BLUDGEONING", "Bludgeoning"),
