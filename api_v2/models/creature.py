@@ -31,16 +31,6 @@ def damage_bonus_field():
         help_text='Damage roll modifier.'
     )
 
-def damage_type_field():
-
-    return models.CharField(
-        null=True,
-        max_length=20,
-        choices=DAMAGE_TYPES,
-        help_text='What kind of damage this attack deals.'
-    )
-
-
 class CreatureType(HasName, HasDescription, FromDocument):
     """The Type of creature, such as Aberration."""
 
@@ -147,7 +137,7 @@ class CreatureAttack(HasName, FromDocument):
     extra_damage_die_count = damage_die_count_field()
     extra_damage_die_type = damage_die_type_field()
     extra_damage_bonus = damage_bonus_field()
-    extra_damage_type_OLD = damage_type_field()
+
     extra_damage_type = models.ForeignKey(
         "DamageType",
         null=True,
