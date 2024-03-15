@@ -29,6 +29,7 @@ class SpellSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     slot_expended=serializers.ReadOnlyField()
     casting_options = CastingOptionSerializer(many=True)
+    school = SpellSchoolSerializer()
 
     class Meta:
         model = models.Spell
