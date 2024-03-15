@@ -32,6 +32,7 @@ def damage_bonus_field():
     )
 
 def damage_type_field():
+
     return models.CharField(
         null=True,
         max_length=20,
@@ -134,7 +135,12 @@ class CreatureAttack(HasName, FromDocument):
     damage_die_count = damage_die_count_field()
     damage_die_type = damage_die_type_field()
     damage_bonus = damage_bonus_field()
-    damage_type = damage_type_field()
+    damage_type_OLD = damage_type_field()
+    damage_type = models.ForeignKey(
+        "DamageType",
+        null=True,
+        on_delete=models.CASCADE,
+        help_text='What kind of damage this attack deals')
 
     # Additional damage fields
     extra_damage_die_count = damage_die_count_field()

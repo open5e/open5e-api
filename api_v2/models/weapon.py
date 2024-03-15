@@ -6,6 +6,8 @@ from django.core.validators import MinValueValidator
 from .abstracts import HasName
 from .document import FromDocument
 
+from .enums import DAMAGE_TYPE_CHOICES
+
 
 class Weapon(HasName, FromDocument):
     """
@@ -15,10 +17,6 @@ class Weapon(HasName, FromDocument):
     Only the unique attributes of a weapon are here. An item that is a weapon
     would link to this model instance.
     """
-    DAMAGE_TYPE_CHOICES = [
-    ("bludgeoning", "bludgeoning"),
-    ("piercing", "piercing"),
-    ("slashing", "slashing")]
 
     damage_type = models.CharField(
         null=False,
