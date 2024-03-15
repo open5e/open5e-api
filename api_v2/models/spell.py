@@ -10,7 +10,7 @@ from .abstracts import HasName, HasDescription
 from .document import FromDocument
 
 
-from .enums import SPELL_SCHOOL_CHOICES, SPELL_TARGET_TYPE_CHOICES
+from .enums import SPELL_TARGET_TYPE_CHOICES
 from .enums import SPELL_TARGET_RANGE_CHOICES, SPELL_CASTING_TIME_CHOICES
 from .enums import SPELL_EFFECT_SHAPE_CHOICES, SPELL_EFFECT_DURATIONS
 from .enums import CASTING_OPTION_TYPES

@@ -162,16 +162,6 @@ SPELL_CASTING_TIME_CHOICES = [
     ('8hours',"8 Hours"),
 ]
 
-SPELL_SCHOOL_CHOICES = [
-    ('abjuration','Abjuration'),
-    ('conjuration','Conjuration'),
-    ('divination','Divination'),
-    ('enchantment','Enchantment'),
-    ('evocation','Evocation'),
-    ('illusion','Illusion'),
-    ('necromancy','Necromancy'),
-    ('transmutation','Transmutaion'),
-]
 
 CASTING_OPTION_TYPES = [
     ('default',"Default"),
