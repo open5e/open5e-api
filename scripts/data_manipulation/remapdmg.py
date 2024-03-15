@@ -7,11 +7,11 @@ from api_v2 import models as v2
 def remapdmg():
     print("REMAPPING dmg FOR monsters")
     for ca in v2.CreatureAttack.objects.all():
-        if ca.damage_type_OLD is not None:
+        if ca.extra_damage_type_OLD is not None:
             for dt in v2.DamageType.objects.all():
-                if ca.damage_type_OLD.lower() == dt.key:
+                if ca.extra_damage_type_OLD.lower() == dt.key:
                     mapped_dt = dt
-                    ca.damage_type = mapped_dt
+                    ca.extra_damage_type = mapped_dt
                     ca.save()
-                    print("key:{} dmg_old:{} dmg_new:{}".format(ca.pk, ca.damage_type_OLD, dt.key))
+                    print("key:{} dmg_old:{} dmg_new:{}".format(ca.pk, ca.extra_damage_type_OLD, dt.key))
             

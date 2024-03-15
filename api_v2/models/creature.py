@@ -135,10 +135,11 @@ class CreatureAttack(HasName, FromDocument):
     damage_die_count = damage_die_count_field()
     damage_die_type = damage_die_type_field()
     damage_bonus = damage_bonus_field()
-    damage_type_OLD = damage_type_field()
+
     damage_type = models.ForeignKey(
         "DamageType",
         null=True,
+        related_name="+", # No backwards relation.
         on_delete=models.CASCADE,
         help_text='What kind of damage this attack deals')
 
@@ -146,7 +147,13 @@ class CreatureAttack(HasName, FromDocument):
     extra_damage_die_count = damage_die_count_field()
     extra_damage_die_type = damage_die_type_field()
     extra_damage_bonus = damage_bonus_field()
-    extra_damage_type = damage_type_field()
+    extra_damage_type_OLD = damage_type_field()
+    extra_damage_type = models.ForeignKey(
+        "DamageType",
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="+", # No backwards relation.
+        help_text='What kind of extra damage this attack deals')
 
 
 class CreatureSet(HasName, FromDocument):
