@@ -62,7 +62,7 @@ def make_attack_obj(attack):
             attack.damage_die_count,
             attack.damage_die_type,
             attack.damage_bonus,
-            attack.damage_type
+            attack.damage_type.key
         )
 
     if attack.extra_damage_type:
@@ -70,7 +70,7 @@ def make_attack_obj(attack):
             attack.extra_damage_die_count,
             attack.extra_damage_die_type,
             attack.extra_damage_bonus,
-            attack.extra_damage_type
+            attack.extra_damage_type.key
         )
 
     return obj
