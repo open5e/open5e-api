@@ -28,14 +28,7 @@ DAMAGE_TYPES = [
     ("THUNDER", "Thunder"),
 ]
 
-# Enumerating sizes, so they are sortable.
-OBJECT_SIZE_CHOICES = [
-    (1, "Tiny"),
-    (2, "Small"),
-    (3, "Medium"),
-    (4, "Large"),
-    (5, "Huge"),
-    (6, "Gargantuan")]
+
 
 # Setting a reasonable maximum for AC.
 OBJECT_ARMOR_CLASS_MAXIMUM = 100
@@ -55,16 +48,6 @@ CREATURE_USES_TYPES = [
     ("PER_DAY", "X/Day"),
     ("RECHARGE_ON_ROLL", "Recharge X-6"),
     ("RECHARGE_AFTER_REST", "Recharge after a Short or Long rest"),
-]
-
-# Item Rarity
-ITEM_RARITY_CHOICES = [
-    (1, 'common'),
-    (2, 'uncommon'),
-    (3, 'rare'),
-    (4, 'very rare'),
-    (5, 'legendary'),
-    (6, 'artifact')
 ]
 
 # Spell options

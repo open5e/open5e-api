@@ -5,7 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 from .abstracts import HasName
 from .size import Size
-from .enums import OBJECT_SIZE_CHOICES, OBJECT_ARMOR_CLASS_MAXIMUM, OBJECT_HIT_POINT_MAXIMUM
+from .enums import  OBJECT_ARMOR_CLASS_MAXIMUM, OBJECT_HIT_POINT_MAXIMUM
 
 
 class Object(HasName):

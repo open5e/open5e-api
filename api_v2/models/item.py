@@ -2,15 +2,12 @@
 
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-from django.urls import reverse
 
-from api.models import GameContent
 from .weapon import Weapon
 from .armor import Armor
 from .abstracts import HasName, HasDescription
 from .object import Object
 from .document import FromDocument
-from .enums import ITEM_RARITY_CHOICES
 
 
 class ItemRarity(HasName, FromDocument):
