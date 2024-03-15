@@ -34,3 +34,5 @@ from .spell import SpellViewSet
 from .characterclass import CharacterClassViewSet
 
 from .size import SizeViewSet
+
+from .enum import get_enums
