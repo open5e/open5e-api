@@ -28,7 +28,6 @@ CREATURE_ATTACK_TYPES = [
     ("WEAPON", "Weapon"),
 ]
 
-
 # Monster action uses description.
 CREATURE_USES_TYPES = [
     ("PER_DAY", "X/Day"),

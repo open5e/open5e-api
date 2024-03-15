@@ -87,7 +87,6 @@ class WeaponFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
-            'damage_type': ['in','iexact','exact'],
             'damage_dice': ['in','iexact','exact'],
             'versatile_dice': ['in','iexact','exact'],
             'range_reach': ['exact','lt','lte','gt','gte'],
