@@ -43,12 +43,6 @@ SPELL_TARGET_TYPE_CHOICES = [
     ('area',"Area")
 ]
 
-DAMAGE_TYPE_CHOICES = [
-    ("bludgeoning", "bludgeoning"),
-    ("piercing", "piercing"),
-    ("slashing", "slashing")]
-
-
 MODIFICATION_TYPES = [
     ("ability_score", "Ability Score Increase or Decrease"),
     ("skill_proficiency", "Skill Proficiency"),

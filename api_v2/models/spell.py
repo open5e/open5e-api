@@ -27,9 +27,15 @@ class Spell(HasName, HasDescription, FromDocument):
         validators=[MinValueValidator(0), MaxValueValidator(9)],
         help_text='Integer representing the default slot level required by the spell.')
 
-    school = models.TextField(
+    school_old = models.TextField(
         choices = SPELL_SCHOOL_CHOICES,
         help_text = "Spell school key, such as 'evocation'")
+    
+    school = models.ForeignKey(
+        "SpellSchool",
+        on_delete=models.CASCADE,
+        help_text="Spell school, such as 'evocation'"
+    )
 
     higher_level = models.TextField(
         help_text = "Description of casting the spell at a different level.")

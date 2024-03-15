@@ -6,8 +6,6 @@ from django.core.validators import MinValueValidator
 from .abstracts import HasName
 from .document import FromDocument
 
-from .enums import DAMAGE_TYPE_CHOICES
-
 
 class Weapon(HasName, FromDocument):
     """
