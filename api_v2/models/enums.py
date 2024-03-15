@@ -28,7 +28,12 @@ DAMAGE_TYPES = [
     ("THUNDER", "Thunder"),
 ]
 
-
+ABILITY_SCORE_MAXIMUM = 30
+SAVING_THROW_MINIMUM = -5
+SAVING_THROW_MAXIMUM = +20
+SKILL_BONUS_MINIMUM = -5
+SKILL_BONUS_MAXIMUM = +20
+PASSIVE_SCORE_MAXIMUM = 30
 
 # Setting a reasonable maximum for AC.
 OBJECT_ARMOR_CLASS_MAXIMUM = 100
@@ -57,6 +62,24 @@ SPELL_TARGET_TYPE_CHOICES = [
     ('point',"Point"),
     ('area',"Area")
 ]
+
+DAMAGE_TYPE_CHOICES = [
+    ("bludgeoning", "bludgeoning"),
+    ("piercing", "piercing"),
+    ("slashing", "slashing")]
+
+
+MODIFICATION_TYPES = [
+    ("ability_score", "Ability Score Increase or Decrease"),
+    ("skill_proficiency", "Skill Proficiency"),
+    ("tool_proficiency", "Tool Proficiency"),
+    ("language", "Language"),
+    ("equipment", "Equipment"),
+    ("feature", "Feature"),  # Used in Backgrounds
+    ("suggested_characteristics", "Suggested Characteristics"),  # Used in Backgrounds
+    ("adventures_and_advancement", "Adventures and Advancement"),  # Used in A5e Backgrounds
+    ("connection_and_memento", "Connection and Memento")]  # Used in A5e Backgrounds
+
 
 SPELL_TARGET_RANGE_CHOICES = [
     ('Self',"Self"),

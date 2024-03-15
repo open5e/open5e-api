@@ -1,7 +1,7 @@
 """Abstract models to be used in Game Content items."""
 
 from django.db import models
-
+from .enums import MODIFICATION_TYPES
 
 
 class HasName(models.Model):
@@ -52,17 +52,6 @@ class Modification(HasName, HasDescription):
     Basically it describes any sort of modification to a character in 5e.
     """
 
-    MODIFICATION_TYPES = [
-        ("ability_score", "Ability Score Increase or Decrease"),
-        ("skill_proficiency", "Skill Proficiency"),
-        ("tool_proficiency", "Tool Proficiency"),
-        ("language", "Language"),
-        ("equipment", "Equipment"),
-        ("feature", "Feature"),  # Used in Backgrounds
-        ("suggested_characteristics", "Suggested Characteristics"),  # Used in Backgrounds
-        ("adventures_and_advancement", "Adventures and Advancement"),  # Used in A5e Backgrounds
-        ("connection_and_memento", "Connection and Memento")]  # Used in A5e Backgrounds
-        
 
     type = models.CharField(
         max_length=200,
