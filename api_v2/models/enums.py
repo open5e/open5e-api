@@ -9,25 +9,6 @@ DIE_TYPES = [
     ("D20", "d20"),
 ]
 
-# List of damage types possible in 5e.
-# Used by creature "damage_type" and "extra_damage_type", as well as spell "damage_types"
-# Replaced by the Damagetype model
-DAMAGE_TYPES = [
-    ("ACID", "Acid"),
-    ("BLUDGEONING", "Bludgeoning"),
-    ("COLD", "Cold"),
-    ("FIRE", "Fire"),
-    ("FORCE", "Force"),
-    ("LIGHTNING", "Lightning"),
-    ("NECROTIC", "Necrotic"),
-    ("PIERCING", "Piercing"),
-    ("POISON", "Poison"),
-    ("PSYCHIC", "Psychic"),
-    ("RADIANT", "Radiant"),
-    ("SLASHING", "Slashing"),
-    ("THUNDER", "Thunder"),
-]
-
 ABILITY_SCORE_MAXIMUM = 30
 SAVING_THROW_MINIMUM = -5
 SAVING_THROW_MAXIMUM = +20

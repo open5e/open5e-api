@@ -6,7 +6,7 @@ from .abilities import Abilities
 from .abstracts import HasDescription, HasName
 from .object import Object
 from .document import FromDocument
-from .enums import CREATURE_ATTACK_TYPES, DIE_TYPES, DAMAGE_TYPES, CREATURE_USES_TYPES
+from .enums import CREATURE_ATTACK_TYPES, DIE_TYPES, CREATURE_USES_TYPES
 
 
 def damage_die_count_field():
