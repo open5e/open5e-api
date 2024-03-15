@@ -18,12 +18,6 @@ class Weapon(HasName, FromDocument):
     would link to this model instance.
     """
 
-    damage_type_old = models.CharField(
-        null=False,
-        choices=DAMAGE_TYPE_CHOICES,
-        max_length=100,
-        help_text='The damage type dealt by attacks with the weapon.')
-
     damage_type = models.ForeignKey(
         "DamageType",
         null=True,
