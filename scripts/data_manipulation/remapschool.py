@@ -1,3 +1,4 @@
+from api import models as v1
 from api_v2 import models as v2
 
 
@@ -7,11 +8,12 @@ from api_v2 import models as v2
 def remapschool():
     print("REMAPPING RARITY FOR ITEMS")
     for spell in v2.Spell.objects.all():
-        for ss in v2.SpellSchool.objects.all():
-            if spell.school_old == ss.key:
-                mapped_s = ss
-            
-                print("key:{} size_int:{} mapped_size:{}".format(spell.key,spell.school_old,mapped_s.name))
-                spell.school = ss
-                spell.school.save()
+        spell_v1 = v1.Spell.objects.filter(slug=spell.key).first()
+                         
+        print("key:{} v2school:{} v1school:{}".format(spell.key,spell.school,spell_v1.school))
+
+        spell.school = v2.SpellSchool.objects.get(key=spell_v1.school.lower())
+        spell.save()
+            #spell.school = ss
+            #spell.school.save()
 
