@@ -45,3 +45,5 @@ from .spell import CastingOption
 from .characterclass import FeatureItem
 from .characterclass import Feature
 from .characterclass import CharacterClass
+
+from .search import SearchResult
