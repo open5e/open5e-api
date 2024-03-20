@@ -7,6 +7,7 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .size import SizeSerializer
 
 
 
@@ -61,7 +62,7 @@ def make_attack_obj(attack):
             attack.damage_die_count,
             attack.damage_die_type,
             attack.damage_bonus,
-            attack.damage_type
+            attack.damage_type.key
         )
 
     if attack.extra_damage_type:
@@ -69,7 +70,7 @@ def make_attack_obj(attack):
             attack.extra_damage_die_count,
             attack.extra_damage_die_type,
             attack.extra_damage_bonus,
-            attack.extra_damage_type
+            attack.extra_damage_type.key
         )
 
     return obj
@@ -103,6 +104,7 @@ class CreatureSerializer(GameContentSerializer):
     skill_bonuses = serializers.SerializerMethodField()
     all_skill_bonuses = serializers.SerializerMethodField()
     actions = serializers.SerializerMethodField()
+    size = SizeSerializer(read_only=True, context={'request': {}})
 
     class Meta:
         model = models.Creature
@@ -111,8 +113,8 @@ class CreatureSerializer(GameContentSerializer):
             'document',
             'key',
             'name',
-            'category',
             'size',
+            'category',
             'type',
             'alignment',
             'weight',

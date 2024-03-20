@@ -3,9 +3,10 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities
-from .abstracts import Object, HasDescription, HasName
+from .abstracts import HasDescription, HasName
+from .object import Object
 from .document import FromDocument
-from .enums import CREATURE_MONSTER_TYPES, CREATURE_ATTACK_TYPES, DIE_TYPES, DAMAGE_TYPES, CREATURE_USES_TYPES
+from .enums import CREATURE_ATTACK_TYPES, DIE_TYPES, CREATURE_USES_TYPES
 
 
 def damage_die_count_field():
@@ -29,15 +30,6 @@ def damage_bonus_field():
         validators=[MinValueValidator(-5), MaxValueValidator(20)],
         help_text='Damage roll modifier.'
     )
-
-def damage_type_field():
-    return models.CharField(
-        null=True,
-        max_length=20,
-        choices=DAMAGE_TYPES,
-        help_text='What kind of damage this attack deals.'
-    )
-
 
 class CreatureType(HasName, HasDescription, FromDocument):
     """The Type of creature, such as Aberration."""
@@ -133,13 +125,25 @@ class CreatureAttack(HasName, FromDocument):
     damage_die_count = damage_die_count_field()
     damage_die_type = damage_die_type_field()
     damage_bonus = damage_bonus_field()
-    damage_type = damage_type_field()
+
+    damage_type = models.ForeignKey(
+        "DamageType",
+        null=True,
+        related_name="+", # No backwards relation.
+        on_delete=models.CASCADE,
+        help_text='What kind of damage this attack deals')
 
     # Additional damage fields
     extra_damage_die_count = damage_die_count_field()
     extra_damage_die_type = damage_die_type_field()
     extra_damage_bonus = damage_bonus_field()
-    extra_damage_type = damage_type_field()
+
+    extra_damage_type = models.ForeignKey(
+        "DamageType",
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="+", # No backwards relation.
+        help_text='What kind of extra damage this attack deals')
 
 
 class CreatureSet(HasName, FromDocument):

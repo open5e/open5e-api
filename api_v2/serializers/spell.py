@@ -6,6 +6,11 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 
+class SpellSchoolSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.SpellSchool
+        fields='__all__'
+
 
 class CastingOptionSerializer(serializers.ModelSerializer):
 #    type=serializers.ReadOnlyField()
@@ -20,11 +25,11 @@ class CastingOptionSerializer(serializers.ModelSerializer):
        # fields = '__all__'
 
 
-
 class SpellSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     slot_expended=serializers.ReadOnlyField()
     casting_options = CastingOptionSerializer(many=True)
+    school = SpellSchoolSerializer()
 
     class Meta:
         model = models.Spell

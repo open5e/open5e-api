@@ -18,7 +18,7 @@ class ItemFilterSet(FilterSet):
             'desc': ['icontains'],
             'cost': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
-            'rarity': ['exact', 'in', ],
+#            'rarity': ['exact', 'in', ],
             'requires_attunement': ['exact'],
             #'category': ['in', 'iexact', 'exact'],
             'document__key': ['in','iexact','exact']
@@ -34,6 +34,17 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Item.objects.all().order_by('pk')
     serializer_class = serializers.ItemSerializer
     filterset_class = ItemFilterSet
+
+
+class ItemRarityViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of item rarities.
+
+    retrieve: API endpoint for returning a particular item rarity.
+    """
+    queryset = models.ItemRarity.objects.all().order_by('pk')
+    serializer_class = serializers.ItemRaritySerializer
+
 
 
 class ItemSetFilterSet(FilterSet):
@@ -68,8 +79,6 @@ class ItemCategoryViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.ItemCategorySerializer
 
 
-
-
 class WeaponFilterSet(FilterSet):
 
     class Meta:
@@ -78,7 +87,6 @@ class WeaponFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
-            'damage_type': ['in','iexact','exact'],
             'damage_dice': ['in','iexact','exact'],
             'versatile_dice': ['in','iexact','exact'],
             'range_reach': ['exact','lt','lte','gt','gte'],

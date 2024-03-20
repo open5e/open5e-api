@@ -9,31 +9,12 @@ DIE_TYPES = [
     ("D20", "d20"),
 ]
 
-# List of damage types possible in 5e.
-DAMAGE_TYPES = [
-    ("ACID", "Acid"),
-    ("BLUDGEONING", "Bludgeoning"),
-    ("COLD", "Cold"),
-    ("FIRE", "Fire"),
-    ("FORCE", "Force"),
-    ("LIGHTNING", "Lightning"),
-    ("NECROTIC", "Necrotic"),
-    ("PIERCING", "Piercing"),
-    ("POISON", "Poison"),
-    ("PSYCHIC", "Psychic"),
-    ("RADIANT", "Radiant"),
-    ("SLASHING", "Slashing"),
-    ("THUNDER", "Thunder"),
-]
-
-# Enumerating sizes, so they are sortable.
-OBJECT_SIZE_CHOICES = [
-    (1, "Tiny"),
-    (2, "Small"),
-    (3, "Medium"),
-    (4, "Large"),
-    (5, "Huge"),
-    (6, "Gargantuan")]
+ABILITY_SCORE_MAXIMUM = 30
+SAVING_THROW_MINIMUM = -5
+SAVING_THROW_MAXIMUM = +20
+SKILL_BONUS_MINIMUM = -5
+SKILL_BONUS_MAXIMUM = +20
+PASSIVE_SCORE_MAXIMUM = 30
 
 # Setting a reasonable maximum for AC.
 OBJECT_ARMOR_CLASS_MAXIMUM = 100
@@ -41,46 +22,17 @@ OBJECT_ARMOR_CLASS_MAXIMUM = 100
 # Setting a reasonable maximum for HP.
 OBJECT_HIT_POINT_MAXIMUM = 10000
 
-# Types of monsters, and their name spelling.
-CREATURE_MONSTER_TYPES = [
-    ("ABERRATION", "Aberration"),
-    ("BEAST", "Beast"),
-    ("CELESTIAL", "Celestial"),
-    ("CONSTRUCT", "Construct"),
-    ("DRAGON", "Dragon"),
-    ("ELEMENTAL", "Elemental"),
-    ("FEY", "Fey"),
-    ("FIEND", "Fiend"),
-    ("GIANT", "Giant"),
-    ("HUMANOID", "Humanoid"),
-    ("MONSTROSITY", "Monstrosity"),
-    ("OOZE", "Ooze"),
-    ("PLANT", "Plant"),
-    ("UNDEAD", "Undead"),
-]
-
 # Type of creature attacks.
 CREATURE_ATTACK_TYPES = [
     ("SPELL", "Spell"),
     ("WEAPON", "Weapon"),
 ]
 
-
 # Monster action uses description.
 CREATURE_USES_TYPES = [
     ("PER_DAY", "X/Day"),
     ("RECHARGE_ON_ROLL", "Recharge X-6"),
     ("RECHARGE_AFTER_REST", "Recharge after a Short or Long rest"),
-]
-
-# Item Rarity
-ITEM_RARITY_CHOICES = [
-    (1, 'common'),
-    (2, 'uncommon'),
-    (3, 'rare'),
-    (4, 'very rare'),
-    (5, 'legendary'),
-    (6, 'artifact')
 ]
 
 # Spell options
@@ -90,6 +42,18 @@ SPELL_TARGET_TYPE_CHOICES = [
     ('point',"Point"),
     ('area',"Area")
 ]
+
+MODIFICATION_TYPES = [
+    ("ability_score", "Ability Score Increase or Decrease"),
+    ("skill_proficiency", "Skill Proficiency"),
+    ("tool_proficiency", "Tool Proficiency"),
+    ("language", "Language"),
+    ("equipment", "Equipment"),
+    ("feature", "Feature"),  # Used in Backgrounds
+    ("suggested_characteristics", "Suggested Characteristics"),  # Used in Backgrounds
+    ("adventures_and_advancement", "Adventures and Advancement"),  # Used in A5e Backgrounds
+    ("connection_and_memento", "Connection and Memento")]  # Used in A5e Backgrounds
+
 
 SPELL_TARGET_RANGE_CHOICES = [
     ('Self',"Self"),
@@ -198,16 +162,6 @@ SPELL_CASTING_TIME_CHOICES = [
     ('8hours',"8 Hours"),
 ]
 
-SPELL_SCHOOL_CHOICES = [
-    ('abjuration','Abjuration'),
-    ('conjuration','Conjuration'),
-    ('divination','Divination'),
-    ('enchantment','Enchantment'),
-    ('evocation','Evocation'),
-    ('illusion','Illusion'),
-    ('necromancy','Necromancy'),
-    ('transmutation','Transmutaion'),
-]
 
 CASTING_OPTION_TYPES = [
     ('default',"Default"),

@@ -66,9 +66,14 @@ class LanguageAdmin(admin.ModelAdmin):
 admin.site.register(Weapon, admin_class=FromDocumentModelAdmin)
 admin.site.register(Armor, admin_class=FromDocumentModelAdmin)
 
+admin.site.register(Size)
+
 admin.site.register(ItemCategory)
+admin.site.register(ItemRarity)
 admin.site.register(Item, admin_class=ItemModelAdmin)
 admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
+
+admin.site.register(SpellSchool)
 
 admin.site.register(Race, admin_class=RaceAdmin)
 
