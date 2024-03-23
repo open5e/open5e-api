@@ -9,6 +9,27 @@ from .spell import Spell
 
 class Monster(GameContent):
     size = models.TextField(help_text='Monster size category.')
+
+    SIZE_MAPPING = {
+    'tiny': 0,
+    'small': 1,
+    'medium': 2,
+    'large': 3,
+    'huge': 4,
+    'gargantuan': 5,
+    'titanic': 6,
+    }
+
+    @property
+    def size_id(self):
+        # Convert the size to lowercase for case-insensitive comparison
+        lowercase_size = self.size.lower()
+
+        # Return the size_rating based on the mapping or default to 0 if not found
+        return self.SIZE_MAPPING.get(lowercase_size, 0)
+
+
+
     type = models.TextField(
         help_text='The type of the monster, such as "aberration"')
     subtype = models.TextField(
@@ -84,11 +105,14 @@ class Monster(GameContent):
     cr = models.FloatField(
         null=True,
         help_text='Monster challenge rating as a float.')
-    actions_json = models.TextField()  # a list of actions in json text.
+    
+    # a list of actions in json text.
+    actions_json = models.TextField()  
 
     def actions(self):
         return json.loads(self.actions_json)
     
+    # a list of bonus actions in json text.
     bonus_actions_json = models.TextField(default=None)
     
     def bonus_actions(self):
@@ -99,16 +123,40 @@ class Monster(GameContent):
 
     def special_abilities(self):
         return json.loads(self.special_abilities_json)
-    reactions_json = models.TextField()  # A list of reactions in json text.
+    
+    # A list of reactions in json text.
+    reactions_json = models.TextField()  
 
     def reactions(self):
         return json.loads(self.reactions_json)
-    legendary_desc = models.TextField()
+    
     # a list of legendary actions in json.
+    legendary_desc = models.TextField()
     legendary_actions_json = models.TextField()
 
     def legendary_actions(self):
         return json.loads(self.legendary_actions_json)
+
+    # a list of mythic actions in json.
+    mythic_actions_json = models.TextField(null=True, blank=True)
+
+    def mythic_actions(self):
+       try:
+           return json.loads(self.mythic_actions_json)
+       except TypeError as e:
+           return None
+
+    # a list of Lair actions in json.
+    lair_desc = models.TextField(null=True, blank=True)
+    lair_actions_json = models.TextField(null=True, blank=True)
+
+    def lair_actions(self):
+        try:
+            return json.loads(self.lair_actions_json)
+        except TypeError as e:
+            return None
+
+   
     spells_json = models.TextField()
     spell_list = models.ManyToManyField(
         Spell,
