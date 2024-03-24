@@ -11,9 +11,9 @@ class SearchResult(models.Model):
     object_route = models.CharField(max_length=255)
     schema_version = models.CharField(max_length=100)
 
-    #rank = models.DecimalField(max_digits=10, decimal_places=4)
-    #text = models.TextField()
-    #highlighted = models.TextField()
+    rank = models.DecimalField(max_digits=10, decimal_places=4, null=True, default=None)
+    text = models.TextField(null=True, default=None)
+    highlighted = models.TextField(null=True, default=None)
 
     @property
     def document_slug(self):

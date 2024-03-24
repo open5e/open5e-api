@@ -31,3 +31,5 @@ from .condition import ConditionViewSet
 from .spell import SpellViewSet
 
 from .characterclass import CharacterClassViewSet
+
+from .search import SearchResultViewSet
