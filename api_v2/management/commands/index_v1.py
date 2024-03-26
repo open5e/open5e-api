@@ -13,12 +13,13 @@ class Command(BaseCommand):
 
     help = 'Build the v1 search index.'
 
-    def unload_all(self):
+    def unload_all_content(self):
         object_count = v2.SearchResult.objects.all().count()
         v2.SearchResult.objects.all().delete()
         print("UNLOADED_OBJECT_COUNT:{}".format(object_count))
 
-    def load_model(self,model,schema):
+
+    def load_content(self,model,schema):
         print("SCHEMA:{} OBJECT_COUNT:{} MODEL:{} TABLE_NAME:{}".format(
                     schema,
                     model.objects.all().count(),
@@ -39,6 +40,7 @@ class Command(BaseCommand):
         v2.SearchResult.objects.bulk_create(search_results)
 
         #print("LOADED_OBJECT_COUNT:{}".format(v2.SearchResult.objects.all().count()))
+
 
     def load_index(self):
         with connection.cursor() as cursor:
@@ -62,10 +64,17 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options) -> None:
         
+        # Ensure FTS is enabled and ready to go.
         self.check_fts_enabled()
-        self.unload_all()
-        self.load_model(v1.MagicItem,"v1")
 
+        # Clear out the content table.
+        self.unload_all_content()
+
+        # Load a model into the content table.
+        self.load_content(v1.MagicItem,"v1")
+
+        # Take the content table's current data and load it into the index.
         self.load_index()
 
-
+        # Unload content table (saves storage space.)
+        self.unload_all_content()

@@ -10,19 +10,36 @@ from api_v2 import serializers
 
 
 
-class SearchResultFilterSet(FilterSet):
-    class Meta:
-        model = models.SearchResult
-        fields = {
-            'schema_version': ['in', 'iexact', 'exact' ],
-        }
-
-
 class SearchResultViewSet(viewsets.ModelViewSet):
 
     serializer_class = serializers.SearchResultSerializer
     #https://docs.djangoproject.com/en/5.0/topics/db/sql/#mapping-query-fields-to-model-fields
-    def get_queryset(self):
+    
+    #todo:
+    # Parameterize query
+    # Pull the "text" input from the querystring
+    # See if 'v1' filters can be added "natively'
 
-        return models.SearchResult.objects.raw("SELECT 1 as id,rank,* FROM search_index WHERE object_name MATCH 'amulet' ORDER BY rank")
+    def get_queryset(self):
+        #query = 'cape'
+        query = self.request.query_params.get('query')
+        schema_version = '%'
+        if self.request.query_params.get("schema") is None:
+            schema_version = '%'
+        else: 
+            schema_version = self.request.query_params.get("schema")
+
+        document_pk= '%'
+        object_route= '%'
+        queryset = models.SearchResult.objects.raw(
+            "SELECT 1 as id,rank,* FROM search_index " + 
+            "WHERE " + 
+            "schema_version LIKE %s " +
+            "AND document_pk LIKE %s " + 
+            "AND object_route LIKE %s " + 
+            "AND object_name MATCH %s " + 
+            "ORDER BY rank",[schema_version, document_pk, object_route, query])
+
+        return queryset
+
 
