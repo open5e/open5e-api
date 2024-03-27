@@ -41,5 +41,3 @@ class SearchResultViewSet(viewsets.ModelViewSet):
             "ORDER BY rank",[schema_version, document_pk, object_route, query])
 
         return queryset
-
-

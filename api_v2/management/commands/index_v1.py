@@ -25,21 +25,24 @@ class Command(BaseCommand):
                     model.objects.all().count(),
                     model.__name__,
                     model._meta.db_table))
-        
-        search_results = []
-        for o in model.objects.all():
-            search_results.append(v2.SearchResult(
-                document_pk=o.document.slug,
-                document_name=o.document.title,
-                object_pk=o.slug,
-                object_name=o.name,
-                object_route=o.route,
-                schema_version="v1"
-            ))
-        
-        v2.SearchResult.objects.bulk_create(search_results)
 
-        #print("LOADED_OBJECT_COUNT:{}".format(v2.SearchResult.objects.all().count()))
+        standard_v1_models = ['MagicItem','Spell','Monster','CharClass','Archetype',
+                        'Race','Subrace','Plane','Section','Feat','Condition','Background','Weapon','Armor']
+
+        search_results = []
+
+        if model.__name__ in standard_v1_models and schema=='v1':
+            for o in model.objects.all():
+                search_results.append(v2.SearchResult(
+                    document_pk=o.document.slug,
+                    document_name=o.document.title,
+                    object_pk=o.slug,
+                    object_name=o.name,
+                    object_route=o.route,
+                    schema_version="v1"
+                ))
+
+        v2.SearchResult.objects.bulk_create(search_results)
 
 
     def load_index(self):
@@ -62,6 +65,7 @@ class Command(BaseCommand):
                 if pragma[0]=='ENABLE_FTS5':
                     print("FOUND PRAGMA {}, FTS5 IS ENABLED".format(pragma))
 
+
     def handle(self, *args, **options) -> None:
         
         # Ensure FTS is enabled and ready to go.
@@ -70,8 +74,21 @@ class Command(BaseCommand):
         # Clear out the content table.
         self.unload_all_content()
 
-        # Load a model into the content table.
+        # Load the v1 models into the content table.
         self.load_content(v1.MagicItem,"v1")
+        self.load_content(v1.Spell,"v1")
+        self.load_content(v1.Monster,"v1")
+        self.load_content(v1.CharClass,"v1")
+        self.load_content(v1.Race,"v1")
+        self.load_content(v1.Subrace,"v1")
+        self.load_content(v1.Plane,"v1")
+        self.load_content(v1.Section,"v1")
+        self.load_content(v1.Feat,"v1")
+        self.load_content(v1.Condition,"v1")
+        self.load_content(v1.Background,"v1")
+        self.load_content(v1.Weapon,"v1")
+        self.load_content(v1.Armor,"v1")
+
 
         # Take the content table's current data and load it into the index.
         self.load_index()
