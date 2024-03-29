@@ -17,6 +17,7 @@ from .race import RaceFilterSet, RaceViewSet
 from .item import ItemFilterSet, ItemViewSet
 from .item import ItemSetFilterSet, ItemSetViewSet
 from .item import ItemCategoryViewSet
+from .item import ItemRarityViewSet
 from .item import ArmorFilterSet, ArmorViewSet
 from .item import WeaponFilterSet, WeaponViewSet
 
@@ -33,3 +34,8 @@ from .spell import SpellViewSet
 from .characterclass import CharacterClassViewSet
 
 from .search import SearchResultViewSet
+
+from .size import SizeViewSet
+
+from .enum import get_enums
+

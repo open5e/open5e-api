@@ -10,23 +10,27 @@ from .abstracts import HasName, HasDescription
 from .document import FromDocument
 
 
-from .enums import SPELL_SCHOOL_CHOICES, SPELL_TARGET_TYPE_CHOICES
+from .enums import SPELL_TARGET_TYPE_CHOICES
 from .enums import SPELL_TARGET_RANGE_CHOICES, SPELL_CASTING_TIME_CHOICES
 from .enums import SPELL_EFFECT_SHAPE_CHOICES, SPELL_EFFECT_DURATIONS
 from .enums import CASTING_OPTION_TYPES
 
+class SpellSchool(HasName, HasDescription, FromDocument):
+    """The model for a spell school object."""
+
+
 class Spell(HasName, HasDescription, FromDocument):
     """The model for a spell object."""
-    version = 'default'
 
    # Casting options and requirements of a spell instance
     level = models.IntegerField(
         validators=[MinValueValidator(0), MaxValueValidator(9)],
         help_text='Integer representing the default slot level required by the spell.')
 
-    school = models.TextField(
-        choices = SPELL_SCHOOL_CHOICES,
-        help_text = "Spell school key, such as 'evocation'")
+    school = models.ForeignKey(
+        "SpellSchool",
+        on_delete=models.CASCADE,
+        help_text="Spell school, such as 'evocation'")
 
     higher_level = models.TextField(
         help_text = "Description of casting the spell at a different level.")

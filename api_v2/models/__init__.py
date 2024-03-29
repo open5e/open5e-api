@@ -5,6 +5,7 @@ from .abilities import Abilities
 from .item import ItemCategory
 from .item import Item
 from .item import ItemSet
+from .item import ItemRarity
 
 from .armor import Armor
 
@@ -41,9 +42,13 @@ from .condition import Condition
 
 from .spell import Spell
 from .spell import CastingOption
+from .spell import SpellSchool
 
 from .characterclass import FeatureItem
 from .characterclass import Feature
 from .characterclass import CharacterClass
 
 from .search import SearchResult
+
+from .size import Size
+

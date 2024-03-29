@@ -3,6 +3,7 @@
 from .item import ArmorSerializer
 from .item import WeaponSerializer
 from .item import ItemSerializer
+from .item import ItemRaritySerializer
 from .item import ItemSetSerializer
 from .item import ItemCategorySerializer
 
@@ -38,5 +39,7 @@ from .characterclass import CharacterClassSerializer
 from .characterclass import FeatureSerializer
 from .characterclass import FeatureItemSerializer
 
-
 from .search import SearchResultSerializer
+
+from .size import SizeSerializer
+

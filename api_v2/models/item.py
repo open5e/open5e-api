@@ -2,18 +2,23 @@
 
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-from django.urls import reverse
 
-from api.models import GameContent
 from .weapon import Weapon
 from .armor import Armor
-from .abstracts import Object, HasName, HasDescription
+from .abstracts import HasName, HasDescription
+from .object import Object
 from .document import FromDocument
-from .enums import ITEM_RARITY_CHOICES
+
+
+class ItemRarity(HasName, FromDocument):
+    """A class describing the rarity of items."""
+    rank = models.IntegerField(
+        unique=True,
+        help_text='Ranking of the rarity, most common has the lowest values.')
+
 
 class ItemCategory(HasName, FromDocument):
     """A class describing categories of items."""
-    pass
 
 
 class Item(Object, HasDescription, FromDocument):
@@ -48,22 +53,18 @@ class Item(Object, HasDescription, FromDocument):
     category = models.ForeignKey(
         ItemCategory,
         on_delete=models.CASCADE,
-        null=False
-    )
+        null=False)
 
     requires_attunement = models.BooleanField(
         null=False,
         default=False,  # An item is not magical unless specified.
         help_text='If the item requires attunement.')
 
-    rarity = models.IntegerField(
-        null=True,  # Allow an unspecified size.
-        blank=True,
-        choices=ITEM_RARITY_CHOICES,
-        validators=[
-            MinValueValidator(1),
-            MaxValueValidator(6)],
-        help_text='Integer representing the rarity of the object.')
+    rarity = models.ForeignKey(
+        "ItemRarity",
+        null=True,
+        on_delete=models.CASCADE,
+        help_text="Rarity object.")
 
     @property 
     def is_magic_item(self):

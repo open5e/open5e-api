@@ -73,6 +73,9 @@ if settings.V2_ENABLED:
     router_v2.register(r'spells',views_v2.SpellViewSet)
     router_v2.register(r'classes',views_v2.CharacterClassViewSet)
     router_v2.register(r'search',views_v2.SearchResultViewSet, basename='search')
+    router_v2.register(r'sizes',views_v2.SizeViewSet)
+    router_v2.register(r'itemrarities',views_v2.ItemRarityViewSet)
+    
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -81,6 +84,7 @@ urlpatterns = [
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     re_path(r'^search/', include('haystack.urls')),
     re_path(r'^version/', views.get_version, name="version"),
+    re_path(r'^v2/enums/', views_v2.get_enums, name="enums"),
 
 
     # Versioned API routes (above routes default to v1)
