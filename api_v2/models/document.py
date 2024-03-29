@@ -52,7 +52,8 @@ class Document(HasName, HasDescription):
                 'Document',
                 'Ruleset',
                 'License',
-                'Publisher']
+                'Publisher',
+                'Size']
             if model.__name__ in SKIPPED_MODEL_NAMES: continue
 
             CHILD_MODEL_NAMES = [
@@ -61,7 +62,10 @@ class Document(HasName, HasDescription):
                 'Capability', 
                 'Benefit',
                 'CreatureAction',
-                'CreatureAttack']
+                'CreatureAttack',
+                'CastingOption',
+                'ItemRarity',
+                'SpellSchool']
             if model.__name__ in CHILD_MODEL_NAMES: continue
 
 
