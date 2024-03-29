@@ -108,7 +108,7 @@ class Command(BaseCommand):
                 write_queryset_data(doc_path, docq)
 
                 for model in app_models:
-                    SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher']
+                    SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher','SearchResult']
                     CHILD_MODEL_NAMES = ['Trait', 'Capability', 'Benefit', 'FeatureItem', 'CastingOption']
                     
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
