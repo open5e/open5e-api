@@ -39,12 +39,14 @@ class SearchResultViewSet(viewsets.ModelViewSet):
             object_route = self.request.query_params.get("object_route")
 
         queryset = models.SearchResult.objects.raw(
-            "SELECT 1 as id,rank,* FROM search_index " + 
+            "SELECT 1 as id,rank, " +
+            "snippet(search_index,5,'<span class=\"highlighted\">','</span>','...',20) as highlighted, " + 
+            "* FROM search_index " + 
             "WHERE " + 
             "schema_version LIKE %s " +
             "AND document_pk LIKE %s " + 
             "AND object_route LIKE %s " + 
-            "AND object_name MATCH %s " + 
+            "AND text MATCH %s " + 
             "ORDER BY rank",[schema_version, document_pk, object_route, query])
 
         return queryset
