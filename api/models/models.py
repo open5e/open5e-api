@@ -229,6 +229,12 @@ class Section(GameContent):
         """Return a string specifying the plural name of this model."""
         return "Sections"
 
+    def search_result_extra_fields(self):
+        return {
+            "parent":self.parent}
+
+
+
 
 class Feat(GameContent):
     prerequisite = models.TextField(
@@ -296,6 +302,13 @@ class MagicItem(GameContent):
     def plural_str() -> str:
         """Return a string specifying the plural name of this model."""
         return "MagicItems"
+    
+    def search_result_extra_fields(self):
+        return {
+            "type":self.type,
+            "rarity":self.rarity,
+            "requires_attunement":self.requires_attunement}
+
 
 
 class Weapon(GameContent):
