@@ -96,6 +96,7 @@ def make_action_obj(action):
 
 
 class CreatureSerializer(GameContentSerializer):
+    '''The serializer for the Creature object.'''
 
     key = serializers.ReadOnlyField()
     ability_scores = serializers.SerializerMethodField()
@@ -227,6 +228,7 @@ class CreatureSerializer(GameContentSerializer):
 
 
 class CreatureTypeSerializer(GameContentSerializer):
+    '''Serializer for the Creature Type object'''
     key = serializers.ReadOnlyField()
 
     class Meta:
@@ -235,6 +237,7 @@ class CreatureTypeSerializer(GameContentSerializer):
 
 
 class CreatureSetSerializer(GameContentSerializer):
+    '''Serializer for the Creature Set object'''
     key = serializers.ReadOnlyField()
     creatures = CreatureSerializer(many=True, read_only=True, context={'request':{}})
 

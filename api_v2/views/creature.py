@@ -7,6 +7,7 @@ from api_v2 import serializers
 
 
 class CreatureFilterSet(FilterSet):
+    '''This is the filterset class for creatures.'''
 
     class Meta:
         model = models.Creature
@@ -22,7 +23,6 @@ class CreatureFilterSet(FilterSet):
             'ability_score_intelligence': ['exact','lt','lte','gt','gte'],
             'ability_score_wisdom': ['exact','lt','lte','gt','gte'],
             'ability_score_charisma': ['exact','lt','lte','gt','gte'],
-            'saving_throw_charisma': ['isnull'],
             'saving_throw_strength': ['isnull'],
             'saving_throw_dexterity': ['isnull'],
             'saving_throw_constitution': ['isnull'],
@@ -62,9 +62,17 @@ class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class CreatureTypeViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of creatures types.
+    retrieve: API endpoint for returning a particular creature type.
+    """
     queryset = models.CreatureType.objects.all().order_by('pk')
     serializer_class = serializers.CreatureTypeSerializer
 
 class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of creature sets, which is similar to tags.
+    retrieve: API endpoint for returning a particular creature set.
+    """
     queryset = models.CreatureSet.objects.all().order_by('pk')
     serializer_class = serializers.CreatureSetSerializer
