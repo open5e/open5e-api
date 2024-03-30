@@ -58,6 +58,10 @@ class Creature(Object, Abilities, FromDocument):
         help_text='The creature\'s allowed alignments.'
     )
 
+    @property
+    def creatureset(self):
+        return self.creaturesets.all()
+
 
 class CreatureAction(HasName, HasDescription, FromDocument):
 

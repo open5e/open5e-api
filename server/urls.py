@@ -66,6 +66,7 @@ if settings.V2_ENABLED:
     router_v2.register(r'races',views_v2.RaceViewSet)
     router_v2.register(r'creatures',views_v2.CreatureViewSet)
     router_v2.register(r'creaturetypes',views_v2.CreatureTypeViewSet)
+    router_v2.register(r'creaturesets',views_v2.CreatureSetViewSet)
     router_v2.register(r'damagetypes',views_v2.DamageTypeViewSet)
     router_v2.register(r'languages',views_v2.LanguageViewSet)
     router_v2.register(r'alignments',views_v2.AlignmentViewSet)

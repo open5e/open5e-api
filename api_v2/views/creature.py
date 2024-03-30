@@ -50,6 +50,7 @@ class CreatureFilterSet(FilterSet):
             'passive_perception': ['exact','lt','lte','gt','gte'],
         }
 
+
 class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creatures.
@@ -63,3 +64,7 @@ class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
 class CreatureTypeViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.CreatureType.objects.all().order_by('pk')
     serializer_class = serializers.CreatureTypeSerializer
+
+class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.CreatureSet.objects.all().order_by('pk')
+    serializer_class = serializers.CreatureSetSerializer
