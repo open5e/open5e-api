@@ -33,20 +33,21 @@ class SearchResultViewSet(viewsets.ModelViewSet):
         else:
             document_pk = self.request.query_params.get("document_pk")
 
-        if self.request.query_params.get("object_route") is None:
-            object_route = '%'
+        if self.request.query_params.get("object_model") is None:
+            object_model = '%'
         else:
-            object_route = self.request.query_params.get("object_route")
+            object_model = self.request.query_params.get("object_model")
 
-        queryset = models.SearchResult.objects.raw(
+        weighted_queryset = models.SearchResult.objects.raw(
             "SELECT 1 as id,rank, " +
             "snippet(search_index,5,'<span class=\"highlighted\">','</span>','...',20) as highlighted, " + 
             "* FROM search_index " + 
             "WHERE " + 
             "schema_version LIKE %s " +
             "AND document_pk LIKE %s " + 
-            "AND object_route LIKE %s " + 
-            "AND text MATCH %s " + 
-            "ORDER BY rank",[schema_version, document_pk, object_route, query])
+            "AND object_model LIKE %s " + 
+            "AND search_index MATCH %s" + 
+            "AND rank MATCH 'bm25(1.0, 1.0, 1.0, 10.0)'"+ # This line results in a 10x weight to Name
+            "ORDER BY rank",[schema_version, document_pk, object_model, query])
 
-        return queryset
+        return weighted_queryset

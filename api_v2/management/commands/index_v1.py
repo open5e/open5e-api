@@ -35,10 +35,9 @@ class Command(BaseCommand):
             for o in model.objects.all():
                 search_results.append(v2.SearchResult(
                     document_pk=o.document.slug,
-                    document_name=o.document.title,
                     object_pk=o.slug,
                     object_name=o.name,
-                    object_route=o.route,
+                    object_model=o.__class__.__name__,
                     schema_version="v1",
                     text=o.name+"\n"+o.desc
 
@@ -52,9 +51,9 @@ class Command(BaseCommand):
 
             cursor.execute("DROP TABLE IF EXISTS search_index;")
             
-            cursor.execute("CREATE VIRTUAL TABLE search_index USING FTS5(document_pk,document_name,object_pk,object_name,object_route,text,schema_version);")
+            cursor.execute("CREATE VIRTUAL TABLE search_index USING FTS5(document_pk,object_pk,object_name,object_model,text,schema_version);")
 
-            cursor.execute("INSERT INTO search_index (document_pk,document_name,object_pk,object_name,object_route,text,schema_version) SELECT document_pk,document_name,object_pk,object_name,object_route,text,schema_version FROM api_v2_searchresult")
+            cursor.execute("INSERT INTO search_index (document_pk,object_pk,object_name,object_model,text,schema_version) SELECT document_pk,object_pk,object_name,object_model,text,schema_version FROM api_v2_searchresult")
     
 
     def check_fts_enabled(self):
