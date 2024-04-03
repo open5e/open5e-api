@@ -18,22 +18,14 @@ class Command(BaseCommand):
         v2.SearchResult.objects.all().delete()
         print("UNLOADED_OBJECT_COUNT:{}".format(object_count))
 
-
-    def load_content(self,model,schema):
-        print("SCHEMA:{} OBJECT_COUNT:{} MODEL:{} TABLE_NAME:{}".format(
-                    schema,
-                    model.objects.all().count(),
-                    model.__name__,
-                    model._meta.db_table))
-
+    def load_v1_content(self, model):
+        results = []
         standard_v1_models = ['MagicItem','Spell','Monster','CharClass','Archetype',
-                        'Race','Subrace','Plane','Section','Feat','Condition','Background','Weapon','Armor']
+                'Race','Subrace','Plane','Section','Feat','Condition','Background','Weapon','Armor']
 
-        search_results = []
-
-        if model.__name__ in standard_v1_models and schema=='v1':
+        if model.__name__ in standard_v1_models:
             for o in model.objects.all():
-                search_results.append(v2.SearchResult(
+                results.append(v2.SearchResult(
                     document_pk=o.document.slug,
                     object_pk=o.slug,
                     object_name=o.name,
@@ -42,19 +34,58 @@ class Command(BaseCommand):
                     text=o.name+"\n"+o.desc
 
                 ))
+        return results
 
-        v2.SearchResult.objects.bulk_create(search_results)
 
+    def load_v2_content(self, model):
+        results = []
+        standard_v2_models = ['Item']
+
+        if model.__name__ in standard_v2_models:
+            for o in model.objects.all():
+                results.append(v2.SearchResult(
+                    document_pk=o.document.pk,
+                    object_pk=o.pk,
+                    object_name=o.name,
+                    object_model=o.__class__.__name__,
+                    schema_version='v2',
+                    text=o.desc
+                ))
+        return results
+
+
+    def load_content(self,model,schema):
+        print("SCHEMA:{} OBJECT_COUNT:{} MODEL:{} TABLE_NAME:{}".format(
+                    schema,
+                    model.objects.all().count(),
+                    model.__name__,
+                    model._meta.db_table))
+
+        if schema == 'v1':
+            v2.SearchResult.objects.bulk_create(
+                self.load_v1_content(model)
+            )
+
+        if schema == 'v2':
+            v2.SearchResult.objects.bulk_create(
+                self.load_v2_content(model)
+            )
 
     def load_index(self):
         with connection.cursor() as cursor:
 
             cursor.execute("DROP TABLE IF EXISTS search_index;")
-            
-            cursor.execute("CREATE VIRTUAL TABLE search_index USING FTS5(document_pk,object_pk,object_name,object_model,text,schema_version);")
 
-            cursor.execute("INSERT INTO search_index (document_pk,object_pk,object_name,object_model,text,schema_version) SELECT document_pk,object_pk,object_name,object_model,text,schema_version FROM api_v2_searchresult")
-    
+            cursor.execute(
+                "CREATE VIRTUAL TABLE search_index " +
+                "USING FTS5(document_pk,object_pk,object_name,object_model,text,schema_version);")
+
+            cursor.execute(
+                "INSERT INTO search_index " +
+                "(document_pk,object_pk,object_name,object_model,text,schema_version) " +
+                "SELECT document_pk,object_pk,object_name,object_model,text,schema_version " +
+                "FROM api_v2_searchresult")
+
 
     def check_fts_enabled(self):
         #import sqlite3
@@ -89,6 +120,8 @@ class Command(BaseCommand):
         self.load_content(v1.Background,"v1")
         self.load_content(v1.Weapon,"v1")
         self.load_content(v1.Armor,"v1")
+
+        self.load_content(v2.Item,"v2")
 
 
         # Take the content table's current data and load it into the index.
