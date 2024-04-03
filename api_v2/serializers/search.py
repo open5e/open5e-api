@@ -6,9 +6,6 @@ from api_v2 import models
 from api import models as v1
 
 class SearchResultSerializer(serializers.ModelSerializer):
-    rank = serializers.ReadOnlyField()
-    text = serializers.ReadOnlyField()
-    highlighted = serializers.ReadOnlyField()
     object = serializers.SerializerMethodField(method_name='get_object')
     document = serializers.SerializerMethodField(method_name='get_document')
 
@@ -48,6 +45,13 @@ class SearchResultSerializer(serializers.ModelSerializer):
         if obj.schema_version == 'v1':
             doc = v1.Document.objects.get(slug=obj.document_pk)
             return {
-                'document_pk': doc.slug,
-                'document_name': doc.title
+                'key': doc.slug,
+                'name': doc.title
+                }
+
+        if obj.schema_version == 'v2':
+            doc = models.Document.objects.get(key=obj.document_pk)
+            return {
+                'key': doc.key,
+                'name': doc.name
                 }
