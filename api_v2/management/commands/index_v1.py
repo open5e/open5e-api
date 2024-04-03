@@ -36,7 +36,6 @@ class Command(BaseCommand):
                 ))
         return results
 
-
     def load_v2_content(self, model):
         results = []
         standard_v2_models = ['Item']
@@ -44,7 +43,7 @@ class Command(BaseCommand):
         if model.__name__ in standard_v2_models:
             for o in model.objects.all():
                 results.append(v2.SearchResult(
-                    document_pk=o.document.pk,
+                    document_pk=o.document.key,
                     object_pk=o.pk,
                     object_name=o.name,
                     object_model=o.__class__.__name__,
@@ -52,7 +51,6 @@ class Command(BaseCommand):
                     text=o.desc
                 ))
         return results
-
 
     def load_content(self,model,schema):
         print("SCHEMA:{} OBJECT_COUNT:{} MODEL:{} TABLE_NAME:{}".format(

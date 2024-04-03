@@ -40,8 +40,8 @@ class SearchResultViewSet(viewsets.ModelViewSet):
 
         weighted_queryset = models.SearchResult.objects.raw(
             "SELECT 1 as id,rank, " +
-            "snippet(search_index,5,'<span class=\"highlighted\">','</span>','...',20) as highlighted, " + 
-            "* FROM search_index " + 
+            "snippet(search_index,4,'<span class=\"highlighted\">','</span>','...',20) as highlighted, " + 
+            "document_pk,object_pk,object_name,object_model,text,schema_version FROM search_index " + 
             "WHERE " + 
             "schema_version LIKE %s " +
             "AND document_pk LIKE %s " + 
