@@ -98,3 +98,11 @@ class CharacterClass(HasName, FromDocument):
             return "{} [{}]".format(self.subclass_of.name, self.name)
         else:
             return self.name
+
+    def as_text(self):
+        text = self.name + '\n'
+        
+        for feature in self.feature_set.all():
+            text+='\n' + feature.as_text()
+
+        return text

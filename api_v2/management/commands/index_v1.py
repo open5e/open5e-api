@@ -38,7 +38,7 @@ class Command(BaseCommand):
 
     def load_v2_content(self, model):
         results = []
-        standard_v2_models = ['Item']
+        standard_v2_models = ['Item','Spell','Creature','CharacterClass','Race','Feat','Condition','Background']
 
         if model.__name__ in standard_v2_models:
             for o in model.objects.all():
@@ -48,7 +48,7 @@ class Command(BaseCommand):
                     object_name=o.name,
                     object_model=o.__class__.__name__,
                     schema_version='v2',
-                    text=o.desc
+                    text=o.as_text()
                 ))
         return results
 
@@ -120,6 +120,13 @@ class Command(BaseCommand):
         self.load_content(v1.Armor,"v1")
 
         self.load_content(v2.Item,"v2")
+        self.load_content(v2.Spell,"v2")
+        self.load_content(v2.Creature,"v2")
+        self.load_content(v2.CharacterClass,"v2")
+        self.load_content(v2.Race,"v2")
+        self.load_content(v2.Feat,"v2")
+        self.load_content(v2.Condition,"v2")
+        self.load_content(v2.Background,"v2")
 
 
         # Take the content table's current data and load it into the index.
