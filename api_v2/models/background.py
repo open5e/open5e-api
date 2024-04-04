@@ -27,3 +27,4 @@ class Background(HasName, HasDescription, FromDocument):
         """To assist with the UI layer."""
 
         verbose_name_plural = "backgrounds"
+

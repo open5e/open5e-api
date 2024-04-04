@@ -57,6 +57,15 @@ class Creature(Object, Abilities, FromDocument):
         max_length=100,
         help_text='The creature\'s allowed alignments.'
     )
+    
+    def as_text(self):
+        text = self.name + '\n'
+        
+        for action in self.creatureaction_set.all():
+            text+='\n' + action.as_text()
+
+        return text
+        
 
 
 class CreatureAction(HasName, HasDescription, FromDocument):

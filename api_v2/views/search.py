@@ -47,7 +47,7 @@ class SearchResultViewSet(viewsets.ModelViewSet):
             "AND document_pk LIKE %s " + 
             "AND object_model LIKE %s " + 
             "AND search_index MATCH %s" + 
-            "AND rank MATCH 'bm25(1.0, 1.0, 1.0, 10.0)'"+ # This line results in a 10x weight to Name
+            "AND rank MATCH 'bm25(1.0, 1.0, 10.0)'"+ # This line results in a 10x weight to Name
             "ORDER BY rank",[schema_version, document_pk, object_model, query])
 
         return weighted_queryset
