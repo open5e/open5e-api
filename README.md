@@ -60,9 +60,9 @@ The API uses the Django REST Framework for it's browsability and ease of use whe
 
 - [Python 3.11](https://www.python.org/downloads/)
 
-- [Pipenv](https://pipenv.pypa.io/en/latest/installation/)
+- [Pipenv](https://pipenv.pypa.io/en/latest/installation.html)
 
-## Modules
+## Dependencies
 
 Pipenv is used to install all required packages from the `Pipfile` at the project root. Use the following command after cloning the project or switching branches.
 
