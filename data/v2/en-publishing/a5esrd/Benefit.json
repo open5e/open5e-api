@@ -445,7 +445,7 @@
   "fields": {
     "name": "Ability Score Increases",
     "desc": "+1 to Intelligence and one other ability score.",
-    "type": "ability_score_increase",
+    "type": "ability_score",
     "background": "artisan"
   }
 },
@@ -485,7 +485,7 @@
   "fields": {
     "name": "Adventures And Advancement",
     "desc": "If you participate in the creation of a magic item (a “master work”), you will gain the services of up to 8 commoner apprentices with the appropriate tool proficiency.",
-    "type": null,
+    "type": "adventures_and_advancement",
     "background": "artisan"
   }
 },
@@ -1667,66 +1667,6 @@
     "desc": "Because of your commercial contacts you may be offered money to lead or escort trade caravans. You'll receive a fee from each trader that reaches their destination safely.",
     "type": "adventures-and-advancement",
     "background": "trader"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 425,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Intelligence and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "artisan"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 426,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Persuasion, and either Insight or History.",
-    "type": "skill_proficiency",
-    "background": "artisan"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 427,
-  "fields": {
-    "name": "Equipment",
-    "desc": "One set of artisan's tools, traveler's clothes.",
-    "type": "equipment",
-    "background": "artisan"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 428,
-  "fields": {
-    "name": "Trade Mark",
-    "desc": "* When in a city or town, you have access to a fully-stocked workshop with everything you need to ply your trade. Furthermore, you can expect to earn full price when you sell items you have crafted (though there is no guarantee of a buyer).",
-    "type": "feature",
-    "background": "artisan"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 429,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Artisan Mementos**\n\n1. *Jeweler:* A 10,000 gold commission for a ruby ring (now all you need is a ruby worth 5,000 gold).\n2. *Smith:* Your blacksmith's hammer (treat as a light hammer).\n3. *Cook:* A well-seasoned skillet (treat as a mace).\n4. *Alchemist:* A formula with exotic ingredients that will produce...something.\n5. *Leatherworker:* An exotic monster hide which could be turned into striking-looking leather armor.\n6. *Mason:* Your trusty sledgehammer (treat as a warhammer).\n7. *Potter:* Your secret technique for vivid colors which is sure to disrupt Big Pottery.\n8. *Weaver:* A set of fine clothes (your own work).\n9. *Woodcarver:* A longbow, shortbow, or crossbow (your own work).\n10. *Calligrapher:* Strange notes you copied from a rambling manifesto. Do they mean something?",
-    "type": "suggested_characteristics",
-    "background": "artisan"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 430,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": "If you participate in the creation of a magic item (a “master work”), you will gain the services of up to 8 commoner apprentices with the appropriate tool proficiency.",
-    "type": "adventures-and-advancement",
-    "background": "artisan"
   }
 },
 {
