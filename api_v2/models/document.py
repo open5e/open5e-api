@@ -108,6 +108,9 @@ class FromDocument(models.Model):
         max_length=100,
         help_text="Unique key for the Item.")
 
+    def as_text(self):
+        return "{}\n\n{}".format(self.name, self.desc)
+
     def get_absolute_url(self):
         return reverse(self.__name__, kwargs={"pk": self.pk})
 
