@@ -375,7 +375,7 @@
   "fields": {
     "name": "Ability Score Increases",
     "desc": "+1 to Constitution and one other ability score.",
-    "type": "ability_score_increase",
+    "type": "ability_score",
     "background": "outlander"
   }
 },
@@ -414,7 +414,7 @@
   "pk": 281,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Outlander Connections**\r\n1. A tribal chief who owes a favor.\r\n2. The chief of a band of marauders who has a grudge against you.\r\n3. A hag to whom you owe a favor.\r\n4. An alchemist or wizard who frequently gives you requests for rare herbs or trophies.\r\n5. A unicorn you’ve glimpsed but never been able to approach.\r\n6. Another outlander: your former best friend who is now a bitter rival.\r\n7. A wise oracle who knows most of what happens in the wilderness and will reveal it for a price.\r\n8. A zany prospector who knows the wild lands almost as well as you.\r\n9. A circus or arena owner who will pay for live animals not yet in their menagerie.\r\n10. A highly civilized poet or painter who has paid you to guide them to wild and inspiring locales.\r\n\r\n### **Outlander Mementos**\r\n\r\n1. A trophy from the hunt of a mighty beast, such as an phase monster-horn helmet.\r\n2. A trophy from a battle against a fierce monster, such as a still-wriggling troll finger.\r\n3. A stone from a holy druidic shrine.\r\n4. Tools appropriate to your home terrain, such as pitons or snowshoes.\r\n5. Hand-crafted leather armor, hide armor, or clothing.\r\n6. The handaxe you made yourself.\r\n7. A gift from a dryad or faun.\r\n8. Trading goods worth 30 gold, such as furs or rare herbs.\r\n9. A tiny whistle given to you by a sprite.\r\n10. An incomplete map.",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Outlander Connections\r\n1. A tribal chief who owes a favor.\r\n2. The chief of a band of marauders who has a grudge against you.\r\n3. A hag to whom you owe a favor.\r\n4. An alchemist or wizard who frequently gives you requests for rare herbs or trophies.\r\n5. A unicorn you’ve glimpsed but never been able to approach.\r\n6. Another outlander: your former best friend who is now a bitter rival.\r\n7. A wise oracle who knows most of what happens in the wilderness and will reveal it for a price.\r\n8. A zany prospector who knows the wild lands almost as well as you.\r\n9. A circus or arena owner who will pay for live animals not yet in their menagerie.\r\n10. A highly civilized poet or painter who has paid you to guide them to wild and inspiring locales.\r\n\r\n### Outlander Mementos\r\n1. A trophy from the hunt of a mighty beast, such as an phase monster-horn helmet.\r\n2. A trophy from a battle against a fierce monster, such as a still-wriggling troll finger.\r\n3. A stone from a holy druidic shrine.\r\n4. Tools appropriate to your home terrain, such as pitons or snowshoes.\r\n5. Hand-crafted leather armor, hide armor, or clothing.\r\n6. The handaxe you made yourself.\r\n7. A gift from a dryad or faun.\r\n8. Trading goods worth 30 gold, such as furs or rare herbs.\r\n9. A tiny whistle given to you by a sprite.\r\n10. An incomplete map.",
     "type": "connection_and_memento",
     "background": "outlander"
   }
@@ -424,7 +424,7 @@
   "pk": 282,
   "fields": {
     "name": "Adventures And Advancement",
-    "desc": "During your travels, wilderness dwellers may come to you for help battling monsters and other dangers. If you succeed in several such adventures, you may earn the freely given aid of up to 8",
+    "desc": "During your travels, wilderness dwellers may come to you for help battling monsters and other dangers. If you succeed in several such adventures, you may earn the freely given aid of up to 8 **warriors**.",
     "type": "adventures_and_advancement",
     "background": "outlander"
   }
@@ -1427,66 +1427,6 @@
     "desc": "Gaming set, thieves' tools.",
     "type": "tool_proficiency",
     "background": "criminal"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 413,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Constitution and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "outlander"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 414,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Survival, and either Athletics or Intimidation.",
-    "type": "skill_proficiency",
-    "background": "outlander"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 415,
-  "fields": {
-    "name": "Equipment",
-    "desc": "Traveler's clothes, waterskin, healer's kit, 7 days rations.",
-    "type": "equipment",
-    "background": "outlander"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 416,
-  "fields": {
-    "name": "Trader",
-    "desc": "If you're in or near the wilderness and have a trading relationship with a tribe, settlement, or other nearby group, you can maintain a moderate lifestyle for yourself and your companions by trading the products of your hunting and gathering.",
-    "type": "feature",
-    "background": "outlander"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 417,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Outlander Mementos**\n\n1. A trophy from the hunt of a mighty beast, such as an phase monster-horn helmet.\n2. A trophy from a battle against a fierce monster, such as a still-wriggling troll finger.\n3. A stone from a holy druidic shrine.\n4. Tools appropriate to your home terrain, such as pitons or snowshoes.\n5. Hand-crafted leather armor, hide armor, or clothing.\n6. The handaxe you made yourself.\n7. A gift from a dryad or faun.\n8. Trading goods worth 30 gold, such as furs or rare herbs.\n9. A tiny whistle given to you by a sprite.\n10. An incomplete map.",
-    "type": "suggested_characteristics",
-    "background": "outlander"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 418,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": "During your travels, wilderness dwellers may come to you for help battling monsters and other dangers. If you succeed in several such adventures, you may earn the freely given aid of up to 8",
-    "type": "adventures-and-advancement",
-    "background": "outlander"
   }
 },
 {
