@@ -215,7 +215,7 @@
   "fields": {
     "name": "Ability Score Increases",
     "desc": "+1 to Dexterity and one other ability score.",
-    "type": "ability_score_increase",
+    "type": "ability_score",
     "background": "urchin"
   }
 },
@@ -244,7 +244,7 @@
   "pk": 264,
   "fields": {
     "name": "Adventures And Advancement",
-    "desc": ".Street kids are among a settlement's most vulnerable people, especially in cities with lycanthropes, vampires, and other supernatural threats. After you help out a few urchins in trouble, word gets out and you'll be able to consult the street network to gather information. If you roll lower than a 15 on an Investigation check to gather information in a city or town, your roll is treated as a 15.",
+    "desc": "Street kids are among a settlement's most vulnerable people, especially in cities with lycanthropes, vampires, and other supernatural threats. After you help out a few urchins in trouble, word gets out and you'll be able to consult the street network to gather information. If you roll lower than a 15 on an Investigation check to gather information in a city or town, your roll is treated as a 15.",
     "type": "adventures_and_advancement",
     "background": "urchin"
   }
@@ -1024,7 +1024,7 @@
   "pk": 361,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "### **Urchin Connections**\r\n\r\n1. The disreputable thief who taught you thieving skills.\r\n2. The saintly orphanage matron who’s so proud of how you’ve grown.\r\n3. The miserly and cruel orphanage administrator who rounds up urchins and runaways.\r\n4. The drunken thief who shared with you what little they could steal. \r\n5. The fellow urchin who has some power to make “bad stuff” happen to their enemies.\r\n6. The thieves’ guild contact who will pay well for small folk to wriggle through a window or chimney to unlock a front door.\r\n7. The philanthropist (or charlatan?) who took you in, dressed you properly, and tried to teach you upper-class manners.\r\n8. The spymaster or detective who sent you on investigation missions.\r\n9. The noble whose horse trampled you or a friend.\r\n10. The rich family you ran away from.\r\n\r\n### **Urchin Mementos**\r\n\r\n1. A locket containing pictures of your parents.\r\n2. A set of (stolen?) fine clothes.\r\n3. A small trained animal, such as a mouse, parrot, or monkey.\r\n4. A map of the sewers.\r\n5. The key or signet ring that was around your neck when you were discovered as a foundling.\r\n6. A battered one-eyed doll.\r\n7. A portfolio of papers given to you by a fleeing, wounded courier.\r\n8. A gold tooth (not yours, and not in your mouth).\r\n9. The flowers or trinkets that you sell.\r\n10. A dangerous secret overheard while at play.",
+    "desc": "### Urchin Connections\r\n\r\n1. The disreputable thief who taught you thieving skills.\r\n2. The saintly orphanage matron who’s so proud of how you’ve grown.\r\n3. The miserly and cruel orphanage administrator who rounds up urchins and runaways.\r\n4. The drunken thief who shared with you what little they could steal. \r\n5. The fellow urchin who has some power to make “bad stuff” happen to their enemies.\r\n6. The thieves’ guild contact who will pay well for small folk to wriggle through a window or chimney to unlock a front door.\r\n7. The philanthropist (or charlatan?) who took you in, dressed you properly, and tried to teach you upper-class manners.\r\n8. The spymaster or detective who sent you on investigation missions.\r\n9. The noble whose horse trampled you or a friend.\r\n10. The rich family you ran away from.\r\n\r\n### Urchin Mementos\r\n\r\n1. A locket containing pictures of your parents.\r\n2. A set of (stolen?) fine clothes.\r\n3. A small trained animal, such as a mouse, parrot, or monkey.\r\n4. A map of the sewers.\r\n5. The key or signet ring that was around your neck when you were discovered as a foundling.\r\n6. A battered one-eyed doll.\r\n7. A portfolio of papers given to you by a fleeing, wounded courier.\r\n8. A gold tooth (not yours, and not in your mouth).\r\n9. The flowers or trinkets that you sell.\r\n10. A dangerous secret overheard while at play.",
     "type": "connection_and_memento",
     "background": "urchin"
   }
@@ -2017,66 +2017,6 @@
     "desc": "You may occasionally meet others from your native land. Some may be friends, and some dire enemies; few will be indifferent to you. After a few such encounters, you may become the leader of a faction of exiles. Your followers include up to three NPCs of Challenge Rating ½ or less, such as",
     "type": "adventures-and-advancement",
     "background": "exile"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 491,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Dexterity and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "urchin"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 492,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Sleight of Hand, and either Deception or Stealth.",
-    "type": "skill_proficiency",
-    "background": "urchin"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 493,
-  "fields": {
-    "name": "Equipment",
-    "desc": "Common clothes, disguise kit.",
-    "type": "equipment",
-    "background": "urchin"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 494,
-  "fields": {
-    "name": "Guttersnipe",
-    "desc": "When you're in a town or city, you can provide a poor lifestyle for yourself and your companions. Also, you know how to get anywhere in town without being spotted by gangs, gossips, or guard patrols.",
-    "type": "feature",
-    "background": "urchin"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 495,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Urchin Mementos**\n\n1. A locket containing pictures of your parents.\n2. A set of (stolen?) fine clothes.\n3. A small trained animal, such as a mouse, parrot, or monkey.\n4. A map of the sewers.\n5. The key or signet ring that was around your neck when you were discovered as a foundling.\n6. A battered one-eyed doll.\n7. A portfolio of papers given to you by a fleeing, wounded courier.\n8. A gold tooth (not yours, and not in your mouth).\n9. The flowers or trinkets that you sell.\n10. A dangerous secret overheard while at play.",
-    "type": "suggested_characteristics",
-    "background": "urchin"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 496,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": ".Street kids are among a settlement's most vulnerable people, especially in cities with lycanthropes, vampires, and other supernatural threats. After you help out a few urchins in trouble, word gets out and you'll be able to consult the street network to gather information. If you roll lower than a 15 on an Investigation check to gather information in a city or town, your roll is treated as a 15.",
-    "type": "adventures-and-advancement",
-    "background": "urchin"
   }
 }
 ]
