@@ -1788,5 +1788,75 @@
     "type": "connection_and_memento",
     "background": "escapee-from-below"
   }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 556,
+  "fields": {
+    "name": "Ability Score Increase",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score",
+    "background": "imposter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 557,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Deception, and either Perception or Survival.",
+    "type": "skill_proficiency",
+    "background": "imposter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 558,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Disguise kit.",
+    "type": "tool_proficiency",
+    "background": "imposter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 559,
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "Common clothes, disguise kit.",
+    "type": "equipment",
+    "background": "imposter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 560,
+  "fields": {
+    "name": "Cover Story",
+    "desc": "Whenever you struggle to maintain the masquerade that you are who you say, a surprising number of people are willing to help you through your “lapses of memory.” They might be deluding themselves, or perhaps they know your secret but provide you cover for reasons of their own. So long as you don’t act completely out of character or get caught in an outrageous lie, you can usually find someone willing to cover for you. This cover most commonly takes  he form of excuses for your strange behavior.",
+    "type": "feature",
+    "background": "imposter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 561,
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "Each of your double’s former acquaintances must be won over, until they like you more than they did your original. Even once that’s accomplished, you won’t truly be free of your past until you have reckoned with it. When evidence of your true nature surfaces—or when the person you are impersonating reappears—you must triumph in the court of public opinion. Once you have done so, you will have permanent, legal access to your former self’s belongings, inheritance rights, and so on.",
+    "type": "adventures_and_advancement",
+    "background": "imposter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 562,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll d10, choose, or make up your own.\r\n\r\n### Imposter Connections\r\n1. The accomplice who knows your secret and helps you for their own reasons.\r\n2. The spouse or lover of your other self, whom you must win over.\r\n3. The enemy of your other self, whose hatred you inherit.\r\n4. Your other self’s rich or noble relative, from whom you may inherit a fortune.\r\n5. Your crooked former partner, who still searches for you, unaware of your new identity.\r\n6. The Underland compatriot who knew both you and the person whose identity you stole.\r\n7. The suspicious priest who noticed a change in your personality.\r\n8. An acquaintance whose “inside joke” you pretend to understand.\r\n9. The family pet that doesn’t recognize you.\r\n10. The person you left behind when you abandoned your old life.\r\n\r\n### Imposter Mementos\r\n1. The precious diary containing your original self’s secrets.\r\n2. The locket or signet ring that proves your identity.\r\n3. The scar that matches the one your original self had.\r\n4. An anonymous blackmail letter.\r\n5. An item that proves your real identity, which you keep hidden.\r\n6. The fingerbone that whispers hints to you at opportune times.\r\n7. The heirloom weapon you fraudulently wield.\r\n8. Your trusty hat of disguise.\r\n9. Your trusty ring of mind shielding.\r\n10. The implements (useless to you) of your original self’s magical training.",
+    "type": "connection_and_memento",
+    "background": "imposter"
+  }
 }
 ]
