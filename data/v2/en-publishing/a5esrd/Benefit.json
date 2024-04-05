@@ -315,7 +315,7 @@
   "fields": {
     "name": "Ability Score Increases",
     "desc": "+1 to Wisdom and one other ability score.",
-    "type": "ability_score_increase",
+    "type": "ability_score",
     "background": "farmer"
   }
 },
@@ -334,7 +334,7 @@
   "pk": 273,
   "fields": {
     "name": "Equipment",
-    "desc": "Common clothes, shovel, mule with saddlebags, 5 Supply.",
+    "desc": "Common clothes, shovel, mule with saddlebags, 5 Supply (rations).",
     "type": "equipment",
     "background": "farmer"
   }
@@ -344,7 +344,7 @@
   "pk": 274,
   "fields": {
     "name": "Bit and Bridle",
-    "desc": "You know how to stow and transport food. You and one animal under your care can each carry additional",
+    "desc": "You know how to stow and transport food. You and one animal under your care can each carry additional Supply equal to your proficiency bonus.",
     "type": "feature",
     "background": "farmer"
   }
@@ -354,7 +354,7 @@
   "pk": 275,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Farmer Connections**\r\n\r\n1. The landowner who foreclosed on your family land.\r\n2. The thugs who burned your village.\r\n3. The parents who wait for your return.\r\n4. The strange witch to whom your family owes a debt.\r\n5. The retired adventurer who trained you.\r\n6. The druid who—according to the villagers—laid a drought curse on your land.\r\n7. The village bully who threatened to kill you if you ever returned.\r\n8. The evil wizard who will stop at nothing to take your family heirloom.\r\n9. Your elder sibling who left searching for adventure before you did.\r\n10. The dragon whose foul reek has spoiled your countryside.\r\n\r\n### **Farmer Mementos**\r\n\r\n1. A strange item you dug up in a field: a key, a lump of unmeltable metal, a glass dagger.\r\n2. The bag of beans your mother warned you not to plant.\r\n3. The shovel, pickaxe, pitchfork, or other tool you used for labor. For you it's a one-handed simple melee weapon that deals 1d6 piercing, slashing, or bludgeoning damage.\r\n4. A debt you must pay.\r\n5. A mastiff.\r\n6. Your trusty fishing pole.\r\n7. A corncob pipe.\r\n8. A dried flower from your family garden.\r\n9. Half of a locket given to you by a missing sweetheart.\r\n10. A family weapon said to have magic powers, though it exhibits none at the moment.",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Farmer Connections\r\n\r\n1. The landowner who foreclosed on your family land.\r\n2. The thugs who burned your village.\r\n3. The parents who wait for your return.\r\n4. The strange witch to whom your family owes a debt.\r\n5. The retired adventurer who trained you.\r\n6. The druid who—according to the villagers—laid a drought curse on your land.\r\n7. The village bully who threatened to kill you if you ever returned.\r\n8. The evil wizard who will stop at nothing to take your family heirloom.\r\n9. Your elder sibling who left searching for adventure before you did.\r\n10. The dragon whose foul reek has spoiled your countryside.\r\n\r\n### Farmer Mementos\r\n\r\n1. A strange item you dug up in a field: a key, a lump of unmeltable metal, a glass dagger.\r\n2. The bag of beans your mother warned you not to plant.\r\n3. The shovel, pickaxe, pitchfork, or other tool you used for labor. For you it's a one-handed simple melee weapon that deals 1d6 piercing, slashing, or bludgeoning damage.\r\n4. A debt you must pay.\r\n5. A **mastiff**.\r\n6. Your trusty fishing pole.\r\n7. A corncob pipe.\r\n8. A dried flower from your family garden.\r\n9. Half of a locket given to you by a missing sweetheart.\r\n10. A family weapon said to have magic powers, though it exhibits none at the moment.",
     "type": "connection_and_memento",
     "background": "farmer"
   }
@@ -1427,66 +1427,6 @@
     "desc": "Gaming set, thieves' tools.",
     "type": "tool_proficiency",
     "background": "criminal"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 407,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Wisdom and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "farmer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 408,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Nature, and either Animal Handling or Survival.",
-    "type": "skill_proficiency",
-    "background": "farmer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 409,
-  "fields": {
-    "name": "Equipment",
-    "desc": "Common clothes, shovel, mule with saddlebags, 5 Supply.",
-    "type": "equipment",
-    "background": "farmer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 410,
-  "fields": {
-    "name": "Bit and Bridle",
-    "desc": "You know how to stow and transport food. You and one animal under your care can each carry additional",
-    "type": "feature",
-    "background": "farmer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 411,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Farmer Mementos**\n\n1. A strange item you dug up in a field: a key, a lump of unmeltable metal, a glass dagger.\n2. The bag of beans your mother warned you not to plant.\n3. The shovel, pickaxe, pitchfork, or other tool you used for labor. For you it's a one-handed simple melee weapon that deals 1d6 piercing, slashing, or bludgeoning damage.\n4. A debt you must pay.\n5. A mastiff.\n6. Your trusty fishing pole.\n7. A corncob pipe.\n8. A dried flower from your family garden.\n9. Half of a locket given to you by a missing sweetheart.\n10. A family weapon said to have magic powers, though it exhibits none at the moment.",
-    "type": "suggested_characteristics",
-    "background": "farmer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 412,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": "You left the farm for a reason but you still have an eye for land. If you acquire farming property, estates, or domains, you can earn twice as much as you otherwise would from their harvests, or be supported by your lands at a lifestyle one level higher than you otherwise would be.",
-    "type": "adventures-and-advancement",
-    "background": "farmer"
   }
 },
 {
