@@ -555,7 +555,7 @@
   "fields": {
     "name": "Ability Score Increases",
     "desc": "+1 to Constitution and one other ability score.",
-    "type": "ability_score_increase",
+    "type": "ability_score",
     "background": "guildmember"
   }
 },
@@ -594,7 +594,7 @@
   "pk": 305,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Guildmember Connections**\r\n\r\n1. Your guild master who occasionally has secret missions for groups which can keep their mouths shut.\r\n2. Members of a rival guild who might or might not stoop to violence.\r\n3. The master who, recognizing your talent, risked all to teach you dangerous guild secrets.\r\n4. The agent of a rival guild who is trying to steal secrets.\r\n5. The jealous teacher who took credit for your work and got you expelled from the guild.\r\n6. The guild quartermaster who stocks goods of dubious legality.\r\n7. The friendly guild officer who always saves you the most interesting assignments.\r\n8. The rivals who always compete for the same guild jobs.\r\n9. The noble who owes you big.\r\n10. Your guild master’s ambitious second-in-command who is recruiting allies for a coup.\r\n\r\n### **Guildmember Mementos**\r\n\r\n1. *Artisans Guild:* An incomplete masterpiece which your mentor never finished.\r\n2. *Entertainers Guild:* An incomplete masterpiece which your mentor never finished.\r\n3. *Explorers Guild:* A roll of incomplete maps each with a reward for completion.\r\n4. *Laborers Guild:* A badge entitling you to a free round of drinks at most inns and taverns.\r\n5. *Adventurers Guild:* A request from a circus to obtain live exotic animals.\r\n6. *Bounty Hunters Guild:* A set of manacles and a bounty on a fugitive who has already eluded you once.\r\n7. *Mages Guild:* The name of a wizard who has created a rare version of a spell that the guild covets.\r\n8. *Monster Hunters Guild:* A bounty, with no time limit, on a monster far beyond your capability.\r\n9. *Archaeologists Guild:* A map marking the entrance of a distant dungeon.\r\n10. *Thieves Guild:* Blueprints of a bank, casino, mint, or other rich locale.",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Guildmember Connections\r\n\r\n1. Your guild master who occasionally has secret missions for groups which can keep their mouths shut.\r\n2. Members of a rival guild who might or might not stoop to violence.\r\n3. The master who, recognizing your talent, risked all to teach you dangerous guild secrets.\r\n4. The agent of a rival guild who is trying to steal secrets.\r\n5. The jealous teacher who took credit for your work and got you expelled from the guild.\r\n6. The guild quartermaster who stocks goods of dubious legality.\r\n7. The friendly guild officer who always saves you the most interesting assignments.\r\n8. The rivals who always compete for the same guild jobs.\r\n9. The noble who owes you big.\r\n10. Your guild master’s ambitious second-in-command who is recruiting allies for a coup.\r\n\r\n### Guildmember Mementos\r\n\r\n1. *Artisans Guild:* An incomplete masterpiece which your mentor never finished.\r\n2. *Entertainers Guild:* An incomplete masterpiece which your mentor never finished.\r\n3. *Explorers Guild:* A roll of incomplete maps each with a reward for completion.\r\n4. *Laborers Guild:* A badge entitling you to a free round of drinks at most inns and taverns.\r\n5. *Adventurers Guild:* A request from a circus to obtain live exotic animals.\r\n6. *Bounty Hunters Guild:* A set of manacles and a bounty on a fugitive who has already eluded you once.\r\n7. *Mages Guild:* The name of a wizard who has created a rare version of a spell that the guild covets.\r\n8. *Monster Hunters Guild:* A bounty, with no time limit, on a monster far beyond your capability.\r\n9. *Archaeologists Guild:* A map marking the entrance of a distant dungeon.\r\n10. *Thieves Guild:* Blueprints of a bank, casino, mint, or other rich locale.",
     "type": "connection_and_memento",
     "background": "guildmember"
   }
@@ -1547,66 +1547,6 @@
     "desc": "Because of your commercial contacts you may be offered money to lead or escort trade caravans. You'll receive a fee from each trader that reaches their destination safely.",
     "type": "adventures-and-advancement",
     "background": "trader"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 437,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Constitution and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "guildmember"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 438,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Two of your choice.",
-    "type": "skill_proficiency",
-    "background": "guildmember"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 439,
-  "fields": {
-    "name": "Equipment",
-    "desc": "One set of artisan's tools or one instrument, traveler's clothes, guild badge.",
-    "type": "equipment",
-    "background": "guildmember"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 440,
-  "fields": {
-    "name": "Guild Business",
-    "desc": "While in a city or town, you can maintain a moderate lifestyle by plying your trade. Furthermore, the guild occasionally informs you of jobs that need doing. Completing such a job might require performing a downtime activity, or it might require a full adventure. The guild provides a modest reward if you're successful.",
-    "type": "feature",
-    "background": "guildmember"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 441,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Guildmember Mementos**\n\n1. *Artisans Guild:* An incomplete masterpiece which your mentor never finished.\n2. *Entertainers Guild:* An incomplete masterpiece which your mentor never finished.\n3. *Explorers Guild:* A roll of incomplete maps each with a reward for completion.\n4. *Laborers Guild:* A badge entitling you to a free round of drinks at most inns and taverns.\n5. *Adventurers Guild:* A request from a circus to obtain live exotic animals.\n6. *Bounty Hunters Guild:* A set of manacles and a bounty on a fugitive who has already eluded you once.\n7. *Mages Guild:* The name of a wizard who has created a rare version of a spell that the guild covets.\n8. *Monster Hunters Guild:* A bounty, with no time limit, on a monster far beyond your capability.\n9. *Archaeologists Guild:* A map marking the entrance of a distant dungeon.\n10. *Thieves Guild:* Blueprints of a bank, casino, mint, or other rich locale.",
-    "type": "suggested_characteristics",
-    "background": "guildmember"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 442,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": "Once you have completed several quests or endeavors advancing guild business, you may be promoted to guild officer. You gain access to more lucrative contracts. In addition, the guild supports you at a moderate lifestyle without you having to work.",
-    "type": "adventures-and-advancement",
-    "background": "guildmember"
   }
 },
 {
