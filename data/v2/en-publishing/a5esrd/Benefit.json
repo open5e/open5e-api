@@ -204,7 +204,7 @@
   "pk": 245,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Hermit Connections**\r\n1. The high priest who banished you to the wilderness until you repent your heresy.\r\n2. The inquisitor who hunts you even through the most solitary wildlands.\r\n3. The supernatural patron whose temptations and gifts you seek to reject.\r\n4. The inner voice you only hear in solitude.\r\n5. The mentor who trained you in silent contemplation—until they mysteriously turned their back on their own teachings.\r\n6. The villain who destroyed the shreds of your original, worldly life. \r\n7. The noble relatives who seek to return you to the life you rejected.\r\n8. The religious superior whose blasphemies scandalized you into fleeing your religious order.\r\n9. The angel who delivered you a prophecy.\r\n10. The mysterious person you glimpsed several times from a distance—unless it was a hallucination.\r\n\r\n### **Hermit Mementos**\r\n\r\n1. The (possibly unhinged) manifesto, encyclopedia, or theoretical work that you spent so much time on.\r\n2. The faded set of fine clothes you preserved for so many years.\r\n3. The signet ring bearing the family crest that you were ashamed of for so long.\r\n4. The book of forbidden secrets that led you to your isolated refuge.\r\n5. The beetle, mouse, or other small creature which was your only companion for so long.\r\n6. The seemingly nonmagical item that your inner voice says is important.\r\n7. The magic-defying clay tablets you spent years translating.\r\n8. The holy relic you were duty bound to protect.\r\n9. The meteor metal you found in a crater the day you first heard your inner voice.\r\n10. Your ridiculous-looking sun hat.",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Hermit Connections\r\n1. The high priest who banished you to the wilderness until you repent your heresy.\r\n2. The inquisitor who hunts you even through the most solitary wildlands.\r\n3. The supernatural patron whose temptations and gifts you seek to reject.\r\n4. The inner voice you only hear in solitude.\r\n5. The mentor who trained you in silent contemplation—until they mysteriously turned their back on their own teachings.\r\n6. The villain who destroyed the shreds of your original, worldly life. \r\n7. The noble relatives who seek to return you to the life you rejected.\r\n8. The religious superior whose blasphemies scandalized you into fleeing your religious order.\r\n9. The angel who delivered you a prophecy.\r\n10. The mysterious person you glimpsed several times from a distance—unless it was a hallucination.\r\n\r\n### Hermit Mementos\r\n1. The (possibly unhinged) manifesto, encyclopedia, or theoretical work that you spent so much time on.\r\n2. The faded set of fine clothes you preserved for so many years.\r\n3. The signet ring bearing the family crest that you were ashamed of for so long.\r\n4. The book of forbidden secrets that led you to your isolated refuge.\r\n5. The beetle, mouse, or other small creature which was your only companion for so long.\r\n6. The seemingly nonmagical item that your inner voice says is important.\r\n7. The magic-defying clay tablets you spent years translating.\r\n8. The holy relic you were duty bound to protect.\r\n9. The meteor metal you found in a crater the day you first heard your inner voice.\r\n10. Your ridiculous-looking sun hat.",
     "type": "connection_and_memento",
     "background": "hermit"
   }
@@ -855,7 +855,7 @@
   "fields": {
     "name": "Ability Score Increases",
     "desc": "+1 to Wisdom and one other ability score.",
-    "type": "ability_score_increase",
+    "type": "ability_score",
     "background": "hermit"
   }
 },
@@ -1607,66 +1607,6 @@
     "desc": "When you visit libraries and universities you tend to be asked for help in your role as a comparatively rough-and-tumble adventurer. After fetching a few bits of esoteric knowledge and settling a few academic disputes, you may be granted access to the restricted areas of the library (which contain darker secrets and deeper mysteries, such as those answerable with a DC 25 Arcana, Culture, Engineering, History, Nature, or Religion check).",
     "type": "adventures-and-advancement",
     "background": "sage"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 473,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Wisdom and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "hermit"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 474,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Religion, and either Medicine or Survival.",
-    "type": "skill_proficiency",
-    "background": "hermit"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 475,
-  "fields": {
-    "name": "Equipment",
-    "desc": "Healer's satchel, herbalism kit, common clothes, 7 days rations, and a prayer book, prayer wheel, or prayer beads.",
-    "type": "equipment",
-    "background": "hermit"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 476,
-  "fields": {
-    "name": "Inner Voice",
-    "desc": "You occasionally hear a voice—perhaps your conscience, perhaps a higher power—which you have come to trust. It told you to go into seclusion, and then it advised you when to rejoin the world. You think it is leading you to your destiny (consult with your Narrator about this feature.)",
-    "type": "feature",
-    "background": "hermit"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 477,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Hermit Mementos**\n\n1. The (possibly unhinged) manifesto, encyclopedia, or theoretical work that you spent so much time on.\n2. The faded set of fine clothes you preserved for so many years.\n3. The signet ring bearing the family crest that you were ashamed of for so long.\n4. The book of forbidden secrets that led you to your isolated refuge.\n5. The beetle, mouse, or other small creature which was your only companion for so long.\n6. The seemingly nonmagical item that your inner voice says is important.\n7. The magic-defying clay tablets you spent years translating.\n8. The holy relic you were duty bound to protect.\n9. The meteor metal you found in a crater the day you first heard your inner voice.\n10. Your ridiculous-looking sun hat.",
-    "type": "suggested_characteristics",
-    "background": "hermit"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 478,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": "Your inner voice may occasionally prompt you to accept certain adventure opportunities or to avoid certain actions. You are free to obey or disobey this voice. Eventually however it may lead you to a special revelation, adventure, or treasure.",
-    "type": "adventures-and-advancement",
-    "background": "hermit"
   }
 },
 {
