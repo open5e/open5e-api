@@ -155,7 +155,7 @@
   "fields": {
     "name": "Ability Score Increases",
     "desc": "+1 to Charisma and one other ability score.",
-    "type": "ability_score_increase",
+    "type": "ability_score",
     "background": "trader"
   }
 },
@@ -184,7 +184,7 @@
   "pk": 191,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Trader Connections**\r\n\r\n1. The parent or relative who wants you to carry on the family business.\r\n2. The sibling who inherited the other half of the family business.\r\n3. The trading company to which you are indentured until you pay off a debt.\r\n4. The powerful merchant who will never forgive the business coup you pulled off.\r\n5. The noble whose horse trampled your poor family’s vegetable stall, injuring or killing a relative you\r\ndearly loved.\r\n6. The parent or elder sibling who squandered your family fortune.\r\n7. The business partner who cheated you.\r\n8. The customs agent who has sworn to catch you red-handed with illicit goods.\r\n9. The crime boss to whom you wouldn’t pay protection money.\r\n10. The smuggler who will pay well for certain commodities.\r\n\r\n### **Trader Mementos**\r\n\r\n1. The first gold piece you earned.\r\n2. Thousands of shares in a failed venture.\r\n3. A letter of introduction to a rich merchant in a distant city.\r\n4. A sample of an improved version of a common tool.\r\n5. Scars from a wound sustained when you tried to collect a debt from a vicious noble.\r\n6. A love letter from the heir of a rival trading family.\r\n7. A signet ring bearing your family crest, which is famous in the mercantile world.\r\n8. A contract binding you to a particular trading company for the next few years.\r\n9. A letter from a friend imploring you to invest in an opportunity that can't miss.\r\n10. A trusted family member's travel journals that mix useful geographical knowledge with tall tales.",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Trader Connections\r\n1. The parent or relative who wants you to carry on the family business.\r\n2. The sibling who inherited the other half of the family business.\r\n3. The trading company to which you are indentured until you pay off a debt.\r\n4. The powerful merchant who will never forgive the business coup you pulled off.\r\n5. The noble whose horse trampled your poor family’s vegetable stall, injuring or killing a relative you\r\ndearly loved.\r\n6. The parent or elder sibling who squandered your family fortune.\r\n7. The business partner who cheated you.\r\n8. The customs agent who has sworn to catch you red-handed with illicit goods.\r\n9. The crime boss to whom you wouldn’t pay protection money.\r\n10. The smuggler who will pay well for certain commodities.\r\n\r\n### Trader Mementos\r\n1. The first gold piece you earned.\r\n2. Thousands of shares in a failed venture.\r\n3. A letter of introduction to a rich merchant in a distant city.\r\n4. A sample of an improved version of a common tool.\r\n5. Scars from a wound sustained when you tried to collect a debt from a vicious noble.\r\n6. A love letter from the heir of a rival trading family.\r\n7. A signet ring bearing your family crest, which is famous in the mercantile world.\r\n8. A contract binding you to a particular trading company for the next few years.\r\n9. A letter from a friend imploring you to invest in an opportunity that can't miss.\r\n10. A trusted family member's travel journals that mix useful geographical knowledge with tall tales.",
     "type": "connection_and_memento",
     "background": "trader"
   }
@@ -1044,7 +1044,7 @@
   "pk": 362,
   "fields": {
     "name": "Tool Proficiencies",
-    "desc": "One Vehicle",
+    "desc": "One vehicle.",
     "type": "tool_proficiency",
     "background": "trader"
   }
@@ -1427,66 +1427,6 @@
     "desc": "Gaming set, thieves' tools.",
     "type": "tool_proficiency",
     "background": "criminal"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 419,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Charisma and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "trader"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 420,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Persuasion, and either Culture, Deception, or Insight.",
-    "type": "skill_proficiency",
-    "background": "trader"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 421,
-  "fields": {
-    "name": "Equipment",
-    "desc": "Traveler's clothes, abacus, merchant's scale.",
-    "type": "equipment",
-    "background": "trader"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 422,
-  "fields": {
-    "name": "Supply and Demand",
-    "desc": "When you buy a trade good and sell it elsewhere to a community in need of that good, you gain a 10% bonus to its sale price for every 100 miles between the buy and sell location (maximum of 50%).",
-    "type": "feature",
-    "background": "trader"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 423,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Trader Mementos**\n\n1. The first gold piece you earned.\n2. Thousands of shares in a failed venture.\n3. A letter of introduction to a rich merchant in a distant city.\n4. A sample of an improved version of a common tool.\n5. Scars from a wound sustained when you tried to collect a debt from a vicious noble.\n6. A love letter from the heir of a rival trading family.\n7. A signet ring bearing your family crest, which is famous in the mercantile world.\n8. A contract binding you to a particular trading company for the next few years.\n9. A letter from a friend imploring you to invest in an opportunity that can't miss.\n10. A trusted family member's travel journals that mix useful geographical knowledge with tall tales.",
-    "type": "suggested_characteristics",
-    "background": "trader"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 424,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": "Because of your commercial contacts you may be offered money to lead or escort trade caravans. You'll receive a fee from each trader that reaches their destination safely.",
-    "type": "adventures-and-advancement",
-    "background": "trader"
   }
 }
 ]
