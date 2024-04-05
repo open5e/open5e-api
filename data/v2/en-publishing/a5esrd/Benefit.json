@@ -1568,5 +1568,75 @@
     "type": "connection_and_memento",
     "background": "haunted"
   }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 534,
+  "fields": {
+    "name": "Ability Score Increase",
+    "desc": "+1 to Wisdom and one other ability score.",
+    "type": "ability_score",
+    "background": "deep-hunter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 535,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either Nature or Stealth.",
+    "type": "skill_proficiency",
+    "background": "deep-hunter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 536,
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Leatherworker’s tools.",
+    "type": "tool_proficiency",
+    "background": "deep-hunter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 537,
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "chalk, traveler’s clothes, 2 hunting traps",
+    "type": "equipment",
+    "background": "deep-hunter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 538,
+  "fields": {
+    "name": "Deep Lore",
+    "desc": "You always have a sense of how deep you are and which direction is north, provided that you’ve traveled in these regions before. You are also generally aware of the physical and political geography of the region (e.g., “the old dwarf colony is this way and those tunnels are part of the wererat pack’s hunting grounds”). You know where relatively safe places to camp are located and you can usually find fresh sources of water.",
+    "type": "feature",
+    "background": "deep-hunter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 539,
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "Once you’ve collected a few trophies from your hunts, people start offering you money in exchange for help against the subterranean monsters plaguing their communities. After a few such bounties, you gain the free service of up to 4 scouts (or scout variants). You can ask them to adventure with you or dispatch them to gather information on distant areas.",
+    "type": "adventures_and_advancement",
+    "background": "deep-hunter"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 540,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Deep Hunter Connections\r\n1. The hunter that saved your life.\r\n2. The rival hunter that pursues the same beast.\r\n3. The rival hunter that took credit for your kill and branded you a liar.\r\n4. The intelligent monster that mocks you every time it escapes your grasp.\r\n5. The community or family that depends on you.\r\n6. The city alchemist that pays well for your trophies.\r\n7. A community of fey, deep gnome, or shadow elves that owe you their lives.\r\n8. A monster you have befriended and sworn to protect.\r\n9. The surface world ruler from whom you’re hiding.\r\n10. The monster that hunts you.\r\n\r\n### Deep Hunter Mementos\r\n1. A prized bow string, arrow, whetstone, or other piece of equipment that has never let you down.\r\n2. A locket containing the picture of a subterranean monster’s victim.\r\n3. An astonishing assortment of unusual jerkies.\r\n4. A scar from the monster that got away.\r\n5. Clothing bedecked with a dozen grisly trophies.\r\n6. A lucky coin you flip when you’re not sure of the way forward.\r\n7. The broken horn or tooth that nearly killed you.\r\n8. A talking monster skull (you hear it talking, anyway).\r\n9. A copper coin taken from a cavern filled with riches; you stumbled across the cavern while lost and have never found your way back.\r\n10. A journal detailing your attempts to find a navigable passage to the Midnight Sea.",
+    "type": "connection_and_memento",
+    "background": "deep-hunter"
+  }
 }
 ]
