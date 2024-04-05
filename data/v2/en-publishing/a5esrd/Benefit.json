@@ -905,7 +905,7 @@
   "fields": {
     "name": "Ability Score Increases",
     "desc": "+1 to Constitution and one other ability score.",
-    "type": "ability_score_increase",
+    "type": "ability_score",
     "background": "sailor"
   }
 },
@@ -944,7 +944,7 @@
   "pk": 347,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Sailor Mementos**\r\n\r\n1. A dagger with a handle carved from a dragon turtle's tooth.\r\n2. A scroll tube filled with nautical charts.\r\n3. A harpoon (treat as a javelin with its butt end fastened to a rope).\r\n4. A scar with a famous tale behind it.\r\n5. A treasure map.\r\n6. A codebook which lets you decipher a certain faction's signal flags.\r\n7. A necklace bearing a scale, shell, tooth, or other nautical trinket.\r\n8. Several bottles of alcohol.\r\n9. A tale of an eerie encounter with a strange monster, a ghost ship, or other mystery.\r\n10. A half-finished manuscript outlining an untested theory about how to rerig a ship to maximize speed.\r\n\r\n### **Sailor Mementos**\r\n\r\n1. A dagger with a handle carved from a dragon turtle’s tooth.\r\n2. A scroll tube filled with nautical charts.\r\n3. A harpoon (treat as a javelin with its butt end fastened to a rope).\r\n4. A scar with a famous tale behind it. \r\n5. A treasure map.\r\n6. A codebook which lets you decipher a certain faction’s signal flags.\r\n7. A necklace bearing a scale, shell, tooth, or other nautical trinket.\r\n8. Several bottles of alcohol. \r\n9. A tale of an eerie encounter with a strange monster, a ghost ship, or other mystery.\r\n10. A half-finished manuscript outlining an untested theory about how to rerig a ship to maximize speed.",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Sailor Mementos\r\n1. A dagger with a handle carved from a dragon turtle's tooth.\r\n2. A scroll tube filled with nautical charts.\r\n3. A harpoon (treat as a javelin with its butt end fastened to a rope).\r\n4. A scar with a famous tale behind it.\r\n5. A treasure map.\r\n6. A codebook which lets you decipher a certain faction's signal flags.\r\n7. A necklace bearing a scale, shell, tooth, or other nautical trinket.\r\n8. Several bottles of alcohol.\r\n9. A tale of an eerie encounter with a strange monster, a ghost ship, or other mystery.\r\n10. A half-finished manuscript outlining an untested theory about how to rerig a ship to maximize speed.\r\n\r\n### Sailor Mementos\r\n1. A dagger with a handle carved from a dragon turtle’s tooth.\r\n2. A scroll tube filled with nautical charts.\r\n3. A harpoon (treat as a javelin with its butt end fastened to a rope).\r\n4. A scar with a famous tale behind it. \r\n5. A treasure map.\r\n6. A codebook which lets you decipher a certain faction’s signal flags.\r\n7. A necklace bearing a scale, shell, tooth, or other nautical trinket.\r\n8. Several bottles of alcohol. \r\n9. A tale of an eerie encounter with a strange monster, a ghost ship, or other mystery.\r\n10. A half-finished manuscript outlining an untested theory about how to rerig a ship to maximize speed.",
     "type": "connection_and_memento",
     "background": "sailor"
   }
@@ -954,7 +954,7 @@
   "pk": 348,
   "fields": {
     "name": "Adventures And Advancement",
-    "desc": ".You and your companions will be able to take passage for free on nearly any commercial ship in exchange for occasional ship duties when all hands are called. In addition, after you have a few naval exploits under your belt your fame makes sailors eager to sail under you. You can hire a ship's crew at half the usual price.",
+    "desc": "You and your companions will be able to take passage for free on nearly any commercial ship in exchange for occasional ship duties when all hands are called. In addition, after you have a few naval exploits under your belt your fame makes sailors eager to sail under you. You can hire a ship's crew at half the usual price.",
     "type": "adventures_and_advancement",
     "background": "sailor"
   }
@@ -1487,66 +1487,6 @@
     "desc": "Because of your commercial contacts you may be offered money to lead or escort trade caravans. You'll receive a fee from each trader that reaches their destination safely.",
     "type": "adventures-and-advancement",
     "background": "trader"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 479,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Constitution and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "sailor"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 480,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Athletics, and either Acrobatics or Perception.",
-    "type": "skill_proficiency",
-    "background": "sailor"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 481,
-  "fields": {
-    "name": "Equipment",
-    "desc": "Common clothes, navigator's tools, 50 feet of rope.",
-    "type": "equipment",
-    "background": "sailor"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 482,
-  "fields": {
-    "name": "Sea Salt",
-    "desc": "Your nautical jargon and rolling gait mark you unmistakably as a mariner. You can easily enter into shop talk with any sailors that are not hostile to you, learning nautical gossip and ships' comings and goings. You also recognize most large ships by sight and by name, and can make a History orCulturecheck to recall their most recent captain and allegiance.",
-    "type": "feature",
-    "background": "sailor"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 483,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Sailor Mementos**\n\n1. A dagger with a handle carved from a dragon turtle's tooth.\n2. A scroll tube filled with nautical charts.\n3. A harpoon (treat as a javelin with its butt end fastened to a rope).\n4. A scar with a famous tale behind it.\n5. A treasure map.\n6. A codebook which lets you decipher a certain faction's signal flags.\n7. A necklace bearing a scale, shell, tooth, or other nautical trinket.\n8. Several bottles of alcohol.\n9. A tale of an eerie encounter with a strange monster, a ghost ship, or other mystery.\n10. A half-finished manuscript outlining an untested theory about how to rerig a ship to maximize speed.",
-    "type": "suggested_characteristics",
-    "background": "sailor"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 484,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": ".You and your companions will be able to take passage for free on nearly any commercial ship in exchange for occasional ship duties when all hands are called. In addition, after you have a few naval exploits under your belt your fame makes sailors eager to sail under you. You can hire a ship's crew at half the usual price.",
-    "type": "adventures-and-advancement",
-    "background": "sailor"
   }
 }
 ]
