@@ -965,7 +965,7 @@
   "fields": {
     "name": "Ability Score Increases",
     "desc": "+1 to Wisdom and one other ability score.",
-    "type": "ability_score_increase",
+    "type": "ability_score",
     "background": "exile"
   }
 },
@@ -1004,7 +1004,7 @@
   "pk": 353,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Exile Connections**\r\n1. The companions who shared your exile.\r\n2. The kindly local who taught you Common.\r\n3. The shopkeeper or innkeeper who took you in and gave you work.\r\n4. The hunters from your native land who pursue you.\r\n5. The distant ruler who banished you until you redeem yourself.\r\n6. The community of fellow exiles who have banded together in a city neighborhood.\r\n7. The acting or carnival troupe which took you in.\r\n8. The suspicious authorities who were convinced you were a spy.\r\n9. Your first friend after your exile: a grizzled adventurer who traveled with you.\r\n10. A well-connected and unscrupulous celebrity who hails from your homeland.\r\n\r\n### **Exile Mementos**\r\n\r\n1. A musical instrument which was common in your homeland.\r\n2. A memorized collection of poems or sagas.\r\n3. A locket containing a picture of your betrothed from whom you are separated.\r\n4. Trade, state, or culinary secrets from your native land.\r\n5. A piece of jewelry given to you by someone you will never see again.\r\n6. An inaccurate, ancient map of the land you now live in.\r\n7. Your incomplete travel journals.\r\n8. A letter from a relative directing you to someone who might be able to help you.\r\n9. A precious cultural artifact you must protect.\r\n10. An arrow meant for the heart of your betrayer.",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Exile Connections\r\n1. The companions who shared your exile.\r\n2. The kindly local who taught you Common.\r\n3. The shopkeeper or innkeeper who took you in and gave you work.\r\n4. The hunters from your native land who pursue you.\r\n5. The distant ruler who banished you until you redeem yourself.\r\n6. The community of fellow exiles who have banded together in a city neighborhood.\r\n7. The acting or carnival troupe which took you in.\r\n8. The suspicious authorities who were convinced you were a spy.\r\n9. Your first friend after your exile: a grizzled adventurer who traveled with you.\r\n10. A well-connected and unscrupulous celebrity who hails from your homeland.\r\n\r\n### Exile Mementos\r\n\r\n1. A musical instrument which was common in your homeland.\r\n2. A memorized collection of poems or sagas.\r\n3. A locket containing a picture of your betrothed from whom you are separated.\r\n4. Trade, state, or culinary secrets from your native land.\r\n5. A piece of jewelry given to you by someone you will never see again.\r\n6. An inaccurate, ancient map of the land you now live in.\r\n7. Your incomplete travel journals.\r\n8. A letter from a relative directing you to someone who might be able to help you.\r\n9. A precious cultural artifact you must protect.\r\n10. An arrow meant for the heart of your betrayer.",
     "type": "connection_and_memento",
     "background": "exile"
   }
@@ -1967,66 +1967,6 @@
     "desc": ".You and your companions will be able to take passage for free on nearly any commercial ship in exchange for occasional ship duties when all hands are called. In addition, after you have a few naval exploits under your belt your fame makes sailors eager to sail under you. You can hire a ship's crew at half the usual price.",
     "type": "adventures-and-advancement",
     "background": "sailor"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 485,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Wisdom and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "exile"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 486,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Survival, and either History or Performance.",
-    "type": "skill_proficiency",
-    "background": "exile"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 487,
-  "fields": {
-    "name": "Equipment",
-    "desc": "Traveler's clothes, 10 days rations.",
-    "type": "equipment",
-    "background": "exile"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 488,
-  "fields": {
-    "name": "Fellow Traveler",
-    "desc": "You gain an",
-    "type": "feature",
-    "background": "exile"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 489,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Exile Mementos**\n\n1. A musical instrument which was common in your homeland.\n2. A memorized collection of poems or sagas.\n3. A locket containing a picture of your betrothed from whom you are separated.\n4. Trade, state, or culinary secrets from your native land.\n5. A piece of jewelry given to you by someone you will never see again.\n6. An inaccurate, ancient map of the land you now live in.\n7. Your incomplete travel journals.\n8. A letter from a relative directing you to someone who might be able to help you.\n9. A precious cultural artifact you must protect.\n10. An arrow meant for the heart of your betrayer.",
-    "type": "suggested_characteristics",
-    "background": "exile"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 490,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": "You may occasionally meet others from your native land. Some may be friends, and some dire enemies; few will be indifferent to you. After a few such encounters, you may become the leader of a faction of exiles. Your followers include up to three NPCs of Challenge Rating ½ or less, such as",
-    "type": "adventures-and-advancement",
-    "background": "exile"
   }
 }
 ]
