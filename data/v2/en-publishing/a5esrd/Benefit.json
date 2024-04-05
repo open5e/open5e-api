@@ -524,7 +524,7 @@
   "pk": 299,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Entertainer Connections**\r\n1. Your rival, an equally talented performer.\r\n2. The cruel ringleader of the sinister circus where you learned your trade.\r\n3. A noble who wants vengeance for the song you wrote about him.\r\n4. The actor who says that there’s always room in their troupe for you and your companions.\r\n5. The noble who owes you a favor for penning the love poems that won their spouse.\r\n6. Your former partner, a slumming noble with a good ear and bad judgment.\r\n7. The rival who became successful and famous by taking credit for your best work.\r\n8. The highly-placed courtier who is always trying to further your career.\r\n9. A jilted lover who wants revenge. \r\n10. The many tavernkeepers and tailors to whom you owe surprisingly large sums.\r\n\r\n### **Entertainer Mementos**\r\n\r\n1. Your unfinished masterpiece—if you can find inspiration to overcome your writer's block.\r\n2. Fine clothing suitable for a noble and some reasonably convincing costume jewelry.\r\n3. A love letter from a rich admirer.\r\n4. A broken instrument of masterwork quality—if repaired, what music you could make on it!\r\n5. A stack of slim poetry volumes you just can't sell.\r\n6. Jingling jester's motley.\r\n7. A disguise kit.\r\n8. Water-squirting wands, knotted scarves, trick handcuffs, and other tools of a bizarre new entertainment trend: a nonmagical magic show.\r\n9. A stage dagger.\r\n10. A letter of recommendation from your mentor to a noble or royal court.",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Entertainer Connections\r\n1. Your rival, an equally talented performer.\r\n2. The cruel ringleader of the sinister circus where you learned your trade.\r\n3. A noble who wants vengeance for the song you wrote about him.\r\n4. The actor who says that there’s always room in their troupe for you and your companions.\r\n5. The noble who owes you a favor for penning the love poems that won their spouse.\r\n6. Your former partner, a slumming noble with a good ear and bad judgment.\r\n7. The rival who became successful and famous by taking credit for your best work.\r\n8. The highly-placed courtier who is always trying to further your career.\r\n9. A jilted lover who wants revenge. \r\n10. The many tavernkeepers and tailors to whom you owe surprisingly large sums.\r\n\r\n### Entertainer Mementos\r\n\r\n1. Your unfinished masterpiece—if you can find inspiration to overcome your writer's block.\r\n2. Fine clothing suitable for a noble and some reasonably convincing costume jewelry.\r\n3. A love letter from a rich admirer.\r\n4. A broken instrument of masterwork quality—if repaired, what music you could make on it!\r\n5. A stack of slim poetry volumes you just can't sell.\r\n6. Jingling jester's motley.\r\n7. A disguise kit.\r\n8. Water-squirting wands, knotted scarves, trick handcuffs, and other tools of a bizarre new entertainment trend: a nonmagical magic show.\r\n9. A stage dagger.\r\n10. A letter of recommendation from your mentor to a noble or royal court.",
     "type": "connection_and_memento",
     "background": "entertainer"
   }
@@ -534,7 +534,7 @@
   "pk": 300,
   "fields": {
     "name": "Adventures And Advancement",
-    "desc": ".Some of your admirers will pay you to plead a cause or smear an enemy. If you succeed at several such quests, your fame will grow. You will be welcome at royal courts, which will support you at a rich lifestyle.",
+    "desc": "Some of your admirers will pay you to plead a cause or smear an enemy. If you succeed at several such quests, your fame will grow. You will be welcome at royal courts, which will support you at a rich lifestyle.",
     "type": "adventures_and_advancement",
     "background": "entertainer"
   }
@@ -1597,66 +1597,6 @@
     "desc": "Because of your commercial contacts you may be offered money to lead or escort trade caravans. You'll receive a fee from each trader that reaches their destination safely.",
     "type": "adventures-and-advancement",
     "background": "trader"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 431,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Charisma and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "entertainer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 432,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Performance, and either Acrobatics, Culture, or Persuasion.",
-    "type": "skill_proficiency",
-    "background": "entertainer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 433,
-  "fields": {
-    "name": "Equipment",
-    "desc": "Lute or other musical instrument, costume.",
-    "type": "equipment",
-    "background": "entertainer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 434,
-  "fields": {
-    "name": "Pay the Piper",
-    "desc": "In any settlement in which you haven't made yourself unpopular, your performances can earn enough money to support yourself and your companions: the bigger the settlement, the higher your standard of living, up to a moderate lifestyle in a city.",
-    "type": "feature",
-    "background": "entertainer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 435,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Entertainer Mementos**\n\n1. Your unfinished masterpiece—if you can find inspiration to overcome your writer's block.\n2. Fine clothing suitable for a noble and some reasonably convincing costume jewelry.\n3. A love letter from a rich admirer.\n4. A broken instrument of masterwork quality—if repaired, what music you could make on it!\n5. A stack of slim poetry volumes you just can't sell.\n6. Jingling jester's motley.\n7. A disguise kit.\n8. Water-squirting wands, knotted scarves, trick handcuffs, and other tools of a bizarre new entertainment trend: a nonmagical magic show.\n9. A stage dagger.\n10. A letter of recommendation from your mentor to a noble or royal court.",
-    "type": "suggested_characteristics",
-    "background": "entertainer"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 436,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": ".Some of your admirers will pay you to plead a cause or smear an enemy. If you succeed at several such quests, your fame will grow. You will be welcome at royal courts, which will support you at a rich lifestyle.",
-    "type": "adventures-and-advancement",
-    "background": "entertainer"
   }
 },
 {
