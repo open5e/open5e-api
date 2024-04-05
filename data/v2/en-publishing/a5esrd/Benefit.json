@@ -1428,5 +1428,75 @@
     "type": "tool_proficiency",
     "background": "criminal"
   }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 520,
+  "fields": {
+    "name": "Ability Score Increase",
+    "desc": "+1 Charisma and one other ability score.",
+    "type": "ability_score",
+    "background": "cursed"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 521,
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Perception, and either Arcana, Nature, or Religion based on the source of your curse.",
+    "type": "skill_proficiency",
+    "background": "cursed"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 522,
+  "fields": {
+    "name": "Languages",
+    "desc": "Two of your choice.",
+    "type": "language",
+    "background": "cursed"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 523,
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "4 days of rations, one person tent, traveler’s clothes",
+    "type": "equipment",
+    "background": "cursed"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 524,
+  "fields": {
+    "name": "Accursed",
+    "desc": "Whenever you fail at a Deception or Persuasion check, your curse manifests in a manner that you work out with your Narrator ahead of time. The failed check is ignored, and you immediately roll an Intimidation check with which you have expertise, taking the new roll. However, even a successful Intimidation check does not necessarily produce the result you originally intended, as the creatures around you may recoil in fear and distrust. At the Narrator’s discretion, you may keep the expertise die to Intimidation until the end of the scene.",
+    "type": "feature",
+    "background": "cursed"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 525,
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "The entity responsible for your curse may press you to complete specific tasks, such as transporting a mysterious item, defeating a hated enemy, or stealing important documents. Work with your Narrator to determine how your curse is leveraged in these situations. After you complete several such tasks, your infamy grows. You are known by all people within 100 miles of your Prestige Center, many of whom hold you in fearful respect. You and your companions are given a moderate lifestyle in settlements within this area by those who dare not risk your curse.",
+    "type": "adventures_and_advancement",
+    "background": "cursed"
+  }
+},
+{
+  "model": "api_v2.benefit",
+  "pk": 526,
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Cursed Connections\r\n1. Your parent who made the deal and left you cursed for their own ends.\r\n2. A cultist devoted to the entity that cursed you and who reveres you as well.\r\n3. Your childhood romantic interest, ultimately marked in some way by your curse.\r\n4. A childhood friend who pulled away from you when they realized you were cursed.\r\n5. The entity that cursed you.\r\n6. A priest or sage who tried—and failed—to break your curse years ago.\r\n7. The kindly family that took you in out of pity.\r\n8. The law enforcers who see you as a dangerous troublemaker.\r\n9. Another accursed individual with whom you sometimes commiserate.\r\n10. A scholar or researcher obsessed with the entity that cursed you.\r\n\r\n### Cursed Memento\r\n1. A locket or ring once owned by someone who was killed when your curse first manifested.\r\n2. A childhood toy, well worn, which has always been soothing.\r\n3. A torn piece of parchment which may lead you to the person who can break your curse.\r\n4. A weapon or piece of ammunition set aside for the entity that cursed you.\r\n5. A unique scar, discoloration, or other mark on your body which shows your curse.\r\n6. Nightmares brought on by the curse which often wake you, screaming.\r\n7. A charm meant to keep your curse contained. You haven’t noticed an effect.\r\n8. An artistic rendering of the entity that cursed you\r\n9. A flask once given to you as well-meaning consolation.\r\n10. A small knife you used as a child to protect yourself, because no one else would.",
+    "type": "connection_and_memento",
+    "background": "cursed"
+  }
 }
 ]
