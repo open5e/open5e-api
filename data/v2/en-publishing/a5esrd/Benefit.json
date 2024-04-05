@@ -294,7 +294,7 @@
   "pk": 269,
   "fields": {
     "name": "Connection and Memento",
-    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### **Criminal Connections**\r\n\r\n1. The master criminal who inducted you into your first gang.\r\n2. The cleric or herald who convinced you to use your skills for good (and who may be legally responsible for your continued good behavior).\r\n3. Your sibling or other relative—who also happens to be a representative of the law.\r\n4. The gang of rascals and pickpockets who once called you their leader.\r\n5. The bounty hunter who has sworn to bring you to justice.\r\n6. Your former partner who made off with all the loot after a big score.\r\n7. The masked courier who occasionally gives you jobs.\r\n8. The crime boss to whom you have sworn loyalty (or to whom you owe an enormous debt).\r\n9. The master thief who once stole something precious from you. \r\n10. The corrupt noble who ruined your once-wealthy family.\r\n\r\n### **Criminal Mementos**\r\n\r\n1. A golden key to which you haven't discovered the lock.\r\n2. A brand that was burned into your shoulder as punishment for a crime.\r\n3. A scar for which you have sworn revenge.\r\n4. The distinctive mask that gives you your nickname (for instance, the Black Mask or the Red Fox).\r\n5. A gold coin which reappears in your possession a week after you've gotten rid of it.\r\n6. The stolen symbol of a sinister organization; not even your fence will take it off your hands.\r\n7. Documents that incriminate a dangerous noble or politician.\r\n8. The floor plan of a palace.\r\n9. The calling cards you leave after (or before) you strike.\r\n10. A manuscript written by your mentor: *Secret Exits of the World's Most Secure Prisons*.",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Criminal Connections\r\n\r\n1. The master criminal who inducted you into your first gang.\r\n2. The cleric or herald who convinced you to use your skills for good (and who may be legally responsible for your continued good behavior).\r\n3. Your sibling or other relative—who also happens to be a representative of the law.\r\n4. The gang of rascals and pickpockets who once called you their leader.\r\n5. The bounty hunter who has sworn to bring you to justice.\r\n6. Your former partner who made off with all the loot after a big score.\r\n7. The masked courier who occasionally gives you jobs.\r\n8. The crime boss to whom you have sworn loyalty (or to whom you owe an enormous debt).\r\n9. The master thief who once stole something precious from you. \r\n10. The corrupt noble who ruined your once-wealthy family.\r\n\r\n### Criminal Mementos\r\n\r\n1. A golden key to which you haven't discovered the lock.\r\n2. A brand that was burned into your shoulder as punishment for a crime.\r\n3. A scar for which you have sworn revenge.\r\n4. The distinctive mask that gives you your nickname (for instance, the Black Mask or the Red Fox).\r\n5. A gold coin which reappears in your possession a week after you've gotten rid of it.\r\n6. The stolen symbol of a sinister organization; not even your fence will take it off your hands.\r\n7. Documents that incriminate a dangerous noble or politician.\r\n8. The floor plan of a palace.\r\n9. The calling cards you leave after (or before) you strike.\r\n10. A manuscript written by your mentor: *Secret Exits of the World's Most Secure Prisons*.",
     "type": "connection_and_memento",
     "background": "criminal"
   }
@@ -304,7 +304,7 @@
   "pk": 270,
   "fields": {
     "name": "Adventures And Advancement",
-    "desc": "If you pull off several successful jobs or heists, you may be promoted (or reinstated) as a leader in your gang. You may gain the free service of up to 8",
+    "desc": "If you pull off several successful jobs or heists, you may be promoted (or reinstated) as a leader in your gang. You may gain the free service of up to 8 **bandits** at any time.",
     "type": "adventures_and_advancement",
     "background": "criminal"
   }
@@ -1416,66 +1416,6 @@
     "name": "Tool Proficiencies",
     "desc": "Gaming set, thieves' tools.",
     "type": "tool_proficiency",
-    "background": "criminal"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 401,
-  "fields": {
-    "name": "Ability Score Increases",
-    "desc": "+1 to Dexterity and one other ability score.",
-    "type": "ability_score_increase",
-    "background": "criminal"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 402,
-  "fields": {
-    "name": "Skill Proficiencies",
-    "desc": "Stealth, and either Deception or Intimidation.",
-    "type": "skill_proficiency",
-    "background": "criminal"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 403,
-  "fields": {
-    "name": "Equipment",
-    "desc": "Common clothes, dark cloak, thieves' tools.",
-    "type": "equipment",
-    "background": "criminal"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 404,
-  "fields": {
-    "name": "Thieves' Cant",
-    "desc": "You know thieves' cant: a set of slang, hand signals, and code terms used by professional criminals. A creature that knows thieves' cant can hide a short message within a seemingly innocent statement. A listener who knows thieves' cant understands the message.",
-    "type": "feature",
-    "background": "criminal"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 405,
-  "fields": {
-    "name": "Suggested Characteristics",
-    "desc": "### **Criminal Mementos**\n\n1. A golden key to which you haven't discovered the lock.\n2. A brand that was burned into your shoulder as punishment for a crime.\n3. A scar for which you have sworn revenge.\n4. The distinctive mask that gives you your nickname (for instance, the Black Mask or the Red Fox).\n5. A gold coin which reappears in your possession a week after you've gotten rid of it.\n6. The stolen symbol of a sinister organization; not even your fence will take it off your hands.\n7. Documents that incriminate a dangerous noble or politician.\n8. The floor plan of a palace.\n9. The calling cards you leave after (or before) you strike.\n10. A manuscript written by your mentor: *Secret Exits of the World's Most Secure Prisons*.",
-    "type": "suggested_characteristics",
-    "background": "criminal"
-  }
-},
-{
-  "model": "api_v2.benefit",
-  "pk": 406,
-  "fields": {
-    "name": "Adventures And Advancement",
-    "desc": "If you pull off several successful jobs or heists, you may be promoted (or reinstated) as a leader in your gang. You may gain the free service of up to 8",
-    "type": "adventures-and-advancement",
     "background": "criminal"
   }
 },
