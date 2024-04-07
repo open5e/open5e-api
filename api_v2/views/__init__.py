@@ -4,6 +4,7 @@ from .background import BackgroundFilterSet, BackgroundViewSet
 
 from .creature import CreatureFilterSet, CreatureViewSet
 from .creature import CreatureTypeViewSet
+from .creature import CreatureSetViewSet
 
 from .document import DocumentViewSet
 from .document import RulesetViewSet

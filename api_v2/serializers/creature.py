@@ -94,7 +94,9 @@ def make_action_obj(action):
 
     return obj
 
+
 class CreatureSerializer(GameContentSerializer):
+    '''The serializer for the Creature object.'''
 
     key = serializers.ReadOnlyField()
     ability_scores = serializers.SerializerMethodField()
@@ -128,6 +130,7 @@ class CreatureSerializer(GameContentSerializer):
             'all_skill_bonuses',
             'passive_perception',
             'actions',
+            'creaturesets'
         ]
 
     def get_ability_scores(self, creature):
@@ -225,8 +228,19 @@ class CreatureSerializer(GameContentSerializer):
 
 
 class CreatureTypeSerializer(GameContentSerializer):
+    '''Serializer for the Creature Type object'''
     key = serializers.ReadOnlyField()
 
     class Meta:
         model = models.CreatureType
+        fields = '__all__'
+
+
+class CreatureSetSerializer(GameContentSerializer):
+    '''Serializer for the Creature Set object'''
+    key = serializers.ReadOnlyField()
+    creatures = CreatureSerializer(many=True, read_only=True, context={'request':{}})
+
+    class Meta:
+        model = models.CreatureSet
         fields = '__all__'
