@@ -48,4 +48,7 @@ from .characterclass import FeatureItem
 from .characterclass import Feature
 from .characterclass import CharacterClass
 
+from .search import SearchResult
+
 from .size import Size
+

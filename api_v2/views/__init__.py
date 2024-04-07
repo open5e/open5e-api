@@ -33,6 +33,9 @@ from .spell import SpellViewSet
 
 from .characterclass import CharacterClassViewSet
 
+from .search import SearchResultViewSet
+
 from .size import SizeViewSet
 
 from .enum import get_enums
+

@@ -39,4 +39,7 @@ from .characterclass import CharacterClassSerializer
 from .characterclass import FeatureSerializer
 from .characterclass import FeatureItemSerializer
 
+from .search import SearchResultSerializer
+
 from .size import SizeSerializer
+

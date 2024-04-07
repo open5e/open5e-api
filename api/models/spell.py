@@ -224,6 +224,13 @@ class Spell(GameContent):
         """Return a string specifying the plural name of this model."""
         return "Spells"
 
+    def search_result_extra_fields(self):
+        return {
+            "school":self.school,
+            "dnd_class":self.dnd_class}
+
+
+
 class SpellList(GameContent):
     """ A list of spells to be referenced by classes and subclasses"""
     
@@ -247,3 +254,4 @@ class SpellList(GameContent):
     def plural_str() -> str:
         """Return a string specifying the plural name of this model."""
         return "SpellLists"
+

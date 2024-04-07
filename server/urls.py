@@ -72,9 +72,11 @@ if settings.V2_ENABLED:
     router_v2.register(r'conditions',views_v2.ConditionViewSet)
     router_v2.register(r'spells',views_v2.SpellViewSet)
     router_v2.register(r'classes',views_v2.CharacterClassViewSet)
+    router_v2.register(r'search',views_v2.SearchResultViewSet, basename='search')
     router_v2.register(r'sizes',views_v2.SizeViewSet)
     router_v2.register(r'itemrarities',views_v2.ItemRarityViewSet)
     
+
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
