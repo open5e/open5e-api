@@ -163,7 +163,7 @@ currently be added to the API in `v2`. This list will be expanded as the migrati
 
 ## Code Contributions
 Code contributions are welcome, but a bit more complex. The project is built using Django and Django Rest Framework, so you will need to have some experience with these technologies. 
-If you are new to Django, you can find a tutorial [here](https://docs.djangoproject.com/en/3.2/intro/).
+If you are new to Django, you can find a tutorial [here](https://docs.djangoproject.com/en/5.0/).
 
 With code changes it is very important to talk to us first. We want to make sure that your changes are in line with the 
 project goals and that they do not conflict with any ongoing work.
