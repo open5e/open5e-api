@@ -70,15 +70,7 @@ class Creature(Object, Abilities, FromDocument):
         return {
             "armor_class":self.armor_class,
             "hit_points":self.hit_points,
-            "hit_dice":self.hit_dice,
-            "strength":self.strength,
-            "dexterity":self.dexterity,
-            "constitution":self.constitution,
-            "intelligence":self.intelligence,
-            "wisdom":self.wisdom,
-            "charisma":self.charisma,
-            "challenge_rating":self.challenge_rating,
-            "cr":self.cr
+            "ability_scores":self.get_ability_scores(),
               }
 
     @property

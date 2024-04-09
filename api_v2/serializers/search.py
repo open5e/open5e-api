@@ -4,6 +4,7 @@ from rest_framework import serializers
 
 from api_v2 import models
 from api import models as v1
+from .item import ItemSerializer
 
 class SearchResultSerializer(serializers.ModelSerializer):
     object = serializers.SerializerMethodField(method_name='get_object')

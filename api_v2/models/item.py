@@ -71,10 +71,10 @@ class Item(Object, HasDescription, FromDocument):
         return self.rarity is not None
 
     def search_result_extra_fields(self):
-        return {
-            "type":self.category,
-            "rarity":self.rarity,
-              }
+        fields = {"type":self.category.key}
+        if self.is_magic_item:
+            fields["rarity"]=self.rarity.key
+        return fields
 
 
 
