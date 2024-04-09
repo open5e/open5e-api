@@ -4,11 +4,12 @@ from rest_framework import serializers
 
 from api_v2 import models
 from api import models as v1
-from .item import ItemSerializer
+from django.urls import reverse
 
 class SearchResultSerializer(serializers.ModelSerializer):
     object = serializers.SerializerMethodField(method_name='get_object')
     document = serializers.SerializerMethodField(method_name='get_document')
+    route = serializers.SerializerMethodField(method_name='get_route')
 
 
     class Meta:
@@ -20,6 +21,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
             'object',
             'object_model',
             'schema_version',
+            'route',
             'rank',
             'text',
             'highlighted']
@@ -64,3 +66,23 @@ class SearchResultSerializer(serializers.ModelSerializer):
                 'key': doc.key,
                 'name': doc.name
                 }
+
+    def get_route(self, obj):
+        # May want to split this out into v1 and v2?
+        route_lookup = {
+            "Item":"items",
+            "Creature":"creatures",
+            "Spell":"spells",
+            "CharacterClass":"class",
+            "Monster":"monsters",
+            "MagicItem":"magicitems",
+            "Section":"sections",
+            "Background":"backgrounds",
+            "Subrace":"subraces",
+            "Feat":"feats",
+            "Race":"races",
+            "Plane":"planes",
+        }
+
+        route = "{}/{}/".format(obj.schema_version,route_lookup[obj.object_model])
+        return route

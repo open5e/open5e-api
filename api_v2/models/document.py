@@ -118,5 +118,10 @@ class FromDocument(models.Model):
     def get_absolute_url(self):
         return reverse(self.__name__, kwargs={"pk": self.pk})
 
+    def search_result_extra_fields(self):
+        return {
+            "school":self.school.key,
+        }
+
     class Meta:
         abstract = True
