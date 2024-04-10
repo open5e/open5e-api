@@ -116,27 +116,7 @@ pipenv run ./manage.py generateschema --generator_class api.schema_generator.Ope
 ```
 
 # Contributing
-
-Before making any changes, you should fork the Ope5e-api repository. This will make a copy on your account, which can be freely edited. Once your edits are done you can open a Pull Request to have your changes reviewed by a maintainer, which may ask for changes or clarification before approving it. Once merged the changes go live on [Beta Site](https://beta.open5e.com) before being pushed live.
-
-Smaller edits such as spelling mistakes can be edited directly in Github. For larger edits, it is recommeded that you make changes in a full editor, such as [VS Code](https://code.visualstudio.com) with the [Github Extenstion](https://code.visualstudio.com/docs/sourcecontrol/github).
-
-## Editing existing sources
-
-Game Content is stored in the `data` directory. It is first split according `v1` and `v2`, which are distinct API versions. As of 2023-12-06, `v1` is the dataset exclusively used in production, but it's a good idea to check for the same data inside of v2. We use [fixtures](https://docs.djangoproject.com/en/4.2/topics/db/fixtures/) as our primary way of populating the database because of strong built-in support. Each fixture in v1 has been split out by Document Slug, and then Model. Find the one you'd like to edit inside of the appropriate ModelName.json file.
-
-## Adding a new source
-
-To add a new source, create new directory inside `data/v1` and a `Document.json` file that credits the source and links to the license it was published under. An example of this can be found [here](/data/v1/wotc-srd/Document.json). You can then add a json file for each Model Fixture of content. See an existing source, such as the 5.1 SRD to see how these should be structured.
-
-A PK (or Primay Key) is text based slug for all game content, and it's used in the URL for getting that item. In the majority of cases, the PK should be the slugified version of the name. In the cases where an object PK would conflict with an existing PK, prepend a clear identifier to the PK.
-
-**TODO SET CONVENTIONS FOR WHAT THE IDENTIFIER IS**
-
-## Change existing models
-
-Models such as Monsters and Classes are stored in the [api/models](/api/models) directory. These define fields (hp, str, speed) and how they are output. The import of Game Content from `data` is handled by django's built-in [loaddata](https://docs.djangoproject.com/en/4.2/ref/django-admin/#django-admin-loaddata).
-
+See [contribution guide](CONTRIBUTING.md).
 # Tests
 
 Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository. These tests require that the api is [running](##run) at `http://localhost:8000`.
