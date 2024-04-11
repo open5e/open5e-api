@@ -70,6 +70,13 @@ class Item(Object, HasDescription, FromDocument):
     def is_magic_item(self):
         return self.rarity is not None
 
+    def search_result_extra_fields(self):
+        fields = {"type":self.category.key}
+        if self.is_magic_item:
+            fields["rarity"]=self.rarity.key
+        return fields
+
+
 
 class ItemSet(HasName, HasDescription, FromDocument):
     """A set of items to be referenced."""

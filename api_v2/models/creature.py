@@ -57,6 +57,21 @@ class Creature(Object, Abilities, FromDocument):
         max_length=100,
         help_text='The creature\'s allowed alignments.'
     )
+    
+    def as_text(self):
+        text = self.name + '\n'
+        
+        for action in self.creatureaction_set.all():
+            text+='\n' + action.as_text()
+
+        return text
+        
+    def search_result_extra_fields(self):
+        return {
+            "armor_class":self.armor_class,
+            "hit_points":self.hit_points,
+            "ability_scores":self.get_ability_scores(),
+              }
 
     @property
     def creatureset(self):
