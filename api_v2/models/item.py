@@ -2,13 +2,23 @@
 
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-from django.urls import reverse
 
-from api.models import GameContent
 from .weapon import Weapon
 from .armor import Armor
-from .abstracts import Object, HasName, HasDescription
+from .abstracts import HasName, HasDescription
+from .object import Object
 from .document import FromDocument
+
+
+class ItemRarity(HasName, FromDocument):
+    """A class describing the rarity of items."""
+    rank = models.IntegerField(
+        unique=True,
+        help_text='Ranking of the rarity, most common has the lowest values.')
+
+
+class ItemCategory(HasName, FromDocument):
+    """A class describing categories of items."""
 
 
 class Item(Object, HasDescription, FromDocument):
@@ -40,62 +50,32 @@ class Item(Object, HasDescription, FromDocument):
         blank=True,
         null=True)
 
-    CATEGORY_CHOICES = [
-        ('staff', 'Staff'),
-        ('rod', 'Rod'),
-        ('scroll', 'Scroll'),
-        ('potion', 'Potion'),
-        ('wand', 'Wand'),
-        ('wondrous-item', 'Wondrous item'),
-        ('ring', 'Ring'),
-        ('ammunition', 'Ammunition'),
-        ('weapon', 'Weapon'),
-        ('armor', 'Armor'),
-        ('gem', 'Gem'),
-        ('jewelry', 'Jewelry'),
-        ('art', 'Art'),
-        ('trade-good', 'Trade Good'),
-        ('shield', 'Shield'),
-        ('poison', 'Poison'),
-        ('adventuring-gear', 'Adventuring gear'),
-        ('tools', 'Tools')
-    ]
-
-    category = models.CharField(
-        null=False,
-        choices=CATEGORY_CHOICES,
-        max_length=100,
-        help_text='The category of the magic item.')
-    # Magic item types that should probably be filterable: 
-    # Staff, Rod, Scroll, Ring, Potion, Ammunition, Wand = category
+    category = models.ForeignKey(
+        ItemCategory,
+        on_delete=models.CASCADE,
+        null=False)
 
     requires_attunement = models.BooleanField(
         null=False,
         default=False,  # An item is not magical unless specified.
         help_text='If the item requires attunement.')
 
-
-    RARITY_CHOICES = [
-        (1, 'common'),
-        (2, 'uncommon'),
-        (3, 'rare'),
-        (4, 'very rare'),
-        (5, 'legendary'),
-        (6, 'artifact')
-    ]
-
-    rarity = models.IntegerField(
-        null=True,  # Allow an unspecified size.
-        blank=True,
-        choices=RARITY_CHOICES,
-        validators=[
-            MinValueValidator(1),
-            MaxValueValidator(6)],
-        help_text='Integer representing the rarity of the object.')
+    rarity = models.ForeignKey(
+        "ItemRarity",
+        null=True,
+        on_delete=models.CASCADE,
+        help_text="Rarity object.")
 
     @property 
     def is_magic_item(self):
         return self.rarity is not None
+
+    def search_result_extra_fields(self):
+        fields = {"type":self.category.key}
+        if self.is_magic_item:
+            fields["rarity"]=self.rarity.key
+        return fields
+
 
 
 class ItemSet(HasName, HasDescription, FromDocument):

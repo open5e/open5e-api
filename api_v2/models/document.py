@@ -1,8 +1,11 @@
 from django.db import models
 from django.urls import reverse
+from django.apps import apps
+
 
 from .abstracts import HasName, HasDescription
 
+from api_v2 import models as v2_models
 
 class Document(HasName, HasDescription):
 
@@ -37,6 +40,38 @@ class Document(HasName, HasDescription):
     permalink = models.URLField(
         help_text="Link to the document."
     )
+
+    @property
+    def stats(self):
+        stats = {}
+        for model in apps.get_models():
+            # Filter out api_v1.
+            if model._meta.app_label != 'api_v2': continue
+
+            SKIPPED_MODEL_NAMES = [
+                'Document',
+                'Ruleset',
+                'License',
+                'Publisher',
+                'Size']
+            if model.__name__ in SKIPPED_MODEL_NAMES: continue
+
+            CHILD_MODEL_NAMES = [
+                'Trait',
+                'FeatureItem',
+                'Capability', 
+                'Benefit',
+                'CreatureAction',
+                'CreatureAttack',
+                'CastingOption',
+                'ItemRarity',
+                'SpellSchool']
+            if model.__name__ in CHILD_MODEL_NAMES: continue
+
+
+            object_count = model.objects.filter(document=self.key).count()
+            stats[model.__name__.lower()]=object_count
+        return stats
 
 
 class License(HasName, HasDescription):
@@ -77,8 +112,16 @@ class FromDocument(models.Model):
         max_length=100,
         help_text="Unique key for the Item.")
 
+    def as_text(self):
+        return "{}\n\n{}".format(self.name, self.desc)
+
     def get_absolute_url(self):
         return reverse(self.__name__, kwargs={"pk": self.pk})
+
+    def search_result_extra_fields(self):
+        return {
+            "school":self.school.key,
+        }
 
     class Meta:
         abstract = True

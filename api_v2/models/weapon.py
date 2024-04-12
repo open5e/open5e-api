@@ -15,16 +15,13 @@ class Weapon(HasName, FromDocument):
     Only the unique attributes of a weapon are here. An item that is a weapon
     would link to this model instance.
     """
-    DAMAGE_TYPE_CHOICES = [
-    ("bludgeoning", "bludgeoning"),
-    ("piercing", "piercing"),
-    ("slashing", "slashing")]
 
-    damage_type = models.CharField(
-        null=False,
-        choices=DAMAGE_TYPE_CHOICES,
-        max_length=100,
-        help_text='The damage type dealt by attacks with the weapon.')
+    damage_type = models.ForeignKey(
+        "DamageType",
+        null=True,
+        related_name="+", # No backwards relation.
+        on_delete=models.CASCADE,
+        help_text='What kind of damage this weapon deals')
 
     damage_dice = models.CharField(
         null=False,

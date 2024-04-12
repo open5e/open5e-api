@@ -1,11 +1,11 @@
 """Abstract models to be used in Game Content items."""
 
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
-from django.template.defaultfilters import slugify
+from .enums import MODIFICATION_TYPES
 
 
 class HasName(models.Model):
+    """This is the definition of a name."""
 
     name = models.CharField(
         max_length=100,
@@ -19,14 +19,18 @@ class HasName(models.Model):
 
 
 class HasDescription(models.Model):
+    """This is the definition of a description."""
+
     desc = models.TextField(
         help_text='Description of the game content item. Markdown.')
-    
+
     class Meta:
         abstract = True
 
 
 class HasPrerequisite(models.Model):
+    """This is the definition of a prerequisite."""
+
     prerequisite = models.CharField(
         max_length=200,
         blank=True,
@@ -40,61 +44,21 @@ class HasPrerequisite(models.Model):
         abstract = True
 
 
-class Object(HasName):
+class Modification(HasName, HasDescription):
     """
-    This is the definition of the Object abstract base class.
+    This is the definition of a modification abstract base class.
 
-    The Object class will be inherited from by Item, Weapon, Character, etc.
-    Basically it describes any sort of matter in the 5e world.
+    A modification class will be reimplemented from Feat, Race, Background, etc.
+    Basically it describes any sort of modification to a character in 5e.
     """
 
-    # Enumerating sizes, so they are sortable.
-    SIZE_CHOICES = [
-        (1, "Tiny"),
-        (2, "Small"),
-        (3, "Medium"),
-        (4, "Large"),
-        (5, "Huge"),
-        (6, "Gargantuan")]
 
-    # Setting a reasonable maximum for AC.
-    ARMOR_CLASS_MAXIMUM = 100
-
-    # Setting a reasonable maximum for HP.
-    HIT_POINT_MAXIMUM = 10000
-
-    size = models.IntegerField(
-        default=1,
-        null=False,  # Allow an unspecified size.
-        choices=SIZE_CHOICES,
-        validators=[
-            MinValueValidator(1),
-            MaxValueValidator(6)],
-        help_text='Integer representing the size of the object.')
-
-    weight = models.DecimalField(
-        default=0,
-        null=False,  # Allow an unspecified weight.
-        max_digits=10,
-        decimal_places=3,
-        validators=[MinValueValidator(0)],
-        help_text='Number representing the weight of the object.')
-
-    armor_class = models.IntegerField(
-        default=0,
-        null=False,  # Allow an unspecified armor_class.
-        validators=[
-            MinValueValidator(0),
-            MaxValueValidator(ARMOR_CLASS_MAXIMUM)],
-        help_text='Integer representing the armor class of the object.')
-
-    hit_points = models.IntegerField(
-        default=0,
-        null=False,  # Allow an unspecified hit point value.
-        validators=[
-            MinValueValidator(0),
-            MaxValueValidator(HIT_POINT_MAXIMUM)],
-        help_text='Integer representing the hit points of the object.')
+    type = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True,
+        choices=MODIFICATION_TYPES,
+        help_text='Modification type.')
 
     class Meta:
         abstract = True

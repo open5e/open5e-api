@@ -3,113 +3,11 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities
-from .abstracts import Object, HasDescription, HasName
+from .abstracts import HasDescription, HasName
+from .object import Object
 from .document import FromDocument
+from .enums import CREATURE_ATTACK_TYPES, DIE_TYPES, CREATURE_USES_TYPES
 
-
-MONSTER_TYPES = [
-    ("ABERRATION", "Aberration"),
-    ("BEAST", "Beast"),
-    ("CELESTIAL", "Celestial"),
-    ("CONSTRUCT", "Construct"),
-    ("DRAGON", "Dragon"),
-    ("ELEMENTAL", "Elemental"),
-    ("FEY", "Fey"),
-    ("FIEND", "Fiend"),
-    ("GIANT", "Giant"),
-    ("HUMANOID", "Humanoid"),
-    ("MONSTROSITY", "Monstrosity"),
-    ("OOZE", "Ooze"),
-    ("PLANT", "Plant"),
-    ("UNDEAD", "Undead"),
-]
-
-class Creature(Object, Abilities, FromDocument):
-    """
-    This is the model for a Creature, per the 5e ruleset.
-
-    This extends the object and abilities models.
-    """
-
-    category = models.CharField(
-        max_length=100,
-        help_text='What category this creature belongs to.'
-    )
-
-    type = models.CharField(
-        max_length=20,
-        choices=MONSTER_TYPES,
-        help_text='Which type of creature this is.'
-    )
-
-    subtype = models.CharField(
-        null=True,
-        max_length=100,
-        help_text='Which subtype or subtypes this creature has, if any.'
-    )
-
-    alignment = models.CharField(
-        max_length=100,
-        help_text='The creature\'s allowed alignments.'
-    )
-
-
-USES_TYPES = [
-    ("PER_DAY", "X/Day"),
-    ("RECHARGE_ON_ROLL", "Recharge X-6"),
-    ("RECHARGE_AFTER_REST", "Recharge after a Short or Long rest"),
-]
-
-class CreatureAction(HasName, HasDescription, FromDocument):
-
-    creature = models.ForeignKey(
-        Creature,
-        on_delete=models.CASCADE,
-        help_text='The creature to which this action belongs.'
-    )
-
-    uses_type = models.CharField(
-        null=True,
-        max_length=20,
-        choices=USES_TYPES,
-        help_text='How use of the action is limited, if at all.'
-    )
-
-    uses_param = models.SmallIntegerField(
-        null=True,
-        help_text='The parameter X for if the action is limited.'
-    )
-
-
-ATTACK_TYPES = [
-    ("SPELL", "Spell"),
-    ("WEAPON", "Weapon"),
-]
-
-DIE_TYPES = [
-    ("D4", "d4"),
-    ("D6", "d6"),
-    ("D8", "d8"),
-    ("D10", "d10"),
-    ("D12", "d12"),
-    ("D20", "d20"),
-]
-
-DAMAGE_TYPES = [
-    ("ACID", "Acid"),
-    ("BLUDGEONING", "Bludgeoning"),
-    ("COLD", "Cold"),
-    ("FIRE", "Fire"),
-    ("FORCE", "Force"),
-    ("LIGHTNING", "Lightning"),
-    ("NECROTIC", "Necrotic"),
-    ("PIERCING", "Piercing"),
-    ("POISON", "Poison"),
-    ("PSYCHIC", "Psychic"),
-    ("RADIANT", "Radiant"),
-    ("SLASHING", "Slashing"),
-    ("THUNDER", "Thunder"),
-]
 
 def damage_die_count_field():
     return models.SmallIntegerField(
@@ -133,13 +31,73 @@ def damage_bonus_field():
         help_text='Damage roll modifier.'
     )
 
-def damage_type_field():
-    return models.CharField(
+class CreatureType(HasName, HasDescription, FromDocument):
+    """The Type of creature, such as Aberration."""
+
+
+class Creature(Object, Abilities, FromDocument):
+    """
+    This is the model for a Creature, per the 5e ruleset.
+
+    This extends the object and abilities models.
+    """
+
+    type = models.ForeignKey(
+        CreatureType,
+        on_delete=models.CASCADE,
+        help_text="Type of creature, such as Aberration."
+    )
+
+    category = models.CharField(
+        max_length=100,
+        help_text='What category this creature belongs to.'
+    )
+
+    alignment = models.CharField(
+        max_length=100,
+        help_text='The creature\'s allowed alignments.'
+    )
+    
+    def as_text(self):
+        text = self.name + '\n'
+        
+        for action in self.creatureaction_set.all():
+            text+='\n' + action.as_text()
+
+        return text
+        
+    def search_result_extra_fields(self):
+        return {
+            "armor_class":self.armor_class,
+            "hit_points":self.hit_points,
+            "ability_scores":self.get_ability_scores(),
+              }
+
+    @property
+    def creatureset(self):
+        return self.creaturesets.all()
+
+
+class CreatureAction(HasName, HasDescription, FromDocument):
+
+    creature = models.ForeignKey(
+        Creature,
+        on_delete=models.CASCADE,
+        help_text='The creature to which this action belongs.'
+    )
+
+    uses_type = models.CharField(
         null=True,
         max_length=20,
-        choices=DAMAGE_TYPES,
-        help_text='What kind of damage this attack deals.'
+        choices=CREATURE_USES_TYPES,
+        help_text='How use of the action is limited, if at all.'
     )
+
+    uses_param = models.SmallIntegerField(
+        null=True,
+        help_text='The parameter X for if the action is limited.'
+    )
+
 
 class CreatureAttack(HasName, FromDocument):
 
@@ -151,7 +109,7 @@ class CreatureAttack(HasName, FromDocument):
 
     attack_type = models.CharField(
         max_length=20,
-        choices=ATTACK_TYPES,
+        choices=CREATURE_ATTACK_TYPES,
         help_text='Whether this is a Weapon or Spell attack.'
     )
 
@@ -186,10 +144,29 @@ class CreatureAttack(HasName, FromDocument):
     damage_die_count = damage_die_count_field()
     damage_die_type = damage_die_type_field()
     damage_bonus = damage_bonus_field()
-    damage_type = damage_type_field()
+
+    damage_type = models.ForeignKey(
+        "DamageType",
+        null=True,
+        related_name="+", # No backwards relation.
+        on_delete=models.CASCADE,
+        help_text='What kind of damage this attack deals')
 
     # Additional damage fields
     extra_damage_die_count = damage_die_count_field()
     extra_damage_die_type = damage_die_type_field()
     extra_damage_bonus = damage_bonus_field()
-    extra_damage_type = damage_type_field()
+
+    extra_damage_type = models.ForeignKey(
+        "DamageType",
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="+", # No backwards relation.
+        help_text='What kind of extra damage this attack deals')
+
+
+class CreatureSet(HasName, FromDocument):
+    """Set that the creature belongs to."""
+
+    creatures = models.ManyToManyField(Creature, related_name="creaturesets",
+                                       help_text="The set of creatures.")

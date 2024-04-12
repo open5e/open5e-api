@@ -89,7 +89,7 @@ class Monster(GameContent):
     def actions(self):
         return json.loads(self.actions_json)
     
-    bonus_actions_json = models.TextField(default=None)
+    bonus_actions_json = models.TextField(default=None, null=True)
     
     def bonus_actions(self):
         return json.loads(self.bonus_actions_json)
@@ -99,13 +99,13 @@ class Monster(GameContent):
 
     def special_abilities(self):
         return json.loads(self.special_abilities_json)
-    reactions_json = models.TextField()  # A list of reactions in json text.
+    reactions_json = models.TextField(null=True)  # A list of reactions in json text.
 
     def reactions(self):
         return json.loads(self.reactions_json)
-    legendary_desc = models.TextField()
+    legendary_desc = models.TextField(null=True)
     # a list of legendary actions in json.
-    legendary_actions_json = models.TextField()
+    legendary_actions_json = models.TextField(null=True)
 
     def legendary_actions(self):
         return json.loads(self.legendary_actions_json)
@@ -123,6 +123,20 @@ class Monster(GameContent):
         """Return a string specifying the plural name of this model."""
         return "Monsters"
 
+    def search_result_extra_fields(self):
+        return {
+            "armor_class":self.armor_class,
+            "hit_points":self.hit_points,
+            "hit_dice":self.hit_dice,
+            "strength":self.strength,
+            "dexterity":self.dexterity,
+            "constitution":self.constitution,
+            "intelligence":self.intelligence,
+            "wisdom":self.wisdom,
+            "charisma":self.charisma,
+            "challenge_rating":self.challenge_rating,
+            "cr":self.cr
+              }
 
 class MonsterSpell(models.Model):
     spell = models.ForeignKey(Spell, on_delete=models.CASCADE)

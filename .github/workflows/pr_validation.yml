@@ -11,18 +11,22 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Python 3.11
-        run: sudo apt install python3.11
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: pipenv
       - name: Install Pipenv
-        run: pip install --user pipenv
-      - name: Checkout
-        uses: actions/checkout@v3
+        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
       - name: Install Dependencies
         run: pipenv install --dev
       - name: Run migrations
-        run: pipenv run python manage.py migrate
+        run: pipenv run python manage.py quicksetup --noindex
       - name: Run Tests
-        run: pipenv run pytest
+        run: |
+          pipenv run python manage.py runserver 0.0.0.0:8000 &
+          sleep 5 &&
+          pipenv run pytest
   build:
     runs-on: ubuntu-latest
     steps:

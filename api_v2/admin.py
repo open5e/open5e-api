@@ -10,7 +10,7 @@ class FromDocumentModelAdmin(admin.ModelAdmin):
 
 
 class ItemModelAdmin(admin.ModelAdmin):
-    list_display = ['key', 'category', 'name']
+    list_display = ['key', 'name']
 
 
 class TraitInline(admin.TabularInline):
@@ -23,27 +23,69 @@ class RaceAdmin(admin.ModelAdmin):
     ]
 
 
-class FeatBenefitInline(admin.TabularInline):
-    model = FeatBenefit
+class CapabilityInline(admin.TabularInline):
+    model = Capability
     exclude = ('name',)
 
 
 class FeatAdmin(admin.ModelAdmin):
     inlines = [
-        FeatBenefitInline,
+        CapabilityInline,
     ]
+    list_display = ['key', 'name']
+
+
+class TraitInline(admin.TabularInline):
+    model = Trait
+
+
+class RaceAdmin(admin.ModelAdmin):
+    inlines = [
+        TraitInline,
+    ]
+
+
+class BenefitInline(admin.TabularInline):
+    model = Benefit
+
+
+class BackgroundAdmin(admin.ModelAdmin):
+    model = Background
+    inlines = [
+        BenefitInline
+    ]
+
+class DamageTypeAdmin(admin.ModelAdmin):
+    model = DamageType
+
+
+class LanguageAdmin(admin.ModelAdmin):
+    model = Language
+
 
 admin.site.register(Weapon, admin_class=FromDocumentModelAdmin)
 admin.site.register(Armor, admin_class=FromDocumentModelAdmin)
 
+admin.site.register(Size)
+
+admin.site.register(ItemCategory)
+admin.site.register(ItemRarity)
 admin.site.register(Item, admin_class=ItemModelAdmin)
 admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
-
-admin.site.register(Race, admin_class=RaceAdmin)
-
-admin.site.register(Feat, admin_class=FeatAdmin)
 
 admin.site.register(Document)
 admin.site.register(License)
 admin.site.register(Publisher)
 admin.site.register(Ruleset)
+
+admin.site.register(DamageType)
+
+admin.site.register(Language)
+
+admin.site.register(Alignment)
+
+admin.site.register(Condition)
+
+admin.site.register(FeatureItem)
+admin.site.register(Feature)
+admin.site.register(CharacterClass)

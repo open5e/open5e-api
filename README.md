@@ -38,7 +38,7 @@
   * [Building the OAS file](#building-the-oas-file)
 - [Contributing](#contributing)
   * [Editing existing sources](#editing-existing-sources)
-  * [Adding a new sorce](#adding-a-new-sorce)
+  * [Adding a new source](#adding-a-new-source)
   * [Change existing models](#change-existing-models)
 - [Tests](#tests)
 - [Deployment](#deployment)
@@ -60,9 +60,9 @@ The API uses the Django REST Framework for it's browsability and ease of use whe
 
 - [Python 3.11](https://www.python.org/downloads/)
 
-- [Pipenv](https://pipenv.pypa.io/en/latest/installation/)
+- [Pipenv](https://pipenv.pypa.io/en/latest/installation.html)
 
-## Modules
+## Dependencies
 
 Pipenv is used to install all required packages from the `Pipfile` at the project root. Use the following command after cloning the project or switching branches.
 
@@ -116,35 +116,21 @@ pipenv run ./manage.py generateschema --generator_class api.schema_generator.Ope
 ```
 
 # Contributing
-
-Before making any changes, you should fork the Ope5e-api repository. This will make a copy on your account, which can be freely edited. Once your edits are done you can open a Pull Request to have your changes reviewed by a maintainer, which may ask for changes or clarification before approving it. Once merged the changes go live on [Beta Site](https://beta.open5e.com) before being pushed live.
-
-Smaller edits such as spelling mistakes can be edited directly in Github. For larger edits, it is recommeded that you make changes in a full editor, such as [VS Code](https://code.visualstudio.com) with the [Github Extenstion](https://code.visualstudio.com/docs/sourcecontrol/github).
-
-## Editing existing sources
-
-Game Content is stored in the `data` directory. It is first split according to which document/source books it originated from and further into JSON files split by category e.g. "monsters.json", "spells.json". These can be edited directly. You can also add new categories to existing sources by creating the required JSON file. See an existing source, such as the 5.1 SRD to see how these should be structured.
-
-## Adding a new sorce
-
-To add a new source, create new directory inside `data` and a `document.json` file that credits the source and links to the license it was published under. An example of this can be found [here](/data/a5e_srd/document.json). You can then add a json file for each category of content. See an existing source, such as the 5.1 SRD to see how these should be structured.
-
-To load this new source, it must be added to the `SOURCE_DIRS` in [quickload.py](/api/management/commands/quickload.py). Rebuild the project to see the new Game Content.
-## Change existing models
-
-Models such as Monsters and Classes are stored in the [api/models](/api/models) directory. These define fields (hp, str, speed) and how they are output. The import of Game Content from `data` is handled by an [ImportSpec](/api/management/commands/importer.py)
-
+See [contribution guide](CONTRIBUTING.md).
 # Tests
 
-Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository.
+Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository. These tests require that the api is [running](##run) at `http://localhost:8000`.
+
 ```bash
 pipenv run pytest
 ```
 
+## Approval tests
+Approval tests are run against the approved files in `api/tests/approved_files` as `*.approved.*` . If a test fails then the recieved input will be stored in a `*.recieved.*` file. If you wish to approve the changes, replace the old approved file with the recieved file.
+
+Recieved files shall not be included in the git repo.
+
 # Deployment
-
-The API is normally deployed via [Docker](https://docs.docker.com/get-started/). You can either build and host it yourself, or use one of the tested providers below:
-
 
 ## DigitalOcean
 
@@ -159,7 +145,6 @@ export SERVER_NAME=whatever.yourdomain.com
 cd open5e-api/
 docker-compose up
 ```
-
 
 ## Railway.app
 1. Create a fork on Github. This is used to automatically deploy whenever you make a change.
