@@ -36,7 +36,10 @@ class Monster(GameContent):
         help_text='String list of environments that the monster can be found in.')
 
     def environments(self):
-        return json.loads(self.environments_json)
+        if self.environments_json is None:
+            return ""
+        else:
+            return json.loads(self.environments_json)
 
     strength = models.IntegerField(
         null=True, help_text='Integer representing the strength score.')
@@ -92,23 +95,39 @@ class Monster(GameContent):
     bonus_actions_json = models.TextField(default=None, null=True)
     
     def bonus_actions(self):
-        return json.loads(self.bonus_actions_json)
+        if self.bonus_actions_json is None:
+            return ""
+        else:
+            return json.loads(self.bonus_actions_json)
     
     # A list of special abilities in json text.
     special_abilities_json = models.TextField()
 
     def special_abilities(self):
-        return json.loads(self.special_abilities_json)
+        if self.special_abilities_json is None:
+            return ""
+        else:
+            return json.loads(self.special_abilities_json)
+
+
     reactions_json = models.TextField(null=True)  # A list of reactions in json text.
 
     def reactions(self):
-        return json.loads(self.reactions_json)
+        if self.reactions_json is None:
+            return ""
+        else:
+            return json.loads(self.reactions_json)
+
+
     legendary_desc = models.TextField(null=True)
     # a list of legendary actions in json.
     legendary_actions_json = models.TextField(null=True)
 
     def legendary_actions(self):
-        return json.loads(self.legendary_actions_json)
+        if self.legendary_actions_json is None:
+            return ""
+        else:
+            return json.loads(self.legendary_actions_json)
     spells_json = models.TextField()
     spell_list = models.ManyToManyField(
         Spell,
