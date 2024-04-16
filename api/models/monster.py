@@ -36,7 +36,7 @@ class Monster(GameContent):
         help_text='String list of environments that the monster can be found in.')
 
     def environments(self):
-        return json.loads(self.environments_json)
+        return json.loads(self.environments_json or "[]")
 
     strength = models.IntegerField(
         null=True, help_text='Integer representing the strength score.')
@@ -67,7 +67,7 @@ class Monster(GameContent):
     skills_json = models.TextField()
 
     def skills(self):
-        return json.loads(self.skills_json)
+        return json.loads(self.skills_json or "{}")
     damage_vulnerabilities = models.TextField(
         help_text='Comma separated list of damage types the monster is vulnerable to.')
     damage_resistances = models.TextField(
@@ -87,28 +87,28 @@ class Monster(GameContent):
     actions_json = models.TextField()  # a list of actions in json text.
 
     def actions(self):
-        return json.loads(self.actions_json)
+        return json.loads(self.actions_json or "[]")
     
     bonus_actions_json = models.TextField(default=None, null=True)
     
     def bonus_actions(self):
-        return json.loads(self.bonus_actions_json)
+        return json.loads(self.bonus_actions_json or "[]")
     
     # A list of special abilities in json text.
     special_abilities_json = models.TextField()
 
     def special_abilities(self):
-        return json.loads(self.special_abilities_json)
+        return json.loads(self.special_abilities_json or "[]")
     reactions_json = models.TextField(null=True)  # A list of reactions in json text.
 
     def reactions(self):
-        return json.loads(self.reactions_json)
+        return json.loads(self.reactions_json or "[]")
     legendary_desc = models.TextField(null=True)
     # a list of legendary actions in json.
     legendary_actions_json = models.TextField(null=True)
 
     def legendary_actions(self):
-        return json.loads(self.legendary_actions_json)
+        return json.loads(self.legendary_actions_json or "[]")
     spells_json = models.TextField()
     spell_list = models.ManyToManyField(
         Spell,
