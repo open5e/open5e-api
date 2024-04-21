@@ -22,7 +22,6 @@ class SearchResultSerializer(serializers.ModelSerializer):
             'object_model',
             'schema_version',
             'route',
-            'rank',
             'text',
             'highlighted']
 

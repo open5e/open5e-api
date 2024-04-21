@@ -1,4 +1,5 @@
 
+import argparse
 
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
@@ -12,6 +13,22 @@ class Command(BaseCommand):
     """Implementation for the `manage.py `index_v1` subcommand."""
 
     help = 'Build the v1 search index.'
+
+    def add_arguments(self, parser: argparse.ArgumentParser):
+        """Define arguments for the `manage.py quicksetup` subcommand."""
+
+        # Named (optional) arguments.
+        parser.add_argument(
+            "--v1",
+            action="store_true",
+            help="Explicitly adding v1 data to index.",
+        )
+        # Named (optional) arguments.
+        parser.add_argument(
+            "--v2",
+            action="store_true",
+            help="Explicitly adding v2 data to index.",
+        )
 
     def unload_all_content(self):
         object_count = v2.SearchResult.objects.all().count()
@@ -84,7 +101,6 @@ class Command(BaseCommand):
                 "SELECT document_pk,object_pk,object_name,object_model,text,schema_version " +
                 "FROM api_v2_searchresult")
 
-
     def check_fts_enabled(self):
         #import sqlite3
         with connection.cursor() as cursor:
@@ -96,7 +112,7 @@ class Command(BaseCommand):
                     print("FOUND PRAGMA {}, FTS5 IS ENABLED".format(pragma))
 
 
-    def handle(self, *args, **options) -> None:
+    def handle(self, *args, **options):
         
         # Ensure FTS is enabled and ready to go.
         self.check_fts_enabled()
@@ -104,30 +120,35 @@ class Command(BaseCommand):
         # Clear out the content table.
         self.unload_all_content()
 
-        # Load the v1 models into the content table.
-        self.load_content(v1.MagicItem,"v1")
-        self.load_content(v1.Spell,"v1")
-        self.load_content(v1.Monster,"v1")
-        self.load_content(v1.CharClass,"v1")
-        self.load_content(v1.Race,"v1")
-        self.load_content(v1.Subrace,"v1")
-        self.load_content(v1.Plane,"v1")
-        self.load_content(v1.Section,"v1")
-        self.load_content(v1.Feat,"v1")
-        self.load_content(v1.Condition,"v1")
-        self.load_content(v1.Background,"v1")
-        self.load_content(v1.Weapon,"v1")
-        self.load_content(v1.Armor,"v1")
+        load_v1=False
+        load_v2=False
 
-        self.load_content(v2.Item,"v2")
-        self.load_content(v2.Spell,"v2")
-        self.load_content(v2.Creature,"v2")
-        self.load_content(v2.CharacterClass,"v2")
-        self.load_content(v2.Race,"v2")
-        self.load_content(v2.Feat,"v2")
-        self.load_content(v2.Condition,"v2")
-        self.load_content(v2.Background,"v2")
+        if options["v1"]:
+            # Load the v1 models into the content table.
+            self.load_content(v1.MagicItem,"v1")
+            self.load_content(v1.Spell,"v1")
+            self.load_content(v1.Monster,"v1")
+            self.load_content(v1.CharClass,"v1")
+            self.load_content(v1.Race,"v1")
+            self.load_content(v1.Subrace,"v1")
+            self.load_content(v1.Plane,"v1")
+            self.load_content(v1.Section,"v1")
+            self.load_content(v1.Feat,"v1")
+            self.load_content(v1.Condition,"v1")
+            self.load_content(v1.Background,"v1")
+            self.load_content(v1.Weapon,"v1")
+            self.load_content(v1.Armor,"v1")
 
+        if options["v2"]:
+            # Load the v2 models into the content table.
+            self.load_content(v2.Item,"v2")
+            self.load_content(v2.Spell,"v2")
+            self.load_content(v2.Creature,"v2")
+            self.load_content(v2.CharacterClass,"v2")
+            self.load_content(v2.Race,"v2")
+            self.load_content(v2.Feat,"v2")
+            self.load_content(v2.Condition,"v2")
+            self.load_content(v2.Background,"v2")
 
         # Take the content table's current data and load it into the index.
         self.load_index()

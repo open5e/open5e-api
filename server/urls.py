@@ -73,10 +73,13 @@ if settings.V2_ENABLED:
     router_v2.register(r'conditions',views_v2.ConditionViewSet)
     router_v2.register(r'spells',views_v2.SpellViewSet)
     router_v2.register(r'classes',views_v2.CharacterClassViewSet)
-    router_v2.register(r'search',views_v2.SearchResultViewSet, basename='search')
     router_v2.register(r'sizes',views_v2.SizeViewSet)
     router_v2.register(r'itemrarities',views_v2.ItemRarityViewSet)
-    
+
+router_search = routers.DefaultRouter()
+if settings.V2_SEARCH_ENABLED:
+    router_search.register('',views_v2.SearchResultViewSet, basename='search')
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -91,7 +94,8 @@ urlpatterns = [
     # Versioned API routes (above routes default to v1)
     re_path(r'^v1/', include(router.urls)),
     re_path(r'^v1/search/', include('haystack.urls')),
-    re_path(r'^v2/', include(router_v2.urls))
+    re_path(r'^v2/', include(router_v2.urls)),
+    re_path(r'^v2/search/', include(router_search.urls))
 ]
 
 if settings.DEBUG is True:
