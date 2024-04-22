@@ -72,7 +72,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
             "Item":"items",
             "Creature":"creatures",
             "Spell":"spells",
-            "CharacterClass":"class",
+            "CharacterClass":"classes",
             "Monster":"monsters",
             "MagicItem":"magicitems",
             "Section":"sections",
@@ -81,7 +81,9 @@ class SearchResultSerializer(serializers.ModelSerializer):
             "Feat":"feats",
             "Race":"races",
             "Plane":"planes",
+            "CharClass":"classes"
         }
+
 
         route = "{}/{}/".format(obj.schema_version,route_lookup[obj.object_model])
         return route
