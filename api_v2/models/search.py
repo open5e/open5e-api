@@ -1,8 +1,12 @@
+""" The Search Result object model"""
 from django.db import models
 
 
 class SearchResult(models.Model):
-    """ The Search Result object model"""
+    """ The Search Result object model. This model is used to build the 
+    originally loaded table which is then separately used to build the search
+    index. That table is then deleted.
+    This process is defined in /api_v2/management/commands/buildindex.py"""
 
     document_pk = models.CharField(max_length=255)
     object_pk = models.CharField(max_length=255)
