@@ -72,6 +72,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
     def get_route(self, obj):
         """Route is a way to build the link to the object."""
         route_lookup = {
+            "Condition":"conditions",
             "Item":"items",
             "Creature":"creatures",
             "Spell":"spells",
