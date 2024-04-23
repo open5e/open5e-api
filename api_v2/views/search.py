@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework import generics
 
 
+
 from django_filters import FilterSet
 
 from api_v2 import models
@@ -10,9 +11,10 @@ from api_v2 import serializers
 
 
 
-class SearchResultViewSet(viewsets.ModelViewSet):
+class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
 
     serializer_class = serializers.SearchResultSerializer
+    ordering_fields=[]
 
     def get_queryset(self):
 
