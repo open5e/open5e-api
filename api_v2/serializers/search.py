@@ -4,13 +4,14 @@ from rest_framework import serializers
 
 from api_v2 import models
 from api import models as v1
-from django.urls import reverse
 
 class SearchResultSerializer(serializers.ModelSerializer):
+    """This method builds the search result object structure.
+    It does a lookup based on primary keys stored in the search table.
+    """
     object = serializers.SerializerMethodField(method_name='get_object')
     document = serializers.SerializerMethodField(method_name='get_document')
     route = serializers.SerializerMethodField(method_name='get_route')
-
 
     class Meta:
         model = models.SearchResult
@@ -26,6 +27,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
             'highlighted']
 
     def get_object(self, obj):
+        """This returns a given object based on the lookup from the search result key."""
         result_detail = None
 
         if obj.schema_version == 'v1':
@@ -52,6 +54,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
             return None
 
     def get_document(self, obj):
+        """All search results have documents related to them, this returns the related document."""
         if obj.schema_version == 'v1':
             doc = v1.Document.objects.get(slug=obj.document_pk)
             return {
@@ -67,7 +70,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
                 }
 
     def get_route(self, obj):
-        # May want to split this out into v1 and v2?
+        """Route is a way to build the link to the object."""
         route_lookup = {
             "Item":"items",
             "Creature":"creatures",
@@ -85,5 +88,5 @@ class SearchResultSerializer(serializers.ModelSerializer):
         }
 
 
-        route = "{}/{}/".format(obj.schema_version,route_lookup[obj.object_model])
+        route = f"{obj.schema_version}/{route_lookup[obj.object_model]}/"
         return route
