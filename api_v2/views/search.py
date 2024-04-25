@@ -1,20 +1,22 @@
+"""Search query and parameter parsing."""
 from rest_framework import viewsets
-from rest_framework.response import Response
-from rest_framework import generics
-
-
-from django_filters import FilterSet
 
 from api_v2 import models
 from api_v2 import serializers
 
 
 
-class SearchResultViewSet(viewsets.ModelViewSet):
+class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
+    """This class both define the query to get results and the structure of 
+    those results for searching. Using the SearchResultSerializer for 
+    structure, this makes a custom query out to a custom table built for
+    full-text search."""
 
     serializer_class = serializers.SearchResultSerializer
+    ordering_fields=[]
 
     def get_queryset(self):
+        """Builds and runs the DB query based on querystring params"""
 
         if self.request.query_params.get('query') is None:
             # Return an empty queryset
@@ -38,16 +40,32 @@ class SearchResultViewSet(viewsets.ModelViewSet):
         else:
             object_model = self.request.query_params.get("object_model")
 
+        
+        columns = [
+            "1 as id", # ID column is required.
+            "rank",
+            "snippet(search_index,4,'<span class=\"highlighted\">','</span>','...',20) as highlighted",
+            "document_pk",
+            "object_pk",
+            "object_name",
+            "object_model",
+            "text",
+            "schema_version"
+        ]
+        table_name = "search_index"
+        filters = [
+            "schema_version LIKE %s",
+            "document_pk LIKE %s",
+            "object_model LIKE %s",
+            "search_index MATCH %s",
+            "rank MATCH 'bm25(1.0, 1.0, 10.0)'" # This gives a 10x weight to the NAME column
+        ]
+        order_by = "rank"
+
         weighted_queryset = models.SearchResult.objects.raw(
-            "SELECT 1 as id,rank, " +
-            "snippet(search_index,4,'<span class=\"highlighted\">','</span>','...',20) as highlighted, " + 
-            "document_pk,object_pk,object_name,object_model,text,schema_version FROM search_index " + 
-            "WHERE " + 
-            "schema_version LIKE %s " +
-            "AND document_pk LIKE %s " + 
-            "AND object_model LIKE %s " + 
-            "AND search_index MATCH %s" + 
-            "AND rank MATCH 'bm25(1.0, 1.0, 10.0)'"+ # This line results in a 10x weight to Name
-            "ORDER BY rank",[schema_version, document_pk, object_model, query])
+            f"SELECT {','.join(columns)} FROM {table_name} WHERE {' AND '.join(filters)} ORDER BY {order_by}",
+            [schema_version, document_pk, object_model, query])
+
+        print(weighted_queryset)
 
         return weighted_queryset
