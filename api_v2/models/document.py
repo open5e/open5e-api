@@ -53,7 +53,8 @@ class Document(HasName, HasDescription):
                 'Ruleset',
                 'License',
                 'Publisher',
-                'Size']
+                'Size',
+                'SearchResult']
             if model.__name__ in SKIPPED_MODEL_NAMES: continue
 
             CHILD_MODEL_NAMES = [
