@@ -1,7 +1,4 @@
-# Step 1:
-#Ensure rulesets are perfect.
-# Step 2: 
-#Ensure Licenses are perfect.
+
 #Step 3:
 # Ensure documents are perect.
 #> This will require remapping if there are renaming
