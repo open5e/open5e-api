@@ -77,9 +77,10 @@ class Creature(Object, Abilities, FromDocument):
     def creatureset(self):
         return self.creaturesets.all()
 
-
+#TODO remove FromDocument
 class CreatureAction(HasName, HasDescription, FromDocument):
 
+    #TODO refactor to parent
     creature = models.ForeignKey(
         Creature,
         on_delete=models.CASCADE,
@@ -98,9 +99,11 @@ class CreatureAction(HasName, HasDescription, FromDocument):
         help_text='The parameter X for if the action is limited.'
     )
 
-
+#TODO rename to CreatureActionAttack
+#TODO remove FromDocument
 class CreatureAttack(HasName, FromDocument):
 
+    #TODO refactor to parent
     creature_action = models.ForeignKey(
         CreatureAction,
         on_delete=models.CASCADE,

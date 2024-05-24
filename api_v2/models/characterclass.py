@@ -9,9 +9,13 @@ from .enums import DIE_TYPES
 class FeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
     feature. The name field is unused."""
+
+    #TODO add a primary key.
+
     # Somewhere in here is where you'd define a field that would eventually display as "Rage Damage +2"
     # Also spell slots...?
 
+    #TODO refactor to parent
     feature = models.ForeignKey('Feature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
 
@@ -26,6 +30,7 @@ class Feature(HasName, HasDescription, FromDocument):
     """This class represents an individual class feature, such as Rage, or Extra
     Attack."""
 
+    #TODO refactor to parent
     characterclass = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
 
@@ -106,3 +111,5 @@ class CharacterClass(HasName, FromDocument):
             text+='\n' + feature.as_text()
 
         return text
+
+    #TODO add verbose name plural

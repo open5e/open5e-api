@@ -124,10 +124,11 @@ class Spell(HasName, HasDescription, FromDocument):
         """Options for casting the spell."""
         return self.castingoption_set
 
-
+# TODO rename to SpellCastingOption
 class CastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
 
+    # TODO rename to parent
     spell = models.ForeignKey("Spell",on_delete=models.CASCADE)
 
     type = models.TextField(
