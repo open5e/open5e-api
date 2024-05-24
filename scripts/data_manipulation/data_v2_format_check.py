@@ -59,31 +59,41 @@ def main():
             objs = json.load(f_in)
 
             # CHECK FOR KEYS THAT ARE NUMBERS, WARN IF EXISTS
-            known_keys_non_numeric_exceptions = ['CastingOption.json','Capability.json','Benefit.json','Trait.json','FeatureItem.json']
+            known_keys_non_numeric_exceptions = ['CastingOption.json','Capability.json','Trait.json','FeatureItem.json']
             if f_obj['filename'] in known_keys_non_numeric_exceptions:
                 logger.debug("Skipping {}: file is known to have numeric keys.".format(f_obj['filename']))
             else:
-
                 check_keys_non_numeric(objs, f_obj)
-
+                #fix_keys_num_to_parent_name(objs, f_obj)
+            '''
             # CHECK FOR KEYS THAT ARE NOT PROPERLY SLUGIFIED
-            known_keys_are_slugified_exceptions = ['CastingOption.json','Capability.json','Benefit.json','Trait.json','FeatureItem.json']
+            known_keys_are_slugified_exceptions = ['CastingOption.json','Capability.json','BackgroundBenefit.json','Trait.json','FeatureItem.json']
             if f_obj['filename'] in known_keys_are_slugified_exceptions:
                 logger.debug("Skipping {}: file is known to have non-slugified keys.".format(f_obj['filename']))
             else:
                 check_keys_are_slugified(objs, f_obj)
-
+            '''
             # CHECK THAT KEYS MATCH THE FORMAT DOC_NAME, SLUGIFIED_NAME
-            known_keys_doc_name_exceptions = ['CastingOption.json','Capability.json','Benefit.json','Trait.json','FeatureItem.json', 'Size.json']
+            known_keys_doc_name_exceptions = ['CastingOption.json','Capability.json','BackgroundBenefit.json','Trait.json','FeatureItem.json', 'Size.json','CreatureAttack.json']
             if f_obj['filename'] in known_keys_doc_name_exceptions:
                 logger.debug("Skipping {}: file is known to have non-slugified keys.".format(f_obj['filename']))
             else:
                 check_keys_doc_name(objs, f_obj)
+                fix_keys_to_doc_name(objs, f_obj)
+
 
 def check_keys_non_numeric(objs,f):
     for obj in objs:
         if isinstance(obj['pk'], numbers.Real):
             logger.warning("{} uses numeric pk".format(f['path']))
+
+def fix_keys_num_to_parent_name(objs,f):
+    for obj in objs:
+        if isinstance(obj['pk'], numbers.Real):
+            if f['filename']=='BackgroundBenefit.json':
+                logger.warning("{} changing from numeric pk to string".format(f['path']))
+                pk_value = "{}_{}".format(obj['fields']['parent'],slugify(obj['fields']['name']))
+                logger.warning("CHANGING PK TO {}".format(pk_value))
 
 def check_keys_are_slugified(objs,f):
     for obj in objs:
@@ -96,6 +106,16 @@ def check_keys_doc_name(objs,f):
         if obj['pk'] != "{}_{}".format(slugify(f['doc']),slugify(obj['fields']['name'])):
             logger.warning("{}:{} does not follow the doc-key_slugified-name format.".format(f['path'],obj['pk']))
             break
+
+def fix_keys_to_doc_name(objs,f):
+    for obj in objs:
+        if obj['pk'] != "{}_{}".format(slugify(f['doc']),slugify(obj['fields']['name'])):
+            if f['filename']=='Background.json':
+                logger.warning("{} changing to doc_name format".format(f['path']))
+                pk_value = "{}_{}".format(obj['fields']['document'],slugify(obj['fields']['name']))
+                logger.warning("CHANGING PK TO {}".format(pk_value))
+
+
 
 def check_keys_doc_parent_name(objs,f):
     for obj in objs:
