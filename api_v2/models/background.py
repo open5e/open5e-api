@@ -1,6 +1,7 @@
 """The model for a feat."""
 from django.db import models
 from .abstracts import HasName, HasDescription, Modification
+from .abstracts import key_field
 from .document import FromDocument
 
 

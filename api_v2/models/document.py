@@ -4,16 +4,13 @@ from django.apps import apps
 
 
 from .abstracts import HasName, HasDescription
+from .abstracts import key_field
 
 from api_v2 import models as v2_models
 
 class Document(HasName, HasDescription):
 
-    key = models.CharField(
-        primary_key=True,
-        max_length=100,
-        help_text="Unique key for the Document."
-    )
+    key = key_field()
 
     licenses = models.ManyToManyField(
         "License",

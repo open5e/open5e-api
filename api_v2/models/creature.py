@@ -4,32 +4,13 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities
 from .abstracts import HasDescription, HasName
+from .abstracts import damage_die_count_field, damage_die_type_field
+from .abstracts import damage_bonus_field
 from .object import Object
 from .document import FromDocument
-from .enums import CREATURE_ATTACK_TYPES, DIE_TYPES, CREATURE_USES_TYPES
+from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES
 
 
-def damage_die_count_field():
-    return models.SmallIntegerField(
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text='The number of dice to roll for damage.'
-    )
-
-def damage_die_type_field():
-    return models.CharField(
-        null=True,
-        max_length=20,
-        choices=DIE_TYPES,
-        help_text='What kind of die to roll for damage.'
-    )
-
-def damage_bonus_field():
-    return models.SmallIntegerField(
-        null=True,
-        validators=[MinValueValidator(-5), MaxValueValidator(20)],
-        help_text='Damage roll modifier.'
-    )
 
 class CreatureType(HasName, HasDescription, FromDocument):
     """The Type of creature, such as Aberration."""

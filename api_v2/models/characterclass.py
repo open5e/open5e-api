@@ -3,6 +3,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from .abstracts import HasName, HasDescription, Modification
+from .abstracts import key_field
 from .document import FromDocument
 from .enums import DIE_TYPES
 
@@ -10,7 +11,7 @@ class FeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
     feature. The name field is unused."""
 
-    #TODO add a primary key.
+    #key = key_field()
 
     # Somewhere in here is where you'd define a field that would eventually display as "Rage Damage +2"
     # Also spell slots...?
