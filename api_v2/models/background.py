@@ -21,7 +21,7 @@ class Background(HasName, HasDescription, FromDocument):
     @property
     def benefits(self):
         """Returns the set of benefits that are related to this feat."""
-        return self.benefit_set
+        return self.backgroundbenefit_set
 
     class Meta:
         """To assist with the UI layer."""
