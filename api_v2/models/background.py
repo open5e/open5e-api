@@ -8,6 +8,7 @@ from .document import FromDocument
 class BackgroundBenefit(Modification):
     """This is the model for an individual benefit of a background."""
 
+    key = key_field()
     parent = models.ForeignKey('Background', on_delete=models.CASCADE)
 
 
