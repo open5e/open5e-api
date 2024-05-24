@@ -4,10 +4,10 @@ from .abstracts import HasName, HasDescription, Modification
 from .document import FromDocument
 
 
-class Benefit(Modification):
+class BackgroundBenefit(Modification):
     """This is the model for an individual benefit of a background."""
 
-    background = models.ForeignKey('Background', on_delete=models.CASCADE)
+    parent = models.ForeignKey('Background', on_delete=models.CASCADE)
 
 
 class Background(HasName, HasDescription, FromDocument):

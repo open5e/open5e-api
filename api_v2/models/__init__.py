@@ -17,7 +17,7 @@ from .race import Race
 from .feat import Capability
 from .feat import Feat
 
-from .background import Benefit
+from .background import BackgroundBenefit
 from .background import Background
 
 from .creature import Creature

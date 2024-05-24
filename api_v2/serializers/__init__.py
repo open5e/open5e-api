@@ -7,7 +7,7 @@ from .item import ItemRaritySerializer
 from .item import ItemSetSerializer
 from .item import ItemCategorySerializer
 
-from .background import BenefitSerializer
+from .background import BackgroundBenefitSerializer
 from .background import BackgroundSerializer
 
 from .document import RulesetSerializer

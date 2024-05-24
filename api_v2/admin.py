@@ -45,14 +45,14 @@ class RaceAdmin(admin.ModelAdmin):
     ]
 
 
-class BenefitInline(admin.TabularInline):
-    model = Benefit
+class BackgroundBenefitInline(admin.TabularInline):
+    model = BackgroundBenefit
 
 
 class BackgroundAdmin(admin.ModelAdmin):
     model = Background
     inlines = [
-        BenefitInline
+        BackgroundBenefitInline
     ]
 
 class DamageTypeAdmin(admin.ModelAdmin):
