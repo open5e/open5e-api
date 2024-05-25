@@ -44,8 +44,8 @@ from .spell import Spell
 from .spell import CastingOption
 from .spell import SpellSchool
 
-from .characterclass import FeatureItem
-from .characterclass import Feature
+from .characterclass import ClassFeatureItem
+from .characterclass import ClassFeature
 from .characterclass import CharacterClass
 
 from .search import SearchResult

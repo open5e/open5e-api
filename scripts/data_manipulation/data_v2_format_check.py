@@ -61,7 +61,7 @@ def main():
             objs = json.load(f_in)
 
             # CHECK FOR KEYS THAT ARE NUMBERS, WARN IF EXISTS
-            known_keys_non_numeric_exceptions = ['CastingOption.json','Capability.json','Trait.json','FeatureItem.json']
+            known_keys_non_numeric_exceptions = ['CastingOption.json','Capability.json','Trait.json']
             if f_obj['filename'] in known_keys_non_numeric_exceptions:
                 logger.debug("Skipping {}: file is known to have numeric keys.".format(f_obj['filename']))
             else:
@@ -93,7 +93,7 @@ def fix_keys_num_to_parent_name(objs,f):
     objs_fixed=[]
     for obj in objs:
         if isinstance(obj['pk'], numbers.Real):
-            if f['filename']=='BackgroundBenefit.json':
+            if f['filename']=='FeatureItem.json':
                 logger.warning("{} changing from numeric pk to string".format(f['path']))
                 pk_value = "{}_{}".format(obj['fields']['parent'],slugify(obj['fields']['name']))
                 logger.warning("CHANGING PK TO {}".format(pk_value))
@@ -122,7 +122,7 @@ def fix_keys_to_doc_name(objs,f):
 
     for obj in objs:
         if obj['pk'] != "{}_{}".format(slugify(f['doc']),slugify(obj['fields']['name'])):
-            if f['filename']=='Background.json':
+            if f['filename']=='FeatureItem.json':
                 logger.warning("{} changing to doc_name format".format(f['path']))
                 pk_value = "{}_{}".format(obj['fields']['document'],slugify(obj['fields']['name']))
                 logger.warning("CHANGING PK TO {}".format(pk_value))
@@ -132,17 +132,17 @@ def fix_keys_to_doc_name(objs,f):
                 objs_fixed.append(obj)
 
 
-        related_path = "{}/{}/{}/{}/{}/".format(f['root'],f['dir'],f['schema'],f['publisher'],f['doc'])
-        related_filenames = ['BackgroundBenefit.json']
+    #    related_path = "{}/{}/{}/{}/{}/".format(f['root'],f['dir'],f['schema'],f['publisher'],f['doc'])
+    #    related_filenames = ['BackgroundBenefit.json']
 
     for obj in objs_fixed:
         for related_file in related_filenames:
             refactor_relations(related_path+related_file,"parent",obj['former_pk'], obj['pk'])
         obj.pop('former_pk')
 
-#    if f['filename']=='Background.json':    
-#        with open(f['path'],'w',encoding='utf-8') as wf:
-#            json.dump(objs_fixed,wf,ensure_ascii=False,indent=2)
+    #if f['filename']=='CharacterClass.json':    
+    #    with open(f['path'],'w',encoding='utf-8') as wf:
+    #        json.dump(objs_fixed,wf,ensure_ascii=False,indent=2)
 
 
 

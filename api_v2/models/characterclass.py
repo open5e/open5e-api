@@ -7,7 +7,7 @@ from .abstracts import key_field
 from .document import FromDocument
 from .enums import DIE_TYPES
 
-class FeatureItem(models.Model):
+class ClassFeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
     feature. The name field is unused."""
 
@@ -17,7 +17,7 @@ class FeatureItem(models.Model):
     # Also spell slots...?
 
     #TODO refactor to parent
-    feature = models.ForeignKey('Feature', on_delete=models.CASCADE)
+    feature = models.ForeignKey('ClassFeature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
 
     def __str__(self):
@@ -27,7 +27,7 @@ class FeatureItem(models.Model):
                                  self.feature.name)
 
 
-class Feature(HasName, HasDescription, FromDocument):
+class ClassFeature(HasName, HasDescription, FromDocument):
     """This class represents an individual class feature, such as Rage, or Extra
     Attack."""
 

@@ -98,6 +98,6 @@ admin.site.register(Alignment)
 
 admin.site.register(Condition)
 
-admin.site.register(FeatureItem)
-admin.site.register(Feature)
+admin.site.register(ClassFeatureItem)
+admin.site.register(ClassFeature)
 admin.site.register(CharacterClass)

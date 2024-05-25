@@ -6,21 +6,21 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 
-class FeatureItemSerializer(serializers.ModelSerializer):
+class ClassFeatureItemSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.FeatureItem
+        model = models.ClassFeatureItem
         fields = ['name','desc','type']
 
-class FeatureSerializer(serializers.ModelSerializer):
+class ClassFeatureSerializer(serializers.ModelSerializer):
     key = serializers.ReadOnlyField()
 
     class Meta:
-        model = models.Feature
+        model = models.ClassFeature
         fields = ['key', 'name', 'desc']
 
 class CharacterClassSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    features = FeatureSerializer(
+    features = ClassFeatureSerializer(
         many=True, context={'request': {}})
     levels = serializers.ReadOnlyField()
     hit_points = serializers.ReadOnlyField()
