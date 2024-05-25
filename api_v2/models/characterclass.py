@@ -107,7 +107,7 @@ class CharacterClass(HasName, FromDocument):
     def as_text(self):
         text = self.name + '\n'
         
-        for feature in self.feature_set.all():
+        for feature in self.classfeature_set.all():
             text+='\n' + feature.as_text()
 
         return text
