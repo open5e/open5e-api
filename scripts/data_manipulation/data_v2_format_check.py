@@ -72,7 +72,7 @@ def main():
                 logger.debug("Skipping {}: file is known to have numeric keys.".format(f_obj['filename']))
             else:
                 check_keys_non_numeric(objs, f_obj)
-                if args.fix: fix_keys_to_parent_level(objs, f_obj)
+                #if args.fix: fix_keys_to_parent_level(objs, f_obj)
 
             # CHECK FOR KEYS THAT ARE NOT PROPERLY SLUGIFIED
             known_keys_are_slugified_exceptions = []
@@ -87,7 +87,7 @@ def main():
                 logger.debug("Skipping {}: file is known to have non-slugified keys.".format(f_obj['filename']))
             else:
                 check_keys_doc_name(objs, f_obj)
-                if args.fix: fix_keys_to_doc_name(objs, f_obj)
+                if args.fix: fix_keys_to_parent_level(objs, f_obj)
 
 
 def check_keys_non_numeric(objs,f):
