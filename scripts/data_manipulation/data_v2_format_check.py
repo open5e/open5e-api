@@ -100,10 +100,10 @@ def fix_keys_num_to_parent_name(objs,f):
                 obj['pk'] = pk_value
                 objs_fixed.append(obj)
 
-    if f['filename']=='BackgroundBenefit.json':
-        with open(f['path'],'w',encoding='utf-8') as wf:
-            json.dump(objs_fixed,wf,indent=2)
-            wf.write('\n')
+    #if f['filename']=='BackgroundBenefit.json':
+    #    with open(f['path'],'w',encoding='utf-8') as wf:
+    #        json.dump(objs_fixed,wf,indent=2)
+    #        wf.write('\n')
 
 def check_keys_are_slugified(objs,f):
     for obj in objs:

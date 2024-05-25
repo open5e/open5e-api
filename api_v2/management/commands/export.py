@@ -109,7 +109,7 @@ class Command(BaseCommand):
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher','SearchResult']
-                    CHILD_MODEL_NAMES = ['Trait', 'Capability', 'BackgroundBenefit', 'FeatureItem', 'CastingOption']
+                    CHILD_MODEL_NAMES = ['Trait', 'Capability', 'BackgroundBenefit', 'ClassFeatureItem', 'CastingOption']
                     
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
                         if model.__name__ in CHILD_MODEL_NAMES:
@@ -121,8 +121,8 @@ class Command(BaseCommand):
                                 modelq = model.objects.filter(parent__document=doc).order_by('pk')
                             if model.__name__ == 'CastingOption':
                                 modelq = model.objects.filter(spell__document=doc).order_by('pk')
-                            if model.__name__ == 'FeatureItem':
-                                modelq = model.objects.filter(feature__document=doc).order_by('pk')
+                            if model.__name__ == 'ClassFeatureItem':
+                                modelq = model.objects.filter(parent__document=doc).order_by('pk')
                         else:
                             modelq = model.objects.filter(document=doc).order_by('pk')
                         model_path = get_filepath_by_model(
