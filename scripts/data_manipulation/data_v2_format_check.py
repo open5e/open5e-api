@@ -18,8 +18,11 @@ def main():
         help='Log level.')
     parser.add_argument('-f', '--fix', action='store_true',
         help='If this flag is set, the script will automatically fix what it can.')
+
+    parser.add_argument('-m','--model',
+        help='Model name to operate on. All others will be skipped.')
     args = parser.parse_args()
-    
+        
     if args.loglevel == 'INFO':
         ll=logging.INFO
     if args.loglevel == 'DEBUG':
@@ -57,11 +60,14 @@ def main():
 
     # LOOPING THROUGH ALL IN-SCOPE FILES
     for f_obj in file_list:
+        if f_obj['filename'] != args.model:
+            continue
+
         with open(f_obj['path'],'r',encoding='utf-8') as f_in:
             objs = json.load(f_in)
 
             # CHECK FOR KEYS THAT ARE NUMBERS, WARN IF EXISTS
-            known_keys_non_numeric_exceptions = ['CastingOption.json','Capability.json','Trait.json']
+            known_keys_non_numeric_exceptions = []
             if f_obj['filename'] in known_keys_non_numeric_exceptions:
                 logger.debug("Skipping {}: file is known to have numeric keys.".format(f_obj['filename']))
             else:
@@ -69,19 +75,19 @@ def main():
                 if args.fix: fix_keys_to_parent_level(objs, f_obj)
 
             # CHECK FOR KEYS THAT ARE NOT PROPERLY SLUGIFIED
-            known_keys_are_slugified_exceptions = ['CastingOption.json','Capability.json','BackgroundBenefit.json','Trait.json']
+            known_keys_are_slugified_exceptions = []
             if f_obj['filename'] in known_keys_are_slugified_exceptions:
                 logger.debug("Skipping {}: file is known to have non-slugified keys.".format(f_obj['filename']))
             else:
                 check_keys_are_slugified(objs, f_obj)
 
             # CHECK THAT KEYS MATCH THE FORMAT DOC_NAME, SLUGIFIED_NAME
-            known_keys_doc_name_exceptions = ['CastingOption.json','Capability.json','BackgroundBenefit.json','Trait.json', 'Size.json','CreatureAttack.json']
+            known_keys_doc_name_exceptions = []
             if f_obj['filename'] in known_keys_doc_name_exceptions:
                 logger.debug("Skipping {}: file is known to have non-slugified keys.".format(f_obj['filename']))
             else:
                 check_keys_doc_name(objs, f_obj)
-                #if args.fix: fix_keys_to_doc_name(objs, f_obj)
+                if args.fix: fix_keys_to_doc_name(objs, f_obj)
 
 
 def check_keys_non_numeric(objs,f):
@@ -112,25 +118,29 @@ def check_keys_are_slugified(objs,f):
 
 
 def check_keys_doc_name(objs,f):
+    child_models = ['BackgroundBenefit.json','ClassFeature.json']
     for obj in objs:
+
+        if f['filename'] in child_models:
+            if obj['pk'] != "{}_{}".format(slugify(obj['fields']['parent']),slugify(obj['fields']['name'])):
+                logger.warning("{}:{} does not follow the parent-name_slugified-name format.".format(f['path'],obj['pk']))
+            continue
         if f['filename']=='ClassFeatureItem.json':
-            #Special rules, it doesn't have a name.
             if obj['pk'] != "{}_{}".format(slugify(obj['fields']['parent']),slugify(obj['fields']['level'])):
                 logger.warning("{}:{} does not follow the parent-name_level format.".format(f['path'],obj['pk']))
-                break
-        else:
-            if obj['pk'] != "{}_{}".format(slugify(f['doc']),slugify(obj['fields']['name'])):
-                logger.warning("{}:{} does not follow the doc-key_slugified-name format.".format(f['path'],obj['pk']))
-                break
+            continue
+        if obj['pk'] != "{}_{}".format(slugify(f['doc']),slugify(obj['fields']['name'])):
+            logger.warning("{}:{} does not follow the doc-key_slugified-name format.".format(f['path'],obj['pk']))
+            continue
 
 def fix_keys_to_doc_name(objs,f):
     objs_fixed=[]
 
     for obj in objs:
         if obj['pk'] != "{}_{}".format(slugify(f['doc']),slugify(obj['fields']['name'])):
-            if f['filename']=='CharacterClass.json':
+            if f['filename']=='ClassFeature.json':
                 logger.warning("{} changing to doc_name format".format(f['path']))
-                pk_value = "{}_{}".format(obj['fields']['document'],slugify(obj['fields']['name']))
+                pk_value = "{}_{}".format(obj['fields']['parent'],slugify(obj['fields']['name']))
                 logger.warning("CHANGING PK TO {}".format(pk_value))
                 
                 obj['former_pk'] = obj['pk']
@@ -139,17 +149,18 @@ def fix_keys_to_doc_name(objs,f):
 
 
         related_path = "{}/{}/{}/{}/{}/".format(f['root'],f['dir'],f['schema'],f['publisher'],f['doc'])
-        related_filenames = ['ClassFeature.json']
+        related_filenames = ['ClassFeatureItem.json']
 
     for obj in objs_fixed:
         for related_file in related_filenames:
-            logger.warning("CHANGING RELATED PK IN {} TO {}".format(related_file,pk_value))
+            logger.warning("CHANGING RELATED PK IN {} TO {}".format(related_file,obj['pk']))
             refactor_relations(related_path+related_file,"parent",obj['former_pk'], obj['pk'])
         obj.pop('former_pk')
 
-    if f['filename']=='CharacterClass.json':    
+    if f['filename']=='ClassFeature.json':    
         with open(f['path'],'w',encoding='utf-8') as wf:
             json.dump(objs_fixed,wf,ensure_ascii=False,indent=2)
+        pass
 
 def fix_keys_to_parent_level(objs,f):
     objs_fixed=[]
