@@ -76,7 +76,7 @@ def main():
                 check_keys_are_slugified(objs, f_obj)
 
             # CHECK THAT KEYS MATCH THE FORMAT DOC_NAME, SLUGIFIED_NAME
-            known_keys_doc_name_exceptions = ['CastingOption.json','Capability.json','BackgroundBenefit.json','Trait.json','FeatureItem.json', 'Size.json','CreatureAttack.json']
+            known_keys_doc_name_exceptions = ['CastingOption.json','Capability.json','BackgroundBenefit.json','Trait.json','ClassFeatureItem.json', 'Size.json','CreatureAttack.json']
             if f_obj['filename'] in known_keys_doc_name_exceptions:
                 logger.debug("Skipping {}: file is known to have non-slugified keys.".format(f_obj['filename']))
             else:
@@ -122,7 +122,7 @@ def fix_keys_to_doc_name(objs,f):
 
     for obj in objs:
         if obj['pk'] != "{}_{}".format(slugify(f['doc']),slugify(obj['fields']['name'])):
-            if f['filename']=='FeatureItem.json':
+            if f['filename']=='CharacterClass.json':
                 logger.warning("{} changing to doc_name format".format(f['path']))
                 pk_value = "{}_{}".format(obj['fields']['document'],slugify(obj['fields']['name']))
                 logger.warning("CHANGING PK TO {}".format(pk_value))
@@ -132,17 +132,18 @@ def fix_keys_to_doc_name(objs,f):
                 objs_fixed.append(obj)
 
 
-    #    related_path = "{}/{}/{}/{}/{}/".format(f['root'],f['dir'],f['schema'],f['publisher'],f['doc'])
-    #    related_filenames = ['BackgroundBenefit.json']
+        related_path = "{}/{}/{}/{}/{}/".format(f['root'],f['dir'],f['schema'],f['publisher'],f['doc'])
+        related_filenames = ['ClassFeature.json']
 
     for obj in objs_fixed:
         for related_file in related_filenames:
+            logger.warning("CHANGING RELATED PK IN {} TO {}".format(related_file,pk_value))
             refactor_relations(related_path+related_file,"parent",obj['former_pk'], obj['pk'])
         obj.pop('former_pk')
 
-    #if f['filename']=='CharacterClass.json':    
-    #    with open(f['path'],'w',encoding='utf-8') as wf:
-    #        json.dump(objs_fixed,wf,ensure_ascii=False,indent=2)
+    if f['filename']=='CharacterClass.json':    
+        with open(f['path'],'w',encoding='utf-8') as wf:
+            json.dump(objs_fixed,wf,ensure_ascii=False,indent=2)
 
 
 
