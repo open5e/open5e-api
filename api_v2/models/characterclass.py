@@ -21,9 +21,9 @@ class ClassFeatureItem(models.Model):
 
     def __str__(self):
         return "{} {} ({})".format(
-                                 self.feature.character_class.name,
+                                 self.parent.parent.name,
                                  str(self.level),
-                                 self.feature.name)
+                                 self.parent.name)
 
 
 class ClassFeature(HasName, HasDescription, FromDocument):
@@ -34,7 +34,7 @@ class ClassFeature(HasName, HasDescription, FromDocument):
         on_delete=models.CASCADE)
 
     def __str__(self):
-        return "{} ({})".format(self.name,self.character_class.name)
+        return "{} ({})".format(self.name,self.parent.name)
 
 
 class CharacterClass(HasName, FromDocument):
@@ -90,6 +90,7 @@ class CharacterClass(HasName, FromDocument):
                 
                 by_level[str(fl.level)]['features'].append(fl.parent.key)
                 by_level[str(fl.level)]['proficiency-bonus'] = self.proficiency_bonus(player_level=fl.level)
+                by_level[str(fl.level)]['level'] = fl.level
                 
         return by_level
 
