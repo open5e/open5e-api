@@ -11,12 +11,11 @@ class ClassFeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
     feature. The name field is unused."""
 
-    #key = key_field()
+    key = key_field()
 
     # Somewhere in here is where you'd define a field that would eventually display as "Rage Damage +2"
     # Also spell slots...?
 
-    #TODO refactor to parent
     parent = models.ForeignKey('ClassFeature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
 
@@ -31,7 +30,6 @@ class ClassFeature(HasName, HasDescription, FromDocument):
     """This class represents an individual class feature, such as Rage, or Extra
     Attack."""
 
-    #TODO refactor to parent
     parent = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
 
