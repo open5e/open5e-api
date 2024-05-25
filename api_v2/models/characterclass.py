@@ -17,7 +17,7 @@ class ClassFeatureItem(models.Model):
     # Also spell slots...?
 
     #TODO refactor to parent
-    feature = models.ForeignKey('ClassFeature', on_delete=models.CASCADE)
+    parent = models.ForeignKey('ClassFeature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
 
     def __str__(self):
@@ -32,7 +32,7 @@ class ClassFeature(HasName, HasDescription, FromDocument):
     Attack."""
 
     #TODO refactor to parent
-    characterclass = models.ForeignKey('CharacterClass',
+    parent = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
 
     def __str__(self):
@@ -78,18 +78,19 @@ class CharacterClass(HasName, FromDocument):
     @property
     def features(self):
         """Returns the set of features that are related to this class."""
-        return self.feature_set
+        return self.classfeature_set
 
     def levels(self):
+        """Returns an array of level information for the given class."""
         by_level = {}
 
-        for feature in self.feature_set.all():
-            for fl in feature.featureitem_set.all():
+        for classfeature in self.classfeature_set.all():
+            for fl in classfeature.classfeatureitem_set.all():
                 if (str(fl.level)) not in by_level.keys():
                     by_level[str(fl.level)] = {}
                     by_level[str(fl.level)]['features'] = []
                 
-                by_level[str(fl.level)]['features'].append(fl.feature.key)
+                by_level[str(fl.level)]['features'].append(fl.parent.key)
                 by_level[str(fl.level)]['proficiency-bonus'] = self.proficiency_bonus(player_level=fl.level)
                 
         return by_level
