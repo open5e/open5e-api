@@ -17,6 +17,7 @@ class SpellCastingOptionSerializer(serializers.ModelSerializer):
         model = models.SpellCastingOption
         exclude = ['id','parent']
 
+
 class SpellSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     slot_expended=serializers.ReadOnlyField()
