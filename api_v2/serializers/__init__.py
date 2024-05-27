@@ -18,8 +18,7 @@ from .document import DocumentSerializer
 from .feat import FeatBenefitSerializer
 from .feat import FeatSerializer
 
-from .race import TraitSerializer
-from .race import SubraceSerializer
+from .race import RaceTraitSerializer
 from .race import RaceSerializer
 
 from .creature import CreatureSerializer

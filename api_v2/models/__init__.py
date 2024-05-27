@@ -11,7 +11,7 @@ from .armor import Armor
 
 from .weapon import Weapon
 
-from .race import Trait
+from .race import RaceTrait
 from .race import Race
 
 from .feat import FeatBenefit

@@ -6,7 +6,7 @@ from .abstracts import Modification
 from .document import FromDocument
 
 #TODO rename to RaceTrait
-class Trait(Modification):
+class RaceTrait(Modification):
     """This is the model for a race or subrace trait.
 
     It inherits from modification, which is an abstract concept.
@@ -31,11 +31,6 @@ class Race(HasName, HasDescription, FromDocument):
                                    on_delete=models.CASCADE)
 
     @property
-    def subraces(self):
-        """Returns the set of subraces that are related to this race."""
-        return self.race_set.all()
-
-    @property
     def is_subrace(self):
         """Returns whether the object is a subrace."""
         return self.subrace_of is not None
@@ -43,7 +38,7 @@ class Race(HasName, HasDescription, FromDocument):
     @property
     def traits(self):
         """Returns the set of traits that are related to this race."""
-        return self.trait_set
+        return self.racetrait_set
 
     class Meta:
         """To assist with the UI layer."""

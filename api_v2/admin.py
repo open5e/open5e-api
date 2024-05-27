@@ -13,16 +13,6 @@ class ItemModelAdmin(admin.ModelAdmin):
     list_display = ['key', 'name']
 
 
-class TraitInline(admin.TabularInline):
-    model = Trait
-
-
-class RaceAdmin(admin.ModelAdmin):
-    inlines = [
-        TraitInline,
-    ]
-
-
 class FeatBenefitInline(admin.TabularInline):
     model = FeatBenefit
     exclude = ('name',)
@@ -35,13 +25,13 @@ class FeatAdmin(admin.ModelAdmin):
     list_display = ['key', 'name']
 
 
-class TraitInline(admin.TabularInline):
-    model = Trait
+class RaceTraitInline(admin.TabularInline):
+    model = RaceTrait
 
 
 class RaceAdmin(admin.ModelAdmin):
     inlines = [
-        TraitInline,
+        RaceTraitInline,
     ]
 
 
