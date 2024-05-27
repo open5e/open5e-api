@@ -14,7 +14,7 @@ from .weapon import Weapon
 from .race import Trait
 from .race import Race
 
-from .feat import Capability
+from .feat import FeatBenefit
 from .feat import Feat
 
 from .background import BackgroundBenefit

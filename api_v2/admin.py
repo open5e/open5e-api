@@ -23,14 +23,14 @@ class RaceAdmin(admin.ModelAdmin):
     ]
 
 
-class CapabilityInline(admin.TabularInline):
-    model = Capability
+class FeatBenefitInline(admin.TabularInline):
+    model = FeatBenefit
     exclude = ('name',)
 
 
 class FeatAdmin(admin.ModelAdmin):
     inlines = [
-        CapabilityInline,
+        FeatBenefitInline
     ]
     list_display = ['key', 'name']
 

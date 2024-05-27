@@ -6,15 +6,15 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 
-class CapabilitySerializer(serializers.ModelSerializer):
+class FeatBenefitSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Capability
+        model = models.FeatBenefit
         fields = ['desc']
 
 class FeatSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     has_prerequisite = serializers.ReadOnlyField()
-    capabilities = CapabilitySerializer(
+    capabilities = FeatBenefitSerializer(
         many=True)
 
     class Meta:

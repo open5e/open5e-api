@@ -15,7 +15,7 @@ from .document import LicenseSerializer
 from .document import PublisherSerializer
 from .document import DocumentSerializer
 
-from .feat import CapabilitySerializer
+from .feat import FeatBenefitSerializer
 from .feat import FeatSerializer
 
 from .race import TraitSerializer
