@@ -109,7 +109,7 @@ class Command(BaseCommand):
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher','SearchResult']
-                    CHILD_MODEL_NAMES = ['RaceTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'CastingOption']
+                    CHILD_MODEL_NAMES = ['RaceTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption']
                     
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
                         if model.__name__ in CHILD_MODEL_NAMES:
@@ -119,7 +119,7 @@ class Command(BaseCommand):
                                 modelq = model.objects.filter(parent__document=doc).order_by('pk')
                             if model.__name__ == 'BackgroundBenefit':
                                 modelq = model.objects.filter(parent__document=doc).order_by('pk')
-                            if model.__name__ == 'CastingOption':
+                            if model.__name__ == 'SpellCastingOption':
                                 modelq = model.objects.filter(spell__document=doc).order_by('pk')
                             if model.__name__ == 'ClassFeatureItem':
                                 modelq = model.objects.filter(parent__document=doc).order_by('pk')

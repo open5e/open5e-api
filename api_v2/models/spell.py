@@ -122,10 +122,10 @@ class Spell(HasName, HasDescription, FromDocument):
 
     def casting_options(self):
         """Options for casting the spell."""
-        return self.castingoption_set
+        return self.spellcastingoption_set
 
-# TODO rename to SpellCastingOption
-class CastingOption(models.Model):
+
+class SpellCastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
 
     # TODO rename to parent

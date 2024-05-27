@@ -41,7 +41,7 @@ from .alignment import Alignment
 from .condition import Condition
 
 from .spell import Spell
-from .spell import CastingOption
+from .spell import SpellCastingOption
 from .spell import SpellSchool
 
 from .characterclass import ClassFeatureItem
@@ -51,4 +51,3 @@ from .characterclass import CharacterClass
 from .search import SearchResult
 
 from .size import Size
-
