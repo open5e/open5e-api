@@ -5,15 +5,14 @@ from .abstracts import HasName, HasDescription, HasPrerequisite
 from .abstracts import Modification
 from .document import FromDocument
 
-#TODO rename to RaceTrait
+
 class RaceTrait(Modification):
     """This is the model for a race or subrace trait.
 
     It inherits from modification, which is an abstract concept.
     """
 
-    #TODO refactor to parent
-    race = models.ForeignKey('Race', on_delete=models.CASCADE)
+    parent = models.ForeignKey('Race', on_delete=models.CASCADE)
 
 
 class Race(HasName, HasDescription, FromDocument):

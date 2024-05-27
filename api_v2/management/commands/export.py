@@ -114,7 +114,7 @@ class Command(BaseCommand):
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
                         if model.__name__ in CHILD_MODEL_NAMES:
                             if model.__name__ == 'RaceTrait':
-                                modelq = model.objects.filter(race__document=doc).order_by('pk')
+                                modelq = model.objects.filter(parent__document=doc).order_by('pk')
                             if model.__name__ == 'FeatBenefit':
                                 modelq = model.objects.filter(parent__document=doc).order_by('pk')
                             if model.__name__ == 'BackgroundBenefit':
