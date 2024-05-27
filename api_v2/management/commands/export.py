@@ -113,16 +113,7 @@ class Command(BaseCommand):
                     
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
                         if model.__name__ in CHILD_MODEL_NAMES:
-                            if model.__name__ == 'RaceTrait':
-                                modelq = model.objects.filter(parent__document=doc).order_by('pk')
-                            if model.__name__ == 'FeatBenefit':
-                                modelq = model.objects.filter(parent__document=doc).order_by('pk')
-                            if model.__name__ == 'BackgroundBenefit':
-                                modelq = model.objects.filter(parent__document=doc).order_by('pk')
-                            if model.__name__ == 'SpellCastingOption':
-                                modelq = model.objects.filter(spell__document=doc).order_by('pk')
-                            if model.__name__ == 'ClassFeatureItem':
-                                modelq = model.objects.filter(parent__document=doc).order_by('pk')
+                            modelq = model.objects.filter(parent__document=doc).order_by('pk')
                         else:
                             modelq = model.objects.filter(document=doc).order_by('pk')
                         model_path = get_filepath_by_model(
