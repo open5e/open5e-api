@@ -14,7 +14,7 @@ class FeatBenefitSerializer(serializers.ModelSerializer):
 class FeatSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     has_prerequisite = serializers.ReadOnlyField()
-    capabilities = FeatBenefitSerializer(
+    benefits = FeatBenefitSerializer(
         many=True)
 
     class Meta:

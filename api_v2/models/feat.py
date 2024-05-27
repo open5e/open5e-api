@@ -22,9 +22,9 @@ class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):
     """
 
     @property
-    def capabilities(self):
+    def benefits(self):
         """Returns the set of benefits that are related to this feat."""
-        return self.capability_set
+        return self.featbenefit_set
 
     class Meta:
         """To assist with the UI layer."""
