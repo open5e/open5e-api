@@ -87,7 +87,7 @@ def main():
                 logger.debug("Skipping {}: file is known to have non-slugified keys.".format(f_obj['filename']))
             else:
                 check_keys_doc_name(objs, f_obj)
-                if args.fix: fix_keys_to_parent_level(objs, f_obj)
+                if args.fix: fix_keys_to_doc_name(objs, f_obj)
 
 
 def check_keys_non_numeric(objs,f):
@@ -138,9 +138,9 @@ def fix_keys_to_doc_name(objs,f):
 
     for obj in objs:
         if obj['pk'] != "{}_{}".format(slugify(f['doc']),slugify(obj['fields']['name'])):
-            if f['filename']=='ClassFeature.json':
+            if f['filename']=='Feat.json':
                 logger.warning("{} changing to doc_name format".format(f['path']))
-                pk_value = "{}_{}".format(obj['fields']['parent'],slugify(obj['fields']['name']))
+                pk_value = "{}_{}".format(obj['fields']['document'],slugify(obj['fields']['name']))
                 logger.warning("CHANGING PK TO {}".format(pk_value))
                 
                 obj['former_pk'] = obj['pk']
@@ -149,7 +149,7 @@ def fix_keys_to_doc_name(objs,f):
 
 
         related_path = "{}/{}/{}/{}/{}/".format(f['root'],f['dir'],f['schema'],f['publisher'],f['doc'])
-        related_filenames = ['ClassFeatureItem.json']
+        related_filenames = ['FeatBenefit.json']
 
     for obj in objs_fixed:
         for related_file in related_filenames:
@@ -157,7 +157,7 @@ def fix_keys_to_doc_name(objs,f):
             refactor_relations(related_path+related_file,"parent",obj['former_pk'], obj['pk'])
         obj.pop('former_pk')
 
-    if f['filename']=='ClassFeature.json':    
+    if f['filename']=='Feat.json':    
         with open(f['path'],'w',encoding='utf-8') as wf:
             json.dump(objs_fixed,wf,ensure_ascii=False,indent=2)
         pass
