@@ -3,12 +3,11 @@ from django.db import models
 from .abstracts import HasName, HasDescription, HasPrerequisite, Modification
 from .document import FromDocument
 
-#TODO rename to FeatBenefit
 class FeatBenefit(Modification):
     """This is the model for an individual benefit of a feat."""
 
-    #TODO refactor to parent
-    feat = models.ForeignKey('Feat', on_delete=models.CASCADE)
+
+    parent = models.ForeignKey('Feat', on_delete=models.CASCADE)
 
 
 class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):
