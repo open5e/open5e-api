@@ -6,7 +6,6 @@ from .document import FromDocument
 class FeatBenefit(Modification):
     """This is the model for an individual benefit of a feat."""
 
-
     parent = models.ForeignKey('Feat', on_delete=models.CASCADE)
 
 
