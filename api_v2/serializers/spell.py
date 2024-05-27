@@ -15,7 +15,7 @@ class SpellSchoolSerializer(serializers.ModelSerializer):
 class SpellCastingOptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.SpellCastingOption
-        exclude = ['id','spell']
+        exclude = ['id','parent']
 
 class SpellSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
