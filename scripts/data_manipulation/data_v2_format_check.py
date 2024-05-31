@@ -139,7 +139,7 @@ def fix_keys_to_doc_name(objs,f):
 
     for obj in objs:
         if obj['pk'] != "{}_{}".format(slugify(f['doc']),slugify(obj['fields']['name'])):
-            if f['filename']=='Weapon.json':
+            if f['filename']=='Creature.json':
                 logger.warning("{} changing to doc_name format".format(f['path']))
                 pk_value = "{}_{}".format(obj['fields']['document'],slugify(obj['fields']['name']))
                 logger.warning("CHANGING PK TO {}".format(pk_value))
@@ -150,15 +150,15 @@ def fix_keys_to_doc_name(objs,f):
 
 
         related_path = "{}/{}/{}/{}/{}/".format(f['root'],f['dir'],f['schema'],f['publisher'],f['doc'])
-        related_filenames = ['Item.json']
+        related_filenames = ['CreatureAction.json']
 
     for obj in objs_fixed:
         for related_file in related_filenames:
             logger.warning("CHANGING RELATED PK IN {} TO {}".format(related_file,obj['pk']))
-            refactor_relations(related_path+related_file,"weapon",obj['former_pk'], obj['pk'])
+            refactor_relations(related_path+related_file,"parent",obj['former_pk'], obj['pk'])
         obj.pop('former_pk')
 
-    if f['filename']=='Weapon.json':    
+    if f['filename']=='Creature.json':    
         with open(f['path'],'w',encoding='utf-8') as wf:
             json.dump(objs_fixed,wf,ensure_ascii=False,indent=2)
         pass
@@ -192,7 +192,7 @@ def refactor_relations(filename, key, former_pk, new_pk):
     if os.path.isfile(filename):
         with open(filename, 'r', encoding='utf-8') as f:
             objs = json.load(f)
-            if key == "weapon":
+            if key == "parent":
                 for obj in objs:
                     if obj['fields'][key] == former_pk:
                         obj['fields'][key] = new_pk
