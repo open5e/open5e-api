@@ -5,7 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities
 from .abstracts import HasDescription, HasName
 from .abstracts import damage_die_count_field, damage_die_type_field
-from .abstracts import damage_bonus_field
+from .abstracts import damage_bonus_field, key_field
 from .object import Object
 from .document import FromDocument
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES
@@ -58,11 +58,13 @@ class Creature(Object, Abilities, FromDocument):
     def creatureset(self):
         return self.creaturesets.all()
 
-#TODO remove FromDocument
-class CreatureAction(HasName, HasDescription, FromDocument):
 
-    #TODO refactor to parent
-    creature = models.ForeignKey(
+class CreatureAction(HasName, HasDescription):
+
+    key = key_field()
+
+    #TODO  Refactor to parent.
+    parent = models.ForeignKey(
         Creature,
         on_delete=models.CASCADE,
         help_text='The creature to which this action belongs.'
@@ -80,12 +82,10 @@ class CreatureAction(HasName, HasDescription, FromDocument):
         help_text='The parameter X for if the action is limited.'
     )
 
-#TODO rename to CreatureActionAttack
-#TODO remove FromDocument
 class CreatureAttack(HasName, FromDocument):
+    key = key_field()
 
-    #TODO refactor to parent
-    creature_action = models.ForeignKey(
+    parent = models.ForeignKey(
         CreatureAction,
         on_delete=models.CASCADE,
         help_text='The creature action to which this attack belongs.'

@@ -109,9 +109,12 @@ class Command(BaseCommand):
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher','SearchResult']
-                    CHILD_MODEL_NAMES = ['RaceTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption']
+                    CHILD_MODEL_NAMES = ['RaceTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption','CreatureAction']
+                    CHILD_CHILD_MODEL_NAMES = ['CreatureAttack']
                     
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
+                        if model.__name__ in CHILD_CHILD_MODEL_NAMES:
+                            modelq = model.objects.filter(parent__parent__document=doc).order_by('pk')
                         if model.__name__ in CHILD_MODEL_NAMES:
                             modelq = model.objects.filter(parent__document=doc).order_by('pk')
                         else:
