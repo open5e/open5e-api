@@ -114,8 +114,8 @@ def refactor_parent_reference(file, old_parent, new_parent):
             refactored_objects.append(obj)
    
     logger.warning("refactoring parent {} {} {}".format(file, old_parent, new_parent))
-    #with open(filename,'w', encoding='utf-8') as o:
-    #    json.dump(refactored_objects,o, ensure_ascii=False,indent=2)
+    with open(file,'w', encoding='utf-8') as o:
+        json.dump(refactored_objects,o, ensure_ascii=False,indent=2)
 
 def refactor_key(file, old_key, new_key):
     refactored_objects = []
@@ -127,8 +127,8 @@ def refactor_key(file, old_key, new_key):
             refactored_objects.append(obj)
    
     logger.warning("refactoring key {} {} {}".format(file, old_key, new_key))
-    #with open(filename,'w', encoding='utf-8') as o:
-    #    json.dump(refactored_objects,o, ensure_ascii=False,indent=2)
+    with open(file,'w', encoding='utf-8') as o:
+        json.dump(refactored_objects,o, ensure_ascii=False,indent=2)
 
 
 
