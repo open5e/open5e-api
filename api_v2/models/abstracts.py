@@ -2,7 +2,41 @@
 
 from django.db import models
 from .enums import MODIFICATION_TYPES
+from django.core.validators import MaxValueValidator, MinValueValidator
+from .enums import DIE_TYPES
 
+# FIELDS USED ACROSS MULTIPLE MODELS
+
+def damage_die_count_field():
+    return models.SmallIntegerField(
+        null=True,
+        validators=[MinValueValidator(0)],
+        help_text='The number of dice to roll for damage.'
+    )
+
+def damage_die_type_field():
+    return models.CharField(
+        null=True,
+        max_length=20,
+        choices=DIE_TYPES,
+        help_text='What kind of die to roll for damage.'
+    )
+
+def damage_bonus_field():
+    return models.SmallIntegerField(
+        null=True,
+        validators=[MinValueValidator(-5), MaxValueValidator(20)],
+        help_text='Damage roll modifier.'
+    )
+
+def key_field():
+    return models.CharField(
+        primary_key=True,
+        max_length=100,
+        help_text="Unique key for the Document."
+    )
+
+# CLASSES INHERITED BY MULTIPLE MODELS
 
 class HasName(models.Model):
     """This is the definition of a name."""
@@ -52,7 +86,6 @@ class Modification(HasName, HasDescription):
     Basically it describes any sort of modification to a character in 5e.
     """
 
-
     type = models.CharField(
         max_length=200,
         blank=True,
@@ -63,6 +96,7 @@ class Modification(HasName, HasDescription):
     class Meta:
         abstract = True
         ordering = ['pk']
+
 
 class Benefit(HasName, HasDescription):
     class Meta:

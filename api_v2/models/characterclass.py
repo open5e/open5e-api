@@ -3,34 +3,38 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from .abstracts import HasName, HasDescription, Modification
+from .abstracts import key_field
 from .document import FromDocument
 from .enums import DIE_TYPES
 
-class FeatureItem(models.Model):
+class ClassFeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
     feature. The name field is unused."""
+
+    key = key_field()
+
     # Somewhere in here is where you'd define a field that would eventually display as "Rage Damage +2"
     # Also spell slots...?
 
-    feature = models.ForeignKey('Feature', on_delete=models.CASCADE)
+    parent = models.ForeignKey('ClassFeature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
 
     def __str__(self):
         return "{} {} ({})".format(
-                                 self.feature.character_class.name,
+                                 self.parent.parent.name,
                                  str(self.level),
-                                 self.feature.name)
+                                 self.parent.name)
 
 
-class Feature(HasName, HasDescription, FromDocument):
+class ClassFeature(HasName, HasDescription, FromDocument):
     """This class represents an individual class feature, such as Rage, or Extra
     Attack."""
 
-    characterclass = models.ForeignKey('CharacterClass',
+    parent = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
 
     def __str__(self):
-        return "{} ({})".format(self.name,self.character_class.name)
+        return "{} ({})".format(self.name,self.parent.name)
 
 
 class CharacterClass(HasName, FromDocument):
@@ -72,19 +76,21 @@ class CharacterClass(HasName, FromDocument):
     @property
     def features(self):
         """Returns the set of features that are related to this class."""
-        return self.feature_set
+        return self.classfeature_set
 
     def levels(self):
+        """Returns an array of level information for the given class."""
         by_level = {}
 
-        for feature in self.feature_set.all():
-            for fl in feature.featureitem_set.all():
+        for classfeature in self.classfeature_set.all():
+            for fl in classfeature.classfeatureitem_set.all():
                 if (str(fl.level)) not in by_level.keys():
                     by_level[str(fl.level)] = {}
                     by_level[str(fl.level)]['features'] = []
                 
-                by_level[str(fl.level)]['features'].append(fl.feature.key)
+                by_level[str(fl.level)]['features'].append(fl.parent.key)
                 by_level[str(fl.level)]['proficiency-bonus'] = self.proficiency_bonus(player_level=fl.level)
+                by_level[str(fl.level)]['level'] = fl.level
                 
         return by_level
 
@@ -102,7 +108,9 @@ class CharacterClass(HasName, FromDocument):
     def as_text(self):
         text = self.name + '\n'
         
-        for feature in self.feature_set.all():
+        for feature in self.classfeature_set.all():
             text+='\n' + feature.as_text()
 
         return text
+
+    #TODO add verbose name plural

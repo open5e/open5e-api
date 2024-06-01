@@ -122,13 +122,13 @@ class Spell(HasName, HasDescription, FromDocument):
 
     def casting_options(self):
         """Options for casting the spell."""
-        return self.castingoption_set
+        return self.spellcastingoption_set
 
 
-class CastingOption(models.Model):
+class SpellCastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
 
-    spell = models.ForeignKey("Spell",on_delete=models.CASCADE)
+    parent = models.ForeignKey("Spell",on_delete=models.CASCADE)
 
     type = models.TextField(
         choices=CASTING_OPTION_TYPES,
