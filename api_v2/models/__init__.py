@@ -22,7 +22,7 @@ from .background import Background
 
 from .creature import Creature
 from .creature import CreatureAction
-from .creature import CreatureAttack
+from .creature import CreatureActionAttack
 from .creature import CreatureType
 from .creature import CreatureSet
 

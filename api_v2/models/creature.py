@@ -82,7 +82,7 @@ class CreatureAction(HasName, HasDescription, FromDocument):
 
 #TODO rename to CreatureActionAttack
 #TODO remove FromDocument
-class CreatureAttack(HasName, FromDocument):
+class CreatureActionAttack(HasName, FromDocument):
 
     #TODO refactor to parent
     creature_action = models.ForeignKey(
