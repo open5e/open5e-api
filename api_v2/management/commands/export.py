@@ -171,18 +171,3 @@ def write_queryset_data(filepath, queryset):
         output_filepath = filepath
         with open(output_filepath, 'w', encoding='utf-8') as f:
             serializers.serialize("json", queryset, indent=2, stream=f)
-
-
-def get_model_queryset_by_document(model, doc):
-    print("Getting the queryset for: {}".format(model.__name__))
-
-    if model.__name__ in ['Trait']:
-        return model.objects.filter(race__document=doc).order_by('pk')
-
-    if model.__name__ in ['BackgroundBenefit']:
-        return model.objects.filter(background__document=doc).order_by('pk')
-
-    if model.__name__ in ['FeatBenefit']:
-        return model.objects.filter(feat__document=doc).order_by('pk')
-
-    return model.objects.filter(document=doc).order_by('pk')
