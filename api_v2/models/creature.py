@@ -5,7 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities
 from .abstracts import HasDescription, HasName
 from .abstracts import damage_die_count_field, damage_die_type_field
-from .abstracts import damage_bonus_field
+from .abstracts import damage_bonus_field, key_field
 from .object import Object
 from .document import FromDocument
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES
@@ -82,7 +82,9 @@ class CreatureAction(HasName, HasDescription, FromDocument):
 
 #TODO rename to CreatureActionAttack
 #TODO remove FromDocument
-class CreatureActionAttack(HasName, FromDocument):
+class CreatureActionAttack(HasName):
+
+    key = key_field()
 
     #TODO refactor to parent
     creature_action = models.ForeignKey(
