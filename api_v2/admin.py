@@ -91,3 +91,5 @@ admin.site.register(Condition)
 admin.site.register(ClassFeatureItem)
 admin.site.register(ClassFeature)
 admin.site.register(CharacterClass)
+
+admin.site.register(Environment)

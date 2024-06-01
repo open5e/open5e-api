@@ -51,3 +51,5 @@ from .characterclass import CharacterClass
 from .search import SearchResult
 
 from .size import Size
+
+from .environment import Environment
