@@ -60,7 +60,7 @@ class Creature(Object, Abilities, FromDocument):
 
 #TODO remove FromDocument
 class CreatureAction(HasName, HasDescription, FromDocument):
-
+    """Describes an action available to a creature."""
     #TODO refactor to parent
     creature = models.ForeignKey(
         Creature,
@@ -80,13 +80,11 @@ class CreatureAction(HasName, HasDescription, FromDocument):
         help_text='The parameter X for if the action is limited.'
     )
 
-#TODO rename to CreatureActionAttack
-#TODO remove FromDocument
 class CreatureActionAttack(HasName):
-
+    """Describes an attack action used by a creature."""
+    
     key = key_field()
 
-    #TODO refactor to parent
     parent = models.ForeignKey(
         CreatureAction,
         on_delete=models.CASCADE,
