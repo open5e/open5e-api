@@ -38,9 +38,15 @@ class Document(HasName, HasDescription):
         help_text="Link to the document."
     )
 
+    stats_expected = models.JSONField(
+        null=True,
+        blank=True,
+        help_text="JSON representation of expected object counts."
+    )
+
     @property
     def stats(self):
-        stats = {}
+        stats = []
         for model in apps.get_models():
             # Filter out api_v1.
             if model._meta.app_label != 'api_v2': continue
@@ -50,7 +56,6 @@ class Document(HasName, HasDescription):
                 'Ruleset',
                 'License',
                 'Publisher',
-                'Size',
                 'SearchResult']
             if model.__name__ in SKIPPED_MODEL_NAMES: continue
 
@@ -62,13 +67,20 @@ class Document(HasName, HasDescription):
                 'CreatureAction',
                 'CreatureActionAttack',
                 'SpellCastingOption',
-                'ItemRarity',
-                'SpellSchool']
+                'ItemRarity']
             if model.__name__ in CHILD_MODEL_NAMES: continue
 
+            actual_object_count = model.objects.filter(document=self.key).count()
 
-            object_count = model.objects.filter(document=self.key).count()
-            stats[model.__name__.lower()]=object_count
+            stat = {}
+            stat['name'] = model.__name__.lower()
+            stat['actual_count'] = actual_object_count
+            try:
+                stat['expected_count'] = self.stats_expected.get(model.__name__.lower())
+            except:
+                stat['expected_count'] = None
+            stats.append(stat)
+
         return stats
 
 
