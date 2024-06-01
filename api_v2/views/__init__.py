@@ -40,3 +40,4 @@ from .size import SizeViewSet
 
 from .enum import get_enums
 
+from .environment import EnvironmentViewSet

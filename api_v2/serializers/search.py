@@ -85,7 +85,8 @@ class SearchResultSerializer(serializers.ModelSerializer):
             "Feat":"feats",
             "Race":"races",
             "Plane":"planes",
-            "CharClass":"classes"
+            "CharClass":"classes",
+            "Environment":"environments"
         }
 
 
