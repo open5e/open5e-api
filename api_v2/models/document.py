@@ -60,7 +60,7 @@ class Document(HasName, HasDescription):
                 'FeatBenefit', 
                 'BackgroundBenefit',
                 'CreatureAction',
-                'CreatureAttack',
+                'CreatureActionAttack',
                 'SpellCastingOption',
                 'ItemRarity',
                 'SpellSchool']
