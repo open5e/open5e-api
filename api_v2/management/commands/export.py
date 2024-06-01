@@ -116,8 +116,6 @@ class Command(BaseCommand):
                             modelq=None
                             if model.__name__=='CreatureAction':
                                 modelq = model.objects.filter(creature__document=doc).order_by('pk')
-                            if model.__name__=='CreatureActionAttack':
-                                modelq = model.objects.filter(creature_action__document=doc).order_by('pk')
                             if modelq is None:
                                 modelq = model.objects.filter(parent__document=doc).order_by('pk')
                         else:

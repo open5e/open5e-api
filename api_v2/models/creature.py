@@ -87,7 +87,7 @@ class CreatureActionAttack(HasName):
     key = key_field()
 
     #TODO refactor to parent
-    creature_action = models.ForeignKey(
+    parent = models.ForeignKey(
         CreatureAction,
         on_delete=models.CASCADE,
         help_text='The creature action to which this attack belongs.'
