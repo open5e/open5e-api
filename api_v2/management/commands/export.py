@@ -112,6 +112,8 @@ class Command(BaseCommand):
                     CHILD_MODEL_NAMES = ['RaceTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption','CreatureAction','CreatureActionAttack']
                     
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
+                        if model.__name__ in CHILD_CHILD_MODEL_NAMES:
+                            modelq = model.objects.filter(parent__parent__document=doc).order_by('pk')
                         if model.__name__ in CHILD_MODEL_NAMES:
                             modelq=None
                             if model.__name__=='CreatureActionAttack':
