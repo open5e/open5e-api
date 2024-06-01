@@ -59,9 +59,12 @@ class Creature(Object, Abilities, FromDocument):
         return self.creaturesets.all()
 
 #TODO remove FromDocument
-class CreatureAction(HasName, HasDescription, FromDocument):
+class CreatureAction(HasName, HasDescription):
+
     """Describes an action available to a creature."""
     #TODO refactor to parent
+    key = key_field()
+    
     creature = models.ForeignKey(
         Creature,
         on_delete=models.CASCADE,
