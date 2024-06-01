@@ -58,14 +58,12 @@ class Creature(Object, Abilities, FromDocument):
     def creatureset(self):
         return self.creaturesets.all()
 
-#TODO remove FromDocument
-class CreatureAction(HasName, HasDescription):
 
+class CreatureAction(HasName, HasDescription):
     """Describes an action available to a creature."""
-    #TODO refactor to parent
     key = key_field()
-    
-    creature = models.ForeignKey(
+
+    parent = models.ForeignKey(
         Creature,
         on_delete=models.CASCADE,
         help_text='The creature to which this action belongs.'
@@ -82,6 +80,12 @@ class CreatureAction(HasName, HasDescription):
         null=True,
         help_text='The parameter X for if the action is limited.'
     )
+
+    def as_text(self):
+        text = self.name + '\n' + self.desc
+
+        return text
+
 
 class CreatureActionAttack(HasName):
     """Describes an attack action used by a creature."""

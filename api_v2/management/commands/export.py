@@ -114,10 +114,8 @@ class Command(BaseCommand):
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
                         if model.__name__ in CHILD_MODEL_NAMES:
                             modelq=None
-                            if model.__name__=='CreatureAction':
-                                modelq = model.objects.filter(creature__document=doc).order_by('pk')
                             if model.__name__=='CreatureActionAttack':
-                                modelq = model.objects.filter(parent__creature__document=doc).order_by('pk')
+                                modelq = model.objects.filter(parent__parent__document=doc).order_by('pk')
                             if modelq is None:
                                 modelq = model.objects.filter(parent__document=doc).order_by('pk')
                         else:
