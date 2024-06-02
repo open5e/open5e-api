@@ -75,10 +75,10 @@ class Document(HasName, HasDescription):
             stat = {}
             stat['name'] = model.__name__.lower()
             stat['actual_count'] = actual_object_count
-            try:
-                stat['expected_count'] = self.stats_expected.get(model.__name__.lower())
-            except:
-                stat['expected_count'] = None
+            stat['expected_count'] = None
+            for se in self.stats_expected:
+                if se['name'] == stat['name']:
+                    stat['expected_count'] = se['expected_count']
             stats.append(stat)
 
         return stats
