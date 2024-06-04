@@ -64,6 +64,7 @@ class Document(HasName, HasDescription):
                 'ClassFeatureItem',
                 'FeatBenefit', 
                 'BackgroundBenefit',
+                'ClassFeature',
                 'CreatureAction',
                 'CreatureActionAttack',
                 'SpellCastingOption',
