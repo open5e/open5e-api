@@ -71,24 +71,14 @@ class SearchResultSerializer(serializers.ModelSerializer):
 
     def get_route(self, obj):
         """Route is a way to build the link to the object."""
+
         route_lookup = {
-            "Condition":"conditions",
-            "Item":"items",
-            "Creature":"creatures",
-            "Spell":"spells",
             "CharacterClass":"classes",
-            "Monster":"monsters",
-            "MagicItem":"magicitems",
-            "Section":"sections",
-            "Background":"backgrounds",
-            "Subrace":"subraces",
-            "Feat":"feats",
-            "Race":"races",
-            "Plane":"planes",
             "CharClass":"classes",
-            "Environment":"environments"
         }
 
-
-        route = f"{obj.schema_version}/{route_lookup[obj.object_model]}/"
+        if obj.object_model in route_lookup.keys():
+            route = f"{obj.schema_version}/{route_lookup[obj.object_model]}/"
+        else:
+            route = f"{obj.schema_version}/{obj.object_model.lower()}s/"
         return route
