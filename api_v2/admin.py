@@ -13,46 +13,36 @@ class ItemModelAdmin(admin.ModelAdmin):
     list_display = ['key', 'name']
 
 
-class TraitInline(admin.TabularInline):
-    model = Trait
-
-
-class RaceAdmin(admin.ModelAdmin):
-    inlines = [
-        TraitInline,
-    ]
-
-
-class CapabilityInline(admin.TabularInline):
-    model = Capability
+class FeatBenefitInline(admin.TabularInline):
+    model = FeatBenefit
     exclude = ('name',)
 
 
 class FeatAdmin(admin.ModelAdmin):
     inlines = [
-        CapabilityInline,
+        FeatBenefitInline
     ]
     list_display = ['key', 'name']
 
 
-class TraitInline(admin.TabularInline):
-    model = Trait
+class RaceTraitInline(admin.TabularInline):
+    model = RaceTrait
 
 
 class RaceAdmin(admin.ModelAdmin):
     inlines = [
-        TraitInline,
+        RaceTraitInline,
     ]
 
 
-class BenefitInline(admin.TabularInline):
-    model = Benefit
+class BackgroundBenefitInline(admin.TabularInline):
+    model = BackgroundBenefit
 
 
 class BackgroundAdmin(admin.ModelAdmin):
     model = Background
     inlines = [
-        BenefitInline
+        BackgroundBenefitInline
     ]
 
 class DamageTypeAdmin(admin.ModelAdmin):
@@ -98,6 +88,8 @@ admin.site.register(Alignment)
 
 admin.site.register(Condition)
 
-admin.site.register(FeatureItem)
-admin.site.register(Feature)
+admin.site.register(ClassFeatureItem)
+admin.site.register(ClassFeature)
 admin.site.register(CharacterClass)
+
+admin.site.register(Environment)

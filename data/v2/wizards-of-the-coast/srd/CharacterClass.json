@@ -1,7 +1,7 @@
 [
 {
   "model": "api_v2.characterclass",
-  "pk": "barbarian",
+  "pk": "srd_barbarian",
   "fields": {
     "name": "Barbarian",
     "document": "srd",
@@ -11,7 +11,7 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "bard",
+  "pk": "srd_bard",
   "fields": {
     "name": "Bard",
     "document": "srd",
@@ -21,27 +21,27 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "champion",
+  "pk": "srd_champion",
   "fields": {
     "name": "Champion",
     "document": "srd",
-    "subclass_of": "fighter",
+    "subclass_of": "srd_fighter",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "circle-of-the-land",
+  "pk": "srd_circle-of-the-land",
   "fields": {
     "name": "Circle of the Land",
     "document": "srd",
-    "subclass_of": "druid",
+    "subclass_of": "srd_druid",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "cleric",
+  "pk": "srd_cleric",
   "fields": {
     "name": "Cleric",
     "document": "srd",
@@ -51,27 +51,27 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "college-of-lore",
+  "pk": "srd_college-of-lore",
   "fields": {
     "name": "College of Lore",
     "document": "srd",
-    "subclass_of": "bard",
+    "subclass_of": "srd_bard",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "draconic-bloodline",
+  "pk": "srd_draconic-bloodline",
   "fields": {
     "name": "Draconic Bloodline",
     "document": "srd",
-    "subclass_of": "sorcerer",
+    "subclass_of": "srd_sorcerer",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "druid",
+  "pk": "srd_druid",
   "fields": {
     "name": "Druid",
     "document": "srd",
@@ -81,7 +81,7 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "fighter",
+  "pk": "srd_fighter",
   "fields": {
     "name": "Fighter",
     "document": "srd",
@@ -91,27 +91,27 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "hunter",
+  "pk": "srd_hunter",
   "fields": {
     "name": "Hunter",
     "document": "srd",
-    "subclass_of": "ranger",
+    "subclass_of": "srd_ranger",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "life-domain",
+  "pk": "srd_life-domain",
   "fields": {
     "name": "Life Domain",
     "document": "srd",
-    "subclass_of": "cleric",
+    "subclass_of": "srd_cleric",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "monk",
+  "pk": "srd_monk",
   "fields": {
     "name": "Monk",
     "document": "srd",
@@ -121,17 +121,17 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "oath-of-devotion",
+  "pk": "srd_oath-of-devotion",
   "fields": {
     "name": "Oath of Devotion",
     "document": "srd",
-    "subclass_of": "paladin",
+    "subclass_of": "srd_paladin",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "paladin",
+  "pk": "srd_paladin",
   "fields": {
     "name": "Paladin",
     "document": "srd",
@@ -141,17 +141,17 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "path-of-the-berserker",
+  "pk": "srd_path-of-the-berserker",
   "fields": {
     "name": "Path of the Berserker",
     "document": "srd",
-    "subclass_of": "barbarian",
+    "subclass_of": "srd_barbarian",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "ranger",
+  "pk": "srd_ranger",
   "fields": {
     "name": "Ranger",
     "document": "srd",
@@ -161,7 +161,7 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "rogue",
+  "pk": "srd_rogue",
   "fields": {
     "name": "Rogue",
     "document": "srd",
@@ -171,17 +171,17 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "school-of-evocation",
+  "pk": "srd_school-of-evocation",
   "fields": {
     "name": "School of Evocation",
     "document": "srd",
-    "subclass_of": "wizard",
+    "subclass_of": "srd_wizard",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "sorcerer",
+  "pk": "srd_sorcerer",
   "fields": {
     "name": "Sorcerer",
     "document": "srd",
@@ -191,27 +191,27 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "the-fiend",
+  "pk": "srd_the-fiend",
   "fields": {
     "name": "The Fiend",
     "document": "srd",
-    "subclass_of": "warlock",
+    "subclass_of": "srd_warlock",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "thief",
+  "pk": "srd_thief",
   "fields": {
     "name": "Thief",
     "document": "srd",
-    "subclass_of": "rogue",
+    "subclass_of": "srd_rogue",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "warlock",
+  "pk": "srd_warlock",
   "fields": {
     "name": "Warlock",
     "document": "srd",
@@ -221,17 +221,17 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "way-of-the-open-hand",
+  "pk": "srd_way-of-the-open-hand",
   "fields": {
     "name": "Way of the Open Hand",
     "document": "srd",
-    "subclass_of": "monk",
+    "subclass_of": "srd_monk",
     "hit_dice": null
   }
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "wizard",
+  "pk": "srd_wizard",
   "fields": {
     "name": "Wizard",
     "document": "srd",

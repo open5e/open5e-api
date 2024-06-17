@@ -25,7 +25,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Document.objects.all().order_by('pk')
     serializer_class = serializers.DocumentSerializer
-    filterset_fields = '__all__'
+    #filterset_fields = '__all__'
 
 
 class PublisherViewSet(viewsets.ReadOnlyModelViewSet):

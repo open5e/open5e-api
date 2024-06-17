@@ -12,23 +12,16 @@ class SpellSchoolSerializer(serializers.ModelSerializer):
         fields='__all__'
 
 
-class CastingOptionSerializer(serializers.ModelSerializer):
-#    type=serializers.ReadOnlyField()
-#    damage_roll = serializers.ReadOnlyField()
-#    duration = serializers.ReadOnlyField()
-#    range = serializers.ReadOnlyField()
-#    target_count = serializers.ReadOnlyField()
-
+class SpellCastingOptionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.CastingOption
-        exclude = ['id','spell']
-       # fields = '__all__'
+        model = models.SpellCastingOption
+        exclude = ['id','parent']
 
 
 class SpellSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     slot_expended=serializers.ReadOnlyField()
-    casting_options = CastingOptionSerializer(many=True)
+    casting_options = SpellCastingOptionSerializer(many=True)
     school = SpellSchoolSerializer()
 
     class Meta:

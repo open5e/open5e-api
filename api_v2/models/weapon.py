@@ -126,7 +126,7 @@ A value of 0 means that the weapon cannot be used for a long ranged attack.""")
     @property
     def ranged_attack_possible(self):
         # Only ammunition or throw weapons can make ranged attacks.
-        return self.ammunition or self.thrown 
+        return self.ammunition or self.thrown
 
     @property
     def range_melee(self):

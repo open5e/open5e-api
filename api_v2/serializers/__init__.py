@@ -7,7 +7,7 @@ from .item import ItemRaritySerializer
 from .item import ItemSetSerializer
 from .item import ItemCategorySerializer
 
-from .background import BenefitSerializer
+from .background import BackgroundBenefitSerializer
 from .background import BackgroundSerializer
 
 from .document import RulesetSerializer
@@ -15,11 +15,10 @@ from .document import LicenseSerializer
 from .document import PublisherSerializer
 from .document import DocumentSerializer
 
-from .feat import CapabilitySerializer
+from .feat import FeatBenefitSerializer
 from .feat import FeatSerializer
 
-from .race import TraitSerializer
-from .race import SubraceSerializer
+from .race import RaceTraitSerializer
 from .race import RaceSerializer
 
 from .creature import CreatureSerializer
@@ -37,10 +36,11 @@ from .condition import ConditionSerializer
 from .spell import SpellSerializer
 
 from .characterclass import CharacterClassSerializer
-from .characterclass import FeatureSerializer
-from .characterclass import FeatureItemSerializer
+from .characterclass import ClassFeatureSerializer
+from .characterclass import ClassFeatureItemSerializer
 
 from .search import SearchResultSerializer
 
 from .size import SizeSerializer
 
+from .environment import EnvironmentSerializer
