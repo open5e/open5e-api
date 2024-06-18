@@ -1,9 +1,10 @@
 """Abstract models to be used in Game Content items."""
 
 from django.db import models
-from .enums import MODIFICATION_TYPES
 from django.core.validators import MaxValueValidator, MinValueValidator
-from .enums import DIE_TYPES
+
+from .enums import MODIFICATION_TYPES, DIE_TYPES
+from .enums import DISTANCE_UNIT_TYPES
 
 # FIELDS USED ACROSS MULTIPLE MODELS
 
@@ -35,6 +36,22 @@ def key_field():
         max_length=100,
         help_text="Unique key for the Document."
     )
+
+def distance_field(null=True):
+    return models.FloatField(
+        null=null,
+        validators=[MinValueValidator(0)],
+        help_text="Used to measure distance."
+    )
+
+def distance_unit_field():
+    return models.CharField(
+        null=True,
+        max_length=20,
+        choices=DISTANCE_UNIT_TYPES,
+        help_text='What distance unit the relevant field uses.'
+    )
+
 
 # CLASSES INHERITED BY MULTIPLE MODELS
 
@@ -102,3 +119,4 @@ class Benefit(HasName, HasDescription):
     class Meta:
         abstract = True
         ordering = ['pk']
+

@@ -53,3 +53,5 @@ from .search import SearchResult
 from .size import Size
 
 from .environment import Environment
+
+from .speed import HasSpeed

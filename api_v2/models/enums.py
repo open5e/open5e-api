@@ -9,6 +9,10 @@ DIE_TYPES = [
     ("D20", "d20"),
 ]
 
+DISTANCE_UNIT_TYPES = [
+    ("feet","feet")
+]
+
 ABILITY_SCORE_MAXIMUM = 30
 SAVING_THROW_MINIMUM = -5
 SAVING_THROW_MAXIMUM = +20

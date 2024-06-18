@@ -8,6 +8,7 @@ from .abstracts import damage_die_count_field, damage_die_type_field
 from .abstracts import damage_bonus_field, key_field
 from .object import Object
 from .document import FromDocument
+from .speed import HasSpeed
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES
 
 
@@ -16,7 +17,7 @@ class CreatureType(HasName, HasDescription, FromDocument):
     """The Type of creature, such as Aberration."""
 
 
-class Creature(Object, Abilities, FromDocument):
+class Creature(Object, Abilities, FromDocument, HasSpeed):
     """
     This is the model for a Creature, per the 5e ruleset.
 

@@ -4,7 +4,7 @@ from django.apps import apps
 
 
 from .abstracts import HasName, HasDescription
-from .abstracts import key_field
+from .abstracts import key_field, distance_unit_field
 
 from api_v2 import models as v2_models
 
@@ -43,6 +43,8 @@ class Document(HasName, HasDescription):
         blank=True,
         help_text="JSON representation of expected object counts."
     )
+
+    distance_unit = distance_unit_field()
 
     @property
     def stats(self):
