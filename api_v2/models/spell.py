@@ -7,6 +7,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 from .abstracts import HasName, HasDescription
+from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
 
 
@@ -40,9 +41,12 @@ class Spell(HasName, HasDescription, FromDocument):
         choices = SPELL_TARGET_TYPE_CHOICES,
         help_text='Spell target type key.')
 
-    range = models.TextField(
+    range = models.TextField( # SWAP TO DISTANCE FIELD
         choices = SPELL_TARGET_RANGE_CHOICES,
         help_text='Spell target range.')
+
+    #range_nominal = distance_field()
+    #range_nominal_unit = distance_unit_field()
 
     ritual = models.BooleanField(
         help_text='Whether or not the spell can be cast as a ritual.',
@@ -111,10 +115,8 @@ class Spell(HasName, HasDescription, FromDocument):
         choices = SPELL_EFFECT_SHAPE_CHOICES,
         help_text = 'The shape of the area of effect.')
 
-    shape_magnitude = models.IntegerField(
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text = 'The magnitude of the shape (without units).')
+    shape_size = distance_field()
+    shape_size_unit = distance_unit_field()
 
     concentration = models.BooleanField(
         help_text='Whether the effect requires concentration to be maintained.',
