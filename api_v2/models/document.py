@@ -64,6 +64,7 @@ class Document(HasName, HasDescription):
                 'ClassFeatureItem',
                 'FeatBenefit', 
                 'BackgroundBenefit',
+                'ClassFeature',
                 'CreatureAction',
                 'CreatureActionAttack',
                 'SpellCastingOption',
@@ -75,11 +76,14 @@ class Document(HasName, HasDescription):
             stat = {}
             stat['name'] = model.__name__.lower()
             stat['actual_count'] = actual_object_count
+            stat['expected_count'] = None
             try:
-                stat['expected_count'] = self.stats_expected.get(model.__name__.lower())
+                for se in self.stats_expected:
+                    if se['name'] == stat['name']:
+                        stat['expected_count'] = se['expected_count']
+                stats.append(stat)
             except:
-                stat['expected_count'] = None
-            stats.append(stat)
+                pass
 
         return stats
 
