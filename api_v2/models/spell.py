@@ -41,12 +41,12 @@ class Spell(HasName, HasDescription, FromDocument):
         choices = SPELL_TARGET_TYPE_CHOICES,
         help_text='Spell target type key.')
 
-    range = models.TextField( # SWAP TO DISTANCE FIELD
+    range_text = models.TextField( # SWAP TO DISTANCE FIELD
         choices = SPELL_TARGET_RANGE_CHOICES,
         help_text='Spell target range.')
 
-    #range_nominal = distance_field()
-    #range_nominal_unit = distance_unit_field()
+    range = distance_field()
+    range_unit = distance_unit_field()
 
     ritual = models.BooleanField(
         help_text='Whether or not the spell can be cast as a ritual.',
