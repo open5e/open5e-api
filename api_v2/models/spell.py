@@ -34,6 +34,7 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text="Spell school, such as 'evocation'")
 
     higher_level = models.TextField(
+        blank=True,
         help_text = "Description of casting the spell at a different level.")
 
     # Casting target requirements of the spell instance SHOULD BE A LIST
@@ -104,6 +105,7 @@ class Spell(HasName, HasDescription, FromDocument):
 
     damage_types = models.JSONField(
         default=list,
+        blank=True,
         help_text="The types of damage done by the spell in a list.")
 
     duration = models.TextField(
@@ -112,8 +114,10 @@ class Spell(HasName, HasDescription, FromDocument):
 
     shape_type = models.TextField(
         null=True,
+        blank=True,
         choices = SPELL_EFFECT_SHAPE_CHOICES,
         help_text = 'The shape of the area of effect.')
+
 
     shape_size = distance_field()
     shape_size_unit = distance_unit_field()

@@ -40,6 +40,7 @@ def key_field():
 def distance_field(null=True):
     return models.FloatField(
         null=null,
+        blank=True,
         validators=[MinValueValidator(0)],
         help_text="Used to measure distance."
     )
@@ -47,6 +48,7 @@ def distance_field(null=True):
 def distance_unit_field():
     return models.CharField(
         null=True,
+        blank=True,
         max_length=20,
         choices=DISTANCE_UNIT_TYPES,
         help_text='What distance unit the relevant field uses.'

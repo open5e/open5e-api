@@ -10,7 +10,8 @@ DIE_TYPES = [
 ]
 
 DISTANCE_UNIT_TYPES = [
-    ("feet","feet")
+    ("feet","feet"),
+    ("miles","miles")
 ]
 
 ABILITY_SCORE_MAXIMUM = 30
@@ -109,7 +110,7 @@ SPELL_EFFECT_DURATIONS = [
     ("2 rounds","2 rounds"),
     ("3 rounds","3 rounds"),
     ("4 rounds","4 rounds"),
-    ("1d4+2 round","1d4+2 round"),
+    ("1d4+2 rounds","1d4+2 rounds"),
     ("5 rounds","5 rounds"),
     ("6 rounds","6 rounds"),
     ("10 rounds","10 rounds"),
