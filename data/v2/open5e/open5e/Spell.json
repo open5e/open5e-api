@@ -10,7 +10,9 @@
     "school": "necromancy",
     "higher_level": "",
     "target_type": "creature",
-    "range": "Self",
+    "range_text": "Self",
+    "range": 0.0,
+    "range_unit": null,
     "ritual": false,
     "casting_time": "action",
     "verbal": true,
@@ -26,7 +28,8 @@
     "damage_types": [],
     "duration": "1 minute",
     "shape_type": null,
-    "shape_magnitude": null,
+    "shape_size": null,
+    "shape_size_unit": null,
     "concentration": true
   }
 },
@@ -41,7 +44,9 @@
     "school": "necromancy",
     "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
     "target_type": "creature",
-    "range": "60 feet",
+    "range_text": "60 feet",
+    "range": 60.0,
+    "range_unit": "feet",
     "ritual": false,
     "casting_time": "action",
     "verbal": true,
@@ -59,7 +64,8 @@
     ],
     "duration": "instantaneous",
     "shape_type": null,
-    "shape_magnitude": null,
+    "shape_size": null,
+    "shape_size_unit": null,
     "concentration": false
   }
 }
