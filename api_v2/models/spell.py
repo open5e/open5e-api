@@ -118,7 +118,6 @@ class Spell(HasName, HasDescription, FromDocument):
         choices = SPELL_EFFECT_SHAPE_CHOICES,
         help_text = 'The shape of the area of effect.')
 
-
     shape_size = distance_field()
     shape_size_unit = distance_unit_field()
 
@@ -129,7 +128,16 @@ class Spell(HasName, HasDescription, FromDocument):
     def casting_options(self):
         """Options for casting the spell."""
         return self.spellcastingoption_set
+    
+    def get_shape_size_unit(self):
+        if self.shape_size_unit is None:
+            return self.document.distance_unit
+        return self.shape_size_unit
 
+    def get_range_unit(self):
+        if self.range_unit is None:
+            return self.document.distance_unit
+        return self.range_unit
 
 class SpellCastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""

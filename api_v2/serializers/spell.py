@@ -24,6 +24,16 @@ class SpellSerializer(GameContentSerializer):
     casting_options = SpellCastingOptionSerializer(many=True)
     school = SpellSchoolSerializer()
 
+    range_unit = serializers.SerializerMethodField()
+    shape_size_unit = serializers.SerializerMethodField()
+
+    def get_range_unit(self, spell):
+        return spell.get_range_unit()
+
+    def get_shape_size_unit(self, spell):
+        return spell.get_shape_size_unit()
+
+
     class Meta:
         model = models.Spell
         fields = '__all__'
