@@ -107,6 +107,8 @@ class CreatureSerializer(GameContentSerializer):
     all_skill_bonuses = serializers.SerializerMethodField()
     actions = serializers.SerializerMethodField()
     size = SizeSerializer(read_only=True, context={'request': {}})
+    speed = serializers.SerializerMethodField()
+    all_speed = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Creature
@@ -116,6 +118,8 @@ class CreatureSerializer(GameContentSerializer):
             'key',
             'name',
             'size',
+            'speed',
+            'all_speed',
             'category',
             'type',
             'alignment',
@@ -175,6 +179,14 @@ class CreatureSerializer(GameContentSerializer):
         }
         entries = creature.get_skill_bonuses().items()
         return { key: (defaults[key] if value is None else value) for key, value in entries }
+
+    def get_speed(self, creature):
+        entries = creature.get_speed().items()
+        return { key: value for key, value in entries if value is not None }
+
+
+    def get_all_speed(self, creature):
+        return creature.get_all_speed()
 
     def get_actions(self, creature):
         result = []

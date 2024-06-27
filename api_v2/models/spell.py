@@ -7,6 +7,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 from .abstracts import HasName, HasDescription
+from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
 
 
@@ -33,6 +34,7 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text="Spell school, such as 'evocation'")
 
     higher_level = models.TextField(
+        blank=True,
         help_text = "Description of casting the spell at a different level.")
 
     # Casting target requirements of the spell instance SHOULD BE A LIST
@@ -40,9 +42,12 @@ class Spell(HasName, HasDescription, FromDocument):
         choices = SPELL_TARGET_TYPE_CHOICES,
         help_text='Spell target type key.')
 
-    range = models.TextField(
+    range_text = models.TextField( # SWAP TO DISTANCE FIELD
         choices = SPELL_TARGET_RANGE_CHOICES,
         help_text='Spell target range.')
+
+    range = distance_field()
+    range_unit = distance_unit_field()
 
     ritual = models.BooleanField(
         help_text='Whether or not the spell can be cast as a ritual.',
@@ -100,6 +105,7 @@ class Spell(HasName, HasDescription, FromDocument):
 
     damage_types = models.JSONField(
         default=list,
+        blank=True,
         help_text="The types of damage done by the spell in a list.")
 
     duration = models.TextField(
@@ -108,13 +114,12 @@ class Spell(HasName, HasDescription, FromDocument):
 
     shape_type = models.TextField(
         null=True,
+        blank=True,
         choices = SPELL_EFFECT_SHAPE_CHOICES,
         help_text = 'The shape of the area of effect.')
 
-    shape_magnitude = models.IntegerField(
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text = 'The magnitude of the shape (without units).')
+    shape_size = distance_field()
+    shape_size_unit = distance_unit_field()
 
     concentration = models.BooleanField(
         help_text='Whether the effect requires concentration to be maintained.',
@@ -123,7 +128,16 @@ class Spell(HasName, HasDescription, FromDocument):
     def casting_options(self):
         """Options for casting the spell."""
         return self.spellcastingoption_set
+    
+    def get_shape_size_unit(self):
+        if self.shape_size_unit is None:
+            return self.document.distance_unit
+        return self.shape_size_unit
 
+    def get_range_unit(self):
+        if self.range_unit is None:
+            return self.document.distance_unit
+        return self.range_unit
 
 class SpellCastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
