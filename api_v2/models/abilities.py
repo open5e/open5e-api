@@ -34,6 +34,7 @@ def ability_modifier(score):
 # Define a field representing a saving throw
 def saving_throw_field(help_text):
     return models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[
             MinValueValidator(SAVING_THROW_MINIMUM),
@@ -43,6 +44,7 @@ def saving_throw_field(help_text):
 # Define a field representing a skill bonus
 def skill_bonus_field(help_text):
     return models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[
             MinValueValidator(SKILL_BONUS_MINIMUM),

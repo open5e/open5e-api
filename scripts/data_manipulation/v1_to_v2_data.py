@@ -1,8 +1,10 @@
 
 from django.template.defaultfilters import slugify
 
-from api.models import Spell as v1_model
-from api_v2.models import Spell as v2_model
+import json
+
+from api.models import Monster as v1_model
+from api_v2.models import Creature as v2_model
 
 
 # Transformation function.
@@ -29,13 +31,15 @@ def main():
 
         ### START LOGIC FOR PARSING V1 DATA ###
 
-        _do_spell_distance(obj_v2=obj_v2)
-        _do_duration_remap(obj_v2=obj_v2)
+        if obj_v2 is not None:
+            copy_v2_speed_from_v1_creature(v1_obj=obj_v1, v2_obj=obj_v2)
+            obj_v2.full_clean()
+            obj_v2.save()
 
         ### DO VALIDATION OF THE OBJECT
-        obj_v2.full_clean()
+        #obj_v2.full_clean()
         # CAREFUL
-        obj_v2.save()
+         
         # END CAREFUL
 
 
@@ -89,6 +93,33 @@ def get_v2_doc_from_v1_obj(v1_obj):
         'wotc-srd':'srd',
     }
     return doc_lookup[v1_obj.document.slug]
+
+def copy_v2_speed_from_v1_creature(v1_obj, v2_obj):
+    assert('walk' in v1_obj.speed_json)
+    v2_obj.walk = float(json.loads(v1_obj.speed_json)['walk'])
+
+    if v1_obj.slug == 'werebear': # This should be split into multiple creature entries.
+        v2_obj.walk = 30.0
+        return
+
+    if 'hover' in v1_obj.speed_json:
+        v2_obj.hover = True
+
+    if 'fly' in v1_obj.speed_json:
+        v2_obj.fly = float(json.loads(v1_obj.speed_json)['fly'])
+    
+    if 'burrow' in v1_obj.speed_json:
+        v2_obj.burrow = float(json.loads(v1_obj.speed_json)['burrow'])
+    
+    if 'climb' in v1_obj.speed_json:
+        v2_obj.climb = float(json.loads(v1_obj.speed_json)['climb'])
+
+    if 'swim' in v1_obj.speed_json:
+        v2_obj.swim = float(json.loads(v1_obj.speed_json)['swim'])
+
+    if v1_obj.slug == 'werebear':
+        v2_obj.walk = 30.0
+
 
 def get_distance_and_unit_from_range_text(spell):
     if spell.range_text == 'Self':
