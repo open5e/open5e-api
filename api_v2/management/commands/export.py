@@ -108,17 +108,17 @@ class Command(BaseCommand):
                 write_queryset_data(doc_path, docq)
 
                 for model in app_models:
-                    SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher']
-                    CHILD_MODEL_NAMES = ['Trait', 'Capability', 'Benefit']
+                    SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher','SearchResult']
+                    CHILD_MODEL_NAMES = ['RaceTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption','CreatureAction']
+                    CHILD_CHILD_MODEL_NAMES = ['CreatureActionAttack']
+                    
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
+                        modelq=None
+                        if model.__name__ in CHILD_CHILD_MODEL_NAMES:
+                            modelq = model.objects.filter(parent__parent__document=doc).order_by('pk')
                         if model.__name__ in CHILD_MODEL_NAMES:
-                            if model.__name__ == 'Trait':
-                                modelq = model.objects.filter(race__document=doc).order_by('pk')
-                            if model.__name__ == 'Capability':
-                                modelq = model.objects.filter(feat__document=doc).order_by('pk')
-                            if model.__name__ == 'Benefit':
-                                modelq = model.objects.filter(background__document=doc).order_by('pk')
-                        else:
+                            modelq = model.objects.filter(parent__document=doc).order_by('pk')
+                        if modelq is None:
                             modelq = model.objects.filter(document=doc).order_by('pk')
                         model_path = get_filepath_by_model(
                             model.__name__,
@@ -171,18 +171,3 @@ def write_queryset_data(filepath, queryset):
         output_filepath = filepath
         with open(output_filepath, 'w', encoding='utf-8') as f:
             serializers.serialize("json", queryset, indent=2, stream=f)
-
-
-def get_model_queryset_by_document(model, doc):
-    print("Getting the queryset for: {}".format(model.__name__))
-
-    if model.__name__ in ['Trait']:
-        return model.objects.filter(race__document=doc).order_by('pk')
-
-    if model.__name__ in ['BackgroundBenefit']:
-        return model.objects.filter(background__document=doc).order_by('pk')
-
-    if model.__name__ in ['FeatBenefit']:
-        return model.objects.filter(feat__document=doc).order_by('pk')
-
-    return model.objects.filter(document=doc).order_by('pk')

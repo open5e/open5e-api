@@ -1,5 +1,6 @@
 """The model for a condition."""
 from django.db import models
+
 from .abstracts import HasName, HasDescription
 from .document import FromDocument
 

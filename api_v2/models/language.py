@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from .abstracts import Object, HasName, HasDescription
+from .abstracts import HasName, HasDescription
 from .document import FromDocument
 
 

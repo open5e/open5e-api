@@ -13,46 +13,36 @@ class ItemModelAdmin(admin.ModelAdmin):
     list_display = ['key', 'name']
 
 
-class TraitInline(admin.TabularInline):
-    model = Trait
-
-
-class RaceAdmin(admin.ModelAdmin):
-    inlines = [
-        TraitInline,
-    ]
-
-
-class CapabilityInline(admin.TabularInline):
-    model = Capability
+class FeatBenefitInline(admin.TabularInline):
+    model = FeatBenefit
     exclude = ('name',)
 
 
 class FeatAdmin(admin.ModelAdmin):
     inlines = [
-        CapabilityInline,
+        FeatBenefitInline
     ]
     list_display = ['key', 'name']
 
 
-class TraitInline(admin.TabularInline):
-    model = Trait
+class RaceTraitInline(admin.TabularInline):
+    model = RaceTrait
 
 
 class RaceAdmin(admin.ModelAdmin):
     inlines = [
-        TraitInline,
+        RaceTraitInline,
     ]
 
 
-class BenefitInline(admin.TabularInline):
-    model = Benefit
+class BackgroundBenefitInline(admin.TabularInline):
+    model = BackgroundBenefit
 
 
 class BackgroundAdmin(admin.ModelAdmin):
     model = Background
     inlines = [
-        BenefitInline
+        BackgroundBenefitInline
     ]
 
 class DamageTypeAdmin(admin.ModelAdmin):
@@ -66,9 +56,14 @@ class LanguageAdmin(admin.ModelAdmin):
 admin.site.register(Weapon, admin_class=FromDocumentModelAdmin)
 admin.site.register(Armor, admin_class=FromDocumentModelAdmin)
 
+admin.site.register(Size)
+
 admin.site.register(ItemCategory)
+admin.site.register(ItemRarity)
 admin.site.register(Item, admin_class=ItemModelAdmin)
 admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
+
+admin.site.register(SpellSchool)
 
 admin.site.register(Race, admin_class=RaceAdmin)
 
@@ -92,3 +87,9 @@ admin.site.register(Language)
 admin.site.register(Alignment)
 
 admin.site.register(Condition)
+
+admin.site.register(ClassFeatureItem)
+admin.site.register(ClassFeature)
+admin.site.register(CharacterClass)
+
+admin.site.register(Environment)

@@ -10,13 +10,13 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 from math import floor
 
+from .enums import ABILITY_SCORE_MAXIMUM
+from .enums import SAVING_THROW_MAXIMUM, SAVING_THROW_MINIMUM
+from .enums import SKILL_BONUS_MINIMUM, SKILL_BONUS_MAXIMUM
+from .enums import PASSIVE_SCORE_MAXIMUM
+
 # Field value limits
-ABILITY_SCORE_MAXIMUM = 30
-SAVING_THROW_MINIMUM = -5
-SAVING_THROW_MAXIMUM = +20
-SKILL_BONUS_MINIMUM = -5
-SKILL_BONUS_MAXIMUM = +20
-PASSIVE_SCORE_MAXIMUM = 30
+
 
 # Define a field representing an ability score
 def ability_score_field(help_text):
@@ -34,6 +34,7 @@ def ability_modifier(score):
 # Define a field representing a saving throw
 def saving_throw_field(help_text):
     return models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[
             MinValueValidator(SAVING_THROW_MINIMUM),
@@ -43,6 +44,7 @@ def saving_throw_field(help_text):
 # Define a field representing a skill bonus
 def skill_bonus_field(help_text):
     return models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[
             MinValueValidator(SKILL_BONUS_MINIMUM),

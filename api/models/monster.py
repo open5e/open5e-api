@@ -57,7 +57,7 @@ class Monster(GameContent):
         help_text='String list of environments that the monster can be found in.')
 
     def environments(self):
-        return json.loads(self.environments_json)
+        return json.loads(self.environments_json or "[]")
 
     strength = models.IntegerField(
         null=True, help_text='Integer representing the strength score.')
@@ -88,7 +88,7 @@ class Monster(GameContent):
     skills_json = models.TextField()
 
     def skills(self):
-        return json.loads(self.skills_json)
+        return json.loads(self.skills_json or "{}")
     damage_vulnerabilities = models.TextField(
         help_text='Comma separated list of damage types the monster is vulnerable to.')
     damage_resistances = models.TextField(
@@ -110,13 +110,12 @@ class Monster(GameContent):
     actions_json = models.TextField()  
 
     def actions(self):
-        return json.loads(self.actions_json)
-    
-    # a list of bonus actions in json text.
-    bonus_actions_json = models.TextField(default=None)
+        return json.loads(self.actions_json or "[]")
+      
+    bonus_actions_json = models.TextField(default=None, null=True)
     
     def bonus_actions(self):
-        return json.loads(self.bonus_actions_json)
+        return json.loads(self.bonus_actions_json or "[]")
     
     # A list of special abilities in json text.
     special_abilities_json = models.TextField()
@@ -156,7 +155,6 @@ class Monster(GameContent):
         except TypeError as e:
             return None
 
-   
     spells_json = models.TextField()
     spell_list = models.ManyToManyField(
         Spell,
@@ -171,6 +169,20 @@ class Monster(GameContent):
         """Return a string specifying the plural name of this model."""
         return "Monsters"
 
+    def search_result_extra_fields(self):
+        return {
+            "armor_class":self.armor_class,
+            "hit_points":self.hit_points,
+            "hit_dice":self.hit_dice,
+            "strength":self.strength,
+            "dexterity":self.dexterity,
+            "constitution":self.constitution,
+            "intelligence":self.intelligence,
+            "wisdom":self.wisdom,
+            "charisma":self.charisma,
+            "challenge_rating":self.challenge_rating,
+            "cr":self.cr
+              }
 
 class MonsterSpell(models.Model):
     spell = models.ForeignKey(Spell, on_delete=models.CASCADE)

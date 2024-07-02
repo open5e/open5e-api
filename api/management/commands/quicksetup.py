@@ -1,8 +1,11 @@
 """Helper command to fully set up the API."""
 import argparse
 
+from server import settings
+
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
+
 
 class Command(BaseCommand):
     """Implementation for the `manage.py quicksetup` subcommand."""
@@ -28,16 +31,35 @@ class Command(BaseCommand):
         self.stdout.write('Populating the v1 database...')
         import_v1()
 
-        self.stdout.write('Populating the v2 database...')
-        import_v2()
+
+        if settings.V2_ENABLED:
+            self.stdout.write('Populating the v2 database...')
+            import_v2()
 
         if options["noindex"]:
             self.stdout.write('Skipping search index rebuild due to --noindex...')
         else:
             self.stdout.write('Rebuilding the search index...')
-            rebuild_index()
+            build_haystack_index()
+
+        # Flag for v2 enabled decides:
+        if settings.V2_SEARCH_ENABLED:
+            if settings.V2_ENABLED:
+                build_searchindex()
+            else: 
+                build_v1_searchindex()
 
         self.stdout.write(self.style.SUCCESS('API setup complete.'))
+
+
+def migrate_db() -> None:
+    """Migrate the local database as needed to incorporate new model updates.
+    This command is added primarily to assist in local development, because
+    checking out and changing branches results in unclean model/dbs."""
+
+    call_command('makemigrations')
+    call_command('migrate')
+
 
 def import_v1() -> None:
     """Import the v1 apps' database models."""
@@ -49,17 +71,22 @@ def import_v2() -> None:
     call_command('import', '--dir', 'data/v2')
 
 
-def migrate_db() -> None:
-    """Migrate the local database as needed to incorporate new model updates."""
-    call_command('makemigrations')
-    call_command('migrate')
-
-
 def collect_static() -> None:
     """Collect static files in a single location."""
     call_command('collectstatic', '--noinput')
 
 
-def rebuild_index() -> None:
-    """Freshen the search indexes."""
+def build_haystack_index() -> None:
+    """Freshen the haystack search indexes. This is an internal haystack
+    API that is being called, and only applies to v1 data."""
     call_command('update_index', '--remove')
+
+def build_v1_searchindex() -> None:
+    """Builds the custom search index defined in the api_v2 management
+    commands. Only adds the v1 data."""
+    call_command('buildindex', '--v1')
+
+def build_searchindex() -> None:
+    """Builds the custom search index defined in the api_v2 management
+    commands. Only adds the v1 data."""
+    call_command('buildindex','--v1','--v2')

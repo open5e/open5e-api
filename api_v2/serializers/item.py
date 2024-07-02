@@ -5,6 +5,8 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .size import SizeSerializer
+
 
 
 class ArmorSerializer(GameContentSerializer):
@@ -29,12 +31,20 @@ class WeaponSerializer(GameContentSerializer):
         model = models.Weapon
         fields = '__all__'
 
+class ItemRaritySerializer(GameContentSerializer):
+    key=serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.ItemRarity
+        fields = '__all__'
 
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     is_magic_item = serializers.ReadOnlyField()
     weapon = WeaponSerializer(read_only=True, context={'request': {}})
+    size = SizeSerializer(read_only=True, context={'request': {}})
     armor = ArmorSerializer(read_only=True, context={'request': {}})
+    rarity = ItemRaritySerializer(read_only=True, context={'request': {}})
 
     class Meta:
         model = models.Item
