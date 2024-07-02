@@ -7,6 +7,7 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .size import SizeSerializer
 
 
 
@@ -61,7 +62,7 @@ def make_attack_obj(attack):
             attack.damage_die_count,
             attack.damage_die_type,
             attack.damage_bonus,
-            attack.damage_type
+            attack.damage_type.key
         )
 
     if attack.extra_damage_type:
@@ -69,7 +70,7 @@ def make_attack_obj(attack):
             attack.extra_damage_die_count,
             attack.extra_damage_die_type,
             attack.extra_damage_bonus,
-            attack.extra_damage_type
+            attack.extra_damage_type.key
         )
 
     return obj
@@ -86,14 +87,16 @@ def make_action_obj(action):
         case 'RECHARGE_AFTER_REST':
             obj['recharge_after_rest'] = True
 
-    attacks = action.creatureattack_set.all()
+    attacks = action.creatureactionattack_set.all()
 
     if len(attacks) > 0:
         obj['attacks'] = [make_attack_obj(attack) for attack in attacks]
 
     return obj
 
+
 class CreatureSerializer(GameContentSerializer):
+    '''The serializer for the Creature object.'''
 
     key = serializers.ReadOnlyField()
     ability_scores = serializers.SerializerMethodField()
@@ -103,6 +106,9 @@ class CreatureSerializer(GameContentSerializer):
     skill_bonuses = serializers.SerializerMethodField()
     all_skill_bonuses = serializers.SerializerMethodField()
     actions = serializers.SerializerMethodField()
+    size = SizeSerializer(read_only=True, context={'request': {}})
+    speed = serializers.SerializerMethodField()
+    all_speed = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Creature
@@ -111,8 +117,10 @@ class CreatureSerializer(GameContentSerializer):
             'document',
             'key',
             'name',
-            'category',
             'size',
+            'speed',
+            'all_speed',
+            'category',
             'type',
             'alignment',
             'weight',
@@ -126,6 +134,7 @@ class CreatureSerializer(GameContentSerializer):
             'all_skill_bonuses',
             'passive_perception',
             'actions',
+            'creaturesets'
         ]
 
     def get_ability_scores(self, creature):
@@ -171,60 +180,36 @@ class CreatureSerializer(GameContentSerializer):
         entries = creature.get_skill_bonuses().items()
         return { key: (defaults[key] if value is None else value) for key, value in entries }
 
+    def get_speed(self, creature):
+        entries = creature.get_speed().items()
+        return { key: value for key, value in entries if value is not None }
+
+
+    def get_all_speed(self, creature):
+        return creature.get_all_speed()
+
     def get_actions(self, creature):
         result = []
         for action in creature.creatureaction_set.all():
-            # item = { 'name': action.name, 'desc': action.desc }
-            # match action.uses_type:
-            #     case 'PER_DAY':
-            #         item['uses_per_day'] = action.uses_param
-            #     case 'RECHARGE_ON_ROLL':
-            #         item['recharge_on_roll'] = action.uses_param
-            #     case 'RECHARGE_AFTER_REST':
-            #         item['recharge_after_rest'] = True
-            # try:
-            #     attack = models.CreatureAttackAction.objects.get(pk=action.key)
-            #     item['attack_type'] = attack.attack_type
-            #     item['to_hit_mod'] = attack.to_hit_mod
-            #     if attack.reach_ft:
-            #         item['reach_ft'] = attack.reach_ft
-            #     if attack.range_ft:
-            #         item['range_ft'] = attack.range_ft
-            #     if attack.long_range_ft:
-            #         item['long_range_ft'] = attack.long_range_ft
-            #     item['target_creature_only'] = attack.target_creature_only
-            #     if attack.damage_type:
-            #         item['damage'] = make_damage_obj(
-            #             attack.damage_die_count,
-            #             attack.damage_die_type,
-            #             attack.damage_bonus,
-            #             attack.damage_type
-            #         )
-            #     if attack.extra_damage_type:
-            #         item['extra_damage'] = make_damage_obj(
-            #             attack.extra_damage_die_count,
-            #             attack.extra_damage_die_type,
-            #             attack.extra_damage_bonus,
-            #             attack.extra_damage_type
-            #         )
-            #     if attack.versatile_weapon:
-            #         item['two_handed_damage'] = make_damage_obj(
-            #             attack.damage_die_count,
-            #             attack.versatile_weapon,
-            #             attack.damage_bonus,
-            #             attack.damage_type
-            #         )
-            # except ObjectDoesNotExist:
-            #     pass
-            # result.append(item)
             action_obj = make_action_obj(action)
             result.append(action_obj)
         return result
 
 
 class CreatureTypeSerializer(GameContentSerializer):
+    '''Serializer for the Creature Type object'''
     key = serializers.ReadOnlyField()
 
     class Meta:
         model = models.CreatureType
+        fields = '__all__'
+
+
+class CreatureSetSerializer(GameContentSerializer):
+    '''Serializer for the Creature Set object'''
+    key = serializers.ReadOnlyField()
+    creatures = CreatureSerializer(many=True, read_only=True, context={'request':{}})
+
+    class Meta:
+        model = models.CreatureSet
         fields = '__all__'

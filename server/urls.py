@@ -66,10 +66,21 @@ if settings.V2_ENABLED:
     router_v2.register(r'races',views_v2.RaceViewSet)
     router_v2.register(r'creatures',views_v2.CreatureViewSet)
     router_v2.register(r'creaturetypes',views_v2.CreatureTypeViewSet)
+    router_v2.register(r'creaturesets',views_v2.CreatureSetViewSet)
     router_v2.register(r'damagetypes',views_v2.DamageTypeViewSet)
     router_v2.register(r'languages',views_v2.LanguageViewSet)
     router_v2.register(r'alignments',views_v2.AlignmentViewSet)
     router_v2.register(r'conditions',views_v2.ConditionViewSet)
+    router_v2.register(r'spells',views_v2.SpellViewSet)
+    router_v2.register(r'classes',views_v2.CharacterClassViewSet)
+    router_v2.register(r'sizes',views_v2.SizeViewSet)
+    router_v2.register(r'itemrarities',views_v2.ItemRarityViewSet)
+    router_v2.register(r'environments',views_v2.EnvironmentViewSet)
+
+router_search = routers.DefaultRouter()
+if settings.V2_SEARCH_ENABLED:
+    router_search.register('',views_v2.SearchResultViewSet, basename='search')
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -78,12 +89,14 @@ urlpatterns = [
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     re_path(r'^search/', include('haystack.urls')),
     re_path(r'^version/', views.get_version, name="version"),
+    re_path(r'^v2/enums/', views_v2.get_enums, name="enums"),
 
 
     # Versioned API routes (above routes default to v1)
     re_path(r'^v1/', include(router.urls)),
     re_path(r'^v1/search/', include('haystack.urls')),
-    re_path(r'^v2/', include(router_v2.urls))
+    re_path(r'^v2/', include(router_v2.urls)),
+    re_path(r'^v2/search/', include(router_search.urls))
 ]
 
 if settings.DEBUG is True:

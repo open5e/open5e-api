@@ -3,11 +3,10 @@ from django.db import models
 from .abstracts import HasName, HasDescription, HasPrerequisite, Modification
 from .document import FromDocument
 
-
-class Capability(Modification):
+class FeatBenefit(Modification):
     """This is the model for an individual benefit of a feat."""
 
-    feat = models.ForeignKey('Feat', on_delete=models.CASCADE)
+    parent = models.ForeignKey('Feat', on_delete=models.CASCADE)
 
 
 class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):
@@ -21,9 +20,9 @@ class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):
     """
 
     @property
-    def capabilities(self):
+    def benefits(self):
         """Returns the set of benefits that are related to this feat."""
-        return self.capability_set
+        return self.featbenefit_set
 
     class Meta:
         """To assist with the UI layer."""

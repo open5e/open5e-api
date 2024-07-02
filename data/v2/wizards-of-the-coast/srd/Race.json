@@ -1,7 +1,7 @@
 [
 {
   "model": "api_v2.race",
-  "pk": "dragonborn",
+  "pk": "srd_dragonborn",
   "fields": {
     "name": "Dragonborn",
     "desc": "Your draconic heritage manifests in a variety of traits you share with other dragonborn.",
@@ -11,7 +11,7 @@
 },
 {
   "model": "api_v2.race",
-  "pk": "dwarf",
+  "pk": "srd_dwarf",
   "fields": {
     "name": "Dwarf",
     "desc": "Your dwarf character has an assortment of inborn abilities, part and parcel of dwarven nature.",
@@ -21,7 +21,7 @@
 },
 {
   "model": "api_v2.race",
-  "pk": "elf",
+  "pk": "srd_elf",
   "fields": {
     "name": "Elf",
     "desc": "Your elf character has a variety of natural abilities, the result of thousands of years of elven refinement.",
@@ -31,7 +31,7 @@
 },
 {
   "model": "api_v2.race",
-  "pk": "gnome",
+  "pk": "srd_gnome",
   "fields": {
     "name": "Gnome",
     "desc": "Your gnome character has certain characteristics in common with all other gnomes.",
@@ -41,7 +41,7 @@
 },
 {
   "model": "api_v2.race",
-  "pk": "half-elf",
+  "pk": "srd_half-elf",
   "fields": {
     "name": "Half-Elf",
     "desc": "Your half-elf character has some qualities in common with elves and some that are unique to half-elves.",
@@ -51,7 +51,7 @@
 },
 {
   "model": "api_v2.race",
-  "pk": "half-orc",
+  "pk": "srd_half-orc",
   "fields": {
     "name": "Half-Orc",
     "desc": "Your half-orc character has certain traits deriving from your orc ancestry.",
@@ -61,7 +61,7 @@
 },
 {
   "model": "api_v2.race",
-  "pk": "halfling",
+  "pk": "srd_halfling",
   "fields": {
     "name": "Halfling",
     "desc": "Your halfling character has a number of traits in common with all other halflings.",
@@ -71,27 +71,27 @@
 },
 {
   "model": "api_v2.race",
-  "pk": "high-elf",
+  "pk": "srd_high-elf",
   "fields": {
     "name": "High Elf",
     "desc": "As a high elf, you have a keen mind and a mastery of at least the basics of magic. In many fantasy gaming worlds, there are two kinds of high elves. One type is haughty and reclusive, believing themselves to be superior to non-elves and even other elves. The other type is more common and more friendly, and often encountered among humans and other races.",
     "document": "srd",
-    "subrace_of": "elf"
+    "subrace_of": "srd_elf"
   }
 },
 {
   "model": "api_v2.race",
-  "pk": "hill-dwarf",
+  "pk": "srd_hill-dwarf",
   "fields": {
     "name": "Hill Dwarf",
     "desc": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.",
     "document": "srd",
-    "subrace_of": "dwarf"
+    "subrace_of": "srd_dwarf"
   }
 },
 {
   "model": "api_v2.race",
-  "pk": "human",
+  "pk": "srd_human",
   "fields": {
     "name": "Human",
     "desc": "It’s hard to make generalizations about humans, but your human character has these traits.",
@@ -101,27 +101,27 @@
 },
 {
   "model": "api_v2.race",
-  "pk": "lightfoot",
+  "pk": "srd_lightfoot",
   "fields": {
     "name": "Lightfoot",
     "desc": "As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You're inclined to be affable and get along well with others. Lightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life.",
     "document": "srd",
-    "subrace_of": "halfling"
+    "subrace_of": "srd_halfling"
   }
 },
 {
   "model": "api_v2.race",
-  "pk": "rock-gnome",
+  "pk": "srd_rock-gnome",
   "fields": {
     "name": "Rock Gnome",
     "desc": "As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes.",
     "document": "srd",
-    "subrace_of": "gnome"
+    "subrace_of": "srd_gnome"
   }
 },
 {
   "model": "api_v2.race",
-  "pk": "tiefling",
+  "pk": "srd_tiefling",
   "fields": {
     "name": "Tiefling",
     "desc": "Tieflings share certain racial traits as a result of their infernal descent.",

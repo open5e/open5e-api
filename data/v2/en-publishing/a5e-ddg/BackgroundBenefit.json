@@ -1,0 +1,292 @@
+[
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_deep-hunter_ability-score-increase",
+  "fields": {
+    "name": "Ability Score Increase",
+    "desc": "+1 to Wisdom and one other ability score.",
+    "type": "ability_score",
+    "parent": "a5e-ddg_deep-hunter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_deep-hunter_adventures-and-advancement",
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "Once you’ve collected a few trophies from your hunts, people start offering you money in exchange for help against the subterranean monsters plaguing their communities. After a few such bounties, you gain the free service of up to 4 scouts (or scout variants). You can ask them to adventure with you or dispatch them to gather information on distant areas.",
+    "type": "adventures_and_advancement",
+    "parent": "a5e-ddg_deep-hunter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_deep-hunter_connection-and-memento",
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Deep Hunter Connections\r\n1. The hunter that saved your life.\r\n2. The rival hunter that pursues the same beast.\r\n3. The rival hunter that took credit for your kill and branded you a liar.\r\n4. The intelligent monster that mocks you every time it escapes your grasp.\r\n5. The community or family that depends on you.\r\n6. The city alchemist that pays well for your trophies.\r\n7. A community of fey, deep gnome, or shadow elves that owe you their lives.\r\n8. A monster you have befriended and sworn to protect.\r\n9. The surface world ruler from whom you’re hiding.\r\n10. The monster that hunts you.\r\n\r\n### Deep Hunter Mementos\r\n1. A prized bow string, arrow, whetstone, or other piece of equipment that has never let you down.\r\n2. A locket containing the picture of a subterranean monster’s victim.\r\n3. An astonishing assortment of unusual jerkies.\r\n4. A scar from the monster that got away.\r\n5. Clothing bedecked with a dozen grisly trophies.\r\n6. A lucky coin you flip when you’re not sure of the way forward.\r\n7. The broken horn or tooth that nearly killed you.\r\n8. A talking monster skull (you hear it talking, anyway).\r\n9. A copper coin taken from a cavern filled with riches; you stumbled across the cavern while lost and have never found your way back.\r\n10. A journal detailing your attempts to find a navigable passage to the Midnight Sea.",
+    "type": "connection_and_memento",
+    "parent": "a5e-ddg_deep-hunter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_deep-hunter_deep-lore",
+  "fields": {
+    "name": "Deep Lore",
+    "desc": "You always have a sense of how deep you are and which direction is north, provided that you’ve traveled in these regions before. You are also generally aware of the physical and political geography of the region (e.g., “the old dwarf colony is this way and those tunnels are part of the wererat pack’s hunting grounds”). You know where relatively safe places to camp are located and you can usually find fresh sources of water.",
+    "type": "feature",
+    "parent": "a5e-ddg_deep-hunter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_deep-hunter_skill-proficiencies",
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Survival, and either Nature or Stealth.",
+    "type": "skill_proficiency",
+    "parent": "a5e-ddg_deep-hunter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_deep-hunter_suggested-equipment",
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "chalk, traveler’s clothes, 2 hunting traps",
+    "type": "equipment",
+    "parent": "a5e-ddg_deep-hunter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_deep-hunter_tool-proficiencies",
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Leatherworker’s tools.",
+    "type": "tool_proficiency",
+    "parent": "a5e-ddg_deep-hunter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_dungeon-robber_ability-score-increase",
+  "fields": {
+    "name": "Ability Score Increase",
+    "desc": "+1 to Intelligence and one other ability score.",
+    "type": "ability_score",
+    "parent": "a5e-ddg_dungeon-robber"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_dungeon-robber_adventures-and-advancement",
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "As you build your reputation, shady people approach you with requests to “discover” items of uncertain ownership. After enough successes, a legitimate organization, such as a wizard’s college or esteemed museum, takes an interest in you. They offer you a position, which comes with funding granting a Wealthy lifestyle, access to free spellcasting services, and legal representation when you inevitably run afoul of the law.",
+    "type": "adventures_and_advancement",
+    "parent": "a5e-ddg_dungeon-robber"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_dungeon-robber_connection-and-memento",
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll d10, choose, or make up your own.\r\n\r\n### Dungeon Robber Connections\r\n1. A rival who always tries to steal what you rightfully find.\r\n2. A rival who seeks powerful artifacts for evil ends.\r\n3. A fence who can find a buyer for anything.\r\n4. An underworld figure to whom you owe a staggering debt.\r\n5. A master forger who can replicate plausible records of ownership, permissions to restricted areas, and so on.\r\n6. An artist who can make perfect copies of artwork and paintings.\r\n7. A collector who sends you after valuable curios.\r\n8. Authorities who would like to question you about a relic’s mysterious disappearance.\r\n9. An admiring urchin who can get you anywhere in their city.\r\n10. A rambling sage whose bizarre, shocking theories you half believe.\r\n\r\n### Dungeon Robber Mementos\r\n1. A mysterious idol whose origin you seek.\r\n2. A cultural item from equipment.\r\n3. A treasure map with no obvious connection to any known land mass.\r\n4. An ancient piece of machinery that is undoubtedly very powerful, although all it currently does is light up.\r\n5. A rare book that grants an expertise die on checks related to a specific civilization.\r\n6. A gold coin bearing the face of a king who never existed.\r\n7. Identification papers from the institution that has kicked you out.\r\n8. A tablet carved with indecipherable glyphs.\r\n9. A giant-sized key to an unknown door.\r\n10. One piece of a seven-part artifact.",
+    "type": "connection_and_memento",
+    "parent": "a5e-ddg_dungeon-robber"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_dungeon-robber_languages",
+  "fields": {
+    "name": "Languages",
+    "desc": "Any six (three of them no longer spoken).",
+    "type": "language",
+    "parent": "a5e-ddg_dungeon-robber"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_dungeon-robber_skill-proficiencies",
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "History, and either Investigation or Religion.",
+    "type": "skill_proficiency",
+    "parent": "a5e-ddg_dungeon-robber"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_dungeon-robber_suggested-equipment",
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "Cartographers’ tools, miner’s pick, traveler’s clothes, shovel.",
+    "type": "equipment",
+    "parent": "a5e-ddg_dungeon-robber"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_dungeon-robber_tool-proficiencies",
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Cartographers’ tools.",
+    "type": "tool_proficiency",
+    "parent": "a5e-ddg_dungeon-robber"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_dungeon-robber_unreliable-intelligence",
+  "fields": {
+    "name": "Unreliable Intelligence",
+    "desc": "You know conspiracy theorists, armchair historians, disgraced academics, and other people with useful, if unreliable, knowledge. While in a city, once per day you can find an NPC who can make an Intelligence check with a +10 bonus to recall a fact. When you do so, the Narrator secretly rolls a d6. On a 1, your contact’s information is dangerously inaccurate.",
+    "type": "feature",
+    "parent": "a5e-ddg_dungeon-robber"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_escapee-from-below_ability-score-increase",
+  "fields": {
+    "name": "Ability Score Increase",
+    "desc": "+1 to Constitution and one other ability score.",
+    "type": "ability_score",
+    "parent": "a5e-ddg_escapee-from-below"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_escapee-from-below_adventures-and-advancement",
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "You find yourself drawn to the lands you once escaped. When you return there, you may have an opportunity to right wrongs or take revenge for past injuries. When you do, other escapees may look to you for leadership.",
+    "type": "adventures_and_advancement",
+    "parent": "a5e-ddg_escapee-from-below"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_escapee-from-below_alien-culture",
+  "fields": {
+    "name": "Alien Culture",
+    "desc": "Your prolonged captivity has granted you insight into the culture that kept you. You understand their customs, traditions, religion, political ties, and to some extent how they think. You are regarded as an expert in this culture and can usually recall some useful detail when you and your companions face a challenge involving this culture.",
+    "type": "feature",
+    "parent": "a5e-ddg_escapee-from-below"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_escapee-from-below_connection-and-memento",
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll d10, choose, or make up your own.\r\n\r\n### Escapee from Below Connections\r\n1. The friend and fellow escapee from whom you were separated.\r\n2. The family members who remain in captivity.\r\n3. The cruel overseer who tortured you.\r\n4. Members of an Underland resistance movement.\r\n5. An evil commando squad that hunts escapees.\r\n6. The kindly merchant who took you in when you first reached the surface.\r\n7. A fellow prisoner, still in captivity, who claimed to be an heir to royalty.\r\n8. The prominent merchant or politician you saw making deals with evil creatures in the Underland.\r\n9. A mighty Underland creature with ambitions to conquer the surface world.\r\n10. A ship captain who sails the Midnight Sea.\r\n\r\n### Escapee from Below Mementos\r\n1. A partial map of your escape route.\r\n2. Broken shackles or chains.\r\n3. A precious heirloom, still hidden somewhere in Underland.\r\n4. A delicious recipe (which no one would eat if they knew the ingredients).\r\n5. A compass that points back where you came.\r\n6. Twelve days worth of rations (dried mushrooms).\r\n7. A tattoo that conceals the hidden routes and passwords you used to gain your freedom.\r\n8. A trophy taken from the guard you overcame.\r\n9. A strange board game or toy designed for hands with too many fingers.\r\n10. A telepathic rat or other unusual pet.",
+    "type": "connection_and_memento",
+    "parent": "a5e-ddg_escapee-from-below"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_escapee-from-below_skill-proficiencies",
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Stealth, and either Perception or Survival.",
+    "type": "skill_proficiency",
+    "parent": "a5e-ddg_escapee-from-below"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_escapee-from-below_suggested-equipment",
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "Common clothes, thieves’ tools.",
+    "type": "equipment",
+    "parent": "a5e-ddg_escapee-from-below"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_escapee-from-below_tool-proficiencies",
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Thieves’ tools.",
+    "type": "tool_proficiency",
+    "parent": "a5e-ddg_escapee-from-below"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_imposter_ability-score-increase",
+  "fields": {
+    "name": "Ability Score Increase",
+    "desc": "+1 to Charisma and one other ability score.",
+    "type": "ability_score",
+    "parent": "a5e-ddg_imposter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_imposter_adventures-and-advancement",
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "Each of your double’s former acquaintances must be won over, until they like you more than they did your original. Even once that’s accomplished, you won’t truly be free of your past until you have reckoned with it. When evidence of your true nature surfaces—or when the person you are impersonating reappears—you must triumph in the court of public opinion. Once you have done so, you will have permanent, legal access to your former self’s belongings, inheritance rights, and so on.",
+    "type": "adventures_and_advancement",
+    "parent": "a5e-ddg_imposter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_imposter_connection-and-memento",
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll d10, choose, or make up your own.\r\n\r\n### Imposter Connections\r\n1. The accomplice who knows your secret and helps you for their own reasons.\r\n2. The spouse or lover of your other self, whom you must win over.\r\n3. The enemy of your other self, whose hatred you inherit.\r\n4. Your other self’s rich or noble relative, from whom you may inherit a fortune.\r\n5. Your crooked former partner, who still searches for you, unaware of your new identity.\r\n6. The Underland compatriot who knew both you and the person whose identity you stole.\r\n7. The suspicious priest who noticed a change in your personality.\r\n8. An acquaintance whose “inside joke” you pretend to understand.\r\n9. The family pet that doesn’t recognize you.\r\n10. The person you left behind when you abandoned your old life.\r\n\r\n### Imposter Mementos\r\n1. The precious diary containing your original self’s secrets.\r\n2. The locket or signet ring that proves your identity.\r\n3. The scar that matches the one your original self had.\r\n4. An anonymous blackmail letter.\r\n5. An item that proves your real identity, which you keep hidden.\r\n6. The fingerbone that whispers hints to you at opportune times.\r\n7. The heirloom weapon you fraudulently wield.\r\n8. Your trusty hat of disguise.\r\n9. Your trusty ring of mind shielding.\r\n10. The implements (useless to you) of your original self’s magical training.",
+    "type": "connection_and_memento",
+    "parent": "a5e-ddg_imposter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_imposter_cover-story",
+  "fields": {
+    "name": "Cover Story",
+    "desc": "Whenever you struggle to maintain the masquerade that you are who you say, a surprising number of people are willing to help you through your “lapses of memory.” They might be deluding themselves, or perhaps they know your secret but provide you cover for reasons of their own. So long as you don’t act completely out of character or get caught in an outrageous lie, you can usually find someone willing to cover for you. This cover most commonly takes  he form of excuses for your strange behavior.",
+    "type": "feature",
+    "parent": "a5e-ddg_imposter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_imposter_skill-proficiencies",
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Deception, and either Perception or Survival.",
+    "type": "skill_proficiency",
+    "parent": "a5e-ddg_imposter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_imposter_suggested-equipment",
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "Common clothes, disguise kit.",
+    "type": "equipment",
+    "parent": "a5e-ddg_imposter"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-ddg_imposter_tool-proficiencies",
+  "fields": {
+    "name": "Tool Proficiencies",
+    "desc": "Disguise kit.",
+    "type": "tool_proficiency",
+    "parent": "a5e-ddg_imposter"
+  }
+}
+]
