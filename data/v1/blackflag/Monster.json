@@ -4916,7 +4916,7 @@
 			"languages": "-",
 			"challenge_rating": "8",
 			"cr": 8,
-			"actions_json": "[{\"name\":\"Multiattack\",\"desc\":\"The hydra makes as many Bite attacks as it has heads.\"},{\"name\":\"Bite\",\"desc\":\"_Melee Weapon Attack:_ +8 to hit, reach 10 ft., one target. _Hit:_ 10 (1d10+5) piercing damage. Noxious Breath (Recharge Special). The hydra exhales poisonous gas in a 30-foot cone. Each creature in that area must make a DC 16 CON save, taking 40 (9d8) poison damage on a failed save, or half as much damage on a successful one. While the hydra has five or more heads, this action has a recharge of 6. The recharge range increases for each head the hydra has below five. For example, a hydra that starts its turn with two heads can recharge this feature on a 3, 4, 5, or 6.\"}]",
+			"actions_json": "[{\"name\":\"Multiattack\",\"desc\":\"The hydra makes as many Bite attacks as it has heads.\"},{\"name\":\"Bite\",\"desc\":\"_Melee Weapon Attack:_ +8 to hit, reach 10 ft., one target. _Hit:_ 10 (1d10+5) piercing damage.\"},{\"name\":\"Noxious Breath (Recharge Special)\",\"desc\":\"The hydra exhales poisonous gas in a 30-foot cone. Each creature in that area must make a DC 16 CON save, taking 40 (9d8) poison damage on a failed save, or half as much damage on a successful one. While the hydra has five or more heads, this action has a recharge of 6. The recharge range increases for each head the hydra has below five. For example, a hydra that starts its turn with two heads can recharge this feature on a 3, 4, 5, or 6.\"}]",
 			"bonus_actions_json": "[{\"name\":\"Bloody Burst (Has Fewer Than Five Heads)\",\"desc\":\"The hydra squeezes the stumps of its severed heads, spraying blood and gore. Each creature within 5 feet of the hydra must succeed on a DC 16 CON save or be incapacitated until the end of its next turn and poisoned for 1 minute. A poisoned creature can repeat the save at the end of each of its turns, ending the effect on itself on a success.\"}]",
 			"special_abilities_json": "[{\"name\":\"Hold Breath\",\"desc\":\"The hydra can hold its breath for 1 hour.\"},{\"name\":\"Multiple Heads\",\"desc\":\"The hydra has five heads and is resistant to the blinded, charmed, deafened, frightened, stunned, and unconscious conditions.<br>Whenever the hydra takes 25 or more damage in a single turn, one of its heads dies. If all its heads die, the hydra dies. At the end of its turn, it grows two heads for each of its heads that died since its last turn, unless it has taken fire damage since its last turn. The hydra regains 10 HP for each head regrown in this way.\"},{\"name\":\"Reactive Heads\",\"desc\":\"For each head the hydra has beyond one, it gets an extra reaction that can be used only for opportunity attacks.\"},{\"name\":\"Wakeful\",\"desc\":\"While the hydra sleeps, at least one of its heads is awake.\"}]",
 			"document": "black-flag-srd"
@@ -8307,7 +8307,7 @@
 			"cr": 2,
 			"actions_json": "[{\"name\":\"Multiattack\",\"desc\":\"The giant boar makes two Tusk attacks. If both attacks hit one creature, the target must succeed on a DC 13 STR save or be knocked prone.\"},{\"name\":\"Tusk\",\"desc\":\"_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 10 (2d6+3) slashing damage.\"}]",
 			"bonus_actions_json": "[{\"name\":\"Challenging Snort\",\"desc\":\"The boar snorts and stomps its feet at a creature it can see within 30 feet of it. The target must succeed on a DC 13 WIS save or be frightened until the end of its next turn and have disadvantage on the next save it makes against being knocked prone by the boar.\"}]",
-			"special_abilities_json": "[{\"name\":\"Charge\",\"desc\":\"If the boar moves at least 20 feet straight toward a target and then hits it with a Tusk attack on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 STR save or be knocked prone. Relentless (Recharges after a Short or Long Rest). If the boar takes 10 damage or less that would reduce it to 0 HP, it is reduced to 1 HP instead.\"}]",
+			"special_abilities_json": "[{\"name\":\"Charge\",\"desc\":\"If the boar moves at least 20 feet straight toward a target and then hits it with a Tusk attack on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 STR save or be knocked prone.\"},{\"name\":\"Relentless (Recharges after a Short or Long Rest)\",\"desc\":\"If the boar takes 10 damage or less that would reduce it to 0 HP, it is reduced to 1 HP instead.\"}]",
 			"document": "black-flag-srd"
 		}
 	},
@@ -8525,7 +8525,7 @@
 			"languages": "-",
 			"challenge_rating": "0",
 			"cr": 0,
-			"actions_json": "[{\"name\":\"Kick\",\"desc\":\"\\\\_Melee Weapon Attack:_ +2 to hit, reach 5 ft., one creature. _Hit:_ 2 (1d4) bludgeoning damage, and if the target is a Large or smaller creature, it must succeed on a DC 10 STR save or be knocked prone.\"}]",
+			"actions_json": "[{\"name\":\"Kick\",\"desc\":\"\\\\_Melee Weapon Attack:_ +2 to hit, reach 5 ft., one creature. \\\\_Hit:_ 2 (1d4) bludgeoning damage, and if the target is a Large or smaller creature, it must succeed on a DC 10 STR save or be knocked prone.\"}]",
 			"bonus_actions_json": "[{\"name\":\"Skittish\",\"desc\":\"The deer takes the Dash or Disengage action.\"}]",
 			"document": "black-flag-srd"
 		}
