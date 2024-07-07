@@ -7,6 +7,8 @@ from .abstracts import HasDescription, HasName
 from .abstracts import damage_die_count_field, damage_die_type_field
 from .abstracts import damage_bonus_field, key_field
 from .object import Object
+from .condition import Condition
+from .damagetype import DamageType
 from .document import FromDocument
 from .speed import HasSpeed
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES
@@ -40,6 +42,8 @@ class Creature(Object, Abilities, FromDocument, HasSpeed):
         help_text='The creature\'s allowed alignments.'
     )
     
+    condition_immunities = models.ForeignKey(Condition)
+
     def as_text(self):
         text = self.name + '\n'
         

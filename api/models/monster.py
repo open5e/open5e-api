@@ -152,6 +152,11 @@ class Monster(GameContent):
         creature.armor_class = self.armor_class
         creature.hit_points = self.hit_points
         creature.passive_perception = v1_to_v2_data.get_passive_perception(self)
+        creature.hit_dice = self.hit_dice
+        # Senses
+        # Languages
+
+        # Damage immunities / resistances / vulnerabilities
         
 
         v1_to_v2_data.copy_v2_speed_from_v1_creature(v1_obj=self, v2_obj=creature)

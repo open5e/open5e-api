@@ -5,6 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 from .abstracts import HasName
 from .size import Size
+from .damagetype import DamageType
 from .enums import  OBJECT_ARMOR_CLASS_MAXIMUM, OBJECT_HIT_POINT_MAXIMUM
 
 
@@ -17,7 +18,7 @@ class Object(HasName):
     """
 
     size = models.ForeignKey(
-        "Size",
+        Size,
         on_delete=models.CASCADE)
 
     weight = models.DecimalField(
@@ -48,6 +49,31 @@ class Object(HasName):
         null=True,
         blank=True,
         help_text='Dice string representing a way to calculate hit points.')
+
+    damage_vulnerabilities = models.ForeignKey(
+        DamageType,
+        on_delete=models.CASCADE,
+        help_text="List of damage types that this object is vulnerable to.")
+    
+    damage_resistances = models.ForeignKey(
+        DamageType,
+        on_delete=models.CASCADE,
+        help_text="List of damage types that this object is resistant to.")
+
+    damage_immunities = models.ForeignKey(
+        DamageType,
+        on_delete=models.CASCADE,
+        help_text="List of damage types that this object is immune to.")
+
+    nonmagical_attack_resistance = models.BooleanField(
+        null=False,
+        default=False,
+        help_text='If object is resistant to nonmagical attacks.')
+    
+    nonmagical_attack_immunity = models.BooleanField(
+        null=False,
+        default=False,
+        help_text='If the object is immune to nonmagical attacks.')
 
     class Meta:
         abstract = True
