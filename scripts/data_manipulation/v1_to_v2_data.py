@@ -33,20 +33,8 @@ def main():
         ### START LOGIC FOR PARSING V1 DATA ###
 
         if obj_v2 is None:
-            print(obj_v1.slug, obj_v1.document.slug)
-            obj_v2_document = v2_models.Document.objects.get(key=get_v2_doc_from_v1_obj(v1_obj=obj_v1))
-
-            obj_v2 = v2_model(
-                key=get_v2_key_from_v1_obj(v1_obj=obj_v1),
-                name=obj_v1.name,
-                document = obj_v2_document,
-                size=get_v2_size_from_v1_obj(v1_obj=obj_v1),
-                type=get_v2_type_from_v1_obj(v1_obj=obj_v1),
-                category="Monsters",
-                alignment = get_alignment(v1_obj=obj_v1)
-
-            )
-            copy_v2_speed_from_v1_creature(v1_obj=obj_v1, v2_obj=obj_v2)
+            #print(obj_v1. name)
+            obj_v2 = obj_v1.as_v2_creature()
             obj_v2.full_clean()
             v2_added_count +=1
  
@@ -147,6 +135,45 @@ def get_v2_size_from_v1_obj(v1_obj):
         print("No size found for {}".format(v1_obj.slug))
     return v2_size
 
+def copy_v2_scores_from_v1_creature(obj_v1, obj_v2):
+    obj_v2.ability_score_strength = obj_v1.strength
+    obj_v2.ability_score_dexterity = obj_v1.dexterity
+    obj_v2.ability_score_constitution = obj_v1.constitution
+    obj_v2.ability_score_intelligence = obj_v1.intelligence
+    obj_v2.ability_score_wisdom = obj_v1.wisdom
+    obj_v2.ability_score_charisma = obj_v1.charisma
+
+def copy_v2_throws_from_v1_creature(obj_v1, obj_v2):
+    obj_v2.saving_throw_strength = obj_v1.strength_save
+    obj_v2.saving_throw_dexterity = obj_v1.dexterity_save
+    obj_v2.saving_throw_constitution = obj_v1.constitution_save
+    obj_v2.saving_throw_intelligence = obj_v1.intelligence_save
+    obj_v2.saving_throw_wisdom = obj_v1.wisdom_save
+    obj_v2.saving_throw_charisma = obj_v1.charisma_save
+
+def copy_v2_skills_from_v1_creature(obj_v1, obj_v2):
+    obj_v1.skills_json = obj_v1.skills_json.lower()
+    obj_v2.skill_bonus_acrobatics = json.loads(obj_v1.skills_json).get('acrobatics')
+    obj_v2.skill_bonus_animal_handling  = json.loads(obj_v1.skills_json).get('animal_handling')
+    obj_v2.skill_bonus_arcana = json.loads(obj_v1.skills_json).get('arcana')
+    obj_v2.skill_bonus_athletics = json.loads(obj_v1.skills_json).get('athletics')
+    obj_v2.skill_bonus_deception = json.loads(obj_v1.skills_json).get('deception')
+    obj_v2.skill_bonus_history = json.loads(obj_v1.skills_json).get('history')
+    obj_v2.skill_bonus_insight = json.loads(obj_v1.skills_json).get('insight')
+    obj_v2.skill_bonus_intimidation = json.loads(obj_v1.skills_json).get('intimidation')
+    obj_v2.skill_bonus_investigation = json.loads(obj_v1.skills_json).get('investigation')
+    obj_v2.skill_bonus_medicine = json.loads(obj_v1.skills_json).get('medicine')
+    obj_v2.skill_bonus_nature = json.loads(obj_v1.skills_json).get('nature')
+    obj_v2.skill_bonus_perception = json.loads(obj_v1.skills_json).get('perception')
+    obj_v2.skill_bonus_performance = json.loads(obj_v1.skills_json).get('performance')
+    obj_v2.skill_bonus_persuasion = json.loads(obj_v1.skills_json).get('persuasion')
+    obj_v2.skill_bonus_religion = json.loads(obj_v1.skills_json).get('religion')
+    obj_v2.skill_bonus_sleight_of_hand = json.loads(obj_v1.skills_json).get('sleight_of_hand')
+    obj_v2.skill_bonus_stealth = json.loads(obj_v1.skills_json).get('stealth')
+    obj_v2.skill_bonus_survival = json.loads(obj_v1.skills_json).get('survival')
+
+
+
 def copy_v2_speed_from_v1_creature(v1_obj, v2_obj):
     if 'walk' not in v1_obj.speed_json:
         v2_obj.walk = 0.0
@@ -213,6 +240,18 @@ def get_alignment_from_doppelganger(v1_obj):
     srd_equivalent_key = "srd_{}".format(slugify(v1_obj.name))
     d = v2_models.Creature.objects.get(key=srd_equivalent_key)
     return d.alignment
+
+def get_passive_perception(v1_obj):
+    if "passive perception" in v1_obj.senses.lower():
+        for s in v1_obj.senses.split(','):
+            if "passive perception" in s:
+                a_pp = s.split('passive perception')[1]
+                trimmed = a_pp.replace("(","").replace(")","").replace(",","")
+                return trimmed
+
+    bonusx2 = v1_obj.wisdom - 10
+    bonus = bonusx2 // 2
+    return 10 + bonus
 
 if __name__ == '__main__':
     main()

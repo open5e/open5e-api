@@ -138,6 +138,34 @@ class Monster(GameContent):
             "cr":self.cr
               }
 
+    def as_v2_creature(self):
+        from api_v2.models import Creature, Document
+        from scripts.data_manipulation import v1_to_v2_data
+        creature = Creature()
+        creature.key = v1_to_v2_data.get_v2_key_from_v1_obj(self),
+        creature.document = Document.objects.get(key=v1_to_v2_data.get_v2_doc_from_v1_obj(v1_obj=self))
+        creature.name = self.name
+        creature.size = v1_to_v2_data.get_v2_size_from_v1_obj(self)
+        creature.type = v1_to_v2_data.get_v2_type_from_v1_obj(self)
+        creature.alignment = v1_to_v2_data.get_alignment(self)
+        creature.category = "Monsters"
+        creature.armor_class = self.armor_class
+        creature.hit_points = self.hit_points
+        creature.passive_perception = v1_to_v2_data.get_passive_perception(self)
+        
+
+        v1_to_v2_data.copy_v2_speed_from_v1_creature(v1_obj=self, v2_obj=creature)
+
+        v1_to_v2_data.copy_v2_scores_from_v1_creature(self, creature)
+
+        v1_to_v2_data.copy_v2_throws_from_v1_creature(self, creature)
+
+        v1_to_v2_data.copy_v2_skills_from_v1_creature(self, creature)
+
+        creature.full_clean()
+        return creature
+
+
 class MonsterSpell(models.Model):
     spell = models.ForeignKey(Spell, on_delete=models.CASCADE)
     monster = models.ForeignKey(Monster, on_delete=models.CASCADE)
