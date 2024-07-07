@@ -44,6 +44,11 @@ class Object(HasName):
             MaxValueValidator(OBJECT_HIT_POINT_MAXIMUM)],
         help_text='Integer representing the hit points of the object.')
 
+    hit_dice = models.TextField(
+        null=True,
+        blank=True,
+        help_text='Dice string representing a way to calculate hit points.')
+
     class Meta:
         abstract = True
         ordering = ['pk']
