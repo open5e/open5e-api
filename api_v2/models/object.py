@@ -50,31 +50,29 @@ class Object(HasName):
         blank=True,
         help_text='Dice string representing a way to calculate hit points.')
 
-    damage_vulnerabilities = models.ForeignKey(
+    damage_vulnerabilities = models.ManyToManyField(
         DamageType,
-        on_delete=models.CASCADE,
-        help_text="List of damage types that this object is vulnerable to.")
+        help_text="List of damage types that this {} is vulnerable to.".format(__name__)
+    )
     
-    damage_resistances = models.ForeignKey(
+    damage_resistances = models.ManyToManyField(
         DamageType,
-        on_delete=models.CASCADE,
-        help_text="List of damage types that this object is resistant to.")
-
-    damage_immunities = models.ForeignKey(
+        help_text="List of damage types that this {} is resistant to.".format(__name__)
+    )
+    damage_immunities = models.ManyToManyField(
         DamageType,
-        on_delete=models.CASCADE,
-        help_text="List of damage types that this object is immune to.")
-
+        help_text="List of damage types that this {} is immune to.".format(__name__)
+    )
     nonmagical_attack_resistance = models.BooleanField(
         null=False,
         default=False,
-        help_text='If object is resistant to nonmagical attacks.')
-    
+        help_text='If {} is resistant to nonmagical attacks.'.format(__name__)
+    )
     nonmagical_attack_immunity = models.BooleanField(
         null=False,
         default=False,
-        help_text='If the object is immune to nonmagical attacks.')
-
+        help_text='If the {} is immune to nonmagical attacks.'.format(__name__)
+    )
     class Meta:
         abstract = True
         ordering = ['pk']

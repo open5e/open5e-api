@@ -41,8 +41,20 @@ class Creature(Object, Abilities, FromDocument, HasSpeed):
         max_length=100,
         help_text='The creature\'s allowed alignments.'
     )
-    
-    condition_immunities = models.ForeignKey(Condition)
+
+    damage_vulnerabilities = models.ManyToManyField(DamageType,
+        related_name="creature_damage_vulnerabilities")
+
+    damage_immunities = models.ManyToManyField(DamageType,
+        related_name="creature_damage_immunities")
+
+    damage_resistances = models.ManyToManyField(DamageType,
+        related_name="creature_damage_resistances")
+
+    condition_immunities = models.ManyToManyField(
+        Condition,
+        help_text="Conditions that this creature is immune to."
+        )
 
     def as_text(self):
         text = self.name + '\n'
