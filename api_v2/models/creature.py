@@ -2,7 +2,7 @@
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from .abilities import Abilities
+from .abilities import Abilities, Senses
 from .abstracts import HasDescription, HasName
 from .abstracts import damage_die_count_field, damage_die_type_field
 from .abstracts import damage_bonus_field, key_field
@@ -19,7 +19,7 @@ class CreatureType(HasName, HasDescription, FromDocument):
     """The Type of creature, such as Aberration."""
 
 
-class Creature(Object, Abilities, FromDocument, HasSpeed):
+class Creature(Object, Abilities, Senses, FromDocument, HasSpeed):
     """
     This is the model for a Creature, per the 5e ruleset.
 

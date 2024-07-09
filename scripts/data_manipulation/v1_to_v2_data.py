@@ -9,6 +9,7 @@ from api.models import Monster as v1_model
 from api_v2.models import Creature as v2_model
 
 
+
 # Transformation function.
 
 # Summarize the changes, print output.
@@ -36,6 +37,9 @@ def main():
             #print(obj_v1. name)
             obj_v2 = obj_v1.as_v2_creature()
             obj_v2.full_clean()
+            
+            copy_v2_damage_from_v1_monsters(obj_v1,obj_v2)
+
             v2_added_count +=1
  
 
@@ -143,6 +147,19 @@ def copy_v2_scores_from_v1_creature(obj_v1, obj_v2):
     obj_v2.ability_score_wisdom = obj_v1.wisdom
     obj_v2.ability_score_charisma = obj_v1.charisma
 
+def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
+    for di in obj_v1.damage_immunities.split(','):
+        if v2_models.DamageType.objects.get(key=di.strip().lower()):
+            obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key=di.strip().lower()))
+    
+    for di in obj_v1.damage_resistances.split(','):
+        if v2_models.DamageType.objects.get(key=di.strip().lower()):
+            obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key=di.strip().lower()))
+
+    for di in obj_v1.damage_vulnerabilities.split(','):
+        if v2_models.DamageType.objects.get(key=di.strip().lower()):
+            obj_v2.damage_vulnerabilities.add(v2_models.DamageType.objects.get(key=di.strip().lower()))
+
 def copy_v2_throws_from_v1_creature(obj_v1, obj_v2):
     obj_v2.saving_throw_strength = obj_v1.strength_save
     obj_v2.saving_throw_dexterity = obj_v1.dexterity_save
@@ -171,8 +188,6 @@ def copy_v2_skills_from_v1_creature(obj_v1, obj_v2):
     obj_v2.skill_bonus_sleight_of_hand = json.loads(obj_v1.skills_json).get('sleight_of_hand')
     obj_v2.skill_bonus_stealth = json.loads(obj_v1.skills_json).get('stealth')
     obj_v2.skill_bonus_survival = json.loads(obj_v1.skills_json).get('survival')
-
-
 
 def copy_v2_speed_from_v1_creature(v1_obj, v2_obj):
     if 'walk' not in v1_obj.speed_json:

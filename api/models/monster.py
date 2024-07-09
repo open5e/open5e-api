@@ -139,7 +139,7 @@ class Monster(GameContent):
               }
 
     def as_v2_creature(self):
-        from api_v2.models import Creature, Document
+        from api_v2.models import Creature, Document, DamageType
         from scripts.data_manipulation import v1_to_v2_data
         creature = Creature()
         creature.key = v1_to_v2_data.get_v2_key_from_v1_obj(self),
@@ -156,8 +156,6 @@ class Monster(GameContent):
         # Senses
         # Languages
 
-        # Damage immunities / resistances / vulnerabilities
-        
 
         v1_to_v2_data.copy_v2_speed_from_v1_creature(v1_obj=self, v2_obj=creature)
 
@@ -168,6 +166,7 @@ class Monster(GameContent):
         v1_to_v2_data.copy_v2_skills_from_v1_creature(self, creature)
 
         creature.full_clean()
+
         return creature
 
 
