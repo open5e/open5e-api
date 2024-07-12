@@ -38,7 +38,8 @@ def main():
             obj_v2 = obj_v1.as_v2_creature()
             obj_v2.full_clean()
             
-            copy_v2_damage_from_v1_monsters(obj_v1,obj_v2)
+            #copy_v2_damage_from_v1_monsters(obj_v1,obj_v2) # This requires objects to exist.
+            #copy_v2_languages_from_v1_monster(obj_v1,obj_v2) # This requires objects to exist.
 
             v2_added_count +=1
  
@@ -139,6 +140,47 @@ def get_v2_size_from_v1_obj(v1_obj):
         print("No size found for {}".format(v1_obj.slug))
     return v2_size
 
+def get_senses(v1_obj):
+    senses = {
+        'normal':10560.0,
+        'blindsight':None,
+        'truesight':None,
+        'darkvision':None,
+        'tremorsense':None,
+    }
+
+    for s in v1_obj.senses.split(','):
+        digits = "0123456789"
+
+        if 'darkvision' in s.lower():
+            darkvision_distance = ""
+            for c in s:
+                if c in digits:
+                    darkvision_distance+=c
+            senses['darkvision'] = float(darkvision_distance)
+        if 'blindsight' in s.lower():
+            blindsight_distance = ""
+            for c in s:
+                if c in digits:
+                    blindsight_distance+=c
+            senses['blindsight'] = float(blindsight_distance)
+        if 'truesight' in s.lower():
+            truesight_distance = ""
+            for c in s:
+                if c in digits:
+                    truesight_distance+=c
+            senses['truesight'] = float(truesight_distance)
+        if 'tremorsense' in s.lower():
+            tremorsense_distance = ""
+            for c in s:
+                if c in digits:
+                    tremorsense_distance+=c
+            senses['tremorsense'] = float(tremorsense_distance)
+        if 'blind beyond' in s.lower():
+            senses['normal'] = None
+
+    return senses
+
 def copy_v2_scores_from_v1_creature(obj_v1, obj_v2):
     obj_v2.ability_score_strength = obj_v1.strength
     obj_v2.ability_score_dexterity = obj_v1.dexterity
@@ -159,6 +201,27 @@ def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
     for di in obj_v1.damage_vulnerabilities.split(','):
         if v2_models.DamageType.objects.get(key=di.strip().lower()):
             obj_v2.damage_vulnerabilities.add(v2_models.DamageType.objects.get(key=di.strip().lower()))
+
+def copy_v2_languages_from_v1_monsters(obj_v1,obj_v2):
+    print(obj_v1.name)
+    for l in obj_v1.languages.split(','):
+        print(l)
+        if v2_models.Language.objects.get(key=slugify(l.strip().lower())):
+            obj_v2.languages.add(v2_models.Language.objects.get(key=slugify(l.strip().lower())))
+        if "all" in l:
+            obj_v2.languages.add(v2_models.Language.objects.all())
+    
+        if "telepathy" in l:
+            between_parens = l.split("(")[1].split(")")[0]
+            distance = between_parens.split(" ")[0]
+            obj_v2.telepathy_range = distance
+
+            #parse telepathy range
+
+    obj_v2.languages_desc = obj_v1.languages
+
+    # cannot speak
+    # description
 
 def copy_v2_throws_from_v1_creature(obj_v1, obj_v2):
     obj_v2.saving_throw_strength = obj_v1.strength_save

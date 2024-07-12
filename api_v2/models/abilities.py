@@ -17,6 +17,8 @@ from .enums import PASSIVE_SCORE_MAXIMUM
 
 from .abstracts import distance_field
 
+from .language import Language
+
 # Field value limits
 
 
@@ -262,6 +264,7 @@ class Abilities(models.Model):
     class Meta:
         abstract = True
 
+
 class Senses(models.Model):
     """
     This is the definition of the Senses abstract base class.
@@ -278,3 +281,4 @@ class Senses(models.Model):
 
     class Meta:
         abstract = True
+

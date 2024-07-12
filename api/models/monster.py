@@ -153,7 +153,11 @@ class Monster(GameContent):
         creature.hit_points = self.hit_points
         creature.passive_perception = v1_to_v2_data.get_passive_perception(self)
         creature.hit_dice = self.hit_dice
-        # Senses
+        creature.normal_sight_range = v1_to_v2_data.get_senses(self)['normal']
+        creature.darkvision_range = v1_to_v2_data.get_senses(self)['darkvision']
+        creature.truesight_range = v1_to_v2_data.get_senses(self)['truesight']
+        creature.blindsight_range = v1_to_v2_data.get_senses(self)['blindsight']
+        creature.tremorsense_range = v1_to_v2_data.get_senses(self)['tremorsense']
         # Languages
 
 
@@ -164,6 +168,8 @@ class Monster(GameContent):
         v1_to_v2_data.copy_v2_throws_from_v1_creature(self, creature)
 
         v1_to_v2_data.copy_v2_skills_from_v1_creature(self, creature)
+
+        v1_to_v2_data.copy_v2_languages_from_v1_monsters(self, creature)
 
         creature.full_clean()
 
