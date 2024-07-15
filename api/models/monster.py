@@ -169,9 +169,7 @@ class Monster(GameContent):
 
         v1_to_v2_data.copy_v2_skills_from_v1_creature(self, creature)
 
-        v1_to_v2_data.copy_v2_languages_from_v1_monsters(self, creature)
 
-        creature.full_clean()
 
         return creature
 
