@@ -30,7 +30,19 @@ def main():
         obj_v2 = v2_model.objects.filter(key=computed_v2_key).first()
         if obj_v2 is not None:
             v1v2_match_count +=1
-            obj_v2 = obj_v1.as_v2_creature()
+            print("Making an update to :{}".format(obj_v2.pk))
+
+            obj_v2_updated = obj_v1.as_v2_creature()
+            if obj_v2_updated.passive_perception == obj_v2.passive_perception:
+                print("Match: {}".format(obj_v2.key))
+                pass
+            else:
+                print("Mismatch: {}".format(obj_v2.key))
+                print("  Old passive perception: {}".format(obj_v2.passive_perception))
+                print("  New passive perception:{} ".format(obj_v2_updated.passive_perception))
+                print("  Senses: {}".format(obj_v1.senses))
+            obj_v2.passive_perception = obj_v2_updated.passive_perception
+            obj_v2.full_clean()
             obj_v2.save()
 
         ### START LOGIC FOR PARSING V1 DATA ###
@@ -323,10 +335,11 @@ def get_alignment_from_doppelganger(v1_obj):
 def get_passive_perception(v1_obj):
     if "passive perception" in v1_obj.senses.lower():
         for s in v1_obj.senses.split(','):
+            s = s.lower()
             if "passive perception" in s:
                 a_pp = s.split('passive perception')[1]
                 trimmed = a_pp.replace("(","").replace(")","").replace(",","")
-                return trimmed
+                return int(trimmed)
 
     bonusx2 = v1_obj.wisdom - 10
     bonus = bonusx2 // 2
