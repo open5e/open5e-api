@@ -85,12 +85,11 @@ class MonsterFilter(CommonFilterSet):
                 "exact",
                 "in",
             ],
-            "name": ["iexact", "exact"],
+            "name": ["iexact", "exact", "icontains"],
             "desc": ["iexact", "exact", "in", "icontains"],
             "cr": ["exact", "range", "gt", "gte", "lt", "lte"],
             "armor_class": ["exact", "range", "gt", "gte", "lt", "lte"],
             "type": ["iexact", "exact", "in", "icontains"],
-            "name": ["iexact", "exact"],
             "page_no": ["exact", "range", "gt", "gte", "lt", "lte"],
             "document__slug": [
                 "iexact",
