@@ -32,7 +32,8 @@ def main():
             v1v2_match_count +=1
             print (obj_v2.key)
             #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
-            copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
+            #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
+            copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
             obj_v2.full_clean()
             obj_v2.save()
 
@@ -233,17 +234,17 @@ def copy_v2_condition_from_v1_monsters(obj_v1,obj_v2):
 def copy_v2_languages_from_v1_monsters(obj_v1,obj_v2):
     for l in obj_v1.languages.split(','):
         language_looked_up = v2_models.Language.objects.filter(pk=slugify(l.lower()))
-        if len(language_looked_up)==1:
-            obj_v2.languages.add(language_looked_up)
+        if len(language_looked_up)!=1:
+            obj_v2.languages.add(language_looked_up.first())
         if "all" in l:
-            obj_v2.languages.add(v2_models.Language.objects.all())
+            for language in v2_models.Language.objects.all():
+                obj_v2.languages.add(language)
     
         if "telepathy" in l:
-            between_parens = l.split("(")[1].split(")")[0]
-            distance = between_parens.split(" ")[0]
-            obj_v2.telepathy_range = distance
-
-            #parse telepathy range
+            for word in l.split(" "):
+                if word.isdigit():
+                    obj_v2.telepathy_range=float(word)
+            
 
     obj_v2.languages_desc = obj_v1.languages
 

@@ -28,6 +28,7 @@ class Language(HasName, HasDescription, FromDocument):
 class HasLanguage(models.Model):
     """The abstract class used by Creature to describe what a creature's language."""
     languages_desc = models.TextField(
+        blank=True,
         default="[None provided]",
         help_text='Description of the languages item.')
 
