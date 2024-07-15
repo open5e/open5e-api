@@ -30,14 +30,8 @@ def main():
         obj_v2 = v2_model.objects.filter(key=computed_v2_key).first()
         if obj_v2 is not None:
             v1v2_match_count +=1
-        
-            obj_v2.normal_sight_range = get_senses(obj_v1)['normal']
-            obj_v2.darkvision_range = get_senses(obj_v1)['darkvision']
-            obj_v2.truesight_range = get_senses(obj_v1)['truesight']
-            obj_v2.blindsight_range = get_senses(obj_v1)['blindsight']
-            obj_v2.tremorsense_range = get_senses(obj_v1)['tremorsense']
-
-            obj_v2_updated = obj_v1.as_v2_creature()
+            print (obj_v2.key)
+            copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
             obj_v2.full_clean()
             obj_v2.save()
 
@@ -200,17 +194,35 @@ def copy_v2_scores_from_v1_creature(obj_v1, obj_v2):
     obj_v2.ability_score_charisma = obj_v1.charisma
 
 def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
-    for di in obj_v1.damage_immunities.split(','):
-        if v2_models.DamageType.objects.get(key=di.strip().lower()):
-            obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key=di.strip().lower()))
-    
-    for di in obj_v1.damage_resistances.split(','):
-        if v2_models.DamageType.objects.get(key=di.strip().lower()):
-            obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key=di.strip().lower()))
+    if obj_v1.damage_immunities!="":
+        for di in obj_v1.damage_immunities.replace(";",",").split(','):
+            if "nonmagical" in di:
+                obj_v2.nonmagical_attack_immunity=True
+                obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key='piercing'))
+                obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key='bludgeoning'))
+                obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key='slashing'))
+                break
+            if v2_models.DamageType.objects.get(key=di.strip().lower()):
+                obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key=di.strip().lower()))
+    if obj_v1.damage_resistances!="":
+        for dr in obj_v1.damage_resistances.replace(";",",").split(','):
+            if "nonmagical" in dr:
+                obj_v2.nonmagical_attack_resistance = True
+                obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key='piercing'))
+                obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key='bludgeoning'))
+                obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key='slashing'))
+                break
 
-    for di in obj_v1.damage_vulnerabilities.split(','):
-        if v2_models.DamageType.objects.get(key=di.strip().lower()):
-            obj_v2.damage_vulnerabilities.add(v2_models.DamageType.objects.get(key=di.strip().lower()))
+            if v2_models.DamageType.objects.get(key=dr.strip().lower()):
+                obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key=dr.strip().lower()))
+    if obj_v1.damage_vulnerabilities!="":
+        for dv in obj_v1.damage_vulnerabilities.split(','):
+            if obj_v1.pk == "rakshasa":
+                obj_v2.damage_vulnerabilities.add(v2_models.DamageType.objects.get(key='piercing'))
+                return
+            if v2_models.DamageType.objects.get(key=dv.strip().lower()):
+                obj_v2.damage_vulnerabilities.add(v2_models.DamageType.objects.get(key=dv.strip().lower()))
+    
 
 def copy_v2_languages_from_v1_monsters(obj_v1,obj_v2):
     for l in obj_v1.languages.split(','):
