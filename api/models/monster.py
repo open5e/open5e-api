@@ -142,7 +142,7 @@ class Monster(GameContent):
         from api_v2.models import Creature, Document, DamageType
         from scripts.data_manipulation import v1_to_v2_data
         creature = Creature()
-        creature.key = v1_to_v2_data.get_v2_key_from_v1_obj(self),
+        creature.key = v1_to_v2_data.get_v2_key_from_v1_obj(self)
         creature.document = Document.objects.get(key=v1_to_v2_data.get_v2_doc_from_v1_obj(v1_obj=self))
         creature.name = self.name
         creature.size = v1_to_v2_data.get_v2_size_from_v1_obj(self)
