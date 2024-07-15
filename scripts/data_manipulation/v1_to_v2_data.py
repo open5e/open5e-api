@@ -30,17 +30,14 @@ def main():
         obj_v2 = v2_model.objects.filter(key=computed_v2_key).first()
         if obj_v2 is not None:
             v1v2_match_count +=1
-            print("Making an update to :{}".format(obj_v2.pk))
+        
+            obj_v2.normal_sight_range = get_senses(obj_v1)['normal']
+            obj_v2.darkvision_range = get_senses(obj_v1)['darkvision']
+            obj_v2.truesight_range = get_senses(obj_v1)['truesight']
+            obj_v2.blindsight_range = get_senses(obj_v1)['blindsight']
+            obj_v2.tremorsense_range = get_senses(obj_v1)['tremorsense']
 
             obj_v2_updated = obj_v1.as_v2_creature()
-            if obj_v2_updated.hit_dice == obj_v2.hit_dice:
-                print("Match: {}".format(obj_v2.key))
-                pass
-            else:
-                print("Mismatch: {}".format(obj_v2.key))
-                print("  Old HD: {}".format(obj_v2.hit_dice))
-                print("  New HD:{} ".format(obj_v2_updated.hit_dice))
-            obj_v2.hit_dice = obj_v2_updated.hit_dice
             obj_v2.full_clean()
             obj_v2.save()
 
