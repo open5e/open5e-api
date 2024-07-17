@@ -91,6 +91,7 @@ class MonsterFilter(CommonFilterSet):
             "hit_points": ["exact", "range", "gt", "gte", "lt", "lte"],
             "armor_class": ["exact", "range", "gt", "gte", "lt", "lte"],
             "type": ["iexact", "exact", "in", "icontains"],
+            "size": ["iexact", "exact", "in", "icontains"],
             "page_no": ["exact", "range", "gt", "gte", "lt", "lte"],
             "document__slug": [
                 "iexact",
