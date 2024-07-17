@@ -88,6 +88,7 @@ class MonsterFilter(CommonFilterSet):
             "name": ["iexact", "exact", "icontains"],
             "desc": ["iexact", "exact", "in", "icontains"],
             "cr": ["exact", "range", "gt", "gte", "lt", "lte"],
+            "hit_points": ["exact", "range", "gt", "gte", "lt", "lte"],
             "armor_class": ["exact", "range", "gt", "gte", "lt", "lte"],
             "type": ["iexact", "exact", "in", "icontains"],
             "page_no": ["exact", "range", "gt", "gte", "lt", "lte"],
