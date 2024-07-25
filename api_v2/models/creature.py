@@ -183,7 +183,6 @@ class CreatureTrait(Modification):
     parent = models.ForeignKey('Creature', on_delete=models.CASCADE)
 
 
-
 class CreatureSet(HasName, FromDocument):
     """Set that the creature belongs to."""
 

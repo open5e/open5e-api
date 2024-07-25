@@ -22,6 +22,7 @@ from .background import BackgroundBenefit
 from .background import Background
 
 from .creature import Creature
+from .creature import CreatureTrait
 from .creature import CreatureAction
 from .creature import CreatureActionAttack
 from .creature import CreatureType

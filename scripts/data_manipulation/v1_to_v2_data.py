@@ -33,9 +33,10 @@ def main():
             print (obj_v2.key)
             #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
-            copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
+            #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
+            copy_traits(obj_v1, obj_v2)
             obj_v2.full_clean()
-            obj_v2.save()
+            #obj_v2.save()
 
         ### START LOGIC FOR PARSING V1 DATA ###
 
@@ -145,6 +146,20 @@ def get_v2_size_from_v1_obj(v1_obj):
     if v2_size is None:
         print("No size found for {}".format(v1_obj.slug))
     return v2_size
+
+def copy_traits(obj_v1, obj_v2):
+    v1_traits = json.loads(obj_v1.special_abilities_json or "[]")
+    if v1_traits is None: return
+    traitcount=0
+
+    for trait in v1_traits:
+        traitcount+=1
+        c = v2_models.CreatureTrait(name=trait['name'], desc=trait['desc'], parent=obj_v2)
+        c.full_clean()
+        c.save()
+    
+    print("mapped {} traits".format(traitcount))
+
 
 def get_senses(v1_obj):
     senses = {
