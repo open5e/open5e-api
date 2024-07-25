@@ -4,7 +4,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from .abilities import Abilities, Senses
 from .language import HasLanguage
-from .abstracts import HasDescription, HasName
+from .abstracts import HasDescription, HasName, Modification
 from .abstracts import damage_die_count_field, damage_die_type_field
 from .abstracts import damage_bonus_field, key_field
 from .object import Object
@@ -172,6 +172,16 @@ class CreatureActionAttack(HasName):
         on_delete=models.CASCADE,
         related_name="+", # No backwards relation.
         help_text='What kind of extra damage this attack deals')
+
+
+class CreatureTrait(Modification):
+    """This is the model for a creature special trait.
+
+    It inherits from modification, which is an abstract concept.
+    """
+
+    parent = models.ForeignKey('Creature', on_delete=models.CASCADE)
+
 
 
 class CreatureSet(HasName, FromDocument):
