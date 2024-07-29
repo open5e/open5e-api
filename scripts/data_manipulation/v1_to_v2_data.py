@@ -30,23 +30,25 @@ def main():
         obj_v2 = v2_model.objects.filter(key=computed_v2_key).first()
         if obj_v2 is not None:
             v1v2_match_count +=1
-            print (obj_v2.key)
             #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
-            copy_traits(obj_v1, obj_v2)
-            obj_v2.full_clean()
+            #copy_traits(obj_v1, obj_v2)
+            #obj_v2.full_clean()
             #obj_v2.save()
 
         ### START LOGIC FOR PARSING V1 DATA ###
 
         if obj_v2 is None:
             #print(obj_v1. name)
-            #obj_v2 = obj_v1.as_v2_creature()
-            #obj_v2.full_clean()
-            
-            #copy_v2_damage_from_v1_monsters(obj_v1,obj_v2) # This requires objects to exist.
-            #copy_v2_languages_from_v1_monster(obj_v1,obj_v2) # This requires objects to exist.
+            obj_v2 = obj_v1.as_v2_creature()
+            obj_v2.full_clean()
+            obj_v2.save()
+            #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
+            #copy_v2_damage_from_v1_monsters(obj_v1,obj_v2)
+            # This requires objects to exist.
+            #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2) # This requires objects to exist.
+            #bj_v2.full_clean()
 
             v2_added_count +=1
  
@@ -150,17 +152,14 @@ def get_v2_size_from_v1_obj(v1_obj):
 def copy_traits(obj_v1, obj_v2):
     v1_traits = json.loads(obj_v1.special_abilities_json or "[]")
     if v1_traits is None: return
-    traitcount=0
+    #traitcount=0
 
     for trait in v1_traits:
-        traitcount+=1
+        #    traitcount+=1
         c = v2_models.CreatureTrait(name=trait['name'], desc=trait['desc'], parent=obj_v2)
         c.full_clean()
         c.save()
     
-    print("mapped {} traits".format(traitcount))
-
-
 def get_senses(v1_obj):
     senses = {
         'normal':10560.0,
@@ -211,6 +210,10 @@ def copy_v2_scores_from_v1_creature(obj_v1, obj_v2):
     obj_v2.ability_score_charisma = obj_v1.charisma
 
 def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
+    print("slug:{}, di:{}".format(obj_v1.slug, obj_v1.damage_immunities))
+    print("slug:{}, dr:{}".format(obj_v1.slug, obj_v1.damage_resistances))
+    print("slug:{}, dv:{}".format(obj_v1.slug, obj_v1.damage_vulnerabilities))
+    
     if obj_v1.damage_immunities!="":
         for di in obj_v1.damage_immunities.replace(";",",").split(','):
             if "nonmagical" in di:
@@ -219,8 +222,9 @@ def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
                 obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key='bludgeoning'))
                 obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key='slashing'))
                 break
-            if v2_models.DamageType.objects.get(key=di.strip().lower()):
-                obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key=di.strip().lower()))
+            mapped_di = v2_models.DamageType.objects.filter(key=di.strip().lower())[0]
+            if mapped_di is not None:
+                obj_v2.damage_immunities.add(mapped_di)
     if obj_v1.damage_resistances!="":
         for dr in obj_v1.damage_resistances.replace(";",",").split(','):
             if "nonmagical" in dr:
@@ -229,16 +233,17 @@ def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
                 obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key='bludgeoning'))
                 obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key='slashing'))
                 break
-
-            if v2_models.DamageType.objects.get(key=dr.strip().lower()):
-                obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key=dr.strip().lower()))
+            mapped_dr = v2_models.DamageType.objects.filter(key=dr.strip().lower())[0]
+            if mapped_dr is not None:
+                obj_v2.damage_resistances.add(mapped_dr)
     if obj_v1.damage_vulnerabilities!="":
         for dv in obj_v1.damage_vulnerabilities.split(','):
             if obj_v1.pk == "rakshasa":
                 obj_v2.damage_vulnerabilities.add(v2_models.DamageType.objects.get(key='piercing'))
                 return
-            if v2_models.DamageType.objects.get(key=dv.strip().lower()):
-                obj_v2.damage_vulnerabilities.add(v2_models.DamageType.objects.get(key=dv.strip().lower()))
+            mapped_dv = v2_models.DamageType.objects.filter(key=dv.strip().lower())[0]
+            if mapped_dv is not None:
+                obj_v2.damage_vulnerabilities.add(mapped_dv)
     
 def copy_v2_condition_from_v1_monsters(obj_v1,obj_v2):
     if obj_v1.condition_immunities!="":
@@ -363,12 +368,16 @@ def get_alignment_from_doppelganger(v1_obj):
     return d.alignment
 
 def get_passive_perception(v1_obj):
+    if v1_obj.slug == "phoenixborn-sorcerer":
+        return 12
+    #print("slug:{} pp:{}".format(v1_obj.slug, v1_obj.senses))
     if "passive perception" in v1_obj.senses.lower():
         for s in v1_obj.senses.split(','):
             s = s.lower()
             if "passive perception" in s:
                 a_pp = s.split('passive perception')[1]
-                trimmed = a_pp.replace("(","").replace(")","").replace(",","")
+                trimmed = a_pp.replace("(","").replace(")","").replace(",","").replace(";","")
+                trimmed = trimmed.split()[0]
                 return int(trimmed)
 
     bonusx2 = v1_obj.wisdom - 10
