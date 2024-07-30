@@ -1982,7 +1982,9 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "piercing"
+    ],
     "condition_immunities": []
   }
 },
@@ -2050,7 +2052,9 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "poison"
+    ],
     "condition_immunities": []
   }
 },
@@ -2116,9 +2120,13 @@
     "category": "Monsters",
     "alignment": "unaligned",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "piercing"
+    ],
     "condition_immunities": []
   }
 },
@@ -2184,9 +2192,14 @@
     "category": "Monsters",
     "alignment": "unaligned",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
     "condition_immunities": []
   }
 },
@@ -14508,7 +14521,7 @@
     "armor_class": 11,
     "hit_points": 58,
     "hit_dice": "9d8+18",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": true,
     "walk": 20.0,
     "unit": null,
@@ -14526,10 +14539,16 @@
     ],
     "damage_immunities": [
       "bludgeoning",
+      "necrotic",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
       "piercing",
       "slashing"
     ],
-    "damage_resistances": [],
     "condition_immunities": [
       "charmed",
       "exhaustion",
@@ -19386,8 +19405,21 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -19454,8 +19486,21 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -19522,8 +19567,21 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -19590,8 +19648,21 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -19658,8 +19729,21 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -19726,8 +19810,21 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -19794,8 +19891,21 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -19862,8 +19972,21 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -19930,8 +20053,20 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -19998,8 +20133,21 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -22020,7 +22168,9 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }

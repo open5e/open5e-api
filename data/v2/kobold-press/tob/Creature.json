@@ -48,8 +48,8 @@
     "armor_class": 17,
     "hit_points": 135,
     "hit_dice": "18d10+36",
-    "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": true,
+    "nonmagical_attack_immunity": true,
     "walk": 10.0,
     "unit": null,
     "hover": true,
@@ -62,9 +62,33 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "bludgeoning",
+      "cold",
+      "necrotic",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained"
+    ]
   }
 },
 {
@@ -130,7 +154,9 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -184,7 +210,7 @@
     "armor_class": 12,
     "hit_points": 75,
     "hit_dice": "10d8+30",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -198,9 +224,21 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "necrotic",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "poisoned"
+    ]
   }
 },
 {
@@ -266,9 +304,15 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "acid",
+      "poison",
+      "thunder"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -334,7 +378,9 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -388,7 +434,7 @@
     "armor_class": 18,
     "hit_points": 184,
     "hit_dice": "16d12+80",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -402,9 +448,18 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid",
+      "thunder"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed"
+    ]
   }
 },
 {
@@ -470,7 +525,10 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold",
+      "necrotic"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -538,7 +596,9 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -606,9 +666,14 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -674,9 +739,16 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "lightning"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "paralyzed",
+      "restrained"
+    ]
   }
 },
 {
@@ -742,7 +814,10 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "lightning",
+      "thunder"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -810,9 +885,15 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "lightning",
+      "poison",
+      "thunder"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -880,7 +961,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -946,9 +1030,22 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "cold",
+      "lightning"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -1218,7 +1315,9 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -1286,9 +1385,17 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid",
+      "thunder"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "charmed"
+    ]
   }
 },
 {
@@ -1354,7 +1461,9 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -1408,7 +1517,7 @@
     "armor_class": 15,
     "hit_points": 198,
     "hit_dice": "12d20+72",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 50.0,
     "unit": null,
@@ -1423,7 +1532,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -1490,9 +1603,14 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -1544,7 +1662,7 @@
     "armor_class": 20,
     "hit_points": 425,
     "hit_dice": "23d20+184",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -1558,9 +1676,20 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "lightning"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "paralyzed",
+      "restrained"
+    ]
   }
 },
 {
@@ -1626,8 +1755,15 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_immunities": [
+      "psychic"
+    ],
+    "damage_resistances": [
+      "acid",
+      "cold",
+      "fire",
+      "lightning"
+    ],
     "condition_immunities": []
   }
 },
@@ -1680,7 +1816,7 @@
     "armor_class": 17,
     "hit_points": 85,
     "hit_dice": "10d8+40",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 50.0,
     "unit": null,
@@ -1694,9 +1830,21 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "necrotic",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "poisoned"
+    ]
   }
 },
 {
@@ -1762,8 +1910,13 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_immunities": [
+      "fire",
+      "radiant"
+    ],
+    "damage_resistances": [
+      "piercing"
+    ],
     "condition_immunities": []
   }
 },
@@ -1830,9 +1983,17 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "poisoned",
+      "prone"
+    ]
   }
 },
 {
@@ -1884,7 +2045,7 @@
     "armor_class": 13,
     "hit_points": 44,
     "hit_dice": "8d8+8",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -1898,9 +2059,24 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "unconscious"
+    ]
   }
 },
 {
@@ -1952,7 +2128,7 @@
     "armor_class": 16,
     "hit_points": 95,
     "hit_dice": "10d10+40",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -1965,10 +2141,24 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "cold"
+    ],
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "fire",
+      "lightning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "frightened",
+      "poisoned"
+    ]
   }
 },
 {
@@ -2020,7 +2210,7 @@
     "armor_class": 17,
     "hit_points": 275,
     "hit_dice": "22d10+154",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -2034,9 +2224,23 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "poisoned",
+      "stunned"
+    ]
   }
 },
 {
@@ -2307,8 +2511,13 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "fire"
+    ],
+    "condition_immunities": [
+      "paralyzed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -2360,7 +2569,7 @@
     "armor_class": 17,
     "hit_points": 168,
     "hit_dice": "16d10+80",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -2374,9 +2583,19 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -2442,7 +2661,10 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "lightning",
+      "thunder"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -2496,7 +2718,7 @@
     "armor_class": 20,
     "hit_points": 171,
     "hit_dice": "18d8+90",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -2510,9 +2732,21 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "lightning",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -2564,7 +2798,7 @@
     "armor_class": 20,
     "hit_points": 171,
     "hit_dice": "18d8+90",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -2578,9 +2812,22 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "lightning",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -2632,7 +2879,7 @@
     "armor_class": 20,
     "hit_points": 171,
     "hit_dice": "18d8+90",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -2646,9 +2893,24 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "lightning",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -2986,9 +3248,15 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -3055,7 +3323,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "cold",
+      "fire",
+      "lightning"
+    ],
     "condition_immunities": []
   }
 },
@@ -3121,8 +3393,12 @@
     "category": "Monsters",
     "alignment": "neutral evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -3190,7 +3466,9 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -3244,7 +3522,7 @@
     "armor_class": 18,
     "hit_points": 157,
     "hit_dice": "15d10+75",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -3258,9 +3536,20 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "lightning",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -3464,7 +3753,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -3584,7 +3876,7 @@
     "armor_class": 17,
     "hit_points": 120,
     "hit_dice": "16d6+64",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -3598,9 +3890,19 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -3667,7 +3969,9 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning"
+    ],
     "condition_immunities": []
   }
 },
@@ -3720,7 +4024,7 @@
     "armor_class": 17,
     "hit_points": 198,
     "hit_dice": "36d10",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -3733,10 +4037,27 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "bludgeoning"
+    ],
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -3788,7 +4109,7 @@
     "armor_class": 18,
     "hit_points": 195,
     "hit_dice": "26d6+104",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -3802,9 +4123,24 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -3856,7 +4192,7 @@
     "armor_class": 15,
     "hit_points": 93,
     "hit_dice": "11d8+44",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -3870,9 +4206,22 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -3924,7 +4273,7 @@
     "armor_class": 13,
     "hit_points": 55,
     "hit_dice": "10d4+30",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -3938,9 +4287,22 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -4074,7 +4436,9 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "thunder"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -4128,7 +4492,7 @@
     "armor_class": 17,
     "hit_points": 152,
     "hit_dice": "16d8+80",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 60.0,
     "unit": null,
@@ -4143,8 +4507,17 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "radiant",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened"
+    ]
   }
 },
 {
@@ -4277,10 +4650,18 @@
     "category": "Monsters",
     "alignment": "unaligned",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "deafened"
+    ]
   }
 },
 {
@@ -4346,9 +4727,14 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -4416,7 +4802,9 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed"
+    ]
   }
 },
 {
@@ -4482,9 +4870,15 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "acid",
+      "poison",
+      "thunder"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -4536,7 +4930,7 @@
     "armor_class": 15,
     "hit_points": 95,
     "hit_dice": "10d10+40",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 5.0,
     "unit": null,
@@ -4551,8 +4945,23 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "deafened",
+      "frightened",
+      "paralyzed",
+      "prone",
+      "stunned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -4618,9 +5027,14 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -4672,7 +5086,7 @@
     "armor_class": 13,
     "hit_points": 32,
     "hit_dice": "5d4+20",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -4687,7 +5101,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -4753,7 +5171,9 @@
     "category": "Monsters",
     "alignment": "neutral evil",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
     "damage_resistances": [],
     "condition_immunities": []
@@ -4808,7 +5228,7 @@
     "armor_class": 18,
     "hit_points": 187,
     "hit_dice": "15d8+120",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -4822,9 +5242,19 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -4877,7 +5307,7 @@
     "hit_points": 152,
     "hit_dice": "16d10+64",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 30.0,
     "unit": null,
     "hover": false,
@@ -4890,9 +5320,20 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "exhaustion",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -4959,7 +5400,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "acid",
+      "fire",
+      "poison"
+    ],
     "condition_immunities": []
   }
 },
@@ -5080,7 +5525,7 @@
     "armor_class": 16,
     "hit_points": 76,
     "hit_dice": "8d10+32",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -5094,9 +5539,25 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -5162,9 +5623,19 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -5230,9 +5701,24 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -5298,9 +5784,19 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -5366,9 +5862,19 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -5434,9 +5940,19 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -5502,9 +6018,19 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -5572,7 +6098,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "frightened",
+      "poisoned"
+    ]
   }
 },
 {
@@ -5639,8 +6168,19 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "stunned"
+    ]
   }
 },
 {
@@ -5707,8 +6247,15 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "cold"
+    ],
+    "condition_immunities": [
+      "paralyzed",
+      "poisoned",
+      "prone",
+      "unconscious"
+    ]
   }
 },
 {
@@ -5774,9 +6321,18 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "necrotic"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "poisoned"
+    ]
   }
 },
 {
@@ -5842,9 +6398,22 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid",
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -5910,9 +6479,14 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -5964,7 +6538,7 @@
     "armor_class": 15,
     "hit_points": 102,
     "hit_dice": "12d8+48",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -5978,9 +6552,20 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -6113,10 +6698,24 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "cold",
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained"
+    ]
   }
 },
 {
@@ -6236,7 +6835,7 @@
     "armor_class": 15,
     "hit_points": 82,
     "hit_dice": "11d8+33",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -6250,9 +6849,30 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained"
+    ]
   }
 },
 {
@@ -6318,9 +6938,14 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "necrotic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -6385,9 +7010,13 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "cold"
+    ],
     "condition_immunities": []
   }
 },
@@ -6453,9 +7082,14 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "cold",
+      "thunder"
+    ],
     "condition_immunities": []
   }
 },
@@ -6521,9 +7155,13 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "cold"
+    ],
     "condition_immunities": []
   }
 },
@@ -6658,9 +7296,14 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -6794,7 +7437,9 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -6848,7 +7493,7 @@
     "armor_class": 12,
     "hit_points": 104,
     "hit_dice": "19d6+38",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 25.0,
     "unit": null,
@@ -6863,8 +7508,17 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "fire",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -6931,8 +7585,17 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "acid"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "exhaustion",
+      "frightened",
+      "prone"
+    ]
   }
 },
 {
@@ -6984,7 +7647,7 @@
     "armor_class": 15,
     "hit_points": 112,
     "hit_dice": "15d8+45",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -6998,9 +7661,20 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -7202,7 +7876,10 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "acid",
+      "lightning"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -7339,7 +8016,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "acid",
+      "cold",
+      "lightning"
+    ],
     "condition_immunities": []
   }
 },
@@ -7406,9 +8087,14 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "lightning"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed",
+      "prone"
+    ]
   }
 },
 {
@@ -7476,7 +8162,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "blinded",
+      "deafened"
+    ]
   }
 },
 {
@@ -7543,8 +8232,12 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "acid"
+    ],
+    "condition_immunities": [
+      "paralyzed"
+    ]
   }
 },
 {
@@ -7596,7 +8289,7 @@
     "armor_class": 15,
     "hit_points": 75,
     "hit_dice": "10d8+30",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -7610,9 +8303,20 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -7664,7 +8368,7 @@
     "armor_class": 15,
     "hit_points": 90,
     "hit_dice": "20d8",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -7678,9 +8382,22 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -7732,7 +8449,7 @@
     "armor_class": 17,
     "hit_points": 178,
     "hit_dice": "17d10+85",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 60.0,
     "unit": null,
@@ -7746,9 +8463,19 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened"
+    ]
   }
 },
 {
@@ -7814,9 +8541,13 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "acid"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "prone"
+    ]
   }
 },
 {
@@ -7952,7 +8683,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -8019,7 +8753,9 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "poison"
+    ],
     "condition_immunities": []
   }
 },
@@ -8086,7 +8822,9 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -8141,7 +8879,7 @@
     "hit_points": 114,
     "hit_dice": "12d8+60",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 30.0,
     "unit": null,
     "hover": false,
@@ -8154,9 +8892,19 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "acid",
+      "cold"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "poisoned"
+    ]
   }
 },
 {
@@ -8208,7 +8956,7 @@
     "armor_class": 15,
     "hit_points": 75,
     "hit_dice": "10d8+30",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -8222,9 +8970,32 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "unconscious"
+    ]
   }
 },
 {
@@ -8344,7 +9115,7 @@
     "armor_class": 18,
     "hit_points": 119,
     "hit_dice": "14d8+56",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -8359,7 +9130,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -8425,10 +9200,17 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_vulnerabilities": [
+      "radiant"
+    ],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -8549,7 +9331,7 @@
     "hit_points": 290,
     "hit_dice": "20d20+80",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 5.0,
     "unit": null,
     "hover": false,
@@ -8562,9 +9344,30 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "poison",
+      "slashing",
+      "thunder"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -8698,9 +9501,23 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "cold",
+      "fire"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "deafened",
+      "exhaustion",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "unconscious"
+    ]
   }
 },
 {
@@ -8767,7 +9584,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "cold",
+      "fire",
+      "lightning"
+    ],
     "condition_immunities": []
   }
 },
@@ -8833,10 +9654,23 @@
     "category": "Monsters",
     "alignment": "unaligned",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -8971,7 +9805,9 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "poison"
+    ],
     "condition_immunities": []
   }
 },
@@ -9039,7 +9875,9 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "poison"
+    ],
     "condition_immunities": []
   }
 },
@@ -9093,7 +9931,7 @@
     "hit_points": 157,
     "hit_dice": "15d10+75",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 30.0,
     "unit": null,
     "hover": false,
@@ -9106,9 +9944,23 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "fire",
+      "piercing",
+      "poison",
+      "psychic",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -9244,7 +10096,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -9311,8 +10166,14 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -9378,9 +10239,21 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "cold",
+      "fire",
+      "lightning"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -9432,7 +10305,7 @@
     "armor_class": 17,
     "hit_points": 60,
     "hit_dice": "11d8+11",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -9447,8 +10320,18 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -9501,7 +10384,7 @@
     "hit_points": 94,
     "hit_dice": "9d12+36",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 20.0,
     "unit": null,
     "hover": false,
@@ -9514,9 +10397,22 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "psychic",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -9568,7 +10464,7 @@
     "armor_class": 16,
     "hit_points": 104,
     "hit_dice": "16d8+32",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -9582,9 +10478,23 @@
     "alignment": "lawful good",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid",
+      "cold"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "fire",
+      "lightning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -9650,9 +10560,25 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "stunned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -9704,7 +10630,7 @@
     "armor_class": 16,
     "hit_points": 99,
     "hit_dice": "18d6+36",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -9718,9 +10644,20 @@
     "alignment": "neutral good",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "invisible"
+    ]
   }
 },
 {
@@ -9786,9 +10723,21 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "exhaustion",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "unconscious"
+    ]
   }
 },
 {
@@ -9854,9 +10803,13 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -9922,7 +10875,9 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -9976,7 +10931,7 @@
     "armor_class": 16,
     "hit_points": 187,
     "hit_dice": "22d10+66",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 10.0,
     "unit": null,
@@ -9989,10 +10944,28 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "radiant"
+    ],
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "paralyzed",
+      "poisoned",
+      "stunned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -10058,9 +11031,15 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic"
+    ],
+    "damage_resistances": [
+      "cold"
+    ],
+    "condition_immunities": [
+      "frightened"
+    ]
   }
 },
 {
@@ -10194,7 +11173,9 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -10248,7 +11229,7 @@
     "armor_class": 16,
     "hit_points": 67,
     "hit_dice": "9d8+27",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 10.0,
     "unit": null,
@@ -10261,10 +11242,24 @@
     "category": "Monsters",
     "alignment": "unaligned",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "cold"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "frightened",
+      "prone"
+    ]
   }
 },
 {
@@ -10330,9 +11325,14 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -10452,7 +11452,7 @@
     "armor_class": 18,
     "hit_points": 71,
     "hit_dice": "11d8+22",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -10466,9 +11466,20 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "poisoned"
+    ]
   }
 },
 {
@@ -10602,9 +11613,17 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "necrotic"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -10670,9 +11689,13 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -10738,9 +11761,17 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "necrotic"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -10806,9 +11837,15 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -10874,9 +11911,15 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -11064,7 +12107,7 @@
     "armor_class": 16,
     "hit_points": 112,
     "hit_dice": "15d8+45",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -11078,9 +12121,19 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -11200,7 +12253,7 @@
     "armor_class": 16,
     "hit_points": 63,
     "hit_dice": "14d6+14",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -11214,9 +12267,27 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -11336,7 +12407,7 @@
     "armor_class": 14,
     "hit_points": 65,
     "hit_dice": "10d8+20",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -11351,8 +12422,15 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -11418,9 +12496,20 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "necrotic"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "poisoned"
+    ]
   }
 },
 {
@@ -11485,10 +12574,23 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "cold",
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained"
+    ]
   }
 },
 {
@@ -11541,7 +12643,7 @@
     "hit_points": 136,
     "hit_dice": "16d8+64",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 30.0,
     "unit": null,
     "hover": false,
@@ -11554,9 +12656,23 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "bludgeoning",
+      "necrotic",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "cold"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -11622,9 +12738,15 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "exhaustion",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -11676,7 +12798,7 @@
     "armor_class": 17,
     "hit_points": 171,
     "hit_dice": "18d10+72",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -11690,9 +12812,18 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -11745,7 +12876,7 @@
     "hit_points": 136,
     "hit_dice": "16d8+64",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 0.0,
     "unit": null,
     "hover": true,
@@ -11758,9 +12889,24 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "cold",
+      "lightning",
+      "necrotic"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -11826,9 +12972,21 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "lightning",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -11894,9 +13052,23 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "lightning",
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -11949,7 +13121,7 @@
     "hit_points": 161,
     "hit_dice": "14d12+70",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 40.0,
     "unit": null,
     "hover": false,
@@ -11962,9 +13134,22 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "psychic",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -12097,8 +13282,12 @@
     "category": "Monsters",
     "alignment": "unaligned",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -12153,7 +13342,7 @@
     "hit_points": 241,
     "hit_dice": "21d12+105",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 50.0,
     "unit": null,
     "hover": false,
@@ -12166,9 +13355,19 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "lightning",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "exhaustion"
+    ]
   }
 },
 {
@@ -12220,7 +13419,7 @@
     "armor_class": 15,
     "hit_points": 94,
     "hit_dice": "9d12+36",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -12235,7 +13434,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -12288,7 +13491,7 @@
     "armor_class": 18,
     "hit_points": 153,
     "hit_dice": "18d10+54",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -12302,9 +13505,26 @@
     "alignment": "chaotic good",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid",
+      "psychic"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "exhaustion",
+      "frightened",
+      "stunned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -12369,10 +13589,27 @@
     "category": "Monsters",
     "alignment": "lawful evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_vulnerabilities": [
+      "cold"
+    ],
+    "damage_immunities": [
+      "bludgeoning",
+      "fire",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -12424,7 +13661,7 @@
     "armor_class": 16,
     "hit_points": 84,
     "hit_dice": "13d8+26",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -12437,9 +13674,17 @@
     "category": "Monsters",
     "alignment": "lawful evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "cold"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -12492,7 +13737,7 @@
     "armor_class": 17,
     "hit_points": 90,
     "hit_dice": "12d6+48",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -12505,10 +13750,26 @@
     "category": "Monsters",
     "alignment": "neutral evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -12573,10 +13834,17 @@
     "category": "Monsters",
     "alignment": "neutral",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "frightened"
+    ]
   }
 },
 {
@@ -12628,7 +13896,7 @@
     "armor_class": 14,
     "hit_points": 54,
     "hit_dice": "12d6+12",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -12642,9 +13910,19 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -12779,7 +14057,10 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "acid",
+      "lightning"
+    ],
     "condition_immunities": []
   }
 },
@@ -12900,7 +14181,7 @@
     "armor_class": 20,
     "hit_points": 407,
     "hit_dice": "22d20+176",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 60.0,
     "unit": null,
@@ -12915,7 +14196,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -13051,7 +14336,10 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
     "condition_immunities": []
   }
 },
@@ -13104,7 +14392,7 @@
     "armor_class": 18,
     "hit_points": 119,
     "hit_dice": "14d8+56",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 50.0,
     "unit": null,
@@ -13118,9 +14406,21 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -13186,9 +14486,13 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -13256,7 +14560,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -13444,7 +14751,7 @@
     "armor_class": 15,
     "hit_points": 136,
     "hit_dice": "16d10+48",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -13458,9 +14765,19 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -13513,7 +14830,7 @@
     "hit_points": 135,
     "hit_dice": "18d8+54",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 30.0,
     "unit": null,
     "hover": false,
@@ -13526,9 +14843,21 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "bludgeoning",
+      "necrotic",
+      "piercing",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "cold",
+      "lightning"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened"
+    ]
   }
 },
 {
@@ -13662,9 +14991,16 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold",
+      "poison",
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -13800,7 +15136,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -14070,9 +15409,14 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -14124,7 +15468,7 @@
     "armor_class": 14,
     "hit_points": 119,
     "hit_dice": "14d8+56",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -14138,9 +15482,18 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -14273,10 +15626,18 @@
     "category": "Monsters",
     "alignment": "neutral evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed",
+      "prone",
+      "unconscious"
+    ]
   }
 },
 {
@@ -14328,7 +15689,7 @@
     "armor_class": 17,
     "hit_points": 110,
     "hit_dice": "20d10",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -14342,9 +15703,33 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison",
+      "psychic",
+      "radiant"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "exhaustion",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "unconscious"
+    ]
   }
 },
 {
@@ -14409,10 +15794,25 @@
     "category": "Monsters",
     "alignment": "unaligned",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -14600,7 +16000,7 @@
     "armor_class": 16,
     "hit_points": 94,
     "hit_dice": "9d10+45",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -14614,9 +16014,19 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -14736,7 +16146,7 @@
     "armor_class": 14,
     "hit_points": 102,
     "hit_dice": "12d8+48",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -14750,9 +16160,22 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison",
+      "radiant"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "poisoned"
+    ]
   }
 },
 {
@@ -14804,7 +16227,7 @@
     "armor_class": 14,
     "hit_points": 120,
     "hit_dice": "16d8+48",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -14818,9 +16241,24 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -14940,7 +16378,7 @@
     "armor_class": 16,
     "hit_points": 97,
     "hit_dice": "13d6+52",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -14955,7 +16393,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -15023,8 +16465,20 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -15090,9 +16544,13 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "acid"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "prone"
+    ]
   }
 },
 {
@@ -15144,7 +16602,7 @@
     "armor_class": 19,
     "hit_points": 207,
     "hit_dice": "18d8+126",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -15157,10 +16615,31 @@
     "category": "Monsters",
     "alignment": "neutral evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "radiant"
+    ],
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "stunned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -15212,7 +16691,7 @@
     "armor_class": 17,
     "hit_points": 170,
     "hit_dice": "20d8+80",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -15226,8 +16705,18 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_immunities": [
+      "cold",
+      "lightning"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "fire",
+      "necrotic",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -15363,7 +16852,10 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "cold",
+      "radiant"
+    ],
     "condition_immunities": []
   }
 },
@@ -15416,7 +16908,7 @@
     "armor_class": 14,
     "hit_points": 85,
     "hit_dice": "10d10+30",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -15431,8 +16923,15 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "prone"
+    ]
   }
 },
 {
@@ -15484,7 +16983,7 @@
     "armor_class": 15,
     "hit_points": 82,
     "hit_dice": "11d8+33",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -15498,9 +16997,20 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "poisoned"
+    ]
   }
 },
 {
@@ -15703,8 +17213,13 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "thunder"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -15825,7 +17340,7 @@
     "hit_points": 102,
     "hit_dice": "12d10+36",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 40.0,
     "unit": null,
     "hover": false,
@@ -15838,9 +17353,20 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -15893,7 +17419,7 @@
     "hit_points": 60,
     "hit_dice": "8d10+16",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 40.0,
     "unit": null,
     "hover": false,
@@ -15906,9 +17432,20 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -15960,7 +17497,7 @@
     "armor_class": 18,
     "hit_points": 264,
     "hit_dice": "16d20+96",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 10.0,
     "unit": null,
@@ -15974,9 +17511,17 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "prone"
+    ]
   }
 },
 {
@@ -16110,9 +17655,15 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "blinded",
+      "poisoned"
+    ]
   }
 },
 {
@@ -16164,7 +17715,7 @@
     "armor_class": 13,
     "hit_points": 45,
     "hit_dice": "10d6+10",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -16178,9 +17729,22 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "poisoned",
+      "stunned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -16232,7 +17796,7 @@
     "armor_class": 17,
     "hit_points": 231,
     "hit_dice": "22d10+110",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -16247,8 +17811,16 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "paralyzed",
+      "poisoned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -16368,7 +17940,7 @@
     "armor_class": 17,
     "hit_points": 112,
     "hit_dice": "15d8+45",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -16382,9 +17954,25 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "poisoned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -16504,7 +18092,7 @@
     "armor_class": 15,
     "hit_points": 114,
     "hit_dice": "12d10+48",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -16519,7 +18107,13 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
     "condition_immunities": []
   }
 },
@@ -16572,8 +18166,8 @@
     "armor_class": 9,
     "hit_points": 22,
     "hit_dice": "3d8+9",
-    "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": true,
+    "nonmagical_attack_immunity": true,
     "walk": 20.0,
     "unit": null,
     "hover": false,
@@ -16586,9 +18180,22 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "bludgeoning",
+      "cold",
+      "necrotic",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -16860,7 +18467,9 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "frightened"
+    ]
   }
 },
 {
@@ -16927,8 +18536,20 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -17048,7 +18669,7 @@
     "armor_class": 7,
     "hit_points": 217,
     "hit_dice": "14d20+70",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -17061,10 +18682,27 @@
     "category": "Monsters",
     "alignment": "unaligned",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "thunder"
+    ],
+    "damage_immunities": [
+      "acid"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "exhaustion",
+      "frightened",
+      "prone"
+    ]
   }
 },
 {
@@ -17116,7 +18754,7 @@
     "armor_class": 19,
     "hit_points": 261,
     "hit_dice": "14d10+126",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -17130,9 +18768,20 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -17184,7 +18833,7 @@
     "armor_class": 15,
     "hit_points": 39,
     "hit_dice": "6d8+12",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -17197,10 +18846,32 @@
     "category": "Monsters",
     "alignment": "chaotic neutral",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "thunder"
+    ],
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "unconscious"
+    ]
   }
 },
 {
@@ -17265,7 +18936,9 @@
     "category": "Monsters",
     "alignment": "neutral evil",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "thunder"
+    ],
     "damage_immunities": [],
     "damage_resistances": [],
     "condition_immunities": []
@@ -17336,7 +19009,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -17457,7 +19133,7 @@
     "hit_points": 95,
     "hit_dice": "10d10+40",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 20.0,
     "unit": null,
     "hover": false,
@@ -17470,9 +19146,22 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "psychic",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -17539,8 +19228,20 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -17606,9 +19307,17 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "cold",
+      "lightning"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -17660,7 +19369,7 @@
     "armor_class": 13,
     "hit_points": 44,
     "hit_dice": "8d8+8",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -17674,9 +19383,19 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -17728,7 +19447,7 @@
     "armor_class": 16,
     "hit_points": 110,
     "hit_dice": "13d8+52",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -17743,7 +19462,15 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -17878,9 +19605,23 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -17932,7 +19673,7 @@
     "armor_class": 14,
     "hit_points": 42,
     "hit_dice": "12d4+12",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -17947,7 +19688,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -18149,10 +19894,19 @@
     "category": "Monsters",
     "alignment": "unaligned",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "cold",
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "deafened"
+    ]
   }
 },
 {
@@ -18422,9 +20176,14 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "psychic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -18492,7 +20251,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -18544,7 +20306,7 @@
     "armor_class": 15,
     "hit_points": 105,
     "hit_dice": "14d8+42",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -18559,8 +20321,15 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -18627,7 +20396,10 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "force",
+      "poison"
+    ],
     "condition_immunities": []
   }
 },
@@ -18695,7 +20467,9 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "cold"
+    ],
     "condition_immunities": []
   }
 },
@@ -18952,7 +20726,7 @@
     "armor_class": 15,
     "hit_points": 82,
     "hit_dice": "11d10+22",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -18966,9 +20740,27 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "unconscious"
+    ]
   }
 },
 {
@@ -19020,7 +20812,7 @@
     "armor_class": 15,
     "hit_points": 110,
     "hit_dice": "17d8+34",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 50.0,
     "unit": null,
@@ -19034,9 +20826,22 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "lightning",
+      "poison",
+      "thunder"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned",
+      "stunned"
+    ]
   }
 },
 {
@@ -19104,7 +20909,9 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -19157,7 +20964,7 @@
     "hit_points": 88,
     "hit_dice": "16d8+16",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 30.0,
     "unit": null,
     "hover": false,
@@ -19170,9 +20977,20 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "necrotic",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -19237,10 +21055,17 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_vulnerabilities": [
+      "acid"
+    ],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -19292,7 +21117,7 @@
     "armor_class": 13,
     "hit_points": 93,
     "hit_dice": "11d8+44",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -19306,9 +21131,20 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -19361,7 +21197,7 @@
     "hit_points": 110,
     "hit_dice": "11d10+55",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 20.0,
     "unit": null,
     "hover": false,
@@ -19374,9 +21210,23 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "fire",
+      "piercing",
+      "poison",
+      "psychic",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -19496,7 +21346,7 @@
     "armor_class": 15,
     "hit_points": 105,
     "hit_dice": "14d8+42",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -19510,9 +21360,27 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "unconscious"
+    ]
   }
 },
 {
@@ -19632,7 +21500,7 @@
     "armor_class": 14,
     "hit_points": 82,
     "hit_dice": "11d8+33",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -19646,9 +21514,25 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "poisoned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -19768,7 +21652,7 @@
     "armor_class": 13,
     "hit_points": 67,
     "hit_dice": "15d6+15",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -19782,9 +21666,24 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid",
+      "bludgeoning",
+      "lightning"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "exhaustion",
+      "frightened",
+      "prone"
+    ]
   }
 },
 {
@@ -19850,9 +21749,22 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "necrotic"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "exhaustion",
+      "frightened",
+      "poisoned",
+      "prone"
+    ]
   }
 },
 {
@@ -19904,7 +21816,7 @@
     "armor_class": 16,
     "hit_points": 172,
     "hit_dice": "15d12+75",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -19917,10 +21829,26 @@
     "category": "Monsters",
     "alignment": "neutral evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "thunder"
+    ],
+    "damage_immunities": [
+      "acid",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -19972,7 +21900,7 @@
     "armor_class": 17,
     "hit_points": 115,
     "hit_dice": "1d10+60",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -19987,8 +21915,15 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -20056,7 +21991,9 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "unconscious"
+    ]
   }
 },
 {
@@ -20123,7 +22060,9 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "poison"
+    ],
     "condition_immunities": []
   }
 },
@@ -20190,7 +22129,9 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -20244,7 +22185,7 @@
     "armor_class": 15,
     "hit_points": 76,
     "hit_dice": "9d8+36",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -20258,8 +22199,15 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_immunities": [
+      "acid",
+      "lightning"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -20327,8 +22275,12 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "poison"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -20381,7 +22333,7 @@
     "hit_points": 102,
     "hit_dice": "12d8+48",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 40.0,
     "unit": null,
     "hover": false,
@@ -20394,9 +22346,22 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "psychic",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -20872,7 +22837,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -20937,10 +22905,19 @@
     "category": "Monsters",
     "alignment": "lawful evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_vulnerabilities": [
+      "bludgeoning"
+    ],
+    "damage_immunities": [
+      "cold",
+      "necrotic",
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -21008,7 +22985,10 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -21074,9 +23054,23 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "slashing",
+      "thunder"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "fire",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "deafened",
+      "prone",
+      "stunned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -21128,7 +23122,7 @@
     "armor_class": 13,
     "hit_points": 9,
     "hit_dice": "2d8",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -21141,10 +23135,33 @@
     "category": "Monsters",
     "alignment": "neutral evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "radiant"
+    ],
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained"
+    ]
   }
 },
 {
@@ -21210,8 +23227,14 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_immunities": [
+      "fire",
+      "lightning",
+      "psychic"
+    ],
+    "damage_resistances": [
+      "radiant"
+    ],
     "condition_immunities": []
   }
 },
@@ -21278,9 +23301,13 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -21346,9 +23373,18 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "acid"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "exhaustion",
+      "frightened",
+      "prone"
+    ]
   }
 },
 {
@@ -21414,9 +23450,17 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "lightning"
+    ],
+    "damage_resistances": [
+      "acid",
+      "cold",
+      "fire"
+    ],
+    "condition_immunities": [
+      "prone"
+    ]
   }
 },
 {
@@ -21481,10 +23525,24 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -21537,7 +23595,7 @@
     "hit_points": 231,
     "hit_dice": "22d10+110",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 30.0,
     "unit": null,
     "hover": false,
@@ -21550,9 +23608,22 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "psychic",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -21605,7 +23676,7 @@
     "hit_points": 175,
     "hit_dice": "14d12+84",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 60.0,
     "unit": null,
     "hover": false,
@@ -21618,9 +23689,26 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "bludgeoning",
+      "cold",
+      "lightning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "psychic",
+      "radiant"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -21672,7 +23760,7 @@
     "armor_class": 16,
     "hit_points": 104,
     "hit_dice": "16d8+32",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -21686,9 +23774,20 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "paralyzed",
+      "poisoned",
+      "stunned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -21740,7 +23839,7 @@
     "armor_class": 16,
     "hit_points": 84,
     "hit_dice": "13d4+52",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 10.0,
     "unit": null,
@@ -21754,9 +23853,27 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "lightning"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "fire",
+      "force",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "grappled",
+      "paralyzed",
+      "poisoned",
+      "prone",
+      "restrained",
+      "unconscious"
+    ]
   }
 },
 {
@@ -21822,9 +23939,13 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -21876,7 +23997,7 @@
     "armor_class": 14,
     "hit_points": 110,
     "hit_dice": "13d8+52",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -21890,9 +24011,31 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained"
+    ]
   }
 },
 {
@@ -21959,8 +24102,14 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "poison"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "poisoned",
+      "unconscious"
+    ]
   }
 },
 {
@@ -22026,9 +24175,21 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [
+      "fire"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -22148,7 +24309,7 @@
     "armor_class": 16,
     "hit_points": 38,
     "hit_dice": "11d4+22",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -22162,8 +24323,15 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_immunities": [
+      "lightning",
+      "thunder"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -22217,7 +24385,7 @@
     "hit_points": 189,
     "hit_dice": "18d10+90",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 40.0,
     "unit": null,
     "hover": false,
@@ -22230,9 +24398,20 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "cold",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -22298,9 +24477,25 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "fire",
+      "lightning",
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -22353,7 +24548,7 @@
     "hit_points": 171,
     "hit_dice": "18d10+72",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 40.0,
     "unit": null,
     "hover": false,
@@ -22366,9 +24561,23 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "fire",
+      "piercing",
+      "poison",
+      "psychic",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -22488,7 +24697,7 @@
     "armor_class": 18,
     "hit_points": 190,
     "hit_dice": "20d8+100",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -22502,9 +24711,20 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -22828,7 +25048,7 @@
     "armor_class": 15,
     "hit_points": 97,
     "hit_dice": "15d8+30",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -22843,7 +25063,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -22896,7 +25120,7 @@
     "armor_class": 17,
     "hit_points": 149,
     "hit_dice": "13d12+65",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -22909,10 +25133,29 @@
     "category": "Monsters",
     "alignment": "chaotic neutral",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained",
+      "unconscious"
+    ]
   }
 },
 {
@@ -23114,9 +25357,21 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "fire",
+      "poison"
+    ],
+    "damage_resistances": [
+      "necrotic"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -23318,9 +25573,14 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -23590,7 +25850,9 @@
     "alignment": "lawful good",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "lightning"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -23644,7 +25906,7 @@
     "armor_class": 14,
     "hit_points": 84,
     "hit_dice": "13d8+26",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 0.0,
     "unit": null,
@@ -23658,9 +25920,29 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "acid",
+      "bludgeoning",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "prone",
+      "restrained"
+    ]
   }
 },
 {
@@ -23712,7 +25994,7 @@
     "armor_class": 14,
     "hit_points": 40,
     "hit_dice": "9d4+18",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -23726,9 +26008,18 @@
     "alignment": "lawful neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "fire",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -23780,7 +26071,7 @@
     "armor_class": 19,
     "hit_points": 256,
     "hit_dice": "19d12+133",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 40.0,
     "unit": null,
@@ -23794,9 +26085,19 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "thunder"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "cold",
+      "lightning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "frightened"
+    ]
   }
 },
 {
@@ -23849,7 +26150,7 @@
     "hit_points": 105,
     "hit_dice": "10d10+50",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 30.0,
     "unit": null,
     "hover": false,
@@ -23862,9 +26163,21 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -23930,9 +26243,16 @@
     "alignment": "lawful evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "poisoned"
+    ]
   }
 },
 {
@@ -23985,7 +26305,7 @@
     "hit_points": 112,
     "hit_dice": "15d8+45",
     "nonmagical_attack_resistance": false,
-    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_immunity": true,
     "walk": 30.0,
     "unit": null,
     "hover": false,
@@ -23998,9 +26318,21 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damage_resistances": [
+      "acid",
+      "cold",
+      "fire",
+      "lightning",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "frightened"
+    ]
   }
 },
 {
@@ -24052,7 +26384,7 @@
     "armor_class": 16,
     "hit_points": 144,
     "hit_dice": "17d8+68",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -24067,7 +26399,12 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "necrotic",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -24188,7 +26525,7 @@
     "armor_class": 11,
     "hit_points": 58,
     "hit_dice": "9d8+18",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 20.0,
     "unit": null,
@@ -24201,10 +26538,25 @@
     "category": "Monsters",
     "alignment": "lawful evil",
     "languages": [],
-    "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_vulnerabilities": [
+      "fire"
+    ],
+    "damage_immunities": [
+      "necrotic",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -24271,8 +26623,18 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "fire",
+      "piercing"
+    ],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "frightened",
+      "prone"
+    ]
   }
 },
 {
@@ -24324,7 +26686,7 @@
     "armor_class": 15,
     "hit_points": 77,
     "hit_dice": "14d8+14",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -24339,7 +26701,11 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -24392,7 +26758,7 @@
     "armor_class": 15,
     "hit_points": 28,
     "hit_dice": "8d6",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -24407,8 +26773,14 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "frightened"
+    ]
   }
 },
 {
@@ -24473,10 +26845,15 @@
     "category": "Monsters",
     "alignment": "lawful neutral",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "blinded",
+      "deafened"
+    ]
   }
 },
 {
@@ -24541,10 +26918,15 @@
     "category": "Monsters",
     "alignment": "lawful neutral",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "blinded",
+      "deafened"
+    ]
   }
 },
 {
@@ -24610,9 +26992,17 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning"
+    ],
+    "condition_immunities": [
+      "deafened",
+      "exhaustion",
+      "poisoned"
+    ]
   }
 },
 {
@@ -24678,7 +27068,9 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -24746,9 +27138,15 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "necrotic"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "exhaustion",
+      "petrified",
+      "prone"
+    ]
   }
 },
 {
@@ -24950,9 +27348,19 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -25017,7 +27425,9 @@
     "category": "Monsters",
     "alignment": "neutral",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "fire"
+    ],
     "damage_immunities": [],
     "damage_resistances": [],
     "condition_immunities": []
@@ -25155,8 +27565,20 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "prone",
+      "restrained",
+      "stunned"
+    ]
   }
 },
 {
@@ -25290,9 +27712,19 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "poison",
+      "radiant"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -25426,9 +27858,22 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "necrotic",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "exhaustion",
+      "frightened",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ]
   }
 },
 {
@@ -25480,7 +27925,7 @@
     "armor_class": 12,
     "hit_points": 97,
     "hit_dice": "13d8+39",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 30.0,
     "unit": null,
@@ -25493,9 +27938,16 @@
     "category": "Monsters",
     "alignment": "chaotic evil",
     "languages": [],
-    "damage_vulnerabilities": [],
+    "damage_vulnerabilities": [
+      "radiant"
+    ],
     "damage_immunities": [],
-    "damage_resistances": [],
+    "damage_resistances": [
+      "bludgeoning",
+      "necrotic",
+      "piercing",
+      "slashing"
+    ],
     "condition_immunities": []
   }
 },
@@ -25562,9 +28014,15 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "lightning"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "paralyzed"
+    ]
   }
 },
 {
@@ -25632,7 +28090,11 @@
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "frightened"
+    ]
   }
 },
 {
@@ -25767,8 +28229,12 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "bludgeoning"
+    ],
+    "condition_immunities": [
+      "exhaustion"
+    ]
   }
 },
 {
@@ -25834,9 +28300,15 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "acid",
+      "poison",
+      "thunder"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "poisoned"
+    ]
   }
 },
 {
@@ -25902,7 +28374,9 @@
     "alignment": "chaotic evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "fire"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -25956,7 +28430,7 @@
     "armor_class": 16,
     "hit_points": 92,
     "hit_dice": "16d8+20",
-    "nonmagical_attack_resistance": false,
+    "nonmagical_attack_resistance": true,
     "nonmagical_attack_immunity": false,
     "walk": 50.0,
     "unit": null,
@@ -25970,9 +28444,18 @@
     "alignment": "neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "acid",
+      "thunder"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "condition_immunities": [
+      "charmed"
+    ]
   }
 },
 {
@@ -26038,7 +28521,9 @@
     "alignment": "neutral evil",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
     "condition_immunities": []
   }
@@ -26174,9 +28659,14 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "cold"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "frightened"
+    ]
   }
 },
 {
@@ -26242,9 +28732,16 @@
     "alignment": "chaotic neutral",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
+    "damage_immunities": [
+      "lightning"
+    ],
     "damage_resistances": [],
-    "condition_immunities": []
+    "condition_immunities": [
+      "charmed",
+      "exhaustion",
+      "paralyzed",
+      "restrained"
+    ]
   }
 },
 {
@@ -26378,9 +28875,23 @@
     "alignment": "unaligned",
     "languages": [],
     "damage_vulnerabilities": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_immunities": [
+      "cold",
+      "poison"
+    ],
+    "damage_resistances": [
+      "bludgeoning",
+      "fire",
+      "lightning",
+      "piercing",
+      "slashing",
+      "thunder"
+    ],
+    "condition_immunities": [
+      "frightened",
+      "paralyzed",
+      "poisoned"
+    ]
   }
 },
 {
@@ -26515,8 +29026,14 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "cold",
+      "fire"
+    ],
+    "condition_immunities": [
+      "paralyzed",
+      "unconscious"
+    ]
   }
 },
 {
@@ -26583,8 +29100,14 @@
     "languages": [],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
-    "damage_resistances": [],
-    "condition_immunities": []
+    "damage_resistances": [
+      "cold",
+      "fire"
+    ],
+    "condition_immunities": [
+      "paralyzed",
+      "unconscious"
+    ]
   }
 }
 ]

@@ -31,21 +31,22 @@ def main():
         if obj_v2 is not None:
             v1v2_match_count +=1
             #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
-            #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
+            print(obj_v2.key)
+            copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
             #copy_traits(obj_v1, obj_v2)
-            #obj_v2.full_clean()
+            obj_v2.save()
             #obj_v2.save()
 
         ### START LOGIC FOR PARSING V1 DATA ###
 
         if obj_v2 is None:
             #print(obj_v1. name)
-            obj_v2 = obj_v1.as_v2_creature()
-            obj_v2.full_clean()
-            obj_v2.save()
+            #obj_v2 = obj_v1.as_v2_creature()
+            #obj_v2.full_clean()
+            #obj_v2.save()
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
-            #copy_v2_damage_from_v1_monsters(obj_v1,obj_v2)
+            #
             # This requires objects to exist.
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2) # This requires objects to exist.
             #bj_v2.full_clean()
@@ -210,9 +211,9 @@ def copy_v2_scores_from_v1_creature(obj_v1, obj_v2):
     obj_v2.ability_score_charisma = obj_v1.charisma
 
 def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
-    print("slug:{}, di:{}".format(obj_v1.slug, obj_v1.damage_immunities))
-    print("slug:{}, dr:{}".format(obj_v1.slug, obj_v1.damage_resistances))
-    print("slug:{}, dv:{}".format(obj_v1.slug, obj_v1.damage_vulnerabilities))
+    #print("slug:{}, di:{}".format(obj_v1.slug, obj_v1.damage_immunities))
+    #print("slug:{}, dr:{}".format(obj_v1.slug, obj_v1.damage_resistances))
+    #print("slug:{}, dv:{}".format(obj_v1.slug, obj_v1.damage_vulnerabilities))
     
     if obj_v1.damage_immunities!="":
         for di in obj_v1.damage_immunities.replace(";",",").split(','):
@@ -222,7 +223,10 @@ def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
                 obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key='bludgeoning'))
                 obj_v2.damage_immunities.add(v2_models.DamageType.objects.get(key='slashing'))
                 break
-            mapped_di = v2_models.DamageType.objects.filter(key=di.strip().lower())[0]
+            mapped_di_results = v2_models.DamageType.objects.filter(key=di.strip().lower())
+            mapped_di = None
+            if len(mapped_di_results)>0:
+                mapped_di = mapped_di_results[0]
             if mapped_di is not None:
                 obj_v2.damage_immunities.add(mapped_di)
     if obj_v1.damage_resistances!="":
@@ -233,7 +237,10 @@ def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
                 obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key='bludgeoning'))
                 obj_v2.damage_resistances.add(v2_models.DamageType.objects.get(key='slashing'))
                 break
-            mapped_dr = v2_models.DamageType.objects.filter(key=dr.strip().lower())[0]
+            mapped_dr_results = v2_models.DamageType.objects.filter(key=dr.strip().lower())
+            mapped_dr = None
+            if len(mapped_dr_results)>0:
+                mapped_dr = mapped_dr_results[0]
             if mapped_dr is not None:
                 obj_v2.damage_resistances.add(mapped_dr)
     if obj_v1.damage_vulnerabilities!="":
@@ -241,13 +248,42 @@ def copy_v2_damage_from_v1_monsters(obj_v1,obj_v2):
             if obj_v1.pk == "rakshasa":
                 obj_v2.damage_vulnerabilities.add(v2_models.DamageType.objects.get(key='piercing'))
                 return
-            mapped_dv = v2_models.DamageType.objects.filter(key=dv.strip().lower())[0]
+            mapped_dv = None
+            mapped_dv_results = v2_models.DamageType.objects.filter(key=dv.strip().lower())
+            if len(mapped_dv_results)>0:
+                mapped_dv = mapped_dv_results[0]
             if mapped_dv is not None:
                 obj_v2.damage_vulnerabilities.add(mapped_dv)
     
 def copy_v2_condition_from_v1_monsters(obj_v1,obj_v2):
     if obj_v1.condition_immunities!="":
         for ci in obj_v1.condition_immunities.split(','):
+            if "false" in ci.lower():
+                continue
+            if ci == "":
+                continue
+            if 'blindness' in ci:
+                ci='blinded'
+            if 'poison' in ci:
+                ci='poisoned'
+            if 'lightning' in ci:
+                continue
+            if 'blind' in ci:
+                ci = 'blinded'
+            if 'diseased' in ci:
+                continue
+            if 'paralysis' in ci:
+                ci = 'paralyzed'
+            if 'confusion' in ci:
+                continue
+            if 'exhausted' in ci:
+                ci = 'exhaustion'
+            if 'fatigue' in ci:
+                ci = 'exhaustion'
+            if 'Lightform' in ci:
+                ci='exhaustion'
+            if 'mind blank' in ci:
+                ci='charmed'
             if v2_models.Condition.objects.get(key=ci.strip().lower()):
                 obj_v2.condition_immunities.add(v2_models.Condition.objects.get(key=ci.strip().lower()))
 
