@@ -289,7 +289,7 @@ def copy_v2_condition_from_v1_monsters(obj_v1,obj_v2):
 
 def copy_v2_languages_from_v1_monsters(obj_v1,obj_v2):
     for l in obj_v1.languages.split(','):
-        lstring = l.lower().strip()
+        lstring = slugify(l)
         language_looked_up = v2_models.Language.objects.filter(key=lstring)
         if len(language_looked_up)==1:
             obj_v2.languages.add(language_looked_up.first())
