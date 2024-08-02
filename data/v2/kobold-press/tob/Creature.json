@@ -5,8 +5,8 @@
   "fields": {
     "name": "Aboleth, Nihilith",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Void Speech, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 21,
     "ability_score_dexterity": 9,
     "ability_score_constitution": 15,
@@ -97,7 +97,7 @@
   "fields": {
     "name": "Abominable Beauty",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 18,
@@ -152,7 +152,12 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire"
@@ -167,7 +172,7 @@
   "fields": {
     "name": "Accursed Defiler",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands an ancient language, but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 14,
@@ -247,7 +252,7 @@
   "fields": {
     "name": "Adult Cave Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul, Draconic, Dwarvish, Goblin",
     "telepathy_range": null,
     "ability_score_strength": 26,
     "ability_score_dexterity": 12,
@@ -302,7 +307,12 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "dwarvish",
+      "goblin"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -321,7 +331,7 @@
   "fields": {
     "name": "Adult Flame Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Giant, Ignan, Infernal, Orc",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 14,
@@ -376,7 +386,13 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "giant",
+      "infernal",
+      "orc"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire"
@@ -391,7 +407,7 @@
   "fields": {
     "name": "Adult Mithral Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Draconic, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 27,
     "ability_score_dexterity": 18,
@@ -446,7 +462,12 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -468,7 +489,7 @@
   "fields": {
     "name": "Adult Rime Worm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 14,
@@ -539,7 +560,7 @@
   "fields": {
     "name": "Adult Sea Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 25,
     "ability_score_dexterity": 10,
@@ -594,7 +615,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold"
@@ -609,7 +633,7 @@
   "fields": {
     "name": "Adult Void Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 10,
@@ -664,7 +688,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold"
@@ -682,7 +709,7 @@
   "fields": {
     "name": "Adult Wind Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 19,
@@ -737,7 +764,11 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning"
@@ -757,7 +788,7 @@
   "fields": {
     "name": "Al-Aeshma Genie",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Auran, Common, Ignan",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 15,
@@ -812,7 +843,9 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning",
@@ -828,7 +861,7 @@
   "fields": {
     "name": "Ala",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 16,
@@ -883,7 +916,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning",
@@ -902,7 +938,7 @@
   "fields": {
     "name": "Alehouse Drake",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 7,
     "ability_score_dexterity": 16,
@@ -957,7 +993,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -973,7 +1012,7 @@
   "fields": {
     "name": "Algorith",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Celestial, Draconic, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 14,
@@ -1028,7 +1067,12 @@
     "type": "construct",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -1054,7 +1098,7 @@
   "fields": {
     "name": "Alseid",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 17,
@@ -1109,7 +1153,11 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -1122,7 +1170,7 @@
   "fields": {
     "name": "Alseid Grovekeeper",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 17,
@@ -1177,7 +1225,11 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -1190,7 +1242,7 @@
   "fields": {
     "name": "Amphiptere",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 18,
@@ -1258,7 +1310,7 @@
   "fields": {
     "name": "Ancient Flame Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Giant, Ignan, Infernal, Orc",
     "telepathy_range": null,
     "ability_score_strength": 23,
     "ability_score_dexterity": 14,
@@ -1313,7 +1365,13 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "giant",
+      "infernal",
+      "orc"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire"
@@ -1328,7 +1386,7 @@
   "fields": {
     "name": "Ancient Mithral Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Draconic, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 29,
     "ability_score_dexterity": 16,
@@ -1383,7 +1441,12 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -1404,7 +1467,7 @@
   "fields": {
     "name": "Ancient Sea Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Infernal, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 29,
     "ability_score_dexterity": 10,
@@ -1459,7 +1522,12 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "infernal",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold"
@@ -1474,8 +1542,8 @@
   "fields": {
     "name": "Ancient Titan",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Giant, Primordial, Titan, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 27,
     "ability_score_dexterity": 13,
     "ability_score_constitution": 22,
@@ -1529,7 +1597,11 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "neutral good",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -1546,7 +1618,7 @@
   "fields": {
     "name": "Ancient Void Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Draconic, Infernal, Primordial, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 28,
     "ability_score_dexterity": 10,
@@ -1601,7 +1673,13 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "infernal",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold"
@@ -1619,7 +1697,7 @@
   "fields": {
     "name": "Ancient Wind Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Dwarvish, Elvish, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 28,
     "ability_score_dexterity": 19,
@@ -1674,7 +1752,13 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "dwarvish",
+      "elvish",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning"
@@ -1698,7 +1782,7 @@
   "fields": {
     "name": "Andrenjinyi",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Celestial, Giant, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 30,
     "ability_score_dexterity": 17,
@@ -1753,7 +1837,12 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "giant",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "psychic"
@@ -1773,7 +1862,7 @@
   "fields": {
     "name": "Angatra",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "all languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 20,
@@ -1828,7 +1917,27 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "celestial",
+      "common",
+      "deep-speech",
+      "draconic",
+      "druidic",
+      "dwarvish",
+      "elvish",
+      "giant",
+      "gnomish",
+      "goblin",
+      "halfling",
+      "infernal",
+      "orc",
+      "primordial",
+      "sylvan",
+      "thieves-cant",
+      "undercommon",
+      "void-speech"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -1853,7 +1962,7 @@
   "fields": {
     "name": "Angel, Chained",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Celestial, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 16,
@@ -1908,7 +2017,11 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -1926,7 +2039,7 @@
   "fields": {
     "name": "Angler Worm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 5,
@@ -2002,7 +2115,7 @@
   "fields": {
     "name": "Anubian",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Primordial",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 16,
@@ -2057,7 +2170,9 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -2085,8 +2200,8 @@
   "fields": {
     "name": "Apau Perape",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Ape, Infernal, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 21,
     "ability_score_dexterity": 18,
     "ability_score_constitution": 19,
@@ -2140,7 +2255,9 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "infernal"
+    ],
     "damage_vulnerabilities": [
       "cold"
     ],
@@ -2167,8 +2284,8 @@
   "fields": {
     "name": "Arbeyach",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Common, Draconic, Infernal, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 22,
     "ability_score_dexterity": 20,
     "ability_score_constitution": 25,
@@ -2222,7 +2339,12 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -2249,7 +2371,7 @@
   "fields": {
     "name": "Arboreal Grappler",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 16,
@@ -2317,7 +2439,7 @@
   "fields": {
     "name": "Aridni",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Gnoll, Sylvan, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 9,
     "ability_score_dexterity": 21,
@@ -2372,7 +2494,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -2385,7 +2510,7 @@
   "fields": {
     "name": "Asanbosam",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Giant",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 13,
@@ -2440,7 +2565,9 @@
     "type": "aberration",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -2453,7 +2580,7 @@
   "fields": {
     "name": "Ash Drake",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 15,
@@ -2508,7 +2635,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -2526,8 +2656,8 @@
   "fields": {
     "name": "Automata Devil",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Infernal; telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 24,
     "ability_score_dexterity": 17,
     "ability_score_constitution": 20,
@@ -2581,7 +2711,9 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -2604,7 +2736,7 @@
   "fields": {
     "name": "Azza Gremlin",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 5,
     "ability_score_dexterity": 18,
@@ -2659,7 +2791,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning",
@@ -2675,8 +2810,8 @@
   "fields": {
     "name": "Baba Yaga's Horsemen, Black Night",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Common, Infernal; telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 22,
     "ability_score_dexterity": 11,
     "ability_score_constitution": 21,
@@ -2730,7 +2865,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold",
@@ -2755,8 +2893,8 @@
   "fields": {
     "name": "Baba Yaga's Horsemen, Bright Day",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Common, Infernal; telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 22,
     "ability_score_dexterity": 11,
     "ability_score_constitution": 21,
@@ -2810,7 +2948,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning",
@@ -2836,8 +2977,8 @@
   "fields": {
     "name": "Baba Yaga's Horsemen, Red Sun",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Common, Infernal; telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 22,
     "ability_score_dexterity": 11,
     "ability_score_constitution": 21,
@@ -2891,7 +3032,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -2919,7 +3063,7 @@
   "fields": {
     "name": "Bagiennik",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 18,
@@ -2974,7 +3118,9 @@
     "type": "aberration",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -2987,7 +3133,7 @@
   "fields": {
     "name": "Bandit Lord",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "any two languages",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 15,
@@ -3055,7 +3201,7 @@
   "fields": {
     "name": "Bastet Temple Cat",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Nurian, and Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 8,
     "ability_score_dexterity": 19,
@@ -3110,7 +3256,9 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -3123,7 +3271,7 @@
   "fields": {
     "name": "Bearfolk",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 14,
@@ -3178,7 +3326,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic good",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -3191,7 +3342,7 @@
   "fields": {
     "name": "Beggar Ghoul",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Undercommon",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 15,
@@ -3246,7 +3397,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "undercommon"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -3265,7 +3418,7 @@
   "fields": {
     "name": "Behtu",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Behtu, Common, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 16,
@@ -3320,7 +3473,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -3337,7 +3493,7 @@
   "fields": {
     "name": "Beli",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Dwarvish, Giant",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 16,
@@ -3392,7 +3548,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "dwarvish",
+      "giant"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -3409,7 +3569,7 @@
   "fields": {
     "name": "Bereginyas",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 20,
@@ -3464,7 +3624,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning"
@@ -3479,8 +3643,8 @@
   "fields": {
     "name": "Berstuc",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Abyssal, Common, Sylvan; telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 22,
     "ability_score_dexterity": 10,
     "ability_score_constitution": 20,
@@ -3534,7 +3698,10 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning",
@@ -3558,7 +3725,7 @@
   "fields": {
     "name": "Black Knight Commander",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "any two languages",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 10,
@@ -3626,7 +3793,7 @@
   "fields": {
     "name": "Blemmyes",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Giant",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 13,
@@ -3681,7 +3848,9 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -3694,7 +3863,7 @@
   "fields": {
     "name": "Blood Hag",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant, Infernal, Sylvan, Trollkin",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 16,
@@ -3749,7 +3918,12 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant",
+      "infernal",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -3765,7 +3939,7 @@
   "fields": {
     "name": "Boloti",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Primordial, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 20,
@@ -3820,7 +3994,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "primordial",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -3833,7 +4011,7 @@
   "fields": {
     "name": "Bone Collective",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 20,
@@ -3888,7 +4066,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "necrotic",
@@ -3911,7 +4091,7 @@
   "fields": {
     "name": "Bone Crab",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 14,
@@ -3981,7 +4161,7 @@
   "fields": {
     "name": "Bone Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 18,
@@ -4036,7 +4216,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [
       "bludgeoning"
     ],
@@ -4066,7 +4248,7 @@
   "fields": {
     "name": "Bonepowder Ghoul",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul, Draconic, Dwarvish",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 20,
@@ -4121,7 +4303,11 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "dwarvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "necrotic",
@@ -4149,8 +4335,8 @@
   "fields": {
     "name": "Bouda",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Celestial, Infernal, Nurian; telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 19,
     "ability_score_dexterity": 14,
     "ability_score_constitution": 18,
@@ -4204,7 +4390,11 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -4230,7 +4420,7 @@
   "fields": {
     "name": "Broodiken",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 8,
     "ability_score_dexterity": 14,
@@ -4311,7 +4501,7 @@
   "fields": {
     "name": "Bucca",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Darakhul, Dwarvish",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 16,
@@ -4366,7 +4556,9 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "dwarvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -4379,7 +4571,7 @@
   "fields": {
     "name": "Bukavac",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 17,
@@ -4434,7 +4626,9 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "thunder"
@@ -4449,8 +4643,8 @@
   "fields": {
     "name": "Buraq",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Common, Primordial, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 15,
     "ability_score_dexterity": 18,
     "ability_score_constitution": 20,
@@ -4504,7 +4698,11 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "lawful good",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -4526,7 +4724,7 @@
   "fields": {
     "name": "Burrowling",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 16,
@@ -4581,7 +4779,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -4594,7 +4794,7 @@
   "fields": {
     "name": "Cactid",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Sylvan, but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 8,
@@ -4670,7 +4870,7 @@
   "fields": {
     "name": "Cambium",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 16,
@@ -4725,7 +4925,11 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -4743,7 +4947,7 @@
   "fields": {
     "name": "Carrion Beetle",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 12,
@@ -4813,7 +5017,7 @@
   "fields": {
     "name": "Cave Dragon Wyrmling",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Draconic",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 12,
@@ -4868,7 +5072,9 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -4887,7 +5093,7 @@
   "fields": {
     "name": "Cavelight Moss",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 10,
@@ -4970,7 +5176,7 @@
   "fields": {
     "name": "Chelicerae",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 17,
@@ -5043,7 +5249,7 @@
   "fields": {
     "name": "Chernomoi",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 9,
     "ability_score_dexterity": 18,
@@ -5098,7 +5304,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -5115,7 +5325,7 @@
   "fields": {
     "name": "Child Of The Briar",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Briarclick, Common, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 6,
     "ability_score_dexterity": 17,
@@ -5170,7 +5380,10 @@
     "type": "plant",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -5185,7 +5398,7 @@
   "fields": {
     "name": "Chort Devil",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Draconic, Infernal, Primordial; telepathy (120 ft.)",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 20,
@@ -5240,7 +5453,12 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold",
@@ -5263,7 +5481,7 @@
   "fields": {
     "name": "Chronalmental",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 1,
     "ability_score_dexterity": 20,
@@ -5318,7 +5536,10 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "unaligned",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -5342,7 +5563,7 @@
   "fields": {
     "name": "Cikavak",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Common; telepathy (touch)",
     "telepathy_range": null,
     "ability_score_strength": 4,
     "ability_score_dexterity": 15,
@@ -5414,7 +5635,7 @@
   "fields": {
     "name": "City Watch Captain",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "one language (usually Common)",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 16,
@@ -5469,7 +5690,27 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "celestial",
+      "common",
+      "deep-speech",
+      "draconic",
+      "druidic",
+      "dwarvish",
+      "elvish",
+      "giant",
+      "gnomish",
+      "goblin",
+      "halfling",
+      "infernal",
+      "orc",
+      "primordial",
+      "sylvan",
+      "thieves-cant",
+      "undercommon",
+      "void-speech"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -5482,7 +5723,7 @@
   "fields": {
     "name": "Clockwork Abomination",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 12,
@@ -5537,7 +5778,10 @@
     "type": "construct",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -5566,8 +5810,8 @@
   "fields": {
     "name": "Clockwork Beetle",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "understands Common, telepathy 100 ft. (creator only)",
+    "telepathy_range": 100.0,
     "ability_score_strength": 8,
     "ability_score_dexterity": 16,
     "ability_score_constitution": 10,
@@ -5644,7 +5888,7 @@
   "fields": {
     "name": "Clockwork Beetle Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 8,
     "ability_score_dexterity": 16,
@@ -5727,7 +5971,7 @@
   "fields": {
     "name": "Clockwork Hound",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Common",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 15,
@@ -5805,7 +6049,7 @@
   "fields": {
     "name": "Clockwork Huntsman",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Common",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 14,
@@ -5883,7 +6127,7 @@
   "fields": {
     "name": "Clockwork Myrmidon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Common",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 14,
@@ -5961,7 +6205,7 @@
   "fields": {
     "name": "Clockwork Watchman",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 12,
@@ -6016,7 +6260,9 @@
     "type": "construct",
     "category": "Monsters",
     "alignment": "unaligned",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison",
@@ -6039,7 +6285,7 @@
   "fields": {
     "name": "Clurichaun",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 12,
@@ -6094,7 +6340,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -6110,7 +6360,7 @@
   "fields": {
     "name": "Cobbleswarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 11,
@@ -6189,7 +6439,7 @@
   "fields": {
     "name": "Coral Drake",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Draconic",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 1,
@@ -6244,7 +6494,9 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -6264,7 +6516,7 @@
   "fields": {
     "name": "Corpse Mound",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Understands Common but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 11,
@@ -6341,7 +6593,7 @@
   "fields": {
     "name": "Corrupting Ooze",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 10,
@@ -6422,8 +6674,8 @@
   "fields": {
     "name": "Crimson Drake",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Draconic, telepathy 60 ft.",
+    "telepathy_range": 60.0,
     "ability_score_strength": 10,
     "ability_score_dexterity": 14,
     "ability_score_constitution": 14,
@@ -6477,7 +6729,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire"
@@ -6495,8 +6750,8 @@
   "fields": {
     "name": "Crystalline Devil",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Common, Infernal, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 18,
     "ability_score_dexterity": 12,
     "ability_score_constitution": 18,
@@ -6550,7 +6805,11 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -6574,8 +6833,8 @@
   "fields": {
     "name": "Dau",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Deep Speech, Primordial, Sylvan, telepathy 60 ft.",
+    "telepathy_range": 60.0,
     "ability_score_strength": 7,
     "ability_score_dexterity": 17,
     "ability_score_constitution": 14,
@@ -6629,7 +6888,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "primordial",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -6642,7 +6904,7 @@
   "fields": {
     "name": "Death Butterfly Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "",
     "telepathy_range": null,
     "ability_score_strength": 1,
     "ability_score_dexterity": 13,
@@ -6724,7 +6986,7 @@
   "fields": {
     "name": "Deathcap Myconid",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 10,
@@ -6792,7 +7054,7 @@
   "fields": {
     "name": "Deathwisp",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "the languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 6,
     "ability_score_dexterity": 20,
@@ -6881,7 +7143,7 @@
   "fields": {
     "name": "Deep Drake",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul, Draconic, Undercommon",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 19,
@@ -6936,7 +7198,11 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "undercommon"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "necrotic"
@@ -6954,7 +7220,7 @@
   "fields": {
     "name": "Deep One",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 12,
@@ -7009,7 +7275,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -7026,7 +7294,7 @@
   "fields": {
     "name": "Deep One Archimandrite",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 15,
@@ -7081,7 +7349,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -7099,7 +7369,7 @@
   "fields": {
     "name": "Deep One Hybrid Priest",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 14,
@@ -7154,7 +7424,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -7171,7 +7443,7 @@
   "fields": {
     "name": "Degenerate Titan",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Titan",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 6,
@@ -7239,7 +7511,7 @@
   "fields": {
     "name": "Derro Fetal Savant",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 1,
     "ability_score_dexterity": 1,
@@ -7312,7 +7584,7 @@
   "fields": {
     "name": "Derro Shadow Antipaladin",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Derro, Undercommon",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 18,
@@ -7367,7 +7639,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "undercommon"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -7380,7 +7654,7 @@
   "fields": {
     "name": "Desert Giant",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant",
     "telepathy_range": null,
     "ability_score_strength": 27,
     "ability_score_dexterity": 10,
@@ -7435,7 +7709,10 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire"
@@ -7450,7 +7727,7 @@
   "fields": {
     "name": "Devilbound Gnomish Prince",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Infernal, Gnomish",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 14,
@@ -7505,7 +7782,11 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "any evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "gnomish",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -7527,7 +7808,7 @@
   "fields": {
     "name": "Dipsa",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 3,
     "ability_score_dexterity": 17,
@@ -7604,7 +7885,7 @@
   "fields": {
     "name": "Dissimortuum",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 10,
@@ -7659,7 +7940,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "necrotic",
@@ -7683,7 +7966,7 @@
   "fields": {
     "name": "Dogmole",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 17,
@@ -7751,7 +8034,7 @@
   "fields": {
     "name": "Dogmole Juggernaut",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 14,
@@ -7819,7 +8102,7 @@
   "fields": {
     "name": "Domovoi",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Dwarvish, Elvish",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 13,
@@ -7874,7 +8157,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "dwarvish",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -7890,7 +8177,7 @@
   "fields": {
     "name": "Doppelrat",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 2,
     "ability_score_dexterity": 17,
@@ -7958,7 +8245,7 @@
   "fields": {
     "name": "Dorreq",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 19,
@@ -8030,7 +8317,7 @@
   "fields": {
     "name": "Dragon Eel",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 26,
     "ability_score_dexterity": 12,
@@ -8085,7 +8372,11 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning"
@@ -8103,7 +8394,7 @@
   "fields": {
     "name": "Dragonleaf Tree",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "can understand the language of its creator or designated master",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 10,
@@ -8174,7 +8465,7 @@
   "fields": {
     "name": "Drakon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 19,
@@ -8246,8 +8537,8 @@
   "fields": {
     "name": "Dream Eater",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Common, Draconic, Infernal, telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 15,
     "ability_score_dexterity": 18,
     "ability_score_constitution": 17,
@@ -8301,7 +8592,12 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -8325,7 +8621,7 @@
   "fields": {
     "name": "Drowned Maiden",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 16,
@@ -8380,7 +8676,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "necrotic",
@@ -8406,7 +8704,7 @@
   "fields": {
     "name": "Dullahan",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 18,
@@ -8461,7 +8759,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "necrotic"
@@ -8484,7 +8786,7 @@
   "fields": {
     "name": "Dune Mimic",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 8,
@@ -8556,7 +8858,7 @@
   "fields": {
     "name": "Duskthorn Dryad",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 20,
@@ -8611,7 +8913,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -8624,7 +8930,7 @@
   "fields": {
     "name": "Dust Goblin",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Goblin",
     "telepathy_range": null,
     "ability_score_strength": 8,
     "ability_score_dexterity": 16,
@@ -8679,7 +8985,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "goblin"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -8695,7 +9004,7 @@
   "fields": {
     "name": "Dwarven Ringmage",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Dwarvish",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 14,
@@ -8750,7 +9059,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "any",
-    "languages": [],
+    "languages": [
+      "common",
+      "dwarvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -8765,7 +9077,7 @@
   "fields": {
     "name": "Eala",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 16,
@@ -8835,8 +9147,8 @@
   "fields": {
     "name": "Eater Of Dust (Yakat-Shi)",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "understands Abyssal, Common, Infernal, Void Speech, but cannot speak; telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 20,
     "ability_score_dexterity": 14,
     "ability_score_constitution": 20,
@@ -8890,7 +9202,10 @@
     "type": "aberration",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -8913,7 +9228,7 @@
   "fields": {
     "name": "Edimmu",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 1,
     "ability_score_dexterity": 19,
@@ -9004,7 +9319,7 @@
   "fields": {
     "name": "Eel Hound",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 16,
@@ -9059,7 +9374,9 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -9072,7 +9389,7 @@
   "fields": {
     "name": "Einherjar",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 16,
@@ -9127,7 +9444,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -9144,7 +9464,7 @@
   "fields": {
     "name": "Elder Shadow Drake",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 13,
@@ -9199,7 +9519,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [
       "radiant"
     ],
@@ -9219,7 +9542,7 @@
   "fields": {
     "name": "Eleinomae",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Aquan, Common, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 19,
@@ -9274,7 +9597,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -9287,7 +9614,7 @@
   "fields": {
     "name": "Elemental Locus",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Primordial",
     "telepathy_range": null,
     "ability_score_strength": 28,
     "ability_score_dexterity": 1,
@@ -9342,7 +9669,9 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -9376,7 +9705,7 @@
   "fields": {
     "name": "Elvish Veteran Archer",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 16,
@@ -9431,7 +9760,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic good or chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -9444,8 +9776,8 @@
   "fields": {
     "name": "Emerald Eye",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Draconic, telepathy 250 ft.",
+    "telepathy_range": 250.0,
     "ability_score_strength": 3,
     "ability_score_dexterity": 15,
     "ability_score_constitution": 14,
@@ -9499,7 +9831,10 @@
     "type": "construct",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -9526,7 +9861,7 @@
   "fields": {
     "name": "Emerald Order Cult Leader",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "any three languages",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 10,
@@ -9598,7 +9933,7 @@
   "fields": {
     "name": "Empty Cloak",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Elvish and Umbral but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 14,
@@ -9679,7 +10014,7 @@
   "fields": {
     "name": "Eonic Drifter",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Eonic, Giant, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 9,
     "ability_score_dexterity": 14,
@@ -9734,7 +10069,11 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -9747,7 +10086,7 @@
   "fields": {
     "name": "Erina Defender",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Erina",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 14,
@@ -9802,7 +10141,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -9817,7 +10158,7 @@
   "fields": {
     "name": "Erina Scrounger",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Erina",
     "telepathy_range": null,
     "ability_score_strength": 9,
     "ability_score_dexterity": 12,
@@ -9872,7 +10213,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -9887,7 +10230,7 @@
   "fields": {
     "name": "Eye Golem",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the language of its creator, but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 9,
@@ -9969,7 +10312,7 @@
   "fields": {
     "name": "Far Darrig",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 16,
@@ -10024,7 +10367,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -10037,8 +10384,8 @@
   "fields": {
     "name": "Fate Eater",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 18,
     "ability_score_dexterity": 12,
     "ability_score_constitution": 14,
@@ -10108,7 +10455,7 @@
   "fields": {
     "name": "Fear Smith",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 17,
@@ -10163,7 +10510,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -10182,7 +10533,7 @@
   "fields": {
     "name": "Fellforged",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "any languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 12,
@@ -10262,7 +10613,7 @@
   "fields": {
     "name": "Fext",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "the languages spoken by its patron",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 16,
@@ -10340,7 +10691,7 @@
   "fields": {
     "name": "Feyward Tree",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 26,
     "ability_score_dexterity": 10,
@@ -10421,7 +10772,7 @@
   "fields": {
     "name": "Fidele Angel",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Celestial, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 18,
@@ -10476,7 +10827,11 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "lawful good",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -10503,7 +10858,7 @@
   "fields": {
     "name": "Fire Dancer Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Ignan",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 20,
@@ -10587,7 +10942,7 @@
   "fields": {
     "name": "Firebird",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Elvish, Primordial, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 19,
@@ -10642,7 +10997,13 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "neutral good",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "elvish",
+      "primordial",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire"
@@ -10666,7 +11027,7 @@
   "fields": {
     "name": "Firegeist",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Primordial",
     "telepathy_range": null,
     "ability_score_strength": 7,
     "ability_score_dexterity": 18,
@@ -10721,7 +11082,9 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -10746,7 +11109,7 @@
   "fields": {
     "name": "Flab Giant",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Dwarvish, Giant",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 6,
@@ -10801,7 +11164,10 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "dwarvish",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -10818,7 +11184,7 @@
   "fields": {
     "name": "Flame Dragon Wyrmling",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Ignan",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 14,
@@ -10873,7 +11239,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire"
@@ -10888,7 +11257,7 @@
   "fields": {
     "name": "Flutterflesh",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 18,
@@ -10943,7 +11312,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [
       "radiant"
     ],
@@ -10974,7 +11345,7 @@
   "fields": {
     "name": "Folk Of Leng",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 15,
@@ -11029,7 +11400,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "necrotic"
@@ -11048,7 +11421,7 @@
   "fields": {
     "name": "Forest Marauder",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Giant, Orc, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 10,
@@ -11103,7 +11476,11 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "giant",
+      "orc",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -11116,7 +11493,7 @@
   "fields": {
     "name": "Fraughashar",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 8,
     "ability_score_dexterity": 14,
@@ -11171,7 +11548,9 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold"
@@ -11186,7 +11565,7 @@
   "fields": {
     "name": "Frostveil",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 20,
@@ -11268,7 +11647,7 @@
   "fields": {
     "name": "Garroter Crab",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 7,
     "ability_score_dexterity": 14,
@@ -11341,7 +11720,7 @@
   "fields": {
     "name": "Gbahali (Postosuchus)",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 14,
@@ -11409,7 +11788,7 @@
   "fields": {
     "name": "Gearforged Templar",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 9,
@@ -11464,7 +11843,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -11488,7 +11869,7 @@
   "fields": {
     "name": "Gerridae",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 15,
@@ -11556,7 +11937,7 @@
   "fields": {
     "name": "Ghost Knight",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 15,
@@ -11611,7 +11992,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -11632,7 +12015,7 @@
   "fields": {
     "name": "Ghostwalk Spider",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Undercommon but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 20,
@@ -11704,7 +12087,7 @@
   "fields": {
     "name": "Ghoul, Darakhul",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 17,
@@ -11759,7 +12142,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -11780,7 +12165,7 @@
   "fields": {
     "name": "Ghoul, Imperial",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul, Undercommon",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 14,
@@ -11835,7 +12220,10 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "undercommon"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -11854,7 +12242,7 @@
   "fields": {
     "name": "Ghoul, Iron",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul, Undercommon",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 16,
@@ -11909,7 +12297,10 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "undercommon"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -11928,7 +12319,7 @@
   "fields": {
     "name": "Giant Ant",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 13,
@@ -11996,7 +12387,7 @@
   "fields": {
     "name": "Giant Ant Queen",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 13,
@@ -12064,7 +12455,7 @@
   "fields": {
     "name": "Gilded Devil",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Draconic, Infernal; telepathy (120 ft.)",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 15,
@@ -12119,7 +12510,11 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -12142,7 +12537,7 @@
   "fields": {
     "name": "Glass Gator",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 14,
@@ -12210,7 +12605,7 @@
   "fields": {
     "name": "Gnarljak",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 22,
@@ -12296,7 +12691,7 @@
   "fields": {
     "name": "Gnoll Havoc Runner",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Gnoll",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 14,
@@ -12364,7 +12759,7 @@
   "fields": {
     "name": "Goat-Man",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant, Trollkin, but cannot speak",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 14,
@@ -12419,7 +12814,10 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -12439,7 +12837,7 @@
   "fields": {
     "name": "Gray Thirster",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands all languages it knew in life but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 16,
@@ -12494,7 +12892,27 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "celestial",
+      "common",
+      "deep-speech",
+      "draconic",
+      "druidic",
+      "dwarvish",
+      "elvish",
+      "giant",
+      "gnomish",
+      "goblin",
+      "halfling",
+      "infernal",
+      "orc",
+      "primordial",
+      "sylvan",
+      "thieves-cant",
+      "undercommon",
+      "void-speech"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -12518,7 +12936,7 @@
   "fields": {
     "name": "Greater Death Butterfly Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "",
     "telepathy_range": null,
     "ability_score_strength": 1,
     "ability_score_dexterity": 16,
@@ -12599,8 +13017,8 @@
   "fields": {
     "name": "Grim Jester",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Abyssal, Celestial, Common, Gnomish, telepathy 60 ft.",
+    "telepathy_range": 60.0,
     "ability_score_strength": 14,
     "ability_score_dexterity": 22,
     "ability_score_constitution": 18,
@@ -12654,7 +13072,12 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "celestial",
+      "common",
+      "gnomish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -12681,7 +13104,7 @@
   "fields": {
     "name": "Gug",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Deep Speech, Giant, Undercommon",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 10,
@@ -12736,7 +13159,10 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "giant",
+      "undercommon"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -12755,7 +13181,7 @@
   "fields": {
     "name": "Gypsosphinx",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Abyssal, Common, Darakhul, Sphinx",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 14,
@@ -12810,7 +13236,10 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison",
@@ -12832,8 +13261,8 @@
   "fields": {
     "name": "Haugbui",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "the languages it spoke in life; telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 18,
     "ability_score_dexterity": 17,
     "ability_score_constitution": 18,
@@ -12915,7 +13344,7 @@
   "fields": {
     "name": "Herald Of Blood",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Infernal, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 12,
@@ -12970,7 +13399,11 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -12995,7 +13428,7 @@
   "fields": {
     "name": "Herald Of Darkness",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Goblin, Infernal, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 14,
@@ -13050,7 +13483,13 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "goblin",
+      "infernal",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold",
@@ -13077,7 +13516,7 @@
   "fields": {
     "name": "Hoard Golem",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the language of its creator but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 15,
@@ -13158,7 +13597,7 @@
   "fields": {
     "name": "Horakh",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Undercommon",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 19,
@@ -13226,7 +13665,7 @@
   "fields": {
     "name": "Hound Of The Night",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Elvish and Umbral but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 16,
@@ -13298,7 +13737,7 @@
   "fields": {
     "name": "Hraesvelgr The Corpse Swallower",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Auran, Common, Giant (can't speak in roc form)",
     "telepathy_range": null,
     "ability_score_strength": 25,
     "ability_score_dexterity": 10,
@@ -13353,7 +13792,9 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -13376,7 +13817,7 @@
   "fields": {
     "name": "Hulking Whelp",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 10,
@@ -13448,7 +13889,7 @@
   "fields": {
     "name": "Hundun",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Celestial and Primordial, but cannot speak intelligibly",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 14,
@@ -13533,7 +13974,7 @@
   "fields": {
     "name": "Ia'affrat",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Infernal, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 3,
     "ability_score_dexterity": 21,
@@ -13588,7 +14029,12 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "infernal",
+      "primordial"
+    ],
     "damage_vulnerabilities": [
       "cold"
     ],
@@ -13618,7 +14064,7 @@
   "fields": {
     "name": "Ice Maiden",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 17,
@@ -13673,7 +14119,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -13694,8 +14144,8 @@
   "fields": {
     "name": "Idolic Deity",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "telepathy 60 ft.",
+    "telepathy_range": 60.0,
     "ability_score_strength": 14,
     "ability_score_dexterity": 20,
     "ability_score_constitution": 18,
@@ -13778,7 +14228,7 @@
   "fields": {
     "name": "Imy-Ut Ushabti",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common (Ancient Nurian)",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 14,
@@ -13853,7 +14303,7 @@
   "fields": {
     "name": "Ink Devil",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Draconic, Infernal; telepathy (120 ft.)",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 18,
@@ -13908,7 +14358,11 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -13931,7 +14385,7 @@
   "fields": {
     "name": "Isonade",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Aquan and Elvish, but cannot speak",
     "telepathy_range": null,
     "ability_score_strength": 30,
     "ability_score_dexterity": 14,
@@ -13999,7 +14453,7 @@
   "fields": {
     "name": "Jaculus",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 18,
@@ -14054,7 +14508,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -14070,7 +14527,7 @@
   "fields": {
     "name": "J'ba Fofi Spider",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 17,
@@ -14138,7 +14595,7 @@
   "fields": {
     "name": "Jotun Giant",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant",
     "telepathy_range": null,
     "ability_score_strength": 30,
     "ability_score_dexterity": 8,
@@ -14193,7 +14650,10 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -14210,7 +14670,7 @@
   "fields": {
     "name": "Kalke",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Abyssal, Common, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 8,
     "ability_score_dexterity": 17,
@@ -14265,7 +14725,11 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -14278,7 +14742,7 @@
   "fields": {
     "name": "Kikimora",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 18,
@@ -14333,7 +14797,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -14349,7 +14816,7 @@
   "fields": {
     "name": "Kishi Demon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Draconic, Infernal, telepathy",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 20,
@@ -14404,7 +14871,12 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -14429,7 +14901,7 @@
   "fields": {
     "name": "Kobold Alchemist",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 7,
     "ability_score_dexterity": 16,
@@ -14484,7 +14956,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -14501,7 +14976,7 @@
   "fields": {
     "name": "Kobold Chieftain",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 17,
@@ -14556,7 +15031,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -14572,7 +15050,7 @@
   "fields": {
     "name": "Kobold Trapsmith",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 7,
     "ability_score_dexterity": 16,
@@ -14627,7 +15105,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -14640,7 +15121,7 @@
   "fields": {
     "name": "Kongamato",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 18,
@@ -14708,8 +15189,8 @@
   "fields": {
     "name": "Koralk (Harvester Devil)",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Infernal, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 16,
     "ability_score_dexterity": 13,
     "ability_score_constitution": 17,
@@ -14763,7 +15244,9 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -14786,7 +15269,7 @@
   "fields": {
     "name": "Koschei",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Abyssal, Common, Celestial, Dwarvish, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 12,
@@ -14841,7 +15324,13 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "celestial",
+      "common",
+      "dwarvish",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -14866,7 +15355,7 @@
   "fields": {
     "name": "Kot Bayun",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 16,
@@ -14921,7 +15410,10 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -14934,7 +15426,7 @@
   "fields": {
     "name": "Krake Spawn",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Infernal, Primordial, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 12,
@@ -14989,7 +15481,11 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "infernal",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold",
@@ -15009,7 +15505,7 @@
   "fields": {
     "name": "Lake Troll",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 13,
@@ -15064,7 +15560,10 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -15077,8 +15576,8 @@
   "fields": {
     "name": "Lantern Dragonette",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Draconic, Elvish, Primordial; telepathy 60 ft.",
+    "telepathy_range": 60.0,
     "ability_score_strength": 7,
     "ability_score_dexterity": 12,
     "ability_score_constitution": 13,
@@ -15132,7 +15631,11 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -15148,7 +15651,7 @@
   "fields": {
     "name": "Lemurfolk",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Lemurfolk",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 15,
@@ -15203,7 +15706,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -15216,7 +15721,7 @@
   "fields": {
     "name": "Lemurfolk Greyfur",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Lemurfolk",
     "telepathy_range": null,
     "ability_score_strength": 9,
     "ability_score_dexterity": 16,
@@ -15271,7 +15776,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -15284,7 +15791,7 @@
   "fields": {
     "name": "Leshy",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 12,
@@ -15339,7 +15846,11 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -15352,7 +15863,7 @@
   "fields": {
     "name": "Library Automaton",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Machine Speech",
     "telepathy_range": null,
     "ability_score_strength": 8,
     "ability_score_dexterity": 13,
@@ -15407,7 +15918,9 @@
     "type": "construct",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -15425,7 +15938,7 @@
   "fields": {
     "name": "Lich Hound",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Darakhul",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 18,
@@ -15502,7 +16015,7 @@
   "fields": {
     "name": "Likho",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Goblin, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 18,
@@ -15557,7 +16070,10 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "goblin"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -15570,7 +16086,7 @@
   "fields": {
     "name": "Lindwurm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 20,
@@ -15646,7 +16162,7 @@
   "fields": {
     "name": "Liosalfar",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Celestial, Primordial, Elvish, Giant",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 25,
@@ -15701,7 +16217,13 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "elvish",
+      "giant",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison",
@@ -15738,7 +16260,7 @@
   "fields": {
     "name": "Living Wick",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "shares a telepathic link with the individual that lit its wick",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 10,
@@ -15821,7 +16343,7 @@
   "fields": {
     "name": "Lorelei",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 21,
@@ -15876,7 +16398,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -15889,7 +16414,7 @@
   "fields": {
     "name": "Loxoda",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Loxodan",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 12,
@@ -15957,8 +16482,8 @@
   "fields": {
     "name": "Lunar Devil",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Draconic, Elvish, Infernal, Sylvan, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 21,
     "ability_score_dexterity": 21,
     "ability_score_constitution": 20,
@@ -16012,7 +16537,13 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "draconic",
+      "elvish",
+      "infernal",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -16035,7 +16566,7 @@
   "fields": {
     "name": "Mahoru",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 19,
@@ -16103,8 +16634,8 @@
   "fields": {
     "name": "Malakbel",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Abyssal, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 14,
     "ability_score_dexterity": 17,
     "ability_score_constitution": 19,
@@ -16158,7 +16689,9 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "abyssal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -16184,7 +16717,7 @@
   "fields": {
     "name": "Mallqui",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "the languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 9,
@@ -16267,7 +16800,7 @@
   "fields": {
     "name": "Malphas (Storm Crow)",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant, Ravenfolk, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 19,
@@ -16322,7 +16855,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -16335,7 +16872,7 @@
   "fields": {
     "name": "Mamura",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Goblin, Sylvan, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 8,
     "ability_score_dexterity": 18,
@@ -16390,7 +16927,12 @@
     "type": "aberration",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "goblin",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -16407,7 +16949,7 @@
   "fields": {
     "name": "Manabane Scarab Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 3,
     "ability_score_dexterity": 16,
@@ -16487,7 +17029,7 @@
   "fields": {
     "name": "Map Mimic",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 15,
@@ -16559,7 +17101,7 @@
   "fields": {
     "name": "Mask Wight",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant, Infernal",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 18,
@@ -16614,7 +17156,11 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant",
+      "infernal"
+    ],
     "damage_vulnerabilities": [
       "radiant"
     ],
@@ -16648,7 +17194,7 @@
   "fields": {
     "name": "Mavka",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Infernal, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 15,
@@ -16703,7 +17249,11 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "infernal",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold",
@@ -16726,7 +17276,7 @@
   "fields": {
     "name": "Mbielu",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 14,
@@ -16794,7 +17344,7 @@
   "fields": {
     "name": "Mi-Go",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Mi-go, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 19,
@@ -16849,7 +17399,9 @@
     "type": "plant",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -16865,7 +17417,7 @@
   "fields": {
     "name": "Millitaur",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 14,
@@ -16920,7 +17472,9 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -16940,7 +17494,7 @@
   "fields": {
     "name": "Mindrot Thrall",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Common but cannot speak",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 14,
@@ -17019,7 +17573,7 @@
   "fields": {
     "name": "Mirager",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 16,
@@ -17074,7 +17628,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -17087,7 +17644,7 @@
   "fields": {
     "name": "Miremal",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Sylvan, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 16,
@@ -17142,7 +17699,9 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -17155,7 +17714,7 @@
   "fields": {
     "name": "Mirror Hag",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 16,
@@ -17210,7 +17769,9 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -17228,7 +17789,7 @@
   "fields": {
     "name": "Mngwa",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Sylvan, can speak with felines",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 17,
@@ -17283,7 +17844,10 @@
     "type": "aberration",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -17296,7 +17860,7 @@
   "fields": {
     "name": "Monolith Champion",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Elvish, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 12,
@@ -17351,7 +17915,9 @@
     "type": "construct",
     "category": "Monsters",
     "alignment": "unaligned",
-    "languages": [],
+    "languages": [
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -17375,7 +17941,7 @@
   "fields": {
     "name": "Monolith Footman",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Elvish, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 12,
@@ -17430,7 +17996,9 @@
     "type": "construct",
     "category": "Monsters",
     "alignment": "unaligned",
-    "languages": [],
+    "languages": [
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -17454,7 +18022,7 @@
   "fields": {
     "name": "Mordant Snare",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 23,
     "ability_score_dexterity": 16,
@@ -17509,7 +18077,10 @@
     "type": "aberration",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid"
@@ -17530,7 +18101,7 @@
   "fields": {
     "name": "Morphoi",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 16,
@@ -17585,7 +18156,9 @@
     "type": "plant",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -17598,7 +18171,7 @@
   "fields": {
     "name": "Moss Lurker",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Giant, Sylvan, Trollkin",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 14,
@@ -17653,7 +18226,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "giant",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -17672,7 +18248,7 @@
   "fields": {
     "name": "Myling",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 10,
@@ -17727,7 +18303,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "necrotic",
@@ -17753,7 +18331,7 @@
   "fields": {
     "name": "Naina",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul, Draconic, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 16,
@@ -17808,7 +18386,12 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -17829,7 +18412,7 @@
   "fields": {
     "name": "Ngobou",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 9,
@@ -17897,7 +18480,7 @@
   "fields": {
     "name": "Nichny",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Elvish, Primordial, Sylvan, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 19,
@@ -17952,7 +18535,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "elvish",
+      "primordial",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -17981,7 +18568,7 @@
   "fields": {
     "name": "Night Scorpion",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 14,
@@ -18049,8 +18636,8 @@
   "fields": {
     "name": "Nightgarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Giant, Goblin, telepathy 200 ft. (with falsemen only)",
+    "telepathy_range": 200.0,
     "ability_score_strength": 20,
     "ability_score_dexterity": 14,
     "ability_score_constitution": 18,
@@ -18104,7 +18691,11 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant",
+      "goblin"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -18123,7 +18714,7 @@
   "fields": {
     "name": "Nihilethic Zombie",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understand Void Speech and the languages it knew in life but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 6,
@@ -18204,7 +18795,7 @@
   "fields": {
     "name": "Nkosi",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 16,
@@ -18259,7 +18850,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -18272,7 +18865,7 @@
   "fields": {
     "name": "Nkosi Pridelord",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 18,
@@ -18327,7 +18920,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -18340,7 +18935,7 @@
   "fields": {
     "name": "Nkosi War Ostrich",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 12,
@@ -18408,7 +19003,7 @@
   "fields": {
     "name": "Noctiny",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, plus the language spoken by the noctini's fext master",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 13,
@@ -18463,7 +19058,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -18478,7 +19075,7 @@
   "fields": {
     "name": "Oculo Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Common but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 20,
@@ -18558,7 +19155,7 @@
   "fields": {
     "name": "Ogre Chieftain, Corrupted",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Giant",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 8,
@@ -18613,7 +19210,10 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -18626,8 +19226,8 @@
   "fields": {
     "name": "Oozasis",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "understands all languages but can't speak, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 18,
     "ability_score_dexterity": 5,
     "ability_score_constitution": 20,
@@ -18681,7 +19281,27 @@
     "type": "ooze",
     "category": "Monsters",
     "alignment": "unaligned",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "celestial",
+      "common",
+      "deep-speech",
+      "draconic",
+      "druidic",
+      "dwarvish",
+      "elvish",
+      "giant",
+      "gnomish",
+      "goblin",
+      "halfling",
+      "infernal",
+      "orc",
+      "primordial",
+      "sylvan",
+      "thieves-cant",
+      "undercommon",
+      "void-speech"
+    ],
     "damage_vulnerabilities": [
       "thunder"
     ],
@@ -18711,8 +19331,8 @@
   "fields": {
     "name": "Orobas Devil",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Darakhul, Draconic, Giant, Infernal, Undercommon, Void Speech; telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 26,
     "ability_score_dexterity": 14,
     "ability_score_constitution": 28,
@@ -18766,7 +19386,13 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "draconic",
+      "giant",
+      "infernal",
+      "undercommon"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -18790,8 +19416,8 @@
   "fields": {
     "name": "Ostinato",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "telepathy 200 ft.",
+    "telepathy_range": 200.0,
     "ability_score_strength": 1,
     "ability_score_dexterity": 20,
     "ability_score_constitution": 15,
@@ -18880,7 +19506,7 @@
   "fields": {
     "name": "Owl Harpy",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Abyssal, Giant",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 17,
@@ -18935,7 +19561,11 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "common",
+      "giant"
+    ],
     "damage_vulnerabilities": [
       "thunder"
     ],
@@ -18950,7 +19580,7 @@
   "fields": {
     "name": "Paper Drake",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Dwarvish, Elvish",
     "telepathy_range": null,
     "ability_score_strength": 7,
     "ability_score_dexterity": 17,
@@ -19005,7 +19635,12 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "dwarvish",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -19021,7 +19656,7 @@
   "fields": {
     "name": "Pombero",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 16,
@@ -19076,7 +19711,9 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -19089,7 +19726,7 @@
   "fields": {
     "name": "Possessed Pillar",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the languages of its creator but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 8,
@@ -19170,7 +19807,7 @@
   "fields": {
     "name": "Prismatic Beetle Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 3,
     "ability_score_dexterity": 16,
@@ -19250,8 +19887,8 @@
   "fields": {
     "name": "Psoglav Demon",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Infernal; telepathy 60 ft.",
+    "telepathy_range": 60.0,
     "ability_score_strength": 21,
     "ability_score_dexterity": 23,
     "ability_score_constitution": 20,
@@ -19305,7 +19942,9 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -19326,7 +19965,7 @@
   "fields": {
     "name": "Putrid Haunt",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 8,
@@ -19404,7 +20043,7 @@
   "fields": {
     "name": "Qwyllion",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Goblin, Infernal, Sylvan, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 20,
@@ -19459,7 +20098,12 @@
     "type": "aberration",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "goblin",
+      "infernal",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -19480,7 +20124,7 @@
   "fields": {
     "name": "Ramag",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 9,
     "ability_score_dexterity": 14,
@@ -19535,7 +20179,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -19548,7 +20194,7 @@
   "fields": {
     "name": "Rat King",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Thieves' Cant",
     "telepathy_range": null,
     "ability_score_strength": 6,
     "ability_score_dexterity": 16,
@@ -19603,7 +20249,9 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -19630,8 +20278,8 @@
   "fields": {
     "name": "Ratatosk",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Common; telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 4,
     "ability_score_dexterity": 18,
     "ability_score_constitution": 12,
@@ -19685,7 +20333,9 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "celestial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -19702,7 +20352,7 @@
   "fields": {
     "name": "Ratfolk",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 7,
     "ability_score_dexterity": 15,
@@ -19757,7 +20407,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -19770,7 +20422,7 @@
   "fields": {
     "name": "Ratfolk Rogue",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Thieves' Cant",
     "telepathy_range": null,
     "ability_score_strength": 7,
     "ability_score_dexterity": 16,
@@ -19825,7 +20477,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -19838,7 +20492,7 @@
   "fields": {
     "name": "Ravenala",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Druidic, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 10,
@@ -19893,7 +20547,12 @@
     "type": "plant",
     "category": "Monsters",
     "alignment": "unaligned",
-    "languages": [],
+    "languages": [
+      "common",
+      "druidic",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [
       "cold",
       "fire"
@@ -19915,7 +20574,7 @@
   "fields": {
     "name": "Ravenfolk Doom Croaker",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Feather Speech, Huginn",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 14,
@@ -19970,7 +20629,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -19983,7 +20644,7 @@
   "fields": {
     "name": "Ravenfolk Scout",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Feather Speech, Huginn",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 14,
@@ -20038,7 +20699,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -20051,7 +20714,7 @@
   "fields": {
     "name": "Ravenfolk Warrior",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Feather Speech, Huginn",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 16,
@@ -20106,7 +20769,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -20119,7 +20784,7 @@
   "fields": {
     "name": "Red-Banded Line Spider",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 4,
     "ability_score_dexterity": 16,
@@ -20192,7 +20857,7 @@
   "fields": {
     "name": "Red Hag",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Druidic, Giant",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 16,
@@ -20247,7 +20912,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "druidic",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -20263,7 +20932,7 @@
   "fields": {
     "name": "Redcap",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Sylvan, Undercommon",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 10,
@@ -20318,7 +20987,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan",
+      "undercommon"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -20338,7 +21011,7 @@
   "fields": {
     "name": "Rift Swine",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 10,
@@ -20409,7 +21082,7 @@
   "fields": {
     "name": "Rime Worm Grub",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 12,
@@ -20479,7 +21152,7 @@
   "fields": {
     "name": "Risen Reaver",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "any languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 16,
@@ -20547,7 +21220,7 @@
   "fields": {
     "name": "Roachling Lord",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 16,
@@ -20602,7 +21275,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -20615,7 +21290,7 @@
   "fields": {
     "name": "Roachling Skirmisher",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 14,
@@ -20670,7 +21345,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -20683,7 +21360,7 @@
   "fields": {
     "name": "Rotting Wind",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 20,
@@ -20769,8 +21446,8 @@
   "fields": {
     "name": "Rubezahl",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Abyssal, Common, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 20,
     "ability_score_dexterity": 15,
     "ability_score_constitution": 14,
@@ -20824,7 +21501,10 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning",
@@ -20850,7 +21530,7 @@
   "fields": {
     "name": "Rum Gremlin",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 16,
@@ -20905,7 +21585,9 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -20920,7 +21602,7 @@
   "fields": {
     "name": "Rusalka",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 13,
@@ -20975,7 +21657,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -20999,7 +21683,7 @@
   "fields": {
     "name": "Rust Drake",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 15,
@@ -21054,7 +21738,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [
       "acid"
     ],
@@ -21074,8 +21761,8 @@
   "fields": {
     "name": "Salt Devil",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Celestial, Common, Gnoll, Infernal, telepathy 120 ft.",
+    "telepathy_range": 120.0,
     "ability_score_strength": 18,
     "ability_score_dexterity": 13,
     "ability_score_constitution": 18,
@@ -21129,7 +21816,11 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -21153,7 +21844,7 @@
   "fields": {
     "name": "Salt Golem",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the languages of its creator but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 9,
@@ -21235,7 +21926,7 @@
   "fields": {
     "name": "Sand Hag",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Dwarvish, Giant, Gnomish",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 15,
@@ -21290,7 +21981,12 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "dwarvish",
+      "giant",
+      "gnomish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -21303,7 +21999,7 @@
   "fields": {
     "name": "Sand Silhouette",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "all languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 12,
@@ -21358,7 +22054,27 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "abyssal",
+      "celestial",
+      "common",
+      "deep-speech",
+      "draconic",
+      "druidic",
+      "dwarvish",
+      "elvish",
+      "giant",
+      "gnomish",
+      "goblin",
+      "halfling",
+      "infernal",
+      "orc",
+      "primordial",
+      "sylvan",
+      "thieves-cant",
+      "undercommon",
+      "void-speech"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "necrotic",
@@ -21389,7 +22105,7 @@
   "fields": {
     "name": "Sand Spider",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 17,
@@ -21457,7 +22173,7 @@
   "fields": {
     "name": "Sandman",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Celestial, Giant, Infernal, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 19,
@@ -21512,7 +22228,12 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "giant",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison",
@@ -21541,7 +22262,7 @@
   "fields": {
     "name": "Sandwyrm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 12,
@@ -21609,7 +22330,7 @@
   "fields": {
     "name": "Sap Demon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "none in its natural form; knows the same languages as a creature it dominates",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 6,
@@ -21692,7 +22413,7 @@
   "fields": {
     "name": "Sarcophagus Slime",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the languages of its creator but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 12,
@@ -21773,7 +22494,7 @@
   "fields": {
     "name": "Sathaq Worm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Deep Speech and Terran, but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 6,
@@ -21857,7 +22578,7 @@
   "fields": {
     "name": "Savager",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 14,
@@ -21932,7 +22653,7 @@
   "fields": {
     "name": "Scheznyki",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul, Elvish",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 15,
@@ -21987,7 +22708,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -22002,7 +22726,7 @@
   "fields": {
     "name": "Scorpion Cultist",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 11,
     "ability_score_dexterity": 14,
@@ -22057,7 +22781,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -22072,7 +22798,7 @@
   "fields": {
     "name": "Sea Dragon Wyrmling",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 10,
@@ -22127,7 +22853,11 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold"
@@ -22142,7 +22872,7 @@
   "fields": {
     "name": "Selang",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Sylvan, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 15,
@@ -22197,7 +22927,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -22217,7 +22951,7 @@
   "fields": {
     "name": "Serpopard",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 16,
@@ -22289,7 +23023,7 @@
   "fields": {
     "name": "Shabti",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the languages of its creator but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 20,
@@ -22370,7 +23104,7 @@
   "fields": {
     "name": "Shadhavar",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Elvish and Umbral but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 15,
@@ -22438,7 +23172,7 @@
   "fields": {
     "name": "Shadow Beast",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Umbral, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 18,
@@ -22493,7 +23227,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -22506,7 +23243,7 @@
   "fields": {
     "name": "Shadow Fey",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 14,
@@ -22561,7 +23298,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -22574,7 +23314,7 @@
   "fields": {
     "name": "Shadow Fey Duelist",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 20,
@@ -22629,7 +23369,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -22642,7 +23385,7 @@
   "fields": {
     "name": "Shadow Fey Enchantress",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 15,
@@ -22697,7 +23440,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -22710,7 +23456,7 @@
   "fields": {
     "name": "Shadow Fey Forest Hunter",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 18,
@@ -22765,7 +23511,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -22778,7 +23527,7 @@
   "fields": {
     "name": "Shadow Fey Guardian",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 14,
@@ -22833,7 +23582,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -22849,7 +23601,7 @@
   "fields": {
     "name": "Sharkjaw Skeleton",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the languages of its creator but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 10,
@@ -22926,7 +23678,7 @@
   "fields": {
     "name": "Shellycoat",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Giant, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 15,
@@ -22981,7 +23733,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "giant",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -22997,7 +23752,7 @@
   "fields": {
     "name": "Shoggoth",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 26,
     "ability_score_dexterity": 14,
@@ -23079,7 +23834,7 @@
   "fields": {
     "name": "Shroud",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 4,
     "ability_score_dexterity": 13,
@@ -23134,7 +23889,9 @@
     "type": "undead",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [
       "radiant"
     ],
@@ -23170,7 +23927,7 @@
   "fields": {
     "name": "Skein Witch",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, telepathy (100 ft.)",
     "telepathy_range": null,
     "ability_score_strength": 6,
     "ability_score_dexterity": 12,
@@ -23225,7 +23982,9 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "celestial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire",
@@ -23244,7 +24003,7 @@
   "fields": {
     "name": "Skin Bat",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 16,
@@ -23316,7 +24075,7 @@
   "fields": {
     "name": "Skitterhaunt",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 11,
@@ -23393,7 +24152,7 @@
   "fields": {
     "name": "Slow Storm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 19,
@@ -23448,7 +24207,10 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning"
@@ -23469,7 +24231,7 @@
   "fields": {
     "name": "Sluagh Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 6,
     "ability_score_dexterity": 16,
@@ -23524,7 +24286,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -23551,7 +24316,7 @@
   "fields": {
     "name": "Smaragdine Golem",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the languages of its creator but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 11,
@@ -23632,8 +24397,8 @@
   "fields": {
     "name": "Son Of Fenris",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Celestial, Draconic, Elvish, Dwarvish, Giant, Infernal, telepathy 60 ft.",
+    "telepathy_range": 60.0,
     "ability_score_strength": 26,
     "ability_score_dexterity": 16,
     "ability_score_constitution": 23,
@@ -23687,7 +24452,15 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "dwarvish",
+      "elvish",
+      "giant",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -23717,7 +24490,7 @@
   "fields": {
     "name": "Soul Eater",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Infernal",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 22,
@@ -23772,7 +24545,9 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -23796,7 +24571,7 @@
   "fields": {
     "name": "Spark",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 4,
     "ability_score_dexterity": 20,
@@ -23851,7 +24626,10 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning"
@@ -23882,7 +24660,7 @@
   "fields": {
     "name": "Spawn Of Arbeyach",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Infernal",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 15,
@@ -23937,7 +24715,9 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -23954,7 +24734,7 @@
   "fields": {
     "name": "Spectral Guardian",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the languages it knew in life but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 6,
     "ability_score_dexterity": 18,
@@ -24044,7 +24824,7 @@
   "fields": {
     "name": "Spider Of Leng",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 16,
@@ -24099,7 +24879,9 @@
     "type": "aberration",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -24118,7 +24900,7 @@
   "fields": {
     "name": "Spider Thief",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Common but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 12,
@@ -24198,7 +24980,7 @@
   "fields": {
     "name": "Spinosaurus",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 27,
     "ability_score_dexterity": 9,
@@ -24266,7 +25048,7 @@
   "fields": {
     "name": "Spire Walker",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 3,
     "ability_score_dexterity": 18,
@@ -24321,7 +25103,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning",
@@ -24341,7 +25126,7 @@
   "fields": {
     "name": "Star Drake",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Draconic, Dwarvish, Elvish, Infernal, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 17,
@@ -24396,7 +25181,15 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "dwarvish",
+      "elvish",
+      "infernal",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -24420,7 +25213,7 @@
   "fields": {
     "name": "Star Spawn Of Cthulhu",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Infernal, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 25,
     "ability_score_dexterity": 15,
@@ -24475,7 +25268,10 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold",
@@ -24504,7 +25300,7 @@
   "fields": {
     "name": "Steam Golem",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands its creator's languages but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 26,
     "ability_score_dexterity": 12,
@@ -24586,7 +25382,7 @@
   "fields": {
     "name": "Stryx",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Elvish",
     "telepathy_range": null,
     "ability_score_strength": 3,
     "ability_score_dexterity": 17,
@@ -24641,7 +25437,10 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "elvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -24654,8 +25453,8 @@
   "fields": {
     "name": "Stuhac",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Infernal; telepathy 100 ft.",
+    "telepathy_range": 100.0,
     "ability_score_strength": 22,
     "ability_score_dexterity": 18,
     "ability_score_constitution": 20,
@@ -24709,7 +25508,9 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold",
@@ -24733,7 +25534,7 @@
   "fields": {
     "name": "Stygian Fat-Tailed Scorpion",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 3,
     "ability_score_dexterity": 16,
@@ -24801,7 +25602,7 @@
   "fields": {
     "name": "Subek",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 10,
@@ -24856,7 +25657,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -24869,7 +25672,7 @@
   "fields": {
     "name": "Suturefly",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 1,
     "ability_score_dexterity": 19,
@@ -24937,7 +25740,7 @@
   "fields": {
     "name": "Swamp Adder",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 4,
     "ability_score_dexterity": 16,
@@ -25005,7 +25808,7 @@
   "fields": {
     "name": "Temple Dog",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Celestial and Common but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 14,
@@ -25077,7 +25880,7 @@
   "fields": {
     "name": "Thuellai",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Dwarvish, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 24,
@@ -25132,7 +25935,11 @@
     "type": "elemental",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "dwarvish",
+      "primordial"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -25164,7 +25971,7 @@
   "fields": {
     "name": "Thursir Giant",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Dwarven, Giant",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 10,
@@ -25219,7 +26026,10 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "neutral evil (50%) lawful evil (50%)",
-    "languages": [],
+    "languages": [
+      "common",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -25232,7 +26042,7 @@
   "fields": {
     "name": "Titanoboa",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 26,
     "ability_score_dexterity": 10,
@@ -25300,7 +26110,7 @@
   "fields": {
     "name": "Tophet",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 10,
@@ -25355,7 +26165,9 @@
     "type": "construct",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold",
@@ -25380,7 +26192,7 @@
   "fields": {
     "name": "Tosculi Drone",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Tosculi",
     "telepathy_range": null,
     "ability_score_strength": 8,
     "ability_score_dexterity": 16,
@@ -25448,7 +26260,7 @@
   "fields": {
     "name": "Tosculi Elite Bow Raider",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Gnoll, Infernal, Tosculi",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 18,
@@ -25503,7 +26315,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -25516,7 +26330,7 @@
   "fields": {
     "name": "Tosculi Hive-Queen",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Deep Speech, Gnoll, Infernal, Tosculi",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 24,
@@ -25571,7 +26385,10 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "lawful evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "infernal"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "poison"
@@ -25589,7 +26406,7 @@
   "fields": {
     "name": "Tosculi Warrior",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Tosculi",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 20,
@@ -25657,7 +26474,7 @@
   "fields": {
     "name": "Treacle",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 4,
     "ability_score_dexterity": 6,
@@ -25725,7 +26542,7 @@
   "fields": {
     "name": "Trollkin Reaver",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Trollkin",
     "telepathy_range": null,
     "ability_score_strength": 19,
     "ability_score_dexterity": 13,
@@ -25780,7 +26597,9 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -25793,7 +26612,7 @@
   "fields": {
     "name": "Tusked Skyfish",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 12,
@@ -25863,7 +26682,7 @@
   "fields": {
     "name": "Umbral Vampire",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Umbral, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 1,
     "ability_score_dexterity": 18,
@@ -25918,7 +26737,9 @@
     "type": "fiend",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold",
@@ -25951,7 +26772,7 @@
   "fields": {
     "name": "Uraeus",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Celestial and Common but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 6,
     "ability_score_dexterity": 15,
@@ -26028,7 +26849,7 @@
   "fields": {
     "name": "Urochar (Strangling Watcher)",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Darakhul and Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 24,
     "ability_score_dexterity": 15,
@@ -26106,7 +26927,7 @@
   "fields": {
     "name": "Ushabti",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Ancient language of DM's choice",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 17,
@@ -26186,7 +27007,7 @@
   "fields": {
     "name": "Vaettir",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "the languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 14,
@@ -26261,7 +27082,7 @@
   "fields": {
     "name": "Valkyrie",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Dwarvish, Giant, and see Gift of Tongues",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 18,
@@ -26316,7 +27137,11 @@
     "type": "celestial",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "dwarvish",
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "bludgeoning",
@@ -26341,7 +27166,7 @@
   "fields": {
     "name": "Vampire Warlock - Variant",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "the languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 18,
@@ -26414,7 +27239,7 @@
   "fields": {
     "name": "Vapor Lynx",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 18,
@@ -26469,7 +27294,10 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -26482,7 +27310,7 @@
   "fields": {
     "name": "Venomous Mummy",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "the languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 8,
@@ -26565,7 +27393,7 @@
   "fields": {
     "name": "Vesiculosa",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 10,
@@ -26643,8 +27471,8 @@
   "fields": {
     "name": "Vila",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "Common, Sylvan, telepathy 60 ft. (beasts only)",
+    "telepathy_range": 60.0,
     "ability_score_strength": 12,
     "ability_score_dexterity": 20,
     "ability_score_constitution": 13,
@@ -26698,7 +27526,10 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -26715,7 +27546,7 @@
   "fields": {
     "name": "Vile Barber",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Goblin, Sylvan, Umbral",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 18,
@@ -26770,7 +27601,11 @@
     "type": "fey",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "goblin",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -26789,7 +27624,7 @@
   "fields": {
     "name": "Vine Lord",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 20,
@@ -26844,7 +27679,9 @@
     "type": "plant",
     "category": "Monsters",
     "alignment": "lawful neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -26862,7 +27699,7 @@
   "fields": {
     "name": "Vine Lord's Tendril Puppet",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 12,
@@ -26935,7 +27772,7 @@
   "fields": {
     "name": "Vine Troll Skeleton",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 12,
@@ -27011,7 +27848,7 @@
   "fields": {
     "name": "Void Dragon Wyrmling",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 10,
@@ -27066,7 +27903,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold"
@@ -27081,8 +27921,8 @@
   "fields": {
     "name": "Voidling",
     "document": "tob",
-    "languages_desc": "[None provided]",
-    "telepathy_range": null,
+    "languages_desc": "telepathy 60 ft.",
+    "telepathy_range": 60.0,
     "ability_score_strength": 15,
     "ability_score_dexterity": 22,
     "ability_score_constitution": 10,
@@ -27155,7 +27995,7 @@
   "fields": {
     "name": "Wampus Cat",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 18,
@@ -27210,7 +28050,9 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -27223,7 +28065,7 @@
   "fields": {
     "name": "Water Leaper",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 14,
@@ -27291,7 +28133,7 @@
   "fields": {
     "name": "Weaving Spider",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Common",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 16,
@@ -27369,7 +28211,7 @@
   "fields": {
     "name": "Weeping Treant",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Druidic, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 8,
@@ -27424,7 +28266,12 @@
     "type": "plant",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "druidic",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [
       "fire"
     ],
@@ -27439,7 +28286,7 @@
   "fields": {
     "name": "Wharfling",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 4,
     "ability_score_dexterity": 16,
@@ -27507,7 +28354,7 @@
   "fields": {
     "name": "Wharfling Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 16,
@@ -27587,7 +28434,7 @@
   "fields": {
     "name": "White Ape",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 16,
@@ -27642,7 +28489,9 @@
     "type": "monstrosity",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "common"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -27655,7 +28504,7 @@
   "fields": {
     "name": "Witchlight",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands the language of its creator but can't speak",
     "telepathy_range": null,
     "ability_score_strength": 1,
     "ability_score_dexterity": 18,
@@ -27733,7 +28582,7 @@
   "fields": {
     "name": "Wolf Reaver Dwarf",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Dwarvish",
     "telepathy_range": null,
     "ability_score_strength": 18,
     "ability_score_dexterity": 12,
@@ -27788,7 +28637,10 @@
     "type": "humanoid",
     "category": "Monsters",
     "alignment": "any chaotic",
-    "languages": [],
+    "languages": [
+      "common",
+      "dwarvish"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -27801,7 +28653,7 @@
   "fields": {
     "name": "Wolf Spirit Swarm",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "understands Common",
     "telepathy_range": null,
     "ability_score_strength": 14,
     "ability_score_dexterity": 16,
@@ -27882,7 +28734,7 @@
   "fields": {
     "name": "Wormhearted Suffragan",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "the languages it knew in life",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 14,
@@ -27957,7 +28809,7 @@
   "fields": {
     "name": "Wyrmling Wind Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Draconic, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 19,
@@ -28012,7 +28864,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "draconic",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning"
@@ -28031,7 +28886,7 @@
   "fields": {
     "name": "Xanka",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Understands the languages of its creator but can't",
     "telepathy_range": null,
     "ability_score_strength": 10,
     "ability_score_dexterity": 15,
@@ -28103,7 +28958,7 @@
   "fields": {
     "name": "Xhkarsh",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Deep Speech, Undercommon",
     "telepathy_range": null,
     "ability_score_strength": 17,
     "ability_score_dexterity": 21,
@@ -28158,7 +29013,10 @@
     "type": "aberration",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "undercommon"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -28171,7 +29029,7 @@
   "fields": {
     "name": "Ychen Bannog",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 28,
     "ability_score_dexterity": 10,
@@ -28243,7 +29101,7 @@
   "fields": {
     "name": "Young Cave Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Darakhul, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 12,
@@ -28298,7 +29156,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -28317,7 +29178,7 @@
   "fields": {
     "name": "Young Flame Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Ignan, Giant, Infernal, Orc",
     "telepathy_range": null,
     "ability_score_strength": 15,
     "ability_score_dexterity": 14,
@@ -28372,7 +29233,13 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "giant",
+      "infernal",
+      "orc"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "fire"
@@ -28387,7 +29254,7 @@
   "fields": {
     "name": "Young Mithral Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Celestial, Common, Draconic, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 22,
@@ -28442,7 +29309,12 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral",
-    "languages": [],
+    "languages": [
+      "celestial",
+      "common",
+      "draconic",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "acid",
@@ -28464,7 +29336,7 @@
   "fields": {
     "name": "Young Sea Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic",
     "telepathy_range": null,
     "ability_score_strength": 21,
     "ability_score_dexterity": 10,
@@ -28519,7 +29391,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "neutral evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold"
@@ -28534,7 +29409,7 @@
   "fields": {
     "name": "Young Spinosaurus",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 23,
     "ability_score_dexterity": 11,
@@ -28602,7 +29477,7 @@
   "fields": {
     "name": "Young Void Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Void Speech",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 10,
@@ -28657,7 +29532,10 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "cold"
@@ -28675,7 +29553,7 @@
   "fields": {
     "name": "Young Wind Dragon",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Primordial",
     "telepathy_range": null,
     "ability_score_strength": 20,
     "ability_score_dexterity": 19,
@@ -28730,7 +29608,11 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic neutral",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "primordial"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [
       "lightning"
@@ -28750,7 +29632,7 @@
   "fields": {
     "name": "Zanskaran Viper",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "-",
     "telepathy_range": null,
     "ability_score_strength": 12,
     "ability_score_dexterity": 11,
@@ -28818,7 +29700,7 @@
   "fields": {
     "name": "Zaratan",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Aquan",
     "telepathy_range": null,
     "ability_score_strength": 30,
     "ability_score_dexterity": 3,
@@ -28900,7 +29782,7 @@
   "fields": {
     "name": "Zimwi",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Giant",
     "telepathy_range": null,
     "ability_score_strength": 13,
     "ability_score_dexterity": 18,
@@ -28955,7 +29837,9 @@
     "type": "giant",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "giant"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [],
@@ -28968,7 +29852,7 @@
   "fields": {
     "name": "Zmey",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Elvish, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 22,
     "ability_score_dexterity": 13,
@@ -29023,7 +29907,12 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "elvish",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [
@@ -29042,7 +29931,7 @@
   "fields": {
     "name": "Zmey Headling",
     "document": "tob",
-    "languages_desc": "[None provided]",
+    "languages_desc": "Common, Draconic, Sylvan",
     "telepathy_range": null,
     "ability_score_strength": 16,
     "ability_score_dexterity": 10,
@@ -29097,7 +29986,11 @@
     "type": "dragon",
     "category": "Monsters",
     "alignment": "chaotic evil",
-    "languages": [],
+    "languages": [
+      "common",
+      "draconic",
+      "sylvan"
+    ],
     "damage_vulnerabilities": [],
     "damage_immunities": [],
     "damage_resistances": [

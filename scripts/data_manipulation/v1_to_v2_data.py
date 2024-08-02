@@ -30,13 +30,13 @@ def main():
         obj_v2 = v2_model.objects.filter(key=computed_v2_key).first()
         if obj_v2 is not None:
             v1v2_match_count +=1
-            #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
             print(obj_v2.key)
-            copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
-            #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
+            #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
+            #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
+            copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
             #copy_traits(obj_v1, obj_v2)
+            #obj_v2.full_clean()
             obj_v2.save()
-            #obj_v2.save()
 
         ### START LOGIC FOR PARSING V1 DATA ###
 
@@ -289,8 +289,9 @@ def copy_v2_condition_from_v1_monsters(obj_v1,obj_v2):
 
 def copy_v2_languages_from_v1_monsters(obj_v1,obj_v2):
     for l in obj_v1.languages.split(','):
-        language_looked_up = v2_models.Language.objects.filter(pk=slugify(l.lower()))
-        if len(language_looked_up)!=1:
+        lstring = l.lower().strip()
+        language_looked_up = v2_models.Language.objects.filter(key=lstring)
+        if len(language_looked_up)==1:
             obj_v2.languages.add(language_looked_up.first())
         if "all" in l:
             for language in v2_models.Language.objects.all():
