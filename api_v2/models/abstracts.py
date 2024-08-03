@@ -9,7 +9,7 @@ from .enums import DISTANCE_UNIT_TYPES
 # FIELDS USED ACROSS MULTIPLE MODELS
 
 def damage_die_count_field():
-    return models.SmallIntegerFiel(
+    return models.SmallIntegerField(
         null=True,
         validators=[MinValueValidator(0)],
         help_text='The number of dice to roll for damage.'
