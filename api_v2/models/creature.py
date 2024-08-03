@@ -59,12 +59,11 @@ class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
 
     def as_text(self):
         text = self.name + '\n'
-        
         for action in self.creatureaction_set.all():
             text+='\n' + action.as_text()
 
         return text
-        
+
     def search_result_extra_fields(self):
         return {
             "armor_class":self.armor_class,
@@ -74,6 +73,7 @@ class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
 
     @property
     def creatureset(self):
+        '''Helper method to rename and return creaturesets.'''
         return self.creaturesets.all()
 
 
@@ -100,6 +100,7 @@ class CreatureAction(HasName, HasDescription):
     )
 
     def as_text(self):
+        '''Text representation of creature is name/desc.'''
         text = self.name + '\n' + self.desc
 
         return text
@@ -107,7 +108,6 @@ class CreatureAction(HasName, HasDescription):
 
 class CreatureActionAttack(HasName):
     """Describes an attack action used by a creature."""
-    
     key = key_field()
 
     parent = models.ForeignKey(
