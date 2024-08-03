@@ -15,6 +15,10 @@ from .enums import SAVING_THROW_MAXIMUM, SAVING_THROW_MINIMUM
 from .enums import SKILL_BONUS_MINIMUM, SKILL_BONUS_MAXIMUM
 from .enums import PASSIVE_SCORE_MAXIMUM
 
+from .abstracts import distance_field
+
+from .language import Language
+
 # Field value limits
 
 
@@ -259,3 +263,22 @@ class Abilities(models.Model):
 
     class Meta:
         abstract = True
+
+
+class Senses(models.Model):
+    """
+    This is the definition of the Senses abstract base class.
+
+    The Senses class defines the senses used by a creature are inherited by
+    the Creature model.
+    """
+
+    normal_sight_range = distance_field()
+    darkvision_range = distance_field()
+    blindsight_range = distance_field()
+    tremorsense_range = distance_field()
+    truesight_range = distance_field()
+
+    class Meta:
+        abstract = True
+

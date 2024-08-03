@@ -12,6 +12,7 @@ from .size import SizeSerializer
 
 
 def calc_damage_amount(die_count, die_type, bonus):
+    '''Calculates the average value of a given die roll.'''
     die_values = {
         'D4': 2.5,
         'D6': 3.5,
@@ -23,6 +24,7 @@ def calc_damage_amount(die_count, die_type, bonus):
     return floor(die_count * die_values[die_type] + bonus)
 
 def make_damage_obj(die_count, die_type, bonus, damage_type):
+    '''Structures an object in a way that can be consistently referenced.'''
     if die_count:
         return {
             'amount': calc_damage_amount(
@@ -41,7 +43,7 @@ def make_damage_obj(die_count, die_type, bonus, damage_type):
     }
 
 def make_attack_obj(attack):
-
+    '''Structures an object in a way that can be consistently referenced.'''
     obj = {
         'name': attack.name,
         'attack_type': attack.attack_type,
@@ -76,7 +78,7 @@ def make_attack_obj(attack):
     return obj
 
 def make_action_obj(action):
-
+    '''Structures an object in a way that can be consistently referenced.'''
     obj = { 'name': action.name, 'desc': action.desc }
 
     match action.uses_type:
@@ -111,6 +113,7 @@ class CreatureSerializer(GameContentSerializer):
     all_speed = serializers.SerializerMethodField()
 
     class Meta:
+        '''Serializer meta options.'''
         model = models.Creature
         fields = [
             'url',
@@ -123,9 +126,10 @@ class CreatureSerializer(GameContentSerializer):
             'category',
             'type',
             'alignment',
-            'weight',
+            'languages',
             'armor_class',
             'hit_points',
+            'hit_dice',
             'ability_scores',
             'modifiers',
             'saving_throws',
@@ -133,30 +137,47 @@ class CreatureSerializer(GameContentSerializer):
             'skill_bonuses',
             'all_skill_bonuses',
             'passive_perception',
+            'damage_immunities',
+            'nonmagical_attack_immunity',
+            'damage_resistances',
+            'nonmagical_attack_resistance',
+            'damage_vulnerabilities',
+            'condition_immunities',
+            'normal_sight_range',
+            'darkvision_range',
+            'blindsight_range',
+            'tremorsense_range',
+            'truesight_range',
             'actions',
             'creaturesets'
         ]
 
     def get_ability_scores(self, creature):
+        '''Ability scores helper method.'''
         return creature.get_ability_scores()
 
     def get_modifiers(self, creature):
+        '''Modifiers helper method.'''
         return creature.get_modifiers()
 
     def get_saving_throws(self, creature):
+        '''Explicit saving throws helper method.'''
         entries = creature.get_saving_throws().items()
         return { key: value for key, value in entries if value is not None }
 
     def get_all_saving_throws(self, creature):
+        '''Implicit saving throws helper method.'''
         defaults = creature.get_modifiers()
         entries = creature.get_saving_throws().items()
         return { key: (defaults[key] if value is None else value) for key, value in entries }
 
     def get_skill_bonuses(self, creature):
+        '''Explicit skill bonuses helper method.'''
         entries = creature.get_skill_bonuses().items()
         return { key: value for key, value in entries if value is not None }
 
     def get_all_skill_bonuses(self, creature):
+        '''Implicit skill bonuses helper method.'''
         defaults = {
             'acrobatics': creature.modifier_dexterity,
             'animal_handling': creature.modifier_wisdom,
@@ -181,14 +202,17 @@ class CreatureSerializer(GameContentSerializer):
         return { key: (defaults[key] if value is None else value) for key, value in entries }
 
     def get_speed(self, creature):
+        '''Explicit speed helper method.'''
         entries = creature.get_speed().items()
         return { key: value for key, value in entries if value is not None }
 
 
     def get_all_speed(self, creature):
+        '''Implicit speed helper method.'''
         return creature.get_all_speed()
 
     def get_actions(self, creature):
+        '''Actions helper method.'''
         result = []
         for action in creature.creatureaction_set.all():
             action_obj = make_action_obj(action)
@@ -201,6 +225,7 @@ class CreatureTypeSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
 
     class Meta:
+        '''Meta options for serializer.'''
         model = models.CreatureType
         fields = '__all__'
 
@@ -211,5 +236,6 @@ class CreatureSetSerializer(GameContentSerializer):
     creatures = CreatureSerializer(many=True, read_only=True, context={'request':{}})
 
     class Meta:
+        '''Meta options for serializer.'''
         model = models.CreatureSet
         fields = '__all__'

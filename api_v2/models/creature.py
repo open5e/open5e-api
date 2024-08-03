@@ -2,11 +2,14 @@
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from .abilities import Abilities
-from .abstracts import HasDescription, HasName
+from .abilities import Abilities, Senses
+from .language import HasLanguage
+from .abstracts import HasDescription, HasName, Modification
 from .abstracts import damage_die_count_field, damage_die_type_field
 from .abstracts import damage_bonus_field, key_field
 from .object import Object
+from .condition import Condition
+from .damagetype import DamageType
 from .document import FromDocument
 from .speed import HasSpeed
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES
@@ -17,7 +20,7 @@ class CreatureType(HasName, HasDescription, FromDocument):
     """The Type of creature, such as Aberration."""
 
 
-class Creature(Object, Abilities, FromDocument, HasSpeed):
+class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
     """
     This is the model for a Creature, per the 5e ruleset.
 
@@ -39,15 +42,28 @@ class Creature(Object, Abilities, FromDocument, HasSpeed):
         max_length=100,
         help_text='The creature\'s allowed alignments.'
     )
-    
+
+    damage_vulnerabilities = models.ManyToManyField(DamageType,
+        related_name="creature_damage_vulnerabilities")
+
+    damage_immunities = models.ManyToManyField(DamageType,
+        related_name="creature_damage_immunities")
+
+    damage_resistances = models.ManyToManyField(DamageType,
+        related_name="creature_damage_resistances")
+
+    condition_immunities = models.ManyToManyField(
+        Condition,
+        help_text="Conditions that this creature is immune to."
+        )
+
     def as_text(self):
         text = self.name + '\n'
-        
         for action in self.creatureaction_set.all():
             text+='\n' + action.as_text()
 
         return text
-        
+
     def search_result_extra_fields(self):
         return {
             "armor_class":self.armor_class,
@@ -57,6 +73,7 @@ class Creature(Object, Abilities, FromDocument, HasSpeed):
 
     @property
     def creatureset(self):
+        '''Helper method to rename and return creaturesets.'''
         return self.creaturesets.all()
 
 
@@ -83,6 +100,7 @@ class CreatureAction(HasName, HasDescription):
     )
 
     def as_text(self):
+        '''Text representation of creature is name/desc.'''
         text = self.name + '\n' + self.desc
 
         return text
@@ -90,7 +108,6 @@ class CreatureAction(HasName, HasDescription):
 
 class CreatureActionAttack(HasName):
     """Describes an attack action used by a creature."""
-    
     key = key_field()
 
     parent = models.ForeignKey(
@@ -155,6 +172,15 @@ class CreatureActionAttack(HasName):
         on_delete=models.CASCADE,
         related_name="+", # No backwards relation.
         help_text='What kind of extra damage this attack deals')
+
+
+class CreatureTrait(Modification):
+    """This is the model for a creature special trait.
+
+    It inherits from modification, which is an abstract concept.
+    """
+
+    parent = models.ForeignKey('Creature', on_delete=models.CASCADE)
 
 
 class CreatureSet(HasName, FromDocument):

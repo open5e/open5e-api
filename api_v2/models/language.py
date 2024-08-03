@@ -3,6 +3,7 @@
 from django.db import models
 
 from .abstracts import HasName, HasDescription
+from .abstracts import distance_field
 from .document import FromDocument
 
 
@@ -23,3 +24,15 @@ class Language(HasName, HasDescription, FromDocument):
     is_secret = models.BooleanField(
         help_text='Whether or not the language is secret.',
         default=False)
+
+class HasLanguage(models.Model):
+    """The abstract class used by Creature to describe what a creature's language."""
+    languages_desc = models.TextField(
+        blank=True,
+        default="[None provided]",
+        help_text='Description of the languages item.')
+
+    languages = models.ManyToManyField(Language)
+    telepathy_range = distance_field()
+    class Meta:
+        abstract = True

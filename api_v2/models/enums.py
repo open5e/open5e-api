@@ -19,13 +19,21 @@ SAVING_THROW_MINIMUM = -5
 SAVING_THROW_MAXIMUM = +20
 SKILL_BONUS_MINIMUM = -5
 SKILL_BONUS_MAXIMUM = +20
-PASSIVE_SCORE_MAXIMUM = 30
+PASSIVE_SCORE_MAXIMUM = 40
 
 # Setting a reasonable maximum for AC.
 OBJECT_ARMOR_CLASS_MAXIMUM = 100
 
 # Setting a reasonable maximum for HP.
 OBJECT_HIT_POINT_MAXIMUM = 10000
+
+# Senses available to a creature.
+CREATURE_SENSES = [
+    'blindsight',
+    'truesight',
+    'darkvision',
+    'tremorsense'
+]
 
 # Type of creature attacks.
 CREATURE_ATTACK_TYPES = [
@@ -58,7 +66,6 @@ MODIFICATION_TYPES = [
     ("suggested_characteristics", "Suggested Characteristics"),  # Used in Backgrounds
     ("adventures_and_advancement", "Adventures and Advancement"),  # Used in A5e Backgrounds
     ("connection_and_memento", "Connection and Memento")]  # Used in A5e Backgrounds
-
 
 SPELL_TARGET_RANGE_CHOICES = [
     ('Self',"Self"),
@@ -166,7 +173,6 @@ SPELL_CASTING_TIME_CHOICES = [
     ('1hour',"1 Hour"),
     ('8hours',"8 Hours"),
 ]
-
 
 CASTING_OPTION_TYPES = [
     ('default',"Default"),

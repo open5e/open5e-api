@@ -7,6 +7,7 @@ from .weapon import Weapon
 from .armor import Armor
 from .abstracts import HasName, HasDescription
 from .object import Object
+from .damagetype import DamageType
 from .document import FromDocument
 
 
@@ -65,6 +66,15 @@ class Item(Object, HasDescription, FromDocument):
         null=True,
         on_delete=models.CASCADE,
         help_text="Rarity object.")
+
+    damage_vulnerabilities = models.ManyToManyField(DamageType,
+        related_name="item_damage_vulnerabilities")
+
+    damage_immunities = models.ManyToManyField(DamageType,
+        related_name="item_damage_immunities")
+
+    damage_resistances = models.ManyToManyField(DamageType,
+        related_name="item_damage_resistances")
 
     @property 
     def is_magic_item(self):

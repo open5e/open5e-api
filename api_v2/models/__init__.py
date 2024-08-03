@@ -1,6 +1,7 @@
 """The initialization for models for open5e's api v2."""
 
 from .abilities import Abilities
+from .abilities import Senses
 
 from .item import ItemCategory
 from .item import Item
@@ -21,6 +22,7 @@ from .background import BackgroundBenefit
 from .background import Background
 
 from .creature import Creature
+from .creature import CreatureTrait
 from .creature import CreatureAction
 from .creature import CreatureActionAttack
 from .creature import CreatureType

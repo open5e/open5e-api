@@ -138,6 +138,42 @@ class Monster(GameContent):
             "cr":self.cr
               }
 
+    def as_v2_creature(self):
+        from api_v2.models import Creature, Document, DamageType
+        from scripts.data_manipulation import v1_to_v2_data
+        creature = Creature()
+        creature.key = v1_to_v2_data.get_v2_key_from_v1_obj(self)
+        creature.document = Document.objects.get(key=v1_to_v2_data.get_v2_doc_from_v1_obj(v1_obj=self))
+        creature.name = self.name
+        creature.size = v1_to_v2_data.get_v2_size_from_v1_obj(self)
+        creature.type = v1_to_v2_data.get_v2_type_from_v1_obj(self)
+        creature.alignment = v1_to_v2_data.get_alignment(self)
+        creature.category = "Monsters"
+        creature.armor_class = self.armor_class
+        creature.hit_points = self.hit_points
+        creature.passive_perception = v1_to_v2_data.get_passive_perception(self)
+        creature.hit_dice = self.hit_dice
+        creature.normal_sight_range = v1_to_v2_data.get_senses(self)['normal']
+        creature.darkvision_range = v1_to_v2_data.get_senses(self)['darkvision']
+        creature.truesight_range = v1_to_v2_data.get_senses(self)['truesight']
+        creature.blindsight_range = v1_to_v2_data.get_senses(self)['blindsight']
+        creature.tremorsense_range = v1_to_v2_data.get_senses(self)['tremorsense']
+        # Languages
+
+
+        v1_to_v2_data.copy_v2_speed_from_v1_creature(v1_obj=self, v2_obj=creature)
+
+        v1_to_v2_data.copy_v2_scores_from_v1_creature(self, creature)
+
+        v1_to_v2_data.copy_v2_throws_from_v1_creature(self, creature)
+
+        v1_to_v2_data.copy_v2_skills_from_v1_creature(self, creature)
+
+
+
+        return creature
+
+
 class MonsterSpell(models.Model):
     spell = models.ForeignKey(Spell, on_delete=models.CASCADE)
     monster = models.ForeignKey(Monster, on_delete=models.CASCADE)
