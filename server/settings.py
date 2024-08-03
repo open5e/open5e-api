@@ -30,7 +30,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
 # A flag that is True when not production to disallow /v2 api endpoint.
-V2_ENABLED = os.environ.get("NEW_RELIC_ENVIRONMENT") != "production"
+V2_ENABLED = True
 
 # A flag to be set related to v2 search being used for v1 items.
 V2_SEARCH_ENABLED = True
