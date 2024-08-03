@@ -68,6 +68,7 @@ class Document(HasName, HasDescription):
                 'BackgroundBenefit',
                 'CreatureAction',
                 'CreatureActionAttack',
+                'CreatureTrait',
                 'SpellCastingOption',
                 'ItemRarity']
             if model.__name__ in CHILD_MODEL_NAMES: continue
