@@ -87,6 +87,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "server.middleware.NewRelicMiddleware",
+    "server.middleware.ResponseWarningHeaderMiddleware"
 ]
 
 HAYSTACK_CONNECTIONS = {
