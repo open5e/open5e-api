@@ -23,38 +23,38 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
-    for obj_v1 in v1_model.objects.all():
+    for obj_v1 in v1_model.objects.filter(document__slug='blackflag'):
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
         obj_v2 = v2_model.objects.filter(key=computed_v2_key).first()
         if obj_v2 is not None:
             v1v2_match_count +=1
-            #print(obj_v2.key)
-            #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
-            #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
-            #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
-            #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
-            #copy_traits(obj_v1, obj_v2)
+            print(obj_v2.key)
+            copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
+            copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
+            copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
+            copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
+            copy_traits(obj_v1, obj_v2)
             #obj_v2.full_clean()
-            #obj_v2.save()
+            obj_v2.save()
 
         ### START LOGIC FOR PARSING V1 DATA ###
 
         if obj_v2 is None:
-            print(obj_v1.slug)
-            obj_v2 = obj_v1.as_v2_creature()
-            copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
+            #print(obj_v1.slug)
+            #obj_v2 = obj_v1.as_v2_creature()
+            #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
             # 2024-08-04 TODO black flack monsters have the incorrect _save fields in v1. FIX
-            copy_v2_throws_from_v1_creature(obj_v1, obj_v2)
+            #copy_v2_throws_from_v1_creature(obj_v1, obj_v2)
             #obj_v2.full_clean()
-            obj_v2.save()
+            #obj_v2.save()
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
             #
             # This requires objects to exist.
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2) # This requires objects to exist.
             #bj_v2.full_clean()
-
+            #obj_v2.full_clean()
             v2_added_count +=1
  
 
