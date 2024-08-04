@@ -23,7 +23,7 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
-    for obj_v1 in v1_model.objects.all():
+    for obj_v1 in v1_model.objects.filter(document__slug='blackflag'):
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
@@ -31,19 +31,22 @@ def main():
         if obj_v2 is not None:
             v1v2_match_count +=1
             print(obj_v2.key)
-            #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
-            #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
-            #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
+            copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
+            copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
+            copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
             copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
-            #copy_traits(obj_v1, obj_v2)
+            copy_traits(obj_v1, obj_v2)
             #obj_v2.full_clean()
             obj_v2.save()
 
         ### START LOGIC FOR PARSING V1 DATA ###
 
         if obj_v2 is None:
-            #print(obj_v1. name)
+            #print(obj_v1.slug)
             #obj_v2 = obj_v1.as_v2_creature()
+            #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
+            # 2024-08-04 TODO black flack monsters have the incorrect _save fields in v1. FIX
+            #copy_v2_throws_from_v1_creature(obj_v1, obj_v2)
             #obj_v2.full_clean()
             #obj_v2.save()
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
@@ -51,7 +54,7 @@ def main():
             # This requires objects to exist.
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2) # This requires objects to exist.
             #bj_v2.full_clean()
-
+            #obj_v2.full_clean()
             v2_added_count +=1
  
 
@@ -111,6 +114,7 @@ def get_v2_doc_from_v1_obj(v1_obj):
         'vom':'vom',
         'warlock':'wz',
         'wotc-srd':'srd',
+        'blackflag':'bfrd'
     }
     return doc_lookup[v1_obj.document.slug]
 
@@ -118,9 +122,9 @@ def get_v2_type_from_v1_obj(v1_obj):
     undead = ['bonecollective-tob1-2023','boneswarm-tob1-2023','swarmofwolfspirits-tob1-2023']
     constructs = ['clockworkbeetleswarm-tob1-2023']
     monstrosity = ['cobbleswarm-tob1-2023']
-    beast = ['deathbutterflyswarm-tob1-2023','greaterdeathbutterflyswarm-tob1-2023','swarmofmanabanescarabs-tob1-2023','swarmofprismaticbeetles-tob1-2023','swarmofwharflings-tob1-2023']
+    beast = ['deathbutterflyswarm-tob1-2023','greaterdeathbutterflyswarm-tob1-2023','swarmofmanabanescarabs-tob1-2023','swarmofprismaticbeetles-tob1-2023','swarmofwharflings-tob1-2023','bat_swarm_of_bats_bf','insect_swarm_of_insects_bf','quipper_swarm_of_quippers_bf','rat_swarm_of_rats_bf','raven_swarm_of_ravens_bf','snake_swarm_of_poisonous_snakes_bf'] 
     fiends = ['iaaffrat-tob1-2023']
-    aberrations = ['oculoswarm-tob1-2023']
+    aberrations = ['oculoswarm-tob1-2023','insatiable_brood_bf']
     elementals = ['swarmoffiredancers-tob1-2023']
     fey = ['swarmofsluaghs-tob1-2023']
     if v1_obj.slug in undead:
@@ -313,6 +317,7 @@ def copy_v2_languages_from_v1_monsters(obj_v1,obj_v2):
     # description
 
 def copy_v2_throws_from_v1_creature(obj_v1, obj_v2):
+    
     obj_v2.saving_throw_strength = obj_v1.strength_save
     obj_v2.saving_throw_dexterity = obj_v1.dexterity_save
     obj_v2.saving_throw_constitution = obj_v1.constitution_save
@@ -321,6 +326,8 @@ def copy_v2_throws_from_v1_creature(obj_v1, obj_v2):
     obj_v2.saving_throw_charisma = obj_v1.charisma_save
 
 def copy_v2_skills_from_v1_creature(obj_v1, obj_v2):
+    if obj_v1.skills_json in [None,""]:
+        return 
     obj_v1.skills_json = obj_v1.skills_json.lower()
     obj_v2.skill_bonus_acrobatics = json.loads(obj_v1.skills_json).get('acrobatics')
     obj_v2.skill_bonus_animal_handling  = json.loads(obj_v1.skills_json).get('animal_handling')
@@ -393,6 +400,8 @@ def get_distance_and_unit_from_range_text(spell):
     print ("Could not parse {}".format(spell.range_text))
 
 def get_alignment(v1_obj):
+    if v1_obj.alignment == "":
+        return "chaotic evil"
     ce = ['aboleth-thrall-a5e','abominable-snowman-a5e','accursed-guardian-naga-a5e']
     if v1_obj.slug in ce:
         return "chaotic evil"
