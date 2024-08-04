@@ -1,4 +1,5 @@
 """The model for a creature."""
+from fractions import Fraction
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -57,6 +58,21 @@ class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
         help_text="Conditions that this creature is immune to."
         )
 
+    challenge_rating_decimal = models.DecimalField(
+        null=False,
+        max_digits=10,
+        decimal_places=3,
+        validators=[MinValueValidator(0),MaxValueValidator(30)],
+        help_text="Challenge Rating field as a decimal number."
+    )
+
+    experience_points_integer = models.IntegerField(
+        null=True,
+        blank=True,
+        validators=[MinValueValidator(0)],
+        help_text="Optional override for calculated XP based on CR."
+    )
+
     def as_text(self):
         text = self.name + '\n'
         for action in self.creatureaction_set.all():
@@ -75,6 +91,58 @@ class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
     def creatureset(self):
         '''Helper method to rename and return creaturesets.'''
         return self.creaturesets.all()
+
+    @property
+    def challenge_rating_text(self):
+        '''Challenge rating as text string representation of a fraction or integer. '''
+        return str(Fraction(self.challenge_rating))
+
+    @property
+    def experience_points(self):
+        if self.experience_points_integer is not None:
+            return self.experience_points_integer
+        else:
+            xp_by_cr_lookup = {
+                "0":0,
+                "1/8":25,
+                "1/4":50,
+                "1/2":100,
+                "1":200,
+                "2":450,
+                "3":700,
+                "4":1100,
+                "5":1800,
+                "6":2300,
+                "7":2900,
+                "8":3900,
+                "9":5000,
+                "10":5900,
+                "11":7200,
+                "12":8400,
+                "13":10000,
+                "14":11500,
+                "15":13000,
+                "16":15000,
+                "17":18000,
+                "18":20000,
+                "19":22000,
+                "20":25000,
+                "21":33000,
+                "22":41000,
+                "23":50000,
+                "24":62000,
+                "25":75000,
+                "26":90000,
+                "27":105000,
+                "28":120000,
+                "29":135000,
+                "30":155000,
+            }
+
+            try:
+                return xp_by_cr_lookup[self.challenge_rating_text()]
+            except:
+                return None
 
 
 class CreatureAction(HasName, HasDescription):

@@ -33,7 +33,8 @@ def main():
             print(obj_v2.key)
             #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
-            copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
+            #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
+            copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
             #copy_traits(obj_v1, obj_v2)
             #obj_v2.full_clean()
             obj_v2.save()
@@ -201,6 +202,9 @@ def get_senses(v1_obj):
             senses['normal'] = None
 
     return senses
+
+def copy_v2_cr_from_v1_monsters(obj_v1, obj_v2):
+    obj_v2.challenge_rating_decimal = obj_v1.cr
 
 def copy_v2_scores_from_v1_creature(obj_v1, obj_v2):
     obj_v2.ability_score_strength = obj_v1.strength
