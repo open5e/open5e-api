@@ -60,7 +60,7 @@ class HasSpeed(models.Model):
         
         return speed
 
-    def get_all_speed(self):
+    def get_speed_all(self):
         return {
             "unit": self.get_unit(),
             "walk": self.walk,
