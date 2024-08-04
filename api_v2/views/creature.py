@@ -70,6 +70,7 @@ class CreatureTypeViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.CreatureType.objects.all().order_by('pk')
     serializer_class = serializers.CreatureTypeSerializer
 
+
 class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creature sets, which is similar to tags.
