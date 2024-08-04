@@ -16,6 +16,7 @@ class CreatureFilterSet(FilterSet):
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
             'size': ['exact'],
+            'challenge_rating_decimal': ['exact','lt','lte','gt','gte'],
             'armor_class': ['exact','lt','lte','gt','gte'],
             'ability_score_strength': ['exact','lt','lte','gt','gte'],
             'ability_score_dexterity': ['exact','lt','lte','gt','gte'],
