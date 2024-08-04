@@ -95,7 +95,7 @@ class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
     @property
     def challenge_rating_text(self):
         '''Challenge rating as text string representation of a fraction or integer. '''
-        return str(Fraction(self.challenge_rating))
+        return str(Fraction(self.challenge_rating_decimal))
 
     @property
     def experience_points(self):
@@ -140,7 +140,7 @@ class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
             }
 
             try:
-                return xp_by_cr_lookup[self.challenge_rating_text()]
+                return xp_by_cr_lookup[str(Fraction(self.challenge_rating_decimal))]
             except:
                 return None
 
