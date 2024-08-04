@@ -111,6 +111,9 @@ class CreatureSerializer(GameContentSerializer):
     size = SizeSerializer(read_only=True, context={'request': {}})
     speed = serializers.SerializerMethodField()
     all_speed = serializers.SerializerMethodField()
+    challenge_rating_text = serializers.SerializerMethodField()
+    experience_points = serializers.SerializerMethodField()
+
 
     class Meta:
         '''Serializer meta options.'''
@@ -130,6 +133,9 @@ class CreatureSerializer(GameContentSerializer):
             'armor_class',
             'hit_points',
             'hit_dice',
+            'challenge_rating_decimal',
+            'challenge_rating_text',
+            'experience_points',
             'ability_scores',
             'modifiers',
             'saving_throws',
@@ -206,7 +212,6 @@ class CreatureSerializer(GameContentSerializer):
         entries = creature.get_speed().items()
         return { key: value for key, value in entries if value is not None }
 
-
     def get_all_speed(self, creature):
         '''Implicit speed helper method.'''
         return creature.get_all_speed()
@@ -219,6 +224,11 @@ class CreatureSerializer(GameContentSerializer):
             result.append(action_obj)
         return result
 
+    def get_challenge_rating_text(self, creature):
+        return creature.challenge_rating_text
+
+    def get_experience_points(self, creature):
+        return creature.experience_points
 
 class CreatureTypeSerializer(GameContentSerializer):
     '''Serializer for the Creature Type object'''
