@@ -47,8 +47,8 @@ def main():
             copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
             # 2024-08-04 TODO black flack monsters have the incorrect _save fields in v1. FIX
             copy_v2_throws_from_v1_creature(obj_v1, obj_v2)
-            obj_v2.full_clean()
-            #obj_v2.save()
+            #obj_v2.full_clean()
+            obj_v2.save()
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
             #
             # This requires objects to exist.
@@ -122,9 +122,9 @@ def get_v2_type_from_v1_obj(v1_obj):
     undead = ['bonecollective-tob1-2023','boneswarm-tob1-2023','swarmofwolfspirits-tob1-2023']
     constructs = ['clockworkbeetleswarm-tob1-2023']
     monstrosity = ['cobbleswarm-tob1-2023']
-    beast = ['deathbutterflyswarm-tob1-2023','greaterdeathbutterflyswarm-tob1-2023','swarmofmanabanescarabs-tob1-2023','swarmofprismaticbeetles-tob1-2023','swarmofwharflings-tob1-2023']
+    beast = ['deathbutterflyswarm-tob1-2023','greaterdeathbutterflyswarm-tob1-2023','swarmofmanabanescarabs-tob1-2023','swarmofprismaticbeetles-tob1-2023','swarmofwharflings-tob1-2023','bat_swarm_of_bats_bf','insect_swarm_of_insects_bf','quipper_swarm_of_quippers_bf','rat_swarm_of_rats_bf','raven_swarm_of_ravens_bf','snake_swarm_of_poisonous_snakes_bf'] 
     fiends = ['iaaffrat-tob1-2023']
-    aberrations = ['oculoswarm-tob1-2023']
+    aberrations = ['oculoswarm-tob1-2023','insatiable_brood_bf']
     elementals = ['swarmoffiredancers-tob1-2023']
     fey = ['swarmofsluaghs-tob1-2023']
     if v1_obj.slug in undead:
@@ -400,6 +400,8 @@ def get_distance_and_unit_from_range_text(spell):
     print ("Could not parse {}".format(spell.range_text))
 
 def get_alignment(v1_obj):
+    if v1_obj.alignment == "":
+        return "chaotic evil"
     ce = ['aboleth-thrall-a5e','abominable-snowman-a5e','accursed-guardian-naga-a5e']
     if v1_obj.slug in ce:
         return "chaotic evil"
