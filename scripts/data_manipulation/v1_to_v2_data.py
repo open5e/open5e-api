@@ -30,21 +30,24 @@ def main():
         obj_v2 = v2_model.objects.filter(key=computed_v2_key).first()
         if obj_v2 is not None:
             v1v2_match_count +=1
-            print(obj_v2.key)
+            #print(obj_v2.key)
             #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
-            copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
+            #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
             #copy_traits(obj_v1, obj_v2)
             #obj_v2.full_clean()
-            obj_v2.save()
+            #obj_v2.save()
 
         ### START LOGIC FOR PARSING V1 DATA ###
 
         if obj_v2 is None:
-            #print(obj_v1. name)
-            #obj_v2 = obj_v1.as_v2_creature()
-            #obj_v2.full_clean()
+            print(obj_v1.slug)
+            obj_v2 = obj_v1.as_v2_creature()
+            copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
+            # 2024-08-04 TODO black flack monsters have the incorrect _save fields in v1. FIX
+            copy_v2_throws_from_v1_creature(obj_v1, obj_v2)
+            obj_v2.full_clean()
             #obj_v2.save()
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
             #
@@ -111,6 +114,7 @@ def get_v2_doc_from_v1_obj(v1_obj):
         'vom':'vom',
         'warlock':'wz',
         'wotc-srd':'srd',
+        'blackflag':'bfrd'
     }
     return doc_lookup[v1_obj.document.slug]
 
@@ -313,6 +317,7 @@ def copy_v2_languages_from_v1_monsters(obj_v1,obj_v2):
     # description
 
 def copy_v2_throws_from_v1_creature(obj_v1, obj_v2):
+    
     obj_v2.saving_throw_strength = obj_v1.strength_save
     obj_v2.saving_throw_dexterity = obj_v1.dexterity_save
     obj_v2.saving_throw_constitution = obj_v1.constitution_save
@@ -321,6 +326,8 @@ def copy_v2_throws_from_v1_creature(obj_v1, obj_v2):
     obj_v2.saving_throw_charisma = obj_v1.charisma_save
 
 def copy_v2_skills_from_v1_creature(obj_v1, obj_v2):
+    if obj_v1.skills_json in [None,""]:
+        return 
     obj_v1.skills_json = obj_v1.skills_json.lower()
     obj_v2.skill_bonus_acrobatics = json.loads(obj_v1.skills_json).get('acrobatics')
     obj_v2.skill_bonus_animal_handling  = json.loads(obj_v1.skills_json).get('animal_handling')
