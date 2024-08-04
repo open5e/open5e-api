@@ -104,13 +104,13 @@ class CreatureSerializer(GameContentSerializer):
     ability_scores = serializers.SerializerMethodField()
     modifiers = serializers.SerializerMethodField()
     saving_throws = serializers.SerializerMethodField()
-    all_saving_throws = serializers.SerializerMethodField()
+    saving_throws_all = serializers.SerializerMethodField()
     skill_bonuses = serializers.SerializerMethodField()
-    all_skill_bonuses = serializers.SerializerMethodField()
+    skill_bonuses_all = serializers.SerializerMethodField()
     actions = serializers.SerializerMethodField()
     size = SizeSerializer(read_only=True, context={'request': {}})
     speed = serializers.SerializerMethodField()
-    all_speed = serializers.SerializerMethodField()
+    speed_all = serializers.SerializerMethodField()
     challenge_rating_text = serializers.SerializerMethodField()
     experience_points = serializers.SerializerMethodField()
 
@@ -125,7 +125,7 @@ class CreatureSerializer(GameContentSerializer):
             'name',
             'size',
             'speed',
-            'all_speed',
+            'speed_all',
             'category',
             'type',
             'alignment',
@@ -139,9 +139,9 @@ class CreatureSerializer(GameContentSerializer):
             'ability_scores',
             'modifiers',
             'saving_throws',
-            'all_saving_throws',
+            'saving_throws_all',
             'skill_bonuses',
-            'all_skill_bonuses',
+            'skill_bonuses_all',
             'passive_perception',
             'damage_immunities',
             'nonmagical_attack_immunity',
@@ -171,7 +171,7 @@ class CreatureSerializer(GameContentSerializer):
         entries = creature.get_saving_throws().items()
         return { key: value for key, value in entries if value is not None }
 
-    def get_all_saving_throws(self, creature):
+    def get_saving_throws_all(self, creature):
         '''Implicit saving throws helper method.'''
         defaults = creature.get_modifiers()
         entries = creature.get_saving_throws().items()
@@ -182,7 +182,7 @@ class CreatureSerializer(GameContentSerializer):
         entries = creature.get_skill_bonuses().items()
         return { key: value for key, value in entries if value is not None }
 
-    def get_all_skill_bonuses(self, creature):
+    def get_skill_bonuses_all(self, creature):
         '''Implicit skill bonuses helper method.'''
         defaults = {
             'acrobatics': creature.modifier_dexterity,
@@ -212,9 +212,9 @@ class CreatureSerializer(GameContentSerializer):
         entries = creature.get_speed().items()
         return { key: value for key, value in entries if value is not None }
 
-    def get_all_speed(self, creature):
+    def get_speed_all(self, creature):
         '''Implicit speed helper method.'''
-        return creature.get_all_speed()
+        return creature.get_speed_all()
 
     def get_actions(self, creature):
         '''Actions helper method.'''
