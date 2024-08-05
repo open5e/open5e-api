@@ -97,6 +97,16 @@ def make_action_obj(action):
     return obj
 
 
+class CreatureTypeSerializer(GameContentSerializer):
+    '''Serializer for the Creature Type object'''
+    key = serializers.ReadOnlyField()
+
+    class Meta:
+        '''Meta options for serializer.'''
+        model = models.CreatureType
+        fields = '__all__'
+
+
 class CreatureSerializer(GameContentSerializer):
     '''The serializer for the Creature object.'''
 
@@ -108,6 +118,7 @@ class CreatureSerializer(GameContentSerializer):
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
     actions = serializers.SerializerMethodField()
+    type = CreatureTypeSerializer(read_only=True, context={'request':{}})
     size = SizeSerializer(read_only=True, context={'request': {}})
     speed = serializers.SerializerMethodField()
     speed_all = serializers.SerializerMethodField()
@@ -229,15 +240,6 @@ class CreatureSerializer(GameContentSerializer):
 
     def get_experience_points(self, creature):
         return creature.experience_points
-
-class CreatureTypeSerializer(GameContentSerializer):
-    '''Serializer for the Creature Type object'''
-    key = serializers.ReadOnlyField()
-
-    class Meta:
-        '''Meta options for serializer.'''
-        model = models.CreatureType
-        fields = '__all__'
 
 
 class CreatureSetSerializer(GameContentSerializer):
