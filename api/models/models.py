@@ -50,9 +50,9 @@ class Document(models.Model):
     url = models.URLField(help_text='URL reference to get the document.')
     copyright = models.TextField(
         null=True, help_text='Copyright statement.')  # Copyright 2025 open5e
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text='Date that this object was added to the database.')
+    #created_at = models.DateTimeField(
+    #    auto_now_add=True,
+    #    help_text='Date that this object was added to the database.')
     license_url = models.TextField(
         default="http://open5e.com/legal",
         help_text='URL reference for the license.')
@@ -75,7 +75,7 @@ class GameContent(models.Model):
         help_text='Description of the game content item. Markdown.')
     # Like the System Reference Document
     document = models.ForeignKey(Document, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    #created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
     # If the source is a physical book (possibly with a digital version),
     # then page_no is the page number in the physical book, even if the PDF
