@@ -48,7 +48,7 @@ class TestAPIRoot:
         self._verify("/conditions")
 
     def test_documents(self):
-        self._verify("/documents", scrub_date)
+        self._verify("/documents")
 
     def test_feats(self):
         self._verify("/feats")
