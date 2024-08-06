@@ -118,8 +118,6 @@ class CreatureSerializer(GameContentSerializer):
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
     actions = serializers.SerializerMethodField()
-    type = CreatureTypeSerializer(read_only=True, context={'request':{}})
-    size = SizeSerializer(read_only=True, context={'request': {}})
     speed = serializers.SerializerMethodField()
     speed_all = serializers.SerializerMethodField()
     challenge_rating_text = serializers.SerializerMethodField()
