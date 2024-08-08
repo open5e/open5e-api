@@ -11,6 +11,7 @@ class SkillSerializer(serializers.ModelSerializer):
         model = models.Skill
         fields = ['key','name','desc']
 
+
 class AbilitySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     skills = SkillSerializer(
@@ -20,4 +21,3 @@ class AbilitySerializer(GameContentSerializer):
     class Meta:
         model = models.Ability
         fields = '__all__'
-

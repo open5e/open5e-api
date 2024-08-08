@@ -46,3 +46,4 @@ from .size import SizeSerializer
 from .environment import EnvironmentSerializer
 
 from .ability import AbilitySerializer
+from .ability import SkillSerializer

@@ -77,6 +77,7 @@ if settings.V2_ENABLED:
     router_v2.register(r'itemrarities',views_v2.ItemRarityViewSet)
     router_v2.register(r'environments',views_v2.EnvironmentViewSet)
     router_v2.register(r'abilities',views_v2.AbilityViewSet)
+    router_v2.register(r'skills',views_v2.SkillViewSet)
 
 router_search = routers.DefaultRouter()
 if settings.V2_SEARCH_ENABLED:

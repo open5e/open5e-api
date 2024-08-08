@@ -17,9 +17,29 @@ class AbilityFilterSet(FilterSet):
 
 class AbilityViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    list: API endpoint for returning a list of alignments.
-    retrieve: API endpoint for returning a particular alignment.
+    list: API endpoint for returning a list of abilities.
+    retrieve: API endpoint for returning a particular ability.
     """
     queryset = models.Ability.objects.all().order_by('pk')
     serializer_class = serializers.AbilitySerializer
     filterset_class = AbilityFilterSet
+
+
+class SkillFilterSet(FilterSet):
+    class Meta:
+        models.Skill
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact','contains'],
+            'document__key': ['in','iexact','exact'],
+        }
+
+
+class SkillViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of skills.
+    retrieve: API endpoint for returning a particular skill.
+    """
+    queryset = models.Skill.objects.all().order_by('pk')
+    serializer_class = serializers.SkillSerializer
+    filterset_class = SkillFilterSet
