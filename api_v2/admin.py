@@ -84,6 +84,9 @@ admin.site.register(DamageType)
 
 admin.site.register(Language)
 
+admin.site.register(Ability)
+admin.site.register(Skill)
+
 admin.site.register(Alignment)
 
 admin.site.register(Condition)

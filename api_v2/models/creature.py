@@ -3,7 +3,7 @@ from fractions import Fraction
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from .abilities import HasAbilities, HasSenses
+from .abstracts import HasAbilities, HasSenses
 from .language import HasLanguage
 from .abstracts import HasDescription, HasName, Modification
 from .abstracts import damage_die_count_field, damage_die_type_field
