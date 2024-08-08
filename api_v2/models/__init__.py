@@ -1,7 +1,7 @@
 """The initialization for models for open5e's api v2."""
 
-from .abilities import Abilities
-from .abilities import Senses
+from .abilities import HasAbilities
+from .abilities import HasSenses
 
 from .item import ItemCategory
 from .item import Item

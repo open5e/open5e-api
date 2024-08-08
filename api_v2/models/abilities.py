@@ -65,7 +65,7 @@ def passive_score_field(help_text):
         help_text=help_text)
 
 
-class Abilities(models.Model):
+class HasAbilities(models.Model):
     """
     This is the definition of the Abilities abstract base class.
 
@@ -265,7 +265,7 @@ class Abilities(models.Model):
         abstract = True
 
 
-class Senses(models.Model):
+class HasSenses(models.Model):
     """
     This is the definition of the Senses abstract base class.
 
