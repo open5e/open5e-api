@@ -5,11 +5,6 @@ from typing import Callable
 
 API_BASE = f"http://localhost:8000"
 
-def scrub_date(data):
-    documents: list[dict] = data["results"]
-    for doc in documents:
-        doc["created_at"] = "2014-07-16T00:00:0.000000"
-
 
 def scrub_img_url(data):
     """img url is inconsistent across platforms. needs to fixed in the api at a later date."""
@@ -53,7 +48,7 @@ class TestAPIRoot:
         self._verify("/conditions")
 
     def test_documents(self):
-        self._verify("/documents", scrub_date)
+        self._verify("/documents")
 
     def test_feats(self):
         self._verify("/feats")

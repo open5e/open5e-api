@@ -53,7 +53,6 @@ class DocumentSerializer(DynamicFieldsHyperlinkedModelSerializer):
                 'author',
                 'organization',
                 'version',
-                'created_at',
                 'copyright',
                 'license_url',)
 
