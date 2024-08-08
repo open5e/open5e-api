@@ -285,10 +285,7 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Condition.objects.all().order_by("pk")
     serializer_class = serializers.ConditionSerializer
     search_fields = ['name', 'desc']
-    filterset_fields=(
-        'name',
-        'document__slug',
-    )
+    filterset_class = filters.ConditionFilter
 
 
 class RaceViewSet(viewsets.ReadOnlyModelViewSet):
