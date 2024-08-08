@@ -139,6 +139,7 @@ class Spell(HasName, HasDescription, FromDocument):
             return self.document.distance_unit
         return self.range_unit
 
+
 class SpellCastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
 

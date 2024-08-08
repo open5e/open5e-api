@@ -3,7 +3,7 @@ from fractions import Fraction
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from .abilities import Abilities, Senses
+from .abstracts import HasAbilities, HasSenses
 from .language import HasLanguage
 from .abstracts import HasDescription, HasName, Modification
 from .abstracts import damage_die_count_field, damage_die_type_field
@@ -21,7 +21,7 @@ class CreatureType(HasName, HasDescription, FromDocument):
     """The Type of creature, such as Aberration."""
 
 
-class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
+class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocument):
     """
     This is the model for a Creature, per the 5e ruleset.
 
