@@ -19,6 +19,10 @@ class Ability(HasName, HasDescription, FromDocument):
         max_length=100,
         help_text='Short description of the ability.')
 
+    @property
+    def skills(self):
+        return self.skill_set.all()
+
     class Meta:
         """To assist with the UI layer."""
 

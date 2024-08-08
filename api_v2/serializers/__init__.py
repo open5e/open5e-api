@@ -44,3 +44,5 @@ from .search import SearchResultSerializer
 from .size import SizeSerializer
 
 from .environment import EnvironmentSerializer
+
+from .ability import AbilitySerializer
