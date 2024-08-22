@@ -1,7 +1,7 @@
 """Viewsets for the Document, Ruleset, Publisher, and License Serializers."""
 from rest_framework import viewsets
-
-from django_filters import FilterSet
+from django_filters import FilterSet, CharFilter
+from django.db.models import JSONField
 
 from api_v2 import models
 from api_v2 import serializers
@@ -18,6 +18,18 @@ class RulesetViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.RulesetSerializer
 
 
+class DocumentFilterSet(FilterSet):
+    '''This is the filterset class for Documents.'''
+    
+    class Meta:
+        model = models.Document
+        fields = '__all__'
+        filter_overrides = {
+            JSONField: {
+                'filter_class': CharFilter
+            }
+        }
+
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of documents.
@@ -25,7 +37,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Document.objects.all().order_by('pk')
     serializer_class = serializers.DocumentSerializer
-    #filterset_fields = '__all__'
+    filterset_class = DocumentFilterSet
 
 
 class PublisherViewSet(viewsets.ReadOnlyModelViewSet):
