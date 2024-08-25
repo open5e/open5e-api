@@ -1,5 +1,6 @@
 """Serializers for Ruleset, License, Publisher, and Document models."""
 from rest_framework import serializers
+from .abstracts import GameContentSerializer
 
 from api_v2 import models
 
@@ -27,10 +28,9 @@ class PublisherSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
-class DocumentSerializer(serializers.HyperlinkedModelSerializer):
+class DocumentSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    stats = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Document
-        fields = "__all__"
+        fields = '__all__'
