@@ -42,12 +42,6 @@ class DocumentSerializer(GameContentSerializer):
     def get_publisher_key(self, obj):
         return obj.publisher.key if obj.publisher else None
     
-    def get_publisher_name(self, obj):
-        return obj.publisher.name if obj.publisher else None
-
-    def get_publisher_key(self, obj):
-        return obj.publisher.key if obj.publisher else None
-    
     def get_ruleset_name(self, obj):
         return obj.ruleset.name if obj.ruleset else None
 
