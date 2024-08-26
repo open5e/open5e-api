@@ -168,9 +168,7 @@ class SpellCastingOption(models.Model):
         help_text='Description of the range of the spell.')
 
 
-class SpellSet(HasName):
+class SpellSet(HasName, FromDocument):
     """A set of spells to be referenced."""
-    key = key_field()
-
     spells = models.ManyToManyField(Spell, related_name="spellsets",
                                     help_text="The set of spells.")
