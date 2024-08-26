@@ -72,6 +72,7 @@ if settings.V2_ENABLED:
     router_v2.register(r'alignments',views_v2.AlignmentViewSet)
     router_v2.register(r'conditions',views_v2.ConditionViewSet)
     router_v2.register(r'spells',views_v2.SpellViewSet)
+    router_v2.register(r'spellsets',views_v2.SpellSetViewSet)
     router_v2.register(r'classes',views_v2.CharacterClassViewSet)
     router_v2.register(r'sizes',views_v2.SizeViewSet)
     router_v2.register(r'itemrarities',views_v2.ItemRarityViewSet)

@@ -7,7 +7,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 from .abstracts import HasName, HasDescription
-from .abstracts import distance_field, distance_unit_field
+from .abstracts import distance_field, distance_unit_field, key_field
 from .document import FromDocument
 
 
@@ -166,3 +166,11 @@ class SpellCastingOption(models.Model):
     range = models.TextField(
         null=True, # Null values mean this value is unchanged from the default casting option.
         help_text='Description of the range of the spell.')
+
+
+class SpellSet(HasName):
+    """A set of spells to be referenced."""
+    key = key_field()
+
+    spells = models.ManyToManyField(Spell, related_name="spellsets",
+                                    help_text="The set of spells.")

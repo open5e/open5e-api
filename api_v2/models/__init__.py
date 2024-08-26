@@ -45,6 +45,7 @@ from .condition import Condition
 from .spell import Spell
 from .spell import SpellCastingOption
 from .spell import SpellSchool
+from .spell import SpellSet
 
 from .characterclass import ClassFeatureItem
 from .characterclass import ClassFeature

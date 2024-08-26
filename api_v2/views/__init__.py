@@ -31,6 +31,7 @@ from .alignment import AlignmentFilterSet, AlignmentViewSet
 from .condition import ConditionViewSet
 
 from .spell import SpellViewSet
+from .spell import SpellSetViewSet
 
 from .characterclass import CharacterClassViewSet
 

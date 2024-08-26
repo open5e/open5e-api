@@ -87,7 +87,6 @@ class Item(Object, HasDescription, FromDocument):
         return fields
 
 
-
 class ItemSet(HasName, HasDescription, FromDocument):
     """A set of items to be referenced."""
 

@@ -17,6 +17,7 @@ class ArmorSerializer(GameContentSerializer):
         model = models.Armor
         fields = '__all__'
 
+
 class WeaponSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     is_versatile = serializers.ReadOnlyField()
@@ -31,12 +32,14 @@ class WeaponSerializer(GameContentSerializer):
         model = models.Weapon
         fields = '__all__'
 
+
 class ItemRaritySerializer(GameContentSerializer):
     key=serializers.ReadOnlyField()
 
     class Meta:
         model = models.ItemRarity
         fields = '__all__'
+
 
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()

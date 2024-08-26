@@ -15,6 +15,7 @@ class SpellFilterSet(FilterSet):
             'document__key': ['in','iexact','exact'],
         }
 
+
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of spells.
@@ -23,4 +24,13 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Spell.objects.all().order_by('pk')
     serializer_class = serializers.SpellSerializer
     filterset_class = SpellFilterSet
+
+
+class SpellSetViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of spellsets.
+    retrieve: API endpoint for returning a particular spellset.
+    """
+    queryset = models.SpellSet.objects.all().order_by('pk')
+    serializer_class = serializers.SpellSetSerializer
 

@@ -37,3 +37,12 @@ class SpellSerializer(GameContentSerializer):
     class Meta:
         model = models.Spell
         fields = '__all__'
+
+
+class SpellSetSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    #spells = SpellSerializer(many=True, read_only=True, context={'request':{}})
+
+    class Meta:
+        model = models.SpellSet
+        fields = '__all__'
