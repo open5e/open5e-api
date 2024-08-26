@@ -62,6 +62,16 @@ class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = CreatureFilterSet
 
 
+class CreatureTypeFilterSet(FilterSet):
+    class Meta:
+        model = models.CreatureType
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact','contains'],
+            'document__key': ['in','iexact','exact'],
+        }
+
+
 class CreatureTypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creatures types.
@@ -69,6 +79,17 @@ class CreatureTypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.CreatureType.objects.all().order_by('pk')
     serializer_class = serializers.CreatureTypeSerializer
+    filterset_class = CreatureTypeFilterSet
+
+
+class CreatureSetFilterSet(FilterSet):
+    class Meta:
+        model = models.CreatureSet
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact','contains'],
+            'document__key': ['in','iexact','exact'],
+        }
 
 
 class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
@@ -78,3 +99,4 @@ class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.CreatureSet.objects.all().order_by('pk')
     serializer_class = serializers.CreatureSetSerializer
+    filterset_class = CreatureSetFilterSet

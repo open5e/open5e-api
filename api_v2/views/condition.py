@@ -1,7 +1,19 @@
 from rest_framework import viewsets
 
+from django_filters import FilterSet
+
 from api_v2 import models
 from api_v2 import serializers
+
+
+class ConditionFilterSet(FilterSet):
+    class Meta:
+        model = models.Condition
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact','contains'],
+            'document__key': ['in','iexact','exact'],
+        }
 
 
 class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
@@ -11,6 +23,4 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Condition.objects.all().order_by('pk')
     serializer_class = serializers.ConditionSerializer
-
-
-
+    filterset_class = ConditionFilterSet
