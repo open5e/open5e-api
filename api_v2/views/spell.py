@@ -6,6 +6,15 @@ from api_v2 import models
 from api_v2 import serializers
 
 
+class SpellFilterSet(FilterSet):
+    class Meta:
+        model = models.Spell
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact','contains'],
+            'document__key': ['in','iexact','exact'],
+        }
+
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of spells.
@@ -13,4 +22,5 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Spell.objects.all().order_by('pk')
     serializer_class = serializers.SpellSerializer
+    filterset_class = SpellFilterSet
 

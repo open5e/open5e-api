@@ -7,8 +7,6 @@ from api_v2 import models
 from api_v2 import serializers
 
 
-
-
 class BackgroundFilterSet(FilterSet):
     class Meta:
         model = models.Background
