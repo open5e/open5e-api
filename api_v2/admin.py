@@ -64,6 +64,7 @@ admin.site.register(Item, admin_class=ItemModelAdmin)
 admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
 
 admin.site.register(SpellSchool)
+admin.site.register(Spell)
 
 admin.site.register(Race, admin_class=RaceAdmin)
 

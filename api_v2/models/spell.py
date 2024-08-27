@@ -9,6 +9,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from .abstracts import HasName, HasDescription
 from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
+from .characterclass import CharacterClass
 
 
 from .enums import SPELL_TARGET_TYPE_CHOICES
@@ -124,6 +125,8 @@ class Spell(HasName, HasDescription, FromDocument):
     concentration = models.BooleanField(
         help_text='Whether the effect requires concentration to be maintained.',
         default=False)
+
+    classes = models.ManyToManyField(CharacterClass)
 
     def casting_options(self):
         """Options for casting the spell."""
