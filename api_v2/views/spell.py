@@ -13,6 +13,7 @@ class SpellFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact','contains'],
             'document__key': ['in','iexact','exact'],
+            'classes__key': ['in','iexact','exact']
         }
 
 class SpellViewSet(viewsets.ReadOnlyModelViewSet):
