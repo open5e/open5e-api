@@ -13,6 +13,7 @@ class SizeFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact','contains'],
             'document__key': ['in','iexact','exact'],
+            'document__ruleset__key': ['in','iexact','exact'],
         }
 
 

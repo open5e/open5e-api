@@ -13,6 +13,7 @@ class LanguageFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
+            'document__ruleset__key': ['in','iexact','exact'],
             'is_exotic': ['exact'],
             'is_secret': ['exact']
         }
