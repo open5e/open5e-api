@@ -29,12 +29,15 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
-# A flag that is True when not production to disallow /v2 api endpoint.
-V2_ENABLED = True
+# Flags to include v1 data and index.
+INCLUDE_V1_DATA = True
+BUILD_V1_INDEX = False
 
-# A flag to be set related to v2 search being used for v1 items.
-V2_SEARCH_ENABLED = True
+# Flags to include v2 data
+INCLUDE_V2_DATA = True
 
+# V2 index always includes v1 data (at this time).
+BUILD_V2_INDEX = True
 
 # Added as part of the migration from django 2 to django 3.
 # Not likely to apply in the short term. https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
