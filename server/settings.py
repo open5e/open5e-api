@@ -31,7 +31,7 @@ DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
 # Flags to include v1 data and index.
 INCLUDE_V1_DATA = True
-BUILD_V1_INDEX = True
+BUILD_V1_INDEX = False
 
 # Flags to include v2 data
 INCLUDE_V2_DATA = True

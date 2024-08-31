@@ -21,6 +21,13 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
+        """[TODO] Check if the directory is dirty."""
+        # Does whoosh_index exist
+        
+        # Does staticfiles exist
+        # Does db.sqlite3 exist
+
+        
         """Main logic."""
         self.stdout.write('Migrating the database...')
         migrate_db()
