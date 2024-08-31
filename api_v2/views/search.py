@@ -66,6 +66,4 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
             f"SELECT {','.join(columns)} FROM {table_name} WHERE {' AND '.join(filters)} ORDER BY {order_by}",
             [schema_version, document_pk, object_model, query])
 
-        print(weighted_queryset)
-
         return weighted_queryset

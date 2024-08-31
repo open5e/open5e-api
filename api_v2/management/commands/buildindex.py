@@ -120,9 +120,6 @@ class Command(BaseCommand):
         # Clear out the content table.
         self.unload_all_content()
 
-        load_v1=False
-        load_v2=False
-
         if options["v1"]:
             # Load the v1 models into the content table.
             self.load_content(v1.MagicItem,"v1")
