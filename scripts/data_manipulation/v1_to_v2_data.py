@@ -23,25 +23,28 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
-    for obj_v1 in v1_model.objects.filter(document__slug='blackflag'):
+    for obj_v1 in v1_model.objects.filter(document__slug='tob'):
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
         obj_v2 = v2_model.objects.filter(key=computed_v2_key).first()
         if obj_v2 is not None:
             v1v2_match_count +=1
-            print(obj_v2.key)
-            copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
-            copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
-            copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
-            copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
-            copy_traits(obj_v1, obj_v2)
+            #print(obj_v2.key)
+            #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
+            #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
+            #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
+            #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
+            #copy_traits(obj_v1, obj_v2)
+            copy_actions(obj_v1, obj_v2)
+            #copy_legendary_desc(obj_v1, obj_v2)
+            #copy_traits(obj_v1,obj_v2)
             #obj_v2.full_clean()
-            obj_v2.save()
+            #obj_v2.save()
 
         ### START LOGIC FOR PARSING V1 DATA ###
 
-        if obj_v2 is None:
+        #if obj_v2 is None:
             #print(obj_v1.slug)
             #obj_v2 = obj_v1.as_v2_creature()
             #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
@@ -55,7 +58,7 @@ def main():
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2) # This requires objects to exist.
             #bj_v2.full_clean()
             #obj_v2.full_clean()
-            v2_added_count +=1
+            #v2_added_count +=1
  
 
         ### DO VALIDATION OF THE OBJECT
@@ -69,6 +72,103 @@ def main():
     print("Matched {} v2 objects.".format(str(v1v2_match_count)))
     print("Added {} v2 objects".format(str(v2_added_count)))
     #print("Failed to match {} objects.".format(str(v1_unmatch_count)))
+
+def copy_actions(obj_v1, obj_v2):
+    # if exists, copy actions_json
+    if obj_v1.actions_json is not None:
+        for a in json.loads(obj_v1.actions_json):
+
+            ca = make_ca(a['name'], a['desc'], obj_v2)
+            if "attack_bonus" in a:
+                make_caa(ca)
+
+    # if exists copy bonus_actions_json
+
+    # if exists copy special_abilities_json
+
+    # if exists copy reactions_json
+
+    # if exists copy legendary_actions_json
+
+def make_ca(name, desc, obj_v2):
+    
+    uses_type = None
+    uses_param = None
+    # If name includes "(recharge X)"
+    if "(Recharge 5-6)" in name:
+        uses_type = "RECHARGE_ON_ROLL"
+        uses_param = 5
+        name = name.split("(")[0]
+    if "(Recharge 4-6)" in name:
+        uses_type = "RECHARGE_ON_ROLL"
+        uses_param = 4
+        name = name.split("(")[0]
+    if "1/Day" in name:
+        uses_type = "PER_DAY"
+        uses_param = 1
+        name = name.split("(")[0]
+    if "2/Day" in name:
+        uses_type = "PER_DAY"
+        uses_param = 2
+        name = name.split("(")[0]
+    if "3/Day" in name:
+        uses_type = "PER_DAY"
+        uses_param = 3
+        name = name.split("(")[0]
+    if "Recharges after a Short or Long Rest" in name:
+        uses_type = "RECHARGE_AFTER_REST"
+        name = name.split("(")[0]
+
+    key = slugify(obj_v2.key + "_" + name)
+    a = v2_models.CreatureAction(
+        key=key,
+        name=name,
+        desc=desc,
+        parent=obj_v2,
+        uses_type=uses_type,
+        uses_param=uses_param,
+    )
+    return a
+
+def make_caa(ca):
+    name = ca.name + " attack"
+    attack_type = None
+    if "spell" in ca.desc.split(":")[0].lower():
+        attack_type = "SPELL"
+    if "magical" in ca.desc.split(":")[0].lower():
+        attack_type = "SPELL"
+    if "weapon" in ca.desc.split(":")[0].lower():
+        attack_type = "WEAPON"
+    if ca.key == "tob_ravenala_bursting-pod":
+        attack_type = "WEAPON"
+
+    '''aa = CreatureActionAttack(
+        key=slugify(ca.key + "_"+name)
+        name=name
+        parent=ca
+        attack_type=attack_type
+        to_hit_mod=
+        reach_ft=
+        range_ft=
+        long_range_ft=
+        target_creature_only=
+        damage_die_count=
+        damage_die_type=
+        damage_bonus=
+        damage_type=
+        extra_damage_die_count=
+        extra_damage_die_type=
+        extra_damage_bonus=
+        extra_damage_type=
+    )
+
+    return aa'''
+
+
+
+
+def copy_legendary_desc(obj_v1, obj_v2):
+    pass
 
 def _do_spell_distance(obj_v2):
     get_distance_and_unit_from_range_text(obj_v2)
