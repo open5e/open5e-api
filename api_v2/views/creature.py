@@ -13,10 +13,11 @@ class CreatureFilterSet(FilterSet):
         model = models.Creature
         fields = {
             'key': ['in', 'iexact', 'exact' ],
-            'name': ['iexact', 'exact'],
+            'name': ['iexact', 'exact', 'icontains'],
             'document__key': ['in','iexact','exact'],
             'document__ruleset__key': ['in','iexact','exact'],
             'size': ['exact'],
+            'type': ['exact'],
             'challenge_rating_decimal': ['exact','lt','lte','gt','gte'],
             'armor_class': ['exact','lt','lte','gt','gte'],
             'ability_score_strength': ['exact','lt','lte','gt','gte'],
