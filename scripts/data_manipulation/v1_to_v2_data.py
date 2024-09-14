@@ -78,7 +78,7 @@ def copy_actions(obj_v1, obj_v2):
     if obj_v1.actions_json is not None:
         for a in json.loads(obj_v1.actions_json):
 
-            ca = make_ca(a['name'], a['desc'], obj_v2)
+            make_ca(a['name'], a['desc'], obj_v2)
             if "attack_bonus" in a:
                 make_caa(ca, a)
 
@@ -119,6 +119,9 @@ def make_ca(name, desc, obj_v2):
         uses_type = "RECHARGE_AFTER_REST"
         name = name.split("(")[0]
 
+    if uses_type == None:
+        print (name, desc, obj_v2)
+
     key = slugify(obj_v2.key + "_" + name)
     a = v2_models.CreatureAction(
         key=key,
@@ -128,6 +131,7 @@ def make_ca(name, desc, obj_v2):
         uses_type=uses_type,
         uses_param=uses_param,
     )
+    a.full_clean()
     return a
 
 def make_caa(ca, a):
@@ -221,7 +225,7 @@ def make_caa(ca, a):
         extra_damage_type=edt
     )
 
-    return aa
+    aa.full_clean()
 
 
 

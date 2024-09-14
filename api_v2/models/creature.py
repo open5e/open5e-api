@@ -156,6 +156,7 @@ class CreatureAction(HasName, HasDescription):
     )
 
     uses_type = models.CharField(
+        blank=True,
         null=True,
         max_length=20,
         choices=CREATURE_USES_TYPES,
@@ -163,6 +164,7 @@ class CreatureAction(HasName, HasDescription):
     )
 
     uses_param = models.SmallIntegerField(
+        blank=True,
         null=True,
         help_text='The parameter X for if the action is limited.'
     )
