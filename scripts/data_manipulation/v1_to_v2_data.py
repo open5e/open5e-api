@@ -78,7 +78,7 @@ def copy_actions(obj_v1, obj_v2):
     if obj_v1.actions_json is not None:
         for a in json.loads(obj_v1.actions_json):
 
-            make_ca(a['name'], a['desc'], obj_v2)
+            ca = make_ca(a['name'], a['desc'], obj_v2)
             if "attack_bonus" in a:
                 make_caa(ca, a)
 
@@ -131,7 +131,7 @@ def make_ca(name, desc, obj_v2):
         uses_type=uses_type,
         uses_param=uses_param,
     )
-    a.full_clean()
+    a.save()
     return a
 
 def make_caa(ca, a):
@@ -189,7 +189,7 @@ def make_caa(ca, a):
     edbonus = None
     try:
         ddct = int(a["damage_dice"].split("d")[0])
-        ddty = int(a["damage_dice"].split("d")[1].split("+")[0])
+        ddty = "D"+ a["damage_dice"].split("d")[1].split("+")[0]
         dbonus = int(damage_parsed.split("plus")[0].split(")")[0].split("(")[1].split("d")[1].split("+")[1].trimmed())
 
     except:
@@ -197,13 +197,19 @@ def make_caa(ca, a):
     try:
         extra = damage_parsed.split("plus")[1]
         die_count = extra.split(")")[0].split("(")[1].split("d")[0]
-        die_type = extra.split(")")[0].split("(")[1].split("d")[1]
+        die_type = "D"+extra.split(")")[0].split("(")[1].split("d")[1]
         eddct = die_count
         eddty = die_type
     except:
         pass
 
-    print(str(ca))
+    # EXCEPTIONS START HERE:
+    print(ca.key)
+
+    if ca.key == 'tob_aboleth-nihilith_tentacle-material-form-only':
+        edt=None
+    if ca.key == 'tob_nkosi-pridelord_mambele-throwing-knife-nkosi-form-only' and name=="Mambele Throwing Knife (Nkosi Form Only) attack":
+        name = "Mambele Throwing Knife (Nkosi Form Only)"
 
     aa = v2_models.CreatureActionAttack(
         key=slugify(ca.key + "_" +name),
@@ -214,7 +220,7 @@ def make_caa(ca, a):
         reach_ft=reach_ft,
         range_ft=range_short,
         long_range_ft=range_long,
-        target_creature_only=None,
+        target_creature_only=False,
         damage_die_count=ddct,
         damage_die_type=ddty,
         damage_bonus=dbonus,

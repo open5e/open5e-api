@@ -198,18 +198,21 @@ class CreatureActionAttack(HasName):
     )
 
     reach_ft = models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)],
         help_text='Reach for melee attacks, in feet.'
     )
 
     range_ft = models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)],
         help_text='Normal range for ranged attacks, in feet.'
     )
 
     long_range_ft = models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)],
         help_text='Long range for ranged attacks, in feet.'
@@ -226,6 +229,7 @@ class CreatureActionAttack(HasName):
 
     damage_type = models.ForeignKey(
         "DamageType",
+        blank=True,
         null=True,
         related_name="+", # No backwards relation.
         on_delete=models.CASCADE,
@@ -238,6 +242,7 @@ class CreatureActionAttack(HasName):
 
     extra_damage_type = models.ForeignKey(
         "DamageType",
+        blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name="+", # No backwards relation.
