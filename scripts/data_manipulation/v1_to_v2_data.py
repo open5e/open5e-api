@@ -197,9 +197,10 @@ def make_caa(ca, a):
     try:
         extra = damage_parsed.split("plus")[1]
         die_count = extra.split(")")[0].split("(")[1].split("d")[0]
-        die_type = "D"+extra.split(")")[0].split("(")[1].split("d")[1]
+        die_type = "D"+extra.split(")")[0].split("(")[1].split("d")[1].split("+")[0].trimmed()
         eddct = die_count
         eddty = die_type
+        edbonus = 0
     except:
         pass
 
@@ -210,6 +211,8 @@ def make_caa(ca, a):
         edt=None
     if ca.key == 'tob_nkosi-pridelord_mambele-throwing-knife-nkosi-form-only' and name=="Mambele Throwing Knife (Nkosi Form Only) attack":
         name = "Mambele Throwing Knife (Nkosi Form Only)"
+    if ca.key == 'tob_temple-dog_bite' and name=="Bite attack":
+        edbonus = 4
 
     aa = v2_models.CreatureActionAttack(
         key=slugify(ca.key + "_" +name),
@@ -227,11 +230,11 @@ def make_caa(ca, a):
         damage_type=dt,
         extra_damage_die_count=eddct,
         extra_damage_die_type=eddty,
-        extra_damage_bonus=0,
+        extra_damage_bonus=edbonus,
         extra_damage_type=edt
     )
 
-    aa.full_clean()
+    aa.save()
 
 
 
