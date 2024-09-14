@@ -80,7 +80,7 @@ def copy_actions(obj_v1, obj_v2):
 
             ca = make_ca(a['name'], a['desc'], obj_v2)
             if "attack_bonus" in a:
-                make_caa(ca)
+                make_caa(ca, a)
 
     # if exists copy bonus_actions_json
 
@@ -130,7 +130,8 @@ def make_ca(name, desc, obj_v2):
     )
     return a
 
-def make_caa(ca):
+def make_caa(ca, a):
+    # This is only entered if it is certain that the creature action is an attack.
     name = ca.name + " attack"
     attack_type = None
     if "spell" in ca.desc.split(":")[0].lower():
@@ -142,27 +143,85 @@ def make_caa(ca):
     if ca.key == "tob_ravenala_bursting-pod":
         attack_type = "WEAPON"
 
-    '''aa = CreatureActionAttack(
-        key=slugify(ca.key + "_"+name)
-        name=name
-        parent=ca
-        attack_type=attack_type
-        to_hit_mod=
-        reach_ft=
-        range_ft=
-        long_range_ft=
-        target_creature_only=
-        damage_die_count=
-        damage_die_type=
-        damage_bonus=
-        damage_type=
-        extra_damage_die_count=
-        extra_damage_die_type=
-        extra_damage_bonus=
-        extra_damage_type=
+    reach_ft = None
+    try:
+        reach_parsed = ca.desc.split("reach")[1].split("f")[0]
+        reach_ft = int(reach_parsed)
+    except:
+        pass
+
+
+    # Range
+    range_short = None
+    range_long = None
+    range_parsed = None
+    try:
+        range_parsed = ca.desc.split("Attack:")[1].split("range")[1].split("ft")[0]
+        range_short  = int(range_parsed.split('/')[0].strip())
+        range_long = int(range_parsed.split('/')[1].strip())
+    except:
+        pass
+
+    # Damage Types
+    dt = None
+    edt = None
+    for word in ca.desc.split(" "):
+        try:
+            d = v2_models.DamageType.objects.get(key=word)
+            if dt is not None:
+                dt = d
+            else:
+                edt = d
+        except v2_models.damagetype.DamageType.DoesNotExist:
+            pass
+   
+    # Damage and Extra Damage
+    damage_parsed = ca.desc.split("Hit:")[1].split(".")[0]
+    ddct = None
+    ddty = None
+    dbonus = None
+    eddct = None
+    eddty = None
+    edbonus = None
+    try:
+        ddct = int(a["damage_dice"].split("d")[0])
+        ddty = int(a["damage_dice"].split("d")[1].split("+")[0])
+        dbonus = int(damage_parsed.split("plus")[0].split(")")[0].split("(")[1].split("d")[1].split("+")[1].trimmed())
+
+    except:
+        pass
+    try:
+        extra = damage_parsed.split("plus")[1]
+        die_count = extra.split(")")[0].split("(")[1].split("d")[0]
+        die_type = extra.split(")")[0].split("(")[1].split("d")[1]
+        eddct = die_count
+        eddty = die_type
+    except:
+        pass
+
+    print(str(ca))
+
+    aa = v2_models.CreatureActionAttack(
+        key=slugify(ca.key + "_" +name),
+        name=name,
+        parent=ca,
+        attack_type=attack_type,
+        to_hit_mod=a["attack_bonus"],
+        reach_ft=reach_ft,
+        range_ft=range_short,
+        long_range_ft=range_long,
+        target_creature_only=None,
+        damage_die_count=ddct,
+        damage_die_type=ddty,
+        damage_bonus=dbonus,
+        damage_type=dt,
+        extra_damage_die_count=eddct,
+        extra_damage_die_type=eddty,
+        extra_damage_bonus=0,
+        extra_damage_type=edt
     )
 
-    return aa'''
+    return aa
 
 
 
