@@ -49,6 +49,8 @@ class SearchResultSerializer(serializers.ModelSerializer):
                 result_detail = models.Spell.objects.get(pk=obj.object_pk)
             if obj.object_model == 'CharacterClass':
                 result_detail = models.CharacterClass.objects.get(pk=obj.object_pk)
+            if obj.object_model == 'Race':
+                result_detail = models.Race.objects.get(pk=obj.object_pk)
 
         if result_detail is not None:
             return result_detail.search_result_extra_fields()
