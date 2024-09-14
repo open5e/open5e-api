@@ -113,4 +113,12 @@ class CharacterClass(HasName, FromDocument):
 
         return text
 
+    def search_result_extra_fields(self):
+        return {
+            "subclass_of": { 
+                "name": self.subclass_of.name,
+                "key": self.subclass_of.key
+            } if self.subclass_of else None
+        }
+    
     #TODO add verbose name plural
