@@ -81,11 +81,11 @@ class Item(Object, HasDescription, FromDocument):
         return self.rarity is not None
 
     def search_result_extra_fields(self):
-        fields = {"type":self.category.key}
-        if self.is_magic_item:
-            fields["rarity"]=self.rarity.key
-        return fields
-
+        return {
+            "is_magic_item": self.is_magic_item,
+            "type": self.category.name if self.is_magic_item else None,
+            "rarity": self.rarity.name if self.is_magic_item else None,
+        }
 
 
 class ItemSet(HasName, HasDescription, FromDocument):
