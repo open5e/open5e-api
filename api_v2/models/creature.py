@@ -82,10 +82,10 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
 
     def search_result_extra_fields(self):
         return {
-            "armor_class":self.armor_class,
-            "hit_points":self.hit_points,
-            "ability_scores":self.get_ability_scores(),
-              }
+            "cr": self.challenge_rating_text,
+            "type": self.type.name,
+            "size": self.size.name,   
+        }
 
     @property
     def creatureset(self):

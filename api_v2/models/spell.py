@@ -142,7 +142,12 @@ class Spell(HasName, HasDescription, FromDocument):
             return self.document.distance_unit
         return self.range_unit
 
-
+    def search_result_extra_fields(self):
+        return {
+            "school": self.school.name,
+            "level": self.level,
+        }
+        
 class SpellCastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
 
