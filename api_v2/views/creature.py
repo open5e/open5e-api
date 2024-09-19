@@ -17,6 +17,8 @@ class CreatureFilterSet(FilterSet):
             'document__key': ['in','iexact','exact'],
             'document__ruleset__key': ['in','iexact','exact'],
             'size': ['exact'],
+            'category': ['exact', 'iexact'],
+            'subcategory': ['exact', 'iexact'],
             'type': ['exact'],
             'challenge_rating_decimal': ['exact','lt','lte','gt','gte'],
             'armor_class': ['exact','lt','lte','gt','gte'],

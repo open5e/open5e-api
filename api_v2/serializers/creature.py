@@ -136,6 +136,7 @@ class CreatureSerializer(GameContentSerializer):
             'speed',
             'speed_all',
             'category',
+            'subcategory',
             'type',
             'alignment',
             'languages',
