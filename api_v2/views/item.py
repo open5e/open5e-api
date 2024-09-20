@@ -13,14 +13,14 @@ class ItemFilterSet(FilterSet):
     class Meta:
         model = models.Item
         fields = {
-            'key': ['in', 'iexact', 'exact' ],
-            'name': ['iexact', 'exact'],
+            'key': ['in', 'iexact', 'exact'],
+            'name': ['iexact', 'exact', 'icontains'],
             'desc': ['icontains'],
             'cost': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
-#            'rarity': ['exact', 'in', ],
+            'rarity': ['exact', 'in'],
             'requires_attunement': ['exact'],
-            #'category': ['in', 'iexact', 'exact'],
+            'category': ['in', 'exact'],
             'document__key': ['in','iexact','exact'],
             'document__ruleset__key': ['in','iexact','exact'],
         }
