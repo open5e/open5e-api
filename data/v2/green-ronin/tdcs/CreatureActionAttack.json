@@ -1,0 +1,90 @@
+[
+{
+  "model": "api_v2.creatureactionattack",
+  "pk": "tdcs_firetamer_scimitar_scimitar-attack",
+  "fields": {
+    "name": "Scimitar attack",
+    "parent": "tdcs_firetamer_scimitar",
+    "attack_type": "WEAPON",
+    "to_hit_mod": 6,
+    "reach_ft": 5,
+    "range_ft": null,
+    "long_range_ft": null,
+    "target_creature_only": false,
+    "damage_die_count": 1,
+    "damage_die_type": "D6",
+    "damage_bonus": 2,
+    "damage_type": null,
+    "extra_damage_die_count": 4,
+    "extra_damage_die_type": "D6",
+    "extra_damage_bonus": 0,
+    "extra_damage_type": "fire"
+  }
+},
+{
+  "model": "api_v2.creatureactionattack",
+  "pk": "tdcs_skydancer_skysail-staff_skysail-staff-attack",
+  "fields": {
+    "name": "Skysail Staff attack",
+    "parent": "tdcs_skydancer_skysail-staff",
+    "attack_type": "WEAPON",
+    "to_hit_mod": 7,
+    "reach_ft": 5,
+    "range_ft": null,
+    "long_range_ft": null,
+    "target_creature_only": false,
+    "damage_die_count": 1,
+    "damage_die_type": "D6",
+    "damage_bonus": 4,
+    "damage_type": null,
+    "extra_damage_die_count": null,
+    "extra_damage_die_type": null,
+    "extra_damage_bonus": null,
+    "extra_damage_type": "lightning"
+  }
+},
+{
+  "model": "api_v2.creatureactionattack",
+  "pk": "tdcs_stoneguard_granite-maul_granite-maul-attack",
+  "fields": {
+    "name": "Granite Maul attack",
+    "parent": "tdcs_stoneguard_granite-maul",
+    "attack_type": "WEAPON",
+    "to_hit_mod": 8,
+    "reach_ft": 5,
+    "range_ft": null,
+    "long_range_ft": null,
+    "target_creature_only": false,
+    "damage_die_count": 2,
+    "damage_die_type": "D6",
+    "damage_bonus": 4,
+    "damage_type": null,
+    "extra_damage_die_count": null,
+    "extra_damage_die_type": null,
+    "extra_damage_bonus": null,
+    "extra_damage_type": "bludgeoning"
+  }
+},
+{
+  "model": "api_v2.creatureactionattack",
+  "pk": "tdcs_waverider_harpoon_harpoon-attack",
+  "fields": {
+    "name": "Harpoon attack",
+    "parent": "tdcs_waverider_harpoon",
+    "attack_type": "WEAPON",
+    "to_hit_mod": 5,
+    "reach_ft": 5,
+    "range_ft": 20,
+    "long_range_ft": 60,
+    "target_creature_only": false,
+    "damage_die_count": 1,
+    "damage_die_type": "D6",
+    "damage_bonus": 2,
+    "damage_type": null,
+    "extra_damage_die_count": null,
+    "extra_damage_die_type": null,
+    "extra_damage_bonus": null,
+    "extra_damage_type": "piercing"
+  }
+}
+]
