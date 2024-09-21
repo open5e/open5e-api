@@ -23,7 +23,7 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
-    for obj_v1 in v1_model.objects.filter(document__slug='tob-2023'):
+    for obj_v1 in v1_model.objects.filter(document__slug='tob2'):
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
@@ -75,7 +75,7 @@ def main():
 
 def copy_actions(obj_v1, obj_v2):
     # if exists, copy actions_json
-    if obj_v1.actions_json is not None:
+    if obj_v1.actions_json not in [None,"null"]:
         for a in json.loads(obj_v1.actions_json):
 
             ca = make_ca(a['name'], a['desc'], obj_v2)
