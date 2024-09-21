@@ -23,7 +23,7 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
-    for obj_v1 in v1_model.objects.filter(document__slug='tob'):
+    for obj_v1 in v1_model.objects.filter(document__slug='tob-2023'):
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
@@ -79,7 +79,8 @@ def copy_actions(obj_v1, obj_v2):
         for a in json.loads(obj_v1.actions_json):
 
             ca = make_ca(a['name'], a['desc'], obj_v2)
-            if "attack_bonus" in a:
+            if "Attack" in ca.desc.split(".")[0].split(":")[0]:
+            #if "attack_bonus" in a:
                 make_caa(ca, a)
 
     # if exists copy bonus_actions_json
@@ -180,7 +181,11 @@ def make_caa(ca, a):
             pass
    
     # Damage and Extra Damage
-    damage_parsed = ca.desc.split("Hit:")[1].split(".")[0]
+    if "attack_bonus" in a:
+        abonus = a['attack_bonus']
+    else:
+        abonus = get_attack_bonus(a)
+    damage_parsed = ca.desc.split("it:")[1].split(".")[0]
     ddct = None
     ddty = None
     dbonus = None
@@ -219,7 +224,7 @@ def make_caa(ca, a):
         name=name,
         parent=ca,
         attack_type=attack_type,
-        to_hit_mod=a["attack_bonus"],
+        to_hit_mod=get_attack_bonus(a),
         reach_ft=reach_ft,
         range_ft=range_short,
         long_range_ft=range_long,
@@ -241,6 +246,23 @@ def make_caa(ca, a):
 
 def copy_legendary_desc(obj_v1, obj_v2):
     pass
+
+def get_attack_bonus(a):
+    if "attack_bonus" in a:
+        return a['attack_bonus']
+    else:
+        if ":" in a['desc']:
+            rdesc = a['desc'].split(":")[1]
+            hitdesc = rdesc.split(",")[0] #Should be format '+9 to hit'
+            hitnum = hitdesc.split(" to hit")[0]
+            if hitnum == "":
+                return None
+            else:
+                return int(hitnum)
+
+        else:
+            return None
+
 
 def _do_spell_distance(obj_v2):
     get_distance_and_unit_from_range_text(obj_v2)
