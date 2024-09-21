@@ -23,7 +23,7 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
-    for obj_v1 in v1_model.objects.filter(document__slug='taldorei'):
+    for obj_v1 in v1_model.objects.filter(document__slug='wotc-srd'):
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
