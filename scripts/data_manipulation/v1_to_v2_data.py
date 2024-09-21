@@ -185,7 +185,7 @@ def make_caa(ca, a):
         abonus = a['attack_bonus']
     else:
         abonus = get_attack_bonus(a)
-    damage_parsed = ca.desc.split("it:")[1].split(".")[0]
+    damage_parsed = ca.desc.split("it:")[1].split(".")[0].strip()
     ddct = None
     ddty = None
     dbonus = None
@@ -193,20 +193,23 @@ def make_caa(ca, a):
     eddty = None
     edbonus = None
     try:
-        ddct = int(a["damage_dice"].split("d")[0])
-        ddty = "D"+ a["damage_dice"].split("d")[1].split("+")[0]
-        dbonus = int(damage_parsed.split("plus")[0].split(")")[0].split("(")[1].split("d")[1].split("+")[1].trimmed())
+        ddct = int(damage_parsed.split("(")[1].split("d")[0])
+        print(damage_parsed)
+        ddty = "D"+ damage_parsed.split("d")[1].split("+")[0].strip()
+        dbonus = int(damage_parsed.split("plus")[0].split(")")[0].split("(")[1].split("d")[1].split("+")[1].strip())
 
+        print(ddct, ddty, dbonus)
     except:
         pass
     try:
         extra = damage_parsed.split("plus")[1]
         die_count = extra.split(")")[0].split("(")[1].split("d")[0]
-        die_type = "D"+extra.split(")")[0].split("(")[1].split("d")[1].split("+")[0].trimmed()
+        die_type = "D"+extra.split(")")[0].split("(")[1].split("d")[1].split("+")[0].strip()
         eddct = die_count
         eddty = die_type
         edbonus = 0
     except:
+
         pass
 
     # EXCEPTIONS START HERE:
