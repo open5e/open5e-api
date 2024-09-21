@@ -23,7 +23,7 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
-    for obj_v1 in v1_model.objects.filter(document__slug='tob2'):
+    for obj_v1 in v1_model.objects.filter(document__slug='blackflag'):
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
@@ -79,7 +79,7 @@ def copy_actions(obj_v1, obj_v2):
         for a in json.loads(obj_v1.actions_json):
 
             ca = make_ca(a['name'], a['desc'], obj_v2)
-            if "Attack" in ca.desc.split(".")[0].split(":")[0]:
+            if "Attack" in ca.desc.replace("_","").split(".")[0].split(":")[0]:
             #if "attack_bonus" in a:
                 make_caa(ca, a)
 
@@ -170,7 +170,7 @@ def make_caa(ca, a):
     # Damage Types
     dt = None
     edt = None
-    for word in ca.desc.split(" "):
+    for word in ca.desc.replace("_","").split(" "):
         try:
             d = v2_models.DamageType.objects.get(key=word)
             if dt is not None:
@@ -185,7 +185,8 @@ def make_caa(ca, a):
         abonus = a['attack_bonus']
     else:
         abonus = get_attack_bonus(a)
-    damage_parsed = ca.desc.split("it:")[1].split(".")[0].strip()
+    damage_parsed = ca.desc.replace("_","").split("it:")[1].split(".")[0].strip()
+        
     ddct = None
     ddty = None
     dbonus = None
@@ -194,11 +195,10 @@ def make_caa(ca, a):
     edbonus = None
     try:
         ddct = int(damage_parsed.split("(")[1].split("d")[0])
-        print(damage_parsed)
         ddty = "D"+ damage_parsed.split("d")[1].split("+")[0].strip()
         dbonus = int(damage_parsed.split("plus")[0].split(")")[0].split("(")[1].split("d")[1].split("+")[1].strip())
 
-        print(ddct, ddty, dbonus)
+        #print(ddct, ddty, dbonus)
     except:
         pass
     try:
@@ -255,7 +255,7 @@ def get_attack_bonus(a):
         return a['attack_bonus']
     else:
         if ":" in a['desc']:
-            rdesc = a['desc'].split(":")[1]
+            rdesc = a['desc'].split(":")[1].replace("_","")
             hitdesc = rdesc.split(",")[0] #Should be format '+9 to hit'
             hitnum = hitdesc.split(" to hit")[0]
             if hitnum == "":
