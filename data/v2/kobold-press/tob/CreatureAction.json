@@ -512,8 +512,8 @@
     "name": "Gravitic Breath",
     "desc": "The dragon exhales a 60-foot cube of powerful localized gravity, originating from the dragon. Falling damage in the area increases to 1d10 per 10 feet fallen. When a creature starts its turn within the area or enters it for the first time in a turn, including when the dragon creates the field, must make a DC 20 Dexterity saving throw. On a failure the creature is restrained. On a success the creature's speed is halved as long as it remains in the field. A restrained creature repeats the saving throw at the end of its turn. The field persists until the dragon's breath recharges, and it can't use gravitic breath twice consecutively.",
     "parent": "tob_adult-void-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -534,8 +534,8 @@
     "name": "Stellar Flare Breath",
     "desc": "The dragon exhales star fire in a 60- foot cone. Each creature in that area must make a DC 20 Dexterity saving throw, taking 31 (9d6) fire damage and 31 (9d6) radiant damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob_adult-void-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -1172,8 +1172,8 @@
     "name": "Gravitic Breath",
     "desc": "The dragon exhales a 90-foot cube of powerful localized gravity, originating from the dragon. Falling damage in the area increases to 1d10 per 10 feet fallen. When a creature starts its turn within the area or enters it for the first time in a turn, including when the dragon creates the field, it must make a DC 24 Dexterity saving throw. On a failure the creature is restrained. On a success the creature's speed is halved as long as it remains in the field. A restrained creature repeats the saving throw at the end of its turn. The field persists until the dragon's breath recharges, and it can't use gravitic breath twice consecutively.",
     "parent": "tob_ancient-void-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -1194,8 +1194,8 @@
     "name": "Stellar Flare Breath",
     "desc": "The dragon exhales star fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 45 (13d6) fire damage and 45 (13d6) radiant damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob_ancient-void-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13107,8 +13107,8 @@
     "name": "Gravitic Breath",
     "desc": "The dragon exhales a 15-foot cube of powerful localized gravity, originating from the dragon. Falling damage in the area increases to 1d10 per 10 feet fallen. When a creature starts its turn within the area or enters it for the first time in a turn, including when the dragon creates the field, must make a DC 13 Dexterity saving throw. On a failure the creature is restrained. On a success the creature's speed is halved as long as it remains in the field. A restrained creature repeats the saving throw at the end of its turn. The field persists until the dragon's breath recharges, and it can't use gravitic breath twice consecutively.",
     "parent": "tob_void-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13118,8 +13118,8 @@
     "name": "Stellar Flare Breath",
     "desc": "The dragon exhales star fire in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 10 (3d6) fire damage and 10 (3d6) radiant damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob_void-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13916,24 +13916,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_young-void-dragon_falling-damage-in-the-area-increases-to-1d10-per-10-feet-fallen",
-  "fields": {
-    "name": "Falling damage in the area increases to 1d10 per 10 feet fallen",
-    "desc": "When a creature starts its turn within the area or enters it for the first time in a turn, including when the dragon creates the field, it must make a DC 17 Dexterity saving throw. On a failure the creature is restrained. On a success the creature's speed is halved as long as it remains in the field. A restrained creature repeats the saving throw at the end of its turn. The field persists until the dragon's breath recharges, and it can't use gravitic breath twice consecutively.",
-    "parent": "tob_young-void-dragon",
-    "uses_type": null,
-    "uses_param": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "tob_young-void-dragon_gravitic-breath",
   "fields": {
     "name": "Gravitic Breath",
-    "desc": "The dragon exhales a 30-foot cube of powerful localized gravity, originating from the dragon.",
+    "desc": "The dragon exhales a 30-foot cube of powerful localized gravity, originating from the dragon. Falling damage in the area increases to 1d10 per 10 feet fallen. When a creature starts its turn within the area or enters it for the first time in a turn, including when the dragon creates the field, it must make a DC 17 Dexterity saving throw. On a failure the creature is restrained. On a success the creature's speed is halved as long as it remains in the field. A restrained creature repeats the saving throw at the end of its turn. The field persists until the dragon's breath recharges, and it can't use gravitic breath twice consecutively.",
     "parent": "tob_young-void-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13954,8 +13943,8 @@
     "name": "Stellar Flare Breath",
     "desc": "The dragon exhales star fire in a 30- foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 28 (8d6) fire damage and 28 (8d6) radiant damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob_young-void-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {

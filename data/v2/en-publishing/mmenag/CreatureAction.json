@@ -14370,7 +14370,7 @@
   "pk": "mmenag_nalfeshnee_bite",
   "fields": {
     "name": "Bite",
-    "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 32 (5d10 + 5) piercing damage. If it uses its bite on a dead  non-demon creature  it regains 27 (5d10) hit points and recharges its Horror Nimbus. It may gain this benefit only once per creature.",
+    "desc": "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 32 (5d10 + 5) piercing damage. If it uses its bite on a dead  non-demon creature it regains 27 (5d10) hit points and recharges its Horror Nimbus. It may gain this benefit only once per creature.",
     "parent": "mmenag_nalfeshnee",
     "uses_type": null,
     "uses_param": null
@@ -18569,21 +18569,10 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_tarrasque_if-a-swallowed-creature-deals-70-or-more-damage-to-the-tarrasque-in-a-single-turn-or-if-the-tarrasque-dies-the-tarrasque-vomits-up-all-swallowed-creatures",
-  "fields": {
-    "name": "If a swallowed creature deals 70 or more damage to the tarrasque in a single turn, or if the tarrasque dies, the tarrasque vomits up all swallowed creatures",
-    "desc": "",
-    "parent": "mmenag_tarrasque",
-    "uses_type": null,
-    "uses_param": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "mmenag_tarrasque_multiattack",
   "fields": {
     "name": "Multiattack",
-    "desc": "The tarrasque attacks with its bite  claw  horns  and tail. It can use Swallow instead of its bite. If its bloodied  it also recharges and then uses Radiant Breath.",
+    "desc": "The tarrasque attacks with its bite, claw, horns, and tail. It can use Swallow instead of its bite. If its bloodied it also recharges and then uses Radiant Breath.",
     "parent": "mmenag_tarrasque",
     "uses_type": null,
     "uses_param": null
@@ -18605,7 +18594,7 @@
   "pk": "mmenag_tarrasque_swallow",
   "fields": {
     "name": "Swallow",
-    "desc": "The tarrasque makes a bite attack against a Large or smaller creature it is grappling. If the attack hits  the target is swallowed and the grapple ends. A swallowed creature has total cover from attacks from outside the tarrasque  it is blinded and restrained  and it takes 35 (10d6) acid damage and 35 (10d6) bludgeoning damage at the start of each of the tarrasques turns.",
+    "desc": "The tarrasque makes a bite attack against a Large or smaller creature it is grappling. If the attack hits  the target is swallowed and the grapple ends. A swallowed creature has total cover from attacks from outside the tarrasque, it is blinded and restrained and it takes 35 (10d6) acid damage and 35 (10d6) bludgeoning damage at the start of each of the tarrasques turns. If a swallowed creature deals 70 or more damage to the tarrasque in a single turn, or if the tarrasque dies, the tarrasque vomits up all swallowed creatures.",
     "parent": "mmenag_tarrasque",
     "uses_type": null,
     "uses_param": null

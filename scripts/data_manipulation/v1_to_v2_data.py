@@ -35,7 +35,8 @@ def main():
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
             #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
-            copy_traits(obj_v1, obj_v2)
+            #copy_traits(obj_v1, obj_v2)
+            check_caa(obj_v2)
             #copy_actions(obj_v1, obj_v2)
             #copy_legendary_desc(obj_v1, obj_v2)
             #copy_traits(obj_v1,obj_v2)
@@ -72,6 +73,11 @@ def main():
     print("Matched {} v2 objects.".format(str(v1v2_match_count)))
     print("Added {} v2 objects".format(str(v2_added_count)))
     #print("Failed to match {} objects.".format(str(v1_unmatch_count)))
+
+def check_caa(obj_v2):
+    for ca in obj_v2.creatureaction_set.all():
+        if "recharge" in ca.desc and ca.uses_type is None:
+            print("should recharge?",ca.key)
 
 def copy_actions(obj_v1, obj_v2):
     # if exists, copy actions_json
