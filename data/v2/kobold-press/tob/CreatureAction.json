@@ -1519,13 +1519,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_apau-perape_variant-demon-summoning",
+  "pk": "tob_apau-perape_summon-demon",
   "fields": {
-    "name": "Variant: Demon Summoning",
-    "desc": "some apau perapes have an action option that allows them to summon other demons.\n\nsummon Demon (1/Day): The apau perape chooses what to summon and attempts a magical summoning\n\nthe apau perape has a 50 percent chance of summoning one apau perape or one giant ape.",
+    "name": "Summon Demon",
+    "desc": "Variant: Demon Summoning\n Some apau perapes have an action option that allows them to summon other demons.\n The apau perape chooses what to summon and attempts a magical summoning\n\nthe apau perape has a 50 percent chance of summoning one apau perape or one giant ape.",
     "parent": "tob_apau-perape",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "PER_DAY",
+    "uses_param": 1
   }
 },
 {
@@ -2135,13 +2135,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_behtu_fire-breath-recharge-6",
+  "pk": "tob_behtu_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 6)",
+    "name": "Fire Breath ",
     "desc": "The behtu exhales fire in a 15-foot cone. Each creature in that area takes 21 (5d8) fire damage, or half damage with a successful DC 13 Dexterity saving throw.",
     "parent": "tob_behtu",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -3708,13 +3708,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_crimson-drake_breath-weapon-recharge-6",
+  "pk": "tob_crimson-drake_breath-weapon",
   "fields": {
-    "name": "Breath Weapon (Recharge 6)",
+    "name": "Breath Weapon ",
     "desc": "The drake exhales fire in a 15-ft. cone. Each target in that cone takes 18 (4d8) fire damage, or half damage with a successful DC 12 Dexterity saving throw.",
     "parent": "tob_crimson-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4401,13 +4401,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_dragon-eel_lightning-breath-recharge-6",
+  "pk": "tob_dragon-eel_lightning-breath",
   "fields": {
-    "name": "Lightning Breath (Recharge 6)",
+    "name": "Lightning Breath ",
     "desc": "The dragon eel exhales lightning in a 60-foot line that is 5 feet wide. Each target in that line takes 55 (10d10) lightning damage, or half damage with a successful DC 18 Dexterity saving throw.",
     "parent": "tob_dragon-eel",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4434,13 +4434,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_dragonleaf-tree_breath-weapon-recharge-6",
+  "pk": "tob_dragonleaf-tree_breath-weapon",
   "fields": {
-    "name": "Breath Weapon (Recharge 6)",
+    "name": "Breath Weapon ",
     "desc": "Dragonleaf tree can issue forth a breath weapon from its leaves appropriate to the dragon it honors. The creature's breath weapon deals 49 (14d6) damage, or half damage to targets that make a successful DC 15 Dexterity saving throw. A black, copper, or green tree breathes a 60-foot line of acid; a blue or bronze tree breathes a 60-foot line of lightning; a brass, gold, or red tree breathes a 30-foot cone of fire; and a silver or white tree breathes a 30-foot cone of cold.",
     "parent": "tob_dragonleaf-tree",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4544,13 +4544,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_dream-eater_lotus-scent-recharge-6",
+  "pk": "tob_dream-eater_lotus-scent",
   "fields": {
-    "name": "Lotus Scent (Recharge 6)",
+    "name": "Lotus Scent ",
     "desc": "The dream eater secretes an oily chemical that most creatures find intoxicating. All living creatures within 30 feet must succeed on a DC 14 Constitution saving throw against poison or be poisoned for 2d4 rounds. While poisoned this way, the creature is stunned. Creatures that successfully save are immune to that dream eater's lotus scent for 24 hours.",
     "parent": "tob_dream-eater",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -5006,13 +5006,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_elvish-veteran-archer_volley-recharge-6",
+  "pk": "tob_elvish-veteran-archer_volley",
   "fields": {
-    "name": "Volley (Recharge 6)",
+    "name": "Volley ",
     "desc": "The elvish archer makes one ranged attack against every enemy within 10 feet of a point it can see.",
     "parent": "tob_elvish-veteran-archer",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -5215,13 +5215,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_eye-golem_gaze-of-ancient-light-recharge-6",
+  "pk": "tob_eye-golem_gaze-of-ancient-light",
   "fields": {
-    "name": "Gaze of Ancient Light (Recharge 6)",
+    "name": "Gaze of Ancient Light ",
     "desc": "The golem emits a burst of blinding light, affecting all opponents within 30 feet who are visible to it. These creatures must make a successful DC 17 Constitution saving throw or be permanently blinded. All affected creatures, including those that save successfully, are stunned until the end of their next turn.",
     "parent": "tob_eye-golem",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -6040,13 +6040,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_ghostwalk-spider_ghostly-snare-during-ghostwalk-only-recharge-5-6",
+  "pk": "tob_ghostwalk-spider_ghostly-snare",
   "fields": {
-    "name": "Ghostly Snare (During Ghostwalk Only, Recharge 5-6)",
-    "desc": "Ranged Weapon Attack: +9 to hit, range 40/160 ft., one target. Hit: The target is restrained by ghostly webbing. While restrained in this way, the target is invisible to all creatures except ghostwalk spiders, and it has resistance to acid, cold, fire, lightning, and thunder damage. A creature restrained by Ghostly Snare can escape by using an action to make a successful DC 14 Strength check, or the webs can be attacked and destroyed (AC 10; hp 5).",
+    "name": "Ghostly Snare ",
+    "desc": "(During Ghostwalk Only) Ranged Weapon Attack: +9 to hit, range 40/160 ft., one target. Hit: The target is restrained by ghostly webbing. While restrained in this way, the target is invisible to all creatures except ghostwalk spiders, and it has resistance to acid, cold, fire, lightning, and thunder damage. A creature restrained by Ghostly Snare can escape by using an action to make a successful DC 14 Strength check, or the webs can be attacked and destroyed (AC 10; hp 5).",
     "parent": "tob_ghostwalk-spider",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -7327,12 +7327,12 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_kobold-alchemist_alchemical-protection-recharge-after-a-short-or-long-rest",
+  "pk": "tob_kobold-alchemist_alchemical-protection",
   "fields": {
-    "name": "Alchemical Protection (Recharge after a Short or Long Rest)",
+    "name": "Alchemical Protection ",
     "desc": "The kobold chooses up to six allied creatures within 10 feet. It releases alchemical vapors that grant those allies resistance to poison damage for 10 minutes. Instead of poison damage, the kobold can grant resistance to the damage type currently in effect for its Apothecary trait.",
     "parent": "tob_kobold-alchemist",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },
@@ -7382,12 +7382,12 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_kobold-chieftain_inspiring-presence-recharge-after-short-or-long-rest",
+  "pk": "tob_kobold-chieftain_inspiring-presence",
   "fields": {
-    "name": "Inspiring Presence (Recharge after Short or Long Rest)",
+    "name": "Inspiring Presence ",
     "desc": "The chieftain chooses up to six allied kobolds it can see within 30 feet. For the next minute, the kobolds gain immunity to the charmed and frightened conditions, and add the chieftain's Charisma bonus to attack rolls.",
     "parent": "tob_kobold-chieftain",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },
@@ -7448,13 +7448,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_kobold-trapsmith_shredder-recharge-6",
+  "pk": "tob_kobold-trapsmith_shredder",
   "fields": {
-    "name": "Shredder (Recharge 6)",
+    "name": "Shredder ",
     "desc": "The kobold trapsmith primes and throws a device at a point within 30 feet. The device explodes when it hits something solid, flinging razor-sharp spikes in a 15-foot-radius sphere. Every creature in the area takes 14 (4d6) piercing damage, or half damage with a successful DC 13 Dexterity saving throw. The ground inside the spherical area is littered with spikes; it becomes difficult terrain, and a creature that falls prone in the area takes 7 (2d6) piercing damage.",
     "parent": "tob_kobold-trapsmith",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -7646,13 +7646,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_krake-spawn_ink-cloud-recharge-6",
+  "pk": "tob_krake-spawn_ink-cloud",
   "fields": {
-    "name": "Ink Cloud (Recharge 6)",
+    "name": "Ink Cloud ",
     "desc": "The krake spawn emits black, venomous ink in a 30-foot cloud as a bonus action while underwater. The cloud affects vision as the darkness spell, and any creature that starts its turn inside the cloud takes 10 (3d6) poison damage, or half damage with a successful DC 18 Constitution saving throw. The krake spawn's darkvision is not impaired by this cloud. The cloud persists for 1 minute, then disperses.",
     "parent": "tob_krake-spawn",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -8361,13 +8361,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_mask-wight_wail-of-the-forgotten-recharge-6",
+  "pk": "tob_mask-wight_wail-of-the-forgotten",
   "fields": {
-    "name": "Wail of the Forgotten (Recharge 6)",
+    "name": "Wail of the Forgotten ",
     "desc": "The mask wight emits an ear-piercing wail. All creatures within 30 feet of the wight take 65 (10d12) thunder damage and are permanently deafened; a successful DC 17 Charisma saving throw reduces damage to half and limits the deafness to 1d4 hours. Targets slain by this attack are erased from the memories of every creature in the planes, all written or pictorial references to the target fade away, and its body is obliterated-the only exception is those who personally witnessed the death. Restoring such a slain creature requires a wish or divine intervention; no mortal remembers the creature's life or death.",
     "parent": "tob_mask-wight",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9637,13 +9637,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_putrid-haunt_vomit-leeches-recharge-6",
+  "pk": "tob_putrid-haunt_vomit-leeches",
   "fields": {
-    "name": "Vomit Leeches (Recharge 6)",
+    "name": "Vomit Leeches ",
     "desc": "A putrid haunt can vomit forth the contents of its stomach onto a target within 5 feet. Along with the bile and mud from its stomach, this includes 2d6 undead leeches that attach to the target. A creature takes 1 necrotic damage per leech on it at the start of the creature's turn, and the putrid haunt gains the same number of temporary hit points. As an action, a creature can remove or destroy 1d3 leeches from itself or an adjacent ally.",
     "parent": "tob_putrid-haunt",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11375,13 +11375,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_skitterhaunt_acid-spray-recharge-6",
+  "pk": "tob_skitterhaunt_acid-spray",
   "fields": {
-    "name": "Acid Spray (Recharge 6)",
+    "name": "Acid Spray ",
     "desc": "The skitterhaunt spits acid in a line 30 feet long and 5 feet wide. Each creature in that line takes 18 (4d8) acid damage, or half damage with a successful DC 14 Dexterity saving throw.",
     "parent": "tob_skitterhaunt",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -12497,13 +12497,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_trollkin-reaver_howl-of-battle-recharge-6",
+  "pk": "tob_trollkin-reaver_howl-of-battle",
   "fields": {
-    "name": "Howl of Battle (Recharge 6)",
+    "name": "Howl of Battle ",
     "desc": "Up to three allies who can hear the trollkin reaver and are within 30 feet of it can each make one melee attack as a reaction.",
     "parent": "tob_trollkin-reaver",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {

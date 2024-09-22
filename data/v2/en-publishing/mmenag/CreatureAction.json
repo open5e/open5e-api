@@ -3037,13 +3037,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_ankheg-queen_acid-spray-recharge-6",
+  "pk": "mmenag_ankheg-queen_acid-spray",
   "fields": {
-    "name": "Acid Spray (Recharge 6)",
+    "name": "Acid Spray ",
     "desc": "The ankheg spits a 30-foot-long  5-foot-wide stream of acid. Each creature in the area makes a DC 13 Dexterity saving throw  taking 14 (4d6) acid damage on a failure or half damage on a success. If the ankheg is grappling a target  it instead bathes the target in acid  dealing 14 (4d6) acid damage with no saving throw only to that target.",
     "parent": "mmenag_ankheg-queen",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -3103,13 +3103,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_ankheg_acid-spray-recharge-6",
+  "pk": "mmenag_ankheg_acid-spray",
   "fields": {
-    "name": "Acid Spray (Recharge 6)",
+    "name": "Acid Spray ",
     "desc": "The ankheg spits a 30-foot-long  5-foot-wide stream of acid. Each creature in the area makes a DC 13 Dexterity saving throw  taking 14 (4d6) acid damage on a failure or half damage on a success. If the ankheg is grappling a target  it instead bathes the target in acid  dealing 14 (4d6) acid damage with no saving throw only to that target.",
     "parent": "mmenag_ankheg",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9010,13 +9010,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_ghost_possession-recharge-6",
+  "pk": "mmenag_ghost_possession",
   "fields": {
-    "name": "Possession (Recharge 6)",
+    "name": "Possession ",
     "desc": "One humanoid within 5 feet makes a DC 13 Charisma saving throw. On a failure  it is possessed by the ghost. The possessed creature is unconscious. The ghost enters the creatures body and takes control of it. The ghost can be targeted only by effects that turn undead  and it retains its Intelligence  Wisdom  and Charisma. It grants its host body immunity to being charmed and frightened. It otherwise uses the possessed creatures statistics and actions instead of its own. It doesnt gain access to the creatures memories but does gain access to proficiencies  nonmagical class features and traits  and nonmagical actions. It can't use limited-used abilities or class traits that require spending a resource. The possession ends after 24 hours  when the body drops to 0 hit points  when the ghost ends it as a bonus action  or when the ghost is turned or affected by dispel evil and good or a similar effect. Additionally  the possessed creature repeats its saving throw whenever it takes damage. When the possession ends  the ghost reappears in a space within 5 feet of the body. A creature is immune to this ghosts Possession for 24 hours after succeeding on its saving throw or after the possession ends.",
     "parent": "mmenag_ghost",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9846,13 +9846,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_gnoll-pack-leader_chilling-laughter-recharge-6",
+  "pk": "mmenag_gnoll-pack-leader_chilling-laughter",
   "fields": {
-    "name": "Chilling Laughter (Recharge 6)",
+    "name": "Chilling Laughter ",
     "desc": "The gnolls barking laughter drives allies into a frenzy. Each other creature of the gnolls choice within 30 feet that can hear it and has a Rampaging Bite bonus action can use its reaction to make a Rampaging Bite.",
     "parent": "mmenag_gnoll-pack-leader",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -17799,13 +17799,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_spark-mephit_spark-form-recharge-6",
+  "pk": "mmenag_spark-mephit_spark-form",
   "fields": {
-    "name": "Spark Form (Recharge 6)",
+    "name": "Spark Form ",
     "desc": "The mephit transforms into an arc of lightning and flies up to 20 feet without provoking opportunity attacks. During this movement  the mephit can pass through other creatures spaces. Whenever it moves through another creatures space for the first time during this movement  that creature makes a DC 12 Dexterity saving throw  taking 5 (2d4) lightning damage on a failed save or half damage on a success. The mephit then reverts to its original form.",
     "parent": "mmenag_spark-mephit",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -18657,13 +18657,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_thunderbird_lightning-strike-recharge-6",
+  "pk": "mmenag_thunderbird_lightning-strike",
   "fields": {
-    "name": "Lightning Strike (Recharge 6)",
+    "name": "Lightning Strike ",
     "desc": "The thunderbird exhales a blast of lightning at one target within 60 feet. The target makes a DC 12 Dexterity saving throw  taking 28 (8d6) lightning damage on a failure or half the damage on a success.",
     "parent": "mmenag_thunderbird",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -19361,13 +19361,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_vengeful-ghost_possession-recharge-6",
+  "pk": "mmenag_vengeful-ghost_possession",
   "fields": {
-    "name": "Possession (Recharge 6)",
+    "name": "Possession ",
     "desc": "One humanoid within 5 feet makes a DC 13 Charisma saving throw. On a failure  it is possessed by the ghost. The possessed creature is unconscious. The ghost enters the creatures body and takes control of it. The ghost can be targeted only by effects that turn undead  and it retains its Intelligence  Wisdom  and Charisma. It grants its host body immunity to being charmed and frightened. It otherwise uses the possessed creatures statistics and actions instead of its own. It doesnt gain access to the creatures memories but does gain access to proficiencies  nonmagical class features and traits  and nonmagical actions. It can't use limited-used abilities or class traits that require spending a resource. The possession ends after 24 hours  when the body drops to 0 hit points  when the ghost ends it as a bonus action  or when the ghost is turned or affected by dispel evil and good or a similar effect. Additionally  the possessed creature repeats its saving throw whenever it takes damage. When the possession ends  the ghost reappears in a space within 5 feet of the body. A creature is immune to this ghosts Possession for 24 hours after succeeding on its saving throw or after the possession ends.",
     "parent": "mmenag_vengeful-ghost",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {

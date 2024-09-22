@@ -12,13 +12,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_abominable-beauty_deafening-voice-recharge-56",
+  "pk": "tob-2023_abominable-beauty_deafening-voice",
   "fields": {
-    "name": "Deafening Voice (Recharge 5–6)",
+    "name": "Deafening Voice ",
     "desc": "The abominable beauty speaks a lilting incantation. Each creature within 30 feet of her and that can hear her voice must make a DC 16 Constitution saving throw. On a failure, a creature takes 31 (9d6) thunder damage and is deafened for 1 hour. On a success, a creature takes half the damage, isn’t deafened, and is immune to the abominable beauty’s Deafening Voice for the next 24 hours.",
     "parent": "tob-2023_abominable-beauty",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -56,13 +56,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_accursed-defiler_sandslash-recharge-56",
+  "pk": "tob-2023_accursed-defiler_sandslash",
   "fields": {
-    "name": "Sandslash (Recharge 5–6)",
+    "name": "Sandslash ",
     "desc": "The accursed defiler intensifies the vortex of sand that surrounds it. Each creature within 10 feet of the accursed defiler must make a DC 14 Dexterity saving throw, taking 21 (6d6) slashing damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_accursed-defiler",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -122,13 +122,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_adult-cave-dragon_poison-breath-recharge-56",
+  "pk": "tob-2023_adult-cave-dragon_poison-breath",
   "fields": {
-    "name": "Poison Breath (Recharge 5–6)",
+    "name": "Poison Breath ",
     "desc": "The dragon exhales a cone of black, poisonous gas in a 60-foot cone. Each target in that area must make a DC 21 Constitution saving throw. On a failure, a creature takes 56 (16d6) poison damage and is poisoned until it finishes a short rest. A creature can repeat the saving throw at the end of each hour, ending the effect on itself on a success.",
     "parent": "tob-2023_adult-cave-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -166,13 +166,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_adult-flame-dragon_fire-breath-recharge-56",
+  "pk": "tob-2023_adult-flame-dragon_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 5–6)",
+    "name": "Fire Breath ",
     "desc": "The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 19 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one. Each creature in that area must also succeed on a DC 18 Wisdom saving throw or go on a rampage for 1 minute. A rampaging creature must attack the nearest creature other than the dragon on its turn. If no other creature is near enough to move to and attack, the rampaging creature stalks off in a random direction, seeking a target for its rage. The rampaging creature can repeat the Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_adult-flame-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -254,13 +254,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_adult-mithral-dragon_shard-breath-recharge-56",
+  "pk": "tob-2023_adult-mithral-dragon_shard-breath",
   "fields": {
-    "name": "Shard Breath (Recharge 5–6)",
+    "name": "Shard Breath ",
     "desc": "The mithral dragon spits metallic shards in a 60-foot cone. Each creature in that area must make a DC 19 Constitution saving throw, taking 42 (12d6) slashing damage on a failed save, or half as much on a successful one. The area becomes difficult terrain for 1 minute, then the shards dissolve into wisps of silvery smoke. When a creature moves into or within the area, it takes 7 (2d6) slashing damage for every 5 feet it travels.",
     "parent": "tob-2023_adult-mithral-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -485,13 +485,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_adult-wind-dragon_tempest-breath-recharge-56",
+  "pk": "tob-2023_adult-wind-dragon_tempest-breath",
   "fields": {
-    "name": "Tempest Breath (Recharge 5–6)",
+    "name": "Tempest Breath ",
     "desc": "The dragon exhales a blast of stormy wind in a 60-foot cone. Each creature in that area must make a DC 19 Strength saving throw. On a failure, a creature takes 27 (6d8) bludgeoning damage and 27 (6d8) lightning damage and is pushed up to 30 feet away from the dragon and knocked prone. On a success, a creature takes half the damage and isn’t pushed or knocked prone. Unprotected flames, such as torches, in the area are extinguished, and protected flames, such as those in lanterns, have a 75 percent chance of being extinguished.",
     "parent": "tob-2023_adult-wind-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -595,13 +595,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ala_lightnings-kiss-recharge-56",
+  "pk": "tob-2023_ala_lightnings-kiss",
   "fields": {
-    "name": "Lightning’s Kiss (Recharge 5–6)",
+    "name": "Lightning’s Kiss ",
     "desc": "The ala launches a bolt of lightning at up to three targets it can see within 30 feet of it. Each target must make a DC 16 Dexterity saving throw, taking 28 (8d6) lightning damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_ala",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -639,24 +639,24 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_alchemist_alchemical-vapors-recharge-6",
+  "pk": "tob-2023_alchemist_alchemical-vapors",
   "fields": {
-    "name": "Alchemical Vapors (Recharge 6)",
+    "name": "Alchemical Vapors ",
     "desc": "The kobold alchemist releases alchemical vapors pleasing to draconic senses and unpleasant to all others. Each creature that isn’t a dragonborn or kobold within 15 feet of the alchemist must make a DC 13 Constitution saving throw, taking 17 (5d6) poison damage on a failed save, or half as much damage on a successful one. Each dragonborn and kobold within 15 feet of the alchemist has resistance to damage of the type determined by Apothecary for 1 minute.",
     "parent": "tob-2023_alchemist",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_alchemist_explosive-flask-recharge-56",
+  "pk": "tob-2023_alchemist_explosive-flask",
   "fields": {
-    "name": "Explosive Flask (Recharge 5–6)",
+    "name": "Explosive Flask ",
     "desc": "The kobold alchemist throws a flask of volatile substances at a point it can see within 30 feet of it. The flask explodes, and each creature within 15 feet of that point must make a DC 13 Dexterity saving throw. On a failure, a creature takes 14 (4d6) damage of the type determined by Apothecary and is poisoned for 1 minute. On a success, a creature takes half the damage and isn’t poisoned. A poisoned creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_alchemist",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -672,13 +672,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_alehouse-drake_breath-weapon-recharge-56",
+  "pk": "tob-2023_alehouse-drake_breath-weapon",
   "fields": {
-    "name": "Breath Weapon (Recharge 5–6)",
+    "name": "Breath Weapon ",
     "desc": "The drake uses one of the following breath weapons.",
     "parent": "tob-2023_alehouse-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -738,13 +738,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_algorith_cone-of-negation-recharge-56",
+  "pk": "tob-2023_algorith_cone-of-negation",
   "fields": {
-    "name": "Cone of Negation (Recharge 5–6)",
+    "name": "Cone of Negation ",
     "desc": "The algorith projects null energy in a 30-foot cone. Each creature in the area must make a DC 16 Dexterity saving throw. On a failure, a creature takes 33 (6d10) force damage and any spell of 4th level or lower on the creature ends, as if it had been the target of a dispel magic spell. On a success, a creature takes half the damage and spells on it don’t end.",
     "parent": "tob-2023_algorith",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -914,13 +914,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ancient-cave-dragon_poison-breath-recharge-56",
+  "pk": "tob-2023_ancient-cave-dragon_poison-breath",
   "fields": {
-    "name": "Poison Breath (Recharge 5–6)",
+    "name": "Poison Breath ",
     "desc": "The dragon exhales a cone of black, poisonous gas in a 90-foot cone. Each target in that area must make a DC 25 Constitution saving throw. On a failure, a creature takes 91 (26d6) poison damage and is poisoned until cured by the greater restoration spell or similar magic. On a success, a creature takes half the damage and isn’t poisoned.",
     "parent": "tob-2023_ancient-cave-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -958,13 +958,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ancient-flame-dragon_fire-breath-recharge-56",
+  "pk": "tob-2023_ancient-flame-dragon_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 5–6)",
+    "name": "Fire Breath ",
     "desc": "The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 23 Dexterity saving throw, taking 91 (26d6) fire damage on a failed save, or half as much damage on a successful one. Each creature in that area must also succeed on a DC 21 Wisdom saving throw or go on a rampage for 1 minute. A rampaging creature must attack the nearest creature other than the dragon on its turn. If no other creature is near enough to move to and attack, the rampaging creature stalks off in a random direction, seeking a target for its rage. The rampaging creature can repeat the Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_ancient-flame-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -1046,13 +1046,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ancient-mithral-dragon_shard-breath-recharge-56",
+  "pk": "tob-2023_ancient-mithral-dragon_shard-breath",
   "fields": {
-    "name": "Shard Breath (Recharge 5–6)",
+    "name": "Shard Breath ",
     "desc": "The mithral dragon spits metallic shards in a 90-foot cone. Each creature in that area must succeed on a DC 22 Dexterity saving throw, taking 73 (21d6) slashing damage on a failed save, or half as much damage on a successful one. The area becomes difficult terrain for 1 minute, then the shards dissolve into wisps of silvery smoke. When a creature moves into or within the area, it takes 7 (2d6) slashing damage for every 5 feet it travels.",
     "parent": "tob-2023_ancient-mithral-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -1167,13 +1167,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ancient-titan_stunning-word-recharge-56",
+  "pk": "tob-2023_ancient-titan_stunning-word",
   "fields": {
-    "name": "Stunning Word (Recharge 5–6)",
+    "name": "Stunning Word ",
     "desc": "The titan speaks a brief, echoing word of power at up to three creatures it can see within 60 feet of it. Each target must make a DC 17 Constitution saving throw. On a failure, a creature takes 45 (10d8) force damage and is stunned for 1 minute. On a success, a creature takes half the damage and isn’t stunned. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_ancient-titan",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -1211,13 +1211,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ancient-void-dragon_breath-weapons-recharge-56",
+  "pk": "tob-2023_ancient-void-dragon_breath-weapons",
   "fields": {
-    "name": "Breath Weapons (Recharge 5–6)",
+    "name": "Breath Weapons ",
     "desc": "The dragon uses one of the following breath weapons.",
     "parent": "tob-2023_ancient-void-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -1332,13 +1332,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ancient-wind-dragon_tempest-breath-recharge-56",
+  "pk": "tob-2023_ancient-wind-dragon_tempest-breath",
   "fields": {
-    "name": "Tempest Breath (Recharge 5–6)",
+    "name": "Tempest Breath ",
     "desc": "The dragon exhales a blast of stormy wind in a 90-foot cone. Each creature in that area must make a DC 23 Strength saving throw. On a failure, a creature takes 36 (8d8) bludgeoning damage and 36 (8d8) lightning damage and is pushed up to 45 feet away from the dragon and knocked prone. On a success, a creature takes half the damage and isn’t pushed or knocked prone. Nonmagical flames in the area are extinguished.",
     "parent": "tob-2023_ancient-wind-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -1387,13 +1387,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_angler-worm_ethereal-lure-recharge-46",
+  "pk": "tob-2023_angler-worm_ethereal-lure",
   "fields": {
-    "name": "Ethereal Lure (Recharge 4–6)",
+    "name": "Ethereal Lure ",
     "desc": "The angler worm creates an orb of faint, blue light on a point it can see within 20 feet of it. The light glows until the start of the worm’s next turn. When a creature that isn’t an angler worm starts its turn within 60 feet of the orb and can see the light, it must succeed on a DC 13 Wisdom saving throw or be charmed until the start of its next turn. While charmed, the creature must take the Dash action and move toward the light by the most direct route, trying to get within 5 feet of the light. It doesn’t avoid opportunity attacks, but before moving into damaging terrain, such as lava or a pit, the creature can repeat the saving throw, ending the effect on itself on a success. If the charmed creature enters the worm’s snares, it has disadvantage on the saving throw to avoid being restrained.",
     "parent": "tob-2023_angler-worm",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4
   }
 },
 {
@@ -1409,13 +1409,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_annelidast_crush-recharge-56",
+  "pk": "tob-2023_annelidast_crush",
   "fields": {
-    "name": "Crush (Recharge 5–6)",
+    "name": "Crush ",
     "desc": "The annelidast launches most of its massive bulk into the air and crashes down on the ground in a 20-foot line that is 10 feet wide. It then retracts itself into a space along that line and can occupy the space of one or more Large or smaller creatures. Each creature in the line must make a DC 17 Dexterity saving throw. On a failure, a creature takes 45 (7d12) bludgeoning damage, is knocked prone, and is restrained while it shares a space with the annelidast, as it is pinned beneath the annelidast’s body. On a success, a creature takes half the damage, isn’t knocked prone, and is pushed out of the annelidast’s space into an unoccupied space of the creature’s choice within 5 feet of the annelidast. A creature, including the restrained creature, can take its action to free the restrained creature by succeeding on a DC 17 Strength check. If the annelidast burrows along the surface of the earth at least 20 feet before using this action, creatures in the line have disadvantage on the saving throw.",
     "parent": "tob-2023_annelidast",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -1497,13 +1497,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_apau-perape_fiery-roar-recharge-6",
+  "pk": "tob-2023_apau-perape_fiery-roar",
   "fields": {
-    "name": "Fiery Roar (Recharge 6)",
+    "name": "Fiery Roar ",
     "desc": "The apau perape releases a terrifying, flame-coated roar in a 30-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw. On a failure, a creature takes 31 (9d6) fire damage and is frightened until the end of its next turn. On a success, a creature takes half the damage and isn’t frightened.",
     "parent": "tob-2023_apau-perape",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1684,24 +1684,24 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ash-drake_ash-breath-recharge-56",
+  "pk": "tob-2023_ash-drake_ash-breath",
   "fields": {
-    "name": "Ash Breath (Recharge 5–6)",
+    "name": "Ash Breath ",
     "desc": "The ash drake spews blistering hot, choking ash in a 30-foot cone. Each creature in the area must make a DC 13 Dexterity saving throw. On a failure, a creature takes 14 (4d6) fire damage and is poisoned for 1 minute. On a success, a creature takes half the damage and isn’t poisoned. A poisoned creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_ash-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ash-drake_ash-cloud-recharge-6",
+  "pk": "tob-2023_ash-drake_ash-cloud",
   "fields": {
-    "name": "Ash Cloud (Recharge 6)",
+    "name": "Ash Cloud ",
     "desc": "The ash drake beats its wings, filling the area within 10 feet of it with ash for 1 minute. The ash spreads around corners, and its area is heavily obscured. Each creature that isn’t an ash drake and that enters the cloud for the first time on its turn or starts its turn there must succeed on a DC 13 Constitution saving throw or become blinded until the end of its next turn. The ash moves with the drake, remaining centered on it for the duration.",
     "parent": "tob-2023_ash-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1739,13 +1739,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ashwalker_draconic-breath-recharge-6",
+  "pk": "tob-2023_ashwalker_draconic-breath",
   "fields": {
-    "name": "Draconic Breath (Recharge 6)",
+    "name": "Draconic Breath ",
     "desc": "The ashwalker exhales elemental energy in a 15-foot cone. Each creature in the area must make a DC 12 Constitution saving throw, taking 14 (4d6) damage of the type noted in its Breath Born trait on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_ashwalker",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -2179,13 +2179,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_behtu_fire-breath-recharge-6",
+  "pk": "tob-2023_behtu_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 6)",
+    "name": "Fire Breath ",
     "desc": "The behtu exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_behtu",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -2586,13 +2586,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_bone-swarm_deaths-embrace-recharge-56",
+  "pk": "tob-2023_bone-swarm_deaths-embrace",
   "fields": {
-    "name": "Death’s Embrace (Recharge 5–6)",
+    "name": "Death’s Embrace ",
     "desc": "Melee Weapon Attack: +10 to hit, reach 0 ft., one creature in the swarm’s space. Hit: The target is grappled (escape DC 16) if it is a Large or smaller creature. Until this grapple ends, the creature is restrained and any attack against the bone swarm has a 50 percent chance of hitting the grappled creature instead. The bone swarm can have only one creature grappled at a time. The grappled creature has advantage on ability checks made to escape the grapple when the bone swarm has half of its hp or fewer.",
     "parent": "tob-2023_bone-swarm",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -2652,13 +2652,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_bonepowder-ghoul_whirlwind-dust-form-only-recharge-56",
+  "pk": "tob-2023_bonepowder-ghoul_whirlwind",
   "fields": {
-    "name": "Whirlwind (Dust Form Only; Recharge 5–6)",
-    "desc": "The ghoul creates a whirlwind of bones and teeth in a 20-foot cube originating from it. Each creature in that area must make a DC 17 Dexterity saving throw. On a failure, a creature takes 55 (10d10) slashing damage, and its Strength score is reduced by 1d6. The creature dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest. On a success, a creature takes half the damage and its Strength score isn’t reduced.",
+    "name": "Whirlwind ",
+    "desc": "(Dust Form Only) The ghoul creates a whirlwind of bones and teeth in a 20-foot cube originating from it. Each creature in that area must make a DC 17 Dexterity saving throw. On a failure, a creature takes 55 (10d10) slashing damage, and its Strength score is reduced by 1d6. The creature dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest. On a success, a creature takes half the damage and its Strength score isn’t reduced.",
     "parent": "tob-2023_bonepowder-ghoul",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -2762,13 +2762,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_bukavac_croaking-blast-recharge-56",
+  "pk": "tob-2023_bukavac_croaking-blast",
   "fields": {
-    "name": "Croaking Blast (Recharge 5–6)",
+    "name": "Croaking Blast ",
     "desc": "A bukavac can emit a howling thunderclap in a 15-foot radius. Each creature in that area must make a DC 16 Constitution saving throw. On a failure, a creature takes 36 (8d8) thunder damage and is deafened until cured by the lesser restoration spell or similar magic. On a success, a creature takes half the damage and isn’t deafened.",
     "parent": "tob-2023_bukavac",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -2938,13 +2938,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_camazotz_fire-breath-recharge-56",
+  "pk": "tob-2023_camazotz_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 5–6)",
+    "name": "Fire Breath ",
     "desc": "Camazotz exhales unholy fire in a 30-foot cone. Each creature in the area must make a DC 22 Dexterity saving throw, taking 33 (6d10) fire damage and 33 (6d10) necrotic damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_camazotz",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -3004,13 +3004,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_carrion-beetle_acid-spit-recharge-56",
+  "pk": "tob-2023_carrion-beetle_acid-spit",
   "fields": {
-    "name": "Acid Spit (Recharge 5–6)",
+    "name": "Acid Spit ",
     "desc": "The carrion beetle spits acid in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 13 Dexterity saving throw, taking 26 (4d12) acid damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_carrion-beetle",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -3092,13 +3092,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_cave-dragon-wyrmling_poison-breath-recharge-56",
+  "pk": "tob-2023_cave-dragon-wyrmling_poison-breath",
   "fields": {
-    "name": "Poison Breath (Recharge 5–6)",
+    "name": "Poison Breath ",
     "desc": "The dragon exhales a cone of black, poisonous gas in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw. On a failure, a creature takes 14 (4d6) poison damage and is poisoned until the end of its next turn. On a success, a creature takes half the damage and isn’t poisoned.",
     "parent": "tob-2023_cave-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -3125,13 +3125,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_chained-angel_fallen-glory-recharge-56",
+  "pk": "tob-2023_chained-angel_fallen-glory",
   "fields": {
-    "name": "Fallen Glory (Recharge 5–6)",
+    "name": "Fallen Glory ",
     "desc": "Each creature the chained angel can see within 50 feet of it must make a DC 15 Strength saving throw. On a failure, a creature takes 19 (3d12) radiant damage and is knocked prone. On a success, a creature takes half the damage and isn’t knocked prone.",
     "parent": "tob-2023_chained-angel",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -3180,9 +3180,9 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_chelicerae_magical-discharge-recharge-special",
+  "pk": "tob-2023_chelicerae_magical-discharge",
   "fields": {
-    "name": "Magical Discharge (Recharge Special)",
+    "name": "Magical Discharge ",
     "desc": "The chelicerae releases some of its stored magical energy in a burst. Each creature within 15 feet of the chelicerae must make a DC 15 Dexterity saving throw, taking 36 (8d8) force damage on a failed save, or half as much damage on a successful one. After using Magical Discharge, the chelicerae can’t do so again until it successfully siphons magic from a creature or until it finishes a long rest.",
     "parent": "tob-2023_chelicerae",
     "uses_type": null,
@@ -3213,13 +3213,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_chernomoi_shriek-recharge-56",
+  "pk": "tob-2023_chernomoi_shriek",
   "fields": {
-    "name": "Shriek (Recharge 5–6)",
+    "name": "Shriek ",
     "desc": "The chernomoi emits a loud shriek that is audible out to 100 feet. Each creature within 60 feet of the chernomoi and that can hear it must make a DC 13 Constitution saving throw, taking 10 (3d6) thunder damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_chernomoi",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -3235,12 +3235,12 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_chieftain_inspiring-shriek-recharge-after-short-or-long-rest",
+  "pk": "tob-2023_chieftain_inspiring-shriek",
   "fields": {
-    "name": "Inspiring Shriek (Recharge after Short or Long Rest)",
+    "name": "Inspiring Shriek ",
     "desc": "The kobold chieftain shrieks a draconic battle cry. Each creature that isn’t a dragonborn or kobold within 30 feet of the chieftain must succeed on a DC 14 Wisdom saving throw or be frightened for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_chieftain",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },
@@ -3312,13 +3312,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_child-of-the-briar_spitdart-tongue-recharge-46",
+  "pk": "tob-2023_child-of-the-briar_spitdart-tongue",
   "fields": {
-    "name": "Spitdart Tongue (Recharge 4–6)",
+    "name": "Spitdart Tongue ",
     "desc": "Ranged Weapon Attack: +5 to hit, range 20/60 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
     "parent": "tob-2023_child-of-the-briar",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4
   }
 },
 {
@@ -3389,13 +3389,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_chronalmental_displace-recharge-56",
+  "pk": "tob-2023_chronalmental_displace",
   "fields": {
-    "name": "Displace (Recharge 5–6)",
+    "name": "Displace ",
     "desc": "The chronalmental sends one creature it can see within 30 feet of it outside of the flow of time, shunting the creature to a tiny demiplane. The target must succeed on a DC 16 Wisdom saving throw or be stunned and magically shunted outside of time for 1 minute. The creature disappears for the duration, returning to the space it previously occupied, or the nearest unoccupied space, when the effect ends. At the end of each of its turns, the target can repeat the saving throw, ending the effect on itself on a success.",
     "parent": "tob-2023_chronalmental",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -3444,24 +3444,24 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_cikavak_silencing-squawk-recharge-6",
+  "pk": "tob-2023_cikavak_silencing-squawk",
   "fields": {
-    "name": "Silencing Squawk (Recharge 6)",
+    "name": "Silencing Squawk ",
     "desc": "The cikavak lets out a magical squawk in a 30-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw or be deafened and unable to speak for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_cikavak",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_citrullus_bile-spray-recharge-56",
+  "pk": "tob-2023_citrullus_bile-spray",
   "fields": {
-    "name": "Bile Spray (Recharge 5–6)",
+    "name": "Bile Spray ",
     "desc": "The citrullus exhales pink bile in a 30-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw. On a failure, the creature takes 14 (4d6) acid damage and is restrained by the sticky seed-filled juice for 1 minute. On a success, the creature takes half the damage and isn’t restrained. A creature, including the restrained creature, can take its action to free the restrained creature by succeeding on a DC 13 Strength check.",
     "parent": "tob-2023_citrullus",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -3532,13 +3532,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_clockwork-abomination_fire-breath-recharge-56",
+  "pk": "tob-2023_clockwork-abomination_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 5–6)",
+    "name": "Fire Breath ",
     "desc": "The clockwork abomination’s infernal power source allows it to breathe fire in a 30-foot cone. Each creature in the area must make a DC 14 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_clockwork-abomination",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -3829,13 +3829,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_coral-drake_biting-breath-recharge-56",
+  "pk": "tob-2023_coral-drake_biting-breath",
   "fields": {
-    "name": "Biting Breath (Recharge 5–6)",
+    "name": "Biting Breath ",
     "desc": "The coral drake pressurizes the throat sacs that contain its growing young and spews tiny, ravenous hatchling drakes in a 15-foot cone. Each creature in the area must make a DC 15 Dexterity saving throw. On a failure, a creature takes 21 (6d6) piercing damage and is blinded for 1 minute. On a success, a creature takes half the damage and isn’t blinded. A blinded creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_coral-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -3994,13 +3994,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_corrupted-ushabti_vomit-swarm-recharge-56",
+  "pk": "tob-2023_corrupted-ushabti_vomit-swarm",
   "fields": {
-    "name": "Vomit Swarm (Recharge 5–6)",
+    "name": "Vomit Swarm ",
     "desc": "The corrupted ushabti exhales scarabs in a 30-foot cone. Each creature in the area must make a DC 15 Dexterity saving throw. On a failure, a creature takes 25 (10d4) piercing damage and is covered in scarabs. On a success, a creature takes half the damage and isn’t covered in scarabs. A creature covered in scarabs takes 2 (1d4) piercing damage at the start of each of its turns. A creature, including the covered creature, can take its action to brush the scarabs off the covered creature by succeeding on a DC 15 Dexterity check.",
     "parent": "tob-2023_corrupted-ushabti",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -4049,13 +4049,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_crimson-drake_fire-breath-recharge-6",
+  "pk": "tob-2023_crimson-drake_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 6)",
+    "name": "Fire Breath ",
     "desc": "The drake exhales fire in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 10 (3d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_crimson-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4082,13 +4082,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_crystalline-devil_crystalline-spray-recharge-56",
+  "pk": "tob-2023_crystalline-devil_crystalline-spray",
   "fields": {
-    "name": "Crystalline Spray (Recharge 5–6)",
+    "name": "Crystalline Spray ",
     "desc": "The crystalline devil sprays a burst of crystal shards. Each creature within 15 feet of the devil must make a DC 15 Dexterity saving throw, taking 27 (6d8) piercing damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_crystalline-devil",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -4302,13 +4302,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_deep-drake_enervating-breath-recharge-56",
+  "pk": "tob-2023_deep-drake_enervating-breath",
   "fields": {
-    "name": "Enervating Breath (Recharge 5–6)",
+    "name": "Enervating Breath ",
     "desc": "The deep drake exhales pain-inducing, purple-black energy in a 90-foot line that is 5 feet wide. Each creature in the line must make a DC 16 Dexterity saving throw. On a failure, a creature takes 35 (10d6) necrotic damage and is stunned until the end of its next turn. On a success, a creature takes half the damage and isn’t stunned.",
     "parent": "tob-2023_deep-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -4445,13 +4445,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_degenerate-titan_earthstrike-recharge-56",
+  "pk": "tob-2023_degenerate-titan_earthstrike",
   "fields": {
-    "name": "Earthstrike (Recharge 5–6)",
+    "name": "Earthstrike ",
     "desc": "The degenerate titan slams its fists onto the ground, creating a shockwave in a 60-foot line that is 10 feet wide. Each creature in the line must make a 16 Dexterity saving throw. On a failure, a creature takes 35 (10d6) force damage and is flung 20 feet away from the titan and knocked prone, as the earth buckles and tosses the creature. On a success, a creature takes half the damage and isn’t flung or knocked prone. If a flung creature strikes a solid surface, the creature takes 3 (1d6) bludgeoning damage for every 10 feet it was flung. If the creature is flung at another creature, that creature must succeed on a DC 16 Dexterity saving throw or take the same damage and be knocked prone.",
     "parent": "tob-2023_degenerate-titan",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -4775,13 +4775,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_dorreq_void-thrum-recharge-56",
+  "pk": "tob-2023_dorreq_void-thrum",
   "fields": {
-    "name": "Void Thrum (Recharge 5–6)",
+    "name": "Void Thrum ",
     "desc": "The dorreq emits a barely audible, vibrating thrum laced with Void energy. Each creature within 20 feet of the dorreq must make a DC 14 Constitution saving throw, taking 10 (3d6) thunder damage and 10 (3d6) necrotic damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_dorreq",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -4797,13 +4797,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_dragon-eel_lightning-breath-recharge-6",
+  "pk": "tob-2023_dragon-eel_lightning-breath",
   "fields": {
-    "name": "Lightning Breath (Recharge 6)",
+    "name": "Lightning Breath ",
     "desc": "The dragon eel exhales lightning in a 60-foot line that is 5 feet wide. Each target in that line must make a DC 18 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_dragon-eel",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4830,13 +4830,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_dragonleaf-tree_elemental-leaves-recharge-6",
+  "pk": "tob-2023_dragonleaf-tree_elemental-leaves",
   "fields": {
-    "name": "Elemental Leaves (Recharge 6)",
+    "name": "Elemental Leaves ",
     "desc": "The dragonleaf tree’s leaves rain acid, shed bolts of lightning, shake loose icicles, or similarly emit the elemental energies of the dragon that grew the tree. Each creature within 20 feet of the dragonleaf tree must make a DC 15 Dexterity saving throw, taking 42 (12d6) damage of the type noted in the Elemental Affinity trait.",
     "parent": "tob-2023_dragonleaf-tree",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4874,13 +4874,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_drakon_acid-breath-recharge-56",
+  "pk": "tob-2023_drakon_acid-breath",
   "fields": {
-    "name": "Acid Breath (Recharge 5–6)",
+    "name": "Acid Breath ",
     "desc": "The drakon exhales acidic vapors in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 28 (8d6) acid damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_drakon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -4962,13 +4962,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_dream-eater_waking-dreams-recharge-56",
+  "pk": "tob-2023_dream-eater_waking-dreams",
   "fields": {
-    "name": "Waking Dreams (Recharge 5–6)",
+    "name": "Waking Dreams ",
     "desc": "Each creature within 20 feet of the dream eater must make a DC 14 Charisma saving throw. On a failure, a creature takes 21 (6d6) psychic damage and is incapacitated for 1 minute. When it moves, an incapacitated creature moves in a random direction. On a success, a creature takes half the damage and isn’t incapacitated. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_dream-eater",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5237,13 +5237,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_eala_fire-breath-recharge-56",
+  "pk": "tob-2023_eala_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 5–6)",
+    "name": "Fire Breath ",
     "desc": "The eala breathes fire in a 15-foot cone. Each creature in the area must make a DC 13 Dexterity saving throw, taking 10 (3d6) fire damage on a failed save, or half as much damage on a successful one. The eala’s fire breath ignites flammable objects and melts soft metals, such as gold and lead, in the area that aren’t being worn or carried.",
     "parent": "tob-2023_eala",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5358,13 +5358,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_einherjar_celestial-blessing-recharge-56",
+  "pk": "tob-2023_einherjar_celestial-blessing",
   "fields": {
-    "name": "Celestial Blessing (Recharge 5–6)",
+    "name": "Celestial Blessing ",
     "desc": "The einherjar calls on its celestial patrons for one of the following blessings:",
     "parent": "tob-2023_einherjar",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5424,13 +5424,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_elder-shadow-drake_stygian-breath-recharge-56",
+  "pk": "tob-2023_elder-shadow-drake_stygian-breath",
   "fields": {
-    "name": "Stygian Breath (Recharge 5–6)",
+    "name": "Stygian Breath ",
     "desc": "The elder shadow drake spits a ball of black liquid on a point the dragon can see within 60 feet of it. The ball bursts into a 20-foot-radius sphere of black mist centered on that point for 1 minute. Each creature in the mist when it appears must make a DC 15 Constitution saving throw, taking 42 (12d6) cold damage on a failed save, or half as much damage on a successful one. The mist spreads around corners, and its area is magical darkness. No natural light can illuminate the mist. If any of the mist overlaps with an area of light created by a spell of 1st level or lower, the spell creating the light is dispelled.",
     "parent": "tob-2023_elder-shadow-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5479,13 +5479,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_elvish-veteran-archer_arrow-spray-recharge-56",
+  "pk": "tob-2023_elvish-veteran-archer_arrow-spray",
   "fields": {
-    "name": "Arrow Spray (Recharge 5–6)",
+    "name": "Arrow Spray ",
     "desc": "The elvish veteran archer fires a flurry of arrows in a 15-foot cone. Each creature in the cone must make a DC 14 Dexterity saving throw, taking 18 (4d8) piercing damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_elvish-veteran-archer",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5622,13 +5622,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_enchantress_beguiling-whispers-recharge-56",
+  "pk": "tob-2023_enchantress_beguiling-whispers",
   "fields": {
-    "name": "Beguiling Whispers (Recharge 5–6)",
+    "name": "Beguiling Whispers ",
     "desc": "The enchantress speaks sweet words to a creature she can see within 60 feet of her and that can hear her. The creature must succeed on a DC 15 Charisma saving throw or be charmed for 1 minute. While charmed in this way, the creature has disadvantage on Wisdom and Charisma saving throws against spells cast by the enchantress.",
     "parent": "tob-2023_enchantress",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5677,13 +5677,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_eonic-drifter_drift-forward-recharge-56",
+  "pk": "tob-2023_eonic-drifter_drift-forward",
   "fields": {
-    "name": "Drift Forward (Recharge 5–6)",
+    "name": "Drift Forward ",
     "desc": "The drifter chooses one creature it can see within 5 feet of its future self. The target must make a DC 13 Wisdom saving throw. On a failure, the target takes 7 (2d6) psychic damage and is pulled forward in time. On a success, the target takes half the damage and isn’t pulled forward in time. A target pulled forward in time disappears, along with the drifter’s future self, as the future self pulls the target with it. At the end of the drifter’s next turn, the target and the drifter’s future self reappear in the spaces they previously occupied, or the nearest unoccupied spaces. When the target reappears, it has disadvantage on attack rolls until the end of its next turn as it recovers from the disorienting experience.",
     "parent": "tob-2023_eonic-drifter",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5754,13 +5754,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_eye-golem_gaze-of-ancient-light-recharge-56",
+  "pk": "tob-2023_eye-golem_gaze-of-ancient-light",
   "fields": {
-    "name": "Gaze of Ancient Light (Recharge 5–6)",
+    "name": "Gaze of Ancient Light ",
     "desc": "The golem opens all of its eyes and emits a burst of blinding light. Each creature within 30 feet of it must make a DC 17 Dexterity saving throw. On a failure, a creature takes 35 (10d6) radiant damage and is blinded for 1 minute. On a success, a creature takes half the damage and isn’t blinded. A creature that fails the saving throw by 5 or more is also stunned until the end of its next turn. A blinded creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_eye-golem",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5831,13 +5831,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_fate-eater_alter-fate-recharge-56",
+  "pk": "tob-2023_fate-eater_alter-fate",
   "fields": {
-    "name": "Alter Fate (Recharge 5–6)",
+    "name": "Alter Fate ",
     "desc": "The fate eater alters the fate of one creature it can see within 30 feet of it. The creature must make a DC 15 Charisma saving throw. On a failure, the creature takes 36 (8d8) psychic damage, and its fate is altered. Roll a d6 to determine which of the following alterations affects the creature. On a success, the creature takes half the damage, and its fate isn’t altered. A creature with an altered fate for 1 minute or less can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Otherwise, a creature with an altered fate can repeat the saving throw at the end of each long rest, ending the effect on itself on a success.",
     "parent": "tob-2023_fate-eater",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5952,13 +5952,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_fetal-savant_soul-exchange-recharge-6",
+  "pk": "tob-2023_fetal-savant_soul-exchange",
   "fields": {
-    "name": "Soul Exchange (Recharge 6)",
+    "name": "Soul Exchange ",
     "desc": "The savant exchanges its soul with one Humanoid it can see within 20 feet of it. Its body becomes paralyzed, the target’s soul inhabits the savant’s paralyzed body, and the savant inhabits the target’s body, taking full control of it. The savant retains its alignment, its Intelligence, Wisdom, and Charisma scores, its Psychic Burst action, and its immunity to being charmed and frightened. It otherwise uses the target’s statistics, but doesn’t gain access to the target’s knowledge, class features, or proficiencies.",
     "parent": "tob-2023_fetal-savant",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -5996,24 +5996,24 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_fext_patrons-might-recharge-56",
+  "pk": "tob-2023_fext_patrons-might",
   "fields": {
-    "name": "Patron’s Might (Recharge 5–6)",
+    "name": "Patron’s Might ",
     "desc": "The fext channels its patron’s awe-inspiring presence, terrifying those nearby. Each creature within 10 feet of the fext must make a DC 15 Wisdom saving throw. On a failure, a creature takes 35 (10d6) psychic damage and is frightened for 1 minute. On a success, a creature takes half the damage and isn’t frightened. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_fext",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_feyward-tree_flaying-leaves-recharge-56",
+  "pk": "tob-2023_feyward-tree_flaying-leaves",
   "fields": {
-    "name": "Flaying Leaves (Recharge 5–6)",
+    "name": "Flaying Leaves ",
     "desc": "The feyward tree launches a barrage of razor-sharp cold iron leaves from its branches. Each creature within 20 feet of the tree must make a DC 15 Dexterity saving throw, taking 28 (8d6) slashing damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_feyward-tree",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -6128,13 +6128,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_firebird_blinding-ray-recharge-56",
+  "pk": "tob-2023_firebird_blinding-ray",
   "fields": {
-    "name": "Blinding Ray (Recharge 5–6)",
+    "name": "Blinding Ray ",
     "desc": "The firebird fires a burning ray of light from its tail feathers in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw. On a failure, a creature takes 17 (5d6) fire damage and is blinded until the end of its next turn. On a success, a creature takes half the damage and isn’t blinded.",
     "parent": "tob-2023_firebird",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -6183,13 +6183,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_firegeist_burning-terror-recharge-56",
+  "pk": "tob-2023_firegeist_burning-terror",
   "fields": {
-    "name": "Burning Terror (Recharge 5–6)",
+    "name": "Burning Terror ",
     "desc": "The firegeist assaults the mind of one creature it can see within 30 feet of it with the painful, humiliating memory of the firegeist’s first death. The target must make a DC 13 Wisdom saving throw. On a failure, the target takes 14 (4d6) fire damage and is frightened for 1 minute. On a success, the target takes half the damage and isn’t frightened. While frightened, the creature takes 3 (1d6) fire damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_firegeist",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -6238,13 +6238,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_flame-dragon-wyrmling_fire-breath-recharge-56",
+  "pk": "tob-2023_flame-dragon-wyrmling_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 5–6)",
+    "name": "Fire Breath ",
     "desc": "The dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 17 (5d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_flame-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -6260,13 +6260,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_flutterflesh_creeping-death-recharge-56",
+  "pk": "tob-2023_flutterflesh_creeping-death",
   "fields": {
-    "name": "Creeping Death (Recharge 5–6)",
+    "name": "Creeping Death ",
     "desc": "The flutterflesh emits a wave of necromantic energy, hastening the journey toward death. Each creature within 20 feet of the flutterflesh must make a DC 16 Constitution saving throw, taking 45 (10d8) necrotic damage on a failed save, or half as much damage on a successful one. A creature below half its hp maximum has disadvantage on this saving throw.",
     "parent": "tob-2023_flutterflesh",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -6480,13 +6480,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_frostveil_spirit-spores-recharge-6",
+  "pk": "tob-2023_frostveil_spirit-spores",
   "fields": {
-    "name": "Spirit Spores (Recharge 6)",
+    "name": "Spirit Spores ",
     "desc": "The frostveil releases a puff of psychotropic spores around itself. Each creature within 10 feet of the frostveil must make a DC 15 Constitution saving throw. On a failure, a creature takes 21 (6d6) cold damage and is incapacitated for 1 minute. On a success, a creature takes half the damage and isn’t incapacitated. When an incapacitated creature moves, it moves in a random direction. An incapacitated creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_frostveil",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -6568,13 +6568,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_gearforged-templar_whirlwind-recharge-56",
+  "pk": "tob-2023_gearforged-templar_whirlwind",
   "fields": {
-    "name": "Whirlwind (Recharge 5–6)",
+    "name": "Whirlwind ",
     "desc": "The gearforged templar whirls its greatsword in a great arc. Each creature within 10 feet of the gearforged must make a DC 15 Dexterity saving throw, taking 27 (5d10) slashing damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_gearforged-templar",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -6656,13 +6656,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ghostwalk-spider_ghostly-snare-ghostwalk-form-only-recharge-46",
+  "pk": "tob-2023_ghostwalk-spider_ghostly-snare",
   "fields": {
-    "name": "Ghostly Snare (Ghostwalk Form Only, Recharge 4–6)",
-    "desc": "Ranged Weapon Attack: +9 to hit, range 30/60 ft., one target. Hit: The target is restrained by invisible webbing. While restrained in this way, the target is invisible. As an action, the restrained target can make a DC 15 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 12; hp 15; immunity to bludgeoning, poison, and psychic damage).",
+    "name": "Ghostly Snare ",
+    "desc": "(Ghostwalk Form Only) Ranged Weapon Attack: +9 to hit, range 30/60 ft., one target. Hit: The target is restrained by invisible webbing. While restrained in this way, the target is invisible. As an action, the restrained target can make a DC 15 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 12; hp 15; immunity to bludgeoning, poison, and psychic damage).",
     "parent": "tob-2023_ghostwalk-spider",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4
   }
 },
 {
@@ -6788,13 +6788,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_gilded-devil_teleport-recharge-46",
+  "pk": "tob-2023_gilded-devil_teleport",
   "fields": {
-    "name": "Teleport (Recharge 4–6)",
+    "name": "Teleport ",
     "desc": "The gilded devil magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
     "parent": "tob-2023_gilded-devil",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4
   }
 },
 {
@@ -7162,13 +7162,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_gypsosphinx_carrion-breath-recharge-56",
+  "pk": "tob-2023_gypsosphinx_carrion-breath",
   "fields": {
-    "name": "Carrion Breath (Recharge 5–6)",
+    "name": "Carrion Breath ",
     "desc": "The gypsosphinx exhales rotting breath in a 30-foot cone. Each creature in the area must make a DC 18 Constitution saving throw. On a failure, a creature takes 21 (6d6) poison damage and 27 (6d8) necrotic damage and is poisoned for 1 minute. On a success, a creature takes half the damage and isn’t poisoned. While poisoned in this way, a creature has disadvantage on death saving throws. A poisoned creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_gypsosphinx",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -7261,13 +7261,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_herald-of-blood_call-blood-recharge-56",
+  "pk": "tob-2023_herald-of-blood_call-blood",
   "fields": {
-    "name": "Call Blood (Recharge 5–6)",
+    "name": "Call Blood ",
     "desc": "Each creature with blood within 10 feet of the herald must make a DC 17 Constitution saving throw, taking 45 (10d8) necrotic damage on a failed save, or half as much damage on a successful one. The herald then gains temporary hp equal to the single highest amount of necrotic damage dealt. A creature that fails the saving throw by 5 or more also suffers one level of exhaustion.",
     "parent": "tob-2023_herald-of-blood",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -7316,13 +7316,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_herald-of-darkness_majesty-of-the-abyss-recharge-56",
+  "pk": "tob-2023_herald-of-darkness_majesty-of-the-abyss",
   "fields": {
-    "name": "Majesty of the Abyss (Recharge 5–6)",
+    "name": "Majesty of the Abyss ",
     "desc": "The herald of darkness emits a sinister burst of infernal power. Each creature within 15 feet of the herald and that can see it must make a DC 15 Constitution saving throw. On a failure, a creature takes 27 (6d8) necrotic damage and is blinded for 1 minute. On a success, a creature takes half the damage and isn’t blinded. A creature that fails the saving throw by 5 or more is also paralyzed until the end of its next turn. A blinded creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_herald-of-darkness",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -7371,13 +7371,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_hoard-golem_thieving-whirlwind-recharge-56",
+  "pk": "tob-2023_hoard-golem_thieving-whirlwind",
   "fields": {
-    "name": "Thieving Whirlwind (Recharge 5–6)",
+    "name": "Thieving Whirlwind ",
     "desc": "The hoard golem partially disperses into a whirlwind of coins, gemstones, and other valuables then recoalesces. Each creature within 20 feet of the golem must make a DC 17 Dexterity saving throw. On a failure, a creature takes 44 (8d10) bludgeoning damage and loses one object it is wearing or carrying. On a success, a creature takes half the damage and doesn’t lose an object. Each object the golem steals must weigh no more than 20 pounds and not be wrapped around or firmly attached to a creature. For example, the golem could steal a belt pouch full of coins or a creature’s jewel-encrusted dagger, but it can’t steal a creature’s shirt or armor. The hoard golem steals objects of high value over those of minimal value. The stolen object becomes part of the golem’s body and can’t be retrieved until the golem dies.",
     "parent": "tob-2023_hoard-golem",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -7426,13 +7426,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_hound-of-the-night_frost-breath-recharge-56",
+  "pk": "tob-2023_hound-of-the-night_frost-breath",
   "fields": {
-    "name": "Frost Breath (Recharge 5–6)",
+    "name": "Frost Breath ",
     "desc": "The hound exhales frost in a 15-foot cone. Each creature in the area must make a DC 14 Dexterity saving throw, taking 27 (6d8) cold damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_hound-of-the-night",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -7448,13 +7448,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_hound-of-the-night_teleport-recharge-46",
+  "pk": "tob-2023_hound-of-the-night_teleport",
   "fields": {
-    "name": "Teleport (Recharge 4–6)",
+    "name": "Teleport ",
     "desc": "The hound magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see. Before or after teleporting, the hound can make one Bite attack.",
     "parent": "tob-2023_hound-of-the-night",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4
   }
 },
 {
@@ -7503,13 +7503,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_hraesvelgr_sudden-gust-recharge-56",
+  "pk": "tob-2023_hraesvelgr_sudden-gust",
   "fields": {
-    "name": "Sudden Gust (Recharge 5–6)",
+    "name": "Sudden Gust ",
     "desc": "Hraesvelgr unleashes a powerful gust of wind in a 60-foot line that is 10 feet wide. Each creature in the line must make a DC 19 Strength saving throw. On a failure, a creature takes 63 (18d6) bludgeoning damage and is pushed up to 15 feet away from Hraesvelgr. On a success, a creature takes half the damage and isn’t pushed.",
     "parent": "tob-2023_hraesvelgr",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -7679,13 +7679,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ice-maiden_icy-embrace-recharge-56",
+  "pk": "tob-2023_ice-maiden_icy-embrace",
   "fields": {
-    "name": "Icy Embrace (Recharge 5–6)",
+    "name": "Icy Embrace ",
     "desc": "The ice maiden blasts wintry weather on a point she can see within 60 feet of her. Each creature within 15 feet of that point must make a DC 16 Dexterity saving throw. On a failure, a creature takes 28 (8d6) cold damage and is restrained by ice until the end of its next turn. On a success, a creature takes half the damage and isn’t restrained. The area then becomes icy, difficult terrain for 1 minute.",
     "parent": "tob-2023_ice-maiden",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -8020,13 +8020,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_jotun_icy-sweep-recharge-56",
+  "pk": "tob-2023_jotun_icy-sweep",
   "fields": {
-    "name": "Icy Sweep (Recharge 5–6)",
+    "name": "Icy Sweep ",
     "desc": "The jotun swings its ice-coated greatclub in a wide arc. Each creature within 20 feet of the jotun must make a DC 23 Dexterity saving throw. On a failure, a creature takes 36 (8d8) bludgeoning damage and 54 (12d8) cold damage and is pushed up to 15 feet away from the jotun and knocked prone. On a success, a creature takes half the damage and isn’t pushed or knocked prone.",
     "parent": "tob-2023_jotun",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -8075,13 +8075,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_kalke_use-magic-item-recharge-56",
+  "pk": "tob-2023_kalke_use-magic-item",
   "fields": {
-    "name": "Use Magic Item (Recharge 5–6)",
+    "name": "Use Magic Item ",
     "desc": "The kalke activates a magic item in its possession and can ignore all class, race, and level requirements on the item. The kalke must make a DC 11 Intelligence saving throw. On a success, the item activates normally. On a failure, the item doesn’t activate and can’t be used again until the next dawn. If the kalke fails the saving throw by 5 or more, it causes a magical backlash. Each creature within 5 feet of the kalke, including the kalke, must make a DC 11 Dexterity saving throw, taking 5 (2d4) force damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_kalke",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -8218,13 +8218,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_kongamato_terrifying-screech-recharge-56",
+  "pk": "tob-2023_kongamato_terrifying-screech",
   "fields": {
-    "name": "Terrifying Screech (Recharge 5–6)",
+    "name": "Terrifying Screech ",
     "desc": "The kongamato releases a screech in a 30-foot cone. Each creature in the area must make a DC 15 Constitution saving throw. On a failure, a creature takes 28 (8d6) thunder damage and is frightened until the end of its next turn. On a success, a creature takes half the damage and isn’t frightened.",
     "parent": "tob-2023_kongamato",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -8372,13 +8372,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_krake-spawn_ink-cloud-recharge-56",
+  "pk": "tob-2023_krake-spawn_ink-cloud",
   "fields": {
-    "name": "Ink Cloud (Recharge 5–6)",
+    "name": "Ink Cloud ",
     "desc": "While underwater, the krake spawn emits a 20-foot-radius cloud of ink all around itself. Each creature in the cloud must make a DC 17 Constitution saving throw, taking 55 (10d10) poison damage on a failed save, or half as much damage on a successful one. The area is heavily obscured for 1 minute, although a significant current can disperse the ink.",
     "parent": "tob-2023_krake-spawn",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -8405,13 +8405,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_krake-spawn_vomit-forth-the-deeps-recharge-56",
+  "pk": "tob-2023_krake-spawn_vomit-forth-the-deeps",
   "fields": {
-    "name": "Vomit Forth the Deeps (Recharge 5–6)",
+    "name": "Vomit Forth the Deeps ",
     "desc": "The krake spawn sprays half-digested food from its maw in a 30-foot cone. Each creature in the area must make a DC 17 Dexterity saving throw. On a failure, a creature takes 27 (6d8) acid damage plus 27 (5d10) poison damage and is incapacitated. On a success, a creature takes half the damage and isn’t incapacitated.",
     "parent": "tob-2023_krake-spawn",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -8526,13 +8526,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_leshy_frightening-mien-recharge-56",
+  "pk": "tob-2023_leshy_frightening-mien",
   "fields": {
-    "name": "Frightening Mien (Recharge 5–6)",
+    "name": "Frightening Mien ",
     "desc": "The leshy briefly appears to grow to an enormous size, taking on a malicious mien before returning to normal. Each creature within 15 feet of the leshy and that can see it must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. A creature is immune to Frightening Mien if it can see through illusions.",
     "parent": "tob-2023_leshy",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -8867,13 +8867,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_loxoda_tooth-rattling-pound-recharge-56",
+  "pk": "tob-2023_loxoda_tooth-rattling-pound",
   "fields": {
-    "name": "Tooth-Rattling Pound (Recharge 5–6)",
+    "name": "Tooth-Rattling Pound ",
     "desc": "The loxoda rears up and lands heavily, rattling the land and creatures around it. Each creature in contact with the ground within 20 feet of the loxoda must make a DC 15 Dexterity saving throw. On a failure, a creature takes 36 (8d8) bludgeoning damage and takes an extra 10 (3d6) thunder damage at the end of its next turn as the shockwaves from the Tooth-Rattling Pound continue up through its body. On a success, a creature takes half the damage and doesn’t take extra thunder damage from shockwaves.",
     "parent": "tob-2023_loxoda",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -8999,13 +8999,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_malakbel_searing-flare-recharge-56",
+  "pk": "tob-2023_malakbel_searing-flare",
   "fields": {
-    "name": "Searing Flare (Recharge 5–6)",
+    "name": "Searing Flare ",
     "desc": "The malakbel intensifies the heat and light it sheds to withering levels. Each creature in the bright light shed by the malakbel’s Blistering Radiance trait must make a DC 16 Constitution saving throw. On a failure, a creature takes 13 (3d8) fire damage and 22 (4d10) radiant damage and suffers one level of exhaustion. On a success, a creature takes half the damage and doesn’t suffer exhaustion.",
     "parent": "tob-2023_malakbel",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -9164,13 +9164,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_mask-wight_wail-of-the-forgotten-recharge-6",
+  "pk": "tob-2023_mask-wight_wail-of-the-forgotten",
   "fields": {
-    "name": "Wail of the Forgotten (Recharge 6)",
+    "name": "Wail of the Forgotten ",
     "desc": "The mask wight emits an ear-piercing wail. Each creature within 30 feet of the mask wight must make a DC 17 Charisma saving throw. On a failure, a creature takes 35 (10d6) thunder damage and 27 (6d8) psychic damage and is deafened for 1 hour. On a success, a creature takes half the damage and isn’t deafened. A creature killed by this wail is erased from the memories of every creature in the planes that ever saw or interacted with it, all written or pictorial references to the target fade away, and its body is obliterated. Only divine beings and creatures that saw the creature die are unaffected by this memory erasure. The slain creature can be restored to life only by means of a true resurrection or a wish spell.",
     "parent": "tob-2023_mask-wight",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9186,13 +9186,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_mavka_flame-burst-recharge-56",
+  "pk": "tob-2023_mavka_flame-burst",
   "fields": {
-    "name": "Flame Burst (Recharge 5–6)",
+    "name": "Flame Burst ",
     "desc": "While riding a nightmare, the mavka channels her power into her mount, causing its fiery light to burn those nearby. Each creature within 20 feet of the mavka must make a DC 16 Dexterity saving throw, taking 54 (12d8) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_mavka",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -9230,13 +9230,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_mbielu_rumbling-bellow-recharge-56",
+  "pk": "tob-2023_mbielu_rumbling-bellow",
   "fields": {
-    "name": "Rumbling Bellow (Recharge 5–6)",
+    "name": "Rumbling Bellow ",
     "desc": "The mbielu releases a deep bellow that vibrates within the bodies of those nearby. Each creature within 15 feet of the mbielu must make a DC 13 Constitution saving throw, taking 18 (4d8) thunder damage on a failed save, or half as much damage on a successful one. If a creature poisoned by the mbielu’s Toxic Skin fails this saving throw, it is also incapacitated until the end of its next turn as the combined vibrations and hallucinations disorient it.",
     "parent": "tob-2023_mbielu",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -9263,13 +9263,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_mechuiti_burning-acid-breath-recharge-56",
+  "pk": "tob-2023_mechuiti_burning-acid-breath",
   "fields": {
-    "name": "Burning Acid Breath (Recharge 5–6)",
+    "name": "Burning Acid Breath ",
     "desc": "Mechuiti exhales fire and acid in a 60-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 49 (14d6) fire damage and 49 (14d6) acid damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_mechuiti",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -9351,13 +9351,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_mi-go_spore-burst-recharge-56",
+  "pk": "tob-2023_mi-go_spore-burst",
   "fields": {
-    "name": "Spore Burst (Recharge 5–6)",
+    "name": "Spore Burst ",
     "desc": "The mi-go releases hallucinogenic spores in a 30-foot cone. Each creature in the area must make a DC 15 Dexterity saving throw. On a failure, a creature takes 21 (6d6) poison damage and is incapacitated until the end of its next turn. On a success, a creature takes half the damage and isn’t incapacitated.",
     "parent": "tob-2023_mi-go",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -9395,13 +9395,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_millitaur_poisonous-flask-recharge-56",
+  "pk": "tob-2023_millitaur_poisonous-flask",
   "fields": {
-    "name": "Poisonous Flask (Recharge 5–6)",
+    "name": "Poisonous Flask ",
     "desc": "The millitaur hastily combines alchemical substances into a poisonous concoction and throws it at a point the millitaur can see within 30 feet. Each creature within 15 feet of that point must make a DC 13 Dexterity saving throw. On a failure, a creature takes 14 (4d6) poison damage and is poisoned for 1 minute. On a success, a creature takes half the damage and isn’t poisoned. A poisoned creature can make a DC 13 Constitution saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_millitaur",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -9428,13 +9428,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_mindrot-thrall_spore-breath-recharge-46",
+  "pk": "tob-2023_mindrot-thrall_spore-breath",
   "fields": {
-    "name": "Spore Breath (Recharge 4–6)",
+    "name": "Spore Breath ",
     "desc": "The thrall exhales a blast of acidic spores from its rotten lungs in a 15-foot cone. Each creature in the area must make a DC 13 Dexterity saving throw. On a failure, a creature takes 18 (4d8) acid damage and is infected with the mindrot disease (see the Mindrot trait). On a success, a creature takes half the damage and isn’t infected.",
     "parent": "tob-2023_mindrot-thrall",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4
   }
 },
 {
@@ -9516,13 +9516,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_miremal_bog-spew-recharge-56",
+  "pk": "tob-2023_miremal_bog-spew",
   "fields": {
-    "name": "Bog Spew (Recharge 5–6)",
+    "name": "Bog Spew ",
     "desc": "The miremal spews a noxious stream of bog filth mixed with stomach acid at one creature it can see within 20 feet of it. The target must make a DC 11 Constitution saving throw. On a failure, the target takes 7 (2d6) acid damage and is blinded until the end of its next turn. On a success, the target takes half the damage and isn’t blinded.",
     "parent": "tob-2023_miremal",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -9604,13 +9604,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_mithral-dragon-wyrmling_shard-breath-recharge-56",
+  "pk": "tob-2023_mithral-dragon-wyrmling_shard-breath",
   "fields": {
-    "name": "Shard Breath (Recharge 5–6)",
+    "name": "Shard Breath ",
     "desc": "The mithral dragon spits metallic shards in a 15-foot cone. Each creature in that area must make a DC 11 Dexterity saving throw, taking 14 (4d6) slashing damage on a failed save, or half as much damage on a successful one. The area becomes difficult terrain until the start of the dragon’s next turn, then the shards dissolve into wisps of silvery smoke.",
     "parent": "tob-2023_mithral-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -9703,13 +9703,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_moonlit-king_animate-shadows-recharge-56",
+  "pk": "tob-2023_moonlit-king_animate-shadows",
   "fields": {
-    "name": "Animate Shadows (Recharge 5–6)",
+    "name": "Animate Shadows ",
     "desc": "The Moonlit King causes the shadows of up to three creatures he can see within 60 feet of him to animate and attack their owners. Each target must make a DC 19 Dexterity saving throw. On a failure, a creature takes 49 (14d6) necrotic damage, and its Strength score is reduced by 1d4. On a success, a creature takes half the damage, and its Strength score isn’t reduced. This reduction lasts until the creature finishes a long rest. The creature dies if this effect reduces its Strength to 0.",
     "parent": "tob-2023_moonlit-king",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -9890,13 +9890,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_naina_breath-weapons-recharge-56-true-form-only",
+  "pk": "tob-2023_naina_breath-weapons",
   "fields": {
-    "name": "Breath Weapons (Recharge 5–6, True Form Only)",
-    "desc": "The naina uses one of the following breath weapons:",
+    "name": "Breath Weapons ",
+    "desc": "(True Form Only) The naina uses one of the following breath weapons:",
     "parent": "tob-2023_naina",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -10011,13 +10011,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_necrohydra_necrotic-bile-recharge-6",
+  "pk": "tob-2023_necrohydra_necrotic-bile",
   "fields": {
-    "name": "Necrotic Bile (Recharge 6)",
+    "name": "Necrotic Bile ",
     "desc": "The necrohydra spews rotten bile soaked in necrotic energy in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 21 (6d6) poison damage and 18 (4d8) necrotic damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_necrohydra",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -10088,13 +10088,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_nichny_teleport-recharge-6",
+  "pk": "tob-2023_nichny_teleport",
   "fields": {
-    "name": "Teleport (Recharge 6)",
+    "name": "Teleport ",
     "desc": "The nichny magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
     "parent": "tob-2023_nichny",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -10308,13 +10308,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_nkosi-pridelord_pridelords-roar-recharge-46",
+  "pk": "tob-2023_nkosi-pridelord_pridelords-roar",
   "fields": {
-    "name": "Pridelord’s Roar (Recharge 4–6)",
+    "name": "Pridelord’s Roar ",
     "desc": "Each nkosi of the pridelord’s choice within 30 feet of it that can hear it has advantage on the next attack roll it makes before the start of the pridelord’s next turn.",
     "parent": "tob-2023_nkosi-pridelord",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4
   }
 },
 {
@@ -10374,13 +10374,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_oculo-swarm_disorienting-gaze-recharge-56",
+  "pk": "tob-2023_oculo-swarm_disorienting-gaze",
   "fields": {
-    "name": "Disorienting Gaze (Recharge 5–6)",
+    "name": "Disorienting Gaze ",
     "desc": "The swarm’s many eyes suddenly turn in different directions. Each creature within 10 feet of the oculo swarm must make a DC 13 Charisma saving throw. On a failure, a creature takes 21 (6d6) psychic damage and is disoriented until the end of its next turn. On a success, a creature takes half the damage and isn’t disoriented. A disoriented creature is incapacitated and moves in a random direction when it moves.",
     "parent": "tob-2023_oculo-swarm",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -10407,13 +10407,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_oozasis_compelling-vapors-recharge-56",
+  "pk": "tob-2023_oozasis_compelling-vapors",
   "fields": {
-    "name": "Compelling Vapors (Recharge 5–6)",
+    "name": "Compelling Vapors ",
     "desc": "The oozasis emits mind-altering vapors. Each creature within 20 feet of the oozasis must make a DC 16 Constitution saving throw. On a failure, a creature takes 45 (10d8) psychic damage and suffers either tranquility or turmoil for minute. On a success, a creature takes half the damage and doesn’t suffer tranquility or turmoil. A creature suffering tranquility is charmed and can’t attack. A creature suffering turmoil is unable to distinguish friend from foe and must move to and attack the nearest creature other than the oozasis on each of its turns, stalking off in a random direction if no creature is in range. A creature suffering tranquility or turmoil can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_oozasis",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -10517,13 +10517,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ostinato_aural-symbiosis-recharge-6",
+  "pk": "tob-2023_ostinato_aural-symbiosis",
   "fields": {
-    "name": "Aural Symbiosis (Recharge 6)",
+    "name": "Aural Symbiosis ",
     "desc": "One Humanoid that the ostinato can see within 5 feet of it must succeed on a DC 13 Charisma saving throw or the ostinato merges with the target, becoming an enjoyable, repetitive tune in its host’s mind. The ostinato can’t be targeted by any attack, spell, or other effect, and it can’t attack. The host retains control of its body and is aware of the ostinato’s presence only as a melody, not as a living entity. The host no longer needs to eat or drink, gains the ostinato’s Magic Resistance trait, and has advantage on Charisma checks. In addition, the host has disadvantage on Wisdom saving throws, and it can’t maintain concentration on spells or other effects. At the end of each long rest, the host can make a DC 13 Wisdom (Insight) check, realizing that the music it hears comes from an external entity on a success.",
     "parent": "tob-2023_ostinato",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -10715,13 +10715,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_paper-drake_shredded-breath-dragon-form-only-recharge-56",
+  "pk": "tob-2023_paper-drake_shredded-breath",
   "fields": {
-    "name": "Shredded Breath (Dragon Form Only; Recharge 5–6)",
-    "desc": "The drake exhales sharp shreds of paper in a 15-foot cone. Each creature in the area must make a DC 13 Dexterity saving throw. On a failure, a creature takes 10 (4d4) slashing damage and is blinded until the end of its next turn. On a success, a creature takes half the damage and isn’t blinded.",
+    "name": "Shredded Breath ",
+    "desc": "(Dragon Form Only) The drake exhales sharp shreds of paper in a 15-foot cone. Each creature in the area must make a DC 13 Dexterity saving throw. On a failure, a creature takes 10 (4d4) slashing damage and is blinded until the end of its next turn. On a success, a creature takes half the damage and isn’t blinded.",
     "parent": "tob-2023_paper-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -10770,13 +10770,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_pombero_charming-touch-recharge-56",
+  "pk": "tob-2023_pombero_charming-touch",
   "fields": {
-    "name": "Charming Touch (Recharge 5–6)",
+    "name": "Charming Touch ",
     "desc": "One creature the pombero can see within 5 feet of it must succeed on a DC 12 Wisdom saving throw or be charmed for 10 minutes. If the target suffers any harm, the effect ends. Otherwise, the target can repeat the saving throw at the end of every minute, ending the effect on itself on a success. The pombero can have only one creature charmed at a time. If it charms another, the effect on the previous creature ends.",
     "parent": "tob-2023_pombero",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -10869,24 +10869,24 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_psoglav_shadow-stealing-ray-recharge-56",
+  "pk": "tob-2023_psoglav_shadow-stealing-ray",
   "fields": {
-    "name": "Shadow-Stealing Ray (Recharge 5–6)",
+    "name": "Shadow-Stealing Ray ",
     "desc": "The psoglav emits a beam from its single eye at one creature it can see within 60 feet of it. The target must make a DC 15 Constitution saving throw. On a failure, the target is pushed up to 20 feet away from the psoglav, and its shadow becomes a creature under the psoglav’s control for 24 hours or until the shadow is reduced to 0 hp. On a success, the target is pushed up to 10 feet away from the psoglav and its shadow isn’t stolen. Each controlled shadow uses the statistics of a shadow, except it can’t create shadows from killing Humanoids. The psoglav can have no more than five shadows under its control at a time. The shadow becomes permanently under the psoglav’s control if the shadow’s original owner dies.",
     "parent": "tob-2023_psoglav",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_putrid-haunt_expel-vermin-recharge-6",
+  "pk": "tob-2023_putrid-haunt_expel-vermin",
   "fields": {
-    "name": "Expel Vermin (Recharge 6)",
+    "name": "Expel Vermin ",
     "desc": "The putrid haunt vomits forth the leeches, stinging insects, and other swamp vermin infesting its innards in a 15-foot cone. Each creature in the area must make a DC 13 Dexterity saving throw. On a failure, a creature takes 7 (2d6) piercing damage and 7 (2d6) poison damage and is poisoned for 1 minute. On a success, a creature takes half the damage and isn’t poisoned. A poisoned creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_putrid-haunt",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -10979,13 +10979,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_queen-of-night-and-magic_shadow-rift-recharge-56",
+  "pk": "tob-2023_queen-of-night-and-magic_shadow-rift",
   "fields": {
-    "name": "Shadow Rift (Recharge 5–6)",
+    "name": "Shadow Rift ",
     "desc": "The Queen of Night and Magic creates a shadowy rift on a point she can see within 120 feet. Each creature within the 20 feet of the rift must make a DC 23 Constitution saving throw. On a failure, a creature takes 36 (8d8) cold damage and 36 (8d8) necrotic damage and is restrained by wisps of icy shadow for 1 minute. On a success, a creature takes half the damage and isn’t restrained. A restrained creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_queen-of-night-and-magic",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -11067,13 +11067,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_queen-of-witches_spray-of-moonlight-recharge-56",
+  "pk": "tob-2023_queen-of-witches_spray-of-moonlight",
   "fields": {
-    "name": "Spray of Moonlight (Recharge 5–6)",
+    "name": "Spray of Moonlight ",
     "desc": "The Queen of Witches sends moonlight flooding out from her. Each creature within 15 feet of her must make a DC 20 Dexterity saving throw, taking 42 (12d6) radiant damage on a failed save, or half as much damage on a successful one. If the Queen is standing in an area of moonlight when she uses this action, each creature in the area has disadvantage on the saving throw. A creature that fails the saving throw by 5 or more is blinded until the end of its next turn.",
     "parent": "tob-2023_queen-of-witches",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -11111,13 +11111,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_quicksilver-siege-orb_slashing-run-recharge-46-disk-form-only",
+  "pk": "tob-2023_quicksilver-siege-orb_slashing-run",
   "fields": {
-    "name": "Slashing Run (Recharge 4–6, Disk Form Only)",
-    "desc": "The quicksilver siege orb flies up to 20 feet in a straight line, then it flies up to 20 feet in a straight line in a different direction. During this move, it can move through the space of any Large or smaller creature. The first time it enters a creature’s space during this move, that creature must make a DC 16 Dexterity saving throw, taking 35 (10d6) slashing damage on a failed save, or half as much damage on a successful one.",
+    "name": "Slashing Run ",
+    "desc": "(Disk Form Only) The quicksilver siege orb flies up to 20 feet in a straight line, then it flies up to 20 feet in a straight line in a different direction. During this move, it can move through the space of any Large or smaller creature. The first time it enters a creature’s space during this move, that creature must make a DC 16 Dexterity saving throw, taking 35 (10d6) slashing damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_quicksilver-siege-orb",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4
   }
 },
 {
@@ -11232,13 +11232,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ratatosk_divisive-chatter-recharge-56",
+  "pk": "tob-2023_ratatosk_divisive-chatter",
   "fields": {
-    "name": "Divisive Chatter (Recharge 5–6)",
+    "name": "Divisive Chatter ",
     "desc": "The ratatosk causes division and strife in up to four creatures it can see within 30 feet of it. Each target must succeed on a DC 14 Charisma saving throw or be irritated for 1 minute. While irritated, a creature must spend its action on each of its turns arguing with, complaining about, or otherwise expressing unhappiness toward one of its allies over a trivial matter. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_ratatosk",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -11419,13 +11419,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ravenfolk-doom-croaker_prophetic-caw-recharge-6",
+  "pk": "tob-2023_ravenfolk-doom-croaker_prophetic-caw",
   "fields": {
-    "name": "Prophetic Caw (Recharge 6)",
+    "name": "Prophetic Caw ",
     "desc": "The ravenfolk doom croaker caws a prophecy that sounds different to each listener. Each creature within 30 feet of the ravenfolk that can hear it must make a DC 15 Wisdom saving throw. Ravenfolk have advantage on the saving throw. On a failure, a creature hears a prophecy of its doom and is frightened for 1 minute. On a success, a creature hears a prophecy of its greatness and has advantage on the first attack roll it makes on each of its turns for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_ravenfolk-doom-croaker",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11595,13 +11595,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_red-hag_siphon-blood-recharge-56",
+  "pk": "tob-2023_red-hag_siphon-blood",
   "fields": {
-    "name": "Siphon Blood (Recharge 5–6)",
+    "name": "Siphon Blood ",
     "desc": "The red hag drains blood from nearby creatures. Each creature that isn’t a Construct or Undead within 20 feet of the red hag must make a DC 16 Constitution saving throw, taking 35 (10d6) necrotic damage on a failed save, or half as much damage on a successful one. If at least one creature fails the saving throw, the next spell the red hag casts is cast as if the spell used a spell slot two levels higher than the spell’s lowest level.",
     "parent": "tob-2023_red-hag",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -11705,13 +11705,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_rime-worm_black-ice-spray-recharge-56",
+  "pk": "tob-2023_rime-worm_black-ice-spray",
   "fields": {
-    "name": "Black Ice Spray (Recharge 5–6)",
+    "name": "Black Ice Spray ",
     "desc": "The rime worm sprays slivers of ice in a 30-foot cone. Each creature in the area must make a DC 15 Constitution saving throw, taking 36 (8d8) cold damage on a failed save, or half as much damage on a successful one. The area then becomes icy, difficult terrain for 1 minute.",
     "parent": "tob-2023_rime-worm",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -11947,13 +11947,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_rubezahl_thunderstrike-recharge-56",
+  "pk": "tob-2023_rubezahl_thunderstrike",
   "fields": {
-    "name": "Thunderstrike (Recharge 5–6)",
+    "name": "Thunderstrike ",
     "desc": "The rubezahl calls a sizzling bolt of lightning out of the sky, or from the air if underground or indoors, to strike a point the rubezahl can see within 150 feet of it. Each creature within 20 feet of that point must make a DC 16 Dexterity saving throw. On a failure, the creature takes 36 (8d8) lightning damage and is stunned until the end of its next turn. On a success, the creature takes half the damage and isn’t stunned.",
     "parent": "tob-2023_rubezahl",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -12024,13 +12024,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_rust-drake_vomit-scrap-recharge-56",
+  "pk": "tob-2023_rust-drake_vomit-scrap",
   "fields": {
-    "name": "Vomit Scrap (Recharge 5–6)",
+    "name": "Vomit Scrap ",
     "desc": "The rust drake vomits forth a 15-foot cone of rusted metal. Each creature in the area must make a DC 15 Dexterity saving throw, taking 22 (5d8) slashing damage and 22 (5d8) poison damage on a failed save, or half as much damage on a successful one. In addition, each creature that failed the saving throw must succeed on a DC 15 Constitution saving throw or contract the rust drake lockjaw disease (see the Rust Drake Lockjaw trait).",
     "parent": "tob-2023_rust-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -12145,13 +12145,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_sand-hag_scouring-sirocco-recharge-56",
+  "pk": "tob-2023_sand-hag_scouring-sirocco",
   "fields": {
-    "name": "Scouring Sirocco (Recharge 5–6)",
+    "name": "Scouring Sirocco ",
     "desc": "The sand hag generates a blast of hot wind and sand in a 30-foot cone. Each creature in the area must make a DC 14 Constitution saving throw. On a failure, a creature takes 14 (4d6) slashing damage and 9 (2d8) fire damage and is blinded for 1 minute. On a success, a creature takes half the damage and isn’t blinded. A blinded creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The area is heavily obscured by airborne sand until the start of the sand hag’s next turn.",
     "parent": "tob-2023_sand-hag",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -12255,24 +12255,24 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_sandman_dreamers-sand-recharge-56",
+  "pk": "tob-2023_sandman_dreamers-sand",
   "fields": {
-    "name": "Dreamer’s Sand (Recharge 5–6)",
+    "name": "Dreamer’s Sand ",
     "desc": "The sandman throws magical sand in a 30-foot cone. Each creature in that area must succeed on a DC 15 Constitution saving throw or fall unconscious for 10 minutes. This effect ends for a creature if the creature takes damage or another creature uses an action to wake it.",
     "parent": "tob-2023_sandman",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_sandman_encourage-dreams-recharge-56",
+  "pk": "tob-2023_sandman_encourage-dreams",
   "fields": {
-    "name": "Encourage Dreams (Recharge 5–6)",
+    "name": "Encourage Dreams ",
     "desc": "The sandman encourages powerful dreams in the minds of up to three unconscious creatures it can see within 30 feet of it. Each target must make a DC 15 Charisma saving throw. On a failure, nightmares fill the target’s mind, and the target takes 35 (10d6) psychic damage, wakes from its sleep, and is frightened for 1 minute. On a success, pleasant dreams fill the target’s mind, and the target regains 10 (3d6) hp and can choose to remain unconscious or awaken. A frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_sandman",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -12365,13 +12365,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_sap-demon_soul-sap-recharge-6",
+  "pk": "tob-2023_sap-demon_soul-sap",
   "fields": {
-    "name": "Soul Sap (Recharge 6)",
+    "name": "Soul Sap ",
     "desc": "One humanoid the sap demon is grappling or that is incapacitated within 5 feet of the sap demon must succeed on a DC 12 Constitution saving throw or be possessed by the sap demon. The sap demon then disappears, and the target is incapacitated and loses control of its body. The sap demon now controls the body but doesn’t deprive the target of awareness. The ooze can’t be targeted by any attack, spell, or other effect, except ones that restore a creature’s hp maximum. The ooze retains its Intelligence, Wisdom, and Charisma and condition immunities. It otherwise uses the possessed target’s statistics, but doesn’t gain access to the target’s knowledge, class features, or proficiencies.",
     "parent": "tob-2023_sap-demon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -12574,13 +12574,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_sea-dragon-wyrmling_tidal-breath-recharge-56",
+  "pk": "tob-2023_sea-dragon-wyrmling_tidal-breath",
   "fields": {
-    "name": "Tidal Breath (Recharge 5–6)",
+    "name": "Tidal Breath ",
     "desc": "The dragon exhales a crushing wave of frigid seawater in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw. On a failure, the creature takes 11 (2d10) bludgeoning damage and 11 (2d10) cold damage and is pushed up to 5 feet away from the dragon and knocked prone. On a success, the creature takes half the damage and isn’t pushed or knocked prone.",
     "parent": "tob-2023_sea-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -12728,13 +12728,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_shadow-antipaladin_infectious-insanity-recharge-56",
+  "pk": "tob-2023_shadow-antipaladin_infectious-insanity",
   "fields": {
-    "name": "Infectious Insanity (Recharge 5–6)",
+    "name": "Infectious Insanity ",
     "desc": "The shadow antipaladin magically assaults the minds of up to three creatures it can see within 30 feet of it. Each target must make a DC 13 Wisdom saving throw. On a failure, a creature takes 21 (6d6) psychic damage and is incapacitated for 1 minute as its mind fills with thoughts of eldritch terrors and otherworldly entities. On a success, a creature takes half the damage and isn’t incapacitated. An incapacitated creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_shadow-antipaladin",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -12783,13 +12783,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_shadow-beast_frightful-shadows-recharge-56",
+  "pk": "tob-2023_shadow-beast_frightful-shadows",
   "fields": {
-    "name": "Frightful Shadows (Recharge 5–6)",
+    "name": "Frightful Shadows ",
     "desc": "The shadow beast releases a wave of shadows filled with frightening images of eyes, fangs, and other barely seen and terrifying beasts in a 30-foot cone. Each creature in the area must make a DC 15 Wisdom saving throw. On a failure, a creature takes 42 (12d6) necrotic damage and is frightened for 1 minute. On a success, a creature takes half the damage and isn’t frightened. A frightened creature must take the Dash action and move away from the shadow beast by the safest available route on each of its turns, unless there is nowhere to move. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_shadow-beast",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -12948,13 +12948,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_skein-witch_destiny-distortion-wave-recharge-56",
+  "pk": "tob-2023_skein-witch_destiny-distortion-wave",
   "fields": {
-    "name": "Destiny Distortion Wave (Recharge 5–6)",
+    "name": "Destiny Distortion Wave ",
     "desc": "The skein witch frays the strands of fate in a 60-foot cone. Each creature in the area must make a DC 17 Wisdom saving throw, taking 55 (10d10) force damage on a failed save, or half as much damage on a successful one. If any creature that failed the saving throw is affected by a condition, such as incapacitated or poisoned, those conditions are randomly redistributed among all the creatures that failed the saving throw.",
     "parent": "tob-2023_skein-witch",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -12992,13 +12992,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_skitterhaunt_acid-spray-recharge-6",
+  "pk": "tob-2023_skitterhaunt_acid-spray",
   "fields": {
-    "name": "Acid Spray (Recharge 6)",
+    "name": "Acid Spray ",
     "desc": "The skitterhaunt spits acid in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 18 (4d8) acid damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_skitterhaunt",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -13080,13 +13080,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_slow-storm_static-shock-recharge-56",
+  "pk": "tob-2023_slow-storm_static-shock",
   "fields": {
-    "name": "Static Shock (Recharge 5–6)",
+    "name": "Static Shock ",
     "desc": "The slow storm releases built-up electricity in a 60-foot cone. Each creature in the area must make a DC 18 Constitution saving throw, taking 54 (12d8) lightning damage on a failed save, or half as much damage on a successful one. A creature that fails this saving throw by 5 or more is also stunned for 1 minute. A stunned creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_slow-storm",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13102,9 +13102,9 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_smaragdine-golem_release-spell-recharge-special",
+  "pk": "tob-2023_smaragdine-golem_release-spell",
   "fields": {
-    "name": "Release Spell (Recharge Special)",
+    "name": "Release Spell ",
     "desc": "The smaragdine golem releases an absorbed spell’s energy in a green burst centered on a point the golem can see within 60 feet of it. Each creature, other than the smaragdine golem, within 5 feet of that point per level of the absorbed spell must make a DC 18 Dexterity saving throw. On a failure, a creature takes 10 (3d6) force damage per level of the absorbed spell and is incapacitated until the end of its next turn. On a success, a creature takes half the damage and isn’t incapacitated. The golem can use this action only if it is Charged (see the Magic Vessel trait).",
     "parent": "tob-2023_smaragdine-golem",
     "uses_type": null,
@@ -13212,13 +13212,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_son-of-fenris_snake-breath-recharge-56",
+  "pk": "tob-2023_son-of-fenris_snake-breath",
   "fields": {
-    "name": "Snake Breath (Recharge 5–6)",
+    "name": "Snake Breath ",
     "desc": "The two snake tongues of the son of Fenris each exhale poison in a 30-foot line that is 5 feet wide, resulting in two lines. Each creature in a line must make a DC 18 Dexterity saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one. If the lines overlap, each creature in the overlapping lines must make one saving throw with disadvantage against only one of the lines rather than one saving throw for each line.",
     "parent": "tob-2023_son-of-fenris",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13234,13 +13234,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_soul-eater_hasten-consumption-recharge-56",
+  "pk": "tob-2023_soul-eater_hasten-consumption",
   "fields": {
-    "name": "Hasten Consumption (Recharge 5–6)",
+    "name": "Hasten Consumption ",
     "desc": "The soul eater emits a wave of psychic energy to hasten the demise of nearby creatures, bringing them one step closer to having their souls consumed. Each creature within 20 feet of the soul eater must make a DC 14 Charisma saving throw, taking 31 (9d6) psychic damage on a failed save, or half as much damage on a successful one. A creature reduced to below half its hp maximum by this effect has disadvantage on the saving throw against the soul eater’s Soul Drain for 1 minute.",
     "parent": "tob-2023_soul-eater",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13630,13 +13630,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_star-drake_plane-altered-breath-recharge-56",
+  "pk": "tob-2023_star-drake_plane-altered-breath",
   "fields": {
-    "name": "Plane-Altered Breath (Recharge 5–6)",
+    "name": "Plane-Altered Breath ",
     "desc": "The drake exhales raw magic in a 60-foot cone. Each creature in that area must make a DC 18 Dexterity saving throw, taking 55 (10d10) force damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_star-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13674,13 +13674,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_star-spawn-of-cthulhu_disintegrating-gaze-recharge-56",
+  "pk": "tob-2023_star-spawn-of-cthulhu_disintegrating-gaze",
   "fields": {
-    "name": "Disintegrating Gaze (Recharge 5–6)",
+    "name": "Disintegrating Gaze ",
     "desc": "One creature the star spawn can see within 60 feet of it must succeed on a DC 19 Constitution saving throw or take 27 (6d8) necrotic damage and be transformed into a misty cloud for 1 minute. The transformed creature’s only method of movement is a flying speed of 10 feet, and it can enter and occupy the space of another creature. In addition, the transformed target can’t talk, attack, cast spells, or manipulate objects, and any objects it was carrying or holding can’t be dropped, used, or otherwise interacted with. The transformed target can repeat the saving throw at the end of each of its turns, taking 13 (3d8) necrotic damage on a failed save, or ending the effect on itself on a successful one. A creature killed by this effect can be restored to life only by means of a true resurrection or a wish spell.",
     "parent": "tob-2023_star-spawn-of-cthulhu",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13740,13 +13740,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_steam-golem_steam-blast-recharge-56",
+  "pk": "tob-2023_steam-golem_steam-blast",
   "fields": {
-    "name": "Steam Blast (Recharge 5–6)",
+    "name": "Steam Blast ",
     "desc": "The steam golem releases a blast of steam in a 30-foot cone or in a 10-foot-radius cloud that extends from it, spreading around corners. Each creature in the area must make a DC 17 Dexterity saving throw, taking 54 (12d8) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_steam-golem",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -13960,13 +13960,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_swarm-of-fire-dancers_frightening-visage-recharge-56",
+  "pk": "tob-2023_swarm-of-fire-dancers_frightening-visage",
   "fields": {
-    "name": "Frightening Visage (Recharge 5–6)",
+    "name": "Frightening Visage ",
     "desc": "The swarm rearranges itself into the shape of a giant, blue, flaming Humanoid skull. Each Humanoid within 30 feet of the swarm that can see it must succeed on a DC 16 Wisdom saving throw or be frightened for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_swarm-of-fire-dancers",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -14037,13 +14037,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_swarm-of-wolf-spirits_chilling-howl-recharge-56",
+  "pk": "tob-2023_swarm-of-wolf-spirits_chilling-howl",
   "fields": {
-    "name": "Chilling Howl (Recharge 5–6)",
+    "name": "Chilling Howl ",
     "desc": "The swarm of wolf spirits howls, causing cold fear to course through those that hear it. Each creature within 15 feet that can hear the howl must make a DC 15 Constitution saving throw. On a failure, a creature takes 35 (10d6) cold damage and is frightened for 1 minute. On a success, a creature takes half the damage and isn’t frightened. A creature that fails the saving throw by 5 or more also suffers one level of exhaustion. A frightened creature can make a DC 15 Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_swarm-of-wolf-spirits",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -14114,13 +14114,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_thuellai_freezing-breath-recharge-56",
+  "pk": "tob-2023_thuellai_freezing-breath",
   "fields": {
-    "name": "Freezing Breath (Recharge 5–6)",
+    "name": "Freezing Breath ",
     "desc": "The thuellai exhales an icy blast in a 60-foot cone. Each creature in the area must make a DC 17 Dexterity saving throw, taking 49 (14d6) cold damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_thuellai",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -14224,13 +14224,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_tophet_gout-of-flame-recharge-56",
+  "pk": "tob-2023_tophet_gout-of-flame",
   "fields": {
-    "name": "Gout of Flame (Recharge 5–6)",
+    "name": "Gout of Flame ",
     "desc": "Flames erupt on a point the tophet can see within 100 feet of it. Each creature within 10 feet of that point must make a DC 16 Dexterity saving throw, taking 35 (10d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_tophet",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -14488,13 +14488,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_trollkin-reaver_howl-of-battle-recharge-6",
+  "pk": "tob-2023_trollkin-reaver_howl-of-battle",
   "fields": {
-    "name": "Howl of Battle (Recharge 6)",
+    "name": "Howl of Battle ",
     "desc": "The trollkin reaver howls a battle cry at up to three friendly creatures it can see within 30 feet of it. Each target can make one weapon attack as a reaction and has advantage on the attack roll.",
     "parent": "tob-2023_trollkin-reaver",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -14543,13 +14543,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_tusked-skyfish_stench-spray-recharge-56",
+  "pk": "tob-2023_tusked-skyfish_stench-spray",
   "fields": {
-    "name": "Stench Spray (Recharge 5–6)",
+    "name": "Stench Spray ",
     "desc": "The tusked skyfish sprays foul-smelling liquid in a 20-foot line that is 5 feet wide. Each creature in that line must make a DC 13 Constitution saving throw. On a failure, a creature takes 21 (6d6) poison damage and is poisoned for 1 minute. On a success, a creature takes half the damage and isn’t poisoned. If the saving throw fails by 5 or more, the creature falls unconscious while poisoned in this way. The unconscious creature wakes up if it takes damage or if another creature takes an action to shake it awake. A poisoned creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_tusked-skyfish",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -14598,13 +14598,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_uraeus_searing-breath-recharge-56",
+  "pk": "tob-2023_uraeus_searing-breath",
   "fields": {
-    "name": "Searing Breath (Recharge 5–6)",
+    "name": "Searing Breath ",
     "desc": "The uraeus exhales a 15-foot cone of fire. Each creature in the area must make a DC 12 Dexterity saving throw, taking 10 (3d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_uraeus",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -14675,13 +14675,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ushabti-royal-guard_enervating-surge-recharge-56",
+  "pk": "tob-2023_ushabti-royal-guard_enervating-surge",
   "fields": {
-    "name": "Enervating Surge (Recharge 5–6)",
+    "name": "Enervating Surge ",
     "desc": "The ushabti emits waves of necrotic energy. Each creature within 30 feet of the ushabti must make a DC 18 Constitution saving throw, taking 49 (11d8) necrotic damage on a failed save, or half as much damage on a successful one. A creature that can’t breathe because of the ushabti’s Breath-Stealing Presence has disadvantage on the saving throw. If the saving throw fails by 5 or more, the creature also suffers one level of exhaustion. A Humanoid slain by this effect rises 1d4 hours later as a mummy under the ushabti’s control, unless the Humanoid is restored to life or its body is destroyed. The ushabti can have no more than five mummies under its control at one time.",
     "parent": "tob-2023_ushabti-royal-guard",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -14851,13 +14851,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_vapor-lynx_poison-breath-recharge-56",
+  "pk": "tob-2023_vapor-lynx_poison-breath",
   "fields": {
-    "name": "Poison Breath (Recharge 5–6)",
+    "name": "Poison Breath ",
     "desc": "The vapor lynx exhales poisonous fog in a 20-foot radius centered on itself. The fog spreads around corners, and its area is heavily obscured. Each creature in the area must make a DC 14 Constitution saving throw. On a failure, a creature takes 28 (8d6) poison damage and is poisoned until the end of its next turn. On a success, a creature takes half the damage and isn’t poisoned. The fog lasts for 1 minute. A creature that starts its turn in the fog or enters the fog for the first time on a turn must succeed on a DC 14 Constitution saving throw or be poisoned until the end of its next turn.",
     "parent": "tob-2023_vapor-lynx",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -14961,13 +14961,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_vile-barber_frightening-cut-recharge-56",
+  "pk": "tob-2023_vile-barber_frightening-cut",
   "fields": {
-    "name": "Frightening Cut (Recharge 5–6)",
+    "name": "Frightening Cut ",
     "desc": "The vile barber makes one Straight Razor attack against a creature it can see within 5 feet of it. If the attack hits and deals damage, the target takes an extra 7 (2d6) necrotic damage, and each creature that can see the attack within 15 feet of the target must succeed on a DC 14 Wisdom saving throw or be frightened for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_vile-barber",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15093,13 +15093,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_void-dragon-wyrmling_breath-weapons-recharge-56",
+  "pk": "tob-2023_void-dragon-wyrmling_breath-weapons",
   "fields": {
-    "name": "Breath Weapons (Recharge 5–6)",
+    "name": "Breath Weapons ",
     "desc": "The dragon uses one of the following breath weapons.",
     "parent": "tob-2023_void-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15159,13 +15159,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_voidling_shadows-grasp-recharge-56",
+  "pk": "tob-2023_voidling_shadows-grasp",
   "fields": {
-    "name": "Shadow’s Grasp (Recharge 5–6)",
+    "name": "Shadow’s Grasp ",
     "desc": "The voidling releases a wave of small, grasping tendrils of shadow. Each creature within 20 feet of it must make a DC 17 Dexterity saving throw. On a failure, a creature takes 49 (14d6) necrotic damage and is restrained by tendrils of shadow for 1 minute. On a success, a creature takes half the damage and isn’t restrained. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_voidling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15203,13 +15203,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_vttir_corpse-breath-recharge-56",
+  "pk": "tob-2023_vttir_corpse-breath",
   "fields": {
-    "name": "Corpse Breath (Recharge 5–6)",
+    "name": "Corpse Breath ",
     "desc": "The vættir spews forth a 15-foot cone of putrid gas. Each creature in the area must make a DC 15 Constitution saving throw. On a failure, a creature takes 21 (6d6) poison damage and is poisoned for 1 minute. On a success, a creature takes half the damage and isn’t poisoned. A poisoned creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_vttir",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15269,24 +15269,24 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_wampus-cat_sweet-song-recharge-56",
+  "pk": "tob-2023_wampus-cat_sweet-song",
   "fields": {
-    "name": "Sweet Song (Recharge 5–6)",
+    "name": "Sweet Song ",
     "desc": "The wampus cat sings a sweet melody. Each creature within 60 feet of her that can hear the song must succeed on a DC 13 Charisma saving throw or be charmed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature’s saving throw is successful or the effect ends for it, the creature is immune to the wampus cat’s Sweet Song for the next 24 hours.",
     "parent": "tob-2023_wampus-cat",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_wampus-cat_terrifying-yowl-recharge-56",
+  "pk": "tob-2023_wampus-cat_terrifying-yowl",
   "fields": {
-    "name": "Terrifying Yowl (Recharge 5–6)",
+    "name": "Terrifying Yowl ",
     "desc": "The wampus cat emits an ear-piercing yowl. Each creature within 15 feet of the wampus cat that can hear the yowl must make a DC 13 Wisdom saving throw. On a failure, a creature takes 10 (3d6) thunder damage and is frightened until the end of its next turn. On a success, a creature takes half the damage and isn’t frightened.",
     "parent": "tob-2023_wampus-cat",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15445,13 +15445,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_white-ape_frenzy-recharge-56",
+  "pk": "tob-2023_white-ape_frenzy",
   "fields": {
-    "name": "Frenzy (Recharge 5–6)",
+    "name": "Frenzy ",
     "desc": "The white ape lashes out wildly at nearby creatures, flailing and biting. Each creature within 10 feet of the white ape must make a DC 15 Dexterity saving throw. On a failure, a creature takes 35 (10d6) bludgeoning damage and is pushed up to 10 feet away from the ape. On a success, a creature takes half the damage and isn’t pushed. A creature that succeeds on this saving throw also has advantage on attack rolls against the white ape until the end of its next turn.",
     "parent": "tob-2023_white-ape",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15478,13 +15478,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_wind-dragon-wyrmling_tempest-breath-recharge-56",
+  "pk": "tob-2023_wind-dragon-wyrmling_tempest-breath",
   "fields": {
-    "name": "Tempest Breath (Recharge 5–6)",
+    "name": "Tempest Breath ",
     "desc": "The dragon exhales a blast of stormy wind in a 15-foot cone. Each creature in that area must make a DC 12 Strength saving throw. On a failure, a creature takes 9 (2d8) bludgeoning damage and is pushed up to 5 feet away from the dragon. On a success, a creature takes half the damage and isn’t pushed. Unprotected flames, such as torches, in the area are extinguished, and protected flames, such as those in lanterns, have a 50 percent chance of being extinguished.",
     "parent": "tob-2023_wind-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15610,13 +15610,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_xanka_release-energy-recharge-56",
+  "pk": "tob-2023_xanka_release-energy",
   "fields": {
-    "name": "Release Energy (Recharge 5–6)",
+    "name": "Release Energy ",
     "desc": "The xanka releases energy created from absorbed material in a burst. Each creature within 10 feet of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) force damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_xanka",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15709,13 +15709,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_ychen-bannog_overrun-recharge-6",
+  "pk": "tob-2023_ychen-bannog_overrun",
   "fields": {
-    "name": "Overrun (Recharge 6)",
+    "name": "Overrun ",
     "desc": "The ychen bannog moves up to 30 feet in a straight line and can move through the space of any Large or smaller creature. This movement doesn’t provoke opportunity attacks. The first time the ychen bannog enters a creature’s space during this move, that creature must make a DC 17 Dexterity saving throw. On a failure, a creature takes 54 (12d8) bludgeoning damage and is knocked prone. On a success, a creature takes half the damage and isn’t knocked prone.",
     "parent": "tob-2023_ychen-bannog",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -15764,13 +15764,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_young-cave-dragon_poison-breath-recharge-56",
+  "pk": "tob-2023_young-cave-dragon_poison-breath",
   "fields": {
-    "name": "Poison Breath (Recharge 5–6)",
+    "name": "Poison Breath ",
     "desc": "The dragon exhales a cone of black, poisonous gas in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw. On a failure, a creature takes 42 (12d6) poison damage and is poisoned for 1 minute. On a success, a creature takes half the damage and isn’t poisoned. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob-2023_young-cave-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15797,13 +15797,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_young-flame-dragon_fire-breath-recharge-56",
+  "pk": "tob-2023_young-flame-dragon_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 5–6)",
+    "name": "Fire Breath ",
     "desc": "The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 42 (12d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_young-flame-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15852,13 +15852,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_young-mithral-dragon_shard-breath-recharge-56",
+  "pk": "tob-2023_young-mithral-dragon_shard-breath",
   "fields": {
-    "name": "Shard Breath (Recharge 5–6)",
+    "name": "Shard Breath ",
     "desc": "The mithral dragon spits metallic shards in a 30-foot cone. Each creature in that area must make a DC 14 Dexterity saving throw, taking 28 (8d6) slashing damage on a failed save, or half as much damage on a successful one. The area becomes difficult terrain for 1 minute, then the shards dissolve into wisps of silvery smoke.",
     "parent": "tob-2023_young-mithral-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15896,13 +15896,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_young-sea-dragon_tidal-breath-recharge-56",
+  "pk": "tob-2023_young-sea-dragon_tidal-breath",
   "fields": {
-    "name": "Tidal Breath (Recharge 5–6)",
+    "name": "Tidal Breath ",
     "desc": "The dragon exhales a crushing wave of frigid seawater in a 30-foot cone. Each creature in that area must make a DC 16 Dexterity saving throw. On a failure, the creature takes 22 (4d10) bludgeoning damage and 22 (4d10) cold damage and is pushed up to 15 feet away from the dragon and knocked prone. On a success, the creature takes half the damage and isn’t pushed or knocked prone.",
     "parent": "tob-2023_young-sea-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -15951,13 +15951,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_young-void-dragon_breath-weapons-recharge-56",
+  "pk": "tob-2023_young-void-dragon_breath-weapons",
   "fields": {
-    "name": "Breath Weapons (Recharge 5–6)",
+    "name": "Breath Weapons ",
     "desc": "The dragon uses one of the following breath weapons.",
     "parent": "tob-2023_young-void-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -16039,13 +16039,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_young-wind-dragon_tempest-breath-recharge-56",
+  "pk": "tob-2023_young-wind-dragon_tempest-breath",
   "fields": {
-    "name": "Tempest Breath (Recharge 5–6)",
+    "name": "Tempest Breath ",
     "desc": "The dragon exhales a blast of stormy wind in a 30-foot cone. Each creature in that area must make a DC 15 Strength saving throw. On a failure, a creature takes 27 (6d8) bludgeoning damage and is pushed up to 15 feet away from the dragon and knocked prone. On a success, a creature takes half the damage and isn’t pushed or knocked prone. Unprotected flames, such as torches, in the area are extinguished, and protected flames, such as those in lanterns, have a 50 percent chance of being extinguished.",
     "parent": "tob-2023_young-wind-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -16127,13 +16127,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_zmey-headling_fire-breath-recharge-56",
+  "pk": "tob-2023_zmey-headling_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 5–6)",
+    "name": "Fire Breath ",
     "desc": "The zmey headling exhales fire in a 30-foot cone. Each creature in that area must make a DC 14 Dexterity saving throw, taking 28 (8d6) fire damage on a failed save, or half as much damage on a successful one. The headling can choose for this breath to not harm plants or Plant creatures.",
     "parent": "tob-2023_zmey-headling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -16171,13 +16171,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_zmey_fire-breath-recharge-56",
+  "pk": "tob-2023_zmey_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 5–6)",
+    "name": "Fire Breath ",
     "desc": "The zmey exhales fire in a 30-foot cone out of each of its heads. Each creature in a cone must make a DC 17 Dexterity saving throw, taking 49 (14d6) fire damage on a failed save, or half as much damage on a successful one. If the cones overlap, each creature in the overlapping cones must make one saving throw with disadvantage against only one of the cones rather than one saving throw for each cone. The zmey can choose for this breath to not harm plants or Plant creatures.",
     "parent": "tob-2023_zmey",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {

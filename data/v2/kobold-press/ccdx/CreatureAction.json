@@ -287,13 +287,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_alabaster-tree_cloud-of-needles-recharge-5-6-pine-only",
+  "pk": "ccdx_alabaster-tree_cloud-of-needles",
   "fields": {
-    "name": "Cloud of Needles (Recharge 5-6, Pine Only)",
-    "desc": "The alabaster tree fires a cloud of sharp needles at all creatures within 30 feet of it. Each creature in that area must make a DC 15 Dexterity saving throw, taking 18 (4d8) piercing damage on a failed save, or half as much damage on a successful one.",
+    "name": "Cloud of Needles ",
+    "desc": "(Pine Only) The alabaster tree fires a cloud of sharp needles at all creatures within 30 feet of it. Each creature in that area must make a DC 15 Dexterity saving throw, taking 18 (4d8) piercing damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_alabaster-tree",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -408,13 +408,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_alchemical-golem_poison-breath-brimstone-infusion-only-recharge-5-6",
+  "pk": "ccdx_alchemical-golem_poison-breath",
   "fields": {
-    "name": "Poison Breath (Brimstone Infusion Only; Recharge 5-6)",
-    "desc": "The golem exhales poisonous fumes in a 30-foot cone. Each creature in that area must make a DC 16 Dexterity saving throw, taking 31 (9d6) poison damage on a failed save, or half as much damage on a successful one.",
+    "name": "Poison Breath ",
+    "desc": "(Brimstone Infusion Only) The golem exhales poisonous fumes in a 30-foot cone. Each creature in that area must make a DC 16 Dexterity saving throw, taking 31 (9d6) poison damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_alchemical-golem",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -463,13 +463,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_alkonost_charged-melody-recharge-6",
+  "pk": "ccdx_alkonost_charged-melody",
   "fields": {
-    "name": "Charged Melody (Recharge 6)",
+    "name": "Charged Melody ",
     "desc": "The alkonost sings a beautiful melody. Each creature within 30 feet of it that can hear the melody must succeed on a DC 12 Charisma saving throw or take 7 (2d6) lightning damage the next time it moves.",
     "parent": "ccdx_alkonost",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -518,9 +518,9 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_alnaar_flare-recharge-special",
+  "pk": "ccdx_alnaar_flare",
   "fields": {
-    "name": "Flare (Recharge Special)",
+    "name": "Flare ",
     "desc": "The alnaar becomes super-heated, expelling momentous energy outwards in a 20-foot radius blast around it. Each creature caught in the blast must make a DC 17 Dexterity saving throw. On a failed save, a creature takes 22 (4d10) fire damage and 22 (4d10) force damage and is knocked prone. On a success, a creature takes half the fire and force damage but isn't knocked prone. The fire ignites flammable objects that aren't being worn or carried. After using Flare, the alnaar is starving. It can't use Flare if it is starving.",
     "parent": "ccdx_alnaar",
     "uses_type": null,
@@ -2157,13 +2157,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_chaos-spawn-goblin_psychic-stab-recharge-6",
+  "pk": "ccdx_chaos-spawn-goblin_psychic-stab",
   "fields": {
-    "name": "Psychic Stab (Recharge 6)",
+    "name": "Psychic Stab ",
     "desc": "The chaos-spawn goblin targets one creature that it can sense within 30 feet of it. The target must make a DC 12 Intelligence saving throw, taking 7 (2d6) psychic damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_chaos-spawn-goblin",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -2399,13 +2399,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_clockwork-soldier_overdrive-flurry-recharge-6",
+  "pk": "ccdx_clockwork-soldier_overdrive-flurry",
   "fields": {
-    "name": "Overdrive Flurry (Recharge 6)",
+    "name": "Overdrive Flurry ",
     "desc": "The soldier makes four halberd attacks. After taking this action, it is stunned until the end of its next turn.",
     "parent": "ccdx_clockwork-soldier",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -3752,13 +3752,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_flame-scourged-scion_embers-recharge-6",
+  "pk": "ccdx_flame-scourged-scion_embers",
   "fields": {
-    "name": "Embers (Recharge 6)",
+    "name": "Embers ",
     "desc": "The flame-scourged scion fills the area around itself with a cloud of burning embers. Each creature within 10 feet of the flame-scourged scion must make a DC 18 Constitution saving throw, taking 28 (8d6) fire damage on a failed save, or half as much damage on a successful one. The embers die out within moments.",
     "parent": "ccdx_flame-scourged-scion",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4005,13 +4005,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_fragrite_spontaneous-explosion-glass-form-only-recharge-5-6",
+  "pk": "ccdx_fragrite_spontaneous-explosion",
   "fields": {
-    "name": "Spontaneous Explosion (Glass Form Only; Recharge 5-6)",
-    "desc": "The fragrite explodes into shards of glass, reducing its hp by 5 (2d4). Each creature within 15 feet of it must make a DC 14 Dexterity saving throw, taking 27 (6d8) slashing damage on a failed save, or half as much damage on a successful one. The fragrite then polymorphs into its sand form.",
+    "name": "Spontaneous Explosion ",
+    "desc": "(Glass Form Only) The fragrite explodes into shards of glass, reducing its hp by 5 (2d4). Each creature within 15 feet of it must make a DC 14 Dexterity saving throw, taking 27 (6d8) slashing damage on a failed save, or half as much damage on a successful one. The fragrite then polymorphs into its sand form.",
     "parent": "ccdx_fragrite",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -4159,13 +4159,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_gargoctopus_ink-cloud-recharge-6",
+  "pk": "ccdx_gargoctopus_ink-cloud",
   "fields": {
-    "name": "Ink Cloud (Recharge 6)",
+    "name": "Ink Cloud ",
     "desc": "A 20-foot-radius cloud of darkness extends around the gargoctopus. The area is heavily obscured until the start of the gargoctopus' next turn. If underwater, the gargoctopus can use the Dash action as a bonus action after releasing the cloud.",
     "parent": "ccdx_gargoctopus",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4764,13 +4764,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_great-mandrake_shriek-recharge-3-6",
+  "pk": "ccdx_great-mandrake_shriek",
   "fields": {
-    "name": "Shriek (Recharge 3-6)",
+    "name": "Shriek ",
     "desc": "Each creature within 60 feet of the mandrake that can hear it must succeed on a DC 13 Constitution saving throw or take 11 (3d6) thunder damage. If a creature fails the saving throw by 5 or more, it is stunned until the end of its next turn. If it fails by 10 or more, it falls unconscious. An unconscious creature can repeat the saving throw at the end of each of its turns, regaining consciousness on a success.",
     "parent": "ccdx_great-mandrake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 3
   }
 },
 {
@@ -6722,13 +6722,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_megapede_acid-spray-recharge-6",
+  "pk": "ccdx_megapede_acid-spray",
   "fields": {
-    "name": "Acid Spray (Recharge 6)",
+    "name": "Acid Spray ",
     "desc": "The megapede spits acid in a line that is 30 feet long and 5 feet wide, provided that it has no creature grappled. Each creature in that line must make a DC 13 Dexterity saving throw, taking 18 (4d8) acid damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_megapede",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -6788,13 +6788,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_mold-zombie_plague-breath-recharge-6",
+  "pk": "ccdx_mold-zombie_plague-breath",
   "fields": {
-    "name": "Plague Breath (Recharge 6)",
+    "name": "Plague Breath ",
     "desc": "The zombie breathes a cloud of spores in 15-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw or take 10 (3d6) necrotic damage and contract iumenta pox (see Iumenta Pox sidebar).",
     "parent": "ccdx_mold-zombie",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -7030,13 +7030,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_morko_disdainful-eye-recharge-6",
+  "pk": "ccdx_morko_disdainful-eye",
   "fields": {
-    "name": "Disdainful Eye (Recharge 6)",
+    "name": "Disdainful Eye ",
     "desc": "The morko fixes its gaze on a creature it can see within 30 feet. The target must make a DC 13 Wisdom saving throw or become cursed with ill manners, taking disadvantage on all ability checks and saving throws based on",
     "parent": "ccdx_morko",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -7492,13 +7492,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_one-headed-clockwork-dragon_fire-breath-recharge-6",
+  "pk": "ccdx_one-headed-clockwork-dragon_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 6)",
+    "name": "Fire Breath ",
     "desc": "The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 16 Dexterity saving throw, taking 35 (10d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_one-headed-clockwork-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -7657,13 +7657,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_oth_spray-recharge-6",
+  "pk": "ccdx_oth_spray",
   "fields": {
-    "name": "Spray (Recharge 6)",
+    "name": "Spray ",
     "desc": "The oth sprays acid in a 30-foot cone. Each creature in the area must make a DC 15 Dexterity saving throw, taking 22 (5d8) acid damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_oth",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -7679,12 +7679,12 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_ouroban_fire-breath-recharge-after-a-short-or-long-rest",
+  "pk": "ccdx_ouroban_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge after a Short or Long Rest)",
+    "name": "Fire Breath ",
     "desc": "The ouroban exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 14 (4d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_ouroban",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },
@@ -8207,13 +8207,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_pishacha_demonic-possession-recharge-6",
+  "pk": "ccdx_pishacha_demonic-possession",
   "fields": {
-    "name": "Demonic Possession (Recharge 6)",
+    "name": "Demonic Possession ",
     "desc": "One humanoid that the pishacha can see within 5 feet of it must succeed on a DC 13 Wisdom saving throw or be possessed by the pishacha; the pishacha then disappears, and the target is incapacitated and loses some control of its body, succumbing to a random short-term madness (see the System Reference Document 5.1) each round for 3d6 rounds. At the end of the 3d6 rounds, the pishacha becomes dormant within the body. \n\nWhile possessing a victim, the pishacha attempts to seize control of the body again every 1d4 hours. The target must succeed on a DC 13 Wisdom saving throw or succumb to another 3d6 round period of random short-term madness. Even if the target succeeds, it is still possessed. If the target is still possessed at the end of a long rest, it must succeed on a DC 13 Wisdom saving throw or gain a long-term madness. \n\nWhile possessing a victim, the pishacha can't be targeted by any attack, spell, or other effect, except those that can turn or repel fiends, and it retains its alignment, Intelligence, Wisdom, and Charisma. It otherwise uses the possessed target's statistics, but doesn't gain access to the target's knowledge, class features, or proficiencies. \n\nThe possession lasts until the body drops to 0 hp, the pishacha ends it as a bonus action, or the pishacha is turned or forced out by an effect like the dispel evil and good spell. The pishacha can also be forced out if the victim eats a bowl of rice that has been cooked in holy water. When the possession ends, the pishacha reappears in an unoccupied space within 5 feet of the body. \n\nThe target is immune to possession by the same pishacha for 24 hours after succeeding on the initial saving throw or after the possession ends.",
     "parent": "ccdx_pishacha",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -8284,12 +8284,12 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_plaresh_infest-corpse-recharges-after-a-long-rest",
+  "pk": "ccdx_plaresh_infest-corpse",
   "fields": {
-    "name": "Infest Corpse (Recharges after a Long Rest)",
+    "name": "Infest Corpse ",
     "desc": "The plaresh targets one dead humanoid in its space. The body is destroyed, and a new plaresh rises from the corpse. The newly created plaresh is free-willed but usually joins its creator.",
     "parent": "ccdx_plaresh",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },
@@ -8372,13 +8372,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_quickstep_freezing-steel-recharge-6",
+  "pk": "ccdx_quickstep_freezing-steel",
   "fields": {
-    "name": "Freezing Steel (Recharge 6)",
+    "name": "Freezing Steel ",
     "desc": "Each creature within 10 feet of the quickstep must make a DC 15 Constitution saving throw as the quickstep whirls in a blur of cold steel. On a failure, a target takes 9 (2d8) piercing damage and 7 (2d6) cold damage and is paralyzed for 1 round. On a success, a target takes half the piercing and cold damage and isn't paralyzed.",
     "parent": "ccdx_quickstep",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -8515,13 +8515,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_ratatosk-warlord_chatter-of-war-recharges-5-6",
+  "pk": "ccdx_ratatosk-warlord_chatter-of-war",
   "fields": {
-    "name": "Chatter of War (Recharges 5-6)",
+    "name": "Chatter of War ",
     "desc": "Each non-ratatosk creature within 30 feet that can hear the warlord must succeed on a DC 15 Charisma saving throw or have disadvantage on all attack rolls until the start of the warlord's next turn.",
     "parent": "ccdx_ratatosk-warlord",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -8911,13 +8911,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_sentinel-in-darkness_curse-of-the-wanderer-recharge-6",
+  "pk": "ccdx_sentinel-in-darkness_curse-of-the-wanderer",
   "fields": {
-    "name": "Curse of the Wanderer (Recharge 6)",
+    "name": "Curse of the Wanderer ",
     "desc": "One creature the sentinel can see within 30 feet of it must succeed on a DC 15 Wisdom saving throw or suffer the Curse of the Wanderer. While cursed, the creature's speed is halved and it can't regain hp. For every 24 hours it goes without discovering or learning new information, it takes 10 (3d6) psychic damage. The curse lasts until it is lifted by a remove curse spell or similar magic.",
     "parent": "ccdx_sentinel-in-darkness",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9131,12 +9131,12 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_shadow-fey-ambassador_honeyed-words-recharges-after-a-long-rest",
+  "pk": "ccdx_shadow-fey-ambassador_honeyed-words",
   "fields": {
-    "name": "Honeyed Words (Recharges after a Long Rest)",
+    "name": "Honeyed Words ",
     "desc": "The silver-tongued shadow fey ambassador weaves together a string of highly persuasive and agreeable words. Each creature within 30 feet of the ambassador must succeed on a DC 16 Wisdom saving throw or be charmed by the ambassador, regarding it as a wise and trustworthy ally with the creature's best interests at heart. A charmed target doesn't have to obey the ambassador's commands, but it views the ambassador's words in the most favorable way. \n\nEach time a charmed target witnesses the shadow fey ambassador or its allies do something harmful to the target or its companions, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts as long as the ambassador maintains concentration, up to 8 hours.",
     "parent": "ccdx_shadow-fey-ambassador",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },
@@ -9285,13 +9285,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_shadow-river-lord_shadow-geyser-recharge-6",
+  "pk": "ccdx_shadow-river-lord_shadow-geyser",
   "fields": {
-    "name": "Shadow Geyser (Recharge 6)",
+    "name": "Shadow Geyser ",
     "desc": "The shadow river lord expels a geyser of shadowy water from its staff in a 30-foot cone. Each creature in that area must make a DC 16 Dexterity saving throw, taking 21 (6d6) necrotic damage and 21 (6d6) cold damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_shadow-river-lord",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9571,13 +9571,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_simhamukha_weird-recharge-6",
+  "pk": "ccdx_simhamukha_weird",
   "fields": {
-    "name": "Weird (Recharge 6)",
+    "name": "Weird ",
     "desc": "The simhamukha draws upon the deepest fears and regrets of the creatures around it, creating illusions visible only to them. Each creature within 40 feet of the simhamukha, must succeed on a DC 15 Charisma saving throw or be frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, taking 11 (2d10) psychic damage on a failure or ending the effect on itself on a success.",
     "parent": "ccdx_simhamukha",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9648,13 +9648,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_skull-drake_necrotic-breath-recharge-6",
+  "pk": "ccdx_skull-drake_necrotic-breath",
   "fields": {
-    "name": "Necrotic Breath (Recharge 6)",
+    "name": "Necrotic Breath ",
     "desc": "The skull drake exhales a 15-foot cone of noxious, black gas. Each creature in the area must make a DC 13 Constitution saving throw, taking 14 (4d6) necrotic damage on a failed save, or half as much damage on a successful one. A creature reduced to 0 hp by this damage dies.",
     "parent": "ccdx_skull-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9670,13 +9670,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_skull-lantern_fire-beam-recharge-6",
+  "pk": "ccdx_skull-lantern_fire-beam",
   "fields": {
-    "name": "Fire Beam (Recharge 6)",
+    "name": "Fire Beam ",
     "desc": "The skull lantern opens its mouth, releasing a searing beam of light in a 15-foot line that is 5 feet wide. Each creature in that line must make a DC 13 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_skull-lantern",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9780,23 +9780,23 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_song-angel_horn-of-blasting-recharges-5-6",
+  "pk": "ccdx_song-angel_horn-of-blasting",
   "fields": {
-    "name": "Horn of Blasting (Recharges 5-6)",
+    "name": "Horn of Blasting ",
     "desc": "The song angel blows on its ram's horn, emitting a thunderous blast in a 30-foot cone that is audible 600 feet away. Each creature in the cone must make a DC 15 Constitution saving throw. On a failure, a creature takes 17 (5d6) thunder damage and is deafened for 1 minute. On a success, a creature takes half the damage but isn't deafened. Creatures and objects made of glass or crystal have disadvantage on the saving throw and take 35 (10d6) thunder damage instead.",
     "parent": "ccdx_song-angel",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_song-angel_horn-of-spirits-recharges-after-a-long-rest",
+  "pk": "ccdx_song-angel_horn-of-spirits",
   "fields": {
-    "name": "Horn of Spirits (Recharges after a Long Rest)",
+    "name": "Horn of Spirits ",
     "desc": "The song angel blows on its brass horn, calling forth 10 (3d4 + 3) warrior spirits. These spirits appear within 60 feet of the angel and use tribal warrior statistics. When the spirits are summoned, one of them is always an ancient champion that uses berserker statistics. They disappear after 1 hour or when they are reduced to 0 hp. These spirits follow the angel's commands.",
     "parent": "ccdx_song-angel",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },
@@ -10121,13 +10121,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_storm-spirit_tempest-recharge-6",
+  "pk": "ccdx_storm-spirit_tempest",
   "fields": {
-    "name": "Tempest (Recharge 6)",
+    "name": "Tempest ",
     "desc": "Each creature within 10 feet of the spirit must succeed on a DC 12 Dexterity saving throw. On a failure, a creature takes 5 (2d4) lightning damage, 5 (2d4) thunder damage, is thrown 10 feet in a random direction, and is knocked prone.",
     "parent": "ccdx_storm-spirit",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -10352,13 +10352,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_three-headed-clockwork-dragon_fire-breath-recharge-6",
+  "pk": "ccdx_three-headed-clockwork-dragon_fire-breath",
   "fields": {
-    "name": "Fire Breath (Recharge 6)",
+    "name": "Fire Breath ",
     "desc": "The dragon exhales fire in three separate 60-foot cones. Each creature in one of these cones must make a DC 19 Dexterity saving throw, taking 45 (13d6) fire damage on a failed save, or half as much damage on a successful one. A creature in overlapping cones has disadvantage on the saving throw, but it takes damage from only one breath.",
     "parent": "ccdx_three-headed-clockwork-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11111,13 +11111,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_vines-of-nemthyr_thorn-spray-recharge-6",
+  "pk": "ccdx_vines-of-nemthyr_thorn-spray",
   "fields": {
-    "name": "Thorn Spray (Recharge 6)",
+    "name": "Thorn Spray ",
     "desc": "The vines of Nemthyr shoots poisonous thorns in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 35 (10d6) poison damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_vines-of-nemthyr",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11298,13 +11298,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_wasteland-dragon-wyrmling_warped-energy-breath-recharge-6",
+  "pk": "ccdx_wasteland-dragon-wyrmling_warped-energy-breath",
   "fields": {
-    "name": "Warped Energy Breath (Recharge 6)",
+    "name": "Warped Energy Breath ",
     "desc": "The dragon blasts warped arcane energy in a 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 22 (5d8) force damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_wasteland-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11837,13 +11837,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_wolpertinger_keening-recharge-6",
+  "pk": "ccdx_wolpertinger_keening",
   "fields": {
-    "name": "Keening (Recharge 6)",
+    "name": "Keening ",
     "desc": "The wolpertinger emits a piercing shriek. Each creature within 30 feet that can hear the wolpertinger must succeed on a DC 13 Constitution saving throw or be deafened for 1 minute. A beast with an Intelligence of 4 or lower that is in the area must also succeed on a DC 13 Wisdom saving throw or be frightened until the beginning of its next turn.",
     "parent": "ccdx_wolpertinger",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -12189,13 +12189,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_young-wasteland-dragon_warped-energy-breath-recharge-6",
+  "pk": "ccdx_young-wasteland-dragon_warped-energy-breath",
   "fields": {
-    "name": "Warped Energy Breath (Recharge 6)",
+    "name": "Warped Energy Breath ",
     "desc": "The dragon blasts warped arcane energy in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 49 (11d8) force damage on a failed save, or half as much damage on a successful one.",
     "parent": "ccdx_young-wasteland-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -12255,23 +12255,23 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_zoryas_dusks-arrival-recharges-after-a-long-rest",
+  "pk": "ccdx_zoryas_dusks-arrival",
   "fields": {
-    "name": "Dusk's Arrival (Recharges after a Long Rest)",
+    "name": "Dusk's Arrival ",
     "desc": "The zoryas' lantern darkens, snuffing out nearby natural and magical sources of light. Each creature within 30 feet of the zoryas must make a DC 16 Constitution saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one. The area is bathed in darkness like the darkness spell until the end of the zoryas' next turn.",
     "parent": "ccdx_zoryas",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "ccdx_zoryas_light-of-dawn-recharges-after-a-long-rest",
+  "pk": "ccdx_zoryas_light-of-dawn",
   "fields": {
-    "name": "Light of Dawn (Recharges after a Long Rest)",
+    "name": "Light of Dawn ",
     "desc": "The zoryas' lantern brightens, bathing its environs in brilliant light. Each creature within 30 feet of the zoryas must succeed on a DC 16 Wisdom saving throw or be blinded for 1d4 rounds. An undead creature who fails this save also takes 13 (3d8) fire damage. The light dispels up to three spells or other magical effects of 3rd level or lower like the dispel magic spell within the area.",
     "parent": "ccdx_zoryas",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },

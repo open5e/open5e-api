@@ -738,13 +738,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_animated-bearskin-rug_menacing-roar-recharge-6",
+  "pk": "tob2_animated-bearskin-rug_menacing-roar",
   "fields": {
-    "name": "Menacing Roar (Recharge 6)",
+    "name": "Menacing Roar ",
     "desc": "The bearskin rug lets out a hideous, supernatural howl. Each creature within 20 feet of the rug that can hear the roar must succeed on a DC 13 Wisdom saving throw or become frightened for 1 minute. A creature frightened this way must spend its turns trying to move as far away from the rug as it can. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action. At the end of each of its turns and when it takes damage, the creature can repeat the saving throw, ending the effect on itself on a success.",
     "parent": "tob2_animated-bearskin-rug",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -782,13 +782,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_aniwye_deadly-musk-recharge-5-6-skunk-form-only",
+  "pk": "tob2_aniwye_deadly-musk",
   "fields": {
-    "name": "Deadly Musk (Recharge 5-6; Skunk Form Only)",
-    "desc": "The aniwye releases a cloud of highly poisonous musk from its tail in a 15-foot cone. Each creature in that area must make a DC 15 Constitution saving throw. On a failure, a creature takes 24 (7d6) poison damage and is stunned until the end of its next turn. On a success, a creature takes half the damage and isn’t stunned.",
+    "name": "Deadly Musk ",
+    "desc": "(Skunk Form Only) The aniwye releases a cloud of highly poisonous musk from its tail in a 15-foot cone. Each creature in that area must make a DC 15 Constitution saving throw. On a failure, a creature takes 24 (7d6) poison damage and is stunned until the end of its next turn. On a success, a creature takes half the damage and isn’t stunned.",
     "parent": "tob2_aniwye",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -1024,13 +1024,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_astral-devourer_serpent-spray-recharge-6",
+  "pk": "tob2_astral-devourer_serpent-spray",
   "fields": {
-    "name": "Serpent Spray (Recharge 6)",
+    "name": "Serpent Spray ",
     "desc": "The astral devourer flings biting astral serpents outward. Each creature within 20 feet of the astral devourer must make a DC 16 Dexterity saving throw, taking 14 (4d6) piercing damage and 14 (4d6) poison damage on a failed save, or half as much damage on a successful one. The astral devourer regains hp equal to the single highest amount of piercing damage dealt by this spray.",
     "parent": "tob2_astral-devourer",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1299,13 +1299,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_baliri-demon_blood-bray-recharge-6",
+  "pk": "tob2_baliri-demon_blood-bray",
   "fields": {
-    "name": "Blood Bray (Recharge 6)",
+    "name": "Blood Bray ",
     "desc": "The baliri demon unleashes an otherworldly braying that causes the internal organs of nearby creatures to twist and rupture. Each creature within 20 feet of the baliri that can hear it must make a DC 18 Constitution saving throw. On a failure, the creature takes 36 (8d8) necrotic damage and is stunned until the end of its next turn as it doubles over in agony. On a success, the creature takes half the damage and isn’t stunned. The bray doesn’t affect creatures without internal organs, such as constructs, elementals, and oozes.",
     "parent": "tob2_baliri-demon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1607,9 +1607,9 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_bloodsapper_bloody-breath-recharge-special",
+  "pk": "tob2_bloodsapper_bloody-breath",
   "fields": {
-    "name": "Bloody Breath (Recharge Special)",
+    "name": "Bloody Breath ",
     "desc": "The bloodsapper can expel a 15-foot cone of acrid gas and blood from its bladder. Each creature in the area must make a DC 13 Constitution saving throw. On a failure, a creature takes 14 (4d6) acid damage and is poisoned for 1 minute. On a success, a creature takes half the damage and isn’t poisoned. A poisoned creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Once a bloodsapper uses its Bloody Breath, it can’t use Bloody Breath again until it has drained at least 25 hp of blood from a creature.",
     "parent": "tob2_bloodsapper",
     "uses_type": null,
@@ -2498,13 +2498,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_cherufe_quake-recharge-6",
+  "pk": "tob2_cherufe_quake",
   "fields": {
-    "name": "Quake (Recharge 6)",
+    "name": "Quake ",
     "desc": "The cherufe slams its fists into the ground, shaking the terrain within 60 feet of it. Each creature standing on the ground in that area must make a DC 18 Dexterity saving throw. On a failure, the creature takes 45 (10d8) bludgeoning damage and is knocked prone. On a success, the creature takes half the damage and isn’t knocked prone.",
     "parent": "tob2_cherufe",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -3092,13 +3092,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_darakhul-captain_imperial-conscription-recharge-6",
+  "pk": "tob2_darakhul-captain_imperial-conscription",
   "fields": {
-    "name": "Imperial Conscription (Recharge 6)",
+    "name": "Imperial Conscription ",
     "desc": "The darakhul captain targets one incapacitated creature it can see within 30 feet. The target must make a DC 15 Wisdom saving throw, taking 27 (5d10) necrotic damage on a failed save, or half as much damage on a successful one. The target’s hp maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. If the victim has darakhul fever, this reduction can’t be removed until the victim recovers from the disease. The target dies if this effect reduces its hit point maximum to 0. A humanoid slain by this attack rises as a ghast 1d4 hours later under the darakhul captain’s control, unless the humanoid is restored to life",
     "parent": "tob2_darakhul-captain",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -3290,13 +3290,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_death-vulture_decaying-breath-recharge-6",
+  "pk": "tob2_death-vulture_decaying-breath",
   "fields": {
-    "name": "Decaying Breath (Recharge 6)",
+    "name": "Decaying Breath ",
     "desc": "The vulture breathes necrotic energy in a 15-foot cone. Each creature in that area must make a DC 14 Constitution saving throw, taking 22 (4d10) necrotic damage on a failed save, or half as much damage on a successful one. Creatures that fail this saving throw by 5 or more also age a number of years equal to half the damage taken.",
     "parent": "tob2_death-vulture",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4214,13 +4214,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_fire-infused-water-elemental_scald-recharge-6",
+  "pk": "tob2_fire-infused-water-elemental_scald",
   "fields": {
-    "name": "Scald (Recharge 6)",
+    "name": "Scald ",
     "desc": "A fire-infused water elemental sprays a 30-foot cone of superheated water. Each creature in the area must make a DC 12 Dexterity saving throw. On a failure, a creature takes 21 (6d6) fire damage and is knocked prone. On a success, a creature takes half as much damage and isn’t knocked prone.",
     "parent": "tob2_fire-infused-water-elemental",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4269,13 +4269,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_fleshdreg_disgorge-innards-recharge-6",
+  "pk": "tob2_fleshdreg_disgorge-innards",
   "fields": {
-    "name": "Disgorge Innards (Recharge 6)",
+    "name": "Disgorge Innards ",
     "desc": "The fleshdreg expels acidic sludge in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 18 (4d8) acid damage on a failed save, or half as much damage on a successful one. A creature that fails the saving throw takes 9 (2d8) acid damage the end of its next turn, unless it or a creature within 5 feet of it takes an action to remove the sludge.",
     "parent": "tob2_fleshdreg",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4555,13 +4555,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_ghillie-dubh_forest-knowledge-recharge-6",
+  "pk": "tob2_ghillie-dubh_forest-knowledge",
   "fields": {
-    "name": "Forest Knowledge (Recharge 6)",
+    "name": "Forest Knowledge ",
     "desc": "The ghillie dubh can alter nearby creatures’ knowledge of the forest, choosing one of the following. An effect lasts for 24 hours, until the creature leaves the ghillie dubh’s forest, or until the ghillie dubh dismisses it as a bonus action. \n* Remove Knowledge. Each creature within 30 feet of the ghillie dubh must succeed on a DC 13 Charisma saving throw or become hopelessly lost in the ghillie dubh’s forest. The creature has disadvantage on Wisdom (Survival) checks and takes 50 percent more time on overland travel, even delaying clearheaded companions. \n* Share Knowledge. Each creature within 30 feet of the ghillie dubh has advantage on Wisdom (Survival) checks. The creature can move at a fast pace through forest terrain, and difficult terrain composed of nonmagical plants doesn’t cost it extra movement.",
     "parent": "tob2_ghillie-dubh",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4753,13 +4753,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_giant-snow-beetle_rotten-snowball-shove-recharge-6",
+  "pk": "tob2_giant-snow-beetle_rotten-snowball-shove",
   "fields": {
-    "name": "Rotten Snowball Shove (Recharge 6)",
+    "name": "Rotten Snowball Shove ",
     "desc": "The giant snow beetle tosses one of its carrion-filled snowballs at a point it can see within 20 feet of it. Each creature within 5 feet of that point must make a DC 12 Dexterity saving throw. On a failure, a target takes 7 (2d6) bludgeoning damage and becomes poisoned for 1 minute. On a success, a target takes half the damage and isn’t poisoned. A poisoned creature can make a DC 13 Constitution saving throw at the end of each of its turns, ending the poisoned condition on itself on a success.",
     "parent": "tob2_giant-snow-beetle",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -5083,13 +5083,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_greater-lunarchidna_web-recharge-56",
+  "pk": "tob2_greater-lunarchidna_web",
   "fields": {
-    "name": "Web (Recharge 5–6)",
+    "name": "Web ",
     "desc": "Ranged Weapon Attack: +5 to hit, ranged 30/60 ft., one creature. Hit: The target is restrained by webbing. As an action the restrained target can make a DC 13 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).",
     "parent": "tob2_greater-lunarchidna",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -5534,13 +5534,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_helashruu_trap-life-recharge-6",
+  "pk": "tob2_helashruu_trap-life",
   "fields": {
-    "name": "Trap Life (Recharge 6)",
+    "name": "Trap Life ",
     "desc": "One creature of the helashruu’s choice that is within 30 feet of the helashruu and that can see it must succeed on a DC 18 Wisdom saving throw or be trapped inside the helashruu’s mirror. While trapped, the target is blinded and restrained, it has total cover against attacks and other effects outside the helashruu, and it takes 21 (6d6) force damage at the start of each of the helashruu’s turns. The helashruu can have only one creature trapped at a time. A fragmented caricature of the trapped creature appears on the helashruu’s surface while a creature is trapped inside it.\n\nIf the helashruu takes 30 or more bludgeoning or thunder damage on a single turn, the helashruu must succeed on a DC 15 Constitution saving throw or release the creature, which falls prone in a space within 10 feet of the helashruu. If the helashruu dies, a trapped creature is immediately released into a space within 10 feet of the helashruu.",
     "parent": "tob2_helashruu",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -5655,13 +5655,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_hoard-drake_midas-breath-recharge-6",
+  "pk": "tob2_hoard-drake_midas-breath",
   "fields": {
-    "name": "Midas Breath (Recharge 6)",
+    "name": "Midas Breath ",
     "desc": "The hoard drake spits molten gold in a 30-foot cone. Each creature in the area must make a DC 16 Dexterity saving throw. On a failure, a creature takes 36 (8d8) fire damage and the gold clings to it. On a success, a creature takes half the damage and the gold doesn’t cling to it. A creature with gold clinging to it has its speed halved until it takes an action to scrape off the gold.\n\nThe gold produced by Midas Breath can be collected once it has cooled, providing roughly 50 gp worth of gold dust and scraps each time it spits molten gold.",
     "parent": "tob2_hoard-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -5776,13 +5776,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_hodag_territorial-display-recharge-6",
+  "pk": "tob2_hodag_territorial-display",
   "fields": {
-    "name": "Territorial Display (Recharge 6)",
+    "name": "Territorial Display ",
     "desc": "The hodag rears and stomps on the ground then roars a territorial challenge. Each creature within 10 feet of the hodag must make a DC 14 Dexterity saving throw, taking 14 (4d6) thunder damage on a failed save, or half as much damage on a successful one. A creature that fails the saving throw by 5 or more is also knocked prone.",
     "parent": "tob2_hodag",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -5930,13 +5930,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_huecambra_gem-explosion-recharge-6",
+  "pk": "tob2_huecambra_gem-explosion",
   "fields": {
-    "name": "Gem Explosion (Recharge 6)",
+    "name": "Gem Explosion ",
     "desc": "The huecambra causes some of the gem-like nodules on its body to detonate. Each creature within 20 feet of the huecambra must make a DC 16 Dexterity saving throw. On a failure, a creature takes 24 (7d6) thunder damage and is stunned until the end of its next turn. On a success, a creature takes half the damage and isn’t stunned. A creature cursed by the huecambra’s bite has disadvantage on this saving throw.",
     "parent": "tob2_huecambra",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -6656,13 +6656,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_kelp-drake_binding-bile-recharge-6",
+  "pk": "tob2_kelp-drake_binding-bile",
   "fields": {
-    "name": "Binding Bile (Recharge 6)",
+    "name": "Binding Bile ",
     "desc": "The drake forcibly vomits a long line of bile-coated kelp that unravels in a 30-foot-long, 5-foot-wide line. Each target in the area must make a DC 13 Dexterity saving throw. On a failure, a creature takes 14 (4d6) acid damage and is restrained by kelp for 1 minute. On a success, a creature takes half the damage and isn’t restrained. A creature, including the target, can take its action to remove the kelp by succeeding on a DC 13 Strength check. Alternatively, the kelp can be attacked and destroyed (AC 10; hp 3; immunity to bludgeoning, poison, and psychic damage).",
     "parent": "tob2_kelp-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -6821,13 +6821,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_kezai_searing-acid-recharge-6",
+  "pk": "tob2_kezai_searing-acid",
   "fields": {
-    "name": "Searing Acid (Recharge 6)",
+    "name": "Searing Acid ",
     "desc": "The kezai’s mandibles drip a searing acid, instantly igniting the gas around it. Each creature within 20 feet of the kezai must make a DC 14 Dexterity saving throw, taking 18 (4d8) fire damage on a failed save, or half as much damage on a successful one. The kezai’s Nauseous Gas trait becomes inactive for 1 minute. The kezai can’t use Searing Gas unless Nauseous Gas has been active for at least 1 minute.",
     "parent": "tob2_kezai",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -7173,13 +7173,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_light-drake_breath-weapon-recharge-6",
+  "pk": "tob2_light-drake_breath-weapon",
   "fields": {
-    "name": "Breath Weapon (Recharge 6)",
+    "name": "Breath Weapon ",
     "desc": "A light drake can breathe a 30-foot line of brilliant white light. Each creature in that line must make a DC 13 Dexterity saving throw. On a failure, a creature takes 5 (2d4) radiant damage and is blinded for 1 minute. On a success, a creature takes half the damage and isn’t blinded. A blinded creature can make a DC 13 Constitution saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob2_light-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -7283,13 +7283,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_luck-leech_feast-of-fortune-recharge-6",
+  "pk": "tob2_luck-leech_feast-of-fortune",
   "fields": {
-    "name": "Feast of Fortune (Recharge 6)",
+    "name": "Feast of Fortune ",
     "desc": "Each creature the luck leech can see within 30 feet of it must make a DC 16 Charisma saving throw. On a failure, the creature takes 27 (6d8) psychic damage, becomes blinded until the end of its next turn, and is cursed with falling fortunes. On a success, a creature takes half the damage and isn’t blinded or cursed. For each creature that fails this saving throw, the luck leech gains 1 luck point.",
     "parent": "tob2_luck-leech",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -7382,13 +7382,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_magma-octopus_magma-blast-recharge-6",
+  "pk": "tob2_magma-octopus_magma-blast",
   "fields": {
-    "name": "Magma Blast (Recharge 6)",
+    "name": "Magma Blast ",
     "desc": "The magma octopus sprays magma in a 30-foot cone. Each creature in that area must make a DC 16 Dexterity saving throw, taking 28 (8d6) fire damage on a failed save, or half as much damage on a successful one. If a creature fails the saving throw by 5 or more, it catches fire. Until someone takes an action to douse the fire, the creature takes 5 (1d10) fire damage at the start of each of its turns.",
     "parent": "tob2_magma-octopus",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -8031,13 +8031,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_mountain-strider_thunderous-bleat-recharge-6",
+  "pk": "tob2_mountain-strider_thunderous-bleat",
   "fields": {
-    "name": "Thunderous Bleat (Recharge 6)",
+    "name": "Thunderous Bleat ",
     "desc": "The mountain strider releases a loud bleat in a 15-foot cone. Each creature in the area must make a DC 13 Dexterity saving throw, taking 7 (2d6) thunder damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob2_mountain-strider",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -8086,13 +8086,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_murgrik_unsettling-ululations-recharge-6",
+  "pk": "tob2_murgrik_unsettling-ululations",
   "fields": {
-    "name": "Unsettling Ululations (Recharge 6)",
+    "name": "Unsettling Ululations ",
     "desc": "The stalk on the murgrik’s head unleashes a dispiriting wail. Each creature within 30 feet of the murgrik that can hear it must make a DC 14 Wisdom saving throw. On a failure, a creature takes 21 (6d6) psychic damage and is frightened for 1 minute. On a success, a creature takes half the damage and isn’t frightened. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob2_murgrik",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -8614,9 +8614,9 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_ophinix_lightning-strike-recharge-special",
+  "pk": "tob2_ophinix_lightning-strike",
   "fields": {
-    "name": "Lightning Strike (Recharge Special)",
+    "name": "Lightning Strike ",
     "desc": "The ophinix releases its static electricity at up to three targets it can see within 30 feet of it. Each creature must make a DC 12 Dexterity saving throw, taking 5 (2d4) lightning damage on a failed save, or half as much damage on a successful one. After using Lightning Strike, the ophinix is no longer charged with electricity. It can’t use Lightning Strike if isn’t charged with electricity.",
     "parent": "tob2_ophinix",
     "uses_type": null,
@@ -8691,13 +8691,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_ortifex_blood-siphon-recharge-6",
+  "pk": "tob2_ortifex_blood-siphon",
   "fields": {
-    "name": "Blood Siphon (Recharge 6)",
+    "name": "Blood Siphon ",
     "desc": "The ortifex drains blood from nearby creatures. Each creature within 20 feet of the ortifex must make a DC 13 Constitution saving throw, taking 14 (4d6) necrotic damage on a failed save, or half as much damage on a successful one. The ortifex gains temporary hp equal to the single highest amount of necrotic damage dealt. If it gains temporary hp from this action while it still has temporary hp from a previous use of this action, the temporary hp add together. The ortifex’s temporary hp can’t exceed half its hp maximum. A creature that doesn’t have blood is immune to Blood Siphon.",
     "parent": "tob2_ortifex",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -8823,13 +8823,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_pale-screamer_scream-of-the-deep-recharge-6",
+  "pk": "tob2_pale-screamer_scream-of-the-deep",
   "fields": {
-    "name": "Scream of the Deep (Recharge 6)",
+    "name": "Scream of the Deep ",
     "desc": "The pale screamer unleashes an alien screech in a 30-foot cone. Each creature in that area must make a DC 14 Constitution saving throw. On a failure, a creature takes 10 (3d6) thunder damage and is deafened until the end of its next turn. On a success, a creature takes half the damage and isn’t deafened.",
     "parent": "tob2_pale-screamer",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -8955,13 +8955,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_pine-doom_flurry-of-pinecones-recharge-6",
+  "pk": "tob2_pine-doom_flurry-of-pinecones",
   "fields": {
-    "name": "Flurry of Pinecones (Recharge 6)",
+    "name": "Flurry of Pinecones ",
     "desc": "Each creature within 30 feet of the pine doom must make a DC 16 Dexterity saving throw, taking 15 (6d4) slashing damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob2_pine-doom",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9351,13 +9351,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_righteous-sentinel_warp-reflection-recharge-6",
+  "pk": "tob2_righteous-sentinel_warp-reflection",
   "fields": {
-    "name": "Warp Reflection (Recharge 6)",
+    "name": "Warp Reflection ",
     "desc": "The righteous sentinel points its shield at a creature within 30 feet of it. If the target can see the sentinel’s shield, the target must make a DC 15 Wisdom saving throw. On a failure, the target takes 22 (4d10) psychic damage and is frightened for 1 minute. On a success, the target takes half the damage and isn’t frightened. An evil-aligned target has disadvantage on this saving throw. At the start of each of the frightened creature’s turns, it takes 11 (2d10) psychic damage. It can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob2_righteous-sentinel",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9461,13 +9461,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_rum-lord_rotgut-belch-recharge-6",
+  "pk": "tob2_rum-lord_rotgut-belch",
   "fields": {
-    "name": "Rotgut Belch (Recharge 6)",
+    "name": "Rotgut Belch ",
     "desc": "The rum lord vomits green bile in a 15-foot cone. Each creature in that area must make a DC 14 Dexterity saving throw. On a failure, a target takes 18 (4d8) poison damage and is covered in green bile for 1 minute. On a success, a target takes half the damage and isn’t covered in bile. A creature, including the target, can take an action to wipe off the bile. Rum gremlins have advantage on attack rolls against creatures covered in a rum lord’s green bile.",
     "parent": "tob2_rum-lord",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9505,13 +9505,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_salamander-monarch_immolating-crest-recharge-6",
+  "pk": "tob2_salamander-monarch_immolating-crest",
   "fields": {
-    "name": "Immolating Crest (Recharge 6)",
+    "name": "Immolating Crest ",
     "desc": "The salamander monarch causes its crest to flare with brilliant radiance, illuminating everything within 30 feet of it with a blue or green light. Each creature in that area must make a DC 17 Dexterity saving throw. On a failure, a creature takes 28 (8d6) fire damage and catches on fire. On a success, a creature takes half the damage and doesn’t catch on fire. Until a creature on fire takes an action to douse the fire, the creature takes 7 (2d6) fire damage at the start of each of its turns.",
     "parent": "tob2_salamander-monarch",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9571,13 +9571,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_sanddrift-drake_heatwave-breath-recharge-6",
+  "pk": "tob2_sanddrift-drake_heatwave-breath",
   "fields": {
-    "name": "Heatwave Breath (Recharge 6)",
+    "name": "Heatwave Breath ",
     "desc": "The drake exhales superheated air in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one. If a creature fails the saving throw by 5 or more, it suffers one level of exhaustion.",
     "parent": "tob2_sanddrift-drake",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -10627,13 +10627,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_sporous-crab_spore-recharge-6",
+  "pk": "tob2_sporous-crab_spore",
   "fields": {
-    "name": "Spore (Recharge 6)",
+    "name": "Spore ",
     "desc": "The sporous crab sprays spores in a 15-foot cone. Each creature in the area must make a DC 12 Constitution saving throw. On a failure, a creature takes 7 (2d6) poison damage and becomes infected with the crab’s spores. On a success, a creature takes half the damage and isn’t infected with spores. After 1 hour, small bubbles and bumps appear across the skin of the infected creature. At the end of each long rest, the infected creature must make a DC 12 Constitution saving throw. On a success, the infected creature’s body fights off the spores and no longer has to make the saving throw. If a creature fails the saving throw every day for 7 days, young sporous crabs hatch from the creature’s skin, and the creature takes 9 (2d8) slashing damage. The spores can also be removed with a lesser restoration spell or similar magic.",
     "parent": "tob2_sporous-crab",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -10814,24 +10814,24 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_stormboar_lightning-run-recharge-6",
+  "pk": "tob2_stormboar_lightning-run",
   "fields": {
-    "name": "Lightning Run (Recharge 6)",
+    "name": "Lightning Run ",
     "desc": "The boar becomes a bolt of living lightning and moves up to its speed without provoking opportunity attacks. It can move through creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage and is pushed to the closest unoccupied space if it ends its turn inside an object. Each creature in the boar’s path must make a DC 15 Dexterity saving throw, taking 22 (4d10) lightning damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob2_stormboar",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_stormboar_thunder-leap-recharge-6",
+  "pk": "tob2_stormboar_thunder-leap",
   "fields": {
-    "name": "Thunder Leap (Recharge 6)",
+    "name": "Thunder Leap ",
     "desc": "The boar moves up to 20 feet, jumping over obstacles in its way. Difficult terrain doesn’t cost it extra movement when it leaps. Each creature within 10 feet of the boar when it leaps and each creature within 10 feet of where it lands must make a DC 15 Constitution saving throw. On a failure, a creature takes 16 (3d10) thunder damage and is pushed up to 10 feet away from the boar. On a success, a creature takes half the damage and isn’t pushed.",
     "parent": "tob2_stormboar",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11089,13 +11089,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_tembril_maddening-chitter-recharge-6",
+  "pk": "tob2_tembril_maddening-chitter",
   "fields": {
-    "name": "Maddening Chitter (Recharge 6)",
+    "name": "Maddening Chitter ",
     "desc": "The tembril chitters maddeningly in a 30-foot cone. Each creature in that area must make a DC 15 Wisdom saving throw. On a failure, a creature takes 21 (6d6) psychic damage and is incapacitated for 1 minute. On a success, a creature takes half the damage and isn’t incapacitated. If a creature fails the saving throw by 5 or more, it also suffers short-term madness. An incapacitated creature can repeat the saving throw at the end of each of its turns, ending the incapacitated condition on itself on a success.",
     "parent": "tob2_tembril",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11133,13 +11133,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_tetomatli_tremor-recharge-6",
+  "pk": "tob2_tetomatli_tremor",
   "fields": {
-    "name": "Tremor (Recharge 6)",
+    "name": "Tremor ",
     "desc": "The tetomatli slams its head repeatedly into the ground, creating a magical shockwave. Each creature within 20 feet of the tetomatli must succeed on a DC 15 Dexterity saving throw or be knocked prone and have disadvantage on attack rolls and Dexterity checks until the end of its next turn.",
     "parent": "tob2_tetomatli",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11452,13 +11452,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_transcendent-lunarchida_lunar-beam-recharge-56",
+  "pk": "tob2_transcendent-lunarchida_lunar-beam",
   "fields": {
-    "name": "Lunar Beam (Recharge 5–6)",
+    "name": "Lunar Beam ",
     "desc": "The lunarchidna flashes a beam of moonlight in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 28 (8d6) radiant damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob2_transcendent-lunarchida",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -11474,13 +11474,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_transcendent-lunarchida_web-recharge-56",
+  "pk": "tob2_transcendent-lunarchida_web",
   "fields": {
-    "name": "Web (Recharge 5–6)",
+    "name": "Web ",
     "desc": "Ranged Weapon Attack: +6 to hit, range 30/60 ft., one creature. Hit: The target is restrained by webbing. As an action the restrained target can make a DC 13 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).",
     "parent": "tob2_transcendent-lunarchida",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5
   }
 },
 {
@@ -11639,13 +11639,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_tzepharion_soul-jolt-recharge-6",
+  "pk": "tob2_tzepharion_soul-jolt",
   "fields": {
-    "name": "Soul Jolt (Recharge 6)",
+    "name": "Soul Jolt ",
     "desc": "The tzepharion leaps up to 20 feet through the air and makes a claw attack against a target within reach. If it hits, the target must succeed on a DC 15 Wisdom saving throw or its soul is forced out of its body, appearing 20 feet in a random direction away from its body, for 1 minute. The creature has control of its soul, which is invisible and can move through creatures and objects as if they were difficult terrain, but it can’t cast spells or take any actions. The creature’s body is knocked unconscious and can’t be awoken until its soul returns, but it can take damage as normal. The creature can repeat the saving throw at the end of each of its turns, reoccupying its body on a success. Alternatively, a creature can reoccupy its body early if it starts its turn within 5 feet of its body. If a creature doesn’t return to its body within 1 minute, the creature dies. If its body is reduced to 0 hp before the creature reoccupies its body, the creature dies.",
     "parent": "tob2_tzepharion",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11815,12 +11815,12 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_vangsluagh_agonizing-trill-recharge-after-a-short-or-long-rest",
+  "pk": "tob2_vangsluagh_agonizing-trill",
   "fields": {
-    "name": "Agonizing Trill (Recharge After a Short or Long Rest)",
+    "name": "Agonizing Trill ",
     "desc": "The vangsluagh increases the pitch of its cacophony to deadly levels. Each creature within 30 feet of the vangsluagh must make a DC 13 Constitution saving throw. On a failure, a creature takes 10 (3d6) thunder damage and is stunned for 1 minute. On a success, a creature takes half the damage and isn’t stunned. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob2_vangsluagh",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null
   }
 },
@@ -12409,13 +12409,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_werynax_arcane-bombardment-recharge-6",
+  "pk": "tob2_werynax_arcane-bombardment",
   "fields": {
-    "name": "Arcane Bombardment (Recharge 6)",
+    "name": "Arcane Bombardment ",
     "desc": "The werynax unleashes an explosion of multicolored arcane energy from its outstretched wings. Each creature within 20 feet of the werynax must make a DC 15 Dexterity saving throw. On a failure, a creature takes 21 (6d6) force damage and is stunned until the end of its next turn. On a success, a creature takes half the damage and isn’t stunned.",
     "parent": "tob2_werynax",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -12684,13 +12684,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_wraith-bear_baleful-roar-recharge-6",
+  "pk": "tob2_wraith-bear_baleful-roar",
   "fields": {
-    "name": "Baleful Roar (Recharge 6)",
+    "name": "Baleful Roar ",
     "desc": "The bear lets out a supernatural roar in a 30-foot cone. Each creature in that area that can hear the bear must make a DC 15 Wisdom saving throw. On a failure, a creature is incapacitated for 1 minute. On a success, a creature is frightened until the end of its next turn. An incapacitated creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob2_wraith-bear",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -13135,13 +13135,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob2_zalikum_death-infused-desert-breath-recharge-6",
+  "pk": "tob2_zalikum_death-infused-desert-breath",
   "fields": {
-    "name": "Death-infused Desert Breath (Recharge 6)",
+    "name": "Death-infused Desert Breath ",
     "desc": "The zalikum exhales superheated sand infused with the power of damned souls in a 30-foot cone. Each creature in the area must make a DC 16 Dexterity saving throw, taking 14 (4d6) fire damage and 14 (4d6) necrotic damage on a failed save, or half as much damage on a successful one. If a creature’s saving throw fails by 5 or more, the creature also suffers one level of exhaustion.",
     "parent": "tob2_zalikum",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {

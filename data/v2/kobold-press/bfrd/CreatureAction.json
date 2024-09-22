@@ -265,13 +265,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_adult-brass-dragon_sleep-breath-recharge-6",
+  "pk": "bfrd_adult-brass-dragon_sleep-breath",
   "fields": {
-    "name": "Sleep Breath (Recharge 6)",
+    "name": "Sleep Breath ",
     "desc": "The dragon exhales sleep gas in a 60-foot cone. Each creature in that area must succeed on a DC 18 CON save or fall unconscious for 5 minutes. This effect ends for a creature if the creature takes damage or another creature uses an action to wake it.",
     "parent": "bfrd_adult-brass-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -342,13 +342,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_adult-bronze-dragon_repulsion-breath-recharge-6",
+  "pk": "bfrd_adult-bronze-dragon_repulsion-breath",
   "fields": {
-    "name": "Repulsion Breath (Recharge 6)",
+    "name": "Repulsion Breath ",
     "desc": "The dragon exhales repulsion energy in a 60-foot cone. Each creature in that area must succeed on a DC 19 STR save or be pushed up to 30 feet away from the dragon.",
     "parent": "bfrd_adult-bronze-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -419,13 +419,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_adult-copper-dragon_slowing-breath-recharge-6",
+  "pk": "bfrd_adult-copper-dragon_slowing-breath",
   "fields": {
-    "name": "Slowing Breath (Recharge 6)",
+    "name": "Slowing Breath ",
     "desc": "As the **copper dragon wyrmling**, except it is a 60-foot cone, and the save DC is 18.",
     "parent": "bfrd_adult-copper-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -507,13 +507,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_adult-gold-dragon_weakening-breath-recharge-6",
+  "pk": "bfrd_adult-gold-dragon_weakening-breath",
   "fields": {
-    "name": "Weakening Breath (Recharge 6)",
+    "name": "Weakening Breath ",
     "desc": "As the **gold dragon wyrmling**, except it is a 60-foot cone, and the save DC is 21.",
     "parent": "bfrd_adult-gold-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -705,13 +705,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_adult-silver-dragon_paralyzing-breath-recharge-6",
+  "pk": "bfrd_adult-silver-dragon_paralyzing-breath",
   "fields": {
-    "name": "Paralyzing Breath (Recharge 6)",
+    "name": "Paralyzing Breath ",
     "desc": "As the **silver dragon wyrmling**, except it is a 60-foot cone, and the save DC is 20.",
     "parent": "bfrd_adult-silver-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1068,13 +1068,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_ancient-brass-dragon_sleep-breath-recharge-6",
+  "pk": "bfrd_ancient-brass-dragon_sleep-breath",
   "fields": {
-    "name": "Sleep Breath (Recharge 6)",
+    "name": "Sleep Breath ",
     "desc": "The dragon exhales sleep gas in a 90-foot cone. Each creature in that area must succeed on a DC 21 CON save or fall unconscious for 10 minutes. This effect ends for a creature if the creature takes damage or another creature uses an action to wake it.",
     "parent": "bfrd_ancient-brass-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1145,13 +1145,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_ancient-bronze-dragon_repulsion-breath-recharge-6",
+  "pk": "bfrd_ancient-bronze-dragon_repulsion-breath",
   "fields": {
-    "name": "Repulsion Breath (Recharge 6)",
+    "name": "Repulsion Breath ",
     "desc": "The dragon exhales repulsion energy in a 90-foot cone. Each creature in that area must succeed on a DC 22 STR save or be pushed up to 45 feet away from the dragon.",
     "parent": "bfrd_ancient-bronze-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1222,13 +1222,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_ancient-copper-dragon_slowing-breath-recharge-6",
+  "pk": "bfrd_ancient-copper-dragon_slowing-breath",
   "fields": {
-    "name": "Slowing Breath (Recharge 6)",
+    "name": "Slowing Breath ",
     "desc": "As the **copper dragon wyrmling**, except it is a 90-foot cone, and the save DC is 21.",
     "parent": "bfrd_ancient-copper-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1310,13 +1310,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_ancient-gold-dragon_weakening-breath-recharge-6",
+  "pk": "bfrd_ancient-gold-dragon_weakening-breath",
   "fields": {
-    "name": "Weakening Breath (Recharge 6)",
+    "name": "Weakening Breath ",
     "desc": "As the **gold dragon wyrmling**, except it is a 90-foot cone, and the save DC is 24.",
     "parent": "bfrd_ancient-gold-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1508,13 +1508,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_ancient-silver-dragon_paralyzing-breath-recharge-6",
+  "pk": "bfrd_ancient-silver-dragon_paralyzing-breath",
   "fields": {
-    "name": "Paralyzing Breath (Recharge 6)",
+    "name": "Paralyzing Breath ",
     "desc": "As the **silver dragon wyrmling**, except it is a 90-foot cone, and the save DC is 23.",
     "parent": "bfrd_ancient-silver-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -1662,13 +1662,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_ankheg_acid-spray-recharge-6",
+  "pk": "bfrd_ankheg_acid-spray",
   "fields": {
-    "name": "Acid Spray (Recharge 6)",
+    "name": "Acid Spray ",
     "desc": "The ankheg spits acid in a line that is 30 feet long and 5 feet wide, provided it has no creature grappled. Each creature in that line must make a DC 13 DEX save, taking 18 (4d8) acid damage on a failed save, or half as much damage on a successful one.",
     "parent": "bfrd_ankheg",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -2806,13 +2806,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_brass-dragon-wyrmling_sleep-breath-recharge-6",
+  "pk": "bfrd_brass-dragon-wyrmling_sleep-breath",
   "fields": {
-    "name": "Sleep Breath (Recharge 6)",
+    "name": "Sleep Breath ",
     "desc": "The dragon exhales sleep gas in a 15-foot cone. Each creature in that area must succeed on a DC 11 CON save or fall unconscious for 1 minute. This effect ends for a creature if the creature takes damage or another creature uses an action to wake it.",
     "parent": "bfrd_brass-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -2861,13 +2861,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_bronze-dragon-wyrmling_repulsion-breath-recharge-6",
+  "pk": "bfrd_bronze-dragon-wyrmling_repulsion-breath",
   "fields": {
-    "name": "Repulsion Breath (Recharge 6)",
+    "name": "Repulsion Breath ",
     "desc": "The dragon exhales repulsion energy in a 15-foot cone. Each creature in that area must succeed on a DC 12 STR save or be pushed up to 5 feet away from the dragon.",
     "parent": "bfrd_bronze-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -3202,13 +3202,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_cloaker_moan-recharge-6",
+  "pk": "bfrd_cloaker_moan",
   "fields": {
-    "name": "Moan (Recharge 6)",
+    "name": "Moan ",
     "desc": "The cloaker releases a deep, thrumming moan that rattles the nerves of all who hear it. Each creature within 30 feet of the cloaker that can hear the moan and that isn't an Aberration must make a DC 15 WIS save. On a failure, a creature takes 40 (9d8) psychic damage and is frightened until the end of its next turn. On a success, a creature takes half the damage and isn't frightened.",
     "parent": "bfrd_cloaker",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -3356,13 +3356,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_copper-dragon-wyrmling_slowing-breath-recharge-6",
+  "pk": "bfrd_copper-dragon-wyrmling_slowing-breath",
   "fields": {
-    "name": "Slowing Breath (Recharge 6)",
+    "name": "Slowing Breath ",
     "desc": "The dragon exhales slowing gas in a 15-foot cone. Each creature in that area must make a DC 11 CON save. On a failure, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, not both. These effects last for 1 minute. The creature can repeat the save at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "bfrd_copper-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -4016,13 +4016,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_dust-mephit_blinding-breath-recharge-6",
+  "pk": "bfrd_dust-mephit_blinding-breath",
   "fields": {
-    "name": "Blinding Breath (Recharge 6)",
+    "name": "Blinding Breath ",
     "desc": "The mephit exhales blinding dust in a 15-foot cone. Each creature in that area must make a DC 11 DEX save. On a failure, a creature takes 5 (2d4) bludgeoning damage and is blinded for 1 minute. On a success, a creature takes half the damage and isn't blinded. A blinded creature can repeat the save at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "bfrd_dust-mephit",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -5094,13 +5094,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_gold-dragon-wyrmling_weakening-breath-recharge-6",
+  "pk": "bfrd_gold-dragon-wyrmling_weakening-breath",
   "fields": {
-    "name": "Weakening Breath (Recharge 6)",
+    "name": "Weakening Breath ",
     "desc": "The dragon exhales weakening gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 STR save or have disadvantage on STR-based attack rolls, STR checks, and STR saves for 1 minute. A creature can repeat the save at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "bfrd_gold-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -6128,13 +6128,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_ice-mephit_frost-breath-recharge-6",
+  "pk": "bfrd_ice-mephit_frost-breath",
   "fields": {
-    "name": "Frost Breath (Recharge 6)",
+    "name": "Frost Breath ",
     "desc": "The mephit exhales freezing fog in a 15-foot cone. Each creature in that area must make a DC 11 CON save. On a failure, a creature takes 7 (2d6) cold damage and is restrained by ice until the end of its next turn. On a success, a creature takes half the damage and isn't restrained.",
     "parent": "bfrd_ice-mephit",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -6502,13 +6502,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_kraken_ink-cloud-recharge-6",
+  "pk": "bfrd_kraken_ink-cloud",
   "fields": {
-    "name": "Ink Cloud (Recharge 6)",
+    "name": "Ink Cloud ",
     "desc": "While underwater, the kraken expels an ink cloud in a 30-foot-radius centered on the kraken. The cloud spreads around corners, and the area is heavily obscured. Each creature in the area when it first appears must make a DC 22 CON save, taking 110 (20d10) poison damage on a failed save, or half as much damage on a successful one. A creature that enters the ink cloud for the first time on a turn or starts its turn there must succeed on a DC 22 CON save or take 11 (2d10) poison damage and be poisoned until the start of its next turn. The cloud lasts for 1 minute or until dispersed by a strong current.",
     "parent": "bfrd_kraken",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -7008,13 +7008,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_magma-mephit_pyroclastic-burst-recharge-6",
+  "pk": "bfrd_magma-mephit_pyroclastic-burst",
   "fields": {
-    "name": "Pyroclastic Burst (Recharge 6)",
+    "name": "Pyroclastic Burst ",
     "desc": "The mephit exhales an explosive blast of lava in a 15-foot cone. Each creature in the area must make a DC 11 STR save. On a failure, a creature takes 7 (2d6) fire damage and is pushed up to 10 feet away from the mephit and knocked prone. On a success, a creature takes half the damage and isn't pushed or knocked prone.",
     "parent": "bfrd_magma-mephit",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -8438,13 +8438,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_planetar_radiant-burst-recharge-6",
+  "pk": "bfrd_planetar_radiant-burst",
   "fields": {
-    "name": "Radiant Burst (Recharge 6)",
+    "name": "Radiant Burst ",
     "desc": "A pulse of divine power ripples out from the planetar's golden halo. Each hostile creature within 15 feet of the planetar must make a DC 19 DEX save, taking 56 (16d6) radiant damage on a failed save, or half as much damage on a successful one. Each friendly creature within 15 feet of the planetar is empowered with divine energy and has advantage on all melee attack rolls it makes before the start of the planetar's next turn.",
     "parent": "bfrd_planetar",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9494,13 +9494,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_silver-dragon-wyrmling_paralyzing-breath-recharge-6",
+  "pk": "bfrd_silver-dragon-wyrmling_paralyzing-breath",
   "fields": {
-    "name": "Paralyzing Breath (Recharge 6)",
+    "name": "Paralyzing Breath ",
     "desc": "The dragon exhales paralyzing gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 CON save or be paralyzed for 1 minute. A creature can repeat the save at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "bfrd_silver-dragon-wyrmling",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9912,13 +9912,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_steam-mephit_steam-breath-recharge-6",
+  "pk": "bfrd_steam-mephit_steam-breath",
   "fields": {
-    "name": "Steam Breath (Recharge 6)",
+    "name": "Steam Breath ",
     "desc": "The mephit exhales superheated breath in a 15-foot cone. Each creature in that area must make a DC 11 CON save. On a failure, a creature takes 5 (2d4) fire damage and suffers one level of exhaustion. On a success, a creature takes half the damage and doesn't suffer exhaustion. A creature can't suffer more than two levels of exhaustion from a steam mephit's Steam Breath, regardless of the number of times it fails the save or the number of steam mephits using Steam Breath against it.",
     "parent": "bfrd_steam-mephit",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -9989,13 +9989,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_stone-golem_slow-recharge-6",
+  "pk": "bfrd_stone-golem_slow",
   "fields": {
-    "name": "Slow (Recharge 6)",
+    "name": "Slow ",
     "desc": "The golem shares the plodding perception of timeless stone with those nearby, slowing all life to a crawl. Each creature within 10 feet of the golem must make a DC 17 WIS save. On a failure, a creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A creature can repeat the save at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "bfrd_stone-golem",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11672,13 +11672,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_young-brass-dragon_sleep-breath-recharge-6",
+  "pk": "bfrd_young-brass-dragon_sleep-breath",
   "fields": {
-    "name": "Sleep Breath (Recharge 6)",
+    "name": "Sleep Breath ",
     "desc": "The dragon exhales sleep gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 CON save or fall unconscious for 1 minute. This effect ends for a creature if the creature takes damage or another creature uses an action to wake it.",
     "parent": "bfrd_young-brass-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11727,13 +11727,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_young-bronze-dragon_repulsion-breath-recharge-6",
+  "pk": "bfrd_young-bronze-dragon_repulsion-breath",
   "fields": {
-    "name": "Repulsion Breath (Recharge 6)",
+    "name": "Repulsion Breath ",
     "desc": "The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 15 STR save or be pushed up to 15 feet away from the dragon.",
     "parent": "bfrd_young-bronze-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11782,13 +11782,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_young-copper-dragon_slowing-breath-recharge-6",
+  "pk": "bfrd_young-copper-dragon_slowing-breath",
   "fields": {
-    "name": "Slowing Breath (Recharge 6)",
+    "name": "Slowing Breath ",
     "desc": "As the **copper dragon wyrmling**, except it is a 30-foot cone, and the save DC is 14.",
     "parent": "bfrd_young-copper-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11837,13 +11837,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_young-gold-dragon_weakening-breath-recharge-6",
+  "pk": "bfrd_young-gold-dragon_weakening-breath",
   "fields": {
-    "name": "Weakening Breath (Recharge 6)",
+    "name": "Weakening Breath ",
     "desc": "As the **gold dragon wyrmling**, except it is a 30-foot cone, and the save DC is 17.",
     "parent": "bfrd_young-gold-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
@@ -11980,13 +11980,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_young-silver-dragon_paralyzing-breath-recharge-6",
+  "pk": "bfrd_young-silver-dragon_paralyzing-breath",
   "fields": {
-    "name": "Paralyzing Breath (Recharge 6)",
+    "name": "Paralyzing Breath ",
     "desc": "As the **silver dragon wyrmling**, except it is a 30-foot cone, and the save DC is 17.",
     "parent": "bfrd_young-silver-dragon",
-    "uses_type": null,
-    "uses_param": null
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6
   }
 },
 {
