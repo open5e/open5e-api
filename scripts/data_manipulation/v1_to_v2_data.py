@@ -351,13 +351,18 @@ def get_v2_size_from_v1_obj(v1_obj):
     return v2_size
 
 def copy_traits(obj_v1, obj_v2):
-    v1_traits = json.loads(obj_v1.special_abilities_json or "[]")
+    v1_traits = json.loads(obj_v1.special_abilities_json or "[]", strict=False)
     if v1_traits is None: return
     #traitcount=0
-
+    print(obj_v1.document.slug, obj_v1.slug)
     for trait in v1_traits:
-        #    traitcount+=1
-        c = v2_models.CreatureTrait(name=trait['name'], desc=trait['desc'], parent=obj_v2)
+        if trait['desc'] in [None,'']:
+            print (slugify(obj_v2.key + "_" + trait['name'])[0:100])
+        c = v2_models.CreatureTrait(
+            key=slugify(obj_v2.key + "_" + trait['name'])[0:100],
+            name=trait['name'].strip()[0:100],
+            desc=trait['desc'].strip(),
+             parent=obj_v2)
         c.full_clean()
         c.save()
     

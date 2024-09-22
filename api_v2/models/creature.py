@@ -254,7 +254,7 @@ class CreatureTrait(Modification):
 
     It inherits from modification, which is an abstract concept.
     """
-
+    key = key_field()
     parent = models.ForeignKey('Creature', on_delete=models.CASCADE)
 
 
