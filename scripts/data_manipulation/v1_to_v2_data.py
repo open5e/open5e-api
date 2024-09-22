@@ -23,7 +23,7 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
-    for obj_v1 in v1_model.objects.filter(document__slug='wotc-srd'):
+    for obj_v1 in v1_model.objects.all():
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
@@ -35,8 +35,8 @@ def main():
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
             #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
-            #copy_traits(obj_v1, obj_v2)
-            copy_actions(obj_v1, obj_v2)
+            copy_traits(obj_v1, obj_v2)
+            #copy_actions(obj_v1, obj_v2)
             #copy_legendary_desc(obj_v1, obj_v2)
             #copy_traits(obj_v1,obj_v2)
             #obj_v2.full_clean()
@@ -243,8 +243,6 @@ def make_caa(ca, a):
     )
 
     aa.save()
-
-
 
 
 def copy_legendary_desc(obj_v1, obj_v2):
