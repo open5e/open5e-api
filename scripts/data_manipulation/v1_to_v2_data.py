@@ -76,19 +76,18 @@ def main():
 
 def check_caa(obj_v2):
     for ca in obj_v2.creatureaction_set.all():
-        if "(" in ca.name:
-            if "only" in ca.name.split("(")[1].lower():
-                new_ca = ca
-                new_name = ca.name.split("(")[0].strip()
-                new_key = slugify(obj_v2.key + "_" + new_name)
-                new_ca.key=new_key
-                new_ca.name=new_name
-                new_ca.save()
-                for caa in ca.creatureactionattack_set.all():
-                    caa.parent = new_ca
-                    caa.save()
-
-                ca.delete()
+        for caa in ca.creatureactionattack_set.all():
+            if "(" in caa.name:
+                if "only" in caa.name.split("(")[1].lower():
+                    print(caa.name)
+                    new_name = caa.name.split("(")[0].strip()
+                    new_key = slugify(caa.key + "_attack" )
+                    new_caa = caa
+                    new_caa.key = new_key
+                    new_caa.name = new_name
+                    new_caa.save()
+                    caa.delete()
+                
                 # IF RENAMING THIS MAKE SURE TO REMAP ATTACKS
 
 
