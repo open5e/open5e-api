@@ -6673,18 +6673,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_night-hag_claws",
-  "fields": {
-    "name": "Claws",
-    "desc": "(Hag Form Only). Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.\n",
-    "parent": "srd_night-hag",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_night-hag_claws-hag-form-only",
   "fields": {
     "name": "Claws (Hag Form Only)",
@@ -6833,18 +6821,6 @@
   "fields": {
     "name": "Change Shape",
     "desc": "The oni magically polymorphs into a Small or Medium humanoid, into a Large giant, or back into its true form. Other than its size, its statistics are the same in each form. The only equipment that is transformed is its glaive, which shrinks so that it can be wielded in humanoid form. If the oni dies, it reverts to its true form, and its glaive reverts to its normal size.",
-    "parent": "srd_oni",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_oni_claw",
-  "fields": {
-    "name": "Claw",
-    "desc": "(Oni Form Only). Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage.\n",
     "parent": "srd_oni",
     "uses_type": null,
     "uses_param": null,
@@ -8377,18 +8353,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_succubusincubus_claw",
-  "fields": {
-    "name": "Claw",
-    "desc": "(Fiend Form Only). Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.\n",
-    "parent": "srd_succubusincubus",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_succubusincubus_claw-fiend-form-only",
   "fields": {
     "name": "Claw (Fiend Form Only)",
@@ -8941,18 +8905,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_vampire_bite",
-  "fields": {
-    "name": "Bite",
-    "desc": "(Bat or Vampire Form Only). Melee Weapon Attack: +9 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 7 (1d6 + 4) piercing damage plus 10 (3d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. A humanoid slain in this way and then buried in the ground rises the following night as a vampire spawn under the vampire's control.\n",
-    "parent": "srd_vampire",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_vampire_bite-bat-or-vampire-form-only",
   "fields": {
     "name": "Bite (Bat or Vampire Form Only)",
@@ -8989,18 +8941,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_vampire_multiattack",
-  "fields": {
-    "name": "Multiattack",
-    "desc": "(Vampire Form Only). The vampire makes two attacks, only one of which can be a bite attack.\n",
-    "parent": "srd_vampire",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_vampire_multiattack-vampire-form-only",
   "fields": {
     "name": "Multiattack (Vampire Form Only)",
@@ -9009,18 +8949,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Vampire Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_vampire_unarmed-strike",
-  "fields": {
-    "name": "Unarmed Strike",
-    "desc": "(Vampire Form Only). Melee Weapon Attack: +9 to hit, reach 5 ft., one creature. Hit: 8 (1d8 + 4) bludgeoning damage. Instead of dealing damage, the vampire can grapple the target (escape DC 18).\n",
-    "parent": "srd_vampire",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
@@ -9265,18 +9193,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_werebear_bite",
-  "fields": {
-    "name": "Bite",
-    "desc": "(Bear or Hybrid Form Only). Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage. If the target is a humanoid, it must succeed on a DC 14 Constitution saving throw or be cursed with werebear lycanthropy.\n",
-    "parent": "srd_werebear",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_werebear_bite-bear-or-hybrid-form-only",
   "fields": {
     "name": "Bite (Bear or Hybrid Form Only)",
@@ -9289,18 +9205,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_werebear_claw",
-  "fields": {
-    "name": "Claw",
-    "desc": "(Bear or Hybrid Form Only). Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.\n",
-    "parent": "srd_werebear",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_werebear_claw-bear-or-hybrid-form-only",
   "fields": {
     "name": "Claw (Bear or Hybrid Form Only)",
@@ -9309,18 +9213,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Bear or Hybrid Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_werebear_greataxe",
-  "fields": {
-    "name": "Greataxe",
-    "desc": "(Humanoid or Hybrid Form Only). Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) slashing damage.\n",
-    "parent": "srd_werebear",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
@@ -9349,18 +9241,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_wereboar_maul",
-  "fields": {
-    "name": "Maul",
-    "desc": "(Humanoid or Hybrid Form Only). Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.\n",
-    "parent": "srd_wereboar",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_wereboar_maul-humanoid-or-hybrid-form-only",
   "fields": {
     "name": "Maul (Humanoid or Hybrid Form Only)",
@@ -9369,18 +9249,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Humanoid or Hybrid Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_wereboar_multiattack",
-  "fields": {
-    "name": "Multiattack",
-    "desc": "(Humanoid or Hybrid Form Only). The wereboar makes two attacks, only one of which can be with its tusks.\n",
-    "parent": "srd_wereboar",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
@@ -9397,18 +9265,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_wereboar_tusks",
-  "fields": {
-    "name": "Tusks",
-    "desc": "(Boar or Hybrid Form Only). Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with wereboar lycanthropy.\n",
-    "parent": "srd_wereboar",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_wereboar_tusks-boar-or-hybrid-form-only",
   "fields": {
     "name": "Tusks (Boar or Hybrid Form Only)",
@@ -9417,18 +9273,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Boar or Hybrid Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_wererat_bite",
-  "fields": {
-    "name": "Bite",
-    "desc": "(Rat or Hybrid Form Only). Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 11 Constitution saving throw or be cursed with wererat lycanthropy.\n",
-    "parent": "srd_wererat",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
@@ -9445,18 +9289,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_wererat_hand-crossbow",
-  "fields": {
-    "name": "Hand Crossbow",
-    "desc": "(Humanoid or Hybrid Form Only). Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\n",
-    "parent": "srd_wererat",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_wererat_hand-crossbow-humanoid-or-hybrid-form-only",
   "fields": {
     "name": "Hand Crossbow (Humanoid or Hybrid Form Only)",
@@ -9465,18 +9297,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Humanoid or Hybrid Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_wererat_multiattack",
-  "fields": {
-    "name": "Multiattack",
-    "desc": "(Humanoid or Hybrid Form Only). The wererat makes two attacks, only one of which can be a bite.\n",
-    "parent": "srd_wererat",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
@@ -9493,18 +9313,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_wererat_shortsword",
-  "fields": {
-    "name": "Shortsword",
-    "desc": "(Humanoid or Hybrid Form Only). Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\n",
-    "parent": "srd_wererat",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_wererat_shortsword-humanoid-or-hybrid-form-only",
   "fields": {
     "name": "Shortsword (Humanoid or Hybrid Form Only)",
@@ -9513,18 +9321,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Humanoid or Hybrid Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_weretiger_bite",
-  "fields": {
-    "name": "Bite",
-    "desc": "(Tiger or Hybrid Form Only). Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage. If the target is a humanoid, it must succeed on a DC 13 Constitution saving throw or be cursed with weretiger lycanthropy.\n",
-    "parent": "srd_weretiger",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
@@ -9541,18 +9337,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_weretiger_claw",
-  "fields": {
-    "name": "Claw",
-    "desc": "(Tiger or Hybrid Form Only). Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage.\n",
-    "parent": "srd_weretiger",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_weretiger_claw-tiger-or-hybrid-form-only",
   "fields": {
     "name": "Claw (Tiger or Hybrid Form Only)",
@@ -9561,18 +9345,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Tiger or Hybrid Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_weretiger_longbow",
-  "fields": {
-    "name": "Longbow",
-    "desc": "(Humanoid or Hybrid Form Only). Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.\n",
-    "parent": "srd_weretiger",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
@@ -9589,18 +9361,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_weretiger_multiattack",
-  "fields": {
-    "name": "Multiattack",
-    "desc": "(Humanoid or Hybrid Form Only). In humanoid form, the weretiger makes two scimitar attacks or two longbow attacks. In hybrid form, it can attack like a humanoid or make two claw attacks.\n",
-    "parent": "srd_weretiger",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_weretiger_multiattack-humanoid-or-hybrid-form-only",
   "fields": {
     "name": "Multiattack (Humanoid or Hybrid Form Only)",
@@ -9609,18 +9369,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Humanoid or Hybrid Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_weretiger_scimitar",
-  "fields": {
-    "name": "Scimitar",
-    "desc": "(Humanoid or Hybrid Form Only). Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.\n",
-    "parent": "srd_weretiger",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
@@ -9637,18 +9385,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_werewolf_bite",
-  "fields": {
-    "name": "Bite",
-    "desc": "(Wolf or Hybrid Form Only). Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with werewolf lycanthropy.\n",
-    "parent": "srd_werewolf",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_werewolf_bite-wolf-or-hybrid-form-only",
   "fields": {
     "name": "Bite (Wolf or Hybrid Form Only)",
@@ -9657,18 +9393,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Wolf or Hybrid Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_werewolf_claws",
-  "fields": {
-    "name": "Claws",
-    "desc": "(Hybrid Form Only). Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4 + 2) slashing damage.\n",
-    "parent": "srd_werewolf",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
@@ -9685,18 +9409,6 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "srd_werewolf_multiattack",
-  "fields": {
-    "name": "Multiattack",
-    "desc": "(Humanoid or Hybrid Form Only). The werewolf makes two attacks: one with its bite and one with its claws or spear.\n",
-    "parent": "srd_werewolf",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
   "pk": "srd_werewolf_multiattack-humanoid-or-hybrid-form-only",
   "fields": {
     "name": "Multiattack (Humanoid or Hybrid Form Only)",
@@ -9705,18 +9417,6 @@
     "uses_type": null,
     "uses_param": null,
     "form_condition": "Humanoid or Hybrid Form Only"
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_werewolf_spear",
-  "fields": {
-    "name": "Spear",
-    "desc": "(Humanoid Form Only). Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack.\n",
-    "parent": "srd_werewolf",
-    "uses_type": null,
-    "uses_param": null,
-    "form_condition": null
   }
 },
 {
