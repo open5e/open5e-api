@@ -75,48 +75,12 @@ def main():
     #print("Failed to match {} objects.".format(str(v1_unmatch_count)))
 
 def check_caa(obj_v2):
-    for ca in obj_v2.creatureaction_set.filter(name__contains='Recharge'):
-        if "Recharge" in ca.name and ca.uses_type is None:
-            uses_param = ca.uses_param
-            uses_type = ca.uses_type
-            desc = ca.desc
-            
-            if '6' in ca.key.split("recharge")[1]:
-                uses_param=6
-                uses_type="RECHARGE_ON_ROLL"
-                if '3' in ca.key.split("recharge")[1]:
-                    uses_param = 3
-                if '4' in ca.key.split("recharge")[1]:
-                    uses_param = 4
-                if '5' in ca.key.split("recharge")[1]:
-                    uses_param = 5
+    for ca in obj_v2.creatureaction_set.all():
+        if "(" in ca.name:
+            if "only" in ca.name.split("(")[1].lower():
+                ca.form_condition = ca.name.split("(")[1].split(")")[0]
+                ca.save()
 
-            if '-rest' in ca.key:
-                uses_type = "RECHARGE_AFTER_REST"
-
-            if 'only' in ca.key:
-                name_paren = ca.name.split("(")[1].split(")")[0]
-                form = ""
-                for condition in name_paren.split(";"):
-                    for ccondition in condition.split(","):
-                        if "only" in ccondition.lower():
-                            form = ccondition.strip()
-                
-                desc = "({}) {}".format(form, ca.desc)
-
-            trimmed_name = ca.name.split("(")[0]
-            new_key = ca.parent.key + "_" + slugify(trimmed_name)
-            new_ca = v2_models.CreatureAction(
-                key=new_key,
-                name=trimmed_name,
-                uses_param=uses_param,
-                uses_type=uses_type,
-                parent = ca.parent,
-                desc=desc)
-            print(new_key)
-            new_ca.full_clean()
-            new_ca.save()
-            ca.delete()
 
 
 def copy_actions(obj_v1, obj_v2):

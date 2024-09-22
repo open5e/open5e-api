@@ -169,6 +169,14 @@ class CreatureAction(HasName, HasDescription):
         help_text='The parameter X for if the action is limited.'
     )
 
+    form_condition = models.CharField(
+        blank=True,
+        null=True,
+        default=None,
+        max_length=100,
+        help_text='Description of form-based conditions for this action.'
+    )
+
     def as_text(self):
         '''Text representation of creature is name/desc.'''
         text = self.name + '\n' + self.desc
