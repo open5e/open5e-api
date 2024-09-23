@@ -76,20 +76,40 @@ def main():
 
 def check_caa(obj_v2):
     for ca in obj_v2.creatureaction_set.all():
-        for caa in ca.creatureactionattack_set.all():
-            if "(" in caa.name:
-                if "only" in caa.name.split("(")[1].lower():
-                    print(caa.name)
-                    new_name = caa.name.split("(")[0].strip()
-                    new_key = slugify(caa.key + "_attack" )
-                    new_caa = caa
-                    new_caa.key = new_key
-                    new_caa.name = new_name
-                    new_caa.save()
-                    caa.delete()
+        if "(" in ca.name:
+            if "/Day" in ca.name:
+                uses_param = int(ca.name.split("/Day")[0].split("(")[-1])
+                ca.uses_param = uses_param
+                ca.save()
+                rename_ca(ca, ca.name.split("(")[0])
                 
-                # IF RENAMING THIS MAKE SURE TO REMAP ATTACKS
 
+def rename_ca(old_ca, name):
+    print("re-nameing and re-keying {}".format(old_ca.key))
+
+    new_key = slugify("{}_{}".format(old_ca.parent.key, name))
+
+    new_ca = v2_models.CreatureAction.objects.get(key=old_ca.key)
+    new_ca.key = new_key
+    new_ca.name = name
+
+    print("Creating {}".format(new_key))
+    new_ca.save()
+
+    for old_caa in old_ca.creatureactionattack_set.all():
+        new_akey = format("{}_attack".format(new_ca.key))
+
+        new_caa = v2_models.CreatureActionAttack.objects.get(key=old_caa.key)
+        new_caa.pk = new_akey
+        new_caa.parent = new_ca
+        
+        print("Creating {}".format(new_akey))
+        new_caa.save()
+        print("Deleting {}".format(old_caa.key))
+        old_caa.delete()
+    
+    print("Deleting {}".format(old_ca.key))
+    old_ca.delete()
 
 
 def copy_actions(obj_v1, obj_v2):

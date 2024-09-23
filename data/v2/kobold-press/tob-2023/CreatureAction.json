@@ -829,13 +829,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_algorith_reality-bomb-5day",
+  "pk": "tob-2023_algorith_reality-bomb",
   "fields": {
-    "name": "Reality Bomb (5/Day)",
+    "name": "Reality Bomb ",
     "desc": "The algorith summons and throws a tiny rune of law at a point it can see within 100 feet. The rune explodes on impact. Each creature within 30 feet of where the rune landed must make a DC 16 Dexterity saving throw. On a failure, a creature takes 27 (5d10) force damage and is stunned until the end of its next turn. On a success, a creature takes half the damage and isn’t stunned.",
     "parent": "tob-2023_algorith",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -3961,13 +3961,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_clockwork-huntsman_net-cannon-4day",
+  "pk": "tob-2023_clockwork-huntsman_net-cannon",
   "fields": {
-    "name": "Net Cannon (4/Day)",
+    "name": "Net Cannon ",
     "desc": "Ranged Weapon Attack: +4 to hit, range 10/20 ft., one target. Hit: If the target is a Large or smaller creature, it is restrained. A mechanism within the clockwork huntsman’s chest can fire a net with a 20-foot trailing cable anchored within its chest. A creature, including the restrained creature, can take its action to free the restrained creature by succeeding on a DC 10 Strength check. Alternatively, dealing 5 slashing damage to the net (AC 10) frees the creature.",
     "parent": "tob-2023_clockwork-huntsman",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 4,
     "form_condition": null
   }
 },
@@ -3985,13 +3985,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_clockwork-myrmidon_alchemical-flame-jet-4day",
+  "pk": "tob-2023_clockwork-myrmidon_alchemical-flame-jet",
   "fields": {
-    "name": "Alchemical Flame Jet (4/Day)",
+    "name": "Alchemical Flame Jet ",
     "desc": "The clockwork myrmidon spews a jet of alchemical fire in a 30-foot line that is 5 feet wide. Each creature in the line must make a DC 16 Dexterity saving throw, taking 14 (4d6) fire damage on a failed save, or half as much damage on a successful one.",
     "parent": "tob-2023_clockwork-myrmidon",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 4,
     "form_condition": null
   }
 },
@@ -4045,13 +4045,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_clockwork-watchman_net-cannon-4day",
+  "pk": "tob-2023_clockwork-watchman_net-cannon",
   "fields": {
-    "name": "Net Cannon (4/Day)",
+    "name": "Net Cannon ",
     "desc": "Ranged Weapon Attack: +3 to hit, range 10/20 ft., one target. Hit: If the target is a Large or smaller creature, it is restrained. A mechanism within the clockwork watchman’s chest can fire a net with a 20-foot trailing cable anchored within the watchman’s chest. A creature, including the restrained creature, can take its action to free the restrained creature by succeeding on a DC 10 Strength check. Alternatively, dealing 5 slashing damage to the net (AC 10) frees the creature.",
     "parent": "tob-2023_clockwork-watchman",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 4,
     "form_condition": null
   }
 },
@@ -16105,13 +16105,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob-2023_valkyrie_healing-touch-4day",
+  "pk": "tob-2023_valkyrie_healing-touch",
   "fields": {
-    "name": "Healing Touch (4/Day)",
+    "name": "Healing Touch ",
     "desc": "The valkyrie touches another creature. The target magically regains 21 (6d6) hp and is freed from any curse, disease, poison, blindness, or deafness.",
     "parent": "tob-2023_valkyrie",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 4,
     "form_condition": null
   }
 },

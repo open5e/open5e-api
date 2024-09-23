@@ -14665,13 +14665,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_manticore_tail-spike-volley-4day",
+  "pk": "mmenag_manticore_tail-spike-volley",
   "fields": {
-    "name": "Tail Spike Volley (4/Day)",
+    "name": "Tail Spike Volley ",
     "desc": "The manticore fires tail spikes in a 5-foot-wide  60-foot-long line. Each creature in the area makes a DC 12 Dexterity saving throw  taking 14 (4d6) piercing damage on a failure or half damage on a success.",
     "parent": "mmenag_manticore",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 4,
     "form_condition": null
   }
 },

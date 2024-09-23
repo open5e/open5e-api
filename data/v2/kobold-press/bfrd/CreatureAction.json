@@ -9169,13 +9169,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_planetar_healing-touch-4day",
+  "pk": "bfrd_planetar_healing-touch",
   "fields": {
-    "name": "Healing Touch (4/Day)",
+    "name": "Healing Touch ",
     "desc": "The planetar touches another creature. The target magically regains 30 (6d8+3) HP and is freed from any curse, disease, poison, blindness, or deafness.",
     "parent": "bfrd_planetar",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 4,
     "form_condition": null
   }
 },
@@ -10549,13 +10549,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "bfrd_solar_healing-touch-4day",
+  "pk": "bfrd_solar_healing-touch",
   "fields": {
-    "name": "Healing Touch (4/Day)",
+    "name": "Healing Touch ",
     "desc": "The solar touches another creature. The target magically regains 40 (8d8+4) HP and is freed from any curse, disease, poison, blindness, or deafness.",
     "parent": "bfrd_solar",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 4,
     "form_condition": null
   }
 },

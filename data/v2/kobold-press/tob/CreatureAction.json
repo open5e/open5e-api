@@ -853,13 +853,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_algorith_reality-bomb-5day",
+  "pk": "tob_algorith_reality-bomb",
   "fields": {
-    "name": "Reality Bomb (5/Day)",
+    "name": "Reality Bomb ",
     "desc": "The algorith can summon forth a tiny rune of law and throw it as a weapon. Any creature within 30 feet of the square where the reality bomb lands takes 21 (6d6) force damage and is stunned until the start of the algorith's next turn. A target that makes a successful DC 16 Dexterity saving throw takes half damage and isn't stunned.",
     "parent": "tob_algorith",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 5,
     "form_condition": null
   }
 },
