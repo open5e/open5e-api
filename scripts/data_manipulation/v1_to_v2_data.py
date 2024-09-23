@@ -76,10 +76,15 @@ def main():
 
 def check_caa(obj_v2):
     for ca in obj_v2.creatureaction_set.all():
+        if ca.key == 'tob_eye-golem_shoot-into-the-sun-1-minuteday':
+            continue
         if "(" in ca.name:
-            if "/Day" in ca.name:
-                uses_param = int(ca.name.split("/Day")[0].split("(")[-1])
+            if "/day" in ca.name:
+                
+                uses_param = int(ca.name.split("/day")[0].split("(")[-1])
+                uses_type = "PER_DAY"
                 ca.uses_param = uses_param
+                ca.uses_type = uses_type
                 ca.save()
                 rename_ca(ca, ca.name.split("(")[0])
                 

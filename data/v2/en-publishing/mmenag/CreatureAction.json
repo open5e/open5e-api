@@ -13885,13 +13885,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_kobold-sorcerer-dragon-servitor_multiattack-2day",
+  "pk": "mmenag_kobold-sorcerer-dragon-servitor_multiattack",
   "fields": {
-    "name": "Multiattack (2/day)",
+    "name": "Multiattack ",
     "desc": "The kobold sorcerer makes three flame bolt attacks.",
     "parent": "mmenag_kobold-sorcerer-dragon-servitor",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
     "form_condition": null
   }
 },
@@ -13921,13 +13921,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_kobold-sorcerer_multiattack-2day",
+  "pk": "mmenag_kobold-sorcerer_multiattack",
   "fields": {
-    "name": "Multiattack (2/day)",
+    "name": "Multiattack ",
     "desc": "The kobold sorcerer makes three flame bolt attacks.",
     "parent": "mmenag_kobold-sorcerer",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
     "form_condition": null
   }
 },
@@ -15325,13 +15325,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "mmenag_miremuck-goblin-king_charm-person-1day",
+  "pk": "mmenag_miremuck-goblin-king_charm-person",
   "fields": {
-    "name": "Charm Person (1/day)",
+    "name": "Charm Person ",
     "desc": "Once per day the goblin king can castcharm personas a 3rd-level spell  allowing him tocharm three creatures within 60 feet. The goblinkings spell save DC is 14.",
     "parent": "mmenag_miremuck-goblin-king",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
     "form_condition": null
   }
 },

@@ -3,23 +3,11 @@
   "model": "api_v2.creatureaction",
   "pk": "srd_aboleth_enslave",
   "fields": {
-    "name": "Enslave",
-    "desc": "The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\n\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth.\n",
+    "name": "Enslave ",
+    "desc": "The aboleth targets one creature it can see within 30 ft. of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth.",
     "parent": "srd_aboleth",
     "uses_type": "PER_DAY",
     "uses_param": 3,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_aboleth_enslave-3day",
-  "fields": {
-    "name": "Enslave (3/day)",
-    "desc": "The aboleth targets one creature it can see within 30 ft. of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth.",
-    "parent": "srd_aboleth",
-    "uses_type": null,
-    "uses_param": null,
     "form_condition": null
   }
 },
@@ -3015,23 +3003,11 @@
   "model": "api_v2.creatureaction",
   "pk": "srd_darkmantle_darkness-aura",
   "fields": {
-    "name": "Darkness Aura",
-    "desc": "A 15-foot radius of magical darkness extends out from the darkmantle, moves with it, and spreads around corners. The darkness lasts as long as the darkmantle maintains concentration, up to 10 minutes (as if concentrating on a spell). Darkvision can't penetrate this darkness, and no natural light can illuminate it. If any of the darkness overlaps with an area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled.\n",
+    "name": "Darkness Aura ",
+    "desc": "A 15-foot radius of magical darkness extends out from the darkmantle, moves with it, and spreads around corners. The darkness lasts as long as the darkmantle maintains concentration, up to 10 minutes (as if concentrating on a spell). Darkvision can't penetrate this darkness, and no natural light can illuminate it. If any of the darkness overlaps with an area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled.",
     "parent": "srd_darkmantle",
     "uses_type": "PER_DAY",
     "uses_param": 1,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_darkmantle_darkness-aura-1day",
-  "fields": {
-    "name": "Darkness Aura (1/day)",
-    "desc": "A 15-foot radius of magical darkness extends out from the darkmantle, moves with it, and spreads around corners. The darkness lasts as long as the darkmantle maintains concentration, up to 10 minutes (as if concentrating on a spell). Darkvision can't penetrate this darkness, and no natural light can illuminate it. If any of the darkness overlaps with an area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled.",
-    "parent": "srd_darkmantle",
-    "uses_type": null,
-    "uses_param": null,
     "form_condition": null
   }
 },
@@ -7311,23 +7287,11 @@
   "model": "api_v2.creatureaction",
   "pk": "srd_quasit_scare",
   "fields": {
-    "name": "Scare",
-    "desc": "One creature of the quasit's choice within 20 feet of it must succeed on a DC 10 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the quasit is within line of sight, ending the effect on itself on a success.\n",
+    "name": "Scare ",
+    "desc": "One creature of the quasit's choice within 20 ft. of it must succeed on a DC 10 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the quasit is within line of sight, ending the effect on itself on a success.",
     "parent": "srd_quasit",
     "uses_type": "PER_DAY",
     "uses_param": 1,
-    "form_condition": null
-  }
-},
-{
-  "model": "api_v2.creatureaction",
-  "pk": "srd_quasit_scare-1day",
-  "fields": {
-    "name": "Scare (1/day)",
-    "desc": "One creature of the quasit's choice within 20 ft. of it must succeed on a DC 10 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the quasit is within line of sight, ending the effect on itself on a success.",
-    "parent": "srd_quasit",
-    "uses_type": null,
-    "uses_param": null,
     "form_condition": null
   }
 },
