@@ -79,7 +79,7 @@ def check_caa(obj_v2):
         if ca.key == 'tob_eye-golem_shoot-into-the-sun-1-minuteday':
             continue
         if "(" in ca.name:
-            if "Level" in ca.name:
+            if "Cantrip" in ca.name:
                 print(ca.key, ca.name)
                 parens = "({}".format(ca.name.split("(")[1])
                 ca.desc = "{} {}".format(parens,ca.desc)
