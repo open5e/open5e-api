@@ -79,14 +79,10 @@ def check_caa(obj_v2):
         if ca.key == 'tob_eye-golem_shoot-into-the-sun-1-minuteday':
             continue
         if "(" in ca.name:
-            if "recharge" in ca.name:
+            if "Level" in ca.name:
                 print(ca.key, ca.name)
-                uses_param = 6
-                if '5' in ca.name:
-                    uses_param = 5
-                uses_type = "RECHARGE_ON_ROLL"
-                ca.uses_param = uses_param
-                ca.uses_type = uses_type
+                parens = "({}".format(ca.name.split("(")[1])
+                ca.desc = "{} {}".format(parens,ca.desc)
                 ca.save()
                 rename_ca(ca, ca.name.split("(")[0])
                 
