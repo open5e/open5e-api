@@ -79,10 +79,12 @@ def check_caa(obj_v2):
         if ca.key == 'tob_eye-golem_shoot-into-the-sun-1-minuteday':
             continue
         if "(" in ca.name:
-            if "/day" in ca.name:
-                
-                uses_param = int(ca.name.split("/day")[0].split("(")[-1])
-                uses_type = "PER_DAY"
+            if "recharge" in ca.name:
+                print(ca.key, ca.name)
+                uses_param = 6
+                if '5' in ca.name:
+                    uses_param = 5
+                uses_type = "RECHARGE_ON_ROLL"
                 ca.uses_param = uses_param
                 ca.uses_type = uses_type
                 ca.save()

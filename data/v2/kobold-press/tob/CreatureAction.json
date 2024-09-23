@@ -1825,13 +1825,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_ash-drake_ash-breath-recharge-6",
+  "pk": "tob_ash-drake_ash-breath",
   "fields": {
-    "name": "Ash Breath (recharge 6)",
+    "name": "Ash Breath ",
     "desc": "An ash drake spews a 20-foot cone of blistering hot, choking ash. Any targets in the path of this spray takes 14 (4d6) fire damage and become poisoned for one minute; a successful DC 13 Dexterity saving throw reduces damage by half and negates the poisoning. A poisoned creature repeats the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
     "parent": "tob_ash-drake",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
     "form_condition": null
   }
 },
@@ -2005,13 +2005,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_baba-yagas-horsemen-black-night_temporal-strike-recharge-5-6",
+  "pk": "tob_baba-yagas-horsemen-black-night_temporal-strike",
   "fields": {
-    "name": "Temporal Strike (recharge 5-6)",
+    "name": "Temporal Strike ",
     "desc": "When the horseman strikes a target with a melee attack, in addition to taking normal damage, the target must succeed on a DC 17 Constitution saving throw or instantly age 3d10 years. A creature that ages this way has disadvantage on attack rolls, ability checks, and saving throws based on Strength, Dexterity, and Constitution until the aging is reversed. A creature that ages beyond its lifespan dies immediately. The aging reverses automatically after 24 hours, or it can be reversed magically by greater restoration or comparable magic. A creature that succeeds on the save is immune to the temporal strike effect for 24 hours.",
     "parent": "tob_baba-yagas-horsemen-black-night",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -2053,13 +2053,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_baba-yagas-horsemen-bright-day_temporal-strike-recharge-5-6",
+  "pk": "tob_baba-yagas-horsemen-bright-day_temporal-strike",
   "fields": {
-    "name": "Temporal Strike (recharge 5-6)",
+    "name": "Temporal Strike ",
     "desc": "When the horseman strikes a target with a melee attack, in addition to taking normal damage, the target must succeed on a DC 17 Constitution saving throw or instantly age 3d10 years. A creature that ages this way has disadvantage on attack rolls, ability checks, and saving throws based on Strength, Dexterity, and Constitution until the aging is reversed. A creature that ages beyond its lifespan dies immediately. The aging reverses automatically after 24 hours, or it can be reversed magically by greater restoration or comparable magic. A creature that succeeds on the save is immune to the temporal strike effect for 24 hours.",
     "parent": "tob_baba-yagas-horsemen-bright-day",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -2101,13 +2101,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_baba-yagas-horsemen-red-sun_temporal-strike-recharge-5-6",
+  "pk": "tob_baba-yagas-horsemen-red-sun_temporal-strike",
   "fields": {
-    "name": "Temporal Strike (recharge 5-6)",
+    "name": "Temporal Strike ",
     "desc": "When the horseman strikes a target with a melee attack, in addition to taking normal damage, the target must succeed on a DC 17 Constitution saving throw or instantly age 3d10 years. A creature that ages this way has disadvantage on attack rolls, ability checks, and saving throws based on Strength, Dexterity, and Constitution until the aging is reversed. A creature that ages beyond its lifespan dies immediately. The aging reverses automatically after 24 hours, or it can be reversed magically by greater restoration or comparable magic. A creature that succeeds on the save is immune to the temporal strike effect for 24 hours.",
     "parent": "tob_baba-yagas-horsemen-red-sun",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -4705,13 +4705,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_doppelrat_arcane-doubling-recharges-after-10-minutes",
+  "pk": "tob_doppelrat_arcane-doubling",
   "fields": {
-    "name": "Arcane Doubling (recharges after 10 minutes)",
+    "name": "Arcane Doubling ",
     "desc": "A doppelrat under duress creates clones of itself at the beginning of its turn. Each round for 4 rounds, the number of live doppelrats quadruples but never exceeds 20. For example, when the doppelrat triggers arcane doubling, 1 rat becomes 4; at the start of the rat's next turn, those 4 become 16; and at the start of the rat's third turn, those 16 become 20, the maximum allowed. If one of the duplicates was destroyed between the original doppelrat's 1st and 2nd turns, then the surviving 3 would become 12, and so on. Each duplicate appears in the same space as any other rat, can either move or take an action the round it appears, and has 4 hit points and AC 13. Any surviving duplicates perish 1 minute (10 rounds) after the first ones were created. If the original doppelrat dies, its clones stop duplicating but the preexisting clones remain until their time expires. A creature can identify the original doppelrat from its duplicates as an action by making a successful DC 15 Intelligence (Nature) or Wisdom (Perception) check.",
     "parent": "tob_doppelrat",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "PER_DAY",
+    "uses_param": 144,
     "form_condition": null
   }
 },
@@ -5197,13 +5197,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_eala_fire-breath-recharge-5-6",
+  "pk": "tob_eala_fire-breath",
   "fields": {
-    "name": "Fire Breath (recharge 5-6)",
+    "name": "Fire Breath ",
     "desc": "The eala breathes fire in a 20-foot cone. Every creature in the area must make a DC 11 Dexterity saving throw, taking 10 (3d6) fire damage on a failed save or half as much on a successful one. The eala's fire breath ignites flammable objects and melts soft metals in the area that aren't being worn or carried.",
     "parent": "tob_eala",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -6361,13 +6361,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_frostveil_spirit-spores-recharge-6",
+  "pk": "tob_frostveil_spirit-spores",
   "fields": {
-    "name": "Spirit Spores (recharge 6)",
+    "name": "Spirit Spores ",
     "desc": "In distress, frostveils release a puff of psychotropic spores in a 10-foot cloud around themselves. Creatures within the cloud of spores must succeed on a DC 13 Constitution saving throw against poison or suffer hallucinations, as per a confusion spell, for 1d3 rounds.",
     "parent": "tob_frostveil",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
     "form_condition": null
   }
 },
@@ -6469,13 +6469,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_gearforged-templar_whirlwind-recharge-5-6",
+  "pk": "tob_gearforged-templar_whirlwind",
   "fields": {
-    "name": "Whirlwind (recharge 5-6)",
+    "name": "Whirlwind ",
     "desc": "The gearforged templar whirls its glaive in a great arc. Every creature within 10 feet of the gearforged takes 16 (3d10) slashing damage, or half damage with a successful DC 16 Dexterity saving throw.",
     "parent": "tob_gearforged-templar",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -7105,25 +7105,25 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_grim-jester_jokers-shuffle-recharge-6",
+  "pk": "tob_grim-jester_jokers-shuffle",
   "fields": {
-    "name": "Joker's Shuffle (recharge 6)",
+    "name": "Joker's Shuffle ",
     "desc": "The jester forces one Medium or Small humanoid within 60 feet to make a DC 17 Charisma saving throw. If the saving throw fails, the jester and the target exchange locations via teleportation and an illusion causes them to swap appearance: the jester looks and sounds like the target, and the target looks and sounds like the jester. The illusion lasts for 1 hour unless it is dismissed earlier by the jester as a bonus action, or dispelled (DC 17).",
     "parent": "tob_grim-jester",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
     "form_condition": null
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_grim-jester_killing-joke-recharge-6",
+  "pk": "tob_grim-jester_killing-joke",
   "fields": {
-    "name": "Killing Joke (recharge 6)",
+    "name": "Killing Joke ",
     "desc": "The jester performs an ancient, nihilistic joke of necromantic power. This joke has no effect on undead or constructs. All other creatures within 60 feet of the jester must make a DC 17 Wisdom saving throw. Those that fail fall prone in a fit of deadly laughter. The laughter lasts 1d4 rounds, during which time the victim is incapacitated and unable to stand up from prone. At the end of its turn each round, an incapacitated victim must make a successful DC 17 Constitution saving throw or be reduced to 0 hit points. The laughter can be ended early by rendering the victim unconscious or with greater restoration or comparable magic.",
     "parent": "tob_grim-jester",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
     "form_condition": null
   }
 },
@@ -7429,13 +7429,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_hraesvelgr-the-corpse-swallower_gale-blast-recharge-5-6",
+  "pk": "tob_hraesvelgr-the-corpse-swallower_gale-blast",
   "fields": {
-    "name": "Gale Blast (recharge 5-6)",
+    "name": "Gale Blast ",
     "desc": "Hraesvelgr unleashes a gale-force blast of wind in a line 60 feet long and 10 feet wide. Creatures in the area take 35 (10d6) bludgeoning damage and are pushed 15 feet directly away from Hraesvelgr, or they take half damage and are not pushed with a successful DC 19 Strength saving throw.",
     "parent": "tob_hraesvelgr-the-corpse-swallower",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -10069,13 +10069,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_oculo-swarm_gaze-recharge-5-6",
+  "pk": "tob_oculo-swarm_gaze",
   "fields": {
-    "name": "Gaze (recharge 5-6)",
+    "name": "Gaze ",
     "desc": "The swarm targets every creature in its space with a gaze attack. The swarm can choose one of two effects for the attack: confusion or hold person. Every target in the swarm's space is affected unless it makes a successful DC 14 Charisma saving throw. Even creatures that avert their eyes or are blind can be affected by an oculus swarm's gaze. The confusion or hold person effect lasts 1d4 rounds.",
     "parent": "tob_oculo-swarm",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -10381,13 +10381,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_pombero_charming-touch-recharge-5-6",
+  "pk": "tob_pombero_charming-touch",
   "fields": {
-    "name": "Charming Touch (recharge 5-6)",
+    "name": "Charming Touch ",
     "desc": "The pombero chooses a creature it can see within 5 feet. The creature must make a successful DC 12 Wisdom saving throw or be charmed for 10 minutes. The effect ends if the charmed creature takes damage. The pombero can have only one creature at a time charmed with this ability. If it charms a new creature, the previous charm effect ends immediately.",
     "parent": "tob_pombero",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -10537,13 +10537,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_qwyllion_deadly-gaze-recharge-5-6",
+  "pk": "tob_qwyllion_deadly-gaze",
   "fields": {
-    "name": "Deadly Gaze (recharge 5-6)",
+    "name": "Deadly Gaze ",
     "desc": "The qwyllion turns its gaze against a single creature within 20 feet of the qwyllion. The target must succeed on a DC 14 Constitution saving throw or take 16 (3d8 + 3) necrotic damage and be incapacitated until the start of the qwyllion's next turn. A humanoid slain by a qwyllion's death gaze rises 2d4 hours later as a specter under the qwyllion's control.",
     "parent": "tob_qwyllion",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -10633,13 +10633,13 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_ratatosk_divisive-chatter-recharge-5-6",
+  "pk": "tob_ratatosk_divisive-chatter",
   "fields": {
-    "name": "Divisive Chatter (recharge 5-6)",
+    "name": "Divisive Chatter ",
     "desc": "Up to six creatures within 30 feet that can hear the ratatosk must make DC 14 Charisma saving throws. On a failure, the creature is affected as if by a confusion spell for 1 minute. An affected creature repeats the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "parent": "tob_ratatosk",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
@@ -12097,24 +12097,24 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_shadow-fey-enchantress_beguiling-whispers-recharge-5-6",
+  "pk": "tob_shadow-fey-enchantress_beguiling-whispers",
   "fields": {
-    "name": "Beguiling Whispers (recharge 5-6)",
+    "name": "Beguiling Whispers ",
     "desc": "The shadow fey speaks sweet words to a creature she can see within 60 feet, that can hear the enchantress. The creature must succeed on a DC 15 Charisma saving throw or be charmed for 1 minute. While charmed in this way, the creature has disadvantage on Wisdom and Charisma saving throws made to resist spells cast by the enchantress.",
     "parent": "tob_shadow-fey-enchantress",
-    "uses_type": null,
-    "uses_param": null,
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
     "form_condition": null
   }
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_shadow-fey-enchantress_leadership-recharges-after-a-short-or-long-rest",
+  "pk": "tob_shadow-fey-enchantress_leadership",
   "fields": {
-    "name": "Leadership (recharges after a Short or Long Rest)",
+    "name": "Leadership ",
     "desc": "The enchantress can utter a special command or warning to a creature she can see within 30 feet of her. The creature must not be hostile to the enchantress and it must be able to hear (the command is inaudible to all but the target creature). For 1 minute, the creature adds a d4 to its attack rolls and saving throws. A creature can benefit from only one enchantress's Leadership at a time. This effect ends if the enchantress is incapacitated.",
     "parent": "tob_shadow-fey-enchantress",
-    "uses_type": null,
+    "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null,
     "form_condition": null
   }
