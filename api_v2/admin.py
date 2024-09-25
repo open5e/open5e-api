@@ -97,3 +97,5 @@ admin.site.register(ClassFeature)
 admin.site.register(CharacterClass)
 
 admin.site.register(Environment)
+
+admin.site.register(Rule)

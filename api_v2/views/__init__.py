@@ -38,6 +38,8 @@ from .search import SearchResultViewSet
 
 from .size import SizeViewSet
 
+from .rule import RuleViewSet
+
 from .enum import get_enums
 
 from .environment import EnvironmentViewSet
