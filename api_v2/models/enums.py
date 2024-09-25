@@ -171,7 +171,13 @@ SPELL_CASTING_TIME_CHOICES = [
     ('5minutes',"5 Minutes"),
     ('10minutes',"10 Minutes"),
     ('1hour',"1 Hour"),
+    ('4hours',"4 Hours"),
+    ('7hours',"7 Hours"),
     ('8hours',"8 Hours"),
+    ('9hours',"9 Hours"),
+    ('12hours',"12 Hours"),
+    ('24hours',"24 Hours"),
+    ('1week',"1 Week")
 ]
 
 CASTING_OPTION_TYPES = [
