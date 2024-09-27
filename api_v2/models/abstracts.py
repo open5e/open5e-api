@@ -15,6 +15,7 @@ from .enums import PASSIVE_SCORE_MAXIMUM
 
 def damage_die_count_field():
     return models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)],
         help_text='The number of dice to roll for damage.'
@@ -22,6 +23,7 @@ def damage_die_count_field():
 
 def damage_die_type_field():
     return models.CharField(
+        blank=True,
         null=True,
         max_length=20,
         choices=DIE_TYPES,
@@ -31,6 +33,7 @@ def damage_die_type_field():
 def damage_bonus_field():
     return models.SmallIntegerField(
         null=True,
+        blank=True,
         validators=[MinValueValidator(-5), MaxValueValidator(20)],
         help_text='Damage roll modifier.'
     )

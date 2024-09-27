@@ -162,6 +162,7 @@ class CreatureAction(HasName, HasDescription):
     )
 
     uses_type = models.CharField(
+        blank=True,
         null=True,
         max_length=20,
         choices=CREATURE_USES_TYPES,
@@ -169,8 +170,17 @@ class CreatureAction(HasName, HasDescription):
     )
 
     uses_param = models.SmallIntegerField(
+        blank=True,
         null=True,
         help_text='The parameter X for if the action is limited.'
+    )
+
+    form_condition = models.CharField(
+        blank=True,
+        null=True,
+        default=None,
+        max_length=100,
+        help_text='Description of form-based conditions for this action.'
     )
 
     def as_text(self):
@@ -202,18 +212,21 @@ class CreatureActionAttack(HasName):
     )
 
     reach_ft = models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)],
         help_text='Reach for melee attacks, in feet.'
     )
 
     range_ft = models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)],
         help_text='Normal range for ranged attacks, in feet.'
     )
 
     long_range_ft = models.SmallIntegerField(
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)],
         help_text='Long range for ranged attacks, in feet.'
@@ -230,6 +243,7 @@ class CreatureActionAttack(HasName):
 
     damage_type = models.ForeignKey(
         "DamageType",
+        blank=True,
         null=True,
         related_name="+", # No backwards relation.
         on_delete=models.CASCADE,
@@ -242,6 +256,7 @@ class CreatureActionAttack(HasName):
 
     extra_damage_type = models.ForeignKey(
         "DamageType",
+        blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name="+", # No backwards relation.
@@ -253,7 +268,7 @@ class CreatureTrait(Modification):
 
     It inherits from modification, which is an abstract concept.
     """
-
+    key = key_field()
     parent = models.ForeignKey('Creature', on_delete=models.CASCADE)
 
 
