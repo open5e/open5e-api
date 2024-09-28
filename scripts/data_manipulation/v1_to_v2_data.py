@@ -36,7 +36,8 @@ def main():
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
             #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
             #copy_traits(obj_v1, obj_v2)
-            check_caa(obj_v2)
+            #check_caa(obj_v2)
+            
             #copy_actions(obj_v1, obj_v2)
             #copy_legendary_desc(obj_v1, obj_v2)
             #copy_traits(obj_v1,obj_v2)

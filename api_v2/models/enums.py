@@ -41,6 +41,12 @@ CREATURE_ATTACK_TYPES = [
     ("WEAPON", "Weapon"),
 ]
 
+ACTION_TYPES = [
+    ("ACTION", "Action"),
+    ("REACTION","Reaction"),
+    ("BONUS_ACTION","Bonus Action")
+]
+
 # Monster action uses description.
 CREATURE_USES_TYPES = [
     ("PER_DAY", "X/Day"),

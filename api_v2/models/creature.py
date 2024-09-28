@@ -13,7 +13,7 @@ from .condition import Condition
 from .damagetype import DamageType
 from .document import FromDocument
 from .speed import HasSpeed
-from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES
+from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES, ACTION_TYPES
 
 
 
@@ -167,6 +167,15 @@ class CreatureAction(HasName, HasDescription):
         blank=True,
         null=True,
         help_text='The parameter X for if the action is limited.'
+    )
+
+    action_type = models.CharField(
+        blank=True,
+        null=True,
+        max_length=20,
+        default="ACTION",
+        choices=ACTION_TYPES,
+        help_text='How use of the action is limited, if at all.'
     )
 
     form_condition = models.CharField(
