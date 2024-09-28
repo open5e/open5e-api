@@ -175,7 +175,7 @@ class CreatureAction(HasName, HasDescription):
         max_length=20,
         default="ACTION",
         choices=ACTION_TYPES,
-        help_text='How use of the action is limited, if at all.'
+        help_text='The type of action used.'
     )
 
     form_condition = models.CharField(
@@ -185,6 +185,14 @@ class CreatureAction(HasName, HasDescription):
         max_length=100,
         help_text='Description of form-based conditions for this action.'
     )
+
+    legendary_cost = models.SmallIntegerField(
+        blank=True,
+        null=True,
+        default=0,
+        help_text='0 if not legendary, else, the number of legendary actions this costs.'
+    )
+
 
     def as_text(self):
         '''Text representation of creature is name/desc.'''
