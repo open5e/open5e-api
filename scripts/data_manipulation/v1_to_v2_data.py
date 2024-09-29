@@ -23,6 +23,8 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
+    reset_legendary_cost()
+
     for obj_v1 in v1_model.objects.all():
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
@@ -38,7 +40,7 @@ def main():
             #copy_traits(obj_v1, obj_v2)
             #check_caa(obj_v2)
 
-            #copy_actions(obj_v1, obj_v2)
+            #copy_leg_actions(obj_v1, obj_v2)
             #copy_legendary_desc(obj_v1, obj_v2)
             #copy_traits(obj_v1,obj_v2)
             #obj_v2.full_clean()
@@ -76,7 +78,56 @@ def main():
     #print("Failed to match {} objects.".format(str(v1_unmatch_count)))
 
 
-def 
+def reset_legendary_cost():
+    for ca in v2_models.CreatureAction.objects.all():
+        ca.legendary_cost = None
+        ca.save()
+    print("RESET LEGENDARY COSTS")
+
+def copy_leg_actions(obj_v1, obj_v2):
+    # if exists, copy actions_json
+    if obj_v1.legendary_actions_json not in [None,"null"]:
+        for a in json.loads(obj_v1.legendary_actions_json):
+            at = "LEGENDARY_ACTION"
+            form_condition = None
+            legendary_cost = 1
+            uses_type = None
+            uses_param = None
+            name = a['name']
+
+            if "(" in a['name']:
+                parens = a['name'].split(")")[0].split("(")[1]
+                name = a['name'].split("(")[0].strip()
+                for semi_separated in parens.split(";"):
+                    for comma_separated in semi_separated.split(","):
+                            #if comma_separated.lower.strip().isdigit():
+                            #    legendary_cost = int(comma_separated.lower.strip())
+                        if "costs" in comma_separated.lower():
+                            legendary_cost = int(comma_separated.lower().split("costs")[1].split("actions")[0].strip())
+                        if "form" in comma_separated.lower():
+                            form_condition = comma_separated.strip()
+                        if "/day" in comma_separated.lower():
+                            uses_type = 'PER_DAY'
+                            uses_param = comma_separated.lower().split("/day")[0].split(' ')[1]
+
+
+            key = slugify(obj_v2.key + "_" + name)
+            if legendary_cost>1:
+                print("key={}, cost={}, fc={}".format(key, legendary_cost, form_condition))
+
+
+            #ca = make_ca(
+            #    name=name,
+            #    parent=obj_v2,
+            #    desc=a['desc']
+            #)
+                # Recharge
+                # Simple int.
+
+                #print(obj_v2.key, parens)
+            #if "Attack" in ca.desc.replace("_","").split(".")[0].split(":")[0]:
+            #if "attack_bonus" in a:
+            #    make_caa(ca, a)
 
 
 def check_caa(obj_v2):

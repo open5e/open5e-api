@@ -44,7 +44,9 @@ CREATURE_ATTACK_TYPES = [
 ACTION_TYPES = [
     ("ACTION", "Action"),
     ("REACTION","Reaction"),
-    ("BONUS_ACTION","Bonus Action")
+    ("BONUS_ACTION","Bonus Action"),
+    ("LEGENDARY_ACTION","Legendary Action"),
+    ("LAIR_ACTION","Lair Action")
 ]
 
 # Monster action uses description.
