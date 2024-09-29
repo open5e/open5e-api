@@ -13,7 +13,7 @@ from .condition import Condition
 from .damagetype import DamageType
 from .document import FromDocument
 from .speed import HasSpeed
-from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES
+from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES, ACTION_TYPES
 
 
 
@@ -169,6 +169,15 @@ class CreatureAction(HasName, HasDescription):
         help_text='The parameter X for if the action is limited.'
     )
 
+    action_type = models.CharField(
+        blank=True,
+        null=True,
+        max_length=20,
+        default="ACTION",
+        choices=ACTION_TYPES,
+        help_text='The type of action used.'
+    )
+
     form_condition = models.CharField(
         blank=True,
         null=True,
@@ -176,6 +185,14 @@ class CreatureAction(HasName, HasDescription):
         max_length=100,
         help_text='Description of form-based conditions for this action.'
     )
+
+    legendary_cost = models.SmallIntegerField(
+        blank=True,
+        null=True,
+        default=None,
+        help_text='0 if not legendary, else, the number of legendary actions this costs.'
+    )
+
 
     def as_text(self):
         '''Text representation of creature is name/desc.'''
