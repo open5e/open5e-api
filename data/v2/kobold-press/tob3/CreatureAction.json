@@ -64,7 +64,7 @@
     "parent": "tob3_akkorokamui",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -99,6 +99,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob3_alabroza-bloodfiend_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into Med humanoid Small mist cloud or back into true bird-like fiend form. Other than size and speed stats are same in each form with mist form exceptions. Items worn/carried not transformed. Reverts on death. Mist form: can’t take any actions speak or manipulate objects resistance to nonmagical damage. Weightless fly speed 20' can hover can enter hostile creature’s space and stop there. If air can pass through a space mist can with o squeezing but can’t pass through water.",
+    "parent": "tob3_alabroza-bloodfiend",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob3_alke_repelling-spikes",
   "fields": {
     "name": "Repelling Spikes",
@@ -106,7 +120,7 @@
     "parent": "tob3_alke",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -120,7 +134,7 @@
     "parent": "tob3_alliumite-rapscallion",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -134,7 +148,21 @@
     "parent": "tob3_alliumite-rapscallion",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_alpine-creeper_lethargic-stupor",
+  "fields": {
+    "name": "Lethargic Stupor",
+    "desc": "One unconscious Humanoid or Giant in creeper’s space suffers one level of exhaustion. A creature with more than half its hp max can’t suffer more than one level of exhaustion from this. This exhaustion lasts until creature finishes short rest.",
+    "parent": "tob3_alpine-creeper",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -148,7 +176,35 @@
     "parent": "tob3_angel-kalkydra",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_angel-pelagic-deva_anoxic-aura",
+  "fields": {
+    "name": "Anoxic Aura",
+    "desc": "Removes oxygen from nearby water for 1 min. Each creature that requires oxygen to live (including air-breathing creatures under effects of water breathing) and starts its turn within 20' of deva: DC 17 Con save or begin suffocating. Deva never suffers effects of this; can choose any creatures in area to ignore it.",
+    "parent": "tob3_angel-pelagic-deva",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_angel-psychopomp_spirit-usher",
+  "fields": {
+    "name": "Spirit Usher",
+    "desc": "Wards a creature with divine power for 1 hr. While warded Celestials Fiends and Undead have disadvantage on attack rolls vs. the creature and creature can’t be charmed frightened or possessed by them. Warded creature gains 11 temp hp and if slain can’t be raised as an Undead for 1 year.",
+    "parent": "tob3_angel-psychopomp",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -162,7 +218,7 @@
     "parent": "tob3_angel-shrouded",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -232,7 +288,7 @@
     "parent": "tob3_angel-zirnitran",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -260,8 +316,22 @@
     "parent": "tob3_animal-lord-mammoth-queen",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": "Elephantine or True Form",
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_animal-lord-mammoth-queen_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into Gargantuan oliphaunt (see Creature Codex) a Huge mammoth a Med female human with thick brown hair tied back in a braid or back into her true Huge elephant-headed humanoid form. Her stats other than size are the same in each form. Any items worn/carried transform with her.",
+    "parent": "tob3_animal-lord-mammoth-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
     "legendary_cost": null
   }
 },
@@ -379,6 +449,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob3_animated-offal_subsume",
+  "fields": {
+    "name": "Subsume",
+    "desc": "Begins absorbing one creature it is grappling. Creature takes 18 (4d8) necrotic (DC 17 Con half). Offal regains hp equal to half the damage dealt. If offal is at its hp max it gains temp hp for 1 hr instead. Offal can add temp hp gained from this trait to temp hp gained earlier from this trait. Temporary hp can’t exceed 48. If its temp hp would exceed 48 a new animated offal appears in an unoccupied space within 5 ft. of offal. The new Ooze is Small doesn’t have this bonus action and has 10 hp. Creature killed by this bonus action is fully subsumed into offal and can be restored to life only by means of a resurrection spell or similar magic.",
+    "parent": "tob3_animated-offal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_arcane-leviathan_arcane-barrage",
+  "fields": {
+    "name": "Arcane Barrage",
+    "desc": "Sends arcane energy toward a creature it can see within 120' of it. Target begins to glow with arcane energy and at end of target’s next turn: 35 (10d6) radiant (DC 19 Con half). Damage is divided evenly between target and all creatures within 10 ft. of it except leviathan.",
+    "parent": "tob3_arcane-leviathan",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob3_archon-ursan_rallying-roar",
   "fields": {
     "name": "Rallying Roar",
@@ -386,7 +484,21 @@
     "parent": "tob3_archon-ursan",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_astralsupial_astral-traveler",
+  "fields": {
+    "name": "Astral Traveler",
+    "desc": "Briefly surrounds itself in a shower of glittering dust and teleports to an unoccupied space it can see within 30 feet.",
+    "parent": "tob3_astralsupial",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -400,7 +512,7 @@
     "parent": "tob3_astralsupial",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -414,7 +526,7 @@
     "parent": "tob3_avestruzii-champion",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -428,7 +540,7 @@
     "parent": "tob3_avestruzii",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -442,7 +554,7 @@
     "parent": "tob3_aziza",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -456,7 +568,105 @@
     "parent": "tob3_baleful-miasma",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_bearfolk-thunderstomper_frenzy",
+  "fields": {
+    "name": "Frenzy",
+    "desc": "Triggers berserk frenzy for 1 min. It gains resistance to B/P/S damage from nonmagical weapons and has advantage on attacks. Attacks vs. frenzied bearfolk have advantage.",
+    "parent": "tob3_bearfolk-thunderstomper",
+    "uses_type": "RECHARGE_AFTER_REST",
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_bearfolk-thunderstomper_taunt",
+  "fields": {
+    "name": "Taunt",
+    "desc": "Jests at one creature it can see within 30' of it. If target can hear bearfolk target: DC 15 Cha save or disadvantage on ability checks attacks and saves until start of bearfolk’s next turn.",
+    "parent": "tob3_bearfolk-thunderstomper",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_belu_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Magically transforms into a Small or Med Humanoid or back into its true form. Its stats other than size are same in each form. Any equipment it is wearing or carrying transforms with it. If it dies it reverts to its true form.",
+    "parent": "tob3_belu",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_berberoka_saturated-expansion",
+  "fields": {
+    "name": "Saturated Expansion",
+    "desc": "While in contact with body of water it absorbs water that is a cube up to 10 ft. on a side and becomes saturated as water fills its body. While saturated increases in size along with anything it is wearing or carrying becoming Huge and has advantage on Str checks and Str saves. If it lacks room to become Huge it attains max size possible in space available. Ground exposed by the absorbed water becomes difficult terrain.",
+    "parent": "tob3_berberoka",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_birgemon-seal_ice-slide",
+  "fields": {
+    "name": "Ice Slide",
+    "desc": "If the birgemon seal moves at least 10 ft. in a straight line while on snow or ice during its turn it can slide up to 40 feet.",
+    "parent": "tob3_birgemon-seal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_black-shuck_mist-stalker",
+  "fields": {
+    "name": "Mist Stalker",
+    "desc": "In dim light fog or mist it takes the Hide action.",
+    "parent": "tob3_black-shuck",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_blestsessebe_free-runner",
+  "fields": {
+    "name": "Free Runner",
+    "desc": "Can take the Dash action.",
+    "parent": "tob3_blestsessebe",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -470,7 +680,7 @@
     "parent": "tob3_blood-barnacle",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -533,6 +743,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob3_brumalek_skittish",
+  "fields": {
+    "name": "Skittish",
+    "desc": "Can take the Dash or Disengage action.",
+    "parent": "tob3_brumalek",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob3_capybear_protect-the-community",
   "fields": {
     "name": "Protect the Community",
@@ -540,7 +764,21 @@
     "parent": "tob3_capybear",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_catamount_control-earth",
+  "fields": {
+    "name": "Control Earth",
+    "desc": "Molds the ground near it causing one of: Stone Wall Causes wall of rock to rise from ground at a point it can see within 30' of it. Wall is up to 30' long 5 ft. high and 5 ft. thick. It can be any shape as long as its base is connected to the ground. If wall cuts through creature’s space when it appears creature is pushed to one side (catamount’s choice). If creature would be surrounded on all sides by the wall it can make a DC 14 Dex save. On success it can use its reaction to move up to its speed so it is not enclosed by the wall. Wall lasts 1 min or until catamount creates new wall.Fissure Catamount causes a rift to form in the ground at a point it can see within 30' of it. Rift can be up to 15 ft. wide up to 30' long and up to 10 ft. deep and can be any shape. Each creature standing on a spot where fissure opens must make DC 14 Dex save or fall in. Creature that successfully saves moves with fissure’s edge as it opens. Fissure that opens beneath a structure causes it to automatically collapse as if structure was in the area of an earthquake spell. It can have only one fissure open at a time. If it opens another previous fissure closes shunting all creatures inside it to surface.Tremors Catamount causes earth beneath its feet to shake and shift. Each creature within 30' of it: 3 (1d6) bludgeoning damage and be knocked prone (DC 14 Str negates both).",
+    "parent": "tob3_catamount",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -554,7 +792,35 @@
     "parent": "tob3_catonoctrix",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_catterball_change-form",
+  "fields": {
+    "name": "Change Form",
+    "desc": "Can extend its body roll up into a ball or return to true form. Each time it extends its body its reach with slam increases by 5 feet max 15 feet and Armor Class decreases by 1.",
+    "parent": "tob3_catterball",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_cave-mimic_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Into Gargantuan object or stretches out as terrain up to 35 ft. cube or back to true amorphous form. Stats same. Items worn/carried not transformed. Reverts on death.",
+    "parent": "tob3_cave-mimic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -613,6 +879,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_chemosit_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Magically transforms into a Small or Med Humanoid or back into its true Fiendish form. Its stats other than size are the same in each form. No matter the form chemosit always has only one leg. Its crutch adjusts to fit its new form but no other equipment transforms. Reverts on death. Crutch becomes nonmagical.",
+    "parent": "tob3_chemosit",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -680,7 +960,21 @@
     "parent": "tob3_climbing-vine",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_clockwork-conductor_concerted-effort",
+  "fields": {
+    "name": "Concerted Effort",
+    "desc": "Inspires itself or one friendly creature it can see within 30' of it until start of conductor’s next turn. When target makes an attack roll or a Con save to maintain concentration on a spell target can roll d4 and add result to attack or save.",
+    "parent": "tob3_clockwork-conductor",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -694,7 +988,7 @@
     "parent": "tob3_clockwork-pugilist",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -708,7 +1002,7 @@
     "parent": "tob3_clockwork-pugilist",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -722,7 +1016,35 @@
     "parent": "tob3_clockwork-scorpion",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_clockwork-tactician_battlefield-commands",
+  "fields": {
+    "name": "Battlefield Commands",
+    "desc": "Issues commands to up to 3 friendly creatures it can see within 60' of it. Each target has advantage on its next ability check or attack roll provided it can hear and understand tactician.",
+    "parent": "tob3_clockwork-tactician",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_clockwork-tactician_press-the-attack",
+  "fields": {
+    "name": "Press the Attack",
+    "desc": "If the clockwork tactician hits one target with two Multiweapon attacks or scores a critical hit with its multiweapon it can make one additional Multiweapon attack.",
+    "parent": "tob3_clockwork-tactician",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -736,7 +1058,21 @@
     "parent": "tob3_clockwork-tactician",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_copperkill-slime_stretch-body",
+  "fields": {
+    "name": "Stretch Body",
+    "desc": "Stretches its body across surface of a Gargantuan or smaller object or across surface of a wall pillar or similar structure no larger than a 20' square within 5 ft. of it sharing the space of the object or structure. Slime can end the stretch as a bonus action occupying nearest unoccupied space to the object or structure.",
+    "parent": "tob3_copperkill-slime",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -785,6 +1121,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob3_crab-samurai_fighting-stance",
+  "fields": {
+    "name": "Fighting Stance",
+    "desc": "Adopts a fighting stance choosing from the options below. The stance lasts until the crab ends it (no action required) or uses this bonus action again.Banded Claw. Adopts a wide grappler’s stance. While the samurai crab is in this stance each creature that starts its turn grappled by the crab takes 3 (1d6) bludgeoning damage.Hard Shell. Defensive stance increasing its AC by 2.Soft Shell. Adopts an offensive stance gaining advantage on the first Crustaceous Sword attack it makes each turn.",
+    "parent": "tob3_crab-samurai",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob3_crystallite_calcify",
   "fields": {
     "name": "Calcify",
@@ -792,7 +1142,7 @@
     "parent": "tob3_crystallite",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -806,7 +1156,35 @@
     "parent": "tob3_cueyatl-warchief",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_cyonaxin_free-runner",
+  "fields": {
+    "name": "Free Runner",
+    "desc": "Can take the Dash action.",
+    "parent": "tob3_cyonaxin",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dawnfly-desolation-nymph_water-jet",
+  "fields": {
+    "name": "Water Jet",
+    "desc": "Takes the Disengage action and each creature within 5 ft. of nymph: DC 13 Dex save or be blinded until end of its next turn.",
+    "parent": "tob3_dawnfly-desolation-nymph",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -855,6 +1233,48 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob3_dawnfly_winged-inferno",
+  "fields": {
+    "name": "Winged Inferno",
+    "desc": "Rapidly beats wings igniting them until start of next turn. Shed bright light in 20' radius dim light extra 20'. Creature that touches dawnfly or hits it with melee attack while within 5 ft. of it: 7 (2d6) fire. Also when creature starts turn within 5 ft. of dawnfly creature: DC 19 Dex save or 7 (2d6) fire. Effect ends early if dawnfly stops flying.",
+    "parent": "tob3_dawnfly",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_demon-inciter_invisibility",
+  "fields": {
+    "name": "Invisibility",
+    "desc": "Magically turns invisible until it attacks or until its concentration ends (as if concentrating on a spell). Any equipment it wears or carries is invisible with it.",
+    "parent": "tob3_demon-inciter",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_demon-vetala_command-corpse",
+  "fields": {
+    "name": "Command Corpse",
+    "desc": "Commands one Undead under its control that it can see to make a weapon attack as reaction. If so has advantage.",
+    "parent": "tob3_demon-vetala",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob3_demon-vetala_corpse-detonation",
   "fields": {
     "name": "Corpse Detonation",
@@ -862,7 +1282,7 @@
     "parent": "tob3_demon-vetala",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -876,7 +1296,49 @@
     "parent": "tob3_derro-hellforged",
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 5,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_desert-slime_surging-sands",
+  "fields": {
+    "name": "Surging Sands",
+    "desc": "Takes the Dash action.",
+    "parent": "tob3_desert-slime",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_despair-and-anger_change-aspect",
+  "fields": {
+    "name": "Change Aspect",
+    "desc": "Changes aspect in control. Only one active at a time. Creature grappled by despair no longer grappled by anger.",
+    "parent": "tob3_despair-and-anger",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_devil-devilflame-juggler_nimble-leap",
+  "fields": {
+    "name": "Nimble Leap",
+    "desc": "The juggler takes the Dash or Disengage action.",
+    "parent": "tob3_devil-devilflame-juggler",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -890,7 +1352,21 @@
     "parent": "tob3_devil-devilflame-juggler",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_devil-infernal-tutor-lesser_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Magically transforms into Small or Med Humanoid or back into its true fiendish form. Its stats except size are same in each form. Items worn/carried aren’t transformed. Reverts on death.",
+    "parent": "tob3_devil-infernal-tutor-lesser",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -904,7 +1380,21 @@
     "parent": "tob3_devil-infernal-tutor-lesser",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_devil-infernal-tutor_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Magically transforms into a Small or Med Humanoid or back into its true fiendish form. Its stats other than its size are same in each form. Items worn/carried aren’t transformed. Reverts on death.",
+    "parent": "tob3_devil-infernal-tutor",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -918,7 +1408,7 @@
     "parent": "tob3_devil-infernal-tutor",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -932,7 +1422,21 @@
     "parent": "tob3_devil-rimepacted",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dinosaur-guardian-archaeopteryx_imbue-poison",
+  "fields": {
+    "name": "Imbue Poison",
+    "desc": "The guardian archaeopteryx chooses a friendly creature it can see within 30' of it and imbues that creature’s attacks with magical poison. The next time the friendly creature hits with an attack before the start of archaeopteryx’s next turn target of attack takes an extra 2 (1d4) poison and must make DC 11 Con save or be poisoned until end of its next turn.",
+    "parent": "tob3_dinosaur-guardian-archaeopteryx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -946,7 +1450,21 @@
     "parent": "tob3_dinosaur-thundercall-hadrosaur",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_doppelixir_imitative-liquid",
+  "fields": {
+    "name": "Imitative Liquid",
+    "desc": "Imitates one common or uncommon potion oil or other alchemical substance until it uses this bonus action again to end it or to imitate a different liquid. If it takes no acid fire or poison on the round it is slain creature can collect its remains which can be used as the liquid it was imitating as died.",
+    "parent": "tob3_doppelixir",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1149,6 +1667,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob3_dragonette-sedge_boggy-presence",
+  "fields": {
+    "name": "Boggy Presence",
+    "desc": "Transmutes ground in 10 ft. radius centered on it into a muddy soup for 10 min. For the duration any creature other than sedge dragonette moving through area must spend 4' of move per 1' it moves.",
+    "parent": "tob3_dragonette-sedge",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob3_dragonette-sedge_prickly-defense",
   "fields": {
     "name": "Prickly Defense",
@@ -1156,7 +1688,63 @@
     "parent": "tob3_dragonette-sedge",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_drake-ethereal_ethereal-step",
+  "fields": {
+    "name": "Ethereal Step",
+    "desc": "Magically shifts from Material Plane to Ethereal or vice versa. Drake can bring creatures grappled by it into the Ethereal Plane with it. A creature not native to Ethereal Plane returns to Material Plane in 1d4 rounds if brought to the plane while grappled by drake.",
+    "parent": "tob3_drake-ethereal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_drake-reef_reef-stealth",
+  "fields": {
+    "name": "Reef Stealth",
+    "desc": "If it is within 10 ft. of a coral reef it can take the Hide action.",
+    "parent": "tob3_drake-reef",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_drake-reef_siege-follow-through",
+  "fields": {
+    "name": "Siege Follow-Through",
+    "desc": "If it destroys an object or structure it can make a bite attack vs. a creature it can see within 5 ft. of that object or structure.",
+    "parent": "tob3_drake-reef",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_drake-riptide_manipulate-currents",
+  "fields": {
+    "name": "Manipulate Currents",
+    "desc": "While underwater changes water flow within 60' of it. Chooses one of below which lasts until start of its next turn.A 20' cube of rushing water forms on a point drake can see in the water. The cube’s space is difficult terrain and a creature that starts its turn swimming in the area must make DC 17 Str save or be pushed out of the cube directly away from drake.The current shoots in a 60' long 10 ft. wide line from drake in a direction it chooses. Each creature in area: pushed up to 15 ft. away from drake in a direction following the line (DC 17 Str negates).The drake takes the Dash action.",
+    "parent": "tob3_drake-riptide",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1170,7 +1758,7 @@
     "parent": "tob3_drake-shepherd",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1226,7 +1814,7 @@
     "parent": "tob3_dubius",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1240,7 +1828,7 @@
     "parent": "tob3_dubius",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1254,7 +1842,7 @@
     "parent": "tob3_dwarf-pike-guard-captain",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1268,7 +1856,7 @@
     "parent": "tob3_dwarf-pike-guard-captain",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1282,7 +1870,49 @@
     "parent": "tob3_dwarf-pike-guard",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_elemental-rockslide_nimble-separation",
+  "fields": {
+    "name": "Nimble Separation",
+    "desc": "Can briefly separate its components parts and take the Dash action. Opportunity attacks vs. it have disadvantage until start of its next turn.",
+    "parent": "tob3_elemental-rockslide",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_elf-shadow-fey-executioner_recall-severed-head",
+  "fields": {
+    "name": "Recall Severed Head",
+    "desc": "Commands all severed heads attached to creatures to detach and return to the executioner’s belt.",
+    "parent": "tob3_elf-shadow-fey-executioner",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_elf-shadow-fey-executioner_shadow-traveler",
+  "fields": {
+    "name": "Shadow Traveler",
+    "desc": "In shadows/dim light/darkness disappears into darkness and reappears in unoccupied space it can see within 30'. Smoke tendril appears at origin and destination.",
+    "parent": "tob3_elf-shadow-fey-executioner",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1327,6 +1957,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_faux-garou_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into Large or smaller Beast matching type of lycanthrope it resembles (wolf if it resembles a werewolf etc.) or back into its true form. Its stats other than size and speed are same in each form. While transformed retains constructed appearance and claws at end of its forelimbs. Items worn or carried not transformed. Reverts to true form if it dies.",
+    "parent": "tob3_faux-garou",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -1380,7 +2024,7 @@
     "parent": "tob3_frostjack",
     "uses_type": "PER_DAY",
     "uses_param": 3,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1394,7 +2038,77 @@
     "parent": "tob3_fungi-mulcher",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_fungi-mulcher_expose-stalk",
+  "fields": {
+    "name": "Expose Stalk",
+    "desc": "Exposes central stalk above ground until end of its next turn or until it ends effect as bonus action. If exposed can’t burrow.",
+    "parent": "tob3_fungi-mulcher",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_fungi-mulcher_rapid-burrow",
+  "fields": {
+    "name": "Rapid Burrow",
+    "desc": "Burrows up to 60 feet. Opportunity attacks vs. it are made with disadvantage when mulcher burrows out of an enemy’s reach this way. Creatures grappled by it are freed before it burrows.",
+    "parent": "tob3_fungi-mulcher",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_fungi-mush-marcher_recall-harpoon",
+  "fields": {
+    "name": "Recall Harpoon",
+    "desc": "Pulls on the mycelial threads connecting it to its harpoon returning the harpoon to its empty hand. If harpoon is stuck in a creature that creature must make DC 13 Str save or be pulled up to 15 ft. toward marcher.",
+    "parent": "tob3_fungi-mush-marcher",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ghost-knight-templar_ghostly-mount",
+  "fields": {
+    "name": "Ghostly Mount",
+    "desc": "Can summon or dismiss a ghostly mount mounting or dismounting it as part of this bonus action with o spending movement. Mount uses the stats of a warhorse skeleton except it has the Incorporeal Movement trait a flying speed of 60 feet 40 hp and resistance to cold and necrotic and B/P/S damage from nonmagical attacks. If mount is slain it disappears leaving behind no physical form and templar must wait 1 hr before summoning it again.",
+    "parent": "tob3_ghost-knight-templar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_giant-flea_leaping-escape",
+  "fields": {
+    "name": "Leaping Escape",
+    "desc": "Leaps up to 15 ft. with o provoking opportunity attacks.",
+    "parent": "tob3_giant-flea",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1408,7 +2122,105 @@
     "parent": "tob3_giant-hellfire",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_giant-mantis-shrimp_water-jet",
+  "fields": {
+    "name": "Water Jet",
+    "desc": "Each creature within 5 ft. of shrimp is blinded until start of its next turn (DC 14 Dex negates). The shrimp then swims up to half its swimming speed with o provoking opportunity attacks.",
+    "parent": "tob3_giant-mantis-shrimp",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_giant-mole-lizard_mass-shove",
+  "fields": {
+    "name": "Mass Shove",
+    "desc": "Each Large or smaller creature within 10 ft. of the giant mole lizard and that isn’t grappled by it must make DC 14 Str save or be pushed up to 15 ft. away from the lizard and knocked prone.",
+    "parent": "tob3_giant-mole-lizard",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_giant-pufferfish_burst-of-speed",
+  "fields": {
+    "name": "Burst of Speed",
+    "desc": "Takes the Dash action.",
+    "parent": "tob3_giant-pufferfish",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_giant-pufferfish_puff-up",
+  "fields": {
+    "name": "Puff Up",
+    "desc": "For 1 min it increases in size by filling its stomach with air or water. While puffed up it is Medium doubles its damage dice on Bite and Spine attacks (included above) and makes Str checks and Str saves with advantage. If pufferfish lacks the room to become Medium it attains the max size possible in space available.",
+    "parent": "tob3_giant-pufferfish",
+    "uses_type": "RECHARGE_AFTER_REST",
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_giant-thursir-armorer_harness-dwarven-soul",
+  "fields": {
+    "name": "Harness Dwarven Soul",
+    "desc": "Draws on the soul fragment trapped in one of the dwarven skulls on its belt. Armorer has advantage on ability checks when using smith’s tools and on attack rolls using a battleaxe handaxe light hammer or warhammer until start of its next turn. It carries six skulls on its belt.",
+    "parent": "tob3_giant-thursir-armorer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_giant-walking-stick_startling-display",
+  "fields": {
+    "name": "Startling Display",
+    "desc": "Each creature within 5 ft. of the stick: DC 13 Int save or be incapacitated until end of its next turn. The walking stick then flies up to its flying speed with o provoking opportunity attacks.",
+    "parent": "tob3_giant-walking-stick",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_gnyan_snow-step",
+  "fields": {
+    "name": "Snow Step",
+    "desc": "Teleports with items worn/carried up to 30' to unoccupied space it can see. Origin and destination must have snow.",
+    "parent": "tob3_gnyan",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1443,6 +2255,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob3_godslayer_hunting-step",
+  "fields": {
+    "name": "Hunting Step",
+    "desc": "Magically teleports with items worn/carried up to 120' to unoccupied space within 15 ft. of a Celestial Fiend divine avatar or deity it senses with Divine Sense magically shifting from Material to Ethereal or Shadow Planes or vice versa. Godslayer has advantage on next attack roll it makes vs. target before start of its next turn. Glowing glyphs appear at origin and destination when it uses this.",
+    "parent": "tob3_godslayer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob3_godslayer_move",
   "fields": {
     "name": "Move",
@@ -1464,7 +2290,7 @@
     "parent": "tob3_godslayer",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1492,7 +2318,147 @@
     "parent": "tob3_golem-ice",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_golem-origami_fold",
+  "fields": {
+    "name": "Fold",
+    "desc": "Reshape papery body to resemble Large dragon Large swan or Med frog. Use again to unfold into Large flat piece of fabric/paper. Stats except size same in each form. Unfolded if it dies.",
+    "parent": "tob3_golem-origami",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_golem-tar_draw-flames",
+  "fields": {
+    "name": "Draw Flames",
+    "desc": "Extinguishes up to 10 ft. cube of nonmagical fire within 5 ft. of it drawing fire into itself and activating its Fire Hazard.",
+    "parent": "tob3_golem-tar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_golem-tar_quench",
+  "fields": {
+    "name": "Quench",
+    "desc": "Puts out fire on it deactivating Fire Hazard.",
+    "parent": "tob3_golem-tar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_grivid_consume-worms",
+  "fields": {
+    "name": "Consume Worms",
+    "desc": "Consumes up to 3 cheek worms regaining 5 (2d4) hp for each worm consumed.",
+    "parent": "tob3_grivid",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_grolar-bear-alpha_versatile-coat",
+  "fields": {
+    "name": "Versatile Coat",
+    "desc": "White fur white to brown vice versa.",
+    "parent": "tob3_grolar-bear-alpha",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_gullkin-hunter_mark-quarry",
+  "fields": {
+    "name": "Mark Quarry",
+    "desc": "Marks a creature as its quarry. Whenever hunter hits marked creature with weapon attack deals extra 1d6 damage to target.",
+    "parent": "tob3_gullkin-hunter",
+    "uses_type": "RECHARGE_AFTER_REST",
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_hag-wood_nettling-word",
+  "fields": {
+    "name": "Nettling Word",
+    "desc": "Heckles mocks or jeers one creature she can see within 30' of her. If creature can hear and understand her enraged until end of its next turn (DC 16 Cha negates). While enraged: advantage on melee attacks unable to distinguish friend from foe and must move to and attack nearest creature (not hag). If none is near enough to move to and attack enraged creature stalks off in random direction. Attacks vs. enraged creature: advantage.",
+    "parent": "tob3_hag-wood",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_herd-skulker_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into a Large or smaller domesticated herd animal it can see such as a cow horse sheep or chicken or back into its true canine form. Its statistics other than its size are the same in each form. Reverts on death.",
+    "parent": "tob3_herd-skulker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_herd-skulker_nimble-escape",
+  "fields": {
+    "name": "Nimble Escape",
+    "desc": "Takes the Disengage or Hide action.",
+    "parent": "tob3_herd-skulker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_hinderling_nimble-escape",
+  "fields": {
+    "name": "Nimble Escape",
+    "desc": "Takes the Disengage or Hide action.",
+    "parent": "tob3_hinderling",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1506,7 +2472,63 @@
     "parent": "tob3_hinderling",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_hippopotamus-sacred_protectors-step",
+  "fields": {
+    "name": "Protector’s Step",
+    "desc": "Magically teleports with any items worn/carried up to 120' to unoccupied space within its sacred site or within 30' of exterior of its site. Golden light swirls or inky shadown tendrils (hippo’s choice) appear at origin and destination.",
+    "parent": "tob3_hippopotamus-sacred",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_hirudine-stalker_hidden-predator",
+  "fields": {
+    "name": "Hidden Predator",
+    "desc": "Takes the Hide action.",
+    "parent": "tob3_hirudine-stalker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_hvalfiskr_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into Huge frost giant Huge whale or back into its true whale-giant hybrid form. Its stats are the same in each form. Items worn/carried transform with it. Reverts on death.",
+    "parent": "tob3_hvalfiskr",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_hvalfiskr_reel-anchor",
+  "fields": {
+    "name": "Reel Anchor",
+    "desc": "Pulls on the chain connected to anchor returning it to its empty hand. If anchor is hooked around a creature creature: DC 19 Str save or be pulled up to 30' toward hvalfiskr.",
+    "parent": "tob3_hvalfiskr",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1520,7 +2542,7 @@
     "parent": "tob3_ice-willow",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1534,7 +2556,49 @@
     "parent": "tob3_imperator",
     "uses_type": "PER_DAY",
     "uses_param": 1,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_incandescent-one_celestial-inspiration",
+  "fields": {
+    "name": "Celestial Inspiration",
+    "desc": "Inspires one creature it can see within 60' of it. Whenever target makes attack roll or save before start of incandescent one’s next turn target can roll a d4 and add number rolled to the attack roll or save.",
+    "parent": "tob3_incandescent-one",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ion-slime_charged-motion",
+  "fields": {
+    "name": "Charged Motion",
+    "desc": "Dash or Dodge action.",
+    "parent": "tob3_ion-slime",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ion-slime_supercharge",
+  "fields": {
+    "name": "Supercharge",
+    "desc": "Gathers ambient electricity to supercharge itself for 3 rounds. While supercharged slime gains +2 bonus to its AC and it gains an additional action on each of its turns. At end of the third round if the slime hasn’t used the Discharge action it suffers feedback taking 18 (4d8) force. Its supercharged state then ends.",
+    "parent": "tob3_ion-slime",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1548,7 +2612,7 @@
     "parent": "tob3_jinnborn-air-pirate",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1562,7 +2626,21 @@
     "parent": "tob3_jubjub-bird",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_juniper-sheriff_hop-away",
+  "fields": {
+    "name": "Hop Away",
+    "desc": "Takes the Dash or Disengage action.",
+    "parent": "tob3_juniper-sheriff",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1576,7 +2654,7 @@
     "parent": "tob3_khamaseen",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1590,7 +2668,7 @@
     "parent": "tob3_khargi",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1604,7 +2682,7 @@
     "parent": "tob3_kobold-drake-rider",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1618,7 +2696,21 @@
     "parent": "tob3_kobold-empyrean",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_kobold-ghost-hunter_elusive-hunter",
+  "fields": {
+    "name": "Elusive Hunter",
+    "desc": "Takes the Dodge or Hide action.",
+    "parent": "tob3_kobold-ghost-hunter",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1632,7 +2724,21 @@
     "parent": "tob3_kobold-ghost-hunter",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_kobold-ghost-hunter_grappling-hook",
+  "fields": {
+    "name": "Grappling Hook",
+    "desc": "The ghost hunter launches its grappling hook at a Large or larger object or structure or at a Huge or larger creature it can see within 60' of it and is pulled to an unoccupied space within 5 ft. of the target with o provoking opportunity attacks.",
+    "parent": "tob3_kobold-ghost-hunter",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1646,7 +2752,21 @@
     "parent": "tob3_kobold-leviathan-hunter",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_kobold-leviathan-hunter_recall-harpoon",
+  "fields": {
+    "name": "Recall Harpoon",
+    "desc": "Pulls on the cord connected to its harpoon returning harpoon to its empty hand. If harpoon is stuck in a creature that creature must make DC 17 Str save or be pulled up to 20' toward the hunter.",
+    "parent": "tob3_kobold-leviathan-hunter",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1660,7 +2780,35 @@
     "parent": "tob3_kobold-planes-hunter",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_kobold-planes-hunter_planar-step",
+  "fields": {
+    "name": "Planar Step",
+    "desc": "Teleports along with any equipment up to 30' to an unoccupied spot it sees. Glowing swirls of elemental energy appear at origin and destination when it uses this.",
+    "parent": "tob3_kobold-planes-hunter",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_leashed-lesion_life-tether",
+  "fields": {
+    "name": "Life Tether",
+    "desc": "Attaches a symbiotic tether to a creature sitting in the recess in its back. A creature in the recess that isn’t attached to the tether takes 7 (2d6) piercing damage at the end of the lesion’s turn and the lesion regains hp equal to the damage dealt. While the tether is attached the creature is grappled by the lesion. The lesion or the creature can detach the tether as a bonus action. Lesion can have its symbiotic tether attached to only one creature at a time.",
+    "parent": "tob3_leashed-lesion",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1674,7 +2822,35 @@
     "parent": "tob3_ley-wanderer",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ley-wanderer_drain-magic-item",
+  "fields": {
+    "name": "Drain Magic Item",
+    "desc": "Drains the magic from an item it is holding. Magic item with charges loses 1d6 charges item with limited uses per day loses one daily use and single-use item such as potion or spell scroll is destroyed. All other magic items have their effects suppressed for 1 min. Wanderer gains 5 temp hp each time it drains a magic item. A drained item regains its magic after 24 hrs.",
+    "parent": "tob3_ley-wanderer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_life-broker_quick-footed",
+  "fields": {
+    "name": "Quick-Footed",
+    "desc": "Takes Dash Disengage or Dodge.",
+    "parent": "tob3_life-broker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1688,7 +2864,35 @@
     "parent": "tob3_light-eater",
     "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_lycanthrope-werecrocodile_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into a Large crocodile or into a crocodile-humanoid hybrid or back into its true form which is Humanoid. Its stats other than size are the same in each form. Any equipment worn/carried isn't transformed. Reverts to its true form if it dies.",
+    "parent": "tob3_lycanthrope-werecrocodile",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_lycanthrope-wereotter_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into a Med otter-humanoid hybrid or into Large otter or back into true form: Humanoid. Stats other than size are same in each form. Items worn/ carried not transformed. Reverts to its true form if it dies.",
+    "parent": "tob3_lycanthrope-wereotter",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1702,7 +2906,21 @@
     "parent": "tob3_malmbjorn",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_malmbjorn_metal-eater",
+  "fields": {
+    "name": "Metal Eater",
+    "desc": "Swallows one Med or smaller ferrous metal object within 5 ft. of it. If the object is being held or worn by a creature that creature must make DC 18 Str save or malmbjorn swallows the object. If the creature holding or wearing the object is also grappled by the malmbjorn it has disadvantage on this save. Nonmagical objects are digested and destroyed at the start of malmbjorn’s next turn. Magic objects remain intact in malmbjorn’s stomach for 8 hrs then are destroyed. Artifacts are never destroyed in this way.",
+    "parent": "tob3_malmbjorn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1716,7 +2934,161 @@
     "parent": "tob3_mindshard",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_moon-weaver_emboldening-song",
+  "fields": {
+    "name": "Emboldening Song",
+    "desc": "Delivers a burst of beautiful song that motivates and emboldens one friendly creature the moon weaver can see within 60' of it. If the target can hear the song it gains one Embolden die a d6. Once within the next 10 min the target can roll the die and add the number rolled to one ability check attack roll or save it makes.",
+    "parent": "tob3_moon-weaver",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_moonweb_ethereal-jaunt",
+  "fields": {
+    "name": "Ethereal Jaunt",
+    "desc": "Magically shifts from the Material Plane to the Ethereal Plane or vice versa.",
+    "parent": "tob3_moonweb",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_moppet_nimble-moves",
+  "fields": {
+    "name": "Nimble Moves",
+    "desc": "Takes the Dash or Disengage action.",
+    "parent": "tob3_moppet",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_musk-deer-swarm_musk",
+  "fields": {
+    "name": "Musk",
+    "desc": "As musk deer but save DC 12.",
+    "parent": "tob3_musk-deer-swarm",
+    "uses_type": "RECHARGE_AFTER_REST",
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_musk-deer-swarm_sprinter",
+  "fields": {
+    "name": "Sprinter",
+    "desc": "Takes the Dash action.",
+    "parent": "tob3_musk-deer-swarm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_musk-deer_musk",
+  "fields": {
+    "name": "Musk",
+    "desc": "Emits a pungent musk around itself for 1 min. While musk is active a creature that starts its turn within 10 ft. of deer: poisoned 1 min (DC 11 Con negates). Poisoned creature can re-save at end of each of its turns success ends effect on itself. For 1 hr after creature fails this save others have advantage on Wis (Perception) and Wis (Survival) checks to find or track the creature unless creature spends 10+ min washing off the musk.",
+    "parent": "tob3_musk-deer",
+    "uses_type": "RECHARGE_AFTER_REST",
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_musk-deer_sprinter",
+  "fields": {
+    "name": "Sprinter",
+    "desc": "Takes the Dash action.",
+    "parent": "tob3_musk-deer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_myrmex-speaker_earth-manipulation",
+  "fields": {
+    "name": "Earth Manipulation",
+    "desc": "Can manipulate and move earth within 30' of it that fits within a 5 ft. cube. This manipulation is limited only by its imagination but it often includes creating caricatures of creatures to tell stories of travels or etching symbols to denote dangerous caverns or similar markers for those in the colony. It can also choose to make the ground within 10 ft. of it difficult terrain or to make difficult terrain normal if the ground is earth or stone. Changes caused by Earth Manipulation are permanent.",
+    "parent": "tob3_myrmex-speaker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_myrmex-young_earth-manipulation",
+  "fields": {
+    "name": "Earth Manipulation",
+    "desc": "Can manipulate and move earth within 30' of it that fits within a 5 ft. cube. This manipulation is limited only by its imagination but it often includes creating caricatures of creatures to tell stories of travels or etching symbols to denote dangerous caverns or similar markers for those in the colony. Can also choose to make ground within 10 ft. of it difficult terrain or to make difficult terrain normal if the ground is earth or stone. Changes caused by Earth Manipulation are permanent.",
+    "parent": "tob3_myrmex-young",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_myrmex_earth-manipulation",
+  "fields": {
+    "name": "Earth Manipulation",
+    "desc": "Can manipulate and move earth within 30' of it that fits within a 5 ft. cube. This manipulation is limited only by its imagination but it often includes creating caricatures of creatures to tell stories of travels or etching symbols to denote dangerous caverns or similar markers for those in the colony. It can also choose to make the ground within 10 ft. of it difficult terrain or to make difficult terrain normal if the ground is earth or stone. Changes caused by Earth Manipulation are permanent.",
+    "parent": "tob3_myrmex",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_nariphon_bury",
+  "fields": {
+    "name": "Bury",
+    "desc": "One creature grappled by nariphon is knocked prone dragged into ground and buried just below surface ending grapple. Victim is restrained unable to breathe or stand up. Creature including victim can use action to free buried creature via DC 18 Str.",
+    "parent": "tob3_nariphon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1730,7 +3102,63 @@
     "parent": "tob3_nautiloid",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_niya-atha-raja_enlarge",
+  "fields": {
+    "name": "Enlarge",
+    "desc": "Magically increases in size with anything worn/carried. While enlarged is Large 2× damage dice on weapon attacks (included above) and makes Str checks and Str saves with advantage. Enlarged can no longer use Evasion and Magic Resistance. If it lacks room to become Large this action fails.",
+    "parent": "tob3_niya-atha-raja",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_niya-atha-sorcerer_enlarge",
+  "fields": {
+    "name": "Enlarge",
+    "desc": "Magically increases in size along with anything it is wearing or carrying. While enlarged it is Large doubles its damage dice on weapon attacks (included above) and makes Str checks and Str saves with advantage. While enlarged it also can no longer use the Summon Iceberg action. If it lacks the room to become Large this action fails.",
+    "parent": "tob3_niya-atha-sorcerer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_niya-atha-warrior_enlarge",
+  "fields": {
+    "name": "Enlarge",
+    "desc": "Magically increases in size along with anything it is wearing or carrying. While enlarged it is Large doubles its damage dice on weapon attacks (included above) and makes Str checks and Str saves with advantage. While enlarged it also can no longer use the Standing Leap trait. If it lacks the room to become Large this action fails.",
+    "parent": "tob3_niya-atha-warrior",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_npc-breathstealer_cunning-action",
+  "fields": {
+    "name": "Cunning Action",
+    "desc": "Dash Disengage or Hide action.",
+    "parent": "tob3_npc-breathstealer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1744,7 +3172,21 @@
     "parent": "tob3_npc-cultist-psychophant",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_npc-cultist-psychophant_bend-the-spoon",
+  "fields": {
+    "name": "Bend the Spoon",
+    "desc": "Chooses one nonmagical weapon it can see within 30' of it and magically warps it. If weapon is being worn or carried creature doing so can prevent warping via DC 16 Wis save. Warped weapon deals only half its normal damage on a hit and creature wielding warped weapon has disadvantage on attack rolls with it. A creature can repair a warped weapon with mending spell or by spending a short rest repairing it with the appropriate tools.",
+    "parent": "tob3_npc-cultist-psychophant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1758,7 +3200,21 @@
     "parent": "tob3_npc-field-commander",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_npc-first-servant_healing-hands",
+  "fields": {
+    "name": "Healing Hands",
+    "desc": "Touches a creature within 5 ft. of it: creature regains 14 (4d6) hp.",
+    "parent": "tob3_npc-first-servant",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1772,7 +3228,7 @@
     "parent": "tob3_npc-frost-afflicted",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1786,7 +3242,21 @@
     "parent": "tob3_npc-infested-duelist",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_npc-infiltrator_cunning-action",
+  "fields": {
+    "name": "Cunning Action",
+    "desc": "Takes the Dash Disengage or Hide action.",
+    "parent": "tob3_npc-infiltrator",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1800,7 +3270,7 @@
     "parent": "tob3_npc-merchant-captain",
     "uses_type": "PER_DAY",
     "uses_param": 4,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1814,7 +3284,7 @@
     "parent": "tob3_npc-warlock-of-the-genie-lord",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1828,7 +3298,7 @@
     "parent": "tob3_npc-wind-acolyte",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1842,7 +3312,21 @@
     "parent": "tob3_npc-wind-acolyte",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_obeleric_defensive-roll",
+  "fields": {
+    "name": "Defensive Roll",
+    "desc": "Can roll itself into a boulder-like defensive form or back into its tentacled true form. While in defensive form it has resistance to B/P/S damage from nonmagical attacks can’t make Tentacle Slam or Spit Acid attacks and can’t use Reflux.",
+    "parent": "tob3_obeleric",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1856,7 +3340,7 @@
     "parent": "tob3_obeleric",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1870,7 +3354,7 @@
     "parent": "tob3_ogre-alleybasher",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1884,7 +3368,35 @@
     "parent": "tob3_ogre-black-sun",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ogre-rainforest_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into a Large boar or back into its true ogre form. Its stats are the same in each form. Any equipment it is wearing or carrying isn’t transformed. Reverts on death.",
+    "parent": "tob3_ogre-rainforest",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ogre-rockchewer_quick-chew",
+  "fields": {
+    "name": "Quick Chew",
+    "desc": "Uses Chew Rock.",
+    "parent": "tob3_ogre-rockchewer",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1898,7 +3410,7 @@
     "parent": "tob3_ogre-rockchewer",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1912,7 +3424,21 @@
     "parent": "tob3_ogre-void-blessed",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_old-salt_cunning-action",
+  "fields": {
+    "name": "Cunning Action",
+    "desc": "Take Dash Disengage or Hide.",
+    "parent": "tob3_old-salt",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1926,7 +3452,7 @@
     "parent": "tob3_ooze-manure",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1982,7 +3508,7 @@
     "parent": "tob3_ooze-scintillating",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1996,7 +3522,35 @@
     "parent": "tob3_ooze-sinkhole",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ooze-sinkhole_stretch-body",
+  "fields": {
+    "name": "Stretch Body",
+    "desc": "Stretches body around inner walls of a pit sinkhole or other circular opening in the ground. Stretched this way it forms a hollow cylinder up to 25 ft. tall up to 25 ft. radius. Ooze can end stretch as a bonus action occupying nearest unoccupied space to the hole.",
+    "parent": "tob3_ooze-sinkhole",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_painted-phantasm_painting-portal",
+  "fields": {
+    "name": "Painting Portal",
+    "desc": "Uses 10 ft. of move to step magically into one artwork within reach and emerge from 2nd artwork within 100' of 1st appearing in unoccupied space within 5 ft. of 2nd. If both are Large or larger can bring up to 3 willing creatures.",
+    "parent": "tob3_painted-phantasm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2010,7 +3564,7 @@
     "parent": "tob3_porcellina",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2038,7 +3592,7 @@
     "parent": "tob3_primordial-matriarch",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2094,7 +3648,7 @@
     "parent": "tob3_puffinfolk",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2108,7 +3662,21 @@
     "parent": "tob3_pyrrhic-podthrower",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_quagga_war-surge",
+  "fields": {
+    "name": "War Surge",
+    "desc": "When the quagga reduces a creature to 0 hp with melee attack on its turn the quagga can move up to half its speed and make a Twin Blade attack.",
+    "parent": "tob3_quagga",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2122,7 +3690,7 @@
     "parent": "tob3_rafflesian",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2136,7 +3704,21 @@
     "parent": "tob3_rakshasa-myrmidon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_rakshasa-pustakam_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into Tiny object or back into true fiend form. Its stats except size are same in each form. Items worn/carried not transformed. Reverts on death.",
+    "parent": "tob3_rakshasa-pustakam",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2150,7 +3732,35 @@
     "parent": "tob3_rakshasa-servitor",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_rakshasa-slayer_cunning-action",
+  "fields": {
+    "name": "Cunning Action",
+    "desc": "Takes the Dash Disengage or Hide action.",
+    "parent": "tob3_rakshasa-slayer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_rakshasa-slayer_gain-the-upper-hand",
+  "fields": {
+    "name": "Gain the Upper Hand",
+    "desc": "The slayer studies one creature it can see within 30' of it granting the slayer advantage on the next attack roll it makes vs. the target before start of the slayer’s next turn. If the attack hits slayer’s weapon attack deals extra 9 (2d8) piercing damage.",
+    "parent": "tob3_rakshasa-slayer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2164,7 +3774,7 @@
     "parent": "tob3_rakshasa-slayer",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2178,7 +3788,35 @@
     "parent": "tob3_relentless-hound",
     "uses_type": "PER_DAY",
     "uses_param": 3,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_rochade_relay",
+  "fields": {
+    "name": "Relay",
+    "desc": "Teleports one object it is holding that weighs up to 10 pounds into empty hand of one friendly creature it can see within 30' of it. If target isn’t a rochade it must make DC 14 Dex save to catch the object otherwise object falls to the ground in a space within 5 ft. of target.",
+    "parent": "tob3_rochade",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_rochade_short-step",
+  "fields": {
+    "name": "Short Step",
+    "desc": "Teleports to unoccupied space it can see within 15 ft..",
+    "parent": "tob3_rochade",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2192,7 +3830,7 @@
     "parent": "tob3_rochade",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2206,7 +3844,63 @@
     "parent": "tob3_scarab-ruin",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_scarsupial_scrabble",
+  "fields": {
+    "name": "Scrabble",
+    "desc": "Takes the Dash or Disengage action",
+    "parent": "tob3_scarsupial",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_scorchrunner-jackal_daylight-skirmish",
+  "fields": {
+    "name": "Daylight Skirmish",
+    "desc": "While in sunlight the jackal takes the Dash or Dodge action.",
+    "parent": "tob3_scorchrunner-jackal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_shadow-lurker_shadows-embrace",
+  "fields": {
+    "name": "Shadow’s Embrace",
+    "desc": "Dim light/darkness: Hide action.",
+    "parent": "tob3_shadow-lurker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_shetani_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Transforms into a Large or smaller Beast or Humanoid or back into its true form which is a Fiend. Without wings it loses its flying speed. Its statistics other than size and speed are the same in each form. Items worn/carried transformed as desired by the shetani taking whatever color or shape it deems appropriate. Reverts on death.",
+    "parent": "tob3_shetani",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2255,6 +3949,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob3_slithy-tove_hidden-step",
+  "fields": {
+    "name": "Hidden Step",
+    "desc": "Magically teleports along with any equipment it is wearing or carrying up to 30' to an unoccupied space it can see and takes the Hide action.",
+    "parent": "tob3_slithy-tove",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_snallygaster_nimble-flier",
+  "fields": {
+    "name": "Nimble Flier",
+    "desc": "Takes the Dash or Disengage action. It must be flying to use this bonus action.",
+    "parent": "tob3_snallygaster",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob3_snallygaster_parry-spell",
   "fields": {
     "name": "Parry Spell",
@@ -2262,7 +3984,49 @@
     "parent": "tob3_snallygaster",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_sodwose_grass-step",
+  "fields": {
+    "name": "Grass Step",
+    "desc": "Teleports along with any equipment it is wearing or carrying up to 30' to an unoccupied spot it sees. The origin and destination spaces must contain grass.",
+    "parent": "tob3_sodwose",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_sodwose_set-snare",
+  "fields": {
+    "name": "Set Snare",
+    "desc": "Creates a snare in a square area it can see within 30' of it that is 5 ft. on a side and 50%+ grass. 1st creature to moves into that space within next min: DC 15 Str save or be restrained by grasses. A creature including restrained creature can use action to free restrained creature via DC 15 Str check. It can have at most 3 snares set at a time. If it sets a 4th oldest ceases to function.",
+    "parent": "tob3_sodwose",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_stargazer_reel",
+  "fields": {
+    "name": "Reel",
+    "desc": "Pulls up to 2 creatures grappled by it up to 15 ft. straight to it.",
+    "parent": "tob3_stargazer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2276,7 +4040,21 @@
     "parent": "tob3_stargazer",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_swampgas-shade_swampland-stealth",
+  "fields": {
+    "name": "Swampland Stealth",
+    "desc": "Takes the Hide action. It must be in swampy terrain to use this bonus action.",
+    "parent": "tob3_swampgas-shade",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2325,6 +4103,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob3_the-flesh_assume-form",
+  "fields": {
+    "name": "Assume Form",
+    "desc": "Consumes corpse of Med or smaller Humanoid or Beast within 5 ft. and transforms into it. Stats other than size are the same in new form. Any items worn/carried meld into new form. Can’t activate use wield or otherwise benefit from any of its equipment. It reverts to its true aberrant form if it dies makes a Manipulate Flesh attack or uses Assume Form while transformed.",
+    "parent": "tob3_the-flesh",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob3_thripper_glamour-counter",
   "fields": {
     "name": "Glamour Counter",
@@ -2332,7 +4124,21 @@
     "parent": "tob3_thripper",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_tigebra_hypnotic-gaze",
+  "fields": {
+    "name": "Hypnotic Gaze",
+    "desc": "Gazes on one creature it can see within 60' of it. If target can see it: paralyzed until end of its next turn (DC 17 Wis negates immune to tigebra’s Hypnotic Gaze 24 hrs).",
+    "parent": "tob3_tigebra",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2346,7 +4152,7 @@
     "parent": "tob3_tripwire-patch",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2360,7 +4166,7 @@
     "parent": "tob3_trollkin-fire-shaman",
     "uses_type": "PER_DAY",
     "uses_param": 2,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2374,7 +4180,49 @@
     "parent": "tob3_trollkin-ironmonger",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_trollkin-ragecaster_ragecasting",
+  "fields": {
+    "name": "Ragecasting",
+    "desc": "Enters special rage that lets it channel elemental power for 1 min. While ragecasting: disadvantage on Wis saves and gains fly speed of 60'. It can end ragecasting as a bonus action. When ragecasting ends it descends 60'/round until it lands on a solid surface and can continue concentrating on spell it cast while ragecasting.",
+    "parent": "tob3_trollkin-ragecaster",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_truant-devourer_dusty-step",
+  "fields": {
+    "name": "Dusty Step",
+    "desc": "Teleports  with items worn/carried up to 60' to unoccupied space it can see. Dust cloud appears at origin and destination.",
+    "parent": "tob3_truant-devourer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_vampiric-vanguard_fleet-of-foot",
+  "fields": {
+    "name": "Fleet of Foot",
+    "desc": "Takes the Dash action.",
+    "parent": "tob3_vampiric-vanguard",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2388,7 +4236,35 @@
     "parent": "tob3_veritigibbet",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_waterkledde_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Magically transforms into a Small or Med Beast or back into its true fiendish form. Without wings it loses its flying speed. Its statistics other than its size and speed are the same in each form. No matter the form its eyes are always an unnatural green. Any equipment it is wearing or carrying isn’t transformed. Reverts on death.",
+    "parent": "tob3_waterkledde",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_waterkledde_supernatural-speed",
+  "fields": {
+    "name": "Supernatural Speed",
+    "desc": "Takes Dash or Disengage.",
+    "parent": "tob3_waterkledde",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2402,7 +4278,7 @@
     "parent": "tob3_wilderness-crone",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2416,7 +4292,35 @@
     "parent": "tob3_wind-witch",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_wrackwraith_wrack-jump",
+  "fields": {
+    "name": "Wrack Jump",
+    "desc": "Leaves current pile magically teleports to another within 60' of it and uses Animate Wrack.",
+    "parent": "tob3_wrackwraith",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_zombie-voidclaw_nimble-fighter",
+  "fields": {
+    "name": "Nimble Fighter",
+    "desc": "Takes Dash or Disengage action.",
+    "parent": "tob3_zombie-voidclaw",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }

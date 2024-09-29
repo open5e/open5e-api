@@ -204,7 +204,7 @@
     "parent": "tob-2023_adult-cave-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -274,9 +274,9 @@
     "parent": "tob-2023_adult-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -323,6 +323,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-flame-dragon_shifting-flames",
+  "fields": {
+    "name": "Shifting Flames",
+    "desc": "The dragon magically transforms into a Huge or smaller fire-based Elemental (such as a salamander, magma mephit, or fire elemental) or back into its true form, which is a Dragon. Without wings or other way of flying, it loses its flying speed. Its statistics, other than its size and speed, are the same in each form. Any equipment it is wearing or carrying transforms with it. It reverts to its true form if it dies.",
+    "parent": "tob-2023_adult-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-flame-dragon_tail",
   "fields": {
     "name": "Tail",
@@ -344,9 +358,9 @@
     "parent": "tob-2023_adult-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -358,7 +372,7 @@
     "parent": "tob-2023_adult-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": 2
   }
@@ -778,7 +792,7 @@
     "parent": "tob-2023_adult-void-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -932,9 +946,23 @@
     "parent": "tob-2023_akyishigal",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_akyishigal_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Akyishigal magically transforms into a Large or smaller insectoid Beast or back into his true form, which is a Fiend. His statistics, other than his size, are the same in each form. Any equipment he is wearing or carrying transforms with him. He reverts to his true form if he dies.",
+    "parent": "tob-2023_akyishigal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -974,7 +1002,7 @@
     "parent": "tob-2023_akyishigal",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": 2
   }
@@ -1002,9 +1030,9 @@
     "parent": "tob-2023_akyishigal",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -1534,7 +1562,7 @@
     "parent": "tob-2023_ancient-cave-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1604,9 +1632,9 @@
     "parent": "tob-2023_ancient-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -1653,6 +1681,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-flame-dragon_shifting-flames",
+  "fields": {
+    "name": "Shifting Flames",
+    "desc": "The dragon magically transforms into a Gargantuan or smaller fire-based Elemental (such as a salamander, magma mephit, or fire elemental) or back into its true form, which is a Dragon. Without wings or other way of flying, it loses its flying speed. Its statistics, other than its size and speed, are the same in each form. Any equipment it is wearing or carrying transforms with it. It reverts to its true form if it dies.",
+    "parent": "tob-2023_ancient-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ancient-flame-dragon_tail",
   "fields": {
     "name": "Tail",
@@ -1674,9 +1716,9 @@
     "parent": "tob-2023_ancient-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -1688,7 +1730,7 @@
     "parent": "tob-2023_ancient-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": 2
   }
@@ -2178,7 +2220,7 @@
     "parent": "tob-2023_ancient-void-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2416,7 +2458,7 @@
     "parent": "tob-2023_annelidast",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2487,6 +2529,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_anubian_sand-step",
+  "fields": {
+    "name": "Sand Step",
+    "desc": "The anubian collapses into loose sand and teleports up to 30 feet to an unoccupied space it can see, reforming in that space. If the destination space contains sand, the anubian can immediately Hide. The anubian can’t use Sand Step while Haboob is active.",
+    "parent": "tob-2023_anubian",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2605,6 +2661,62 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_aridni_confusion",
+  "fields": {
+    "name": "Confusion",
+    "desc": "The target can’t take reactions and acts randomly until the end of its next turn, as if it had failed the saving throw against the confusion spell.",
+    "parent": "tob-2023_aridni",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_aridni_enchanted-arrows",
+  "fields": {
+    "name": "Enchanted Arrows",
+    "desc": "The aridni enchants one arrow with minor magic. The next time it hits a creature with a Pixie Bow attack before the start of its next turn, the target must succeed on a DC 14 Wisdom saving throw or suffer one of the following effects:",
+    "parent": "tob-2023_aridni",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_aridni_fear",
+  "fields": {
+    "name": "Fear",
+    "desc": "The target is frightened until the end of its next turn and must spend its next turn moving away from the aridni by the safest available route.",
+    "parent": "tob-2023_aridni",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_aridni_laughter",
+  "fields": {
+    "name": "Laughter",
+    "desc": "The target falls prone and is incapacitated with laughter until the end of its next turn.",
+    "parent": "tob-2023_aridni",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_aridni_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -2647,6 +2759,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_aridni_sleep",
+  "fields": {
+    "name": "Sleep",
+    "desc": "The target falls unconscious for 1 minute. It wakes up if it takes damage or if another creature takes an action to shake it awake.\n\n\n\n\nAridni in Midgard",
+    "parent": "tob-2023_aridni",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_aridni_spellcasting",
   "fields": {
     "name": "Spellcasting",
@@ -2669,6 +2795,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_arx_emplace-wall",
+  "fields": {
+    "name": "Emplace Wall",
+    "desc": "The arx extends its hardened elytra and casts them into the ground, creating a wall. The wall is 3 inches thick and is composed of two 10-foot-by-10-foot panels. The panels must connect perpendicular to each other, forming a corner behind the arx. If the wall falls in a creature’s space when the arx places it, the creature must make a DC 16 Dexterity saving throw. On a failure, the creature takes 10 (3d6) bludgeoning damage, and the arx determines to which side of the wall the creature is pushed. On a success, the creature takes half the damage and decides to which side of the wall it is pushed.",
+    "parent": "tob-2023_arx",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2711,6 +2851,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_asanbosam_arboreal-escape",
+  "fields": {
+    "name": "Arboreal Escape",
+    "desc": "While in a tree, the asanbosam takes the Disengage or Hide action.",
+    "parent": "tob-2023_asanbosam",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2962,7 +3116,7 @@
     "parent": "tob-2023_azza-gremlin",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3019,6 +3173,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_baba-yagas-horsemen_temporal-strike",
+  "fields": {
+    "name": "Temporal Strike",
+    "desc": "One creature the horseman can see and that the horseman hit with a Horseman’s Bolt or Longsword attack within the last minute must succeed on a DC 17 Constitution saving throw or age 16 (3d10) years. A creature that ages this way has disadvantage on attack rolls, ability checks, and saving throws that use Strength, Dexterity, and Constitution until the aging is reversed. A creature that ages beyond its lifespan dies immediately. The aging lasts until the creature finishes a long rest, or until it is reversed by a greater restoration spell or similar magic. On a successful saving throw, the creature is immune to the horseman’s Temporal Strike for 24 hours.",
+    "parent": "tob-2023_baba-yagas-horsemen",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3144,7 +3312,7 @@
     "parent": "tob-2023_bandit-lord",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3158,7 +3326,7 @@
     "parent": "tob-2023_bandit-lord",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3249,6 +3417,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bear-king_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The Bear King transforms into a Large brown bear, or a Large bear-Humanoid hybrid, or back into his true form, which is Fey. His statistics other than his size, are the same in each form. Any equipment he is wearing or carrying isn’t transformed. The Bear King reverts to his true form if he dies.",
+    "parent": "tob-2023_bear-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_bear-king_claw",
   "fields": {
     "name": "Claw",
@@ -3270,7 +3452,7 @@
     "parent": "tob-2023_bear-king",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": 2
   }
@@ -3298,9 +3480,9 @@
     "parent": "tob-2023_bear-king",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -3326,9 +3508,9 @@
     "parent": "tob-2023_bear-king",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -3369,6 +3551,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bearfolk_frenzy",
+  "fields": {
+    "name": "Frenzy",
+    "desc": "The bearfolk triggers a berserk frenzy that lasts 1 minute. While in frenzy, it has resistance to bludgeoning, piercing, and slashing damage and has advantage on attack rolls. Attack rolls made against a frenzied bearfolk have advantage.",
+    "parent": "tob-2023_bearfolk",
+    "uses_type": "RECHARGE_AFTER_REST",
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3893,6 +4089,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_boloti_vortex-form",
+  "fields": {
+    "name": "Vortex Form",
+    "desc": "The boloti magically transforms into a Small vortex of swirling, churning water or back into its true form, which is Fey. The boloti can transform into its vortex form only while at least half of its body is submerged in water, and any creature it is grappling with Whirlpool is freed if the boloti transforms back to its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying transforms with it. It reverts to its true form if it dies.",
+    "parent": "tob-2023_boloti",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_boloti_whirlpool",
   "fields": {
     "name": "Whirlpool",
@@ -3958,6 +4168,20 @@
     "uses_param": null,
     "action_type": "ACTION",
     "form_condition": "Shapeless Form Only",
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bone-collective_shape-swarm",
+  "fields": {
+    "name": "Shape Swarm",
+    "desc": "The bone collective can shape itself into a Small Humanoid or back into a shapeless form of Tiny bones. Its statistics are the same in each form, and it can’t regain hp or gain temporary hp. It can’t take on a Humanoid form if it is occupying the space of another creature.",
+    "parent": "tob-2023_bone-collective",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
     "legendary_cost": null
   }
 },
@@ -4054,7 +4278,7 @@
     "parent": "tob-2023_bonepowder-ghoul",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4112,6 +4336,34 @@
     "uses_param": null,
     "action_type": "ACTION",
     "form_condition": "Giant Hyena or Hybrid Form Only",
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bouda_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The bouda transforms into a human, a hyena, or back into its true form, which is a hyena-human hybrid. Its statistics, other than its speed, are the same in each form. Any equipment it is wearing or carrying isn’t transformed. It reverts to its true form if it dies, then crumbles to dust moments later.",
+    "parent": "tob-2023_bouda",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bouda_defiling-smear",
+  "fields": {
+    "name": "Defiling Smear",
+    "desc": "The bouda secretes a disgusting whitish-yellow substance with the viscosity of tar and smears the substance on an object, unoccupied space, or creature within 5 feet of it. An unwilling creature must succeed on a DC 15 Dexterity saving throw to avoid the smear. Each creature, other than a bouda or hyena, that starts its turn within 30 feet of the smeared target must succeed on a DC 15 Constitution saving throw or be poisoned for 1 minute. If a creature’s saving throw is successful or the effect ends for it, the creature is immune to that source of Defiling Smear for the next 24 hours. The stench of a smear remains potent for 7 days or until removed by the greater restoration spell or similar magic.",
+    "parent": "tob-2023_bouda",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
     "legendary_cost": null
   }
 },
@@ -4376,7 +4628,7 @@
     "parent": "tob-2023_cactid",
     "uses_type": "PER_DAY",
     "uses_param": 1,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4460,9 +4712,23 @@
     "parent": "tob-2023_camazotz",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_camazotz_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Camazotz magically transforms into a Large giant bat covered in smoldering ashes, or back into his true form, which is a Fiend. His statistics, other than his size, are the same in each form. Any equipment he is wearing or carrying transforms with him. He turns into a pile of greasy ash if destroyed.",
+    "parent": "tob-2023_camazotz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -4488,9 +4754,9 @@
     "parent": "tob-2023_camazotz",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -4502,7 +4768,7 @@
     "parent": "tob-2023_camazotz",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": 2
   }
@@ -4530,9 +4796,9 @@
     "parent": "tob-2023_camazotz",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -4565,6 +4831,62 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_cambium_choleric-flux",
+  "fields": {
+    "name": "Choleric Flux",
+    "desc": "The target becomes confused for 1 minute. This effect works as if the target failed a saving throw against the confusion spell, except the cambium doesn’t have to maintain concentration.",
+    "parent": "tob-2023_cambium",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_cambium_damage-ability",
+  "fields": {
+    "name": "Damage Ability",
+    "desc": "The cambium twists the bodily humors of a creature within 30 feet of it that isn’t a Construct or Undead and that it hit with Needle Fingers in the past minute. The target must succeed on a DC 17 Constitution saving throw or its Strength, Dexterity, or Constitution score (the cambium’s choice) is reduced by 1d4. The target falls unconscious if this reduces an ability score to 0. This reduction lasts until the target finishes a long rest.",
+    "parent": "tob-2023_cambium",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_cambium_imbalance-humors",
+  "fields": {
+    "name": "Imbalance Humors",
+    "desc": "If the cambium has hit a creature that isn’t a Construct or Undead with Needle Fingers in the past minute, it can cause a surge in one of the target’s bodily humors, causing an imbalance. The target must succeed on a DC 17 Constitution saving throw or suffer one of the following effects of the cambium’s choice. Unless noted otherwise, the target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+    "parent": "tob-2023_cambium",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_cambium_melancholic-flux",
+  "fields": {
+    "name": "Melancholic Flux",
+    "desc": "The target is incapacitated and its speed is halved for 1 minute.",
+    "parent": "tob-2023_cambium",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_cambium_needle-fingers",
   "fields": {
     "name": "Needle Fingers",
@@ -4579,6 +4901,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_cambium_phlegmatic-flux",
+  "fields": {
+    "name": "Phlegmatic Flux",
+    "desc": "The target is poisoned for 1 minute.\n\n\nCarrion Beetle\n\nThe beetles wore golden bridles and carried huge leather sacks of stone and guano. They marched without stopping; dozens, even hundreds, bringing fresh earth to the white-fungus trees of the great forests. Their claws skittered with a sound like horseshoes slipping on stone, but their multiple legs ensured they never fell. The air around them singed the nostrils with the taint of acid.",
+    "parent": "tob-2023_cambium",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_cambium_poison-ray",
   "fields": {
     "name": "Poison Ray",
@@ -4587,6 +4923,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_cambium_sanguine-flux",
+  "fields": {
+    "name": "Sanguine Flux",
+    "desc": "The target can’t regain hp—naturally or magically—until after it finishes a long rest.",
+    "parent": "tob-2023_cambium",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4691,6 +5041,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_caustic-charger_slurp",
+  "fields": {
+    "name": "Slurp",
+    "desc": "The caustic charger feeds on a creature paralyzed by its Tentacles attack. The target must succeed on a DC 15 Constitution saving throw or its hp maximum is reduced by half the amount of acid damage dealt by the Tentacles attack that caused the paralysis, and the charger regains hp equal to that amount. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hp maximum to 0.",
+    "parent": "tob-2023_caustic-charger",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_caustic-charger_tentacles",
   "fields": {
     "name": "Tentacles",
@@ -4782,7 +5146,7 @@
     "parent": "tob-2023_chained-angel",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4853,6 +5217,34 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_chelicerae_nimble-moves",
+  "fields": {
+    "name": "Nimble Moves",
+    "desc": "The chelicerae takes the Dash or Disengage action.",
+    "parent": "tob-2023_chelicerae",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_chelicerae_siphon-magic",
+  "fields": {
+    "name": "Siphon Magic",
+    "desc": "The chelicerae siphons magic from a spellcaster it is grappling. The target must succeed on a DC 15 Intelligence saving throw or lose one spell slot of the highest level it can cast. The chelicerae then regains an expended use of its Spellcasting.",
+    "parent": "tob-2023_chelicerae",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4978,7 +5370,7 @@
     "parent": "tob-2023_chieftain",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5188,7 +5580,7 @@
     "parent": "tob-2023_chronalmental",
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 4,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5245,6 +5637,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_citrullus_creeping-seedlings",
+  "fields": {
+    "name": "Creeping Seedlings",
+    "desc": "The seeds in the sticky juice grow viny tendrils and drag each creature restrained by Bile Spray and Gush up to 25 feet straight toward the citrullus.",
+    "parent": "tob-2023_citrullus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5461,6 +5867,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_clockwork-huntsman_reel",
+  "fields": {
+    "name": "Reel",
+    "desc": "The clockwork huntsman pulls a creature restrained by its net up to 15 feet straight toward it.",
+    "parent": "tob-2023_clockwork-huntsman",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_clockwork-huntsman_slam",
   "fields": {
     "name": "Slam",
@@ -5483,6 +5903,20 @@
     "uses_type": "PER_DAY",
     "uses_param": 4,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_clockwork-myrmidon_grease-spray",
+  "fields": {
+    "name": "Grease Spray",
+    "desc": "The clockwork myrmidon’s chest fires a spray of alchemical grease on a point on the ground within 30 feet of it. The grease covers a 10-foot square centered on that point, and the area is difficult terrain. Each creature standing in the area must succeed on a DC 16 Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a DC 16 Dexterity saving throw or fall prone.",
+    "parent": "tob-2023_clockwork-myrmidon",
+    "uses_type": "PER_DAY",
+    "uses_param": 4,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5553,6 +5987,20 @@
     "uses_type": "PER_DAY",
     "uses_param": 4,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_clockwork-watchman_reel",
+  "fields": {
+    "name": "Reel",
+    "desc": "The clockwork watchman pulls a creature restrained by its net up to 15 feet straight toward it.",
+    "parent": "tob-2023_clockwork-watchman",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5665,6 +6113,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_cobbleswarm_shift-and-tumble",
+  "fields": {
+    "name": "Shift and Tumble",
+    "desc": "The cobbleswarm pushes a prone creature in its space up to 5 feet away from it.",
+    "parent": "tob-2023_cobbleswarm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5811,6 +6273,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_corrupted-chieftain_aggressive",
+  "fields": {
+    "name": "Aggressive",
+    "desc": "The corrupted chieftain moves up to its speed toward a hostile creature it can see.",
+    "parent": "tob-2023_corrupted-chieftain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_corrupted-chieftain_chieftains-command",
   "fields": {
     "name": "Chieftain’s Command",
@@ -5937,6 +6413,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_corrupting-ooze_reshape-body",
+  "fields": {
+    "name": "Reshape Body",
+    "desc": "The corrupting ooze can reshape its mass into a vaguely Humanoid shape or back into its amorphous shape. It reverts to its amorphous shape if it dies. While in a Humanoid shape, it can take any action that requires hands, except it can’t wield weapons or a shield or don armor.",
+    "parent": "tob-2023_corrupting-ooze",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_corrupting-ooze_slam",
   "fields": {
     "name": "Slam",
@@ -6021,6 +6511,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_crystalline-devil_betraying-carbuncle",
+  "fields": {
+    "name": "Betraying Carbuncle",
+    "desc": "The crystalline devil magically transforms into a Small or smaller gemstone or back into its true form, which is a Fiend. Its statistics, other than its size, are the same in each form, except it can’t move or speak when in its gemstone form. Any equipment it is wearing or carrying transforms with it. It reverts to its true from if it dies.",
+    "parent": "tob-2023_crystalline-devil",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_crystalline-devil_crystalline-spray",
   "fields": {
     "name": "Crystalline Spray ",
@@ -6058,6 +6562,20 @@
     "uses_param": null,
     "action_type": "ACTION",
     "form_condition": "Fiend Form Only",
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_crystalline-devil_summon-devil",
+  "fields": {
+    "name": "Summon Devil",
+    "desc": "The crystalline devil magically calls one jewel-encrusted, fiendish animated armor that has the crystalline devil’s damage resistances and immunities. The crystalline devil has a 25 percent chance of calling one crystalline devil instead. The called creature arrives in 1d4 rounds, acting as an ally of the devil and obeying its telepathic commands. The creature remains for 1 hour, until the devil dies, or until the devil dismisses it as a bonus action.",
+    "parent": "tob-2023_crystalline-devil",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
     "legendary_cost": null
   }
 },
@@ -6126,7 +6644,7 @@
     "parent": "tob-2023_dau",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6182,7 +6700,7 @@
     "parent": "tob-2023_dau",
     "uses_type": "PER_DAY",
     "uses_param": 1,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6295,6 +6813,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_deathwisp_shadow-traveler",
+  "fields": {
+    "name": "Shadow Traveler",
+    "desc": "While in shadows, dim light, or darkness, the deathwisp disappears into the darkness and reappears in an unoccupied space it can see within 30 feet. A tendril of inky smoke appears at the origin and destination when it uses this bonus action.",
+    "parent": "tob-2023_deathwisp",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6630,7 +7162,7 @@
     "parent": "tob-2023_devilbound-gnome",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6701,6 +7233,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_dipsa_translucent",
+  "fields": {
+    "name": "Translucent",
+    "desc": "The dipsa takes the Hide action.",
+    "parent": "tob-2023_dipsa",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6798,7 +7344,7 @@
     "parent": "tob-2023_dogmole-juggernaut",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6854,7 +7400,7 @@
     "parent": "tob-2023_dogmole",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6883,6 +7429,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_domovoi_protectors-step",
+  "fields": {
+    "name": "Protector’s Step",
+    "desc": "The domovoi magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space within a structure protected by its House Guardian trait or within 30 feet of the exterior of that structure. Swirls of golden light, sparkles of starlight, or tendrils of inky shadow (the domovoi’s choice) appear at the origin and destination when it uses this bonus action.",
+    "parent": "tob-2023_domovoi",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6953,6 +7513,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_dorreq_stone-step",
+  "fields": {
+    "name": "Stone Step",
+    "desc": "The dorreq teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see. The origin and destination spaces must contain a stone or rocky surface, such as a cliff face or rocky terrain.",
+    "parent": "tob-2023_dorreq",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7169,6 +7743,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_dream-eater_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The dream eater magically transforms into a Small or Medium humanoid it has seen, or back into its true form, which is a Fiend. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying transforms with it. It reverts to its true form if it dies.",
+    "parent": "tob-2023_dream-eater",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_dream-eater_claw",
   "fields": {
     "name": "Claw",
@@ -7281,6 +7869,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_drowned-maiden_reel",
+  "fields": {
+    "name": "Reel",
+    "desc": "The drowned maiden pulls each creature grappled by her up to 15 feet straight toward her.",
+    "parent": "tob-2023_drowned-maiden",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_duelist_dagger",
   "fields": {
     "name": "Dagger",
@@ -7316,7 +7918,7 @@
     "parent": "tob-2023_duelist",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7331,6 +7933,34 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_duelist_shadow-traveler",
+  "fields": {
+    "name": "Shadow Traveler",
+    "desc": "While in shadows, dim light, or darkness, the shadow fey disappears into the darkness and reappears in an unoccupied space it can see within 30 feet. A tendril of inky smoke appears at the origin and destination when it uses this bonus action.",
+    "parent": "tob-2023_duelist",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_dullahan_deathly-doom",
+  "fields": {
+    "name": "Deathly Doom",
+    "desc": "The dullahan magically dooms a creature for 1 hour. It can have only one creature doomed at a time. If it dooms another, the effect on the previous target ends. The dullahan knows the direction to the doomed creature as long as both are on the same plane of existence.",
+    "parent": "tob-2023_dullahan",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7387,6 +8017,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_dune-mimic_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The dune mimic transforms into a Huge sand- or gravel-covered object, shapes itself into a sandy or rocky terrain feature no larger than a 20-foot cube or transforms back into its true, amorphous form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn’t transformed. It reverts to its true form if it dies.",
+    "parent": "tob-2023_dune-mimic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7610,7 +8254,7 @@
     "parent": "tob-2023_eala",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7625,6 +8269,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_eater-of-dust_hungry-step",
+  "fields": {
+    "name": "Hungry Step",
+    "desc": "The eater of dust magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space within 10 feet of a creature that isn’t a Construct or Undead.",
+    "parent": "tob-2023_eater-of-dust",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7729,6 +8387,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_eel-hound_water-step",
+  "fields": {
+    "name": "Water Step",
+    "desc": "The eel hound teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see. The origin and destination spaces must contain enough water to partially submerge the hound.",
+    "parent": "tob-2023_eel-hound",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_einherjar_battleaxe",
   "fields": {
     "name": "Battleaxe",
@@ -7821,6 +8493,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_elder-shadow-drake_shadow-step",
+  "fields": {
+    "name": "Shadow Step",
+    "desc": "The drake teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see. The origin and destination spaces must be in dim light or darkness.",
+    "parent": "tob-2023_elder-shadow-drake",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8002,7 +8688,7 @@
     "parent": "tob-2023_emerald-order-cult-leader",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8045,6 +8731,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_empty-cloak_protective-embrace",
+  "fields": {
+    "name": "Protective Embrace",
+    "desc": "When a creature the cloak can see attacks a creature in the cloak’s space, the cloak can briefly wrap itself around the creature in its space. The creature in its space takes only half the damage from the attack, and the cloak takes the other half.",
+    "parent": "tob-2023_empty-cloak",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8149,6 +8849,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_enchantress_shadow-traveler",
+  "fields": {
+    "name": "Shadow Traveler",
+    "desc": "While in shadows, dim light, or darkness, the shadow fey disappears into the darkness and reappears in an unoccupied space it can see within 30 feet. A tendril of inky smoke appears at the origin and destination when it uses this bonus action.",
+    "parent": "tob-2023_enchantress",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_enchantress_spellcasting",
   "fields": {
     "name": "Spellcasting",
@@ -8157,6 +8871,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_eonic-drifter_call-to-the-future",
+  "fields": {
+    "name": "Call to the Future",
+    "desc": "The eonic drifter calls to a future version of itself, which appears in an unoccupied space the drifter can see within 30 feet of it. The drifter’s future self acts on the drifter’s turn, and each turn it makes one Time-Warping Staff attack against a creature of the drifter’s choice or uses the Help action to aid the drifter. The future self can be attacked and destroyed (AC 13; hp 30; resistance to bludgeoning, piercing, and slashing damage; immunity to poison and psychic damage), otherwise it remains until the drifter dismisses it as a bonus action or the drifter finishes a long rest. If the drifter’s future self is destroyed, the drifter must succeed on a DC 13 Wisdom saving throw or be stunned until the end of its next turn.",
+    "parent": "tob-2023_eonic-drifter",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8212,7 +8940,7 @@
     "parent": "tob-2023_erina-defender",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8359,6 +9087,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_far-darrig_nimble-woodsman",
+  "fields": {
+    "name": "Nimble Woodsman",
+    "desc": "The far darrig takes the Dash or Disengage action. The far darrig can use this bonus action only if it is in a forest.",
+    "parent": "tob-2023_far-darrig",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_far-darrig_woodland-friends",
   "fields": {
     "name": "Woodland Friends ",
@@ -8465,6 +9207,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_fellforged_burst-gears",
+  "fields": {
+    "name": "Burst Gears",
+    "desc": "The specter within the fellforged strains the construct’s body, sending broken springs and gears flying. Each creature within 5 feet of the fellforged must make a DC 14 Dexterity saving throw, taking 7 (2d6) piercing damage on a failed save, or half as much damage on a successful one. Each time the fellforged uses this bonus action, its speed is reduced by 5 feet, and it can’t use this bonus action if its speed is 0. Its speed returns to normal when it finishes a long rest.",
+    "parent": "tob-2023_fellforged",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8648,6 +9404,20 @@
     "uses_param": null,
     "action_type": "ACTION",
     "form_condition": "Bird Form Only",
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_fidele-angel_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The fidele angel transforms into a Medium or smaller Humanoid, a Large or smaller birdlike Beast, or back into its true form, which is a winged Celestial. Without wings, it loses its flying speed. Its statistics, other than its size and speed, are the same in each form. Any equipment it is wearing or carrying isn’t transformed. It reverts to its true form if it dies.",
+    "parent": "tob-2023_fidele-angel",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
     "legendary_cost": null
   }
 },
@@ -8961,6 +9731,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_folk-of-leng_etherealness",
+  "fields": {
+    "name": "Etherealness",
+    "desc": "The folk of Leng enters the Ethereal Plane from the Material Plane, or vice versa. It is visible on the Material Plane while it is in the Border Ethereal, and vice versa, yet it can’t affect or be affected by anything on the other plane.",
+    "parent": "tob-2023_folk-of-leng",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_folk-of-leng_hooked-spider-net",
   "fields": {
     "name": "Hooked Spider Net",
@@ -9059,6 +9843,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_forest-hunter_shadow-traveler",
+  "fields": {
+    "name": "Shadow Traveler",
+    "desc": "While in shadows, dim light, or darkness, the shadow fey disappears into the darkness and reappears in an unoccupied space it can see within 30 feet. A tendril of inky smoke appears at the origin and destination when it uses this bonus action.",
+    "parent": "tob-2023_forest-hunter",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_forest-marauder_boar-spear",
   "fields": {
     "name": "Boar Spear",
@@ -9067,6 +9865,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_forest-marauder_forest-ambusher",
+  "fields": {
+    "name": "Forest Ambusher",
+    "desc": "While in a forest, the forest marauder can take the Hide action.",
+    "parent": "tob-2023_forest-marauder",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9276,7 +10088,7 @@
     "parent": "tob-2023_gearforged-templar",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9332,7 +10144,7 @@
     "parent": "tob-2023_gearforged-templar",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9465,6 +10277,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ghostwalk-spider_ghostwalk",
+  "fields": {
+    "name": "Ghostwalk",
+    "desc": "The ghostwalk spider magically takes on a ghostly form or returns to its true, tangible form. Its statistics are the same in each form. Any equipment it is wearing or carrying becomes ghostly with it. It reverts to its true form if it dies.",
+    "parent": "tob-2023_ghostwalk-spider",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ghostwalk-spider_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -9557,6 +10383,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_gilded-devil_betrayal-of-riches",
+  "fields": {
+    "name": "Betrayal of Riches",
+    "desc": "One creature wearing jewelry (an object made of precious material and worth at least 100 gp) the gilded devil can see within 60 feet of it must make a DC 15 Wisdom saving throw. On a failure, the target takes 13 (3d8) bludgeoning damage and suffers an effect until it finishes a short rest. The effect is based on the location of the worn jewelry (devil’s choice if worn in multiple locations): on upper limbs, its melee damage is halved; on lower limbs, its speed is halved; on head, it is blinded or deafened (devil’s choice); on body, it has vulnerability to bludgeoning damage. On a success, the target takes half the damage and doesn’t suffer an additional effect.",
+    "parent": "tob-2023_gilded-devil",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9682,7 +10522,7 @@
     "parent": "tob-2023_glass-gator",
     "uses_type": "RECHARGE_AFTER_REST",
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9731,6 +10571,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_gnarljak_secure-tail",
+  "fields": {
+    "name": "Secure Tail",
+    "desc": "When within 10 feet of the ground, structure, wall, or other solid surface, the gnarljak can secure its tail spike on a point in the surface within 10 feet of it. While secured, the gnarljak can’t be knocked prone, it can’t move more than 10 feet from that point, and its Chain Tail attack’s reach is reduced to 5 feet. If the gnarljak is attached to a creature while its tail is secured, the creature is restrained until the gnarljak is no longer attached to it.",
+    "parent": "tob-2023_gnarljak",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_gnoll-havoc-runner_battleaxe",
   "fields": {
     "name": "Battleaxe",
@@ -9753,6 +10607,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_gnoll-havoc-runner_lightning-lope",
+  "fields": {
+    "name": "Lightning Lope",
+    "desc": "The gnoll takes the Dash or Disengage action.",
+    "parent": "tob-2023_gnoll-havoc-runner",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9941,6 +10809,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_grim-jester_jokers-shuffle",
+  "fields": {
+    "name": "Joker’s Shuffle",
+    "desc": "The grim jester exchanges locations with a Medium or smaller creature it can see within 60 feet of it. The jester and target each teleport to the other’s space, and each becomes covered in a magical illusion to look and sound like the other. A creature must take an action to visually inspect an illusion and succeed on a DC 19 Intelligence (Investigation) check to discern that the jester and target are disguised. The illusions last for 1 minute, until the jester dies, or until the jester dismisses them as a bonus action.",
+    "parent": "tob-2023_grim-jester",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_grim-jester_killing-joke",
   "fields": {
     "name": "Killing Joke",
@@ -10032,7 +10914,21 @@
     "parent": "tob-2023_guardian",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_guardian_shadow-traveler",
+  "fields": {
+    "name": "Shadow Traveler",
+    "desc": "While in shadows, dim light, or darkness, the shadow fey disappears into the darkness and reappears in an unoccupied space it can see within 30 feet. A tendril of inky smoke appears at the origin and destination when it uses this bonus action.",
+    "parent": "tob-2023_guardian",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -10263,6 +11159,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_haugbui_sepulchral-scrying",
+  "fields": {
+    "name": "Sepulchral Scrying",
+    "desc": "While within 1 mile of its burial mound, the haugbui creates an invisible sensor within 5 miles of the mound for 1 minute. When it uses this bonus action and as a bonus action on each of its turns for the duration, the haugbui can switch between using its own senses and projecting its senses through the sensor. While projecting its senses through the sensor, it can see, hear, telepathically communicate, and cast spells as if it was in the sensor’s space, and it is blinded and deafened with regard to its own senses. The sensor can be dispelled (DC 14).",
+    "parent": "tob-2023_haugbui",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_haugbui_spellcasting",
   "fields": {
     "name": "Spellcasting",
@@ -10299,6 +11209,20 @@
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 5,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_herald-of-blood_grant-blood-rage",
+  "fields": {
+    "name": "Grant Blood Rage",
+    "desc": "The herald of blood infuses reckless rage in one creature it can see within 60 feet of it that isn’t a Construct or Undead. The target must succeed on a DC 17 Constitution saving throw or be enraged for a number of rounds equal to the target’s Constitution modifier. While enraged, the target has advantage on all melee attack rolls, and attack rolls against it have advantage. When the rage ends, the target takes 13 (3d8) necrotic damage and suffers one level of exhaustion. A creature with any levels of exhaustion automatically succeeds on this saving throw.",
+    "parent": "tob-2023_herald-of-blood",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -10383,6 +11307,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_herald-of-darkness_shadow-shape",
+  "fields": {
+    "name": "Shadow Shape",
+    "desc": "The herald magically transforms into a Large shadow or back into its true form, which is a Fiend. Its statistics are the same in each form. Any equipment it is wearing or carrying transforms with it. It reverts to its true form if it dies.",
+    "parent": "tob-2023_herald-of-darkness",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -10487,6 +11425,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_horakh_shadow-stealth",
+  "fields": {
+    "name": "Shadow Stealth",
+    "desc": "While in dim light or darkness, the horakh takes the Hide action.",
+    "parent": "tob-2023_horakh",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_hound-of-the-night_bite",
   "fields": {
     "name": "Bite",
@@ -10550,9 +11502,9 @@
     "parent": "tob-2023_hraesvelgr",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -10571,6 +11523,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_hraesvelgr_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "Hraesvelgr transforms into a roc or back into his true form, which is a Giant. His statistics, other than his speed, are the same in each form. Any equipment he is wearing or carrying isn’t transformed. He reverts to his true form if he dies.",
+    "parent": "tob-2023_hraesvelgr",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_hraesvelgr_ear-splitting-screech",
   "fields": {
     "name": "Ear-Splitting Screech",
@@ -10578,7 +11544,7 @@
     "parent": "tob-2023_hraesvelgr",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": "Roc Form Only",
     "legendary_cost": 2
   }
@@ -10620,9 +11586,9 @@
     "parent": "tob-2023_hraesvelgr",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -10683,6 +11649,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_hulking-whelp_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The hulking whelp transforms into a Huge, hulking canine or back into its true whelp form, which is Fey. Its statistics, other than its size and creature type, are the same in each form. Any equipment it is wearing or carrying isn’t transformed. It reverts to its true form if it dies.",
+    "parent": "tob-2023_hulking-whelp",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_hulking-whelp_defensive-transformation",
   "fields": {
     "name": "Defensive Transformation",
@@ -10690,7 +11670,7 @@
     "parent": "tob-2023_hulking-whelp",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": "Whelp Form Only",
     "legendary_cost": null
   }
@@ -10816,7 +11796,7 @@
     "parent": "tob-2023_iaaffrat",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": "Shapeless Form Only",
     "legendary_cost": 3
   }
@@ -10865,6 +11845,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_iaaffrat_shape-swarm",
+  "fields": {
+    "name": "Shape Swarm",
+    "desc": "Ia’Affrat can shape himself into a Large or smaller Humanoid or back into a shapeless mass of Tiny insectoid Fiends. His statistics, other than his size, are the same in each form, and he can’t regain hp or gain temporary hp, except for the Consume Host legendary action. He can’t take on a Humanoid form if he is occupying the space of another creature.",
+    "parent": "tob-2023_iaaffrat",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_iaaffrat_teleport",
   "fields": {
     "name": "Teleport",
@@ -10872,9 +11866,9 @@
     "parent": "tob-2023_iaaffrat",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
-    "legendary_cost": 1
+    "legendary_cost": null
   }
 },
 {
@@ -10886,7 +11880,7 @@
     "parent": "tob-2023_iaaffrat",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "BONUS_ACTION",
     "form_condition": "Humanoid Form Only",
     "legendary_cost": 2
   }
@@ -10963,6 +11957,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ice-maiden_snow-step",
+  "fields": {
+    "name": "Snow Step",
+    "desc": "The ice maiden teleports, along with any equipment she is wearing or carrying, up to 30 feet to an unoccupied space she can see. The origin and destination spaces must contain snow or ice.",
+    "parent": "tob-2023_ice-maiden",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_idolic-deity_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -10985,6 +11993,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_idolic-deity_shadow-stealth",
+  "fields": {
+    "name": "Shadow Stealth",
+    "desc": "While in dim light or darkness, the idolic deity takes the Hide action.",
+    "parent": "tob-2023_idolic-deity",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11097,6 +12119,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ink-devil_disrupt-concentration",
+  "fields": {
+    "name": "Disrupt Concentration",
+    "desc": "One spellcaster concentrating on a spell within 30 feet of the ink devil that the devil can see must succeed on a DC 13 Wisdom saving throw or lose concentration on the spell.",
+    "parent": "tob-2023_ink-devil",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11404,7 +12440,7 @@
     "parent": "tob-2023_jotun",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11419,6 +12455,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_kalke_nimble-escape",
+  "fields": {
+    "name": "Nimble Escape",
+    "desc": "The kalke takes the Disengage or Hide action.",
+    "parent": "tob-2023_kalke",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11475,6 +12525,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_kikimora_homeward-step",
+  "fields": {
+    "name": "Homeward Step",
+    "desc": "While within a structure containing its hidden home (see the Hidden Home trait), the kikimora magically teleports, along with any equipment it is wearing or carrying, to an unoccupied space within 15 feet of the hidden home’s symbol.",
+    "parent": "tob-2023_kikimora",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11573,6 +12637,34 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_kishi_summon-demon",
+  "fields": {
+    "name": "Summon Demon",
+    "desc": "The kishi demon magically calls 1d4 giant hyenas that are Fiends with the kishi’s damage resistances and immunities. It has a 50 percent chance of calling one kishi demon instead. The called creatures arrive in 1d4 rounds, acting as allies of the kishi and obeying its telepathic commands. The creatures remain for 1 hour, until the kishi dies, or until the kishi dismisses them as a bonus action.",
+    "parent": "tob-2023_kishi",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_kishi_trophy-shield",
+  "fields": {
+    "name": "Trophy Shield",
+    "desc": "The kishi absorbs some of the essence of a creature it killed since the end of its previous turn and magically creates a grisly trophy of the creature on its shield or spear. For 1 hour, its Armor Class becomes 20, and creatures of the same type as the slain creature have disadvantage on attack rolls against the kishi.",
+    "parent": "tob-2023_kishi",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11873,6 +12965,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_krake-spawn_water-jet",
+  "fields": {
+    "name": "Water Jet",
+    "desc": "Each creature within 5 feet of the krake spawn must succeed on a DC 17 Dexterity saving throw or be knocked prone. The spawn then swims up to half its swimming speed without provoking opportunity attacks. The spawn must be underwater to use this bonus action.",
+    "parent": "tob-2023_krake-spawn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_lake-troll_bite",
   "fields": {
     "name": "Bite",
@@ -11937,6 +13043,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_lantern-dragonette_lantern-belly",
+  "fields": {
+    "name": "Lantern Belly",
+    "desc": "The dragonette sheds bright light in a 20-foot radius and dim light for an additional 20 feet or stops shedding light. To shed light, it must have eaten at least 4 ounces of candle wax in the past 24 hours. It can shed light for up to 1 hour for every 4 ounces of candle wax it has eaten in the past 24 hours, to a maximum of 4 hours every 24 hours.",
+    "parent": "tob-2023_lantern-dragonette",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -12077,6 +13197,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_lich-hound_ethereal-jaunt",
+  "fields": {
+    "name": "Ethereal Jaunt",
+    "desc": "The lich hound magically shifts from the Material Plane to the Ethereal Plane, or vice versa.",
+    "parent": "tob-2023_lich-hound",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -12307,6 +13441,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_lord-of-the-hunt_fey-mount",
+  "fields": {
+    "name": "Fey Mount",
+    "desc": "The Lord of the Hunt can summon or dismiss a magical Fey mount, mounting or dismounting it as part of this bonus action without spending movement. The mount uses the statistics of a warhorse, except it has 40 hp, is a Fey, has the same damage and condition resistances and immunities as the Lord of the Hunt, and uses the Lord’s saving throw bonuses in place of its own. If the mount is slain, it disappears, leaving behind no physical form, and the Lord of the Hunt must wait 1 hour before summoning the mount again.",
+    "parent": "tob-2023_lord-of-the-hunt",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_lord-of-the-hunt_hunters-quarry",
   "fields": {
     "name": "Hunter’s Quarry",
@@ -12356,7 +13504,7 @@
     "parent": "tob-2023_lord-of-the-hunt",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -12790,7 +13938,7 @@
     "parent": "tob-2023_malphas",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -12825,6 +13973,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_mamura_shadow-stealth",
+  "fields": {
+    "name": "Shadow Stealth",
+    "desc": "While in dim light or darkness, the mamura takes the Hide action.",
+    "parent": "tob-2023_mamura",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_mamura_whiptail-stinger",
   "fields": {
     "name": "Whiptail Stinger",
@@ -12833,6 +13995,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_map-mimic_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The mimic transforms into a Tiny object or back into its true, amorphous form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn’t transformed. It reverts to its true form if it dies.",
+    "parent": "tob-2023_map-mimic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -13329,6 +14505,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_mirager_sand-dancer",
+  "fields": {
+    "name": "Sand Dancer",
+    "desc": "While in sandy terrain, the mirager takes the Dash or Disengage action.",
+    "parent": "tob-2023_mirager",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_mirager_slam",
   "fields": {
     "name": "Slam",
@@ -13539,6 +14729,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_mngwa_ethereal-step",
+  "fields": {
+    "name": "Ethereal Step",
+    "desc": "The mngwa magically shifts from the Material Plane to the Ethereal Plane, or vice versa. When it leaves or enters the Material Plane, a puff of gray smoke briefly appears in the space on the Material Plane it leaves or enters.",
+    "parent": "tob-2023_mngwa",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_mngwa_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -13679,6 +14883,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_moonlit-king_moonlight-step",
+  "fields": {
+    "name": "Moonlight Step",
+    "desc": "The Moonlit King teleports, along with any equipment he is wearing or carrying, up to 60 feet to an unoccupied space he can see. The origin and destination spaces must contain moonlight.",
+    "parent": "tob-2023_moonlit-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_moonlit-king_move",
   "fields": {
     "name": "Move",
@@ -13700,7 +14918,7 @@
     "parent": "tob-2023_moonlit-king",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -13833,6 +15051,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_morphoi_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The morphoi transforms into a Medium Humanoid or back into its true form, which is a Plant. Its statistics are the same in each form. Any equipment it is wearing or carrying isn’t transformed. It reverts to its true form when it dies.",
+    "parent": "tob-2023_morphoi",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_morphoi_claw",
   "fields": {
     "name": "Claw",
@@ -13903,6 +15135,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_myling_bury-alive",
+  "fields": {
+    "name": "Bury Alive",
+    "desc": "The creature to which the myling is attached is knocked prone, dragged into the ground, and buried just below the surface, ending the attachment. The buried creature is restrained and unable to breathe or stand up. A creature, including the buried creature, can take its action to free the buried creature by succeeding on a DC 13 Strength check.",
+    "parent": "tob-2023_myling",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_myling_claw",
   "fields": {
     "name": "Claw",
@@ -13939,6 +15185,20 @@
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 5,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_naina_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The naina transforms into a Medium Humanoid or back into her true form, which is a Dragon. Her statistics, other than her size, are the same in each form. Any equipment she is wearing or carrying isn’t transformed. It reverts to its true from if she dies.",
+    "parent": "tob-2023_naina",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14386,7 +15646,21 @@
     "parent": "tob-2023_nihileth",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_nihileth_void-shape",
+  "fields": {
+    "name": "Void Shape",
+    "desc": "The nihileth magically transforms into a dark purple, Void ghost form or back into its Undead form. Its statistics, other than its speed, resistances, and immunities, are the same in each form. Any equipment it is wearing or carrying changes with it. It reverts to its Undead form if it dies.",
+    "parent": "tob-2023_nihileth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14456,7 +15730,21 @@
     "parent": "tob-2023_nihilethic-dominator",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_nihilethic-dominator_void-shape",
+  "fields": {
+    "name": "Void Shape",
+    "desc": "The nihilethic dominator magically transforms into a dark purple, Void ghost form or back into its Undead form. Its statistics, other than its speed and resistances, are the same in each form. Any equipment it is wearing or carrying changes with it. It reverts to its Undead form of it dies.",
+    "parent": "tob-2023_nihilethic-dominator",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14470,7 +15758,7 @@
     "parent": "tob-2023_nihilethic-zombie",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14498,7 +15786,21 @@
     "parent": "tob-2023_nihilethic-zombie",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_nihilethic-zombie_void-shape",
+  "fields": {
+    "name": "Void Shape",
+    "desc": "The nihilethic zombie magically transforms into a dark purple, Void ghost form or back into its Undead form. Its statistics, other than its speed and resistances, are the same in each form. Any equipment it is wearing or carrying changes with it. It reverts to its Undead form of it dies.",
+    "parent": "tob-2023_nihilethic-zombie",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14527,6 +15829,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_nkosi-pridelord_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The pridelord transforms into a Large lion or back into its true form, which is Humanoid. Its statistics, other than its size, speed, and AC, are the same in each form. Any equipment it is wearing or carrying isn’t transformed. It reverts to its true form if it dies.",
+    "parent": "tob-2023_nkosi-pridelord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14583,6 +15899,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_nkosi_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The nkosi transforms into a Large lion or back into its true form, which is Humanoid. Its statistics, other than its size, speed, and AC, are the same in each form. Any equipment it is wearing or carrying isn’t transformed. It reverts to its true form if it dies.",
+    "parent": "tob-2023_nkosi",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14792,7 +16122,7 @@
     "parent": "tob-2023_orobas-devil",
     "uses_type": "PER_DAY",
     "uses_param": 3,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15107,6 +16437,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_paper-drake_fold",
+  "fields": {
+    "name": "Fold",
+    "desc": "The paper drake can fold and reshape its papery body to change its size between Tiny, Small, and Medium. It can also use this bonus action to fold itself into the shape of a book, which doesn’t have wings, or back into its Small form. Without wings, it loses its flying speed. Its statistics, other than its size and speed, are the same in each form. It reverts to its Small form if it dies.",
+    "parent": "tob-2023_paper-drake",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_paper-drake_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -15185,6 +16529,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_planewatcher_reel",
+  "fields": {
+    "name": "Reel",
+    "desc": "The planewatcher pulls a creature grappled by it up to 25 feet straight toward it.",
+    "parent": "tob-2023_planewatcher",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15311,6 +16669,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_psoglav_shadow-jump",
+  "fields": {
+    "name": "Shadow Jump",
+    "desc": "While in shadows, dim light, or darkness, the psoglav disappears into the darkness and reappears in an unoccupied space it can see within 60 feet.",
+    "parent": "tob-2023_psoglav",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15499,6 +16871,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_queen-of-night-and-magic_hidden-step",
+  "fields": {
+    "name": "Hidden Step",
+    "desc": "The Queen of Night and Magic magically teleports, along with any equipment she is wearing or carrying, up to 60 feet to an unoccupied space she can see and takes the Hide action.",
+    "parent": "tob-2023_queen-of-night-and-magic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_queen-of-night-and-magic_move",
   "fields": {
     "name": "Move",
@@ -15590,7 +16976,7 @@
     "parent": "tob-2023_queen-of-night-and-magic",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15632,7 +17018,7 @@
     "parent": "tob-2023_queen-of-witches",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15765,6 +17151,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_quicksilver-siege-orb_shape-quicksilver",
+  "fields": {
+    "name": "Shape Quicksilver",
+    "desc": "The quicksilver siege orb flattens itself into a razor-sharp, whirling disk or back into its orb form. Its statistics are the same in each form. It becomes a puddle of quicksilver if it dies.",
+    "parent": "tob-2023_quicksilver-siege-orb",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_quicksilver-siege-orb_slam",
   "fields": {
     "name": "Slam",
@@ -15849,6 +17249,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ramag_portal-traveler",
+  "fields": {
+    "name": "Portal Traveler",
+    "desc": "The ramag creates and steps into a small portal and out of an identical portal in a space it can see within 60 feet of it. If a creature is in the destination space, the creature must make a DC 13 Intelligence saving throw. On a failure, the ramag trades spaces with the creature. On a success, the ramag fails to teleport. Whatever the result, the portal disappears.",
+    "parent": "tob-2023_ramag",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ramag_scimitar",
   "fields": {
     "name": "Scimitar",
@@ -15884,7 +17298,7 @@
     "parent": "tob-2023_rat-king",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15954,7 +17368,7 @@
     "parent": "tob-2023_ratatosk",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16003,6 +17417,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ratatosk_skitter",
+  "fields": {
+    "name": "Skitter",
+    "desc": "The ratatosk takes the Dash, Disengage, or Hide action.",
+    "parent": "tob-2023_ratatosk",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ratatosk_spellcasting",
   "fields": {
     "name": "Spellcasting",
@@ -16011,6 +17439,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ratfolk-rogue_cunning-action",
+  "fields": {
+    "name": "Cunning Action",
+    "desc": "The ratfolk rogue takes the Dash, Disengage, or Hide action.",
+    "parent": "tob-2023_ratfolk-rogue",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16360,7 +17802,7 @@
     "parent": "tob-2023_ravenfolk-warrior",
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 6,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16403,6 +17845,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_red-banded-line-spider_swingline",
+  "fields": {
+    "name": "Swingline",
+    "desc": "The spider throws a length of webbing at a point on a surface, such as the ground or wall, it can see within 30 feet of it, attaching one end of the webbing to that point. It then reels in the webbing, pulling itself to an unoccupied space within 5 feet of that point. When the spider moves in this way, opportunity attacks against it have disadvantage. If the spider pulled itself at least 15 feet straight toward a creature, it has advantage on the next Bite attack it makes against that creature before the start of its next turn.",
+    "parent": "tob-2023_red-banded-line-spider",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16501,6 +17957,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_redcap_solid-kick",
+  "fields": {
+    "name": "Solid Kick",
+    "desc": "The redcap kicks a Medium or smaller creature within 5 feet of it. The target must succeed on a DC 15 Strength saving throw or be knocked prone.",
+    "parent": "tob-2023_redcap",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16654,7 +18124,7 @@
     "parent": "tob-2023_risen-reaver",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16669,6 +18139,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_risen-reaver_skitter",
+  "fields": {
+    "name": "Skitter",
+    "desc": "The risen reaver takes the Dash action.",
+    "parent": "tob-2023_risen-reaver",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16696,7 +18180,7 @@
     "parent": "tob-2023_river-king",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -17340,7 +18824,7 @@
     "parent": "tob-2023_sand-spider",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -17452,7 +18936,7 @@
     "parent": "tob-2023_sandwyrm",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -17963,6 +19447,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_shadhavar_plaintive-melody",
+  "fields": {
+    "name": "Plaintive Melody",
+    "desc": "The shadhavar plays a captivating melody through its hollow horn. Each creature within 60 feet of the shadhavar that can hear it must succeed on a DC 13 Wisdom saving throw or be charmed until the start of the shadhavar’s next turn. While charmed, a creature is incapacitated, its speed is reduced to 0, and the shadhavar has advantage on attack rolls against it.",
+    "parent": "tob-2023_shadhavar",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_shadow-antipaladin_heavy-crossbow",
   "fields": {
     "name": "Heavy Crossbow",
@@ -18012,7 +19510,7 @@
     "parent": "tob-2023_shadow-antipaladin",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -18083,6 +19581,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_shadow-fey_shadow-traveler",
+  "fields": {
+    "name": "Shadow Traveler",
+    "desc": "While in shadows, dim light, or darkness, the shadow fey disappears into the darkness and reappears in an unoccupied space it can see within 30 feet. A tendril of inky smoke appears at the origin and destination when it uses this bonus action.",
+    "parent": "tob-2023_shadow-fey",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -18243,6 +19755,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_shroud_shadow-stealth",
+  "fields": {
+    "name": "Shadow Stealth",
+    "desc": "While in dim light or darkness, the shroud takes the Hide action.",
+    "parent": "tob-2023_shroud",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_shroud_strength-drain",
   "fields": {
     "name": "Strength Drain",
@@ -18285,6 +19811,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_skein-witch_fates-step",
+  "fields": {
+    "name": "Fate’s Step",
+    "desc": "The skein witch teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see. A tiny hourglass shatters into a swirl of sand at the origin and destination when it uses this bonus action.",
+    "parent": "tob-2023_skein-witch",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_skein-witch_inexorable-thread",
   "fields": {
     "name": "Inexorable Thread",
@@ -18320,7 +19860,7 @@
     "parent": "tob-2023_skein-witch",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -18334,7 +19874,7 @@
     "parent": "tob-2023_skin-bat",
     "uses_type": "PER_DAY",
     "uses_param": 1,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -18488,7 +20028,7 @@
     "parent": "tob-2023_smaragdine-golem",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -18768,7 +20308,7 @@
     "parent": "tob-2023_soul-eater",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -19020,7 +20560,7 @@
     "parent": "tob-2023_spider-of-leng",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -19105,6 +20645,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_spider-thief_wire-jump",
+  "fields": {
+    "name": "Wire Jump",
+    "desc": "The spider thief throws a hooked wire at a point on a surface, such as the ground or wall, it can see within 30 feet of it, attaching one end of the wire to that point. It then reels in the wire, pulling itself to an unoccupied space within 5 feet of that point. It can bring along objects and willing creatures as long as their total weight doesn’t exceed 100 pounds. When the spider moves in this way, opportunity attacks against it have disadvantage.",
+    "parent": "tob-2023_spider-thief",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -19251,6 +20805,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_spire-walker_steeple-step",
+  "fields": {
+    "name": "Steeple Step",
+    "desc": "The spire walker teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see. The destination must be on the steeple of a building, mast of a ship, corner of a rooftop, or similar narrow point or feature.",
+    "parent": "tob-2023_spire-walker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_star-drake_bite",
   "fields": {
     "name": "Bite",
@@ -19377,6 +20945,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_star-spawn-of-cthulhu_interdimensional-step",
+  "fields": {
+    "name": "Interdimensional Step",
+    "desc": "The star spawn of Cthulhu teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see. Small tears in reality appear at the origin and destination when it uses this bonus action.",
+    "parent": "tob-2023_star-spawn-of-cthulhu",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_star-spawn-of-cthulhu_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -19468,7 +21050,7 @@
     "parent": "tob-2023_steam-golem",
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 4,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -19496,7 +21078,7 @@
     "parent": "tob-2023_strife",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -19510,7 +21092,7 @@
     "parent": "tob-2023_strife",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -19825,6 +21407,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_swarm-of-manabane-scarabs_drain-magic-item",
+  "fields": {
+    "name": "Drain Magic Item",
+    "desc": "The swarm drains the magic from one magic item in its space that isn’t being worn or carried. A magic item with charges loses 1d4 charges, an item with limited uses per day loses one daily use, and a single-use item, such as a potion or spell scroll is destroyed. All other magic items have their effects suppressed for 1 minute. A drained item regains its magic after 1 hour.",
+    "parent": "tob-2023_swarm-of-manabane-scarabs",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_swarm-of-prismatic-beetles_bites",
   "fields": {
     "name": "Bites",
@@ -19847,6 +21443,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_swarm-of-sluaghs_shadow-stealth",
+  "fields": {
+    "name": "Shadow Stealth",
+    "desc": "While in dim light or darkness, the swarm of sluaghs takes the Hide action.",
+    "parent": "tob-2023_swarm-of-sluaghs",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20015,6 +21625,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_thursir_runic-blood",
+  "fields": {
+    "name": "Runic Blood",
+    "desc": "The thursir touches a weapon, painting the thurs rune on the weapon in the thursir’s blood. When the thursir hits with the weapon while the rune is active, the weapon deals an extra 9 (2d8) lightning damage, and the target can’t take reactions until the start of its next turn. The rune lasts for 1 minute.",
+    "parent": "tob-2023_thursir",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20197,6 +21821,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_tosculi-elite-bow-raider_skirmisher",
+  "fields": {
+    "name": "Skirmisher",
+    "desc": "The tosculi takes the Dash or Disengage action.",
+    "parent": "tob-2023_tosculi-elite-bow-raider",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20420,7 +22058,7 @@
     "parent": "tob-2023_treacle",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20581,6 +22219,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_umbral-vampire_shadow-stealth",
+  "fields": {
+    "name": "Shadow Stealth",
+    "desc": "While in dim light or darkness, the umbral vampire takes the Hide action.",
+    "parent": "tob-2023_umbral-vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_umbral-vampire_shadow-touch",
   "fields": {
     "name": "Shadow Touch",
@@ -20630,7 +22282,7 @@
     "parent": "tob-2023_uraeus",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20659,6 +22311,34 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_uraeus_ward-bond",
+  "fields": {
+    "name": "Ward Bond",
+    "desc": "The uraeus forms a magical bond with a willing creature within 5 feet of it. While bonded, the uraeus and its ward know the distance and direction to each other and the general state of each other’s health, even if the two are on different planes of existence. The bond lasts until the uraeus or its ward dies, until the uraeus ends it as a bonus action, or until the uraeus uses this bonus action to create a bond with another creature.",
+    "parent": "tob-2023_uraeus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_urochar_hidden-step",
+  "fields": {
+    "name": "Hidden Step",
+    "desc": "The urochar magically teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see and takes the Hide action. Grappled creatures are no longer grappled and don’t teleport with it.",
+    "parent": "tob-2023_urochar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20812,7 +22492,7 @@
     "parent": "tob-2023_ushabti-royal-guard",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20875,6 +22555,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ushabti_telekinesis",
+  "fields": {
+    "name": "Telekinesis",
+    "desc": "One creature the ushabti can see within 60 feet of it must succeed on a DC 16 Strength saving throw or the ushabti moves the creature up to 30 feet in any direction (including upward). The target is restrained until the start of the ushabti’s next turn.",
+    "parent": "tob-2023_ushabti",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_valkyrie_ascension",
   "fields": {
     "name": "Ascension",
@@ -20882,7 +22576,7 @@
     "parent": "tob-2023_valkyrie",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -21001,6 +22695,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_vapor-lynx_fog-step",
+  "fields": {
+    "name": "Fog Step",
+    "desc": "The vapor lynx teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see. The origin and destination spaces must contain fog.",
+    "parent": "tob-2023_vapor-lynx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_vapor-lynx_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -21037,6 +22745,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_vesiculosa_bury",
+  "fields": {
+    "name": "Bury",
+    "desc": "One creature grappled by the vesiculosa is knocked prone, dragged into the ground, and buried just below the surface, ending the grapple. The buried creature is restrained and unable to breathe or stand up. A creature, including the buried creature, can take its action to free the buried creature by succeeding on a DC 16 Strength check. This bonus action doesn’t wake a creature that is unconscious from the vesiculosa’s Sweet Water trait or Spit Sweet Water action.",
+    "parent": "tob-2023_vesiculosa",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -21163,6 +22885,20 @@
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 5,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_vile-barber_hidden-step",
+  "fields": {
+    "name": "Hidden Step",
+    "desc": "The vile barber magically teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see and takes the Hide action.",
+    "parent": "tob-2023_vile-barber",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -21372,7 +23108,7 @@
     "parent": "tob-2023_void-dragon-wyrmling",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -21477,6 +23213,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_volguloth_strangle",
+  "fields": {
+    "name": "Strangle",
+    "desc": "A creature enshrouded by the volguloth must succeed on a DC 13 Strength saving throw or take 10 (3d6) bludgeoning damage and begin suffocating, as the air is squeezed from its lungs.",
+    "parent": "tob-2023_volguloth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_vttir_corpse-breath",
   "fields": {
     "name": "Corpse Breath ",
@@ -21541,6 +23291,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_wampus-cat_change-shape",
+  "fields": {
+    "name": "Change Shape",
+    "desc": "The wampus cat magically polymorphs into a Medium female Humanoid, or back into her true form. Her statistics are the same in each form. Any equipment she is wearing or carrying transforms with her. She reverts to her true form if she dies.",
+    "parent": "tob-2023_wampus-cat",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -21625,6 +23389,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_war-ostrich_skittish",
+  "fields": {
+    "name": "Skittish",
+    "desc": "The war ostrich takes the Dash or Disengage action.",
+    "parent": "tob-2023_war-ostrich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -22212,7 +23990,7 @@
     "parent": "tob-2023_young-cave-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -22520,7 +24298,7 @@
     "parent": "tob-2023_young-void-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "LEGENDARY_ACTION",
+    "action_type": "REACTION",
     "form_condition": null,
     "legendary_cost": null
   }
