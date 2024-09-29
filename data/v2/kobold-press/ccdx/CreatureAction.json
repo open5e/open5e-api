@@ -1,6 +1,20 @@
 [
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_aatxe_bulwark",
+  "fields": {
+    "name": "Bulwark",
+    "desc": "The aatxe flares crimson with celestial power, protecting those nearby. The next attack that would hit an ally within 5 feet of the aatxe hits the aatxe instead.",
+    "parent": "ccdx_aatxe",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_aatxe_bulwark-costs-3-actions",
   "fields": {
     "name": "Bulwark (Costs 3 Actions)",
@@ -22,9 +36,9 @@
     "parent": "ccdx_aatxe",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -32,13 +46,13 @@
   "pk": "ccdx_aatxe_gore",
   "fields": {
     "name": "Gore",
-    "desc": "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) piercing damage.",
+    "desc": "The aatxe makes one gore attack.",
     "parent": "ccdx_aatxe",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
   }
 },
 {
@@ -148,9 +162,9 @@
     "parent": "ccdx_adult-light-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -204,9 +218,23 @@
     "parent": "ccdx_adult-light-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_adult-light-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "ccdx_adult-light-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -260,9 +288,9 @@
     "parent": "ccdx_adult-wasteland-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -316,9 +344,9 @@
     "parent": "ccdx_adult-wasteland-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -333,6 +361,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_adult-wasteland-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 18 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "ccdx_adult-wasteland-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1030,9 +1072,9 @@
     "parent": "ccdx_ancient-light-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1072,9 +1114,23 @@
     "parent": "ccdx_ancient-light-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_ancient-light-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "ccdx_ancient-light-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1184,9 +1240,9 @@
     "parent": "ccdx_ancient-wasteland-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1240,9 +1296,9 @@
     "parent": "ccdx_ancient-wasteland-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1257,6 +1313,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_ancient-wasteland-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 20 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "ccdx_ancient-wasteland-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1324,9 +1394,23 @@
     "parent": "ccdx_ankou-soul-herald",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_ankou-soul-herald_envelope-in-shadow",
+  "fields": {
+    "name": "Envelope in Shadow",
+    "desc": "The ankou moves up to half its speed without provoking opportunity attacks. Any creature whose space it moves through must make a DC 22 Dexterity saving throw, taking 21 (6d6) necrotic damage on a failed save, or half as much damage on a successful one.",
+    "parent": "ccdx_ankou-soul-herald",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1408,9 +1492,9 @@
     "parent": "ccdx_ankou-soul-herald",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1795,14 +1879,14 @@
   "model": "api_v2.creatureaction",
   "pk": "ccdx_avatar-of-shoth_acid-wave",
   "fields": {
-    "name": "Acid Wave ",
-    "desc": "The avatar rises up and crashes down, releasing a 20-foot radius wave of acidic ooze. Each creature in the area must make a DC 20 Dexterity saving throw. On a failure, a creature takes 67 (15d8) acid damage and is knocked prone. On a success, a creature takes half the damage and isn't knocked prone.",
+    "name": "Acid Wave",
+    "desc": "The avatar uses Acid Wave, if it is available.",
     "parent": "ccdx_avatar-of-shoth",
-    "uses_type": "RECHARGE_ON_ROLL",
-    "uses_param": 5,
-    "action_type": "ACTION",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
   }
 },
 {
@@ -1828,9 +1912,9 @@
     "parent": "ccdx_avatar-of-shoth",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1884,9 +1968,9 @@
     "parent": "ccdx_avatar-of-shoth",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1982,9 +2066,9 @@
     "parent": "ccdx_azi-dahaka",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -2013,6 +2097,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_azi-dahaka_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "Azi Dahaka beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 20 Dexterity saving throw or take 12 (2d6 + 5) bludgeoning damage and be knocked prone. Azi Dahaka can then fly up to half its flying speed.",
+    "parent": "ccdx_azi-dahaka",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2108,9 +2206,9 @@
     "parent": "ccdx_barong",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -2125,6 +2223,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_barong_divine-command",
+  "fields": {
+    "name": "Divine Command",
+    "desc": "Barong roars a command at one allied undead or celestial within 30 feet of him. It can move up to its speed and make one attack as a reaction. The creature doesn't provoke an opportunity attack from this movement. Bats Bats exist in hundreds of species, from the harmless messenger bats of the ghoul empire to the ravening blood-devouring vampire bats found in various castles and deep jungles. The giant albino bat and the giant vampire bat are two monsters that vex adventurers more often than most, and they are often allies of darakhul, werebats, dhampirs, and vampires.",
+    "parent": "ccdx_barong",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2150,9 +2262,9 @@
     "parent": "ccdx_barong",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -6427,6 +6539,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_greater-rakshasa_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The greater rakshasa casts a spell from its list of innate spells, consuming a use of the spell as normal.",
+    "parent": "ccdx_greater-rakshasa",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_greater-rakshasa_cast-a-spell-costs-3-actions",
   "fields": {
     "name": "Cast a Spell (Costs 3 Actions)",
@@ -6462,9 +6588,9 @@
     "parent": "ccdx_greater-rakshasa",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -6479,6 +6605,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_greater-rakshasa_misleading-escape",
+  "fields": {
+    "name": "Misleading Escape",
+    "desc": "The greater rakshasa becomes invisible at the same time that an illusory double of itself appears where it is standing. This switch is indiscernible to others. After the double appears, the greater rakshasa can move up to its speed. Both effects last until the start of the greater rakshasa's next turn, but the invisibility ends if the greater rakshasa makes an attack or casts a spell before then.",
+    "parent": "ccdx_greater-rakshasa",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -6679,6 +6819,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_gugalanna_blazing-sun-disc",
+  "fields": {
+    "name": "Blazing Sun Disc",
+    "desc": "The sun disc floating between Gugalanna's horns flares. Each creature within 30 feet of Gugalanna must make a DC 18 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.",
+    "parent": "ccdx_gugalanna",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_gugalanna_blazing-sun-disc-costs-2-actions-recharge-5-6",
   "fields": {
     "name": "Blazing Sun Disc (Costs 2 Actions, Recharge 5-6)",
@@ -6714,9 +6868,9 @@
     "parent": "ccdx_gugalanna",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -6731,6 +6885,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_gugalanna_rearing-stomp",
+  "fields": {
+    "name": "Rearing Stomp",
+    "desc": "Gugalanna spreads his wings and stomps his hooves, shaking the earth. Each creature within 10 feet of Gugalanna must make a DC 22 Strength saving throw. On a failure, a target takes 18 (2d10 + 7) bludgeoning damage and is pushed 20 feet away from Gugalanna. On a success, a target takes half the damage and isn't pushed. Gugalanna can then fly up to half his flying speed.",
+    "parent": "ccdx_gugalanna",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -6966,9 +7134,23 @@
     "parent": "ccdx_hierophant-lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_hierophant-lich_damnation",
+  "fields": {
+    "name": "Damnation",
+    "desc": "The hierophant lich threatens one creature within 10 feet of it with eternal suffering. The target must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to the hierophant lich's Damnation for the next 24 hours.",
+    "parent": "ccdx_hierophant-lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -6990,13 +7172,13 @@
   "pk": "ccdx_hierophant-lich_unholy-smite",
   "fields": {
     "name": "Unholy Smite",
-    "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d6 + 1) bludgeoning plus 9 (2d8) necrotic damage. The target must succeed on a DC 17 Wisdom saving throw or be charmed for 1 minute. The charmed target must defend the hierophant. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. An undead target that fails is charmed for 24 hours and can only repeat the saving throw once every 24 hours.",
+    "desc": "The heirophant lich uses its Unholy Smite.",
     "parent": "ccdx_hierophant-lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
   }
 },
 {
@@ -7561,6 +7743,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_jinmenju_mirthful-miasma",
+  "fields": {
+    "name": "Mirthful Miasma",
+    "desc": "The jinmenju emits a puff of purple gas around its roots. Each creature within 10 feet of an exposed root must succeed on a DC 16 Constitution saving throw or fall prone with laughter, becoming incapacitated and unable to stand up until the end of its next turn. A creature in an area of overlapping gas only makes the saving throw once. A creature with an Intelligence score of 4 or less isn't affected.",
+    "parent": "ccdx_jinmenju",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_jinmenju_mirthful-miasma-costs-2-actions",
   "fields": {
     "name": "Mirthful Miasma (Costs 2 Actions)",
@@ -7596,9 +7792,9 @@
     "parent": "ccdx_jinmenju",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -7610,9 +7806,9 @@
     "parent": "ccdx_jinmenju",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -8464,9 +8660,9 @@
     "parent": "ccdx_lamassu",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -8478,9 +8674,9 @@
     "parent": "ccdx_lamassu",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -8509,6 +8705,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_lamassu_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The lamassu beats its wings. Each creature within 10 feet of it must succeed on a DC 16 Dexterity saving throw or take 11 (2d6 + 4) bludgeoning damage and be knocked prone. The lamassu can then fly up to its flying speed.",
+    "parent": "ccdx_lamassu",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -8744,9 +8954,9 @@
     "parent": "ccdx_lord-zombie",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9269,6 +9479,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_monkey-king_golden-burst",
+  "fields": {
+    "name": "Golden Burst",
+    "desc": "Each creature of the Monkey King's choice within 10 feet of him must make a DC 18 Charisma saving throw, taking 36 (8d8) radiant damage on a failed save, or half as much damage on a successful one.",
+    "parent": "ccdx_monkey-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_monkey-king_golden-burst-costs-3-actions",
   "fields": {
     "name": "Golden Burst (Costs 3 Actions)",
@@ -9304,9 +9528,9 @@
     "parent": "ccdx_monkey-king",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9332,9 +9556,9 @@
     "parent": "ccdx_monkey-king",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9612,9 +9836,9 @@
     "parent": "ccdx_mountain-giant",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9629,6 +9853,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_mountain-giant_roar",
+  "fields": {
+    "name": "Roar",
+    "desc": "The mountain giant emits a tremendous growl. Each creature within 20 feet of the giant must make a DC 21 Constitution saving throw. On a failure, a creature takes 21 (6d6) thunder damage and is knocked prone. On a success, a creature takes half the damage and isn't knocked prone.",
+    "parent": "ccdx_mountain-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -9657,6 +9895,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_mountain-giant_spawn-elemental",
+  "fields": {
+    "name": "Spawn Elemental",
+    "desc": "A piece of the mountain giant's body tears away in the form of an earth elemental. The earth elemental acts on the same initiative count as the mountain giant, obeying the mountain giant's commands and fighting until destroyed. The mountain giant can have no more than five earth elementals under its control at one time.",
+    "parent": "ccdx_mountain-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {
@@ -10480,9 +10732,23 @@
     "parent": "ccdx_ouroboros",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_ouroboros_blurring-facade",
+  "fields": {
+    "name": "Blurring Façade",
+    "desc": "The ouroboros blurs and shifts light around itself or another creature it can see within 60 feet of it. Attacks against the target have disadvantage until the end of the ouroboros' next turn. The target can resist this effect with a successful DC 15 Wisdom saving throw.",
+    "parent": "ccdx_ouroboros",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -10497,6 +10763,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_ouroboros_guiding-beacon",
+  "fields": {
+    "name": "Guiding Beacon",
+    "desc": "The ouroboros causes itself or another creature it can see within 60 feet of it to illuminate with white flame. Attacks against the target have advantage until the end of the ouroboros' next turn. The target can resist this effect with a successful DC 15 Wisdom saving throw.",
+    "parent": "ccdx_ouroboros",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -10634,23 +10914,23 @@
     "parent": "ccdx_pact-lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
   "model": "api_v2.creatureaction",
   "pk": "ccdx_pact-lich_eldritch-master",
   "fields": {
-    "name": "Eldritch Master ",
+    "name": "Eldritch Master",
     "desc": "The lich entreats its patron for aid, regaining all expended spells.",
     "parent": "ccdx_pact-lich",
     "uses_type": "PER_DAY",
     "uses_param": 1,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 3
   }
 },
 {
@@ -10676,9 +10956,9 @@
     "parent": "ccdx_pact-lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -10700,13 +10980,13 @@
   "pk": "ccdx_pact-lich_maddening-touch",
   "fields": {
     "name": "Maddening Touch",
-    "desc": "Melee Spell Attack: +10 to hit, reach 5 ft., one target. Hit: 10 (3d6) necrotic damage. The target must succeed on a DC 18 Charisma saving throw or have vivid hallucinations for 1 minute. During this time, the target is blinded, stunned, and deafened, sensing only the hallucinatory terrain and events. The hallucinations play on aspects of the creature's deepest fears. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+    "desc": "The pact lich uses its Maddening Touch.",
     "parent": "ccdx_pact-lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
   }
 },
 {
@@ -14792,9 +15072,9 @@
     "parent": "ccdx_venom-maw-hydra",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -14816,13 +15096,13 @@
   "pk": "ccdx_venom-maw-hydra_spit",
   "fields": {
     "name": "Spit",
-    "desc": "Ranged Weapon Attack: +7 to hit, range 20/60 ft., one target. Hit: 10 (3d6) acid damage, and the target must succeed on a DC 16 Dexterity saving throw or be poisoned until the end of its next turn.",
+    "desc": "The venom maw hydra makes one spit attack.",
     "parent": "ccdx_venom-maw-hydra",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
   }
 },
 {
@@ -14851,6 +15131,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_venom-maw-hydra_wallowing-rampage",
+  "fields": {
+    "name": "Wallowing Rampage",
+    "desc": "When the venom maw hydra is in water, it wallows, causing the water to hiss, froth, and splash within 20 feet. Each creature in that area must make a DC 16 Dexterity saving throw, taking 14 (4d6) acid damage on a failed save, or half as much damage on a successful one.",
+    "parent": "ccdx_venom-maw-hydra",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {

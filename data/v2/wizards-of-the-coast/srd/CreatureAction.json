@@ -1,6 +1,930 @@
 [
 {
   "model": "api_v2.creatureaction",
+  "pk": "srd_aboleth_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The aboleth makes a Wisdom (Perception) check.",
+    "parent": "srd_aboleth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_aboleth_psychic-drain",
+  "fields": {
+    "name": "Psychic Drain",
+    "desc": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes.",
+    "parent": "srd_aboleth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_aboleth_tail-swipe",
+  "fields": {
+    "name": "Tail Swipe",
+    "desc": "The aboleth makes one tail attack.",
+    "parent": "srd_aboleth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-black-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-black-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-black-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-blue-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-blue-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-blue-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-brass-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-brass-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-brass-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-bronze-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-bronze-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-bronze-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-copper-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-copper-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-copper-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-gold-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-gold-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-gold-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-green-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-green-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-green-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-red-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-red-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-red-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-silver-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-silver-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-silver-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-white-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_adult-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-white-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_adult-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_adult-white-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_adult-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-black-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-black-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-black-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-blue-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-blue-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-blue-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-brass-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-brass-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-brass-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-bronze-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-bronze-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-bronze-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-copper-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-copper-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-copper-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-gold-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-gold-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-gold-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-green-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-green-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-green-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-red-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-red-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-red-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-silver-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-silver-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-silver-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-white-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "srd_ancient-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-white-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a tail attack.",
+    "parent": "srd_ancient-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ancient-white-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "srd_ancient-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_androsphinx_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The sphinx casts a spell from its list of prepared spells, using a spell slot as normal.",
+    "parent": "srd_androsphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_androsphinx_claw-attack",
+  "fields": {
+    "name": "Claw Attack",
+    "desc": "The sphinx makes one claw attack.",
+    "parent": "srd_androsphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_androsphinx_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
+    "parent": "srd_androsphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "srd_elf-drow_hand-crossbow",
   "fields": {
     "name": "Hand Crossbow",
@@ -53,6 +977,384 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_gynosphinx_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The sphinx casts a spell from its list of prepared spells, using a spell slot as normal.",
+    "parent": "srd_gynosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_gynosphinx_claw-attack",
+  "fields": {
+    "name": "Claw Attack",
+    "desc": "The sphinx makes one claw attack.",
+    "parent": "srd_gynosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_gynosphinx_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
+    "parent": "srd_gynosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_kraken_ink-cloud",
+  "fields": {
+    "name": "Ink Cloud",
+    "desc": "While underwater, the kraken expels an ink cloud in a 60-foot radius. The cloud spreads around corners, and that area is heavily obscured to creatures other than the kraken. Each creature other than the kraken that ends its turn there must succeed on a DC 23 Constitution saving throw, taking 16 (3d10) poison damage on a failed save, or half as much damage on a successful one. A strong current disperses the cloud, which otherwise disappears at the end of the kraken's next turn.",
+    "parent": "srd_kraken",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_kraken_lightning-storm",
+  "fields": {
+    "name": "Lightning Storm",
+    "desc": "The kraken uses Lightning Storm.",
+    "parent": "srd_kraken",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_kraken_tentacle-attack-or-fling",
+  "fields": {
+    "name": "Tentacle Attack or Fling",
+    "desc": "The kraken makes one tentacle attack or uses its Fling.",
+    "parent": "srd_kraken",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_lich_cantrip",
+  "fields": {
+    "name": "Cantrip",
+    "desc": "The lich casts a cantrip.",
+    "parent": "srd_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_lich_disrupt-life",
+  "fields": {
+    "name": "Disrupt Life",
+    "desc": "Each non-undead creature within 20 feet of the lich must make a DC 18 Constitution saving throw against this magic, taking 21 (6d6) necrotic damage on a failed save, or half as much damage on a successful one.",
+    "parent": "srd_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_lich_frightening-gaze",
+  "fields": {
+    "name": "Frightening Gaze",
+    "desc": "The lich fixes its gaze on one creature it can see within 10 feet of it. The target must succeed on a DC 18 Wisdom saving throw against this magic or become frightened for 1 minute. The frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to the lich's gaze for the next 24 hours.",
+    "parent": "srd_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_lich_paralyzing-touch",
+  "fields": {
+    "name": "Paralyzing Touch",
+    "desc": "The lich uses its Paralyzing Touch.",
+    "parent": "srd_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_mummy-lord_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "The mummy lord makes one attack with its rotting fist or uses its Dreadful Glare.",
+    "parent": "srd_mummy-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_mummy-lord_blasphemous-word",
+  "fields": {
+    "name": "Blasphemous Word",
+    "desc": "The mummy lord utters a blasphemous word. Each non-undead creature within 10 feet of the mummy lord that can hear the magical utterance must succeed on a DC 16 Constitution saving throw or be stunned until the end of the mummy lord's next turn.",
+    "parent": "srd_mummy-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_mummy-lord_blinding-dust",
+  "fields": {
+    "name": "Blinding Dust",
+    "desc": "Blinding dust and sand swirls magically around the mummy lord. Each creature within 5 feet of the mummy lord must succeed on a DC 16 Constitution saving throw or be blinded until the end of the creature's next turn.",
+    "parent": "srd_mummy-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_mummy-lord_channel-negative-energy",
+  "fields": {
+    "name": "Channel Negative Energy",
+    "desc": "The mummy lord magically unleashes negative energy. Creatures within 60 feet of the mummy lord, including ones behind barriers and around corners, can't regain hit points until the end of the mummy lord's next turn.",
+    "parent": "srd_mummy-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_mummy-lord_whirlwind-of-sand",
+  "fields": {
+    "name": "Whirlwind of Sand",
+    "desc": "The mummy lord magically transforms into a whirlwind of sand, moves up to 60 feet, and reverts to its normal form. While in whirlwind form, the mummy lord is immune to all damage, and it can't be grappled, petrified, knocked prone, restrained, or stunned. Equipment worn or carried by the mummy lord remain in its possession.",
+    "parent": "srd_mummy-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_solar_blinding-gaze",
+  "fields": {
+    "name": "Blinding Gaze",
+    "desc": "The solar targets one creature it can see within 30 ft. of it. If the target can see it, the target must succeed on a DC 15 Constitution saving throw or be blinded until magic such as the lesser restoration spell removes the blindness.",
+    "parent": "srd_solar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_solar_searing-burst",
+  "fields": {
+    "name": "Searing Burst",
+    "desc": "The solar emits magical, divine energy. Each creature of its choice in a 10 -foot radius must make a DC 23 Dexterity saving throw, taking 14 (4d6) fire damage plus 14 (4d6) radiant damage on a failed save, or half as much damage on a successful one.",
+    "parent": "srd_solar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_solar_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "The solar magically teleports, along with any equipment it is wearing or carrying, up to 120 ft. to an unoccupied space it can see.",
+    "parent": "srd_solar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_tarrasque_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "The tarrasque makes one claw attack or tail attack.",
+    "parent": "srd_tarrasque",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_tarrasque_chomp",
+  "fields": {
+    "name": "Chomp",
+    "desc": "The tarrasque makes one bite attack or uses its Swallow.",
+    "parent": "srd_tarrasque",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_tarrasque_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The tarrasque moves up to half its speed.",
+    "parent": "srd_tarrasque",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_unicorn_heal-self",
+  "fields": {
+    "name": "Heal Self",
+    "desc": "The unicorn magically regains 11 (2d8 + 2) hit points.",
+    "parent": "srd_unicorn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_unicorn_hooves",
+  "fields": {
+    "name": "Hooves",
+    "desc": "The unicorn makes one attack with its hooves.",
+    "parent": "srd_unicorn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_unicorn_shimmering-shield",
+  "fields": {
+    "name": "Shimmering Shield",
+    "desc": "The unicorn creates a shimmering, magical field around itself or another creature it can see within 60 ft. of it. The target gains a +2 bonus to AC until the end of the unicorn's next turn.",
+    "parent": "srd_unicorn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_vampire_bite",
+  "fields": {
+    "name": "Bite",
+    "desc": "The vampire makes one bite attack.",
+    "parent": "srd_vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_vampire_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The vampire moves up to its speed without provoking opportunity attacks.",
+    "parent": "srd_vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_vampire_unarmed-strike",
+  "fields": {
+    "name": "Unarmed Strike",
+    "desc": "The vampire makes one unarmed strike.",
+    "parent": "srd_vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 }
 ]

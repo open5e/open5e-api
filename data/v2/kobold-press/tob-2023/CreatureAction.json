@@ -127,6 +127,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-cave-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_adult-cave-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-cave-dragon_frightful-presence",
   "fields": {
     "name": "Frightful Presence",
@@ -137,6 +151,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-cave-dragon_limb-sweep",
+  "fields": {
+    "name": "Limb Sweep",
+    "desc": "The dragon sweeps its wingless limbs outward. Each creature within 10 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be pushed up to 10 feet away from the dragon and knocked prone.",
+    "parent": "tob-2023_adult-cave-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -183,6 +211,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-cave-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_adult-cave-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-flame-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -207,6 +249,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-flame-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_adult-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -267,6 +323,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-flame-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_adult-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-flame-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 17 Dexterity saving throw or take 11 (2d6 + 4) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob-2023_adult-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-mithral-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -291,6 +375,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-mithral-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_adult-mithral-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -351,6 +449,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-mithral-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_adult-mithral-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-mithral-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 20 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob-2023_adult-mithral-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-sea-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -361,6 +487,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-sea-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_adult-sea-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -421,6 +561,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-sea-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_adult-sea-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-sea-dragon_tidal-breath",
   "fields": {
     "name": "Tidal Breath ",
@@ -431,6 +585,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-sea-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then move up to half its flying speed, or half its swimming speed if in the water.",
+    "parent": "tob-2023_adult-sea-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -491,6 +659,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-void-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_adult-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-void-dragon_gravitic-breath",
   "fields": {
     "name": "Gravitic Breath",
@@ -547,6 +729,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-void-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_adult-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-void-dragon_void-slip",
+  "fields": {
+    "name": "Void Slip",
+    "desc": "The dragon twists the fabric of space around it, disappearing and reappearing in an unoccupied space it can see within 120 feet of it. Each creature within 10 feet of the dragon must succeed on a DC 20 Constitution saving throw or take 14 (4d6) cold damage and be knocked prone.",
+    "parent": "tob-2023_adult-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-wind-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -571,6 +781,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-wind-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_adult-wind-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -617,6 +841,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-wind-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_adult-wind-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-wind-dragon_tempest-breath",
   "fields": {
     "name": "Tempest Breath ",
@@ -631,6 +869,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-wind-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob-2023_adult-wind-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_akyishigal_call-spawn",
   "fields": {
     "name": "Call Spawn ",
@@ -641,6 +893,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_akyishigal_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Akyishigal uses Spellcasting.",
+    "parent": "tob-2023_akyishigal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -673,6 +939,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_akyishigal_skitter",
+  "fields": {
+    "name": "Skitter",
+    "desc": "Akyishigal moves up to half his speed and makes one Claw attack. This movement doesn’t provoke opportunity attacks.",
+    "parent": "tob-2023_akyishigal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_akyishigal_spellcasting",
   "fields": {
     "name": "Spellcasting",
@@ -683,6 +963,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_akyishigal_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "Akyishigal magically teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see.",
+    "parent": "tob-2023_akyishigal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -1135,6 +1429,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-cave-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_ancient-cave-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ancient-cave-dragon_frightful-presence",
   "fields": {
     "name": "Frightful Presence",
@@ -1145,6 +1453,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-cave-dragon_limb-sweep",
+  "fields": {
+    "name": "Limb Sweep",
+    "desc": "The dragon sweeps its wingless limbs outward. Each creature within 10 feet of the dragon must succeed on a DC 25 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be pushed up to 10 feet away from the dragon and knocked prone.",
+    "parent": "tob-2023_ancient-cave-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1191,6 +1513,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-cave-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_ancient-cave-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ancient-flame-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -1215,6 +1551,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-flame-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_ancient-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -1275,6 +1625,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-flame-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_ancient-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-flame-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob-2023_ancient-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ancient-mithral-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -1299,6 +1677,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-mithral-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_ancient-mithral-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -1359,6 +1751,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-mithral-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_ancient-mithral-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-mithral-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob-2023_ancient-mithral-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ancient-sea-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -1369,6 +1789,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-sea-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_ancient-sea-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -1429,6 +1863,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-sea-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_ancient-sea-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ancient-sea-dragon_tidal-breath",
   "fields": {
     "name": "Tidal Breath ",
@@ -1439,6 +1887,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-sea-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then move up to half its flying speed, or swimming speed if in the water.",
+    "parent": "tob-2023_ancient-sea-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1569,6 +2031,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-void-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_ancient-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ancient-void-dragon_gravitic-breath",
   "fields": {
     "name": "Gravitic Breath",
@@ -1625,6 +2101,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-void-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_ancient-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-void-dragon_void-slip",
+  "fields": {
+    "name": "Void Slip",
+    "desc": "The dragon twists the fabric of space around it, disappearing and reappearing in an unoccupied space it can see within 120 feet of it. Each creature within 15 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 17 (5d6) cold damage and be knocked prone.",
+    "parent": "tob-2023_ancient-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ancient-wind-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -1649,6 +2153,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-wind-dragon_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_ancient-wind-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -1695,6 +2213,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-wind-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_ancient-wind-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_ancient-wind-dragon_tempest-breath",
   "fields": {
     "name": "Tempest Breath ",
@@ -1705,6 +2237,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-wind-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob-2023_ancient-wind-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2605,6 +3151,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bear-king_frightful-roar",
+  "fields": {
+    "name": "Frightful Roar",
+    "desc": "The Bear King lets out a blood-curdling roar. Each hostile creature within 60 feet of the Bear King and that can hear the roar must succeed on a DC 17 Wisdom saving throw or be frightened until the end of its next turn.",
+    "parent": "tob-2023_bear-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_bear-king_honey-bolt",
   "fields": {
     "name": "Honey Bolt",
@@ -2619,6 +3179,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bear-king_honey-toss",
+  "fields": {
+    "name": "Honey Toss",
+    "desc": "The Bear King throws a jar of magical honey at a creature he can see within 120 feet of him. The target must succeed on a DC 17 Dexterity saving throw or be restrained by sticky honey until the end of its next turn.",
+    "parent": "tob-2023_bear-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_bear-king_maul",
   "fields": {
     "name": "Maul",
@@ -2629,6 +3203,20 @@
     "action_type": "ACTION",
     "form_condition": "Fey or Hybrid Form Only",
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bear-king_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The Bear King moves up to his speed without provoking opportunity attacks.",
+    "parent": "tob-2023_bear-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -3725,6 +4313,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_camazotz_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Camazotz uses Spellcasting.",
+    "parent": "tob-2023_camazotz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_camazotz_claw",
   "fields": {
     "name": "Claw",
@@ -3739,6 +4341,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_camazotz_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "Camazotz makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_camazotz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_camazotz_fiery-wing-beat",
+  "fields": {
+    "name": "Fiery Wing Beat",
+    "desc": "Camazotz beats his wings, extinguishing mundane and magical light sources. Each creature within 10 feet of Camazotz must succeed on a DC 22 Dexterity saving throw or take 14 (4d6) fire damage and be knocked prone.",
+    "parent": "tob-2023_camazotz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_camazotz_fire-breath",
   "fields": {
     "name": "Fire Breath ",
@@ -3749,6 +4379,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_camazotz_move",
+  "fields": {
+    "name": "Move",
+    "desc": "Camazotz moves up to his speed, or he flies up to half his speed. This movement doesn’t provoke opportunity attacks.",
+    "parent": "tob-2023_camazotz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -9115,6 +9759,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_gypsosphinx_beak-attack",
+  "fields": {
+    "name": "Beak Attack",
+    "desc": "The sphinx makes one Beak attack.",
+    "parent": "tob-2023_gypsosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_gypsosphinx_carrion-breath",
   "fields": {
     "name": "Carrion Breath ",
@@ -9125,6 +9783,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_gypsosphinx_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The sphinx uses Spellcasting.",
+    "parent": "tob-2023_gypsosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -9167,6 +9839,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_gypsosphinx_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
+    "parent": "tob-2023_gypsosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -9493,6 +10179,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_hraesvelgr_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "Hraesvelgr makes a Fist or Talons attack.",
+    "parent": "tob-2023_hraesvelgr",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_hraesvelgr_beak",
   "fields": {
     "name": "Beak",
@@ -9503,6 +10203,20 @@
     "action_type": "ACTION",
     "form_condition": "Roc Form Only",
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_hraesvelgr_ear-splitting-screech",
+  "fields": {
+    "name": "Ear-Splitting Screech",
+    "desc": "Hraesvelgr lets out an ear-splitting screech. Each creature within 30 feet of Hraesvelgr must succeed on a DC 19 Constitution saving throw or take 14 (4d6) thunder damage and be deafened until the end of its next turn.",
+    "parent": "tob-2023_hraesvelgr",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": "Roc Form Only",
+    "legendary_cost": 2
   }
 },
 {
@@ -9531,6 +10245,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_hraesvelgr_move",
+  "fields": {
+    "name": "Move",
+    "desc": "Hraesvelgr moves up to his speed, or flies up to half his flying speed if in roc form, without provoking opportunity attacks.",
+    "parent": "tob-2023_hraesvelgr",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -9703,6 +10431,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_iaaffrat_consume-host",
+  "fields": {
+    "name": "Consume Host",
+    "desc": "While inhabiting a Humanoid, Ia’Affrat consumes the host from the inside. The host takes 18 (4d8) necrotic damage, and Ia’Affrat regains hp equal to that amount.",
+    "parent": "tob-2023_iaaffrat",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": "Shapeless Form Only",
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_iaaffrat_flaming-insect-bolt",
   "fields": {
     "name": "Flaming Insect Bolt",
@@ -9741,6 +10483,34 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_iaaffrat_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "Ia’Affrat teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see.",
+    "parent": "tob-2023_iaaffrat",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_iaaffrat_vermin-breath",
+  "fields": {
+    "name": "Vermin Breath",
+    "desc": "Ia’Affrat exhales 1d4 swarms of insects in spaces he can see within 30 feet. The swarms take their turns immediately after Ia’Affrat, and they are allies of Ia’Affrat, obeying his telepathic commands. They remain for 1 minute, until Ia’Affrat dies, or until Ia’Affrat dismisses them as a bonus action. Ia’Affrat can have no more than five swarms of insects under his control at a time.",
+    "parent": "tob-2023_iaaffrat",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": "Humanoid Form Only",
+    "legendary_cost": 2
   }
 },
 {
@@ -11117,6 +11887,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_lord-of-the-hunt_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "The Lord of the Hunt makes one Spear or Longbow attack.",
+    "parent": "tob-2023_lord-of-the-hunt",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_lord-of-the-hunt_call-to-the-hunt",
+  "fields": {
+    "name": "Call to the Hunt",
+    "desc": "The Lord of the Hunt blows his hunting horn and chooses one creature he can see within 60 feet. If the creature can hear the horn, it must succeed on a DC 16 Charisma saving throw or be charmed by the Lord of the Hunt for 8 hours. The charmed target obeys the Lord’s verbal commands. If the target suffers any harm or receives a suicidal command, it can repeat the saving throw, ending the effect on a success. If the target successfully saves against the effect, or if the effect on it ends, the target is immune to the Lord’s Call to the Hunt for the next 24 hours. The Lord can have only one target charmed at a time. If he charms another, the effect on the previous target ends.",
+    "parent": "tob-2023_lord-of-the-hunt",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_lord-of-the-hunt_hunters-quarry",
   "fields": {
     "name": "Hunter’s Quarry",
@@ -11169,6 +11967,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_lord-of-the-hunt_tenacious-stride",
+  "fields": {
+    "name": "Tenacious Stride",
+    "desc": "The Lord of the Hunt moves up to his speed without provoking opportunity attacks. If he is mounted, he can force the mount to move up to half its speed without provoking opportunity attacks instead.",
+    "parent": "tob-2023_lord-of-the-hunt",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -11789,6 +12601,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_mechuiti_burn-from-the-inside",
+  "fields": {
+    "name": "Burn from the Inside",
+    "desc": "Mechuiti chooses a creature within 120 feet of him that is infected with the Mechuiti’s deadly ichor disease. The target must make a DC 24 Constitution saving throw. On a failure, the target takes 10 (3d6) fire damage and 10 (3d6) acid damage and catches fire. On a success, the target takes half the damage and doesn’t catch fire. Until a creature uses an action to douse the fire, the target takes 7 (2d6) fire damage at the start of each of its turns.",
+    "parent": "tob-2023_mechuiti",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_mechuiti_burning-acid-breath",
   "fields": {
     "name": "Burning Acid Breath ",
@@ -11799,6 +12625,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_mechuiti_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Mechuiti uses Spellcasting.",
+    "parent": "tob-2023_mechuiti",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -11827,6 +12667,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_mechuiti_move",
+  "fields": {
+    "name": "Move",
+    "desc": "Mechuiti moves up to his speed, or he climbs up to half his speed. This movement doesn’t provoke opportunity attacks.",
+    "parent": "tob-2023_mechuiti",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -12363,6 +13217,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_moonlit-king_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "The Moonlit King makes a Crystal Staff or Moon Bolt attack.",
+    "parent": "tob-2023_moonlit-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_moonlit-king_crystal-staff",
   "fields": {
     "name": "Crystal Staff",
@@ -12391,6 +13259,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_moonlit-king_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The Moonlit King moves up to his speed without provoking opportunity attacks.",
+    "parent": "tob-2023_moonlit-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_moonlit-king_shift-moonlight",
+  "fields": {
+    "name": "Shift Moonlight",
+    "desc": "The Moonlit King changes the brightness of each area of moonlight he can see within 120 feet of him from dim light to bright light or vice versa.",
+    "parent": "tob-2023_moonlit-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_moonlit-king_spellcasting",
   "fields": {
     "name": "Spellcasting",
@@ -12401,6 +13297,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_moonlit-king_spread-madness",
+  "fields": {
+    "name": "Spread Madness",
+    "desc": "Each creature within 30 feet of the Moonlit King must succeed on a DC 19 Wisdom saving throw or suffer short-term madness. The Moonlit King can use this legendary action only when he is in moonlight.",
+    "parent": "tob-2023_moonlit-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -12951,6 +13861,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_nihileth_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The nihileth makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_nihileth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_nihileth_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -12965,6 +13889,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_nihileth_rotten-drain",
+  "fields": {
+    "name": "Rotten Drain",
+    "desc": "One creature infected with the nihilethic rot disease within 30 feet of the nihileth takes 10 (3d6) psychic damage, and the nihileth regains hp equal to that amount.",
+    "parent": "tob-2023_nihileth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_nihileth_tail",
   "fields": {
     "name": "Tail",
@@ -12975,6 +13913,20 @@
     "action_type": "ACTION",
     "form_condition": "Undead Form Only",
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_nihileth_tail-swipe",
+  "fields": {
+    "name": "Tail Swipe",
+    "desc": "The nihileth makes one Tail attack.",
+    "parent": "tob-2023_nihileth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -13514,13 +14466,13 @@
   "pk": "tob-2023_pact-vampire_call-blood",
   "fields": {
     "name": "Call Blood",
-    "desc": "The pact vampire draws the blood out of a bleeding creature’s body, where it flows through the air into the vampire’s mouth. One creature the vampire can see within 60 feet of it that doesn’t have all its hp and isn’t a Construct or Undead must succeed on a DC 18 Constitution saving throw or take 22 (4d10) necrotic damage, and its hp maximum is reduced by that amount. The vampire regains hp equal to half the damage dealt. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hp maximum to 0.",
+    "desc": "The pact vampire uses Call Blood.",
     "parent": "tob-2023_pact-vampire",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
   }
 },
 {
@@ -13567,6 +14519,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_pact-vampire_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The pact vampire moves up to its speed without provoking opportunity attacks.",
+    "parent": "tob-2023_pact-vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_pact-vampire_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -13577,6 +14543,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_pact-vampire_spread-poison",
+  "fields": {
+    "name": "Spread Poison",
+    "desc": "The pact vampire’s blood briefly turns into a mist around it. Each creature within 15 feet of the vampire must succeed on a DC 18 Constitution saving throw or take 14 (4d6) poison damage and be poisoned until the end of its next turn.",
+    "parent": "tob-2023_pact-vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -13903,6 +14883,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_qorgeth_death-roll",
+  "fields": {
+    "name": "Death Roll",
+    "desc": "Qorgeth moves up to half its speed straight toward a creature and makes one Crush attack against the creature. Each object and structure between Qorgeth and the target takes 33 (6d10) bludgeoning damage.",
+    "parent": "tob-2023_qorgeth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_qorgeth_devour",
+  "fields": {
+    "name": "Devour",
+    "desc": "Qorgeth makes one Bite attack.",
+    "parent": "tob-2023_qorgeth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_qorgeth_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -13913,6 +14921,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_qorgeth_shriek",
+  "fields": {
+    "name": "Shriek",
+    "desc": "Each creature within 60 feet of Qorgeth and that can hear the demon must succeed on a DC 21 Wisdom saving throw or be frightened for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+    "parent": "tob-2023_qorgeth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -13941,6 +14963,48 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_queen-of-night-and-magic_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "The Queen of Night and Magic makes one Star Strike attack. She doesn’t have disadvantage on this attack roll from being within 5 feet of a creature, though she can have disadvantage from other sources.",
+    "parent": "tob-2023_queen-of-night-and-magic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_queen-of-night-and-magic_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The Queen of Night and Magic uses Spellcasting.",
+    "parent": "tob-2023_queen-of-night-and-magic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_queen-of-night-and-magic_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The Queen of Night and Magic moves up to her walking speed or up to half of her flying speed without provoking opportunity attacks.",
+    "parent": "tob-2023_queen-of-night-and-magic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -14015,6 +15079,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_queen-of-night-and-magic_swirling-stars",
+  "fields": {
+    "name": "Swirling Stars",
+    "desc": "The stars on the Queen’s gown pulse with brilliant starlight. Each creature within 15 feet of her must succeed on a DC 23 Dexterity saving throw or be blinded until the end of its next turn.",
+    "parent": "tob-2023_queen-of-night-and-magic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_queen-of-night-and-magic_unravel",
   "fields": {
     "name": "Unravel",
@@ -14025,6 +15103,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_queen-of-witches_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The Queen of Witches uses Spellcasting.",
+    "parent": "tob-2023_queen-of-witches",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -14060,13 +15152,13 @@
   "pk": "tob-2023_queen-of-witches_mystical-blast",
   "fields": {
     "name": "Mystical Blast",
-    "desc": "Melee or Ranged Spell Attack: +12 to hit, reach 5 ft. or range 120 ft., one target. Hit: 16 (3d6 + 6) force damage.",
+    "desc": "The Queen makes one Mystical Blast attack.",
     "parent": "tob-2023_queen-of-witches",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -14095,6 +15187,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_queen-of-witches_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "The Queen magically teleports, along with any equipment she is wearing or carrying, to an unoccupied space she can see within 60 feet.",
+    "parent": "tob-2023_queen-of-witches",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -14981,6 +16087,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_river-king_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "The River King makes a Longsword or Flood Blast attack.",
+    "parent": "tob-2023_river-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_river-king_flood-blast",
   "fields": {
     "name": "Flood Blast",
@@ -14991,6 +16111,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_river-king_flow",
+  "fields": {
+    "name": "Flow",
+    "desc": "The River King moves up to his walking speed, or swims up to half his swimming speed, without provoking opportunity attacks.",
+    "parent": "tob-2023_river-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -15033,6 +16167,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_river-king_ripple",
+  "fields": {
+    "name": "Ripple",
+    "desc": "The River King magically ripples like sunlight on the surface of water. Until the start of his next turn, attack rolls against him have disadvantage.",
+    "parent": "tob-2023_river-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -16703,6 +17851,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_snow-queen_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "The Snow Queen makes a Claw or Ice Bolt attack.",
+    "parent": "tob-2023_snow-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_snow-queen_claw",
   "fields": {
     "name": "Claw",
@@ -16745,6 +17907,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_snow-queen_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The Snow Queen moves up to her speed without provoking opportunity attacks.",
+    "parent": "tob-2023_snow-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_snow-queen_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -16755,6 +17931,34 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_snow-queen_snowblind",
+  "fields": {
+    "name": "Snowblind",
+    "desc": "One creature the Snow Queen can see within 120 feet of her must succeed on a DC 18 Dexterity saving throw or be blinded by swirling snow until the end of its next turn.",
+    "parent": "tob-2023_snow-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_snow-queen_wintry-swirl",
+  "fields": {
+    "name": "Wintry Swirl",
+    "desc": "Each creature within 15 feet of the Snow Queen must succeed on a DC 18 Constitution saving throw or have vulnerability to cold damage until the end of its next turn. A creature with immunity to cold damage that fails this saving throw instead loses its immunity to cold damage but isn’t vulnerable to it.",
+    "parent": "tob-2023_snow-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -17235,6 +18439,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_spinosaurus_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The spinosaurus moves up to half its speed without provoking opportunity attacks.",
+    "parent": "tob-2023_spinosaurus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_spinosaurus_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -17249,6 +18467,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_spinosaurus_roar",
+  "fields": {
+    "name": "Roar",
+    "desc": "The spinosaurus uses Frightful Presence.",
+    "parent": "tob-2023_spinosaurus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_spinosaurus_tail",
   "fields": {
     "name": "Tail",
@@ -17259,6 +18491,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_spinosaurus_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The spinosaurus makes one Tail attack.",
+    "parent": "tob-2023_spinosaurus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -18201,6 +19447,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_tosculi-hive-queen_flight",
+  "fields": {
+    "name": "Flight",
+    "desc": "The hive queen flies up to half her flying speed without provoking opportunity attacks.",
+    "parent": "tob-2023_tosculi-hive-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_tosculi-hive-queen_glitter-dust",
+  "fields": {
+    "name": "Glitter Dust",
+    "desc": "The hive queen beats her wings and creates a cloud of glittering, golden particles. Each non-tosculi creature within 20 feet of her must succeed on a DC 17 Dexterity saving throw or be blinded until the end of its next turn.",
+    "parent": "tob-2023_tosculi-hive-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_tosculi-hive-queen_implant-egg",
   "fields": {
     "name": "Implant Egg",
@@ -18246,13 +19520,13 @@
   "pk": "tob-2023_tosculi-hive-queen_stinger",
   "fields": {
     "name": "Stinger",
-    "desc": "Melee Weapon Attack: +11 to hit, reach 5 ft., one creature. Hit: 22 (6d4 + 7) piercing damage, and the target must succeed on a DC 17 Constitution saving throw or be poisoned for 1 minute. While poisoned in this way, the target is also paralyzed. A poisoned target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The hive queen’s potent poison can be removed only by the greater restoration spell or similar magic.",
+    "desc": "The hive queen makes one Stinger attack.",
     "parent": "tob-2023_tosculi-hive-queen",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
   }
 },
 {
@@ -18708,13 +19982,27 @@
   "pk": "tob-2023_ushabti-royal-guard_medjais-scepter",
   "fields": {
     "name": "Medjai’s Scepter",
-    "desc": "Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage plus 9 (2d8) necrotic damage.",
+    "desc": "The ushabti makes one Medjai’s Scepter attack.",
     "parent": "tob-2023_ushabti-royal-guard",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ushabti-royal-guard_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The ushabti moves up to its speed without provoking opportunity attacks.",
+    "parent": "tob-2023_ushabti-royal-guard",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -18729,6 +20017,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ushabti-royal-guard_telekinesis",
+  "fields": {
+    "name": "Telekinesis",
+    "desc": "Up to two creatures the ushabti can see within 60 feet of it must succeed on a DC 18 Strength saving throw or the ushabti moves the creature up to 30 feet in any direction (including upward). A moved target is then restrained until the start of the ushabti’s next turn.",
+    "parent": "tob-2023_ushabti-royal-guard",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -20595,6 +21897,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_zmey_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The zmey moves up to its speed, or flies up to half its flying speed, without provoking opportunity attacks.",
+    "parent": "tob-2023_zmey",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_zmey_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -20605,6 +21921,34 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_zmey_tail-whip",
+  "fields": {
+    "name": "Tail Whip",
+    "desc": "The zmey whips its tail around it. Each creature within 15 feet of the zmey must succeed on a DC 17 Dexterity saving throw or be knocked prone.",
+    "parent": "tob-2023_zmey",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_zmey_tripartite-roar",
+  "fields": {
+    "name": "Tripartite Roar",
+    "desc": "The zmey’s heads exhale a three-part roar, one a deafening shriek, one a frightful screech, and one a stunning bellow, in a 30-foot cone. Each creature in that area must succeed on a DC 17 Wisdom saving throw or suffer the effects of the roars until the end of its next turn. The effects depend upon the number of heads the zmey has remaining: deafened for only one head, deafened and frightened for two heads, or stunned for three heads.",
+    "parent": "tob-2023_zmey",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 }
 ]

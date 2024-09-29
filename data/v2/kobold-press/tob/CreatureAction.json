@@ -8,9 +8,9 @@
     "parent": "tob_aboleth-nihilith",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -57,6 +57,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_aboleth-nihilith_psychic-drain",
+  "fields": {
+    "name": "Psychic Drain",
+    "desc": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes.",
+    "parent": "tob_aboleth-nihilith",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_aboleth-nihilith_psychic-drain-costs-2-actions",
   "fields": {
     "name": "Psychic Drain (Costs 2 Actions)",
@@ -92,9 +106,9 @@
     "parent": "tob_aboleth-nihilith",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -260,9 +274,9 @@
     "parent": "tob_adult-cave-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -316,9 +330,23 @@
     "parent": "tob_adult-cave-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_adult-cave-dragon_swift-bite",
+  "fields": {
+    "name": "Swift Bite",
+    "desc": "The dragon makes two bite attacks.",
+    "parent": "tob_adult-cave-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -344,9 +372,9 @@
     "parent": "tob_adult-cave-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -386,9 +414,9 @@
     "parent": "tob_adult-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -470,9 +498,23 @@
     "parent": "tob_adult-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_adult-flame-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 17 Dexterity saving throw or take 11 (2d6 + 4) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob_adult-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -540,9 +582,9 @@
     "parent": "tob_adult-mithral-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -596,9 +638,23 @@
     "parent": "tob_adult-mithral-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_adult-mithral-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob_adult-mithral-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -708,9 +764,9 @@
     "parent": "tob_adult-sea-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -764,9 +820,9 @@
     "parent": "tob_adult-sea-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -781,6 +837,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_adult-sea-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then move up to half its flying speed, or half its swim speed if in the water.",
+    "parent": "tob_adult-sea-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -862,9 +932,9 @@
     "parent": "tob_adult-void-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -932,9 +1002,9 @@
     "parent": "tob_adult-void-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -953,6 +1023,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_adult-void-dragon_void-cache",
+  "fields": {
+    "name": "Void Cache",
+    "desc": "The dragon can magically reach into its treasure hoard and retrieve one item. If it is holding an item, it can use this ability to deposit the item into its hoard.",
+    "parent": "tob_adult-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_adult-void-dragon_void-cache-costs-3-actions",
   "fields": {
     "name": "Void Cache (Costs 3 Actions)",
@@ -963,6 +1047,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_adult-void-dragon_void-slip",
+  "fields": {
+    "name": "Void Slip",
+    "desc": "The dragon twists the fabric of space. Each creature within 15 feet of the dragon must succeed on a DC 18 Dexterity saving throw or take 12 (2d6 + 5) bludgeoning damage and be knocked prone. The dragon can then teleport to an unoccupied space within 40 feet.",
+    "parent": "tob_adult-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1030,9 +1128,9 @@
     "parent": "tob_adult-wind-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1086,9 +1184,23 @@
     "parent": "tob_adult-wind-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_adult-wind-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob_adult-wind-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1450,9 +1562,9 @@
     "parent": "tob_ancient-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1534,9 +1646,23 @@
     "parent": "tob_ancient-flame-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_ancient-flame-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob_ancient-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1604,9 +1730,9 @@
     "parent": "tob_ancient-mithral-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1660,9 +1786,23 @@
     "parent": "tob_ancient-mithral-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_ancient-mithral-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 23 Dexterity saving throw or take 18 (2d8 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob_ancient-mithral-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1716,9 +1856,9 @@
     "parent": "tob_ancient-sea-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1772,9 +1912,9 @@
     "parent": "tob_ancient-sea-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1789,6 +1929,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_ancient-sea-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then move up to half its flying speed, or swim speed if in the water.",
+    "parent": "tob_ancient-sea-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1926,9 +2080,9 @@
     "parent": "tob_ancient-void-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1996,9 +2150,9 @@
     "parent": "tob_ancient-void-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -2017,6 +2171,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_ancient-void-dragon_void-cache",
+  "fields": {
+    "name": "Void Cache",
+    "desc": "The dragon can magically reach into its treasure hoard and retrieve one item. If the dragon is holding an item, it can use this ability to deposit the item into its hoard.",
+    "parent": "tob_ancient-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_ancient-void-dragon_void-cache-costs-3-actions",
   "fields": {
     "name": "Void Cache (Costs 3 Actions)",
@@ -2027,6 +2195,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_ancient-void-dragon_void-slip",
+  "fields": {
+    "name": "Void Slip",
+    "desc": "The dragon twists the fabric of space. Each creature within 15 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then teleport to an unoccupied space within 40 feet.",
+    "parent": "tob_ancient-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2094,9 +2276,9 @@
     "parent": "tob_ancient-wind-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -2150,9 +2332,23 @@
     "parent": "tob_ancient-wind-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_ancient-wind-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 24 Dexterity saving throw or take 20 (2d10 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob_ancient-wind-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2514,9 +2710,9 @@
     "parent": "tob_arbeyach",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -2542,9 +2738,23 @@
     "parent": "tob_arbeyach",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_arbeyach_spell",
+  "fields": {
+    "name": "Spell",
+    "desc": "Arbeyach casts a spell.",
+    "parent": "tob_arbeyach",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -8898,9 +9108,9 @@
     "parent": "tob_gug",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -8912,9 +9122,9 @@
     "parent": "tob_gug",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -8926,9 +9136,9 @@
     "parent": "tob_gug",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -8982,9 +9192,9 @@
     "parent": "tob_gug",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -8996,9 +9206,9 @@
     "parent": "tob_gug",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9024,9 +9234,23 @@
     "parent": "tob_gypsosphinx",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_gypsosphinx_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The sphinx casts a spell from its list of prepared spells, using a spell slot as normal.",
+    "parent": "tob_gypsosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {
@@ -9087,6 +9311,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_gypsosphinx_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.",
+    "parent": "tob_gypsosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_gypsosphinx_teleport-costs-2-actions",
   "fields": {
     "name": "Teleport (Costs 2 Actions)",
@@ -9129,6 +9367,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_herald-of-blood_call-of-blood",
+  "fields": {
+    "name": "Call of Blood",
+    "desc": "Melee Weapon Attack. +10 to hit, reach 5 ft., all creatures in reach. Hit: 39 (6d12) necrotic damage and each target must make a successful DC 17 Constitution saving throw or gain 1 level of exhaustion.",
+    "parent": "tob_herald-of-blood",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_herald-of-blood_call-of-blood-costs-2-actions",
   "fields": {
     "name": "Call of Blood (Costs 2 Actions)",
@@ -9157,6 +9409,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_herald-of-blood_majesty-of-ragnarok",
+  "fields": {
+    "name": "Majesty of Ragnarok",
+    "desc": "The herald of blood emits a terrifying burst of eldritch power. All creatures within 100 feet and in direct line of sight of the herald take 32 (5d12) necrotic damage, gain 2 levels of exhaustion, and are permanently blinded. Targets that make a successful DC 15 Charisma saving throw are not blinded and gain only 1 level of exhaustion.",
+    "parent": "tob_herald-of-blood",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_herald-of-blood_majesty-of-ragnarok-costs-3-actions",
   "fields": {
     "name": "Majesty of Ragnarok (Costs 3 Actions)",
@@ -9178,9 +9444,9 @@
     "parent": "tob_herald-of-blood",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9374,9 +9640,9 @@
     "parent": "tob_hraesvelgr-the-corpse-swallower",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9423,6 +9689,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_hraesvelgr-the-corpse-swallower_move",
+  "fields": {
+    "name": "Move",
+    "desc": "Hraesvelgr moves half his speed. If in roc form, all creatures within 10 feet of Hraesvelgr at the end of this move must succeed on a DC 15 Dexterity saving throw or take 10 (3d6) bludgeoning damage and fall prone.",
+    "parent": "tob_hraesvelgr-the-corpse-swallower",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_hraesvelgr-the-corpse-swallower_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -9433,6 +9713,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_hraesvelgr-the-corpse-swallower_swallow",
+  "fields": {
+    "name": "Swallow",
+    "desc": "Hraesvelgr makes a bite attack against a creature he has grappled. If he hits, he swallows the creature. A swallowed creature is no longer grappled, but is blinded, restrained, and has advantage against attacks and effects originating from outside Hraesvelgr. A swallowed creature takes 14 (4d6) acid damage at the start of each of Hraesvelgr's turns. If Hraesvelgr returns to giant form, or takes 40 damage or more in a single turn from a swallowed creature, he must succeed on a DC 20 Constitution saving throw or regurgitate all swallowed creatures, which land prone within 10 feet of the giant. If Hraesvelgr dies, swallowed creatures are no longer restrained and can escape the corpse by spending 30 feet of movement, exiting prone.",
+    "parent": "tob_hraesvelgr-the-corpse-swallower",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": "Roc Form Only",
+    "legendary_cost": 1
   }
 },
 {
@@ -9913,6 +10207,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_jotun-giant_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The Jotun giant makes a Wisdom (Perception) check.",
+    "parent": "tob_jotun-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_jotun-giant_frightful-presence",
   "fields": {
     "name": "Frightful Presence",
@@ -9955,6 +10263,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_jotun-giant_planar-return",
+  "fields": {
+    "name": "Planar Return",
+    "desc": "If banished, a Jotun giant can return to the plane it departed 2/day. If banished a third time, it cannot return.",
+    "parent": "tob_jotun-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_jotun-giant_rock",
   "fields": {
     "name": "Rock",
@@ -9965,6 +10287,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_jotun-giant_sweeping-blow",
+  "fields": {
+    "name": "Sweeping Blow",
+    "desc": "The Jotun giant can sweep its greatclub in an arc around itself. The sweep affects a semicircular path 30 feet wide around the giant. All targets in that area take 46 (8d8 + 10) bludgeoning damage, or no damage with a successful DC 19 Dexterity saving throw.",
+    "parent": "tob_jotun-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -10347,6 +10683,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_koschei_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "Koschei makes one attack with his longsword.",
+    "parent": "tob_koschei",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_koschei_drain",
+  "fields": {
+    "name": "Drain",
+    "desc": "Koschei makes one attack with Drain Life.",
+    "parent": "tob_koschei",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_koschei_drain-life",
   "fields": {
     "name": "Drain Life",
@@ -10385,6 +10749,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_koschei_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "Koschei teleports to an unoccupied space he can see within 40 feet.",
+    "parent": "tob_koschei",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -15681,6 +16059,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_spinosaurus_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The spinosaurus moves up to half its speed.",
+    "parent": "tob_spinosaurus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_spinosaurus_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -15695,6 +16087,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_spinosaurus_roar",
+  "fields": {
+    "name": "Roar",
+    "desc": "The spinosaurus uses Frightful Presence.",
+    "parent": "tob_spinosaurus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_spinosaurus_tail",
   "fields": {
     "name": "Tail",
@@ -15705,6 +16111,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_spinosaurus_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The spinosaurus makes one tail attack.",
+    "parent": "tob_spinosaurus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -15733,6 +16153,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_star-drake_bite-attack",
+  "fields": {
+    "name": "Bite Attack",
+    "desc": "The drake makes one bite attack.",
+    "parent": "tob_star-drake",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -15775,6 +16209,34 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_star-drake_nova",
+  "fields": {
+    "name": "Nova",
+    "desc": "The drake momentarily doubles the radius and intensity of its nimbus of stars. Every sighted creature within 20 feet of the drake must make a successful DC 18 Constitution saving throw or become blinded until the end of its next turn. Characters who are averting their eyes are immune to the nova.",
+    "parent": "tob_star-drake",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_star-drake_pale-sparks",
+  "fields": {
+    "name": "Pale Sparks",
+    "desc": "The drake casts faerie fire or moonbeam.",
+    "parent": "tob_star-drake",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -16423,16 +16885,30 @@
 },
 {
   "model": "api_v2.creatureaction",
-  "pk": "tob_tosculi-hive-queen_glitter-dust",
+  "pk": "tob_tosculi-hive-queen_flight",
   "fields": {
-    "name": "Glitter Dust",
-    "desc": "The hive-queen produces a cloud of glittering golden particles in a 30-foot radius. Each creature that is not a tosculi in the area must succeed on a DC 18 Constitution saving throw or be blinded for 1 minute. A blinded creature repeats the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+    "name": "Flight",
+    "desc": "The hive-queen flies up to half its flying speed.",
     "parent": "tob_tosculi-hive-queen",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_tosculi-hive-queen_glitter-dust",
+  "fields": {
+    "name": "Glitter Dust",
+    "desc": "The hive-queen uses Glitter Dust.",
+    "parent": "tob_tosculi-hive-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -16489,6 +16965,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_tosculi-hive-queen_stinger-attack",
+  "fields": {
+    "name": "Stinger Attack",
+    "desc": "The hive-queen makes one stinger attack.",
+    "parent": "tob_tosculi-hive-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -16773,6 +17263,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_urochar-strangling-watcher_crush-attack",
+  "fields": {
+    "name": "Crush Attack",
+    "desc": "The urochar crushes one creature grappled by its tentacle. The target takes 25 (4d8 + 7) bludgeoning damage.",
+    "parent": "tob_urochar-strangling-watcher",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_urochar-strangling-watcher_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -16811,6 +17315,34 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_urochar-strangling-watcher_tentacle-attack",
+  "fields": {
+    "name": "Tentacle Attack",
+    "desc": "The watcher makes one tentacle attack.",
+    "parent": "tob_urochar-strangling-watcher",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_urochar-strangling-watcher_tentacle-leap",
+  "fields": {
+    "name": "Tentacle Leap",
+    "desc": "Using a tentacle, the urochar moves up to 20 feet to an unoccupied space adjacent to a wall, ceiling, floor, or other solid surface. This move doesn't trigger reactions. The urochar must have at least one tentacle free (not grappling a creature) to use this action. Grappled creatures move with the urochar.",
+    "parent": "tob_urochar-strangling-watcher",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -16927,6 +17459,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_valkyrie_cast-a-cantrip",
+  "fields": {
+    "name": "Cast a Cantrip",
+    "desc": "The valkyrie casts one spell from her at-will list.",
+    "parent": "tob_valkyrie",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_valkyrie_harvest-the-fallen",
+  "fields": {
+    "name": "Harvest the Fallen",
+    "desc": "A valkyrie can take the soul of a newly dead body and bind it into a weapon or shield. Only one soul can be bound to any object. Individuals whose souls are bound can't be raised by any means short of a wish or comparable magic. A valkyrie can likewise release any soul that has been bound by another valkyrie, or transfer a bound soul from one object to another. Once bound, the soul grants the item a +1 bonus for every 4 character levels of the soul (maximum of +3), and this replaces any other magic on the item. At the DM's discretion, part of this bonus can become an appropriate special quality (a fire giant's soul might create a flaming weapon, for example).",
+    "parent": "tob_valkyrie",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_valkyrie_longsword",
   "fields": {
     "name": "Longsword",
@@ -16951,6 +17511,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_valkyrie_spear-or-longsword-attack",
+  "fields": {
+    "name": "Spear or Longsword Attack",
+    "desc": "The valkyrie makes one longsword or spear attack.",
+    "parent": "tob_valkyrie",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -16986,13 +17560,13 @@
   "pk": "tob_vampire-warlock-variant_call-the-blood",
   "fields": {
     "name": "Call the Blood",
-    "desc": "The vampire warlock targets one humanoid it can see within 60 feet. The target must be injured (has fewer than its normal maximum hit points). The target's blood is drawn out of the body and streams through the air to the vampire warlock. The target takes 25 (6d6 + 4) necrotic damage and its hit point maximum is reduced by an equal amount until the target finishes a long rest; a successful DC 17 Constitution saving throw prevents both effects. The vampire warlock regains hit points equal to half the damage dealt. The target dies if this effect reduces its hit point maximum to 0.",
+    "desc": "The vampire warlock uses call the blood.",
     "parent": "tob_vampire-warlock-variant",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
   }
 },
 {
@@ -17007,6 +17581,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_vampire-warlock-variant_unarmed-strike",
+  "fields": {
+    "name": "Unarmed Strike",
+    "desc": "The vampire warlock makes one unarmed strike.",
+    "parent": "tob_vampire-warlock-variant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -18579,6 +19167,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_zaratan_consume",
+  "fields": {
+    "name": "Consume",
+    "desc": "The zaratan makes one bite attack or uses Swallow.",
+    "parent": "tob_zaratan",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_zaratan_flipper",
   "fields": {
     "name": "Flipper",
@@ -18589,6 +19191,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_zaratan_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The zaratan moves up to half its speed.",
+    "parent": "tob_zaratan",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -18617,6 +19233,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_zaratan_swipe",
+  "fields": {
+    "name": "Swipe",
+    "desc": "The zaratan makes one flipper attack.",
+    "parent": "tob_zaratan",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -18736,13 +19366,13 @@
   "pk": "tob_zmey_bite",
   "fields": {
     "name": "Bite",
-    "desc": "Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 19 (2d12 + 6) piercing damage.",
+    "desc": "The zmey makes a bite attack.",
     "parent": "tob_zmey",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -18799,6 +19429,34 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_zmey_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The zmey makes a tail attack.",
+    "parent": "tob_zmey",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_zmey_trample",
+  "fields": {
+    "name": "Trample",
+    "desc": "The zmey moves up to half its land speed. It can enter enemy-occupied spaces but can't end its move there. Creatures in spaces the zmey enters must make successful DC 14 Dexterity saving throws or take 10 (1d8 + 6) bludgeoning damage and fall prone.",
+    "parent": "tob_zmey",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 }
 ]

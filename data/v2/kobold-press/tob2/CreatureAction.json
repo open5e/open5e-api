@@ -176,9 +176,9 @@
     "parent": "tob2_adult-boreal-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -232,9 +232,23 @@
     "parent": "tob2_adult-boreal-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_adult-boreal-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob2_adult-boreal-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -263,6 +277,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_adult-imperial-dragon_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The dragon casts a spell from its list of innate spells, consuming a use of the spell as normal.",
+    "parent": "tob2_adult-imperial-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {
@@ -316,9 +344,9 @@
     "parent": "tob2_adult-imperial-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -386,9 +414,9 @@
     "parent": "tob2_adult-imperial-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -764,9 +792,9 @@
     "parent": "tob2_ancient-boreal-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -820,9 +848,23 @@
     "parent": "tob2_ancient-boreal-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_ancient-boreal-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 23 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob2_ancient-boreal-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -851,6 +893,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_ancient-imperial-dragon_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The dragon casts a spell from its list of innate spells, consuming a use of the spell as normal.",
+    "parent": "tob2_ancient-imperial-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {
@@ -904,9 +960,9 @@
     "parent": "tob2_ancient-imperial-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -974,9 +1030,9 @@
     "parent": "tob2_ancient-imperial-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -3921,6 +3977,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_crystalline-monolith_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The crystalline monolith casts a spell from its list of innate spells, expending a daily use as normal.",
+    "parent": "tob2_crystalline-monolith",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_crystalline-monolith_cast-a-spell-costs-3-actions",
   "fields": {
     "name": "Cast a Spell (Costs 3 Actions)",
@@ -3942,9 +4012,9 @@
     "parent": "tob2_crystalline-monolith",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -4001,6 +4071,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_crystalline-monolith_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "The crystalline monolith magically teleports up to 120 feet to an unoccupied space it can see.",
+    "parent": "tob2_crystalline-monolith",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -4600,9 +4684,23 @@
     "parent": "tob2_derendian-moth-abomination",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_derendian-moth-abomination_lay-eggs",
+  "fields": {
+    "name": "Lay Eggs",
+    "desc": "The Derendian moth abomination ejects a sticky mass of eggs within 5 feet of itself. At the beginning of the abomination’s next turn, the eggs hatch as a swarm of insects that attacks the abomination’s enemies.",
+    "parent": "tob2_derendian-moth-abomination",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -4642,9 +4740,9 @@
     "parent": "tob2_derendian-moth-abomination",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -7365,6 +7463,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_herald-of-the-void_discorporate",
+  "fields": {
+    "name": "Discorporate",
+    "desc": "The herald chooses up to two creatures it can see within 30 feet of it. Each target must succeed on a DC 17 Constitution saving throw or become intangible until the end of its next turn. While intangible, the creature is incapacitated, drops whatever it’s holding, and is unable to interact with physical objects. The creature is still visible and able to speak.",
+    "parent": "tob2_herald-of-the-void",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_herald-of-the-void_discorporate-costs-2-actions",
   "fields": {
     "name": "Discorporate (Costs 2 Actions)",
@@ -7386,9 +7498,9 @@
     "parent": "tob2_herald-of-the-void",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -7403,6 +7515,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_herald-of-the-void_song-of-mighty-doom",
+  "fields": {
+    "name": "Song of Mighty Doom",
+    "desc": "The herald emits a cacophonous dirge praising the Void. Each creature other than the herald within 30 feet of the herald and that understands Void Speech gains 10 temporary hp.",
+    "parent": "tob2_herald-of-the-void",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {
@@ -7438,13 +7564,13 @@
   "pk": "tob2_herald-of-the-void_void-claw",
   "fields": {
     "name": "Void Claw",
-    "desc": "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 18 (3d8 + 5) cold damage plus 4 (1d8) force damage.",
+    "desc": "The herald makes one void claw attack.",
     "parent": "tob2_herald-of-the-void",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 2
   }
 },
 {
@@ -11894,9 +12020,9 @@
     "parent": "tob2_psychic-vampire",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -11929,6 +12055,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_psychic-vampire_psychic-pulse",
+  "fields": {
+    "name": "Psychic Pulse",
+    "desc": "The vampire releases a powerful wave of psychic energy. Each creature within 20 feet of the vampire must succeed on a DC 17 Intelligence saving throw or be stunned until the end of its next turn.",
+    "parent": "tob2_psychic-vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_psychic-vampire_psychic-pulse-costs-3-actions",
   "fields": {
     "name": "Psychic Pulse (Costs 3 Actions)",
@@ -11950,9 +12090,9 @@
     "parent": "tob2_psychic-vampire",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -15758,9 +15898,9 @@
     "parent": "tob2_virtuoso-lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -15775,6 +15915,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_virtuoso-lich_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The lich casts a spell from its list of prepared spells, using a spell slot as normal.",
+    "parent": "tob2_virtuoso-lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {
@@ -15814,9 +15968,9 @@
     "parent": "tob2_virtuoso-lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -15831,6 +15985,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_virtuoso-lich_unrestrained-art",
+  "fields": {
+    "name": "Unrestrained Art",
+    "desc": "The lich unleashes the full force of its artistic talents on those nearby. Each creature with 10 feet of the lich must make a DC 16 Dexterity saving throw. On a failure, a creature takes 18 (4d8) damage of the type chosen with the Versatile Artist trait and is knocked prone. On a success, a creature takes half the damage and isn’t knocked prone.",
+    "parent": "tob2_virtuoso-lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {

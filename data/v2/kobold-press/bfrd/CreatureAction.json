@@ -8,9 +8,9 @@
     "parent": "bfrd_aboleth",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -57,6 +57,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_aboleth_slime-drain",
+  "fields": {
+    "name": "Slime Drain",
+    "desc": "One creature infected with _slime pox_ within 30 feet of the aboleth takes 10 (3d6) acid damage, and the aboleth regains HP equal to the damage the creature takes.",
+    "parent": "bfrd_aboleth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_aboleth_slime-drain-costs-2-actions",
   "fields": {
     "name": "Slime Drain (Costs 2 Actions)",
@@ -78,9 +92,9 @@
     "parent": "bfrd_aboleth",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -190,9 +204,23 @@
     "parent": "bfrd_adult-black-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-black-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 16 CHA save or be vulnerable to acid damage until the end of its next turn. A target resistant to acid damage isn't resistant to it for the duration. A target immune to acid damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -260,9 +288,23 @@
     "parent": "bfrd_adult-black-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-black-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 20 DEX save or take 14 (2d6+7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -316,9 +358,23 @@
     "parent": "bfrd_adult-blue-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-blue-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 17 CHA save or be vulnerable to lightning damage until the end of its next turn. A target resistant to lightning damage isn't resistant to it for the duration. A target immune to lightning damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -400,9 +456,23 @@
     "parent": "bfrd_adult-blue-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-blue-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 20 DEX save or take 14 (2d6+7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -456,9 +526,23 @@
     "parent": "bfrd_adult-brass-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-brass-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 16 CHA save or be vulnerable to fire damage until the end of its next turn. A target resistant to fire damage isn't resistant to it for the duration. A target immune to fire damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -554,9 +638,23 @@
     "parent": "bfrd_adult-brass-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-brass-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 19 DEX save or take 13 (2d6+6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -610,9 +708,23 @@
     "parent": "bfrd_adult-bronze-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-bronze-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 17 CHA save or be vulnerable to lightning damage until the end of its next turn. A target resistant to lightning damage isn't resistant to it for the duration. A target immune to lightning damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -708,9 +820,23 @@
     "parent": "bfrd_adult-bronze-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-bronze-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 20 DEX save or take 14 (2d6+7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -778,9 +904,23 @@
     "parent": "bfrd_adult-copper-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-copper-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 16 CHA save or be vulnerable to acid damage until the end of its next turn. A target resistant to acid damage isn't resistant to it for the duration. A target immune to acid damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -862,9 +1002,23 @@
     "parent": "bfrd_adult-copper-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-copper-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 19 DEX save or take 13 (2d6+6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -918,9 +1072,23 @@
     "parent": "bfrd_adult-gold-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-gold-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 18 CHA save or be vulnerable to fire damage until the end of its next turn. A target resistant to fire damage isn't resistant to it for the duration. A target immune to fire damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1002,9 +1170,9 @@
     "parent": "bfrd_adult-gold-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -1019,6 +1187,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-gold-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 22 DEX save or take 15 (2d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1072,9 +1254,23 @@
     "parent": "bfrd_adult-green-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-green-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 16 CHA save or be vulnerable to poison damage until the end of its next turn. A target resistant to poison damage isn't resistant to it for the duration. A target immune to poison damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1156,9 +1352,23 @@
     "parent": "bfrd_adult-green-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-green-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 19 DEX save or take 13 (2d6+6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1212,9 +1422,23 @@
     "parent": "bfrd_adult-red-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-red-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 19 CHA save or be vulnerable to fire damage until the end of its next turn. A target resistant to fire damage isn't resistant to it for the duration. A target immune to fire damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1296,9 +1520,23 @@
     "parent": "bfrd_adult-red-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-red-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 22 DEX save or take 15 (2d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1366,9 +1604,23 @@
     "parent": "bfrd_adult-silver-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-silver-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 17 CHA save or be vulnerable to cold damage until the end of its next turn. A target resistant to cold damage isn't resistant to it for the duration. A target immune to cold damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1450,9 +1702,23 @@
     "parent": "bfrd_adult-silver-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-silver-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 21 Dexterity save or take 15 (2d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1520,9 +1786,23 @@
     "parent": "bfrd_adult-white-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-white-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 15 CHA save or be vulnerable to cold damage until the end of its next turn. A target resistant to cold damage isn't resistant to it for the duration. A target immune to cold damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_adult-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1590,9 +1870,23 @@
     "parent": "bfrd_adult-white-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_adult-white-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 19 DEX save or take 13 (2d6+6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_adult-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1772,9 +2066,23 @@
     "parent": "bfrd_ancient-black-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-black-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 18 CHA save or be vulnerable to acid damage until the end of its next turn. A target resistant to acid damage isn't resistant to it for the duration. A target immune to acid damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1842,9 +2150,23 @@
     "parent": "bfrd_ancient-black-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-black-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 23 DEX save or take 16 (2d6+9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1898,9 +2220,23 @@
     "parent": "bfrd_ancient-blue-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-blue-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 19 CHA save or be vulnerable to lightning damage until the end of its next turn. A target resistant to lightning damage isn't resistant to it for the duration. A target immune to lightning damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -1982,9 +2318,23 @@
     "parent": "bfrd_ancient-blue-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-blue-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 23 DEX save or take 16 (2d6+9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2038,9 +2388,23 @@
     "parent": "bfrd_ancient-brass-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-brass-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 18 CHA save or be vulnerable to fire damage until the end of its next turn. A target resistant to fire damage isn't resistant to it for the duration. A target immune to fire damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2136,9 +2500,23 @@
     "parent": "bfrd_ancient-brass-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-brass-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 24 DEX save or take 15 (2d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2192,9 +2570,23 @@
     "parent": "bfrd_ancient-bronze-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-bronze-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 19 CHA save or be vulnerable to lightning damage until the end of its next turn. A target resistant to lightning damage isn't resistant to it for the duration. A target immune to lightning damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2290,9 +2682,23 @@
     "parent": "bfrd_ancient-bronze-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-bronze-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 23 DEX save or take 16 (2d6+9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2360,9 +2766,23 @@
     "parent": "bfrd_ancient-copper-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-copper-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 18 CHA save or be vulnerable to acid damage until the end of its next turn. A target resistant to acid damage isn't resistant to it for the duration. A target immune to acid damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2444,9 +2864,23 @@
     "parent": "bfrd_ancient-copper-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-copper-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 22 DEX save or take 15 (2d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2500,9 +2934,23 @@
     "parent": "bfrd_ancient-gold-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-gold-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 20 CHA save or be vulnerable to fire damage until the end of its next turn. A target resistant to fire damage isn't resistant to it for the duration. A target immune to fire damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2584,9 +3032,9 @@
     "parent": "bfrd_ancient-gold-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -2601,6 +3049,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-gold-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 25 DEX save or take 17 (2d6+10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2654,9 +3116,23 @@
     "parent": "bfrd_ancient-green-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-green-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 18 CHA save or be vulnerable to poison damage until the end of its next turn. A target resistant to poison damage isn't resistant to it for the duration. A target immune to poison damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2738,9 +3214,23 @@
     "parent": "bfrd_ancient-green-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-green-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 22 DEX save or take 22 (4d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2794,9 +3284,23 @@
     "parent": "bfrd_ancient-red-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-red-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 21 CHA save or be vulnerable to fire damage until the end of its next turn. A target resistant to fire damage isn't resistant to it for the duration. A target immune to fire damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2878,9 +3382,23 @@
     "parent": "bfrd_ancient-red-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-red-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 25 DEX save or take 17 (2d6+10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -2948,9 +3466,23 @@
     "parent": "bfrd_ancient-silver-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-silver-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 19 CHA save or be vulnerable to cold damage until the end of its next turn. A target resistant to cold damage isn't resistant to it for the duration. A target immune to cold damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -3032,9 +3564,23 @@
     "parent": "bfrd_ancient-silver-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-silver-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 24 DEX save or take 17 (2d6+10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -3102,9 +3648,23 @@
     "parent": "bfrd_ancient-white-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-white-dragon_elemental-roar",
+  "fields": {
+    "name": "Elemental Roar",
+    "desc": "The dragon roars at up to two creatures of its choice within 120 feet of it. Each target must succeed on a DC 17 CHA save or be vulnerable to cold damage until the end of its next turn. A target resistant to cold damage isn't resistant to it for the duration. A target immune to cold damage is still immune to it, even if the target fails the save.",
+    "parent": "bfrd_ancient-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -3172,9 +3732,23 @@
     "parent": "bfrd_ancient-white-dragon",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_ancient-white-dragon_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 22 DEX save or take 15 (2d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "parent": "bfrd_ancient-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -3207,6 +3781,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_androsphinx_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The sphinx uses Spellcasting.",
+    "parent": "bfrd_androsphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_androsphinx_cast-a-spell-costs-2-actions",
   "fields": {
     "name": "Cast a Spell (Costs 2 Actions)",
@@ -3231,6 +3819,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_androsphinx_lacerating-swipe",
+  "fields": {
+    "name": "Lacerating Swipe",
+    "desc": "The sphinx rears up on its hind legs, wings fluttering, and swipes in a wide arc with both its forepaws. Each creature in a 15-foot cone must succeed on a DC 18 DEX save or take 11 (2d10) slashing damage and suffer a bleeding wound. A creature with a bleeding wound loses 5 (1d10) HP at the start of each of its turns. Any creature can take an action to stanch the wound with a successful DC 18 WIS (Medicine) check. The wound also closes if the bleeding creature receives magical healing.",
+    "parent": "bfrd_androsphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -3284,9 +3886,9 @@
     "parent": "bfrd_androsphinx",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -8149,6 +8751,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_gynosphinx_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The sphinx uses Spellcasting.",
+    "parent": "bfrd_gynosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_gynosphinx_cast-a-spell-costs-2-actions",
   "fields": {
     "name": "Cast a Spell (Costs 2 Actions)",
@@ -8205,6 +8821,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_gynosphinx_psychic-burst",
+  "fields": {
+    "name": "Psychic Burst",
+    "desc": "The sphinx sends out a burst of psychic energy. Each creature within 20 feet of the sphinx that has an INT of 8 or higher must succeed on a DC 17 INT save or be incapacitated until the end of its next turn, as it reels from the psychic onslaught.",
+    "parent": "bfrd_gynosphinx",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_gynosphinx_psychic-burst-costs-2-actions",
   "fields": {
     "name": "Psychic Burst (Costs 2 Actions)",
@@ -8240,9 +8870,9 @@
     "parent": "bfrd_gynosphinx",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9535,6 +10165,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_kraken_lightning-storm",
+  "fields": {
+    "name": "Lightning Storm",
+    "desc": "The kraken magically calls bolts of lightning to strike up to two creatures it can see or sense within 120 feet of it. Each creature must make a DC 22 DEX save, taking 22 (4d10) lightning damage on a failed save, or half as much damage on a successful one.",
+    "parent": "bfrd_kraken",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_kraken_lightning-storm-costs-2-actions",
   "fields": {
     "name": "Lightning Storm (Costs 2 Actions)",
@@ -9570,9 +10214,9 @@
     "parent": "bfrd_kraken",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9598,9 +10242,9 @@
     "parent": "bfrd_kraken",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -9717,6 +10361,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_lich_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The lich uses Spellcasting.",
+    "parent": "bfrd_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_lich_cast-a-spell-costs-2-actions",
   "fields": {
     "name": "Cast a Spell (Costs 2 Actions)",
@@ -9741,6 +10399,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_lich_disrupt-life",
+  "fields": {
+    "name": "Disrupt Life",
+    "desc": "Each creature within 20 feet of the lich that isn't Undead must make a DC 20 CON save, taking 21 (6d6) necrotic damage on a failed save, or half as much damage on a successful one. The lich regains HP equal to the single highest amount of necrotic damage dealt.",
+    "parent": "bfrd_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {
@@ -9780,9 +10452,9 @@
     "parent": "bfrd_lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -10963,6 +11635,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_mummy-lord_call-servitors",
+  "fields": {
+    "name": "Call Servitors",
+    "desc": "The mummy lord uses Undead Servitors.",
+    "parent": "bfrd_mummy-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_mummy-lord_call-servitors-costs-2-actions",
   "fields": {
     "name": "Call Servitors (Costs 2 Actions)",
@@ -10984,9 +11670,9 @@
     "parent": "bfrd_mummy-lord",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -11040,9 +11726,9 @@
     "parent": "bfrd_mummy-lord",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -11071,6 +11757,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_mummy-lord_unleash-divine-energy",
+  "fields": {
+    "name": "Unleash Divine Energy",
+    "desc": "The mummy lord unleashes a wave of divine energy. Each creature within 10 feet of it must make a DC 17 CON save. On a failure, a creature takes 14 (4d6) necrotic damage or radiant damage (the mummy lord's choice) and is stunned until the end of its next turn. On a success, a creature takes half the damage and isn't stunned.",
+    "parent": "bfrd_mummy-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -13721,6 +14421,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_solar_intimidating-glare",
+  "fields": {
+    "name": "Intimidating Glare",
+    "desc": "The solar glares at up to three creatures it can see within 30 feet of it. Each target must succeed on a DC 22 CHA save or be cowed until the end of its next turn. While cowed, a creature's speed is halved, and it can't look at the solar.",
+    "parent": "bfrd_solar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_solar_intimidating-glare-costs-3-actions",
   "fields": {
     "name": "Intimidating Glare (Costs 3 Actions)",
@@ -13745,6 +14459,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_solar_searing-burst",
+  "fields": {
+    "name": "Searing Burst",
+    "desc": "The solar emits divine energy. Each creature of its choice within 10 feet of it must make a DC 22 Dexterity saving throw, taking 14 (4d6) fire damage and 14 (4d6) radiant damage on a failed save, or half as much damage on a successful one.",
+    "parent": "bfrd_solar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -13784,9 +14512,9 @@
     "parent": "bfrd_solar",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -14316,9 +15044,9 @@
     "parent": "bfrd_tarrasque",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -14344,9 +15072,9 @@
     "parent": "bfrd_tarrasque",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -14386,9 +15114,23 @@
     "parent": "bfrd_tarrasque",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_tarrasque_tail-swipe",
+  "fields": {
+    "name": "Tail Swipe",
+    "desc": "The tarrasque whips its spiked tail in a wide arc, flailing it in a 30-foot cone. Each creature in that area must make a DC 27 DEX save. On a failure, a creature takes 45 (10d8) piercing damage and is knocked prone. On a success, a creature takes half the damage and isn't knocked prone.",
+    "parent": "bfrd_tarrasque",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -14708,9 +15450,23 @@
     "parent": "bfrd_unicorn",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_unicorn_heal-self",
+  "fields": {
+    "name": "Heal Self",
+    "desc": "The unicorn magically regains 11 (2d8+2) HP.",
+    "parent": "bfrd_unicorn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {
@@ -14795,6 +15551,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_unicorn_radiant-stomp",
+  "fields": {
+    "name": "Radiant Stomp",
+    "desc": "The unicorn raises its hooves glowing with golden light and brings them down with a reverberating stomp. Each hostile creature within 10 feet of the unicorn must make a DC 14 STR save. On a failure, a creature takes 10 (3d6) radiant damage and is knocked prone. On a success, a creature takes half the damage and isn't knocked prone.",
+    "parent": "bfrd_unicorn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -14967,6 +15737,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_vampire_call-children",
+  "fields": {
+    "name": "Call Children",
+    "desc": "The vampire uses Children of the Night.",
+    "parent": "bfrd_vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_vampire_call-children-costs-2-actions",
   "fields": {
     "name": "Call Children (Costs 2 Actions)",
@@ -15037,6 +15821,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "bfrd_vampire_excessive-bleeding",
+  "fields": {
+    "name": "Excessive Bleeding",
+    "desc": "Each creature within 15 feet of the vampire that doesn't have all its HP must succeed on a DC 17 CON save or lose 14 (4d6) HP as its wounds bleed profusely. Before the end of its next turn, the vampire has advantage on the next attack roll it makes against a creature that failed this save.",
+    "parent": "bfrd_vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "bfrd_vampire_excessive-bleeding-costs-2-actions",
   "fields": {
     "name": "Excessive Bleeding (Costs 2 Actions)",
@@ -15058,9 +15856,9 @@
     "parent": "bfrd_vampire",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -15226,9 +16024,23 @@
     "parent": "bfrd_virtuoso-lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_virtuoso-lich_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The lich uses Spellcasting.",
+    "parent": "bfrd_virtuoso-lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -15268,9 +16080,9 @@
     "parent": "bfrd_virtuoso-lich",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": null
+    "legendary_cost": 1
   }
 },
 {
@@ -15299,6 +16111,20 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "bfrd_virtuoso-lich_unrestrained-art",
+  "fields": {
+    "name": "Unrestrained Art",
+    "desc": "The lich unleashes the full force of its artistic talents. Each creature with 15 feet of the lich must make a DC 17 DEX save. On a failure, a creature takes 9 (2d8) damage of the type chosen with the Versatile Artist trait and is knocked prone. On a success, a creature takes half the damage and isn't knocked prone.",
+    "parent": "bfrd_virtuoso-lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
   }
 },
 {

@@ -26,5 +26,1055 @@
     "form_condition": null,
     "legendary_cost": null
   }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_akkorokamui_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Uses Spellcasting.",
+    "parent": "tob3_akkorokamui",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_akkorokamui_discern",
+  "fields": {
+    "name": "Discern",
+    "desc": "Makes a Wis (Perception) or Wis (Insight) check.",
+    "parent": "tob3_akkorokamui",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_akkorokamui_jet",
+  "fields": {
+    "name": "Jet",
+    "desc": "Swims up to half its swimming speed with o provoking opportunity attacks.",
+    "parent": "tob3_akkorokamui",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_akkorokamui_tentacle-sweep",
+  "fields": {
+    "name": "Tentacle Sweep",
+    "desc": "Spins in place with its tentacles extended. Each creature within 20' of it that isn’t grappled by it: DC 17 Dex save or take 19 (4d6+5) bludgeoning damage and be knocked prone. Each creature grappled by akkorokamui must make DC 17 Str save or take 12 (2d6+5) bludgeoning damage.",
+    "parent": "tob3_akkorokamui",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_angel-zirnitran_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "Makes one Anointed Claws or Draconic Blast attack.",
+    "parent": "tob3_angel-zirnitran",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_angel-zirnitran_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Uses Spellcasting.",
+    "parent": "tob3_angel-zirnitran",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_angel-zirnitran_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "Knows location of each dragon and each creature with strong connection to dragons such as a sorcerer with the draconic bloodline within 120' of it.",
+    "parent": "tob3_angel-zirnitran",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_angel-zirnitran_move",
+  "fields": {
+    "name": "Move",
+    "desc": "Flies up to half its fly speed with o provoking opportunity attacks.",
+    "parent": "tob3_angel-zirnitran",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_angel-zirnitran_under-black-wings",
+  "fields": {
+    "name": "Under Black Wings",
+    "desc": "Creates a magical feathered shield around itself or another creature it can see within 120' of it. Target gains +2 to AC and 20 temp hp until the end of zirnitran’s next turn.",
+    "parent": "tob3_angel-zirnitran",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_animal-lord-mammoth-queen_queens-trumpet",
+  "fields": {
+    "name": "Queen’s Trumpet",
+    "desc": "Emits loud trumpeting audible to 300'. Chooses up to 3 creatures that can hear trumpet. If target is friendly has advantage on its next attack roll ability check or save. If hostile: DC 20 Wis save or frightened til end of its next turn.",
+    "parent": "tob3_animal-lord-mammoth-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_animal-lord-mammoth-queen_regenerative-hide",
+  "fields": {
+    "name": "Regenerative Hide",
+    "desc": "Regains 15 hp. She can’t use this legendary action again until the end of her next turn. ",
+    "parent": "tob3_animal-lord-mammoth-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_animal-lord-mammoth-queen_shoving-stampede",
+  "fields": {
+    "name": "Shoving Stampede",
+    "desc": "Charges becoming unstoppable stampede in line up to 80' long × 15 ft. wide. All in line: 14 (4d6) bludgeoning damage and pushed up to 15 ft. away and knocked prone (DC 20 Dex half not pushed/prone). Queen’s move along this line doesn’t provoke opportunity attacks.",
+    "parent": "tob3_animal-lord-mammoth-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_animal-lord-mammoth-queen_trunk",
+  "fields": {
+    "name": "Trunk",
+    "desc": "Makes one Trunk attack.",
+    "parent": "tob3_animal-lord-mammoth-queen",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_animated-instrument-symphony_harmonize",
+  "fields": {
+    "name": "Harmonize",
+    "desc": "Tunes its worn-out instruments back to working harmony regaining 20 hp and ending one condition affecting it.",
+    "parent": "tob3_animated-instrument-symphony",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_animated-instrument-symphony_move",
+  "fields": {
+    "name": "Move",
+    "desc": "Moves up to its speed with o provoking opportunity attacks.",
+    "parent": "tob3_animated-instrument-symphony",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_animated-instrument-symphony_orchestral-flourish",
+  "fields": {
+    "name": "Orchestral Flourish",
+    "desc": "Plays a short fierce melody. Each creature within 10 ft. of symphony including creatures in its space:  10 (3d6) thunder (DC 19 Con half).",
+    "parent": "tob3_animated-instrument-symphony",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_animated-instrument-symphony_syncopated-melody",
+  "fields": {
+    "name": "Syncopated Melody",
+    "desc": "Mimics a spell that was cast since the end of its last turn. It makes a Performance check where the DC is the caster's DC+the level of the spell symphony is trying to mimic. If successful symphony casts the spell using original caster’s DC and spell attack bonus.",
+    "parent": "tob3_animated-instrument-symphony",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_bone-lord_call-servants",
+  "fields": {
+    "name": "Call Servants",
+    "desc": "Uses Servants of Death.",
+    "parent": "tob3_bone-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_bone-lord_fling",
+  "fields": {
+    "name": "Fling",
+    "desc": "Uses Fling.",
+    "parent": "tob3_bone-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_bone-lord_sovereigns-onslaught",
+  "fields": {
+    "name": "Sovereign’s Onslaught",
+    "desc": "Commands up to four friendly Undead it can see within 60' of it to move. Each target can use its reaction to immediately move up to its speed. This movement doesn’t provoke opportunity attacks.",
+    "parent": "tob3_bone-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_bone-lord_sovereigns-reprisal",
+  "fields": {
+    "name": "Sovereign’s Reprisal",
+    "desc": "Commands one friendly Undead within 30' to attack. Target can make one weapon attack as reaction.",
+    "parent": "tob3_bone-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_cave-sovereign_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Uses Spellcasting.",
+    "parent": "tob3_cave-sovereign",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_cave-sovereign_move",
+  "fields": {
+    "name": "Move",
+    "desc": "The cave sovereign moves up to its speed with o provoking opportunity attacks.",
+    "parent": "tob3_cave-sovereign",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_cave-sovereign_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "Makes one Tail attack.",
+    "parent": "tob3_cave-sovereign",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_cave-sovereign_telekinetic-reel",
+  "fields": {
+    "name": "Telekinetic Reel",
+    "desc": "Magically pulls incapacitated or stunned creature by its Deathlights it can see up to 20' straight toward it.",
+    "parent": "tob3_cave-sovereign",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_chimera-royal_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Uses Spellcasting.",
+    "parent": "tob3_chimera-royal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_chimera-royal_prideful-prowl",
+  "fields": {
+    "name": "Prideful Prowl",
+    "desc": "Moves up to its walking speed or flies up to half its flying speed with o provoking opportunity attacks.",
+    "parent": "tob3_chimera-royal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_chimera-royal_roar-of-the-king",
+  "fields": {
+    "name": "Roar of the King",
+    "desc": "Lion head's bellow spurs allies. Each friendly creature including chimera within 30' of it that can hear roar gains 11 (2d10) temp hp and can’t be frightened for 1 min.",
+    "parent": "tob3_chimera-royal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_chimera-royal_serpent-strike",
+  "fields": {
+    "name": "Serpent Strike",
+    "desc": "Makes one Serpent Strike attack.",
+    "parent": "tob3_chimera-royal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_cosmic-symphony_fly",
+  "fields": {
+    "name": "Fly",
+    "desc": "Flies up to half its flying speed with o provoking opportunity attacks.",
+    "parent": "tob3_cosmic-symphony",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_cosmic-symphony_major-chord",
+  "fields": {
+    "name": "Major Chord",
+    "desc": "The symphony regains 18 (4d8) hp.",
+    "parent": "tob3_cosmic-symphony",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_cosmic-symphony_minor-chord",
+  "fields": {
+    "name": "Minor Chord",
+    "desc": "Each creature within 10 ft. of the symphony must make DC 18 Con save or take 9 (2d8) thunder.",
+    "parent": "tob3_cosmic-symphony",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dawnfly_dust-burst",
+  "fields": {
+    "name": "Dust Burst",
+    "desc": "Its wings shed blinding dust within 10 ft. of it. Each creature in the area: DC 19 Con save or be blinded until end of its next turn.",
+    "parent": "tob3_dawnfly",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dawnfly_fiery-downburst",
+  "fields": {
+    "name": "Fiery Downburst",
+    "desc": "15 ft. cone hot air downdraft. All in area: 9 (2d8) bludgeoning damage and 7 (2d6) fire pushed up to 15 ft. from dawnfly in direction following cone and knocked prone (DC 19 Str half damage not pushed/prone). ",
+    "parent": "tob3_dawnfly",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dawnfly_snatch-and-drop",
+  "fields": {
+    "name": "Snatch and Drop",
+    "desc": "Flies up to half its fly speed making one Tail attack at creature within reach on the way. Hits: creature grappled carried and dropped at end of move; normal fall damage.",
+    "parent": "tob3_dawnfly",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-prismatic-adult_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "The prismatic dragon uses Spellcasting.",
+    "parent": "tob3_dragon-prismatic-adult",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-prismatic-adult_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "Makes a Wis (Perception) check.",
+    "parent": "tob3_dragon-prismatic-adult",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-prismatic-adult_shimmering-wings",
+  "fields": {
+    "name": "Shimmering Wings",
+    "desc": "Each creature within 20': DC 16 Wis save or take 11 (2d10) radiant and blinded until start of its next turn.",
+    "parent": "tob3_dragon-prismatic-adult",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-prismatic-adult_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "Makes a tail attack.",
+    "parent": "tob3_dragon-prismatic-adult",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-prismatic-ancient_cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Uses Spellcasting.",
+    "parent": "tob3_dragon-prismatic-ancient",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-prismatic-ancient_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "Makes a Wis (Perception) check.",
+    "parent": "tob3_dragon-prismatic-ancient",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-prismatic-ancient_shimmering-wings",
+  "fields": {
+    "name": "Shimmering Wings",
+    "desc": "Each creature within 20': DC 19 Wis save or take 16 (3d10) radiant and blinded until start of its next turn.",
+    "parent": "tob3_dragon-prismatic-ancient",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-prismatic-ancient_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "Makes a tail attack.",
+    "parent": "tob3_dragon-prismatic-ancient",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-sand-adult_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "Makes a Wis (Perception) check.",
+    "parent": "tob3_dragon-sand-adult",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-sand-adult_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "Makes a tail attack.",
+    "parent": "tob3_dragon-sand-adult",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-sand-adult_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "All within 15 feet: 14 (2d6+7) bludgeoning damage and knocked prone (DC 21 Wis negates). Can then fly up to half its fly speed.",
+    "parent": "tob3_dragon-sand-adult",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-sand-ancient_detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "Makes a Wis (Perception) check.",
+    "parent": "tob3_dragon-sand-ancient",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-sand-ancient_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "Makes a tail attack.",
+    "parent": "tob3_dragon-sand-ancient",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dragon-sand-ancient_wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "All within 15 feet: 15 (2d6+8) bludgeoning damage and knocked prone (DC 24 Wis negates). Can then fly up to half its fly speed.",
+    "parent": "tob3_dragon-sand-ancient",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dread-examiner_psychic-surge",
+  "fields": {
+    "name": "Psychic Surge",
+    "desc": "The dread examiner releases a wave of psychic energy. Each creature within 20' of it: 21 (6d6) psychic can’t use reactions and has disadvantage on attack rolls and ability checks until the end of its next turn. (DC 20 Wis half damage and ignores the other effects.)",
+    "parent": "tob3_dread-examiner",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dread-examiner_reform",
+  "fields": {
+    "name": "Reform",
+    "desc": "The dread examiner rearranges its disjointed parts and regains 36 (8d8) hp.",
+    "parent": "tob3_dread-examiner",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_dread-examiner_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "Magically teleports along with any equipment it is wearing or carrying up to 120' to an unoccupied spot it sees.",
+    "parent": "tob3_dread-examiner",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_equitox_gore",
+  "fields": {
+    "name": "Gore",
+    "desc": "Makes one Gore attack.",
+    "parent": "tob3_equitox",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_equitox_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "With items it has up to 60' to unoccupied space it can see.",
+    "parent": "tob3_equitox",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_equitox_withering-gaze",
+  "fields": {
+    "name": "Withering Gaze",
+    "desc": "Locks eyes with one creature within 60' that can see it. Target: DC 18 Wis or stunned by thirst until end of its next turn.",
+    "parent": "tob3_equitox",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_forgotten-regent_army-of-the-damned",
+  "fields": {
+    "name": "Army of the Damned",
+    "desc": "Raises an arm into the air sending out a chill wind that empowers Undead allies. Each friendly Undead within 30' of it gains 10 temp hp.",
+    "parent": "tob3_forgotten-regent",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_forgotten-regent_frozen-rune-maul",
+  "fields": {
+    "name": "Frozen Rune Maul",
+    "desc": "Makes one Frozen Rune Maul attack.",
+    "parent": "tob3_forgotten-regent",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_forgotten-regent_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "Magically teleports along with any items worn or carried up to 120' to an unoccupied spot it sees.",
+    "parent": "tob3_forgotten-regent",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_godslayer_arcane-word",
+  "fields": {
+    "name": "Arcane Word",
+    "desc": "One Lexicon glyph on target within 90' it can see.",
+    "parent": "tob3_godslayer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_godslayer_attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "Makes one Energy Glaive or Rune Discus attack.",
+    "parent": "tob3_godslayer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_godslayer_move",
+  "fields": {
+    "name": "Move",
+    "desc": "Up to its speed with o provoking opportunity attacks.",
+    "parent": "tob3_godslayer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_godslayer_rejuvenating-repair",
+  "fields": {
+    "name": "Rejuvenating Repair",
+    "desc": "Regains 65 (10d12) hp.",
+    "parent": "tob3_godslayer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ooze-scintillating_grasping-pseudopod",
+  "fields": {
+    "name": "Grasping Pseudopod",
+    "desc": "Launches a pseudopod at one creature it can see within 30' of it. Target must make DC 17 Str save or be pulled up to 30' toward the ooze.",
+    "parent": "tob3_ooze-scintillating",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ooze-scintillating_lunging-attack",
+  "fields": {
+    "name": "Lunging Attack",
+    "desc": "Makes one Weapon Thrash attack at a creature it can see within 10 ft. of it.",
+    "parent": "tob3_ooze-scintillating",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_ooze-scintillating_move",
+  "fields": {
+    "name": "Move",
+    "desc": "Up to its speed with o provoking opportunity attacks.",
+    "parent": "tob3_ooze-scintillating",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_primordial-matriarch_create-elemental",
+  "fields": {
+    "name": "Create Elemental",
+    "desc": "Uses Create Elementals.",
+    "parent": "tob3_primordial-matriarch",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_primordial-matriarch_elemental-change",
+  "fields": {
+    "name": "Elemental Change",
+    "desc": "Changes the damage immunity granted by Roiling Elements.",
+    "parent": "tob3_primordial-matriarch",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_primordial-matriarch_fly",
+  "fields": {
+    "name": "Fly",
+    "desc": "Up to half her flying speed with o provoking opportunity attacks.",
+    "parent": "tob3_primordial-matriarch",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_primordial-matriarch_return-to-mother",
+  "fields": {
+    "name": "Return to Mother",
+    "desc": "Absorbs Elemental within 10 ft. of her gaining temp hp equal to 10 times the CR of Elemental absorbed.",
+    "parent": "tob3_primordial-matriarch",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_sinstar_detonate-thrall",
+  "fields": {
+    "name": "Detonate Thrall",
+    "desc": "Orders one of its star thralls to explode. Each creature within 10 ft. of the thrall must make a DC 19 Dex save taking 10 (3d6) bludgeoning damage and 7 (2d6) piercing damage on a failed save or half damage if made.",
+    "parent": "tob3_sinstar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_sinstar_spines",
+  "fields": {
+    "name": "Spines",
+    "desc": "Makes one Spines attack.",
+    "parent": "tob3_sinstar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_sinstar_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "Magically teleports up to 120' to an unoccupied spot it sees.",
+    "parent": "tob3_sinstar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_tatzelwurm_angry-hiss",
+  "fields": {
+    "name": "Angry Hiss",
+    "desc": "Each creature within 30' of it: frightened until the end of its next turn (DC 13 Wis negates).",
+    "parent": "tob3_tatzelwurm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_tatzelwurm_move",
+  "fields": {
+    "name": "Move",
+    "desc": "Up to half its speed with o provoking opportunity attacks.",
+    "parent": "tob3_tatzelwurm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob3_tatzelwurm_tail-slap",
+  "fields": {
+    "name": "Tail Slap",
+    "desc": "Swings its tail in a wide arc around it. Each creature within 10 ft. knocked prone (DC 14 Str negates).",
+    "parent": "tob3_tatzelwurm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
 }
 ]

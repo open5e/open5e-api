@@ -189,7 +189,7 @@ class CreatureAction(HasName, HasDescription):
     legendary_cost = models.SmallIntegerField(
         blank=True,
         null=True,
-        default=0,
+        default=None,
         help_text='0 if not legendary, else, the number of legendary actions this costs.'
     )
 
