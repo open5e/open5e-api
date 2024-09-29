@@ -57,6 +57,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tdcs_skydancer_slow-fall",
+  "fields": {
+    "name": "Slow Fall",
+    "desc": "When the skydancer takes falling damage, it may reduce the damage by half.",
+    "parent": "tdcs_skydancer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tdcs_stoneguard_granite-maul",
   "fields": {
     "name": "Granite Maul",
@@ -79,6 +93,34 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tdcs_stoneguard_sentinel",
+  "fields": {
+    "name": "Sentinel",
+    "desc": "When a creature within 5 feet of the stoneguard attacks a target other than the stoneguard, it can make a single attack roll against the attacker.",
+    "parent": "tdcs_stoneguard",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tdcs_stoneguard_skin-to-stone",
+  "fields": {
+    "name": "Skin to Stone",
+    "desc": "When the stoneguard is attacked, it may gain resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks until the end of the attacker’s turn.",
+    "parent": "tdcs_stoneguard",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }

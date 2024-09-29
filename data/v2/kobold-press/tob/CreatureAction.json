@@ -127,6 +127,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_aboleth-nihilith_void-body",
+  "fields": {
+    "name": "Void Body",
+    "desc": "The nihileth can reduce the damage it takes from a single source to 0. Radiant damage can only be reduced by half.",
+    "parent": "tob_aboleth-nihilith",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_aboleth-nihilith_withering-touch",
   "fields": {
     "name": "Withering Touch",
@@ -333,6 +347,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_adult-cave-dragon_ruff-spikes",
+  "fields": {
+    "name": "Ruff Spikes",
+    "desc": "When a creature tries to enter a space adjacent to a cave dragon, the dragon flares its many feelers and spikes. The creature cannot enter a space adjacent to the dragon unless it makes a successful DC 18 Dexterity saving throw. If the saving throw fails, the creature can keep moving but only into spaces that aren't within 5 feet of the dragon and takes 10 (3d6) piercing damage from spikes.",
+    "parent": "tob_adult-cave-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -1073,6 +1101,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_adult-void-dragon_void-twist",
+  "fields": {
+    "name": "Void Twist",
+    "desc": "When the dragon is hit by a ranged attack it can create a small rift in space to increase its AC by 5 against that attack. If the attack misses because of this increase the dragon can choose a creature within 30 feet to become the new target for that attack. Use the original attack roll to determine if the attack hits the new target.",
+    "parent": "tob_adult-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2227,6 +2269,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_ancient-void-dragon_void-twist",
+  "fields": {
+    "name": "Void Twist",
+    "desc": "When the dragon is hit by a ranged attack, it can create a small rift in space to increase its AC by 7 against that attack. If the attack misses because of this increase, the dragon can choose a creature within 30 feet to become the new target for that attack. Use the original attack roll to determine if the attack hits the new target.",
+    "parent": "tob_ancient-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_ancient-wind-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -2487,6 +2543,20 @@
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 5,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_angel-chained_fiendish-cunning",
+  "fields": {
+    "name": "Fiendish Cunning",
+    "desc": "When a creature within 60 feet casts a divine spell, the chained angel can counter the spell if it succeeds on a Charisma check against a DC of 10 + the spell's level.",
+    "parent": "tob_angel-chained",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3081,6 +3151,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_azza-gremlin_ride-the-bolt",
+  "fields": {
+    "name": "Ride the Bolt",
+    "desc": "The azza gremlin can travel instantly along any bolt of lightning. When it is within 5 feet of a lightning effect, the azza can teleport to any unoccupied space inside or within 5 feet of that lightning effect.",
+    "parent": "tob_azza-gremlin",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_baba-yagas-horsemen-black-night_lance",
   "fields": {
     "name": "Lance",
@@ -3341,6 +3425,34 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_bandit-lord_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The bandit lord adds 2 to its AC against one melee attack that would hit it. To do so the bandit lord must see the attacker and be wielding a weapon.",
+    "parent": "tob_bandit-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_bandit-lord_redirect-attack",
+  "fields": {
+    "name": "Redirect Attack",
+    "desc": "When a creature the bandit lord can see targets it with an attack, the bandit lord chooses an ally within 5 feet of it. The bandit lord and the ally swap places, and the chosen ally becomes the target instead.",
+    "parent": "tob_bandit-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4901,6 +5013,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_chronalmental_step-between-seconds",
+  "fields": {
+    "name": "Step Between Seconds",
+    "desc": "When a creature the chronalmental can see moves within 5 feet of it, the chronalmental can shift itself to a place it occupied in the past, teleporting up to 60 feet to an unoccupied space, along with any equipment it is wearing or carrying.",
+    "parent": "tob_chronalmental",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_cikavak_bite",
   "fields": {
     "name": "Bite",
@@ -5595,6 +5721,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_dau_mirror-dodge",
+  "fields": {
+    "name": "Mirror Dodge",
+    "desc": "When the dau would be hit by an attack or affected by a spell, the dau replaces itself with an illusory duplicate and teleports to any unoccupied space within 30 feet in sight. The dau isn't affected and the illusory duplicate is destroyed.",
+    "parent": "tob_dau",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6679,6 +6819,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_dullahan_interposing-glare",
+  "fields": {
+    "name": "Interposing Glare",
+    "desc": "When the dullahan is hit by a melee attack it can move its severed head in front of the attacker's face. The attacker is affected by the dullahan's Baleful Glare immediately. If the creature is averting its eyes this turn, it must still make the save, but does so with advantage.",
+    "parent": "tob_dullahan",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_dullahan_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -6869,6 +7023,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_eala_swan-song",
+  "fields": {
+    "name": "Swan Song",
+    "desc": "When the eala is reduced to 0 hit points, it can use its last breath sing a plaintive and beautiful melody. Creatures within 20 feet that can hear the eala must succeed on a DC 13 Charisma saving throw or be incapacitated for 1 round. A creature incapacitated in this way has its speed reduced to 0.",
+    "parent": "tob_eala",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7225,6 +7393,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_emerald-order-cult-leader_esoteric-vengeance",
+  "fields": {
+    "name": "Esoteric Vengeance",
+    "desc": "As a reaction when struck by a melee attack, the emerald order cult leader can expend a spell slot to do 10 (3d6) necrotic damage to the attacker. If the emerald order cult leader expends a spell slot of 2nd level or higher, the damage increases by 1d6 for each level above 1st.",
+    "parent": "tob_emerald-order-cult-leader",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_emerald-order-cult-leader_mace",
   "fields": {
     "name": "Mace",
@@ -7359,6 +7541,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_erina-defender_protect",
+  "fields": {
+    "name": "Protect",
+    "desc": "The erina imposes disadvantage on an attack roll made against an ally within 5 feet of the erina defender.",
+    "parent": "tob_erina-defender",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8331,6 +8527,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_gearforged-templar_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The gearforged templar raises its AC by 3 against one melee attack that would hit it. To do so, the gearforged must be able to see the attacker and must be wielding a melee weapon.",
+    "parent": "tob_gearforged-templar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_gearforged-templar_whirlwind",
   "fields": {
     "name": "Whirlwind ",
@@ -8877,6 +9087,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_glass-gator_silt-cloud",
+  "fields": {
+    "name": "Silt Cloud",
+    "desc": "After taking damage while in water, the glass gator thrashes to stir up a 10-foot-radius cloud of silt around itself. The area inside the sphere is heavily obscured for 1 minute (10 rounds) in still water or 5 (2d4) rounds in a strong current. After stirring up the silt, the glass gator can move its speed.",
+    "parent": "tob_glass-gator",
+    "uses_type": "RECHARGE_AFTER_REST",
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_gnarljak_bite",
   "fields": {
     "name": "Bite",
@@ -9095,6 +9319,20 @@
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 6,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_grim-jester_ridicule-hope",
+  "fields": {
+    "name": "Ridicule Hope",
+    "desc": "When a spell that restores hit points is cast within 60 feet of the jester, the jester can cause that spell to inflict damage instead of curing it. The damage equals the hit points the spell would have cured.",
+    "parent": "tob_grim-jester",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9759,6 +9997,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_hulking-whelp_quick-step",
+  "fields": {
+    "name": "Quick Step",
+    "desc": "A hulking whelp can move 20 feet as a reaction when it is attacked. No opportunity attacks are triggered by this move.",
+    "parent": "tob_hulking-whelp",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_hulking-whelp_slam",
   "fields": {
     "name": "Slam",
@@ -10291,6 +10543,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_jotun-giant_rock-catching",
+  "fields": {
+    "name": "Rock Catching",
+    "desc": "If a rock or similar object is hurled at the giant, the giant can, with a successful DC 10 Dexterity saving throw, catch the missile and take no bludgeoning damage from it.",
+    "parent": "tob_jotun-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_jotun-giant_sweeping-blow",
   "fields": {
     "name": "Sweeping Blow",
@@ -10523,6 +10789,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_kobold-chieftain_springspike-shield",
+  "fields": {
+    "name": "Springspike Shield",
+    "desc": "When the kobold chieftain is hit by a melee attack within 5 feet, the kobold chieftain can fire one of its shield spikes at the attacker. The attacker takes 3 (1d6) piercing damage plus 3 (1d6) poison damage.",
+    "parent": "tob_kobold-chieftain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11649,6 +11929,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_malphas-storm-crow_shadow-call",
+  "fields": {
+    "name": "Shadow Call",
+    "desc": "A malphas can cast magic missile as a reaction when it is hit by a ranged weapon attack.",
+    "parent": "tob_malphas-storm-crow",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_mamura_claw",
   "fields": {
     "name": "Claw",
@@ -11803,6 +12097,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_mbielu_rollover",
+  "fields": {
+    "name": "Rollover",
+    "desc": "If the mbielu is grappled by a Large creature, it rolls on top of the grappler and crushes it. The mbielu automatically escapes from the grapple and the grappler takes 20 (3d10 + 4) bludgeoning damage.",
+    "parent": "tob_mbielu",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_mbielu_tail",
   "fields": {
     "name": "Tail",
@@ -11839,6 +12147,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_mi-go_spore-release",
+  "fields": {
+    "name": "Spore Release",
+    "desc": "When a mi-go dies, it releases its remaining spores. All living creatures within 10 feet take 14 (2d8 + 5) poison damage and become poisoned; a successful DC 16 Constitution saving throw halves the damage and prevents poisoning. A poisoned creature repeats the saving throw at the end of its turn, ending the effect on itself with a success.",
+    "parent": "tob_mi-go",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -12021,6 +12343,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_miremal_muddled-escape",
+  "fields": {
+    "name": "Muddled Escape",
+    "desc": "If an attack would reduce the miremal's hit points to 0, it collapses into a pool of filth-laden swamp water and its hit points are reduced to 1 instead. The miremal can move at its normal speed in this form, including moving through spaces occupied by other creatures. As a bonus action at the beginning of the miremal's next turn, it can reform, still with 1 hit point.",
+    "parent": "tob_miremal",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -12666,6 +13002,20 @@
     "uses_param": null,
     "action_type": "ACTION",
     "form_condition": "Material Form Only",
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_nihilethic-zombie_void-body",
+  "fields": {
+    "name": "Void Body",
+    "desc": "The nihilethic zombie can reduce the damage it takes from a single source by 1d12 points. This reduction cannot be applied to radiant damage.",
+    "parent": "tob_nihilethic-zombie",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
     "legendary_cost": null
   }
 },
@@ -13483,6 +13833,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_rat-king_absorption",
+  "fields": {
+    "name": "Absorption",
+    "desc": "When the rat king does damage to a rat or rat swarm, it can absorb the rat, or part of the swarm, into its own mass. The rat king regains hit points equal to the damage it did to the rat or swarm.",
+    "parent": "tob_rat-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_rat-king_bite",
   "fields": {
     "name": "Bite",
@@ -13519,6 +13883,20 @@
     "uses_type": "PER_DAY",
     "uses_param": 1,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_ratatosk_desperate-lies",
+  "fields": {
+    "name": "Desperate Lies",
+    "desc": "A creature that can hear the ratatosk must make a DC 14 Wisdom saving throw when it attacks the ratatosk. If the saving throw fails, the creature still attacks, but it must choose a different target creature. An ally must be chosen if no other enemies are within the attack's reach or range. If no other target is in the attack's range or reach, the attack is still made (and ammunition or a spell slot is expended, if appropriate) but it automatically misses and has no effect.",
+    "parent": "tob_ratatosk",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -13813,6 +14191,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_ravenfolk-warrior_odins-call",
+  "fields": {
+    "name": "Odin's Call",
+    "desc": "A ravenfolk warrior can disengage after an attack reduces it to 10 hp or less.",
+    "parent": "tob_ravenfolk-warrior",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14575,6 +14967,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_sand-spider_trapdoor-ambush",
+  "fields": {
+    "name": "Trapdoor Ambush",
+    "desc": "When a creature walks over a sand spider's hidden burrow, the spider can use its reaction to attack that creature with two impaling leg attacks. The creature is considered a surprised target for both attacks. If one or both attacks hit and the target is a Medium or smaller creature, then the sand spider and the target engage in a Strength contest. If the creature wins, it can immediately move 5 feet away from the sand spider. If the contest results in a tie, the creature is grappled (escape DC 15). If the sand spider wins, the creature is grappled and dragged by the sand spider 30 feet into its lair. If the creature is still grappled at the start of the sand spider's next turn, it becomes restrained instead. The restrained creature can escape by using an action to make a successful DC 15 Strength (Athletics) check.",
+    "parent": "tob_sand-spider",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_sandman_claw",
   "fields": {
     "name": "Claw",
@@ -15219,6 +15625,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_shadow-fey-duelist_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The shadow fey duelist adds 3 to its AC against one melee attack that would hit it. To do so, the duelist must see the attacker and be wielding a melee weapon.",
+    "parent": "tob_shadow-fey-duelist",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_shadow-fey-duelist_rapier",
   "fields": {
     "name": "Rapier",
@@ -15367,6 +15787,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_shadow-fey-guardian_protect",
+  "fields": {
+    "name": "Protect",
+    "desc": "The shadow fey guardian imposes disadvantage on an attack roll against an ally within 5 feet. The guardian must be wielding a melee weapon to use this reaction.",
+    "parent": "tob_shadow-fey-guardian",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15919,6 +16353,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_spider-of-leng_ancient-hatred",
+  "fields": {
+    "name": "Ancient Hatred",
+    "desc": "When reduced to 0 hp, the spider of Leng makes one final spit venom attack before dying.",
+    "parent": "tob_spider-of-leng",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_spider-of-leng_claw",
   "fields": {
     "name": "Claw",
@@ -16361,6 +16809,20 @@
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 5,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_steam-golem_whistle",
+  "fields": {
+    "name": "Whistle",
+    "desc": "When an opponent within 30 feet of the golem tries to cast a spell, the steam golem can emit a shriek from its twin steam whistles. The spellcaster must make a DC 17 Constitution saving throw. If the save succeeds, the spell is cast normally. If it fails, the spell is not cast; the spell slot is not used, but the caster's action is.",
+    "parent": "tob_steam-golem",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -17249,6 +17711,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_uraeus_bonded-savior",
+  "fields": {
+    "name": "Bonded Savior",
+    "desc": "When the uraeus' bonded ward takes damage, the uraeus can transfer the damage to itself instead. The uraeus' damage resistance and immunity don't apply to transferred damage.",
+    "parent": "tob_uraeus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_uraeus_searing-breath",
   "fields": {
     "name": "Searing Breath ",
@@ -18033,6 +18509,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_void-dragon-wyrmling_void-twist",
+  "fields": {
+    "name": "Void Twist",
+    "desc": "When the dragon is hit by a ranged attack it can create a small rift in space to increase its AC by 2 against that attack. If the attack misses because of this increase the dragon can choose a creature within 30 feet to become the new target for that attack. Use the original attack roll to determine if the attack hits the new target.",
+    "parent": "tob_void-dragon-wyrmling",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_voidling_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -18789,6 +19279,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob_young-cave-dragon_ruff-spikes",
+  "fields": {
+    "name": "Ruff Spikes",
+    "desc": "When a creature tries to enter a space adjacent to a cave dragon, the dragon flares its many feelers and spikes. The creature cannot enter a space adjacent to the dragon unless it makes a successful DC 16 Dexterity saving throw. If the saving throw fails, the creature can keep moving but only into spaces that aren't within 5 feet of the dragon and takes 4 (1d8) piercing damage from spikes.",
+    "parent": "tob_young-cave-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob_young-flame-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -19077,6 +19581,20 @@
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 5,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob_young-void-dragon_void-twist",
+  "fields": {
+    "name": "Void Twist",
+    "desc": "When the dragon is hit by a ranged attack it can create a small rift in space to increase its AC by 4 against that attack. If the attack misses because of this increase the dragon can choose a creature within 30 feet to become the new target for that attack. Use the original attack roll to determine if the attack hits the new target.",
+    "parent": "tob_young-void-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }

@@ -15,6 +15,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_aboleth-thrall_self-sacrifice",
+  "fields": {
+    "name": "Self-Sacrifice",
+    "desc": "When a creature within 5 feet of the thrall that the thrall can see hits an aboleth with an attack, the thrall can make itself the target of the attack instead.",
+    "parent": "mmenag_aboleth-thrall",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_aboleth_baleful-charm",
   "fields": {
     "name": "Baleful Charm",
@@ -337,6 +351,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_accursed-spirit-naga_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the naga is hit by an attack or targeted by magic missile, it gains a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the beginning of its next turn.",
+    "parent": "mmenag_accursed-spirit-naga",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_accursed-spirit-naga_vampiric-bite",
   "fields": {
     "name": "Vampiric Bite",
@@ -415,6 +443,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-amethyst-dragon_assume-control",
+  "fields": {
+    "name": "Assume Control",
+    "desc": "When a creature charmed by the dragon begins its turn, the dragon telepathically commands the charmed creature until the end of the creatures turn. If the dragon commands the creature to take an action that would harm itself or an ally, the creature makes a DC 19 Wisdom saving throw. On a success, the creatures turn immediately ends.",
+    "parent": "mmenag_adult-amethyst-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -659,6 +701,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-black-dragon-lich_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-black-dragon-lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_adult-black-dragon-lich_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -799,6 +855,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-black-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_adult-black-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -933,6 +1003,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-blue-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1135,6 +1219,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-brass-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_adult-brass-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -1317,6 +1415,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-bronze-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_adult-bronze-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -1493,6 +1605,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-copper-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1793,6 +1919,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-emerald-dragon_spiteful-retort",
+  "fields": {
+    "name": "Spiteful Retort",
+    "desc": "When a creature the dragon can see damages the dragon, the dragon lashes out with a psionic screech. The attacker makes a DC 15 Wisdom saving throw, taking 18 (4d8) thunder damage on a failed save or half damage on a success. Confused creatures make this saving throw with disadvantage.",
+    "parent": "mmenag_adult-emerald-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_adult-emerald-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -1961,6 +2101,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-gold-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_adult-gold-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -1971,6 +2125,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-gold-dragon_vanguard",
+  "fields": {
+    "name": "Vanguard",
+    "desc": "When another creature the dragon can see within 20 feet is hit by an attack, the dragon deflects the attack, turning the hit into a miss.",
+    "parent": "mmenag_adult-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -2109,6 +2277,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-green-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2255,6 +2437,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-red-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_adult-red-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -2363,6 +2559,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-river-dragon_snap-back",
+  "fields": {
+    "name": "Snap Back",
+    "desc": "When a creature the dragon can see hits it with a melee weapon attack, the dragon makes a bite attack against the attacker.",
+    "parent": "mmenag_adult-river-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -2829,6 +3039,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-silver-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_adult-silver-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -2977,6 +3201,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_adult-white-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_adult-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3179,6 +3417,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_alchemist_alchemists-brew-concoctions-with-potent-magical-and-chemical-properties",
+  "fields": {
+    "name": "Alchemists brew concoctions with potent magical and chemical properties",
+    "desc": "Some alchemists perform dangerous experiments to perfect new alchemical recipes, while others fabricate guardians and other constructs in pursuit of the creation of life itself.",
+    "parent": "mmenag_alchemist",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_alchemist_bomb",
   "fields": {
     "name": "Bomb ",
@@ -3201,6 +3453,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_alchemist_desperate-drink",
+  "fields": {
+    "name": "Desperate Drink",
+    "desc": "When the alchemist is dealt damage, they drink a potion.",
+    "parent": "mmenag_alchemist",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3473,6 +3739,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-amethyst-dragon_assume-control",
+  "fields": {
+    "name": "Assume Control",
+    "desc": "When a creature charmed by the dragon begins its turn, the dragon telepathically commands the charmed creature until the end of the creatures turn. If the dragon commands the creature to take an action that would harm itself or an ally, the creature makes a DC 22 Wisdom saving throw. On a success, the creatures turn immediately ends.",
+    "parent": "mmenag_ancient-amethyst-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ancient-amethyst-dragon_bite",
   "fields": {
     "name": "Bite",
@@ -3711,6 +3991,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-black-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ancient-black-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -3845,6 +4139,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-blue-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4047,6 +4355,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-brass-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-brass-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ancient-brass-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -4215,6 +4537,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-bronze-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ancient-bronze-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -4377,6 +4713,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-copper-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-copper-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4677,6 +5027,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-emerald-dragon_spiteful-retort",
+  "fields": {
+    "name": "Spiteful Retort",
+    "desc": "When a creature the dragon can see damages the dragon, the dragon lashes out with a psionic screech. The attacker makes a DC 17 Wisdom saving throw, taking 27 (6d8) thunder damage on a failed save or half damage on a success. Confused creatures make this saving throw with disadvantage.",
+    "parent": "mmenag_ancient-emerald-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ancient-emerald-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -4845,6 +5209,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-gold-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ancient-gold-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -4855,6 +5233,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-gold-dragon_vanguard",
+  "fields": {
+    "name": "Vanguard",
+    "desc": "When another creature the dragon can see within 20 feet is hit by an attack, the dragon deflects the attack, turning the hit into a miss.",
+    "parent": "mmenag_ancient-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -4993,6 +5385,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-green-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5139,6 +5545,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-red-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-red-dragon_taskmaster",
+  "fields": {
+    "name": "Taskmaster",
+    "desc": "When a creature within 60 feet fails an ability check or saving throw, the dragon roars a command to it. The creature can roll a d10 and add it to the result of the roll, possibly turning the failure into a success.",
+    "parent": "mmenag_ancient-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ancient-red-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -5247,6 +5681,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-river-dragon_snap-back",
+  "fields": {
+    "name": "Snap Back",
+    "desc": "When a creature the dragon can see hits it with a melee weapon attack, the dragon makes a bite attack against the attacker.",
+    "parent": "mmenag_ancient-river-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -5377,6 +5825,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-sapphire-dragon_prophesy-doom",
+  "fields": {
+    "name": "Prophesy Doom",
+    "desc": "When a language-using creature suffering ongoing psychic damage targets the dragon with an attack or spell, the dragon telepathically prophesies the attackers doom. The attacker makes a DC 20 Intelligence saving throw. On a failure, the target magically gains the doomed condition. It is aware that it will die due to some bizarre circumstance within 13 (2d12) hours. In addition to the normal means of removing the condition, this doom can be avoided by a spell that can predict the future, such as augury, contact other plane, or foresight. The dragon can end the effect as an action.",
+    "parent": "mmenag_ancient-sapphire-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ancient-sapphire-dragon_psionic-wave",
   "fields": {
     "name": "Psionic Wave",
@@ -5499,6 +5961,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-shadow-dragon_lash-out",
+  "fields": {
+    "name": "Lash Out",
+    "desc": "When a creature the dragon can see hits it with a melee weapon attack, the dragon makes a claw attack against the attacker.",
+    "parent": "mmenag_ancient-shadow-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -5713,6 +6189,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-silver-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-silver-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ancient-silver-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -5861,6 +6351,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ancient-white-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_ancient-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6175,6 +6679,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_apprentice-mage_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the mage is hit by an attack or targeted by magic missile, they gain a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the start of their next turn.",
+    "parent": "mmenag_apprentice-mage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_apprentice-mage_whether-a-student-attending-a-wizard-college-or-serving-a-crotchety-master",
+  "fields": {
+    "name": "Whether a student attending a wizard college or serving a crotchety master",
+    "desc": "Apprentice mage statistics can also be used to represent an older hedge wizard of limited accomplishments.",
+    "parent": "mmenag_apprentice-mage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_arcane-blademaster_composite-longbow",
   "fields": {
     "name": "Composite Longbow",
@@ -6371,6 +6903,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_archfey_riposte",
+  "fields": {
+    "name": "Riposte",
+    "desc": "When the archfey is hit by a melee attack made by a creature it can see, it makes a glittering scimitar attack against the attacker.",
+    "parent": "mmenag_archfey",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_archfey_summon-midnight",
   "fields": {
     "name": "Summon Midnight ",
@@ -6427,6 +6973,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_archfey_vengeful-eye",
+  "fields": {
+    "name": "Vengeful Eye",
+    "desc": "When the archfey is hit by a ranged attack or targeted with a spell by a creature within 60 feet, it uses Evil Eye on the attacker if they can see each other.",
+    "parent": "mmenag_archfey",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_archfey_weird",
   "fields": {
     "name": "Weird ",
@@ -6463,6 +7023,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_archmage_counterspell",
+  "fields": {
+    "name": "Counterspell",
+    "desc": "(3rd-Level; S) When a creature the archmage can see within 60 feet casts a spell, the archmage attempts to interrupt it. If the creature is casting a 2nd-level spell or lower, the spell fails. If the creature is casting a 3rd-level or higher spell, the archmage makes an Intelligence check against a DC of 10 + the spells level. On a success, the spell fails, and the spellcasting creature can use its reaction to try to cast a second spell with the same casting time so long as it uses a spell slot level equal to or less than half the original spell slot. If the archmage casts counterspell with a higher spell slot, the interrupted spell fails if its level is less than that of counterspell.",
+    "parent": "mmenag_archmage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6533,6 +7107,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_archmage_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the archmage is hit by an attack or targeted by magic missile, they gain a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the start of their next turn.",
+    "parent": "mmenag_archmage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6631,6 +7219,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ascetic-grandmaster_deft-dodge",
+  "fields": {
+    "name": "Deft Dodge",
+    "desc": "When an attacker that the grandmaster can see hits them with an attack, the grandmaster halves the attacks damage against them.",
+    "parent": "mmenag_ascetic-grandmaster",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6833,6 +7435,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_balor-general_avenging-bolt",
+  "fields": {
+    "name": "Avenging Bolt",
+    "desc": "When damaged by a ranged weapon attack, spell, or magical effect, a 100-foot-long, 5-foot-wide lightning bolt springs from the balors extended sword. Each creature in the area makes a DC 19 Dexterity saving throw, taking 42 (12d6) lightning damage on a failed save or half damage on a success.",
+    "parent": "mmenag_balor-general",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_balor-general_avenging-sword",
+  "fields": {
+    "name": "Avenging Sword",
+    "desc": "When damaged by a melee weapon attack, the balor attacks with its lightning sword.",
+    "parent": "mmenag_balor-general",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_balor-general_fire-whip",
   "fields": {
     "name": "Fire Whip",
@@ -6841,6 +7471,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_balor-general_hunters-whip",
+  "fields": {
+    "name": "Hunters Whip",
+    "desc": "When damaged by a ranged weapon attack, spell, area effect, or magical effect, the balor uses Teleport and then attacks with its fire whip.",
+    "parent": "mmenag_balor-general",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6917,6 +7561,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_balor_instinctive-teleport",
+  "fields": {
+    "name": "Instinctive Teleport",
+    "desc": "After the balor takes damage, it uses Teleport.",
+    "parent": "mmenag_balor",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_balor_lightning-sword",
   "fields": {
     "name": "Lightning Sword",
@@ -6973,6 +7631,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_bandit-captain_bandits-are-outlaws-who-live-by-violence",
+  "fields": {
+    "name": "Bandits are outlaws who live by violence",
+    "desc": "Most are highway robbers, though a few are principled exiles or freedom fighters.",
+    "parent": "mmenag_bandit-captain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_bandit-captain_dagger",
   "fields": {
     "name": "Dagger",
@@ -6995,6 +7667,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_bandit-captain_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "If the bandit captain is wielding a melee weapon and can see their attacker, they add 2 to their AC against one melee attack that would hit them.",
+    "parent": "mmenag_bandit-captain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7085,6 +7771,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_banshee_wounded-warning",
+  "fields": {
+    "name": "Wounded Warning",
+    "desc": "When the banshee takes damage from a creature within 60 feet, it uses Presage Death on the attacker.",
+    "parent": "mmenag_banshee",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_barbed-devil_claws",
   "fields": {
     "name": "Claws",
@@ -7149,6 +7849,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_basilisk_stone-glance",
+  "fields": {
+    "name": "Stone Glance",
+    "desc": "If a creature within 60 feet that the basilisk can see hits the basilisk with an attack, the basilisk uses Stone Gaze on the attacker.",
+    "parent": "mmenag_basilisk",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7239,6 +7953,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_behir-magus_blindness",
+  "fields": {
+    "name": "Blindness",
+    "desc": "When struck by a ranged or area attack by a creature within 60 feet that it can see, the behir forces the attacker to make a DC 13 Constitution saving throw. On a failure, the creature is magically blinded for 1 minute. The creature can repeat the saving throw at the end of each of its turns.",
+    "parent": "mmenag_behir-magus",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_behir-magus_constrict",
   "fields": {
     "name": "Constrict",
@@ -7253,6 +7981,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_behir-magus_drain-charge",
+  "fields": {
+    "name": "Drain Charge",
+    "desc": "When subjected to lightning damage, the behir takes no damage, and the attacker or caster takes necrotic damage equal to the lightning damage dealt.",
+    "parent": "mmenag_behir-magus",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_behir-magus_if-a-swallowed-creature-deals-30-or-more-damage-to-the-behir-in-a-single-turn-or-if-the-behir-dies-the-behir-vomits-up-the-creature",
   "fields": {
     "name": "If a swallowed creature deals 30 or more damage to the behir in a single turn, or if the behir dies, the behir vomits up the creature",
@@ -7261,6 +8003,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_behir-magus_invisibility",
+  "fields": {
+    "name": "Invisibility",
+    "desc": "When damaged by an attack, the behir magically becomes invisible for 1 minute or until it makes an attack.",
+    "parent": "mmenag_behir-magus",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7289,6 +8045,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_behir-magus_vengeful-breath",
+  "fields": {
+    "name": "Vengeful Breath",
+    "desc": "When struck by a melee attack, the behir immediately recharges and uses Lightning Breath, including the attacker in the area of effect.",
+    "parent": "mmenag_behir-magus",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7359,6 +8129,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_behir_vengeful-breath",
+  "fields": {
+    "name": "Vengeful Breath",
+    "desc": "When struck by a melee attack, the behir immediately recharges and uses Lightning Breath, including the attacker in the area of effect.",
+    "parent": "mmenag_behir",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7499,6 +8283,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_black-pudding_split",
+  "fields": {
+    "name": "Split",
+    "desc": "When a Medium or larger pudding with at least 10 hit points is subjected to lightning or slashing damage, it splits into two puddings that are each one size smaller. Each new pudding has half the originals hit points (rounded down).",
+    "parent": "mmenag_black-pudding",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8149,6 +8947,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_bulette_hard-carapace",
+  "fields": {
+    "name": "Hard Carapace",
+    "desc": "After taking damage from an attack, the bulette lies down and closes its eyes, protecting all vulnerable spots. Until the beginning of its next turn, its AC becomes 21 and it has advantage on saving throws.",
+    "parent": "mmenag_bulette",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_bulette_jaw-clamp",
+  "fields": {
+    "name": "Jaw Clamp",
+    "desc": "When an attacker within 5 feet of the bulette misses it with a melee attack, the bulette makes a bite attack against the attacker. On a hit, the attacker is grappled (escape DC 15). Until this grapple ends, the grappled creature is restrained, and the only attack the bulette can make is a bite against the grappled creature.",
+    "parent": "mmenag_bulette",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_bulette_leap",
   "fields": {
     "name": "Leap ",
@@ -8527,6 +9353,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_chain-devil_unnerving-mask",
+  "fields": {
+    "name": "Unnerving Mask",
+    "desc": "When damaged by a creature within 30 feet that can see the devil, the devil momentarily assumes the magical illusory form of one of the attackers enemies or loved ones, alive or dead. The illusory figure may speak words that only the attacker can hear. The attacker makes a DC 15 Wisdom saving throw. On a failure, it takes 9 (2d8) psychic damage and is frightened until the end of its next turn.The attacker is then immune to this effect for the next 24 hours.",
+    "parent": "mmenag_chain-devil",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_champion-warrior_greataxe",
   "fields": {
     "name": "Greataxe",
@@ -8611,6 +9451,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_chimera_tail-swipe",
+  "fields": {
+    "name": "Tail Swipe",
+    "desc": "If a creature within 5 feet hits the chimera with a melee attack, the attacker is battered by the chimeras tail. The attacker makes a DC 15 Strength saving throw. On a failure, it takes 9 (2d4 + 4) bludgeoning damage and is pushed 10 feet from the chimera and knocked prone.",
+    "parent": "mmenag_chimera",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_chimera_the-chimera-can-take-2-legendary-actions",
   "fields": {
     "name": "The chimera can take 2 legendary actions",
@@ -8621,6 +9475,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_chimera_winged-charge",
+  "fields": {
+    "name": "Winged Charge",
+    "desc": "If a creature the chimera can see hits it with a ranged attack, the chimera leaps off the ground and moves up to its fly speed towards the attacker. If within range, the chimera then makes a headbutt attack against the attacker.",
+    "parent": "mmenag_chimera",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -8695,6 +9563,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_cloaker_angry-moan",
+  "fields": {
+    "name": "Angry Moan",
+    "desc": "When the cloaker takes damage, it uses Moan.",
+    "parent": "mmenag_cloaker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_cloaker_bite",
   "fields": {
     "name": "Bite",
@@ -8731,6 +9613,20 @@
     "uses_type": "PER_DAY",
     "uses_param": 1,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_cloaker_reactive-tail",
+  "fields": {
+    "name": "Reactive Tail",
+    "desc": "When hit or missed with a melee attack, the cloaker makes a tail attack against the attacker.",
+    "parent": "mmenag_cloaker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8787,6 +9683,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_clockwork-sentinel_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The sentinel adds 2 to its AC against one melee attack that would hit it.",
+    "parent": "mmenag_clockwork-sentinel",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8975,6 +9885,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_cockatrice_frenzy",
+  "fields": {
+    "name": "Frenzy",
+    "desc": "When attacked by a creature it can see within 20 feet, the cockatrice moves up to half its Speed and makes a bite attack against that creature.",
+    "parent": "mmenag_cockatrice",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_commoner-mob_clubs",
   "fields": {
     "name": "Clubs",
@@ -9123,6 +10047,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_coralfish_frenzy",
+  "fields": {
+    "name": "Frenzy",
+    "desc": "When attacked by a creature it can see within 20 feet, the cockatrice moves up to half its Speed and makes a bite attack against that creature.",
+    "parent": "mmenag_coralfish",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9297,6 +10235,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_cosmopolitan-alchemist_desperate-drink",
+  "fields": {
+    "name": "Desperate Drink",
+    "desc": "When the alchemist is dealt damage, they drink a potion.",
+    "parent": "mmenag_cosmopolitan-alchemist",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_cosmopolitan-alchemist_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -9361,6 +10313,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_couatl_shielding-wing",
+  "fields": {
+    "name": "Shielding Wing",
+    "desc": "When the couatl or a creature within 5 feet is attacked, the couatl can interpose a wing and impose disadvantage on the attack.",
+    "parent": "mmenag_couatl",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9563,6 +10529,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_coven-night-hag_steal-magic",
+  "fields": {
+    "name": "Steal Magic",
+    "desc": "When a creature the hag can see within 60 feet casts a spell using a 3rd-level or lower spell slot, the hag attempts to steal its power. The caster makes a DC 14 saving throw using its spellcasting ability. On a failure, the spell fails, and the hag gains 5 (1d10) temporary hit points per level of the spell slot used.",
+    "parent": "mmenag_coven-night-hag",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_coven-sea-hag_claws",
   "fields": {
     "name": "Claws",
@@ -9661,6 +10641,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_coven-winter-hag_ice-shield",
+  "fields": {
+    "name": "Ice Shield",
+    "desc": "The hag adds 3 to its AC against one melee attack that would hit it made by a creature it can see. If the attack misses, the attacker takes 14 (4d6) cold damage.",
+    "parent": "mmenag_coven-winter-hag",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_coven-winter-hag_if-the-wall-enters-a-creatures-space-when-it-appears-the-creature-is-pushed-to-one-side-of-the-wall-hags-choice",
   "fields": {
     "name": "If the wall enters a creatures space when it appears, the creature is pushed to one side of the wall (hags choice)",
@@ -9745,6 +10739,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_crime-boss_command-bodyguard",
+  "fields": {
+    "name": "Command Bodyguard",
+    "desc": "When the boss would be hit by an attack, they command an ally within 5 feet to use its reaction to switch places with the boss. The ally is hit by the attack instead of the boss.",
+    "parent": "mmenag_crime-boss",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_crime-boss_dagger",
   "fields": {
     "name": "Dagger",
@@ -9781,6 +10789,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_crime-boss_offhand-dagger",
+  "fields": {
+    "name": "Offhand Dagger",
+    "desc": "When missed by an attack, the boss makes a dagger attack.",
+    "parent": "mmenag_crime-boss",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9983,6 +11005,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_cyclops-myrmidon_big-windup",
+  "fields": {
+    "name": "Big Windup",
+    "desc": "When a creature hits the cyclops with a melee attack, the cyclops readies a powerful strike against its attacker. The cyclops has advantage on the next club attack it makes against the attacker before the end of its next turn.",
+    "parent": "mmenag_cyclops-myrmidon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_cyclops-myrmidon_maul",
   "fields": {
     "name": "Maul",
@@ -10019,6 +11055,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_cyclops_big-windup",
+  "fields": {
+    "name": "Big Windup",
+    "desc": "When a creature hits the cyclops with a melee attack, the cyclops readies a powerful strike against its attacker. The cyclops has advantage on the next club attack it makes against the attacker before the end of its next turn.",
+    "parent": "mmenag_cyclops",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11061,6 +12111,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_dragon-turtle_retract",
+  "fields": {
+    "name": "Retract",
+    "desc": "When the dragon turtle takes 50 damage or more from a single attack or spell, it retracts its head and limbs into its shell. It immediately regains 20 hit points. While retracted, it is blinded; its Speed is 0; it can't take reactions; it has advantage on saving throws; attacks against it have disadvantage; and it has resistance to all damage. The dragon turtle stays retracted until the beginning of its next turn.",
+    "parent": "mmenag_dragon-turtle",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_dragon-turtle_steam-breath",
   "fields": {
     "name": "Steam Breath ",
@@ -11078,11 +12142,11 @@
   "pk": "mmenag_dragon-turtle_tail",
   "fields": {
     "name": "Tail",
-    "desc": "Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 46 (6d12 + 7) bludgeoning damage. If the target is a creature  it makes a DC 21 Strength saving throw. On a failure  it is pushed 15 feet away from the dragon turtle and knocked prone.",
+    "desc": "When the dragon turtle is hit by an opportunity attack, it makes a tail attack.",
     "parent": "mmenag_dragon-turtle",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11635,6 +12699,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_duelist_riposte",
+  "fields": {
+    "name": "Riposte",
+    "desc": "When the duelist is missed by a melee attack by an attacker they can see within 5 feet, the duelist makes a rapier attack against the attacker with advantage.",
+    "parent": "mmenag_duelist",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_dust-mephit_blinding-breath",
   "fields": {
     "name": "Blinding Breath ",
@@ -11915,6 +12993,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_elder-black-pudding_split",
+  "fields": {
+    "name": "Split",
+    "desc": "When a Medium or larger pudding with at least 10 hit points is subjected to lightning or slashing damage, it splits into two puddings that are each one size smaller. Each new pudding has half the originals hit points (rounded down).",
+    "parent": "mmenag_elder-black-pudding",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_elder-vampire_blood-charm",
   "fields": {
     "name": "Blood Charm",
@@ -11957,6 +13049,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_elder-vampire_hissing-scuttle",
+  "fields": {
+    "name": "Hissing Scuttle",
+    "desc": "When the vampire takes radiant damage, it moves up to its Speed without provoking opportunity attacks.",
+    "parent": "mmenag_elder-vampire",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_elder-vampire_mist-form",
   "fields": {
     "name": "Mist Form",
@@ -11995,6 +13101,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_elder-vampire_warding-charm",
+  "fields": {
+    "name": "Warding Charm",
+    "desc": "When a creature the vampire can see targets it with a melee attack but before the attack is made, the vampire uses Charm on that creature.",
+    "parent": "mmenag_elder-vampire",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -12245,6 +13365,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_erinyes_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "If the erinyes is wielding a longsword and can see its attacker, it adds 4 to its AC against one melee attack that would hit it.",
+    "parent": "mmenag_erinyes",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -12601,6 +13735,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_faerie-noble_riposte",
+  "fields": {
+    "name": "Riposte",
+    "desc": "When the noble is hit by a melee attack made by a creature it can see, it makes a glittering scimitar attack against the attacker.",
+    "parent": "mmenag_faerie-noble",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_faerie-noble_the-target-falls-asleep",
   "fields": {
     "name": "The target falls asleep",
@@ -12637,6 +13785,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_faerie-noble_vengeful-eye",
+  "fields": {
+    "name": "Vengeful Eye",
+    "desc": "When the noble is hit by a ranged attack or targeted with a spell by a creature within 60 feet, it uses Evil Eye on the attacker if they can see each other.",
+    "parent": "mmenag_faerie-noble",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -12797,6 +13959,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_fallen-planetar_protective-parry",
+  "fields": {
+    "name": "Protective Parry",
+    "desc": "When a creature within 5 feet would be hit with a melee attack, the planetar applies disadvantage to the attack roll.",
+    "parent": "mmenag_fallen-planetar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_fallen-solar_abase-yourself-the-creature-falls-prone",
   "fields": {
     "name": "Abase yourself! The creature falls prone",
@@ -12877,6 +14053,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_fallen-solar_forceful-parry",
+  "fields": {
+    "name": "Forceful Parry",
+    "desc": "When a creature misses the solar with a melee attack, the solars parrying sword sparks with energy. The attacker takes 21 (6d6) lightning damage and makes a DC 24 Constitution saving throw. On a failure, it is pushed 10 feet away and falls prone.",
+    "parent": "mmenag_fallen-solar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -13049,6 +14239,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_fey-knight_natures-shield",
+  "fields": {
+    "name": "Natures Shield",
+    "desc": "When the knight would be hit by an attack while the knight is within 5 feet of a tree or other large plant, the knights AC magically increases by 3 against that attack as the plant interposes branches or vines between the knight and the attacker.",
+    "parent": "mmenag_fey-knight",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_fire-elemental_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -13119,6 +14323,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_fire-giant-war-priest_kick",
+  "fields": {
+    "name": "Kick",
+    "desc": "When hit by a melee attack by a Medium or smaller creature the giant can see within 10 feet, the giant kicks its attacker. The attacker makes a DC 19 Dexterity saving throw. On a failure, it takes 14 (3d4 + 7) bludgeoning damage, is pushed up to 20 feet from the giant, and falls prone.",
+    "parent": "mmenag_fire-giant-war-priest",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_fire-giant-war-priest_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -13183,6 +14401,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_fire-giant_kick",
+  "fields": {
+    "name": "Kick",
+    "desc": "When hit by a melee attack by a Medium or smaller creature the giant can see within 10 feet, the giant kicks its attacker. The attacker makes a DC 19 Dexterity saving throw. On a failure, it takes 14 (3d4 + 7) bludgeoning damage, is pushed up to 20 feet from the giant, and falls prone.",
+    "parent": "mmenag_fire-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -13427,6 +14659,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_forest-gnome-illusionist_counterspell",
+  "fields": {
+    "name": "Counterspell",
+    "desc": "(3rd-Level; S) When a creature the mage can see within 60 feet casts a spell, the mage attempts to interrupt it. If the creature is casting a 2nd-level spell or lower, the spell fails. If the creature is casting a 3rd-level or higher spell, the mage makes an Intelligence check against a DC of 10 + the spells level. On a success, the spell fails, and the spellcasting creature can use its reaction to try to cast a second spell with the same casting time so long as it uses a spell slot level equal to or less than half the original spell slot. If the mage casts counterspell with a higher spell slot, the interrupted spell fails if its level is less than that of counterspell.",
+    "parent": "mmenag_forest-gnome-illusionist",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_forest-gnome-illusionist_dagger",
   "fields": {
     "name": "Dagger",
@@ -13505,6 +14751,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_forest-gnome-illusionist_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the mage is hit by an attack or targeted by magic missile, they gain a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the start of their next turn.",
+    "parent": "mmenag_forest-gnome-illusionist",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -13934,11 +15194,11 @@
   "pk": "mmenag_ghost_horrifying-visage",
   "fields": {
     "name": "Horrifying Visage",
-    "desc": "Each non-undead creature within 60 feet and on the same plane of existence that can see the ghost makes a DC 13 Wisdom saving throw. On a failure  a creature is frightened for 1 minute. A frightened creature repeats the saving throw at the end of each of its turns  ending the effect on itself on a success. If a creatures saving throw is successful or the effect ends for it  it is immune to this ghosts Horrifying Visage for 24 hours.",
+    "desc": "If the ghost takes damage from an attack or spell, it uses Horrifying Visage.",
     "parent": "mmenag_ghost",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14743,6 +16003,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_giant-vulture_retreat",
+  "fields": {
+    "name": "Retreat",
+    "desc": "When the vulture would be hit by a melee attack, the vulture can move 5 feet away from the attacker. If this moves the vulture out of the attackers reach, the attacker has disadvantage on its attack.",
+    "parent": "mmenag_giant-vulture",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_giant-vulture_talons",
   "fields": {
     "name": "Talons",
@@ -14961,6 +16235,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_gladiator_shield-block",
+  "fields": {
+    "name": "Shield Block",
+    "desc": "If the gladiator is wielding a shield and can see their attacker, they add 3 to their AC against one melee or ranged attack that would hit them.",
+    "parent": "mmenag_gladiator",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15345,6 +16633,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_goblin-warlock_quick-switch",
+  "fields": {
+    "name": "Quick Switch",
+    "desc": "When the warlock is hit by an attack, it magically teleports, switching places with a goblin ally within 30 feet. The goblin ally is hit by the triggering attack and suffers its effects.",
+    "parent": "mmenag_goblin-warlock",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_goblin-warlock_silver-fire",
   "fields": {
     "name": "Silver Fire",
@@ -15611,6 +16913,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_great-wyrm-black-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_great-wyrm-black-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_great-wyrm-black-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -15745,6 +17061,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_great-wyrm-blue-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_great-wyrm-blue-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15933,6 +17263,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_great-wyrm-gold-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_great-wyrm-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_great-wyrm-gold-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -15943,6 +17287,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_great-wyrm-gold-dragon_vanguard",
+  "fields": {
+    "name": "Vanguard",
+    "desc": "When another creature the dragon can see within 20 feet is hit by an attack, the dragon deflects the attack, turning the hit into a miss.",
+    "parent": "mmenag_great-wyrm-gold-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -16081,6 +17439,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_great-wyrm-green-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_great-wyrm-green-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16227,6 +17599,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_great-wyrm-red-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_great-wyrm-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_great-wyrm-red-dragon_taskmaster",
+  "fields": {
+    "name": "Taskmaster",
+    "desc": "When a creature within 60 feet fails an ability check or saving throw, the dragon roars a command to it. The creature can roll a d10 and add it to the result of the roll, possibly turning the failure into a success.",
+    "parent": "mmenag_great-wyrm-red-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_great-wyrm-red-dragon_the-dragon-can-take-3-legendary-actions",
   "fields": {
     "name": "The dragon can take 3 legendary actions",
@@ -16361,6 +17761,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_great-wyrm-white-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_great-wyrm-white-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16997,6 +18411,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_half-red-dragon-veteran_off-hand-counter",
+  "fields": {
+    "name": "Off-Hand Counter",
+    "desc": "When the veteran is missed by a melee attack by an attacker it can see within 5 feet, the veteran makes a shortsword attack against the attacker.",
+    "parent": "mmenag_half-red-dragon-veteran",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_half-red-dragon-veteran_shortsword",
   "fields": {
     "name": "Shortsword",
@@ -17193,6 +18621,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_hezrou_stench",
+  "fields": {
+    "name": "Stench",
+    "desc": "When hit by a melee attack, the hezrou emits a cloud of foul-smelling poison gas in a 20-foot radius. Each creature in the area makes a DC 14 Constitution saving throw. On a failure, a creature is poisoned for 1 minute. A creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success",
+    "parent": "mmenag_hezrou",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_hezrou_swallow",
   "fields": {
     "name": "Swallow",
@@ -17201,6 +18643,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_high-elf-noble_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "If the noble is wielding a melee weapon and can see their attacker, they add 2 to their AC against one melee attack that would hit them.",
+    "parent": "mmenag_high-elf-noble",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -17355,6 +18811,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_hill-dwarf-wrestler_opportune-jab",
+  "fields": {
+    "name": "Opportune Jab",
+    "desc": "If a creature attempts to grapple the pugilist, the pugilist attacks that creature with their fists.",
+    "parent": "mmenag_hill-dwarf-wrestler",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -17851,6 +19321,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_horned-devil_pin",
+  "fields": {
+    "name": "Pin",
+    "desc": "When a creature misses the devil with a melee attack, the devil makes a fork attack against that creature. On a hit, the target is impaled by the fork and grappled (escape DC 17). Until this grapple ends, the devil can't make fork attacks or use Inferno, but the target takes 7 (2d6) piercing damage plus 3 (1d6) fire damage at the beginning of each of its turns.",
+    "parent": "mmenag_horned-devil",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_horned-devil_tail",
   "fields": {
     "name": "Tail",
@@ -17943,6 +19427,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_hound-guardian_protective-bite",
+  "fields": {
+    "name": "Protective Bite",
+    "desc": "When a creature within 5 feet hits the guardians owner with a melee attack, the guardian bites the attacker.",
+    "parent": "mmenag_hound-guardian",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -18075,6 +19573,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ice-devil_freezing-blood",
+  "fields": {
+    "name": "Freezing Blood",
+    "desc": "When a creature within 60 feet that the devil can see hits it with a ranged attack or includes it in a spells area, the creature makes a DC 16 Constitution saving throw. On a failure, the creature takes 10 (3d6) cold damage and is slowed until the end of its next turn.",
+    "parent": "mmenag_ice-devil",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_ice-devil_ice-wall",
   "fields": {
     "name": "Ice Wall ",
@@ -18181,6 +19693,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ice-worm_fighting-retreat",
+  "fields": {
+    "name": "Fighting Retreat",
+    "desc": "When a creature makes an opportunity attack on the worm, the worm attacks with either its bite or its tail stinger.",
+    "parent": "mmenag_ice-worm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -18369,6 +19895,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_iron-guardian_deflection",
+  "fields": {
+    "name": "Deflection",
+    "desc": "When missed by a ranged attack by a creature the guardian can see, the guardian redirects the attack against a creature within 60 feet that it can see. The original attacker must reroll the attack against the new target.",
+    "parent": "mmenag_iron-guardian",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_iron-guardian_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -18433,6 +19973,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_jackalope_uncanny-dodge",
+  "fields": {
+    "name": "Uncanny Dodge",
+    "desc": "When an attacker the jackalope can see hits it with an attack, the jackalope halves the attacks damage against it.",
+    "parent": "mmenag_jackalope",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -18643,6 +20197,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_khalkos_telekinetic-shield",
+  "fields": {
+    "name": "Telekinetic Shield",
+    "desc": "When the khalkos is hit by an attack made by a creature that it can see or sense with its Detect Alignment trait, it gains a +4 bonus to AC against the triggering attack.",
+    "parent": "mmenag_khalkos",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -18957,6 +20525,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_kobold-broodguard-dragon-servitor_rally",
+  "fields": {
+    "name": "Rally!",
+    "desc": "When the kobold takes damage, it shouts a rallying cry. All kobolds within 30 feet that can hear it gain immunity to the frightened condition for 1 minute, and their next attack roll made before this effect ends deals an extra 1d4 damage.",
+    "parent": "mmenag_kobold-broodguard-dragon-servitor",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_kobold-broodguard-dragon-servitor_sling",
   "fields": {
     "name": "Sling",
@@ -19007,6 +20589,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_kobold-broodguard_rally",
+  "fields": {
+    "name": "Rally!",
+    "desc": "When the kobold takes damage, it shouts a rallying cry. All kobolds within 30 feet that can hear it gain immunity to the frightened condition for 1 minute, and their next attack roll made before this effect ends deals an extra 1d4 damage.",
+    "parent": "mmenag_kobold-broodguard",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -19559,6 +21155,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_lich_sabotage-spell",
+  "fields": {
+    "name": "Sabotage Spell",
+    "desc": "When a creature within 60 feet casts a spell that targets the lich, the lich attempts to interrupt it. The lich makes an Intelligence check against a DC of 10 + the spells level. On a success, the spell fails, and the caster takes 10 (3d6) necrotic damage.",
+    "parent": "mmenag_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_lich_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the lich is hit by an attack or targeted by magic missile, it gains a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the beginning of its next turn.",
+    "parent": "mmenag_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_lich_the-lich-can-take-3-legendary-actions",
   "fields": {
     "name": "The lich can take 3 legendary actions",
@@ -19651,6 +21275,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_lizardfolk-chosen-one_supernatural-rebuke",
+  "fields": {
+    "name": "Supernatural Rebuke",
+    "desc": "When the lizardfolk is dealt damage by a creature it can see within 60 feet, its attacker makes a DC 13 Dexterity saving throw. On a failure, the attacker takes 11 (2d10) fire or radiant damage (the lizardfolks choice).",
+    "parent": "mmenag_lizardfolk-chosen-one",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -19755,6 +21393,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_mage_counterspell",
+  "fields": {
+    "name": "Counterspell",
+    "desc": "(3rd-Level; S) When a creature the mage can see within 60 feet casts a spell, the mage attempts to interrupt it. If the creature is casting a 2nd-level spell or lower, the spell fails. If the creature is casting a 3rd-level or higher spell, the mage makes an Intelligence check against a DC of 10 + the spells level. On a success, the spell fails, and the spellcasting creature can use its reaction to try to cast a second spell with the same casting time so long as it uses a spell slot level equal to or less than half the original spell slot. If the mage casts counterspell with a higher spell slot, the interrupted spell fails if its level is less than that of counterspell.",
+    "parent": "mmenag_mage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_mage_dagger",
   "fields": {
     "name": "Dagger",
@@ -19819,6 +21471,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_mage_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the mage is hit by an attack or targeted by magic missile, they gain a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the start of their next turn.",
+    "parent": "mmenag_mage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -19965,6 +21631,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_malcubus_living-shield",
+  "fields": {
+    "name": "Living Shield",
+    "desc": "When a creature the malcubus can see hits it with an attack, the malcubus can give an order to a creature charmed by it within 5 feet. The charmed creature uses its reaction, if available, to swap places with the malcubus. The attack hits the charmed creature instead of the malcubus.",
+    "parent": "mmenag_malcubus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_mammoth_gore",
   "fields": {
     "name": "Gore",
@@ -20057,6 +21737,20 @@
     "uses_type": "PER_DAY",
     "uses_param": 4,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_manticore_tail-whip",
+  "fields": {
+    "name": "Tail Whip",
+    "desc": "If a creature the manticore can see hits it with a melee attack, the manticore attacks the attacker with its tail. If it hits, it can fly up to half its fly speed without provoking opportunity attacks from the attacker.",
+    "parent": "mmenag_manticore",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20169,6 +21863,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_marilith_reactive-teleport",
+  "fields": {
+    "name": "Reactive Teleport",
+    "desc": "When the marilith is hit or missed by a ranged attack, it uses Teleport. If it teleports within 5 feet of a creature, it can attack with its tail.",
+    "parent": "mmenag_marilith",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20407,6 +22115,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_merclops_big-windup",
+  "fields": {
+    "name": "Big Windup",
+    "desc": "When a creature hits the merclops with a melee attack, the merclops readies a powerful strike against its attacker. The merclops has advantage on the next club attack it makes against the attacker before the end of its next turn.",
+    "parent": "mmenag_merclops",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -20917,6 +22639,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_miremuck-goblin-king_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The goblin king adds 2 to his AC against onemelee attack that would hit him. To do this the goblinking must see the attacker and be wielding a meleeweapon.",
+    "parent": "mmenag_miremuck-goblin-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_miremuck-goblin-king_rapier",
   "fields": {
     "name": "Rapier",
@@ -21071,6 +22807,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_mountain-dwarf-lord_shield-block",
+  "fields": {
+    "name": "Shield Block",
+    "desc": "When a creature attacks the mountain dwarf lord or a target within 5 feet, the mountain dwarf lord imposes disadvantage on that attack. To do so, the mountain dwarf lord must see the attacker and be wielding a shield.",
+    "parent": "mmenag_mountain-dwarf-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_mountain-dwarf-soldier_handaxe",
   "fields": {
     "name": "Handaxe",
@@ -21123,6 +22873,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_mummy-lord_blasphemous-counterspell",
+  "fields": {
+    "name": "Blasphemous Counterspell",
+    "desc": "When the mummy lord is targeted by a spell using a 4th-level or lower spell slot, the attacker makes a DC 16 Constitution saving throw. On a failure, the spell is wasted, and the caster takes 3 (1d6) necrotic damage per level of the spell slot.",
+    "parent": "mmenag_mummy-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -21449,6 +23213,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_necromancer_counterspell",
+  "fields": {
+    "name": "Counterspell",
+    "desc": "(3rd-Level; S) When a creature the mage can see within 60 feet casts a spell, the mage attempts to interrupt it. If the creature is casting a 2nd-level spell or lower, the spell fails. If the creature is casting a 3rd-level or higher spell, the mage makes an Intelligence check against a DC of 10 + the spells level. On a success, the spell fails, and the spellcasting creature can use its reaction to try to cast a second spell with the same casting time so long as it uses a spell slot level equal to or less than half the original spell slot. If the mage casts counterspell with a higher spell slot, the interrupted spell fails if its level is less than that of counterspell.",
+    "parent": "mmenag_necromancer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_necromancer_dagger",
   "fields": {
     "name": "Dagger",
@@ -21513,6 +23291,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_necromancer_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the mage is hit by an attack or targeted by magic missile, they gain a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the start of their next turn.",
+    "parent": "mmenag_necromancer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -21645,6 +23437,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_noble_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "If the noble is wielding a melee weapon and can see their attacker, they add 2 to their AC against one melee attack that would hit them.",
+    "parent": "mmenag_noble",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_noble_rapier",
   "fields": {
     "name": "Rapier",
@@ -21673,6 +23479,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_ochre-jelly_split",
+  "fields": {
+    "name": "Split",
+    "desc": "When a Medium or larger jelly with at least 10 hit points is subjected to lightning or slashing damage, it splits into two jellies that are each one size smaller, freeing any grappled targets. Each new jelly has half the originals hit points (rounded down).",
+    "parent": "mmenag_ochre-jelly",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_octopus_tentacles",
   "fields": {
     "name": "Tentacles",
@@ -21695,6 +23515,34 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ogre-flesh-heap_bodyblock",
+  "fields": {
+    "name": "Bodyblock",
+    "desc": "If the ogre flesh heap is grappling a creature when it is hit with a weapon attack by a creature it can see, it uses the creature as a shield, adding 2 to its AC against the attack. If this causes the attack to miss, the attack hits the grappled creature instead.",
+    "parent": "mmenag_ogre-flesh-heap",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_ogre-flesh-heap_corpulent-expulsion",
+  "fields": {
+    "name": "Corpulent Expulsion",
+    "desc": "When it takes damage, the ogre flesh heaps belly splits and releases a torrent of caustic gore in a 30-foot cone. Creatures in this area make a DC 14 Dexterity saving throw, taking 14 (4d6) acid damage on a failure and half damage on a success. The flesh heap then takes 10 (3d6) acid damage.",
+    "parent": "mmenag_ogre-flesh-heap",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -22471,6 +24319,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_pirate-captain_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "If the bandit captain is wielding a melee weapon and can see their attacker, they add 2 to their AC against one melee attack that would hit them.",
+    "parent": "mmenag_pirate-captain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_pirate-captain_scimitar",
   "fields": {
     "name": "Scimitar",
@@ -22891,6 +24753,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_planetar_protective-parry",
+  "fields": {
+    "name": "Protective Parry",
+    "desc": "When a creature within 5 feet would be hit with a melee attack, the planetar applies disadvantage to the attack roll.",
+    "parent": "mmenag_planetar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_plesiosaurus_bite",
   "fields": {
     "name": "Bite",
@@ -23143,6 +25019,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_pugilist_opportune-jab",
+  "fields": {
+    "name": "Opportune Jab",
+    "desc": "If a creature attempts to grapple the pugilist, the pugilist attacks that creature with their fists.",
+    "parent": "mmenag_pugilist",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_purple-worm_bite",
   "fields": {
     "name": "Bite",
@@ -23151,6 +25041,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_purple-worm_fighting-retreat",
+  "fields": {
+    "name": "Fighting Retreat",
+    "desc": "When a creature makes an opportunity attack on the worm, the worm attacks with either its bite or its tail stinger.",
+    "parent": "mmenag_purple-worm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -23390,6 +25294,20 @@
     "uses_param": null,
     "action_type": "ACTION",
     "form_condition": "True Form Only",
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_rakshasa_counterproposal",
+  "fields": {
+    "name": "Counterproposal",
+    "desc": "The rakshasa uses Sweet Promises on a creature that attacked it or attempted to target it with a spell.",
+    "parent": "mmenag_rakshasa",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
     "legendary_cost": null
   }
 },
@@ -23815,6 +25733,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_roc-juvenile_retributive-strike",
+  "fields": {
+    "name": "Retributive Strike",
+    "desc": "When a creature the roc can see hits it with a melee weapon attack, the roc makes a beak attack against its attacker.",
+    "parent": "mmenag_roc-juvenile",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_roc-juvenile_talons",
   "fields": {
     "name": "Talons",
@@ -23851,6 +25783,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_roc_retributive-strike",
+  "fields": {
+    "name": "Retributive Strike",
+    "desc": "When a creature the roc can see hits it with a melee weapon attack, the roc makes a beak attack against its attacker.",
+    "parent": "mmenag_roc",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -23977,6 +25923,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_rust-monster_defensive-bite",
+  "fields": {
+    "name": "Defensive Bite",
+    "desc": "When the rust monster is hit by a melee attack made by a creature it can see within 5 feet, it bites the attacker.",
+    "parent": "mmenag_rust-monster",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -24207,6 +26167,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_sand-ray_angry-moan",
+  "fields": {
+    "name": "Angry Moan",
+    "desc": "When the cloaker takes damage, it uses Moan.",
+    "parent": "mmenag_sand-ray",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_sand-ray_bite",
   "fields": {
     "name": "Bite",
@@ -24249,6 +26223,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_sand-ray_reactive-tail",
+  "fields": {
+    "name": "Reactive Tail",
+    "desc": "When hit or missed with a melee attack, the cloaker makes a tail attack against the attacker.",
+    "parent": "mmenag_sand-ray",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_sand-ray_tail",
   "fields": {
     "name": "Tail",
@@ -24271,6 +26259,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_sand-worm_fighting-retreat",
+  "fields": {
+    "name": "Fighting Retreat",
+    "desc": "When a creature makes an opportunity attack on the worm, the worm attacks with either its bite or its tail stinger.",
+    "parent": "mmenag_sand-worm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -24809,6 +26811,34 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_sea-serpent_reactive-bite",
+  "fields": {
+    "name": "Reactive Bite",
+    "desc": "If the serpent takes 15 damage or more from a melee attack made by a creature it can see, it bites the attacker.",
+    "parent": "mmenag_sea-serpent",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_sea-serpent_reactive-tail",
+  "fields": {
+    "name": "Reactive Tail",
+    "desc": "If the serpent takes 15 damage or more from an attack made by a creature or object it can see, it makes a tail attack against the attacker.",
+    "parent": "mmenag_sea-serpent",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_sea-serpent_recover",
   "fields": {
     "name": "Recover ",
@@ -25033,6 +27063,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_shadow-elf-mage_counterspell",
+  "fields": {
+    "name": "Counterspell",
+    "desc": "(3rd-Level; S) When a creature the mage can see within 60 feet casts a spell, the mage attempts to interrupt it. If the creature is casting a 2nd-level spell or lower, the spell fails. If the creature is casting a 3rd-level or higher spell, the mage makes an Intelligence check against a DC of 10 + the spells level. On a success, the spell fails, and the spellcasting creature can use its reaction to try to cast a second spell with the same casting time so long as it uses a spell slot level equal to or less than half the original spell slot. If the mage casts counterspell with a higher spell slot, the interrupted spell fails if its level is less than that of counterspell.",
+    "parent": "mmenag_shadow-elf-mage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_shadow-elf-mage_dagger",
   "fields": {
     "name": "Dagger",
@@ -25097,6 +27141,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_shadow-elf-mage_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the mage is hit by an attack or targeted by magic missile, they gain a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the start of their next turn.",
+    "parent": "mmenag_shadow-elf-mage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -25285,6 +27343,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_shield-guardian_absorb-damage",
+  "fields": {
+    "name": "Absorb Damage",
+    "desc": "If the guardian is within 60 feet of its master when the master takes damage, half the damage (rounded up) is transferred to the guardian.",
+    "parent": "mmenag_shield-guardian",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_shield-guardian_fist",
   "fields": {
     "name": "Fist",
@@ -25327,6 +27399,48 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_shield-guardian_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "If the guardian is within 5 feet of its master when the master is attacked, the guardian grants a +3 bonus to its masters AC.",
+    "parent": "mmenag_shield-guardian",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_shrieker_shriek",
+  "fields": {
+    "name": "Shriek",
+    "desc": "If the shrieker perceives a creature within 30 feet  or if an area of bright light is within 30 feet  it shrieks loudly and continuously. The shriek is audible within 300 feet. The shrieker continues to shriek for 1 minute after the creature or light has moved away.",
+    "parent": "mmenag_shrieker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_shroud-ray_angry-moan",
+  "fields": {
+    "name": "Angry Moan",
+    "desc": "When the cloaker takes damage, it uses Moan.",
+    "parent": "mmenag_shroud-ray",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_shroud-ray_bite",
   "fields": {
     "name": "Bite",
@@ -25363,6 +27477,20 @@
     "uses_type": "PER_DAY",
     "uses_param": 1,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_shroud-ray_reactive-tail",
+  "fields": {
+    "name": "Reactive Tail",
+    "desc": "When hit or missed with a melee attack, the cloaker makes a tail attack against the attacker.",
+    "parent": "mmenag_shroud-ray",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -25503,6 +27631,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_skeletal-champion_shielding-riposte",
+  "fields": {
+    "name": "Shielding Riposte",
+    "desc": "When a creature within the skeletons reach misses with a melee attack against the skeleton or a creature within 5 feet, the skeleton makes a longsword attack against the attacker. The skeleton must be wielding a longsword to use this reaction.",
+    "parent": "mmenag_skeletal-champion",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -25743,6 +27885,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_solar_forceful-parry",
+  "fields": {
+    "name": "Forceful Parry",
+    "desc": "When a creature misses the solar with a melee attack, the solars parrying sword sparks with energy. The attacker takes 21 (6d6) lightning damage and makes a DC 24 Constitution saving throw. On a failure, it is pushed 10 feet away and falls prone.",
+    "parent": "mmenag_solar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -26125,6 +28281,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_spirit-naga_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the naga is hit by an attack or targeted by magic missile, it gains a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the beginning of its next turn.",
+    "parent": "mmenag_spirit-naga",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_sprite_gust",
   "fields": {
     "name": "Gust",
@@ -26489,6 +28659,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_stone-giant-stonetalker_rock-catching",
+  "fields": {
+    "name": "Rock Catching",
+    "desc": "If a rock or other Small or larger projectile is hurled or fired at the giant, the giant makes a DC 10 Dexterity saving throw. On a success, the giant catches the projectile, takes no bludgeoning or piercing damage from it, and is not pushed or knocked prone by it.",
+    "parent": "mmenag_stone-giant-stonetalker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_stone-giant-stonetalker_stone-spikes",
   "fields": {
     "name": "Stone Spikes",
@@ -26539,6 +28723,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_stone-giant_rock-catching",
+  "fields": {
+    "name": "Rock Catching",
+    "desc": "If a rock or other Small or larger projectile is hurled or fired at the giant, the giant makes a DC 10 Dexterity saving throw. On a success, the giant catches the projectile, takes no bludgeoning or piercing damage from it, and is not pushed or knocked prone by it.",
+    "parent": "mmenag_stone-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -27301,6 +29499,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_titanic-dragon-turtle_retract",
+  "fields": {
+    "name": "Retract",
+    "desc": "When the dragon turtle takes 50 damage or more from a single attack or spell, it retracts its head and limbs into its shell. It immediately regains 20 hit points. While retracted, it is blinded; its Speed is 0; it can't take reactions; it has advantage on saving throws; attacks against it have disadvantage; and it has resistance to all damage. The dragon turtle stays retracted until the beginning of its next turn.",
+    "parent": "mmenag_titanic-dragon-turtle",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_titanic-dragon-turtle_steam-breath",
   "fields": {
     "name": "Steam Breath ",
@@ -27318,13 +29530,13 @@
   "pk": "mmenag_titanic-dragon-turtle_tail",
   "fields": {
     "name": "Tail",
-    "desc": "The dragon turtle makes a tail attack.",
+    "desc": "When the dragon turtle is hit by an opportunity attack, it makes a tail attack.",
     "parent": "mmenag_titanic-dragon-turtle",
     "uses_type": null,
     "uses_param": null,
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
-    "legendary_cost": 2
+    "legendary_cost": null
   }
 },
 {
@@ -27987,6 +30199,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire-assassin_hissing-scuttle",
+  "fields": {
+    "name": "Hissing Scuttle",
+    "desc": "When the vampire takes radiant damage, it moves up to its Speed without provoking opportunity attacks.",
+    "parent": "mmenag_vampire-assassin",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_vampire-assassin_mist-form",
   "fields": {
     "name": "Mist Form",
@@ -28025,6 +30251,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire-assassin_warding-charm",
+  "fields": {
+    "name": "Warding Charm",
+    "desc": "When a creature the vampire can see targets it with a melee attack but before the attack is made, the vampire uses Charm on that creature.",
+    "parent": "mmenag_vampire-assassin",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -28099,6 +30339,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire-mage_hissing-scuttle",
+  "fields": {
+    "name": "Hissing Scuttle",
+    "desc": "When the vampire takes radiant damage, it moves up to its Speed without provoking opportunity attacks.",
+    "parent": "mmenag_vampire-mage",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_vampire-mage_mist-form",
   "fields": {
     "name": "Mist Form",
@@ -28127,6 +30381,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire-mage_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "(1st-Level; V) When the vampire is hit by an attack or targeted by magic missile, it gains a +5 bonus to AC (including against the triggering attack) and immunity to magic missile. These benefits last until the start of its next turn.",
+    "parent": "mmenag_vampire-mage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_vampire-mage_the-vampire-can-take-1-legendary-action",
   "fields": {
     "name": "The vampire can take 1 legendary action",
@@ -28137,6 +30405,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire-mage_warding-charm",
+  "fields": {
+    "name": "Warding Charm",
+    "desc": "When a creature the vampire can see targets it with a melee attack but before the attack is made, the vampire uses Charm on that creature.",
+    "parent": "mmenag_vampire-mage",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -28163,6 +30445,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire-spawn_hissing-scuttle",
+  "fields": {
+    "name": "Hissing Scuttle",
+    "desc": "When the vampire takes radiant damage, it moves up to its Speed without provoking opportunity attacks.",
+    "parent": "mmenag_vampire-spawn",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -28225,6 +30521,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire-warrior_hissing-scuttle",
+  "fields": {
+    "name": "Hissing Scuttle",
+    "desc": "When the vampire takes radiant damage, it moves up to its Speed without provoking opportunity attacks.",
+    "parent": "mmenag_vampire-warrior",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_vampire-warrior_mist-form",
   "fields": {
     "name": "Mist Form",
@@ -28281,6 +30591,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire-warrior_warding-charm",
+  "fields": {
+    "name": "Warding Charm",
+    "desc": "When a creature the vampire can see targets it with a melee attack but before the attack is made, the vampire uses Charm on that creature.",
+    "parent": "mmenag_vampire-warrior",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_vampire_blood-charm",
   "fields": {
     "name": "Blood Charm",
@@ -28319,6 +30643,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire_hissing-scuttle",
+  "fields": {
+    "name": "Hissing Scuttle",
+    "desc": "When the vampire takes radiant damage, it moves up to its Speed without provoking opportunity attacks.",
+    "parent": "mmenag_vampire",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -28365,6 +30703,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "mmenag_vampire_warding-charm",
+  "fields": {
+    "name": "Warding Charm",
+    "desc": "When a creature the vampire can see targets it with a melee attack but before the attack is made, the vampire uses Charm on that creature.",
+    "parent": "mmenag_vampire",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "mmenag_vengeful-ghost_ethereal-jaunt",
   "fields": {
     "name": "Ethereal Jaunt",
@@ -28382,11 +30734,11 @@
   "pk": "mmenag_vengeful-ghost_horrifying-visage",
   "fields": {
     "name": "Horrifying Visage",
-    "desc": "Each non-undead creature within 60 feet and on the same plane of existence that can see the ghost makes a DC 13 Wisdom saving throw. On a failure  a creature is frightened for 1 minute. A frightened creature repeats the saving throw at the end of each of its turns  ending the effect on itself on a success. If a creatures saving throw is successful or the effect ends for it  it is immune to this ghosts Horrifying Visage for 24 hours.",
+    "desc": "If the ghost takes damage from an attack or spell, it uses Horrifying Visage.",
     "parent": "mmenag_vengeful-ghost",
     "uses_type": null,
     "uses_param": null,
-    "action_type": "ACTION",
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -28457,6 +30809,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_veteran_off-hand-counter",
+  "fields": {
+    "name": "Off-Hand Counter",
+    "desc": "When the veteran is missed by a melee attack by an attacker they can see within 5 feet, the veteran makes a shortsword attack against the attacker.",
+    "parent": "mmenag_veteran",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -28569,6 +30935,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_vulture_retreat",
+  "fields": {
+    "name": "Retreat",
+    "desc": "When the vulture would be hit by a melee attack, the vulture can move 5 feet away from the attacker. If this moves the vulture out of the attackers reach, the attacker has disadvantage on its attack.",
+    "parent": "mmenag_vulture",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -28751,6 +31131,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_warlords-ghost_wounded-warning",
+  "fields": {
+    "name": "Wounded Warning",
+    "desc": "When the banshee takes damage from a creature within 60 feet, it uses Presage Death on the attacker.",
+    "parent": "mmenag_warlords-ghost",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -29227,6 +31621,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_winter-hag_ice-shield",
+  "fields": {
+    "name": "Ice Shield",
+    "desc": "The hag adds 3 to its AC against one melee attack that would hit it made by a creature it can see. If the attack misses, the attacker takes 14 (4d6) cold damage.",
+    "parent": "mmenag_winter-hag",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -30081,6 +32489,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "mmenag_young-bronze-dragon_tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it.",
+    "parent": "mmenag_young-bronze-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }

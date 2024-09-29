@@ -39,7 +39,7 @@ def main():
             #copy_traits(obj_v1, obj_v2)
             #check_caa(obj_v2)
 
-            copy_leg_actions(obj_v1, obj_v2)
+            copy_reactions(obj_v1, obj_v2)
             #copy_legendary_desc(obj_v1, obj_v2)
             #copy_traits(obj_v1,obj_v2)
             #obj_v2.full_clean()
@@ -115,6 +115,76 @@ def copy_leg_actions(obj_v1, obj_v2):
 
             print("KEY={}".format(key))
             if v2_models.CreatureAction.objects.filter(key=key):
+                pass
+                #v2_models.CreatureAction.objects.filter(pk=key).update(name=name)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(desc=a['desc'])
+                #v2_models.CreatureAction.objects.filter(pk=key).update(uses_type=uses_type)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(uses_param=uses_param)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(action_type='LEGENDARY_ACTION')
+                #v2_models.CreatureAction.objects.filter(pk=key).update(form_condition=form_condition)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(legendary_cost=legendary_cost)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(parent=obj_v2)
+            else:
+                ca = v2_models.CreatureAction(name=name,
+                    key = key,
+                    parent=obj_v2,
+                    desc=a['desc'],
+                    uses_type=uses_type,
+                    uses_param=uses_param,
+                    action_type='LEGENDARY_ACTION',
+                    form_condition=form_condition,
+                    legendary_cost=legendary_cost
+                    )
+                print(ca.key)
+                #ca.save()
+
+
+def check_caa(obj_v2):
+    for ca in obj_v2.creatureaction_set.all():
+        rename_ca(ca, ca.name)
+
+                
+def copy_reactions(obj_v1, obj_v2):
+    # if exists, copy actions_json
+    if obj_v1.reactions_json not in [None,"null"]:
+        for a in json.loads(obj_v1.reactions_json):
+            at = "REACTION"
+            form_condition = None
+            legendary_cost = None
+            uses_type = None
+            uses_param = None
+            name = a['name']
+
+            if "(" in a['name']:
+                parens = a['name'].split(")")[0].split("(")[1]
+                name = a['name'].split("(")[0].strip()
+                for semi_separated in parens.split(";"):
+                    for comma_separated in semi_separated.split(","):
+                        if "costs" in comma_separated.lower():
+                            legendary_cost = int(comma_separated.lower().split("costs")[1].split("actions")[0].strip())
+                        if comma_separated.lower().strip().isdigit():
+                            legendary_cost = int(comma_separated.lower().strip())
+                        if "form" in comma_separated.lower():
+                            form_condition = comma_separated.strip()
+                        if "/day" in comma_separated.lower():
+                            uses_type = 'PER_DAY'
+                            uses_param = comma_separated.lower().split("/day")[0][-1]
+                        if "recharge" in comma_separated.lower():
+                            if " rest" in comma_separated.lower():
+                                uses_type = "RECHARGE_AFTER_REST"
+                            else:
+                                uses_type = "RECHARGE_ON_ROLL"
+                                uses_param = comma_separated.lower().split(" ")[1][0]
+                        if "level" in comma_separated.lower():
+                            a['desc']="({}) {}".format(parens, a['desc'])
+
+            key = slugify(obj_v2.key + "_" + name)
+            #if legendary_cost>1:
+                #print("key={}, cost={}, fc={}".format(key, legendary_cost, form_condition))
+
+            print("KEY={}".format(key))
+            if v2_models.CreatureAction.objects.filter(key=key):
+                
                 v2_models.CreatureAction.objects.filter(pk=key).update(name=name)
                 v2_models.CreatureAction.objects.filter(pk=key).update(desc=a['desc'])
                 v2_models.CreatureAction.objects.filter(pk=key).update(uses_type=uses_type)
@@ -135,16 +205,8 @@ def copy_leg_actions(obj_v1, obj_v2):
                     legendary_cost=legendary_cost
                     )
                 print(ca.key)
+                ca.full_clean()
                 ca.save()
-
-
-def check_caa(obj_v2):
-    for ca in obj_v2.creatureaction_set.all():
-        rename_ca(ca, ca.name)
-
-                
-
-  
 
 def rename_ca(old_ca, name):
     print("re-nameing and re-keying {}".format(old_ca.key))

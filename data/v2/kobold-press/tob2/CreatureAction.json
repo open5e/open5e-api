@@ -99,6 +99,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_abbanith-giant_earth-counter",
+  "fields": {
+    "name": "Earth Counter",
+    "desc": "When a creature the abbanith can see within 30 feet of it casts a spell, the abbanith counters it. This reaction works like the counterspell spell, except the abbanith can only counter spells that directly affect or create earth or stone, such as stone shape, wall of stone, or move earth, and it doesn’t need to make a spellcasting ability check, regardless of the spell’s level.",
+    "parent": "tob2_abbanith-giant",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_abbanith-giant_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -527,6 +541,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_akaasit_time-assisted-counterattack",
+  "fields": {
+    "name": "Time-Assisted Counterattack",
+    "desc": "The akaasit’s awareness of the near future allows it to see attacks before they happen. When a creature the akaasit can see attacks it while within 5 feet of it, the akaasit can attack the creature before the creature’s attack hits. The akaasit makes a single arm blade attack against the creature. If the creature is reduced to 0 hp as a result of the akaasit’s attack, the creature’s attack doesn’t hit the akaasit.",
+    "parent": "tob2_akaasit",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1373,6 +1401,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_apaxrusl_shifting-sands",
+  "fields": {
+    "name": "Shifting Sands",
+    "desc": "The apaxrusl can shift the flowing sands of its body to avoid harm. When the apaxrusl takes damage, roll a d12. Reduce the damage it takes by the number rolled.",
+    "parent": "tob2_apaxrusl",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_apaxrusl_slam",
   "fields": {
     "name": "Slam",
@@ -1499,6 +1541,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_astral-devourer_divide",
+  "fields": {
+    "name": "Divide",
+    "desc": "When an astral devourer that is Small or larger takes bludgeoning, piercing, or slashing damage, it can split into two new astral devourers if it has at least 10 hp. Each new devourer has hp equal to half the original creature, rounded down. New astral devourers are one size smaller than the original. While within 1 mile of each other, the new astral devourers share one collective mind.",
+    "parent": "tob2_astral-devourer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_astral-devourer_hungering-serpents",
   "fields": {
     "name": "Hungering Serpents",
@@ -1527,6 +1583,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_astral-devourer_recombine",
+  "fields": {
+    "name": "Recombine",
+    "desc": "When one or more astral devourers that are Small or smaller and share a collective mind are within 5 feet of each other, they can combine into a new astral devourer. The new astral devourer is one size larger than the largest original creature, and it has hp equal to the combined total of the original creatures. The new astral devourer’s hp can’t exceed the normal hp maximum of a Medium astral devourer.",
+    "parent": "tob2_astral-devourer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_astral-devourer_serpent-spray",
   "fields": {
     "name": "Serpent Spray ",
@@ -1549,6 +1619,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_astri_defensive-counter",
+  "fields": {
+    "name": "Defensive Counter",
+    "desc": "When a creature within 5 feet of the astri makes an attack against a creature other than the astri, the astri can bite the attacker. To do so, the astri must be able to see the attacker.",
+    "parent": "tob2_astri",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1857,6 +1941,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_backup-holler-spider_tune-up",
+  "fields": {
+    "name": "Tune Up",
+    "desc": "When an ally within 15 feet of the backup holler spider casts a spell that deals thunder damage, the backup holler spider chooses one of the spell’s targets. That target has disadvantage on the saving throw against the spell.",
+    "parent": "tob2_backup-holler-spider",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -2479,6 +2577,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_boomer_shriek",
+  "fields": {
+    "name": "Shriek",
+    "desc": "If bright light or a creature is within 30 feet of the boomer, it emits a shriek audible within 300 feet of it. The boomer continues to shriek until the disturbance moves out of range and for 1d4 of the boomer’s turns afterward.",
+    "parent": "tob2_boomer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_boreal-dragon-wyrmling_bite",
   "fields": {
     "name": "Bite",
@@ -2683,6 +2795,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_broodmother-of-leng_protect-the-future",
+  "fields": {
+    "name": "Protect the Future",
+    "desc": "When a creature the broodmother can see attacks her, she can call on a spider of Leng within 5 feet of her to protect her. The spider of Leng becomes the target of the attack instead.",
+    "parent": "tob2_broodmother-of-leng",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3473,6 +3599,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_chronomatic-enhancer_alter-timeline",
+  "fields": {
+    "name": "Alter Timeline",
+    "desc": "When a friendly creature within 15 feet of the chronomatic enhancer takes damage, the enhancer can modify time to protect the creature, changing all damage dice rolled to 1s.",
+    "parent": "tob2_chronomatic-enhancer",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_chronomatic-enhancer_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -3669,6 +3809,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_clockwork-tiger_deflecting-leap",
+  "fields": {
+    "name": "Deflecting Leap",
+    "desc": "When the clockwork tiger’s ward is the target of an attack the tiger can see, the tiger can move up to 10 feet toward its ward without provoking opportunity attacks. If it ends this movement within 5 feet of its ward, the tiger becomes the target of the attack instead.",
+    "parent": "tob2_clockwork-tiger",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_clockwork-tiger_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -3817,6 +3971,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_corpse-worm_regurgitate",
+  "fields": {
+    "name": "Regurgitate",
+    "desc": "When a creature the corpse worm can see hits it with an attack while within 10 feet of it, the corpse worm regurgitates a portion of its stomach contents on the attacker. The target must succeed on a DC 14 Constitution saving throw or be poisoned for 1 minute. If the corpse worm has a swallowed creature when it uses this reaction, the worm must succeed on a DC 14 Constitution saving throw or also regurgitate the swallowed creature, which falls prone in a space within 5 feet of the target. If it regurgitates the swallowed creature, the target and the swallowed creature take 7 (2d6) acid damage.",
+    "parent": "tob2_corpse-worm",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4181,6 +4349,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_dancing-foliage_shower-of-petals",
+  "fields": {
+    "name": "Shower of Petals",
+    "desc": "When a creature the dancing foliage can see targets it with an attack, it releases a shower of flower petals, giving the attacker disadvantage on that attack roll.",
+    "parent": "tob2_dancing-foliage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5265,6 +5447,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_eldritch-ooze_split",
+  "fields": {
+    "name": "Split",
+    "desc": "When an eldritch ooze that is Medium or larger is subjected to lightning or slashing damage, it splits into two new oozes if it has at least 10 hp. Each new ooze has hp equal to half the original ooze’s, rounded down. New oozes are one size smaller than the original ooze.",
+    "parent": "tob2_eldritch-ooze",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_eldritch-ooze_void-infused-pseudopod",
   "fields": {
     "name": "Void-Infused Pseudopod",
@@ -5895,6 +6091,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_flithidir_mocking-retort",
+  "fields": {
+    "name": "Mocking Retort",
+    "desc": "When a creature the flithidir can see misses it with an attack, the flithidir can cast vicious mockery at the attacker.",
+    "parent": "tob2_flithidir",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_flithidir_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -5973,6 +6183,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_fragrant-one_interpose-ally",
+  "fields": {
+    "name": "Interpose Ally",
+    "desc": "When a creature the fragrant one can see targets it with an attack, the fragrant one can force a charmed ally within 5 feet of it to move between it and the attack. The charmed ally becomes the target of the attack instead. If the charmed ally takes damage from this attack, it can immediately repeat the Fragrant Aura’s saving throw, ending the charmed condition on itself on a success.",
+    "parent": "tob2_fragrant-one",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6379,6 +6603,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_giant-mongoose_defensive-roll",
+  "fields": {
+    "name": "Defensive Roll",
+    "desc": "The mongoose adds its Athletics bonus to its AC against one attack that would hit it. To do so, the mongoose must see the attacker.",
+    "parent": "tob2_giant-mongoose",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7023,6 +7261,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_haleshi_water-shield",
+  "fields": {
+    "name": "Water Shield",
+    "desc": "The haleshi adds 3 to its AC against one attack that would hit it. To do so, the haleshi must be within 5 feet of a gallon or more of water. Alternatively, if the haleshi would take fire damage from an attack or spell, it can negate that damage if it is within 5 feet of a gallon or more of water.",
+    "parent": "tob2_haleshi",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7715,6 +7967,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_hoarfrost-drake_retaliatory-slip",
+  "fields": {
+    "name": "Retaliatory Slip",
+    "desc": "When a creature grapples the drake, the drake can immediately attempt to escape. If it succeeds, it can make a bite attack against the creature that grappled it.",
+    "parent": "tob2_hoarfrost-drake",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_hodag_bite",
   "fields": {
     "name": "Bite",
@@ -7835,6 +8101,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_holler-spider_sound-alarm",
+  "fields": {
+    "name": "Sound Alarm",
+    "desc": "When the holler spider detects a creature within 60 feet of it, the spider can emit a hoot or trumpet audible within 300 feet of it. The noise continues until the creature moves out of range, the spider’s handler uses an action to soothe it, or the spider ends the alarm (no action required).",
+    "parent": "tob2_holler-spider",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8121,6 +8401,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_hverhuldra_steam-cloud",
+  "fields": {
+    "name": "Steam Cloud",
+    "desc": "When the hverhuldra takes cold damage, it uses the steam from the impact of the cold on its body to magically create a cloud of steam centered on a point it can see within 60 feet of it. This cloud works like the fog cloud spell, except the hverhuldra can dismiss it as a bonus action.",
+    "parent": "tob2_hverhuldra",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_hverhuldra_steaming-fist",
   "fields": {
     "name": "Steaming Fist",
@@ -8129,6 +8423,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_ice-bogie_frosty-aid",
+  "fields": {
+    "name": "Frosty Aid",
+    "desc": "Whenever an allied ice bogie within 30 feet is reduced to 0 hp, this ice bogie can choose to reduce its hp by 3 (1d6), and the ally regains hp equal to the amount of hp this ice bogie lost.",
+    "parent": "tob2_ice-bogie",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8829,6 +9137,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_kaveph_revenge",
+  "fields": {
+    "name": "Revenge",
+    "desc": "When a kaveph is dealt 20 damage or more by a single attack and survives, it can make a smash attack against the attacker.",
+    "parent": "tob2_kaveph",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9983,6 +10305,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_major-malleable_sudden-separation",
+  "fields": {
+    "name": "Sudden Separation",
+    "desc": "When the major malleable takes 20 damage or more from a single attack, it can choose to immediately use Separate Malleables. If it does so, the damage is divided evenly among the separate malleables it becomes.",
+    "parent": "tob2_major-malleable",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_manggus_bite",
   "fields": {
     "name": "Bite",
@@ -10201,6 +10537,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_massive-malleable_sudden-separation",
+  "fields": {
+    "name": "Sudden Separation",
+    "desc": "When the massive malleable takes 30 damage or more from a single attack, it can choose to immediately use Separate Malleables. If it does so, the damage is divided evenly among the separate malleables it becomes.",
+    "parent": "tob2_massive-malleable",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -10487,6 +10837,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_moderate-malleable_sudden-separation",
+  "fields": {
+    "name": "Sudden Separation",
+    "desc": "When the moderate malleable takes 10 damage or more from a single attack, it can choose to immediately use Separate Malleables. If it does so, the damage is divided evenly among the separate malleables it becomes.",
+    "parent": "tob2_moderate-malleable",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_moonkite_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -10635,6 +10999,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_mountain-strider_revenge-for-the-fallen",
+  "fields": {
+    "name": "Revenge for the Fallen",
+    "desc": "When an ally the mountain strider can see is reduced to 0 hp within 30 feet of the mountain strider, the strider can move up to half its speed and make a headbutt attack.",
+    "parent": "tob2_mountain-strider",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -10823,6 +11201,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_mystic_void-deflection",
+  "fields": {
+    "name": "Void Deflection",
+    "desc": "When a creature the mystic can see targets it with a ranged spell attack, the mystic can attempt to deflect the spell. The mystic makes a Constitution saving throw. If the result is higher than the attack roll, the mystic is unaffected by the spell.",
+    "parent": "tob2_mystic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_naizu-ha_dagger-legs",
   "fields": {
     "name": "Dagger Legs",
@@ -10929,6 +11321,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_nephirron-devil_sculpt-breath",
+  "fields": {
+    "name": "Sculpt Breath",
+    "desc": "When the nephirron is in the area of a spell, such as fireball, or a breath weapon, it can create a hole in the spell or breath weapon, protecting itself from the effects. If it does so, the nephirron automatically succeeds on its saving throw against the spell or breath weapon and takes no damage if it would normally take half damage on a successful save.",
+    "parent": "tob2_nephirron-devil",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11293,6 +11699,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_onyx-magistrate_tip-the-scales",
+  "fields": {
+    "name": "Tip the Scales",
+    "desc": "The onyx magistrate adds 3 to its AC against one attack that would hit it. Alternatively, the onyx magistrate succeeds on a saving throw it failed.",
+    "parent": "tob2_onyx-magistrate",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11887,6 +12307,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_pixies-umbrella_float",
+  "fields": {
+    "name": "Float",
+    "desc": "When a pixie’s umbrella senses motion within 30 feet of it, it fills its cap with air and flies 20 feet away from the motion without provoking opportunity attacks.",
+    "parent": "tob2_pixies-umbrella",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_pixies-umbrella_twirl",
   "fields": {
     "name": "Twirl",
@@ -12167,6 +12601,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_qiqirn_horrifying-wail",
+  "fields": {
+    "name": "Horrifying Wail",
+    "desc": "When the qiqirn takes damage, the spirits infusing it cry out, afraid of losing their host. If the creature that dealt the damage can hear the qiqirn, it must succeed on a DC 12 Wisdom saving throw or be frightened until the end of its next turn.",
+    "parent": "tob2_qiqirn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_qiqirn_spirit-infused-yip",
   "fields": {
     "name": "Spirit-infused Yip",
@@ -12357,6 +12805,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_righteous-sentinel_reflective-retribution",
+  "fields": {
+    "name": "Reflective Retribution",
+    "desc": "The sentinel adds 3 to its AC against one melee attack that would hit it. To do so, the sentinel must see the attacker. If the attack misses, the attacker takes 11 (2d10) psychic damage.",
+    "parent": "tob2_righteous-sentinel",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -13035,6 +13497,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_scrofin_quick-to-anger",
+  "fields": {
+    "name": "Quick to Anger",
+    "desc": "If the scrofin is wrestling a foe as part of a challenge and takes damage, or when it is reduced to half its hp maximum, it becomes angry. While angry, the scrofin has advantage on melee attack rolls and on saving throws against spells or effects that would charm or frighten it or make it unconscious, and it has resistance to bludgeoning damage. It remains angry for 1 minute, or until it is knocked unconscious. Alternatively, it can end its anger as a bonus action.",
+    "parent": "tob2_scrofin",
+    "uses_type": "RECHARGE_AFTER_REST",
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_scroll-mummy_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -13435,6 +13911,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_shukankor_sacrifice-replica",
+  "fields": {
+    "name": "Sacrifice Replica",
+    "desc": "When a creature the shukankor can see targets it with an attack, the shukankor forces a replica within 5 feet of it to jump in the way. The chosen replica becomes the target of the attack instead.",
+    "parent": "tob2_shukankor",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14813,6 +15303,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_thrummren_protect-rider",
+  "fields": {
+    "name": "Protect Rider",
+    "desc": "When the thrummren’s rider is the target of an attack the thrummren can see, the thrummren can choose to become the target of the attack instead.",
+    "parent": "tob2_thrummren",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_thrummren_thunder-stomp",
   "fields": {
     "name": "Thunder Stomp ",
@@ -14835,6 +15339,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_tidehunter_entangle-weapon",
+  "fields": {
+    "name": "Entangle Weapon",
+    "desc": "When the tidehunter is targeted by a melee weapon attack, the attacker must succeed on a DC 16 Dexterity saving throw or miss the attack as the tidehunter uses its net to interfere with the weapon. The tidehunter must have an empty net to use this reaction.",
+    "parent": "tob2_tidehunter",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14989,6 +15507,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_tormented-qiqirn_protective-spirits",
+  "fields": {
+    "name": "Protective Spirits",
+    "desc": "When the qiqirn takes damage, the spirits infusing it rise up to protect it. Roll 2d8 and reduce the damage by the result.",
+    "parent": "tob2_tormented-qiqirn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15437,6 +15969,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_valkruung_disarming-tendrils",
+  "fields": {
+    "name": "Disarming Tendrils",
+    "desc": "When a creature the valkruung can see targets it with a melee weapon attack, the attacker must succeed on a DC 13 Dexterity saving throw or its weapon is knocked out of its grasp into a random unoccupied space within 5 feet of the attacker. The valkruung can’t use this reaction against attackers wielding a heavy or two-handed weapon.",
+    "parent": "tob2_valkruung",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16899,6 +17445,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob2_yathon_precognition",
+  "fields": {
+    "name": "Precognition",
+    "desc": "The yathon catches a glimpse of an attack just before it lands, giving it time to react. When a creature the yathon can see hits it with a melee attack, the attacker has disadvantage on the attack roll. Alternatively, when the yathon misses with a melee weapon attack, it can reroll the attack roll with advantage.",
+    "parent": "tob2_yathon",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 6,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob2_yavalnoi_bite",
   "fields": {
     "name": "Bite",
@@ -17327,6 +17887,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob2_zeitgeist_rewind",
+  "fields": {
+    "name": "Rewind",
+    "desc": "When the zeitgeist takes damage or when it starts its turn afflicted with a condition, it can rewind time around it, preventing the damage or undoing the condition. It can use this reaction even while paralyzed or stunned.",
+    "parent": "tob2_zeitgeist",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }

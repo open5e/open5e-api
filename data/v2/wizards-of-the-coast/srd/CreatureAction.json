@@ -925,6 +925,48 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "srd_bandit-captain_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon.",
+    "parent": "srd_bandit-captain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_black-pudding_split",
+  "fields": {
+    "name": "Split",
+    "desc": "When a pudding that is Medium or larger is subjected to lightning or slashing damage, it splits into two new puddings if it has at least 10 hit points. Each new pudding has hit points equal to half the original pudding's, rounded down. New puddings are one size smaller than the original pudding.",
+    "parent": "srd_black-pudding",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_chain-devil_unnerving-mask",
+  "fields": {
+    "name": "Unnerving Mask",
+    "desc": "When a creature the devil can see starts its turn within 30 feet of the devil, the devil can create the illusion that it looks like one of the creature's departed loved ones or bitter enemies. If the creature can see the devil, it must succeed on a DC 14 Wisdom saving throw or be frightened until the end of its turn.",
+    "parent": "srd_chain-devil",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "srd_elf-drow_hand-crossbow",
   "fields": {
     "name": "Hand Crossbow",
@@ -947,6 +989,34 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_erinyes_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The erinyes adds 4 to its AC against one melee attack that would hit it. To do so, the erinyes must see the attacker and be wielding a melee weapon.",
+    "parent": "srd_erinyes",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_gladiator_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The gladiator adds 3 to its AC against one melee attack that would hit it. To do so, the gladiator must see the attacker and be wielding a melee weapon.",
+    "parent": "srd_gladiator",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -1019,6 +1089,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_knight_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The knight adds 2 to its AC against one melee attack that would hit it. To do so, the knight must see the attacker and be wielding a melee weapon.",
+    "parent": "srd_knight",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {
@@ -1121,6 +1205,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "srd_marilith_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The marilith adds 5 to its AC against one melee attack that would hit it. To do so, the marilith must see the attacker and be wielding a melee weapon.",
+    "parent": "srd_marilith",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "srd_mummy-lord_attack",
   "fields": {
     "name": "Attack",
@@ -1191,6 +1289,48 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "srd_noble_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The noble adds 2 to its AC against one melee attack that would hit it. To do so, the noble must see the attacker and be wielding a melee weapon.",
+    "parent": "srd_noble",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_ochre-jelly_split",
+  "fields": {
+    "name": "Split",
+    "desc": "When a jelly that is Medium or larger is subjected to lightning or slashing damage, it splits into two new jellies if it has at least 10 hit points. Each new jelly has hit points equal to half the original jelly's, rounded down. New jellies are one size smaller than the original jelly.",
+    "parent": "srd_ochre-jelly",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_shield-guardian_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "When a creature makes an attack against the wearer of the guardian's amulet, the guardian grants a +2 bonus to the wearer's AC if the guardian is within 5 feet of the wearer.",
+    "parent": "srd_shield-guardian",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "srd_solar_blinding-gaze",
   "fields": {
     "name": "Blinding Gaze",
@@ -1229,6 +1369,20 @@
     "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_stone-giant_rock-catching",
+  "fields": {
+    "name": "Rock Catching",
+    "desc": "If a rock or similar object is hurled at the giant, the giant can, with a successful DC 10 Dexterity saving throw, catch the missile and take no bludgeoning damage from it.",
+    "parent": "srd_stone-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
   }
 },
 {

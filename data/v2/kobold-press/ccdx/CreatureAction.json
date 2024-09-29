@@ -855,6 +855,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_alnaar_on-the-hunt",
+  "fields": {
+    "name": "On the Hunt",
+    "desc": "When a creature the alnaar can see moves, the alnaar can move up to 20 feet toward the moving creature. If the alnaar moves within 10 feet of that creature, it can make one fiery fangs attack against the creature.",
+    "parent": "ccdx_alnaar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_alp_sleepers-slap",
   "fields": {
     "name": "Sleeper's Slap",
@@ -1737,6 +1751,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_arcanaphage_voracious",
+  "fields": {
+    "name": "Voracious",
+    "desc": "The arcanaphage's tentacles glow when a spell is cast within 30 feet of it, countering the spell. This reaction works like the counterspell spell, except the arcanaphage must always make a spellcasting ability check, no matter the spell level. Its ability check for this is +5. If it successfully counters the spell, the arcanaphage feeds.",
+    "parent": "ccdx_arcanaphage",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_archaeopteryx_beak",
   "fields": {
     "name": "Beak",
@@ -2255,6 +2283,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_barong_divine-protection",
+  "fields": {
+    "name": "Divine Protection",
+    "desc": "When a creature makes an attack against Barong or one of his allies within 30 feet, Barong grants the target of the attack a +5 bonus to its AC until the start of his next turn.",
+    "parent": "ccdx_barong",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_barong_enlightening-roar",
   "fields": {
     "name": "Enlightening Roar",
@@ -2647,6 +2689,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_blood-ooze_overflow",
+  "fields": {
+    "name": "Overflow",
+    "desc": "When the blood ooze is hit with a melee attack, it can drain blood from the attacker. The attacker must make a DC 15 Constitution saving throw, taking 11 (2d10) necrotic damage on a failed save, or half as much damage on a successful one. The ooze gains temporary hp equal to the necrotic damage taken.",
+    "parent": "ccdx_blood-ooze",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_blood-ooze_pseudopod",
   "fields": {
     "name": "Pseudopod",
@@ -2697,6 +2753,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_bloody-bones_its-crown-runs-red",
+  "fields": {
+    "name": "Its Crown Runs Red",
+    "desc": "When it is hit by an attack, the bloody bones regains 5 (1d10) hit points and has resistance to that damage type until the end of its next turn as life-giving blood pours from the top of its skull.",
+    "parent": "ccdx_bloody-bones",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3263,6 +3333,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_chuhaister_deadfall-shield",
+  "fields": {
+    "name": "Deadfall Shield",
+    "desc": "When the chuhaister or one ally within 30 feet of it is hit by an attack, the chuhaister can create a magical, wooden barrier that interrupts the attack. The attack causes no damage. The shield splinters and disappears afterwards.",
+    "parent": "ccdx_chuhaister",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_chuhaister_greatclub",
   "fields": {
     "name": "Greatclub",
@@ -3327,6 +3411,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_chupacabra_malodorous-stench",
+  "fields": {
+    "name": "Malodorous Stench",
+    "desc": "When the chupacabra is reduced to less than half of its maximum hp, it releases a foul, sulphurous stench. Each creature within 5 feet of the chupacabra must succeed on a DC 11 Constitution saving throw or be poisoned until the end of its next turn.",
+    "parent": "ccdx_chupacabra",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -3809,6 +3907,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_dark-father_banish-hope",
+  "fields": {
+    "name": "Banish Hope",
+    "desc": "When a spell from the evocation or necromancy school is cast within 30 feet of the dark father, the dark father can counter the spell with a successful ability check. This works like the counterspell spell with a +5 spellcasting ability check, except the dark father must make the ability check no matter the level of the spell.",
+    "parent": "ccdx_dark-father",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_dark-father_final-curtain",
   "fields": {
     "name": "Final Curtain",
@@ -4027,6 +4139,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_devil-bough_arcasynthesis",
+  "fields": {
+    "name": "Arcasynthesis",
+    "desc": "When a spell of 5th level or lower is cast within 100 feet of the devil bough, it attempts to synthesize the magic. The spell resolves as normal, but the devil bough has a 50% chance of regaining 5 (1d10) hp per level of the spell cast.",
+    "parent": "ccdx_devil-bough",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4299,6 +4425,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_doom-golem_doom-upon-you",
+  "fields": {
+    "name": "Doom Upon You",
+    "desc": "When a creature the doom golem can see within 60 feet of it hits it with a spell or attack that requires a ranged attack roll, the doom golem strikes the attacker with a doom bolt. The doom bolt is a shadowy reflection of the original attack, using the same attack roll and effects as the original, except it deals necrotic damage.",
+    "parent": "ccdx_doom-golem",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_doom-golem_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -4411,6 +4551,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_dream-squire_for-the-master",
+  "fields": {
+    "name": "For the Master",
+    "desc": "When the dream squire's master is targeted by an attack or spell, the squire magically teleports to an unoccupied space within 5 feet of the master, and the attack or spell targets the squire instead. If the attack or spell deals damage, the dream squire takes half damage from it. To use this ability, the master and squire must be on the same plane.",
+    "parent": "ccdx_dream-squire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_dream-squire_light-crossbow",
   "fields": {
     "name": "Light Crossbow",
@@ -4447,6 +4601,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_dream-wraith_dreamers-gaze",
+  "fields": {
+    "name": "Dreamer's Gaze",
+    "desc": "When a creature the dream wraith can see starts its turn within 30 feet of the dream wraith, the dream wraith can create the illusion that it looks like that creature's most recently departed loved one. If the creature can see the dream wraith, it must succeed on a DC 14 Wisdom saving throw or be stunned until the end of its turn.",
+    "parent": "ccdx_dream-wraith",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4545,6 +4713,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_dust-goblin-chieftain_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The dust goblin chieftain adds 2 to its AC against one melee attack that would hit it. To do so, the chieftain must see the attacker and be wielding a melee weapon.",
+    "parent": "ccdx_dust-goblin-chieftain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -4761,6 +4943,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_elder-ghost-boar_ghostly-slip",
+  "fields": {
+    "name": "Ghostly Slip",
+    "desc": "When it is targeted by an attack or spell or is grappled or restrained, the ghost boar becomes momentarily incorporeal. It gains resistance to any damage that isn't force and ends any grappled or restrained conditions on itself.",
+    "parent": "ccdx_elder-ghost-boar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_elder-ghost-boar_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -4901,6 +5097,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_enchanter_beguiling-parry",
+  "fields": {
+    "name": "Beguiling Parry",
+    "desc": "When a creature within 30 feet that the enchanter can see targets it with an attack, the enchanter can stop the attacker with a glance. The attacker must succeed on a DC 15 Charisma saving throw or immediately stop the attack. The attacker can't attack the enchanter again until the start of its next turn.",
+    "parent": "ccdx_enchanter",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 4,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_enchanter_captivating-gaze",
   "fields": {
     "name": "Captivating Gaze",
@@ -4965,6 +5175,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_exploding-toad_death-leap",
+  "fields": {
+    "name": "Death Leap",
+    "desc": "The exploding toad can turn an attack that missed it into a hit or turn a successful saving throw into a failure.",
+    "parent": "ccdx_exploding-toad",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5385,6 +5609,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_flying-polyp_fist-of-wind",
+  "fields": {
+    "name": "Fist of Wind",
+    "desc": "When a creature the flying polyp can see targets it with an attack, the flying polyp can unleash a line of strong wind 60 feet long and 10 feet wide in the direction of the attacker. The wind lasts until the start of the flying polyp's next turn. Each creature in the wind when it appears or that starts its turn in the wind must succeed on a DC 17 Strength saving throw or be pushed 15 feet away from the flying polyp in a direction following the line. Any creature in the line treats all movement as difficult terrain.",
+    "parent": "ccdx_flying-polyp",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -5853,6 +6091,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_ghost-boar_tusk-swipe",
+  "fields": {
+    "name": "Tusk Swipe",
+    "desc": "When a creature hits the ghost boar with a melee weapon attack, the ghost boar can make one tusk attack against the creature. The ghost boar must see the attacker and be within 5 feet of it.",
+    "parent": "ccdx_ghost-boar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_ghost-dragon_claw",
   "fields": {
     "name": "Claw",
@@ -6225,6 +6477,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_glass-golem_shatter",
+  "fields": {
+    "name": "Shatter",
+    "desc": "When a glass golem takes bludgeoning damage, it can make one shard attack against each creature within 5 feet of it.",
+    "parent": "ccdx_glass-golem",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -6735,6 +7001,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_green-knight-of-the-woods_knights-rebuke",
+  "fields": {
+    "name": "Knight's Rebuke",
+    "desc": "When the green knight is hit by a melee attack from a creature it has successfully challenged, it can make one battle axe attack with advantage against the attacker.",
+    "parent": "ccdx_green-knight-of-the-woods",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_green-knight-of-the-woods_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -6995,6 +7275,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_gumienniki_taunting-cackle",
+  "fields": {
+    "name": "Taunting Cackle",
+    "desc": "When the gumienniki is missed by an attack, it can taunt the attacker. The attacking creature must succeed on a DC 12 Wisdom saving throw or have disadvantage on its next attack roll or saving throw.",
+    "parent": "ccdx_gumienniki",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -7575,6 +7869,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_inkling_redirect-spell",
+  "fields": {
+    "name": "Redirect Spell",
+    "desc": "If a spell attack hits the inkling, it can force the attacker to make a DC 12 Intelligence saving throw. If the attacker fails the saving throw, the spell is redirected to hit another creature of the inkling's choice within 30 feet.",
+    "parent": "ccdx_inkling",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_iron-sphere_blade",
   "fields": {
     "name": "Blade",
@@ -8135,6 +8443,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_king-kobold_uncanny-dodge",
+  "fields": {
+    "name": "Uncanny Dodge",
+    "desc": "The king kobold halves the damage from one attack that hits it. To do so, it must see the attacker.",
+    "parent": "ccdx_king-kobold",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_kinnara_discordant-refrain",
   "fields": {
     "name": "Discordant Refrain ",
@@ -8143,6 +8465,20 @@
     "uses_type": "RECHARGE_ON_ROLL",
     "uses_param": 5,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_kinnara_share-the-pain",
+  "fields": {
+    "name": "Share the Pain",
+    "desc": "When the kinnara's partner is hit with a melee or ranged attack, the kinnara can teleport to an unoccupied space within 5 feet of its partner. The damage caused by the attack is divided evenly between the two kinnara.",
+    "parent": "ccdx_kinnara",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -8289,6 +8625,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_korrigan_catch-me-if-you-can",
+  "fields": {
+    "name": "Catch Me If You Can",
+    "desc": "When a creature moves within 5 feet of the korrigan, the korrigan can cast the misty step spell.",
+    "parent": "ccdx_korrigan",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_korrigan_dagger",
   "fields": {
     "name": "Dagger",
@@ -8339,6 +8689,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_kryt_haunting-vision",
+  "fields": {
+    "name": "Haunting Vision",
+    "desc": "When a kryt is attacked by a creature it can see within 30 feet of it, the kryt can haunt the creature with a vision of the creature's death. The haunted creature has disadvantage on its next attack roll. Undead creatures and creatures that are unable to be killed are immune to this reaction.",
+    "parent": "ccdx_kryt",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -9017,6 +9381,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_lotus-golem_arcane-absorption",
+  "fields": {
+    "name": "Arcane Absorption",
+    "desc": "When a spell is cast within 30 feet of it, the golem absorbs some of the spell's potency. If it is a spell that forces a saving throw, the DC to succeed drops by 2. If it is a spell with an attack roll, the attack roll has disadvantage. The golem regains 20 hp and gains 1 charge point in its Arcane Pool.",
+    "parent": "ccdx_lotus-golem",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_lotus-golem_arcane-water",
   "fields": {
     "name": "Arcane Water",
@@ -9465,6 +9843,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_monkey-king_drunken-dodge",
+  "fields": {
+    "name": "Drunken Dodge",
+    "desc": "When the Monkey King is hit by a weapon attack, he gains resistance to bludgeoning, piercing, and slashing damage until the end of that turn.",
+    "parent": "ccdx_monkey-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_monkey-king_enlightened-ray",
   "fields": {
     "name": "Enlightened Ray",
@@ -9599,6 +9991,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_moon-drake_form-of-moonlight",
+  "fields": {
+    "name": "Form of Moonlight",
+    "desc": "When the moon drake takes damage or is restrained, it can transmute its physical form into an incorporeal form of pure moonlight until the end of its next turn. While in this form, it has resistance to cold, fire, and lightning damage and immunity to bludgeoning, piercing, and slashing damage from nonmagical attacks. While in this form, the drake can pass through openings at least 1 inch wide and through transparent objects. It takes 5 (1d10) force damage if it ends its turn inside an object.",
+    "parent": "ccdx_moon-drake",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -10319,6 +10725,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_ningyo_share-pain",
+  "fields": {
+    "name": "Share Pain",
+    "desc": "When the ningyo takes damage, it can choose to take half the damage instead. The ningyo then chooses a creature within 60 feet. The target must succeed on a DC 15 Constitution saving throw or have disadvantage until the end of its next turn as it is wracked with the pain of the attack.",
+    "parent": "ccdx_ningyo",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_nodosaurus_tail",
   "fields": {
     "name": "Tail",
@@ -10831,6 +11251,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_ouroboros_reactive-hide",
+  "fields": {
+    "name": "Reactive Hide",
+    "desc": "When the dragon is hit with an attack, it gains resistance to damage of that type until the end of its next turn, including the damage from the attack that triggered this reaction.",
+    "parent": "ccdx_ouroboros",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -11719,6 +12153,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_quickstep_quick-dodge",
+  "fields": {
+    "name": "Quick Dodge",
+    "desc": "When a creature the quickstep can see targets it with an attack, the quickstep can move to an unoccupied space within 5 feet of it without provoking opportunity attacks. If this movement would put the quickstep out of reach of the attacker, the attack misses.",
+    "parent": "ccdx_quickstep",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_quiet-soul_psychic-lash",
   "fields": {
     "name": "Psychic Lash",
@@ -11909,6 +12357,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_ratfolk-mercenary_guard-the-big-cheese",
+  "fields": {
+    "name": "Guard the Big Cheese",
+    "desc": "When a creature makes an attack against the ratfolk mercenary's current employer, the mercenary grants a +2 bonus to the employer's AC if the mercenary is within 5 feet of the employer.",
+    "parent": "ccdx_ratfolk-mercenary",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -12755,6 +13217,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_shadow-goblin_vengeful-jinx",
+  "fields": {
+    "name": "Vengeful Jinx",
+    "desc": "When the shadow goblin is hit by an attack from a creature it can see, it can curse the attacker. The attacker has disadvantage on attack rolls until the end of its next turn.",
+    "parent": "ccdx_shadow-goblin",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_shadow-ooze_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -13077,6 +13553,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_shoreline-scrapper_shell-protection",
+  "fields": {
+    "name": "Shell Protection",
+    "desc": "The shoreline scrapper adds 4 to its AC against one melee attack that would hit it as it withdraws into its shell. Until it emerges, it increases its AC by 4, has a speed of 0 ft., and can't use its claws or magnetic pulse. The shoreline scrapper can emerge from its shell as a bonus action.",
+    "parent": "ccdx_shoreline-scrapper",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_sigilian_cut",
   "fields": {
     "name": "Cut",
@@ -13329,6 +13819,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_sleipnir_eight-hooves",
+  "fields": {
+    "name": "Eight Hooves",
+    "desc": "When a creature moves within 5 feet of the sleipnir, the sleipnir can move up to its speed without provoking opportunity attacks.",
+    "parent": "ccdx_sleipnir",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_sleipnir_gold-and-ice",
   "fields": {
     "name": "Gold and Ice ",
@@ -13449,6 +13953,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_song-angel_heavenly-inspiration",
+  "fields": {
+    "name": "Heavenly Inspiration",
+    "desc": "When a creature the song angel can see fails an ability check or saving throw or misses with a weapon attack, the angel can sing a verse of divine music. If the creature hears this song, it can reroll the failed check, save, or attack roll with advantage.",
+    "parent": "ccdx_song-angel",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -14309,6 +14827,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_tosculi-jeweled-drone_protect-the-queen",
+  "fields": {
+    "name": "Protect the Queen",
+    "desc": "When a creature makes an attack against a tosculi hive queen, the jeweled drone grants a +2 bonus to the queen's AC if the drone is within 5 feet of the queen.",
+    "parent": "ccdx_tosculi-jeweled-drone",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_tosculi-jeweled-drone_scimitar",
   "fields": {
     "name": "Scimitar",
@@ -14953,6 +15485,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_vampiric-knight_shield",
+  "fields": {
+    "name": "Shield",
+    "desc": "When a creature makes an attack against an allied vampire, the knight can grant the vampire a +3 bonus to its AC if the knight is within 5 feet of the vampire.",
+    "parent": "ccdx_vampiric-knight",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_vanara_howl",
   "fields": {
     "name": "Howl ",
@@ -15121,6 +15667,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_venom-maw-hydra_tail-lash",
+  "fields": {
+    "name": "Tail Lash",
+    "desc": "When it is hit by a melee weapon attack within 10 feet of it, the venom maw hydra lashes out with its tail. The attacker must make a DC 16 Strength saving throw. On a failure, it takes 7 (2d6) bludgeoning damage and is knocked prone. On a success, the target takes half the damage and isn't knocked prone.",
+    "parent": "ccdx_venom-maw-hydra",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_venom-maw-hydra_venom-spray",
   "fields": {
     "name": "Venom Spray ",
@@ -15213,6 +15773,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_void-giant_magic-absorption",
+  "fields": {
+    "name": "Magic Absorption",
+    "desc": "If the void giant succeeds on a saving throw against an enemy spell, the void giant doesn't suffer the effects of that spell. If it uses Void Casting on its next turn, the void giant can affect all creatures hit by its spell or who fail a saving throw against its spell instead of just one creature.",
+    "parent": "ccdx_void-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -15863,6 +16437,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_wind-demon_swift-as-frost",
+  "fields": {
+    "name": "Swift as Frost",
+    "desc": "After a creature the wind demon can see damages it with an attack, the wind demon can move up to its speed without provoking opportunity attacks.",
+    "parent": "ccdx_wind-demon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_wind-eater_claw",
   "fields": {
     "name": "Claw",
@@ -15942,6 +16530,20 @@
     "uses_param": null,
     "action_type": "ACTION",
     "form_condition": "Whirlwind Form Only",
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_winds-harp_diabolical-countersong",
+  "fields": {
+    "name": "Diabolical Countersong",
+    "desc": "When a spell is cast within 60 feet of it, the wind's harp devil plays a single, infernal note, interrupting the spell. This reaction works like the counterspell spell, except it only works on spells of 3rd level or lower.",
+    "parent": "ccdx_winds-harp",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
     "legendary_cost": null
   }
 },
@@ -16241,6 +16843,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "ccdx_wyvern-knight_protection",
+  "fields": {
+    "name": "Protection",
+    "desc": "When a creature the wyvern knight can see attacks a target that is within 5 feet of it, including a creature it is riding, the knight can use a reaction to impose disadvantage on the attack roll. The knight must be wielding a shield.",
+    "parent": "ccdx_wyvern-knight",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "ccdx_xenabsorber_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -16263,6 +16879,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_xiphus_borrowed-time",
+  "fields": {
+    "name": "Borrowed Time",
+    "desc": "If damage is dealt to a xiphus that would kill it, it can attempt to temporarily borrow time from another creature to avoid death. One creature the xiphus can see within 30 feet of it must succeed on a DC 16 Constitution saving throw or take 10 (3d6) necrotic damage, and the xiphus regains hp equal to the damage taken. The target is stable and doesn't die if this effect reduces its hp to 0. After 2 rounds, the xiphus takes necrotic damage, and the target regains hp, equal to the original amount borrowed.",
+    "parent": "ccdx_xiphus",
+    "uses_type": "RECHARGE_AFTER_REST",
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
@@ -16333,6 +16963,20 @@
     "uses_type": null,
     "uses_param": null,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "ccdx_yaga-goo_puddle-splash",
+  "fields": {
+    "name": "Puddle Splash",
+    "desc": "When a creature the Yaga goo can see targets it with a melee attack while within 5 feet of the goo, the goo can teleport to a puddle created by its Foul Transit, if that puddle's space is unoccupied, negating the damage from the attack. If it does, the attacker must succeed on a DC 16 Constitution saving throw or take 10 (3d6) necrotic damage and become poisoned until the end of its next turn.",
+    "parent": "ccdx_yaga-goo",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": null
   }
