@@ -28,7 +28,7 @@ def fixup_spell_casting_time():
           slug = slug + "-a5e"
 
       v1_spell = v1.Spell.objects.get(pk=slug)
-      v2_spell.casting_time = get_casting_time(v1_spell.casting_time)
+      [v2_spell.casting_time, v2_spell.reaction_condition] = get_casting_time(v1_spell.casting_time)
       v2_spell.save()
 
 
@@ -307,18 +307,18 @@ def get_target(desc, v1_pk, v1_range):
 
 def get_casting_time(v1_casting_time):
     for CTC in v2.enums.SPELL_CASTING_TIME_CHOICES:
-        cast_time = v1_casting_time.split(",")[0].lower()
+        if "," in v1_casting_time:
+            [cast_time, reaction_condition] = v1_casting_time.split(", ", 1)
+        else:
+            [cast_time, reaction_condition] = [v1_casting_time, None]
+        cast_time = cast_time.lower()
         if cast_time.split(" ")[1] == CTC[1].lower() or cast_time == CTC[1].lower():
-            return CTC[0]
-    
-    if v1_casting_time == "1 turn":
-        return "action"
-    if v1_casting_time == "1 round":
-        return "action"
-    if v1_casting_time == "10 minutes plus 1 hour of attunement":
-        return "10minutes"
+            return [CTC[0], reaction_condition]
 
-    return "action"
+    if v1_casting_time == "10 minutes plus 1 hour of attunement":
+        return ["10minutes", None]
+
+    raise ValueError("Could not process" + v1_casting_time + " into a cast_time enum") 
 
 
 def get_material_cost(v1_material):
