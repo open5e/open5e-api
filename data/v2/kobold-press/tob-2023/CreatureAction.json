@@ -309,6 +309,48 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-flame-dragon_legendary-detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_adult-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-flame-dragon_legendary-tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_adult-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_adult-flame-dragon_legendary-wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 17 Dexterity saving throw or take 11 (2d6 + 4) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob-2023_adult-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_adult-flame-dragon_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -977,6 +1019,48 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_akyishigal_legendary-cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Akyishigal uses Spellcasting.",
+    "parent": "tob-2023_akyishigal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_akyishigal_legendary-skitter",
+  "fields": {
+    "name": "Skitter",
+    "desc": "Akyishigal moves up to half his speed and makes one Claw attack. This movement doesn’t provoke opportunity attacks.",
+    "parent": "tob-2023_akyishigal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_akyishigal_legendary-teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "Akyishigal magically teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see.",
+    "parent": "tob-2023_akyishigal",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -1663,6 +1747,48 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-flame-dragon_legendary-detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "The dragon makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_ancient-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-flame-dragon_legendary-tail-attack",
+  "fields": {
+    "name": "Tail Attack",
+    "desc": "The dragon makes a Tail attack.",
+    "parent": "tob-2023_ancient-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_ancient-flame-dragon_legendary-wing-attack",
+  "fields": {
+    "name": "Wing Attack",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+    "parent": "tob-2023_ancient-flame-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
   }
 },
 {
@@ -3487,6 +3613,48 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bear-king_legendary-frightful-roar",
+  "fields": {
+    "name": "Frightful Roar",
+    "desc": "The Bear King lets out a blood-curdling roar. Each hostile creature within 60 feet of the Bear King and that can hear the roar must succeed on a DC 17 Wisdom saving throw or be frightened until the end of its next turn.",
+    "parent": "tob-2023_bear-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bear-king_legendary-honey-toss",
+  "fields": {
+    "name": "Honey Toss",
+    "desc": "The Bear King throws a jar of magical honey at a creature he can see within 120 feet of him. The target must succeed on a DC 17 Dexterity saving throw or be restrained by sticky honey until the end of its next turn.",
+    "parent": "tob-2023_bear-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_bear-king_legendary-move",
+  "fields": {
+    "name": "Move",
+    "desc": "The Bear King moves up to his speed without provoking opportunity attacks.",
+    "parent": "tob-2023_bear-king",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_bear-king_maul",
   "fields": {
     "name": "Maul",
@@ -4785,6 +4953,62 @@
     "action_type": "ACTION",
     "form_condition": null,
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_camazotz_legendary-cast-a-spell",
+  "fields": {
+    "name": "Cast a Spell",
+    "desc": "Camazotz uses Spellcasting.",
+    "parent": "tob-2023_camazotz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_camazotz_legendary-detect",
+  "fields": {
+    "name": "Detect",
+    "desc": "Camazotz makes a Wisdom (Perception) check.",
+    "parent": "tob-2023_camazotz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_camazotz_legendary-fiery-wing-beat",
+  "fields": {
+    "name": "Fiery Wing Beat",
+    "desc": "Camazotz beats his wings, extinguishing mundane and magical light sources. Each creature within 10 feet of Camazotz must succeed on a DC 22 Dexterity saving throw or take 14 (4d6) fire damage and be knocked prone.",
+    "parent": "tob-2023_camazotz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_camazotz_legendary-move",
+  "fields": {
+    "name": "Move",
+    "desc": "Camazotz moves up to his speed, or he flies up to half his speed. This movement doesn’t provoke opportunity attacks.",
+    "parent": "tob-2023_camazotz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
   }
 },
 {
@@ -11579,6 +11803,48 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "tob-2023_hraesvelgr_legendary-attack",
+  "fields": {
+    "name": "Attack",
+    "desc": "Hraesvelgr makes a Fist or Talons attack.",
+    "parent": "tob-2023_hraesvelgr",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_hraesvelgr_legendary-ear-splitting-screech",
+  "fields": {
+    "name": "Ear-Splitting Screech",
+    "desc": "Hraesvelgr lets out an ear-splitting screech. Each creature within 30 feet of Hraesvelgr must succeed on a DC 19 Constitution saving throw or take 14 (4d6) thunder damage and be deafened until the end of its next turn.",
+    "parent": "tob-2023_hraesvelgr",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": "Roc Form Only",
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_hraesvelgr_legendary-move",
+  "fields": {
+    "name": "Move",
+    "desc": "Hraesvelgr moves up to his speed, or flies up to half his flying speed if in roc form, without provoking opportunity attacks.",
+    "parent": "tob-2023_hraesvelgr",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "tob-2023_hraesvelgr_move",
   "fields": {
     "name": "Move",
@@ -11827,6 +12093,48 @@
     "action_type": "ACTION",
     "form_condition": "Shapeless Form Only",
     "legendary_cost": null
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_iaaffrat_legendary-consume-host",
+  "fields": {
+    "name": "Consume Host",
+    "desc": "While inhabiting a Humanoid, Ia’Affrat consumes the host from the inside. The host takes 18 (4d8) necrotic damage, and Ia’Affrat regains hp equal to that amount.",
+    "parent": "tob-2023_iaaffrat",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": "Shapeless Form Only",
+    "legendary_cost": 3
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_iaaffrat_legendary-teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "Ia’Affrat teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see.",
+    "parent": "tob-2023_iaaffrat",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "tob-2023_iaaffrat_legendary-vermin-breath",
+  "fields": {
+    "name": "Vermin Breath",
+    "desc": "Ia’Affrat exhales 1d4 swarms of insects in spaces he can see within 30 feet. The swarms take their turns immediately after Ia’Affrat, and they are allies of Ia’Affrat, obeying his telepathic commands. They remain for 1 minute, until Ia’Affrat dies, or until Ia’Affrat dismisses them as a bonus action. Ia’Affrat can have no more than five swarms of insects under his control at a time.",
+    "parent": "tob-2023_iaaffrat",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": "Humanoid Form Only",
+    "legendary_cost": 2
   }
 },
 {

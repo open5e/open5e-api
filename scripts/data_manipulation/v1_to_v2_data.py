@@ -24,7 +24,7 @@ def main():
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
 
-    for obj_v1 in v1_model.objects.filter(document__slug='wotc-srd'):
+    for obj_v1 in v1_model.objects.all():
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
@@ -39,7 +39,7 @@ def main():
             #copy_traits(obj_v1, obj_v2)
             #check_caa(obj_v2)
             #print(obj_v2.key)
-            copy_actions_2(obj_v1, obj_v2)
+            copy_leg_actions(obj_v1, obj_v2)
             #copy_legendary_desc(obj_v1, obj_v2)
             #copy_traits(obj_v1,obj_v2)
             #obj_v2.full_clean()
@@ -167,12 +167,28 @@ def copy_leg_actions(obj_v1, obj_v2):
                             uses_param = comma_separated.lower().split("/day")[0][-1]
 
             key = slugify(obj_v2.key + "_" + name)
+            # SOME HAVE CONFLICTS
             #if legendary_cost>1:
                 #print("key={}, cost={}, fc={}".format(key, legendary_cost, form_condition))
 
-            print("KEY={}".format(key))
+            #print("KEY={}".format(key))
             if v2_models.CreatureAction.objects.filter(key=key):
-                pass
+                for obj in v2_models.CreatureAction.objects.filter(key=key):
+                    if obj.action_type != 'LEGENDARY_ACTION':
+                        newkey = slugify(obj_v2.key + "_legendary-" + name)
+                        print("CONFLICT FOUND WITH {}".format(key))
+                        ca = v2_models.CreatureAction(name=name,
+                            key = newkey,
+                            parent=obj_v2,
+                            desc=a['desc'],
+                            uses_type=uses_type,
+                            uses_param=uses_param,
+                            action_type='LEGENDARY_ACTION',
+                            form_condition=form_condition,
+                            legendary_cost=legendary_cost
+                            )
+                        ca.save()
+
                 #v2_models.CreatureAction.objects.filter(pk=key).update(name=name)
                 #v2_models.CreatureAction.objects.filter(pk=key).update(desc=a['desc'])
                 #v2_models.CreatureAction.objects.filter(pk=key).update(uses_type=uses_type)

@@ -7911,6 +7911,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "srd_kraken_legendary-lightning-storm",
+  "fields": {
+    "name": "Lightning Storm",
+    "desc": "The kraken uses Lightning Storm.",
+    "parent": "srd_kraken",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "srd_kraken_lightning-storm",
   "fields": {
     "name": "Lightning Storm",
@@ -8069,6 +8083,20 @@
   "fields": {
     "name": "Frightening Gaze",
     "desc": "The lich fixes its gaze on one creature it can see within 10 feet of it. The target must succeed on a DC 18 Wisdom saving throw against this magic or become frightened for 1 minute. The frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to the lich's gaze for the next 24 hours.",
+    "parent": "srd_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_lich_legendary-paralyzing-touch",
+  "fields": {
+    "name": "Paralyzing Touch",
+    "desc": "The lich uses its Paralyzing Touch.",
     "parent": "srd_lich",
     "uses_type": null,
     "uses_param": null,
@@ -11565,6 +11593,20 @@
 },
 {
   "model": "api_v2.creatureaction",
+  "pk": "srd_unicorn_legendary-hooves",
+  "fields": {
+    "name": "Hooves",
+    "desc": "The unicorn makes one attack with its hooves.",
+    "parent": "srd_unicorn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
   "pk": "srd_unicorn_multiattack",
   "fields": {
     "name": "Multiattack",
@@ -11685,6 +11727,34 @@
     "uses_type": "PER_DAY",
     "uses_param": 1,
     "action_type": "ACTION",
+    "form_condition": null,
+    "legendary_cost": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_vampire_legendary-bite",
+  "fields": {
+    "name": "Bite",
+    "desc": "The vampire makes one bite attack.",
+    "parent": "srd_vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
+    "form_condition": null,
+    "legendary_cost": 2
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd_vampire_legendary-unarmed-strike",
+  "fields": {
+    "name": "Unarmed Strike",
+    "desc": "The vampire makes one unarmed strike.",
+    "parent": "srd_vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "LEGENDARY_ACTION",
     "form_condition": null,
     "legendary_cost": 1
   }
