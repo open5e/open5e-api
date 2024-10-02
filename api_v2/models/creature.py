@@ -145,6 +145,12 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
                 return None
 
 
+    @property
+    def actions(self):
+        """Returns the set of actions that are related to this creature."""
+        return self.creatureaction_set
+
+
 class CreatureAction(HasName, HasDescription):
     """Describes an action available to a creature."""
     key = key_field()

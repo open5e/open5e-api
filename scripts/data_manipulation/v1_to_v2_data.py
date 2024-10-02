@@ -39,7 +39,7 @@ def main():
             #copy_traits(obj_v1, obj_v2)
             #check_caa(obj_v2)
             #print(obj_v2.key)
-            copy_reactions(obj_v1, obj_v2)
+            copy_leg_actions(obj_v1, obj_v2)
             #copy_legendary_desc(obj_v1, obj_v2)
             #copy_traits(obj_v1,obj_v2)
             #obj_v2.full_clean()
@@ -77,6 +77,63 @@ def main():
     #print("Failed to match {} objects.".format(str(v1_unmatch_count)))
 
 
+def copy_actions_2(obj_v1, obj_v2):
+    # if exists, copy actions_json
+    if obj_v1.actions_json not in [None,"null"]:
+        for a in json.loads(obj_v1.actions_json):
+            at = "ACTION"
+            form_condition = None
+            legendary_cost = 1
+            uses_type = None
+            uses_param = None
+            name = a['name']
+
+            if "(" in a['name']:
+                parens = a['name'].split(")")[0].split("(")[1]
+                name = a['name'].split("(")[0].strip()
+                for semi_separated in parens.split(";"):
+                    for comma_separated in semi_separated.split(","):
+                        if "costs" in comma_separated.lower():
+                            legendary_cost = int(comma_separated.lower().split("costs")[1].split("actions")[0].strip())
+                        if comma_separated.lower().strip().isdigit():
+                            legendary_cost = int(comma_separated.lower().strip())
+                        if "form" in comma_separated.lower():
+                            form_condition = comma_separated.strip()
+                        if "/day" in comma_separated.lower():
+                            uses_type = 'PER_DAY'
+                            uses_param = comma_separated.lower().split("/day")[0][-1]
+
+            key = slugify(obj_v2.key + "_" + name)
+            #if legendary_cost>1:
+                #print("key={}, cost={}, fc={}".format(key, legendary_cost, form_condition))
+
+            #print("KEY={}".format(key))
+            if v2_models.CreatureAction.objects.filter(key=key):
+                print("UPDATING CA:{}".format(key))
+                v2_models.CreatureAction.objects.filter(pk=key).update(name=name)
+                v2_models.CreatureAction.objects.filter(pk=key).update(desc=a['desc'])
+                v2_models.CreatureAction.objects.filter(pk=key).update(uses_type=uses_type)
+                v2_models.CreatureAction.objects.filter(pk=key).update(uses_param=uses_param)
+                v2_models.CreatureAction.objects.filter(pk=key).update(action_type='ACTION')
+                v2_models.CreatureAction.objects.filter(pk=key).update(form_condition=form_condition)
+                v2_models.CreatureAction.objects.filter(pk=key).update(legendary_cost=legendary_cost)
+                v2_models.CreatureAction.objects.filter(pk=key).update(parent=obj_v2)
+            else:
+                ca = v2_models.CreatureAction(name=name,
+                    key = key,
+                    parent=obj_v2,
+                    desc=a['desc'],
+                    uses_type=uses_type,
+                    uses_param=uses_param,
+                    action_type='ACTION',
+                    form_condition=form_condition,
+                    legendary_cost=legendary_cost
+                    )
+                print("CREATING NEW CA:{}".format(ca.key))
+                ca.full_clean()
+                ca.save()
+
+
 def reset_legendary_cost():
     for ca in v2_models.CreatureAction.objects.all():
         ca.legendary_cost = None
@@ -110,12 +167,28 @@ def copy_leg_actions(obj_v1, obj_v2):
                             uses_param = comma_separated.lower().split("/day")[0][-1]
 
             key = slugify(obj_v2.key + "_" + name)
+            # SOME HAVE CONFLICTS
             #if legendary_cost>1:
                 #print("key={}, cost={}, fc={}".format(key, legendary_cost, form_condition))
 
-            print("KEY={}".format(key))
+            #print("KEY={}".format(key))
             if v2_models.CreatureAction.objects.filter(key=key):
-                pass
+                for obj in v2_models.CreatureAction.objects.filter(key=key):
+                    if obj.action_type != 'LEGENDARY_ACTION':
+                        newkey = slugify(obj_v2.key + "_legendary-" + name)
+                        print("CONFLICT FOUND WITH {}".format(key))
+                        ca = v2_models.CreatureAction(name=name,
+                            key = newkey,
+                            parent=obj_v2,
+                            desc=a['desc'],
+                            uses_type=uses_type,
+                            uses_param=uses_param,
+                            action_type='LEGENDARY_ACTION',
+                            form_condition=form_condition,
+                            legendary_cost=legendary_cost
+                            )
+                        ca.save()
+
                 #v2_models.CreatureAction.objects.filter(pk=key).update(name=name)
                 #v2_models.CreatureAction.objects.filter(pk=key).update(desc=a['desc'])
                 #v2_models.CreatureAction.objects.filter(pk=key).update(uses_type=uses_type)

@@ -79,6 +79,7 @@ def make_attack_obj(attack):
 
 def make_action_obj(action):
     '''Structures an object in a way that can be consistently referenced.'''
+    return action
     obj = { 'name': action.name, 'desc': action.desc }
 
     match action.uses_type:
@@ -95,6 +96,14 @@ def make_action_obj(action):
         obj['attacks'] = [make_attack_obj(attack) for attack in attacks]
 
     return obj
+
+
+class CreatureActionSerializer(serializers.ModelSerializer):
+    key = serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.CreatureAction
+        fields = '__all__'
 
 
 class CreatureTypeSerializer(GameContentSerializer):
@@ -117,7 +126,7 @@ class CreatureSerializer(GameContentSerializer):
     saving_throws_all = serializers.SerializerMethodField()
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
-    actions = serializers.SerializerMethodField()
+    actions = CreatureActionSerializer(many=True, context={'request': {}})
     speed = serializers.SerializerMethodField()
     speed_all = serializers.SerializerMethodField()
     challenge_rating_text = serializers.SerializerMethodField()
@@ -225,13 +234,13 @@ class CreatureSerializer(GameContentSerializer):
         '''Implicit speed helper method.'''
         return creature.get_speed_all()
 
-    def get_actions(self, creature):
-        '''Actions helper method.'''
-        result = []
-        for action in creature.creatureaction_set.all():
-            action_obj = make_action_obj(action)
-            result.append(action_obj)
-        return result
+#    def get_actions(self, creature):
+#        '''Actions helper method.'''
+#        result = []
+#        for action in creature.creatureaction_set.all():
+#            action_obj = make_action_obj(action)
+#            result.append(action_obj)
+#        return result
 
     def get_challenge_rating_text(self, creature):
         return creature.challenge_rating_text
@@ -249,3 +258,5 @@ class CreatureSetSerializer(GameContentSerializer):
         '''Meta options for serializer.'''
         model = models.CreatureSet
         fields = '__all__'
+
+
