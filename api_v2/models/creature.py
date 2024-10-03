@@ -39,6 +39,12 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
         help_text='What category this creature belongs to.'
     )
 
+    subcategory = models.CharField(
+        max_length=100,
+        null=True,
+        help_text='What subcategory this creature belongs to.'
+    )
+
     alignment = models.CharField(
         max_length=100,
         help_text='The creature\'s allowed alignments.'
