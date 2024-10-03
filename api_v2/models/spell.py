@@ -57,6 +57,11 @@ class Spell(HasName, HasDescription, FromDocument):
     casting_time = models.TextField(
         choices = SPELL_CASTING_TIME_CHOICES,
         help_text = "Casting time key, such as 'action'")
+    
+    reaction_condition = models.TextField(
+        blank=True,
+        null=True,
+        help_text='The conditions describing when a reaction spell can be cast')
 
     verbal = models.BooleanField(
         help_text='Whether or not casting the spell requires a verbal component.',
