@@ -7,13 +7,13 @@ WORKDIR /opt/services/open5e-api
 # install our dependencies
 RUN pip install pipenv
 COPY . /opt/services/open5e-api
-RUN pipenv install --system --deploy
+RUN pipenv install --deploy
 
 # migrate the db, load content, and index it
-RUN python manage.py quicksetup
+RUN pipenv run python manage.py quicksetup
 
 # remove .env file (set your env vars via docker-compose.yml or your hosting provider)
 RUN rm .env
 
 #run gunicorn.
-CMD ["gunicorn","-b", ":8888", "server.wsgi:application"]
+CMD ["pipenv", "run", "gunicorn","-b", ":8888", "server.wsgi:application"]
