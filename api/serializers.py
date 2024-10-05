@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User, Group
-from drf_haystack.serializers import HighlighterMixin, HaystackSerializer
 from rest_framework import serializers
 
 from api import models
@@ -419,7 +418,8 @@ class ArmorSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'weight',
             'stealth_disadvantage')
 
-class AggregateSerializer(HighlighterMixin, HaystackSerializer):
+# Deprecating because it's unused.
+'''class AggregateSerializer(HighlighterMixin, HaystackSerializer):
 
     class Meta:
         index_classes = [search_indexes.MonsterIndex, 
@@ -455,4 +455,4 @@ class AggregateSerializer(HighlighterMixin, HaystackSerializer):
             'document_title',
             'parent',
         ]
-        
+'''

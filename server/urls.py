@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.conf.urls import re_path, include
+from django.conf.urls import include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from django.contrib import admin
@@ -47,7 +47,7 @@ router.register(r'magicitems',views.MagicItemViewSet)
 router.register(r'weapons',views.WeaponViewSet)
 router.register(r'armor',views.ArmorViewSet)
 
-router.register('search', views.SearchView, basename="global-search")
+#router.register('search', views.SearchView, basename="global-search")
 
 
 router_v2 = routers.DefaultRouter()
@@ -87,18 +87,18 @@ router_search.register('',views_v2.SearchResultViewSet, basename='search')
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    re_path(r'^', include(router.urls)),
+    path('', include(router.urls)),
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    re_path(r'^search/', include('haystack.urls')),
-    re_path(r'^version/', views.get_version, name="version"),
-    re_path(r'^v2/enums/', views_v2.get_enums, name="enums"),
+    #path('search/', include('haystack.urls')),
+    path('version/', views.get_version, name="version"),
+    path('v2/enums/', views_v2.get_enums, name="enums"),
 
 
     # Versioned API routes (above routes default to v1)
-    re_path(r'^v1/', include(router.urls)),
-    re_path(r'^v1/search/', include('haystack.urls')),
-    re_path(r'^v2/', include(router_v2.urls)),
-    re_path(r'^v2/search/', include(router_search.urls))
+    path('v1/', include(router.urls)),
+    #path('v1/search/', include('haystack.urls')),
+    path('v2/', include(router_v2.urls)),
+    path('v2/search/', include(router_search.urls))
 ]
 
 if settings.DEBUG is True:

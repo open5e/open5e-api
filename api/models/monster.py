@@ -112,7 +112,6 @@ class Monster(GameContent):
     spells_json = models.TextField()
     spell_list = models.ManyToManyField(
         Spell,
-        related_name='monsters',
         symmetrical=True,
         through="monsterSpell")
     route = models.TextField(default="monsters/")
