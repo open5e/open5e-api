@@ -5,10 +5,9 @@ WORKDIR /opt/services/open5e-api
 # copy our project code
 
 # install our dependencies
-RUN pip install pipenv gunicorn
+RUN pip install pipenv
 COPY . /opt/services/open5e-api
-
-RUN pipenv install
+RUN pipenv install --system --deploy
 
 # migrate the db, load content, and index it
 RUN pipenv run python manage.py quicksetup
