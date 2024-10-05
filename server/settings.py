@@ -64,23 +64,16 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    
-    # search
-    "haystack",
-    
-    # apps
     'api',
     'api_v2',
 
     # downloaded modules
     "rest_framework",
     "django_filters",
-    "markdown2",
 ]
 
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -92,15 +85,6 @@ MIDDLEWARE = [
     "server.middleware.NewRelicMiddleware",
     "server.middleware.ResponseWarningHeaderMiddleware"
 ]
-
-HAYSTACK_CONNECTIONS = {
-    "default": {
-        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
-        "PATH": os.path.join(os.path.dirname(__file__), "whoosh_index"),
-    },
-}
-
-HAYSTACK_CUSTOM_HIGHLIGHTER = "api.utils.NewHighlighter"
 
 ROOT_URLCONF = "server.urls"
 

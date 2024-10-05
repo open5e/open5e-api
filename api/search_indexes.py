@@ -1,5 +1,6 @@
 import datetime
-
+# DEPRECATING Because it's no longer used.
+'''
 from haystack import indexes
 
 from api import models
@@ -129,3 +130,4 @@ class MagicItemIndex(indexes.SearchIndex, indexes.Indexable):
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
     return self.get_model().objects.all()
+'''
