@@ -83,13 +83,13 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS('Data for v1 data complete.'))
 
         # Start V2 output.
-        rulesets = Ruleset.objects.all()
-        ruleset_path = get_filepath_by_model(
-            'Ruleset',
+        gamesystems = GameSystem.objects.all()
+        gamesystem_path = get_filepath_by_model(
+            'GameSystem',
             'api_v2',
             base_path=options['dir'],
             format=options['format'])
-        write_queryset_data(ruleset_path, rulesets, format=options['format'])
+        write_queryset_data(gamesystem_path, gamesystems, format=options['format'])
 
         license_path = get_filepath_by_model(
             'License',
@@ -123,7 +123,7 @@ class Command(BaseCommand):
                 write_queryset_data(doc_path, docq, format=options['format'])
 
                 for model in app_models:
-                    SKIPPED_MODEL_NAMES = ['Document', 'Ruleset', 'License', 'Publisher','SearchResult']
+                    SKIPPED_MODEL_NAMES = ['Document', 'GameSystem', 'License', 'Publisher','SearchResult']
                     CHILD_MODEL_NAMES = ['RaceTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption','CreatureAction', 'CreatureTrait']
                     CHILD_CHILD_MODEL_NAMES = ['CreatureActionAttack']
                     
@@ -158,7 +158,7 @@ def get_filepath_by_model(model_name, app_label, pub_key=None, doc_key=None, bas
 
     if app_label == "api_v2":
         root_folder_name = 'v2'
-        root_models = ['License', 'Ruleset']
+        root_models = ['License', 'GameSystem']
         pub_models = ['Publisher']
         
         if model_name in root_models:

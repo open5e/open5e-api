@@ -13,7 +13,7 @@ class SpellFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact'],
             'name': ['iexact', 'exact', 'contains', 'icontains'],
             'document__key': ['in', 'iexact', 'exact'],
-            'document__ruleset__key': ['in', 'iexact', 'exact'],
+            'document__gamesystem__key': ['in', 'iexact', 'exact'],
             'classes__key': ['in', 'iexact', 'exact'],
             'classes__name': ['in'],
             'level': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],

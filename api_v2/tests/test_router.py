@@ -28,7 +28,7 @@ class APIV2RootTest(APITestCase):
         self.assertContains(response, 'documents', count=2)
         self.assertContains(response, 'publishers', count=2)
         self.assertContains(response, 'licenses', count=2)
-        self.assertContains(response, 'rulesets', count=2)
+        self.assertContains(response, 'gamesystems', count=2)
         self.assertContains(response, 'items', count=4) #include itemsets
         self.assertContains(response, 'itemsets', count=2)
         self.assertContains(response, 'weapons', count=2)
