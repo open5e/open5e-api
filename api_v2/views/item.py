@@ -22,7 +22,7 @@ class ItemFilterSet(FilterSet):
             'requires_attunement': ['exact'],
             'category': ['in', 'exact'],
             'document__key': ['in','iexact','exact'],
-            'document__ruleset__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
         }
 
 
@@ -56,7 +56,7 @@ class ItemSetFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
-            'document__ruleset__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
         }
 
 
@@ -89,7 +89,7 @@ class WeaponFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
-            'document__ruleset__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
             'damage_dice': ['in','iexact','exact'],
             'versatile_dice': ['in','iexact','exact'],
             'range_reach': ['exact','lt','lte','gt','gte'],
@@ -127,7 +127,7 @@ class ArmorFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
-            'document__ruleset__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
             'grants_stealth_disadvantage': ['exact'],
             'strength_score_required': ['exact','lt','lte','gt','gte'],
             'ac_base': ['exact','lt','lte','gt','gte'],

@@ -21,7 +21,7 @@ class Document(HasName, HasDescription):
         on_delete=models.CASCADE,
         help_text="Publisher which has written the game content document.")
 
-    ruleset = models.ForeignKey(
+    gamesystem = models.ForeignKey(
         "GameSystem",
         on_delete=models.CASCADE,
         help_text="The document's game system that it was published for."
@@ -107,7 +107,7 @@ class GameSystem(HasName, HasDescription):
     key = models.CharField(
         primary_key=True,
         max_length=100,
-        help_text="Unique key for the ruleset the document was published for."
+        help_text="Unique key for the gamesystem the document was published for."
     )
 
     content_prefix = models.CharField(

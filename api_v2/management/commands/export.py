@@ -83,13 +83,13 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS('Data for v1 data complete.'))
 
         # Start V2 output.
-        rulesets = GameSystem.objects.all()
-        ruleset_path = get_filepath_by_model(
+        gamesystems = GameSystem.objects.all()
+        gamesystem_path = get_filepath_by_model(
             'GameSystem',
             'api_v2',
             base_path=options['dir'],
             format=options['format'])
-        write_queryset_data(ruleset_path, rulesets, format=options['format'])
+        write_queryset_data(gamesystem_path, gamesystems, format=options['format'])
 
         license_path = get_filepath_by_model(
             'License',

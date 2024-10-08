@@ -10,9 +10,9 @@ from api_v2 import serializers
 
 class GameSystemViewSet(viewsets.ReadOnlyModelViewSet):
     """"
-    list: API Endpoint for returning a set of rulesets.
+    list: API Endpoint for returning a set of gamesystems.
 
-    retrieve: API endpoint for return a particular ruleset.
+    retrieve: API endpoint for return a particular gamesystem.
     """
     queryset = models.GameSystem.objects.all().order_by('pk')
     serializer_class = serializers.GameSystemSerializer

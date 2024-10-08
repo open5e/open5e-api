@@ -99,7 +99,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('name', models.CharField(help_text='Name of the item.', max_length=100)),
                 ('desc', models.TextField(help_text='Description of the game content item. Markdown.')),
-                ('key', models.CharField(help_text='Unique key for the ruleset the document was published for.', max_length=100, primary_key=True, serialize=False)),
+                ('key', models.CharField(help_text='Unique key for the gamesystem the document was published for.', max_length=100, primary_key=True, serialize=False)),
                 ('content_prefix', models.CharField(blank=True, help_text='Short code prepended to content keys.', max_length=10)),
             ],
             options={
@@ -533,8 +533,8 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='document',
-            name='ruleset',
-            field=models.ForeignKey(help_text="The document's game system that it was published for.", on_delete=django.db.models.deletion.CASCADE, to='api_v2.ruleset'),
+            name='gamesystem',
+            field=models.ForeignKey(help_text="The document's game system that it was published for.", on_delete=django.db.models.deletion.CASCADE, to='api_v2.gamesystem'),
         ),
         migrations.CreateModel(
             name='Size',
