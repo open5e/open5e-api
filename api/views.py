@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User, Group
 
-from drf_haystack.viewsets import HaystackViewSet
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -55,7 +54,8 @@ def get_version(_):
     })
 
 
-class SearchView(HaystackViewSet):
+# Deprecating because it's unused.
+'''class SearchView(HaystackViewSet):
     """
     list: API endpoint for returning a list of search results from the Open5e database.
     """
@@ -78,7 +78,7 @@ class SearchView(HaystackViewSet):
             # Blank text should return results. Improbable query below.
             return queryset.filter(wisdom="99999")
         return queryset
-
+'''
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):

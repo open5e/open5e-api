@@ -32,7 +32,7 @@ def main():
 
     # Get a list of files
     files = glob.glob(args.directory + '/**/*.json', recursive=True)
-    excluded_files = ['Publisher.json','Document.json','Ruleset.json','License.json']
+    excluded_files = ['Publisher.json','Document.json','GameSystem.json','License.json']
     file_list = []
 
     for file in files:

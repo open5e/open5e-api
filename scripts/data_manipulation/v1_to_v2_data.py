@@ -23,7 +23,8 @@ def main():
     v1_unmatch_count = 0
     v2_added_count = 0
     # CHANGE MODEL ON THIS LINE
-    for obj_v1 in v1_model.objects.filter(document__slug='tob'):
+
+    for obj_v1 in v1_model.objects.all():
         v1_iteration +=1
         computed_v2_key = get_v2_key_from_v1_obj(obj_v1)
 
@@ -36,7 +37,9 @@ def main():
             #copy_v2_languages_from_v1_monsters(obj_v1,obj_v2)
             #copy_v2_cr_from_v1_monsters(obj_v1, obj_v2)
             #copy_traits(obj_v1, obj_v2)
-            copy_actions(obj_v1, obj_v2)
+            #check_caa(obj_v2)
+            #print(obj_v2.key)
+            copy_leg_actions(obj_v1, obj_v2)
             #copy_legendary_desc(obj_v1, obj_v2)
             #copy_traits(obj_v1,obj_v2)
             #obj_v2.full_clean()
@@ -73,13 +76,311 @@ def main():
     print("Added {} v2 objects".format(str(v2_added_count)))
     #print("Failed to match {} objects.".format(str(v1_unmatch_count)))
 
+
+def copy_actions_2(obj_v1, obj_v2):
+    # if exists, copy actions_json
+    if obj_v1.actions_json not in [None,"null"]:
+        for a in json.loads(obj_v1.actions_json):
+            at = "ACTION"
+            form_condition = None
+            legendary_cost = 1
+            uses_type = None
+            uses_param = None
+            name = a['name']
+
+            if "(" in a['name']:
+                parens = a['name'].split(")")[0].split("(")[1]
+                name = a['name'].split("(")[0].strip()
+                for semi_separated in parens.split(";"):
+                    for comma_separated in semi_separated.split(","):
+                        if "costs" in comma_separated.lower():
+                            legendary_cost = int(comma_separated.lower().split("costs")[1].split("actions")[0].strip())
+                        if comma_separated.lower().strip().isdigit():
+                            legendary_cost = int(comma_separated.lower().strip())
+                        if "form" in comma_separated.lower():
+                            form_condition = comma_separated.strip()
+                        if "/day" in comma_separated.lower():
+                            uses_type = 'PER_DAY'
+                            uses_param = comma_separated.lower().split("/day")[0][-1]
+
+            key = slugify(obj_v2.key + "_" + name)
+            #if legendary_cost>1:
+                #print("key={}, cost={}, fc={}".format(key, legendary_cost, form_condition))
+
+            #print("KEY={}".format(key))
+            if v2_models.CreatureAction.objects.filter(key=key):
+                print("UPDATING CA:{}".format(key))
+                v2_models.CreatureAction.objects.filter(pk=key).update(name=name)
+                v2_models.CreatureAction.objects.filter(pk=key).update(desc=a['desc'])
+                v2_models.CreatureAction.objects.filter(pk=key).update(uses_type=uses_type)
+                v2_models.CreatureAction.objects.filter(pk=key).update(uses_param=uses_param)
+                v2_models.CreatureAction.objects.filter(pk=key).update(action_type='ACTION')
+                v2_models.CreatureAction.objects.filter(pk=key).update(form_condition=form_condition)
+                v2_models.CreatureAction.objects.filter(pk=key).update(legendary_cost=legendary_cost)
+                v2_models.CreatureAction.objects.filter(pk=key).update(parent=obj_v2)
+            else:
+                ca = v2_models.CreatureAction(name=name,
+                    key = key,
+                    parent=obj_v2,
+                    desc=a['desc'],
+                    uses_type=uses_type,
+                    uses_param=uses_param,
+                    action_type='ACTION',
+                    form_condition=form_condition,
+                    legendary_cost=legendary_cost
+                    )
+                print("CREATING NEW CA:{}".format(ca.key))
+                ca.full_clean()
+                ca.save()
+
+
+def reset_legendary_cost():
+    for ca in v2_models.CreatureAction.objects.all():
+        ca.legendary_cost = None
+        ca.save()
+    print("RESET LEGENDARY COSTS")
+
+def copy_leg_actions(obj_v1, obj_v2):
+    # if exists, copy actions_json
+    if obj_v1.legendary_actions_json not in [None,"null"]:
+        for a in json.loads(obj_v1.legendary_actions_json):
+            at = "LEGENDARY_ACTION"
+            form_condition = None
+            legendary_cost = 1
+            uses_type = None
+            uses_param = None
+            name = a['name']
+
+            if "(" in a['name']:
+                parens = a['name'].split(")")[0].split("(")[1]
+                name = a['name'].split("(")[0].strip()
+                for semi_separated in parens.split(";"):
+                    for comma_separated in semi_separated.split(","):
+                        if "costs" in comma_separated.lower():
+                            legendary_cost = int(comma_separated.lower().split("costs")[1].split("actions")[0].strip())
+                        if comma_separated.lower().strip().isdigit():
+                            legendary_cost = int(comma_separated.lower().strip())
+                        if "form" in comma_separated.lower():
+                            form_condition = comma_separated.strip()
+                        if "/day" in comma_separated.lower():
+                            uses_type = 'PER_DAY'
+                            uses_param = comma_separated.lower().split("/day")[0][-1]
+
+            key = slugify(obj_v2.key + "_" + name)
+            # SOME HAVE CONFLICTS
+            #if legendary_cost>1:
+                #print("key={}, cost={}, fc={}".format(key, legendary_cost, form_condition))
+
+            #print("KEY={}".format(key))
+            if v2_models.CreatureAction.objects.filter(key=key):
+                for obj in v2_models.CreatureAction.objects.filter(key=key):
+                    if obj.action_type != 'LEGENDARY_ACTION':
+                        newkey = slugify(obj_v2.key + "_legendary-" + name)
+                        print("CONFLICT FOUND WITH {}".format(key))
+                        ca = v2_models.CreatureAction(name=name,
+                            key = newkey,
+                            parent=obj_v2,
+                            desc=a['desc'],
+                            uses_type=uses_type,
+                            uses_param=uses_param,
+                            action_type='LEGENDARY_ACTION',
+                            form_condition=form_condition,
+                            legendary_cost=legendary_cost
+                            )
+                        ca.save()
+
+                #v2_models.CreatureAction.objects.filter(pk=key).update(name=name)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(desc=a['desc'])
+                #v2_models.CreatureAction.objects.filter(pk=key).update(uses_type=uses_type)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(uses_param=uses_param)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(action_type='LEGENDARY_ACTION')
+                #v2_models.CreatureAction.objects.filter(pk=key).update(form_condition=form_condition)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(legendary_cost=legendary_cost)
+                #v2_models.CreatureAction.objects.filter(pk=key).update(parent=obj_v2)
+            else:
+                ca = v2_models.CreatureAction(name=name,
+                    key = key,
+                    parent=obj_v2,
+                    desc=a['desc'],
+                    uses_type=uses_type,
+                    uses_param=uses_param,
+                    action_type='LEGENDARY_ACTION',
+                    form_condition=form_condition,
+                    legendary_cost=legendary_cost
+                    )
+                print(ca.key)
+                #ca.save()
+
+
+def check_caa(obj_v2):
+    for ca in obj_v2.creatureaction_set.all():
+        rename_ca(ca, ca.name)
+
+def copy_bonus_actions(obj_v1, obj_v2):
+    # if exists, copy actions_json
+    if obj_v1.bonus_actions_json not in [None,"null"]:
+        for a in json.loads(obj_v1.bonus_actions_json, strict=False):
+            at = "BONUS_ACTION"
+            form_condition = None
+            legendary_cost = None
+            uses_type = None
+            uses_param = None
+            name = a['name']
+
+            if "(" in a['name']:
+                parens = a['name'].split(")")[0].split("(")[1]
+                name = a['name'].split("(")[0].strip()
+                for semi_separated in parens.split(";"):
+                    for comma_separated in semi_separated.split(","):
+                        if "costs" in comma_separated.lower():
+                            legendary_cost = int(comma_separated.lower().split("costs")[1].split("actions")[0].strip())
+                        if comma_separated.lower().strip().isdigit():
+                            legendary_cost = int(comma_separated.lower().strip())
+                        if "form" in comma_separated.lower():
+                            form_condition = comma_separated.strip()
+                        if "/day" in comma_separated.lower():
+                            uses_type = 'PER_DAY'
+                            uses_param = comma_separated.lower().split("/day")[0][-1]
+                        if "recharge" in comma_separated.lower():
+                            if " rest" in comma_separated.lower():
+                                uses_type = "RECHARGE_AFTER_REST"
+                            else:
+                                uses_type = "RECHARGE_ON_ROLL"
+                                uses_param = comma_separated.lower().split(" ")[1][0]
+                        if "level" in comma_separated.lower():
+                            a['desc']="({}) {}".format(parens, a['desc'])
+
+            key = slugify(obj_v2.key + "_" + name)
+            #if legendary_cost>1:
+                #print("key={}, cost={}, fc={}".format(key, legendary_cost, form_condition))
+
+            print("KEY={}".format(key))
+            if v2_models.CreatureAction.objects.filter(key=key):
+                pass
+                v2_models.CreatureAction.objects.filter(pk=key).update(name=name)
+                v2_models.CreatureAction.objects.filter(pk=key).update(desc=a['desc'])
+                v2_models.CreatureAction.objects.filter(pk=key).update(uses_type=uses_type)
+                v2_models.CreatureAction.objects.filter(pk=key).update(uses_param=uses_param)
+                v2_models.CreatureAction.objects.filter(pk=key).update(action_type='BONUS_ACTION')
+                v2_models.CreatureAction.objects.filter(pk=key).update(form_condition=form_condition)
+                v2_models.CreatureAction.objects.filter(pk=key).update(legendary_cost=legendary_cost)
+                v2_models.CreatureAction.objects.filter(pk=key).update(parent=obj_v2)
+            else:
+                ca = v2_models.CreatureAction(name=name,
+                    key = key,
+                    parent=obj_v2,
+                    desc=a['desc'],
+                    uses_type=uses_type,
+                    uses_param=uses_param,
+                    action_type='BONUS_ACTION',
+                    form_condition=form_condition,
+                    legendary_cost=legendary_cost
+                    )
+                print(ca.key)
+                ca.full_clean()
+                ca.save()
+
+                
+def copy_reactions(obj_v1, obj_v2):
+    # if exists, copy actions_json
+    if obj_v1.reactions_json not in [None,"null"]:
+        for a in json.loads(obj_v1.reactions_json):
+            at = "REACTION"
+            form_condition = None
+            legendary_cost = None
+            uses_type = None
+            uses_param = None
+            name = a['name']
+
+            if "(" in a['name']:
+                parens = a['name'].split(")")[0].split("(")[1]
+                name = a['name'].split("(")[0].strip()
+                for semi_separated in parens.split(";"):
+                    for comma_separated in semi_separated.split(","):
+                        if "costs" in comma_separated.lower():
+                            legendary_cost = int(comma_separated.lower().split("costs")[1].split("actions")[0].strip())
+                        if comma_separated.lower().strip().isdigit():
+                            legendary_cost = int(comma_separated.lower().strip())
+                        if "form" in comma_separated.lower():
+                            form_condition = comma_separated.strip()
+                        if "/day" in comma_separated.lower():
+                            uses_type = 'PER_DAY'
+                            uses_param = comma_separated.lower().split("/day")[0][-1]
+                        if "recharge" in comma_separated.lower():
+                            if " rest" in comma_separated.lower():
+                                uses_type = "RECHARGE_AFTER_REST"
+                            else:
+                                uses_type = "RECHARGE_ON_ROLL"
+                                uses_param = comma_separated.lower().split(" ")[1][0]
+                        if "level" in comma_separated.lower():
+                            a['desc']="({}) {}".format(parens, a['desc'])
+
+            key = slugify(obj_v2.key + "_" + name)
+            #if legendary_cost>1:
+                #print("key={}, cost={}, fc={}".format(key, legendary_cost, form_condition))
+
+            print("KEY={}".format(key))
+            if v2_models.CreatureAction.objects.filter(key=key):
+                
+                v2_models.CreatureAction.objects.filter(pk=key).update(name=name)
+                v2_models.CreatureAction.objects.filter(pk=key).update(desc=a['desc'])
+                v2_models.CreatureAction.objects.filter(pk=key).update(uses_type=uses_type)
+                v2_models.CreatureAction.objects.filter(pk=key).update(uses_param=uses_param)
+                v2_models.CreatureAction.objects.filter(pk=key).update(action_type='REACTION')
+                v2_models.CreatureAction.objects.filter(pk=key).update(form_condition=form_condition)
+                v2_models.CreatureAction.objects.filter(pk=key).update(legendary_cost=legendary_cost)
+                v2_models.CreatureAction.objects.filter(pk=key).update(parent=obj_v2)
+            else:
+                ca = v2_models.CreatureAction(name=name,
+                    key = key,
+                    parent=obj_v2,
+                    desc=a['desc'],
+                    uses_type=uses_type,
+                    uses_param=uses_param,
+                    action_type='REACTION',
+                    form_condition=form_condition,
+                    legendary_cost=legendary_cost
+                    )
+                print(ca.key)
+                ca.full_clean()
+                ca.save()
+
+def rename_ca(old_ca, name):
+    print("re-nameing and re-keying {}".format(old_ca.key))
+
+    new_key = slugify("{}_{}".format(old_ca.parent.key, name))
+
+    new_ca = v2_models.CreatureAction.objects.get(key=old_ca.key)
+    new_ca.key = new_key
+    new_ca.name = name
+
+    print("Creating {}".format(new_key))
+    new_ca.save()
+
+    for old_caa in old_ca.creatureactionattack_set.all():
+        new_akey = format("{}_attack".format(new_ca.key))
+
+        new_caa = v2_models.CreatureActionAttack.objects.get(key=old_caa.key)
+        new_caa.pk = new_akey
+        new_caa.parent = new_ca
+        
+        print("Creating {}".format(new_akey))
+        new_caa.save()
+        print("Deleting {}".format(old_caa.key))
+        old_caa.delete()
+    
+    print("Deleting {}".format(old_ca.key))
+    old_ca.delete()
+
+
 def copy_actions(obj_v1, obj_v2):
     # if exists, copy actions_json
-    if obj_v1.actions_json is not None:
+    if obj_v1.actions_json not in [None,"null"]:
         for a in json.loads(obj_v1.actions_json):
 
             ca = make_ca(a['name'], a['desc'], obj_v2)
-            if "attack_bonus" in a:
+            if "Attack" in ca.desc.replace("_","").split(".")[0].split(":")[0]:
+            #if "attack_bonus" in a:
                 make_caa(ca, a)
 
     # if exists copy bonus_actions_json
@@ -119,6 +420,9 @@ def make_ca(name, desc, obj_v2):
         uses_type = "RECHARGE_AFTER_REST"
         name = name.split("(")[0]
 
+    if uses_type == None:
+        print (name, desc, obj_v2)
+
     key = slugify(obj_v2.key + "_" + name)
     a = v2_models.CreatureAction(
         key=key,
@@ -128,6 +432,7 @@ def make_ca(name, desc, obj_v2):
         uses_type=uses_type,
         uses_param=uses_param,
     )
+    a.save()
     return a
 
 def make_caa(ca, a):
@@ -165,7 +470,7 @@ def make_caa(ca, a):
     # Damage Types
     dt = None
     edt = None
-    for word in ca.desc.split(" "):
+    for word in ca.desc.replace("_","").split(" "):
         try:
             d = v2_models.DamageType.objects.get(key=word)
             if dt is not None:
@@ -176,7 +481,12 @@ def make_caa(ca, a):
             pass
    
     # Damage and Extra Damage
-    damage_parsed = ca.desc.split("Hit:")[1].split(".")[0]
+    if "attack_bonus" in a:
+        abonus = a['attack_bonus']
+    else:
+        abonus = get_attack_bonus(a)
+    damage_parsed = ca.desc.replace("_","").split("it:")[1].split(".")[0].strip()
+        
     ddct = None
     ddty = None
     dbonus = None
@@ -184,50 +494,76 @@ def make_caa(ca, a):
     eddty = None
     edbonus = None
     try:
-        ddct = int(a["damage_dice"].split("d")[0])
-        ddty = int(a["damage_dice"].split("d")[1].split("+")[0])
-        dbonus = int(damage_parsed.split("plus")[0].split(")")[0].split("(")[1].split("d")[1].split("+")[1].trimmed())
+        ddct = int(damage_parsed.split("(")[1].split("d")[0])
+        ddty = "D"+ damage_parsed.split("d")[1].split("+")[0].strip()
+        dbonus = int(damage_parsed.split("plus")[0].split(")")[0].split("(")[1].split("d")[1].split("+")[1].strip())
 
+        #print(ddct, ddty, dbonus)
     except:
         pass
     try:
         extra = damage_parsed.split("plus")[1]
         die_count = extra.split(")")[0].split("(")[1].split("d")[0]
-        die_type = extra.split(")")[0].split("(")[1].split("d")[1]
+        die_type = "D"+extra.split(")")[0].split("(")[1].split("d")[1].split("+")[0].strip()
         eddct = die_count
         eddty = die_type
+        edbonus = 0
     except:
+
         pass
 
-    print(str(ca))
+    # EXCEPTIONS START HERE:
+    print(ca.key)
+
+    if ca.key == 'tob_aboleth-nihilith_tentacle-material-form-only':
+        edt=None
+    if ca.key == 'tob_nkosi-pridelord_mambele-throwing-knife-nkosi-form-only' and name=="Mambele Throwing Knife (Nkosi Form Only) attack":
+        name = "Mambele Throwing Knife (Nkosi Form Only)"
+    if ca.key == 'tob_temple-dog_bite' and name=="Bite attack":
+        edbonus = 4
 
     aa = v2_models.CreatureActionAttack(
         key=slugify(ca.key + "_" +name),
         name=name,
         parent=ca,
         attack_type=attack_type,
-        to_hit_mod=a["attack_bonus"],
+        to_hit_mod=get_attack_bonus(a),
         reach_ft=reach_ft,
         range_ft=range_short,
         long_range_ft=range_long,
-        target_creature_only=None,
+        target_creature_only=False,
         damage_die_count=ddct,
         damage_die_type=ddty,
         damage_bonus=dbonus,
         damage_type=dt,
         extra_damage_die_count=eddct,
         extra_damage_die_type=eddty,
-        extra_damage_bonus=0,
+        extra_damage_bonus=edbonus,
         extra_damage_type=edt
     )
 
-    return aa
-
-
+    aa.save()
 
 
 def copy_legendary_desc(obj_v1, obj_v2):
     pass
+
+def get_attack_bonus(a):
+    if "attack_bonus" in a:
+        return a['attack_bonus']
+    else:
+        if ":" in a['desc']:
+            rdesc = a['desc'].split(":")[1].replace("_","")
+            hitdesc = rdesc.split(",")[0] #Should be format '+9 to hit'
+            hitnum = hitdesc.split(" to hit")[0]
+            if hitnum == "":
+                return None
+            else:
+                return int(hitnum)
+
+        else:
+            return None
+
 
 def _do_spell_distance(obj_v2):
     get_distance_and_unit_from_range_text(obj_v2)
@@ -315,13 +651,18 @@ def get_v2_size_from_v1_obj(v1_obj):
     return v2_size
 
 def copy_traits(obj_v1, obj_v2):
-    v1_traits = json.loads(obj_v1.special_abilities_json or "[]")
+    v1_traits = json.loads(obj_v1.special_abilities_json or "[]", strict=False)
     if v1_traits is None: return
     #traitcount=0
-
+    print(obj_v1.document.slug, obj_v1.slug)
     for trait in v1_traits:
-        #    traitcount+=1
-        c = v2_models.CreatureTrait(name=trait['name'], desc=trait['desc'], parent=obj_v2)
+        if trait['desc'] in [None,'']:
+            print (slugify(obj_v2.key + "_" + trait['name'])[0:100])
+        c = v2_models.CreatureTrait(
+            key=slugify(obj_v2.key + "_" + trait['name'])[0:100],
+            name=trait['name'].strip()[0:100],
+            desc=trait['desc'].strip(),
+             parent=obj_v2)
         c.full_clean()
         c.save()
     

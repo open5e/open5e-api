@@ -79,7 +79,7 @@ admin.site.register(Background, admin_class=BackgroundAdmin)
 admin.site.register(Document)
 admin.site.register(License)
 admin.site.register(Publisher)
-admin.site.register(Ruleset)
+admin.site.register(GameSystem)
 
 admin.site.register(DamageType)
 

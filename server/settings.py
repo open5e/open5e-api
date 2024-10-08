@@ -23,7 +23,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env file!"
+assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env or local OS!"
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -64,25 +64,19 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    
-    # search
-    "haystack",
-    
-    # apps
     'api',
     'api_v2',
 
     # downloaded modules
     "rest_framework",
     "django_filters",
-    "markdown2",
 ]
 
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -92,15 +86,6 @@ MIDDLEWARE = [
     "server.middleware.NewRelicMiddleware",
     "server.middleware.ResponseWarningHeaderMiddleware"
 ]
-
-HAYSTACK_CONNECTIONS = {
-    "default": {
-        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
-        "PATH": os.path.join(os.path.dirname(__file__), "whoosh_index"),
-    },
-}
-
-HAYSTACK_CUSTOM_HIGHLIGHTER = "api.utils.NewHighlighter"
 
 ROOT_URLCONF = "server.urls"
 

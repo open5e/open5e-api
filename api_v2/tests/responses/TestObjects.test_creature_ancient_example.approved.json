@@ -1,0 +1,207 @@
+{
+    "ability_scores": {
+        "charisma": 23,
+        "constitution": 29,
+        "dexterity": 10,
+        "intelligence": 18,
+        "strength": 30,
+        "wisdom": 15
+    },
+    "actions": [
+        {
+            "action_type": "ACTION",
+            "desc": "Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage plus 14 (4d6) fire damage.",
+            "form_condition": null,
+            "key": "srd_ancient-red-dragon_bite",
+            "legendary_cost": 1,
+            "name": "Bite",
+            "parent": "srd_ancient-red-dragon",
+            "uses_param": null,
+            "uses_type": null
+        },
+        {
+            "action_type": "ACTION",
+            "desc": "Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit: 17 (2d6 + 10) slashing damage.",
+            "form_condition": null,
+            "key": "srd_ancient-red-dragon_claw",
+            "legendary_cost": 1,
+            "name": "Claw",
+            "parent": "srd_ancient-red-dragon",
+            "uses_param": null,
+            "uses_type": null
+        },
+        {
+            "action_type": "LEGENDARY_ACTION",
+            "desc": "The dragon makes a Wisdom (Perception) check.",
+            "form_condition": null,
+            "key": "srd_ancient-red-dragon_detect",
+            "legendary_cost": 1,
+            "name": "Detect",
+            "parent": "srd_ancient-red-dragon",
+            "uses_param": null,
+            "uses_type": null
+        },
+        {
+            "action_type": "ACTION",
+            "desc": "The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 91 (26d6) fire damage on a failed save, or half as much damage on a successful one.",
+            "form_condition": null,
+            "key": "srd_ancient-red-dragon_fire-breath",
+            "legendary_cost": 1,
+            "name": "Fire Breath",
+            "parent": "srd_ancient-red-dragon",
+            "uses_param": null,
+            "uses_type": null
+        },
+        {
+            "action_type": "ACTION",
+            "desc": "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.",
+            "form_condition": null,
+            "key": "srd_ancient-red-dragon_frightful-presence",
+            "legendary_cost": 1,
+            "name": "Frightful Presence",
+            "parent": "srd_ancient-red-dragon",
+            "uses_param": null,
+            "uses_type": null
+        },
+        {
+            "action_type": "ACTION",
+            "desc": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
+            "form_condition": null,
+            "key": "srd_ancient-red-dragon_multiattack",
+            "legendary_cost": 1,
+            "name": "Multiattack",
+            "parent": "srd_ancient-red-dragon",
+            "uses_param": null,
+            "uses_type": null
+        },
+        {
+            "action_type": "ACTION",
+            "desc": "Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) bludgeoning damage.",
+            "form_condition": null,
+            "key": "srd_ancient-red-dragon_tail",
+            "legendary_cost": 1,
+            "name": "Tail",
+            "parent": "srd_ancient-red-dragon",
+            "uses_param": null,
+            "uses_type": null
+        },
+        {
+            "action_type": "LEGENDARY_ACTION",
+            "desc": "The dragon makes a tail attack.",
+            "form_condition": null,
+            "key": "srd_ancient-red-dragon_tail-attack",
+            "legendary_cost": 1,
+            "name": "Tail Attack",
+            "parent": "srd_ancient-red-dragon",
+            "uses_param": null,
+            "uses_type": null
+        },
+        {
+            "action_type": "LEGENDARY_ACTION",
+            "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+            "form_condition": null,
+            "key": "srd_ancient-red-dragon_wing-attack",
+            "legendary_cost": 2,
+            "name": "Wing Attack",
+            "parent": "srd_ancient-red-dragon",
+            "uses_param": null,
+            "uses_type": null
+        }
+    ],
+    "alignment": "chaotic evil",
+    "armor_class": 22,
+    "blindsight_range": 60.0,
+    "category": "Monsters",
+    "challenge_rating_decimal": "24.000",
+    "challenge_rating_text": "24",
+    "condition_immunities": [],
+    "creaturesets": [],
+    "damage_immunities": [
+        "http://localhost:8000/v2/damagetypes/fire/"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "darkvision_range": 120.0,
+    "document": "http://localhost:8000/v2/documents/srd/",
+    "experience_points": 62000,
+    "hit_dice": "28d20+252",
+    "hit_points": 546,
+    "key": "srd_ancient-red-dragon",
+    "languages": [
+        "http://localhost:8000/v2/languages/common/",
+        "http://localhost:8000/v2/languages/draconic/"
+    ],
+    "modifiers": {
+        "charisma": 6,
+        "constitution": 9,
+        "dexterity": 0,
+        "intelligence": 4,
+        "strength": 10,
+        "wisdom": 2
+    },
+    "name": "Ancient Red Dragon",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "normal_sight_range": 10560.0,
+    "passive_perception": 26,
+    "saving_throws": {
+        "charisma": 13,
+        "constitution": 16,
+        "dexterity": 7,
+        "wisdom": 9
+    },
+    "saving_throws_all": {
+        "charisma": 13,
+        "constitution": 16,
+        "dexterity": 7,
+        "intelligence": 4,
+        "strength": 10,
+        "wisdom": 9
+    },
+    "size": "http://localhost:8000/v2/sizes/gargantuan/",
+    "skill_bonuses": {
+        "perception": 16,
+        "stealth": 7
+    },
+    "skill_bonuses_all": {
+        "acrobatics": 0,
+        "animal_handling": 2,
+        "arcana": 4,
+        "athletics": 10,
+        "deception": 6,
+        "history": 4,
+        "insight": 2,
+        "intimidation": 6,
+        "investigation": 4,
+        "medicine": 2,
+        "nature": 4,
+        "perception": 16,
+        "performance": 6,
+        "persuasion": 6,
+        "religion": 4,
+        "sleight_of_hand": 0,
+        "stealth": 7,
+        "survival": 2
+    },
+    "speed": {
+        "climb": 40.0,
+        "fly": 80.0,
+        "unit": "feet",
+        "walk": 40.0
+    },
+    "speed_all": {
+        "burrow": 0.0,
+        "climb": 40.0,
+        "crawl": 20.0,
+        "fly": 80.0,
+        "hover": false,
+        "swim": 20.0,
+        "unit": "feet",
+        "walk": 40.0
+    },
+    "subcategory": "Dragons, Chromatic",
+    "tremorsense_range": null,
+    "truesight_range": null,
+    "type": "http://localhost:8000/v2/creaturetypes/dragon/",
+    "url": "http://localhost:8000/v2/creatures/srd_ancient-red-dragon/"
+}

@@ -10,7 +10,7 @@ from .item import ItemCategorySerializer
 from .background import BackgroundBenefitSerializer
 from .background import BackgroundSerializer
 
-from .document import RulesetSerializer
+from .document import GameSystemSerializer
 from .document import LicenseSerializer
 from .document import PublisherSerializer
 from .document import DocumentSerializer

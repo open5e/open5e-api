@@ -15,6 +15,29 @@ def casting_option_generate():
     print("Generated {} options for {} spells.".format(success_option_count, success_spell_count))
 
 # Run this by:
+#$ python manage.py shell -c 'from scripts.data_manipulation.convertors.spell import fixup_spell_casting_time; fixup_spell_casting_time()'
+def fixup_spell_casting_time():
+  success_count = 0
+  fail_list=[]
+  failed=False
+      
+  try:
+    for v2_spell in v2.Spell.objects.all():
+      [doc, slug] = v2_spell.key.split("_")
+      if doc == "a5e-ag":
+          slug = slug + "-a5e"
+
+      v1_spell = v1.Spell.objects.get(pk=slug)
+      [v2_spell.casting_time, v2_spell.reaction_condition] = get_casting_time(v1_spell.casting_time)
+      v2_spell.save()
+
+
+  except Exception as e:
+    print(e)
+    exit(1)
+      
+
+# Run this by:
 #$  python manage.py shell -c 'from scripts.data_manipulation.spell import spellmigrate; spellmigrate()'
 def spellmigrate(save=False):
     success_count=0
@@ -169,6 +192,11 @@ def map1to2(v1_spell):
         higher_level=v1_spell.higher_level
     ).save()
 
+def doc2to1(v2_doc):
+    if v2_doc.key == "a5e-ag":
+        return "a5e"
+    else:
+        return None
 
 def doc1to2(v1_doc):
     doc_map = {
@@ -279,9 +307,18 @@ def get_target(desc, v1_pk, v1_range):
 
 def get_casting_time(v1_casting_time):
     for CTC in v2.enums.SPELL_CASTING_TIME_CHOICES:
-        if v1_casting_time.split(" ")[1] == CTC[1].lower():
-            return CTC[0]
-    return "action"
+        if "," in v1_casting_time:
+            [cast_time, reaction_condition] = v1_casting_time.split(", ", 1)
+        else:
+            [cast_time, reaction_condition] = [v1_casting_time, None]
+        cast_time = cast_time.lower()
+        if cast_time.split(" ")[1] == CTC[1].lower() or cast_time == CTC[1].lower():
+            return [CTC[0], reaction_condition]
+
+    if v1_casting_time == "10 minutes plus 1 hour of attunement":
+        return ["10minutes", None]
+
+    raise ValueError("Could not process" + v1_casting_time + " into a cast_time enum") 
 
 
 def get_material_cost(v1_material):

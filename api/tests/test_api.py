@@ -71,9 +71,6 @@ class TestAPIRoot:
         pass
         #self._verify("/races")
 
-    def test_search(self):
-        self._verify("/search")
-
     def test_sections(self):
         self._verify("/sections")
 

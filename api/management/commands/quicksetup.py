@@ -88,6 +88,7 @@ def collect_static() -> None:
 def build_haystack_index() -> None:
     """Freshen the haystack search indexes. This is an internal haystack
     API that is being called, and only applies to v1 data."""
+    print("THIS ENTIRE COMMAND HAS BEEN DEPRECATED! EXPECT ERRORS.")
     call_command('update_index', '--remove')
 
 def build_v1v2_searchindex() -> None:

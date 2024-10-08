@@ -31,7 +31,7 @@ from .creature import CreatureSet
 from .document import Document
 from .document import License
 from .document import Publisher
-from .document import Ruleset
+from .document import GameSystem
 from .document import FromDocument
 
 from .damagetype import DamageType
