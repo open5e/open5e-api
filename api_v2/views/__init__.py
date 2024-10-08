@@ -38,7 +38,7 @@ from .search import SearchResultViewSet
 
 from .size import SizeViewSet
 
-from .rule import RuleViewSet
+from .rule import RuleSectionViewSet, RuleGroupViewSet
 
 from .enum import get_enums
 
