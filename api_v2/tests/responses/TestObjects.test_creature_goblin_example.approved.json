@@ -1,0 +1,120 @@
+{
+    "ability_scores": {
+        "charisma": 8,
+        "constitution": 10,
+        "dexterity": 14,
+        "intelligence": 10,
+        "strength": 8,
+        "wisdom": 8
+    },
+    "actions": [
+        {
+            "action_type": "ACTION",
+            "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+            "form_condition": null,
+            "key": "srd_goblin_scimitar",
+            "legendary_cost": 1,
+            "name": "Scimitar",
+            "parent": "srd_goblin",
+            "uses_param": null,
+            "uses_type": null
+        },
+        {
+            "action_type": "ACTION",
+            "desc": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+            "form_condition": null,
+            "key": "srd_goblin_shortbow",
+            "legendary_cost": 1,
+            "name": "Shortbow",
+            "parent": "srd_goblin",
+            "uses_param": null,
+            "uses_type": null
+        }
+    ],
+    "alignment": "neutral evil",
+    "armor_class": 15,
+    "blindsight_range": null,
+    "category": "Monsters",
+    "challenge_rating_decimal": "0.250",
+    "challenge_rating_text": "1/4",
+    "condition_immunities": [],
+    "creaturesets": [],
+    "damage_immunities": [],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "darkvision_range": 60.0,
+    "document": "http://localhost:8000/v2/documents/srd/",
+    "experience_points": 50,
+    "hit_dice": "2d6",
+    "hit_points": 7,
+    "key": "srd_goblin",
+    "languages": [
+        "http://localhost:8000/v2/languages/common/",
+        "http://localhost:8000/v2/languages/goblin/"
+    ],
+    "modifiers": {
+        "charisma": -1,
+        "constitution": 0,
+        "dexterity": 2,
+        "intelligence": 0,
+        "strength": -1,
+        "wisdom": -1
+    },
+    "name": "Goblin",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "normal_sight_range": 10560.0,
+    "passive_perception": 9,
+    "saving_throws": {},
+    "saving_throws_all": {
+        "charisma": -1,
+        "constitution": 0,
+        "dexterity": 2,
+        "intelligence": 0,
+        "strength": -1,
+        "wisdom": -1
+    },
+    "size": "http://localhost:8000/v2/sizes/small/",
+    "skill_bonuses": {
+        "stealth": 6
+    },
+    "skill_bonuses_all": {
+        "acrobatics": 2,
+        "animal_handling": -1,
+        "arcana": 0,
+        "athletics": -1,
+        "deception": -1,
+        "history": 0,
+        "insight": -1,
+        "intimidation": -1,
+        "investigation": 0,
+        "medicine": -1,
+        "nature": 0,
+        "perception": -1,
+        "performance": -1,
+        "persuasion": -1,
+        "religion": 0,
+        "sleight_of_hand": 2,
+        "stealth": 6,
+        "survival": -1
+    },
+    "speed": {
+        "unit": "feet",
+        "walk": 30.0
+    },
+    "speed_all": {
+        "burrow": 0.0,
+        "climb": 15.0,
+        "crawl": 15.0,
+        "fly": 0.0,
+        "hover": false,
+        "swim": 15.0,
+        "unit": "feet",
+        "walk": 30.0
+    },
+    "subcategory": null,
+    "tremorsense_range": null,
+    "truesight_range": null,
+    "type": "http://localhost:8000/v2/creaturetypes/humanoid/",
+    "url": "http://localhost:8000/v2/creatures/srd_goblin/"
+}
