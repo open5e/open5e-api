@@ -78,8 +78,8 @@ router_v2.register(r'itemrarities',views_v2.ItemRarityViewSet)
 router_v2.register(r'environments',views_v2.EnvironmentViewSet)
 router_v2.register(r'abilities',views_v2.AbilityViewSet)
 router_v2.register(r'skills',views_v2.SkillViewSet)
-router_v2.register(r'rules', views_v2.RuleSectionViewSet)
-router_v2.register(r'rulegroup', views_v2.RuleGroupViewSet)
+router_v2.register(r'rules', views_v2.RuleViewSet)
+router_v2.register(r'rulesets', views_v2.RuleSetViewSet)
 
 router_search = routers.DefaultRouter()
 

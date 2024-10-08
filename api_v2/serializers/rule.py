@@ -11,7 +11,7 @@ class RuleSerializer(GameContentSerializer):
     model = models.Rule
     fields = '__all__'
 
-class RuleGroupSerializer(GameContentSerializer):
+class RuleSetSerializer(GameContentSerializer):
   class Meta:
-    model = models.RuleGroup
+    model = models.RuleSet
     fields = ['name', 'key', 'document', 'desc', 'rules']
