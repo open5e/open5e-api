@@ -23,7 +23,7 @@ class CreatureType(HasName, HasDescription, FromDocument):
 
 class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocument):
     """
-    This is the model for a Creature, per the 5e ruleset.
+    This is the model for a Creature, per the 5e gamesystem.
 
     This extends the object and abilities models.
     """

@@ -7,7 +7,7 @@ from .creature import CreatureTypeViewSet
 from .creature import CreatureSetViewSet
 
 from .document import DocumentViewSet
-from .document import RulesetViewSet
+from .document import GameSystemViewSet
 from .document import PublisherViewSet
 from .document import LicenseViewSet
 

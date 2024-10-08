@@ -79,7 +79,7 @@ it with the content you add.
   create a new one.
 - `Publisher`: The publisher of the source. Select one of the available publishers. If the publisher is not available, 
   create a new one.
-- `Ruleset`: The ruleset the source is associated with. Select one of the available rulesets. If the ruleset is not available, 
+- `GameSystem`: The gamesystem the source is associated with. Select one of the available gamesystems. If the gamesystem is not available, 
   create a new one.
 - `Author`: The author of the source. This can be a single author or a list of authors. List them in the format `Author 1, Author 2, Author 3`.
 - `Published at`: The Date and Time the source was published. Select the date it was published on. The time can be set to 00:00:00.
