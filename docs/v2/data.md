@@ -4,7 +4,7 @@ Within the v2 api, the data loading is completely distinct from the v1 data. It 
 
 Descriptions of the licenses for data that we serve, and rulesets for the data.
 > /data/v2/License.json
-> /data/v2/Ruleset.json
+> /data/v2/GameSystem.json
 
 Description of the organization or publishers of the data.
 > /data/v2/{publisher-key}/Publisher.json

@@ -95,7 +95,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Ruleset',
+            name='GameSystem',
             fields=[
                 ('name', models.CharField(help_text='Name of the item.', max_length=100)),
                 ('desc', models.TextField(help_text='Description of the game content item. Markdown.')),

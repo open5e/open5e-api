@@ -22,7 +22,7 @@ class Document(HasName, HasDescription):
         help_text="Publisher which has written the game content document.")
 
     ruleset = models.ForeignKey(
-        "Ruleset",
+        "GameSystem",
         on_delete=models.CASCADE,
         help_text="The document's game system that it was published for."
     )
@@ -55,7 +55,7 @@ class Document(HasName, HasDescription):
 
             SKIPPED_MODEL_NAMES = [
                 'Document',
-                'Ruleset',
+                'GameSystem',
                 'License',
                 'Publisher',
                 'SearchResult']
@@ -103,7 +103,7 @@ class Publisher(HasName):
     )
 
 
-class Ruleset(HasName, HasDescription):
+class GameSystem(HasName, HasDescription):
     key = models.CharField(
         primary_key=True,
         max_length=100,
