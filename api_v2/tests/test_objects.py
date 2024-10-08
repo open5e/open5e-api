@@ -67,7 +67,7 @@ class TestObjects:
 
     # /GAMESYSTEM ENDPOINT
     def test_gamesystem_example(self):
-        path="/v2/rulesets/o5e/"
+        path="/v2/gamesystems/o5e/"
         self._verify(path)
 
     # /BACKGROUNDS ENDPOINT
