@@ -58,4 +58,4 @@ from .environment import Environment
 
 from .speed import HasSpeed
 
-from .rules import Rule, RuleSet
+from .rule import Rule, RuleSet
