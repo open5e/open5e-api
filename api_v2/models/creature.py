@@ -8,6 +8,7 @@ from .language import HasLanguage
 from .abstracts import HasDescription, HasName, Modification
 from .abstracts import damage_die_count_field, damage_die_type_field
 from .abstracts import damage_bonus_field, key_field
+from .abstracts import distance_field, distance_unit_field
 from .object import Object
 from .condition import Condition
 from .damagetype import DamageType
@@ -202,7 +203,7 @@ class CreatureAction(HasName, HasDescription):
         blank=True,
         null=True,
         default=None,
-        help_text='0 if not legendary, else, the number of legendary actions this costs.'
+        help_text='null if not legendary, else, the number of legendary actions this costs.'
     )
 
 
@@ -234,26 +235,16 @@ class CreatureActionAttack(HasName):
         help_text='Attack roll modifier.'
     )
 
-    reach_ft = models.SmallIntegerField(
-        blank=True,
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text='Reach for melee attacks, in feet.'
-    )
+    reach_ft = distance_field()
+    range_ft = distance_field()
+    long_range_ft = distance_field()
+    distance_unit = distance_unit_field()
 
-    range_ft = models.SmallIntegerField(
-        blank=True,
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text='Normal range for ranged attacks, in feet.'
-    )
+    def get_distance_unit(self):
+        if self.distance_unit is None:
+            return self.document.distance_unit
+        return self.distance_unit
 
-    long_range_ft = models.SmallIntegerField(
-        blank=True,
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text='Long range for ranged attacks, in feet.'
-    )
 
     target_creature_only = models.BooleanField(
         help_text='If an attack can target creatures only and not objects.'
