@@ -4,6 +4,7 @@ from django.db import models
 from django.core.validators import MinValueValidator
 
 from .abstracts import HasName
+from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
 
 
@@ -35,25 +36,11 @@ class Weapon(HasName, FromDocument):
         help_text="""The damage dice when attacking using versatile.
 A value of 0 means that the weapon does not have the versatile property.""")
 
-    range_reach = models.IntegerField(
-        null=False,
-        default=5,
-        validators=[MinValueValidator(0)],
-        help_text='The range of the weapon when making a melee attack.')
+    reach = distance_field()
 
-    range_normal = models.IntegerField(
-        null=False,
-        default=0,
-        validators=[MinValueValidator(0)],
-        help_text="""The normal range of a ranged weapon attack.
-A value of 0 means that the weapon cannot be used for a ranged attack.""")
+    range = distance_field()
 
-    range_long = models.IntegerField(
-        null=False,
-        default=0,
-        validators=[MinValueValidator(0)],
-        help_text="""The long range of a ranged weapon attack.
-A value of 0 means that the weapon cannot be used for a long ranged attack.""")
+    long_range = distance_field()
 
     is_finesse = models.BooleanField(
         null=False,
