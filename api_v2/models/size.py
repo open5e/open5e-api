@@ -1,8 +1,7 @@
 from django.db import models
-from django.core.validators import MinValueValidator
 
 from .abstracts import HasName
-from .abstracts import distance_field
+from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
 
 class Size(HasName, FromDocument):
@@ -18,3 +17,10 @@ class Size(HasName, FromDocument):
         help_text='Ranking of the size, smallest has the lowest values.')
 
     space_diameter = distance_field()
+    distance_unit = distance_unit_field()
+
+    @property
+    def get_distance_unit(self):
+        if self.distance_unit is None:
+            return self.document.distance_unit
+        return self.distance_unit
