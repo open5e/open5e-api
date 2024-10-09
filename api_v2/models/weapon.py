@@ -41,6 +41,15 @@ A value of 0 means that the weapon does not have the versatile property.""")
     range = distance_field()
 
     long_range = distance_field()
+    
+    distance_unit = distance_unit_field()
+    
+    @property
+    def get_distance_unit(self):
+        if self.distance_unit is None:
+            return self.document.distance_unit
+        return self.distance_unit
+
 
     is_finesse = models.BooleanField(
         null=False,
