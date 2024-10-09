@@ -4,7 +4,7 @@ from .document import FromDocument
 
 class RuleSet(HasName, HasDescription, FromDocument):
   """
-  The RuleGroup model contains a set of Rules as part of a larger article, or 
+  The RuleSet model contains a set of Rules as part of a larger article, or 
   as a chapter of a book.
   """
   key = key_field()
@@ -12,7 +12,7 @@ class RuleSet(HasName, HasDescription, FromDocument):
 
 class Rule(HasName, HasDescription, FromDocument):
   """"
-  The Rule model contains information about a single rule from a larger RuleGroup.
+  The Rule model contains information about a single rule from a larger RuleSet.
   Each Rule is typically a paragraph or two long and might contain tables.
   """
 
