@@ -11,10 +11,15 @@ from .size import SizeSerializer
 
 
 class CreatureActionAttackSerializer(serializers.ModelSerializer):
+
+    distance_unit = serializers.SerializerMethodField()
+
     class Meta:
         model = models.CreatureActionAttack
         fields = '__all__'
 
+    def get_distance_unit(self, CreatureActionAttack):
+        return CreatureActionAttack.get_distance_unit
 
 class CreatureActionSerializer(serializers.ModelSerializer):
     key = serializers.ReadOnlyField()

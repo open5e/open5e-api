@@ -243,11 +243,11 @@ class CreatureActionAttack(HasName):
     long_range = distance_field()
     distance_unit = distance_unit_field()
 
+    @property
     def get_distance_unit(self):
         if self.distance_unit is None:
-            return self.document.distance_unit
+            return self.parent.parent.document.distance_unit
         return self.distance_unit
-
 
     target_creature_only = models.BooleanField(
         help_text='If an attack can target creatures only and not objects.'
