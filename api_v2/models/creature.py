@@ -213,6 +213,9 @@ class CreatureAction(HasName, HasDescription):
 
         return text
 
+    def attacks(self):
+        return self.creatureactionattack_set
+
 
 class CreatureActionAttack(HasName):
     """Describes an attack action used by a creature."""
