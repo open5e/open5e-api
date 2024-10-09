@@ -21,6 +21,7 @@ class CreatureActionAttackSerializer(serializers.ModelSerializer):
     def get_distance_unit(self, CreatureActionAttack):
         return CreatureActionAttack.get_distance_unit
 
+
 class CreatureActionSerializer(serializers.ModelSerializer):
     key = serializers.ReadOnlyField()
     attacks = CreatureActionAttackSerializer(many=True, context={'request': {}})
