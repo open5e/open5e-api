@@ -235,9 +235,9 @@ class CreatureActionAttack(HasName):
         help_text='Attack roll modifier.'
     )
 
-    reach_ft = distance_field()
-    range_ft = distance_field()
-    long_range_ft = distance_field()
+    reach = distance_field()
+    range = distance_field()
+    long_range = distance_field()
     distance_unit = distance_unit_field()
 
     def get_distance_unit(self):
