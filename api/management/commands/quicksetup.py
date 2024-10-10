@@ -21,6 +21,13 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
+        """[TODO] Check if the directory is dirty."""
+        # Does whoosh_index exist
+        
+        # Does staticfiles exist
+        # Does db.sqlite3 exist
+
+        
         """Main logic."""
         self.stdout.write('Migrating the database...')
         migrate_db()
@@ -28,26 +35,28 @@ class Command(BaseCommand):
         self.stdout.write('Collecting static files...')
         collect_static()
 
-        self.stdout.write('Populating the v1 database...')
-        import_v1()
+        if settings.INCLUDE_V1_DATA:
+            self.stdout.write('Populating the v1 database...')
+            import_v1()
+            
+            if not options['noindex']:
+                if settings.BUILD_V1_INDEX:
+                    build_haystack_index()
+            else:
+                self.stdout.write("Skipping v1 index build because of --noindex")
+        else:
+            self.stdout.write('Skipping v1 database population.')
 
-
-        if settings.V2_ENABLED:
+        if settings.INCLUDE_V2_DATA:
             self.stdout.write('Populating the v2 database...')
             import_v2()
 
-        if options["noindex"]:
-            self.stdout.write('Skipping search index rebuild due to --noindex...')
+        if not options['noindex']:
+            if settings.BUILD_V2_INDEX:
+                self.stdout.write('Building the v2 index with both v1 and v2 data.')
+                build_v1v2_searchindex()
         else:
-            self.stdout.write('Rebuilding the search index...')
-            build_haystack_index()
-
-        # Flag for v2 enabled decides:
-        if settings.V2_SEARCH_ENABLED:
-            if settings.V2_ENABLED:
-                build_searchindex()
-            else: 
-                build_v1_searchindex()
+            self.stdout.write('Skipping v2 index build because of --noindex.')
 
         self.stdout.write(self.style.SUCCESS('API setup complete.'))
 
@@ -79,14 +88,10 @@ def collect_static() -> None:
 def build_haystack_index() -> None:
     """Freshen the haystack search indexes. This is an internal haystack
     API that is being called, and only applies to v1 data."""
+    print("THIS ENTIRE COMMAND HAS BEEN DEPRECATED! EXPECT ERRORS.")
     call_command('update_index', '--remove')
 
-def build_v1_searchindex() -> None:
-    """Builds the custom search index defined in the api_v2 management
-    commands. Only adds the v1 data."""
-    call_command('buildindex', '--v1')
-
-def build_searchindex() -> None:
+def build_v1v2_searchindex() -> None:
     """Builds the custom search index defined in the api_v2 management
     commands. Only adds the v1 data."""
     call_command('buildindex','--v1','--v2')

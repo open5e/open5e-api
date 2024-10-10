@@ -27,6 +27,9 @@ jobs:
           pipenv run python manage.py runserver 0.0.0.0:8000 &
           sleep 5 &&
           pipenv run pytest
+      - name: Validate Data
+        run: |
+          pipenv run python ./scripts/data_test.py --dir ./data/v2
   build:
     runs-on: ubuntu-latest
     steps:

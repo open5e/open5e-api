@@ -1,0 +1,95 @@
+{
+    "attack_roll": false,
+    "casting_options": [
+        {
+            "damage_roll": null,
+            "duration": null,
+            "range": null,
+            "target_count": null,
+            "type": "default"
+        },
+        {
+            "damage_roll": "9d6",
+            "duration": null,
+            "range": null,
+            "target_count": null,
+            "type": "slot_level_4"
+        },
+        {
+            "damage_roll": "10d6",
+            "duration": null,
+            "range": null,
+            "target_count": null,
+            "type": "slot_level_5"
+        },
+        {
+            "damage_roll": "11d6",
+            "duration": null,
+            "range": null,
+            "target_count": null,
+            "type": "slot_level_6"
+        },
+        {
+            "damage_roll": "12d6",
+            "duration": null,
+            "range": null,
+            "target_count": null,
+            "type": "slot_level_7"
+        },
+        {
+            "damage_roll": "13d6",
+            "duration": null,
+            "range": null,
+            "target_count": null,
+            "type": "slot_level_8"
+        },
+        {
+            "damage_roll": "14d6",
+            "duration": null,
+            "range": null,
+            "target_count": null,
+            "type": "slot_level_9"
+        }
+    ],
+    "casting_time": "action",
+    "classes": [
+        "http://localhost:8000/v2/classes/srd_sorcerer/",
+        "http://localhost:8000/v2/classes/srd_wizard/"
+    ],
+    "concentration": false,
+    "damage_roll": "8d6",
+    "damage_types": [
+        "fire"
+    ],
+    "desc": "A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.",
+    "document": "http://localhost:8000/v2/documents/srd/",
+    "duration": "instantaneous",
+    "higher_level": "When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+    "key": "srd_fireball",
+    "level": 3,
+    "material": true,
+    "material_consumed": false,
+    "material_cost": null,
+    "material_specified": "A tiny ball of bat guano and sulfur.",
+    "name": "Fireball",
+    "range": 150.0,
+    "range_text": "150 feet",
+    "range_unit": "feet",
+    "reaction_condition": null,
+    "ritual": false,
+    "saving_throw_ability": "dexterity",
+    "school": {
+        "desc": "**Evocation** spells manipulate magical energy to produce a desired effect. Some call up blasts of fire or lightning. Others channel positive energy to heal wounds.",
+        "document": "srd",
+        "key": "evocation",
+        "name": "Evocation"
+    },
+    "shape_size": 20.0,
+    "shape_size_unit": "feet",
+    "shape_type": "sphere",
+    "somatic": true,
+    "target_count": 1,
+    "target_type": "point",
+    "url": "http://localhost:8000/v2/spells/srd_fireball/",
+    "verbal": true
+}

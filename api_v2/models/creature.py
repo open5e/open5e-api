@@ -3,17 +3,18 @@ from fractions import Fraction
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from .abilities import Abilities, Senses
+from .abstracts import HasAbilities, HasSenses
 from .language import HasLanguage
 from .abstracts import HasDescription, HasName, Modification
 from .abstracts import damage_die_count_field, damage_die_type_field
 from .abstracts import damage_bonus_field, key_field
+from .abstracts import distance_field, distance_unit_field
 from .object import Object
 from .condition import Condition
 from .damagetype import DamageType
 from .document import FromDocument
 from .speed import HasSpeed
-from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES
+from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES, ACTION_TYPES
 
 
 
@@ -21,9 +22,9 @@ class CreatureType(HasName, HasDescription, FromDocument):
     """The Type of creature, such as Aberration."""
 
 
-class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
+class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocument):
     """
-    This is the model for a Creature, per the 5e ruleset.
+    This is the model for a Creature, per the 5e gamesystem.
 
     This extends the object and abilities models.
     """
@@ -37,6 +38,12 @@ class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
     category = models.CharField(
         max_length=100,
         help_text='What category this creature belongs to.'
+    )
+
+    subcategory = models.CharField(
+        max_length=100,
+        null=True,
+        help_text='What subcategory this creature belongs to.'
     )
 
     alignment = models.CharField(
@@ -82,10 +89,10 @@ class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
 
     def search_result_extra_fields(self):
         return {
-            "armor_class":self.armor_class,
-            "hit_points":self.hit_points,
-            "ability_scores":self.get_ability_scores(),
-              }
+            "cr": self.challenge_rating_text,
+            "type": self.type.name,
+            "size": self.size.name,   
+        }
 
     @property
     def creatureset(self):
@@ -145,6 +152,12 @@ class Creature(Object, Abilities, Senses, HasLanguage, HasSpeed, FromDocument):
                 return None
 
 
+    @property
+    def actions(self):
+        """Returns the set of actions that are related to this creature."""
+        return self.creatureaction_set
+
+
 class CreatureAction(HasName, HasDescription):
     """Describes an action available to a creature."""
     key = key_field()
@@ -156,6 +169,7 @@ class CreatureAction(HasName, HasDescription):
     )
 
     uses_type = models.CharField(
+        blank=True,
         null=True,
         max_length=20,
         choices=CREATURE_USES_TYPES,
@@ -163,15 +177,44 @@ class CreatureAction(HasName, HasDescription):
     )
 
     uses_param = models.SmallIntegerField(
+        blank=True,
         null=True,
         help_text='The parameter X for if the action is limited.'
     )
+
+    action_type = models.CharField(
+        blank=True,
+        null=True,
+        max_length=20,
+        default="ACTION",
+        choices=ACTION_TYPES,
+        help_text='The type of action used.'
+    )
+
+    form_condition = models.CharField(
+        blank=True,
+        null=True,
+        default=None,
+        max_length=100,
+        help_text='Description of form-based conditions for this action.'
+    )
+
+    legendary_cost = models.SmallIntegerField(
+        blank=True,
+        null=True,
+        default=None,
+        help_text='null if not legendary, else, the number of legendary actions this costs.'
+    )
+
 
     def as_text(self):
         '''Text representation of creature is name/desc.'''
         text = self.name + '\n' + self.desc
 
         return text
+
+    def attacks(self):
+        return self.creatureactionattack_set
 
 
 class CreatureActionAttack(HasName):
@@ -195,23 +238,16 @@ class CreatureActionAttack(HasName):
         help_text='Attack roll modifier.'
     )
 
-    reach_ft = models.SmallIntegerField(
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text='Reach for melee attacks, in feet.'
-    )
+    reach = distance_field()
+    range = distance_field()
+    long_range = distance_field()
+    distance_unit = distance_unit_field()
 
-    range_ft = models.SmallIntegerField(
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text='Normal range for ranged attacks, in feet.'
-    )
-
-    long_range_ft = models.SmallIntegerField(
-        null=True,
-        validators=[MinValueValidator(0)],
-        help_text='Long range for ranged attacks, in feet.'
-    )
+    @property
+    def get_distance_unit(self):
+        if self.distance_unit is None:
+            return self.parent.parent.document.distance_unit
+        return self.distance_unit
 
     target_creature_only = models.BooleanField(
         help_text='If an attack can target creatures only and not objects.'
@@ -224,6 +260,7 @@ class CreatureActionAttack(HasName):
 
     damage_type = models.ForeignKey(
         "DamageType",
+        blank=True,
         null=True,
         related_name="+", # No backwards relation.
         on_delete=models.CASCADE,
@@ -236,6 +273,7 @@ class CreatureActionAttack(HasName):
 
     extra_damage_type = models.ForeignKey(
         "DamageType",
+        blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name="+", # No backwards relation.
@@ -247,7 +285,7 @@ class CreatureTrait(Modification):
 
     It inherits from modification, which is an abstract concept.
     """
-
+    key = key_field()
     parent = models.ForeignKey('Creature', on_delete=models.CASCADE)
 
 

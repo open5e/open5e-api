@@ -64,6 +64,7 @@ admin.site.register(Item, admin_class=ItemModelAdmin)
 admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
 
 admin.site.register(SpellSchool)
+admin.site.register(Spell)
 
 admin.site.register(Race, admin_class=RaceAdmin)
 
@@ -78,11 +79,14 @@ admin.site.register(Background, admin_class=BackgroundAdmin)
 admin.site.register(Document)
 admin.site.register(License)
 admin.site.register(Publisher)
-admin.site.register(Ruleset)
+admin.site.register(GameSystem)
 
 admin.site.register(DamageType)
 
 admin.site.register(Language)
+
+admin.site.register(Ability)
+admin.site.register(Skill)
 
 admin.site.register(Alignment)
 
@@ -93,3 +97,6 @@ admin.site.register(ClassFeature)
 admin.site.register(CharacterClass)
 
 admin.site.register(Environment)
+
+admin.site.register(Rule)
+admin.site.register(RuleSet)

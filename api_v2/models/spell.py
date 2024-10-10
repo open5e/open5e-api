@@ -9,6 +9,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from .abstracts import HasName, HasDescription
 from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
+from .characterclass import CharacterClass
 
 
 from .enums import SPELL_TARGET_TYPE_CHOICES
@@ -56,6 +57,11 @@ class Spell(HasName, HasDescription, FromDocument):
     casting_time = models.TextField(
         choices = SPELL_CASTING_TIME_CHOICES,
         help_text = "Casting time key, such as 'action'")
+    
+    reaction_condition = models.TextField(
+        blank=True,
+        null=True,
+        help_text='The conditions describing when a reaction spell can be cast')
 
     verbal = models.BooleanField(
         help_text='Whether or not casting the spell requires a verbal component.',
@@ -125,6 +131,8 @@ class Spell(HasName, HasDescription, FromDocument):
         help_text='Whether the effect requires concentration to be maintained.',
         default=False)
 
+    classes = models.ManyToManyField(CharacterClass)
+
     def casting_options(self):
         """Options for casting the spell."""
         return self.spellcastingoption_set
@@ -139,6 +147,12 @@ class Spell(HasName, HasDescription, FromDocument):
             return self.document.distance_unit
         return self.range_unit
 
+    def search_result_extra_fields(self):
+        return {
+            "school": self.school.name,
+            "level": self.level,
+        }
+        
 class SpellCastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
 

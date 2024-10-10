@@ -7,7 +7,7 @@ from .creature import CreatureTypeViewSet
 from .creature import CreatureSetViewSet
 
 from .document import DocumentViewSet
-from .document import RulesetViewSet
+from .document import GameSystemViewSet
 from .document import PublisherViewSet
 from .document import LicenseViewSet
 
@@ -38,6 +38,11 @@ from .search import SearchResultViewSet
 
 from .size import SizeViewSet
 
+from .rule import RuleViewSet, RuleSetViewSet
+
 from .enum import get_enums
 
 from .environment import EnvironmentViewSet
+
+from .ability import AbilityFilterSet, AbilityViewSet
+from .ability import SkillFilterSet, SkillViewSet

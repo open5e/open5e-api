@@ -13,9 +13,13 @@ class CreatureFilterSet(FilterSet):
         model = models.Creature
         fields = {
             'key': ['in', 'iexact', 'exact' ],
-            'name': ['iexact', 'exact'],
+            'name': ['iexact', 'exact', 'icontains'],
             'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
             'size': ['exact'],
+            'category': ['exact', 'iexact'],
+            'subcategory': ['exact', 'iexact'],
+            'type': ['exact'],
             'challenge_rating_decimal': ['exact','lt','lte','gt','gte'],
             'armor_class': ['exact','lt','lte','gt','gte'],
             'ability_score_strength': ['exact','lt','lte','gt','gte'],
@@ -62,6 +66,17 @@ class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = CreatureFilterSet
 
 
+class CreatureTypeFilterSet(FilterSet):
+    class Meta:
+        model = models.CreatureType
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact','contains'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
+        }
+
+
 class CreatureTypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creatures types.
@@ -69,6 +84,18 @@ class CreatureTypeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.CreatureType.objects.all().order_by('pk')
     serializer_class = serializers.CreatureTypeSerializer
+    filterset_class = CreatureTypeFilterSet
+
+
+class CreatureSetFilterSet(FilterSet):
+    class Meta:
+        model = models.CreatureSet
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact','contains'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
+        }
 
 
 class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
@@ -78,3 +105,4 @@ class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.CreatureSet.objects.all().order_by('pk')
     serializer_class = serializers.CreatureSetSerializer
+    filterset_class = CreatureSetFilterSet

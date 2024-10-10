@@ -13,6 +13,7 @@ class AlignmentFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact','contains'],
             'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
         }
 
 class AlignmentViewSet(viewsets.ReadOnlyModelViewSet):

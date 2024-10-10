@@ -1,0 +1,112 @@
+[
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_firetamer_flameform",
+  "fields": {
+    "name": "Flameform",
+    "desc": "As a bonus action, the firetamer can transform into a **fire elemental**. While in this form, the firetamer cannot cast spells, but can expend a spell slot as a bonus action to regain 1d8 hit points per level of the spell slot expended. When the firetamer is reduced to 0 hit points, falls unconscious, or dies in this form, it reverts to its humanoid form. It can remain in flameform for up to 5 hours, and can enter flameform twice, regaining expended uses after completing a short or long rest.",
+    "type": null,
+    "parent": "tdcs_firetamer"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_firetamer_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "desc": "The firetamer is a 9th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks). It has the following druid spells prepared:\n\n* Cantrips (at will): druidcraft, mending, produce flame\n* 1st level (4 slots): cure wounds, faerie fire, longstrider, jump\n* 2nd level (3 slots): flame blade, heat metal, lesser restoration\n* 3rd level (3 slots): daylight, dispel magic, protection from energy\n* 4th level (3 slots): blight, freedom of movement, wall of fire 5th level (1 slot): conjure elemental",
+    "type": null,
+    "parent": "tdcs_firetamer"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_skydancer_evasion",
+  "fields": {
+    "name": "Evasion",
+    "desc": "If the skydancer is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the skydancer instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "type": null,
+    "parent": "tdcs_skydancer"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_skydancer_flyby",
+  "fields": {
+    "name": "Flyby",
+    "desc": "The skydancer doesn’t provoke opportunity attacks when it flies out of an enemy’s reach.",
+    "type": null,
+    "parent": "tdcs_skydancer"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_skydancer_skysail",
+  "fields": {
+    "name": "Skysail",
+    "desc": "The skydancer flies with a special weapon called a _skysail_ (see pg. 45). While the _skysail’s_ wings are extended, the skydancer can cast _levitate_ at will, and can spend an action to cast _fly_ on itself (no concentration required) for up to 1 minute once per day. This use of _fly_ instantly replenishes when in an area of powerful air elemental magic.",
+    "type": null,
+    "parent": "tdcs_skydancer"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_skydancer_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "desc": "The skydancer is a 3rd-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 14, +6 to hit with spell attacks). It has the following druid spells prepared:\n\n* Cantrips (at will): guidance, shillelagh\n* 1st level (4 slots): fog cloud, entangle, jump\n* 2nd level (2 slots): gust of wind, skywrite",
+    "type": null,
+    "parent": "tdcs_skydancer"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_stoneguard_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "desc": "The stoneguard is a 3rd-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 14, +6 to hit with spell attacks). It has the following druid spells prepared:\n\n* Cantrips (at will): druidcraft, resistance\n* 1st level (4 slots): goodberry, speak with animals, thunderwave\n* 2nd level (2 slots): hold person, spike growth",
+    "type": null,
+    "parent": "tdcs_stoneguard"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_waverider_fishform",
+  "fields": {
+    "name": "Fishform",
+    "desc": "As a bonus action, the waverider can transform into a **hunter shark** or **giant octopus**. While in this form, the waverider cannot cast spells, but can expend a spell slot as a bonus action to regain 1d8 hit points per level of the spell slot expended. When the waverider is reduced to 0 hit points, falls unconscious, or dies in this form, it reverts to its humanoid form. It can remain in fishform for up to 3 hours, and can enter fishform twice, regaining expended uses after completing a short or long rest.",
+    "type": null,
+    "parent": "tdcs_waverider"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_waverider_healing-tides",
+  "fields": {
+    "name": "Healing Tides",
+    "desc": "Whenever the waverider casts a spell of 1st level or higher that affects a nonhostile creature, that creature regains 3 hit points (in addition to any healing the spell may provide).",
+    "type": null,
+    "parent": "tdcs_waverider"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_waverider_marine-empathy",
+  "fields": {
+    "name": "Marine Empathy",
+    "desc": "The waverider can speak with and understand aquatic plants and animals.",
+    "type": null,
+    "parent": "tdcs_waverider"
+  }
+},
+{
+  "model": "api_v2.creaturetrait",
+  "pk": "tdcs_waverider_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "desc": "The waverider is a 7th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 14, +6 to hit with spell attacks). It has the following druid spells prepared:\n\n* Cantrips (at will): druidcraft, poison spray, resistance\n* 1st level (4 slots): cure wounds, create or destroy water, healing word\n* 2nd level (3 slots): animal messenger, enhance ability, lesser restoration\n* 3rd level (3 slots): conjure animals (aquatic beasts only), water walk, water breathing\n* 4th level (1 slots): control water",
+    "type": null,
+    "parent": "tdcs_waverider"
+  }
+}
+]

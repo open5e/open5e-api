@@ -10,91 +10,25 @@ from .abstracts import GameContentSerializer
 from .size import SizeSerializer
 
 
+class CreatureActionAttackSerializer(serializers.ModelSerializer):
 
-def calc_damage_amount(die_count, die_type, bonus):
-    '''Calculates the average value of a given die roll.'''
-    die_values = {
-        'D4': 2.5,
-        'D6': 3.5,
-        'D8': 4.5,
-        'D10': 5.5,
-        'D12': 6.5,
-        'D20': 10.5,
-    }
-    return floor(die_count * die_values[die_type] + bonus)
+    distance_unit = serializers.SerializerMethodField()
 
-def make_damage_obj(die_count, die_type, bonus, damage_type):
-    '''Structures an object in a way that can be consistently referenced.'''
-    if die_count:
-        return {
-            'amount': calc_damage_amount(
-                die_count,
-                die_type,
-                bonus
-            ),
-            'die_count': die_count,
-            'die_type': die_type,
-            'bonus': bonus,
-            'type': damage_type,
-        }
-    return {
-        'amount': 1,
-        'type': damage_type,
-    }
+    class Meta:
+        model = models.CreatureActionAttack
+        fields = '__all__'
 
-def make_attack_obj(attack):
-    '''Structures an object in a way that can be consistently referenced.'''
-    obj = {
-        'name': attack.name,
-        'attack_type': attack.attack_type,
-        'to_hit_mod': attack.to_hit_mod,
-    }
+    def get_distance_unit(self, CreatureActionAttack):
+        return CreatureActionAttack.get_distance_unit
 
-    if attack.reach_ft:
-        obj['reach_ft'] = attack.reach_ft
-    if attack.range_ft:
-        obj['range_ft'] = attack.range_ft
-    if attack.long_range_ft:
-        obj['long_range_ft'] = attack.long_range_ft
 
-    obj['target_creature_only'] = attack.target_creature_only
+class CreatureActionSerializer(serializers.ModelSerializer):
+    key = serializers.ReadOnlyField()
+    attacks = CreatureActionAttackSerializer(many=True, context={'request': {}})
 
-    if attack.damage_type:
-        obj['damage'] = make_damage_obj(
-            attack.damage_die_count,
-            attack.damage_die_type,
-            attack.damage_bonus,
-            attack.damage_type.key
-        )
-
-    if attack.extra_damage_type:
-        obj['extra_damage'] = make_damage_obj(
-            attack.extra_damage_die_count,
-            attack.extra_damage_die_type,
-            attack.extra_damage_bonus,
-            attack.extra_damage_type.key
-        )
-
-    return obj
-
-def make_action_obj(action):
-    '''Structures an object in a way that can be consistently referenced.'''
-    obj = { 'name': action.name, 'desc': action.desc }
-
-    match action.uses_type:
-        case 'PER_DAY':
-            obj['uses_per_day'] = action.uses_param
-        case 'RECHARGE_ON_ROLL':
-            obj['recharge_on_roll'] = action.uses_param
-        case 'RECHARGE_AFTER_REST':
-            obj['recharge_after_rest'] = True
-
-    attacks = action.creatureactionattack_set.all()
-
-    if len(attacks) > 0:
-        obj['attacks'] = [make_attack_obj(attack) for attack in attacks]
-
-    return obj
+    class Meta:
+        model = models.CreatureAction
+        fields = '__all__'
 
 
 class CreatureTypeSerializer(GameContentSerializer):
@@ -117,7 +51,7 @@ class CreatureSerializer(GameContentSerializer):
     saving_throws_all = serializers.SerializerMethodField()
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
-    actions = serializers.SerializerMethodField()
+    actions = CreatureActionSerializer(many=True, context={'request': {}})
     speed = serializers.SerializerMethodField()
     speed_all = serializers.SerializerMethodField()
     challenge_rating_text = serializers.SerializerMethodField()
@@ -136,6 +70,7 @@ class CreatureSerializer(GameContentSerializer):
             'speed',
             'speed_all',
             'category',
+            'subcategory',
             'type',
             'alignment',
             'languages',
@@ -224,14 +159,6 @@ class CreatureSerializer(GameContentSerializer):
     def get_speed_all(self, creature):
         '''Implicit speed helper method.'''
         return creature.get_speed_all()
-
-    def get_actions(self, creature):
-        '''Actions helper method.'''
-        result = []
-        for action in creature.creatureaction_set.all():
-            action_obj = make_action_obj(action)
-            result.append(action_obj)
-        return result
 
     def get_challenge_rating_text(self, creature):
         return creature.challenge_rating_text

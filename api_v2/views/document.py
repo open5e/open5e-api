@@ -1,22 +1,34 @@
-"""Viewsets for the Document, Ruleset, Publisher, and License Serializers."""
+"""Viewsets for the Document, GameSystem, Publisher, and License Serializers."""
 from rest_framework import viewsets
-
-from django_filters import FilterSet
+from django_filters import FilterSet, CharFilter
+from django.db.models import JSONField
 
 from api_v2 import models
 from api_v2 import serializers
 
 
 
-class RulesetViewSet(viewsets.ReadOnlyModelViewSet):
+class GameSystemViewSet(viewsets.ReadOnlyModelViewSet):
     """"
-    list: API Endpoint for returning a set of rulesets.
+    list: API Endpoint for returning a set of gamesystems.
 
-    retrieve: API endpoint for return a particular ruleset.
+    retrieve: API endpoint for return a particular gamesystem.
     """
-    queryset = models.Ruleset.objects.all().order_by('pk')
-    serializer_class = serializers.RulesetSerializer
+    queryset = models.GameSystem.objects.all().order_by('pk')
+    serializer_class = serializers.GameSystemSerializer
 
+
+class DocumentFilterSet(FilterSet):
+    '''This is the filterset class for Documents.'''
+    
+    class Meta:
+        model = models.Document
+        fields = '__all__'
+        filter_overrides = {
+            JSONField: {
+                'filter_class': CharFilter
+            }
+        }
 
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -25,7 +37,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = models.Document.objects.all().order_by('pk')
     serializer_class = serializers.DocumentSerializer
-    #filterset_fields = '__all__'
+    filterset_class = DocumentFilterSet
 
 
 class PublisherViewSet(viewsets.ReadOnlyModelViewSet):

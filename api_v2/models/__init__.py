@@ -1,12 +1,12 @@
 """The initialization for models for open5e's api v2."""
 
-from .abilities import Abilities
-from .abilities import Senses
-
 from .item import ItemCategory
 from .item import Item
 from .item import ItemSet
 from .item import ItemRarity
+
+from .abilities import Ability
+from .abilities import Skill
 
 from .armor import Armor
 
@@ -31,7 +31,7 @@ from .creature import CreatureSet
 from .document import Document
 from .document import License
 from .document import Publisher
-from .document import Ruleset
+from .document import GameSystem
 from .document import FromDocument
 
 from .damagetype import DamageType
@@ -57,3 +57,5 @@ from .size import Size
 from .environment import Environment
 
 from .speed import HasSpeed
+
+from .rule import Rule, RuleSet

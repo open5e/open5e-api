@@ -41,6 +41,14 @@ CREATURE_ATTACK_TYPES = [
     ("WEAPON", "Weapon"),
 ]
 
+ACTION_TYPES = [
+    ("ACTION", "Action"),
+    ("REACTION","Reaction"),
+    ("BONUS_ACTION","Bonus Action"),
+    ("LEGENDARY_ACTION","Legendary Action"),
+    ("LAIR_ACTION","Lair Action")
+]
+
 # Monster action uses description.
 CREATURE_USES_TYPES = [
     ("PER_DAY", "X/Day"),
@@ -167,11 +175,19 @@ SPELL_CASTING_TIME_CHOICES = [
     ('reaction',"Reaction"),
     ('bonus-action',"1 Bonus Action"),
     ('action',"1 Action"),
+    ('turn',"1 Turn"),
+    ('round',"1 Round"),
     ('1minute',"1 Minute"),
     ('5minutes',"5 Minutes"),
     ('10minutes',"10 Minutes"),
     ('1hour',"1 Hour"),
+    ('4hours',"4 Hours"),
+    ('7hours',"7 Hours"),
     ('8hours',"8 Hours"),
+    ('9hours',"9 Hours"),
+    ('12hours',"12 Hours"),
+    ('24hours',"24 Hours"),
+    ('1week',"1 Week")
 ]
 
 CASTING_OPTION_TYPES = [

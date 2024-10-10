@@ -13,6 +13,7 @@ class FeatFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
         }
 
 

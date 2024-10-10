@@ -4,7 +4,7 @@
   <p align="center">
     <a href="https://open5e.com">https://open5e.com</a>
     <br/>
-    A JSON API for the D&D 5e ruleset
+    A JSON API for the D&D 5e gamesystem
   </p>
 </p>
 <br />

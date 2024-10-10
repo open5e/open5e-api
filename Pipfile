@@ -4,32 +4,20 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "3"
+django = "5.*"
 djangorestframework = "*"
 django-filter = "*"
 django-cors-headers = "*"
-django-haystack = "*"
-drf-haystack = "*"
-gunicorn = "*"
-jsonfield = "*"
-markdown = "*"
-"markdown2" = "*"
-pylint = "*"
-python-decouple = "*"
-setuptools = "*"
-whitenoise = "*"
-whoosh = "*"
-pyyaml = "*"
-uritemplate = "*"
 newrelic = "*"
-approvaltests = "*"
-pytest-approvaltests = "*"
 requests = "*"
-chardet = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 pytest = "*"
 pytest-django = "*"
+approvaltests = "*"
+pytest-approvaltests = "*"
 
 [requires]
 python_version = "3.11"

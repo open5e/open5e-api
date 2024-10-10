@@ -13,15 +13,16 @@ class ItemFilterSet(FilterSet):
     class Meta:
         model = models.Item
         fields = {
-            'key': ['in', 'iexact', 'exact' ],
-            'name': ['iexact', 'exact'],
+            'key': ['in', 'iexact', 'exact'],
+            'name': ['iexact', 'exact', 'icontains'],
             'desc': ['icontains'],
             'cost': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
-#            'rarity': ['exact', 'in', ],
+            'rarity': ['exact', 'in'],
             'requires_attunement': ['exact'],
-            #'category': ['in', 'iexact', 'exact'],
-            'document__key': ['in','iexact','exact']
+            'category': ['in', 'exact'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
         }
 
 
@@ -54,7 +55,8 @@ class ItemSetFilterSet(FilterSet):
         fields = {
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
-            'document__key': ['in','iexact','exact']
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
         }
 
 
@@ -87,11 +89,12 @@ class WeaponFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
             'damage_dice': ['in','iexact','exact'],
             'versatile_dice': ['in','iexact','exact'],
-            'range_reach': ['exact','lt','lte','gt','gte'],
-            'range_normal': ['exact','lt','lte','gt','gte'],
-            'range_long': ['exact','lt','lte','gt','gte'],
+            'reach': ['exact','lt','lte','gt','gte'],
+            'range': ['exact','lt','lte','gt','gte'],
+            'long_range': ['exact','lt','lte','gt','gte'],
             'is_finesse': ['exact'],
             'is_thrown': ['exact'],
             'is_two_handed': ['exact'],
@@ -124,6 +127,7 @@ class ArmorFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
             'grants_stealth_disadvantage': ['exact'],
             'strength_score_required': ['exact','lt','lte','gt','gte'],
             'ac_base': ['exact','lt','lte','gt','gte'],
@@ -141,97 +145,3 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Armor.objects.all().order_by('pk')
     serializer_class = serializers.ArmorSerializer
     filterset_class = ArmorFilterSet
-
-
-
-class FeatFilterSet(FilterSet):
-    class Meta:
-        model = models.Feat
-        fields = {
-            'key': ['in', 'iexact', 'exact' ],
-            'name': ['iexact', 'exact'],
-            'document__key': ['in','iexact','exact'],
-        }
-        
-class FeatViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    list: API endpoint for returning a list of feats.
-    retrieve: API endpoint for returning a particular feat.
-    """
-    queryset = models.Feat.objects.all().order_by('pk')
-    serializer_class = serializers.FeatSerializer
-    filterset_class = FeatFilterSet
-
-    
-class CreatureFilterSet(FilterSet):
-
-    class Meta:
-        model = models.Creature
-        fields = {
-            'key': ['in', 'iexact', 'exact' ],
-            'name': ['iexact', 'exact'],
-            'document__key': ['in','iexact','exact'],
-             'size': ['exact'],
-            'armor_class': ['exact','lt','lte','gt','gte'],
-            'ability_score_strength': ['exact','lt','lte','gt','gte'],
-            'ability_score_dexterity': ['exact','lt','lte','gt','gte'],
-            'ability_score_constitution': ['exact','lt','lte','gt','gte'],
-            'ability_score_intelligence': ['exact','lt','lte','gt','gte'],
-            'ability_score_wisdom': ['exact','lt','lte','gt','gte'],
-            'ability_score_charisma': ['exact','lt','lte','gt','gte'],
-            'saving_throw_charisma': ['isnull'],
-            'saving_throw_strength': ['isnull'],
-            'saving_throw_dexterity': ['isnull'],
-            'saving_throw_constitution': ['isnull'],
-            'saving_throw_intelligence': ['isnull'],
-            'saving_throw_wisdom': ['isnull'],
-            'saving_throw_charisma': ['isnull'],
-            'skill_bonus_acrobatics': ['isnull'],
-            'skill_bonus_animal_handling': ['isnull'],
-            'skill_bonus_arcana': ['isnull'],
-            'skill_bonus_athletics': ['isnull'],
-            'skill_bonus_deception': ['isnull'],
-            'skill_bonus_history': ['isnull'],
-            'skill_bonus_insight': ['isnull'],
-            'skill_bonus_intimidation': ['isnull'],
-            'skill_bonus_investigation': ['isnull'],
-            'skill_bonus_medicine': ['isnull'],
-            'skill_bonus_nature': ['isnull'],
-            'skill_bonus_perception': ['isnull'],
-            'skill_bonus_performance': ['isnull'],
-            'skill_bonus_persuasion': ['isnull'],
-            'skill_bonus_religion': ['isnull'],
-            'skill_bonus_sleight_of_hand': ['isnull'],
-            'skill_bonus_stealth': ['isnull'],
-            'skill_bonus_survival': ['isnull'],
-            'passive_perception': ['exact','lt','lte','gt','gte'],
-        }
-
-class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    list: API endpoint for returning a list of creatures.
-    retrieve: API endpoint for returning a particular creature.
-    """
-    queryset = models.Creature.objects.all().order_by('pk')
-    serializer_class = serializers.CreatureSerializer
-    filterset_class = CreatureFilterSet
-
-
-class RaceFilterSet(FilterSet):
-    class Meta:
-        model = models.Race
-        fields = {
-            'key': ['in', 'iexact', 'exact'],
-            'name': ['iexact', 'exact'],
-            'document__key': ['in', 'iexact', 'exact'],
-        }
-
-
-class RaceViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    list: API endpoint for returning a list of races.
-    retrieve: API endpoint for returning a particular race.
-    """
-    queryset = models.Race.objects.all().order_by('pk')
-    serializer_class = serializers.RaceSerializer
-    filterset_class = RaceFilterSet

@@ -26,10 +26,15 @@ class WeaponSerializer(GameContentSerializer):
     range_melee = serializers.ReadOnlyField()
     is_reach = serializers.ReadOnlyField()
     properties = serializers.ReadOnlyField()
+    distance_unit = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Weapon
         fields = '__all__'
+
+    def get_distance_unit(self, Weapon):
+        return Weapon.get_distance_unit
+
 
 class ItemRaritySerializer(GameContentSerializer):
     key=serializers.ReadOnlyField()

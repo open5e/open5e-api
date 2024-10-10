@@ -7,8 +7,6 @@ from api_v2 import models
 from api_v2 import serializers
 
 
-
-
 class BackgroundFilterSet(FilterSet):
     class Meta:
         model = models.Background
@@ -16,6 +14,7 @@ class BackgroundFilterSet(FilterSet):
             'key': ['in', 'iexact', 'exact'],
             'name': ['iexact', 'exact'],
             'document__key': ['in', 'iexact', 'exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
         }
 
 

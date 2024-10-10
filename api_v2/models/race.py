@@ -39,6 +39,13 @@ class Race(HasName, HasDescription, FromDocument):
         """Returns the set of traits that are related to this race."""
         return self.racetrait_set
 
+    def search_result_extra_fields(self):
+        return {
+            "subrace_of": { 
+                "name": self.subrace_of.name,
+                "key": self.subrace_of.key
+            } if self.subrace_of else None
+        }
     class Meta:
         """To assist with the UI layer."""
 

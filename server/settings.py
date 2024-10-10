@@ -23,18 +23,21 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env file!"
+assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env or local OS!"
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
-# A flag that is True when not production to disallow /v2 api endpoint.
-V2_ENABLED = True
+# Flags to include v1 data and index.
+INCLUDE_V1_DATA = True
+BUILD_V1_INDEX = False
 
-# A flag to be set related to v2 search being used for v1 items.
-V2_SEARCH_ENABLED = True
+# Flags to include v2 data
+INCLUDE_V2_DATA = True
 
+# V2 index always includes v1 data (at this time).
+BUILD_V2_INDEX = True
 
 # Added as part of the migration from django 2 to django 3.
 # Not likely to apply in the short term. https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -61,25 +64,19 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    
-    # search
-    "haystack",
-    
-    # apps
     'api',
     'api_v2',
 
     # downloaded modules
     "rest_framework",
     "django_filters",
-    "markdown2",
 ]
 
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -89,15 +86,6 @@ MIDDLEWARE = [
     "server.middleware.NewRelicMiddleware",
     "server.middleware.ResponseWarningHeaderMiddleware"
 ]
-
-HAYSTACK_CONNECTIONS = {
-    "default": {
-        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
-        "PATH": os.path.join(os.path.dirname(__file__), "whoosh_index"),
-    },
-}
-
-HAYSTACK_CUSTOM_HIGHLIGHTER = "api.utils.NewHighlighter"
 
 ROOT_URLCONF = "server.urls"
 
