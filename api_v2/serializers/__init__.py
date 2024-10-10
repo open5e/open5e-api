@@ -47,3 +47,5 @@ from .environment import EnvironmentSerializer
 
 from .ability import AbilitySerializer
 from .ability import SkillSerializer
+
+from .rule import RuleSerializer, RuleSetSerializer
