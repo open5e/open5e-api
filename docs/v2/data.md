@@ -16,9 +16,9 @@ The actual data.
 > /data/v2/{publisher-key}/{document-key}/{model-name}.json.
 
 ## Keys
-Documents when onboarded are given a short key. To allow for data to be presented in the same views, even with conflicting data names, we by convention choose the keys of an individual data item to be <slugified-name>-<document-pk>, which should be unique in all cases.
+Documents when onboarded are given a short key. To allow for data to be presented in the same views, even with conflicting data names, we by convention choose the keys of an individual data item to be <document-key>_<slugified-name>, or for child objects, such as CreatureActions, <document-key>_<slugified-parent-name>_<slugified-name> which should be unique per object all cases. The only violation of this rule is on legendary actions, which are also CreatureActions, so Legendary Bite can be distinct from Bite.
 
 **Examples:**
-> magic-missile-srd - The original Magic Missile, from Wizard's of the Coast's Systems Reference Document (srd)
+> srd_magic-missile - The original Magic Missile, from Wizard's of the Coast's Systems Reference Document (srd)
 >
-> acolyte-a5e-ag - The Acolyte Background, from Advanced 5e's Adventurer's Guide (a5e-ag).
+> a5e-ag_acolyte - The Acolyte Background, from Advanced 5e's Adventurer's Guide (a5e-ag).
