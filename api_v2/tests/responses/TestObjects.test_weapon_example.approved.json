@@ -9,7 +9,9 @@
     "is_lance": false,
     "is_light": true,
     "is_martial": true,
+    "is_melee": true,
     "is_net": false,
+    "is_reach": false,
     "is_simple": false,
     "is_thrown": false,
     "is_two_handed": false,
@@ -17,7 +19,13 @@
     "key": "srd_shortsword",
     "long_range": 0.0,
     "name": "Shortsword",
+    "properties": [
+        "finesse",
+        "light"
+    ],
     "range": 0.0,
+    "range_melee": 5.0,
+    "ranged_attack_possible": false,
     "reach": 5.0,
     "requires_ammunition": false,
     "requires_loading": false,
