@@ -46,6 +46,8 @@ class ItemRaritySerializer(GameContentSerializer):
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     is_magic_item = serializers.ReadOnlyField()
+    weapon = WeaponSerializer(read_only=True, context={'request':{}})
+    armor = ArmorSerializer(read_only=True, context={'request':{}})
 
     class Meta:
         model = models.Item
