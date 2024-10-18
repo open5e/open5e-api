@@ -11,27 +11,38 @@ from api_v2.models import DamageType
 
 def main():
     for item in Item.objects.all():
-        if len(item.damage_immunities.all())>0:
-            item.damage_immunities.add(DamageType.objects.get(pk='poison'))
-            item.damage_immunities.add(DamageType.objects.get(pk='psychic'))
         ismundane=True
-        if item.rarity is None:
-            if item.weapon is not None:
-                if len(item.desc)>40:
-                    ismundane=False
+        if item.rarity is not None:
+            ismundane=False
         if ismundane == False:
-            #print("Key:{}".format(item.key))
-            m_item = get_mundane_version(item)
-            item.weight = m_item.weight
-            #print("Weight:{}".format(m_item.weight))
-            new_rarity = predict_rarity(item)
-            item.rarity = new_rarity
+            if item.armor is not None:
+                if item.weight == 0:
+                    m_item = get_mundane_version(item)
+                    print("Item:{}".format(item.key))
+                    print("Mundane:{}".format(m_item.key))
+                    item.weight = m_item.weight
+                    print("Weight:{}".format(m_item.weight))
+            #new_rarity = predict_rarity(item)
+            #item.rarity = new_rarity
             #print("Rarity:{}".format(new_rarity))
 
         item.save()
 
 def get_mundane_version(magic_item):
-    mundane_item = Item.objects.get(key=magic_item.weapon.key)
+    print("item:{} armor:{}".format(magic_item.key, magic_item.armor.key))
+    if magic_item.armor.key == "srd_hide":
+        return Item.objects.get(key='srd_hide-armor')
+    if magic_item.armor.key == "srd_plate":
+        return Item.objects.get(key='srd_plate-armor')
+    if magic_item.armor.key == "srd_splint":
+        return Item.objects.get(key='srd_splint-armor')
+    if magic_item.armor.key == "srd_leather":
+        return Item.objects.get(key='srd_leather-armor')
+    if magic_item.armor.key == "srd_padded":
+        return Item.objects.get(key='srd_padded-armor')
+    if magic_item.armor.key == "srd_studded-leather":
+        return Item.objects.get(key='srd_studded-leather-armor')
+    mundane_item = Item.objects.get(key=str(magic_item.armor.key))
 
     return mundane_item
 
