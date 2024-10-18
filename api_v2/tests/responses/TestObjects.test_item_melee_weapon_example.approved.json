@@ -3,7 +3,10 @@
     "armor_class": 0,
     "category": "http://localhost:8000/v2/itemcategories/weapon/",
     "cost": "10.00",
-    "damage_immunities": [],
+    "damage_immunities": [
+        "http://localhost:8000/v2/damagetypes/poison/",
+        "http://localhost:8000/v2/damagetypes/psychic/"
+    ],
     "damage_resistances": [],
     "damage_vulnerabilities": [],
     "desc": "A short sword.",
