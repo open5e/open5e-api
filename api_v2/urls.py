@@ -1,4 +1,5 @@
-
+from django.conf.urls import include
+from django.urls import path
 from rest_framework import routers
 
 from api_v2 import views
@@ -35,3 +36,9 @@ router.register(r'rulesets', views.RuleSetViewSet)
 
 search_router = routers.DefaultRouter()
 search_router.register('',views.SearchResultViewSet, basename='search')
+
+urlpatterns = [
+    path('v2/', include(router.urls)),
+    path('v2/search/', include(search_router.urls)),
+    path('v2/enums/', views.get_enums, name="enums")
+]

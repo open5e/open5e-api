@@ -15,25 +15,16 @@ Including another URLconf
 """
 
 from django.conf.urls import include
-
-from django.contrib import admin
 from django.urls import path
+from django.contrib import admin
 from django.conf import settings
 
 from api import urls as v1_urls
-from api.views import get_version
 from api_v2 import urls as v2_urls
-from api_v2.views import get_enums
 
-urlpatterns = [
-    path('', include(v1_urls.router.urls)),
-    path('version/', get_version, name="version"),
-    path('v1/', include(v1_urls.router.urls)),
-   
-    path('v2/', include(v2_urls.router.urls)),
-    path('v2/search/', include(v2_urls.search_router.urls)),
-    path('v2/enums/', get_enums, name="enums")
-]
+urlpatterns = []
+urlpatterns+=v1_urls.urlpatterns
+urlpatterns+=v2_urls.urlpatterns
 
 if settings.DEBUG is True:
     urlpatterns.append(path('admin/', admin.site.urls))
