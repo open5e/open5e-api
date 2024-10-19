@@ -1,4 +1,6 @@
 from rest_framework import routers
+from django.conf.urls import include
+from django.urls import path
 
 from api import views
 
@@ -18,3 +20,9 @@ router.register(r'classes',views.CharClassViewSet)
 router.register(r'magicitems',views.MagicItemViewSet)
 router.register(r'weapons',views.WeaponViewSet)
 router.register(r'armor',views.ArmorViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)), #Consider removing this after a while.
+    path('version/', views.get_version, name="version"),
+    path('v1/', include(router.urls))
+    ]
