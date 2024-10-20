@@ -12,6 +12,7 @@ from .size import SizeSerializer
 class ArmorSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     ac_display = serializers.ReadOnlyField()
+    category = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Armor
