@@ -38,3 +38,23 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.SpellSerializer
     filterset_class = SpellFilterSet
 
+    def get_queryset(self):
+        queryset = models.Spell.objects.all().order_by('pk')
+        depth = self.get_serializer().Meta.depth
+        queryset = SpellViewSet.setup_eager_loading(queryset, depth)
+        return queryset
+
+    @staticmethod
+    def setup_eager_loading(queryset, depth):
+        selects = ['document', 'school']
+        prefetches = ['classes', 'spellcastingoption_set']
+
+        if depth >= 1:
+            prefetches = prefetches + ['document__licenses']
+        
+        if depth >= 2:
+            prefetches = prefetches + ['document__gamesystem', 'document__publisher']
+
+        queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
+        return queryset
+
