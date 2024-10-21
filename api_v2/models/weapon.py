@@ -6,7 +6,8 @@ from django.core.validators import MinValueValidator
 from .abstracts import HasName
 from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
-
+from drf_spectacular.utils import extend_schema_field
+from drf_spectacular.types import OpenApiTypes
 
 class Weapon(HasName, FromDocument):
     """
@@ -45,6 +46,8 @@ A value of 0 means that the weapon does not have the versatile property.""")
     distance_unit = distance_unit_field()
     
     @property
+    # or none
+    @extend_schema_field(OpenApiTypes.STR)
     def get_distance_unit(self):
         if self.distance_unit is None:
             return self.document.distance_unit
@@ -107,33 +110,41 @@ A value of 0 means that the weapon does not have the versatile property.""")
         help_text='If the weapon is improvised.')
     
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_versatile(self):
         return self.versatile_dice != str(0)
 
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_martial(self):
         return not self.is_simple
 
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_melee(self):
         # Ammunition weapons can only be used as improvised melee weapons.
         return not self.requires_ammunition
 
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def ranged_attack_possible(self):
         # Only ammunition or throw weapons can make ranged attacks.
         return self.requires_ammunition or self.is_thrown
 
     @property
+    # type is any
+    @extend_schema_field(OpenApiTypes.BOOL)
     def range_melee(self):
         return self.reach
     
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_reach(self):
         # A weapon with a longer reach than the default has the reach property.
         return self.reach > 5 
 
     @property
+    # todo: array of enums ["special", "finesse", "ammunition", "light", "heavy", "thrown", "loading", "two-handed", "versatile", "reach"]
     def properties(self):
         properties = []
         

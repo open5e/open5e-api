@@ -9,6 +9,8 @@ from .abstracts import HasName, HasDescription
 from .object import Object
 from .damagetype import DamageType
 from .document import FromDocument
+from drf_spectacular.utils import extend_schema_field
+from drf_spectacular.types import OpenApiTypes
 
 
 class ItemRarity(HasName, FromDocument):
@@ -77,6 +79,7 @@ class Item(Object, HasDescription, FromDocument):
         related_name="item_damage_resistances")
 
     @property 
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_magic_item(self):
         return self.rarity is not None
 

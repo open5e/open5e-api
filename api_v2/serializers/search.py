@@ -4,6 +4,8 @@ from rest_framework import serializers
 
 from api_v2 import models
 from api import models as v1
+from drf_spectacular.utils import extend_schema_field, inline_serializer
+from drf_spectacular.types import OpenApiTypes
 
 class SearchResultSerializer(serializers.ModelSerializer):
     """This method builds the search result object structure.
@@ -26,6 +28,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
             'text',
             'highlighted']
 
+    # todo: we want to type this as oneof all types... which might not be easy.
     def get_object(self, obj):
         """This returns a given object based on the lookup from the search result key."""
         result_detail = None
@@ -57,6 +60,14 @@ class SearchResultSerializer(serializers.ModelSerializer):
         else:
             return None
 
+    @extend_schema_field(inline_serializer(
+        name="search_document",
+        fields={
+            # todo: slug is typed as any
+            "key": serializers.StringRelatedField(),
+            "name": serializers.StringRelatedField()
+        }
+    ))
     def get_document(self, obj):
         """All search results have documents related to them, this returns the related document."""
         if obj.schema_version == 'v1':
@@ -73,6 +84,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
                 'name': doc.name
                 }
 
+    @extend_schema_field(OpenApiTypes.STR)
     def get_route(self, obj):
         """Route is a way to build the link to the object."""
 

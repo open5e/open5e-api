@@ -218,4 +218,7 @@ SPECTACULAR_SETTINGS = {
     'TITLE': 'Open5e',
     'DESCRIPTION': 'The Open5e API includes all monsters and spells from the SRD and other',
     'SERVERS': [{'url': 'https://api.open5e.com', 'description': 'Production server'}],
+	'PREPROCESSING_HOOKS': [
+        'server.oas.custom_preprocessing_hook'
+    ]
 }

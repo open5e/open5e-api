@@ -10,6 +10,9 @@ from .enums import ABILITY_SCORE_MAXIMUM
 from .enums import SAVING_THROW_MAXIMUM, SAVING_THROW_MINIMUM
 from .enums import SKILL_BONUS_MINIMUM, SKILL_BONUS_MAXIMUM
 from .enums import PASSIVE_SCORE_MAXIMUM
+from drf_spectacular.utils import extend_schema_field, inline_serializer
+from drf_spectacular.types import OpenApiTypes
+from rest_framework import serializers
 
 # FIELDS USED ACROSS MULTIPLE MODELS
 
@@ -140,6 +143,7 @@ class HasPrerequisite(models.Model):
         help_text='Prerequisite for the game content item.')
 
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def has_prerequisite(self):
         return self.prerequisite not in ("", None)
 
@@ -202,6 +206,17 @@ class HasAbilities(models.Model):
     ability_score_charisma = ability_score_field(
         'Integer representing the charisma ability.')
 
+    @extend_schema_field(inline_serializer(
+        name="ability_scores",
+        fields={
+            "strength": serializers.IntegerField(),
+            "dexterity": serializers.IntegerField(),
+            "constitution": serializers.IntegerField(),
+            "intelligence": serializers.IntegerField(),
+            "wisdom": serializers.IntegerField(),
+            "charisma": serializers.IntegerField(),
+        })
+    )
     def get_ability_scores(self):
         return {
             'strength': self.ability_score_strength,
@@ -239,6 +254,18 @@ class HasAbilities(models.Model):
     def modifier_charisma(self):
         return ability_modifier(self.ability_score_charisma)
 
+    @extend_schema_field(inline_serializer(
+        name="ability_modifiers",
+        fields={
+            # todo: technically they're all typed as any, but they're `floor`'d, so they should come out as integers
+            "strength": serializers.IntegerField(),
+            "dexterity": serializers.IntegerField(),
+            "constitution": serializers.IntegerField(),
+            "intelligence": serializers.IntegerField(),
+            "wisdom": serializers.IntegerField(),
+            "charisma": serializers.IntegerField(),
+        })
+    )
     def get_modifiers(self):
         return {
             'strength': self.modifier_strength,
@@ -272,6 +299,19 @@ class HasAbilities(models.Model):
     saving_throw_charisma = saving_throw_field(
         'Signed integer added to charisma saving throws.')
 
+
+    @extend_schema_field(inline_serializer(
+        name="saving_throws",
+        fields={
+            # todo: all of these are "or none"
+            "strength": serializers.IntegerField(),
+            "dexterity": serializers.IntegerField(),
+            "constitution": serializers.IntegerField(),
+            "intelligence": serializers.IntegerField(),
+            "wisdom": serializers.IntegerField(),
+            "charisma": serializers.IntegerField(),
+        })
+    )
     def get_saving_throws(self):
         return {
             'strength': self.saving_throw_strength,
@@ -341,6 +381,30 @@ class HasAbilities(models.Model):
     skill_bonus_survival = skill_bonus_field(
         'Signed integer added to survival skill checks.')
 
+    @extend_schema_field(inline_serializer(
+        name="skill_bonuses",
+        fields={
+            # todo: all of these are typed as also none
+            'acrobatics': serializers.IntegerField(),
+            'animal_handling': serializers.IntegerField(),
+            'arcana': serializers.IntegerField(),
+            'athletics': serializers.IntegerField(),
+            'deception': serializers.IntegerField(),
+            'history': serializers.IntegerField(),
+            'insight': serializers.IntegerField(),
+            'intimidation': serializers.IntegerField(),
+            'investigation': serializers.IntegerField(),
+            'medicine': serializers.IntegerField(),
+            'nature': serializers.IntegerField(),
+            'perception': serializers.IntegerField(),
+            'performance': serializers.IntegerField(),
+            'persuasion': serializers.IntegerField(),
+            'religion': serializers.IntegerField(),
+            'sleight_of_hand': serializers.IntegerField(),
+            'stealth': serializers.IntegerField(),
+            'survival': serializers.IntegerField(),
+        }
+    ))
     def get_skill_bonuses(self):
         return {
             'acrobatics': self.skill_bonus_acrobatics,
