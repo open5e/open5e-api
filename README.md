@@ -114,7 +114,7 @@ You can use our Dockerfile as inspiration, but it likely will not work without s
 
 After completing a build, you can generate an OAS file to be used by another application.
 ```bash
-pipenv run ./manage.py generateschema --generator_class api.schema_generator.Open5eSchemaGenerator > openapi-schema.yml` to build the OAS file.
+pipenv run python manage.py spectacular --color --file openapi-schema.yml` to build the OAS file.
 ```
 
 # Contributing
