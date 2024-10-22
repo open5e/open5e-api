@@ -1,4 +1,4 @@
-from rest_framework.schemas.openapi import SchemaGenerator
+'''from rest_framework.schemas.openapi import SchemaGenerator
 from rest_framework.schemas.openapi import AutoSchema
 
 # Adds additional metadata onto an OAS operation. Attach this to your view and provide the necessary constructor args.
@@ -21,6 +21,7 @@ class CustomSchema(AutoSchema):
         oldOperation = super().get_operation(path, method)
 
         # I can't find a version of DRF that support summaries
+        if path.startswith('/v1/'): return oldOperation
         oldOperation['summary'] = self.extra_info['summary'][path]
 
         # Future versions of DRF support tags
@@ -61,3 +62,4 @@ class Open5eSchemaGenerator(SchemaGenerator):
         # This isn't a real endpoint, so we remove it from the schema
         schema['paths'].pop('/search/{id}/')
         return schema
+'''

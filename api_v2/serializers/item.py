@@ -12,6 +12,7 @@ from .size import SizeSerializer
 class ArmorSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     ac_display = serializers.ReadOnlyField()
+    category = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Armor
@@ -46,6 +47,8 @@ class ItemRaritySerializer(GameContentSerializer):
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     is_magic_item = serializers.ReadOnlyField()
+    weapon = WeaponSerializer(read_only=True, context={'request':{}})
+    armor = ArmorSerializer(read_only=True, context={'request':{}})
 
     class Meta:
         model = models.Item

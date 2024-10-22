@@ -1,9 +1,24 @@
 {
-    "armor": "http://localhost:8000/v2/armor/srd_splint/",
+    "armor": {
+        "ac_add_dexmod": false,
+        "ac_base": 17,
+        "ac_cap_dexmod": null,
+        "ac_display": "17",
+        "category": "heavy",
+        "document": "http://localhost:8000/v2/documents/srd/",
+        "grants_stealth_disadvantage": true,
+        "key": "srd_splint",
+        "name": "Splint",
+        "strength_score_required": 15,
+        "url": "http://localhost:8000/v2/armor/srd_splint/"
+    },
     "armor_class": 0,
     "category": "http://localhost:8000/v2/itemcategories/armor/",
     "cost": "200.00",
-    "damage_immunities": [],
+    "damage_immunities": [
+        "http://localhost:8000/v2/damagetypes/poison/",
+        "http://localhost:8000/v2/damagetypes/psychic/"
+    ],
     "damage_resistances": [],
     "damage_vulnerabilities": [],
     "desc": "This armor is made of narrow vertical strips of metal riveted to a backing of leather that is worn over cloth padding. Flexible chain mail protects the joints.",

@@ -7,7 +7,10 @@
             "armor_class": 0,
             "category": "http://localhost:8000/v2/itemcategories/adventuring-gear/",
             "cost": "10.00",
-            "damage_immunities": [],
+            "damage_immunities": [
+                "http://localhost:8000/v2/damagetypes/poison/",
+                "http://localhost:8000/v2/damagetypes/psychic/"
+            ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
             "desc": "Can be used as an arcane focus.",
@@ -31,7 +34,10 @@
             "armor_class": 0,
             "category": "http://localhost:8000/v2/itemcategories/adventuring-gear/",
             "cost": "20.00",
-            "damage_immunities": [],
+            "damage_immunities": [
+                "http://localhost:8000/v2/damagetypes/poison/",
+                "http://localhost:8000/v2/damagetypes/psychic/"
+            ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
             "desc": "Can be used as an Arcane Focus.",
@@ -55,7 +61,10 @@
             "armor_class": 0,
             "category": "http://localhost:8000/v2/itemcategories/rod/",
             "cost": "10.00",
-            "damage_immunities": [],
+            "damage_immunities": [
+                "http://localhost:8000/v2/damagetypes/poison/",
+                "http://localhost:8000/v2/damagetypes/psychic/"
+            ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
             "desc": "Can be used as an arcane focus.",
@@ -79,7 +88,10 @@
             "armor_class": 0,
             "category": "http://localhost:8000/v2/itemcategories/staff/",
             "cost": "5.00",
-            "damage_immunities": [],
+            "damage_immunities": [
+                "http://localhost:8000/v2/damagetypes/poison/",
+                "http://localhost:8000/v2/damagetypes/psychic/"
+            ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
             "desc": "Can be used as an arcane focus.",
@@ -95,7 +107,39 @@
             "requires_attunement": false,
             "size": "http://localhost:8000/v2/sizes/tiny/",
             "url": "http://localhost:8000/v2/items/srd_staff/",
-            "weapon": "http://localhost:8000/v2/weapons/srd_quarterstaff/",
+            "weapon": {
+                "damage_dice": "1d6",
+                "damage_type": "http://localhost:8000/v2/damagetypes/bludgeoning/",
+                "distance_unit": "feet",
+                "document": "http://localhost:8000/v2/documents/srd/",
+                "is_finesse": false,
+                "is_heavy": false,
+                "is_improvised": false,
+                "is_lance": false,
+                "is_light": false,
+                "is_martial": false,
+                "is_melee": true,
+                "is_net": false,
+                "is_reach": false,
+                "is_simple": true,
+                "is_thrown": false,
+                "is_two_handed": false,
+                "is_versatile": true,
+                "key": "srd_quarterstaff",
+                "long_range": 0.0,
+                "name": "Quarterstaff",
+                "properties": [
+                    "versatile (1d8)"
+                ],
+                "range": 0.0,
+                "range_melee": 5.0,
+                "ranged_attack_possible": false,
+                "reach": 5.0,
+                "requires_ammunition": false,
+                "requires_loading": false,
+                "url": "http://localhost:8000/v2/weapons/srd_quarterstaff/",
+                "versatile_dice": "1d8"
+            },
             "weight": "4.000"
         },
         {
@@ -103,7 +147,10 @@
             "armor_class": 0,
             "category": "http://localhost:8000/v2/itemcategories/wand/",
             "cost": "10.00",
-            "damage_immunities": [],
+            "damage_immunities": [
+                "http://localhost:8000/v2/damagetypes/poison/",
+                "http://localhost:8000/v2/damagetypes/psychic/"
+            ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
             "desc": "Can be used as an arcane focus.",

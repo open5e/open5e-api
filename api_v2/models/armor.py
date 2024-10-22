@@ -40,6 +40,16 @@ class Armor(HasName, FromDocument):
         help_text='Integer representing the dexterity modifier cap.')
 
     @property
+    def category(self):
+        category = 'heavy'
+        if self.ac_add_dexmod:
+            category= 'light'
+        if self.ac_cap_dexmod:
+            category= 'medium'
+        return category
+
+
+    @property
     def ac_display(self):
         """Display text for armor class."""
         ac_string = str(self.ac_base)

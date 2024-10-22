@@ -3,11 +3,12 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.schemas.openapi import AutoSchema
 
 from api import models
 from api import serializers
 from api import filters
-from api.schema_generator import CustomSchema
+
 
 
 class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
@@ -28,13 +29,6 @@ class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
     automatically downloads data from Open5e, you can periodically check
     the manifests to determine whether your data is out of date.
     """
-    schema = CustomSchema(
-        summary={
-            '/manifest/': 'List Manifests',
-            '/manifest/{id}/': 'Retrieve Manifest',
-        },
-        tags=['Manifests'],
-    )
     queryset = models.Manifest.objects.all().order_by("pk")
     serializer_class = serializers.ManifestSerializer
 
@@ -102,18 +96,7 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of documents.
     retrieve: API endpoint for returning a particular document.
     """
-    schema = CustomSchema(
-        summary={
-			'/documents/': 'List Documents',
-			'/documents/{id}/': 'Retrieve Document',
-		},
-        tags=['Documents'],
-        query={
-			'slug': 'A short, human readable string uniquely identifying this document',
-			'title': 'A short descriptive title of this document',
-			'organization': 'The organization that published the document',
-			'license': 'The license under which the document is published',
-		})
+    schema = AutoSchema(operation_id_base='V1Document')
     queryset = models.Document.objects.all().order_by("pk")
     serializer_class = serializers.DocumentSerializer
     search_fields = ['title', 'desc']
@@ -130,13 +113,7 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of spells.
     retrieve: API endpoint for returning a particular spell.
     """
-    schema = CustomSchema(
-        summary={
-            '/spells/': 'List Spells',
-            '/spells/{slug}/': 'Retrieve Spell',
-        },
-        tags=['Spells']
-    )
+    schema = AutoSchema(operation_id_base='V1Spell')
     queryset = models.Spell.objects.all().order_by("pk")
     filterset_class=filters.SpellFilter
     serializer_class = serializers.SpellSerializer
@@ -163,13 +140,7 @@ class SpellListViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of spell lists.
     retrieve: API endpoint for returning a particular spell list.
     """
-    schema = CustomSchema(
-        summary={
-            '/spelllist/': 'List Spell Lists',
-            '/spelllist/{slug}/': 'Retrieve Spell List',
-        },
-        tags=['SpellList']
-    )
+    schema = AutoSchema(operation_id_base='V1SpellList')
     queryset = models.SpellList.objects.all().order_by("pk")
     serializer_class = serializers.SpellListSerializer
     filterset_class = filters.SpellListFilter
@@ -181,13 +152,7 @@ class MonsterViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of monsters.
     retrieve: API endpoint for returning a particular monster.
     """
-    schema = CustomSchema(
-        summary={
-            '/monsters/': 'List Monsters',
-            '/monsters/{slug}/': 'Retrieve Monster',
-        },
-        tags=['Monsters']
-    )
+    schema = AutoSchema(operation_id_base='V1Monster')
     queryset = models.Monster.objects.all().order_by("pk")
     filterset_class = filters.MonsterFilter
     
@@ -199,13 +164,7 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of backgrounds.
     retrieve: API endpoint for returning a particular background.
     """
-    schema = CustomSchema(
-        summary={
-            '/backgrounds/': 'List Backgrounds',
-            '/backgrounds/{slug}/': 'Retrieve Background',
-        },
-        tags=['Backgrounds']
-    )
+    schema = AutoSchema(operation_id_base='V1Background')
     queryset = models.Background.objects.all().order_by("pk")
     serializer_class = serializers.BackgroundSerializer
     ordering_fields = '__all__'
@@ -219,13 +178,7 @@ class PlaneViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of planes.
     retrieve: API endpoint for returning a particular plane.
     """
-    schema = CustomSchema(
-        summary={
-            '/planes/': 'List Planes',
-            '/planes/{slug}/': 'Retrieve Plane',
-        },
-        tags=['Planes']
-    )
+    schema = AutoSchema(operation_id_base='V1Plane')
     queryset = models.Plane.objects.all().order_by("pk")
     serializer_class = serializers.PlaneSerializer
     filterset_class = filters.PlaneFilter
@@ -237,13 +190,7 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of sections.
     retrieve: API endpoint for returning a particular section.
     """
-    schema = CustomSchema(
-        summary={
-            '/sections/': 'List Sections',
-            '/sections/{slug}/': 'Retrieve Section',
-        },
-        tags=['Sections']
-    )
+    schema = AutoSchema(operation_id_base='V1Section')
     queryset = models.Section.objects.all().order_by("pk")
     serializer_class = serializers.SectionSerializer
     ordering_fields = '__all__'
@@ -257,13 +204,7 @@ class FeatViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of feats.
     retrieve: API endpoint for returning a particular feat.
     """
-    schema = CustomSchema(
-        summary={
-            '/feats/': 'List Feats',
-            '/feats/{slug}/': 'Retrieve Feat',
-        },
-        tags=['Feats']
-    )
+    schema = AutoSchema(operation_id_base='V1Feat')
     queryset = models.Feat.objects.all().order_by("pk")
     serializer_class = serializers.FeatSerializer
     filterset_class = filters.FeatFilter
@@ -275,13 +216,7 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of conditions.
     retrieve: API endpoint for returning a particular condition.
     """
-    schema = CustomSchema(
-        summary={
-            '/conditions/': 'List Conditions',
-            '/conditions/{slug}/': 'Retrieve Condition',
-        },
-        tags=['Conditions']
-    )
+    schema = AutoSchema(operation_id_base='V1Condition')
     queryset = models.Condition.objects.all().order_by("pk")
     serializer_class = serializers.ConditionSerializer
     search_fields = ['name', 'desc']
@@ -293,13 +228,7 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of races.
     retrieve: API endpoint for returning a particular race.
     """
-    schema = CustomSchema(
-        summary={
-            '/races/': 'List Races',
-            '/races/{slug}/': 'Retrieve Race',
-        },
-        tags=['Races']
-    )
+    schema = AutoSchema(operation_id_base='V1Race')
     queryset = models.Race.objects.all().order_by("pk")
     serializer_class = serializers.RaceSerializer
     filterset_class = filters.RaceFilter
@@ -312,13 +241,7 @@ class SubraceViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint that allows viewing of Subraces.
     retrieve: API endpoint for returning a particular subrace.
     """
-    schema = CustomSchema(
-        summary={
-            '/subraces/': 'List Subraces',
-            '/subraces/{slug}/': 'Retrieve Subrace',
-        },
-        tags=['Subraces']
-    )
+    schema = AutoSchema(operation_id_base='V1Subrace')
     queryset = models.Subrace.objects.all().order_by("pk")
     serializer_class = serializers.SubraceSerializer
     search_fields = ['name', 'desc']
@@ -333,13 +256,7 @@ class CharClassViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of classes and archetypes.
     retrieve: API endpoint for returning a particular class or archetype.
     """
-    schema = CustomSchema(
-        summary={
-            '/classes/': 'List Classes',
-            '/classes/{slug}/': 'Retrieve Class',
-        },
-        tags=['Classes']
-    )
+    schema = AutoSchema(operation_id_base='V1Class')
     queryset = models.CharClass.objects.all().order_by("pk")
     serializer_class = serializers.CharClassSerializer
     filterset_class = filters.CharClassFilter
@@ -352,13 +269,7 @@ class ArchetypeViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint that allows viewing of Archetypes.
     retrieve: API endpoint for returning a particular archetype.
     """
-    schema = CustomSchema(
-        summary={
-            '/archetypes/': 'List Archetypes',
-            '/archetypes/{slug}/': 'Retrieve Archetype',
-        },
-        tags=['Archetypes']
-    )
+    schema = AutoSchema(operation_id_base='V1Archetype')
     queryset = models.Archetype.objects.all().order_by("pk")
     serializer_class = serializers.ArchetypeSerializer
     search_fields = ['name', 'desc']
@@ -373,13 +284,7 @@ class MagicItemViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of magic items.
     retrieve: API endpoint for returning a particular magic item.
     """
-    schema = CustomSchema(
-        summary={
-            '/magicitems/': 'List Magic Items',
-            '/magicitems/{slug}/': 'Retrieve Magic Item',
-        },
-        tags=['Magic Items']
-    )
+    schema = AutoSchema(operation_id_base='V1MagicItem')
     queryset = models.MagicItem.objects.all().order_by("pk")
     serializer_class = serializers.MagicItemSerializer
     filterset_class = filters.MagicItemFilter
@@ -391,13 +296,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of weapons.
     retrieve: API endpoint for returning a particular weapon.
     """
-    schema = CustomSchema(
-        summary={
-            '/weapons/': 'List Weapons',
-            '/weapons/{slug}/': 'Retrieve Weapon',
-        },
-        tags=['Weapons']
-    )
+    schema = AutoSchema(operation_id_base='V1Weapon')
     queryset = models.Weapon.objects.all().order_by("pk")
     serializer_class = serializers.WeaponSerializer
     filterset_class = filters.WeaponFilter
@@ -409,13 +308,7 @@ class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
     list: API endpoint for returning a list of armor.
     retrieve: API endpoint for returning a particular armor.
     """
-    schema = CustomSchema(
-        summary={
-            '/armor/': 'List Armor',
-            '/armor/{slug}/': 'Retrieve Armor',
-        },
-        tags=['Armor']
-    )
+    schema = AutoSchema(operation_id_base='V1Armor')
     queryset = models.Armor.objects.all().order_by("pk")
     serializer_class = serializers.ArmorSerializer
     filterset_class = filters.ArmorFilter
