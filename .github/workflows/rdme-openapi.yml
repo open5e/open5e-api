@@ -17,6 +17,23 @@ jobs:
       - name: Check out repo 📚
         uses: actions/checkout@v3
 
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: install python packages
+        run: |
+          python -m p install --upgrade pip pipenv
+
+      - name: install dependencies
+        run: |
+          pipenv install
+
+      - name: build oas file
+        run: |
+          pipenv run python manage.py spectacular --file openapi-schema.yml
+
       - name: Run `openapi` command for v1🚀
         uses: readmeio/rdme@v8
         with:
