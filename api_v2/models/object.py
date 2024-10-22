@@ -7,7 +7,7 @@ from .abstracts import HasName
 from .size import Size
 from .damagetype import DamageType
 from .enums import  OBJECT_ARMOR_CLASS_MAXIMUM, OBJECT_HIT_POINT_MAXIMUM
-
+import decimal
 
 class Object(HasName):
     """
@@ -26,7 +26,7 @@ class Object(HasName):
         null=False,  # Allow an unspecified weight.
         max_digits=10,
         decimal_places=3,
-        validators=[MinValueValidator(0)],
+        validators=[MinValueValidator(decimal.Decimal(0.0))],
         help_text='Number representing the weight of the object.')
 
     armor_class = models.IntegerField(

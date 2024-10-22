@@ -23,7 +23,6 @@ class SpellCastingOptionSerializer(serializers.ModelSerializer):
 
 class SpellSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    slot_expended=serializers.ReadOnlyField()
     casting_options = SpellCastingOptionSerializer(many=True)
     school = SpellSchoolSerializer()
 

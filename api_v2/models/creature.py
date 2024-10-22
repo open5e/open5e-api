@@ -15,7 +15,7 @@ from .damagetype import DamageType
 from .document import FromDocument
 from .speed import HasSpeed
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES, ACTION_TYPES
-
+import decimal
 
 
 class CreatureType(HasName, HasDescription, FromDocument):
@@ -69,7 +69,7 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
         null=False,
         max_digits=10,
         decimal_places=3,
-        validators=[MinValueValidator(0),MaxValueValidator(30)],
+        validators=[MinValueValidator(decimal.Decimal(0.0)),MaxValueValidator(decimal.Decimal(30.0))],
         help_text="Challenge Rating field as a decimal number."
     )
 

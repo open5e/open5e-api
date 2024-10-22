@@ -13,6 +13,7 @@ from .enums import PASSIVE_SCORE_MAXIMUM
 from drf_spectacular.utils import extend_schema_field, inline_serializer
 from drf_spectacular.types import OpenApiTypes
 from rest_framework import serializers
+import decimal
 
 # FIELDS USED ACROSS MULTIPLE MODELS
 
@@ -52,7 +53,7 @@ def distance_field(null=True):
     return models.FloatField(
         null=null,
         blank=True,
-        validators=[MinValueValidator(0)],
+        validators=[MinValueValidator(decimal.Decimal(0.0))],
         help_text="Used to measure distance."
     )
 
