@@ -8,6 +8,7 @@ from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
 from drf_spectacular.utils import extend_schema_field
 from drf_spectacular.types import OpenApiTypes
+from rest_framework import serializers
 
 class Weapon(HasName, FromDocument):
     """
@@ -144,7 +145,7 @@ A value of 0 means that the weapon does not have the versatile property.""")
         return self.reach > 5 
 
     @property
-    # todo: array of enums ["special", "finesse", "ammunition", "light", "heavy", "thrown", "loading", "two-handed", "versatile", "reach"]
+    @extend_schema_field(serializers.ChoiceField(choices=['special', 'finesse', 'ammunition', 'light', 'heavy', 'thrown', 'loading', 'two-handed', 'versatile', 'reach'])) 
     def properties(self):
         properties = []
         

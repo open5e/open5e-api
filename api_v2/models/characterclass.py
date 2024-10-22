@@ -9,6 +9,7 @@ from .document import FromDocument
 from .enums import DIE_TYPES
 from drf_spectacular.utils import extend_schema_field, inline_serializer
 from drf_spectacular.types import OpenApiTypes
+from rest_framework import serializers
 
 class ClassFeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
@@ -91,7 +92,18 @@ class CharacterClass(HasName, FromDocument):
         """Returns the set of features that are related to this class."""
         return self.classfeature_set
 
-    # todo: dict, key is the level, value is an object with `features` (an array of currently typed as any), `proficiency-bonus` (currently typed as any), and `level` (currently typed as any)`
+    @extend_schema_field(serializers.DictField(
+        child=inline_serializer(
+            name="levels",
+            fields={
+                "features": serializers.ListSerializer(
+                    child=serializers.CharField()
+                ),
+                "proficiency-bonus": serializers.IntegerField(),
+                "level": serializers.IntegerField
+            }
+        )
+    ))
     def levels(self):
         """Returns an array of level information for the given class."""
         by_level = {}
