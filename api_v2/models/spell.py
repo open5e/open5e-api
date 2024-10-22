@@ -152,7 +152,8 @@ class Spell(HasName, HasDescription, FromDocument):
             "school": self.school.name,
             "level": self.level,
         }
-        
+
+
 class SpellCastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
 
@@ -179,3 +180,11 @@ class SpellCastingOption(models.Model):
     range = models.TextField(
         null=True, # Null values mean this value is unchanged from the default casting option.
         help_text='Description of the range of the spell.')
+
+    concentration = models.BooleanField(
+        null=True, # Null values mean this value is unchanged from the default casting option.
+        blank=True,
+        help_text='Whether the effect requires concentration to be maintained.')
+    
+    shape_size = distance_field()
+    # Null values mean this value is unchanged from the default casting option.
