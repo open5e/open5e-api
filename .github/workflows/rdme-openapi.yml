@@ -9,6 +9,7 @@ on:
       # Check out GitHub's docs for more info on configuring this:
       # https://docs.github.com/actions/using-workflows/events-that-trigger-workflows
       - main
+      - oas-v2
 
 jobs:
   rdme-openapi:
@@ -37,4 +38,4 @@ jobs:
       - name: Run `openapi` command for v1🚀
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi openapi-schema.yml --key=${{ secrets.README_API_KEY }} --id=641f6d9e0ffbcd06c0e7343c
+          rdme: openapi openapi-schema.yml --key=${{ secrets.README_API_KEY }} --id=6715b7fb7960ee004eb4a8cf
