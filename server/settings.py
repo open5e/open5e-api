@@ -220,5 +220,8 @@ SPECTACULAR_SETTINGS = {
     'SERVERS': [{'url': 'https://api.open5e.com', 'description': 'Production server'}],
 	'PREPROCESSING_HOOKS': [
         'server.oas.custom_preprocessing_hook'
-    ]
+    ],
+    'POSTPROCESSING_HOOKS': [
+        'server.oas.custom_postprocessing_hook'
+    ],
 }

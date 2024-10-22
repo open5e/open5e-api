@@ -4,8 +4,9 @@ from rest_framework import serializers
 
 from api_v2 import models
 from api import models as v1
-from drf_spectacular.utils import extend_schema_field, inline_serializer
+from drf_spectacular.utils import extend_schema_field, inline_serializer, PolymorphicProxySerializer
 from drf_spectacular.types import OpenApiTypes
+from api_v2 import serializers as v2_serializers
 
 class SearchResultSerializer(serializers.ModelSerializer):
     """This method builds the search result object structure.
@@ -28,7 +29,8 @@ class SearchResultSerializer(serializers.ModelSerializer):
             'text',
             'highlighted']
 
-    # todo: we want to type this as oneof all types... which might not be easy.
+    # The following override is replaced in a postproccessing hook defined in oas.py. I couldn't figure out how to get a oneof in here
+    @extend_schema_field(OpenApiTypes.STR)
     def get_object(self, obj):
         """This returns a given object based on the lookup from the search result key."""
         result_detail = None
