@@ -9,7 +9,8 @@ on:
       # Check out GitHub's docs for more info on configuring this:
       # https://docs.github.com/actions/using-workflows/events-that-trigger-workflows
       - main
-      - oas-v2
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   rdme-openapi:
