@@ -6,7 +6,8 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 from .size import SizeSerializer
-
+from drf_spectacular.utils import extend_schema_field
+from drf_spectacular.types import OpenApiTypes
 
 
 class ArmorSerializer(GameContentSerializer):
@@ -33,6 +34,8 @@ class WeaponSerializer(GameContentSerializer):
         model = models.Weapon
         fields = '__all__'
 
+    # todo: type is any
+    @extend_schema_field(OpenApiTypes.STR)
     def get_distance_unit(self, Weapon):
         return Weapon.get_distance_unit
 

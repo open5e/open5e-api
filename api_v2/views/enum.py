@@ -3,7 +3,20 @@ from rest_framework.response import Response
 
 from api_v2.models import enums
 
+from drf_spectacular.types import OpenApiTypes
+from rest_framework import serializers
+from drf_spectacular.utils import extend_schema_field, extend_schema_view, extend_schema, inline_serializer
 
+@extend_schema(
+    description="API endpoint for enums.",
+    responses={
+        200: serializers.ListSerializer(
+            child=serializers.DictField(
+                child=serializers.CharField()
+            )
+        )
+    }
+)
 @api_view()
 def get_enums(_):
     """

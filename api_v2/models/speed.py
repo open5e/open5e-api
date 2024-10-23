@@ -2,6 +2,9 @@
 
 from django.db import models
 from .abstracts import distance_field, distance_unit_field
+from drf_spectacular.utils import extend_schema_field, inline_serializer
+from drf_spectacular.types import OpenApiTypes
+from rest_framework import serializers
 
 class HasSpeed(models.Model):
     '''This object represents a creature's speed.'''
@@ -46,6 +49,23 @@ class HasSpeed(models.Model):
             return self.document.distance_unit
         return self.unit
 
+    @extend_schema_field(inline_serializer(
+        name="speed",
+        fields={
+            # todo: model typed as any
+            "walk": serializers.StringRelatedField(),
+            # todo: model typed as any
+            "fly": serializers.StringRelatedField(),
+            # todo: model typed as any
+            "swim": serializers.StringRelatedField(),
+            # todo: model typed as any
+            "climb": serializers.StringRelatedField(),
+            # todo: model typed as any
+            "burrow": serializers.StringRelatedField(),
+            # todo: and none
+            "hover": serializers.BooleanField(),
+        }
+    ))
     def get_speed(self):
         speed={
             "walk":self.walk,
@@ -60,6 +80,24 @@ class HasSpeed(models.Model):
         
         return speed
 
+    @extend_schema_field(inline_serializer(
+        name="speed_all",
+        fields={
+            # todo: model typed as any
+            "unit": serializers.StringRelatedField(),
+            # todo: model typed as any
+            "walk": serializers.StringRelatedField(),
+            # todo: model typed as any
+            "crawl": serializers.StringRelatedField(),
+            "hover": serializers.BooleanField(),
+            "fly": serializers.FloatField(),
+            "burrow": serializers.FloatField(),
+            # todo: model typed as any
+            "climb": serializers.StringRelatedField(),
+            # todo: model typed as any
+            "swim": serializers.StringRelatedField(),  
+        }
+    ))
     def get_speed_all(self):
         return {
             "unit": self.get_unit(),

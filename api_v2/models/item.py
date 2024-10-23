@@ -9,7 +9,9 @@ from .abstracts import HasName, HasDescription
 from .object import Object
 from .damagetype import DamageType
 from .document import FromDocument
-
+from drf_spectacular.utils import extend_schema_field
+from drf_spectacular.types import OpenApiTypes
+import decimal
 
 class ItemRarity(HasName, FromDocument):
     """A class describing the rarity of items."""
@@ -34,7 +36,7 @@ class Item(Object, HasDescription, FromDocument):
         default=None,
         max_digits=10,
         decimal_places=2,  # Only track down to 2 decimal places.
-        validators=[MinValueValidator(0)],
+        validators=[MinValueValidator(decimal.Decimal(0.0))],
         help_text='Number representing the cost of the object.')
 
     weapon = models.ForeignKey(
@@ -77,6 +79,7 @@ class Item(Object, HasDescription, FromDocument):
         related_name="item_damage_resistances")
 
     @property 
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_magic_item(self):
         return self.rarity is not None
 
