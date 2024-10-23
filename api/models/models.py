@@ -2,7 +2,10 @@ import json
 import uuid
 
 from django.db import models
+from django.urls import reverse
+from django.shortcuts import redirect
 from django.template.defaultfilters import slugify
+#from api_v2 import urls as urls_v2
 
 class Manifest(models.Model):
     """A Manifest contains a hash based on the contents of a file.
@@ -108,18 +111,18 @@ class GameContent(models.Model):
         # url.
 
         url_lookup = { #Looks up v1 object type to relevant v2 url.
-            "Spell":"v2/spells",
-            "Monster":"v2/creatures",
-            "Background":"v2/backgrounds",
-            "Plane":"v2/environments",
-            "Section":"v2/rules",
-            "Feat":"v2/feats",
-            "Condition":"v2/conditions",
-            "Race":"v2/races",
-            "CharClass":"v2/classes",
-            "MagicItem":"v2/items",
-            "Weapon":"v2/items",
-            "Armor":"v2/items"
+            "Spell":"spell",
+            "Monster":"creature",
+            "Background":"background",
+            "Plane":"environments",
+            "Section":"rule",
+            "Feat":"feat",
+            "Condition":"condition",
+            "Race":"race",
+            "CharClass":"class",
+            "MagicItem":"item",
+            "Weapon":"item",
+            "Armor":"item"
         }
 
         exclude_doc_key = ['Condition']
@@ -139,15 +142,15 @@ class GameContent(models.Model):
             "Armor":"a5e-ag"
         }
 
-        resource = url_lookup[self.__class__.__name__]
+        resource = url_lookup[self.__class__.__name__]+"-detail"
         v2_document = self.document.v2_related_key
         if v2_document=="a5e":
             v2_document = a5e_doc_lookup[self.__class__.__name__]
         converted_name=slugify(self.name)
 
         if self.__class__.__name__ in exclude_doc_key:
-            return f"{resource}/{converted_name}"
-        return f"{resource}/{v2_document}_{converted_name}"
+            return reverse(resource,kwargs={'pk':f"{converted_name}"})
+        return redirect(reverse(resource,kwargs={'pk':f"{v2_document}_{converted_name}"})).url
 
 
     class Meta:
