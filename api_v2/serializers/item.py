@@ -69,7 +69,6 @@ class ItemSetSerializer(GameContentSerializer):
 
 class ItemCategorySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    item_set = ItemSerializer(many=True, read_only=True, context={'request':{}})
 
     class Meta:
         model = models.ItemCategory
