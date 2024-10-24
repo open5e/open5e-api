@@ -42,6 +42,7 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
 
     subcategory = models.CharField(
         max_length=100,
+        blank=True,
         null=True,
         help_text='What subcategory this creature belongs to.'
     )

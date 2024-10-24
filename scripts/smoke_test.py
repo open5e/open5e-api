@@ -34,7 +34,7 @@ def main():
         results.append(check_for_OK(value))
 
     for result in results:
-        assert(result,"Path was not OK.")
+        assert result,"Path was not OK."
 
 def check_for_OK(url):
     r = requests.get(url)
