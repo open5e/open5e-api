@@ -102,7 +102,8 @@ class CreatureSerializer(GameContentSerializer):
             'tremorsense_range',
             'truesight_range',
             'actions',
-            'creaturesets'
+            'creaturesets',
+            'environments'
         ]
 
     @extend_schema_field(inline_serializer(
