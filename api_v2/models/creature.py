@@ -13,6 +13,7 @@ from .object import Object
 from .condition import Condition
 from .damagetype import DamageType
 from .document import FromDocument
+from .environment import Environment
 from .speed import HasSpeed
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES, ACTION_TYPES
 import decimal
@@ -80,6 +81,9 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
         validators=[MinValueValidator(0)],
         help_text="Optional override for calculated XP based on CR."
     )
+
+    environments = models.ManyToManyField(Environment,
+        related_name="creature_environments")
 
     def as_text(self):
         text = self.name + '\n'
