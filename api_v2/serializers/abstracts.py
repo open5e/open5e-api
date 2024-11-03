@@ -28,10 +28,25 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
 
     @staticmethod
     def split_param(dynamic_param):
+        """
+        Splits a dynamic parameter into a key value pair. The key is used to
+        index into the serializers context to pass nested parameters
+
+        document__fields=name -> ['document', 'fields=name']
+        document__licenses__fields=name -> ['document', 'licenses__fields=name']
+
+        '__'s after the first are preserved so that the dynamic parameter can 
+        be passed recursively down to more deeply-nested serializers
+        """
         crumbs = dynamic_param.split("__")
         return crumbs[0], "__".join(crumbs[1:]) if len(crumbs) > 1 else None
 
     def set_dynamic_params_for_children(self, dynamic_params):
+        """
+        Passes nested dynamic params to child serializer. ie. 
+        "document__fields=name" would pass the query param "fields=name" to the
+        nested Document Serializer via the 'context' prop
+        """
         for param, fields in dynamic_params.items():
             child, child_dynamic_param = self.split_param(param)
             if child in set(self.fields.keys()):
@@ -41,11 +56,14 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
     @staticmethod
     def is_param_dynamic(p):
         """
-        Currently only the 'fields' query param is supported
+        Only the 'fields' query param supported, so we test for that
         """
         return p.endswith("fields")
 
     def get_dynamic_params_for_root(self, request):
+        """
+        Checks query params in request and returns dynamic parameters
+        """
         query_params = request.query_params.items()
         return {k: v for k, v in query_params if self.is_param_dynamic(k)}
 
@@ -59,32 +77,37 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
             return self.parent._context.get("dynamic_params", {})
         return self._context.get("dynamic_params", {})
 
+    def set_depth(self, depth):
+        """
+        Add appropriate 'depth' param to self.Meta based on 'depth' query param
+        """
+        if not depth:
+            self.Meta.depth = 0
+            return
+        try:
+            depth = int(depth)
+            if depth > 0 and depth < 3:
+                # This value going above 1 could cause performance issues.
+                # Limited to 1 and 2 for now.
+                self.Meta.depth = depth
+            # Depth does not reset by default on subsequent requests with malformed urls.
+            else:
+                self.Meta.depth = 0
+        except ValueError:
+            pass  # it was not castable to an int.
+
+
     def __init__(self, *args, **kwargs):
         request = kwargs.get("context", {}).get("request")
         super().__init__(*args, **kwargs)
 
+
         # "request" doesn't exist on the child serializers, or when generating OAS spec
+        # So this if only evaluates as true on the root serializer
+
         is_root = bool(request)
         if is_root:
-            if request.method != "GET":
-                return
-
-            if depth:= request.query_params.get('depth'):
-                try:
-                    depth_value = int(depth)
-                    if depth_value > 0 and depth_value < 3:
-                        # This value going above 1 could cause performance issues.
-                        # Limited to 1 and 2 for now.
-                        self.Meta.depth = depth_value
-                        # Depth does not reset by default on subsequent requests with malformed urls.
-                    else:
-                        self.Meta.depth = 0
-                except ValueError:
-                    pass  # it was not castable to an int.
-            else:
-                self.Meta.depth = 0 #The default.
-
-            # 
+            self.set_depth(request.query_params.get('depth'))
             dynamic_params = self.get_dynamic_params_for_root(request)
             self._context.update({"dynamic_params": dynamic_params})
     
