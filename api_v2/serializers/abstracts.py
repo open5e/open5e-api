@@ -6,25 +6,29 @@ from api_v2 import models
 
 class GameContentSerializer(serializers.HyperlinkedModelSerializer):
 
+    def remove_unwanted_fields(self, fields_to_keep):
+        fields_to_keep = set(fields_to_keep.split(","))
+        all_fields = set(self.fields.keys())
+        for field in all_fields - fields_to_keep:
+            self.fields.pop(field, None)
+    
+
     # Adding dynamic "fields" qs parameter.
     def __init__(self, *args, **kwargs):
-        # Add default fields variable.
 
+        request = kwargs.get("context", {}).get("request")
         # Instantiate the superclass normally
         super(GameContentSerializer, self).__init__(*args, **kwargs)
 
-        # The request doesn't exist when generating an OAS file, so we have to check that first
-        if self.context['request']:
-            fields = self.context['request'].query_params.get('fields')
-            if fields:
-                fields = fields.split(',')
-                # Drop any fields that are not specified in the `fields` argument.
-                allowed = set(fields)
-                existing = set(self.fields.keys())
-                for field_name in existing - allowed:
-                    self.fields.pop(field_name)
+        # request only exists on root, not on nested queries or when generating OAS file
+        is_root = bool(request)
 
-            depth = self.context['request'].query_params.get('depth')
+        if is_root:
+            fields = request.query_params.get('fields')
+            if fields:
+                self.remove_unwanted_fields(fields)
+
+            depth = request.query_params.get('depth')
             if depth:
                 try:
                     depth_value = int(depth)
