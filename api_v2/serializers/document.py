@@ -4,7 +4,7 @@ from .abstracts import GameContentSerializer
 
 from api_v2 import models
 
-class GameSystemSerializer(serializers.HyperlinkedModelSerializer):
+class GameSystemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
 
     class Meta:
@@ -12,7 +12,7 @@ class GameSystemSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
-class LicenseSerializer(serializers.HyperlinkedModelSerializer):
+class LicenseSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
 
     class Meta:
@@ -20,7 +20,7 @@ class LicenseSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
-class PublisherSerializer(serializers.HyperlinkedModelSerializer):
+class PublisherSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
 
     class Meta:
@@ -30,6 +30,9 @@ class PublisherSerializer(serializers.HyperlinkedModelSerializer):
 
 class DocumentSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    licenses = LicenseSerializer(many=True)
+    publisher = PublisherSerializer()
+    gamesystem = GameSystemSerializer()
 
     class Meta:
         model = models.Document

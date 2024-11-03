@@ -5,13 +5,14 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .document import DocumentSerializer
 
-class ClassFeatureItemSerializer(serializers.ModelSerializer):
+class ClassFeatureItemSerializer(GameContentSerializer):
     class Meta:
         model = models.ClassFeatureItem
         fields = ['name','desc','type']
 
-class ClassFeatureSerializer(serializers.ModelSerializer):
+class ClassFeatureSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
 
     class Meta:
@@ -24,6 +25,7 @@ class CharacterClassSerializer(GameContentSerializer):
         many=True, context={'request': {}})
     levels = serializers.ReadOnlyField()
     hit_points = serializers.ReadOnlyField()
+    document = DocumentSerializer()
 
     class Meta:
         model = models.CharacterClass
