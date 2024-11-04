@@ -40,7 +40,10 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         queryset = models.Spell.objects.all().order_by('pk')
-        depth = self.get_serializer().Meta.depth
+
+        # Retrieve depth from query params, defaulting to 0 if not provided
+        depth = int(self.request.query_params.get("depth", 0))
+
         queryset = SpellViewSet.setup_eager_loading(queryset, depth)
         return queryset
 
