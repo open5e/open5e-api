@@ -36,9 +36,15 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
         """
         for param, fields in dynamic_params.items():
             child, child_dynamic_param = self.split_param(param)
-            if child in set(self.fields.keys()):
-                dynamic_params = self.get_or_create_dynamic_params(child)
-                dynamic_params.update({child_dynamic_param: fields})
+            if child in self.fields.keys():
+                # Get dynamic parameters for child serializer and update
+                child_dynamic_params = self.get_or_create_dynamic_params(child)
+                child_dynamic_params.update({child_dynamic_param: fields})
+
+                # Overwrite existing params to remove 'fields' inherited from parent serializer
+                self.fields[child]._context['dynamic_params'] = {
+                    **child_dynamic_params,
+                }
 
     @staticmethod
     def is_param_dynamic(p):
@@ -53,6 +59,41 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
             return self.parent._context.get("dynamic_params", {})
         return self._context.get("dynamic_params", {})
 
+    def handle_depth_serialization(self, instance, representation):
+        """
+        Handles the serialization of fields based on the current depth 
+        compared to the maximum allowed depth. This function modifies 
+        the representation to include only URLs for nested serializers 
+        when the maximum depth is reached.
+        """
+        max_depth = self._context.get("max_depth", 0)
+        current_depth = self._context.get("current_depth", 0)
+
+        # if we reach the maximum depth, nested serializers return their pk
+        if current_depth >= max_depth:
+            for field_name, field in self.fields.items():
+                if isinstance(field, serializers.HyperlinkedModelSerializer):
+                    nested_representation = representation.get(field_name)
+                    if nested_representation and "url" in nested_representation:
+                        representation[field_name] = nested_representation["url"]
+        
+        # otherwise, pass depth to children serializers
+        else:
+            for field_name, field in self.fields.items():
+                if isinstance(field, GameContentSerializer):
+                    nested_instance = getattr(instance, field_name)
+                    nested_serializer = field.__class__(nested_instance, context={
+                        **self._context,
+                        "current_depth": current_depth + 1,
+                        "max_depth": max_depth,
+                    })
+                    # Ensure dynamic params are specific to the child serializer
+                    child_dynamic_params = self.get_or_create_dynamic_params(field_name)
+                    nested_serializer._context['dynamic_params'] = child_dynamic_params
+                    representation[field_name] = nested_serializer.data
+                    
+        return representation
+
     def __init__(self, *args, **kwargs):
         request = kwargs.get("context", {}).get("request")
         super().__init__(*args, **kwargs)
@@ -66,30 +107,16 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
         max_depth = self._context.get("max_depth", 0)
         current_depth = self._context.get("current_depth", 0)
 
-        # Process dynamic parameters for filtering fields
         if dynamic_params := self.get_dynamic_params().copy():
             self.remove_unwanted_fields(dynamic_params)
             self.set_dynamic_params_for_children(dynamic_params)
 
-        # Collect only the fields that need to be included in the representation
         representation = super().to_representation(instance)
 
-        if current_depth >= max_depth:
-            # Remove fields that are HyperlinkedModelSerializers (nested fields)
-            for field_name, field in self.fields.items():
-                if isinstance(field, serializers.HyperlinkedModelSerializer):
-                    # Check if the nested field has a 'url' attribute in the representation
-                    nested_representation = representation.get(field_name)
-                    if nested_representation and "url" in nested_representation:
-                        # Replace the entire nested structure with the URL field
-                        representation[field_name] = nested_representation["url"]
-        else:
-            # Update depth level in children
-            for field_name, field in self.fields.items():
-                if isinstance(field, GameContentSerializer):
-                    field._context["current_depth"] = current_depth + 1
+        representation = self.handle_depth_serialization(instance, representation)
 
         return representation
+
 
     class Meta:
         abstract = True
