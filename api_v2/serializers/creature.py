@@ -61,6 +61,8 @@ class CreatureSerializer(GameContentSerializer):
     challenge_rating_text = serializers.SerializerMethodField()
     experience_points = serializers.SerializerMethodField()
     document = DocumentSerializer()
+    type = CreatureTypeSerializer()
+    size = SizeSerializer()
 
     class Meta:
         '''Serializer meta options.'''
