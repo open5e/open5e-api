@@ -30,7 +30,7 @@ from .alignment import AlignmentFilterSet, AlignmentViewSet
 
 from .condition import ConditionViewSet
 
-from .spell import SpellViewSet
+from .spell import SpellViewSet, SpellSchoolViewSet
 
 from .characterclass import CharacterClassViewSet
 
