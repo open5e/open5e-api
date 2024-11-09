@@ -33,7 +33,7 @@ from .alignment import AlignmentSerializer
 
 from .condition import ConditionSerializer
 
-from .spell import SpellSerializer
+from .spell import SpellSerializer, SpellSchoolSerializer
 
 from .characterclass import CharacterClassSerializer
 from .characterclass import ClassFeatureSerializer

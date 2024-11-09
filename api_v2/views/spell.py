@@ -40,7 +40,10 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         queryset = models.Spell.objects.all().order_by('pk')
-        depth = self.get_serializer().Meta.depth
+
+        # Retrieve depth from query params, defaulting to 0 if not provided
+        depth = int(self.request.query_params.get("depth", 0))
+
         queryset = SpellViewSet.setup_eager_loading(queryset, depth)
         return queryset
 
@@ -58,3 +61,17 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
         queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
         return queryset
 
+class SpellSchoolFilterSet(FilterSet):
+    class Meta:
+        model = models.CreatureSet
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact','contains'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
+        }
+
+class SpellSchoolViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.SpellSchool.objects.all().order_by('pk')
+    serializer_class = serializers.SpellSchoolSerializer
+    filterset_class = SpellSchoolFilterSet
