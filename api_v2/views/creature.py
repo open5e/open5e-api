@@ -65,6 +65,30 @@ class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.CreatureSerializer
     filterset_class = CreatureFilterSet
 
+    def get_queryset(self):       
+        # Retrieve depth from query params, default to 0 if not provided
+        depth = int(self.request.query_params.get('depth', 0))
+        queryset = CreatureViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
+        return queryset
+
+    @staticmethod
+    def setup_eager_loading(queryset, action, depth):
+        # Apply select_related and prefetch_related based on action and depth
+        if action == 'list':
+            selects = ['type', 'size', 'document']
+            
+            # Many-to-many and reverse relationships for prefetching
+            prefetches = [
+                'creatureaction_set', 'condition_immunities', 'damage_immunities',
+                'damage_vulnerabilities', 'damage_resistances', 'environments',
+                'document'
+            ] 
+
+            if depth >= 2:
+                prefetches += ['document__publisher', 'document__licenses', 'document__gamesystem']
+            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
+        return queryset
+
 
 class CreatureTypeFilterSet(FilterSet):
     class Meta:
