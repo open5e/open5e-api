@@ -47,27 +47,162 @@
     "darkvision_range": 60.0,
     "document": "http://localhost:8000/v2/documents/srd/",
     "environments": [
-        "http://localhost:8000/v2/environments/arctic/",
-        "http://localhost:8000/v2/environments/caves/",
-        "http://localhost:8000/v2/environments/desert/",
-        "http://localhost:8000/v2/environments/forest/",
-        "http://localhost:8000/v2/environments/grassland/",
-        "http://localhost:8000/v2/environments/hills/",
-        "http://localhost:8000/v2/environments/mountain/",
-        "http://localhost:8000/v2/environments/ruins/",
-        "http://localhost:8000/v2/environments/sewer/",
-        "http://localhost:8000/v2/environments/srd_feywild/",
-        "http://localhost:8000/v2/environments/swamp/",
-        "http://localhost:8000/v2/environments/underworld/",
-        "http://localhost:8000/v2/environments/urban/"
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "arctic",
+            "name": "Arctic or Tundra",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/arctic/"
+        },
+        {
+            "aquatic": false,
+            "desc": "Caves and caverns",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": true,
+            "key": "caves",
+            "name": "Caves",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/caves/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "desert",
+            "name": "Desert",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/desert/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "forest",
+            "name": "Forest or Jungle",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/forest/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "grassland",
+            "name": "Grassland or Plains",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/grassland/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None Provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "hills",
+            "name": "Hills",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/hills/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "mountain",
+            "name": "Mountain",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/mountain/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": true,
+            "key": "ruins",
+            "name": "Ruins",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/ruins/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": true,
+            "key": "sewer",
+            "name": "Sewer",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/sewer/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "srd_feywild",
+            "name": "Feywild",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/srd_feywild/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "swamp",
+            "name": "Swamp or Marsh",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/swamp/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None Provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "underworld",
+            "name": "Underworld",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/underworld/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "urban",
+            "name": "Urban",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/urban/"
+        }
     ],
     "experience_points": 50,
     "hit_dice": "2d6",
     "hit_points": 7,
     "key": "srd_goblin",
     "languages": [
-        "http://localhost:8000/v2/languages/common/",
-        "http://localhost:8000/v2/languages/goblin/"
+        {
+            "desc": "Typical speakers are Humans.",
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "common",
+            "name": "Common",
+            "script_language": "http://localhost:8000/v2/languages/common/",
+            "url": "http://localhost:8000/v2/languages/common/"
+        },
+        {
+            "desc": "Typical speakers are goblinoids.",
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "goblin",
+            "name": "Goblin",
+            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
+            "url": "http://localhost:8000/v2/languages/goblin/"
+        }
     ],
     "modifiers": {
         "charisma": -1,
