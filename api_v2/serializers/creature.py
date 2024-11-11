@@ -8,6 +8,8 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 from .document import DocumentSerializer
+from .language import LanguageSerializer
+from .environment import EnvironmentSerializer
 from .size import SizeSerializer
 from drf_spectacular.utils import extend_schema_field, inline_serializer
 from drf_spectacular.types import OpenApiTypes
@@ -63,6 +65,8 @@ class CreatureSerializer(GameContentSerializer):
     document = DocumentSerializer()
     type = CreatureTypeSerializer()
     size = SizeSerializer()
+    languages = LanguageSerializer(many=True)
+    environments = EnvironmentSerializer(many=True)
 
     class Meta:
         '''Serializer meta options.'''
