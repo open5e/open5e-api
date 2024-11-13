@@ -39,8 +39,26 @@
             "darkvision_range": null,
             "document": "http://localhost:8000/v2/documents/srd/",
             "environments": [
-                "http://localhost:8000/v2/environments/desert/",
-                "http://localhost:8000/v2/environments/urban/"
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "desert",
+                    "name": "Desert",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/desert/"
+                },
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "urban",
+                    "name": "Urban",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/urban/"
+                }
             ],
             "experience_points": 25,
             "hit_dice": "2d10+4",
@@ -297,7 +315,16 @@
             "darkvision_range": null,
             "document": "http://localhost:8000/v2/documents/srd/",
             "environments": [
-                "http://localhost:8000/v2/environments/urban/"
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "urban",
+                    "name": "Urban",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/urban/"
+                }
             ],
             "experience_points": 50,
             "hit_dice": "3d10+3",
@@ -445,9 +472,36 @@
             "darkvision_range": null,
             "document": "http://localhost:8000/v2/documents/srd/",
             "environments": [
-                "http://localhost:8000/v2/environments/desert/",
-                "http://localhost:8000/v2/environments/forest/",
-                "http://localhost:8000/v2/environments/grassland/"
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "desert",
+                    "name": "Desert",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/desert/"
+                },
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "forest",
+                    "name": "Forest or Jungle",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/forest/"
+                },
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "grassland",
+                    "name": "Grassland or Plains",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/grassland/"
+                }
             ],
             "experience_points": 1100,
             "hit_dice": "8d12+24",
@@ -583,9 +637,36 @@
             "darkvision_range": null,
             "document": "http://localhost:8000/v2/documents/srd/",
             "environments": [
-                "http://localhost:8000/v2/environments/forest/",
-                "http://localhost:8000/v2/environments/hills/",
-                "http://localhost:8000/v2/environments/urban/"
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "forest",
+                    "name": "Forest or Jungle",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/forest/"
+                },
+                {
+                    "aquatic": false,
+                    "desc": "[None Provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "hills",
+                    "name": "Hills",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/hills/"
+                },
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "urban",
+                    "name": "Urban",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/urban/"
+                }
             ],
             "experience_points": 25,
             "hit_dice": "1d8+1",
@@ -721,9 +802,36 @@
             "darkvision_range": null,
             "document": "http://localhost:8000/v2/documents/srd/",
             "environments": [
-                "http://localhost:8000/v2/environments/grassland/",
-                "http://localhost:8000/v2/environments/hills/",
-                "http://localhost:8000/v2/environments/urban/"
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "grassland",
+                    "name": "Grassland or Plains",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/grassland/"
+                },
+                {
+                    "aquatic": false,
+                    "desc": "[None Provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "hills",
+                    "name": "Hills",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/hills/"
+                },
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "urban",
+                    "name": "Urban",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/urban/"
+                }
             ],
             "experience_points": 25,
             "hit_dice": "2d8+2",
@@ -859,8 +967,26 @@
             "darkvision_range": null,
             "document": "http://localhost:8000/v2/documents/srd/",
             "environments": [
-                "http://localhost:8000/v2/environments/mountain/",
-                "http://localhost:8000/v2/environments/urban/"
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "mountain",
+                    "name": "Mountain",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/mountain/"
+                },
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "urban",
+                    "name": "Urban",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/urban/"
+                }
             ],
             "experience_points": 25,
             "hit_dice": "2d8+2",
@@ -996,8 +1122,26 @@
             "darkvision_range": null,
             "document": "http://localhost:8000/v2/documents/srd/",
             "environments": [
-                "http://localhost:8000/v2/environments/grassland/",
-                "http://localhost:8000/v2/environments/urban/"
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "grassland",
+                    "name": "Grassland or Plains",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/grassland/"
+                },
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "urban",
+                    "name": "Urban",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/urban/"
+                }
             ],
             "experience_points": 50,
             "hit_dice": "2d10+2",
@@ -1133,7 +1277,16 @@
             "darkvision_range": null,
             "document": "http://localhost:8000/v2/documents/srd/",
             "environments": [
-                "http://localhost:8000/v2/environments/urban/"
+                {
+                    "aquatic": false,
+                    "desc": "[None provided]",
+                    "document": "http://localhost:8000/v2/documents/open5e-e/",
+                    "interior": false,
+                    "key": "urban",
+                    "name": "Urban",
+                    "planar": false,
+                    "url": "http://localhost:8000/v2/environments/urban/"
+                }
             ],
             "experience_points": 100,
             "hit_dice": "3d10+3",

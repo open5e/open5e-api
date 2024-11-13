@@ -133,16 +133,52 @@
     "darkvision_range": 120.0,
     "document": "http://localhost:8000/v2/documents/srd/",
     "environments": [
-        "http://localhost:8000/v2/environments/hills/",
-        "http://localhost:8000/v2/environments/mountain/"
+        {
+            "aquatic": false,
+            "desc": "[None Provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "hills",
+            "name": "Hills",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/hills/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "mountain",
+            "name": "Mountain",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/mountain/"
+        }
     ],
     "experience_points": 62000,
     "hit_dice": "28d20+252",
     "hit_points": 546,
     "key": "srd_ancient-red-dragon",
     "languages": [
-        "http://localhost:8000/v2/languages/common/",
-        "http://localhost:8000/v2/languages/draconic/"
+        {
+            "desc": "Typical speakers are Humans.",
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "common",
+            "name": "Common",
+            "script_language": "http://localhost:8000/v2/languages/common/",
+            "url": "http://localhost:8000/v2/languages/common/"
+        },
+        {
+            "desc": "Typical speakers include dragons and dragonborn.",
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "draconic",
+            "name": "Draconic",
+            "script_language": "http://localhost:8000/v2/languages/draconic/",
+            "url": "http://localhost:8000/v2/languages/draconic/"
+        }
     ],
     "modifiers": {
         "charisma": 6,
