@@ -61,9 +61,10 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
         queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
         return queryset
 
+
 class SpellSchoolFilterSet(FilterSet):
     class Meta:
-        model = models.CreatureSet
+        model = models.SpellSchool
         fields = {
             'key': ['in', 'iexact', 'exact' ],
             'name': ['iexact', 'exact','contains'],
