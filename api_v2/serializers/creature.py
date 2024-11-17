@@ -47,6 +47,14 @@ class CreatureTypeSerializer(GameContentSerializer):
         fields = '__all__'
 
 
+class CreatureTraitSerializer(GameContentSerializer):
+    '''Serializer for the Creature Trait object'''
+    key = serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.CreatureTrait
+        fields = '__all__'
+
 class CreatureSerializer(GameContentSerializer):
     '''The serializer for the Creature object.'''
 
@@ -58,6 +66,7 @@ class CreatureSerializer(GameContentSerializer):
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
     actions = CreatureActionSerializer(many=True, context={'request': {}})
+    traits = CreatureTraitSerializer(many=True, read_only=True)
     speed = serializers.SerializerMethodField()
     speed_all = serializers.SerializerMethodField()
     challenge_rating_text = serializers.SerializerMethodField()
@@ -71,47 +80,49 @@ class CreatureSerializer(GameContentSerializer):
     class Meta:
         '''Serializer meta options.'''
         model = models.Creature
-        fields = [
-            'url',
-            'document',
-            'key',
-            'name',
-            'size',
-            'speed',
-            'speed_all',
-            'category',
-            'subcategory',
-            'type',
-            'alignment',
-            'languages',
-            'armor_class',
-            'hit_points',
-            'hit_dice',
-            'challenge_rating_decimal',
-            'challenge_rating_text',
-            'experience_points',
-            'ability_scores',
-            'modifiers',
-            'saving_throws',
-            'saving_throws_all',
-            'skill_bonuses',
-            'skill_bonuses_all',
-            'passive_perception',
-            'damage_immunities',
-            'nonmagical_attack_immunity',
-            'damage_resistances',
-            'nonmagical_attack_resistance',
-            'damage_vulnerabilities',
-            'condition_immunities',
-            'normal_sight_range',
-            'darkvision_range',
-            'blindsight_range',
-            'tremorsense_range',
-            'truesight_range',
-            'actions',
-            'creaturesets',
-            'environments'
-        ]
+        fields = '__all__'
+        # fields = [
+        #     'url',
+        #     'document',
+        #     'key',
+        #     'name',
+        #     'size',
+        #     'speed',
+        #     'speed_all',
+        #     'category',
+        #     'subcategory',
+        #     'type',
+        #     'alignment',
+        #     'languages',
+        #     'armor_class',
+        #     'hit_points',
+        #     'hit_dice',
+        #     'challenge_rating_decimal',
+        #     'challenge_rating_text',
+        #     'experience_points',
+        #     'ability_scores',
+        #     'modifiers',
+        #     'saving_throws',
+        #     'saving_throws_all',
+        #     'skill_bonuses',
+        #     'skill_bonuses_all',
+        #     'passive_perception',
+        #     'damage_immunities',
+        #     'nonmagical_attack_immunity',
+        #     'damage_resistances',
+        #     'nonmagical_attack_resistance',
+        #     'damage_vulnerabilities',
+        #     'condition_immunities',
+        #     'normal_sight_range',
+        #     'darkvision_range',
+        #     'blindsight_range',
+        #     'tremorsense_range',
+        #     'truesight_range',
+        #     'actions',
+        #     'traits',
+        #     'creaturesets',
+        #     'environments'
+        # ]
 
     @extend_schema_field(inline_serializer(
         name="ability_scores",

@@ -291,8 +291,8 @@ class CreatureTrait(Modification):
     It inherits from modification, which is an abstract concept.
     """
     key = key_field()
-    parent = models.ForeignKey('Creature', on_delete=models.CASCADE)
-
+    parent = models.ForeignKey(Creature, on_delete=models.CASCADE, related_name="traits")
+    
 
 class CreatureSet(HasName, FromDocument):
     """Set that the creature belongs to."""

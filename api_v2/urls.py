@@ -34,6 +34,7 @@ router.register(r'abilities',views.AbilityViewSet)
 router.register(r'skills',views.SkillViewSet)
 router.register(r'rules', views.RuleViewSet)
 router.register(r'rulesets', views.RuleSetViewSet)
+router.register(r'creaturetraits', views.CreatureTraitViewSet)
 
 search_router = routers.DefaultRouter()
 search_router.register('',views.SearchResultViewSet, basename='search')

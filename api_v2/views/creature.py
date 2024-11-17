@@ -130,3 +130,8 @@ class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.CreatureSet.objects.all().order_by('pk')
     serializer_class = serializers.CreatureSetSerializer
     filterset_class = CreatureSetFilterSet
+
+
+class CreatureTraitViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.CreatureTrait.objects.all().order_by('pk')
+    serializer_class = serializers.CreatureTraitSerializer

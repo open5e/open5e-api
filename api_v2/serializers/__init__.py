@@ -24,6 +24,7 @@ from .race import RaceSerializer
 from .creature import CreatureSerializer
 from .creature import CreatureTypeSerializer
 from .creature import CreatureSetSerializer
+from .creature import CreatureTraitSerializer
 
 from .damagetype import DamageTypeSerializer
 
