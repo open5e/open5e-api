@@ -12,7 +12,28 @@
             "actions": [
                 {
                     "action_type": "ACTION",
-                    "attacks": [],
+                    "attacks": [
+                        {
+                            "attack_type": "WEAPON",
+                            "damage_bonus": null,
+                            "damage_die_count": null,
+                            "damage_die_type": null,
+                            "damage_type": "thunder",
+                            "distance_unit": "feet",
+                            "extra_damage_bonus": null,
+                            "extra_damage_die_count": null,
+                            "extra_damage_die_type": null,
+                            "extra_damage_type": null,
+                            "key": "srd_camel_bite_bite-attack",
+                            "long_range": null,
+                            "name": "Bite attack",
+                            "parent": "srd_camel_bite",
+                            "range": null,
+                            "reach": 5.0,
+                            "target_creature_only": false,
+                            "to_hit_mod": 5
+                        }
+                    ],
                     "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
                     "form_condition": null,
                     "key": "srd_camel_bite",
@@ -270,7 +291,28 @@
             "actions": [
                 {
                     "action_type": "ACTION",
-                    "attacks": [],
+                    "attacks": [
+                        {
+                            "attack_type": "WEAPON",
+                            "damage_bonus": null,
+                            "damage_die_count": 2,
+                            "damage_die_type": "D4",
+                            "damage_type": "thunder",
+                            "distance_unit": "feet",
+                            "extra_damage_bonus": null,
+                            "extra_damage_die_count": null,
+                            "extra_damage_die_type": null,
+                            "extra_damage_type": null,
+                            "key": "srd_draft-horse_hooves_hooves-attack",
+                            "long_range": null,
+                            "name": "Hooves attack",
+                            "parent": "srd_draft-horse_hooves",
+                            "range": null,
+                            "reach": 5.0,
+                            "target_creature_only": false,
+                            "to_hit_mod": 6
+                        }
+                    ],
                     "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) bludgeoning damage.",
                     "form_condition": null,
                     "key": "srd_draft-horse_hooves",
@@ -406,7 +448,28 @@
             "actions": [
                 {
                     "action_type": "ACTION",
-                    "attacks": [],
+                    "attacks": [
+                        {
+                            "attack_type": "WEAPON",
+                            "damage_bonus": null,
+                            "damage_die_count": 3,
+                            "damage_die_type": "D8",
+                            "damage_type": "thunder",
+                            "distance_unit": "feet",
+                            "extra_damage_bonus": null,
+                            "extra_damage_die_count": null,
+                            "extra_damage_die_type": null,
+                            "extra_damage_type": null,
+                            "key": "srd_elephant_gore_gore-attack",
+                            "long_range": null,
+                            "name": "Gore attack",
+                            "parent": "srd_elephant_gore",
+                            "range": null,
+                            "reach": 5.0,
+                            "target_creature_only": false,
+                            "to_hit_mod": 8
+                        }
+                    ],
                     "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) piercing damage.",
                     "form_condition": null,
                     "key": "srd_elephant_gore",
@@ -418,7 +481,28 @@
                 },
                 {
                     "action_type": "ACTION",
-                    "attacks": [],
+                    "attacks": [
+                        {
+                            "attack_type": "WEAPON",
+                            "damage_bonus": null,
+                            "damage_die_count": 3,
+                            "damage_die_type": "D10",
+                            "damage_type": "thunder",
+                            "distance_unit": "feet",
+                            "extra_damage_bonus": null,
+                            "extra_damage_die_count": null,
+                            "extra_damage_die_type": null,
+                            "extra_damage_type": null,
+                            "key": "srd_elephant_stomp_stomp-attack",
+                            "long_range": null,
+                            "name": "Stomp attack",
+                            "parent": "srd_elephant_stomp",
+                            "range": null,
+                            "reach": 5.0,
+                            "target_creature_only": true,
+                            "to_hit_mod": 8
+                        }
+                    ],
                     "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one prone creature. Hit: 22 (3d10 + 6) bludgeoning damage.",
                     "form_condition": null,
                     "key": "srd_elephant_stomp",
@@ -556,7 +640,28 @@
             "actions": [
                 {
                     "action_type": "ACTION",
-                    "attacks": [],
+                    "attacks": [
+                        {
+                            "attack_type": "WEAPON",
+                            "damage_bonus": null,
+                            "damage_die_count": 1,
+                            "damage_die_type": "D6",
+                            "damage_type": "thunder",
+                            "distance_unit": "feet",
+                            "extra_damage_bonus": null,
+                            "extra_damage_die_count": null,
+                            "extra_damage_die_type": null,
+                            "extra_damage_type": null,
+                            "key": "srd_mastiff_bite_bite-attack",
+                            "long_range": null,
+                            "name": "Bite attack",
+                            "parent": "srd_mastiff_bite",
+                            "range": null,
+                            "reach": 5.0,
+                            "target_creature_only": false,
+                            "to_hit_mod": 3
+                        }
+                    ],
                     "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
                     "form_condition": null,
                     "key": "srd_mastiff_bite",
@@ -694,7 +799,28 @@
             "actions": [
                 {
                     "action_type": "ACTION",
-                    "attacks": [],
+                    "attacks": [
+                        {
+                            "attack_type": "WEAPON",
+                            "damage_bonus": null,
+                            "damage_die_count": 1,
+                            "damage_die_type": "D4",
+                            "damage_type": "thunder",
+                            "distance_unit": "feet",
+                            "extra_damage_bonus": null,
+                            "extra_damage_die_count": null,
+                            "extra_damage_die_type": null,
+                            "extra_damage_type": null,
+                            "key": "srd_mule_hooves_hooves-attack",
+                            "long_range": null,
+                            "name": "Hooves attack",
+                            "parent": "srd_mule_hooves",
+                            "range": null,
+                            "reach": 5.0,
+                            "target_creature_only": false,
+                            "to_hit_mod": 2
+                        }
+                    ],
                     "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
                     "form_condition": null,
                     "key": "srd_mule_hooves",
@@ -832,7 +958,28 @@
             "actions": [
                 {
                     "action_type": "ACTION",
-                    "attacks": [],
+                    "attacks": [
+                        {
+                            "attack_type": "WEAPON",
+                            "damage_bonus": null,
+                            "damage_die_count": 2,
+                            "damage_die_type": "D4",
+                            "damage_type": "thunder",
+                            "distance_unit": "feet",
+                            "extra_damage_bonus": null,
+                            "extra_damage_die_count": null,
+                            "extra_damage_die_type": null,
+                            "extra_damage_type": null,
+                            "key": "srd_pony_hooves_hooves-attack",
+                            "long_range": null,
+                            "name": "Hooves attack",
+                            "parent": "srd_pony_hooves",
+                            "range": null,
+                            "reach": 5.0,
+                            "target_creature_only": false,
+                            "to_hit_mod": 4
+                        }
+                    ],
                     "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage.",
                     "form_condition": null,
                     "key": "srd_pony_hooves",
@@ -969,7 +1116,28 @@
             "actions": [
                 {
                     "action_type": "ACTION",
-                    "attacks": [],
+                    "attacks": [
+                        {
+                            "attack_type": "WEAPON",
+                            "damage_bonus": null,
+                            "damage_die_count": 2,
+                            "damage_die_type": "D4",
+                            "damage_type": "thunder",
+                            "distance_unit": "feet",
+                            "extra_damage_bonus": null,
+                            "extra_damage_die_count": null,
+                            "extra_damage_die_type": null,
+                            "extra_damage_type": null,
+                            "key": "srd_riding-horse_hooves_hooves-attack",
+                            "long_range": null,
+                            "name": "Hooves attack",
+                            "parent": "srd_riding-horse_hooves",
+                            "range": null,
+                            "reach": 5.0,
+                            "target_creature_only": false,
+                            "to_hit_mod": 5
+                        }
+                    ],
                     "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
                     "form_condition": null,
                     "key": "srd_riding-horse_hooves",
@@ -1106,7 +1274,28 @@
             "actions": [
                 {
                     "action_type": "ACTION",
-                    "attacks": [],
+                    "attacks": [
+                        {
+                            "attack_type": "WEAPON",
+                            "damage_bonus": null,
+                            "damage_die_count": 2,
+                            "damage_die_type": "D6",
+                            "damage_type": "thunder",
+                            "distance_unit": "feet",
+                            "extra_damage_bonus": null,
+                            "extra_damage_die_count": null,
+                            "extra_damage_die_type": null,
+                            "extra_damage_type": null,
+                            "key": "srd_warhorse_hooves_hooves-attack",
+                            "long_range": null,
+                            "name": "Hooves attack",
+                            "parent": "srd_warhorse_hooves",
+                            "range": null,
+                            "reach": 5.0,
+                            "target_creature_only": false,
+                            "to_hit_mod": 6
+                        }
+                    ],
                     "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
                     "form_condition": null,
                     "key": "srd_warhorse_hooves",
