@@ -10,7 +10,28 @@
     "actions": [
         {
             "action_type": "ACTION",
-            "attacks": [],
+            "attacks": [
+                {
+                    "attack_type": "WEAPON",
+                    "damage_bonus": null,
+                    "damage_die_count": 1,
+                    "damage_die_type": "D6",
+                    "damage_type": "thunder",
+                    "distance_unit": "feet",
+                    "extra_damage_bonus": null,
+                    "extra_damage_die_count": null,
+                    "extra_damage_die_type": null,
+                    "extra_damage_type": null,
+                    "key": "srd_goblin_scimitar_scimitar-attack",
+                    "long_range": null,
+                    "name": "Scimitar attack",
+                    "parent": "srd_goblin_scimitar",
+                    "range": null,
+                    "reach": 5.0,
+                    "target_creature_only": false,
+                    "to_hit_mod": 4
+                }
+            ],
             "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
             "form_condition": null,
             "key": "srd_goblin_scimitar",
@@ -22,7 +43,28 @@
         },
         {
             "action_type": "ACTION",
-            "attacks": [],
+            "attacks": [
+                {
+                    "attack_type": "WEAPON",
+                    "damage_bonus": null,
+                    "damage_die_count": 1,
+                    "damage_die_type": "D6",
+                    "damage_type": "thunder",
+                    "distance_unit": "feet",
+                    "extra_damage_bonus": null,
+                    "extra_damage_die_count": null,
+                    "extra_damage_die_type": null,
+                    "extra_damage_type": null,
+                    "key": "srd_goblin_shortbow_shortbow-attack",
+                    "long_range": 320.0,
+                    "name": "Shortbow attack",
+                    "parent": "srd_goblin_shortbow",
+                    "range": 80.0,
+                    "reach": null,
+                    "target_creature_only": false,
+                    "to_hit_mod": 4
+                }
+            ],
             "desc": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
             "form_condition": null,
             "key": "srd_goblin_shortbow",
