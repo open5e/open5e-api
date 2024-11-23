@@ -38,3 +38,41 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.SpellSerializer
     filterset_class = SpellFilterSet
 
+    def get_queryset(self):
+        queryset = models.Spell.objects.all().order_by('pk')
+
+        # Retrieve depth from query params, defaulting to 0 if not provided
+        depth = int(self.request.query_params.get("depth", 0))
+
+        queryset = SpellViewSet.setup_eager_loading(queryset, depth)
+        return queryset
+
+    @staticmethod
+    def setup_eager_loading(queryset, depth):
+        selects = ['document', 'school']
+        prefetches = ['classes', 'spellcastingoption_set']
+
+        if depth >= 1:
+            prefetches = prefetches + ['document__licenses']
+        
+        if depth >= 2:
+            prefetches = prefetches + ['document__gamesystem', 'document__publisher']
+
+        queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
+        return queryset
+
+
+class SpellSchoolFilterSet(FilterSet):
+    class Meta:
+        model = models.SpellSchool
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact','contains'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
+        }
+
+class SpellSchoolViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.SpellSchool.objects.all().order_by('pk')
+    serializer_class = serializers.SpellSchoolSerializer
+    filterset_class = SpellSchoolFilterSet

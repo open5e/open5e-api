@@ -14,10 +14,24 @@ jobs:
   rdme-openapi:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repo 📚
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: install pipenv
+        run: |
+          pip install pipenv
+
+      - name: install dependencies
+        run: |
+          pipenv install
+
+      - name: build oas file
+        run: |
+          pipenv run python manage.py spectacular --file openapi-schema.yml
 
       - name: Run `openapi` command for v1🚀
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi openapi-schema.yml --key=${{ secrets.README_API_KEY }} --id=641f6d9e0ffbcd06c0e7343c
+          rdme: openapi openapi-schema.yml --key=${{ secrets.README_API_KEY }} --id=6715b7fb7960ee004eb4a8cf

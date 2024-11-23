@@ -18,6 +18,10 @@ class Environment(HasName, HasDescription, FromDocument):
         help_text='Whether or not this environment is a plane of existence.',
         default=False)
 
+    interior = models.BooleanField(
+        help_text='Whether or not this environment is an interior space.',
+        default=False)
+
     class Meta:
         """To assist with the UI layer."""
 

@@ -10,7 +10,28 @@
     "actions": [
         {
             "action_type": "ACTION",
-            "attacks": [],
+            "attacks": [
+                {
+                    "attack_type": "WEAPON",
+                    "damage_bonus": null,
+                    "damage_die_count": 1,
+                    "damage_die_type": "D6",
+                    "damage_type": "thunder",
+                    "distance_unit": "feet",
+                    "extra_damage_bonus": null,
+                    "extra_damage_die_count": null,
+                    "extra_damage_die_type": null,
+                    "extra_damage_type": null,
+                    "key": "srd_goblin_scimitar_scimitar-attack",
+                    "long_range": null,
+                    "name": "Scimitar attack",
+                    "parent": "srd_goblin_scimitar",
+                    "range": null,
+                    "reach": 5.0,
+                    "target_creature_only": false,
+                    "to_hit_mod": 4
+                }
+            ],
             "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
             "form_condition": null,
             "key": "srd_goblin_scimitar",
@@ -22,7 +43,28 @@
         },
         {
             "action_type": "ACTION",
-            "attacks": [],
+            "attacks": [
+                {
+                    "attack_type": "WEAPON",
+                    "damage_bonus": null,
+                    "damage_die_count": 1,
+                    "damage_die_type": "D6",
+                    "damage_type": "thunder",
+                    "distance_unit": "feet",
+                    "extra_damage_bonus": null,
+                    "extra_damage_die_count": null,
+                    "extra_damage_die_type": null,
+                    "extra_damage_type": null,
+                    "key": "srd_goblin_shortbow_shortbow-attack",
+                    "long_range": 320.0,
+                    "name": "Shortbow attack",
+                    "parent": "srd_goblin_shortbow",
+                    "range": 80.0,
+                    "reach": null,
+                    "target_creature_only": false,
+                    "to_hit_mod": 4
+                }
+            ],
             "desc": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
             "form_condition": null,
             "key": "srd_goblin_shortbow",
@@ -46,13 +88,163 @@
     "damage_vulnerabilities": [],
     "darkvision_range": 60.0,
     "document": "http://localhost:8000/v2/documents/srd/",
+    "environments": [
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "arctic",
+            "name": "Arctic or Tundra",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/arctic/"
+        },
+        {
+            "aquatic": false,
+            "desc": "Caves and caverns",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": true,
+            "key": "caves",
+            "name": "Caves",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/caves/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "desert",
+            "name": "Desert",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/desert/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "forest",
+            "name": "Forest or Jungle",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/forest/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "grassland",
+            "name": "Grassland or Plains",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/grassland/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None Provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "hills",
+            "name": "Hills",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/hills/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "mountain",
+            "name": "Mountain",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/mountain/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": true,
+            "key": "ruins",
+            "name": "Ruins",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/ruins/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": true,
+            "key": "sewer",
+            "name": "Sewer",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/sewer/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "srd_feywild",
+            "name": "Feywild",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/srd_feywild/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "swamp",
+            "name": "Swamp or Marsh",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/swamp/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None Provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "underworld",
+            "name": "Underworld",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/underworld/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "urban",
+            "name": "Urban",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/urban/"
+        }
+    ],
     "experience_points": 50,
     "hit_dice": "2d6",
     "hit_points": 7,
     "key": "srd_goblin",
     "languages": [
-        "http://localhost:8000/v2/languages/common/",
-        "http://localhost:8000/v2/languages/goblin/"
+        {
+            "desc": "Typical speakers are Humans.",
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "common",
+            "name": "Common",
+            "script_language": "http://localhost:8000/v2/languages/common/",
+            "url": "http://localhost:8000/v2/languages/common/"
+        },
+        {
+            "desc": "Typical speakers are goblinoids.",
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "goblin",
+            "name": "Goblin",
+            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
+            "url": "http://localhost:8000/v2/languages/goblin/"
+        }
     ],
     "modifiers": {
         "charisma": -1,
@@ -115,6 +307,16 @@
         "walk": 30.0
     },
     "subcategory": null,
+    "traits": [
+        {
+            "desc": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns.",
+            "key": "srd_goblin_nimble-escape",
+            "name": "Nimble Escape",
+            "parent": "http://localhost:8000/v2/creatures/srd_goblin/",
+            "type": null,
+            "url": "http://localhost:8000/v2/creaturetraits/srd_goblin_nimble-escape/"
+        }
+    ],
     "tremorsense_range": null,
     "truesight_range": null,
     "type": "http://localhost:8000/v2/creaturetypes/humanoid/",

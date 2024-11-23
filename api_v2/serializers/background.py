@@ -5,6 +5,7 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .document import DocumentSerializer
 
 class BackgroundBenefitSerializer(serializers.ModelSerializer):
     class Meta:
@@ -17,6 +18,7 @@ class BackgroundSerializer(GameContentSerializer):
     benefits = BackgroundBenefitSerializer(
         many=True
     )
+    document = DocumentSerializer()
 
     class Meta:
         model = models.Background

@@ -4,6 +4,8 @@
 from django.db import models
 from .abstracts import HasName
 from .document import FromDocument
+from drf_spectacular.utils import extend_schema_field
+from drf_spectacular.types import OpenApiTypes
 
 
 class Armor(HasName, FromDocument):
@@ -40,6 +42,7 @@ class Armor(HasName, FromDocument):
         help_text='Integer representing the dexterity modifier cap.')
 
     @property
+    @extend_schema_field(OpenApiTypes.STR)
     def category(self):
         category = 'heavy'
         if self.ac_add_dexmod:
@@ -50,6 +53,7 @@ class Armor(HasName, FromDocument):
 
 
     @property
+    @extend_schema_field(OpenApiTypes.STR)
     def ac_display(self):
         """Display text for armor class."""
         ac_string = str(self.ac_base)

@@ -13,9 +13,10 @@ from .object import Object
 from .condition import Condition
 from .damagetype import DamageType
 from .document import FromDocument
+from .environment import Environment
 from .speed import HasSpeed
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES, ACTION_TYPES
-
+import decimal
 
 
 class CreatureType(HasName, HasDescription, FromDocument):
@@ -42,6 +43,7 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
 
     subcategory = models.CharField(
         max_length=100,
+        blank=True,
         null=True,
         help_text='What subcategory this creature belongs to.'
     )
@@ -69,7 +71,7 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
         null=False,
         max_digits=10,
         decimal_places=3,
-        validators=[MinValueValidator(0),MaxValueValidator(30)],
+        validators=[MinValueValidator(decimal.Decimal(0.0)),MaxValueValidator(decimal.Decimal(30.0))],
         help_text="Challenge Rating field as a decimal number."
     )
 
@@ -79,6 +81,9 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
         validators=[MinValueValidator(0)],
         help_text="Optional override for calculated XP based on CR."
     )
+
+    environments = models.ManyToManyField(Environment,
+        related_name="creature_environments")
 
     def as_text(self):
         text = self.name + '\n'
@@ -286,8 +291,8 @@ class CreatureTrait(Modification):
     It inherits from modification, which is an abstract concept.
     """
     key = key_field()
-    parent = models.ForeignKey('Creature', on_delete=models.CASCADE)
-
+    parent = models.ForeignKey(Creature, on_delete=models.CASCADE, related_name="traits")
+    
 
 class CreatureSet(HasName, FromDocument):
     """Set that the creature belongs to."""

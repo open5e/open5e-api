@@ -54,7 +54,8 @@ class DocumentSerializer(DynamicFieldsHyperlinkedModelSerializer):
                 'organization',
                 'version',
                 'copyright',
-                'license_url',)
+                'license_url',
+                'v2_related_key')
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -72,6 +73,7 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
     legendary_actions = serializers.SerializerMethodField()
     special_abilities = serializers.SerializerMethodField()
     img_main = serializers.SerializerMethodField()
+    v2_converted_path = serializers.SerializerMethodField()
 
     def get_img_main(self, monster):
         request = self.context.get('request')
@@ -105,6 +107,9 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
 
     def get_special_abilities(self, monster):
         return monster.special_abilities()
+
+    def get_v2_converted_path(self, monster):
+        return monster.v2_converted_path()
 
 
     class Meta:
@@ -158,7 +163,8 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__slug',
             'document__title',
             'document__license_url',
-            'document__url'
+            'document__url',
+            'v2_converted_path'
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer):

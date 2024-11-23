@@ -4,7 +4,8 @@ from django.db import models
 from .abstracts import HasName, HasDescription, HasPrerequisite
 from .abstracts import Modification
 from .document import FromDocument
-
+from drf_spectacular.utils import extend_schema_field
+from drf_spectacular.types import OpenApiTypes
 
 class RaceTrait(Modification):
     """This is the model for a race or subrace trait.
@@ -30,6 +31,7 @@ class Race(HasName, HasDescription, FromDocument):
                                    on_delete=models.CASCADE)
 
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_subrace(self):
         """Returns whether the object is a subrace."""
         return self.subrace_of is not None

@@ -31,6 +31,7 @@ def main():
         obj_v2 = v2_model.objects.filter(key=computed_v2_key).first()
         if obj_v2 is not None:
             v1v2_match_count +=1
+            set_hit_dice(obj_v1=obj_v1, obj_v2=obj_v2)
             #print(obj_v2.key)
             #copy_v2_damage_from_v1_monsters(obj_v1=obj_v1, obj_v2=obj_v2)
             #copy_v2_condition_from_v1_monsters(obj_v1,obj_v2)
@@ -39,7 +40,7 @@ def main():
             #copy_traits(obj_v1, obj_v2)
             #check_caa(obj_v2)
             #print(obj_v2.key)
-            copy_leg_actions(obj_v1, obj_v2)
+            #copy_leg_actions(obj_v1, obj_v2)
             #copy_legendary_desc(obj_v1, obj_v2)
             #copy_traits(obj_v1,obj_v2)
             #obj_v2.full_clean()
@@ -132,6 +133,51 @@ def copy_actions_2(obj_v1, obj_v2):
                 print("CREATING NEW CA:{}".format(ca.key))
                 ca.full_clean()
                 ca.save()
+
+
+def set_hit_dice(obj_v1, obj_v2):
+
+    if obj_v2.hit_dice == "":
+        print("Empty string hit dice set for {}".format(obj_v2.pk))
+
+        # Compute hit dice:
+        size_dice_lookup = {
+            'tiny': 'd4',
+            'small' : 'd6',
+            'medium' : 'd8',
+            'large' : 'd10',
+            'huge' : 'd12',
+            'gargantuan' : 'd20',
+        }
+
+        hp_per_die = {
+            'd4': 2.5,
+            'd6' : 3.5,
+            'd8' : 4.5,
+            'd10' : 5.5,
+            'd12' : 6.5,
+            'd20' : 10.5,
+        }
+
+        con_modifier = obj_v2.modifier_constitution
+
+        # what should the base D be?
+        c_hit_dice = size_dice_lookup[obj_v2.size.key]
+
+        # what should the hp per level be?
+        hp_per_level = hp_per_die[c_hit_dice] + con_modifier
+        computed_level = obj_v2.hit_points / hp_per_level
+
+        print("Name    : {}".format(obj_v2.pk))
+        print("Hit Dice: {}".format(c_hit_dice))
+        print("Con Mod : {}".format(con_modifier))
+        print("HP/Level: {}".format(hp_per_level))
+        print("HP Value: {}".format(obj_v2.hit_points))
+        print("Level   : {}".format(computed_level))
+
+        obj_v2.hit_dice = None
+        obj_v2.full_clean()
+        obj_v2.save()
 
 
 def reset_legendary_cost():

@@ -24,6 +24,7 @@ from .race import RaceSerializer
 from .creature import CreatureSerializer
 from .creature import CreatureTypeSerializer
 from .creature import CreatureSetSerializer
+from .creature import CreatureTraitSerializer
 
 from .damagetype import DamageTypeSerializer
 
@@ -33,7 +34,7 @@ from .alignment import AlignmentSerializer
 
 from .condition import ConditionSerializer
 
-from .spell import SpellSerializer
+from .spell import SpellSerializer, SpellSchoolSerializer
 
 from .characterclass import CharacterClassSerializer
 from .characterclass import ClassFeatureSerializer

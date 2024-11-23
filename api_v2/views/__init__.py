@@ -5,6 +5,7 @@ from .background import BackgroundFilterSet, BackgroundViewSet
 from .creature import CreatureFilterSet, CreatureViewSet
 from .creature import CreatureTypeViewSet
 from .creature import CreatureSetViewSet
+from .creature import CreatureTraitViewSet
 
 from .document import DocumentViewSet
 from .document import GameSystemViewSet
@@ -30,7 +31,7 @@ from .alignment import AlignmentFilterSet, AlignmentViewSet
 
 from .condition import ConditionViewSet
 
-from .spell import SpellViewSet
+from .spell import SpellViewSet, SpellSchoolViewSet
 
 from .characterclass import CharacterClassViewSet
 

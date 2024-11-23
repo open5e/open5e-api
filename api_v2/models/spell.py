@@ -16,6 +16,7 @@ from .enums import SPELL_TARGET_TYPE_CHOICES
 from .enums import SPELL_TARGET_RANGE_CHOICES, SPELL_CASTING_TIME_CHOICES
 from .enums import SPELL_EFFECT_SHAPE_CHOICES, SPELL_EFFECT_DURATIONS
 from .enums import CASTING_OPTION_TYPES
+import decimal
 
 class SpellSchool(HasName, HasDescription, FromDocument):
     """The model for a spell school object."""
@@ -85,7 +86,7 @@ class Spell(HasName, HasDescription, FromDocument):
         default=None,
         max_digits=10,
         decimal_places=2,  # Only track down to 2 decimal places.
-        validators=[MinValueValidator(0)],
+        validators=[MinValueValidator(decimal.Decimal(0.0))],
         help_text='Number representing the cost of the materials of the spell.')
 
     material_consumed = models.BooleanField(
@@ -152,7 +153,8 @@ class Spell(HasName, HasDescription, FromDocument):
             "school": self.school.name,
             "level": self.level,
         }
-        
+
+
 class SpellCastingOption(models.Model):
     """An object representing an alternative way to cast a spell."""
 
@@ -179,3 +181,11 @@ class SpellCastingOption(models.Model):
     range = models.TextField(
         null=True, # Null values mean this value is unchanged from the default casting option.
         help_text='Description of the range of the spell.')
+
+    concentration = models.BooleanField(
+        null=True, # Null values mean this value is unchanged from the default casting option.
+        blank=True,
+        help_text='Whether the effect requires concentration to be maintained.')
+    
+    shape_size = distance_field()
+    # Null values mean this value is unchanged from the default casting option.

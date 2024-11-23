@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'api',
     'api_v2',
+	'drf_spectacular',
 
     # downloaded modules
     "rest_framework",
@@ -186,6 +187,9 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ],
     'DEFAULT_CONTENT_NEGOTIATION_CLASS': 'rest_framework.negotiation.DefaultContentNegotiation',
+	
+    # OpenAPI Schema Generation
+	'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 
@@ -209,3 +213,15 @@ SECURE_PROXY_SSL_HEADER = (
     "HTTP_X_FORWARDED_PROTO",
     "https",
 )  # This setting allows the header from NGINX to tell us that the request is secured.
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Open5e',
+    'DESCRIPTION': 'The Open5e API includes all monsters and spells from the SRD and other',
+    'SERVERS': [{'url': 'https://api.open5e.com', 'description': 'Production server'}],
+	'PREPROCESSING_HOOKS': [
+        'server.oas.custom_preprocessing_hook'
+    ],
+    'POSTPROCESSING_HOOKS': [
+        'server.oas.custom_postprocessing_hook'
+    ],
+}
