@@ -81,7 +81,8 @@ class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
             prefetches = [
                 'creatureaction_set', 'condition_immunities', 'damage_immunities',
                 'damage_vulnerabilities', 'damage_resistances', 'environments',
-                'document'
+                'document', 'traits', 'document', 'document__publisher', 'document__gamesystem',
+                'document__licenses', 'languages__document'
             ] 
 
             if depth >= 2:
@@ -130,3 +131,8 @@ class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.CreatureSet.objects.all().order_by('pk')
     serializer_class = serializers.CreatureSetSerializer
     filterset_class = CreatureSetFilterSet
+
+
+class CreatureTraitViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.CreatureTrait.objects.all().order_by('pk')
+    serializer_class = serializers.CreatureTraitSerializer

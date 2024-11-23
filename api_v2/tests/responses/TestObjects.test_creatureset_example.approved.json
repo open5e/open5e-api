@@ -150,6 +150,7 @@
                 "walk": 50.0
             },
             "subcategory": null,
+            "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
             "type": "http://localhost:8000/v2/creaturetypes/beast/",
@@ -271,6 +272,7 @@
                 "walk": 0.0
             },
             "subcategory": null,
+            "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
             "type": "http://localhost:8000/v2/creaturetypes/beast/",
@@ -416,6 +418,7 @@
                 "walk": 40.0
             },
             "subcategory": null,
+            "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
             "type": "http://localhost:8000/v2/creaturetypes/beast/",
@@ -593,6 +596,16 @@
                 "walk": 40.0
             },
             "subcategory": null,
+            "traits": [
+                {
+                    "desc": "If the elephant moves at least 20 ft. straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the elephant can make one stomp attack against it as a bonus action.",
+                    "key": "srd_elephant_trampling-charge",
+                    "name": "Trampling Charge",
+                    "parent": "http://localhost:8000/v2/creatures/srd_elephant/",
+                    "type": null,
+                    "url": "http://localhost:8000/v2/creaturetraits/srd_elephant_trampling-charge/"
+                }
+            ],
             "tremorsense_range": null,
             "truesight_range": null,
             "type": "http://localhost:8000/v2/creaturetypes/beast/",
@@ -758,6 +771,16 @@
                 "walk": 40.0
             },
             "subcategory": null,
+            "traits": [
+                {
+                    "desc": "The mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+                    "key": "srd_mastiff_keen-hearing-and-smell",
+                    "name": "Keen Hearing and Smell",
+                    "parent": "http://localhost:8000/v2/creatures/srd_mastiff/",
+                    "type": null,
+                    "url": "http://localhost:8000/v2/creaturetraits/srd_mastiff_keen-hearing-and-smell/"
+                }
+            ],
             "tremorsense_range": null,
             "truesight_range": null,
             "type": "http://localhost:8000/v2/creaturetypes/beast/",
@@ -923,6 +946,24 @@
                 "walk": 40.0
             },
             "subcategory": null,
+            "traits": [
+                {
+                    "desc": "The mule is considered to be a Large animal for the purpose of determining its carrying capacity.",
+                    "key": "srd_mule_beast-of-burden",
+                    "name": "Beast of Burden",
+                    "parent": "http://localhost:8000/v2/creatures/srd_mule/",
+                    "type": null,
+                    "url": "http://localhost:8000/v2/creaturetraits/srd_mule_beast-of-burden/"
+                },
+                {
+                    "desc": "The mule has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
+                    "key": "srd_mule_sure-footed",
+                    "name": "Sure-Footed",
+                    "parent": "http://localhost:8000/v2/creatures/srd_mule/",
+                    "type": null,
+                    "url": "http://localhost:8000/v2/creaturetraits/srd_mule_sure-footed/"
+                }
+            ],
             "tremorsense_range": null,
             "truesight_range": null,
             "type": "http://localhost:8000/v2/creaturetypes/beast/",
@@ -1078,6 +1119,7 @@
                 "walk": 40.0
             },
             "subcategory": null,
+            "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
             "type": "http://localhost:8000/v2/creaturetypes/beast/",
@@ -1233,6 +1275,7 @@
                 "walk": 60.0
             },
             "subcategory": null,
+            "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
             "type": "http://localhost:8000/v2/creaturetypes/beast/",
@@ -1378,6 +1421,16 @@
                 "walk": 60.0
             },
             "subcategory": null,
+            "traits": [
+                {
+                    "desc": "If the horse moves at least 20 ft. straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action.",
+                    "key": "srd_warhorse_trampling-charge",
+                    "name": "Trampling Charge",
+                    "parent": "http://localhost:8000/v2/creatures/srd_warhorse/",
+                    "type": null,
+                    "url": "http://localhost:8000/v2/creaturetraits/srd_warhorse_trampling-charge/"
+                }
+            ],
             "tremorsense_range": null,
             "truesight_range": null,
             "type": "http://localhost:8000/v2/creaturetypes/beast/",

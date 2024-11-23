@@ -47,6 +47,14 @@ class CreatureTypeSerializer(GameContentSerializer):
         fields = '__all__'
 
 
+class CreatureTraitSerializer(GameContentSerializer):
+    '''Serializer for the Creature Trait object'''
+    key = serializers.ReadOnlyField()
+
+    class Meta:
+        model = models.CreatureTrait
+        fields = '__all__'
+
 class CreatureSerializer(GameContentSerializer):
     '''The serializer for the Creature object.'''
 
@@ -58,6 +66,7 @@ class CreatureSerializer(GameContentSerializer):
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
     actions = CreatureActionSerializer(many=True, context={'request': {}})
+    traits = CreatureTraitSerializer(many=True, read_only=True)
     speed = serializers.SerializerMethodField()
     speed_all = serializers.SerializerMethodField()
     challenge_rating_text = serializers.SerializerMethodField()
@@ -109,6 +118,7 @@ class CreatureSerializer(GameContentSerializer):
             'tremorsense_range',
             'truesight_range',
             'actions',
+            'traits',
             'creaturesets',
             'environments'
         ]
