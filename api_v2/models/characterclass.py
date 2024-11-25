@@ -5,6 +5,7 @@ from rest_framework import serializers
 
 from .abstracts import HasName, HasDescription, Modification
 from .abstracts import key_field
+from .abilities import Ability
 from .document import FromDocument
 from .enums import DIE_TYPES
 from drf_spectacular.utils import extend_schema_field, inline_serializer
@@ -56,6 +57,11 @@ class CharacterClass(HasName, FromDocument):
         null=True,
         choices=DIE_TYPES,
         help_text='Dice notation hit dice option.')
+
+
+    saving_throws = models.ManyToManyField(Ability,
+        related_name="characterclass_saving_throws",
+        help_text='Saving throw proficiencies for this class.')
 
     @property
     @extend_schema_field(inline_serializer(
