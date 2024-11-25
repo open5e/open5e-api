@@ -70,14 +70,24 @@
             "desc": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.",
             "key": "srd_barbarian_unarmored-defense",
             "name": "Unarmored Defense"
+        },
+        {
+            "desc": "**Armor:** Light armor, medium armor, shields\r\n**Weapons:** Simple weapons, martial weapons\r\n**Tools:** None\r\n**Saving Throws:** Strength, Constitution\r\n**Skills:** Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival",
+            "key": "srd_barbarian_proficiencies",
+            "name": "Proficiencies"
+        },
+        {
+            "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a greataxe or (*b*) any martial melee weapon\r\n* (*a*) two handaxes or (*b*) any simple weapon\r\n* An explorer\u2019s pack and four javelins",
+            "key": "srd_barbarian_equipment",
+            "name": "Equipment"
         }
     ],
-    "hit_dice": "d12",
+    "hit_dice": "D12",
     "hit_points": {
-        "hit_dice": "d12",
-        "hit_dice_name": "1d12 per Barbarian level",
+        "hit_dice": "D12",
+        "hit_dice_name": "1D12 per Barbarian level",
         "hit_points_at_1st_level": "12 + your Constitution modifier",
-        "hit_points_at_higher_levels": "1d12 (or 7) + your Constitution modifier per barbarian level after 1st"
+        "hit_points_at_higher_levels": "1D12 (or 7) + your Constitution modifier per barbarian level after 1st"
     },
     "key": "srd_barbarian",
     "levels": {
@@ -205,6 +215,10 @@
         }
     },
     "name": "Barbarian",
+    "saving_throws": [
+        "http://localhost:8000/v2/abilities/con/",
+        "http://localhost:8000/v2/abilities/str/"
+    ],
     "subclass_of": null,
     "url": "http://localhost:8000/v2/classes/srd_barbarian/"
 }
