@@ -7,10 +7,12 @@ from .abstracts import HasName, HasDescription, Modification
 from .abstracts import key_field
 from .abilities import Ability
 from .document import FromDocument
-from .enums import DIE_TYPES
+from .enums import DIE_TYPES, CASTER_TYPES
 from drf_spectacular.utils import extend_schema_field, inline_serializer
 from drf_spectacular.types import OpenApiTypes
 from rest_framework import serializers
+
+
 
 class ClassFeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
@@ -93,6 +95,17 @@ class CharacterClass(HasName, FromDocument):
         """Returns whether the object is a subclass."""
         return self.subclass_of is not None
 
+    caster_type = models.CharField(
+        max_length=100,
+        default=None,
+        blank=True,
+        null=True,
+        choices=CASTER_TYPES,
+        help_text='Type of caster. Options are full, half, none.'
+    )
+
+
+
     @property
     def features(self):
         """Returns the set of features that are related to this class."""
@@ -125,6 +138,65 @@ class CharacterClass(HasName, FromDocument):
                 by_level[str(fl.level)]['level'] = fl.level
                 
         return by_level
+    
+    def get_slots_by_player_level(self,level=1,full=True):
+        # full is for a full caster, not including cantrips.
+        # full=False is for a half caster.
+        if level<0: # Invalid player level.
+            return None
+        if level>20: # Invalid player level.
+            return None
+
+        full = [[],
+        [0,2,0,0,0,0,0,0,0,0],
+        [0,3,0,0,0,0,0,0,0,0],
+        [0,4,2,0,0,0,0,0,0,0],
+        [0,4,3,0,0,0,0,0,0,0],
+        [0,4,3,2,0,0,0,0,0,0],
+        [0,4,3,3,0,0,0,0,0,0],
+        [0,4,3,3,1,0,0,0,0,0],
+        [0,4,3,3,2,0,0,0,0,0],
+        [0,4,3,3,3,1,0,0,0,0],
+        [0,4,3,3,3,2,0,0,0,0],
+        [0,4,3,3,3,2,1,0,0,0],
+        [0,4,3,3,3,2,1,0,0,0],
+        [0,4,3,3,3,2,1,1,0,0],
+        [0,4,3,3,3,2,1,1,0,0],
+        [0,4,3,3,3,2,1,1,1,0],
+        [0,4,3,3,3,2,1,1,1,0],
+        [0,4,3,3,3,2,1,1,1,1],
+        [0,4,3,3,3,3,1,1,1,1],
+        [0,4,3,3,3,3,2,1,1,1],
+        [0,4,3,3,3,3,2,2,1,1]
+        ]
+
+        half = [[],
+        [0,0,0,0,0,0],
+        [0,2,0,0,0,0],
+        [0,3,0,0,0,0],
+        [0,3,0,0,0,0],
+        [0,4,2,0,0,0],
+        [0,4,2,0,0,0],
+        [0,4,3,0,0,0],
+        [0,4,3,0,0,0],
+        [0,4,3,2,0,0],
+        [0,4,3,2,0,0],
+        [0,4,3,3,0,0],
+        [0,4,3,3,0,0],
+        [0,4,3,3,1,0],
+        [0,4,3,3,1,0],
+        [0,4,3,3,2,0],
+        [0,4,3,3,2,0],
+        [0,4,3,3,3,1],
+        [0,4,3,3,3,1],
+        [0,4,3,3,3,2],
+        [0,4,3,3,3,2]
+        ]
+
+        if full:
+            return full[level]
+        else:
+            return half[level]
 
     def proficiency_bonus(self, player_level):
         # Consider as part of enums
@@ -152,5 +224,3 @@ class CharacterClass(HasName, FromDocument):
                 "key": self.subclass_of.key
             } if self.subclass_of else None
         }
-    
-    #TODO add verbose name plural

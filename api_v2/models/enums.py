@@ -41,6 +41,12 @@ CREATURE_ATTACK_TYPES = [
     ("WEAPON", "Weapon"),
 ]
 
+CASTER_TYPES = [
+    ("FULL","Full"),
+    ("HALF","Half"),
+    ("NONE","None")
+]
+
 ACTION_TYPES = [
     ("ACTION", "Action"),
     ("REACTION","Reaction"),
