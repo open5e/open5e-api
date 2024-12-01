@@ -16,7 +16,7 @@ from rest_framework import serializers
 
 class ClassFeatureItem(models.Model):
     """This is the class for an individual class feature item, a subset of a class
-    feature. The name field is unused."""
+    feature."""
 
     key = key_field()
 
@@ -25,6 +25,20 @@ class ClassFeatureItem(models.Model):
 
     parent = models.ForeignKey('ClassFeature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
+
+    column_value = models.CharField(
+        # The value displayed in a column, or null if no value.
+        null=True,
+        blank=True,
+        max_length=20,
+        help_text='The value that should be displayed in the table column (where applicable).'
+    )
+
+    @property
+    def column(self):
+        # Represents whether or not this should be displaye as it's own column.
+        return self.column_value is not None
+
 
     def __str__(self):
         return "{} {} ({})".format(
@@ -39,6 +53,12 @@ class ClassFeature(HasName, HasDescription, FromDocument):
 
     parent = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
+    
+    def featureitem_data(self):
+        return self.classfeatureitem_set
+
+    def column(self):
+        return len(self.classfeatureitem_set.exclude(column_value=None))>0
 
     def __str__(self):
         return "{} ({})".format(self.name,self.parent.name)
@@ -46,12 +66,13 @@ class ClassFeature(HasName, HasDescription, FromDocument):
 
 class CharacterClass(HasName, FromDocument):
     """The model for a character class or subclass."""
+
     subclass_of = models.ForeignKey('self',
                                    default=None,
                                    blank=True,
                                    null=True,
                                    on_delete=models.CASCADE)
-    
+
     hit_dice = models.CharField(
         max_length=100,
         default=None,
@@ -60,10 +81,17 @@ class CharacterClass(HasName, FromDocument):
         choices=DIE_TYPES,
         help_text='Dice notation hit dice option.')
 
-
     saving_throws = models.ManyToManyField(Ability,
         related_name="characterclass_saving_throws",
         help_text='Saving throw proficiencies for this class.')
+
+    caster_type = models.CharField(
+        max_length=100,
+        default=None,
+        blank=True,
+        null=True,
+        choices=CASTER_TYPES,
+        help_text='Type of caster. Options are full, half, none.')
 
     @property
     @extend_schema_field(inline_serializer(
@@ -95,17 +123,6 @@ class CharacterClass(HasName, FromDocument):
         """Returns whether the object is a subclass."""
         return self.subclass_of is not None
 
-    caster_type = models.CharField(
-        max_length=100,
-        default=None,
-        blank=True,
-        null=True,
-        choices=CASTER_TYPES,
-        help_text='Type of caster. Options are full, half, none.'
-    )
-
-
-
     @property
     def features(self):
         """Returns the set of features that are related to this class."""
@@ -123,23 +140,9 @@ class CharacterClass(HasName, FromDocument):
             }
         )
     ))
-    def levels(self):
-        """Returns an array of level information for the given class."""
-        by_level = {}
 
-        for classfeature in self.classfeature_set.all():
-            for fl in classfeature.classfeatureitem_set.all():
-                if (str(fl.level)) not in by_level.keys():
-                    by_level[str(fl.level)] = {}
-                    by_level[str(fl.level)]['features'] = []
-                
-                by_level[str(fl.level)]['features'].append(fl.parent.key)
-                by_level[str(fl.level)]['proficiency-bonus'] = self.proficiency_bonus(player_level=fl.level)
-                by_level[str(fl.level)]['level'] = fl.level
-                
-        return by_level
-    
-    def get_slots_by_player_level(self,level=1,full=True):
+
+    def get_slots_by_player_level(self,level,caster_type):
         # full is for a full caster, not including cantrips.
         # full=False is for a half caster.
         if level<0: # Invalid player level.
@@ -193,10 +196,12 @@ class CharacterClass(HasName, FromDocument):
         [0,4,3,3,3,2]
         ]
 
-        if full:
+        if caster_type=='FULL':
             return full[level]
-        else:
+        if caster_type=='HALF':
             return half[level]
+        else:
+            return []
 
     def proficiency_bonus(self, player_level):
         # Consider as part of enums
