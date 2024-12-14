@@ -34,12 +34,6 @@ class ClassFeatureItem(models.Model):
         help_text='The value that should be displayed in the table column (where applicable).'
     )
 
-    @property
-    def column(self):
-        # Represents whether or not this should be displaye as it's own column.
-        return self.column_value is not None
-
-
     def __str__(self):
         return "{} {} ({})".format(
                                  self.parent.parent.name,
@@ -53,12 +47,12 @@ class ClassFeature(HasName, HasDescription, FromDocument):
 
     parent = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
-    
-    def featureitem_data(self):
-        return self.classfeatureitem_set
 
-    def column(self):
-        return len(self.classfeatureitem_set.exclude(column_value=None))>0
+    def featureitems(self):
+        return self.classfeatureitem_set.exclude(column_value__isnull=False)
+
+    def columnitems(self):
+        return self.classfeatureitem_set.exclude(column_value__isnull=True)
 
     def __str__(self):
         return "{} ({})".format(self.name,self.parent.name)

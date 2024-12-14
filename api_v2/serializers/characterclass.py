@@ -9,21 +9,29 @@ from .document import DocumentSerializer
 
 
 class ClassFeatureItemSerializer(GameContentSerializer):
+    
+    class Meta:
+        model = models.ClassFeatureItem
+        fields = ['level']
+
+class ClassFeatureColumnItemSerializer(GameContentSerializer):
     class Meta:
         model = models.ClassFeatureItem
         fields = ['level','column_value']
 
-
 class ClassFeatureSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    column = serializers.ReadOnlyField()
-    featureitem_data = ClassFeatureItemSerializer(
-        many=True, context={'request': {}}
+    featureitems = ClassFeatureItemSerializer(
+        many=True
+    )
+
+    columnitems = ClassFeatureColumnItemSerializer(
+        many=True
     )
 
     class Meta:
         model = models.ClassFeature
-        fields = ['key', 'name', 'desc','column','featureitem_data']
+        fields = ['key', 'name', 'desc','featureitems','columnitems']
 
 class CharacterClassSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()

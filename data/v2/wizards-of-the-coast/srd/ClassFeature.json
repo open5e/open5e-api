@@ -131,6 +131,26 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_barbarian_rage-damage",
+  "fields": {
+    "name": "Rage Damage",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_barbarian"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_barbarian_rages",
+  "fields": {
+    "name": "Rages",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_barbarian"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_barbarian_reckless-attack",
   "fields": {
     "name": "Reckless Attack",
@@ -185,6 +205,16 @@
   "fields": {
     "name": "Bardic Inspiration",
     "desc": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\r\n\r\nOnce within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\r\n\r\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.\r\n\r\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_bard"
   }
@@ -275,6 +305,16 @@
   "fields": {
     "name": "Spellcasting",
     "desc": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music.\r\n\r\nYour spells are part of your vast repertoire, magic that you can tune to different situations.\r\n\r\n###Cantrips\r\n\r\nYou know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Bard table.\r\n\r\n###Spell Slots\r\n\r\nThe Bard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nFor example, if you know the 1st-level spell cure wounds and have a 1st-level and a 2nd-level spell slot available, you can cast cure wounds using either slot.\r\n\r\n###Spells Known of 1st Level and Higher\r\n\r\nYou know four 1st-level spells of your choice from the bard spell list.\r\n\r\nThe Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\r\n\r\nAdditionally, when you gain a level in this class, you can choose one of the bard spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots.\r\n\r\n###Spellcasting Ability\r\n\r\nCharisma is your spellcasting ability for your bard spells. Your magic comes from the heart and soul you pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a bard spell you cast and when making an attack roll with one.\r\n\r\n*Spell save DC* = 8 + your proficiency bonus + your Charisma modifier\r\n\r\n*Spell attack modifier* = your proficiency bonus + your Charisma modifier\r\n\r\n###Ritual Casting\r\n\r\nYou can cast any bard spell you know as a ritual if that spell has the ritual tag.\r\n\r\n###Spellcasting Focus\r\n\r\nYou can use a musical instrument (see chapter 5, “Equipment”) as a spellcasting focus for your bard spells.",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_bard"
   }
@@ -405,6 +445,16 @@
   "fields": {
     "name": "Ability Score Improvement",
     "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_cleric"
   }
@@ -595,6 +645,16 @@
   "fields": {
     "name": "Beast Spells",
     "desc": "Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components.",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_druid"
   }
@@ -955,6 +1015,16 @@
   "fields": {
     "name": "Ki-Empowered Strikes",
     "desc": "Starting at 6th level, your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.",
+    "document": "srd",
+    "parent": "srd_monk"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_monk_ki-points",
+  "fields": {
+    "name": "Ki Points",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_monk"
   }
@@ -1471,6 +1541,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_ranger_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_ranger"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_ranger_vanish",
   "fields": {
     "name": "Vanish",
@@ -1691,6 +1771,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_equipment",
   "fields": {
     "name": "Equipment",
@@ -1741,10 +1831,30 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_sorcery-points",
+  "fields": {
+    "name": "Sorcery Points",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_spellcasting",
   "fields": {
     "name": "Spellcasting",
     "desc": "An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.\r\n\r\n### Cantrips\r\n\r\nAt 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Sorcerer table.\r\n\r\n### Spell Slots\r\n\r\nThe Sorcerer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nFor example, if you know the 1st-level spell burning hands and have a 1st-level and a 2nd-level spell slot available, you can cast burning hands using either slot.\r\n\r\n### Spells Known of 1st Level and Higher\r\n\r\nYou know two 1st-level spells of your choice from the sorcerer spell list.\r\n\r\nThe Spells Known column of the Sorcerer table shows when you learn more sorcerer spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\r\n\r\nAdditionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list, which also must be of a level for which you have spell slots.\r\n\r\n### Spellcasting Ability\r\n\r\nCharisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your will into the world. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a sorcerer spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC = 8** + your proficiency bonus + your Charisma modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\r\nSpellcasting Focus\r\n\r\nYou can use an arcane focus as a spellcasting focus for your sorcerer spells.",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_sorcerer"
   }
@@ -1871,6 +1981,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_warlock_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_warlock_eldritch-invocation-list",
   "fields": {
     "name": "Eldritch Invocation List",
@@ -1905,6 +2025,16 @@
   "fields": {
     "name": "Equipment",
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a light crossbow and 20 bolts or (*b*) any simple weapon\r\n* (*a*) a component pouch or (*b*) an arcane focus\r\n* (*a*) a scholar’s pack or (*b*) a dungeoneer’s pack\r\n* Leather armor, any simple weapon, and two daggers",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_warlock_invocations-known",
+  "fields": {
+    "name": "Invocations Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_warlock"
   }
@@ -1955,6 +2085,36 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** Light armor\r\n**Weapons:** Simple weapons\r\n**Tools:** None\r\n**Saving Throws:** Wisdom, Charisma\r\n**Skills:** Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_warlock_slot-level",
+  "fields": {
+    "name": "Slot Level",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_warlock_spell-slots",
+  "fields": {
+    "name": "Spell Slots",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_warlock_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_warlock"
   }
@@ -2025,6 +2185,16 @@
   "fields": {
     "name": "Arcane Tradition",
     "desc": "When you reach 2nd level, you choose an arcane tradition, shaping your practice of magic through one of eight schools: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation, all detailed at the end of the class description.\r\n\r\nYour choice grants you features at 2nd level and again at 6th, 10th, and 14th level.",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_wizard"
   }
