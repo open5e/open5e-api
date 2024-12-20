@@ -121,6 +121,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_barbarian_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_barbarian"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_barbarian_rage",
   "fields": {
     "name": "Rage",
@@ -285,6 +295,16 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** Light armor\r\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\r\n**Tools:** Three musical instruments of your choice\r\n**Saving Throws:** Dexterity, Charisma\r\n**Skills:** Choose any three",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_bard"
   }
@@ -521,6 +541,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_cleric_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_cleric_spellcasting",
   "fields": {
     "name": "Spellcasting",
@@ -701,6 +731,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_druid_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_druid_spellcasting",
   "fields": {
     "name": "Spellcasting",
@@ -805,6 +845,16 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** All armor, shields\r\n**Weapons:** Simple weapons, martial weapons\r\n**Tools:** None\r\n**Saving Throws:** Strength, Constitution\r\n**Skills:** Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival",
+    "document": "srd",
+    "parent": "srd_fighter"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_fighter_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_fighter"
   }
@@ -1065,6 +1115,16 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** None\r\n**Weapons:** Simple weapons, shortswords\r\n**Tools:** Choose one type of artisan’s tools or one musical instrument\r\n**Saving Throws:** Strength, Dexterity\r\n**Skills:** Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth",
+    "document": "srd",
+    "parent": "srd_monk"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_monk_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_monk"
   }
@@ -1341,6 +1401,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_paladin_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_paladin"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_paladin_sacred-oath",
   "fields": {
     "name": "Sacred Oath",
@@ -1521,6 +1591,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_ranger_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_ranger"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_ranger_ranger-archetype",
   "fields": {
     "name": "Ranger Archetype",
@@ -1635,6 +1715,16 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** Light armor\r\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\r\n**Tools:** Thieves’ tools\r\n**Saving Throws:** Dexterity, Intelligence\r\n**Skills:** Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth",
+    "document": "srd",
+    "parent": "srd_rogue"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_rogue_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_rogue"
   }
@@ -1805,6 +1895,16 @@
   "fields": {
     "name": "Metamagic",
     "desc": "At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level.\r\n\r\nYou can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\r\n\r\n### Careful Spell\r\n\r\nWhen you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.\r\n\r\n### Distant Spell\r\n\r\nWhen you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell.\r\n\r\nWhen you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feet.\r\n\r\n### Empowered Spell\r\n\r\nWhen you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.\r\n\r\nYou can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell.\r\n\r\n### Extended Spell\r\n\r\nWhen you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.\r\n\r\n### Heightened Spell\r\n\r\nWhen you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell.\r\n\r\n### Quickened Spell\r\n\r\nWhen you cast a spell that has a casting time of 1 action, you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting.\r\n\r\n### Subtle Spell\r\n\r\nWhen you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components.\r\n\r\n### Twinned Spell\r\n\r\nWhen you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).\r\n\r\nTo be eligible, a spell must be incapable of targeting more than one creature at the spell's current level. For example, magic missile and scorching ray aren't eligible, but ray of frost and chromatic orb are.",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_sorcerer"
   }
@@ -2091,6 +2191,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_warlock_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_warlock_slot-level",
   "fields": {
     "name": "Slot Level",
@@ -2221,10 +2331,110 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_wizard_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_wizard_signature-spells",
   "fields": {
     "name": "Signature Spells",
     "desc": "When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don't count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest.\r\n\r\nIf you want to cast either spell at a higher level, you must expend a spell slot as normal.",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-1st",
+  "fields": {
+    "name": "1st",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-4th",
+  "fields": {
+    "name": "4th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-5th",
+  "fields": {
+    "name": "5th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-6th",
+  "fields": {
+    "name": "6th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-7th",
+  "fields": {
+    "name": "7th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-8th",
+  "fields": {
+    "name": "8th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-9th",
+  "fields": {
+    "name": "9th",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_wizard"
   }
@@ -2245,126 +2455,6 @@
   "fields": {
     "name": "Spellcasting",
     "desc": "As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power.\r\n\r\n### Cantrips\r\n\r\nAt 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.\r\n\r\n### Spellbook\r\n\r\nAt 1st level, you have a spellbook containing six 1st- level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind.\r\n\r\n### Preparing and Casting Spells\r\n\r\nThe Wizard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nYou prepare the list of wizard spells that are available for you to cast. To do so, choose a number of wizard spells from your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.\r\n\r\nFor example, if you're a 3rd-level wizard, you have four 1st-level and two 2nd-level spell slots. With an Intelligence of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination, chosen from your spellbook. If you prepare the 1st-level spell magic missile, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\r\n\r\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of wizard spells requires time spent studying your spellbook and memorizing the incantations and gestures you must make to cast the spell: at least 1 minute per spell level for each spell on your list.\r\n\r\n### Spellcasting Ability\r\n\r\nIntelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC** = 8 + your proficiency bonus + your Intelligence modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Intelligence modifier\r\n\r\n### Ritual Casting\r\n\r\nYou can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don't need to have the spell prepared.\r\n\r\n### Spellcasting Focus\r\n\r\nYou can use an arcane focus as a spellcasting focus for your wizard spells.\r\n\r\n### Learning Spells of 1st Level and Higher\r\n\r\nEach time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook (see the “Your Spellbook” sidebar).",
-    "document": "srd",
-    "parent": "srd_wizard"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_bard_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_bard"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_barbarian_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_barbarian"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_cleric_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_cleric"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_druid_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_druid"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_fighter_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_fighter"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_monk_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_monk"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_paladin_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_paladin"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_ranger_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_ranger"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_rogue_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_rogue"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_sorcerer_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_sorcerer"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_warlock_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
-    "document": "srd",
-    "parent": "srd_warlock"
-  }
-},
-{
-  "model": "api_v2.classfeature",
-  "pk": "srd_wizard_proficiency-bonus",
-  "fields": {
-    "name": "Proficiency Bonus",
-    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_wizard"
   }

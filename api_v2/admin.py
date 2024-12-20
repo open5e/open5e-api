@@ -34,6 +34,14 @@ class RaceAdmin(admin.ModelAdmin):
         RaceTraitInline,
     ]
 
+class ClassFeatureItemInline(admin.TabularInline):
+    model = ClassFeatureItem
+
+class ClassFeatureAdmin(admin.ModelAdmin):
+    inlines = [
+        ClassFeatureItemInline
+    ]
+
 
 class BackgroundBenefitInline(admin.TabularInline):
     model = BackgroundBenefit
@@ -93,7 +101,7 @@ admin.site.register(Alignment)
 admin.site.register(Condition)
 
 admin.site.register(ClassFeatureItem)
-admin.site.register(ClassFeature)
+admin.site.register(ClassFeature, admin_class=ClassFeatureAdmin)
 admin.site.register(CharacterClass)
 
 admin.site.register(Environment)
