@@ -121,10 +121,40 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_barbarian_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_barbarian"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_barbarian_rage",
   "fields": {
     "name": "Rage",
     "desc": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.\r\n\r\nWhile raging, you gain the following benefits if you aren't wearing heavy armor:\r\n\r\n* You have advantage on Strength checks and Strength saving throws.\r\n* When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\r\n* You have resistance to bludgeoning, piercing, and slashing damage. \r\n\r\nIf you are able to cast spells, you can't cast them or concentrate on them while raging.\r\n\r\nYour rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.\r\n\r\nOnce you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again.",
+    "document": "srd",
+    "parent": "srd_barbarian"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_barbarian_rage-damage",
+  "fields": {
+    "name": "Rage Damage",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_barbarian"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_barbarian_rages",
+  "fields": {
+    "name": "Rages",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_barbarian"
   }
@@ -185,6 +215,16 @@
   "fields": {
     "name": "Bardic Inspiration",
     "desc": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\r\n\r\nOnce within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\r\n\r\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.\r\n\r\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_bard"
   }
@@ -261,6 +301,106 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_bard_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_slots-1st",
+  "fields": {
+    "name": "1st",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_slots-4th",
+  "fields": {
+    "name": "4th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_slots-5th",
+  "fields": {
+    "name": "5th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_slots-6th",
+  "fields": {
+    "name": "6th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_slots-7th",
+  "fields": {
+    "name": "7th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_slots-8th",
+  "fields": {
+    "name": "8th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_slots-9th",
+  "fields": {
+    "name": "9th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_bard_song-of-rest",
   "fields": {
     "name": "Song of Rest",
@@ -275,6 +415,16 @@
   "fields": {
     "name": "Spellcasting",
     "desc": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music.\r\n\r\nYour spells are part of your vast repertoire, magic that you can tune to different situations.\r\n\r\n###Cantrips\r\n\r\nYou know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Bard table.\r\n\r\n###Spell Slots\r\n\r\nThe Bard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nFor example, if you know the 1st-level spell cure wounds and have a 1st-level and a 2nd-level spell slot available, you can cast cure wounds using either slot.\r\n\r\n###Spells Known of 1st Level and Higher\r\n\r\nYou know four 1st-level spells of your choice from the bard spell list.\r\n\r\nThe Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\r\n\r\nAdditionally, when you gain a level in this class, you can choose one of the bard spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots.\r\n\r\n###Spellcasting Ability\r\n\r\nCharisma is your spellcasting ability for your bard spells. Your magic comes from the heart and soul you pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a bard spell you cast and when making an attack roll with one.\r\n\r\n*Spell save DC* = 8 + your proficiency bonus + your Charisma modifier\r\n\r\n*Spell attack modifier* = your proficiency bonus + your Charisma modifier\r\n\r\n###Ritual Casting\r\n\r\nYou can cast any bard spell you know as a ritual if that spell has the ritual tag.\r\n\r\n###Spellcasting Focus\r\n\r\nYou can use a musical instrument (see chapter 5, “Equipment”) as a spellcasting focus for your bard spells.",
+    "document": "srd",
+    "parent": "srd_bard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_bard_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_bard"
   }
@@ -411,6 +561,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_cleric_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_cleric_channel-divinity",
   "fields": {
     "name": "Channel Divinity",
@@ -465,6 +625,106 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** Light armor, medium armor, shields\r\n**Weapons:** Simple weapons\r\n**Tools:** None\r\n**Saving Throws:** Wisdom, Charisma\r\n**Skills:** Choose two from History, Insight, Medicine, Persuasion, and Religion",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_slots-1st",
+  "fields": {
+    "name": "1st",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_slots-4th",
+  "fields": {
+    "name": "4th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_slots-5th",
+  "fields": {
+    "name": "5th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_slots-6th",
+  "fields": {
+    "name": "6th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_slots-7th",
+  "fields": {
+    "name": "7th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_slots-8th",
+  "fields": {
+    "name": "8th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_cleric"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_cleric_slots-9th",
+  "fields": {
+    "name": "9th",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_cleric"
   }
@@ -601,6 +861,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_druid_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_druid_druid-circle",
   "fields": {
     "name": "Druid Circle",
@@ -635,6 +905,106 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** Light armor, medium armor, shields (druids will not wear armor or use shields made of metal)\r\n**Weapons:** Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears \r\n**Tools:** Herbalism kit\r\n**Saving Throws:** Intelligence, Wisdom\r\n**Skills:** Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_slots-1st",
+  "fields": {
+    "name": "1st",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_slots-4th",
+  "fields": {
+    "name": "4th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_slots-5th",
+  "fields": {
+    "name": "5th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_slots-6th",
+  "fields": {
+    "name": "6th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_slots-7th",
+  "fields": {
+    "name": "7th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_slots-8th",
+  "fields": {
+    "name": "8th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_druid"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_druid_slots-9th",
+  "fields": {
+    "name": "9th",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_druid"
   }
@@ -745,6 +1115,16 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** All armor, shields\r\n**Weapons:** Simple weapons, martial weapons\r\n**Tools:** None\r\n**Saving Throws:** Strength, Constitution\r\n**Skills:** Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival",
+    "document": "srd",
+    "parent": "srd_fighter"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_fighter_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_fighter"
   }
@@ -961,6 +1341,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_monk_ki-points",
+  "fields": {
+    "name": "Ki Points",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_monk"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_monk_martial-arts",
   "fields": {
     "name": "Martial Arts",
@@ -995,6 +1385,16 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** None\r\n**Weapons:** Simple weapons, shortswords\r\n**Tools:** Choose one type of artisan’s tools or one musical instrument\r\n**Saving Throws:** Strength, Dexterity\r\n**Skills:** Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth",
+    "document": "srd",
+    "parent": "srd_monk"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_monk_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_monk"
   }
@@ -1271,10 +1671,70 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_paladin_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_paladin"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_paladin_sacred-oath",
   "fields": {
     "name": "Sacred Oath",
     "desc": "When you reach 3rd level, you swear the oath that binds you as a paladin forever. Up to this time you have been in a preparatory stage, committed to the path but not yet sworn to it. Now you choose the Oath of Devotion, the Oath of the Ancients, or the Oath of Vengeance, all detailed at the end of the class description.\r\n\r\nYour choice grants you features at 3rd level and again at 7th, 15th, and 20th level. Those features include oath spells and the Channel Divinity feature.\r\n\r\n### Oath Spells\r\n\r\nEach oath has a list of associated spells. You gain access to these spells at the levels specified in the oath description. Once you gain access to an oath spell, you always have it prepared. Oath spells don't count against the number of spells you can prepare each day.\r\n\r\nIf you gain an oath spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.\r\n\r\n### Channel Divinity\r\n\r\nYour oath allows you to channel divine energy to fuel magical effects. Each Channel Divinity option provided by your oath explains how to use it.\r\n\r\nWhen you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.\r\n\r\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC.",
+    "document": "srd",
+    "parent": "srd_paladin"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_paladin_slots-1st",
+  "fields": {
+    "name": "1st",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_paladin"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_paladin_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_paladin"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_paladin_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_paladin"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_paladin_slots-4th",
+  "fields": {
+    "name": "4th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_paladin"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_paladin_slots-5th",
+  "fields": {
+    "name": "5th",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_paladin"
   }
@@ -1451,6 +1911,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_ranger_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_ranger"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_ranger_ranger-archetype",
   "fields": {
     "name": "Ranger Archetype",
@@ -1461,10 +1931,70 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_ranger_slots-1st",
+  "fields": {
+    "name": "1st",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_ranger"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_ranger_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_ranger"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_ranger_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_ranger"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_ranger_slots-4th",
+  "fields": {
+    "name": "4th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_ranger"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_ranger_slots-5th",
+  "fields": {
+    "name": "5th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_ranger"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_ranger_spellcasting",
   "fields": {
     "name": "Spellcasting",
     "desc": "By the time you reach 2nd level, you have learned to use the magical essence of nature to cast spells, much as a druid does. See chapter 10 for the general rules of spellcasting and chapter 11 for the ranger spell list.\r\n\r\n### Spell Slots\r\n\r\nThe Ranger table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nFor example, if you know the 1st-level spell animal friendship and have a 1st-level and a 2nd-level spell slot available, you can cast animal friendship using either slot.\r\n\r\n### Spells Known of 1st Level and Higher\r\n\r\nYou know two 1st-level spells of your choice from the ranger spell list.\r\n\r\nThe Spells Known column of the Ranger table shows when you learn more ranger spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 5th level in this class, you can learn one new spell of 1st or 2nd level.\r\n\r\nAdditionally, when you gain a level in this class, you can choose one of the ranger spells you know and replace it with another spell from the ranger spell list, which also must be of a level for which you have spell slots.\r\n\r\n### Spellcasting Ability\r\n\r\nWisdom is your spellcasting ability for your ranger spells, since your magic draws on your attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a ranger spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier",
+    "document": "srd",
+    "parent": "srd_ranger"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_ranger_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_ranger"
   }
@@ -1555,6 +2085,16 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** Light armor\r\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\r\n**Tools:** Thieves’ tools\r\n**Saving Throws:** Dexterity, Intelligence\r\n**Skills:** Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth",
+    "document": "srd",
+    "parent": "srd_rogue"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_rogue_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_rogue"
   }
@@ -1691,6 +2231,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_equipment",
   "fields": {
     "name": "Equipment",
@@ -1721,6 +2271,106 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_slots-1st",
+  "fields": {
+    "name": "1st",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_slots-4th",
+  "fields": {
+    "name": "4th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_slots-5th",
+  "fields": {
+    "name": "5th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_slots-6th",
+  "fields": {
+    "name": "6th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_slots-7th",
+  "fields": {
+    "name": "7th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_slots-8th",
+  "fields": {
+    "name": "8th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_slots-9th",
+  "fields": {
+    "name": "9th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_sorcerous-origin",
   "fields": {
     "name": "Sorcerous Origin",
@@ -1741,10 +2391,30 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_sorcery-points",
+  "fields": {
+    "name": "Sorcery Points",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_spellcasting",
   "fields": {
     "name": "Spellcasting",
     "desc": "An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.\r\n\r\n### Cantrips\r\n\r\nAt 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Sorcerer table.\r\n\r\n### Spell Slots\r\n\r\nThe Sorcerer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nFor example, if you know the 1st-level spell burning hands and have a 1st-level and a 2nd-level spell slot available, you can cast burning hands using either slot.\r\n\r\n### Spells Known of 1st Level and Higher\r\n\r\nYou know two 1st-level spells of your choice from the sorcerer spell list.\r\n\r\nThe Spells Known column of the Sorcerer table shows when you learn more sorcerer spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\r\n\r\nAdditionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list, which also must be of a level for which you have spell slots.\r\n\r\n### Spellcasting Ability\r\n\r\nCharisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your will into the world. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a sorcerer spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC = 8** + your proficiency bonus + your Charisma modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\r\nSpellcasting Focus\r\n\r\nYou can use an arcane focus as a spellcasting focus for your sorcerer spells.",
+    "document": "srd",
+    "parent": "srd_sorcerer"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_sorcerer_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_sorcerer"
   }
@@ -1871,6 +2541,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_warlock_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_warlock_eldritch-invocation-list",
   "fields": {
     "name": "Eldritch Invocation List",
@@ -1905,6 +2585,16 @@
   "fields": {
     "name": "Equipment",
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a light crossbow and 20 bolts or (*b*) any simple weapon\r\n* (*a*) a component pouch or (*b*) an arcane focus\r\n* (*a*) a scholar’s pack or (*b*) a dungeoneer’s pack\r\n* Leather armor, any simple weapon, and two daggers",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_warlock_invocations-known",
+  "fields": {
+    "name": "Invocations Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_warlock"
   }
@@ -1955,6 +2645,46 @@
   "fields": {
     "name": "Proficiencies",
     "desc": "**Armor:** Light armor\r\n**Weapons:** Simple weapons\r\n**Tools:** None\r\n**Saving Throws:** Wisdom, Charisma\r\n**Skills:** Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_warlock_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_warlock_slot-level",
+  "fields": {
+    "name": "Slot Level",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_warlock_spell-slots",
+  "fields": {
+    "name": "Spell Slots",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_warlock"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_warlock_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_warlock"
   }
@@ -2031,6 +2761,16 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_wizard_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_wizard_equipment",
   "fields": {
     "name": "Equipment",
@@ -2051,10 +2791,110 @@
 },
 {
   "model": "api_v2.classfeature",
+  "pk": "srd_wizard_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
   "pk": "srd_wizard_signature-spells",
   "fields": {
     "name": "Signature Spells",
     "desc": "When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don't count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest.\r\n\r\nIf you want to cast either spell at a higher level, you must expend a spell slot as normal.",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-1st",
+  "fields": {
+    "name": "1st",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-4th",
+  "fields": {
+    "name": "4th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-5th",
+  "fields": {
+    "name": "5th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-6th",
+  "fields": {
+    "name": "6th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-7th",
+  "fields": {
+    "name": "7th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-8th",
+  "fields": {
+    "name": "8th",
+    "desc": "[Column data]",
+    "document": "srd",
+    "parent": "srd_wizard"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "srd_wizard_slots-9th",
+  "fields": {
+    "name": "9th",
+    "desc": "[Column data]",
     "document": "srd",
     "parent": "srd_wizard"
   }
