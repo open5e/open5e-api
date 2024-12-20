@@ -28,7 +28,7 @@ class SpellSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     casting_options = SpellCastingOptionSerializer(many=True)
     school = SpellSchoolSerializer()
-    #classes = CharacterClassSerializer(many=True) - Should not be a full class object.
+    classes = CharacterClassSerializer(many=True)
 
     range_unit = serializers.SerializerMethodField()
     shape_size_unit = serializers.SerializerMethodField()
