@@ -67,8 +67,1770 @@
     ],
     "casting_time": "action",
     "classes": [
-        "http://localhost:8000/v2/classes/srd_sorcerer/",
-        "http://localhost:8000/v2/classes/srd_wizard/"
+        {
+            "caster_type": null,
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "features": [
+                {
+                    "columnitems": [],
+                    "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+                    "featureitems": [
+                        {
+                            "level": 12
+                        },
+                        {
+                            "level": 16
+                        },
+                        {
+                            "level": 19
+                        },
+                        {
+                            "level": 4
+                        },
+                        {
+                            "level": 8
+                        }
+                    ],
+                    "key": "srd_sorcerer_ability-score-improvement",
+                    "name": "Ability Score Improvement"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "4",
+                            "level": 1
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 2
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 3
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_cantrips-known",
+                    "name": "Cantrips Known"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a light crossbow and 20 bolts or (*b*) any simple weapon\r\n* (*a*) a component pouch or (*b*) an arcane focus\r\n* (*a*) a dungeoneer\u2019s pack or (*b*) an explorer\u2019s pack\r\n* Two daggers",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_equipment",
+                    "name": "Equipment"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.\r\n\r\n### Sorcery Points\r\n\r\nYou have 2 sorcery points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer table. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest.\r\n\r\n### Flexible Casting\r\n\r\nYou can use your sorcery points to gain additional spell slots, or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.\r\n\r\n***Creating Spell Slots.*** You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.\r\n\r\nAny spell slot you create with this feature vanishes when you finish a long rest.\r\n\r\n### Creating Spell Slots (table)\r\n| Spell Slot Level | Sorcery Point Cost |\r\n| --- | --- |\r\n| 1st | 2 |\r\n| 2nd | 3 |\r\n| 3rd | 5 |\r\n| 4th | 6 |\r\n| 5th | 7|\r\n\r\n***Converting a Spell Slot to Sorcery Points.*** As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level.",
+                    "featureitems": [
+                        {
+                            "level": 2
+                        }
+                    ],
+                    "key": "srd_sorcerer_font-of-magic",
+                    "name": "Font of Magic"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level.\r\n\r\nYou can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\r\n\r\n### Careful Spell\r\n\r\nWhen you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.\r\n\r\n### Distant Spell\r\n\r\nWhen you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell.\r\n\r\nWhen you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feet.\r\n\r\n### Empowered Spell\r\n\r\nWhen you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.\r\n\r\nYou can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell.\r\n\r\n### Extended Spell\r\n\r\nWhen you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.\r\n\r\n### Heightened Spell\r\n\r\nWhen you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell.\r\n\r\n### Quickened Spell\r\n\r\nWhen you cast a spell that has a casting time of 1 action, you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting.\r\n\r\n### Subtle Spell\r\n\r\nWhen you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components.\r\n\r\n### Twinned Spell\r\n\r\nWhen you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).\r\n\r\nTo be eligible, a spell must be incapable of targeting more than one creature at the spell's current level. For example, magic missile and scorching ray aren't eligible, but ray of frost and chromatic orb are.",
+                    "featureitems": [
+                        {
+                            "level": 10
+                        },
+                        {
+                            "level": 17
+                        },
+                        {
+                            "level": 3
+                        }
+                    ],
+                    "key": "srd_sorcerer_metamagic",
+                    "name": "Metamagic"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "+2",
+                            "level": 1
+                        },
+                        {
+                            "column_value": "+4",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "+4",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "+4",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "+5",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "+5",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "+5",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "+5",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "+6",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "+6",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "+6",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "+2",
+                            "level": 2
+                        },
+                        {
+                            "column_value": "+6",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "+2",
+                            "level": 3
+                        },
+                        {
+                            "column_value": "+2",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "+3",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "+3",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "+3",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "+3",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "+4",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_proficiency-bonus",
+                    "name": "Proficiency Bonus"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "2",
+                            "level": 1
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 2
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 3
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_slots-1st",
+                    "name": "1st"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "3",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_slots-2nd",
+                    "name": "2nd"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "3",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_slots-3rd",
+                    "name": "3rd"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "3",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_slots-4th",
+                    "name": "4th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "2",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_slots-5th",
+                    "name": "5th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "1",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 20
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_slots-6th",
+                    "name": "6th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "1",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 20
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_slots-7th",
+                    "name": "7th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "1",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 20
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_slots-8th",
+                    "name": "8th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "1",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 20
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_slots-9th",
+                    "name": "9th"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "Choose a sorcerous origin, which describes the source of your innate magical power: Draconic Bloodline or Wild Magic, both detailed at the end of the class description.\r\n\r\nYour choice grants you features when you choose it at 1st level and again at 6th, 14th, and 18th level.",
+                    "featureitems": [
+                        {
+                            "level": 1
+                        }
+                    ],
+                    "key": "srd_sorcerer_sorcerous-origin",
+                    "name": "Sorcerous Origin"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "At 20th level, you regain 4 expended sorcery points whenever you finish a short rest.",
+                    "featureitems": [
+                        {
+                            "level": 20
+                        }
+                    ],
+                    "key": "srd_sorcerer_sorcerous-restoration",
+                    "name": "Sorcerous Restoration"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "10",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "11",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "12",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "13",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "14",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "15",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "16",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "17",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "18",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "19",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 2
+                        },
+                        {
+                            "column_value": "20",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 3
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "7",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "8",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "9",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_sorcery-points",
+                    "name": "Sorcery Points"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.\r\n\r\n### Cantrips\r\n\r\nAt 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Sorcerer table.\r\n\r\n### Spell Slots\r\n\r\nThe Sorcerer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nFor example, if you know the 1st-level spell burning hands and have a 1st-level and a 2nd-level spell slot available, you can cast burning hands using either slot.\r\n\r\n### Spells Known of 1st Level and Higher\r\n\r\nYou know two 1st-level spells of your choice from the sorcerer spell list.\r\n\r\nThe Spells Known column of the Sorcerer table shows when you learn more sorcerer spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\r\n\r\nAdditionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list, which also must be of a level for which you have spell slots.\r\n\r\n### Spellcasting Ability\r\n\r\nCharisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your will into the world. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a sorcerer spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC = 8** + your proficiency bonus + your Charisma modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\r\nSpellcasting Focus\r\n\r\nYou can use an arcane focus as a spellcasting focus for your sorcerer spells.",
+                    "featureitems": [
+                        {
+                            "level": 1
+                        }
+                    ],
+                    "key": "srd_sorcerer_spellcasting",
+                    "name": "Spellcasting"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "2",
+                            "level": 1
+                        },
+                        {
+                            "column_value": "11",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "12",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "12",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "13",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "13",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "14",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "14",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "15",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "15",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "15",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 2
+                        },
+                        {
+                            "column_value": "15",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 3
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "6",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "7",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "8",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "9",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "10",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_sorcerer_spells-known",
+                    "name": "Spells Known"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "**Armor:** None\r\n**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows\r\n**Tools:** None\r\n**Saving Throws:** Constitution, Charisma\r\n**Skills:** Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion",
+                    "featureitems": [],
+                    "key": "srd_sorceror_proficiencies",
+                    "name": "Proficiencies"
+                }
+            ],
+            "hit_dice": "D6",
+            "hit_points": {
+                "hit_dice": "D6",
+                "hit_dice_name": "1D6 per Sorcerer level",
+                "hit_points_at_1st_level": "6 + your Constitution modifier",
+                "hit_points_at_higher_levels": "1D6 (or 4) + your Constitution modifier per sorcerer level after 1st"
+            },
+            "key": "srd_sorcerer",
+            "name": "Sorcerer",
+            "saving_throws": [
+                "http://localhost:8000/v2/abilities/cha/",
+                "http://localhost:8000/v2/abilities/con/"
+            ],
+            "subclass_of": null,
+            "url": "http://localhost:8000/v2/classes/srd_sorcerer/"
+        },
+        {
+            "caster_type": null,
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "features": [
+                {
+                    "columnitems": [],
+                    "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+                    "featureitems": [
+                        {
+                            "level": 12
+                        },
+                        {
+                            "level": 16
+                        },
+                        {
+                            "level": 19
+                        },
+                        {
+                            "level": 4
+                        },
+                        {
+                            "level": 8
+                        }
+                    ],
+                    "key": "srd_wizard_ability-score-improvement",
+                    "name": "Ability Score Improvement"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.\r\n\r\nFor example, if you're a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots.",
+                    "featureitems": [
+                        {
+                            "level": 1
+                        }
+                    ],
+                    "key": "srd_wizard_arcane-recovery",
+                    "name": "Arcane Recovery"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "When you reach 2nd level, you choose an arcane tradition, shaping your practice of magic through one of eight schools: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation, all detailed at the end of the class description.\r\n\r\nYour choice grants you features at 2nd level and again at 6th, 10th, and 14th level.",
+                    "featureitems": [
+                        {
+                            "level": 2
+                        }
+                    ],
+                    "key": "srd_wizard_arcane-tradition",
+                    "name": "Arcane Tradition"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "3",
+                            "level": 1
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 2
+                        },
+                        {
+                            "column_value": "5",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 3
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_cantrips-known",
+                    "name": "Cantrips Known"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a quarterstaff or (*b*) a dagger\r\n* (*a*) a component pouch or (*b*) an arcane focus\r\n* (*a*) a scholar\u2019s pack or (*b*) an explorer\u2019s pack\r\n* A spellbook",
+                    "featureitems": [],
+                    "key": "srd_wizard_equipment",
+                    "name": "Equipment"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "**Armor:** None\r\n**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows\r\n**Tools:** None\r\n**Saving Throws:** Intelligence, Wisdom\r\n**Skills:** Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion",
+                    "featureitems": [],
+                    "key": "srd_wizard_proficiencies",
+                    "name": "Proficiencies"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "+2",
+                            "level": 1
+                        },
+                        {
+                            "column_value": "+4",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "+4",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "+4",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "+5",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "+5",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "+5",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "+5",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "+6",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "+6",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "+6",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "+2",
+                            "level": 2
+                        },
+                        {
+                            "column_value": "+6",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "+2",
+                            "level": 3
+                        },
+                        {
+                            "column_value": "+2",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "+3",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "+3",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "+3",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "+3",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "+4",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_proficiency-bonus",
+                    "name": "Proficiency Bonus"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don't count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest.\r\n\r\nIf you want to cast either spell at a higher level, you must expend a spell slot as normal.",
+                    "featureitems": [
+                        {
+                            "level": 20
+                        }
+                    ],
+                    "key": "srd_wizard_signature-spells",
+                    "name": "Signature Spells"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "2",
+                            "level": 1
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 2
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 3
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "4",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_slots-1st",
+                    "name": "1st"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "3",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 4
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_slots-2nd",
+                    "name": "2nd"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "3",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 5
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 6
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_slots-3rd",
+                    "name": "3rd"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "3",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 7
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 8
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_slots-4th",
+                    "name": "4th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "2",
+                            "level": 10
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "3",
+                            "level": 20
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 9
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_slots-5th",
+                    "name": "5th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "1",
+                            "level": 11
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 12
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 20
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_slots-6th",
+                    "name": "6th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "1",
+                            "level": 13
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 14
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "2",
+                            "level": 20
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_slots-7th",
+                    "name": "7th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "1",
+                            "level": 15
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 16
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 20
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_slots-8th",
+                    "name": "8th"
+                },
+                {
+                    "columnitems": [
+                        {
+                            "column_value": "1",
+                            "level": 17
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 18
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 19
+                        },
+                        {
+                            "column_value": "1",
+                            "level": 20
+                        }
+                    ],
+                    "desc": "[Column data]",
+                    "featureitems": [],
+                    "key": "srd_wizard_slots-9th",
+                    "name": "9th"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "At 18th level, you have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. If you want to cast either spell at a higher level, you must expend a spell slot as normal.\r\n\r\nBy spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels.",
+                    "featureitems": [
+                        {
+                            "level": 18
+                        }
+                    ],
+                    "key": "srd_wizard_spell-mastery",
+                    "name": "Spell Mastery"
+                },
+                {
+                    "columnitems": [],
+                    "desc": "As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power.\r\n\r\n### Cantrips\r\n\r\nAt 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.\r\n\r\n### Spellbook\r\n\r\nAt 1st level, you have a spellbook containing six 1st- level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind.\r\n\r\n### Preparing and Casting Spells\r\n\r\nThe Wizard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\r\n\r\nYou prepare the list of wizard spells that are available for you to cast. To do so, choose a number of wizard spells from your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.\r\n\r\nFor example, if you're a 3rd-level wizard, you have four 1st-level and two 2nd-level spell slots. With an Intelligence of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination, chosen from your spellbook. If you prepare the 1st-level spell magic missile, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\r\n\r\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of wizard spells requires time spent studying your spellbook and memorizing the incantations and gestures you must make to cast the spell: at least 1 minute per spell level for each spell on your list.\r\n\r\n### Spellcasting Ability\r\n\r\nIntelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.\r\n\r\n**Spell save DC** = 8 + your proficiency bonus + your Intelligence modifier\r\n\r\n**Spell attack modifier** = your proficiency bonus + your Intelligence modifier\r\n\r\n### Ritual Casting\r\n\r\nYou can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don't need to have the spell prepared.\r\n\r\n### Spellcasting Focus\r\n\r\nYou can use an arcane focus as a spellcasting focus for your wizard spells.\r\n\r\n### Learning Spells of 1st Level and Higher\r\n\r\nEach time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook (see the \u201cYour Spellbook\u201d sidebar).",
+                    "featureitems": [
+                        {
+                            "level": 1
+                        }
+                    ],
+                    "key": "srd_wizard_spellcasting",
+                    "name": "Spellcasting"
+                }
+            ],
+            "hit_dice": "D6",
+            "hit_points": {
+                "hit_dice": "D6",
+                "hit_dice_name": "1D6 per Wizard level",
+                "hit_points_at_1st_level": "6 + your Constitution modifier",
+                "hit_points_at_higher_levels": "1D6 (or 4) + your Constitution modifier per wizard level after 1st"
+            },
+            "key": "srd_wizard",
+            "name": "Wizard",
+            "saving_throws": [
+                "http://localhost:8000/v2/abilities/int/",
+                "http://localhost:8000/v2/abilities/wis/"
+            ],
+            "subclass_of": null,
+            "url": "http://localhost:8000/v2/classes/srd_wizard/"
+        }
     ],
     "concentration": false,
     "damage_roll": "8d6",
