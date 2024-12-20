@@ -1,66 +1,67 @@
 {
+    "caster_type": null,
     "document": "http://localhost:8000/v2/documents/srd/",
     "features": [
         {
+            "columnitems": [],
             "desc": "Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools to disarm a trap or open a lock, or take the Use an Object action.",
+            "featureitems": [
+                {
+                    "level": 3
+                }
+            ],
             "key": "srd_thief_fast-hands",
             "name": "Fast Hands"
         },
         {
+            "columnitems": [],
             "desc": "When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement.\r\n\r\nIn addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.",
+            "featureitems": [
+                {
+                    "level": 3
+                }
+            ],
             "key": "srd_thief_second-story-work",
             "name": "Second-Story Work"
         },
         {
+            "columnitems": [],
             "desc": "Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn.",
+            "featureitems": [
+                {
+                    "level": 9
+                }
+            ],
             "key": "srd_thief_supreme-sneak",
             "name": "Supreme Sneak"
         },
         {
+            "columnitems": [],
             "desc": "When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised.",
+            "featureitems": [
+                {
+                    "level": 17
+                }
+            ],
             "key": "srd_thief_thiefs-reflexes",
             "name": "Thief's Reflexes"
         },
         {
+            "columnitems": [],
             "desc": "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items.",
+            "featureitems": [
+                {
+                    "level": 13
+                }
+            ],
             "key": "srd_thief_use-magic-device",
             "name": "Use Magic Device"
         }
     ],
     "hit_dice": null,
     "key": "srd_thief",
-    "levels": {
-        "13": {
-            "features": [
-                "srd_thief_use-magic-device"
-            ],
-            "level": 13,
-            "proficiency-bonus": 5
-        },
-        "17": {
-            "features": [
-                "srd_thief_thiefs-reflexes"
-            ],
-            "level": 17,
-            "proficiency-bonus": 6
-        },
-        "3": {
-            "features": [
-                "srd_thief_fast-hands",
-                "srd_thief_second-story-work"
-            ],
-            "level": 3,
-            "proficiency-bonus": 2
-        },
-        "9": {
-            "features": [
-                "srd_thief_supreme-sneak"
-            ],
-            "level": 9,
-            "proficiency-bonus": 4
-        }
-    },
     "name": "Thief",
+    "saving_throws": [],
     "subclass_of": "http://localhost:8000/v2/classes/srd_rogue/",
     "url": "http://localhost:8000/v2/classes/srd_thief/"
 }
