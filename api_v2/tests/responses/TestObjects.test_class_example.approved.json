@@ -1,85 +1,456 @@
 {
+    "caster_type": "NONE",
     "document": "http://localhost:8000/v2/documents/srd/",
     "features": [
         {
+            "columnitems": [],
             "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can\u2019t increase an ability score above 20 using this feature.",
+            "featureitems": [
+                {
+                    "level": 12
+                },
+                {
+                    "level": 16
+                },
+                {
+                    "level": 19
+                },
+                {
+                    "level": 4
+                },
+                {
+                    "level": 8
+                }
+            ],
             "key": "srd_barbarian_ability-score-improvement",
             "name": "Ability Score Improvement"
         },
         {
+            "columnitems": [],
             "desc": "Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.\r\n\r\nThis increases to two additional dice at 13th level and three additional dice at 17th level.",
+            "featureitems": [
+                {
+                    "level": 13
+                },
+                {
+                    "level": 17
+                },
+                {
+                    "level": 9
+                }
+            ],
             "key": "srd_barbarian_brutal-critical",
             "name": "Brutal Critical"
         },
         {
+            "columnitems": [],
             "desc": "At 2nd level, you gain an uncanny sense of when things nearby aren\u2019t as they should be, giving you an edge when you dodge away from danger.\r\n\r\nYou have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can\u2019t be blinded, deafened, or incapacitated.",
+            "featureitems": [
+                {
+                    "level": 2
+                }
+            ],
             "key": "srd_barbarian_danger-sense",
             "name": "Danger Sense"
         },
         {
+            "columnitems": [],
             "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a greataxe or (*b*) any martial melee weapon\r\n* (*a*) two handaxes or (*b*) any simple weapon\r\n* An explorer\u2019s pack and four javelins",
+            "featureitems": [],
             "key": "srd_barbarian_equipment",
             "name": "Equipment"
         },
         {
+            "columnitems": [],
             "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.",
+            "featureitems": [
+                {
+                    "level": 5
+                }
+            ],
             "key": "srd_barbarian_extra-attack",
             "name": "Extra Attack"
         },
         {
+            "columnitems": [],
             "desc": "Starting at 5th level, your speed increases by 10 feet while you aren\u2019t wearing heavy armor.",
+            "featureitems": [
+                {
+                    "level": 5
+                }
+            ],
             "key": "srd_barbarian_fast-movement",
             "name": "Fast Movement"
         },
         {
+            "columnitems": [],
             "desc": "By 7th level, your instincts are so honed that you have advantage on initiative rolls.\r\n\r\nAdditionally, if you are surprised at the beginning of combat and aren\u2019t incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn.",
+            "featureitems": [
+                {
+                    "level": 7
+                }
+            ],
             "key": "srd_barbarian_feral-instinct",
             "name": "Feral Instinct"
         },
         {
+            "columnitems": [],
             "desc": "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total.",
+            "featureitems": [
+                {
+                    "level": 18
+                }
+            ],
             "key": "srd_barbarian_indomitable-might",
             "name": "Indomitable Might"
         },
         {
+            "columnitems": [],
             "desc": "Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if you choose to end it.",
+            "featureitems": [
+                {
+                    "level": 15
+                }
+            ],
             "key": "srd_barbarian_persistent-rage",
             "name": "Persistent Rage"
         },
         {
+            "columnitems": [],
             "desc": "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24.",
+            "featureitems": [
+                {
+                    "level": 20
+                }
+            ],
             "key": "srd_barbarian_primal-champion",
             "name": "Primal Champion"
         },
         {
+            "columnitems": [],
             "desc": "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels.",
+            "featureitems": [
+                {
+                    "level": 3
+                }
+            ],
             "key": "srd_barbarian_primal-path",
             "name": "Primal Path"
         },
         {
+            "columnitems": [],
             "desc": "**Armor:** Light armor, medium armor, shields\r\n**Weapons:** Simple weapons, martial weapons\r\n**Tools:** None\r\n**Saving Throws:** Strength, Constitution\r\n**Skills:** Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival",
+            "featureitems": [],
             "key": "srd_barbarian_proficiencies",
             "name": "Proficiencies"
         },
         {
+            "columnitems": [],
             "desc": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.\r\n\r\nWhile raging, you gain the following benefits if you aren't wearing heavy armor:\r\n\r\n* You have advantage on Strength checks and Strength saving throws.\r\n* When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\r\n* You have resistance to bludgeoning, piercing, and slashing damage. \r\n\r\nIf you are able to cast spells, you can't cast them or concentrate on them while raging.\r\n\r\nYour rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.\r\n\r\nOnce you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again.",
+            "featureitems": [
+                {
+                    "level": 1
+                }
+            ],
             "key": "srd_barbarian_rage",
             "name": "Rage"
         },
         {
+            "columnitems": [],
             "desc": "Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn.",
+            "featureitems": [
+                {
+                    "level": 2
+                }
+            ],
             "key": "srd_barbarian_reckless-attack",
             "name": "Reckless Attack"
         },
         {
+            "columnitems": [],
             "desc": "Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you\u2019re raging and don\u2019t die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead.\r\n\r\nEach time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.",
+            "featureitems": [
+                {
+                    "level": 11
+                }
+            ],
             "key": "srd_barbarian_relentless-rage",
             "name": "Relentless Rage"
         },
         {
+            "columnitems": [],
             "desc": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.",
+            "featureitems": [
+                {
+                    "level": 1
+                }
+            ],
             "key": "srd_barbarian_unarmored-defense",
             "name": "Unarmored Defense"
+        },
+        {
+            "columnitems": [
+                {
+                    "column_value": "2",
+                    "level": 1
+                },
+                {
+                    "column_value": "2",
+                    "level": 2
+                },
+                {
+                    "column_value": "3",
+                    "level": 3
+                },
+                {
+                    "column_value": "3",
+                    "level": 4
+                },
+                {
+                    "column_value": "3",
+                    "level": 5
+                },
+                {
+                    "column_value": "4",
+                    "level": 6
+                },
+                {
+                    "column_value": "4",
+                    "level": 7
+                },
+                {
+                    "column_value": "4",
+                    "level": 8
+                },
+                {
+                    "column_value": "4",
+                    "level": 9
+                },
+                {
+                    "column_value": "4",
+                    "level": 10
+                },
+                {
+                    "column_value": "4",
+                    "level": 11
+                },
+                {
+                    "column_value": "5",
+                    "level": 12
+                },
+                {
+                    "column_value": "5",
+                    "level": 13
+                },
+                {
+                    "column_value": "5",
+                    "level": 14
+                },
+                {
+                    "column_value": "5",
+                    "level": 15
+                },
+                {
+                    "column_value": "5",
+                    "level": 16
+                },
+                {
+                    "column_value": "6",
+                    "level": 17
+                },
+                {
+                    "column_value": "6",
+                    "level": 18
+                },
+                {
+                    "column_value": "6",
+                    "level": 19
+                },
+                {
+                    "column_value": "Unlimited",
+                    "level": 20
+                }
+            ],
+            "desc": "[Column data]",
+            "featureitems": [],
+            "key": "srd_barbarian_rages",
+            "name": "Rages"
+        },
+        {
+            "columnitems": [
+                {
+                    "column_value": "+2",
+                    "level": 1
+                },
+                {
+                    "column_value": "+2",
+                    "level": 2
+                },
+                {
+                    "column_value": "+2",
+                    "level": 3
+                },
+                {
+                    "column_value": "+2",
+                    "level": 4
+                },
+                {
+                    "column_value": "+2",
+                    "level": 5
+                },
+                {
+                    "column_value": "+2",
+                    "level": 6
+                },
+                {
+                    "column_value": "+2",
+                    "level": 7
+                },
+                {
+                    "column_value": "+2",
+                    "level": 8
+                },
+                {
+                    "column_value": "+3",
+                    "level": 9
+                },
+                {
+                    "column_value": "+3",
+                    "level": 10
+                },
+                {
+                    "column_value": "+3",
+                    "level": 11
+                },
+                {
+                    "column_value": "+3",
+                    "level": 12
+                },
+                {
+                    "column_value": "+3",
+                    "level": 13
+                },
+                {
+                    "column_value": "+3",
+                    "level": 14
+                },
+                {
+                    "column_value": "+3",
+                    "level": 15
+                },
+                {
+                    "column_value": "+4",
+                    "level": 16
+                },
+                {
+                    "column_value": "+4",
+                    "level": 17
+                },
+                {
+                    "column_value": "+4",
+                    "level": 18
+                },
+                {
+                    "column_value": "+4",
+                    "level": 19
+                },
+                {
+                    "column_value": "+4",
+                    "level": 20
+                }
+            ],
+            "desc": "[Column data]",
+            "featureitems": [],
+            "key": "srd_barbarian_rage-damage",
+            "name": "Rage Damage"
+        },
+        {
+            "columnitems": [
+                {
+                    "column_value": "+2",
+                    "level": 1
+                },
+                {
+                    "column_value": "+2",
+                    "level": 2
+                },
+                {
+                    "column_value": "+2",
+                    "level": 3
+                },
+                {
+                    "column_value": "+2",
+                    "level": 4
+                },
+                {
+                    "column_value": "+3",
+                    "level": 5
+                },
+                {
+                    "column_value": "+3",
+                    "level": 6
+                },
+                {
+                    "column_value": "+3",
+                    "level": 7
+                },
+                {
+                    "column_value": "+3",
+                    "level": 8
+                },
+                {
+                    "column_value": "+4",
+                    "level": 9
+                },
+                {
+                    "column_value": "+4",
+                    "level": 10
+                },
+                {
+                    "column_value": "+4",
+                    "level": 11
+                },
+                {
+                    "column_value": "+4",
+                    "level": 12
+                },
+                {
+                    "column_value": "+5",
+                    "level": 13
+                },
+                {
+                    "column_value": "+5",
+                    "level": 14
+                },
+                {
+                    "column_value": "+5",
+                    "level": 15
+                },
+                {
+                    "column_value": "+5",
+                    "level": 16
+                },
+                {
+                    "column_value": "+6",
+                    "level": 17
+                },
+                {
+                    "column_value": "+6",
+                    "level": 18
+                },
+                {
+                    "column_value": "+6",
+                    "level": 19
+                },
+                {
+                    "column_value": "+6",
+                    "level": 20
+                }
+            ],
+            "desc": "[Column data]",
+            "featureitems": [],
+            "key": "srd_barbarian_proficiency-bonus",
+            "name": "Proficiency Bonus"
         }
     ],
     "hit_dice": "D12",
@@ -90,130 +461,6 @@
         "hit_points_at_higher_levels": "1D12 (or 7) + your Constitution modifier per barbarian level after 1st"
     },
     "key": "srd_barbarian",
-    "levels": {
-        "1": {
-            "features": [
-                "srd_barbarian_rage",
-                "srd_barbarian_unarmored-defense"
-            ],
-            "level": 1,
-            "proficiency-bonus": 2
-        },
-        "11": {
-            "features": [
-                "srd_barbarian_relentless-rage"
-            ],
-            "level": 11,
-            "proficiency-bonus": 4
-        },
-        "12": {
-            "features": [
-                "srd_barbarian_ability-score-improvement"
-            ],
-            "level": 12,
-            "proficiency-bonus": 4
-        },
-        "13": {
-            "features": [
-                "srd_barbarian_brutal-critical"
-            ],
-            "level": 13,
-            "proficiency-bonus": 5
-        },
-        "15": {
-            "features": [
-                "srd_barbarian_persistent-rage"
-            ],
-            "level": 15,
-            "proficiency-bonus": 5
-        },
-        "16": {
-            "features": [
-                "srd_barbarian_ability-score-improvement"
-            ],
-            "level": 16,
-            "proficiency-bonus": 5
-        },
-        "17": {
-            "features": [
-                "srd_barbarian_brutal-critical"
-            ],
-            "level": 17,
-            "proficiency-bonus": 6
-        },
-        "18": {
-            "features": [
-                "srd_barbarian_indomitable-might"
-            ],
-            "level": 18,
-            "proficiency-bonus": 6
-        },
-        "19": {
-            "features": [
-                "srd_barbarian_ability-score-improvement"
-            ],
-            "level": 19,
-            "proficiency-bonus": 6
-        },
-        "2": {
-            "features": [
-                "srd_barbarian_danger-sense",
-                "srd_barbarian_reckless-attack"
-            ],
-            "level": 2,
-            "proficiency-bonus": 2
-        },
-        "20": {
-            "features": [
-                "srd_barbarian_primal-champion"
-            ],
-            "level": 20,
-            "proficiency-bonus": 6
-        },
-        "3": {
-            "features": [
-                "srd_barbarian_primal-path"
-            ],
-            "level": 3,
-            "proficiency-bonus": 2
-        },
-        "4": {
-            "features": [
-                "srd_barbarian_ability-score-improvement"
-            ],
-            "level": 4,
-            "proficiency-bonus": 2
-        },
-        "5": {
-            "features": [
-                "srd_barbarian_extra-attack",
-                "srd_barbarian_fast-movement"
-            ],
-            "level": 5,
-            "proficiency-bonus": 3
-        },
-        "7": {
-            "features": [
-                "srd_barbarian_feral-instinct"
-            ],
-            "level": 7,
-            "proficiency-bonus": 3
-        },
-        "8": {
-            "features": [
-                "srd_barbarian_ability-score-improvement"
-            ],
-            "level": 8,
-            "proficiency-bonus": 3
-        },
-        "9": {
-            "features": [
-                "srd_barbarian_brutal-critical"
-            ],
-            "level": 9,
-            "proficiency-bonus": 4
-        }
-    },
     "name": "Barbarian",
     "saving_throws": [
         "http://localhost:8000/v2/abilities/con/",
