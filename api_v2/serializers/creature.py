@@ -68,6 +68,7 @@ class CreatureSerializer(GameContentSerializer):
     skill_bonuses_all = serializers.SerializerMethodField()
     damage_immunities = DamageTypeSerializer(many=True)
     damage_resistances = DamageTypeSerializer(many=True)
+    damage_vulnerabilities = DamageTypeSerializer(many=True)
     actions = CreatureActionSerializer(many=True, context={'request': {}})
     traits = CreatureTraitSerializer(many=True, read_only=True)
     speed = serializers.SerializerMethodField()
