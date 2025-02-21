@@ -189,7 +189,13 @@
     "condition_immunities": [],
     "creaturesets": [],
     "damage_immunities": [
-        "http://localhost:8000/v2/damagetypes/fire/"
+        {
+            "desc": "Red dragons breathe fire, and many spells conjure flames to deal fire damage.",
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "key": "fire",
+            "name": "Fire",
+            "url": "http://localhost:8000/v2/damagetypes/fire/"
+        }
     ],
     "damage_resistances": [],
     "damage_vulnerabilities": [],
