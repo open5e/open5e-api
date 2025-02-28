@@ -54,6 +54,17 @@ class ClassFeature(HasName, HasDescription, FromDocument):
     def columnitems(self):
         return self.classfeatureitem_set.exclude(column_value__isnull=True)
 
+    # Infer the type of this feature based on the `key`
+    @property
+    def feature_type(self):
+        if "proficiency-bonus" in self.key: return "PROFICIENCY_BONUS"
+        if "proficiencies" in self.key:     return "PROFICIENCIES"
+        if "equipment" in self.key:         return "STARTING_EQUIPMENT"
+        if "_slots-" in self.key:           return "SPELL_SLOTS"
+        if "_spells-known" in self.key:     return "SPELLS_KNOWN"
+        if "_cantrips-known" in self.key:   return "CANTRIPS_KNOWN"
+        return "CLASS_FEATURE"              # <- base-case
+
     def __str__(self):
         return "{} ({})".format(self.name,self.parent.name)
 
