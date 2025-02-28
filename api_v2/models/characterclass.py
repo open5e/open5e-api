@@ -48,7 +48,7 @@ class ClassFeature(HasName, HasDescription, FromDocument):
     parent = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
 
-    def featureitems(self):
+    def gained_at(self):
         return self.classfeatureitem_set.exclude(column_value__isnull=False)
 
     def columnitems(self):
