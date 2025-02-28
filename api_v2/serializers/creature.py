@@ -7,6 +7,8 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .damagetype import DamageTypeSerializer
+from .condition import ConditionSerializer
 from .document import DocumentSerializer
 from .language import LanguageSerializer
 from .environment import EnvironmentSerializer
@@ -65,6 +67,10 @@ class CreatureSerializer(GameContentSerializer):
     saving_throws_all = serializers.SerializerMethodField()
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
+    damage_immunities = DamageTypeSerializer(many=True)
+    damage_resistances = DamageTypeSerializer(many=True)
+    damage_vulnerabilities = DamageTypeSerializer(many=True)
+    condition_immunities = ConditionSerializer(many=True)
     actions = CreatureActionSerializer(many=True, context={'request': {}})
     traits = CreatureTraitSerializer(many=True, read_only=True)
     speed = serializers.SerializerMethodField()
