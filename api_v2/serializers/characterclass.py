@@ -25,13 +25,13 @@ class ClassFeatureSerializer(GameContentSerializer):
         many=True
     )
 
-    columnitems = ClassFeatureColumnItemSerializer(
+    table_data = ClassFeatureColumnItemSerializer(
         many=True
     )
 
     class Meta:
         model = models.ClassFeature
-        fields = ['key', 'name', 'desc','gained_at','columnitems', 'feature_type']
+        fields = ['key', 'name', 'desc','gained_at','table_data', 'feature_type']
 
 class CharacterClassSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()

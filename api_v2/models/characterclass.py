@@ -53,8 +53,11 @@ class ClassFeature(HasName, HasDescription, FromDocument):
 
     def gained_at(self):
         return self.classfeatureitem_set.exclude(column_value__isnull=False)
+    
+    def table_data(self):
+        """Returns an array of tabular data relating to the feature. Each
+        array element is a table-row of data. Not needed for most features."""
 
-    def columnitems(self):
         return self.classfeatureitem_set.exclude(column_value__isnull=True)
 
     # Infer the type of this feature based on the `key`
