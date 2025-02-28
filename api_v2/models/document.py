@@ -38,12 +38,6 @@ class Document(HasName, HasDescription):
         help_text="Link to the document."
     )
 
-    stats_expected = models.JSONField(
-        null=True,
-        blank=True,
-        help_text="JSON representation of expected object counts."
-    )
-
     distance_unit = distance_unit_field()
 
     @property
@@ -78,10 +72,6 @@ class Document(HasName, HasDescription):
             stat = {}
             stat['name'] = model.__name__.lower()
             stat['actual_count'] = actual_object_count
-            try:
-                stat['expected_count'] = self.stats_expected.get(model.__name__.lower())
-            except:
-                stat['expected_count'] = None
             stats.append(stat)
 
         return stats
