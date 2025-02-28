@@ -12,7 +12,7 @@ class ClassFeatureItemSerializer(GameContentSerializer):
     
     class Meta:
         model = models.ClassFeatureItem
-        fields = ['level']
+        fields = ['level', 'detail']
 
 class ClassFeatureColumnItemSerializer(GameContentSerializer):
     class Meta:

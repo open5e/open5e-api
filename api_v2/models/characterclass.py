@@ -25,7 +25,10 @@ class ClassFeatureItem(models.Model):
 
     parent = models.ForeignKey('ClassFeature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
-
+    detail = models.CharField(
+        null=True,
+        max_length = 100
+    )
     column_value = models.CharField(
         # The value displayed in a column, or null if no value.
         null=True,
