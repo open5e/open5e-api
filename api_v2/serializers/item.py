@@ -63,7 +63,16 @@ class ItemSerializer(GameContentSerializer):
     document = DocumentSerializer()
     category = ItemCategorySerializer()
     rarity = ItemRaritySerializer()
+    
+    def to_representation(self, instance):
+        """Ensures weapon/armor remain null instead of empty objects at depth>0."""
+        data = super().to_representation(instance)
 
+        for field in ["weapon", "armor"]:
+            if getattr(instance, field, None) is None:
+                data[field] = None
+        return data
+    
     class Meta:
         model = models.Item
         fields = '__all__'
