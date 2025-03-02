@@ -12,7 +12,7 @@ class ClassFeatureItemSerializer(GameContentSerializer):
     
     class Meta:
         model = models.ClassFeatureItem
-        fields = ['level']
+        fields = ['level', 'detail']
 
 class ClassFeatureColumnItemSerializer(GameContentSerializer):
     class Meta:
@@ -21,17 +21,17 @@ class ClassFeatureColumnItemSerializer(GameContentSerializer):
 
 class ClassFeatureSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    featureitems = ClassFeatureItemSerializer(
+    gained_at = ClassFeatureItemSerializer(
         many=True
     )
 
-    columnitems = ClassFeatureColumnItemSerializer(
+    table_data = ClassFeatureColumnItemSerializer(
         many=True
     )
 
     class Meta:
         model = models.ClassFeature
-        fields = ['key', 'name', 'desc','featureitems','columnitems', 'feature_type']
+        fields = ['key', 'name', 'desc','gained_at','table_data', 'feature_type']
 
 class CharacterClassSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
