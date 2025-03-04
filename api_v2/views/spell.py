@@ -49,14 +49,14 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
 
     @staticmethod
     def setup_eager_loading(queryset, depth):
-        selects = ['document', 'school']
-        prefetches = ['classes', 'spellcastingoption_set']
+        selects = ['document', 'school', 'document__publisher', 'document__gamesystem']
+        prefetches = ['document', 'classes', 'spellcastingoption_set']
 
         if depth >= 1:
             prefetches = prefetches + ['document__licenses']
         
         if depth >= 2:
-            prefetches = prefetches + ['document__gamesystem', 'document__publisher']
+            prefetches = prefetches + []
 
         queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
         return queryset

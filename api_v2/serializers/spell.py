@@ -5,8 +5,8 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
-from .document import DocumentSerializer
-from .characterclass import CharacterClassSerializer
+from .document import DocumentSummarySerializer
+from .characterclass import CharacterClassSummarySerializer
 
 from drf_spectacular.utils import extend_schema_field
 from drf_spectacular.types import OpenApiTypes
@@ -24,12 +24,12 @@ class SpellCastingOptionSerializer(serializers.ModelSerializer):
 
 
 class SpellSerializer(GameContentSerializer):
-    document = DocumentSerializer()
+    document = DocumentSummarySerializer()
     key = serializers.ReadOnlyField()
     casting_options = SpellCastingOptionSerializer(many=True)
     school = SpellSchoolSerializer()
-    classes = CharacterClassSerializer(many=True)
-
+    classes = CharacterClassSummarySerializer(many=True)
+    
     range_unit = serializers.SerializerMethodField()
     shape_size_unit = serializers.SerializerMethodField()
 

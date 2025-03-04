@@ -11,6 +11,11 @@ class GameSystemSerializer(GameContentSerializer):
         model = models.GameSystem
         fields = '__all__'
 
+class GameSystemSummarySerializer(GameContentSerializer):
+    class Meta:
+        model = models.GameSystem
+        fields = ["name", "key"]
+
 
 class LicenseSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
@@ -27,6 +32,11 @@ class PublisherSerializer(GameContentSerializer):
         model = models.Publisher
         fields = '__all__'
 
+class PublisherSummarySerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    class Meta:
+        model = models.Publisher
+        fields = ['name', 'key']
 
 class DocumentSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
@@ -37,3 +47,11 @@ class DocumentSerializer(GameContentSerializer):
     class Meta:
         model = models.Document
         fields = '__all__'
+
+class DocumentSummarySerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    publisher = PublisherSummarySerializer()
+    gamesystem = GameSystemSummarySerializer() 
+    class Meta:
+        model = models.Document
+        fields = ['name', 'key', 'publisher', 'gamesystem', 'permalink']
