@@ -26,3 +26,19 @@ class BackgroundViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Background.objects.all().order_by('pk')
     serializer_class = serializers.BackgroundSerializer
     filterset_class = BackgroundFilterSet
+
+
+    def get_queryset(self):
+        # get 'depth' from query param
+        depth = int(self.request.query_params.get('depth', 0)) 
+        queryset = BackgroundViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
+        return queryset
+
+    @staticmethod
+    def setup_eager_loading(queryset, action, depth):
+        # Apply select_related and prefetch_related based on action and depth
+        if action == 'list':
+            selects = []
+            prefetches = ['benefits'] # Many-to-many/rvrs relationships to prefetch
+            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
+        return queryset
