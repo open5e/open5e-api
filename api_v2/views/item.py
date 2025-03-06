@@ -48,9 +48,13 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
             selects = ['armor', 'weapon']
             # Prefetch many-to-many and reverse ForeignKey relations
             prefetches = [
-                'category', 'document', 'document__licenses',
-                'damage_immunities', 'damage_resistances', 
-                'damage_vulnerabilities', 'rarity'
+                'category',
+                'document',
+                'document__publisher',
+                'damage_immunities',
+                'damage_resistances', 
+                'damage_vulnerabilities',
+                'rarity'
             ]
             queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
         return queryset
