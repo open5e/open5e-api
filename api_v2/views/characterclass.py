@@ -35,10 +35,8 @@ class CharacterClassViewSet(viewsets.ReadOnlyModelViewSet):
     Set up selects and prefetching nested joins to mitigate N+1 problems
     """
     def get_queryset(self):
-        # get 'depth' from query param
-        depth = int(self.request.query_params.get('depth', 0)) 
-        queryset = CharacterClassViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-        return queryset
+        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query params
+        return CharacterClassViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
 
     @staticmethod
     def setup_eager_loading(queryset, action, depth):

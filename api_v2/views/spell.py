@@ -39,13 +39,9 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = SpellFilterSet
 
     def get_queryset(self):
-        queryset = models.Spell.objects.all().order_by('pk')
-
         # Retrieve depth from query params, defaulting to 0 if not provided
-        depth = int(self.request.query_params.get("depth", 0))
-
-        queryset = SpellViewSet.setup_eager_loading(queryset, depth)
-        return queryset
+        depth = int(self.request.query_params.get('depth', 0))
+        return SpellViewSet.setup_eager_loading(super().get_queryset(), depth)
 
     @staticmethod
     def setup_eager_loading(queryset, depth):

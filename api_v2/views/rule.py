@@ -18,8 +18,7 @@ class RuleSetViewSet(viewsets.ReadOnlyModelViewSet):
   """
   def get_queryset(self):
       depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query param
-      queryset = RuleSetViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-      return queryset
+      return RuleSetViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
 
   @staticmethod
   def setup_eager_loading(queryset, action, depth):

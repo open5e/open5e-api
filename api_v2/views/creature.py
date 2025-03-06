@@ -66,10 +66,8 @@ class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = CreatureFilterSet
 
     def get_queryset(self):       
-        # Retrieve depth from query params, default to 0 if not provided
-        depth = int(self.request.query_params.get('depth', 0))
-        queryset = CreatureViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-        return queryset
+        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query params
+        return CreatureViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
 
     @staticmethod
     def setup_eager_loading(queryset, action, depth):

@@ -39,12 +39,9 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.DocumentSerializer
     filterset_class = DocumentFilterSet
 
-
     def get_queryset(self):       
-        # Retrieve depth from query params, default to 0 if not provided
-        depth = int(self.request.query_params.get('depth', 0))
-        queryset = DocumentViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-        return queryset
+        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query params
+        return DocumentViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
 
     @staticmethod
     def setup_eager_loading(queryset, action, depth):
