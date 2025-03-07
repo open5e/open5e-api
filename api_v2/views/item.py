@@ -37,9 +37,8 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_class = ItemFilterSet
 
     def get_queryset(self):
-        depth = int(self.request.query_params.get('depth', 0))
-        queryset = ItemViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-        return queryset
+        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query param
+        return ItemViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
 
     # Eagerly load nested resources to address N+1 problems
     @staticmethod
@@ -48,9 +47,13 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
             selects = ['armor', 'weapon']
             # Prefetch many-to-many and reverse ForeignKey relations
             prefetches = [
-                'category', 'document', 'document__licenses',
-                'damage_immunities', 'damage_resistances', 
-                'damage_vulnerabilities', 'rarity'
+                'category',
+                'document',
+                'document__publisher',
+                'damage_immunities',
+                'damage_resistances', 
+                'damage_vulnerabilities',
+                'rarity'
             ]
             queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
         return queryset

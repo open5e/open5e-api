@@ -39,6 +39,18 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.DocumentSerializer
     filterset_class = DocumentFilterSet
 
+    def get_queryset(self):       
+        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query params
+        return DocumentViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
+
+    @staticmethod
+    def setup_eager_loading(queryset, action, depth):
+        # Apply select_related and prefetch_related based on action and depth
+        if action == 'list':
+            selects = ['gamesystem', 'publisher'] #  follows foreign-key relationships
+            prefetches = ['licenses']   # Many-to-many/reverse relationships for prefetching
+            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
+        return queryset
 
 class PublisherViewSet(viewsets.ReadOnlyModelViewSet):
     """
