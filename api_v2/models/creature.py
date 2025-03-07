@@ -85,6 +85,23 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
     environments = models.ManyToManyField(Environment,
         related_name="creature_environments")
 
+    initiative_bonus = models.SmallIntegerField(
+        null=True,
+        blank=True,
+        help_text="Initiative bonus. If not set, defaults to dexterity modifier."
+    )
+
+    def get_initiative_bonus(self):
+        """
+        Returns the creature's initiative bonus. If no explicit bonus is set,
+        returns the dexterity modifier.
+        """
+        print(f"Raw initiative_bonus value: {self.initiative_bonus}")  # Debug
+        print(f"Dexterity modifier: {self.modifier_dexterity}")  # Debug
+        if self.initiative_bonus is not None:
+            return self.initiative_bonus
+        return self.modifier_dexterity
+
     def as_text(self):
         text = self.name + '\n'
         for action in self.creatureaction_set.all():
@@ -155,7 +172,6 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
                 return xp_by_cr_lookup[str(Fraction(self.challenge_rating_decimal))]
             except:
                 return None
-
 
     @property
     def actions(self):
