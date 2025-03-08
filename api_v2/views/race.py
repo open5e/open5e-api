@@ -27,3 +27,24 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Race.objects.all().order_by('pk')
     serializer_class = serializers.RaceSerializer
     filterset_class = RaceFilterSet
+
+    """
+    Set up selects and prefetching nested joins to mitigate N+1 problems
+    """
+    def get_queryset(self):
+        depth = int(self.request.query_params.get('depth', 0))  # get 'depth' from query param
+        return RaceViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
+
+    @staticmethod
+    def setup_eager_loading(queryset, action, depth):
+        # Apply select_related and prefetch_related based on action and depth
+        if action == 'list':
+            selects = [
+                'document',
+                'document__gamesystem',
+                'document__publisher',
+                'subrace_of'
+            ]
+            prefetches = ['traits'] # Many-to-many/rvrs relationships to prefetch
+            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
+        return queryset

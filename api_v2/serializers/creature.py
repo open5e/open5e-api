@@ -7,7 +7,9 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
-from .document import DocumentSerializer
+from .damagetype import DamageTypeSerializer
+from .condition import ConditionSerializer
+from .document import DocumentSummarySerializer
 from .language import LanguageSerializer
 from .environment import EnvironmentSerializer
 from .size import SizeSerializer
@@ -30,8 +32,7 @@ class CreatureActionAttackSerializer(serializers.ModelSerializer):
 
 class CreatureActionSerializer(serializers.ModelSerializer):
     key = serializers.ReadOnlyField()
-    attacks = CreatureActionAttackSerializer(many=True, context={'request': {}})
-
+    attacks = CreatureActionAttackSerializer(many=True)
     class Meta:
         model = models.CreatureAction
         fields = '__all__'
@@ -65,13 +66,17 @@ class CreatureSerializer(GameContentSerializer):
     saving_throws_all = serializers.SerializerMethodField()
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
-    actions = CreatureActionSerializer(many=True, context={'request': {}})
+    damage_immunities = DamageTypeSerializer(many=True)
+    damage_resistances = DamageTypeSerializer(many=True)
+    damage_vulnerabilities = DamageTypeSerializer(many=True)
+    condition_immunities = ConditionSerializer(many=True)
+    actions = CreatureActionSerializer(many=True)
     traits = CreatureTraitSerializer(many=True, read_only=True)
     speed = serializers.SerializerMethodField()
     speed_all = serializers.SerializerMethodField()
     challenge_rating_text = serializers.SerializerMethodField()
     experience_points = serializers.SerializerMethodField()
-    document = DocumentSerializer()
+    document = DocumentSummarySerializer()
     type = CreatureTypeSerializer()
     size = SizeSerializer()
     languages = LanguageSerializer(many=True)

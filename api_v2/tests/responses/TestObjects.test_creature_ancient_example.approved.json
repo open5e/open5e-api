@@ -189,12 +189,30 @@
     "condition_immunities": [],
     "creaturesets": [],
     "damage_immunities": [
-        "http://localhost:8000/v2/damagetypes/fire/"
+        {
+            "desc": "Red dragons breathe fire, and many spells conjure flames to deal fire damage.",
+            "document": "http://localhost:8000/v2/documents/srd/",
+            "key": "fire",
+            "name": "Fire",
+            "url": "http://localhost:8000/v2/damagetypes/fire/"
+        }
     ],
     "damage_resistances": [],
     "damage_vulnerabilities": [],
     "darkvision_range": 120.0,
-    "document": "http://localhost:8000/v2/documents/srd/",
+    "document": {
+        "gamesystem": {
+            "key": "o5e",
+            "name": "5th Edition"
+        },
+        "key": "srd",
+        "name": "Systems Reference Document",
+        "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+        "publisher": {
+            "key": "wizards-of-the-coast",
+            "name": "Wizards of the Coast"
+        }
+    },
     "environments": [
         {
             "aquatic": false,
@@ -224,7 +242,19 @@
     "languages": [
         {
             "desc": "Typical speakers are Humans.",
-            "document": "http://localhost:8000/v2/documents/srd/",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
             "is_exotic": false,
             "is_secret": false,
             "key": "common",
@@ -234,7 +264,19 @@
         },
         {
             "desc": "Typical speakers include dragons and dragonborn.",
-            "document": "http://localhost:8000/v2/documents/srd/",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
             "is_exotic": true,
             "is_secret": false,
             "key": "draconic",

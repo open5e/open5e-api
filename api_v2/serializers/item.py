@@ -6,7 +6,7 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 from .size import SizeSerializer
-from .document import DocumentSerializer
+from .document import DocumentSummarySerializer
 from drf_spectacular.utils import extend_schema_field
 from drf_spectacular.types import OpenApiTypes
 
@@ -60,10 +60,19 @@ class ItemSerializer(GameContentSerializer):
     is_magic_item = serializers.ReadOnlyField()
     weapon = WeaponSerializer(read_only=True, context={'request':{}})
     armor = ArmorSerializer(read_only=True, context={'request':{}})
-    document = DocumentSerializer()
+    document = DocumentSummarySerializer()
     category = ItemCategorySerializer()
     rarity = ItemRaritySerializer()
+    
+    def to_representation(self, instance):
+        """Ensures weapon/armor remain null instead of empty objects at depth>0."""
+        data = super().to_representation(instance)
 
+        for field in ["weapon", "armor"]:
+            if getattr(instance, field, None) is None:
+                data[field] = None
+        return data
+    
     class Meta:
         model = models.Item
         fields = '__all__'

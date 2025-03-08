@@ -25,7 +25,10 @@ class ClassFeatureItem(models.Model):
 
     parent = models.ForeignKey('ClassFeature', on_delete=models.CASCADE)
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
-
+    detail = models.CharField(
+        null=True,
+        max_length = 100
+    )
     column_value = models.CharField(
         # The value displayed in a column, or null if no value.
         null=True,
@@ -48,11 +51,25 @@ class ClassFeature(HasName, HasDescription, FromDocument):
     parent = models.ForeignKey('CharacterClass',
         on_delete=models.CASCADE)
 
-    def featureitems(self):
+    def gained_at(self):
         return self.classfeatureitem_set.exclude(column_value__isnull=False)
+    
+    def table_data(self):
+        """Returns an array of tabular data relating to the feature. Each
+        array element is a table-row of data. Not needed for most features."""
 
-    def columnitems(self):
         return self.classfeatureitem_set.exclude(column_value__isnull=True)
+
+    # Infer the type of this feature based on the `key`
+    @property
+    def feature_type(self):
+        if "proficiency-bonus" in self.key: return "PROFICIENCY_BONUS"
+        if "proficiencies" in self.key:     return "PROFICIENCIES"
+        if "equipment" in self.key:         return "STARTING_EQUIPMENT"
+        if "_slots-" in self.key:           return "SPELL_SLOTS"
+        if "_spells-known" in self.key:     return "SPELLS_KNOWN"
+        if "_cantrips-known" in self.key:   return "CANTRIPS_KNOWN"
+        return "CLASS_FEATURE"              # <- base-case
 
     def __str__(self):
         return "{} ({})".format(self.name,self.parent.name)

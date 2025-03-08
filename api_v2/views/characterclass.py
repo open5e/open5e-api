@@ -24,9 +24,25 @@ class CharacterClassFilterSet(FilterSet):
 
 class CharacterClassViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    list: API endpoint for returning a list of backgrounds.
-    retrieve: API endpoint for returning a particular background.
+    list: API endpoint for returning a list of classes.
+    retrieve: API endpoint for returning a particular class.
     """
     queryset = models.CharacterClass.objects.all().order_by('pk')
     serializer_class = serializers.CharacterClassSerializer
     filterset_class = CharacterClassFilterSet
+
+    """
+    Set up selects and prefetching nested joins to mitigate N+1 problems
+    """
+    def get_queryset(self):
+        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query params
+        return CharacterClassViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
+
+    @staticmethod
+    def setup_eager_loading(queryset, action, depth):
+        # Apply select_related and prefetch_related based on action and depth
+        if action == 'list':
+            selects = ['document']
+            prefetches = [] # Many-to-many/rvrs relationships to prefetch
+            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
+        return queryset
