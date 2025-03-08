@@ -5,6 +5,7 @@ from django_filters import FilterSet
 from api_v2 import models
 from api_v2 import serializers
 
+from .mixins import EagerLoadingMixin
 
 class RaceFilterSet(FilterSet):
     class Meta:
@@ -19,7 +20,7 @@ class RaceFilterSet(FilterSet):
         }
 
 
-class RaceViewSet(viewsets.ReadOnlyModelViewSet):
+class RaceViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of races.
     retrieve: API endpoint for returning a particular race.
@@ -28,23 +29,10 @@ class RaceViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.RaceSerializer
     filterset_class = RaceFilterSet
 
-    """
-    Set up selects and prefetching nested joins to mitigate N+1 problems
-    """
-    def get_queryset(self):
-        depth = int(self.request.query_params.get('depth', 0))  # get 'depth' from query param
-        return RaceViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-
-    @staticmethod
-    def setup_eager_loading(queryset, action, depth):
-        # Apply select_related and prefetch_related based on action and depth
-        if action == 'list':
-            selects = [
-                'document',
-                'document__gamesystem',
-                'document__publisher',
-                'subrace_of'
-            ]
-            prefetches = ['traits'] # Many-to-many/rvrs relationships to prefetch
-            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
-        return queryset
+    select_related_fields = []
+    prefetch_related_fields = [
+        'document',
+        'document__gamesystem',
+        'traits',
+        'subrace_of'
+    ]

@@ -2,7 +2,7 @@
 from rest_framework import viewsets
 from django_filters import FilterSet, CharFilter
 from django.db.models import JSONField
-
+from .mixins import EagerLoadingMixin
 from api_v2 import models
 from api_v2 import serializers
 
@@ -30,7 +30,7 @@ class DocumentFilterSet(FilterSet):
             }
         }
 
-class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
+class DocumentViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of documents.
     retrieve: API endpoint for returning a particular document.
@@ -39,18 +39,9 @@ class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.DocumentSerializer
     filterset_class = DocumentFilterSet
 
-    def get_queryset(self):       
-        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query params
-        return DocumentViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
+    select_related_fields = []
+    prefetch_related_fields = ['licenses', 'gamesystem', 'publisher']
 
-    @staticmethod
-    def setup_eager_loading(queryset, action, depth):
-        # Apply select_related and prefetch_related based on action and depth
-        if action == 'list':
-            selects = ['gamesystem', 'publisher'] #  follows foreign-key relationships
-            prefetches = ['licenses']   # Many-to-many/reverse relationships for prefetching
-            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
-        return queryset
 
 class PublisherViewSet(viewsets.ReadOnlyModelViewSet):
     """

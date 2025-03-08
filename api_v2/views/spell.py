@@ -4,7 +4,7 @@ from django_filters import FilterSet
 
 from api_v2 import models
 from api_v2 import serializers
-
+from .mixins import EagerLoadingMixin
 
 class SpellFilterSet(FilterSet):
     class Meta:
@@ -29,7 +29,7 @@ class SpellFilterSet(FilterSet):
             'casting_time': ['in', 'iexact', 'exact'],
         }
 
-class SpellViewSet(viewsets.ReadOnlyModelViewSet):
+class SpellViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of spells.
     retrieve: API endpoint for returning a particular spell.
@@ -38,25 +38,15 @@ class SpellViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.SpellSerializer
     filterset_class = SpellFilterSet
 
-    def get_queryset(self):
-        # Retrieve depth from query params, defaulting to 0 if not provided
-        depth = int(self.request.query_params.get('depth', 0))
-        return SpellViewSet.setup_eager_loading(super().get_queryset(), depth)
-
-    @staticmethod
-    def setup_eager_loading(queryset, depth):
-        selects = ['document', 'school', 'document__publisher', 'document__gamesystem']
-        prefetches = ['document', 'classes', 'spellcastingoption_set']
-
-        if depth >= 1:
-            prefetches = prefetches + ['document__licenses']
-        
-        if depth >= 2:
-            prefetches = prefetches + []
-
-        queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
-        return queryset
-
+    select_related_fields = ['document']
+    prefetch_related_fields = [
+        'classes',
+        'document',
+        'school',
+        'document__gamesystem',
+        'document__publisher',
+        'spellcastingoption_set'
+    ]
 
 class SpellSchoolFilterSet(FilterSet):
     class Meta:

@@ -5,6 +5,7 @@ from django_filters import FilterSet
 from api_v2 import models
 from api_v2 import serializers
 
+from .mixins import EagerLoadingMixin
 
 class CreatureFilterSet(FilterSet):
     '''This is the filterset class for creatures.'''
@@ -56,7 +57,7 @@ class CreatureFilterSet(FilterSet):
         }
 
 
-class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
+class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creatures.
     retrieve: API endpoint for returning a particular creature.
@@ -65,38 +66,22 @@ class CreatureViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.CreatureSerializer
     filterset_class = CreatureFilterSet
 
-    def get_queryset(self):       
-        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query params
-        return CreatureViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-
-    @staticmethod
-    def setup_eager_loading(queryset, action, depth):
-        # Apply select_related and prefetch_related based on action and depth
-        if action == 'list':
-            selects = [
-                'document',
-                'document__gamesystem',
-                'document',
-                'document__publisher',
-                'size',
-                'type',
-            ]
-            
-            # Many-to-many and reverse relationships for prefetching
-            prefetches = [
-                'creatureaction_set',
-                'condition_immunities',
-                'damage_immunities',
-                'damage_resistances',
-                'damage_vulnerabilities',
-                'environments',
-                'languages',
-                'languages__document',
-                'traits'
-            ] 
-
-            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
-        return queryset
+    prefetch_related_fields = [
+        'condition_immunities',
+        'creatureaction_set',
+        'damage_immunities',
+        'damage_resistances',
+        'damage_vulnerabilities',
+        'document',
+        'document__gamesystem',
+        'document__publisher',
+        'environments',
+        'languages',
+        'languages__document',
+        'type',
+        'size',
+        'traits',
+    ]
 
 
 class CreatureTypeFilterSet(FilterSet):

@@ -4,7 +4,7 @@ from django_filters import FilterSet
 
 from api_v2 import models
 from api_v2 import serializers
-
+from .mixins import EagerLoadingMixin
 
 class ConditionFilterSet(FilterSet):
     class Meta:
@@ -17,7 +17,7 @@ class ConditionFilterSet(FilterSet):
         }
 
 
-class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
+class ConditionViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of conditions.
     retrieve: API endpoint for returning a particular condition.
@@ -26,18 +26,5 @@ class ConditionViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.ConditionSerializer
     filterset_class = ConditionFilterSet
 
-    """
-    Set up selects and prefetching nested joins to mitigate N+1 problems
-    """
-    def get_queryset(self):
-        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query params
-        return ConditionViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-
-    @staticmethod
-    def setup_eager_loading(queryset, action, depth):
-        # Apply select_related and prefetch_related based on action and depth
-        if action == 'list':
-            selects = ['document', 'document__gamesystem', 'document__publisher']
-            prefetches = [] # Many-to-many/rvrs relationships to prefetch
-            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
-        return queryset
+    select_related_fields = []
+    prefetch_related_fields = ['document__gamesystem']

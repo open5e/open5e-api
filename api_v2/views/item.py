@@ -3,9 +3,9 @@ from rest_framework import viewsets
 from django_filters import FilterSet
 from django_filters import BooleanFilter
 
-
 from api_v2 import models
 from api_v2 import serializers
+from .mixins import EagerLoadingMixin
 
 class ItemFilterSet(FilterSet):
     is_magic_item = BooleanFilter(field_name='rarity', lookup_expr='isnull', exclude=True)
@@ -26,7 +26,7 @@ class ItemFilterSet(FilterSet):
         }
 
 
-class ItemViewSet(viewsets.ReadOnlyModelViewSet):
+class ItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of items.
 
@@ -36,27 +36,16 @@ class ItemViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.ItemSerializer
     filterset_class = ItemFilterSet
 
-    def get_queryset(self):
-        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query param
-        return ItemViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-
-    # Eagerly load nested resources to address N+1 problems
-    @staticmethod
-    def setup_eager_loading(queryset, action, depth):
-        if action == 'list':
-            selects = ['armor', 'weapon']
-            # Prefetch many-to-many and reverse ForeignKey relations
-            prefetches = [
-                'category',
-                'document',
-                'document__publisher',
-                'damage_immunities',
-                'damage_resistances', 
-                'damage_vulnerabilities',
-                'rarity'
-            ]
-            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
-        return queryset
+    select_related_fields = ['armor', 'weapon']
+    prefetch_related_fields = [
+        'armor',
+        'category',
+        'damage_immunities',
+        'damage_resistances',
+        'damage_vulnerabilities',
+        'document',
+        'rarity',
+    ]
 
 class ItemRarityViewSet(viewsets.ReadOnlyModelViewSet):
     """
