@@ -5,6 +5,7 @@ from server import settings
 
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
+from api_v2.utils.markdown_cleaner import clean_data_directory
 
 
 class Command(BaseCommand):
@@ -18,6 +19,11 @@ class Command(BaseCommand):
             "--noindex",
             action="store_true",
             help="Flushes all existing database data before adding new objects.",
+        )
+        parser.add_argument(
+            '--clean', '-c',
+            action='store_true',
+            help='Clean markdown formatting in v2 data files'
         )
 
     def handle(self, *args, **options):
@@ -35,17 +41,18 @@ class Command(BaseCommand):
         self.stdout.write('Collecting static files...')
         collect_static()
 
-        if settings.INCLUDE_V1_DATA:
-            self.stdout.write('Populating the v1 database...')
-            import_v1()
-            
-            if not options['noindex']:
-                if settings.BUILD_V1_INDEX:
-                    build_haystack_index()
-            else:
-                self.stdout.write("Skipping v1 index build because of --noindex")
+        if options['clean']:
+            self.stdout.write('Cleaning v2 markdown content...')
+            clean_data_directory('data')
+
+        self.stdout.write('Populating the v1 database...')
+        import_v1()
+        
+        if not options['noindex']:
+            if settings.BUILD_V1_INDEX:
+                build_haystack_index()
         else:
-            self.stdout.write('Skipping v1 database population.')
+            self.stdout.write("Skipping v1 index build because of --noindex")
 
         if settings.INCLUDE_V2_DATA:
             self.stdout.write('Populating the v2 database...')

@@ -1,0 +1,9 @@
+ repos:
+  - repo: local
+    hooks:
+      - id: markdown-cleanup
+        name: Clean markdown in v2 JSON files
+        entry: python -c 'from api_v2.utils.markdown_cleaner import clean_data_directory; clean_data_directory("data")'
+        language: python
+        pass_filenames: false
+        files: ^data/v2/.*\.json$
