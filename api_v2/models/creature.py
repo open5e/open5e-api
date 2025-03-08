@@ -96,8 +96,6 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
         Returns the creature's initiative bonus. If no explicit bonus is set,
         returns the dexterity modifier.
         """
-        print(f"Raw initiative_bonus value: {self.initiative_bonus}")  # Debug
-        print(f"Dexterity modifier: {self.modifier_dexterity}")  # Debug
         if self.initiative_bonus is not None:
             return self.initiative_bonus
         return self.modifier_dexterity
