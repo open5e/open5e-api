@@ -3,6 +3,7 @@ from rest_framework import viewsets
 
 from django_filters import FilterSet
 from django_filters import BooleanFilter
+from .mixins import EagerLoadingMixin
 
 from api_v2 import models
 from api_v2 import serializers
@@ -22,7 +23,7 @@ class CharacterClassFilterSet(FilterSet):
         }
 
 
-class CharacterClassViewSet(viewsets.ReadOnlyModelViewSet):
+class CharacterClassViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of classes.
     retrieve: API endpoint for returning a particular class.
@@ -31,18 +32,5 @@ class CharacterClassViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.CharacterClassSerializer
     filterset_class = CharacterClassFilterSet
 
-    """
-    Set up selects and prefetching nested joins to mitigate N+1 problems
-    """
-    def get_queryset(self):
-        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query params
-        return CharacterClassViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-
-    @staticmethod
-    def setup_eager_loading(queryset, action, depth):
-        # Apply select_related and prefetch_related based on action and depth
-        if action == 'list':
-            selects = ['document']
-            prefetches = [] # Many-to-many/rvrs relationships to prefetch
-            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
-        return queryset
+    select_related_fields = []
+    prefetch_related_fields = ['document', 'saving_throws', 'features', 'subclass_of']

@@ -5,6 +5,7 @@ from django_filters import FilterSet
 from api_v2 import models
 from api_v2 import serializers
 
+from .mixins import EagerLoadingMixin
 
 class AlignmentFilterSet(FilterSet):
     class Meta:
@@ -16,7 +17,7 @@ class AlignmentFilterSet(FilterSet):
             'document__gamesystem__key': ['in','iexact','exact'],
         }
 
-class AlignmentViewSet(viewsets.ReadOnlyModelViewSet):
+class AlignmentViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of alignments.
     retrieve: API endpoint for returning a particular alignment.
@@ -24,3 +25,5 @@ class AlignmentViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.Alignment.objects.all().order_by('pk')
     serializer_class = serializers.AlignmentSerializer
     filterset_class = AlignmentFilterSet
+
+    prefetch_related_fields = ['document']

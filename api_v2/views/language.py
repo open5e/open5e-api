@@ -5,6 +5,8 @@ from django_filters import FilterSet
 from api_v2 import models
 from api_v2 import serializers
 
+from .mixins import EagerLoadingMixin
+
 
 class LanguageFilterSet(FilterSet):
     class Meta:
@@ -19,7 +21,7 @@ class LanguageFilterSet(FilterSet):
         }
 
 
-class LanguageViewSet(viewsets.ReadOnlyModelViewSet):
+class LanguageViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of feats.
     retrieve: API endpoint for returning a particular feat.
@@ -28,18 +30,9 @@ class LanguageViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.LanguageSerializer
     filterset_class = LanguageFilterSet
 
-    """
-    Set up selects and prefetching nested joins to mitigate N+1 problems
-    """
-    def get_queryset(self):
-        depth = int(self.request.query_params.get('depth', 0)) # get 'depth' from query param
-        return LanguageViewSet.setup_eager_loading(super().get_queryset(), self.action, depth)
-
-    @staticmethod
-    def setup_eager_loading(queryset, action, depth):
-        # Apply select_related and prefetch_related based on action and depth
-        if action == 'list':
-            selects = ['document', 'document__gamesystem', 'document__publisher']
-            prefetches = [] # Many-to-many/rvrs relationships to prefetch
-            queryset = queryset.select_related(*selects).prefetch_related(*prefetches)
-        return queryset
+    select_related_fields = []
+    prefetch_related_fields = [
+        'document',
+        'document__gamesystem',
+        'document__publisher',
+    ]
