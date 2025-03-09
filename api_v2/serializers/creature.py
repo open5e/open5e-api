@@ -81,6 +81,7 @@ class CreatureSerializer(GameContentSerializer):
     size = SizeSerializer()
     languages = LanguageSerializer(many=True)
     environments = EnvironmentSerializer(many=True)
+    initiative_bonus = serializers.SerializerMethodField()
 
     class Meta:
         '''Serializer meta options.'''
@@ -106,6 +107,7 @@ class CreatureSerializer(GameContentSerializer):
             'experience_points',
             'ability_scores',
             'modifiers',
+            'initiative_bonus',
             'saving_throws',
             'saving_throws_all',
             'skill_bonuses',
@@ -325,10 +327,14 @@ class CreatureSerializer(GameContentSerializer):
     @extend_schema_field(OpenApiTypes.INT)
     def get_experience_points(self, creature):
         return creature.experience_points
-
+    
+    @extend_schema_field(OpenApiTypes.INT)
+    def get_initiative_bonus(self, creature):
+        return creature.get_initiative_bonus()
 
 class CreatureSetSerializer(GameContentSerializer):
     '''Serializer for the Creature Set object'''
+    
     key = serializers.ReadOnlyField()
     creatures = CreatureSerializer(many=True, read_only=True, context={'request':{}})
 
