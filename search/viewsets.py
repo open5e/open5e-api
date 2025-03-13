@@ -1,8 +1,8 @@
 """Search query and parameter parsing."""
 from rest_framework import viewsets
 
-from api_v2 import models
-from api_v2 import serializers
+from search import models
+from search import serializers
 
 
 

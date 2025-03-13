@@ -40,8 +40,6 @@ from .characterclass import CharacterClassSerializer
 from .characterclass import ClassFeatureSerializer
 from .characterclass import ClassFeatureItemSerializer
 
-from .search import SearchResultSerializer
-
 from .size import SizeSerializer
 
 from .environment import EnvironmentSerializer

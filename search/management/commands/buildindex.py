@@ -8,6 +8,7 @@ from django.db import connection
 
 from api import models as v1
 from api_v2 import models as v2
+from search import models as search
 
 class Command(BaseCommand):
     """Implementation for the `manage.py `index_v1` subcommand."""
@@ -31,8 +32,8 @@ class Command(BaseCommand):
         )
 
     def unload_all_content(self):
-        object_count = v2.SearchResult.objects.all().count()
-        v2.SearchResult.objects.all().delete()
+        object_count = search.SearchResult.objects.all().count()
+        search.SearchResult.objects.all().delete()
         print("UNLOADED_OBJECT_COUNT:{}".format(object_count))
 
     def load_v1_content(self, model):
@@ -42,7 +43,7 @@ class Command(BaseCommand):
 
         if model.__name__ in standard_v1_models:
             for o in model.objects.all():
-                results.append(v2.SearchResult(
+                results.append(search.SearchResult(
                     document_pk=o.document.slug,
                     object_pk=o.slug,
                     object_name=o.name,
@@ -59,7 +60,7 @@ class Command(BaseCommand):
 
         if model.__name__ in standard_v2_models:
             for o in model.objects.all():
-                results.append(v2.SearchResult(
+                results.append(search.SearchResult(
                     document_pk=o.document.key,
                     object_pk=o.pk,
                     object_name=o.name,
@@ -77,12 +78,12 @@ class Command(BaseCommand):
                     model._meta.db_table))
 
         if schema == 'v1':
-            v2.SearchResult.objects.bulk_create(
+            search.SearchResult.objects.bulk_create(
                 self.load_v1_content(model)
             )
 
         if schema == 'v2':
-            v2.SearchResult.objects.bulk_create(
+            search.SearchResult.objects.bulk_create(
                 self.load_v2_content(model)
             )
 
@@ -99,7 +100,7 @@ class Command(BaseCommand):
                 "INSERT INTO search_index " +
                 "(document_pk,object_pk,object_name,object_model,text,schema_version) " +
                 "SELECT document_pk,object_pk,object_name,object_model,text,schema_version " +
-                "FROM api_v2_searchresult")
+                "FROM search_searchresult")
 
     def check_fts_enabled(self):
         #import sqlite3

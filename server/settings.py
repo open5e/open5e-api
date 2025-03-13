@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'api',
     'api_v2',
+    'search',
 	'drf_spectacular',
 
     # downloaded modules
