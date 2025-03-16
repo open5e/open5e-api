@@ -59,3 +59,5 @@ from .environment import Environment
 from .speed import HasSpeed
 
 from .rule import Rule, RuleSet
+
+from .image import Image

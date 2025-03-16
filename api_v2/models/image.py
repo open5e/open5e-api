@@ -1,6 +1,7 @@
-from django import models
-from api_v2.models import HasName, FromDocument
-from api_v2.models.enums import IMAGE_TYPES
+from django.db import models
+from .abstracts import HasName
+from .document import FromDocument
+from .enums import IMAGE_TYPES
 
 class Image(HasName, FromDocument):
     """This is the definition of an icon."""
