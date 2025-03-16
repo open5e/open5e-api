@@ -1,12 +1,12 @@
-"""Serializers for the SearchResult model."""
+"""Serializers for the Search application models."""
 
 from rest_framework import serializers
 
-from api_v2 import models
+from api_v2 import models as v2
 from api import models as v1
+from search import models
 from drf_spectacular.utils import extend_schema_field, inline_serializer, PolymorphicProxySerializer
 from drf_spectacular.types import OpenApiTypes
-from api_v2 import serializers as v2_serializers
 
 class SearchResultSerializer(serializers.ModelSerializer):
     """This method builds the search result object structure.
@@ -47,15 +47,15 @@ class SearchResultSerializer(serializers.ModelSerializer):
         
         if obj.schema_version == 'v2':
             if obj.object_model == 'Item':
-                result_detail = models.Item.objects.get(pk=obj.object_pk)
+                result_detail = v2.Item.objects.get(pk=obj.object_pk)
             if obj.object_model == 'Creature':
-                result_detail = models.Creature.objects.get(pk=obj.object_pk)
+                result_detail = v2.Creature.objects.get(pk=obj.object_pk)
             if obj.object_model == 'Spell':
-                result_detail = models.Spell.objects.get(pk=obj.object_pk)
+                result_detail = v2.Spell.objects.get(pk=obj.object_pk)
             if obj.object_model == 'CharacterClass':
-                result_detail = models.CharacterClass.objects.get(pk=obj.object_pk)
+                result_detail = v2.CharacterClass.objects.get(pk=obj.object_pk)
             if obj.object_model == 'Race':
-                result_detail = models.Race.objects.get(pk=obj.object_pk)
+                result_detail = v2.Race.objects.get(pk=obj.object_pk)
 
         if result_detail is not None:
             return result_detail.search_result_extra_fields()
@@ -80,7 +80,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
                 }
 
         if obj.schema_version == 'v2':
-            doc = models.Document.objects.get(key=obj.document_pk)
+            doc = v2.Document.objects.get(key=obj.document_pk)
             return {
                 'key': doc.key,
                 'name': doc.name

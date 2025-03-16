@@ -36,11 +36,7 @@ router.register(r'rules', views.RuleViewSet)
 router.register(r'rulesets', views.RuleSetViewSet)
 router.register(r'creaturetraits', views.CreatureTraitViewSet)
 
-search_router = routers.DefaultRouter()
-search_router.register('',views.SearchResultViewSet, basename='search')
-
 urlpatterns = [
     path('v2/', include(router.urls)),
-    path('v2/search/', include(search_router.urls)),
     path('v2/enums/', views.get_enums, name="enums")
 ]
