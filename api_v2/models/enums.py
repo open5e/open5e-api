@@ -229,3 +229,8 @@ CASTING_OPTION_TYPES = [
     ('slot_level_8','Spell Slot Level 8'),
     ('slot_level_9','Spell Slot Level 9')
 ]
+
+IMAGE_TYPES = [
+    ('icon','Icon'),
+    ('illustration','Illustration')
+]
