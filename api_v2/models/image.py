@@ -1,10 +1,13 @@
+"""The model for an image with metadata."""
+
+
 from django.db import models
 from .abstracts import HasName
 from .document import FromDocument
 from .enums import IMAGE_TYPES
 
 class Image(HasName, FromDocument):
-    """This is the definition of an icon."""
+    """This is the model related to image metadata."""
 
     keywords = models.TextField(
         help_text='List of keywords, to be used by the search index.')
@@ -24,6 +27,3 @@ class Image(HasName, FromDocument):
 
     def file_url(self):
         return "1"
-
-    class Meta:
-        abstract = True
