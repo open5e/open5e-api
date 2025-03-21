@@ -35,8 +35,6 @@ from .spell import SpellViewSet, SpellSchoolViewSet
 
 from .characterclass import CharacterClassViewSet
 
-from .search import SearchResultViewSet
-
 from .size import SizeViewSet
 
 from .rule import RuleViewSet, RuleSetViewSet

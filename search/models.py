@@ -1,4 +1,4 @@
-""" The Search Result object model"""
+""" The Search app models"""
 from django.db import models
 
 

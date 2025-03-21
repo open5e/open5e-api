@@ -50,8 +50,6 @@ from .characterclass import ClassFeatureItem
 from .characterclass import ClassFeature
 from .characterclass import CharacterClass
 
-from .search import SearchResult
-
 from .size import Size
 
 from .environment import Environment

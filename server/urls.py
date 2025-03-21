@@ -21,10 +21,12 @@ from django.conf import settings
 
 from api import urls as v1_urls
 from api_v2 import urls as v2_urls
+from search import urls as search_urls
 
 urlpatterns = []
 urlpatterns+=v1_urls.urlpatterns
 urlpatterns+=v2_urls.urlpatterns
+urlpatterns+=search_urls.urlpatterns
 
 if settings.DEBUG is True:
     urlpatterns.append(path('admin/', admin.site.urls))
