@@ -16,25 +16,55 @@ class ClassFeatureItemSerializer(GameContentSerializer):
 class ClassFeatureColumnItemSerializer(GameContentSerializer):
     class Meta:
         model = models.ClassFeatureItem
-        fields = ['level','column_value']
+        fields = ['level', 'column_value']
+
+class ClassFeaturePrefetchSerializer(GameContentSerializer):
+    class Meta:
+        model = models.ClassFeatureItem
+        fields = ['level', 'detail', 'column_value']
 
 class ClassFeatureSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    gained_at = ClassFeatureItemSerializer(
-        many=True
-    )
+    feature_items = ClassFeaturePrefetchSerializer(many=True, read_only=True)
 
-    table_data = ClassFeatureColumnItemSerializer(
-        many=True
-    )
+    def to_representation(self, instance):
+        # run 'to_representation' on super-class (GameContentSerializer)
+        representation = super().to_representation(instance)
+
+        # Filters non-table data from FeatureItems
+        gained_at = [
+            ClassFeatureItemSerializer(item).data
+            for item in instance.feature_items.all()
+            if item.column_value is None
+        ]
+
+        # Filters table data from FeatureItems
+        column_data = [
+            ClassFeatureColumnItemSerializer(item).data
+            for item in instance.feature_items.all()
+            if item.column_value is not None
+        ]
+
+        # replace 'feature_items' with 'gained_at' and 'column_data' in representation
+        representation['gained_at'] = gained_at
+        representation['column_data'] = column_data
+        del representation['feature_items']
+
+        return representation
 
     class Meta:
         model = models.ClassFeature
-        fields = ['key', 'name', 'desc','gained_at','table_data', 'feature_type']
+        fields = [
+            'key',
+            'name',
+            'desc',
+            'feature_type',
+            'feature_items'
+        ]
 
 class CharacterClassSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    features = ClassFeatureSerializer(many=True)
+    features = ClassFeatureSerializer(many=True, read_only=True)
     hit_points = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
 
