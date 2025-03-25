@@ -39,7 +39,7 @@ class ClassFeatureSerializer(GameContentSerializer):
         ]
 
         # Filters table data from FeatureItems
-        column_data = [
+        table_data = [
             ClassFeatureColumnItemSerializer(item).data
             for item in instance.feature_items.all()
             if item.column_value is not None
@@ -47,7 +47,7 @@ class ClassFeatureSerializer(GameContentSerializer):
 
         # replace 'feature_items' with 'gained_at' and 'column_data' in representation
         representation['gained_at'] = gained_at
-        representation['column_data'] = column_data
+        representation['table_data'] = table_data
         del representation['feature_items']
 
         return representation
