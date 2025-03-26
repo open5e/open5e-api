@@ -32,7 +32,7 @@ class CreatureActionAttackSerializer(serializers.ModelSerializer):
 
 class CreatureActionSerializer(serializers.ModelSerializer):
     key = serializers.ReadOnlyField()
-    attacks = CreatureActionAttackSerializer(many=True)
+    attacks = CreatureActionAttackSerializer(many=True, read_only=True)
     class Meta:
         model = models.CreatureAction
         fields = '__all__'

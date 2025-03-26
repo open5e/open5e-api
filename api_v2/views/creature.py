@@ -66,20 +66,25 @@ class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.CreatureSerializer
     filterset_class = CreatureFilterSet
 
+    select_related_fields = []
+
     prefetch_related_fields = [
+        'actions',
+        'actions__attacks',
+        'creaturesets',
         'condition_immunities',
-        'creatureaction_set',
         'damage_immunities',
         'damage_resistances',
         'damage_vulnerabilities',
         'document',
-        'document__gamesystem',
         'document__publisher',
+        'document__gamesystem',
         'environments',
         'languages',
         'languages__document',
         'type',
         'size',
+        'size__document',
         'traits',
     ]
 
