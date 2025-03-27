@@ -27,4 +27,9 @@ class BackgroundViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.BackgroundSerializer
     filterset_class = BackgroundFilterSet
 
-    prefetch_related_fields = ['benefits']
+    prefetch_related_fields = [
+        'benefits',
+        'document',
+        'document__publisher',
+        'document__gamesystem'
+    ]
