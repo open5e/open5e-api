@@ -67,7 +67,7 @@ class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     filterset_class = CreatureFilterSet
 
     select_related_fields = []
-
+    
     prefetch_related_fields = [
         'actions',
         'actions__attacks',
@@ -121,7 +121,7 @@ class CreatureSetFilterSet(FilterSet):
         }
 
 
-class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
+class CreatureSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creature sets, which is similar to tags.
     retrieve: API endpoint for returning a particular creature set.
@@ -130,6 +130,20 @@ class CreatureSetViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.CreatureSetSerializer
     filterset_class = CreatureSetFilterSet
 
+    prefetch_related_fields = [
+        'creatures__actions',
+        'creatures__condition_immunities',
+        'creatures__damage_resistances',
+        'creatures__damage_immunities',
+        'creatures__damage_vulnerabilities',
+        'creatures__creaturesets',
+        'creatures__document',
+        'creatures__environments',
+        'creatures__size',
+        'creatures__traits',
+        'creatures__type',
+        'creatures__languages',
+    ]
 
 class CreatureTraitViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.CreatureTrait.objects.all().order_by('pk')
