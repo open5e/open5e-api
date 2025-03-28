@@ -12,7 +12,7 @@ class EagerLoadingMixin:
   2. Re-define `select_related_fields` and `prefetch_related_fields` lists on 
   the child ViewSet to specify relationships to optimise.
   
-  ## Example
+  ## Usage Example
   ```
     # EagerLoadingMixin inhertired before base-case
     class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
@@ -20,10 +20,8 @@ class EagerLoadingMixin:
       serializer_class = serializers.CreatureSerializer
       filterset_class = CreatureFilterSet
 
-      # ForeignKey relations to optimise with select_related()
-      select_related_fields = []
-      # ManyToMany / reverse relations to optimise with prefetch_related()
-      prefetch_related_fields = []
+      select_related_fields = []   # ForeignKey relations to optimise with select_related()      
+      prefetch_related_fields = [] # ManyToMany/reverse relations to optimise with prefetch_related()
   ```
   """
 
@@ -34,26 +32,32 @@ class EagerLoadingMixin:
   def get_queryset(self):
     """Override DRF's default get_queryset() method to apply eager loading"""
     queryset = super().get_queryset()
-    request = self.request
 
-    # Get query parameters
-    requested_fields = request.query_params.get('fields', '')
-    depth = int(request.query_params.get('depth', 0))
+    # Get query parameters from request
+    requested_fields = self.request.query_params.get('fields', '').split(',')
+    depth = int(self.request.query_params.get('depth', 0))
 
-    if requested_fields:
-      requested_fields = set(requested_fields.split(','))
-    else:
-      # If no fields requested, apply all opitmisations
-      requested_fields = set(self.select_related_fields + self.prefetch_related_fields)
-
-    # Filter fields based on on which have been requested
-    select_fields = [field for field in self.select_related_fields if field in requested_fields]
-    prefetch_fields = [field for field in self.prefetch_related_fields if field in requested_fields]
+    # if no fields are passed via query param, select/prefetch all fields defined on the view
+    if not requested_fields:
+      queryset = queryset.select_related(*self.select_related_fields)
+      queryset = queryset.prefetch_related(*self.prefetch_related_fields)
+      return queryset
     
-    # Apply optimisations
-    if select_fields:
-      queryset = queryset.select_related(*select_fields)
-    if prefetch_fields:
-      queryset = queryset.prefetch_related(*prefetch_fields)
+    # filter selected fields against fields requested by user via query params 
+    # this stops Django prefetching data that isn't even returned by this view
+    select_fields = []
+    for field_to_select in self.select_related_fields:
+      if any(field_in_request in field_to_select for field_in_request in requested_fields):
+        select_fields.append(field_to_select)
+    
+    # filter prefetch fields against fields requested by user via query params
+    # this stops Django prefetching data that isn't even returned by this view
+    prefetch_fields = []
+    for field_to_prefetch in self.prefetch_related_fields:
+      if any(field_in_request in field_to_prefetch for field_in_request in requested_fields):
+        prefetch_fields.append(field_to_prefetch)
 
+    # Apply filtered optimisations
+    queryset = queryset.select_related(*select_fields)
+    queryset = queryset.prefetch_related(*prefetch_fields)
     return queryset
