@@ -26,3 +26,14 @@ class Image(HasName, FromDocument):
 
     def file_url(self):
         return "1"
+
+
+class HasIcon(models.Model):
+    """The model inherited for defining an icon for another object type."""
+    icon = models.ForeignKey(Image, 
+                            blank=True,
+                            null=True,
+                            on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True

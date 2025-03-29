@@ -3,8 +3,9 @@ from django.db import models
 
 from .abstracts import HasName, HasDescription
 from .document import FromDocument
+from .image import HasIcon
 
-class Condition(HasName, HasDescription, FromDocument):
+class Condition(HasName, HasDescription, HasIcon, FromDocument):
     """
     This is the model for a condition.
     """
