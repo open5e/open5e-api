@@ -100,6 +100,7 @@ class CreatureSerializer(GameContentSerializer):
             'alignment',
             'languages',
             'armor_class',
+            'armor_detail',
             'hit_points',
             'hit_dice',
             'challenge_rating_decimal',
