@@ -2,6 +2,8 @@
 
 
 from django.db import models
+from django.templatetags.static import static
+
 from .abstracts import HasName
 from .document import FromDocument
 from .enums import IMAGE_TYPES
@@ -25,7 +27,7 @@ class Image(HasName, FromDocument):
         return (self.document.name + " - " + self.name)
 
     def file_url(self):
-        return "1"
+        return static(self.file_path)
 
 
 class HasIcon(models.Model):

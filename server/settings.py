@@ -18,10 +18,11 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "data/images"),
 
+]
 # SECURITY WARNING: keep the secret key used in production secret!
 assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env or local OS!"
 SECRET_KEY = os.environ["SECRET_KEY"]
