@@ -33,4 +33,4 @@ class CharacterClassViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     filterset_class = CharacterClassFilterSet
 
     select_related_fields = []
-    prefetch_related_fields = ['document', 'saving_throws', 'features', 'subclass_of']
+    prefetch_related_fields = ['document', 'saving_throws', 'features', 'subclass_of', 'features__feature_items']

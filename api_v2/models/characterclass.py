@@ -23,7 +23,7 @@ class ClassFeatureItem(models.Model):
     # Somewhere in here is where you'd define a field that would eventually display as "Rage Damage +2"
     # Also spell slots...?
 
-    parent = models.ForeignKey('ClassFeature', on_delete=models.CASCADE)
+    parent = models.ForeignKey('ClassFeature', on_delete=models.CASCADE, related_name="feature_items")
     level = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(20)])
     detail = models.CharField(
         null=True,
@@ -48,17 +48,16 @@ class ClassFeature(HasName, HasDescription, FromDocument):
     """This class represents an individual class feature, such as Rage, or Extra
     Attack."""
 
-    parent = models.ForeignKey('CharacterClass',
-        on_delete=models.CASCADE)
+    parent = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, related_name="features")
 
     def gained_at(self):
-        return self.classfeatureitem_set.exclude(column_value__isnull=False)
+        return self.feature_items.filter(column_value__isnull=True)
     
     def table_data(self):
         """Returns an array of tabular data relating to the feature. Each
         array element is a table-row of data. Not needed for most features."""
 
-        return self.classfeatureitem_set.exclude(column_value__isnull=True)
+        return self.feature_items.filter(column_value__isnull=False)
 
     # Infer the type of this feature based on the `key`
     @property
@@ -133,11 +132,6 @@ class CharacterClass(HasName, FromDocument):
     def is_subclass(self):
         """Returns whether the object is a subclass."""
         return self.subclass_of is not None
-
-    @property
-    def features(self):
-        """Returns the set of features that are related to this class."""
-        return self.classfeature_set
 
     @extend_schema_field(serializers.DictField(
         child=inline_serializer(
@@ -228,7 +222,7 @@ class CharacterClass(HasName, FromDocument):
     def as_text(self):
         text = self.name + '\n'
         
-        for feature in self.classfeature_set.all():
+        for feature in self.features.all():
             text+='\n' + feature.as_text()
 
         return text
