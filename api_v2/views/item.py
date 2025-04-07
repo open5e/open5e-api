@@ -70,7 +70,7 @@ class ItemSetFilterSet(FilterSet):
         }
 
 
-class ItemSetViewSet(viewsets.ReadOnlyModelViewSet):
+class ItemSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """"
     list: API Endpoint for returning a set of itemsets.
 
@@ -80,6 +80,17 @@ class ItemSetViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.ItemSetSerializer
     filterset_class = ItemSetFilterSet
 
+    prefetch_related_fields = [
+        'items',
+        'items__document',
+        'items__damage_resistances',
+        'items__damage_immunities',
+        'items__damage_vulnerabilities',
+        'items__armor',
+        'items__category',
+        'items__weapon',
+        'items__weapon__document'
+    ]
 
 class ItemCategoryViewSet(viewsets.ReadOnlyModelViewSet):
     """"
@@ -119,7 +130,7 @@ class WeaponFilterSet(FilterSet):
             }
 
 
-class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
+class WeaponViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of weapons.
     retrieve: API endpoint for returning a particular weapon.
@@ -128,6 +139,7 @@ class WeaponViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.WeaponSerializer
     filterset_class = WeaponFilterSet
 
+    prefetch_related_fields = ['document']
 
 class ArmorFilterSet(FilterSet):
 
