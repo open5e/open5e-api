@@ -50,15 +50,6 @@ class ClassFeature(HasName, HasDescription, FromDocument):
 
     parent = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, related_name="features")
 
-    def gained_at(self):
-        return self.feature_items.filter(column_value__isnull=True)
-    
-    def table_data(self):
-        """Returns an array of tabular data relating to the feature. Each
-        array element is a table-row of data. Not needed for most features."""
-
-        return self.feature_items.filter(column_value__isnull=False)
-
     # Infer the type of this feature based on the `key`
     @property
     def feature_type(self):
