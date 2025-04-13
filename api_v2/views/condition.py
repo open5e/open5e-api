@@ -27,4 +27,5 @@ class ConditionViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     filterset_class = ConditionFilterSet
 
     select_related_fields = []
-    prefetch_related_fields = ['document__gamesystem']
+    prefetch_related_fields = ['document__gamesystem',
+                                'icon']
