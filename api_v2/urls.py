@@ -35,6 +35,7 @@ router.register(r'skills',views.SkillViewSet)
 router.register(r'rules', views.RuleViewSet)
 router.register(r'rulesets', views.RuleSetViewSet)
 router.register(r'creaturetraits', views.CreatureTraitViewSet)
+router.register(r'images', views.ImageViewSet)
 
 urlpatterns = [
     path('v2/', include(router.urls)),

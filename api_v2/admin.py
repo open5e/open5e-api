@@ -108,3 +108,5 @@ admin.site.register(Environment)
 
 admin.site.register(Rule)
 admin.site.register(RuleSet)
+
+admin.site.register(Image)
