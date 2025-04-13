@@ -102,7 +102,7 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
 
     def as_text(self):
         text = self.name + '\n'
-        for action in self.creatureaction_set.all():
+        for action in self.actions.all():
             text+='\n' + action.as_text()
 
         return text
@@ -113,12 +113,7 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
             "type": self.type.name,
             "size": self.size.name,   
         }
-
-    @property
-    def creatureset(self):
-        '''Helper method to rename and return creaturesets.'''
-        return self.creaturesets.all()
-
+        
     @property
     def challenge_rating_text(self):
         '''Challenge rating as text string representation of a fraction or integer. '''
@@ -171,12 +166,6 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
             except:
                 return None
 
-    @property
-    def actions(self):
-        """Returns the set of actions that are related to this creature."""
-        return self.creatureaction_set
-
-
 class CreatureAction(HasName, HasDescription):
     """Describes an action available to a creature."""
     key = key_field()
@@ -184,6 +173,7 @@ class CreatureAction(HasName, HasDescription):
     parent = models.ForeignKey(
         Creature,
         on_delete=models.CASCADE,
+        related_name='actions',
         help_text='The creature to which this action belongs.'
     )
 
@@ -232,16 +222,13 @@ class CreatureAction(HasName, HasDescription):
 
         return text
 
-    def attacks(self):
-        return self.creatureactionattack_set
-
-
 class CreatureActionAttack(HasName):
     """Describes an attack action used by a creature."""
     key = key_field()
 
     parent = models.ForeignKey(
         CreatureAction,
+        related_name="attacks",
         on_delete=models.CASCADE,
         help_text='The creature action to which this attack belongs.'
     )
