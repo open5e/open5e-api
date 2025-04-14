@@ -200,6 +200,12 @@ class CreatureAction(HasName, HasDescription):
         help_text='The type of action used.'
     )
 
+    order = models.SmallIntegerField(
+        blank=True,
+        null=True,
+        help_text='The position in the list of features that a feature appears in its source statblock'
+    )
+
     form_condition = models.CharField(
         blank=True,
         null=True,
