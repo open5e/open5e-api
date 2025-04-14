@@ -37,6 +37,13 @@ class Object(HasName):
             MaxValueValidator(OBJECT_ARMOR_CLASS_MAXIMUM)],
         help_text='Integer representing the armor class of the object.')
 
+    armor_detail = models.CharField(
+        default="",
+        null=True,
+        help_text='Represents parathetical text that follows an objects AC',
+        max_length=64,
+    )
+
     hit_points = models.IntegerField(
         default=0,
         null=False,  # Allow an unspecified hit point value.
