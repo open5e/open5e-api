@@ -28,28 +28,35 @@ class ClassFeatureSerializer(GameContentSerializer):
     feature_items = ClassFeaturePrefetchSerializer(many=True, read_only=True)
 
     def to_representation(self, instance):
+        """
+        'feature_items' field contains tabulated and non-tabulated data. These
+        have different uses and must be split into the 'gained_at' and 
+        'table_data' fields before being returned by the serializer
+        """
         # run 'to_representation' on super-class (GameContentSerializer)
         representation = super().to_representation(instance)
+        
+        # Split FeatureItems into tabulated and non-tabulated data arrays
+        table_data = []
+        non_table_data = []
+        for item in instance.feature_items.all():
+            if item.column_value is None:
+                non_table_data.append(item)
+            else:
+                table_data.append(item)
 
-        # Filters non-table data from FeatureItems
-        gained_at = [
-            ClassFeatureItemSerializer(item).data
-            for item in instance.feature_items.all()
-            if item.column_value is None
-        ]
+        # If a feature has tabulated data AND a description, take its lowest 
+        # level FeatureItem and add it to the non-tabulated data.
+        if len(table_data) > 0 and instance.desc != '[Column data]':
+            first_level_gained = min(table_data, key=lambda x: x.level)
+            non_table_data.append(first_level_gained)
 
-        # Filters table data from FeatureItems
-        table_data = [
-            ClassFeatureColumnItemSerializer(item).data
-            for item in instance.feature_items.all()
-            if item.column_value is not None
-        ]
+        # serialize data and add it to representation
+        representation['gained_at'] = [ClassFeatureItemSerializer(item).data for item in non_table_data]
+        representation['table_data'] = [ClassFeatureColumnItemSerializer(item).data for item in table_data]
 
-        # replace 'feature_items' with 'gained_at' and 'column_data' in representation
-        representation['gained_at'] = gained_at
-        representation['table_data'] = table_data
+        # remove feature_items field to avoid data duplication
         del representation['feature_items']
-
         return representation
 
     class Meta:
