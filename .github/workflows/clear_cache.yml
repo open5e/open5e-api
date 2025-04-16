@@ -51,7 +51,7 @@ jobs:
           done
 
       - name: Purge Cloudflare cache
-        if: steps.check-deployments.outputs.status == 'success'
+        if: steps.poll-deployments.outputs.status == 'success'
         env:
           CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
