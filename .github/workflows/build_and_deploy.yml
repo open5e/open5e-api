@@ -1,9 +1,10 @@
 name: "Build and deploy"
 on:
-  push:
-    branches:
-      - staging
-      - main
+  push: {}
+    # For testing - change to specific branches later
+    # branches:
+    #   - staging
+    #   - main
 
 jobs:
   build:
@@ -25,10 +26,15 @@ jobs:
             echo "DOCKER_IMAGE_TAG=staging" >> $GITHUB_ENV
           fi
       - name: Build and push
+        id: docker_build
         uses: docker/build-push-action@v4
         with:
           push: true
           tags: eepmoody/open5e-api:${{ env.DOCKER_IMAGE_TAG }}
+      - name: Update status check
+        run: |
+          echo "STATUS_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_OUTPUT
+        if: success()
 
   deploy:
     runs-on: ubuntu-latest
