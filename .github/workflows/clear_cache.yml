@@ -40,7 +40,7 @@ jobs:
               
               # Check if deployment is from last 10 minutes, is active, and either matches our commit or is null (manual deployments)
               if [ "$status" = "ACTIVE" ] && \
-                 [ $(( $(date +%s) - $(date -d "$created_at" +%s) )) -lt 300 ] && \
+                 [ $(( $(date +%s) - $(date -d "$created_at" +%s) )) -lt 600 ] && \
                  ( [ "$commit_hash" = "$CURRENT_COMMIT" ] || [ "$commit_hash" = "null" ] ); then
                 echo "Found recent successful deployment matching our criteria"
                 echo "status=success" >> $GITHUB_OUTPUT
