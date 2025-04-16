@@ -31,7 +31,7 @@ jobs:
               
               created_at=$(echo $response | jq -r '.deployments[0].created_at')
               status=$(echo $response | jq -r '.deployments[0].phase')
-              commit_hash=$(echo $response | jq -r '.deployments[0].commit_hash')
+              commit_hash=$(echo $response | jq -r '.deployments[0].source_commit_hash')
               
               echo "Latest deployment status: $status (created: $created_at, commit: $commit_hash)"
               
