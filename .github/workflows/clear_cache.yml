@@ -4,20 +4,25 @@ on:
   push: {}  # For testing - change to specific branches later
 
 jobs:
-  wait-and-clear-cache:
+  clear-cache:
     runs-on: ubuntu-latest
     steps:
       - name: Initial delay
-        run: sleep 120
+        run: |
+          echo "Waiting 2 minutes for potential deployments to start..."
+          sleep 120
 
       - name: Check deployment status
         id: check-deployments
         env:
-          DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
         run: |
+          echo "Checking deployments on branch: ${{ github.ref_name }}"
+          
           APP_IDS="52a99a96-7e6a-4258-b523-23d615c05571,7917c4fa-2426-4f51-b8cd-15a680fcaf1f,7f68aa01-e022-4244-81a4-0e5a50893703,476726eb-3be5-4b53-abeb-fba6db77786e"
           
           for app_id in ${APP_IDS//,/ }; do
+            echo "Checking app: $app_id"
             response=$(curl -s \
               -H "Authorization: Bearer $DIGITALOCEAN_ACCESS_TOKEN" \
               -H "Content-Type: application/json" \
@@ -26,21 +31,35 @@ jobs:
             created_at=$(echo $response | jq -r '.deployments[0].created_at')
             status=$(echo $response | jq -r '.deployments[0].phase')
             
+            echo "Latest deployment status: $status (created: $created_at)"
+            
             # Check if deployment is from last 10 minutes and is active
             if [ "$status" = "ACTIVE" ] && [ $(( $(date +%s) - $(date -d "$created_at" +%s) )) -lt 600 ]; then
+              echo "Found recent successful deployment"
               echo "status=success" >> $GITHUB_OUTPUT
               exit 0
             fi
           done
+          
+          echo "No recent deployments found"
           echo "status=skip" >> $GITHUB_OUTPUT
 
       - name: Purge Cloudflare cache
         if: steps.check-deployments.outputs.status == 'success'
         env:
-          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          curl -s -X POST \
+          echo "Purging Cloudflare cache..."
+          response=$(curl -s -X POST \
             "https://api.cloudflare.com/client/v4/zones/04102fd3a28043d9d40a2688282d688a/purge_cache" \
             -H "Authorization: Bearer $CLOUDFLARE_TOKEN" \
             -H "Content-Type: application/json" \
-            --data '{"purge_everything":true}'
+            --data '{"purge_everything":true}')
+          
+          if [ "$(echo $response | jq -r '.success')" = "true" ]; then
+            echo "Successfully purged Cloudflare cache"
+          else
+            echo "Failed to purge cache:"
+            echo $response
+            exit 1
+          fi
