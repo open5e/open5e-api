@@ -1,7 +1,10 @@
 name: Clear Cloudflare Cache After Deployments
 
 on:
-  push: {}  # For testing - change to specific branches later
+  push:
+    branches:
+      - main
+      - staging
 
 jobs:
   clear-cache:
