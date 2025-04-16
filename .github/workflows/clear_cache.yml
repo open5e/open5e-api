@@ -16,9 +16,11 @@ jobs:
           sleep 30
           
           APP_IDS="52a99a96-7e6a-4258-b523-23d615c05571,7917c4fa-2426-4f51-b8cd-15a680fcaf1f,7f68aa01-e022-4244-81a4-0e5a50893703,476726eb-3be5-4b53-abeb-fba6db77786e"
+          CURRENT_COMMIT="${{ github.sha }}"
+          echo "Current commit: $CURRENT_COMMIT"
           
           for attempt in {1..20}; do
-            echo "Check attempt $attempt of 40..."
+            echo "Check attempt $attempt of 20..."
             
             for app_id in ${APP_IDS//,/ }; do
               echo "Checking app: $app_id"
@@ -29,24 +31,27 @@ jobs:
               
               created_at=$(echo $response | jq -r '.deployments[0].created_at')
               status=$(echo $response | jq -r '.deployments[0].phase')
+              commit_hash=$(echo $response | jq -r '.deployments[0].commit_hash')
               
-              echo "Latest deployment status: $status (created: $created_at)"
+              echo "Latest deployment status: $status (created: $created_at, commit: $commit_hash)"
               
-              # Check if deployment is from last 10 minutes and is active
-              if [ "$status" = "ACTIVE" ] && [ $(( $(date +%s) - $(date -d "$created_at" +%s) )) -lt 600 ]; then
-                echo "Found recent successful deployment"
+              # Check if deployment is from last 10 minutes, is active, and matches our commit
+              if [ "$status" = "ACTIVE" ] && \
+                 [ $(( $(date +%s) - $(date -d "$created_at" +%s) )) -lt 600 ] && \
+                 [ "$commit_hash" = "$CURRENT_COMMIT" ]; then
+                echo "Found recent successful deployment matching current commit"
                 echo "status=success" >> $GITHUB_OUTPUT
                 exit 0
               fi
             done
             
-            if [ $attempt -eq 40 ]; then
-              echo "Timeout after 10 minutes - no successful deployments found"
+            if [ $attempt -eq 20 ]; then
+              echo "Timeout after 10 minutes - no matching successful deployments found"
               echo "status=timeout" >> $GITHUB_OUTPUT
               exit 1
             fi
             
-            echo "No successful deployments yet, waiting 15 seconds..."
+            echo "No matching successful deployments yet, waiting 30 seconds..."
             sleep 30
           done
 
