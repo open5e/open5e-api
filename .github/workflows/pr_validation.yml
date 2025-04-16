@@ -36,7 +36,12 @@ jobs:
       - name: Sanitize branch name
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF##*/} | tr '/' '-')" >> $GITHUB_ENV
       - name: Build Docker image
+        id: docker_build
         uses: docker/build-push-action@v4
         with:
           push: false
           tags: open5e-api:${{ env.BRANCH_NAME }}
+      - name: Update status check
+        run: |
+          echo "STATUS_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_OUTPUT
+        if: success()

@@ -1,10 +1,9 @@
 name: "Build and deploy"
 on:
-  push: {}
-    # For testing - change to specific branches later
-    # branches:
-    #   - staging
-    #   - main
+  push:
+    branches:
+      - staging
+      - main
 
 jobs:
   build:
