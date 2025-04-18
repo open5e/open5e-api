@@ -1,5 +1,7 @@
 """Helper command to fully set up the API."""
 import argparse
+import shutil
+from pathlib import Path
 
 from server import settings
 
@@ -20,14 +22,22 @@ class Command(BaseCommand):
             help="Flushes all existing database data before adding new objects.",
         )
 
-    def handle(self, *args, **options):
-        """[TODO] Check if the directory is dirty."""
-        # Does whoosh_index exist
-        
-        # Does staticfiles exist
-        # Does db.sqlite3 exist
+        parser.add_argument(
+            "--clean",
+            action="store_true",
+            help="Flushes all existing database data before adding new objects.",
+        )
 
-        
+    def handle(self, *args, **options):
+        self.stdout.write('Checking if the directory is dirty...')
+        if options['clean']:
+            clean_dir()
+
+        if is_dirty():
+            self.stdout.write('Directory is dirty, consider the --clean argument.')
+        else:
+            self.stdout.write('Directory is clean')
+
         """Main logic."""
         self.stdout.write('Migrating the database...')
         migrate_db()
@@ -69,6 +79,27 @@ def migrate_db() -> None:
     call_command('makemigrations')
     call_command('migrate')
 
+def is_dirty() ->None:
+    # TODO switch these over to server settings values.
+    is_dirty=False
+    if Path('./server/whoosh_index').is_dir():
+        print("Found whoosh_index")
+        is_dirty=True
+    if Path(settings.STATIC_ROOT).is_dir():
+        print("Found static root")
+        is_dirty=True
+    if Path(settings.DATABASES['default']['NAME']).exists():
+        print("Found db file")
+        is_dirty=True
+    return is_dirty
+
+def clean_dir() ->None:
+    if Path('./server/whoosh_index').is_dir():
+        shutil.rmtree(Path('./server/whoosh_index'))
+    if Path(settings.STATIC_ROOT).is_dir():
+        shutil.rmtree(Path(settings.STATIC_ROOT))
+    if Path(settings.DATABASES['default']['NAME']).exists():
+        Path(settings.DATABASES['default']['NAME']).unlink()
 
 def import_v1() -> None:
     """Import the v1 apps' database models."""
