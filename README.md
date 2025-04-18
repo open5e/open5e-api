@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" width="200px" align="center" alt="Open5e logo" />
+  <img src="static/logo.png" width="200px" align="center" alt="Open5e logo" />
   <h1 align="center">Open5e API</h1>
   <p align="center">
     <a href="https://open5e.com">https://open5e.com</a>
