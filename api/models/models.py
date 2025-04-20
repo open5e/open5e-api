@@ -128,7 +128,7 @@ class GameContent(models.Model):
         exclude_doc_key = ['Condition']
 
         a5e_doc_lookup = {
-            "Monster":"mmenag",
+            "Monster":"a5e-mm",
             "MagicItem":"a5e-ddg",
             "Spell":"a5e-ag",
             "Background":"a5e-ag",
