@@ -29,7 +29,8 @@ jobs:
           pipenv run pytest
       - name: Validate Data
         run: |
-          pipenv run python ./scripts/data_test.py --dir ./data/v2
+          pipenv run python ./scripts/data_test.py --dir ./data/v2 &
+          pipenv run python ./manage.py 
   build:
     runs-on: ubuntu-latest
     steps:
