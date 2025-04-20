@@ -92,9 +92,9 @@ source_map = [
     'output_path': '../../../data/v2/kobold-press/tob3/Creature.json',
   },
   {
-    'v2_document_key': 'mmenag',
+    'v2_document_key': 'a5e-mm',
     'input_path': '../../../data/v1/menagerie/Monster.json',
-    'output_path': '../../../data/v2/en-publishing/mmenag/Creature.json',
+    'output_path': '../../../data/v2/en-publishing/a5e-mm/Creature.json',
   },
   {
     'v2_document_key': 'ccdx',

@@ -644,7 +644,7 @@ def get_v2_doc_from_v1_obj(v1_obj):
         'dmag':'deepm',
         'dmag-e':'deepmx',
         'kp':'kp',
-        'menagerie':'mmenag',
+        'menagerie':'a5e-mm',
         'o5e':'open5e',
         'taldorei':'tdcs',
         'tob':'tob',
