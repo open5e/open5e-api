@@ -2,8 +2,9 @@ name: Clear Cloudflare Cache After Deployments
 
 on:
   push:
-    # Run on all branches
-    branches-ignore: []
+    branches:
+      - main
+      - staging
 
 jobs:
   clear-cache:
