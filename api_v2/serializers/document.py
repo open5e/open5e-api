@@ -28,7 +28,7 @@ class LicenseSummarySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     class Meta:
         model = models.License
-        fields = ['name', 'key']
+        fields = ['name', 'key', 'url']
 
 class PublisherSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
