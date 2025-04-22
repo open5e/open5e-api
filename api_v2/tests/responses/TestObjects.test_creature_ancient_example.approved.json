@@ -250,52 +250,23 @@
     "hit_points": 546,
     "initiative_bonus": 0,
     "key": "srd_ancient-red-dragon",
-    "languages": [
-        {
-            "desc": "Typical speakers are Humans.",
-            "document": {
-                "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
-                },
-                "key": "srd",
-                "name": "Systems Reference Document",
-                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-                "publisher": {
-                    "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
-                }
+    "languages": {
+        "as_string": "Common, Draconic",
+        "data": [
+            {
+                "desc": "Typical speakers are Humans.",
+                "key": "common",
+                "name": "Common",
+                "url": "http://localhost:8000/v2/languages/common/"
             },
-            "is_exotic": false,
-            "is_secret": false,
-            "key": "common",
-            "name": "Common",
-            "script_language": "http://localhost:8000/v2/languages/common/",
-            "url": "http://localhost:8000/v2/languages/common/"
-        },
-        {
-            "desc": "Typical speakers include dragons and dragonborn.",
-            "document": {
-                "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
-                },
-                "key": "srd",
-                "name": "Systems Reference Document",
-                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-                "publisher": {
-                    "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
-                }
-            },
-            "is_exotic": true,
-            "is_secret": false,
-            "key": "draconic",
-            "name": "Draconic",
-            "script_language": "http://localhost:8000/v2/languages/draconic/",
-            "url": "http://localhost:8000/v2/languages/draconic/"
-        }
-    ],
+            {
+                "desc": "Typical speakers include dragons and dragonborn.",
+                "key": "draconic",
+                "name": "Draconic",
+                "url": "http://localhost:8000/v2/languages/draconic/"
+            }
+        ]
+    },
     "modifiers": {
         "charisma": 6,
         "constitution": 9,

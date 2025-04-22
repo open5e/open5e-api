@@ -240,52 +240,23 @@
     "hit_points": 7,
     "initiative_bonus": 2,
     "key": "srd_goblin",
-    "languages": [
-        {
-            "desc": "Typical speakers are Humans.",
-            "document": {
-                "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
-                },
-                "key": "srd",
-                "name": "Systems Reference Document",
-                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-                "publisher": {
-                    "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
-                }
+    "languages": {
+        "as_string": "Common, Goblin",
+        "data": [
+            {
+                "desc": "Typical speakers are Humans.",
+                "key": "common",
+                "name": "Common",
+                "url": "http://localhost:8000/v2/languages/common/"
             },
-            "is_exotic": false,
-            "is_secret": false,
-            "key": "common",
-            "name": "Common",
-            "script_language": "http://localhost:8000/v2/languages/common/",
-            "url": "http://localhost:8000/v2/languages/common/"
-        },
-        {
-            "desc": "Typical speakers are goblinoids.",
-            "document": {
-                "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
-                },
-                "key": "srd",
-                "name": "Systems Reference Document",
-                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-                "publisher": {
-                    "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
-                }
-            },
-            "is_exotic": false,
-            "is_secret": false,
-            "key": "goblin",
-            "name": "Goblin",
-            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
-            "url": "http://localhost:8000/v2/languages/goblin/"
-        }
-    ],
+            {
+                "desc": "Typical speakers are goblinoids.",
+                "key": "goblin",
+                "name": "Goblin",
+                "url": "http://localhost:8000/v2/languages/goblin/"
+            }
+        ]
+    },
     "modifiers": {
         "charisma": -1,
         "constitution": 0,
