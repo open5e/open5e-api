@@ -69,19 +69,20 @@ class ClassFeatureSerializer(GameContentSerializer):
             'feature_items'
         ]
 
+class CharacterClassSummarySerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    class Meta:
+        model = models.CharacterClass
+        fields = ['name', 'key']
+
 class CharacterClassSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     features = ClassFeatureSerializer(many=True, read_only=True)
     hit_points = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
     saving_throws = AbilitySummarySerializer(many=True)
-
+    subclass_of = CharacterClassSummarySerializer(read_only=True)
+    
     class Meta:
         model = models.CharacterClass
         fields = '__all__'
-
-class CharacterClassSummarySerializer(GameContentSerializer):
-    key = serializers.ReadOnlyField()
-    class Meta:
-        model = models.CharacterClass
-        fields = ['name', 'key']
