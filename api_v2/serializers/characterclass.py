@@ -6,7 +6,7 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 from .document import DocumentSummarySerializer
-
+from .ability import AbilitySummarySerializer
 
 class ClassFeatureItemSerializer(GameContentSerializer):
     class Meta:
@@ -74,6 +74,7 @@ class CharacterClassSerializer(GameContentSerializer):
     features = ClassFeatureSerializer(many=True, read_only=True)
     hit_points = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
+    saving_throws = AbilitySummarySerializer(many=True)
 
     class Meta:
         model = models.CharacterClass
