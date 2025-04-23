@@ -23,8 +23,6 @@ class AbilitySerializer(GameContentSerializer):
         fields = '__all__'
 
 class AbilitySummarySerializer(GameContentSerializer):
-    key = serializers.ReadOnlyField
-
     class Meta:
         model = models.Ability
         fields = ['name', 'url']
