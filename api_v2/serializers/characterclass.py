@@ -53,7 +53,7 @@ class ClassFeatureSerializer(GameContentSerializer):
 
         # serialize data and add it to representation
         representation['gained_at'] = [ClassFeatureItemSerializer(item).data for item in non_table_data]
-        representation['table_data'] = [ClassFeatureColumnItemSerializer(item).data for item in table_data]
+        representation['data_for_class_table'] = [ClassFeatureColumnItemSerializer(item).data for item in table_data]
 
         # remove feature_items field to avoid data duplication
         del representation['feature_items']
