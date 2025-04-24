@@ -18,20 +18,26 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
 
+]
 # SECURITY WARNING: keep the secret key used in production secret!
-assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env file!"
+assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env or local OS!"
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
-# A flag that is True when not production to disallow /v2 api endpoint.
-V2_ENABLED = os.environ.get("NEW_RELIC_ENVIRONMENT") != "production"
+# Flags to include v1 data and index.
+INCLUDE_V1_DATA = True
+BUILD_V1_INDEX = False
 
+# Flags to include v2 data
+INCLUDE_V2_DATA = True
+
+# V2 index always includes v1 data (at this time).
+BUILD_V2_INDEX = True
 
 # Added as part of the migration from django 2 to django 3.
 # Not likely to apply in the short term. https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -58,25 +64,21 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    
-    # search
-    "haystack",
-    
-    # apps
     'api',
     'api_v2',
+    'search',
+	'drf_spectacular',
 
     # downloaded modules
     "rest_framework",
     "django_filters",
-    "markdown2",
 ]
 
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -84,16 +86,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "server.middleware.NewRelicMiddleware",
+    "server.middleware.ResponseWarningHeaderMiddleware"
 ]
-
-HAYSTACK_CONNECTIONS = {
-    "default": {
-        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
-        "PATH": os.path.join(os.path.dirname(__file__), "whoosh_index"),
-    },
-}
-
-HAYSTACK_CUSTOM_HIGHLIGHTER = "api.utils.NewHighlighter"
 
 ROOT_URLCONF = "server.urls"
 
@@ -181,6 +175,22 @@ REST_FRAMEWORK = {
     "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.NamespaceVersioning",
     "DEFAULT_VERSION": "v1",
     "ALLOWED_VERSIONS": ["v1", "v2"],
+
+    # Rendering
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    # Parsing
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+    ],
+    'DEFAULT_CONTENT_NEGOTIATION_CLASS': 'rest_framework.negotiation.DefaultContentNegotiation',
+	
+    # OpenAPI Schema Generation
+	'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 
@@ -204,3 +214,15 @@ SECURE_PROXY_SSL_HEADER = (
     "HTTP_X_FORWARDED_PROTO",
     "https",
 )  # This setting allows the header from NGINX to tell us that the request is secured.
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Open5e',
+    'DESCRIPTION': 'The Open5e API includes all monsters and spells from the SRD and other',
+    'SERVERS': [{'url': 'https://api.open5e.com', 'description': 'Production server'}],
+	'PREPROCESSING_HOOKS': [
+        'server.oas.custom_preprocessing_hook'
+    ],
+    'POSTPROCESSING_HOOKS': [
+        'server.oas.custom_postprocessing_hook'
+    ],
+}

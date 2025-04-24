@@ -1,0 +1,38 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
+
+      - name: Create ZIP archive
+        run: |
+          cd dist
+          zip -r ../open5e-api-${{ github.ref }}.zip .
+        working-directory: ${{ github.workspace }}
+
+      - name: Upload release asset
+        uses: actions/upload-artifact@v3
+        with:
+          name: codebase
+
+      - uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body_path: CHANGELOG.md # Optional: Path to a file containing release notes
+          draft: true # Set to true for draft releases
+          prerelease: ${{ contains(github.ref, '-alpha') || contains(github.ref, '-beta') }} # Set to true for pre-releases with specific tags
+          assets: ${{ github.workspace }}/open5e-api-${{ github.ref }}.zip

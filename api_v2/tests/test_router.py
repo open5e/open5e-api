@@ -28,12 +28,12 @@ class APIV2RootTest(APITestCase):
         self.assertContains(response, 'documents', count=2)
         self.assertContains(response, 'publishers', count=2)
         self.assertContains(response, 'licenses', count=2)
-        self.assertContains(response, 'rulesets', count=2)
+        self.assertContains(response, 'gamesystems', count=2)
         self.assertContains(response, 'items', count=4) #include itemsets
         self.assertContains(response, 'itemsets', count=2)
         self.assertContains(response, 'weapons', count=2)
         self.assertContains(response, 'armor', count=2)
-        self.assertContains(response, 'creatures', count=2)
+        self.assertContains(response, 'creatures', count=4) #includes creaturesets
 
     def test_options_root_data(self):
         """

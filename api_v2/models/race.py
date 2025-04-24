@@ -2,17 +2,18 @@
 
 from django.db import models
 from .abstracts import HasName, HasDescription, HasPrerequisite
-from .abstracts import Benefit
+from .abstracts import Modification
 from .document import FromDocument
+from drf_spectacular.utils import extend_schema_field
+from drf_spectacular.types import OpenApiTypes
 
-
-class Trait(Benefit):
+class RaceTrait(Modification):
     """This is the model for a race or subrace trait.
 
-    It inherits from benefit, which is an abstract concept.
+    It inherits from modification, which is an abstract concept.
     """
 
-    race = models.ForeignKey('Race', on_delete=models.CASCADE)
+    parent = models.ForeignKey('Race', on_delete=models.CASCADE)
 
 
 class Race(HasName, HasDescription, FromDocument):
@@ -30,21 +31,23 @@ class Race(HasName, HasDescription, FromDocument):
                                    on_delete=models.CASCADE)
 
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_subrace(self):
         """Returns whether the object is a subrace."""
         return self.subrace_of is not None
 
     @property
-    def is_selectable(self):
-        """Returns whether or not this is a choosable race or subrace."""
-        # Returns true if this has 0 referencing children.
-        return len(self.race_set.all()) == 0
-
-    @property
     def traits(self):
         """Returns the set of traits that are related to this race."""
-        return self.trait_set
+        return self.racetrait_set
 
+    def search_result_extra_fields(self):
+        return {
+            "subrace_of": { 
+                "name": self.subrace_of.name,
+                "key": self.subrace_of.key
+            } if self.subrace_of else None
+        }
     class Meta:
         """To assist with the UI layer."""
 

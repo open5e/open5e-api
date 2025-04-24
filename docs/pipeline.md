@@ -21,15 +21,16 @@ Digital Ocean is used for production and beta environments. We are using Digital
 The root repository is https://github.com/open5e/open5e-api.
 
 ### Monitoring / Analytics
-None (beyond Cloudflare's built-in analytics).
+New Relic is being used, as well as cloudflare's built in analytics.
 
 ## Pipelines
 We have four major flows.
 | Pipeline | Trigger | Result | 
 | --- | --- | --- |
 | PR Validation | pull_request, push (except to staging, main) | Python tests are run, and docker image is built. |
-| Build and Deploy (Staging) | push (staging)| Docker image is built and pushed to DO staging app.|
-| Build and Deploy (Production) | push (main) | Docker image is built and pushed to DO production app.|
+| Build and Deploy (Staging) | push (staging)| Docker image is built and pushed to DO staging app, as well as docker hub.|
+| Build and Deploy (Production) | push (main) | Docker image is built and pushed to DO production app, as well as docker hub.|
 | Deploy Readme OpenAPI | push (main) | openAPI schema is pushed to readme.io.|
+
 
 We have controls around the ***staging*** branch (no one is allowed to merge directly). We have similar controls around the ***main*** branch, but we also require that merges come from staging.

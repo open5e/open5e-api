@@ -51,3 +51,7 @@ jobs:
         env:
           DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
         run: ./scripts/do_app_deploy.sh
+      - name: Run Smoke Test
+        run: | 
+          APP_URL=$(jq -r '.app.live_url' ./app.json)
+          python3 ./scripts/smoke_test.py --url $APP_URL

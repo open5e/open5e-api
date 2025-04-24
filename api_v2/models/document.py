@@ -1,16 +1,16 @@
 from django.db import models
 from django.urls import reverse
+from django.apps import apps
+
 
 from .abstracts import HasName, HasDescription
+from .abstracts import key_field, distance_unit_field
 
+from api_v2 import models as v2_models
 
 class Document(HasName, HasDescription):
 
-    key = models.CharField(
-        primary_key=True,
-        max_length=100,
-        help_text="Unique key for the Document."
-    )
+    key = key_field()
 
     licenses = models.ManyToManyField(
         "License",
@@ -21,8 +21,8 @@ class Document(HasName, HasDescription):
         on_delete=models.CASCADE,
         help_text="Publisher which has written the game content document.")
 
-    ruleset = models.ForeignKey(
-        "Ruleset",
+    gamesystem = models.ForeignKey(
+        "GameSystem",
         on_delete=models.CASCADE,
         help_text="The document's game system that it was published for."
     )
@@ -37,6 +37,44 @@ class Document(HasName, HasDescription):
     permalink = models.URLField(
         help_text="Link to the document."
     )
+
+    distance_unit = distance_unit_field()
+
+    @property
+    def stats(self):
+        stats = []
+        for model in apps.get_models():
+            # Filter out api_v1.
+            if model._meta.app_label != 'api_v2': continue
+
+            SKIPPED_MODEL_NAMES = [
+                'Document',
+                'GameSystem',
+                'License',
+                'Publisher',
+                'SearchResult']
+            if model.__name__ in SKIPPED_MODEL_NAMES: continue
+
+            CHILD_MODEL_NAMES = [
+                'RaceTrait',
+                'ClassFeatureItem',
+                'FeatBenefit', 
+                'BackgroundBenefit',
+                'CreatureAction',
+                'CreatureActionAttack',
+                'CreatureTrait',
+                'SpellCastingOption',
+                'ItemRarity']
+            if model.__name__ in CHILD_MODEL_NAMES: continue
+
+            actual_object_count = model.objects.filter(document=self.key).count()
+
+            stat = {}
+            stat['name'] = model.__name__.lower()
+            stat['actual_count'] = actual_object_count
+            stats.append(stat)
+
+        return stats
 
 
 class License(HasName, HasDescription):
@@ -55,11 +93,11 @@ class Publisher(HasName):
     )
 
 
-class Ruleset(HasName, HasDescription):
+class GameSystem(HasName, HasDescription):
     key = models.CharField(
         primary_key=True,
         max_length=100,
-        help_text="Unique key for the ruleset the document was published for."
+        help_text="Unique key for the gamesystem the document was published for."
     )
 
     content_prefix = models.CharField(
@@ -77,8 +115,16 @@ class FromDocument(models.Model):
         max_length=100,
         help_text="Unique key for the Item.")
 
+    def as_text(self):
+        return "{}\n\n{}".format(self.name, self.desc)
+
     def get_absolute_url(self):
         return reverse(self.__name__, kwargs={"pk": self.pk})
+
+    def search_result_extra_fields(self):
+        return {
+            "school":self.school.key,
+        }
 
     class Meta:
         abstract = True

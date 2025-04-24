@@ -1,5 +1,6 @@
 import datetime
-
+# DEPRECATING Because it's no longer used.
+'''
 from haystack import indexes
 
 from api import models
@@ -29,9 +30,7 @@ class MonsterIndex(indexes.SearchIndex, indexes.Indexable):
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
-    return self.get_model().objects.filter(
-      created_at__lte=datetime.datetime.now()
-    )
+    return self.get_model().objects.all()
 
 class SpellIndex(indexes.SearchIndex, indexes.Indexable):
   document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
@@ -49,9 +48,7 @@ class SpellIndex(indexes.SearchIndex, indexes.Indexable):
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
-    return self.get_model().objects.filter(
-      created_at__lte=datetime.datetime.now()
-    )
+    return self.get_model().objects.all()
 
 class SectionIndex(indexes.SearchIndex, indexes.Indexable):
   document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
@@ -68,9 +65,7 @@ class SectionIndex(indexes.SearchIndex, indexes.Indexable):
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
-    return self.get_model().objects.filter(
-      created_at__lte=datetime.datetime.now()
-    )
+    return self.get_model().objects.all()
 
 class ConditionIndex(indexes.SearchIndex, indexes.Indexable):
   document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
@@ -86,9 +81,7 @@ class ConditionIndex(indexes.SearchIndex, indexes.Indexable):
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
-    return self.get_model().objects.filter(
-      created_at__lte=datetime.datetime.now()
-    )
+    return self.get_model().objects.all()
 
 class CharClassIndex(indexes.SearchIndex, indexes.Indexable):
   document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
@@ -103,9 +96,7 @@ class CharClassIndex(indexes.SearchIndex, indexes.Indexable):
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
-    return self.get_model().objects.filter(
-      created_at__lte=datetime.datetime.now()
-    )
+    return self.get_model().objects.all()
 
 class RaceIndex(indexes.SearchIndex, indexes.Indexable):
   document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
@@ -120,9 +111,7 @@ class RaceIndex(indexes.SearchIndex, indexes.Indexable):
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
-    return self.get_model().objects.filter(
-      created_at__lte=datetime.datetime.now()
-    )
+    return self.get_model().objects.all()
 
 class MagicItemIndex(indexes.SearchIndex, indexes.Indexable):
   document_slug = indexes.CharField(model_attr='document__slug', indexed=False)
@@ -140,6 +129,5 @@ class MagicItemIndex(indexes.SearchIndex, indexes.Indexable):
 
   def index_queryset(self, using=None):
     """Used when the entire index for model is updated."""
-    return self.get_model().objects.filter(
-      created_at__lte=datetime.datetime.now()
-    )
+    return self.get_model().objects.all()
+'''

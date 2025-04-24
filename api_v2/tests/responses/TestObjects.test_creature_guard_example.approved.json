@@ -1,0 +1,655 @@
+{
+    "ability_scores": {
+        "charisma": 10,
+        "constitution": 12,
+        "dexterity": 12,
+        "intelligence": 10,
+        "strength": 13,
+        "wisdom": 11
+    },
+    "actions": [
+        {
+            "action_type": "ACTION",
+            "attacks": [
+                {
+                    "attack_type": "WEAPON",
+                    "damage_bonus": null,
+                    "damage_die_count": 1,
+                    "damage_die_type": "D8",
+                    "damage_type": "thunder",
+                    "distance_unit": "feet",
+                    "extra_damage_bonus": null,
+                    "extra_damage_die_count": null,
+                    "extra_damage_die_type": null,
+                    "extra_damage_type": null,
+                    "key": "srd_guard_spear_spear-melee-attack",
+                    "long_range": 60.0,
+                    "name": "Spear Melee attack",
+                    "parent": "srd_guard_spear",
+                    "range": 20.0,
+                    "reach": 5.0,
+                    "target_creature_only": false,
+                    "to_hit_mod": 3
+                },
+                {
+                    "attack_type": "WEAPON",
+                    "damage_bonus": null,
+                    "damage_die_count": 1,
+                    "damage_die_type": "D6",
+                    "damage_type": "thunder",
+                    "distance_unit": "feet",
+                    "extra_damage_bonus": null,
+                    "extra_damage_die_count": null,
+                    "extra_damage_die_type": null,
+                    "extra_damage_type": null,
+                    "key": "srd_guard_spear_spear-ranged-attack",
+                    "long_range": 60.0,
+                    "name": "Spear Ranged attack",
+                    "parent": "srd_guard_spear",
+                    "range": 20.0,
+                    "reach": null,
+                    "target_creature_only": false,
+                    "to_hit_mod": 3
+                }
+            ],
+            "desc": "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.",
+            "form_condition": null,
+            "key": "srd_guard_spear",
+            "legendary_cost": 1,
+            "name": "Spear",
+            "order": 0,
+            "parent": "srd_guard",
+            "uses_param": null,
+            "uses_type": null
+        }
+    ],
+    "alignment": "any alignment",
+    "armor_class": 16,
+    "armor_detail": "chain shirt, shield",
+    "blindsight_range": null,
+    "category": "Monsters",
+    "challenge_rating_decimal": "0.125",
+    "challenge_rating_text": "1/8",
+    "condition_immunities": [],
+    "creaturesets": [],
+    "damage_immunities": [],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "darkvision_range": null,
+    "document": {
+        "gamesystem": {
+            "key": "o5e",
+            "name": "5th Edition"
+        },
+        "key": "srd",
+        "name": "Systems Reference Document",
+        "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+        "publisher": {
+            "key": "wizards-of-the-coast",
+            "name": "Wizards of the Coast"
+        }
+    },
+    "environments": [
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "coast",
+            "name": "Coast",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/coast/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "desert",
+            "name": "Desert",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/desert/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "forest",
+            "name": "Forest or Jungle",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/forest/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "grassland",
+            "name": "Grassland or Plains",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/grassland/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None Provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "hills",
+            "name": "Hills",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/hills/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "mountain",
+            "name": "Mountain",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/mountain/"
+        },
+        {
+            "aquatic": false,
+            "desc": "[None provided]",
+            "document": "http://localhost:8000/v2/documents/open5e-e/",
+            "interior": false,
+            "key": "urban",
+            "name": "Urban",
+            "planar": false,
+            "url": "http://localhost:8000/v2/environments/urban/"
+        }
+    ],
+    "experience_points": 25,
+    "hit_dice": "2d8+2",
+    "hit_points": 11,
+    "initiative_bonus": 1,
+    "key": "srd_guard",
+    "languages": [
+        {
+            "desc": "Typical speakers are demons.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "abyssal",
+            "name": "Abyssal",
+            "script_language": "http://localhost:8000/v2/languages/infernal/",
+            "url": "http://localhost:8000/v2/languages/abyssal/"
+        },
+        {
+            "desc": "Typical speakers are celestials",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "celestial",
+            "name": "Celestial",
+            "script_language": "http://localhost:8000/v2/languages/celestial/",
+            "url": "http://localhost:8000/v2/languages/celestial/"
+        },
+        {
+            "desc": "Typical speakers are Humans.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "common",
+            "name": "Common",
+            "script_language": "http://localhost:8000/v2/languages/common/",
+            "url": "http://localhost:8000/v2/languages/common/"
+        },
+        {
+            "desc": "Typical speakers include aboleths and cloakers. It is only spoken.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "deep-speech",
+            "name": "Deep Speech",
+            "script_language": null,
+            "url": "http://localhost:8000/v2/languages/deep-speech/"
+        },
+        {
+            "desc": "Typical speakers include dragons and dragonborn.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "draconic",
+            "name": "Draconic",
+            "script_language": "http://localhost:8000/v2/languages/draconic/",
+            "url": "http://localhost:8000/v2/languages/draconic/"
+        },
+        {
+            "desc": "The secret language of druids. Those who know it can speak the language and use it to leave hidden messages. Those who know this language automatically spot such a message. Others spot the message\u2019s presence with a successful DC 15 Wisdom (Perception) check but can\u2019t decipher it without magic.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": true,
+            "key": "druidic",
+            "name": "Druidic",
+            "script_language": null,
+            "url": "http://localhost:8000/v2/languages/druidic/"
+        },
+        {
+            "desc": "Typical speakers are dwarves.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "dwarvish",
+            "name": "Dwarvish",
+            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
+            "url": "http://localhost:8000/v2/languages/dwarvish/"
+        },
+        {
+            "desc": "Typical speakers are elves.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "elvish",
+            "name": "Elvish",
+            "script_language": "http://localhost:8000/v2/languages/elvish/",
+            "url": "http://localhost:8000/v2/languages/elvish/"
+        },
+        {
+            "desc": "Typical speakers include ogres, and giants.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "giant",
+            "name": "Giant",
+            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
+            "url": "http://localhost:8000/v2/languages/giant/"
+        },
+        {
+            "desc": "Typical speakers are gnomes.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "gnomish",
+            "name": "Gnomish",
+            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
+            "url": "http://localhost:8000/v2/languages/gnomish/"
+        },
+        {
+            "desc": "Typical speakers are goblinoids.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "goblin",
+            "name": "Goblin",
+            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
+            "url": "http://localhost:8000/v2/languages/goblin/"
+        },
+        {
+            "desc": "Typical speakers are halflings.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "halfling",
+            "name": "Halfling",
+            "script_language": "http://localhost:8000/v2/languages/common/",
+            "url": "http://localhost:8000/v2/languages/halfling/"
+        },
+        {
+            "desc": "Typical speakers are devils.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "infernal",
+            "name": "Infernal",
+            "script_language": "http://localhost:8000/v2/languages/infernal/",
+            "url": "http://localhost:8000/v2/languages/infernal/"
+        },
+        {
+            "desc": "Typical speakers are orcs",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": false,
+            "key": "orc",
+            "name": "Orc",
+            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
+            "url": "http://localhost:8000/v2/languages/orc/"
+        },
+        {
+            "desc": "Typical speakers are elementals.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "primordial",
+            "name": "Primordial",
+            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
+            "url": "http://localhost:8000/v2/languages/primordial/"
+        },
+        {
+            "desc": "Typical speakers are fey creatures.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "sylvan",
+            "name": "Sylvan",
+            "script_language": "http://localhost:8000/v2/languages/elvish/",
+            "url": "http://localhost:8000/v2/languages/sylvan/"
+        },
+        {
+            "desc": "A secret mix of dialect, jargon, and code that allows the speaker to hide messages in seemingly normal conversation. Only another creature that knows thieves\u2019 cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": false,
+            "is_secret": true,
+            "key": "thieves-cant",
+            "name": "Thieves' Cant",
+            "script_language": null,
+            "url": "http://localhost:8000/v2/languages/thieves-cant/"
+        },
+        {
+            "desc": "Typical speakers are underworld traders.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "srd",
+                "name": "Systems Reference Document",
+                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+                "publisher": {
+                    "key": "wizards-of-the-coast",
+                    "name": "Wizards of the Coast"
+                }
+            },
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "undercommon",
+            "name": "Undercommon",
+            "script_language": "http://localhost:8000/v2/languages/elvish/",
+            "url": "http://localhost:8000/v2/languages/undercommon/"
+        },
+        {
+            "desc": "Void speech is a rename of Deep Speech from Tome of Beasts.",
+            "document": {
+                "gamesystem": {
+                    "key": "o5e",
+                    "name": "5th Edition"
+                },
+                "key": "tob",
+                "name": "Tome of Beasts",
+                "permalink": "https://koboldpress.com/tome-of-beasts/",
+                "publisher": {
+                    "key": "kobold-press",
+                    "name": "Kobold Press"
+                }
+            },
+            "is_exotic": true,
+            "is_secret": false,
+            "key": "void-speech",
+            "name": "Void Speech",
+            "script_language": null,
+            "url": "http://localhost:8000/v2/languages/void-speech/"
+        }
+    ],
+    "modifiers": {
+        "charisma": 0,
+        "constitution": 1,
+        "dexterity": 1,
+        "intelligence": 0,
+        "strength": 1,
+        "wisdom": 0
+    },
+    "name": "Guard",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "normal_sight_range": 10560.0,
+    "passive_perception": 12,
+    "saving_throws": {},
+    "saving_throws_all": {
+        "charisma": 0,
+        "constitution": 1,
+        "dexterity": 1,
+        "intelligence": 0,
+        "strength": 1,
+        "wisdom": 0
+    },
+    "size": "http://localhost:8000/v2/sizes/medium/",
+    "skill_bonuses": {
+        "perception": 2
+    },
+    "skill_bonuses_all": {
+        "acrobatics": 1,
+        "animal_handling": 0,
+        "arcana": 0,
+        "athletics": 1,
+        "deception": 0,
+        "history": 0,
+        "insight": 0,
+        "intimidation": 0,
+        "investigation": 0,
+        "medicine": 0,
+        "nature": 0,
+        "perception": 2,
+        "performance": 0,
+        "persuasion": 0,
+        "religion": 0,
+        "sleight_of_hand": 1,
+        "stealth": 1,
+        "survival": 0
+    },
+    "speed": {
+        "unit": "feet",
+        "walk": 30.0
+    },
+    "speed_all": {
+        "burrow": 0.0,
+        "climb": 15.0,
+        "crawl": 15.0,
+        "fly": 0.0,
+        "hover": false,
+        "swim": 15.0,
+        "unit": "feet",
+        "walk": 30.0
+    },
+    "subcategory": null,
+    "traits": [],
+    "tremorsense_range": null,
+    "truesight_range": null,
+    "type": "http://localhost:8000/v2/creaturetypes/humanoid/",
+    "url": "http://localhost:8000/v2/creatures/srd_guard/"
+}

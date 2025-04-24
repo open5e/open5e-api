@@ -4,8 +4,11 @@ from django.db import models
 from django.core.validators import MinValueValidator
 
 from .abstracts import HasName
+from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
-
+from drf_spectacular.utils import extend_schema_field
+from drf_spectacular.types import OpenApiTypes
+from rest_framework import serializers
 
 class Weapon(HasName, FromDocument):
     """
@@ -15,16 +18,13 @@ class Weapon(HasName, FromDocument):
     Only the unique attributes of a weapon are here. An item that is a weapon
     would link to this model instance.
     """
-    DAMAGE_TYPE_CHOICES = [
-    ("bludgeoning", "bludgeoning"),
-    ("piercing", "piercing"),
-    ("slashing", "slashing")]
 
-    damage_type = models.CharField(
-        null=False,
-        choices=DAMAGE_TYPE_CHOICES,
-        max_length=100,
-        help_text='The damage type dealt by attacks with the weapon.')
+    damage_type = models.ForeignKey(
+        "DamageType",
+        null=True,
+        related_name="+", # No backwards relation.
+        on_delete=models.CASCADE,
+        help_text='What kind of damage this weapon deals')
 
     damage_dice = models.CharField(
         null=False,
@@ -38,25 +38,22 @@ class Weapon(HasName, FromDocument):
         help_text="""The damage dice when attacking using versatile.
 A value of 0 means that the weapon does not have the versatile property.""")
 
-    range_reach = models.IntegerField(
-        null=False,
-        default=5,
-        validators=[MinValueValidator(0)],
-        help_text='The range of the weapon when making a melee attack.')
+    reach = distance_field()
 
-    range_normal = models.IntegerField(
-        null=False,
-        default=0,
-        validators=[MinValueValidator(0)],
-        help_text="""The normal range of a ranged weapon attack.
-A value of 0 means that the weapon cannot be used for a ranged attack.""")
+    range = distance_field()
 
-    range_long = models.IntegerField(
-        null=False,
-        default=0,
-        validators=[MinValueValidator(0)],
-        help_text="""The long range of a ranged weapon attack.
-A value of 0 means that the weapon cannot be used for a long ranged attack.""")
+    long_range = distance_field()
+    
+    distance_unit = distance_unit_field()
+    
+    @property
+    # or none
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_distance_unit(self):
+        if self.distance_unit is None:
+            return self.document.distance_unit
+        return self.distance_unit
+
 
     is_finesse = models.BooleanField(
         null=False,
@@ -114,39 +111,47 @@ A value of 0 means that the weapon cannot be used for a long ranged attack.""")
         help_text='If the weapon is improvised.')
     
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_versatile(self):
         return self.versatile_dice != str(0)
 
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_martial(self):
         return not self.is_simple
 
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_melee(self):
         # Ammunition weapons can only be used as improvised melee weapons.
-        return not self.ammunition
+        return not self.requires_ammunition
 
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def ranged_attack_possible(self):
         # Only ammunition or throw weapons can make ranged attacks.
-        return self.ammunition or self.thrown 
+        return self.requires_ammunition or self.is_thrown
 
     @property
+    # type is any
+    @extend_schema_field(OpenApiTypes.BOOL)
     def range_melee(self):
-        return self.range_reach
+        return self.reach
     
     @property
+    @extend_schema_field(OpenApiTypes.BOOL)
     def is_reach(self):
         # A weapon with a longer reach than the default has the reach property.
-        return self.range_reach > 5 
+        return self.reach > 5 
 
     @property
+    @extend_schema_field(serializers.ChoiceField(choices=['special', 'finesse', 'ammunition', 'light', 'heavy', 'thrown', 'loading', 'two-handed', 'versatile', 'reach'])) 
     def properties(self):
         properties = []
         
         range_desc = "(range {}/{})".format(
-            str(self.range_normal),
-            str(self.range_long))
+            str(self.range),
+            str(self.long_range))
 
         versatile_desc = "({})".format(self.versatile_dice)
 

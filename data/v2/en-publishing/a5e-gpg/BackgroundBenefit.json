@@ -1,0 +1,142 @@
+[
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_cursed_ability-score-increase",
+  "fields": {
+    "name": "Ability Score Increase",
+    "desc": "+1 Charisma and one other ability score.",
+    "type": "ability_score",
+    "parent": "a5e-gpg_cursed"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_cursed_accursed",
+  "fields": {
+    "name": "Accursed",
+    "desc": "Whenever you fail at a Deception or Persuasion check, your curse manifests in a manner that you work out with your Narrator ahead of time. The failed check is ignored, and you immediately roll an Intimidation check with which you have expertise, taking the new roll. However, even a successful Intimidation check does not necessarily produce the result you originally intended, as the creatures around you may recoil in fear and distrust. At the Narrator’s discretion, you may keep the expertise die to Intimidation until the end of the scene.",
+    "type": "feature",
+    "parent": "a5e-gpg_cursed"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_cursed_adventures-and-advancement",
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "The entity responsible for your curse may press you to complete specific tasks, such as transporting a mysterious item, defeating a hated enemy, or stealing important documents. Work with your Narrator to determine how your curse is leveraged in these situations. After you complete several such tasks, your infamy grows. You are known by all people within 100 miles of your Prestige Center, many of whom hold you in fearful respect. You and your companions are given a moderate lifestyle in settlements within this area by those who dare not risk your curse.",
+    "type": "adventures_and_advancement",
+    "parent": "a5e-gpg_cursed"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_cursed_connection-and-memento",
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Cursed Connections\r\n1. Your parent who made the deal and left you cursed for their own ends.\r\n2. A cultist devoted to the entity that cursed you and who reveres you as well.\r\n3. Your childhood romantic interest, ultimately marked in some way by your curse.\r\n4. A childhood friend who pulled away from you when they realized you were cursed.\r\n5. The entity that cursed you.\r\n6. A priest or sage who tried—and failed—to break your curse years ago.\r\n7. The kindly family that took you in out of pity.\r\n8. The law enforcers who see you as a dangerous troublemaker.\r\n9. Another accursed individual with whom you sometimes commiserate.\r\n10. A scholar or researcher obsessed with the entity that cursed you.\r\n\r\n### Cursed Memento\r\n1. A locket or ring once owned by someone who was killed when your curse first manifested.\r\n2. A childhood toy, well worn, which has always been soothing.\r\n3. A torn piece of parchment which may lead you to the person who can break your curse.\r\n4. A weapon or piece of ammunition set aside for the entity that cursed you.\r\n5. A unique scar, discoloration, or other mark on your body which shows your curse.\r\n6. Nightmares brought on by the curse which often wake you, screaming.\r\n7. A charm meant to keep your curse contained. You haven’t noticed an effect.\r\n8. An artistic rendering of the entity that cursed you\r\n9. A flask once given to you as well-meaning consolation.\r\n10. A small knife you used as a child to protect yourself, because no one else would.",
+    "type": "connection_and_memento",
+    "parent": "a5e-gpg_cursed"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_cursed_languages",
+  "fields": {
+    "name": "Languages",
+    "desc": "Two of your choice.",
+    "type": "language",
+    "parent": "a5e-gpg_cursed"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_cursed_skill-proficiencies",
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Perception, and either Arcana, Nature, or Religion based on the source of your curse.",
+    "type": "skill_proficiency",
+    "parent": "a5e-gpg_cursed"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_cursed_suggested-equipment",
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "4 days of rations, one person tent, traveler’s clothes",
+    "type": "equipment",
+    "parent": "a5e-gpg_cursed"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_haunted_ability-score-increase",
+  "fields": {
+    "name": "Ability Score Increase",
+    "desc": "+1 Wisdom and one other ability score of your choice.",
+    "type": "ability_score",
+    "parent": "a5e-gpg_haunted"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_haunted_adventures-and-advancement",
+  "fields": {
+    "name": "Adventures and Advancement",
+    "desc": "Whether you seek to violently banish the restless dead or help them to peacefully pass on, you will gain a reputation as a spirit-speaker. Common folk and nobility alike are likely to approach you for advice and aid with everything from hereditary curses to irritable poltergeists to speaking with a dead relative about a lost treasure.\r\nAfter you have solved several such problems, you’ve become known to those who deal in certain kinds of esoteric knowledge and gain access to their private libraries. These vast personal collections contain esoteric mysteries, such as those answerable with a DC 25 Arcana, History, or Religion check. While using such a library your host will provide you and your companions a moderate or rich lifestyle, depending on their means and how impressed they are by your exploits.",
+    "type": "adventures_and_advancement",
+    "parent": "a5e-gpg_haunted"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_haunted_connection-and-memento",
+  "fields": {
+    "name": "Connection and Memento",
+    "desc": "Roll 1d10, choose, or make up your own.\r\n\r\n### Haunted Connections\r\n1. A descendant of your spirit who blames them for current misfortunes.\r\n2. Another haunted individual who came to you seeking help with their spirit in a time of crisis.\r\n3. The murderer who killed your spirit.\r\n4. A ghost who has consulted your spirit during a time of need.\r\n5. The bereaved spouse your spirit left behind who will do nearly anything to speak with their lost love.\r\n6. Your spirit, a childhood friend or a romantic partner before tragedy struck.\r\n7. Your spirits, a gaggle of bickering ancestors trying to use you to right a terrible wrong.\r\n8. A relative of your spirit who killed them in order to inherit a fortune.\r\n9. Your spirit, a hateful enemy of your family who is bound to you through a quirk of misfortune.\r\n10. Your spirit, who haunts their own body after you stole it and took up residence.\r\n\r\n### Haunted Memento\r\n1. A personal item (jewelry, tools, weapon, ect) once owned by your spirit. You can’t seem to get rid of it.\r\n2. A locket containing the image of the one who haunts you.\r\n3. The scent of your spirit’s favored cologne or perfume that clings to you.\r\n4. A small pouch of soil taken from your spirit’s grave.\r\n5. A letter of introduction penned by your spirit, giving you their blessing.\r\n6. Journals of your spirit’s life.\r\n7. An innocuous nonmagical item that your spirit tells you is of dire importance.\r\n8. The manacles that shackled your spirit before their death.\r\n9. A cryptic note written by your spirit who has no memory of its existence.\r\n10. The signet ring of your spirit, who you claim as your parent or ancestor.",
+    "type": "connection_and_memento",
+    "parent": "a5e-gpg_haunted"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_haunted_languages",
+  "fields": {
+    "name": "Languages",
+    "desc": "Two of your choice, one of which is the spirit’s native language.",
+    "type": "language",
+    "parent": "a5e-gpg_haunted"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_haunted_silent-aid",
+  "fields": {
+    "name": "Silent Aid",
+    "desc": "Being in tune with your spirit allows them to point out something you might have missed, if only for their own purposes. You gain a +2 to your choice of your passive Perception, Investigation, or Insight score, depending on your spirit’s skills.\r\nIf you banish, free, or otherwise lose your spirit, consult with the Narrator to choose an appropriate feature from another background. Alternatively, the Narrator may rule that you’ve become a beacon for the supernatural and another spirit has taken up haunting you.",
+    "type": "feature",
+    "parent": "a5e-gpg_haunted"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_haunted_skill-proficiencies",
+  "fields": {
+    "name": "Skill Proficiencies",
+    "desc": "Religion, and any one skill of your choice that the spirit has imparted to you.",
+    "type": "skill_proficiency",
+    "parent": "a5e-gpg_haunted"
+  }
+},
+{
+  "model": "api_v2.backgroundbenefit",
+  "pk": "a5e-gpg_haunted_suggested-equipment",
+  "fields": {
+    "name": "Suggested Equipment",
+    "desc": "2 days worth of rations, bell, 5 candles, ink, ink pen, 10 sheets of paper, 5 pieces of chalk, traveler’s clothes",
+    "type": "equipment",
+    "parent": "a5e-gpg_haunted"
+  }
+}
+]

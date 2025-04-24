@@ -2,7 +2,10 @@ import json
 import uuid
 
 from django.db import models
-
+from django.urls import reverse
+from django.shortcuts import redirect
+from django.template.defaultfilters import slugify
+#from api_v2 import urls as urls_v2
 
 class Manifest(models.Model):
     """A Manifest contains a hash based on the contents of a file.
@@ -50,12 +53,17 @@ class Document(models.Model):
     url = models.URLField(help_text='URL reference to get the document.')
     copyright = models.TextField(
         null=True, help_text='Copyright statement.')  # Copyright 2025 open5e
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text='Date that this object was added to the database.')
+    #created_at = models.DateTimeField(
+    #    auto_now_add=True,
+    #    help_text='Date that this object was added to the database.')
     license_url = models.TextField(
         default="http://open5e.com/legal",
         help_text='URL reference for the license.')
+
+    v2_related_key = models.TextField(
+        null=True,
+        help_text='Key mapping for v2 document.'
+    )
 
     @staticmethod
     def plural_str() -> str:
@@ -75,7 +83,7 @@ class GameContent(models.Model):
         help_text='Description of the game content item. Markdown.')
     # Like the System Reference Document
     document = models.ForeignKey(Document, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    #created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
     # If the source is a physical book (possibly with a digital version),
     # then page_no is the page number in the physical book, even if the PDF
@@ -96,6 +104,54 @@ class GameContent(models.Model):
 
     def document__url(self):
         return self.document.url
+
+    def v2_converted_path(self):
+        # Returns a text string that is the theoretical v2 object url related
+        # to a given object. Does not guarantee that an object exists at that
+        # url.
+
+        url_lookup = { #Looks up v1 object type to relevant v2 url.
+            "Spell":"spell",
+            "Monster":"creature",
+            "Background":"background",
+            "Plane":"environments",
+            "Section":"rule",
+            "Feat":"feat",
+            "Condition":"condition",
+            "Race":"race",
+            "CharClass":"class",
+            "MagicItem":"item",
+            "Weapon":"item",
+            "Armor":"item"
+        }
+
+        exclude_doc_key = ['Condition']
+
+        a5e_doc_lookup = {
+            "Monster":"a5e-mm",
+            "MagicItem":"a5e-ddg",
+            "Spell":"a5e-ag",
+            "Background":"a5e-ag",
+            "Plane":"a5e-ag",
+            "Section":"a5e-ag",
+            "Feat":"a5e-ag",
+            "Condition":"a5e-ag",
+            "Race":"a5e-ag",
+            "CharClass":"a5e-ag",
+            "Weapon":"a5e-ag",
+            "Armor":"a5e-ag"
+        }
+
+        resource = url_lookup[self.__class__.__name__]+"-detail"
+        v2_document = self.document.v2_related_key
+        if v2_document=="a5e":
+            v2_document = a5e_doc_lookup[self.__class__.__name__]
+        converted_name=slugify(self.name)
+
+        if self.__class__.__name__ in exclude_doc_key:
+            return reverse(resource,kwargs={'pk':f"{converted_name}"})
+        return redirect(reverse(resource,kwargs={'pk':f"{v2_document}_{converted_name}"})).url
+
 
     class Meta:
         abstract = True
@@ -211,7 +267,7 @@ class Subrace(GameContent):
 
 
 class Plane(GameContent):
-    pass
+    parent = models.TextField(null=True)
     route = models.TextField(default="planes/")
 
     @staticmethod
@@ -228,6 +284,12 @@ class Section(GameContent):
     def plural_str() -> str:
         """Return a string specifying the plural name of this model."""
         return "Sections"
+
+    def search_result_extra_fields(self):
+        return {
+            "parent":self.parent}
+
+
 
 
 class Feat(GameContent):
@@ -296,6 +358,13 @@ class MagicItem(GameContent):
     def plural_str() -> str:
         """Return a string specifying the plural name of this model."""
         return "MagicItems"
+    
+    def search_result_extra_fields(self):
+        return {
+            "type":self.type,
+            "rarity":self.rarity,
+            "requires_attunement":self.requires_attunement}
+
 
 
 class Weapon(GameContent):

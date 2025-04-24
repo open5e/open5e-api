@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User, Group
-from drf_haystack.serializers import HighlighterMixin, HaystackSerializer
 from rest_framework import serializers
 
 from api import models
@@ -19,14 +18,15 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 
         # The request doesn't exist when generating an OAS file, so we have to check that first
         if 'request' in self.context:
-            fields = self.context['request'].query_params.get('fields')
-            if fields:
-                fields = fields.split(',')
-                # Drop any fields that are not specified in the `fields` argument.
-                allowed = set(fields)
-                existing = set(self.fields.keys())
-                for field_name in existing - allowed:
-                    self.fields.pop(field_name)
+            if self.context['request'] is not None:
+                fields = self.context['request'].query_params.get('fields')
+                if fields:
+                    fields = fields.split(',')
+                    # Drop any fields that are not specified in the `fields` argument.
+                    allowed = set(fields)
+                    existing = set(self.fields.keys())
+                    for field_name in existing - allowed:
+                        self.fields.pop(field_name)
 
 class DynamicFieldsHyperlinkedModelSerializer(
     DynamicFieldsModelSerializer, serializers.HyperlinkedModelSerializer
@@ -53,9 +53,9 @@ class DocumentSerializer(DynamicFieldsHyperlinkedModelSerializer):
                 'author',
                 'organization',
                 'version',
-                'created_at',
                 'copyright',
-                'license_url',)
+                'license_url',
+                'v2_related_key')
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -68,10 +68,12 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
     environments = serializers.SerializerMethodField()
     skills = serializers.SerializerMethodField()
     actions = serializers.SerializerMethodField()
+    bonus_actions = serializers.SerializerMethodField()
     reactions = serializers.SerializerMethodField()
     legendary_actions = serializers.SerializerMethodField()
     special_abilities = serializers.SerializerMethodField()
     img_main = serializers.SerializerMethodField()
+    v2_converted_path = serializers.SerializerMethodField()
 
     def get_img_main(self, monster):
         request = self.context.get('request')
@@ -93,6 +95,9 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
 
     def get_actions(self, monster):
         return monster.actions()
+    
+    def get_bonus_actions(self, monster):
+        return monster.bonus_actions()
 
     def get_reactions(self, monster):
         return monster.reactions()
@@ -102,6 +107,9 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
 
     def get_special_abilities(self, monster):
         return monster.special_abilities()
+
+    def get_v2_converted_path(self, monster):
+        return monster.v2_converted_path()
 
 
     class Meta:
@@ -143,6 +151,7 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'challenge_rating',
             'cr',
             'actions',
+            'bonus_actions',
             'reactions',
             'legendary_desc',
             'legendary_actions',
@@ -154,7 +163,8 @@ class MonsterSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'document__slug',
             'document__title',
             'document__license_url',
-            'document__url'
+            'document__url',
+            'v2_converted_path'
         )
 
 class SpellSerializer(DynamicFieldsModelSerializer):
@@ -238,7 +248,7 @@ class BackgroundSerializer(DynamicFieldsHyperlinkedModelSerializer):
 class PlaneSerializer(DynamicFieldsHyperlinkedModelSerializer):
     class Meta:
         model = models.Plane
-        fields = ('slug','name','desc','document__slug', 'document__title', 'document__url')
+        fields = ('slug','name','desc','document__slug', 'document__title', 'document__url','parent')
 
 class SectionSerializer(DynamicFieldsHyperlinkedModelSerializer):
     class Meta:
@@ -415,7 +425,8 @@ class ArmorSerializer(DynamicFieldsHyperlinkedModelSerializer):
             'weight',
             'stealth_disadvantage')
 
-class AggregateSerializer(HighlighterMixin, HaystackSerializer):
+# Deprecating because it's unused.
+'''class AggregateSerializer(HighlighterMixin, HaystackSerializer):
 
     class Meta:
         index_classes = [search_indexes.MonsterIndex, 
@@ -451,4 +462,4 @@ class AggregateSerializer(HighlighterMixin, HaystackSerializer):
             'document_title',
             'parent',
         ]
-        
+'''

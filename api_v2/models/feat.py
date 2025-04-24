@@ -1,16 +1,12 @@
 """The model for a feat."""
 from django.db import models
-from .abstracts import HasName, HasDescription, HasPrerequisite, Benefit
+from .abstracts import HasName, HasDescription, HasPrerequisite, Modification
 from .document import FromDocument
 
-
-class FeatBenefit(Benefit):
+class FeatBenefit(Modification):
     """This is the model for an individual benefit of a feat."""
 
-    desc = models.TextField(
-        help_text='Text of the individual feat benefit.')
-
-    feat = models.ForeignKey('Feat', on_delete=models.CASCADE)
+    parent = models.ForeignKey('Feat', on_delete=models.CASCADE)
 
 
 class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):

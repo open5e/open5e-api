@@ -2,9 +2,9 @@
 
 Within the v2 api, the data loading is completely distinct from the v1 data. It uses the /data/v2 folder in the repository. It also follows a heirarchy that looks like this:
 
-Descriptions of the licenses for data that we serve, and rulesets for the data.
+Descriptions of the licenses for data that we serve, and gamesystems for the data.
 > /data/v2/License.json
-> /data/v2/Ruleset.json
+> /data/v2/GameSystem.json
 
 Description of the organization or publishers of the data.
 > /data/v2/{publisher-key}/Publisher.json
@@ -15,34 +15,10 @@ Description of the document related to the data.
 The actual data.
 > /data/v2/{publisher-key}/{document-key}/{model-name}.json.
 
-## Import
-To import data, there's a new django command.
-> python manage.py import --dir data/v2/
+## Keys
+Documents when onboarded are given a short key. To allow for data to be presented in the same views, even with conflicting data names, we by convention choose the keys of an individual data item to be <document-key>_<slugified-name>, or for child objects, such as CreatureActions, <document-key>_<slugified-parent-name>_<slugified-name> which should be unique per object all cases. The only violation of this rule is on legendary actions, which are also CreatureActions, so Legendary Bite can be distinct from Bite.
 
-This is based on logic found here, and leverages django's built-in concept of fixtures.
-> /api_v2/management/commands/import.py
-
-
-## Admin Interface
-V2 data can be edited using the built-in django admin interface. This allows for a UI rather than a text-editable field. It works cleanly with import and export below. It is disabled on production and staging, so editing must occur when running the application locally.
-
-### Setup
-To setup the admin interface, first, follow the setup instructions in Readme.md. Then try the following commands.
-
-This will force a prompt to create a custom superuser for the local instance.
-> python manage.py createsuperuser
-
-Once done, you should be able to run the server.
-> python manage.py runserver
-
-Then you can aim your browser at the default admin interface, and log in using the credentials you just created.
-> http://localhost:8000/admin/
-
-You will see forms and lists of objects that are editable. These edits will apply to only your local database.
-
-## Export
-To export data, there's a new django command. For now only models used in the v2 API are supported for export.
-> python manage.py export --dir data/
-
-This is based on logic found here, and leverages django's built-in concept of fixtures, but structures the folders in a way that's consistent and flexible.
-> /api_v2/management/commands/export.py
+**Examples:**
+> srd_magic-missile - The original Magic Missile, from Wizard's of the Coast's Systems Reference Document (srd)
+>
+> a5e-ag_acolyte - The Acolyte Background, from Advanced 5e's Adventurer's Guide (a5e-ag).
