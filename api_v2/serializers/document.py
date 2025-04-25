@@ -11,10 +11,10 @@ class GameSystemSerializer(GameContentSerializer):
         model = models.GameSystem
         fields = '__all__'
 
-class GameSystemSummarySerializer(GameContentSerializer):
+class GameSystemSummarySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.GameSystem
-        fields = ["name", "key"]
+        fields = ['name', 'key', 'url']
 
 
 class LicenseSerializer(GameContentSerializer):
@@ -28,7 +28,7 @@ class LicenseSummarySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     class Meta:
         model = models.License
-        fields = ['name', 'key']
+        fields = ['name', 'key', 'url']
 
 class PublisherSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
@@ -37,17 +37,17 @@ class PublisherSerializer(GameContentSerializer):
         model = models.Publisher
         fields = '__all__'
 
-class PublisherSummarySerializer(GameContentSerializer):
+class PublisherSummarySerializer(serializers.ModelSerializer):
     key = serializers.ReadOnlyField()
     class Meta:
         model = models.Publisher
-        fields = ['name', 'key']
+        fields = ['name', 'key', 'url']
 
 class DocumentSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    licenses = LicenseSummarySerializer(many=True)
-    publisher = PublisherSerializer()
-    gamesystem = GameSystemSerializer()
+    licenses = LicenseSummarySerializer(read_only=True, many=True)
+    publisher = PublisherSummarySerializer(read_only=True)
+    gamesystem = GameSystemSummarySerializer(read_only=True)
 
     class Meta:
         model = models.Document
