@@ -30,7 +30,7 @@ class Document(HasName, HasDescription):
     author = models.TextField(
         help_text='Author or authors.')
 
-    published_at = models.DateTimeField(
+    publication_date = models.DateTimeField(
         help_text="Date of publication, or null if unknown."
     )
 
