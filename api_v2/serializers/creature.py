@@ -10,7 +10,7 @@ from .abstracts import GameContentSerializer
 from .damagetype import DamageTypeSerializer
 from .condition import ConditionSerializer
 from .document import DocumentSummarySerializer
-from .language import LanguageSerializer
+from .language import LanguageSummarySerializer
 from .environment import EnvironmentSerializer
 from .size import SizeSerializer
 from drf_spectacular.utils import extend_schema_field, inline_serializer
@@ -56,6 +56,14 @@ class CreatureTraitSerializer(GameContentSerializer):
         model = models.CreatureTrait
         fields = '__all__'
 
+class CreatureLanguageSerializer(GameContentSerializer):
+    as_string = serializers.CharField(source="languages_desc")
+    data = LanguageSummarySerializer(source="languages", many=True)
+
+    class Meta:
+        model = models.Creature
+        fields = ['as_string', 'data']
+
 class CreatureSerializer(GameContentSerializer):
     '''The serializer for the Creature object.'''
 
@@ -79,7 +87,7 @@ class CreatureSerializer(GameContentSerializer):
     document = DocumentSummarySerializer()
     type = CreatureTypeSerializer()
     size = SizeSerializer()
-    languages = LanguageSerializer(many=True)
+    languages = CreatureLanguageSerializer(source='*')
     environments = EnvironmentSerializer(many=True)
     initiative_bonus = serializers.SerializerMethodField()
 
