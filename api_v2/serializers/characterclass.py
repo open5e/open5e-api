@@ -6,7 +6,7 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 from .document import DocumentSummarySerializer
-
+from .ability import AbilitySummarySerializer
 
 class ClassFeatureItemSerializer(GameContentSerializer):
     class Meta:
@@ -53,7 +53,7 @@ class ClassFeatureSerializer(GameContentSerializer):
 
         # serialize data and add it to representation
         representation['gained_at'] = [ClassFeatureItemSerializer(item).data for item in non_table_data]
-        representation['table_data'] = [ClassFeatureColumnItemSerializer(item).data for item in table_data]
+        representation['data_for_class_table'] = [ClassFeatureColumnItemSerializer(item).data for item in table_data]
 
         # remove feature_items field to avoid data duplication
         del representation['feature_items']
@@ -69,18 +69,19 @@ class ClassFeatureSerializer(GameContentSerializer):
             'feature_items'
         ]
 
+class CharacterClassSummarySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.CharacterClass
+        fields = ['name', 'key', 'url']
+
 class CharacterClassSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     features = ClassFeatureSerializer(many=True, read_only=True)
     hit_points = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
-
+    saving_throws = AbilitySummarySerializer(many=True)
+    subclass_of = CharacterClassSummarySerializer()
+    
     class Meta:
         model = models.CharacterClass
         fields = '__all__'
-
-class CharacterClassSummarySerializer(GameContentSerializer):
-    key = serializers.ReadOnlyField()
-    class Meta:
-        model = models.CharacterClass
-        fields = ['name', 'key']

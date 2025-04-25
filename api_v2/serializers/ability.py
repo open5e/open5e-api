@@ -21,3 +21,8 @@ class AbilitySerializer(GameContentSerializer):
     class Meta:
         model = models.Ability
         fields = '__all__'
+
+class AbilitySummarySerializer(GameContentSerializer):
+    class Meta:
+        model = models.Ability
+        fields = ['name', 'url']
