@@ -12,3 +12,8 @@ class DamageTypeSerializer(GameContentSerializer):
     class Meta:
         model = models.DamageType
         fields = '__all__'
+
+class DamageTypeSummarySerializer(GameContentSerializer):
+    class Meta:
+        model = models.DamageType
+        fields = ['name', 'key', 'url']

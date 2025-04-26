@@ -89,6 +89,14 @@ class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
         'traits',
     ]
 
+    def get_serializer(self, *args, **kwargs):
+        # Ignore `depth` query parameter on this endpoint. It interacts badly
+        # with our custom serializers and is no longer necessary on this view
+        if 'depth' in self.request.query_params:
+            self.request.query_params._mutable = True
+            self.request.query_params.pop('depth', None)
+            self.request.query_params._mutable = False
+        return super().get_serializer(*args, **kwargs)
 
 class CreatureTypeFilterSet(FilterSet):
     class Meta:

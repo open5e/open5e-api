@@ -23,3 +23,8 @@ class SizeSerializer(GameContentSerializer):
     @extend_schema_field(OpenApiTypes.STR)
     def get_distance_unit(self, Size):
         return Size.get_distance_unit
+
+class SizeSummarySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Size
+        fields = ['name', 'key', 'url']

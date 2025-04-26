@@ -16,3 +16,8 @@ class ConditionSerializer(GameContentSerializer):
     class Meta:
         model = models.Condition
         fields = '__all__'
+
+class ConditionSummarySerializer(GameContentSerializer):
+    class Meta:
+        model = models.Condition
+        fields = ['name', 'key', 'url']
