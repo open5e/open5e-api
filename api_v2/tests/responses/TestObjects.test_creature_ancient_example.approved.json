@@ -200,8 +200,6 @@
     "creaturesets": [],
     "damage_immunities": [
         {
-            "desc": "Red dragons breathe fire, and many spells conjure flames to deal fire damage.",
-            "document": "http://localhost:8000/v2/documents/srd/",
             "key": "fire",
             "name": "Fire",
             "url": "http://localhost:8000/v2/damagetypes/fire/"
@@ -227,23 +225,13 @@
     },
     "environments": [
         {
-            "aquatic": false,
-            "desc": "[None Provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "hills",
             "name": "Hills",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/hills/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "mountain",
             "name": "Mountain",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/mountain/"
         }
     ],
@@ -296,7 +284,11 @@
         "strength": 10,
         "wisdom": 9
     },
-    "size": "http://localhost:8000/v2/sizes/gargantuan/",
+    "size": {
+        "key": "gargantuan",
+        "name": "Gargantuan",
+        "url": "http://localhost:8000/v2/sizes/gargantuan/"
+    },
     "skill_bonuses": {
         "perception": 16,
         "stealth": 7
@@ -350,6 +342,10 @@
     ],
     "tremorsense_range": null,
     "truesight_range": null,
-    "type": "http://localhost:8000/v2/creaturetypes/dragon/",
+    "type": {
+        "key": "dragon",
+        "name": "Dragon",
+        "url": "http://localhost:8000/v2/creaturetypes/dragon/"
+    },
     "url": "http://localhost:8000/v2/creatures/srd_ancient-red-dragon/"
 }

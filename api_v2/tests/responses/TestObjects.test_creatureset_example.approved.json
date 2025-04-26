@@ -77,23 +77,13 @@
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "desert",
                     "name": "Desert",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/desert/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
@@ -135,7 +125,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/large/",
+            "size": {
+                "key": "large",
+                "name": "Large",
+                "url": "http://localhost:8000/v2/sizes/large/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -194,7 +188,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_camel/"
         },
         {
@@ -276,7 +274,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/medium/",
+            "size": {
+                "key": "medium",
+                "name": "Medium",
+                "url": "http://localhost:8000/v2/sizes/medium/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -335,7 +337,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_donkey/"
         },
         {
@@ -415,13 +421,8 @@
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
@@ -463,7 +464,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/large/",
+            "size": {
+                "key": "large",
+                "name": "Large",
+                "url": "http://localhost:8000/v2/sizes/large/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -522,7 +527,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_draft-horse/"
         },
         {
@@ -636,33 +645,18 @@
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "desert",
                     "name": "Desert",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/desert/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "forest",
                     "name": "Forest or Jungle",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/forest/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "grassland",
                     "name": "Grassland or Plains",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/grassland/"
                 }
             ],
@@ -704,7 +698,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/huge/",
+            "size": {
+                "key": "huge",
+                "name": "Huge",
+                "url": "http://localhost:8000/v2/sizes/huge/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -772,7 +770,11 @@
             ],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_elephant/"
         },
         {
@@ -852,33 +854,18 @@
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "forest",
                     "name": "Forest or Jungle",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/forest/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None Provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "hills",
                     "name": "Hills",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/hills/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
@@ -920,7 +907,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/medium/",
+            "size": {
+                "key": "medium",
+                "name": "Medium",
+                "url": "http://localhost:8000/v2/sizes/medium/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -988,7 +979,11 @@
             ],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_mastiff/"
         },
         {
@@ -1068,33 +1063,18 @@
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "grassland",
                     "name": "Grassland or Plains",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/grassland/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None Provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "hills",
                     "name": "Hills",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/hills/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
@@ -1136,7 +1116,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/medium/",
+            "size": {
+                "key": "medium",
+                "name": "Medium",
+                "url": "http://localhost:8000/v2/sizes/medium/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -1212,7 +1196,11 @@
             ],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_mule/"
         },
         {
@@ -1292,23 +1280,13 @@
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "mountain",
                     "name": "Mountain",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/mountain/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
@@ -1350,7 +1328,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/medium/",
+            "size": {
+                "key": "medium",
+                "name": "Medium",
+                "url": "http://localhost:8000/v2/sizes/medium/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -1409,7 +1391,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_pony/"
         },
         {
@@ -1489,23 +1475,13 @@
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "grassland",
                     "name": "Grassland or Plains",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/grassland/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
@@ -1547,7 +1523,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/large/",
+            "size": {
+                "key": "large",
+                "name": "Large",
+                "url": "http://localhost:8000/v2/sizes/large/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -1606,7 +1586,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_riding-horse/"
         },
         {
@@ -1686,13 +1670,8 @@
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
@@ -1734,7 +1713,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/large/",
+            "size": {
+                "key": "large",
+                "name": "Large",
+                "url": "http://localhost:8000/v2/sizes/large/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -1802,7 +1785,11 @@
             ],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_warhorse/"
         }
     ],

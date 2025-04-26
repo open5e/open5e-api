@@ -107,133 +107,68 @@
     },
     "environments": [
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "arctic",
             "name": "Arctic or Tundra",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/arctic/"
         },
         {
-            "aquatic": false,
-            "desc": "Caves and caverns",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": true,
             "key": "caves",
             "name": "Caves",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/caves/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "desert",
             "name": "Desert",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/desert/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "forest",
             "name": "Forest or Jungle",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/forest/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "grassland",
             "name": "Grassland or Plains",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/grassland/"
         },
         {
-            "aquatic": false,
-            "desc": "[None Provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "hills",
             "name": "Hills",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/hills/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "mountain",
             "name": "Mountain",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/mountain/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": true,
             "key": "ruins",
             "name": "Ruins",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/ruins/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": true,
             "key": "sewer",
             "name": "Sewer",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/sewer/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "srd_feywild",
             "name": "Feywild",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/srd_feywild/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "swamp",
             "name": "Swamp or Marsh",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/swamp/"
         },
         {
-            "aquatic": false,
-            "desc": "[None Provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "underworld",
             "name": "Underworld",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/underworld/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "urban",
             "name": "Urban",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/urban/"
         }
     ],
@@ -281,7 +216,11 @@
         "strength": -1,
         "wisdom": -1
     },
-    "size": "http://localhost:8000/v2/sizes/small/",
+    "size": {
+        "key": "small",
+        "name": "Small",
+        "url": "http://localhost:8000/v2/sizes/small/"
+    },
     "skill_bonuses": {
         "stealth": 6
     },
@@ -332,6 +271,10 @@
     ],
     "tremorsense_range": null,
     "truesight_range": null,
-    "type": "http://localhost:8000/v2/creaturetypes/humanoid/",
+    "type": {
+        "key": "humanoid",
+        "name": "Humanoid",
+        "url": "http://localhost:8000/v2/creaturetypes/humanoid/"
+    },
     "url": "http://localhost:8000/v2/creatures/srd_goblin/"
 }
