@@ -33,7 +33,8 @@ class ArmorSummarySerializer(serializers.ModelSerializer):
             'ac_display',
             'ac_add_dexmod',
             'ac_cap_dexmod',
-            'grants_stealth_disadvantage'
+            'grants_stealth_disadvantage',
+            'strength_score_required',
         ]
 
 class WeaponSerializer(GameContentSerializer):

@@ -45,7 +45,7 @@ class CreatureTypeSerializer(GameContentSerializer):
     class Meta:
         '''Meta options for serializer.'''
         model = models.CreatureType
-        fields = ['__all__']
+        fields = '__all__'
 
 class CreatureTypeSummarySerializer(serializers.ModelSerializer):
     class Meta:
