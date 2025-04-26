@@ -17,6 +17,11 @@ class SpellSchoolSerializer(GameContentSerializer):
         fields='__all__'
 
 class SpellSchoolSummarySerializer(serializers.ModelSerializer):
+    '''
+    A slimmer SpellSchoolSerializer, designed to serialize Spell School FKs on 
+    other serializers. ie. The `school` field on the SpellSerializer. Not
+    intended to be used directly in a ModelViewset.
+    '''
     class Meta:
         model = models.SpellSchool
         fields = ['name', 'key', 'url']

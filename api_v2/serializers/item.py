@@ -22,6 +22,11 @@ class ArmorSerializer(GameContentSerializer):
         fields = '__all__'
 
 class ArmorSummarySerializer(serializers.ModelSerializer):
+    '''
+    A slightly slimmer ArmorSerializer, designed to serialize Armor FKs on
+    other serializers. ie. The `armor` field on the ItemSerializer. Not 
+    intended to be used directly in a ModelViewset.
+    '''
     class Meta:
         model = models.Armor
         fields = [

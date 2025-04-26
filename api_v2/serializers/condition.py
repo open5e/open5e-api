@@ -18,6 +18,11 @@ class ConditionSerializer(GameContentSerializer):
         fields = '__all__'
 
 class ConditionSummarySerializer(GameContentSerializer):
+    '''
+    A slimmer ConditionSerializer, designed to serialize Condition FKs on
+    other serializers. ie. The `condition_immunities` field on the Creature
+    serializer. Not intended to be used directly with in a ModelViewset.
+    '''
     class Meta:
         model = models.Condition
         fields = ['name', 'key', 'url']

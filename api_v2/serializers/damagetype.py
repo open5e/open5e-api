@@ -14,6 +14,10 @@ class DamageTypeSerializer(GameContentSerializer):
         fields = '__all__'
 
 class DamageTypeSummarySerializer(serializers.ModelSerializer):
+    '''
+    A slimmer DamageTypeSerializer, designed to serialize DamageType FKs on
+    other serializers. Not intended to be used directly with in a ModelViewset.
+    '''
     class Meta:
         model = models.DamageType
         fields = ['name', 'key', 'url']

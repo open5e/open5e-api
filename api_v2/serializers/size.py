@@ -25,6 +25,11 @@ class SizeSerializer(GameContentSerializer):
         return Size.get_distance_unit
 
 class SizeSummarySerializer(serializers.ModelSerializer):
+    '''
+    A slimmer SizeSerializer, designed to serialize Size FKs on other
+    serializers. ie. The `size` field on the CreatureSerializer. Not intended
+    to be used directly in a ModelViewset.
+    '''
     class Meta:
         model = models.Size
         fields = ['name', 'key', 'url']

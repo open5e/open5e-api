@@ -12,6 +12,10 @@ class GameSystemSerializer(GameContentSerializer):
         fields = '__all__'
 
 class GameSystemSummarySerializer(serializers.ModelSerializer):
+    '''
+    A slimmer GameSystemSerializer, designed to serialize GameSystem FKs on 
+    other serializers. Not intended to be used directly with in a ModelViewset.
+    '''
     class Meta:
         model = models.GameSystem
         fields = ['name', 'key', 'url']
@@ -25,7 +29,10 @@ class LicenseSerializer(GameContentSerializer):
         fields = '__all__'
 
 class LicenseSummarySerializer(GameContentSerializer):
-    key = serializers.ReadOnlyField()
+    '''
+    A slimmer LicenseSerializer, designed to serialize License FKs on other 
+    serializers. Not intended to be used directly with in a ModelViewset.
+    '''
     class Meta:
         model = models.License
         fields = ['name', 'key', 'url']
@@ -38,7 +45,10 @@ class PublisherSerializer(GameContentSerializer):
         fields = '__all__'
 
 class PublisherSummarySerializer(serializers.ModelSerializer):
-    key = serializers.ReadOnlyField()
+    '''
+    A slimmer PublisherSerializer, designed to serialize Publisher FKs on other
+    serializers. Not intended to be used directly with in a ModelViewset.
+    '''
     class Meta:
         model = models.Publisher
         fields = ['name', 'key', 'url']
@@ -54,9 +64,13 @@ class DocumentSerializer(GameContentSerializer):
         fields = '__all__'
 
 class DocumentSummarySerializer(GameContentSerializer):
-    key = serializers.ReadOnlyField()
+    '''
+    A slimmer DocumentSerializer, designed to serialize Documents FKs on other
+    serializers. Not intended to be used directly with in a ModelViewset.
+    '''
     publisher = PublisherSummarySerializer()
     gamesystem = GameSystemSummarySerializer()
+
     class Meta:
         model = models.Document
         fields = ['name', 'key', 'publisher', 'gamesystem', 'permalink']

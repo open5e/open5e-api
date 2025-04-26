@@ -48,6 +48,10 @@ class CreatureTypeSerializer(GameContentSerializer):
         fields = '__all__'
 
 class CreatureTypeSummarySerializer(serializers.ModelSerializer):
+    '''
+    A slimmer CreatureTypeSerializer, designed to serialize CreatureType FKs on
+    other serializers . Not intended to be used directly with in a ModelViewset.
+    '''
     class Meta:
         model = models.CreatureType
         fields = ['name', 'key', 'url']
