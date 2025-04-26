@@ -16,6 +16,10 @@ class SpellSchoolSerializer(GameContentSerializer):
         model = models.SpellSchool
         fields='__all__'
 
+class SpellSchoolSummarySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.SpellSchool
+        fields = ['name', 'key', 'url']
 
 class SpellCastingOptionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,7 +31,7 @@ class SpellSerializer(GameContentSerializer):
     document = DocumentSummarySerializer()
     key = serializers.ReadOnlyField()
     casting_options = SpellCastingOptionSerializer(many=True)
-    school = SpellSchoolSerializer()
+    school = SpellSchoolSummarySerializer()
     classes = CharacterClassSummarySerializer(many=True)
     
     range_unit = serializers.SerializerMethodField()
