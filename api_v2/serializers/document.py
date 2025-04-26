@@ -56,7 +56,7 @@ class DocumentSerializer(GameContentSerializer):
 class DocumentSummarySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     publisher = PublisherSummarySerializer()
-    gamesystem = GameSystemSummarySerializer() 
+    gamesystem = GameSystemSummarySerializer()
     class Meta:
         model = models.Document
         fields = ['name', 'key', 'publisher', 'gamesystem', 'permalink']
