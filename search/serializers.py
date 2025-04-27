@@ -54,8 +54,8 @@ class SearchResultSerializer(serializers.ModelSerializer):
                 result_detail = v2.Spell.objects.get(pk=obj.object_pk)
             if obj.object_model == 'CharacterClass':
                 result_detail = v2.CharacterClass.objects.get(pk=obj.object_pk)
-            if obj.object_model == 'Race':
-                result_detail = v2.Race.objects.get(pk=obj.object_pk)
+            if obj.object_model == 'Species':
+                result_detail = v2.Species.objects.get(pk=obj.object_pk)
 
         if result_detail is not None:
             return result_detail.search_result_extra_fields()
@@ -93,6 +93,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
         route_lookup = {
             "CharacterClass":"classes",
             "CharClass":"classes",
+            "Species": "species",
         }
 
         if obj.object_model in route_lookup.keys():
