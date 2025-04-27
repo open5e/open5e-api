@@ -124,7 +124,7 @@ class Command(BaseCommand):
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document', 'GameSystem', 'License', 'Publisher','SearchResult']
-                    CHILD_MODEL_NAMES = ['RaceTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption','CreatureAction', 'CreatureTrait']
+                    CHILD_MODEL_NAMES = ['SpeciesTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption','CreatureAction', 'CreatureTrait']
                     CHILD_CHILD_MODEL_NAMES = ['CreatureActionAttack']
                     
                     if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
