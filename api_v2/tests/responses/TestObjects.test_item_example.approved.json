@@ -2,11 +2,23 @@
     "armor": null,
     "armor_class": 0,
     "armor_detail": "",
-    "category": "http://localhost:8000/v2/itemcategories/wondrous-item/",
+    "category": {
+        "document": "srd",
+        "key": "wondrous-item",
+        "name": "Wondrous Item"
+    },
     "cost": "0.00",
     "damage_immunities": [
-        "http://localhost:8000/v2/damagetypes/poison/",
-        "http://localhost:8000/v2/damagetypes/psychic/"
+        {
+            "key": "poison",
+            "name": "Poison",
+            "url": "http://localhost:8000/v2/damagetypes/poison/"
+        },
+        {
+            "key": "psychic",
+            "name": "Psychic",
+            "url": "http://localhost:8000/v2/damagetypes/psychic/"
+        }
     ],
     "damage_resistances": [],
     "damage_vulnerabilities": [],
@@ -33,9 +45,18 @@
     "name": "Apparatus of the Crab",
     "nonmagical_attack_immunity": false,
     "nonmagical_attack_resistance": false,
-    "rarity": "http://localhost:8000/v2/itemrarities/legendary/",
+    "rarity": {
+        "key": "legendary",
+        "name": "Legendary",
+        "rank": 5,
+        "url": "http://localhost:8000/v2/itemrarities/legendary/"
+    },
     "requires_attunement": false,
-    "size": "http://localhost:8000/v2/sizes/tiny/",
+    "size": {
+        "key": "tiny",
+        "name": "Tiny",
+        "url": "http://localhost:8000/v2/sizes/tiny/"
+    },
     "url": "http://localhost:8000/v2/items/srd_apparatus-of-the-crab/",
     "weapon": null,
     "weight": "0.000"

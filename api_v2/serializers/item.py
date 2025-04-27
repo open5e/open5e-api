@@ -5,8 +5,9 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
-from .size import SizeSerializer
+from .damagetype import DamageTypeSummarySerializer
 from .document import DocumentSummarySerializer
+from .size import SizeSummarySerializer
 from drf_spectacular.utils import extend_schema_field
 from drf_spectacular.types import OpenApiTypes
 
@@ -20,8 +21,30 @@ class ArmorSerializer(GameContentSerializer):
         model = models.Armor
         fields = '__all__'
 
+class ArmorSummarySerializer(serializers.ModelSerializer):
+    '''
+    A slightly slimmer ArmorSerializer, designed to serialize Armor FKs on
+    other serializers. ie. The `armor` field on the ItemSerializer. Not 
+    intended to be used directly in a ModelViewset.
+    '''
+    class Meta:
+        model = models.Armor
+        fields = [
+            'name',
+            'key',
+            'url',
+            'category',
+            'ac_base',
+            'ac_display',
+            'ac_add_dexmod',
+            'ac_cap_dexmod',
+            'grants_stealth_disadvantage',
+            'strength_score_required',
+        ]
+
 class WeaponSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    damage_type = DamageTypeSummarySerializer()
     is_versatile = serializers.ReadOnlyField()
     is_martial = serializers.ReadOnlyField()
     is_melee = serializers.ReadOnlyField()
@@ -41,14 +64,12 @@ class WeaponSerializer(GameContentSerializer):
         return Weapon.get_distance_unit
 
 
-class ItemRaritySerializer(GameContentSerializer):
-    key=serializers.ReadOnlyField()
-
+class ItemRaritySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.ItemRarity
-        fields = '__all__'
+        fields = ['name', 'url', 'key', 'rank']
 
-class ItemCategorySerializer(GameContentSerializer):
+class ItemCategorySerializer(serializers.ModelSerializer):
     key = serializers.ReadOnlyField()
 
     class Meta:
@@ -58,21 +79,14 @@ class ItemCategorySerializer(GameContentSerializer):
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     is_magic_item = serializers.ReadOnlyField()
-    weapon = WeaponSerializer(read_only=True, context={'request':{}})
-    armor = ArmorSerializer(read_only=True, context={'request':{}})
+    weapon = WeaponSerializer()
+    armor = ArmorSummarySerializer()
     document = DocumentSummarySerializer()
     category = ItemCategorySerializer()
     rarity = ItemRaritySerializer()
-    
-    def to_representation(self, instance):
-        """Ensures weapon/armor remain null instead of empty objects at depth>0."""
-        data = super().to_representation(instance)
-
-        for field in ["weapon", "armor"]:
-            if getattr(instance, field, None) is None:
-                data[field] = None
-        return data
-    
+    damage_immunities = DamageTypeSummarySerializer(many=True)
+    size = SizeSummarySerializer()
+        
     class Meta:
         model = models.Item
         fields = '__all__'

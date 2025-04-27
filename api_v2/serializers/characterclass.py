@@ -70,6 +70,12 @@ class ClassFeatureSerializer(GameContentSerializer):
         ]
 
 class CharacterClassSummarySerializer(serializers.ModelSerializer):
+    '''
+    A slimmer CharacterClassSerializer, designed to serialize Class FKs on
+    other serializers. ie. The `subclass_of` field on the 
+    CharacterClassSerializer serializer. Not intended to be used directly in a
+    ModelViewset.
+    '''
     class Meta:
         model = models.CharacterClass
         fields = ['name', 'key', 'url']

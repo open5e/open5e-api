@@ -23,6 +23,11 @@ class AbilitySerializer(GameContentSerializer):
         fields = '__all__'
 
 class AbilitySummarySerializer(GameContentSerializer):
+    '''
+    A slimmer AbilitySerializer, designed to serialize Ability FKs on other 
+    serializers. ie. The `saving_throws` field on CharacterClassSerializer. Not
+    intended to be used directly with in a ModelViewset.
+    '''
     class Meta:
         model = models.Ability
         fields = ['name', 'url']

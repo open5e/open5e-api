@@ -68,7 +68,11 @@
     "reaction_condition": null,
     "ritual": false,
     "saving_throw_ability": "",
-    "school": "http://localhost:8000/v2/spellschools/transmutation/",
+    "school": {
+        "key": "transmutation",
+        "name": "Transmutation",
+        "url": "http://localhost:8000/v2/spellschools/transmutation/"
+    },
     "shape_size": null,
     "shape_size_unit": "feet",
     "shape_type": null,

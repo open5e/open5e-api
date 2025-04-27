@@ -93,73 +93,38 @@
     },
     "environments": [
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "coast",
             "name": "Coast",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/coast/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "desert",
             "name": "Desert",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/desert/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "forest",
             "name": "Forest or Jungle",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/forest/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "grassland",
             "name": "Grassland or Plains",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/grassland/"
         },
         {
-            "aquatic": false,
-            "desc": "[None Provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "hills",
             "name": "Hills",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/hills/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "mountain",
             "name": "Mountain",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/mountain/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "urban",
             "name": "Urban",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/urban/"
         }
     ],
@@ -201,7 +166,11 @@
         "strength": 1,
         "wisdom": 0
     },
-    "size": "http://localhost:8000/v2/sizes/medium/",
+    "size": {
+        "key": "medium",
+        "name": "Medium",
+        "url": "http://localhost:8000/v2/sizes/medium/"
+    },
     "skill_bonuses": {
         "perception": 2
     },
@@ -243,6 +212,10 @@
     "traits": [],
     "tremorsense_range": null,
     "truesight_range": null,
-    "type": "http://localhost:8000/v2/creaturetypes/humanoid/",
+    "type": {
+        "key": "humanoid",
+        "name": "Humanoid",
+        "url": "http://localhost:8000/v2/creaturetypes/humanoid/"
+    },
     "url": "http://localhost:8000/v2/creatures/srd_guard/"
 }

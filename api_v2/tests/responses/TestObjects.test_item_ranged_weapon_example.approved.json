@@ -2,11 +2,23 @@
     "armor": null,
     "armor_class": 0,
     "armor_detail": "",
-    "category": "http://localhost:8000/v2/itemcategories/weapon/",
+    "category": {
+        "document": "srd",
+        "key": "weapon",
+        "name": "Weapon"
+    },
     "cost": "50.00",
     "damage_immunities": [
-        "http://localhost:8000/v2/damagetypes/poison/",
-        "http://localhost:8000/v2/damagetypes/psychic/"
+        {
+            "key": "poison",
+            "name": "Poison",
+            "url": "http://localhost:8000/v2/damagetypes/poison/"
+        },
+        {
+            "key": "psychic",
+            "name": "Psychic",
+            "url": "http://localhost:8000/v2/damagetypes/psychic/"
+        }
     ],
     "damage_resistances": [],
     "damage_vulnerabilities": [],
@@ -35,7 +47,11 @@
     "nonmagical_attack_resistance": false,
     "rarity": null,
     "requires_attunement": false,
-    "size": "http://localhost:8000/v2/sizes/tiny/",
+    "size": {
+        "key": "tiny",
+        "name": "Tiny",
+        "url": "http://localhost:8000/v2/sizes/tiny/"
+    },
     "url": "http://localhost:8000/v2/items/srd_longbow/",
     "weapon": "http://localhost:8000/v2/weapons/srd_longbow/",
     "weight": "2.000"

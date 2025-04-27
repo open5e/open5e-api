@@ -114,7 +114,11 @@
     "reaction_condition": null,
     "ritual": false,
     "saving_throw_ability": "dexterity",
-    "school": "http://localhost:8000/v2/spellschools/evocation/",
+    "school": {
+        "key": "evocation",
+        "name": "Evocation",
+        "url": "http://localhost:8000/v2/spellschools/evocation/"
+    },
     "shape_size": 20.0,
     "shape_size_unit": "feet",
     "shape_type": "sphere",

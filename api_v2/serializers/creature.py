@@ -7,12 +7,12 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
-from .damagetype import DamageTypeSerializer
-from .condition import ConditionSerializer
+from .damagetype import DamageTypeSummarySerializer
+from .condition import ConditionSummarySerializer
 from .document import DocumentSummarySerializer
 from .language import LanguageSummarySerializer
-from .environment import EnvironmentSerializer
-from .size import SizeSerializer
+from .environment import EnvironmentSummarySerializer
+from .size import SizeSummarySerializer
 from drf_spectacular.utils import extend_schema_field, inline_serializer
 from drf_spectacular.types import OpenApiTypes
 
@@ -47,6 +47,15 @@ class CreatureTypeSerializer(GameContentSerializer):
         model = models.CreatureType
         fields = '__all__'
 
+class CreatureTypeSummarySerializer(serializers.ModelSerializer):
+    '''
+    A slimmer CreatureTypeSerializer, designed to serialize CreatureType FKs on
+    other serializers . Not intended to be used directly with in a ModelViewset.
+    '''
+    class Meta:
+        model = models.CreatureType
+        fields = ['name', 'key', 'url']
+
 
 class CreatureTraitSerializer(GameContentSerializer):
     '''Serializer for the Creature Trait object'''
@@ -74,10 +83,10 @@ class CreatureSerializer(GameContentSerializer):
     saving_throws_all = serializers.SerializerMethodField()
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
-    damage_immunities = DamageTypeSerializer(many=True)
-    damage_resistances = DamageTypeSerializer(many=True)
-    damage_vulnerabilities = DamageTypeSerializer(many=True)
-    condition_immunities = ConditionSerializer(many=True)
+    damage_immunities = DamageTypeSummarySerializer(many=True)
+    damage_resistances = DamageTypeSummarySerializer(many=True)
+    damage_vulnerabilities = DamageTypeSummarySerializer(many=True)
+    condition_immunities = ConditionSummarySerializer(many=True)
     actions = CreatureActionSerializer(many=True)
     traits = CreatureTraitSerializer(many=True, read_only=True)
     speed = serializers.SerializerMethodField()
@@ -85,10 +94,10 @@ class CreatureSerializer(GameContentSerializer):
     challenge_rating_text = serializers.SerializerMethodField()
     experience_points = serializers.SerializerMethodField()
     document = DocumentSummarySerializer()
-    type = CreatureTypeSerializer()
-    size = SizeSerializer()
+    type = CreatureTypeSummarySerializer()
+    size = SizeSummarySerializer()
     languages = CreatureLanguageSerializer(source='*')
-    environments = EnvironmentSerializer(many=True)
+    environments = EnvironmentSummarySerializer(many=True)
     initiative_bonus = serializers.SerializerMethodField()
 
     class Meta:
@@ -96,23 +105,23 @@ class CreatureSerializer(GameContentSerializer):
         model = models.Creature
         fields = [
             'url',
-            'document',
             'key',
             'name',
+            'document',
+            'type',
             'size',
+            'challenge_rating_decimal',
+            'challenge_rating_text',
             'speed',
             'speed_all',
             'category',
             'subcategory',
-            'type',
             'alignment',
             'languages',
             'armor_class',
             'armor_detail',
             'hit_points',
             'hit_dice',
-            'challenge_rating_decimal',
-            'challenge_rating_text',
             'experience_points',
             'ability_scores',
             'modifiers',

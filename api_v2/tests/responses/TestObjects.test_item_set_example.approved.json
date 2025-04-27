@@ -6,11 +6,23 @@
             "armor": null,
             "armor_class": 0,
             "armor_detail": "",
-            "category": "http://localhost:8000/v2/itemcategories/adventuring-gear/",
+            "category": {
+                "document": "srd",
+                "key": "adventuring-gear",
+                "name": "Adventuring Gear"
+            },
             "cost": "10.00",
             "damage_immunities": [
-                "http://localhost:8000/v2/damagetypes/poison/",
-                "http://localhost:8000/v2/damagetypes/psychic/"
+                {
+                    "key": "poison",
+                    "name": "Poison",
+                    "url": "http://localhost:8000/v2/damagetypes/poison/"
+                },
+                {
+                    "key": "psychic",
+                    "name": "Psychic",
+                    "url": "http://localhost:8000/v2/damagetypes/psychic/"
+                }
             ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
@@ -39,7 +51,11 @@
             "nonmagical_attack_resistance": false,
             "rarity": null,
             "requires_attunement": false,
-            "size": "http://localhost:8000/v2/sizes/tiny/",
+            "size": {
+                "key": "tiny",
+                "name": "Tiny",
+                "url": "http://localhost:8000/v2/sizes/tiny/"
+            },
             "url": "http://localhost:8000/v2/items/srd_crystal/",
             "weapon": null,
             "weight": "1.000"
@@ -48,11 +64,23 @@
             "armor": null,
             "armor_class": 0,
             "armor_detail": "",
-            "category": "http://localhost:8000/v2/itemcategories/adventuring-gear/",
+            "category": {
+                "document": "srd",
+                "key": "adventuring-gear",
+                "name": "Adventuring Gear"
+            },
             "cost": "20.00",
             "damage_immunities": [
-                "http://localhost:8000/v2/damagetypes/poison/",
-                "http://localhost:8000/v2/damagetypes/psychic/"
+                {
+                    "key": "poison",
+                    "name": "Poison",
+                    "url": "http://localhost:8000/v2/damagetypes/poison/"
+                },
+                {
+                    "key": "psychic",
+                    "name": "Psychic",
+                    "url": "http://localhost:8000/v2/damagetypes/psychic/"
+                }
             ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
@@ -81,7 +109,11 @@
             "nonmagical_attack_resistance": false,
             "rarity": null,
             "requires_attunement": false,
-            "size": "http://localhost:8000/v2/sizes/tiny/",
+            "size": {
+                "key": "tiny",
+                "name": "Tiny",
+                "url": "http://localhost:8000/v2/sizes/tiny/"
+            },
             "url": "http://localhost:8000/v2/items/srd_orb/",
             "weapon": null,
             "weight": "3.000"
@@ -90,11 +122,23 @@
             "armor": null,
             "armor_class": 0,
             "armor_detail": "",
-            "category": "http://localhost:8000/v2/itemcategories/rod/",
+            "category": {
+                "document": "srd",
+                "key": "rod",
+                "name": "Rod"
+            },
             "cost": "10.00",
             "damage_immunities": [
-                "http://localhost:8000/v2/damagetypes/poison/",
-                "http://localhost:8000/v2/damagetypes/psychic/"
+                {
+                    "key": "poison",
+                    "name": "Poison",
+                    "url": "http://localhost:8000/v2/damagetypes/poison/"
+                },
+                {
+                    "key": "psychic",
+                    "name": "Psychic",
+                    "url": "http://localhost:8000/v2/damagetypes/psychic/"
+                }
             ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
@@ -123,7 +167,11 @@
             "nonmagical_attack_resistance": false,
             "rarity": null,
             "requires_attunement": false,
-            "size": "http://localhost:8000/v2/sizes/tiny/",
+            "size": {
+                "key": "tiny",
+                "name": "Tiny",
+                "url": "http://localhost:8000/v2/sizes/tiny/"
+            },
             "url": "http://localhost:8000/v2/items/srd_rod/",
             "weapon": null,
             "weight": "0.000"
@@ -132,11 +180,23 @@
             "armor": null,
             "armor_class": 0,
             "armor_detail": "",
-            "category": "http://localhost:8000/v2/itemcategories/staff/",
+            "category": {
+                "document": "srd",
+                "key": "staff",
+                "name": "Staff"
+            },
             "cost": "5.00",
             "damage_immunities": [
-                "http://localhost:8000/v2/damagetypes/poison/",
-                "http://localhost:8000/v2/damagetypes/psychic/"
+                {
+                    "key": "poison",
+                    "name": "Poison",
+                    "url": "http://localhost:8000/v2/damagetypes/poison/"
+                },
+                {
+                    "key": "psychic",
+                    "name": "Psychic",
+                    "url": "http://localhost:8000/v2/damagetypes/psychic/"
+                }
             ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
@@ -165,7 +225,11 @@
             "nonmagical_attack_resistance": false,
             "rarity": null,
             "requires_attunement": false,
-            "size": "http://localhost:8000/v2/sizes/tiny/",
+            "size": {
+                "key": "tiny",
+                "name": "Tiny",
+                "url": "http://localhost:8000/v2/sizes/tiny/"
+            },
             "url": "http://localhost:8000/v2/items/srd_staff/",
             "weapon": "http://localhost:8000/v2/weapons/srd_quarterstaff/",
             "weight": "4.000"
@@ -174,11 +238,23 @@
             "armor": null,
             "armor_class": 0,
             "armor_detail": "",
-            "category": "http://localhost:8000/v2/itemcategories/wand/",
+            "category": {
+                "document": "srd",
+                "key": "wand",
+                "name": "Wand"
+            },
             "cost": "10.00",
             "damage_immunities": [
-                "http://localhost:8000/v2/damagetypes/poison/",
-                "http://localhost:8000/v2/damagetypes/psychic/"
+                {
+                    "key": "poison",
+                    "name": "Poison",
+                    "url": "http://localhost:8000/v2/damagetypes/poison/"
+                },
+                {
+                    "key": "psychic",
+                    "name": "Psychic",
+                    "url": "http://localhost:8000/v2/damagetypes/psychic/"
+                }
             ],
             "damage_resistances": [],
             "damage_vulnerabilities": [],
@@ -207,7 +283,11 @@
             "nonmagical_attack_resistance": false,
             "rarity": null,
             "requires_attunement": false,
-            "size": "http://localhost:8000/v2/sizes/tiny/",
+            "size": {
+                "key": "tiny",
+                "name": "Tiny",
+                "url": "http://localhost:8000/v2/sizes/tiny/"
+            },
             "url": "http://localhost:8000/v2/items/srd_wand/",
             "weapon": null,
             "weight": "1.000"
