@@ -35,14 +35,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_camel_bite",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Bite",
-                    "order": 0,
-                    "parent": "srd_camel",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -379,14 +376,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_draft-horse_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_draft-horse",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -569,14 +563,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) piercing damage.",
-                    "form_condition": null,
-                    "key": "srd_elephant_gore",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Gore",
-                    "order": 0,
-                    "parent": "srd_elephant",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 },
                 {
                     "action_type": "ACTION",
@@ -603,14 +594,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one prone creature. Hit: 22 (3d10 + 6) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_elephant_stomp",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Stomp",
-                    "order": 1,
-                    "parent": "srd_elephant",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 1,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -761,11 +749,7 @@
             "traits": [
                 {
                     "desc": "If the elephant moves at least 20 ft. straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the elephant can make one stomp attack against it as a bonus action.",
-                    "key": "srd_elephant_trampling-charge",
-                    "name": "Trampling Charge",
-                    "parent": "http://localhost:8000/v2/creatures/srd_elephant/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_elephant_trampling-charge/"
+                    "name": "Trampling Charge"
                 }
             ],
             "tremorsense_range": null,
@@ -812,14 +796,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
-                    "form_condition": null,
-                    "key": "srd_mastiff_bite",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Bite",
-                    "order": 0,
-                    "parent": "srd_mastiff",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -970,11 +951,7 @@
             "traits": [
                 {
                     "desc": "The mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-                    "key": "srd_mastiff_keen-hearing-and-smell",
-                    "name": "Keen Hearing and Smell",
-                    "parent": "http://localhost:8000/v2/creatures/srd_mastiff/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_mastiff_keen-hearing-and-smell/"
+                    "name": "Keen Hearing and Smell"
                 }
             ],
             "tremorsense_range": null,
@@ -1021,14 +998,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_mule_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_mule",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -1179,19 +1153,11 @@
             "traits": [
                 {
                     "desc": "The mule is considered to be a Large animal for the purpose of determining its carrying capacity.",
-                    "key": "srd_mule_beast-of-burden",
-                    "name": "Beast of Burden",
-                    "parent": "http://localhost:8000/v2/creatures/srd_mule/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_mule_beast-of-burden/"
+                    "name": "Beast of Burden"
                 },
                 {
                     "desc": "The mule has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
-                    "key": "srd_mule_sure-footed",
-                    "name": "Sure-Footed",
-                    "parent": "http://localhost:8000/v2/creatures/srd_mule/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_mule_sure-footed/"
+                    "name": "Sure-Footed"
                 }
             ],
             "tremorsense_range": null,
@@ -1238,14 +1204,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_pony_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_pony",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -1433,14 +1396,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_riding-horse_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_riding-horse",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -1628,14 +1588,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_warhorse_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_warhorse",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -1776,11 +1733,7 @@
             "traits": [
                 {
                     "desc": "If the horse moves at least 20 ft. straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action.",
-                    "key": "srd_warhorse_trampling-charge",
-                    "name": "Trampling Charge",
-                    "parent": "http://localhost:8000/v2/creatures/srd_warhorse/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_warhorse_trampling-charge/"
+                    "name": "Trampling Charge"
                 }
             ],
             "tremorsense_range": null,
