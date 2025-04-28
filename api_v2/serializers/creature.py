@@ -59,11 +59,9 @@ class CreatureTypeSummarySerializer(serializers.ModelSerializer):
 
 class CreatureTraitSerializer(GameContentSerializer):
     '''Serializer for the Creature Trait object'''
-    key = serializers.ReadOnlyField()
-
     class Meta:
         model = models.CreatureTrait
-        fields = '__all__'
+        fields = ['name', 'desc']
 
 class CreatureLanguageSerializer(GameContentSerializer):
     as_string = serializers.CharField(source="languages_desc")

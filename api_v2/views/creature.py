@@ -153,7 +153,3 @@ class CreatureSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
         'creatures__type',
         'creatures__languages',
     ]
-
-class CreatureTraitViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.CreatureTrait.objects.all().order_by('pk')
-    serializer_class = serializers.CreatureTraitSerializer
