@@ -22,7 +22,24 @@ class CreatureActionAttackSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.CreatureActionAttack
-        fields = '__all__'
+        fields = [
+            'name',
+            'attack_type',
+            'to_hit_mod',
+            'reach',
+            'range',
+            'long_range',
+            'target_creature_only',
+            'damage_die_count',
+            'damage_die_type',
+            'damage_bonus',
+            'damage_type',
+            'extra_damage_die_count',
+            'extra_damage_die_type',
+            'extra_damage_bonus',
+            'extra_damage_type',
+            'distance_unit',
+        ]
 
     # todo: type is any
     @extend_schema_field(OpenApiTypes.STR)
