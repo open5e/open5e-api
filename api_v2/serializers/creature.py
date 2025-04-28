@@ -31,9 +31,12 @@ class CreatureActionAttackSerializer(serializers.ModelSerializer):
 
 class CreatureActionSerializer(serializers.ModelSerializer):
     attacks = CreatureActionAttackSerializer(many=True, read_only=True)
+    usage_limits = serializers.SerializerMethodField()
+    
+    # rename model fields to improve readibility of JSON
     order_in_statblock = serializers.IntegerField(source='order')
     limited_to_form = serializers.CharField(source='form_condition')
-    usage_limits = serializers.SerializerMethodField()
+    legendary_action_cost = serializers.IntegerField(source='legendary_cost')
 
     class Meta:
         model = models.CreatureAction
@@ -43,7 +46,7 @@ class CreatureActionSerializer(serializers.ModelSerializer):
             'attacks',
             'action_type',
             'order_in_statblock',
-            'legendary_cost',
+            'legendary_action_cost',
             'limited_to_form',
             'usage_limits'
         ]
