@@ -29,25 +29,32 @@ class CreatureActionAttackSerializer(serializers.ModelSerializer):
     def get_distance_unit(self, CreatureActionAttack):
         return CreatureActionAttack.get_distance_unit
 
-
 class CreatureActionSerializer(serializers.ModelSerializer):
     attacks = CreatureActionAttackSerializer(many=True, read_only=True)
     order_in_statblock = serializers.IntegerField(source='order')
     limited_to_form = serializers.CharField(source='form_condition')
+    usage_limits = serializers.SerializerMethodField()
+
     class Meta:
         model = models.CreatureAction
         fields = [
             'name',
             'desc',
             'attacks',
-            'uses_type',
-            'uses_param',
             'action_type',
             'order_in_statblock',
             'legendary_cost',
             'limited_to_form',
+            'usage_limits'
         ]
 
+    # Gathers 'uses_type' and 'uses_param' into a single 'usage_limits' obj.
+    def get_usage_limits(self, obj):
+        if obj.uses_type and obj.uses_param: 
+            return {
+                'type': obj.uses_type,
+                'param': obj.uses_param
+            }
 
 class CreatureTypeSerializer(GameContentSerializer):
     '''Serializer for the Creature Type object'''
