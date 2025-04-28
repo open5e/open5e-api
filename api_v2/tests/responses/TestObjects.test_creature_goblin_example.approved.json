@@ -22,10 +22,8 @@
                     "extra_damage_die_count": null,
                     "extra_damage_die_type": null,
                     "extra_damage_type": null,
-                    "key": "srd_goblin_scimitar_scimitar-attack",
                     "long_range": null,
                     "name": "Scimitar attack",
-                    "parent": "srd_goblin_scimitar",
                     "range": null,
                     "reach": 5.0,
                     "target_creature_only": false,
@@ -33,14 +31,11 @@
                 }
             ],
             "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-            "form_condition": null,
-            "key": "srd_goblin_scimitar",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Scimitar",
-            "order": 0,
-            "parent": "srd_goblin",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 0,
+            "usage_limits": null
         },
         {
             "action_type": "ACTION",
@@ -56,10 +51,8 @@
                     "extra_damage_die_count": null,
                     "extra_damage_die_type": null,
                     "extra_damage_type": null,
-                    "key": "srd_goblin_shortbow_shortbow-attack",
                     "long_range": 320.0,
                     "name": "Shortbow attack",
-                    "parent": "srd_goblin_shortbow",
                     "range": 80.0,
                     "reach": null,
                     "target_creature_only": false,
@@ -67,14 +60,11 @@
                 }
             ],
             "desc": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-            "form_condition": null,
-            "key": "srd_goblin_shortbow",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Shortbow",
-            "order": 1,
-            "parent": "srd_goblin",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 1,
+            "usage_limits": null
         }
     ],
     "alignment": "neutral evil",
@@ -262,11 +252,7 @@
     "traits": [
         {
             "desc": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns.",
-            "key": "srd_goblin_nimble-escape",
-            "name": "Nimble Escape",
-            "parent": "http://localhost:8000/v2/creatures/srd_goblin/",
-            "type": null,
-            "url": "http://localhost:8000/v2/creaturetraits/srd_goblin_nimble-escape/"
+            "name": "Nimble Escape"
         }
     ],
     "tremorsense_range": null,

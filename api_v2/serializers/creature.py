@@ -22,21 +22,59 @@ class CreatureActionAttackSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.CreatureActionAttack
-        fields = '__all__'
+        fields = [
+            'name',
+            'attack_type',
+            'to_hit_mod',
+            'reach',
+            'range',
+            'long_range',
+            'target_creature_only',
+            'damage_die_count',
+            'damage_die_type',
+            'damage_bonus',
+            'damage_type',
+            'extra_damage_die_count',
+            'extra_damage_die_type',
+            'extra_damage_bonus',
+            'extra_damage_type',
+            'distance_unit',
+        ]
 
     # todo: type is any
     @extend_schema_field(OpenApiTypes.STR)
     def get_distance_unit(self, CreatureActionAttack):
         return CreatureActionAttack.get_distance_unit
 
-
 class CreatureActionSerializer(serializers.ModelSerializer):
-    key = serializers.ReadOnlyField()
     attacks = CreatureActionAttackSerializer(many=True, read_only=True)
+    usage_limits = serializers.SerializerMethodField()
+    
+    # rename model fields to improve readibility of JSON
+    order_in_statblock = serializers.IntegerField(source='order')
+    limited_to_form = serializers.CharField(source='form_condition')
+    legendary_action_cost = serializers.IntegerField(source='legendary_cost')
+
     class Meta:
         model = models.CreatureAction
-        fields = '__all__'
+        fields = [
+            'name',
+            'desc',
+            'attacks',
+            'action_type',
+            'order_in_statblock',
+            'legendary_action_cost',
+            'limited_to_form',
+            'usage_limits'
+        ]
 
+    # Gathers 'uses_type' and 'uses_param' into a single 'usage_limits' obj.
+    def get_usage_limits(self, obj):
+        if obj.uses_type and obj.uses_param: 
+            return {
+                'type': obj.uses_type,
+                'param': obj.uses_param
+            }
 
 class CreatureTypeSerializer(GameContentSerializer):
     '''Serializer for the Creature Type object'''
@@ -59,11 +97,9 @@ class CreatureTypeSummarySerializer(serializers.ModelSerializer):
 
 class CreatureTraitSerializer(GameContentSerializer):
     '''Serializer for the Creature Trait object'''
-    key = serializers.ReadOnlyField()
-
     class Meta:
         model = models.CreatureTrait
-        fields = '__all__'
+        fields = ['name', 'desc']
 
 class CreatureLanguageSerializer(GameContentSerializer):
     as_string = serializers.CharField(source="languages_desc")
