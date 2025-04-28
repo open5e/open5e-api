@@ -156,7 +156,7 @@ class Modification(HasName, HasDescription):
     """
     This is the definition of a modification abstract base class.
 
-    A modification class will be reimplemented from Feat, Race, Background, etc.
+    A modification class will be reimplemented from Feat, Species, Background, etc.
     Basically it describes any sort of modification to a character in 5e.
     """
 

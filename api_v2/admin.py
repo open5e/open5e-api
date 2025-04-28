@@ -25,13 +25,13 @@ class FeatAdmin(admin.ModelAdmin):
     list_display = ['key', 'name']
 
 
-class RaceTraitInline(admin.TabularInline):
-    model = RaceTrait
+class SpeciesTraitInline(admin.TabularInline):
+    model = SpeciesTrait
 
 
-class RaceAdmin(admin.ModelAdmin):
+class SpeciesAdmin(admin.ModelAdmin):
     inlines = [
-        RaceTraitInline,
+        SpeciesTraitInline,
     ]
 
 class ClassFeatureItemInline(admin.TabularInline):
@@ -74,7 +74,7 @@ admin.site.register(ItemSet, admin_class=FromDocumentModelAdmin)
 admin.site.register(SpellSchool)
 admin.site.register(Spell)
 
-admin.site.register(Race, admin_class=RaceAdmin)
+admin.site.register(Species, admin_class=SpeciesAdmin)
 
 admin.site.register(Feat, admin_class=FeatAdmin)
 

@@ -7,32 +7,32 @@ from api_v2 import serializers
 
 from .mixins import EagerLoadingMixin
 
-class RaceFilterSet(FilterSet):
+class SpeciesFilterSet(FilterSet):
     class Meta:
-        model = models.Race
+        model = models.Species
         fields = {
             'key': ['in', 'iexact', 'exact'],
             'name': ['iexact', 'exact'],
             'document__key': ['in', 'iexact', 'exact'],
             'document__gamesystem__key': ['in','iexact','exact'],
-            'subrace_of': ['isnull'],
-            'subrace_of__key':['in', 'iexact', 'exact'],
+            'subspecies_of': ['isnull'],
+            'subspecies_of__key':['in', 'iexact', 'exact'],
         }
 
 
-class RaceViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class SpeciesViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
-    list: API endpoint for returning a list of races.
-    retrieve: API endpoint for returning a particular race.
+    list: API endpoint for returning a list of species.
+    retrieve: API endpoint for returning a particular species.
     """
-    queryset = models.Race.objects.all().order_by('pk')
-    serializer_class = serializers.RaceSerializer
-    filterset_class = RaceFilterSet
+    queryset = models.Species.objects.all().order_by('pk')
+    serializer_class = serializers.SpeciesSerializer
+    filterset_class = SpeciesFilterSet
 
     select_related_fields = []
     prefetch_related_fields = [
         'document',
         'document__gamesystem',
         'traits',
-        'subrace_of'
+        'subspecies_of'
     ]

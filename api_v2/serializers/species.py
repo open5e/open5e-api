@@ -1,4 +1,4 @@
-"""Serializers for the Trait and Race models."""
+"""Serializers for the Trait and Species models."""
 
 from rest_framework import serializers
 
@@ -7,21 +7,21 @@ from api_v2 import models
 from .abstracts import GameContentSerializer
 from .document import DocumentSummarySerializer
 
-class RaceTraitSerializer(serializers.ModelSerializer):
+class SpeciesTraitSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = models.RaceTrait
+        model = models.SpeciesTrait
         fields = ['name', 'desc']
 
 
-class RaceSerializer(GameContentSerializer):
+class SpeciesSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    is_subrace = serializers.ReadOnlyField()
+    is_subspecies = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
     
-    traits = RaceTraitSerializer(many=True)
+    traits = SpeciesTraitSerializer(many=True)
 
     class Meta:
-        model = models.Race
+        model = models.Species
         fields = '__all__'
 

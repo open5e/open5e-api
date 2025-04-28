@@ -80,9 +80,9 @@ class TestObjects:
         path="/v2/feats/srd_grappler/"
         self._verify(path)
 
-    # /RACES ENDPOINT
-    def test_races_example(self):
-        path="/v2/races/srd_halfling/"
+    # /SPECIES ENDPOINT
+    def test_species_example(self):
+        path="/v2/species/srd_halfling/"
         self._verify(path)
 
     # /CREATURES ENDPOINT

@@ -56,7 +56,7 @@ class Command(BaseCommand):
 
     def load_v2_content(self, model):
         results = []
-        standard_v2_models = ['Item','Spell','Creature','CharacterClass','Race','Feat','Condition','Background','Environment', 'Rule']
+        standard_v2_models = ['Item','Spell','Creature','CharacterClass','Species','Feat','Condition','Background','Environment', 'Rule']
 
         if model.__name__ in standard_v2_models:
             for o in model.objects.all():
@@ -143,7 +143,7 @@ class Command(BaseCommand):
             self.load_content(v2.Spell,"v2")
             self.load_content(v2.Creature,"v2")
             self.load_content(v2.CharacterClass,"v2")
-            self.load_content(v2.Race,"v2")
+            self.load_content(v2.Species,"v2")
             self.load_content(v2.Feat,"v2")
             self.load_content(v2.Condition,"v2")
             self.load_content(v2.Background,"v2")
