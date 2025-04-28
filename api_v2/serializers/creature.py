@@ -31,11 +31,22 @@ class CreatureActionAttackSerializer(serializers.ModelSerializer):
 
 
 class CreatureActionSerializer(serializers.ModelSerializer):
-    key = serializers.ReadOnlyField()
     attacks = CreatureActionAttackSerializer(many=True, read_only=True)
+    order_in_statblock = serializers.IntegerField(source='order')
+    limited_to_form = serializers.CharField(source='form_condition')
     class Meta:
         model = models.CreatureAction
-        fields = '__all__'
+        fields = [
+            'name',
+            'desc',
+            'attacks',
+            'uses_type',
+            'uses_param',
+            'action_type',
+            'order_in_statblock',
+            'legendary_cost',
+            'limited_to_form',
+        ]
 
 
 class CreatureTypeSerializer(GameContentSerializer):
