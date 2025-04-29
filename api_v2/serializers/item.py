@@ -16,6 +16,7 @@ class ArmorSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     ac_display = serializers.ReadOnlyField()
     category = serializers.ReadOnlyField()
+    document = DocumentSummarySerializer()
 
     class Meta:
         model = models.Armor
@@ -44,6 +45,7 @@ class ArmorSummarySerializer(GameContentSerializer):
 
 class WeaponSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    document = DocumentSummarySerializer()
     damage_type = DamageTypeSummarySerializer()
     is_versatile = serializers.ReadOnlyField()
     is_martial = serializers.ReadOnlyField()
@@ -63,6 +65,59 @@ class WeaponSerializer(GameContentSerializer):
     def get_distance_unit(self, Weapon):
         return Weapon.get_distance_unit
 
+class WeaponSummarySerializer(GameContentSerializer):
+    '''
+    A (slightly) more slender version of the WeaponSerializer. Designed for 
+    serializing FKs to the Weapons table in other serializers – ie. the 
+    `"weapon"` field on the ItemSerializer
+    '''
+    damage_type = DamageTypeSummarySerializer()
+    is_versatile = serializers.ReadOnlyField()
+    is_martial = serializers.ReadOnlyField()
+    is_melee = serializers.ReadOnlyField()
+    is_finesse = serializers.ReadOnlyField()
+    ranged_attack_possible = serializers.ReadOnlyField()
+    range_melee = serializers.ReadOnlyField()
+    is_reach = serializers.ReadOnlyField()
+    properties = serializers.ReadOnlyField()
+    distance_unit = serializers.SerializerMethodField()
+
+    class Meta:
+        model = models.Weapon
+        fields = [
+            'name',
+            'key',
+            'url',
+            'damage_type',
+            'damage_dice',
+            'versatile_dice',
+            'is_versatile',
+            'reach',
+            'is_reach',
+            'is_finesse',
+            'range',
+            'range_melee',
+            'long_range',
+            'ranged_attack_possible',
+            'is_thrown',
+            'is_two_handed',
+            'requires_ammunition',
+            'requires_loading',
+            'is_heavy',
+            'is_light',
+            'is_lance',
+            'is_net',
+            'is_melee',
+            'is_simple',
+            'is_martial',
+            'is_improvised',
+            'properties',
+            'distance_unit',
+        ]
+    
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_distance_unit(self, Weapon):
+        return Weapon.get_distance_unit
 
 class ItemRaritySerializer(GameContentSerializer):
     class Meta:
@@ -71,18 +126,23 @@ class ItemRaritySerializer(GameContentSerializer):
 
 class ItemCategorySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-
+    document = DocumentSummarySerializer()
     class Meta:
         model = models.ItemCategory
-        fields = "__all__"
+        fields = '__all__'
+
+class ItemCategorySummarySerializer(GameContentSerializer):
+    class Meta:
+        model = models.ItemCategory
+        fields = ['name', 'key', 'url']
 
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     is_magic_item = serializers.ReadOnlyField()
-    weapon = WeaponSerializer()
+    weapon = WeaponSummarySerializer()
     armor = ArmorSummarySerializer()
     document = DocumentSummarySerializer()
-    category = ItemCategorySerializer()
+    category = ItemCategorySummarySerializer()
     rarity = ItemRaritySerializer()
     damage_immunities = DamageTypeSummarySerializer(many=True)
     size = SizeSummarySerializer()
@@ -91,10 +151,15 @@ class ItemSerializer(GameContentSerializer):
         model = models.Item
         fields = '__all__'
 
+class ItemSummarySerializer(GameContentSerializer):
+    class Meta:
+        model = models.Item
+        fields = ['name', 'key', 'url']
+
 
 class ItemSetSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    items = ItemSerializer(many=True, read_only=True, context={'request':{}})
+    items = ItemSummarySerializer(many=True, read_only=True)
 
     class Meta:
         model = models.ItemSet
