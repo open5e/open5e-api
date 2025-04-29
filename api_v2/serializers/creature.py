@@ -17,8 +17,9 @@ from drf_spectacular.utils import extend_schema_field, inline_serializer
 from drf_spectacular.types import OpenApiTypes
 
 class CreatureActionAttackSerializer(GameContentSerializer):
-
     distance_unit = serializers.SerializerMethodField()
+    damage_type = DamageTypeSummarySerializer()
+    extra_damage_type = DamageTypeSummarySerializer()
 
     class Meta:
         model = models.CreatureActionAttack
