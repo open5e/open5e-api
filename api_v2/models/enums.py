@@ -11,7 +11,8 @@ DIE_TYPES = [
 
 DISTANCE_UNIT_TYPES = [
     ("feet","feet"),
-    ("miles","miles")
+    ("miles","miles"),
+    ("meters","meters")
 ]
 
 ABILITY_SCORE_MAXIMUM = 50

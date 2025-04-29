@@ -5,7 +5,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from .enums import MODIFICATION_TYPES, DIE_TYPES
-from .enums import DISTANCE_UNIT_TYPES
+from .enums import DISTANCE_UNIT_TYPES, WEIGHT_UNIT_TYPES
 from .enums import ABILITY_SCORE_MAXIMUM
 from .enums import SAVING_THROW_MAXIMUM, SAVING_THROW_MINIMUM
 from .enums import SKILL_BONUS_MINIMUM, SKILL_BONUS_MAXIMUM
@@ -64,6 +64,15 @@ def distance_unit_field():
         max_length=20,
         choices=DISTANCE_UNIT_TYPES,
         help_text='What distance unit the relevant field uses.'
+    )
+
+def weight_unit_field():
+    return models.CharField(
+        null=True,
+        blank=True,
+        max_length=20,
+        choices=WEIGHT_UNIT_TYPES,
+        help_text='What weight unit the relevant field uses.'
     )
 
 # Define a field representing an ability score
