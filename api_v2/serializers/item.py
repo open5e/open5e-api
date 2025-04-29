@@ -21,7 +21,7 @@ class ArmorSerializer(GameContentSerializer):
         model = models.Armor
         fields = '__all__'
 
-class ArmorSummarySerializer(serializers.ModelSerializer):
+class ArmorSummarySerializer(GameContentSerializer):
     '''
     A slightly slimmer ArmorSerializer, designed to serialize Armor FKs on
     other serializers. ie. The `armor` field on the ItemSerializer. Not 
@@ -64,12 +64,12 @@ class WeaponSerializer(GameContentSerializer):
         return Weapon.get_distance_unit
 
 
-class ItemRaritySerializer(serializers.ModelSerializer):
+class ItemRaritySerializer(GameContentSerializer):
     class Meta:
         model = models.ItemRarity
         fields = ['name', 'url', 'key', 'rank']
 
-class ItemCategorySerializer(serializers.ModelSerializer):
+class ItemCategorySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
 
     class Meta:

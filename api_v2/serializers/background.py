@@ -7,7 +7,7 @@ from api_v2 import models
 from .abstracts import GameContentSerializer
 from .document import DocumentSummarySerializer
 
-class BackgroundBenefitSerializer(serializers.ModelSerializer):
+class BackgroundBenefitSerializer(GameContentSerializer):
     class Meta:
         model = models.BackgroundBenefit
         fields = ['name','desc','type']

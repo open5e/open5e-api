@@ -16,7 +16,7 @@ from .size import SizeSummarySerializer
 from drf_spectacular.utils import extend_schema_field, inline_serializer
 from drf_spectacular.types import OpenApiTypes
 
-class CreatureActionAttackSerializer(serializers.ModelSerializer):
+class CreatureActionAttackSerializer(GameContentSerializer):
 
     distance_unit = serializers.SerializerMethodField()
 
@@ -46,7 +46,7 @@ class CreatureActionAttackSerializer(serializers.ModelSerializer):
     def get_distance_unit(self, CreatureActionAttack):
         return CreatureActionAttack.get_distance_unit
 
-class CreatureActionSerializer(serializers.ModelSerializer):
+class CreatureActionSerializer(GameContentSerializer):
     attacks = CreatureActionAttackSerializer(many=True, read_only=True)
     usage_limits = serializers.SerializerMethodField()
     
@@ -85,7 +85,7 @@ class CreatureTypeSerializer(GameContentSerializer):
         model = models.CreatureType
         fields = '__all__'
 
-class CreatureTypeSummarySerializer(serializers.ModelSerializer):
+class CreatureTypeSummarySerializer(GameContentSerializer):
     '''
     A slimmer CreatureTypeSerializer, designed to serialize CreatureType FKs on
     other serializers . Not intended to be used directly with in a ModelViewset.
