@@ -146,7 +146,12 @@ class ItemSerializer(GameContentSerializer):
     rarity = ItemRaritySerializer()
     damage_immunities = DamageTypeSummarySerializer(many=True)
     size = SizeSummarySerializer()
-        
+    weight_unit = serializers.SerializerMethodField()
+    
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_weight_unit(self, item):
+        return item.get_weight_unit()
+
     class Meta:
         model = models.Item
         fields = '__all__'
@@ -155,6 +160,7 @@ class ItemSummarySerializer(GameContentSerializer):
     class Meta:
         model = models.Item
         fields = ['name', 'key', 'url']
+
 
 
 class ItemSetSerializer(GameContentSerializer):
