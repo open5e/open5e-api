@@ -39,6 +39,7 @@ class Document(HasName, HasDescription):
     )
 
     distance_unit = distance_unit_field()
+    weight_unit = distance_unit_field()
 
     @property
     def stats(self):

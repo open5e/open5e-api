@@ -13,7 +13,7 @@ class Object(HasName):
     """
     This is the definition of the Object abstract base class.
 
-    The Object class will be inherited from by Item, Weapon, Character, etc.
+    The Object class will be inherited from by Item, and Creature.
     Basically it describes any sort of matter in the 5e world.
     """
 
@@ -80,6 +80,11 @@ class Object(HasName):
         default=False,
         help_text='If the {} is immune to nonmagical attacks.'.format(__name__)
     )
+
+    def get_weight_unit(self):
+        '''Returns document level weight unit.'''
+        return self.document.weight_unit
+
     class Meta:
         abstract = True
         ordering = ['pk']
