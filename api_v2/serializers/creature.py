@@ -109,14 +109,16 @@ class CreatureLanguageSerializer(GameContentSerializer):
         model = models.Creature
         fields = ['as_string', 'data']
 
-class CreatureDamageModifierSerializer(GameContentSerializer):
+class CreatureResistancesAndImmunitiesSerializer(GameContentSerializer):
     '''This serializer formats a Creature's damage modifier as a single obj '''
-    damage_immunities = serializers.CharField()
+    damage_immunities_display = serializers.CharField()
     damage_immunities = DamageTypeSummarySerializer(many=True)
     damage_resistances_display = serializers.CharField()
     damage_resistances = DamageTypeSummarySerializer(many=True)
     damage_vulnerabilities_display = serializers.CharField()
     damage_vulnerabilities = DamageTypeSummarySerializer(many=True)
+    condition_immunities_display = serializers.CharField()
+    condition_immunities = ConditionSummarySerializer(many=True)
 
     class Meta:
         model = models.Creature
@@ -127,6 +129,8 @@ class CreatureDamageModifierSerializer(GameContentSerializer):
             'damage_resistances',
             'damage_vulnerabilities_display',
             'damage_vulnerabilities',
+            'condition_immunities_display',
+            'condition_immunities',
         ]
 
 class CreatureSerializer(GameContentSerializer):
@@ -139,8 +143,7 @@ class CreatureSerializer(GameContentSerializer):
     saving_throws_all = serializers.SerializerMethodField()
     skill_bonuses = serializers.SerializerMethodField()
     skill_bonuses_all = serializers.SerializerMethodField()
-    damage_modifiers = CreatureDamageModifierSerializer(source='*')
-    condition_immunities = ConditionSummarySerializer(many=True)
+    resistances_and_immunities = CreatureResistancesAndImmunitiesSerializer(source='*')
     actions = CreatureActionSerializer(many=True)
     traits = CreatureTraitSerializer(many=True, read_only=True)
     speed = serializers.SerializerMethodField()
@@ -185,8 +188,7 @@ class CreatureSerializer(GameContentSerializer):
             'skill_bonuses',
             'skill_bonuses_all',
             'passive_perception',
-            'damage_modifiers',
-            'condition_immunities',
+            'resistances_and_immunities',
             'normal_sight_range',
             'darkvision_range',
             'blindsight_range',

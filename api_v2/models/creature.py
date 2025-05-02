@@ -88,6 +88,13 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
     damage_resistances = models.ManyToManyField(DamageType,
         related_name="creature_damage_resistances")
 
+    condition_immunities_display = models.CharField(
+        max_length=128,
+        blank=True,
+        null=True,
+        help_text='The Creature\'s condition immunities, formatted as a human-readable string',
+        default=''
+    )
     condition_immunities = models.ManyToManyField(
         Condition,
         help_text="Conditions that this creature is immune to."
