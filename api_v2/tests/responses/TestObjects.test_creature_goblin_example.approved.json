@@ -74,11 +74,7 @@
     "category": "Monsters",
     "challenge_rating_decimal": "0.250",
     "challenge_rating_text": "1/4",
-    "condition_immunities": [],
     "creaturesets": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
     "darkvision_range": 60.0,
     "document": {
         "gamesystem": {
@@ -193,10 +189,18 @@
         "wisdom": -1
     },
     "name": "Goblin",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
     "normal_sight_range": 10560.0,
     "passive_perception": 9,
+    "resistances_and_immunities": {
+        "condition_immunities": [],
+        "condition_immunities_display": "",
+        "damage_immunities": [],
+        "damage_immunities_display": "",
+        "damage_resistances": [],
+        "damage_resistances_display": "",
+        "damage_vulnerabilities": [],
+        "damage_vulnerabilities_display": ""
+    },
     "saving_throws": {},
     "saving_throws_all": {
         "charisma": -1,
