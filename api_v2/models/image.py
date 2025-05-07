@@ -15,6 +15,10 @@ class Image(HasName, FromDocument):
         help_text='Relative path of the file, to be used in static file resolution.'
     )
 
+    alt_text = models.TextField(
+        help_text='A short textual description of the image. Important for accessibility',
+    )
+
     type = models.CharField(
         blank=True,
         null=True,
