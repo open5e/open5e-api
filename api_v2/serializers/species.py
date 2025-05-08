@@ -7,7 +7,7 @@ from api_v2 import models
 from .abstracts import GameContentSerializer
 from .document import DocumentSummarySerializer
 
-class SpeciesTraitSerializer(serializers.ModelSerializer):
+class SpeciesTraitSerializer(GameContentSerializer):
 
     class Meta:
         model = models.SpeciesTrait

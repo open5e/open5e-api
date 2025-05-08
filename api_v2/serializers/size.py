@@ -24,7 +24,7 @@ class SizeSerializer(GameContentSerializer):
     def get_distance_unit(self, Size):
         return Size.get_distance_unit
 
-class SizeSummarySerializer(serializers.ModelSerializer):
+class SizeSummarySerializer(GameContentSerializer):
     '''
     A slimmer SizeSerializer, designed to serialize Size FKs on other
     serializers. ie. The `size` field on the CreatureSerializer. Not intended
