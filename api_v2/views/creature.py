@@ -65,16 +65,15 @@ class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     queryset = models.Creature.objects.all().order_by('pk')
     serializer_class = serializers.CreatureSerializer
     filterset_class = CreatureFilterSet
-
-    select_related_fields = []
     
     prefetch_related_fields = [
         'actions',
         'actions__attacks',
+        'actions__attacks__damage_type',
+        'actions__attacks__extra_damage_type',
         'creaturesets',
         'condition_immunities',
         'condition_immunities__icon',
-        'condition_immunities__document',
         'damage_immunities',
         'damage_resistances',
         'damage_vulnerabilities',
@@ -85,18 +84,8 @@ class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
         'languages',
         'type',
         'size',
-        'size__document',
         'traits',
     ]
-
-    def get_serializer(self, *args, **kwargs):
-        # Ignore `depth` query parameter on this endpoint. It interacts badly
-        # with our custom serializers and is no longer necessary on this view
-        if 'depth' in self.request.query_params:
-            self.request.query_params._mutable = True
-            self.request.query_params.pop('depth', None)
-            self.request.query_params._mutable = False
-        return super().get_serializer(*args, **kwargs)
 
 class CreatureTypeFilterSet(FilterSet):
     class Meta:
