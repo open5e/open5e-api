@@ -16,7 +16,11 @@
                     "damage_bonus": null,
                     "damage_die_count": 1,
                     "damage_die_type": "D6",
-                    "damage_type": "thunder",
+                    "damage_type": {
+                        "key": "thunder",
+                        "name": "Thunder",
+                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                    },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
                     "extra_damage_die_count": null,
@@ -45,7 +49,11 @@
                     "damage_bonus": null,
                     "damage_die_count": 1,
                     "damage_die_type": "D6",
-                    "damage_type": "thunder",
+                    "damage_type": {
+                        "key": "thunder",
+                        "name": "Thunder",
+                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                    },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
                     "extra_damage_die_count": null,
@@ -82,8 +90,8 @@
             "name": "5th Edition",
             "url": "http://localhost:8000/v2/gamesystems/o5e/"
         },
-        "key": "srd",
-        "name": "Systems Reference Document",
+        "key": "srd-2014",
+        "name": "System Reference Document 5.1",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
         "publisher": {
             "key": "wizards-of-the-coast",
