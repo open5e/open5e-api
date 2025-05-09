@@ -69,7 +69,7 @@ class ClassFeatureSerializer(GameContentSerializer):
             'feature_items'
         ]
 
-class CharacterClassSummarySerializer(serializers.ModelSerializer):
+class CharacterClassSummarySerializer(GameContentSerializer):
     '''
     A slimmer CharacterClassSerializer, designed to serialize Class FKs on
     other serializers. ie. The `subclass_of` field on the 

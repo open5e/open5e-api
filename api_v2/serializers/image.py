@@ -11,4 +11,4 @@ class ImageSerializer(GameContentSerializer):
 
     class Meta:
         model = models.Image
-        fields = ['key','file_url']
+        fields = ['name', 'key', 'file_url', 'alt_text', 'attribution']

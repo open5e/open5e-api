@@ -42,7 +42,7 @@ class TestObjects:
 
     # /DOCUMENTS ENDPOINT
     def test_document_example(self):
-        path="/v2/documents/srd/"
+        path="/v2/documents/srd-2014/"
         self._verify(path)
 
     # /LICENSES ENDPOINT

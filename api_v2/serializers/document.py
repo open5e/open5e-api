@@ -44,7 +44,7 @@ class PublisherSerializer(GameContentSerializer):
         model = models.Publisher
         fields = '__all__'
 
-class PublisherSummarySerializer(serializers.ModelSerializer):
+class PublisherSummarySerializer(GameContentSerializer):
     '''
     A slimmer PublisherSerializer, designed to serialize Publisher FKs on other
     serializers. Not intended to be used directly with in a ModelViewset.
