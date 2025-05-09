@@ -27,7 +27,7 @@ class Image(HasName, FromDocument):
         return (self.document.name + " - " + self.name)
 
     @property
-    def file_url(self):
+    def file_url(self)->str:
         return static(self.file_path)
 
 

@@ -19,6 +19,8 @@ from django.urls import path
 from django.contrib import admin
 from django.conf import settings
 
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+
 from api import urls as v1_urls
 from api_v2 import urls as v2_urls
 from search import urls as search_urls
@@ -27,6 +29,11 @@ urlpatterns = []
 urlpatterns+=v1_urls.urlpatterns
 urlpatterns+=v2_urls.urlpatterns
 urlpatterns+=search_urls.urlpatterns
+urlpatterns+=[
+    path('schema/', SpectacularAPIView.as_view(), name='schema'),
+    # Optional UI:
+    path('schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),]
 
 if settings.DEBUG is True:
     urlpatterns.append(path('admin/', admin.site.urls))

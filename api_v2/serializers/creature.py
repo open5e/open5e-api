@@ -69,7 +69,7 @@ class CreatureActionSerializer(serializers.ModelSerializer):
         ]
 
     # Gathers 'uses_type' and 'uses_param' into a single 'usage_limits' obj.
-    def get_usage_limits(self, obj):
+    def get_usage_limits(self, obj)->dict:
         if obj.uses_type and obj.uses_param: 
             return {
                 'type': obj.uses_type,
