@@ -53,15 +53,48 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
         help_text='The creature\'s allowed alignments.'
     )
 
+
+    damage_vulnerabilities_display = models.CharField(
+        max_length=128,
+        blank=True,
+        null=True,
+        help_text='The Creature\'s damage vulnerabilities, formatted as a human-readable string',
+        default=''
+    )
+
     damage_vulnerabilities = models.ManyToManyField(DamageType,
         related_name="creature_damage_vulnerabilities")
+
+    damage_immunities_display = models.CharField(
+        max_length=128,
+        blank=True,
+        null=True,
+        help_text='The Creature\'s damage immunities, formatted as a human-readable string',
+        default=''
+    )
 
     damage_immunities = models.ManyToManyField(DamageType,
         related_name="creature_damage_immunities")
 
+
+    damage_resistances_display = models.CharField(
+        max_length=128,
+        blank=True,
+        null=True,
+        help_text='The Creature\'s damage resistances, formatted as a human-readable string',
+        default=''
+    )
+
     damage_resistances = models.ManyToManyField(DamageType,
         related_name="creature_damage_resistances")
 
+    condition_immunities_display = models.CharField(
+        max_length=128,
+        blank=True,
+        null=True,
+        help_text='The Creature\'s condition immunities, formatted as a human-readable string',
+        default=''
+    )
     condition_immunities = models.ManyToManyField(
         Condition,
         help_text="Conditions that this creature is immune to."

@@ -179,17 +179,7 @@
     "category": "Monsters",
     "challenge_rating_decimal": "24.000",
     "challenge_rating_text": "24",
-    "condition_immunities": [],
     "creaturesets": [],
-    "damage_immunities": [
-        {
-            "key": "fire",
-            "name": "Fire",
-            "url": "http://localhost:8000/v2/damagetypes/fire/"
-        }
-    ],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
     "darkvision_range": 120.0,
     "document": {
         "gamesystem": {
@@ -249,10 +239,24 @@
         "wisdom": 2
     },
     "name": "Ancient Red Dragon",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
     "normal_sight_range": 10560.0,
     "passive_perception": 26,
+    "resistances_and_immunities": {
+        "condition_immunities": [],
+        "condition_immunities_display": "",
+        "damage_immunities": [
+            {
+                "key": "fire",
+                "name": "Fire",
+                "url": "http://localhost:8000/v2/damagetypes/fire/"
+            }
+        ],
+        "damage_immunities_display": "fire",
+        "damage_resistances": [],
+        "damage_resistances_display": "",
+        "damage_vulnerabilities": [],
+        "damage_vulnerabilities_display": ""
+    },
     "saving_throws": {
         "charisma": 13,
         "constitution": 16,
