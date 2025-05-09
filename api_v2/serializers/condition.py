@@ -6,12 +6,12 @@ from api_v2 import models
 
 from .abstracts import GameContentSerializer
 from .document import DocumentSummarySerializer
-from .image import ImageSerializer
+from .image import ImageSummarySerializer
 
 class ConditionSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
-    icon = ImageSerializer()
+    icon = ImageSummarySerializer()
 
     class Meta:
         model = models.Condition
