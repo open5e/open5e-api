@@ -9,6 +9,8 @@ class RuleSet(HasName, HasDescription, FromDocument):
   """
   key = key_field()
 
+  class Meta:
+    ordering = ['name']
 
 class Rule(HasName, HasDescription, FromDocument):
   """"
@@ -35,3 +37,6 @@ class Rule(HasName, HasDescription, FromDocument):
     choices=((i, i) for i in range(1,6)),
     help_text="The header level to set rule title to"
   )
+
+  class Meta:
+    ordering = ['name']

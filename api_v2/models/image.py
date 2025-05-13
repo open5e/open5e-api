@@ -37,6 +37,9 @@ class Image(HasName, FromDocument):
     @property
     def file_url(self):
         return static(self.file_path)
+    
+    class Meta:
+        ordering = ['name']
 
 
 class HasIcon(models.Model):
