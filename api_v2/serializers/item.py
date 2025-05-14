@@ -43,6 +43,12 @@ class ArmorSummarySerializer(GameContentSerializer):
             'strength_score_required',
         ]
 
+class WeaponPropertySerializer(GameContentSerializer):
+    class Meta:
+        model = models.WeaponProperty
+        document = DocumentSummarySerializer()
+        fields = ['key', 'name', 'desc', 'document']
+
 class WeaponSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
