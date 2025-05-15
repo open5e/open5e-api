@@ -44,6 +44,8 @@ class ItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
         'damage_resistances',
         'damage_vulnerabilities',
         'document',
+        'weapon__properties',
+        'weapon__properties__property',
         # 'document__gamesystem',
         'rarity',
         'size',
