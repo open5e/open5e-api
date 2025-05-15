@@ -46,8 +46,19 @@ class ArmorSummarySerializer(GameContentSerializer):
 class WeaponPropertySerializer(GameContentSerializer):
     class Meta:
         model = models.WeaponProperty
-        document = DocumentSummarySerializer()
-        fields = ['key', 'name', 'desc', 'document']
+        fields = ['key', 'name', 'desc', 'document', 'url']
+
+class WeaponPropertySummarySerializer(GameContentSerializer):
+    class Meta:
+        model = models.WeaponProperty
+        fields = ['name', 'url']
+
+class WeaponPropertyAssignmentSerializer(GameContentSerializer):
+    property = WeaponPropertySummarySerializer()
+
+    class Meta:
+        model = models.WeaponPropertyAssignment
+        fields = ['property', 'detail']
 
 class WeaponSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
@@ -59,7 +70,6 @@ class WeaponSerializer(GameContentSerializer):
     ranged_attack_possible = serializers.ReadOnlyField()
     range_melee = serializers.ReadOnlyField()
     is_reach = serializers.ReadOnlyField()
-    properties = serializers.ReadOnlyField()
     distance_unit = serializers.SerializerMethodField()
 
     class Meta:
@@ -85,8 +95,8 @@ class WeaponSummarySerializer(GameContentSerializer):
     ranged_attack_possible = serializers.ReadOnlyField()
     range_melee = serializers.ReadOnlyField()
     is_reach = serializers.ReadOnlyField()
-    properties = serializers.ReadOnlyField()
     distance_unit = serializers.SerializerMethodField()
+    properties = WeaponPropertyAssignmentSerializer(many=True, read_only=True)
 
     class Meta:
         model = models.Weapon
@@ -124,7 +134,7 @@ class WeaponSummarySerializer(GameContentSerializer):
     @extend_schema_field(OpenApiTypes.STR)
     def get_distance_unit(self, Weapon):
         return Weapon.get_distance_unit
-
+    
 class ItemRaritySerializer(GameContentSerializer):
     class Meta:
         model = models.ItemRarity

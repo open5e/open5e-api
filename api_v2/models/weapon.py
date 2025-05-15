@@ -3,13 +3,35 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 
-from .abstracts import HasName
+from .abstracts import HasName, HasDescription
 from .abstracts import distance_field, distance_unit_field
 from .document import FromDocument
 from drf_spectacular.utils import extend_schema_field
 from drf_spectacular.types import OpenApiTypes
 from rest_framework import serializers
 
+class WeaponProperty(HasName, HasDescription, FromDocument):  
+  class Meta:
+    verbose_name_plural = "Weapon Properties"
+    ordering = ["pk"]
+  
+  def __str__(self):
+    return self.name
+
+
+class WeaponPropertyAssignment(FromDocument):
+  weapon = models.ForeignKey(
+    'Weapon',
+    related_name='properties',
+    on_delete=models.CASCADE
+  )
+  property = models.ForeignKey(
+    'WeaponProperty',
+    related_name='weapons',
+    on_delete=models.CASCADE,
+  )
+  detail = models.CharField(null=True, blank=True, max_length=32)
+  
 class Weapon(HasName, FromDocument):
     """
     This model represents types of weapons.
@@ -45,7 +67,7 @@ A value of 0 means that the weapon does not have the versatile property.""")
     long_range = distance_field()
     
     distance_unit = distance_unit_field()
-    
+
     @property
     # or none
     @extend_schema_field(OpenApiTypes.STR)
@@ -143,37 +165,3 @@ A value of 0 means that the weapon does not have the versatile property.""")
     def is_reach(self):
         # A weapon with a longer reach than the default has the reach property.
         return self.reach > 5 
-
-    @property
-    @extend_schema_field(serializers.ChoiceField(choices=['special', 'finesse', 'ammunition', 'light', 'heavy', 'thrown', 'loading', 'two-handed', 'versatile', 'reach'])) 
-    def properties(self):
-        properties = []
-        
-        range_desc = "(range {}/{})".format(
-            str(self.range),
-            str(self.long_range))
-
-        versatile_desc = "({})".format(self.versatile_dice)
-
-        if self.is_net or self.is_lance:
-            properties.append("special")
-        if self.is_finesse:
-            properties.append("finesse")
-        if self.requires_ammunition:
-            properties.append("ammuntion {}".format(range_desc))
-        if self.is_light:
-            properties.append("light")
-        if self.is_heavy:
-            properties.append("heavy")
-        if self.is_thrown:
-            properties.append("thrown {}".format(range_desc))
-        if self.requires_loading:
-            properties.append("loading")
-        if self.is_two_handed:
-            properties.append("two-handed")
-        if self.is_versatile:
-            properties.append("versatile {}".format(versatile_desc))
-        if self.is_reach:
-            properties.append("reach")
-       
-        return properties
