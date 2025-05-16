@@ -63,13 +63,10 @@ class WeaponPropertyAssignmentSerializer(GameContentSerializer):
 class WeaponSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
+    properties = WeaponPropertyAssignmentSerializer(many=True)
     damage_type = DamageTypeSummarySerializer()
-    is_versatile = serializers.ReadOnlyField()
-    is_martial = serializers.ReadOnlyField()
-    is_melee = serializers.ReadOnlyField()
     ranged_attack_possible = serializers.ReadOnlyField()
     range_melee = serializers.ReadOnlyField()
-    is_reach = serializers.ReadOnlyField()
     distance_unit = serializers.SerializerMethodField()
 
     class Meta:
@@ -88,13 +85,8 @@ class WeaponSummarySerializer(GameContentSerializer):
     `"weapon"` field on the ItemSerializer
     '''
     damage_type = DamageTypeSummarySerializer()
-    is_versatile = serializers.ReadOnlyField()
     is_martial = serializers.ReadOnlyField()
     is_melee = serializers.ReadOnlyField()
-    is_finesse = serializers.ReadOnlyField()
-    ranged_attack_possible = serializers.ReadOnlyField()
-    range_melee = serializers.ReadOnlyField()
-    is_reach = serializers.ReadOnlyField()
     distance_unit = serializers.SerializerMethodField()
     properties = WeaponPropertyAssignmentSerializer(many=True, read_only=True)
 
@@ -106,28 +98,11 @@ class WeaponSummarySerializer(GameContentSerializer):
             'url',
             'damage_type',
             'damage_dice',
-            'versatile_dice',
-            'is_versatile',
-            'reach',
-            'is_reach',
-            'is_finesse',
-            'range',
-            'range_melee',
-            'long_range',
-            'ranged_attack_possible',
-            'is_thrown',
-            'is_two_handed',
-            'requires_ammunition',
-            'requires_loading',
-            'is_heavy',
-            'is_light',
-            'is_lance',
-            'is_net',
+            'properties',
             'is_melee',
             'is_simple',
             'is_martial',
             'is_improvised',
-            'properties',
             'distance_unit',
         ]
     

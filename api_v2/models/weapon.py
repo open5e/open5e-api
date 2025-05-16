@@ -20,6 +20,10 @@ class WeaponProperty(HasName, HasDescription, FromDocument):
 
 
 class WeaponPropertyAssignment(FromDocument):
+  """
+  This is an intermediate model that is used to assign WeaponProperties to
+  Weapons while bundling in any extra contextual data in the `detail` field
+  """
   weapon = models.ForeignKey(
     'Weapon',
     related_name='properties',
@@ -53,15 +57,6 @@ class Weapon(HasName, FromDocument):
         max_length=100,
         help_text='The damage dice when used making an attack.')
 
-    versatile_dice = models.CharField(
-        null=False,
-        default=0,
-        max_length=100,
-        help_text="""The damage dice when attacking using versatile.
-A value of 0 means that the weapon does not have the versatile property.""")
-
-    reach = distance_field()
-
     range = distance_field()
 
     long_range = distance_field()
@@ -76,52 +71,6 @@ A value of 0 means that the weapon does not have the versatile property.""")
             return self.document.distance_unit
         return self.distance_unit
 
-
-    is_finesse = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon is finesse.')
-
-    is_thrown = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon is thrown.')
-
-    is_two_handed = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon is two-handed.')
-
-    requires_ammunition = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon requires ammunition.')
-
-    requires_loading = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon requires loading.')
-
-    is_heavy = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon is heavy.')
-
-    is_light = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon is light.')
-
-    is_lance = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon is a lance.')
-
-    is_net = models.BooleanField(
-        null=False,
-        default=False,
-        help_text='If the weapon is a net.')
-
     is_simple = models.BooleanField(
         null=False,
         default=False,
@@ -131,37 +80,8 @@ A value of 0 means that the weapon does not have the versatile property.""")
         null=False,
         default=False,
         help_text='If the weapon is improvised.')
-    
-    @property
-    @extend_schema_field(OpenApiTypes.BOOL)
-    def is_versatile(self):
-        return self.versatile_dice != str(0)
 
     @property
     @extend_schema_field(OpenApiTypes.BOOL)
     def is_martial(self):
         return not self.is_simple
-
-    @property
-    @extend_schema_field(OpenApiTypes.BOOL)
-    def is_melee(self):
-        # Ammunition weapons can only be used as improvised melee weapons.
-        return not self.requires_ammunition
-
-    @property
-    @extend_schema_field(OpenApiTypes.BOOL)
-    def ranged_attack_possible(self):
-        # Only ammunition or throw weapons can make ranged attacks.
-        return self.requires_ammunition or self.is_thrown
-
-    @property
-    # type is any
-    @extend_schema_field(OpenApiTypes.BOOL)
-    def range_melee(self):
-        return self.reach
-    
-    @property
-    @extend_schema_field(OpenApiTypes.BOOL)
-    def is_reach(self):
-        # A weapon with a longer reach than the default has the reach property.
-        return self.reach > 5 
