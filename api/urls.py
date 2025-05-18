@@ -3,8 +3,9 @@ from django.conf.urls import include
 from django.urls import path
 
 from api import views
+from server.routers import DocumentedDefaultRouter
 
-router = routers.DefaultRouter()
+router = DocumentedDefaultRouter()
 router.register(r'manifest', views.ManifestViewSet)
 router.register(r'spells', views.SpellViewSet)
 router.register(r'spelllist',views.SpellListViewSet)
