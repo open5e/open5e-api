@@ -6,6 +6,7 @@ from .item import ItemSerializer
 from .item import ItemRaritySerializer
 from .item import ItemSetSerializer
 from .item import ItemCategorySerializer
+from .item import WeaponPropertySerializer
 
 from .background import BackgroundBenefitSerializer
 from .background import BackgroundSerializer

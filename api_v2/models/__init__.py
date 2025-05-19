@@ -11,6 +11,8 @@ from .abilities import Skill
 from .armor import Armor
 
 from .weapon import Weapon
+from .weapon import WeaponProperty
+from .weapon import WeaponPropertyAssignment
 
 from .species import SpeciesTrait
 from .species import Species
