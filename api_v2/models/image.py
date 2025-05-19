@@ -39,7 +39,7 @@ class Image(HasName, FromDocument):
         return static(self.file_path)
     
     class Meta:
-        ordering = ['name']
+        ordering = ['key']
 
 
 class HasIcon(models.Model):

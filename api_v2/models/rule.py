@@ -10,7 +10,7 @@ class RuleSet(HasName, HasDescription, FromDocument):
   key = key_field()
 
   class Meta:
-    ordering = ['name']
+    ordering = ['key']
 
 class Rule(HasName, HasDescription, FromDocument):
   """"
@@ -39,4 +39,4 @@ class Rule(HasName, HasDescription, FromDocument):
   )
 
   class Meta:
-    ordering = ['name']
+    ordering = ['key']
