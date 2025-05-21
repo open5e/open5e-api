@@ -19,19 +19,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: install pipenv
-        run: |
-          pip install pipenv
+      - name: build schema
+        run: sh ./scripts/generate_openapi_spec.sh
 
-      - name: install dependencies
-        run: |
-          pipenv install
 
-      - name: build oas file
-        run: |
-          pipenv run python manage.py spectacular --file openapi-schema.yml
-
-      - name: Run `openapi` command for v1🚀
+      - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v8
         with:
           rdme: openapi openapi-schema.yml --key=${{ secrets.README_API_KEY }} --id=6715b7fb7960ee004eb4a8cf

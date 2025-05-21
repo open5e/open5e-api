@@ -3,4 +3,4 @@
 # Version takes in a string that will be shown in the API docs.
 pip install pipenv
 pipenv install
-pipenv run python manage.py spectacular --color --file schema.yml --validate --fail-on-warn 
+pipenv run python manage.py spectacular --color --file openapi-schema.yml --validate --fail-on-warn 
