@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'api_v2',
     'search',
 	'drf_spectacular',
+    'drf_spectacular_sidecar',
 
     # downloaded modules
     "rest_framework",
@@ -216,13 +217,20 @@ SECURE_PROXY_SSL_HEADER = (
 )  # This setting allows the header from NGINX to tell us that the request is secured.
 
 SPECTACULAR_SETTINGS = {
+    'VERSION' : 'development',
     'TITLE': 'Open5e',
-    'DESCRIPTION': 'The Open5e API includes all monsters and spells from the SRD and other',
-    'SERVERS': [{'url': 'https://api.open5e.com', 'description': 'Production server'}],
+    'DESCRIPTION': 'The Open5e API. See [https://github.com/open5e/open5e-api] for more information.',
+    'SERVERS': [
+        {'url': 'https://api.open5e.com', 'description': 'Production server'},
+        {'url': 'https://api-beta.open5e.com', 'description': 'Beta server'},
+        {'url': 'http://localhost:8000', 'description': 'Localhost'}],
 	'PREPROCESSING_HOOKS': [
         'server.oas.custom_preprocessing_hook'
     ],
     'POSTPROCESSING_HOOKS': [
         'server.oas.custom_postprocessing_hook'
     ],
+    'SWAGGER_UI_DIST': 'SIDECAR',
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
 }
