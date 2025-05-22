@@ -170,6 +170,7 @@ class CreatureSerializer(GameContentSerializer):
             'size',
             'challenge_rating_decimal',
             'challenge_rating_text',
+            'proficiency_bonus',
             'speed',
             'speed_all',
             'category',
