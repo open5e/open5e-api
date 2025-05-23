@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User, Group
 from django.conf import settings
+from django import get_version as django_get_version
 
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
@@ -17,6 +18,7 @@ def get_version(_):
     API endpoint for data and api versions.
     """
     return Response({
+        "django_version": django_get_version(),
         "open5e_api_version":settings.VERSION,
     })
 
