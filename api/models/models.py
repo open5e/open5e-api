@@ -5,34 +5,6 @@ from django.db import models
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.template.defaultfilters import slugify
-#from api_v2 import urls as urls_v2
-
-class Manifest(models.Model):
-    """A Manifest contains a hash based on the contents of a file.
-
-    This is intended for folks who process and store content from our API.
-    When they download content, they also download the corresponding manifest.
-    Periodically, they check back in to see whether any manifests have changed.
-    If so, then they know to re-download that source.
-    """
-    
-    filename = models.CharField(
-        max_length=255,
-        unique=True,
-        help_text='Input file name.')
-    type = models.CharField(
-        max_length=25,
-        help_text='Type of file (maps to a model).')
-    hash = models.CharField(max_length=255,
-                            help_text='md5 hash of the file contents.')
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        help_text='Date that this object was added to the database.')
-
-    @staticmethod
-    def plural_str() -> str:
-        """Return a string specifying the plural name of this model."""
-        return "Manifests"
 
 
 class Document(models.Model):
