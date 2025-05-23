@@ -91,6 +91,9 @@ def is_dirty() ->None:
     if Path(settings.DATABASES['default']['NAME']).exists():
         print("Found db file")
         is_dirty=True
+    if settings.VERSION!='development':
+        print("Found build.json file.")
+        is_dirty=True
     return is_dirty
 
 def clean_dir() ->None:
@@ -100,6 +103,8 @@ def clean_dir() ->None:
         shutil.rmtree(Path(settings.STATIC_ROOT))
     if Path(settings.DATABASES['default']['NAME']).exists():
         Path(settings.DATABASES['default']['NAME']).unlink()
+    if Path('./build.json').exists():
+        Path('./build.json').unlink()
 
 def import_v1() -> None:
     """Import the v1 apps' database models."""

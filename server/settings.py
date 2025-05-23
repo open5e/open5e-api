@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,6 +29,13 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
+
+try:
+    with open('./build.json', 'r',encoding='utf-8') as buildjson:
+        b = json.load(buildjson)
+        VERSION=b['version']
+except IOError:
+    VERSION='development'
 
 # Flags to include v1 data and index.
 INCLUDE_V1_DATA = True
