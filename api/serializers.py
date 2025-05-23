@@ -5,11 +5,6 @@ from api import models
 from api import search_indexes
 
 
-class ManifestSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Manifest
-        fields = ('filename', 'type', 'hash', 'created_at')
-
 class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
