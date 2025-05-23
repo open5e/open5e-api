@@ -33,7 +33,7 @@ DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 try:
     with open('./build.json', 'r',encoding='utf-8') as buildjson:
         b = json.load(buildjson)
-        VERSION=b['version']
+        VERSION=b['open5e-api-version']
 except IOError:
     VERSION='development'
 
