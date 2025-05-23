@@ -225,7 +225,7 @@ SECURE_PROXY_SSL_HEADER = (
 )  # This setting allows the header from NGINX to tell us that the request is secured.
 
 SPECTACULAR_SETTINGS = {
-    'VERSION' : 'development',
+    'VERSION' : VERSION,
     'TITLE': 'Open5e',
     'DESCRIPTION': 'The Open5e API. See [https://github.com/open5e/open5e-api] for more information.',
     'SERVERS': [
