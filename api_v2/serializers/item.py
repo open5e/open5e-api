@@ -46,12 +46,12 @@ class ArmorSummarySerializer(GameContentSerializer):
 class WeaponPropertySerializer(GameContentSerializer):
     class Meta:
         model = models.WeaponProperty
-        fields = ['key', 'name', 'desc', 'document', 'url']
+        fields = ['key', 'name', 'desc', 'document', 'url', 'type']
 
 class WeaponPropertySummarySerializer(GameContentSerializer):
     class Meta:
         model = models.WeaponProperty
-        fields = ['name', 'url']
+        fields = ['name', 'type', 'url']
 
 class WeaponPropertyAssignmentSerializer(GameContentSerializer):
     property = WeaponPropertySummarySerializer()

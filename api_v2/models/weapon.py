@@ -11,9 +11,15 @@ from drf_spectacular.types import OpenApiTypes
 from rest_framework import serializers
 
 class WeaponProperty(HasName, HasDescription, FromDocument):  
+  type = models.CharField(
+    null=True,
+    blank=True,
+    max_length=32,
+    help_text='Weapon property type: ie. Weapon Mastery, etc.',
+  )
   class Meta:
-    verbose_name_plural = "Weapon Properties"
-    ordering = ["pk"]
+    verbose_name_plural = 'Weapon Properties'
+    ordering = ['pk']
   
   def __str__(self):
     return self.name

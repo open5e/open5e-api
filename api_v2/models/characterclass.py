@@ -86,6 +86,11 @@ class CharacterClass(HasName, FromDocument):
         related_name="characterclass_saving_throws",
         help_text='Saving throw proficiencies for this class.')
 
+    primary_abilities = models.ManyToManyField(
+        Ability,
+        help_text='Primary abilities for thie class'
+    )
+
     caster_type = models.CharField(
         max_length=100,
         default=None,

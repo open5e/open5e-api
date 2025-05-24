@@ -3,6 +3,13 @@ from django.db import models
 from .abstracts import HasName, HasDescription, HasPrerequisite, Modification
 from .document import FromDocument
 
+FEAT_TYPES = [
+    ('GENERAL', 'General'),
+    ('ORIGIN', 'Origin'),
+    ('FIGHTING_STYLE', 'Fighting Style'),
+    ('EPIC_BOON', 'Epic Boon')
+]
+
 class FeatBenefit(Modification):
     """This is the model for an individual benefit of a feat."""
 
@@ -18,6 +25,12 @@ class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):
     training, experience, and abilities beyond what a
     class provides.
     """
+
+    type = models.CharField(
+        max_length=32,
+        choices=FEAT_TYPES,
+        default='GENERAL'
+    )
 
     @property
     def benefits(self):
