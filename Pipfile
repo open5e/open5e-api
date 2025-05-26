@@ -12,7 +12,7 @@ newrelic = "*"
 requests = "*"
 whitenoise = "*"
 gunicorn = "*"
-drf-spectacular = "*"
+drf-spectacular = {extras = ["sidecar"], version = "*"}
 
 [dev-packages]
 pytest = "*"
