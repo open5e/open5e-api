@@ -7,7 +7,20 @@ from api_v2 import serializers
 
 from .mixins import EagerLoadingMixin
 
-class WeaponPropertyViewSet(viewsets.ReadOnlyModelViewSet):
+class WeaponPropertyFilterSet(FilterSet):
+    class Meta:
+        model = models.WeaponProperty
+        fields = {
+            'key': ['in', 'iexact', 'exact'],
+            'name': ['iexact', 'exact', 'icontains'],
+            'type': ['exact', 'isnull'],
+            'document__key': ['in', 'iexact', 'exact'],
+            'document__gamesystem__key': ['in', 'iexact', 'exact'],
+        }
+
+class WeaponPropertyViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
   queryset = models.WeaponProperty.objects.all()
   serializer_class = serializers.WeaponPropertySerializer
-  filterset_fields = '__all__'
+  filterset_class = WeaponPropertyFilterSet
+
+  prefetch_related_fields = ['document']
