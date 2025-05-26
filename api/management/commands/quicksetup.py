@@ -7,6 +7,7 @@ from server import settings
 
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
+from django.db import IntegrityError
 
 
 class Command(BaseCommand):
@@ -47,7 +48,16 @@ class Command(BaseCommand):
 
         if settings.INCLUDE_V1_DATA:
             self.stdout.write('Populating the v1 database...')
-            import_v1()
+            try:
+                import_v1()
+            except IntegrityError as e:
+                self.stdout.write(self.style.ERROR(
+                    f'V1 data import failed: Foreign key constraint error: {e}'
+                ))
+                self.stdout.write(self.style.ERROR(
+                    'QUICKSETUP FAILED - Fix foreign key constraint violations before proceeding.'
+                ))
+                return  # Exit without showing "API setup complete"
             
             if not options['noindex']:
                 if settings.BUILD_V1_INDEX:
@@ -59,7 +69,16 @@ class Command(BaseCommand):
 
         if settings.INCLUDE_V2_DATA:
             self.stdout.write('Populating the v2 database...')
-            import_v2()
+            try:
+                import_v2()
+            except IntegrityError as e:
+                self.stdout.write(self.style.ERROR(
+                    f'V2 data import failed: Foreign key constraint error: {e}'
+                ))
+                self.stdout.write(self.style.ERROR(
+                    'QUICKSETUP FAILED - Fix foreign key constraint violations before proceeding.'
+                ))
+                return  # Exit without showing "API setup complete"
 
         if not options['noindex']:
             if settings.BUILD_V2_INDEX:
