@@ -41,7 +41,7 @@ class Command(BaseCommand):
                 # Disable foreign key checks during loading
                 self._disable_foreign_key_checks()
                 self.stdout.write('Disabled foreign key constraints for loading.')
-                
+
                 call_command('loaddata', fixture_filepaths)
                 
                 # Re-enable foreign key checks and validate
@@ -109,11 +109,6 @@ class Command(BaseCommand):
                         for violation in violations:
                             violation_details.append(f"Table: {violation[0]}, Row: {violation[1]}, Parent: {violation[2]}, FK: {violation[3]}")
                         raise IntegrityError(f"Foreign key constraint violations found:\n" + "\n".join(violation_details))
-                elif connection.vendor == 'mysql':
-                    # MySQL will automatically check when we re-enable foreign_key_checks
-                    pass
-                elif connection.vendor == 'postgresql':
-                    # PostgreSQL will check when we reset session_replication_role
                     pass
         except Exception as e:
             raise IntegrityError(f"Foreign key constraint validation failed: {e}")

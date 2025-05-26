@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-SRD 5.2 Monster Converter
+SRD 5.2 Monster and Animal Converter
 
-This script converts monsters from the D&D SRD 5.2 markdown format to Open5e API v2 JSON format,
+This script converts monsters and animals from the D&D SRD 5.2 markdown format to Open5e API v2 JSON format,
 creating separate files for Creature, CreatureAction, and CreatureTrait data.
 """
 
@@ -728,27 +728,31 @@ def parse_monster(monster_text: str) -> Tuple[Dict[str, Any], List[Dict[str, Any
     return creature_data, traits, all_actions, all_attacks
 
 def main():
-    """Main function to convert monsters."""
-    input_file = Path("../sections/13_monsters_az.md")
+    """Main function to convert monsters and animals."""
+    monster_file = Path("../sections/13_monsters_az.md")
+    animal_file = Path("../sections/14_animals.md")
     output_dir = Path("../../../v2/wizards-of-the-coast/srd-2024/")
     
-    if not input_file.exists():
-        print(f"Error: Input file {input_file} not found")
+    if not monster_file.exists():
+        print(f"Error: Monster file {monster_file} not found")
         return
     
-    # Read the input file
-    with open(input_file, 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    # Split into individual monsters by ## headers
-    monster_sections = re.split(r'\n(?=## [^#])', content)
+    if not animal_file.exists():
+        print(f"Error: Animal file {animal_file} not found")
+        return
     
     creatures = []
     all_traits = []
     all_actions = []
     all_attacks = []
     
+    # Process monsters
     print("Converting monsters...")
+    with open(monster_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Split into individual monsters by ## headers
+    monster_sections = re.split(r'\n(?=## [^#])', content)
     
     for i, section in enumerate(monster_sections):
         if not section.strip() or section.startswith('# Monsters'):
@@ -766,6 +770,34 @@ def main():
                 print(f"Failed to parse monster in section {i}")
         except Exception as e:
             print(f"Error parsing monster in section {i}: {e}")
+            continue
+    
+    # Process animals
+    print("\nConverting animals...")
+    with open(animal_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Split into individual animals by ## headers
+    animal_sections = re.split(r'\n(?=## [^#])', content)
+    
+    for i, section in enumerate(animal_sections):
+        if not section.strip() or section.startswith('# Animals'):
+            continue
+        
+        try:
+            creature, traits, actions, attacks = parse_monster(section)  # We can reuse parse_monster since format is identical
+            if creature:
+                # Set category to Animals for animal entries
+                creature['fields']['category'] = 'Animals'
+                creatures.append(creature)
+                all_traits.extend(traits)
+                all_actions.extend(actions)
+                all_attacks.extend(attacks)
+                print(f"Converted: {creature['fields']['name']}")
+            else:
+                print(f"Failed to parse animal in section {i}")
+        except Exception as e:
+            print(f"Error parsing animal in section {i}: {e}")
             continue
     
     # Write output files
@@ -792,7 +824,7 @@ def main():
         json.dump(all_attacks, f, indent=2, ensure_ascii=False)
     
     print(f"\nConversion completed!")
-    print(f"Converted {len(creatures)} creatures")
+    print(f"Converted {len(creatures)} total creatures")
     print(f"Generated {len(all_traits)} traits")
     print(f"Generated {len(all_actions)} actions")
     print(f"Generated {len(all_attacks)} attacks")

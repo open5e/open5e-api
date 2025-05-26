@@ -39,7 +39,6 @@ class Command(BaseCommand):
         else:
             self.stdout.write('Directory is clean')
 
-        """Main logic."""
         self.stdout.write('Migrating the database...')
         migrate_db()
 
@@ -80,12 +79,12 @@ class Command(BaseCommand):
                 ))
                 return  # Exit without showing "API setup complete"
 
-        if not options['noindex']:
-            if settings.BUILD_V2_INDEX:
-                self.stdout.write('Building the v2 index with both v1 and v2 data.')
-                build_v1v2_searchindex()
-        else:
-            self.stdout.write('Skipping v2 index build because of --noindex.')
+            if not options['noindex']:
+                if settings.BUILD_V2_INDEX:
+                    self.stdout.write('Building the v2 index with both v1 and v2 data.')
+                    build_v1v2_searchindex()
+            else:
+                self.stdout.write('Skipping v2 index build because of --noindex.')
 
         self.stdout.write(self.style.SUCCESS('API setup complete.'))
 
