@@ -1,7 +1,6 @@
-
 # Tools
 
-#### Alchemist's Supplies (50 GP)
+## Alchemist's Supplies (50 GP)
 
 **Ability:** Intelligence 
 
@@ -11,7 +10,7 @@
 
 **Craft:** Acid, Alchemist's Fire, Component Pouch, Oil, Paper, Perfume
 
-#### Brewer's Supplies (20 GP)
+## Brewer's Supplies (20 GP)
 
 **Ability:** Intelligence 
 
@@ -21,7 +20,7 @@
 
 **Craft:** Antitoxin
 
-#### Calligrapher's Supplies (10 GP)
+## Calligrapher's Supplies (10 GP)
 
 **Ability:** Dexterity 
 
@@ -31,7 +30,7 @@
 
 **Craft:** Ink, *Spell Scroll*
 
-#### Carpenter's Tools (8 GP)
+## Carpenter's Tools (8 GP)
 
 **Ability:** Strength 
 
@@ -41,7 +40,7 @@
 
 **Craft:** Club, Greatclub, Quarterstaff, Barrel, Chest, Ladder, Pole, Portable Ram, Torch
 
-#### Cartographer's Tools (15 GP)
+## Cartographer's Tools (15 GP)
 
 **Ability:** Wisdom 
 
@@ -51,7 +50,7 @@
 
 **Craft:** Map
 
-#### Cobbler's Tools (5 GP)
+## Cobbler's Tools (5 GP)
 
 **Ability:** Dexterity 
 
@@ -61,7 +60,7 @@
 
 **Craft:** Climber's Kit
 
-#### Cook's Utensils (1 GP)
+## Cook's Utensils (1 GP)
 
 **Ability:** Wisdom 
 
@@ -71,7 +70,7 @@
 
 **Craft:** Rations
 
-#### Glassblower's Tools (30 GP)
+## Glassblower's Tools (30 GP)
 
 **Ability:** Intelligence 
 
@@ -81,7 +80,7 @@
 
 **Craft:** Glass Bottle, Magnifying Glass, Spyglass, Vial
 
-#### Jeweler's Tools (25 GP)
+## Jeweler's Tools (25 GP)
 
 **Ability:** Intelligence 
 
@@ -91,7 +90,7 @@
 
 **Craft:** Arcane Focus, Holy Symbol
 
-#### Leatherworker's Tools (5 GP)
+## Leatherworker's Tools (5 GP)
 
 **Ability:** Dexterity 
 
@@ -101,7 +100,7 @@
 
 **Craft:** Sling, Whip, Hide Armor, Leather Armor, Studded Leather Armor, Backpack, Crossbow Bolt Case, Map or Scroll Case, Parchment, Pouch, Quiver, Waterskin
 
-#### Mason's Tools (10 GP)
+## Mason's Tools (10 GP)
 
 **Ability:** Strength 
 
@@ -111,7 +110,7 @@
 
 **Craft:** Block and Tackle
 
-#### Painter's Supplies (10 GP)
+## Painter's Supplies (10 GP)
 
 **Ability:** Wisdom 
 
@@ -121,7 +120,7 @@
 
 **Craft:** Druidic Focus, Holy Symbol
 
-#### Potter's Tools (10 GP)
+## Potter's Tools (10 GP)
 
 **Ability:** Intelligence 
 
@@ -131,7 +130,7 @@
 
 **Craft:** Jug, Lamp
 
-#### Smith's Tools (20 GP)
+## Smith's Tools (20 GP)
 
 **Ability:** Strength 
 
@@ -141,7 +140,7 @@
 
 **Craft:** Any Melee weapon (except Club, Greatclub, Quarterstaff, and Whip), Medium armor (except Hide), Heavy armor, Ball Bearings, Bucket, Caltrops, Chain, Crowbar, Firearm Bullets, Grappling Hook, Iron Pot, Iron Spikes, Sling Bullets
 
-#### Tinker's Tools (50 GP)
+## Tinker's Tools (50 GP)
 
 **Ability:** Dexterity 
 
@@ -151,7 +150,7 @@
 
 **Craft:** Musket, Pistol, Bell, Bullseye Lantern, Flask, Hooded Lantern, Hunting Trap, Lock, Manacles, Mirror, Shovel, Signal Whistle, Tinderbox
 
-#### Weaver's Tools (1 GP)
+## Weaver's Tools (1 GP)
 
 **Ability:** Dexterity 
 
@@ -161,7 +160,7 @@
 
 **Craft:** Padded Armor, Basket, Bedroll, Blanket, Fine Clothes, Net, Robe, Rope, Sack, String, Tent, Traveler's Clothes
 
-#### Woodcarver's Tools (1 GP)
+## Woodcarver's Tools (1 GP)
 
 **Ability:** Dexterity 
 
@@ -171,9 +170,9 @@
 
 **Craft:** Club, Greatclub, Quarterstaff, Ranged weapons (except Pistol, Musket, and Sling), Arcane Focus, Arrows, Bolts, Druidic Focus, Ink Pen, Needles
 
-### Other Tools
+## Other Tools
 
-#### Disguise Kit (25 GP)
+### Disguise Kit (25 GP)
 
 **Ability:** Charisma 
 
@@ -183,7 +182,7 @@
 
 **Craft:** Costume
 
-#### Forgery Kit (15 GP)
+### Forgery Kit (15 GP)
 
 **Ability:** Dexterity 
 
@@ -191,15 +190,37 @@
 
 **Utilize:** Mimic 10 or fewer words of someone else's handwriting (DC 15), or duplicate a wax seal (DC 20)
 
-#### Gaming Set (Varies)
+### Gaming Set, Dice (1 SP)
 
 **Ability:** Wisdom 
 
 **Weight:** — 
 
-**Utilize:** Discern whether someone is cheating (DC 10), or win the game (DC 20) 
+**Utilize:** Discern whether someone is cheating (DC 10), or win the game (DC 20)
 
-**Variants:** Dice (1 SP), dragonchess (1 GP), playing cards (5 SP), three-dragon ante (1 GP)
+#### Gaming Set, Dragonchess (1 GP)
+
+**Ability:** Wisdom 
+
+**Weight:** — 
+
+**Utilize:** Discern whether someone is cheating (DC 10), or win the game (DC 20)
+
+#### Gaming Set, Playing Cards (5 SP)
+
+**Ability:** Wisdom 
+
+**Weight:** — 
+
+**Utilize:** Discern whether someone is cheating (DC 10), or win the game (DC 20)
+
+#### Gaming Set, Three-Dragon Ante (1 GP)
+
+**Ability:** Wisdom 
+
+**Weight:** — 
+
+**Utilize:** Discern whether someone is cheating (DC 10), or win the game (DC 20)
 
 #### **Herbalism Kit (5 GP)**
 
@@ -211,15 +232,85 @@
 
 **Craft:** Antitoxin, Candle, Healer's Kit, *Potion of Healing*
 
-#### **Musical Instrument (Varies)**
+#### Musical Instrument, Bagpipes (30 GP)
 
 **Ability:** Charisma 
 
-**Weight:** Varies 
+**Weight:** 6 lb. 
 
-**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15) 
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
 
-**Variants:** Bagpipes (30 GP, 6 lb.), drum (6 GP, 3 lb.), dulcimer (25 GP, 10 lb.), flute (2 GP, 1 lb.), horn (3 GP, 2 lb.), lute (35 GP, 2 lb.), lyre (30 GP, 2 lb.), pan flute (12 GP, 2 lb.), shawm (2 GP, 1 lb.), viol (30 GP, 1 lb.)
+#### Musical Instrument, Drum (6 GP)
+
+**Ability:** Charisma 
+
+**Weight:** 3 lb. 
+
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
+
+#### Musical Instrument, Dulcimer (25 GP)
+
+**Ability:** Charisma 
+
+**Weight:** 10 lb. 
+
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
+
+#### Musical Instrument, Flute (2 GP)
+
+**Ability:** Charisma 
+
+**Weight:** 1 lb. 
+
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
+
+#### Musical Instrument, Horn (3 GP)
+
+**Ability:** Charisma 
+
+**Weight:** 2 lb. 
+
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
+
+#### Musical Instrument, Lute (35 GP)
+
+**Ability:** Charisma 
+
+**Weight:** 2 lb. 
+
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
+
+#### Musical Instrument, Lyre (30 GP)
+
+**Ability:** Charisma 
+
+**Weight:** 2 lb. 
+
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
+
+#### Musical Instrument, Pan Flute (12 GP)
+
+**Ability:** Charisma 
+
+**Weight:** 2 lb. 
+
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
+
+#### Musical Instrument, Shawm (2 GP)
+
+**Ability:** Charisma 
+
+**Weight:** 1 lb. 
+
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
+
+#### Musical Instrument, Viol (30 GP)
+
+**Ability:** Charisma 
+
+**Weight:** 1 lb. 
+
+**Utilize:** Play a known tune (DC 10), or improvise a song (DC 15)
 
 #### Navigator's Tools (25 GP)
 
@@ -246,3 +337,4 @@
 **Weight:** 1 lb. 
 
 **Utilize:** Pick a lock (DC 15), or disarm a trap (DC 15)
+ 
