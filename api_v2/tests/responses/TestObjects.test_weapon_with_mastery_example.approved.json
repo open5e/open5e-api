@@ -1,0 +1,49 @@
+{
+    "damage_dice": "1d8",
+    "damage_type": {
+        "key": "slashing",
+        "name": "Slashing",
+        "url": "http://localhost:8000/v2/damagetypes/slashing/"
+    },
+    "distance_unit": "feet",
+    "document": {
+        "gamesystem": {
+            "key": "o5e",
+            "name": "5th Edition",
+            "url": "http://localhost:8000/v2/gamesystems/o5e/"
+        },
+        "key": "srd-2024",
+        "name": "System Reference Document 5.2",
+        "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
+        "publisher": {
+            "key": "wizards-of-the-coast",
+            "name": "Wizards of the Coast",
+            "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+        }
+    },
+    "is_improvised": false,
+    "is_simple": false,
+    "key": "srd2024_longsword",
+    "long_range": 0.0,
+    "name": "Longsword",
+    "properties": [
+        {
+            "detail": "1d10",
+            "property": {
+                "name": "Versatile",
+                "type": null,
+                "url": "http://localhost:8000/v2/weaponproperties/srd-2024_versatile-wp/"
+            }
+        },
+        {
+            "detail": null,
+            "property": {
+                "name": "Sap",
+                "type": "Mastery",
+                "url": "http://localhost:8000/v2/weaponproperties/srd-2024_sap-mastery/"
+            }
+        }
+    ],
+    "range": 0.0,
+    "url": "http://localhost:8000/v2/weapons/srd2024_longsword/"
+}

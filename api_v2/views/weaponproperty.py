@@ -10,3 +10,4 @@ from .mixins import EagerLoadingMixin
 class WeaponPropertyViewSet(viewsets.ReadOnlyModelViewSet):
   queryset = models.WeaponProperty.objects.all()
   serializer_class = serializers.WeaponPropertySerializer
+  filterset_fields = '__all__'

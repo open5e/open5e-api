@@ -60,6 +60,10 @@ class TestObjects:
         path="/v2/weapons/srd_shortsword/"
         self._verify(path)
 
+    def test_weapon_with_mastery_example(self):
+        path="/v2/weapons/srd2024_longsword/"
+        self._verify(path)
+
     # /ARMOR ENDPOINT
     def test_armor_example(self):
         path="/v2/armor/srd_splint/"
@@ -173,4 +177,21 @@ class TestObjects:
     # SKILLS ENDPOINT
     def test_skill_example(self):
         path="/v2/skills/insight/"
+        self._verify(path)
+
+    # WEAPONPROPERTIES ENDPOINT
+    def test_weaponproperty_standard_example(self):
+        path="/v2/weaponproperties/srd-2014_finesse-wp/"
+        self._verify(path)
+
+    def test_weaponproperty_mastery_example(self):
+        path="/v2/weaponproperties/srd-2024_cleave-mastery/"
+        self._verify(path)
+
+    def test_weaponproperties_mastery_filter(self):
+        path="/v2/weaponproperties/?type=Mastery&limit=3"
+        self._verify(path)
+
+    def test_weaponproperties_standard_filter(self):
+        path="/v2/weaponproperties/?type__isnull=true&document__key=srd-2024&limit=3"
         self._verify(path)
