@@ -108,6 +108,146 @@ def parse_standardized_item(content: str) -> Dict[str, Any]:
     
     return item_data
 
+def parse_magic_item_type_and_rarity(type_line: str) -> Tuple[str, str, bool]:
+    """Parse the magic item type and rarity line."""
+    # Remove italic markers
+    type_line = type_line.strip('*').strip()
+    
+    # Extract rarity and attunement requirement
+    rarity = None
+    requires_attunement = False
+    category = "wondrous-item"  # default
+    
+    # Common rarity patterns
+    rarity_patterns = [
+        r'\b(Artifact)\b',
+        r'\b(Legendary)\b', 
+        r'\b(Very Rare)\b',
+        r'\b(Rare)\b',
+        r'\b(Uncommon)\b',
+        r'\b(Common)\b'
+    ]
+    
+    for pattern in rarity_patterns:
+        match = re.search(pattern, type_line, re.IGNORECASE)
+        if match:
+            rarity = match.group(1).lower().replace(' ', '-')
+            break
+    
+    # Check for attunement requirement
+    if 'requires attunement' in type_line.lower():
+        requires_attunement = True
+    
+    # Determine category from type
+    type_lower = type_line.lower()
+    if 'armor' in type_lower:
+        category = "armor"
+    elif 'weapon' in type_lower:
+        category = "weapon"
+    elif 'shield' in type_lower:
+        category = "shield"
+    elif 'potion' in type_lower:
+        category = "potion"
+    elif 'scroll' in type_lower:
+        category = "scroll"
+    elif 'ring' in type_lower:
+        category = "ring"
+    elif 'rod' in type_lower:
+        category = "rod"
+    elif 'staff' in type_lower:
+        category = "staff"
+    elif 'wand' in type_lower:
+        category = "wand"
+    else:
+        category = "wondrous-item"
+    
+    return category, rarity, requires_attunement
+
+def convert_magic_items(magic_items_file: Path) -> List[Dict[str, Any]]:
+    """Convert magic items from the SRD 5.2 format."""
+    if not magic_items_file.exists():
+        return []
+    
+    with open(magic_items_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    magic_items = []
+    
+    # Split into individual magic item sections
+    item_sections = re.split(r'\n### ', content)
+    
+    for section in item_sections[1:]:  # Skip the header
+        lines = section.strip().split('\n')
+        if not lines:
+            continue
+            
+        # Extract name from first line
+        name = lines[0].strip()
+        name = clean_text(name)  # Clean any markdown formatting from name
+        if not name:
+            continue
+        
+        # Find the type/rarity line (should be in italics)
+        type_line = ""
+        desc_start_idx = 1
+        
+        for i, line in enumerate(lines[1:], 1):
+            line = line.strip()
+            if line.startswith('*') and line.endswith('*'):
+                type_line = line
+                desc_start_idx = i + 1
+                break
+        
+        if not type_line:
+            continue
+        
+        # Parse type and rarity
+        category, rarity, requires_attunement = parse_magic_item_type_and_rarity(type_line)
+        
+        # Extract description (everything after the type line)
+        desc_lines = []
+        for line in lines[desc_start_idx:]:
+            line = line.strip()
+            if line and not line.startswith('|') and not line.startswith('Table:'):
+                desc_lines.append(line)
+        
+        desc = ' '.join(desc_lines) if desc_lines else f"A magical {name.lower()}."
+        desc = clean_text(desc)
+        
+        # Create primary key
+        item_pk = create_pk(name)
+        
+        # Create magic item
+        magic_item = {
+            "model": "api_v2.item",
+            "pk": item_pk,
+            "fields": {
+                "name": name,
+                "desc": desc,
+                "document": "srd-2024",
+                "size": "tiny",
+                "weight": "0.000",  # Most magic items don't specify weight
+                "armor_class": 0,
+                "hit_points": 0,
+                "hit_dice": None,
+                "nonmagical_attack_resistance": False,
+                "nonmagical_attack_immunity": False,
+                "cost": "0.00",  # Magic items typically don't have standard costs
+                "weapon": None,
+                "armor": None,
+                "category": category,
+                "requires_attunement": requires_attunement,
+                "rarity": rarity,  # Reference to 2014 rarity
+                "damage_vulnerabilities": [],
+                "damage_immunities": [],
+                "damage_resistances": []
+            }
+        }
+        
+        magic_items.append(magic_item)
+    
+    return magic_items
+
 def convert_weapons(weapons_file: Path) -> Tuple[List[Dict], List[Dict], List[Dict], List[Dict]]:
     """Convert weapons from standardized format."""
     with open(weapons_file, 'r', encoding='utf-8') as f:
@@ -692,13 +832,17 @@ def main():
         armors, armor_items = [], []
         print("Armor file not found")
     
-    # Convert items
-    item_files = [f for f in [tools_file, services_file, mounts_file, magic_items_file] if f.exists()]
+    # Convert magic items (separate from other items)
+    magic_items = convert_magic_items(magic_items_file)
+    print(f"Converted {len(magic_items)} magic items")
+    
+    # Convert other items (tools, services, mounts)
+    item_files = [f for f in [tools_file, services_file, mounts_file] if f.exists()]
     other_items = convert_items(item_files)
     print(f"Converted {len(other_items)} other items from {len(item_files)} files")
     
-    # Combine all items (weapons, armor, and other items)
-    all_items = weapon_items + armor_items + other_items
+    # Combine all items (weapons, armor, magic items, and other items)
+    all_items = weapon_items + armor_items + magic_items + other_items
     print(f"Total items: {len(all_items)}")
     
     # Create categories and sets
