@@ -1,283 +1,263 @@
-"""Search query and parameter parsing."""
+"""Clean search implementation with exact, fuzzy, and vector search."""
+import pickle
+import re
+from pathlib import Path
+from urllib.parse import urlencode
+
+from rapidfuzz import process, fuzz
 from rest_framework import viewsets
 from rest_framework.response import Response
-from rapidfuzz import process, fuzz
-from pathlib import Path
-import pickle
-import logging
-from urllib.parse import urlencode
-import re
 
-from search import models
-from search import serializers
-
-logger = logging.getLogger(__name__)
+from search import models, serializers
 
 
-# Search configuration constants
-class SearchConfig:
-    VECTOR_INDEX_PATH = Path('server/vector_index.pkl')
-    FUZZY_THRESHOLD = 60
-    VECTOR_THRESHOLD = 0.05
-    DEFAULT_LIMIT = 50
-    BM25_WEIGHTS = "bm25(1.0, 1.0, 10.0)"  # 10x weight to NAME column
-    SNIPPET_CONFIG = "snippet(search_index,4,'<span class=\"highlighted\">','</span>','...',20)"
-    
-    # Schema version handling
-    VALID_SCHEMA_VERSIONS = ['v1', 'v2']
-    DEFAULT_SCHEMA_VERSION = 'v2'
+class ResultsWithMetadata(list):
+    """Custom list that can hold search metadata and behaves like a QuerySet."""
+    def __init__(self, items, metadata=None):
+        super().__init__(items)
+        self._search_metadata = metadata
+        # Add model attribute to satisfy DRF expectations
+        self.model = models.SearchResult
 
 
 class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
-    """Search viewset that provides unified search across direct text, fuzzy, and vector search methods."""
+    """Unified search across exact text, fuzzy, and vector search methods."""
 
     serializer_class = serializers.SearchResultSerializer
-    ordering_fields = []
+    
+    # Configuration
+    VECTOR_INDEX_PATH = Path('server/vector_index.pkl')
+    FUZZY_THRESHOLD = 80
+    VECTOR_THRESHOLD = 0.05
+    DEFAULT_LIMIT = 50
 
-    def _load_search_index(self):
-        """Load and cache the search index for fuzzy and vector operations."""
-        if not hasattr(self, '_search_index'):
-            if not SearchConfig.VECTOR_INDEX_PATH.exists():
-                return None
-            try:
-                with SearchConfig.VECTOR_INDEX_PATH.open('rb') as fh:
-                    self._search_index = pickle.load(fh)
-            except Exception as e:
-                logger.error(f"Error loading search index: {e}")
-                return None
-        return self._search_index
-
-    def _parse_search_parameters(self):
-        """Extract and normalize search parameters from request."""
-        # Determine schema version based on API endpoint version
-        # Extract version from URL path: /v1/search/ -> v1, /v2/search/ -> v2
+    def _parse_parameters(self):
+        """Parse search parameters from request."""
+        # Auto-detect schema version from URL path
         path = self.request.path
         if '/v1/' in path:
-            default_schema = 'v1'
+            schema_version = 'v1'
         elif '/v2/' in path:
-            default_schema = 'v2'
+            schema_version = 'v2'
         else:
-            # Fallback: try request.version or use configured default
-            api_version = getattr(self.request, 'version', SearchConfig.DEFAULT_SCHEMA_VERSION)
-            default_schema = api_version if api_version in SearchConfig.VALID_SCHEMA_VERSIONS else SearchConfig.DEFAULT_SCHEMA_VERSION
-        
+            schema_version = 'v2'  # default
+            
         return {
             'query': self.request.query_params.get('query'),
             'include_vector': self.request.query_params.get("vector", "false").lower() in ["1", "true", "yes"],
             'include_fuzzy': self.request.query_params.get("fuzzy", "false").lower() in ["1", "true", "yes"],
             'strict': self.request.query_params.get("strict", "false").lower() in ["1", "true", "yes"],
-            'schema_version': self.request.query_params.get("schema", default_schema),
+            'schema_version': self.request.query_params.get("schema", schema_version),
             'document_pk': self.request.query_params.get("document_pk", '%'),
             'object_model': self.request.query_params.get("object_model", '%')
         }
 
-    def _build_search_sql(self, placeholders, filters, order_by="rank", include_rank=True, include_match_type=False, 
-                         pk_list=None, match_types=None):
-        """Build SQL query for search results with optional ranking and search type."""
-        columns = [
-            "1 as id",  # ID column is required
-            SearchConfig.SNIPPET_CONFIG + " as highlighted",
-            "document_pk", "object_pk", "object_name", "object_model", "text", "schema_version"
-        ]
-        
-        if include_rank:
-            if include_match_type and pk_list and match_types:
-                # Build CASE statements for ranking and search type
-                order_cases = [f"WHEN object_pk = %s THEN {i}" for i, (pk, _) in enumerate(zip(pk_list, match_types))]
-                match_type_cases = [f"WHEN object_pk = %s THEN '{match_type}'" for pk, match_type in zip(pk_list, match_types)]
-                
-                columns.insert(1, f"CASE {' '.join(order_cases)} ELSE 999999 END as rank")
-                columns.insert(2, f"CASE {' '.join(match_type_cases)} ELSE 'unknown' END as match_type")
-            else:
-                columns.insert(1, "rank" if order_by == "rank" else "0 as rank")
-        
-        return f"SELECT {','.join(columns)} FROM search_index WHERE {' AND '.join(filters)} ORDER BY {order_by}"
+    def _load_index(self):
+        """Load the search index."""
+        if not hasattr(self, '_index'):
+            with self.VECTOR_INDEX_PATH.open('rb') as f:
+                self._index = pickle.load(f)
+        return self._index
 
-    def _extract_pks_safely(self, results):
-        """Safely extract object_pk values from search results."""
+    def _exact_search(self, query, schema_version, document_pk, object_model):
+        """Exact text search using SQLite FTS5."""
+        sql = """
+            SELECT 1 as id,
+                   rank,
+                   snippet(search_index, 4, '<span class="highlighted">', '</span>', '...', 20) as highlighted,
+                   document_pk, object_pk, object_name, object_model, text, schema_version
+            FROM search_index 
+            WHERE schema_version LIKE %s 
+              AND document_pk LIKE %s
+              AND object_model LIKE %s
+              AND search_index MATCH %s
+              AND rank MATCH 'bm25(1.0, 1.0, 10.0)'
+            ORDER BY rank
+        """
+        
         try:
-            return [r.object_pk for r in list(results)]
-        except Exception:
+            results = models.SearchResult.objects.raw(sql, [schema_version, document_pk, object_model, query])
+            # Exact search gets perfect score of 1.0 and the query as matched_term for consistency
+            return [(r.object_pk, r.highlighted, query, 1.0) for r in results]
+        except:
             return []
 
-    def _build_name_based_query(self, names, schema_version, document_pk, object_model):
-        """Build SQL query for fuzzy and vector searches that match by object names."""
-        if not names:
-            return models.SearchResult.objects.none()
-            
-        placeholders = ','.join(['%s' for _ in names])
-        filters = [
-            f"object_name IN ({placeholders})",
-            "schema_version LIKE %s",
-            "document_pk LIKE %s",
-            "object_model LIKE %s"
-        ]
+    def _fuzzy_search(self, query, schema_version, document_pk, object_model):
+        """Fuzzy search using RapidFuzz."""
+        index = self._load_index()
+        names = index['names']
         
-        sql = self._build_search_sql(placeholders, filters, order_by="object_name", include_rank=False)
-        params = names + [schema_version, document_pk, object_model]
-        return models.SearchResult.objects.raw(sql, params)
-
-    def _attach_metadata_safely(self, results, metadata):
-        """Safely attach metadata to results, handling both QuerySet and list cases."""
+        matches = process.extract(query, names, scorer=fuzz.partial_ratio, limit=self.DEFAULT_LIMIT*2)
+        good_matches = [(match[0], match[1]) for match in matches if match[1] > self.FUZZY_THRESHOLD]
+        
+        if not good_matches:
+            return []
+            
+        # Sort matches: name matches first, then by similarity score (descending)
+        def sort_key(match):
+            name, score = match
+            # Check if this is a name-only match (query matches the name exactly)
+            is_name_match = fuzz.partial_ratio(query.lower(), name.lower()) >= self.FUZZY_THRESHOLD
+            # Return tuple: (name_match_priority, negative_score) for sorting
+            # name matches get priority 0, others get priority 1
+            # negative score because we want higher scores first
+            return (0 if is_name_match else 1, -score)
+        
+        good_matches.sort(key=sort_key)
+        
+        # Get results for matched names, tracking which name was matched with its score
+        match_name_to_info = {match[0]: {'term': match[0], 'score': match[1] / 100.0} for match in good_matches}  # Convert to 0-1 range
+        matched_names = [match[0] for match in good_matches]
+        
+        placeholders = ','.join(['%s'] * len(matched_names))
+        sql = f"""
+            SELECT 1 as id, 0 as rank, text as highlighted,
+                   document_pk, object_pk, object_name, object_model, text, schema_version
+            FROM search_index
+            WHERE object_name IN ({placeholders})
+              AND schema_version LIKE %s
+              AND document_pk LIKE %s  
+              AND object_model LIKE %s
+            ORDER BY object_name
+        """
+        
         try:
-            results._search_metadata = metadata
-            return results
-        except AttributeError:
-            # Handle case where this might be a list in tests
-            class ResultsWithMetadata(list):
-                def __init__(self, items):
-                    super().__init__(items)
-                    self._search_metadata = metadata
+            results = models.SearchResult.objects.raw(
+                sql, matched_names + [schema_version, document_pk, object_model]
+            )
+            # Return with proper ordering based on our sorted matches
+            result_list = list(results)
+            # Sort results to match our fuzzy match ordering
+            name_to_result = {r.object_name: r for r in result_list}
+            ordered_results = []
+            for name in matched_names:
+                if name in name_to_result:
+                    result = name_to_result[name]
+                    match_info = match_name_to_info[name]
+                    ordered_results.append((result.object_pk, result.highlighted, match_info['term'], match_info['score']))
             
-            if hasattr(results, '__iter__') and not hasattr(results, '_search_metadata'):
-                return ResultsWithMetadata(list(results))
-            return results
+            return ordered_results
+        except:
+            return []
 
-    def _highlight_text_manually(self, text, query):
-        """Manually highlight query terms in text for fuzzy and vector search results."""
-        if not text or not query:
-            return text
+    def _vector_search(self, query, schema_version, document_pk, object_model):
+        """Vector search using TF-IDF."""
+        index = self._load_index()
+        vectorizer = index['vectorizer'] 
+        matrix = index['matrix']
         
-        # Split query into words and create a pattern that matches any of them
-        query_words = [word.strip() for word in re.split(r'\s+', query.lower()) if word.strip()]
-        if not query_words:
-            return text
+        # Get similarity scores
+        query_vec = vectorizer.transform([query])
+        scores = (matrix @ query_vec.T).toarray().ravel()
+        best_indices = scores.argsort()[::-1][:self.DEFAULT_LIMIT]
         
-        # Create regex pattern for case-insensitive matching
-        # Escape special regex characters and join with OR
-        escaped_words = [re.escape(word) for word in query_words]
+        # Filter by threshold and track scores
+        good_results = []
+        for i in best_indices:
+            if scores[i] > self.VECTOR_THRESHOLD:
+                good_results.append((i, scores[i]))
+        
+        if not good_results:
+            return []
+            
+        # Get matched names with their scores
+        matched_data = [(index['names'][i], score) for i, score in good_results]
+        matched_names = [name for name, score in matched_data]
+        
+        # Get results for matched names  
+        placeholders = ','.join(['%s'] * len(matched_names))
+        sql = f"""
+            SELECT 1 as id, 0 as rank, text as highlighted,
+                   document_pk, object_pk, object_name, object_model, text, schema_version
+            FROM search_index
+            WHERE object_name IN ({placeholders})
+              AND schema_version LIKE %s
+              AND document_pk LIKE %s
+              AND object_model LIKE %s
+            ORDER BY object_name
+        """
+        
+        try:
+            results = models.SearchResult.objects.raw(
+                sql, matched_names + [schema_version, document_pk, object_model]
+            )
+            
+            # Create mapping from name to score
+            name_to_score = dict(matched_data)
+            
+            # Return with vector similarity scores as match_score, no matched_term for vector
+            result_list = []
+            for result in results:
+                score = name_to_score.get(result.object_name, 0.0)
+                result_list.append((result.object_pk, result.highlighted, None, score))
+            
+            return result_list
+        except:
+            return []
+
+    def _highlight_text(self, text, query_or_term):
+        """Add highlighting to text for fuzzy/vector results."""
+        if not text or not query_or_term:
+            return text
+            
+        # Split query/term into words
+        words = [w.strip() for w in re.split(r'\s+', query_or_term.lower()) if w.strip()]
+        if not words:
+            return text
+            
+        # Create pattern and highlight
+        escaped_words = [re.escape(word) for word in words]
         pattern = r'\b(' + '|'.join(escaped_words) + r')\b'
         
-        # Replace matches with highlighted versions
-        def highlight_match(match):
-            return f'<span class="highlighted">{match.group(0)}</span>'
-        
         try:
-            highlighted = re.sub(pattern, highlight_match, text, flags=re.IGNORECASE)
-            return highlighted
-        except Exception:
-            # If regex fails for any reason, return original text
+            return re.sub(
+                pattern, 
+                r'<span class="highlighted">\1</span>', 
+                text, 
+                flags=re.IGNORECASE
+            )
+        except:
             return text
 
-    def _highlight_vector_features(self, text, feature_words):
-        """Highlight specific TF-IDF features that contributed to vector similarity."""
-        if not text or not feature_words:
-            return text
+    def _merge_results(self, exact_results, fuzzy_results, vector_results, params):
+        """Merge search results maintaining priority order."""
+        # Extract PKs, highlighted text, matched terms, and scores
+        exact_pks = [r[0] for r in exact_results]
+        fuzzy_pks = [r[0] for r in fuzzy_results] 
+        vector_pks = [r[0] for r in vector_results]
         
-        # Create regex pattern for the specific feature words
-        escaped_words = [re.escape(word) for word in feature_words if word.strip()]
-        if not escaped_words:
-            return text
-            
-        pattern = r'\b(' + '|'.join(escaped_words) + r')\b'
+        # Store highlighted text, matched terms, and scores from searches
+        highlighted_map = {r[0]: r[1] for r in exact_results}
+        matched_term_map = {}
+        match_score_map = {}
         
-        # Replace matches with highlighted versions
-        def highlight_match(match):
-            return f'<span class="highlighted">{match.group(0)}</span>'
-        
-        try:
-            highlighted = re.sub(pattern, highlight_match, text, flags=re.IGNORECASE)
-            return highlighted
-        except Exception:
-            # If regex fails for any reason, return original text
-            return text
-
-    def get_direct_search_results(self, query, schema_version, document_pk, object_model):
-        """Get direct text search results."""
-        try:
-            filters = [
-                "schema_version LIKE %s",
-                "document_pk LIKE %s", 
-                "object_model LIKE %s",
-                "search_index MATCH %s",
-                f"rank MATCH '{SearchConfig.BM25_WEIGHTS}'"
-            ]
-            
-            sql = self._build_search_sql("", filters, order_by="rank")
-            return models.SearchResult.objects.raw(sql, [schema_version, document_pk, object_model, query])
-        except Exception as e:
-            logger.error(f"Error in direct search: {e}")
-            return models.SearchResult.objects.none()
-
-    def get_fuzzy_search_results(self, query, schema_version, document_pk, object_model, limit=SearchConfig.DEFAULT_LIMIT):
-        """Get fuzzy search results."""
-        try:
-            index = self._load_search_index()
-            if not index:
-                return models.SearchResult.objects.none(), []
-            
-            names = index['names']
-            matches = process.extract(query, names, scorer=fuzz.partial_ratio, limit=limit*2)
-            matched_items = [m for m in matches if m[1] > SearchConfig.FUZZY_THRESHOLD]
-            
-            if not matched_items:
-                return models.SearchResult.objects.none(), []
-            
-            fuzzy_names = [match[0] for match in matched_items[:limit]]
-            return self._build_name_based_query(fuzzy_names, schema_version, document_pk, object_model), fuzzy_names
-            
-        except Exception as e:
-            logger.error(f"Error in fuzzy search: {e}")
-            return models.SearchResult.objects.none(), []
-
-    def get_vector_search_results(self, query, schema_version, document_pk, object_model, limit=SearchConfig.DEFAULT_LIMIT):
-        """Get vector search results."""
-        try:
-            index = self._load_search_index()
-            if not index:
-                return models.SearchResult.objects.none(), 0, {}
-            
-            vectorizer = index['vectorizer']
-            matrix = index['matrix']
-            q_vec = vectorizer.transform([query])
-            scores = (matrix @ q_vec.T).toarray().ravel()
-            best = scores.argsort()[::-1][:SearchConfig.DEFAULT_LIMIT]
-            
-            matched_indices = [i for i in best if scores[i] > SearchConfig.VECTOR_THRESHOLD]
-            
-            if not matched_indices:
-                return models.SearchResult.objects.none(), 0, {}
-            
-            # Extract matching features for each result
-            feature_names = vectorizer.get_feature_names_out()
-            q_vec_array = q_vec.toarray()[0]  # Convert to 1D array
-            matching_features = {}
-            
-            for i in matched_indices[:limit]:
-                doc_vec = matrix[i].toarray()[0]  # Get document vector as 1D array
+        # Store matched terms and scores for all search types - respect priority order
+        for pk, highlighted, matched_term, score in exact_results:
+            if matched_term is not None:
+                matched_term_map[pk] = matched_term
+            if score is not None:
+                match_score_map[pk] = score
                 
-                # Find features that contributed to the similarity
-                # Both query and document must have non-zero values for the feature to contribute
-                contributing_features = []
-                for feature_idx, feature_name in enumerate(feature_names):
-                    if q_vec_array[feature_idx] > 0 and doc_vec[feature_idx] > 0:
-                        # Calculate contribution: product of query and document weights
-                        contribution = q_vec_array[feature_idx] * doc_vec[feature_idx]
-                        contributing_features.append((feature_name, contribution))
+        # Only add fuzzy data if not already present (exact has priority)
+        for pk, highlighted, matched_term, score in fuzzy_results:
+            if matched_term is not None and pk not in matched_term_map:
+                matched_term_map[pk] = matched_term
+            if score is not None and pk not in match_score_map:
+                match_score_map[pk] = score
                 
-                # Sort by contribution and take top features
-                contributing_features.sort(key=lambda x: x[1], reverse=True)
-                top_features = [f[0] for f in contributing_features[:10]]  # Top 10 contributing words
-                
-                object_name = index['names'][i]
-                matching_features[object_name] = top_features
-            
-            vector_names = [index['names'][i] for i in matched_indices[:limit]]
-            return self._build_name_based_query(vector_names, schema_version, document_pk, object_model), len(matched_indices), matching_features
-            
-        except Exception as e:
-            logger.error(f"Error in vector search: {e}")
-            return models.SearchResult.objects.none(), 0, {}
-
-    def merge_search_results(self, direct_pks, fuzzy_pks, vector_pks, schema_version, document_pk, object_model):
-        """Merge search results from different sources with proper priority ordering."""
-        # Combine all PKs, removing duplicates while preserving order (direct > fuzzy > vector)
+        # Only add vector data if not already present (exact and fuzzy have priority)  
+        for pk, highlighted, matched_term, score in vector_results:
+            if matched_term is not None and pk not in matched_term_map:
+                matched_term_map[pk] = matched_term
+            if score is not None and pk not in match_score_map:
+                match_score_map[pk] = score
+        
+        # Merge PKs in priority order, removing duplicates
         all_pks = []
-        seen = set()
         match_types = []
+        seen = set()
         
-        # Add results by priority: direct > fuzzy > vector
-        for pks, match_type in [(direct_pks, 'direct'), (fuzzy_pks, 'fuzzy'), (vector_pks, 'vector')]:
+        for pks, match_type in [(exact_pks, 'exact'), (fuzzy_pks, 'fuzzy'), (vector_pks, 'vector')]:
             for pk in pks:
                 if pk not in seen:
                     all_pks.append(pk)
@@ -285,162 +265,141 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
                     seen.add(pk)
         
         if not all_pks:
-            return models.SearchResult.objects.none()
+            return []
+            
+        # Build final query with proper ordering
+        placeholders = ','.join(['%s'] * len(all_pks))
+        order_cases = [f"WHEN object_pk = %s THEN {i}" for i, pk in enumerate(all_pks)]
+        match_type_cases = [f"WHEN object_pk = %s THEN '{mt}'" for pk, mt in zip(all_pks, match_types)]
         
-        placeholders = ','.join(['%s' for _ in all_pks])
-        filters = [
-            f"object_pk IN ({placeholders})",
-            "schema_version LIKE %s",
-            "document_pk LIKE %s",
-            "object_model LIKE %s"
-        ]
-        
-        sql = self._build_search_sql(
-            placeholders, filters, order_by="rank", include_rank=True, 
-            include_match_type=True, pk_list=all_pks, match_types=match_types
-        )
-        
-        params = all_pks + all_pks + all_pks + [schema_version, document_pk, object_model]
-        return models.SearchResult.objects.raw(sql, params)
-
-    def build_vector_search_link(self, query, current_params):
-        """Build a URL for vector search with current parameters."""
-        params = dict(current_params)
-        params.update({'query': query, 'vector': 'true'})
-        query_string = urlencode(params)
-        path = f"/v2/search/?{query_string}"
-        return self.request.build_absolute_uri(path)
-
-    def perform_unified_search(self, query, schema_version, document_pk, object_model, include_fuzzy=False, include_vector=False, strict=False):
+        sql = f"""
+            SELECT 1 as id,
+                   CASE {' '.join(order_cases)} ELSE 999999 END as rank,
+                   CASE {' '.join(match_type_cases)} ELSE 'unknown' END as match_type,
+                   text as highlighted,
+                   document_pk, object_pk, object_name, object_model, text, schema_version
+            FROM search_index
+            WHERE object_pk IN ({placeholders})
+              AND schema_version LIKE %s
+              AND document_pk LIKE %s
+              AND object_model LIKE %s
+            ORDER BY rank
         """
-        Clean unified search approach:
-        1. Run all search methods
-        2. Merge in priority order 
-        3. Calculate metadata on complete results
-        4. Filter final results based on parameters
-        """
-        # 1. Run all searches
-        direct_results = self.get_direct_search_results(query, schema_version, document_pk, object_model)
-        fuzzy_results, _ = self.get_fuzzy_search_results(query, schema_version, document_pk, object_model)
-        vector_results, total_vector_matches, matching_features = self.get_vector_search_results(query, schema_version, document_pk, object_model)
         
-        # Store highlighted text from direct search results
-        highlighted_text = {}
         try:
-            for result in direct_results:
-                highlighted_text[result.object_pk] = result.highlighted
-        except Exception:
-            pass
-        
-        direct_pks = self._extract_pks_safely(direct_results)
-        fuzzy_pks = self._extract_pks_safely(fuzzy_results)
-        vector_pks = self._extract_pks_safely(vector_results)
-        
-        # 2. Merge all in priority order
-        all_results = self.merge_search_results(direct_pks, fuzzy_pks, vector_pks, schema_version, document_pk, object_model)
-        all_results_list = list(all_results)
-        
-        # Restore highlighted text for direct search results
-        for result in all_results_list:
-            if result.object_pk in highlighted_text:
-                result.highlighted = highlighted_text[result.object_pk]
-            else:
-                # Apply smart highlighting for fuzzy and vector results
-                match_type = getattr(result, 'match_type', '')
-                if match_type == 'vector' and result.object_name in matching_features:
-                    # Use TF-IDF features for vector results
-                    features = matching_features[result.object_name]
-                    logger.info(f"Vector features for '{result.object_name}': {features}")
-                    result.highlighted = self._highlight_vector_features(result.text, features)
+            results = list(models.SearchResult.objects.raw(
+                sql, all_pks + all_pks + all_pks + [params['schema_version'], params['document_pk'], params['object_model']]
+            ))
+            
+            # Apply highlighting, matched terms, and scores
+            for result in results:
+                if result.object_pk in highlighted_map:
+                    # Use FTS5 highlighting for exact results
+                    result.highlighted = highlighted_map[result.object_pk]
                 else:
-                    # Use query words for fuzzy results
-                    result.highlighted = self._highlight_text_manually(result.text, query)
+                    # For fuzzy results, highlight the matched term; for vector results, highlight the query
+                    if getattr(result, 'match_type', '') == 'fuzzy' and result.object_pk in matched_term_map:
+                        # Highlight the matched term for fuzzy results
+                        result.highlighted = self._highlight_text(result.text, matched_term_map[result.object_pk])
+                    else:
+                        # Highlight the original query for vector results
+                        result.highlighted = self._highlight_text(result.text, params['query'])
+                
+                # Add matched_term and match_score
+                result.matched_term = matched_term_map.get(result.object_pk)
+                result.match_score = match_score_map.get(result.object_pk)
+                    
+            return results
+        except:
+            return []
+
+    def _filter_results(self, results, params):
+        """Filter results based on search parameters."""
+        exact_count = sum(1 for r in results if getattr(r, 'match_type', '') == 'exact')
         
-        # 3. Calculate metadata on complete dataset
-        vector_count = sum(1 for r in all_results_list if getattr(r, 'match_type', '') == 'vector')
-        used_fallback = len(direct_pks) == 0 and len(fuzzy_pks) > 0
-        
-        # 4. Filter results based on parameters
-        if strict:
-            # Strict mode: only include explicitly requested types
-            final_results = [
-                r for r in all_results_list 
-                if ((not include_vector and not include_fuzzy and getattr(r, 'match_type', '') == 'direct') or
-                    (include_fuzzy and getattr(r, 'match_type', '') == 'fuzzy') or
-                    (include_vector and getattr(r, 'match_type', '') == 'vector'))
-            ]
+        if params['strict']:
+            # Strict mode: only requested types
+            return [r for r in results if (
+                (not params['include_vector'] and not params['include_fuzzy'] and getattr(r, 'match_type', '') == 'exact') or
+                (params['include_fuzzy'] and getattr(r, 'match_type', '') == 'fuzzy') or
+                (params['include_vector'] and getattr(r, 'match_type', '') == 'vector')
+            )]
         else:
-            # Normal mode: include direct + requested types, with fallback logic
-            should_include_fuzzy = include_fuzzy or (len(direct_pks) == 0)
-            final_results = [
-                r for r in all_results_list 
-                if (getattr(r, 'match_type', '') == 'direct' or
-                    (getattr(r, 'match_type', '') == 'fuzzy' and should_include_fuzzy) or
-                    (getattr(r, 'match_type', '') == 'vector' and include_vector))
-            ]
+            # Normal mode: exact + requested + fallback logic
+            should_include_fuzzy = params['include_fuzzy'] or (exact_count == 0)
+            return [r for r in results if (
+                getattr(r, 'match_type', '') == 'exact' or
+                (getattr(r, 'match_type', '') == 'fuzzy' and should_include_fuzzy) or
+                (getattr(r, 'match_type', '') == 'vector' and params['include_vector'])
+            )]
+
+    def _build_metadata(self, all_results, final_results, params):
+        """Build search metadata."""
+        exact_count = sum(1 for r in all_results if getattr(r, 'match_type', '') == 'exact')
+        vector_count = sum(1 for r in all_results if getattr(r, 'match_type', '') == 'vector')
         
         metadata = {
-            'direct_matches': len(direct_pks) > 0,
-            'used_fallback': used_fallback,
+            'exact_matches': exact_count > 0,
             'suggestion': None
         }
         
-        # Add vector search suggestion if there are additional vector results
-        if vector_count > 0 and not include_vector:
+        # Add vector suggestion if there are vector results not included
+        if vector_count > 0 and not params['include_vector']:
+            vector_params = dict(self.request.query_params)
+            vector_params.update({'query': params['query'], 'vector': 'true'})
+            query_string = urlencode(vector_params)
+            vector_link = self.request.build_absolute_uri(f"/v2/search/?{query_string}")
+            
             metadata['suggestion'] = {
                 'type': 'vector',
                 'additional_matches': vector_count,
-                'link': None  # Will be set in get_queryset
+                'link': vector_link
             }
-        
-        return {'results': final_results, 'metadata': metadata}
+            
+        return metadata
 
     def get_queryset(self):
-        """Builds and runs the DB query based on querystring params"""
-        params = self._parse_search_parameters()
+        """Main search logic."""
+        params = self._parse_parameters()
         
-        if params['query'] is None:
+        if not params['query']:
             queryset = models.SearchResult.objects.none()
-            empty_metadata = {
-                'direct_matches': False,
-                'used_fallback': False,
+            queryset._search_metadata = {
+                'exact_matches': False,
                 'suggestion': None
             }
-            return self._attach_metadata_safely(queryset, empty_metadata)
-
-        # Use unified search method
-        search_result = self.perform_unified_search(
-            params['query'], params['schema_version'], params['document_pk'], params['object_model'],
-            include_fuzzy=params['include_fuzzy'], include_vector=params['include_vector'], strict=params['strict']
-        )
+            return queryset
         
-        final_results = search_result['results']
-        search_metadata = search_result['metadata']
-
-        # Add vector search link if there are additional unique vector results
-        if search_metadata.get('suggestion') and search_metadata['suggestion']['type'] == 'vector':
-            vector_link = self.build_vector_search_link(params['query'], self.request.query_params)
-            search_metadata['suggestion']['link'] = vector_link
-
-        return self._attach_metadata_safely(final_results, search_metadata)
+        # Run all search types
+        exact_results = self._exact_search(params['query'], params['schema_version'], params['document_pk'], params['object_model'])
+        fuzzy_results = self._fuzzy_search(params['query'], params['schema_version'], params['document_pk'], params['object_model'])
+        vector_results = self._vector_search(params['query'], params['schema_version'], params['document_pk'], params['object_model'])
+        
+        # Merge and process results
+        all_results = self._merge_results(exact_results, fuzzy_results, vector_results, params)
+        final_results = self._filter_results(all_results, params)
+        metadata = self._build_metadata(all_results, final_results, params)
+        
+        # Return results with metadata
+        return ResultsWithMetadata(final_results, metadata)
 
     def list(self, request, *args, **kwargs):
-        """Override list to include search metadata in the response."""
+        """Return search results with metadata."""
         queryset = self.get_queryset()
-        search_metadata = getattr(queryset, '_search_metadata', None)
+        metadata = getattr(queryset, '_search_metadata', None)
         
-        # Get the paginated response
+        # Handle pagination
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
             paginated_response = self.get_paginated_response(serializer.data)
-            if search_metadata:
-                paginated_response.data['search_metadata'] = search_metadata
+            if metadata:
+                paginated_response.data['search_metadata'] = metadata
             return paginated_response
-
+        
         # Non-paginated response
         serializer = self.get_serializer(queryset, many=True)
         response_data = {'results': serializer.data, 'count': len(serializer.data)}
-        if search_metadata:
-            response_data['search_metadata'] = search_metadata
+        if metadata:
+            response_data['search_metadata'] = metadata
         return Response(response_data)

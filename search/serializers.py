@@ -16,6 +16,8 @@ class SearchResultSerializer(serializers.ModelSerializer):
     document = serializers.SerializerMethodField(method_name='get_document')
     route = serializers.SerializerMethodField(method_name='get_route')
     match_type = serializers.CharField(read_only=True)
+    matched_term = serializers.CharField(read_only=True, allow_null=True)
+    match_score = serializers.FloatField(read_only=True, allow_null=True)
 
     class Meta:
         model = models.SearchResult
@@ -29,7 +31,9 @@ class SearchResultSerializer(serializers.ModelSerializer):
             'route',
             'text',
             'highlighted',
-            'match_type']
+            'match_type',
+            'matched_term',
+            'match_score']
 
     # The following override is replaced in a postproccessing hook defined in oas.py. I couldn't figure out how to get a oneof in here
     @extend_schema_field(OpenApiTypes.STR)
