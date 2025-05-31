@@ -1,7 +1,7 @@
 """Clean search implementation with exact, fuzzy, and vector search."""
 import pickle
 import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.parse import urlencode
 
@@ -26,29 +26,22 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
 
     serializer_class = serializers.SearchResultSerializer
     
-    # Configuration
+    # Configuration constants
     VECTOR_INDEX_PATH = Path('server/vector_index.pkl')
     FUZZY_THRESHOLD = 75
     VECTOR_THRESHOLD = 0.05
     DEFAULT_LIMIT = 50
+    BASE_SELECT_FIELDS = "document_pk, object_pk, object_name, object_model, text, schema_version"
+    WHERE_FILTERS = "schema_version LIKE %s AND document_pk LIKE %s AND object_model LIKE %s"
 
     def _parse_parameters(self):
         """Parse search parameters from request."""
-        # Auto-detect schema version from URL path
-        path = self.request.path
-        if '/v1/' in path:
-            schema_version = 'v1'
-        elif '/v2/' in path:
-            schema_version = 'v2'
-        else:
-            schema_version = 'v2'  # default
-            
         return {
             'query': self.request.query_params.get('query'),
             'include_vector': self.request.query_params.get("vector", "false").lower() in ["1", "true", "yes"],
             'include_fuzzy': self.request.query_params.get("fuzzy", "false").lower() in ["1", "true", "yes"],
             'strict': self.request.query_params.get("strict", "false").lower() in ["1", "true", "yes"],
-            'schema_version': self.request.query_params.get("schema", schema_version),
+            'schema_version': self.request.query_params.get("schema", "v2"),
             'document_pk': self.request.query_params.get("document_pk", '%'),
             'object_model': self.request.query_params.get("object_model", '%')
         }
@@ -60,35 +53,47 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
                 self._index = pickle.load(f)
         return self._index
 
+    def _execute_search_query(self, sql, params):
+        """Execute a search query with error handling."""
+        try:
+            return list(models.SearchResult.objects.raw(sql, params))
+        except Exception:
+            return []
+
+    def _build_name_lookup_query(self, matched_names, schema_version, document_pk, object_model):
+        """Build SQL query for looking up results by object names."""
+        placeholders = ','.join(['%s'] * len(matched_names))
+        sql = f"""
+            SELECT 1 as id, 0 as rank, text as highlighted,
+                   {self.BASE_SELECT_FIELDS}
+            FROM search_index
+            WHERE object_name IN ({placeholders})
+              AND {self.WHERE_FILTERS}
+            ORDER BY object_name
+        """
+        params = matched_names + [schema_version, document_pk, object_model]
+        return sql, params
+
     def _exact_search(self, query, schema_version, document_pk, object_model):
         """Exact text search using SQLite FTS5."""
-        sql = """
+        sql = f"""
             SELECT 1 as id,
                    rank,
                    snippet(search_index, 4, '<span class="highlighted">', '</span>', '...', 20) as highlighted,
-                   document_pk, object_pk, object_name, object_model, text, schema_version
+                   {self.BASE_SELECT_FIELDS}
             FROM search_index 
-            WHERE schema_version LIKE %s 
-              AND document_pk LIKE %s
-              AND object_model LIKE %s
+            WHERE {self.WHERE_FILTERS}
               AND search_index MATCH %s
               AND rank MATCH 'bm25(1.0, 1.0, 10.0)'
             ORDER BY rank
         """
         
-        try:
-            results = models.SearchResult.objects.raw(sql, [schema_version, document_pk, object_model, query])
-            # Exact search gets perfect score of 1.0 and the query as matched_term for consistency
-            return [(r.object_pk, r.highlighted, query, 1.0) for r in results]
-        except:
-            return []
+        results = self._execute_search_query(sql, [schema_version, document_pk, object_model, query])
+        # Exact search gets perfect score of 1.0 and the query as matched_term for consistency
+        return [(r.object_pk, r.highlighted, query, 1.0) for r in results]
 
-    def _fuzzy_search(self, query, schema_version, document_pk, object_model):
-        """Fuzzy search using RapidFuzz against individual words."""
-        index = self._load_index()
-        names = index['names']
-        
-        # Create mapping of words to names they belong to
+    def _build_word_index(self, names):
+        """Build mapping of words to names for fuzzy search."""
         word_to_names = {}
         for name in names:
             # Split name into words (handle spaces, hyphens, etc.)
@@ -97,8 +102,10 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
                 if word not in word_to_names:
                     word_to_names[word] = []
                 word_to_names[word].append(name)
-        
-        # Get all unique words
+        return word_to_names
+
+    def _find_fuzzy_matches(self, query, word_to_names):
+        """Find fuzzy matches and return sorted name matches."""
         all_words = list(word_to_names.keys())
         
         # Fuzzy match query against individual words (case-insensitive)
@@ -128,44 +135,39 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
             return (0 if is_exact_word_match else 1, -score)
         
         name_matches.sort(key=sort_key)
-        
-        # Limit results
-        name_matches = name_matches[:self.DEFAULT_LIMIT]
-        
+        return name_matches[:self.DEFAULT_LIMIT]
+
+    def _process_name_matches(self, name_matches, schema_version, document_pk, object_model):
+        """Process name matches into ordered results."""
+        if not name_matches:
+            return []
+            
         # Get results for matched names
         match_name_to_info = {match[0]: {'term': match[2], 'score': match[1] / 100.0} for match in name_matches}  # Convert to 0-1 range
         matched_names = [match[0] for match in name_matches]
         
-        placeholders = ','.join(['%s'] * len(matched_names))
-        sql = f"""
-            SELECT 1 as id, 0 as rank, text as highlighted,
-                   document_pk, object_pk, object_name, object_model, text, schema_version
-            FROM search_index
-            WHERE object_name IN ({placeholders})
-              AND schema_version LIKE %s
-              AND document_pk LIKE %s  
-              AND object_model LIKE %s
-            ORDER BY object_name
-        """
+        sql, params = self._build_name_lookup_query(matched_names, schema_version, document_pk, object_model)
+        results = self._execute_search_query(sql, params)
         
-        try:
-            results = models.SearchResult.objects.raw(
-                sql, matched_names + [schema_version, document_pk, object_model]
-            )
-            # Return with proper ordering based on our sorted matches
-            result_list = list(results)
-            # Sort results to match our fuzzy match ordering
-            name_to_result = {r.object_name: r for r in result_list}
-            ordered_results = []
-            for name in matched_names:
-                if name in name_to_result:
-                    result = name_to_result[name]
-                    match_info = match_name_to_info[name]
-                    ordered_results.append((result.object_pk, result.highlighted, match_info['term'], match_info['score']))
-            
-            return ordered_results
-        except:
-            return []
+        # Return with proper ordering based on our sorted matches
+        name_to_result = {r.object_name: r for r in results}
+        ordered_results = []
+        for name in matched_names:
+            if name in name_to_result:
+                result = name_to_result[name]
+                match_info = match_name_to_info[name]
+                ordered_results.append((result.object_pk, result.highlighted, match_info['term'], match_info['score']))
+        
+        return ordered_results
+
+    def _fuzzy_search(self, query, schema_version, document_pk, object_model):
+        """Fuzzy search using RapidFuzz against individual words."""
+        index = self._load_index()
+        names = index['names']
+        
+        word_to_names = self._build_word_index(names)
+        name_matches = self._find_fuzzy_matches(query, word_to_names)
+        return self._process_name_matches(name_matches, schema_version, document_pk, object_model)
 
     def _vector_search(self, query, schema_version, document_pk, object_model):
         """Vector search using TF-IDF."""
@@ -191,36 +193,19 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
         matched_data = [(index['names'][i], score) for i, score in good_results]
         matched_names = [name for name, score in matched_data]
         
-        # Get results for matched names  
-        placeholders = ','.join(['%s'] * len(matched_names))
-        sql = f"""
-            SELECT 1 as id, 0 as rank, text as highlighted,
-                   document_pk, object_pk, object_name, object_model, text, schema_version
-            FROM search_index
-            WHERE object_name IN ({placeholders})
-              AND schema_version LIKE %s
-              AND document_pk LIKE %s
-              AND object_model LIKE %s
-            ORDER BY object_name
-        """
+        sql, params = self._build_name_lookup_query(matched_names, schema_version, document_pk, object_model)
+        results = self._execute_search_query(sql, params)
         
-        try:
-            results = models.SearchResult.objects.raw(
-                sql, matched_names + [schema_version, document_pk, object_model]
-            )
-            
-            # Create mapping from name to score
-            name_to_score = dict(matched_data)
-            
-            # Return with vector similarity scores as match_score, no matched_term for vector
-            result_list = []
-            for result in results:
-                score = name_to_score.get(result.object_name, 0.0)
-                result_list.append((result.object_pk, result.highlighted, None, score))
-            
-            return result_list
-        except:
-            return []
+        # Create mapping from name to score
+        name_to_score = dict(matched_data)
+        
+        # Return with vector similarity scores as match_score, no matched_term for vector
+        result_list = []
+        for result in results:
+            score = name_to_score.get(result.object_name, 0.0)
+            result_list.append((result.object_pk, result.highlighted, None, score))
+        
+        return result_list
 
     def _highlight_text(self, text, query_or_term):
         """Add highlighting to text for fuzzy/vector results."""
@@ -243,43 +228,25 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
                 text, 
                 flags=re.IGNORECASE
             )
-        except:
+        except Exception:
             return text
 
-    def _merge_results(self, exact_results, fuzzy_results, vector_results, params):
-        """Merge search results maintaining priority order."""
-        # Extract PKs, highlighted text, matched terms, and scores
-        exact_pks = [r[0] for r in exact_results]
-        fuzzy_pks = [r[0] for r in fuzzy_results] 
-        vector_pks = [r[0] for r in vector_results]
+    def _extract_result_data(self, results_list):
+        """Extract PKs and create mappings from search results."""
+        pks = [r[0] for r in results_list]
+        highlighted_map = {r[0]: r[1] for r in results_list}
+        matched_term_map = {r[0]: r[2] for r in results_list if r[2] is not None}
+        match_score_map = {r[0]: r[3] for r in results_list if r[3] is not None}
+        return pks, highlighted_map, matched_term_map, match_score_map
+
+    def _merge_result_data(self, exact_results, fuzzy_results, vector_results):
+        """Merge data from all search types with priority."""
+        # Extract data from each search type
+        exact_pks, exact_highlighted, exact_terms, exact_scores = self._extract_result_data(exact_results)
+        fuzzy_pks, _, fuzzy_terms, fuzzy_scores = self._extract_result_data(fuzzy_results)
+        vector_pks, _, vector_terms, vector_scores = self._extract_result_data(vector_results)
         
-        # Store highlighted text, matched terms, and scores from searches
-        highlighted_map = {r[0]: r[1] for r in exact_results}
-        matched_term_map = {}
-        match_score_map = {}
-        
-        # Store matched terms and scores for all search types - respect priority order
-        for pk, highlighted, matched_term, score in exact_results:
-            if matched_term is not None:
-                matched_term_map[pk] = matched_term
-            if score is not None:
-                match_score_map[pk] = score
-                
-        # Only add fuzzy data if not already present (exact has priority)
-        for pk, highlighted, matched_term, score in fuzzy_results:
-            if matched_term is not None and pk not in matched_term_map:
-                matched_term_map[pk] = matched_term
-            if score is not None and pk not in match_score_map:
-                match_score_map[pk] = score
-                
-        # Only add vector data if not already present (exact and fuzzy have priority)  
-        for pk, highlighted, matched_term, score in vector_results:
-            if matched_term is not None and pk not in matched_term_map:
-                matched_term_map[pk] = matched_term
-            if score is not None and pk not in match_score_map:
-                match_score_map[pk] = score
-        
-        # Merge PKs in priority order, removing duplicates
+        # Combine with priority: exact > fuzzy > vector
         all_pks = []
         match_types = []
         seen = set()
@@ -290,6 +257,18 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
                     all_pks.append(pk)
                     match_types.append(match_type)
                     seen.add(pk)
+        
+        # Build combined mappings with priority
+        matched_term_map = {**vector_terms, **fuzzy_terms, **exact_terms}  # Priority order: right overwrites left
+        match_score_map = {**vector_scores, **fuzzy_scores, **exact_scores}
+        
+        return all_pks, match_types, exact_highlighted, matched_term_map, match_score_map
+
+    def _merge_results(self, exact_results, fuzzy_results, vector_results, params):
+        """Merge search results maintaining priority order."""
+        all_pks, match_types, highlighted_map, matched_term_map, match_score_map = self._merge_result_data(
+            exact_results, fuzzy_results, vector_results
+        )
         
         if not all_pks:
             return []
@@ -304,46 +283,39 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
                    CASE {' '.join(order_cases)} ELSE 999999 END as rank,
                    CASE {' '.join(match_type_cases)} ELSE 'unknown' END as match_type,
                    text as highlighted,
-                   document_pk, object_pk, object_name, object_model, text, schema_version
+                   {self.BASE_SELECT_FIELDS}
             FROM search_index
             WHERE object_pk IN ({placeholders})
-              AND schema_version LIKE %s
-              AND document_pk LIKE %s
-              AND object_model LIKE %s
+              AND {self.WHERE_FILTERS}
             ORDER BY rank
         """
         
-        try:
-            results = list(models.SearchResult.objects.raw(
-                sql, all_pks + all_pks + all_pks + [params['schema_version'], params['document_pk'], params['object_model']]
-            ))
-            
-            # Apply highlighting, matched terms, and scores
-            for result in results:
-                if result.object_pk in highlighted_map:
-                    # Use FTS5 highlighting for exact results
-                    result.highlighted = highlighted_map[result.object_pk]
+        # Need all_pks repeated 3 times for the CASE statements, plus 3 filter params
+        params_list = all_pks + all_pks + all_pks + [params['schema_version'], params['document_pk'], params['object_model']]
+        results = self._execute_search_query(sql, params_list)
+        
+        # Apply highlighting, matched terms, and scores
+        for result in results:
+            if result.object_pk in highlighted_map:
+                # Use FTS5 highlighting for exact results
+                result.highlighted = highlighted_map[result.object_pk]
+            else:
+                # For fuzzy results, highlight the matched term; for vector results, highlight the query
+                if getattr(result, 'match_type', '') == 'fuzzy' and result.object_pk in matched_term_map:
+                    # Highlight the matched term for fuzzy results
+                    result.highlighted = self._highlight_text(result.text, matched_term_map[result.object_pk])
                 else:
-                    # For fuzzy results, highlight the matched term; for vector results, highlight the query
-                    if getattr(result, 'match_type', '') == 'fuzzy' and result.object_pk in matched_term_map:
-                        # Highlight the matched term for fuzzy results
-                        result.highlighted = self._highlight_text(result.text, matched_term_map[result.object_pk])
-                    else:
-                        # Highlight the original query for vector results
-                        result.highlighted = self._highlight_text(result.text, params['query'])
+                    # Highlight the original query for vector results
+                    result.highlighted = self._highlight_text(result.text, params['query'])
+            
+            # Add matched_term and match_score
+            result.matched_term = matched_term_map.get(result.object_pk)
+            result.match_score = match_score_map.get(result.object_pk)
                 
-                # Add matched_term and match_score
-                result.matched_term = matched_term_map.get(result.object_pk)
-                result.match_score = match_score_map.get(result.object_pk)
-                    
-            return results
-        except:
-            return []
+        return results
 
     def _filter_results(self, results, params):
         """Filter results based on search parameters."""
-        exact_count = sum(1 for r in results if getattr(r, 'match_type', '') == 'exact')
-        
         if params['strict']:
             # Strict mode: only requested types
             return [r for r in results if (
@@ -352,11 +324,10 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
                 (params['include_vector'] and getattr(r, 'match_type', '') == 'vector')
             )]
         else:
-            # Normal mode: exact + requested + fallback logic
-            should_include_fuzzy = params['include_fuzzy'] or (exact_count == 0)
+            # Normal mode: include exact and fuzzy (already filtered), but vector only if requested
             return [r for r in results if (
                 getattr(r, 'match_type', '') == 'exact' or
-                (getattr(r, 'match_type', '') == 'fuzzy' and should_include_fuzzy) or
+                getattr(r, 'match_type', '') == 'fuzzy' or
                 (getattr(r, 'match_type', '') == 'vector' and params['include_vector'])
             )]
 
@@ -372,7 +343,7 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
         
         # Add vector suggestion if there are vector results not included
         if vector_count > 0 and not params['include_vector']:
-            vector_params = dict(self.request.query_params)
+            vector_params = {k: v for k, v in self.request.query_params.items()}
             vector_params.update({'query': params['query'], 'vector': 'true'})
             query_string = urlencode(vector_params)
             vector_link = self.request.build_absolute_uri(f"/v2/search/?{query_string}")
@@ -397,17 +368,42 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
             }
             return queryset
         
-        # Run all search types in parallel
-        with ThreadPoolExecutor(max_workers=3) as executor:
-            exact_future = executor.submit(self._exact_search, params['query'], params['schema_version'], params['document_pk'], params['object_model'])
-            fuzzy_future = executor.submit(self._fuzzy_search, params['query'], params['schema_version'], params['document_pk'], params['object_model'])
-            vector_future = executor.submit(self._vector_search, params['query'], params['schema_version'], params['document_pk'], params['object_model'])
-            
-            # Wait for all to complete and get results
-            exact_results = exact_future.result()
-            fuzzy_results = fuzzy_future.result()
-            vector_results = vector_future.result()
+        # Determine which searches to run
+        if params['strict']:
+            run_searches = []
+            if not params['include_fuzzy'] and not params['include_vector']:
+                run_searches.append('exact')
+            if params['include_fuzzy']:
+                run_searches.append('fuzzy')
+            if params['include_vector']:
+                run_searches.append('vector')
+        else:
+            run_searches = ['exact', 'fuzzy', 'vector']
         
+        # Run selected searches in parallel
+        search_args = (params['query'], params['schema_version'], params['document_pk'], params['object_model'])
+        results = {}
+        
+        with ThreadPoolExecutor(max_workers=3) as executor:
+            futures = {}
+            if 'exact' in run_searches:
+                futures['exact'] = executor.submit(self._exact_search, *search_args)
+            if 'fuzzy' in run_searches:
+                futures['fuzzy'] = executor.submit(self._fuzzy_search, *search_args)
+            if 'vector' in run_searches:
+                futures['vector'] = executor.submit(self._vector_search, *search_args)
+            
+            for search_type, future in futures.items():
+                results[search_type] = future.result()
+        
+        # Extract results with empty list defaults
+        exact_results = results.get('exact', [])
+        fuzzy_results = results.get('fuzzy', [])
+        vector_results = results.get('vector', [])
+        
+        if not params['strict'] and len(exact_results) > 0:
+            fuzzy_results = []
+
         # Merge and process results
         all_results = self._merge_results(exact_results, fuzzy_results, vector_results, params)
         final_results = self._filter_results(all_results, params)
