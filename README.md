@@ -92,6 +92,10 @@ To use the search function, you must build the search index by running the above
 pipenv run python manage.py quicksetup
 ```
 
+The `/v2/search/` endpoint now supports two optional parameters:
+- `fuzzy=true` enables fuzzy matching using RapidFuzz when no exact matches are found.
+- `vector=true` enables a TF‑IDF based vector search as a final fallback when full‑text search returns nothing.
+
 
 ## Run
 

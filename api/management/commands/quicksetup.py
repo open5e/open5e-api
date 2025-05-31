@@ -100,6 +100,9 @@ def clean_dir() ->None:
         shutil.rmtree(Path(settings.STATIC_ROOT))
     if Path(settings.DATABASES['default']['NAME']).exists():
         Path(settings.DATABASES['default']['NAME']).unlink()
+    vector_index = Path('server/vector_index.pkl')
+    if vector_index.exists():
+        vector_index.unlink()
 
 def import_v1() -> None:
     """Import the v1 apps' database models."""
