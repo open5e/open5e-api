@@ -1,6 +1,7 @@
 """Clean search implementation with exact, fuzzy, and vector search."""
 import pickle
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib.parse import urlencode
 
@@ -396,10 +397,16 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
             }
             return queryset
         
-        # Run all search types
-        exact_results = self._exact_search(params['query'], params['schema_version'], params['document_pk'], params['object_model'])
-        fuzzy_results = self._fuzzy_search(params['query'], params['schema_version'], params['document_pk'], params['object_model'])
-        vector_results = self._vector_search(params['query'], params['schema_version'], params['document_pk'], params['object_model'])
+        # Run all search types in parallel
+        with ThreadPoolExecutor(max_workers=3) as executor:
+            exact_future = executor.submit(self._exact_search, params['query'], params['schema_version'], params['document_pk'], params['object_model'])
+            fuzzy_future = executor.submit(self._fuzzy_search, params['query'], params['schema_version'], params['document_pk'], params['object_model'])
+            vector_future = executor.submit(self._vector_search, params['query'], params['schema_version'], params['document_pk'], params['object_model'])
+            
+            # Wait for all to complete and get results
+            exact_results = exact_future.result()
+            fuzzy_results = fuzzy_future.result()
+            vector_results = vector_future.result()
         
         # Merge and process results
         all_results = self._merge_results(exact_results, fuzzy_results, vector_results, params)
