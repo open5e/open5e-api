@@ -27,7 +27,7 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
     
     # Configuration
     VECTOR_INDEX_PATH = Path('server/vector_index.pkl')
-    FUZZY_THRESHOLD = 80
+    FUZZY_THRESHOLD = 75
     VECTOR_THRESHOLD = 0.05
     DEFAULT_LIMIT = 50
 
@@ -83,31 +83,57 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
             return []
 
     def _fuzzy_search(self, query, schema_version, document_pk, object_model):
-        """Fuzzy search using RapidFuzz."""
+        """Fuzzy search using RapidFuzz against individual words."""
         index = self._load_index()
         names = index['names']
         
-        matches = process.extract(query, names, scorer=fuzz.partial_ratio, limit=self.DEFAULT_LIMIT*2)
-        good_matches = [(match[0], match[1]) for match in matches if match[1] > self.FUZZY_THRESHOLD]
+        # Create mapping of words to names they belong to
+        word_to_names = {}
+        for name in names:
+            # Split name into words (handle spaces, hyphens, etc.)
+            words = re.findall(r'\b\w+\b', name.lower())
+            for word in words:
+                if word not in word_to_names:
+                    word_to_names[word] = []
+                word_to_names[word].append(name)
         
-        if not good_matches:
+        # Get all unique words
+        all_words = list(word_to_names.keys())
+        
+        # Fuzzy match query against individual words (case-insensitive)
+        word_matches = process.extract(query.lower(), all_words, scorer=fuzz.ratio, limit=self.DEFAULT_LIMIT*3)
+        good_word_matches = [(word, score) for word, score, _ in word_matches if score >= self.FUZZY_THRESHOLD]
+        
+        if not good_word_matches:
             return []
-            
-        # Sort matches: name matches first, then by similarity score (descending)
+        
+        # Collect all names that contain good word matches, with their best scores
+        name_scores = {}
+        for word, score in good_word_matches:
+            for name in word_to_names[word]:
+                # Keep the highest score for each name
+                if name not in name_scores or score > name_scores[name]['score']:
+                    name_scores[name] = {'score': score, 'matched_word': word}
+        
+        # Convert to list and sort
+        name_matches = [(name, info['score'], info['matched_word']) for name, info in name_scores.items()]
+        
+        # Sort matches: exact word matches first, then by similarity score (descending)
         def sort_key(match):
-            name, score = match
-            # Check if this is a name-only match (query matches the name exactly)
-            is_name_match = fuzz.partial_ratio(query.lower(), name.lower()) >= self.FUZZY_THRESHOLD
-            # Return tuple: (name_match_priority, negative_score) for sorting
-            # name matches get priority 0, others get priority 1
-            # negative score because we want higher scores first
-            return (0 if is_name_match else 1, -score)
+            name, score, matched_word = match
+            # Check if query exactly matches the word (case insensitive)
+            is_exact_word_match = query.lower() == matched_word.lower()
+            # Return tuple: (exact_word_priority, negative_score) for sorting
+            return (0 if is_exact_word_match else 1, -score)
         
-        good_matches.sort(key=sort_key)
+        name_matches.sort(key=sort_key)
         
-        # Get results for matched names, tracking which name was matched with its score
-        match_name_to_info = {match[0]: {'term': match[0], 'score': match[1] / 100.0} for match in good_matches}  # Convert to 0-1 range
-        matched_names = [match[0] for match in good_matches]
+        # Limit results
+        name_matches = name_matches[:self.DEFAULT_LIMIT]
+        
+        # Get results for matched names
+        match_name_to_info = {match[0]: {'term': match[2], 'score': match[1] / 100.0} for match in name_matches}  # Convert to 0-1 range
+        matched_names = [match[0] for match in name_matches]
         
         placeholders = ','.join(['%s'] * len(matched_names))
         sql = f"""
