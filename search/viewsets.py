@@ -169,6 +169,35 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
         name_matches = self._find_fuzzy_matches(query, word_to_names)
         return self._process_name_matches(name_matches, schema_version, document_pk, object_model)
 
+    def _vector_search_count(self, query, schema_version, document_pk, object_model):
+        """Get count of vector matches without full database lookup."""
+        index = self._load_index()
+        vectorizer = index['vectorizer'] 
+        matrix = index['matrix']
+        
+        # Get similarity scores
+        query_vec = vectorizer.transform([query])
+        scores = (matrix @ query_vec.T).toarray().ravel()
+        
+        # Just count matches above threshold - no database lookup
+        return sum(1 for score in scores if score > self.VECTOR_THRESHOLD)
+
+    def _vector_search_exists(self, query, schema_version, document_pk, object_model):
+        """Quick check if vector search would return any results."""
+        index = self._load_index()
+        vectorizer = index['vectorizer'] 
+        matrix = index['matrix']
+        
+        # Get similarity scores
+        query_vec = vectorizer.transform([query])
+        scores = (matrix @ query_vec.T).toarray().ravel()
+        
+        # Early termination - return as soon as we find one match
+        for score in scores:
+            if score > self.VECTOR_THRESHOLD:
+                return True
+        return False
+
     def _vector_search(self, query, schema_version, document_pk, object_model):
         """Vector search using TF-IDF."""
         index = self._load_index()
@@ -331,18 +360,22 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
                 (getattr(r, 'match_type', '') == 'vector' and params['include_vector'])
             )]
 
-    def _build_metadata(self, all_results, final_results, params):
+    def _build_metadata(self, all_results, final_results, params, vector_count=None):
         """Build search metadata."""
         exact_count = sum(1 for r in all_results if getattr(r, 'match_type', '') == 'exact')
-        vector_count = sum(1 for r in all_results if getattr(r, 'match_type', '') == 'vector')
+        vector_result_count = sum(1 for r in all_results if getattr(r, 'match_type', '') == 'vector')
         
         metadata = {
             'exact_matches': exact_count > 0,
             'suggestion': None
         }
         
-        # Add vector suggestion if there are vector results not included
-        if vector_count > 0 and not params['include_vector']:
+        # Determine total vector matches for suggestion
+        # Use vector_count if available (from count-only search), otherwise use result count
+        total_vector_matches = vector_count if vector_count is not None else vector_result_count
+        
+        # Add vector suggestion if there are vector results not included in final results
+        if total_vector_matches > 0 and not params['include_vector']:
             vector_params = {k: v for k, v in self.request.query_params.items()}
             vector_params.update({'query': params['query'], 'vector': 'true'})
             query_string = urlencode(vector_params)
@@ -350,7 +383,7 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
             
             metadata['suggestion'] = {
                 'type': 'vector',
-                'additional_matches': vector_count,
+                'additional_matches': total_vector_matches,
                 'link': vector_link
             }
             
@@ -368,46 +401,65 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
             }
             return queryset
         
-        # Determine which searches to run
-        if params['strict']:
-            run_searches = []
-            if not params['include_fuzzy'] and not params['include_vector']:
-                run_searches.append('exact')
-            if params['include_fuzzy']:
-                run_searches.append('fuzzy')
-            if params['include_vector']:
-                run_searches.append('vector')
-        else:
-            run_searches = ['exact', 'fuzzy', 'vector']
-        
-        # Run selected searches in parallel
+        # Run searches optimally
         search_args = (params['query'], params['schema_version'], params['document_pk'], params['object_model'])
         results = {}
         
-        with ThreadPoolExecutor(max_workers=3) as executor:
-            futures = {}
-            if 'exact' in run_searches:
-                futures['exact'] = executor.submit(self._exact_search, *search_args)
-            if 'fuzzy' in run_searches:
-                futures['fuzzy'] = executor.submit(self._fuzzy_search, *search_args)
-            if 'vector' in run_searches:
-                futures['vector'] = executor.submit(self._vector_search, *search_args)
+        # Determine which searches to run initially
+        if params['strict']:
+            # Strict mode: only what user explicitly requested
+            initial_searches = []
+            if not params['include_fuzzy'] and not params['include_vector']:
+                initial_searches.append('exact')
+            if params['include_fuzzy']:
+                initial_searches.append('fuzzy')
+            if params['include_vector']:
+                initial_searches.append('vector')
+        else:
+            # Default mode: exact + vector count for metadata (unless full vector requested)
+            initial_searches = ['exact']
+            if params['include_vector']:
+                initial_searches.append('vector')  # Full vector results
+            else:
+                initial_searches.append('vector_count')  # Just count for metadata
+        
+        # Run initial searches in parallel
+        if initial_searches:
+            search_functions = {
+                'exact': self._exact_search,
+                'fuzzy': self._fuzzy_search,
+                'vector': self._vector_search,
+                'vector_count': self._vector_search_count
+            }
             
-            for search_type, future in futures.items():
-                results[search_type] = future.result()
+            # Always use thread pool for consistency
+            with ThreadPoolExecutor(max_workers=len(initial_searches)) as executor:
+                futures = {
+                    search_type: executor.submit(search_functions[search_type], *search_args)
+                    for search_type in initial_searches
+                }
+                
+                for search_type, future in futures.items():
+                    results[search_type] = future.result()
+        
+        # If no exact matches, default mode should fall back to fuzzy
+        if not params['strict']:
+            exact_results = results.get('exact', [])
+            fuzzy_ran = 'fuzzy' in initial_searches
+            
+            # If exact found nothing and fuzzy didn't run, run fuzzy as fallback
+            if len(exact_results) == 0 and not fuzzy_ran:
+                results['fuzzy'] = self._fuzzy_search(*search_args)
         
         # Extract results with empty list defaults
         exact_results = results.get('exact', [])
         fuzzy_results = results.get('fuzzy', [])
         vector_results = results.get('vector', [])
-        
-        if not params['strict'] and len(exact_results) > 0:
-            fuzzy_results = []
 
         # Merge and process results
         all_results = self._merge_results(exact_results, fuzzy_results, vector_results, params)
         final_results = self._filter_results(all_results, params)
-        metadata = self._build_metadata(all_results, final_results, params)
+        metadata = self._build_metadata(all_results, final_results, params, results.get('vector_count'))
         
         # Return results with metadata
         return ResultsWithMetadata(final_results, metadata)
