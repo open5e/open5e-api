@@ -1,4 +1,4 @@
-FROM python:3.11-alpine
+FROM python:3.11-slim
 
 RUN mkdir -p /opt/services/open5e-api
 WORKDIR /opt/services/open5e-api
