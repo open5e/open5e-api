@@ -1,219 +1,135 @@
-from rest_framework.test import APITestCase
+import json
+from unittest.mock import Mock, patch
+
 from django.test import TestCase
-from unittest.mock import patch, MagicMock, Mock
+from rest_framework.test import APITestCase
+
 from search.viewsets import SearchResultViewSet
-from django.http import HttpRequest
-import numpy as np
 
 
 class SearchLogicTest(TestCase):
-    """Test the search logic without requiring full database setup."""
+    """Test basic search logic and parameter parsing."""
 
     def setUp(self):
         self.viewset = SearchResultViewSet()
-        # Mock request
         self.request = Mock()
-        self.request.query_params = {}
         self.viewset.request = self.request
 
     def test_fuzzy_parameter_parsing(self):
-        """Test that fuzzy parameter is correctly parsed."""
-        test_cases = [
-            ("true", True),
-            ("True", True), 
-            ("1", True),
-            ("yes", True),
-            ("false", False),
-            ("False", False),
-            ("0", False),
-            ("no", False),
-            ("", False),
-        ]
-        
-        for param_value, expected in test_cases:
-            self.request.query_params = {"fuzzy": param_value, "query": "test"}
-            include_fuzzy = self.request.query_params.get("fuzzy", "false").lower() in ["1", "true", "yes"]
-            self.assertEqual(include_fuzzy, expected, f"Failed for input '{param_value}'")
+        """Test that fuzzy parameter is parsed correctly."""
+        # Test fuzzy=true
+        self.request.query_params = {"fuzzy": "true"}
+        params = self.viewset._parse_parameters()
+        self.assertTrue(params['include_fuzzy'])
+
+        # Test fuzzy=false
+        self.request.query_params = {"fuzzy": "false"}
+        params = self.viewset._parse_parameters()
+        self.assertFalse(params['include_fuzzy'])
+
+        # Test default (not specified)
+        self.request.query_params = {}
+        params = self.viewset._parse_parameters()
+        self.assertFalse(params['include_fuzzy'])
 
     def test_vector_parameter_parsing(self):
-        """Test that vector parameter is correctly parsed."""
-        test_cases = [
-            ("true", True),
-            ("True", True),
-            ("1", True), 
-            ("yes", True),
-            ("false", False),
-            ("False", False),
-            ("0", False),
-            ("no", False),
-            ("", False),
-        ]
-        
-        for param_value, expected in test_cases:
-            self.request.query_params = {"vector": param_value, "query": "test"}
-            include_vector = self.request.query_params.get("vector", "false").lower() in ["1", "true", "yes"]
-            self.assertEqual(include_vector, expected, f"Failed for input '{param_value}'")
+        """Test that vector parameter is parsed correctly."""
+        # Test vector=true
+        self.request.query_params = {"vector": "true"}
+        params = self.viewset._parse_parameters()
+        self.assertTrue(params['include_vector'])
+
+        # Test vector=false
+        self.request.query_params = {"vector": "false"}
+        params = self.viewset._parse_parameters()
+        self.assertFalse(params['include_vector'])
+
+        # Test default (not specified)
+        self.request.query_params = {}
+        params = self.viewset._parse_parameters()
+        self.assertFalse(params['include_vector'])
 
     def test_query_required(self):
         """Test that query parameter is required."""
         self.request.query_params = {}
+        
         result = self.viewset.get_queryset()
-        # Should return empty queryset with metadata
+        
+        # Should have metadata for empty query
         self.assertTrue(hasattr(result, '_search_metadata'))
-        self.assertEqual(result._search_metadata['search_type'], 'empty')
+        metadata = result._search_metadata
+        self.assertEqual(metadata['exact_matches'], False)
+
+    def test_strict_parameter_parsing(self):
+        """Test that strict parameter is parsed correctly."""
+        # Test strict=true
+        self.request.query_params = {"strict": "true"}
+        params = self.viewset._parse_parameters()
+        self.assertTrue(params['strict'])
+
+        # Test default (not specified)
+        self.request.query_params = {}
+        params = self.viewset._parse_parameters()
+        self.assertFalse(params['strict'])
 
 
-class DirectSearchTest(TestCase):
-    """Test direct search behavior."""
+class SearchMethodTest(TestCase):
+    """Test individual search methods."""
 
-    @patch('search.viewsets.models.SearchResult.objects.raw')
-    def test_direct_search_with_results(self, mock_raw):
-        """Test direct search returns results when found."""
-        mock_result = Mock()
-        mock_result.object_name = "Fireball"
-        mock_raw.return_value = [mock_result]
+    def setUp(self):
+        self.viewset = SearchResultViewSet()
+
+    def test_extract_result_data(self):
+        """Test result data extraction."""
+        results = [
+            (1, 'highlighted1', 'term1', 0.9),
+            (2, 'highlighted2', None, 0.8),
+            (3, 'highlighted3', 'term3', 0.7),
+        ]
         
-        viewset = SearchResultViewSet()
-        request = Mock()
-        request.query_params = {"query": "fireball"}
-        viewset.request = request
+        pks, highlighted_map, matched_term_map, match_score_map = self.viewset._extract_result_data(results)
         
-        with patch.object(viewset, 'get_direct_search_results') as mock_direct, \
-             patch.object(viewset, 'get_vector_search_results') as mock_vector:
-            
-            mock_direct.return_value = [mock_result]
-            mock_vector.return_value = ([], 5)  # 5 vector matches available
-            
-            result = viewset.get_queryset()
-            
-            # Should not use fallback
-            self.assertTrue(hasattr(result, '_search_metadata'))
-            metadata = result._search_metadata
-            self.assertEqual(metadata['search_type'], 'direct')
-            self.assertTrue(metadata['has_direct_matches'])
-            self.assertFalse(metadata['used_fallback'])
-            self.assertIsNone(metadata['suggestion'])  # No suggestion since we found direct matches
+        self.assertEqual(pks, [1, 2, 3])
+        self.assertEqual(highlighted_map, {1: 'highlighted1', 2: 'highlighted2', 3: 'highlighted3'})
+        self.assertEqual(matched_term_map, {1: 'term1', 3: 'term3'})  # None values filtered out
+        self.assertEqual(match_score_map, {1: 0.9, 2: 0.8, 3: 0.7})
 
+    @patch('search.viewsets.SearchResultViewSet._load_index')
+    def test_build_word_index(self, mock_load_index):
+        """Test word index building for fuzzy search."""
+        names = ['Fire Shield', 'Fireball', 'Magic Weapon', 'Sword +1']
+        
+        word_index = self.viewset._build_word_index(names)
+        
+        # Check expected mappings
+        self.assertIn('fire', word_index)
+        self.assertIn('Fire Shield', word_index['fire'])  # "Fire Shield" contains "fire"
+        
+        self.assertIn('fireball', word_index)
+        self.assertIn('Fireball', word_index['fireball'])  # "Fireball" contains "fireball"
+        
+        self.assertIn('magic', word_index)
+        self.assertIn('Magic Weapon', word_index['magic'])
+        
+        self.assertIn('sword', word_index)
+        self.assertIn('Sword +1', word_index['sword'])
 
-class FuzzyFallbackTest(TestCase):
-    """Test fuzzy search fallback behavior."""
-
-    def test_fuzzy_fallback_when_no_direct_matches(self):
-        """Test that fuzzy search is used as fallback when no direct matches."""
-        viewset = SearchResultViewSet()
-        request = Mock()
-        request.query_params = {"query": "firebll"}  # Misspelling
-        viewset.request = request
+    def test_highlight_text(self):
+        """Test text highlighting functionality."""
+        text = "This is a magic weapon spell"
         
-        mock_fuzzy_result = Mock()
-        mock_fuzzy_result.object_name = "Fireball"
+        # Test single word highlighting
+        result = self.viewset._highlight_text(text, "magic")
+        self.assertIn('<span class="highlighted">magic</span>', result)
         
-        with patch.object(viewset, 'get_direct_search_results') as mock_direct, \
-             patch.object(viewset, 'get_fuzzy_search_results') as mock_fuzzy, \
-             patch.object(viewset, 'get_vector_search_results') as mock_vector:
-            
-            mock_direct.return_value = []  # No direct matches
-            mock_fuzzy.return_value = ([mock_fuzzy_result], ["Fireball"])
-            mock_vector.return_value = ([], 0)
-            
-            result = viewset.get_queryset()
-            
-            # Should use fuzzy fallback
-            metadata = result._search_metadata
-            self.assertFalse(metadata['has_direct_matches'])
-            self.assertTrue(metadata['used_fallback'])
-            self.assertEqual(metadata['fallback_type'], 'fuzzy')
-            self.assertEqual(metadata['fuzzy_count'], 1)
-
-    def test_explicit_fuzzy_with_direct_matches(self):
-        """Test that fuzzy=true includes fuzzy results even with direct matches."""
-        viewset = SearchResultViewSet()
-        request = Mock()
-        request.query_params = {"query": "fire", "fuzzy": "true"}
-        viewset.request = request
+        # Test multiple word highlighting  
+        result = self.viewset._highlight_text(text, "magic weapon")
+        self.assertIn('<span class="highlighted">magic</span>', result)
+        self.assertIn('<span class="highlighted">weapon</span>', result)
         
-        mock_direct_result = Mock()
-        mock_direct_result.object_name = "Fire Shield"
-        mock_fuzzy_result = Mock()
-        mock_fuzzy_result.object_name = "Fireball"
-        
-        with patch.object(viewset, 'get_direct_search_results') as mock_direct, \
-             patch.object(viewset, 'get_fuzzy_search_results') as mock_fuzzy, \
-             patch.object(viewset, 'get_vector_search_results') as mock_vector, \
-             patch('search.viewsets.models.SearchResult.objects.raw') as mock_raw:
-            
-            mock_direct.return_value = [mock_direct_result]
-            mock_fuzzy.return_value = ([mock_fuzzy_result], ["Fireball"])
-            mock_vector.return_value = ([], 0)
-            mock_raw.return_value = []
-            
-            result = viewset.get_queryset()
-            
-            # Should include both direct and fuzzy
-            metadata = result._search_metadata
-            self.assertTrue(metadata['has_direct_matches'])
-            self.assertEqual(metadata['search_type'], 'enhanced')
-            self.assertEqual(metadata['fuzzy_count'], 1)
-
-
-class VectorSearchTest(TestCase):
-    """Test vector search behavior."""
-
-    def test_vector_suggestion_when_no_direct_matches(self):
-        """Test that vector search suggestion appears when no direct matches."""
-        viewset = SearchResultViewSet()
-        request = Mock()
-        request.query_params = {"query": "magical weapon"}
-        viewset.request = request
-        
-        mock_vector_result = Mock()
-        mock_vector_result.object_name = "Magic Weapon"
-        
-        with patch.object(viewset, 'get_direct_search_results') as mock_direct, \
-             patch.object(viewset, 'get_fuzzy_search_results') as mock_fuzzy, \
-             patch.object(viewset, 'get_vector_search_results') as mock_vector, \
-             patch.object(viewset, 'get_deduplicated_vector_count') as mock_dedup:
-            
-            mock_direct.return_value = []  # No direct matches
-            mock_fuzzy.return_value = ([], [])  # No fuzzy matches
-            mock_vector.return_value = ([], 0)  # Not running vector search
-            mock_dedup.return_value = (15, 20)  # 15 unique vector matches, 20 total
-            
-            result = viewset.get_queryset()
-            
-            # Should suggest vector search
-            metadata = result._search_metadata
-            self.assertFalse(metadata['has_direct_matches'])
-            self.assertIsNotNone(metadata['suggestion'])
-            self.assertEqual(metadata['suggestion']['type'], 'vector')
-            self.assertEqual(metadata['suggestion']['count'], 15)
-            self.assertIn("view 15 additional results for similar terms", metadata['suggestion']['message'])
-            self.assertIn('link', metadata['suggestion'])
-
-    def test_explicit_vector_search(self):
-        """Test that vector=true includes vector results."""
-        viewset = SearchResultViewSet()
-        request = Mock()
-        request.query_params = {"query": "magic", "vector": "true"}
-        viewset.request = request
-        
-        mock_vector_result = Mock()
-        mock_vector_result.object_name = "Magic Weapon"
-        
-        with patch.object(viewset, 'get_direct_search_results') as mock_direct, \
-             patch.object(viewset, 'get_vector_search_results') as mock_vector, \
-             patch('search.viewsets.models.SearchResult.objects.raw') as mock_raw:
-            
-            mock_direct.return_value = []
-            mock_vector.return_value = ([mock_vector_result], 1)
-            mock_raw.return_value = []
-            
-            result = viewset.get_queryset()
-            
-            # Should include vector results
-            metadata = result._search_metadata
-            self.assertEqual(metadata['search_type'], 'enhanced')
-            self.assertEqual(metadata['vector_count'], 1)
+        # Test case insensitive
+        result = self.viewset._highlight_text(text, "MAGIC")
+        self.assertIn('<span class="highlighted">magic</span>', result)
 
 
 class SearchMetadataTest(APITestCase):
@@ -227,13 +143,8 @@ class SearchMetadataTest(APITestCase):
             def __init__(self):
                 super().__init__([])
                 self._search_metadata = {
-                    'search_type': 'empty',
-                    'has_direct_matches': False,
-                    'direct_count': 0,
-                    'fuzzy_count': 0,
-                    'vector_count': 0,
-                    'used_fallback': False,
-                    'fallback_type': None
+                    'exact_matches': False,
+                    'suggestion': None
                 }
         
         mock_queryset = MockQuerySetWithMetadata()
@@ -246,7 +157,46 @@ class SearchMetadataTest(APITestCase):
         self.assertEqual(data['count'], 0)
         self.assertEqual(len(data['results']), 0)
         self.assertIn('search_metadata', data)
-        self.assertEqual(data['search_metadata']['search_type'], 'empty')
+        self.assertEqual(data['search_metadata']['exact_matches'], False)
+
+    def test_build_metadata_with_exact_results(self):
+        """Test metadata building with exact results."""
+        viewset = SearchResultViewSet()
+        request = Mock()
+        request.query_params = {"query": "test"}
+        viewset.request = request
+        
+        # Mock result with match_type attribute
+        mock_result = Mock()
+        mock_result.match_type = 'exact'
+        all_results = [mock_result]
+        final_results = [mock_result]
+        params = {'include_vector': False}
+        
+        metadata = viewset._build_metadata(all_results, final_results, params)
+        
+        self.assertEqual(metadata['exact_matches'], True)
+        self.assertIsNone(metadata['suggestion'])
+
+    def test_build_metadata_with_vector_suggestion(self):
+        """Test metadata building with vector suggestion."""
+        viewset = SearchResultViewSet()
+        request = Mock()
+        request.query_params = {"query": "test"}
+        request.build_absolute_uri = Mock(return_value="http://test.com/search")
+        viewset.request = request
+        
+        all_results = []
+        final_results = []
+        params = {'query': 'test', 'include_vector': False}
+        vector_count = 10
+        
+        metadata = viewset._build_metadata(all_results, final_results, params, vector_count)
+        
+        self.assertEqual(metadata['exact_matches'], False)
+        self.assertIsNotNone(metadata['suggestion'])
+        self.assertEqual(metadata['suggestion']['type'], 'vector')
+        self.assertEqual(metadata['suggestion']['additional_matches'], 10)
 
     def test_search_metadata_structure(self):
         """Test that search metadata has the expected structure."""
@@ -255,56 +205,71 @@ class SearchMetadataTest(APITestCase):
         request.query_params = {"query": "test"}
         viewset.request = request
         
-        with patch.object(viewset, 'get_direct_search_results') as mock_direct, \
-             patch.object(viewset, 'get_fuzzy_search_results') as mock_fuzzy, \
-             patch.object(viewset, 'get_vector_search_results') as mock_vector, \
-             patch.object(viewset, 'get_deduplicated_vector_count') as mock_dedup:
-            
-            mock_direct.return_value = []
-            mock_fuzzy.return_value = ([], [])
-            mock_vector.return_value = ([], 0)
-            mock_dedup.return_value = (0, 0)
-            
-            result = viewset.get_queryset()
-            
-            metadata = result._search_metadata
-            
-            # Check all expected fields are present
-            expected_fields = [
-                'search_type', 'has_direct_matches', 'direct_count',
-                'fuzzy_count', 'vector_count', 'unique_vector_count',
-                'used_fallback', 'fallback_type', 'suggestion'
-            ]
-            
-            for field in expected_fields:
-                self.assertIn(field, metadata, f"Missing field: {field}")
-
-
-class SearchCombinationTest(TestCase):
-    """Test various combinations of search parameters."""
-
-    def test_all_search_types_combined(self):
-        """Test combining direct, fuzzy, and vector search."""
-        viewset = SearchResultViewSet()
-        request = Mock()
-        request.query_params = {"query": "magic", "fuzzy": "true", "vector": "true"}
-        viewset.request = request
+        all_results = []
+        final_results = []
+        params = {'include_vector': False}
         
-        with patch.object(viewset, 'get_direct_search_results') as mock_direct, \
-             patch.object(viewset, 'get_fuzzy_search_results') as mock_fuzzy, \
-             patch.object(viewset, 'get_vector_search_results') as mock_vector, \
-             patch('search.viewsets.models.SearchResult.objects.raw') as mock_raw:
-            
-            mock_direct.return_value = [Mock()]
-            mock_fuzzy.return_value = ([Mock()], ["Fuzzy"])
-            mock_vector.return_value = ([Mock()], 1)
-            mock_raw.return_value = []
-            
-            result = viewset.get_queryset()
-            
-            metadata = result._search_metadata
-            self.assertEqual(metadata['search_type'], 'enhanced')
-            self.assertTrue(metadata['has_direct_matches'])
-            self.assertEqual(metadata['fuzzy_count'], 1)
-            self.assertEqual(metadata['vector_count'], 1)
+        metadata = viewset._build_metadata(all_results, final_results, params)
+        
+        # Check all expected fields are present
+        expected_fields = ['exact_matches', 'suggestion']
+        
+        for field in expected_fields:
+            self.assertIn(field, metadata, f"Missing field: {field}")
+
+
+class SearchIntegrationTest(TestCase):
+    """Test search integration with mocked database calls."""
+
+    @patch('search.viewsets.SearchResultViewSet._execute_search_query')
+    @patch('search.viewsets.SearchResultViewSet._load_index')
+    def test_exact_search_integration(self, mock_load_index, mock_execute):
+        """Test exact search method integration."""
+        # Mock database result
+        mock_result = Mock()
+        mock_result.object_pk = 1
+        mock_result.highlighted = 'Fire<span class="highlighted">ball</span>'
+        mock_execute.return_value = [mock_result]
+        
+        viewset = SearchResultViewSet()
+        results = viewset._exact_search('fireball', '%', '%', '%')
+        
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0][0], 1)  # pk
+        self.assertEqual(results[0][2], 'fireball')  # matched_term
+        self.assertEqual(results[0][3], 1.0)  # score
+
+    @patch('search.viewsets.SearchResultViewSet._load_index')
+    def test_vector_search_count_integration(self, mock_load_index):
+        """Test vector search count method."""
+        # Mock index data with numpy-like behavior
+        import numpy as np
+        
+        mock_vectorizer = Mock()
+        mock_matrix = Mock()
+        
+        # Create actual numpy arrays for realistic behavior
+        query_vec = np.array([[0.1, 0.2, 0.3, 0.4]])
+        mock_vectorizer.transform.return_value = type('MockSparse', (), {
+            'T': query_vec.T
+        })()
+        
+        # Mock matrix multiplication result
+        scores = np.array([0.1, 0.3, 0.02, 0.8])
+        mock_matrix.__matmul__ = Mock(return_value=type('MockResult', (), {
+            'toarray': Mock(return_value=type('MockArray', (), {
+                'ravel': Mock(return_value=scores)
+            })())
+        })())
+        
+        mock_load_index.return_value = {
+            'vectorizer': mock_vectorizer,
+            'matrix': mock_matrix
+        }
+        
+        viewset = SearchResultViewSet()
+        # With threshold 0.05, should match scores 0.1, 0.3, 0.8 = 3 matches
+        count = viewset._vector_search_count('test query', '%', '%', '%')
+        
+        self.assertEqual(count, 3)
 
