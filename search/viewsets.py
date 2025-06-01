@@ -1,4 +1,4 @@
-"""Clean search implementation with exact, fuzzy, and vector search."""
+"""Search implementation with exact, fuzzy, and vector search."""
 import pickle
 import re
 from concurrent.futures import ThreadPoolExecutor
@@ -8,6 +8,8 @@ from urllib.parse import urlencode
 from rapidfuzz import process, fuzz
 from rest_framework import viewsets
 from rest_framework.response import Response
+from drf_spectacular.utils import extend_schema, extend_schema_view, OpenApiParameter, OpenApiExample
+from drf_spectacular.types import OpenApiTypes
 
 from search import models, serializers
 from search.apps import SearchConfig
@@ -22,6 +24,164 @@ class ResultsWithMetadata(list):
         self.model = models.SearchResult
 
 
+@extend_schema_view(
+    list=extend_schema(
+        operation_id="search_list",
+        summary="Search across D&D 5E content",
+        description="""
+        Search across all Open5e content and objects.
+
+        If multiple search types are requested, the results are first sorted, then merged & deduplicated in order of decreasing precision:
+        - Exact matches(name first, then other fields)
+        - Fuzzy matches (similarity, descending)
+        - Vector matches (similarity, descending)
+
+        """,
+        parameters=[
+            OpenApiParameter(
+                name="query",
+                type=OpenApiTypes.STR,
+                location=OpenApiParameter.QUERY,
+                required=True,
+                description="The search term to find. Required parameter.",
+                examples=[
+                    OpenApiExample("Existing term", value="fireball"),
+                    OpenApiExample("Typo example", value="firbal"),
+                    OpenApiExample("Multi-word", value="magic weapon"),
+                ]
+            ),
+            OpenApiParameter(
+                name="strict",
+                type=OpenApiTypes.BOOL,
+                location=OpenApiParameter.QUERY,
+                required=False,
+                description="Strict mode: only return explicitly requested search types. When false (default), exact search always runs with fuzzy fallback if no results found.",
+                examples=[
+                    OpenApiExample("Strict mode", value="true"),
+                    OpenApiExample("Default mode", value="false"),
+                ]
+            ),
+            OpenApiParameter(
+                name="fuzzy",
+                type=OpenApiTypes.BOOL,
+                location=OpenApiParameter.QUERY,
+                required=False,
+                description="Include fuzzy individual word matches in name fields only. Default: false (but used as fallback in default mode).",
+                examples=[
+                    OpenApiExample("Enable fuzzy matching", value="true"),
+                    OpenApiExample("Disable fuzzy matching", value="false"),
+                ]
+            ),
+            OpenApiParameter(
+                name="vector",
+                type=OpenApiTypes.BOOL,
+                location=OpenApiParameter.QUERY,
+                required=False,
+                description="Include vector search results against name + description. Finds semantically similar content using TF-IDF similarity. Default: false.",
+                examples=[
+                    OpenApiExample("Enable vector", value="true"),
+                    OpenApiExample("Disable vector", value="false"),
+                ]
+            ),
+            OpenApiParameter(
+                name="object_model",
+                type=OpenApiTypes.STR,
+                location=OpenApiParameter.QUERY,
+                required=False,
+                description="Filter results to specific content type. Default: all types.",
+                examples=[
+                    OpenApiExample("Spells only", value="Spell"),
+                    OpenApiExample("Creatures only", value="Creature"),
+                    OpenApiExample("Items only", value="Item"),
+                    OpenApiExample("All types", value="%"),
+                ]
+            ),
+            OpenApiParameter(
+                name="document_pk",
+                type=OpenApiTypes.STR,
+                location=OpenApiParameter.QUERY,
+                required=False,
+                description="Filter results to specific document. Use document key/slug. Default: all documents.",
+                examples=[
+                    OpenApiExample("SRD only", value="srd-2014"),
+                    OpenApiExample("All documents", value="%"),
+                ]
+            ),
+            OpenApiParameter(
+                name="schema",
+                type=OpenApiTypes.STR,
+                location=OpenApiParameter.QUERY,
+                required=False,
+                description="API schema version to search. Default: 'v2'.",
+                examples=[
+                    OpenApiExample("API v2", value="v2"),
+                    OpenApiExample("API v1", value="v1"),
+                ]
+            ),
+        ],
+        responses={
+            200: serializers.SearchResultSerializer(many=True),
+            400: "Bad request - missing or invalid query parameter"
+        },
+        examples=[
+            OpenApiExample(
+                "Default search",
+                summary="Basic search with exact + fuzzy fallback",
+                description="Searches for 'fireball' using exact text search, with fuzzy fallback if no exact matches",
+                value={
+                    "query": "fireball"
+                }
+            ),
+            OpenApiExample(
+                "Fuzzy search for typo",
+                summary="Explicit fuzzy search for handling typos",
+                description="Searches for 'firbal' using fuzzy search to handle the typo and find 'fireball'",
+                value={
+                    "query": "firbal",
+                    "fuzzy": "true"
+                }
+            ),
+            OpenApiExample(
+                "Vector semantic search",
+                summary="Add semantic similarity search",
+                description="Finds exact matches for 'healing' and content semantically similar to 'healing' using vector search",
+                value={
+                    "query": "healing",
+                    "vector": "true"
+                }
+            ),
+            OpenApiExample(
+                "Strict mode - vector only",
+                summary="Strict mode: vector only search",
+                description="Returns only vector matches for 'fire' eg. 'heat', 'flame', 'scorching'",
+                value={
+                    "query": "fire",
+                    "strict": "true",
+                    "vector": "true"
+                }
+            ),
+            OpenApiExample(
+                "Combined search modes",
+                summary="Multiple search types combined",
+                description="Combines exact, fuzzy, and vector search for comprehensive results",
+                value={
+                    "query": "magic",
+                    "fuzzy": "true",
+                    "vector": "true"
+                }
+            ),
+            OpenApiExample(
+                "Filtered search",
+                summary="Search filtered to specific content type",
+                description="Search for dragons but only in creature content",
+                value={
+                    "query": "dragon",
+                    "object_model": "Creature"
+                }
+            ),
+        ]
+    )
+)
 class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
     """Unified search across exact text, fuzzy, and vector search methods."""
 
