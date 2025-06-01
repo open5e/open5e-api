@@ -10,6 +10,7 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 
 from search import models, serializers
+from search.apps import SearchConfig
 
 
 class ResultsWithMetadata(list):
@@ -47,11 +48,15 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
         }
 
     def _load_index(self):
-        """Load the search index."""
-        if not hasattr(self, '_index'):
-            with self.VECTOR_INDEX_PATH.open('rb') as f:
-                self._index = pickle.load(f)
-        return self._index
+        """Get the pre-loaded search index from app configuration."""
+        if SearchConfig.vector_index is None:
+            # Fallback: load on demand if not pre-loaded
+            if not hasattr(SearchResultViewSet, '_fallback_index'):
+                with self.VECTOR_INDEX_PATH.open('rb') as f:
+                    SearchResultViewSet._fallback_index = pickle.load(f)
+            return SearchResultViewSet._fallback_index
+        
+        return SearchConfig.vector_index
 
     def _execute_search_query(self, sql, params):
         """Execute a search query with error handling."""
@@ -268,80 +273,72 @@ class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
         match_score_map = {r[0]: r[3] for r in results_list if r[3] is not None}
         return pks, highlighted_map, matched_term_map, match_score_map
 
-    def _merge_result_data(self, exact_results, fuzzy_results, vector_results):
-        """Merge data from all search types with priority."""
-        # Extract data from each search type
-        exact_pks, exact_highlighted, exact_terms, exact_scores = self._extract_result_data(exact_results)
-        fuzzy_pks, _, fuzzy_terms, fuzzy_scores = self._extract_result_data(fuzzy_results)
-        vector_pks, _, vector_terms, vector_scores = self._extract_result_data(vector_results)
-        
-        # Combine with priority: exact > fuzzy > vector
-        all_pks = []
-        match_types = []
-        seen = set()
-        
-        for pks, match_type in [(exact_pks, 'exact'), (fuzzy_pks, 'fuzzy'), (vector_pks, 'vector')]:
-            for pk in pks:
-                if pk not in seen:
-                    all_pks.append(pk)
-                    match_types.append(match_type)
-                    seen.add(pk)
-        
-        # Build combined mappings with priority
-        matched_term_map = {**vector_terms, **fuzzy_terms, **exact_terms}  # Priority order: right overwrites left
-        match_score_map = {**vector_scores, **fuzzy_scores, **exact_scores}
-        
-        return all_pks, match_types, exact_highlighted, matched_term_map, match_score_map
-
     def _merge_results(self, exact_results, fuzzy_results, vector_results, params):
-        """Merge search results maintaining priority order."""
-        all_pks, match_types, highlighted_map, matched_term_map, match_score_map = self._merge_result_data(
-            exact_results, fuzzy_results, vector_results
-        )
+        """Fast merge of pre-sorted result lists with deduplication."""
+        # Fast merge with priority: exact > fuzzy > vector
+        # Each list is already sorted correctly, just combine and dedupe
+        seen_pks = set()
+        merged_data = []
+        match_types = []
         
-        if not all_pks:
+        # Process in priority order: exact, fuzzy, vector
+        for results, match_type in [(exact_results, 'exact'), (fuzzy_results, 'fuzzy'), (vector_results, 'vector')]:
+            for result_tuple in results:
+                pk = result_tuple[0]
+                if pk not in seen_pks:
+                    seen_pks.add(pk)
+                    merged_data.append(result_tuple)
+                    match_types.append(match_type)
+        
+        if not merged_data:
             return []
-            
-        # Build final query with proper ordering
-        placeholders = ','.join(['%s'] * len(all_pks))
-        order_cases = [f"WHEN object_pk = %s THEN {i}" for i, pk in enumerate(all_pks)]
-        match_type_cases = [f"WHEN object_pk = %s THEN '{mt}'" for pk, mt in zip(all_pks, match_types)]
+        
+        # Build simple lookup query - no complex CASE statements needed
+        pks = [r[0] for r in merged_data]
+        placeholders = ','.join(['%s'] * len(pks))
         
         sql = f"""
-            SELECT 1 as id,
-                   CASE {' '.join(order_cases)} ELSE 999999 END as rank,
-                   CASE {' '.join(match_type_cases)} ELSE 'unknown' END as match_type,
-                   text as highlighted,
-                   {self.BASE_SELECT_FIELDS}
+            SELECT 1 as id, object_pk, object_name, object_model, text, document_pk, schema_version
             FROM search_index
             WHERE object_pk IN ({placeholders})
               AND {self.WHERE_FILTERS}
-            ORDER BY rank
         """
         
-        # Need all_pks repeated 3 times for the CASE statements, plus 3 filter params
-        params_list = all_pks + all_pks + all_pks + [params['schema_version'], params['document_pk'], params['object_model']]
-        results = self._execute_search_query(sql, params_list)
+        params_list = pks + [params['schema_version'], params['document_pk'], params['object_model']]
+        raw_results = self._execute_search_query(sql, params_list)
         
-        # Apply highlighting, matched terms, and scores
-        for result in results:
-            if result.object_pk in highlighted_map:
-                # Use FTS5 highlighting for exact results
-                result.highlighted = highlighted_map[result.object_pk]
-            else:
-                # For fuzzy results, highlight the matched term; for vector results, highlight the query
-                if getattr(result, 'match_type', '') == 'fuzzy' and result.object_pk in matched_term_map:
+        # Create lookup map for fast access
+        pk_to_raw = {r.object_pk: r for r in raw_results}
+        
+        # Build final results in correct order with all metadata
+        final_results = []
+        for i, (result_tuple, match_type) in enumerate(zip(merged_data, match_types)):
+            pk, highlighted, matched_term, score = result_tuple
+            
+            if pk in pk_to_raw:
+                raw_result = pk_to_raw[pk]
+                
+                # Set the core attributes
+                raw_result.id = 1
+                raw_result.rank = i  # Preserve merge order
+                raw_result.match_type = match_type
+                raw_result.matched_term = matched_term
+                raw_result.match_score = score
+                
+                # Set highlighting
+                if match_type == 'exact':
+                    # Use the FTS5 highlighting for exact matches
+                    raw_result.highlighted = highlighted
+                elif match_type == 'fuzzy' and matched_term:
                     # Highlight the matched term for fuzzy results
-                    result.highlighted = self._highlight_text(result.text, matched_term_map[result.object_pk])
+                    raw_result.highlighted = self._highlight_text(raw_result.text, matched_term)
                 else:
                     # Highlight the original query for vector results
-                    result.highlighted = self._highlight_text(result.text, params['query'])
-            
-            # Add matched_term and match_score
-            result.matched_term = matched_term_map.get(result.object_pk)
-            result.match_score = match_score_map.get(result.object_pk)
+                    raw_result.highlighted = self._highlight_text(raw_result.text, params['query'])
                 
-        return results
+                final_results.append(raw_result)
+        
+        return final_results
 
     def _filter_results(self, results, params):
         """Filter results based on search parameters."""
