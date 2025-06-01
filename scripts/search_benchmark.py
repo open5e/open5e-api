@@ -70,9 +70,9 @@ def run_performance_test():
     ]
     
     print("Performance Comparison: Default Mode vs Exact+Strict Mode")
-    print("=" * 90)
-    print(f"{'Query':<15} {'Default (ms)':<12} {'Exact+Strict (ms)':<17} {'Speedup':<8} {'Default Results':<15} {'Strict Results':<14}")
-    print("-" * 90)
+    print("=" * 100)
+    print(f"{'Query':<15} {'Default (ms)':<12} {'Exact+Strict (ms)':<17} {'Overhead':<12} {'Default Results':<15} {'Strict Results':<14}")
+    print("-" * 100)
     
     improvements = []
     
@@ -88,7 +88,7 @@ def run_performance_test():
                     default_results = results
         
         if not default_times:
-            print(f"{query:<15} {'ERROR':<12} {'ERROR':<17} {'N/A':<8}")
+            print(f"{query:<15} {'ERROR':<12} {'ERROR':<17} {'N/A':<12}")
             continue
             
         default_avg = mean(default_times)
@@ -104,14 +104,21 @@ def run_performance_test():
                     strict_results = results
         
         if not strict_times:
-            print(f"{query:<15} {default_avg:<12.1f} {'ERROR':<17} {'N/A':<8}")
+            print(f"{query:<15} {default_avg:<12.1f} {'ERROR':<17} {'N/A':<12}")
             continue
             
         strict_avg = mean(strict_times)
         
-        # Calculate improvement
-        speedup = ((default_avg - strict_avg) / default_avg) * 100
-        improvements.append(speedup)
+        # Calculate overhead: how much extra time default mode takes
+        overhead_ms = default_avg - strict_avg
+        overhead_percent = (overhead_ms / strict_avg) * 100 if strict_avg > 0 else 0
+        improvements.append(overhead_ms)
+        
+        # Format overhead display
+        if overhead_ms > 0:
+            overhead_display = f"+{overhead_ms:.1f}ms ({overhead_percent:+.0f}%)"
+        else:
+            overhead_display = f"{overhead_ms:.1f}ms ({overhead_percent:+.0f}%)"
         
         # Format result information
         default_info = f"T:{default_results['total_results']}"
@@ -126,24 +133,27 @@ def run_performance_test():
         if strict_results['vector_suggestions'] > 0:
             strict_info += f" V:{strict_results['vector_suggestions']}"
         
-        print(f"{query:<15} {default_avg:<12.1f} {strict_avg:<17.1f} {speedup:<7.1f}% {default_info:<15} {strict_info:<14}")
+        print(f"{query:<15} {default_avg:<12.1f} {strict_avg:<17.1f} {overhead_display:<12} {default_info:<15} {strict_info:<14}")
     
-    print("-" * 90)
+    print("-" * 100)
     
     if improvements:
-        avg_improvement = mean(improvements)
-        positive_improvements = [x for x in improvements if x > 0]
+        avg_overhead = mean(improvements)
+        high_overhead_queries = [x for x in improvements if x > 20]  # More than 20ms overhead
         
         print(f"\nSummary:")
-        print(f"Average performance change: {avg_improvement:.1f}%")
-        if positive_improvements:
-            print(f"Average improvement (positive cases): {mean(positive_improvements):.1f}%")
-        print(f"Queries with performance improvement: {len(positive_improvements)}/{len(improvements)}")
+        print(f"Average overhead: {avg_overhead:.1f}ms (default mode vs exact+strict)")
+        if high_overhead_queries:
+            print(f"Queries with high overhead (>20ms): {len(high_overhead_queries)}/{len(improvements)}")
+            print(f"Average high overhead: {mean(high_overhead_queries):.1f}ms")
+        else:
+            print("No queries with significant overhead (>20ms)")
     
     print(f"\nLegend:")
     print(f"T:X = Total results returned")
     print(f"E:✓ = Has exact matches") 
     print(f"V:X = Vector suggestions available")
+    print(f"Overhead = Extra time that default mode takes vs exact+strict (+ is worse, - is better)")
 
 if __name__ == "__main__":
     print("Starting performance comparison...")
