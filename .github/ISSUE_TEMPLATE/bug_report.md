@@ -1,22 +1,20 @@
 ---
 name: Bug report
 about: Report a bug you encountered
-title: ‘[BUG]’
-labels: ‘bug’
+title: "[BUG]"
+labels: "bug’
 assignees: ‘’
 
 ---
 
-## Expected Behavior
-<!--- Tell us what should happen -->
-
-## Current Behavior
-<!--- Tell us what happens instead of the expected behavior -->
+## Bug description
+<!--- Tell us what should happen, and what happens instead of the expected behavior -->
 
 ## Steps to Reproduce
-<!--- Delete if not relevant --->
+<!--- Please include EITHER logs or reproduction steps when --->
+
 <!--- Provide a link to a live example, or an unambiguous set of steps to -->
-<!--- reproduce this bug. Include some code that can reproduce it, if relevant -->
+<!--- reproduce this bug. Include some code that can reproduce it, if possible -->
 1.
 2.
 3.
