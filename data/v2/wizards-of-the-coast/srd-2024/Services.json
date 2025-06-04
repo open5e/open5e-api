@@ -145,5 +145,38 @@
       "document": "srd-2024",
       "cost": "100000.00"
     }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_skilled-hireling",
+    "fields": {
+      "name": "Skilled Hireling",
+      "detail": "per day",
+      "desc": "A skilled hireling who can perform tasks requiring proficiency (weapons, tools, or skills).",
+      "document": "srd-2024",
+      "cost": "2.00"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_untrained-hireling",
+    "fields": {
+      "name": "Untrained Hireling",
+      "detail": "per day",
+      "desc": "An untrained hireling who can perform basic labor and porter duties.",
+      "document": "srd-2024",
+      "cost": "0.20"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_messenger",
+    "fields": {
+      "name": "Messenger",
+      "detail": "per mile",
+      "desc": "A messenger who will deliver a message to a destination.",
+      "document": "srd-2024",
+      "cost": "0.02"
+    }
   }
 ]
