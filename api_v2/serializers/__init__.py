@@ -51,3 +51,5 @@ from .ability import SkillSerializer
 from .rule import RuleSerializer, RuleSetSerializer
 
 from .image import ImageSerializer
+
+from .service import ServiceSerializer
