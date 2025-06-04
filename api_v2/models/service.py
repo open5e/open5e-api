@@ -3,7 +3,7 @@ from .abstracts import HasName, HasDescription, HasPrice
 from .document import FromDocument
 
 
-class Service(HasDescription, FromDocument, HasPrice):
+class Service(HasName, HasDescription, FromDocument, HasPrice):
   """
   
   This is the Model for a purchasable Service
