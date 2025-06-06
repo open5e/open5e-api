@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 from .weapon import Weapon
 from .armor import Armor
-from .abstracts import HasName, HasDescription
+from .abstracts import HasName, HasDescription, HasPrice
 from .object import Object
 from .damagetype import DamageType
 from .document import FromDocument
@@ -24,20 +24,12 @@ class ItemCategory(HasName, FromDocument):
     """A class describing categories of items."""
 
 
-class Item(Object, HasDescription, FromDocument):
+class Item(Object, HasDescription, FromDocument, HasPrice):
     """
     This is the model for an Item, which is an object that can be used.
 
     This extends the object model, but adds cost, and is_magical.
     """
-
-    cost = models.DecimalField(
-        null=True,  # Allow an unspecified cost.
-        default=None,
-        max_digits=10,
-        decimal_places=2,  # Only track down to 2 decimal places.
-        validators=[MinValueValidator(decimal.Decimal(0.0))],
-        help_text='Number representing the cost of the object.')
 
     weapon = models.ForeignKey(
         Weapon,

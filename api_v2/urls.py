@@ -36,6 +36,7 @@ router.register(r'rules', views.RuleViewSet)
 router.register(r'rulesets', views.RuleSetViewSet)
 router.register(r'images', views.ImageViewSet)
 router.register(r'weaponproperties', views.WeaponPropertyViewSet)
+router.register(r'services', views.ServiceViewSet)
 urlpatterns = [
     path('v2/', include(router.urls)),
     path('v2/enums/', views.get_enums, name="enums")

@@ -464,3 +464,23 @@ class HasSenses(models.Model):
     class Meta:
         abstract = True
 
+
+class HasPrice(models.Model):
+    """
+    The HasPrice abstract class is inherited by other models that have a price;
+    items, services, etc.
+
+    When inherited, it add the 'cost' field to the derived model
+    """
+    
+    cost = models.DecimalField(
+        null=True,  # Allow an unspecified cost.
+        default=None,
+        max_digits=10,
+        decimal_places=2,  # Only track down to 2 decimal places.
+        validators=[MinValueValidator(decimal.Decimal(0.0))],
+        help_text='Number representing the cost of the object.'
+    )
+
+    class Meta:
+        abstract = True

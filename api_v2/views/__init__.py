@@ -48,3 +48,5 @@ from .ability import SkillFilterSet, SkillViewSet
 from .image import ImageViewSet
 
 from .weaponproperty import WeaponPropertyViewSet
+
+from .service import ServiceViewSet
