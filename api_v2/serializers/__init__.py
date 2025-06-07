@@ -33,6 +33,7 @@ from .language import LanguageSerializer
 from .alignment import AlignmentSerializer
 
 from .condition import ConditionSerializer
+from .condition import ConditionConceptSerializer
 
 from .spell import SpellSerializer, SpellSchoolSerializer
 
