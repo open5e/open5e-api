@@ -108,6 +108,48 @@ def parse_standardized_item(content: str) -> Dict[str, Any]:
     
     return item_data
 
+def parse_adventuring_gear_item(content: str) -> Dict[str, Any]:
+    """Parse an adventuring gear item from the specific format used in 07_adventuring_gear.md."""
+    lines = content.strip().split('\n')
+    item_data = {}
+    
+    # Extract name and cost from header (format: "## Item Name (Cost)")
+    header_line = lines[0] if lines else ""
+    if header_line.startswith('## '):
+        header = header_line[3:].strip()
+        
+        # Parse name and cost from header like "Arrows (20) (1 GP)"
+        if '(' in header and header.endswith(')'):
+            # Find the last parentheses which should contain the cost
+            parts = header.rsplit('(', 1)
+            if len(parts) == 2:
+                name_part = parts[0].strip()
+                cost_part = parts[1].rstrip(')').strip()
+                
+                # Clean up name_part in case it has quantity info
+                name = name_part.rstrip(' (').strip()
+                item_data['name'] = name
+                item_data['Cost'] = cost_part
+        else:
+            item_data['name'] = header
+    
+    # Extract description (everything between header and **Weight:**)
+    desc_lines = []
+    for line in lines[1:]:
+        line = line.strip()
+        if line.startswith('**Weight:**'):
+            # Extract weight
+            weight_str = line.replace('**Weight:**', '').strip()
+            item_data['Weight'] = weight_str
+            break
+        elif line and not line.startswith('#'):
+            desc_lines.append(line)
+    
+    if desc_lines:
+        item_data['Description'] = ' '.join(desc_lines)
+    
+    return item_data
+
 def parse_magic_item_type_and_rarity(type_line: str) -> Tuple[str, str, bool]:
     """Parse the magic item type and rarity line."""
     # Remove italic markers
@@ -715,10 +757,30 @@ def convert_items(item_files: List[Path]) -> List[Dict[str, Any]]:
     return items
 
 def create_item_categories() -> List[Dict[str, Any]]:
-    """Create only new item categories not already in 2014 SRD."""
-    # Categories have already been added to the 2014 ItemCategory.json
-    # No need to create separate 2024 categories
-    return []
+    """Create new item categories for SRD 2024 that don't exist in 2014."""
+    categories = []
+    
+    # Add new categories introduced by adventuring gear
+    categories.extend([
+        {
+            "model": "api_v2.itemcategory",
+            "pk": "equipment-pack",
+            "fields": {
+                "name": "Equipment Pack",
+                "document": "srd-2024"
+            }
+        },
+        {
+            "model": "api_v2.itemcategory",
+            "pk": "spellcasting-focus",
+            "fields": {
+                "name": "Spellcasting Focus",
+                "document": "srd-2024"
+            }
+        }
+    ])
+    
+    return categories
 
 def create_item_sets(weapons: List[Dict], armors: List[Dict], items: List[Dict]) -> List[Dict[str, Any]]:
     """Create new item sets for SRD 2024 that don't conflict with 2014."""
@@ -796,6 +858,89 @@ def generate_2014_itemset_updates_for_tools(items: List[Dict]) -> Dict[str, List
     
     return updates
 
+def convert_adventuring_gear(adventuring_gear_file: Path) -> List[Dict[str, Any]]:
+    """Convert adventuring gear items from the specific SRD 5.2 format."""
+    if not adventuring_gear_file.exists():
+        return []
+    
+    with open(adventuring_gear_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    items = []
+    
+    # Split into individual item sections
+    item_sections = re.split(r'\n## ', content)
+    
+    for section in item_sections[1:]:  # Skip the header
+        section = '## ' + section
+        item_data = parse_adventuring_gear_item(section)
+        
+        if 'name' not in item_data:
+            continue
+            
+        name = item_data['name']
+        item_pk = create_pk(name)
+        
+        # Parse cost and weight
+        cost = parse_cost(item_data.get('Cost', '0 GP'))
+        weight = parse_weight(item_data.get('Weight', '0 lb.'))
+        
+        # Create description
+        desc = item_data.get('Description', f"A {name.lower()}.")
+        desc = clean_text(desc)
+        
+        # Determine category based on item name/description
+        category = "adventuring-gear"
+        name_lower = name.lower()
+        desc_lower = desc.lower()
+        
+        if any(word in name_lower for word in ['ammunition', 'arrows', 'bolts', 'bullets', 'needles']):
+            category = "ammunition"
+        elif any(word in name_lower for word in ['armor', 'shield']):
+            category = "armor"
+        elif any(word in name_lower for word in ['weapon']) or 'attack action' in desc_lower:
+            category = "weapon"
+        elif any(word in name_lower for word in ['potion', 'antitoxin', 'healing']):
+            category = "potion"
+        elif any(word in name_lower for word in ['scroll']):
+            category = "scroll"
+        elif any(word in name_lower for word in ['holy', 'druidic', 'component']) and 'focus' in name_lower:
+            category = "spellcasting-focus"
+        elif any(word in name_lower for word in ['pack']) and any(word in desc_lower for word in ['contains', 'backpack']):
+            category = "equipment-pack"
+        elif any(word in name_lower for word in ['tools', 'kit', 'supplies']):
+            category = "tools"
+        
+        item = {
+            "model": "api_v2.item",
+            "pk": item_pk,
+            "fields": {
+                "name": name,
+                "desc": desc,
+                "document": "srd-2024",
+                "size": "tiny",
+                "weight": weight,
+                "armor_class": 0,
+                "hit_points": 0,
+                "hit_dice": None,
+                "nonmagical_attack_resistance": False,
+                "nonmagical_attack_immunity": False,
+                "cost": cost,
+                "weapon": None,
+                "armor": None,
+                "category": category,
+                "requires_attunement": False,
+                "rarity": None,
+                "damage_vulnerabilities": [],
+                "damage_immunities": ["poison", "psychic"],
+                "damage_resistances": []
+            }
+        }
+        
+        items.append(item)
+    
+    return items
+
 def main():
     """Main function to convert equipment."""
     # Input files
@@ -805,6 +950,7 @@ def main():
     services_file = Path("../sections/07_services_items.md")
     mounts_file = Path("../sections/07_mounts_vehicles_items.md")
     magic_items_file = Path("../sections/07_magic_items.md")
+    adventuring_gear_file = Path("../sections/07_adventuring_gear.md")
     
     # Output directory
     output_dir = Path("../../../v2/wizards-of-the-coast/srd-2024/")
@@ -836,13 +982,17 @@ def main():
     magic_items = convert_magic_items(magic_items_file)
     print(f"Converted {len(magic_items)} magic items")
     
+    # Convert adventuring gear
+    adventuring_gear_items = convert_adventuring_gear(adventuring_gear_file)
+    print(f"Converted {len(adventuring_gear_items)} adventuring gear items")
+    
     # Convert other items (tools, services, mounts)
     item_files = [f for f in [tools_file, services_file, mounts_file] if f.exists()]
     other_items = convert_items(item_files)
     print(f"Converted {len(other_items)} other items from {len(item_files)} files")
     
     # Combine all items (weapons, armor, magic items, and other items)
-    all_items = weapon_items + armor_items + magic_items + other_items
+    all_items = weapon_items + armor_items + magic_items + adventuring_gear_items + other_items
     print(f"Total items: {len(all_items)}")
     
     # Create categories and sets
