@@ -945,6 +945,65 @@ def convert_adventuring_gear(adventuring_gear_file: Path) -> List[Dict[str, Any]
     
     return items
 
+def convert_services(services_file: Path) -> List[Dict[str, Any]]:
+    """Convert services from the standardized SRD 5.2 format."""
+    if not services_file.exists():
+        return []
+    
+    with open(services_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    services = []
+    
+    # Split into individual service sections
+    service_sections = re.split(r'\n## ', content)
+    
+    for section in service_sections[1:]:  # Skip the header
+        section = '## ' + section
+        service_data = parse_standardized_item(section)
+        
+        if 'name' not in service_data:
+            continue
+            
+        # Only process service category items
+        category = service_data.get('Category', '')
+        if category != 'service':
+            continue
+            
+        name = service_data['name']
+        service_pk = create_pk(name)
+        
+        # Parse cost
+        cost = parse_cost(service_data.get('Cost', '0 GP'))
+        
+        # Create description
+        desc = service_data.get('Description', f"A {name.lower()}.")
+        desc = clean_text(desc)
+        
+        # Extract detail from cost (e.g., "per day", "per mile")
+        detail = None
+        cost_str = service_data.get('Cost', '')
+        if 'per day' in cost_str:
+            detail = 'per day'
+        elif 'per mile' in cost_str:
+            detail = 'per mile'
+        
+        service = {
+            "model": "api_v2.service",
+            "pk": service_pk,
+            "fields": {
+                "name": name,
+                "desc": desc,
+                "document": "srd-2024",
+                "cost": cost,
+                "detail": detail
+            }
+        }
+        
+        services.append(service)
+    
+    return services
+
 def main():
     """Main function to convert equipment."""
     # Input files
@@ -990,7 +1049,11 @@ def main():
     adventuring_gear_items = convert_adventuring_gear(adventuring_gear_file)
     print(f"Converted {len(adventuring_gear_items)} adventuring gear items")
     
-    # Convert other items (tools, mounts) - excluding services for separate PR
+    # Convert services (separate from items)
+    services = convert_services(services_file)
+    print(f"Converted {len(services)} services")
+    
+    # Convert other items (tools, mounts) - excluding services as they have separate endpoint
     item_files = [f for f in [tools_file, mounts_file] if f.exists()]
     other_items = convert_items(item_files)
     print(f"Converted {len(other_items)} other items from {len(item_files)} files")
@@ -1058,6 +1121,12 @@ def main():
         with open(sets_file_out, 'w', encoding='utf-8') as f:
             json.dump(sets, f, indent=2, ensure_ascii=False)
         files_written.append("ItemSet.json")
+    
+    if services:
+        services_file_out = output_dir / "Services.json"
+        with open(services_file_out, 'w', encoding='utf-8') as f:
+            json.dump(services, f, indent=2, ensure_ascii=False)
+        files_written.append("Services.json")
     
     # Note: 2014 ItemSet.json has already been manually updated with 2024 items
     # No need to generate the updates file anymore

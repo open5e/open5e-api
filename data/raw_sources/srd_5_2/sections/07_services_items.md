@@ -209,4 +209,10 @@
 **Cost:** 100,000 GP
 **Category:** service
 **Availability:** City only
-**Description:** Casting of a 9th-level spell. 
+**Description:** Casting of a 9th-level spell.
+
+## Stabling (per day)
+
+**Cost:** 5 SP
+**Category:** service
+**Description:** Daily stabling for a mount.

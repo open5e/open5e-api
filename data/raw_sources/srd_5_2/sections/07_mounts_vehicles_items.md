@@ -112,12 +112,6 @@
 **Category:** land-vehicle
 **Description:** A vehicle designed for travel over snow and ice.
 
-## Stabling (per day)
-
-**Cost:** 5 SP
-**Category:** service
-**Description:** Daily stabling for a mount.
-
 ## Wagon
 
 **Cost:** 35 GP
