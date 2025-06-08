@@ -4,13 +4,14 @@ from .item import ItemCategory
 from .item import Item
 from .item import ItemSet
 from .item import ItemRarity
-
 from .abilities import Ability
 from .abilities import Skill
 
 from .armor import Armor
 
 from .weapon import Weapon
+from .weapon import WeaponProperty
+from .weapon import WeaponPropertyAssignment
 
 from .species import SpeciesTrait
 from .species import Species
@@ -60,3 +61,5 @@ from .speed import HasSpeed
 from .rule import Rule, RuleSet
 
 from .image import Image
+
+from .service import Service

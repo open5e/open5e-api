@@ -52,7 +52,7 @@ class ClassFeature(HasName, HasDescription, FromDocument):
 
     # Infer the type of this feature based on the `key`
     @property
-    def feature_type(self):
+    def feature_type(self) -> str:
         if "proficiency-bonus" in self.key: return "PROFICIENCY_BONUS"
         if "proficiencies" in self.key:     return "PROFICIENCIES"
         if "equipment" in self.key:         return "STARTING_EQUIPMENT"
@@ -85,6 +85,11 @@ class CharacterClass(HasName, FromDocument):
     saving_throws = models.ManyToManyField(Ability,
         related_name="characterclass_saving_throws",
         help_text='Saving throw proficiencies for this class.')
+
+    primary_abilities = models.ManyToManyField(
+        Ability,
+        help_text='Primary abilities for thie class'
+    )
 
     caster_type = models.CharField(
         max_length=100,

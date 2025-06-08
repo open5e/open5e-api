@@ -6,6 +6,7 @@ from .item import ItemSerializer
 from .item import ItemRaritySerializer
 from .item import ItemSetSerializer
 from .item import ItemCategorySerializer
+from .item import WeaponPropertySerializer
 
 from .background import BackgroundBenefitSerializer
 from .background import BackgroundSerializer
@@ -51,3 +52,5 @@ from .ability import SkillSerializer
 from .rule import RuleSerializer, RuleSetSerializer
 
 from .image import ImageSerializer
+
+from .service import ServiceSerializer

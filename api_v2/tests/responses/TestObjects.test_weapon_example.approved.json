@@ -7,6 +7,7 @@
     },
     "distance_unit": "feet",
     "document": {
+        "display_name": "5e 2014 Rules",
         "gamesystem": {
             "key": "5e-2014",
             "name": "5th Edition 2014",
@@ -21,32 +22,29 @@
             "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
         }
     },
-    "is_finesse": true,
-    "is_heavy": false,
     "is_improvised": false,
-    "is_lance": false,
-    "is_light": true,
-    "is_martial": true,
-    "is_melee": true,
-    "is_net": false,
-    "is_reach": false,
     "is_simple": false,
-    "is_thrown": false,
-    "is_two_handed": false,
-    "is_versatile": false,
     "key": "srd_shortsword",
     "long_range": 0.0,
     "name": "Shortsword",
     "properties": [
-        "finesse",
-        "light"
+        {
+            "detail": null,
+            "property": {
+                "name": "Finesse",
+                "type": null,
+                "url": "http://localhost:8000/v2/weaponproperties/srd-2014_finesse-wp/"
+            }
+        },
+        {
+            "detail": null,
+            "property": {
+                "name": "Light",
+                "type": null,
+                "url": "http://localhost:8000/v2/weaponproperties/srd-2014_light-wp/"
+            }
+        }
     ],
     "range": 0.0,
-    "range_melee": 5.0,
-    "ranged_attack_possible": false,
-    "reach": 5.0,
-    "requires_ammunition": false,
-    "requires_loading": false,
-    "url": "http://localhost:8000/v2/weapons/srd_shortsword/",
-    "versatile_dice": "0"
+    "url": "http://localhost:8000/v2/weapons/srd_shortsword/"
 }

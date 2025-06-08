@@ -108,6 +108,11 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
         help_text="Challenge Rating field as a decimal number."
     )
 
+    proficiency_bonus = models.SmallIntegerField(
+        null=True,
+        help_text='The Creauture\'s Proficiency Bonus'
+    )
+
     experience_points_integer = models.IntegerField(
         null=True,
         blank=True,

@@ -1,0 +1,188 @@
+# Open5e API Project Documentation for AI Assistants
+
+## Project Overview
+This is the Open5e API - a Django REST API providing D&D 5th Edition game content data.
+- **Main API versions**: v1 (`api/`) and v2 (`api_v2/`)
+- **Primary focus**: v2 API is the current development target
+- **Database**: SQLite for development, supports PostgreSQL for production
+- **Framework**: Django REST Framework with custom serializers
+
+## Project Structure
+
+### Key Directories
+- `api/` - Legacy v1 API (mostly maintenance mode)
+- `api_v2/` - Current v2 API development
+  - `models/` - Database models
+  - `serializers/` - DRF serializers with inheritance patterns
+  - `views/` - API viewsets
+  - `tests/` - Approval tests (see Testing section)
+- `data/` - JSON fixture files for database seeding
+  - `v1/` - Legacy data
+  - `v2/` - Current data format
+- `server/` - Django settings and configuration
+
+### Important Files
+- `manage.py` - Standard Django management
+- `api/management/commands/quicksetup.py` - Database rebuild script
+- `Pipfile` - Python dependencies (using pipenv)
+
+## Database Setup & Management
+
+### Quick Setup (CRITICAL for development)
+```bash
+python manage.py quicksetup --clean --noindex
+```
+This command:
+- Cleans existing database/static files/search indexes
+- Runs migrations
+- Loads ALL fixture data from `data/v1/` and `data/v2/`
+- Collects static files
+- **Always run this after schema changes or when fixture data is updated**
+
+### Manual Steps
+```bash
+python manage.py makemigrations api_v2  # For model changes
+python manage.py migrate                # Apply migrations
+python manage.py collectstatic         # Static files
+```
+
+### Fixture Data Loading
+- Fixtures are automatically loaded by quicksetup
+- Data format: JSON files with Django fixture format
+- v2 fixtures in `data/v2/publisher/document/` structure
+
+## Testing System (APPROVAL TESTS)
+
+### How Approval Tests Work
+The project uses **approval testing** - tests compare actual API responses against pre-approved JSON files.
+
+#### Test Structure
+- Tests in: `api_v2/tests/test_objects.py`
+- Approved responses: `api_v2/tests/responses/*.approved.json`
+- Failed test responses: `api_v2/tests/responses/*.received.json`
+
+#### Running Tests
+```bash
+# Requires running server for integration tests
+python manage.py runserver 8000 &
+python -m pytest api_v2/tests/test_objects.py -v
+pkill -f "python manage.py runserver"  # Stop server
+```
+
+#### Updating Test Expectations (IMPORTANT PATTERN)
+When API responses change (like adding new fields):
+
+1. **Run tests** - they will fail and generate `.received.json` files
+2. **Review changes** in the `.received.json` files
+3. **Update all at once** (EFFICIENT METHOD):
+   ```bash
+   cd api_v2/tests/responses/
+   for file in *.received.json; do 
+     mv "$file" "${file%.received.json}.approved.json"
+   done
+   ```
+4. **Re-run tests** to verify they pass
+
+**DO NOT** manually edit `.approved.json` files - use the rename pattern above!
+
+## API v2 Serializer Patterns
+
+### Inheritance Hierarchy
+- `GameContentSerializer` - Base class for all game content
+- `DocumentSerializer` - Full document serialization
+- `DocumentSummarySerializer` - Lightweight document refs (for FKs)
+
+### Common Patterns
+
+#### Fallback Properties
+When adding optional display fields, use model properties with fallbacks:
+```python
+# In model
+@property
+def display_name_or_name(self):
+    if self.display_name and self.display_name.strip():
+        return self.display_name
+    return self.name
+
+# In serializer  
+display_name = serializers.SerializerMethodField()
+
+def get_display_name(self, obj):
+    return obj.display_name_or_name
+```
+
+#### Document Relationships
+- Full documents: Use `DocumentSerializer` 
+- FK references: Use `DocumentSummarySerializer`
+- Check serializer `fields = '__all__'` vs specific field lists
+
+## Development Workflow
+
+### Adding New Fields
+1. **Add field to model** in `api_v2/models/`
+2. **Create migration**: `python manage.py makemigrations api_v2 --name descriptive_name`
+3. **Update serializers** if needed
+4. **Run quicksetup** to rebuild DB with fixture data: `python manage.py quicksetup --clean --noindex`
+5. **Update tests** using the `.received.json` → `.approved.json` rename pattern
+6. **Test the API** with running server
+
+### API Testing
+```bash
+# Start server
+python manage.py runserver 8000 &
+
+# Test endpoints
+curl -s "http://localhost:8000/v2/documents/" | python -m json.tool
+
+# Stop server
+pkill -f "python manage.py runserver"
+```
+
+## Common Gotchas
+
+### Database State
+- **Always run quicksetup after model changes** - migrations alone don't reload fixture data
+- Fixture data may have different values than what's in migrations
+- Database relationships are complex - FK dependencies matter for loading order
+
+### Test Failures
+- Tests are integration tests requiring a running server
+- Connection refused errors = server not running
+- Approval mismatches = API response changed, update `.approved.json` files
+- Tests expect exact JSON matches including field order
+
+### Serializer Field Order
+- JSON field order matters for approval tests
+- SerializerMethodFields appear in declaration order
+- `fields = '__all__'` includes all model fields + method fields
+
+## Useful Commands
+
+```bash
+# Full development reset
+python manage.py quicksetup --clean --noindex
+
+# Run specific test
+python -m pytest api_v2/tests/test_objects.py::TestObjects::test_document_example -v
+
+# Find fixture files
+find data/v2/ -name "*.json" | grep -i document
+
+# Check API response
+curl -s "http://localhost:8000/v2/documents/srd-2024/" | python -m json.tool
+
+# Update all failing tests at once
+cd api_v2/tests/responses/ && for file in *.received.json; do mv "$file" "${file%.received.json}.approved.json"; done
+```
+
+## Project Conventions
+
+### Model Patterns
+- Inherit from `HasName`, `HasDescription` abstracts when appropriate
+- Use `key_field()` for primary keys (CharField, not AutoField)
+- Foreign keys typically reference document for data lineage
+
+### API Design
+- RESTful endpoints: `/v2/modelname/` and `/v2/modelname/key/`
+- Consistent field naming across models
+- Rich relationship serialization (nested objects, not just IDs)

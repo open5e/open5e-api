@@ -70,7 +70,7 @@ class CreatureActionSerializer(GameContentSerializer):
         ]
 
     # Gathers 'uses_type' and 'uses_param' into a single 'usage_limits' obj.
-    def get_usage_limits(self, obj):
+    def get_usage_limits(self, obj)->dict:
         if obj.uses_type and obj.uses_param: 
             return {
                 'type': obj.uses_type,
@@ -170,6 +170,7 @@ class CreatureSerializer(GameContentSerializer):
             'size',
             'challenge_rating_decimal',
             'challenge_rating_text',
+            'proficiency_bonus',
             'speed',
             'speed_all',
             'category',
