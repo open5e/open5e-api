@@ -1,21 +1,6 @@
 [
   {
     "model": "api_v2.characterclass",
-    "pk": "srd-2024_artificer",
-    "fields": {
-      "name": "Artificer",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D8",
-      "caster_type": "HALF",
-      "saving_throws": [
-        "con",
-        "int"
-      ]
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
     "pk": "srd-2024_bard",
     "fields": {
       "name": "Bard",
@@ -56,6 +41,51 @@
       "saving_throws": [
         "int",
         "wis"
+      ]
+    }
+  },
+  {
+    "model": "api_v2.characterclass",
+    "pk": "srd-2024_fighter",
+    "fields": {
+      "name": "Fighter",
+      "document": "srd-2024",
+      "subclass_of": null,
+      "hit_dice": "D10",
+      "caster_type": "NONE",
+      "saving_throws": [
+        "str",
+        "dex"
+      ]
+    }
+  },
+  {
+    "model": "api_v2.characterclass",
+    "pk": "srd-2024_monk",
+    "fields": {
+      "name": "Monk",
+      "document": "srd-2024",
+      "subclass_of": null,
+      "hit_dice": "D8",
+      "caster_type": "NONE",
+      "saving_throws": [
+        "dex",
+        "wis"
+      ]
+    }
+  },
+  {
+    "model": "api_v2.characterclass",
+    "pk": "srd-2024_barbarian",
+    "fields": {
+      "name": "Barbarian",
+      "document": "srd-2024",
+      "subclass_of": null,
+      "hit_dice": "D12",
+      "caster_type": "NONE",
+      "saving_throws": [
+        "str",
+        "con"
       ]
     }
   },
