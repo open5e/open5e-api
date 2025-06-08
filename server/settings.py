@@ -233,4 +233,10 @@ SPECTACULAR_SETTINGS = {
     'SWAGGER_UI_DIST': 'SIDECAR',
     'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
     'REDOC_DIST': 'SIDECAR',
+    'SORT_OPERATIONS': False,  
+    'SORT_OPERATION_PARAMETERS': False,  # Preserve parameter order from code
+    'SWAGGER_UI_SETTINGS': {
+        'operationsSorter': None,  
+        'tagsSorter': None,        
+    }
 }
