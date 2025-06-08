@@ -713,6 +713,10 @@ def convert_items(item_files: List[Path]) -> List[Dict[str, Any]]:
             # Get category from the standardized format
             category = item_data.get('Category', 'adventuring-gear')
             
+            # Skip service items - they will be handled in a separate endpoint
+            if category == 'service':
+                continue
+            
             # Create description from available data
             desc_parts = []
             if 'Description' in item_data:
@@ -986,8 +990,8 @@ def main():
     adventuring_gear_items = convert_adventuring_gear(adventuring_gear_file)
     print(f"Converted {len(adventuring_gear_items)} adventuring gear items")
     
-    # Convert other items (tools, services, mounts)
-    item_files = [f for f in [tools_file, services_file, mounts_file] if f.exists()]
+    # Convert other items (tools, mounts) - excluding services for separate PR
+    item_files = [f for f in [tools_file, mounts_file] if f.exists()]
     other_items = convert_items(item_files)
     print(f"Converted {len(other_items)} other items from {len(item_files)} files")
     
