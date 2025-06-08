@@ -110,3 +110,5 @@ admin.site.register(Rule)
 admin.site.register(RuleSet)
 
 admin.site.register(Image)
+
+admin.site.register(Service)
