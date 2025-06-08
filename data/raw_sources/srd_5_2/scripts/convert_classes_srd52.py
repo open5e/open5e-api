@@ -17,12 +17,6 @@ def create_basic_classes() -> List[Dict[str, Any]]:
     # Basic class data - minimal information needed for spell references
     classes_data = [
         {
-            "name": "Artificer",
-            "hit_dice": "D8",
-            "caster_type": "HALF",
-            "saving_throws": ["con", "int"]
-        },
-        {
             "name": "Bard", 
             "hit_dice": "D8",
             "caster_type": "FULL",
@@ -40,6 +34,25 @@ def create_basic_classes() -> List[Dict[str, Any]]:
             "caster_type": "FULL", 
             "saving_throws": ["int", "wis"]
         },
+        {
+            "name": "Fighter",
+            "hit_dice": "D12",
+            "caster_type": "NONE", 
+            "saving_throws": ["str", "con"]
+        },
+        {
+            "name": "Barbarian",
+            "hit_dice": "D12",
+            "caster_type": "NONE", 
+            "saving_throws": ["str", "con"]
+        },
+        {
+            "name": "Monk",
+            "hit_dice": "D8",
+            "caster_type": "NONE", 
+            "saving_throws": ["str", "dex"]
+        },
+
         {
             "name": "Paladin",
             "hit_dice": "D10",
@@ -76,7 +89,7 @@ def create_basic_classes() -> List[Dict[str, Any]]:
     fixtures = []
     for class_data in classes_data:
         # Create primary key
-        pk = f"srd2024_{class_data['name'].lower()}"
+        pk = f"srd-2024_{class_data['name'].lower()}"
         
         fixture = {
             "model": "api_v2.characterclass",

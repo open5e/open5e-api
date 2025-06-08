@@ -34,7 +34,7 @@ def clean_text(text: str) -> str:
     
     return text
 
-def create_pk(name: str, prefix: str = "srd2024") -> str:
+def create_pk(name: str, prefix: str = "srd-2024") -> str:
     """Create primary key from name."""
     # Remove cost information from name (e.g., "Cook's Utensils (1 GP)" -> "Cook's Utensils")
     clean_name = re.sub(r'\s*\([^)]*[Gg][Pp]\)', '', name)
@@ -414,7 +414,7 @@ def convert_weapons(weapons_file: Path) -> Tuple[List[Dict], List[Dict], List[Di
 
 def create_property_assignment(weapon_pk: str, property_name: str, detail: str = None) -> Dict[str, Any]:
     """Create a weapon property assignment."""
-    assignment_pk = f"srd-2024_{weapon_pk.replace('srd2024_', '')}_{property_name.replace('-wp', '').replace('-mastery', '')}"
+    assignment_pk = f"srd-2024_{weapon_pk.replace('srd-2024_', '')}_{property_name.replace('-wp', '').replace('-mastery', '')}"
     
     assignment = {
         "model": "api_v2.weaponpropertyassignment",

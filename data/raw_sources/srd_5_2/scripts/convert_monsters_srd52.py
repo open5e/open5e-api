@@ -31,7 +31,7 @@ def create_creature_pk(name: str) -> str:
     # Convert to lowercase, replace spaces with hyphens, remove special chars
     pk = re.sub(r'[^\w\s-]', '', name.lower())
     pk = re.sub(r'[-\s]+', '-', pk)
-    return f"srd2024_{pk}"
+    return f"srd-2024_{pk}"
 
 def parse_ability_scores(stats_table: str) -> Dict[str, int]:
     """Parse ability scores from the stats table."""

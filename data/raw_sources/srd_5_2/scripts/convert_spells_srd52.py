@@ -137,15 +137,15 @@ def parse_classes(class_text: str) -> List[str]:
     
     # Map to SRD 2024 class keys
     class_mapping = {
-        "Artificer": "srd2024_artificer",
-        "Bard": "srd2024_bard", 
-        "Cleric": "srd2024_cleric",
-        "Druid": "srd2024_druid",
-        "Paladin": "srd2024_paladin",
-        "Ranger": "srd2024_ranger",
-        "Sorcerer": "srd2024_sorcerer",
-        "Warlock": "srd2024_warlock",
-        "Wizard": "srd2024_wizard"
+        "Artificer": "srd-2024_artificer",
+        "Bard": "srd-2024_bard", 
+        "Cleric": "srd-2024_cleric",
+        "Druid": "srd-2024_druid",
+        "Paladin": "srd-2024_paladin",
+        "Ranger": "srd-2024_ranger",
+        "Sorcerer": "srd-2024_sorcerer",
+        "Warlock": "srd-2024_warlock",
+        "Wizard": "srd-2024_wizard"
     }
     
     result = []
@@ -183,7 +183,7 @@ def create_spell_pk(name: str) -> str:
     # Convert to lowercase, replace spaces with hyphens, remove special chars
     pk = re.sub(r'[^\w\s-]', '', name.lower())
     pk = re.sub(r'[-\s]+', '-', pk)
-    return f"srd2024_{pk}"
+    return f"srd-2024_{pk}"
 
 def parse_spell_header(header_line: str) -> tuple[int, str, List[str]]:
     """Parse the spell header line to extract level, school, and classes."""

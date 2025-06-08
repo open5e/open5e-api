@@ -25,7 +25,7 @@ def parse_standardized_item(content: str):
     return item_data
 
 def create_property_assignment(weapon_pk: str, property_name: str, detail: str = None):
-    assignment_pk = f"srd-2024_{weapon_pk.replace('srd2024_', '')}_{property_name.replace('-wp', '').replace('-mastery', '')}"
+    assignment_pk = f"srd-2024_{weapon_pk.replace('srd-2024_', '')}_{property_name.replace('-wp', '').replace('-mastery', '')}"
     
     assignment = {
         "model": "api_v2.weaponpropertyassignment",
@@ -96,7 +96,7 @@ for i, section in enumerate(weapon_sections[1:4]):  # Test first 3 weapons
     # Test property assignment creation
     properties_str = weapon_data.get('Properties', '')
     mastery = weapon_data.get('Mastery', '')
-    weapon_pk = f"srd2024_{weapon_data.get('name', '').lower().replace(' ', '-')}"
+    weapon_pk = f"srd-2024_{weapon_data.get('name', '').lower().replace(' ', '-')}"
     
     assignments = []
     
