@@ -26,10 +26,8 @@ STATICFILES_DIRS = [
 DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# Allow a default secret key for build/development, but require it in production
-SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key-not-for-production")
-if SECRET_KEY == "dev-secret-key-not-for-production" and not DEBUG:
-    raise ValueError("SECRET_KEY must be set for production deployments!")
+assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env or local OS!"
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # Flags to include v1 data and index.
 INCLUDE_V1_DATA = True
