@@ -61,7 +61,7 @@ class TestObjects:
         self._verify(path)
 
     def test_weapon_with_mastery_example(self):
-        path="/v2/weapons/srd2024_longsword/"
+        path="/v2/weapons/srd-2024_longsword/"
         self._verify(path)
 
     # /ARMOR ENDPOINT
