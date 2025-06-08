@@ -12,6 +12,21 @@ class ConditionSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
     icon = ImageSummarySerializer()
+    concept = serializers.SerializerMethodField()
+    
+    def get_concept(self, obj):
+        # Find the concept this condition belongs to
+        try:
+            concept = models.ConditionConcept.objects.filter(conditions=obj).first()
+            if concept:
+                return {
+                    'name': concept.name,
+                    'key': concept.key,
+                    'url': self.context['request'].build_absolute_uri(f'/v2/condition-concepts/{concept.key}/') if 'request' in self.context else f'/v2/condition-concepts/{concept.key}/'
+                }
+        except:
+            pass
+        return None
 
     class Meta:
         model = models.Condition
@@ -26,6 +41,35 @@ class ConditionSummarySerializer(GameContentSerializer):
     class Meta:
         model = models.Condition
         fields = ['name', 'key', 'url']
+
+
+class ConditionDetailSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    document = DocumentSummarySerializer()
+    icon = ImageSummarySerializer()
+    gamesystem_key = serializers.SerializerMethodField()
+    concept = serializers.SerializerMethodField()
+    
+    def get_gamesystem_key(self, obj):
+        return obj.document.gamesystem.key
+    
+    def get_concept(self, obj):
+        # Find the concept this condition belongs to
+        try:
+            concept = models.ConditionConcept.objects.filter(conditions=obj).first()
+            if concept:
+                return {
+                    'name': concept.name,
+                    'key': concept.key,
+                    'url': self.context['request'].build_absolute_uri(f'/v2/condition-concepts/{concept.key}/') if 'request' in self.context else f'/v2/condition-concepts/{concept.key}/'
+                }
+        except:
+            pass
+        return None
+    
+    class Meta:
+        model = models.Condition
+        fields = ['name', 'key', 'url', 'desc', 'document', 'gamesystem_key', 'concept', 'icon']
 
 
 class ConditionSystemVariantSerializer(GameContentSerializer):
@@ -53,7 +97,7 @@ class ConditionConceptSerializer(GameContentSerializer):
     This provides a unified view of equivalent conditions across game systems.
     """
     key = serializers.ReadOnlyField()
-    conditions = ConditionSummarySerializer(many=True, read_only=True)
+    conditions = ConditionDetailSerializer(many=True, read_only=True)
     
     class Meta:
         model = models.ConditionConcept
