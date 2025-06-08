@@ -1,4 +1,4 @@
-"""The model for an image with metadata."""
+"""The model for an image with metadata. Includes abstracts."""
 
 
 from django.db import models
@@ -44,7 +44,18 @@ class Image(HasName, FromDocument):
 
 class HasIcon(models.Model):
     """The model inherited for defining an icon for another object type."""
-    icon = models.ForeignKey(Image, 
+    icon = models.ForeignKey(Image,
+                            blank=True,
+                            null=True,
+                            on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True
+
+
+class HasIllustration(models.Model):
+    """The model inherited for defining an illustration for another object type."""
+    illustration = models.ForeignKey(Image,
                             blank=True,
                             null=True,
                             on_delete=models.CASCADE)
