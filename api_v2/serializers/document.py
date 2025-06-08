@@ -58,6 +58,10 @@ class DocumentSerializer(GameContentSerializer):
     licenses = LicenseSummarySerializer(read_only=True, many=True)
     publisher = PublisherSummarySerializer(read_only=True)
     gamesystem = GameSystemSummarySerializer(read_only=True)
+    display_name = serializers.SerializerMethodField()
+
+    def get_display_name(self, obj):
+        return obj.display_name_or_name
 
     class Meta:
         model = models.Document
@@ -70,7 +74,11 @@ class DocumentSummarySerializer(GameContentSerializer):
     '''
     publisher = PublisherSummarySerializer()
     gamesystem = GameSystemSummarySerializer()
+    display_name = serializers.SerializerMethodField()
+
+    def get_display_name(self, obj):
+        return obj.display_name_or_name
 
     class Meta:
         model = models.Document
-        fields = ['name', 'key', 'publisher', 'gamesystem', 'permalink']
+        fields = ['name', 'key', 'display_name', 'publisher', 'gamesystem', 'permalink']

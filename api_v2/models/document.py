@@ -30,6 +30,12 @@ class Document(HasName, HasDescription):
     author = models.TextField(
         help_text='Author or authors.')
 
+    display_name = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        help_text="Display name for the document, used for presentation purposes.")
+
     publication_date = models.DateTimeField(
         help_text="Date of publication, or null if unknown."
     )
@@ -40,6 +46,13 @@ class Document(HasName, HasDescription):
 
     distance_unit = distance_unit_field()
     weight_unit = distance_unit_field()
+
+    @property
+    def display_name_or_name(self):
+        """Returns display_name if it exists and is not blank, otherwise returns name."""
+        if self.display_name and self.display_name.strip():
+            return self.display_name
+        return self.name
 
     @property
     def stats(self):
