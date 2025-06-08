@@ -32,12 +32,13 @@ class Image(HasName, FromDocument):
     )
 
     def __str__(self):
-        return (self.document.name + " - " + self.name)
+        return self.document.name + " - " + self.name
 
     @property
     def file_url(self)->str:
+        """Returns a relative path to the related file."""
         return static(self.file_path)
-    
+
     class Meta:
         ordering = ['key']
 
