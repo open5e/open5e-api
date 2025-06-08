@@ -59,6 +59,6 @@ from .speed import HasSpeed
 
 from .rule import Rule, RuleSet
 
-from .image import Image
+from .image import Image, HasIcon, HasIllustration
 
 from .service import Service
