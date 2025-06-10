@@ -4,10 +4,10 @@
     "pk": "srd-2024_lifestyle-wretched",
     "fields": {
       "name": "Lifestyle - Wretched",
-      "detail": "1 day",
       "desc": "You survive via chance and charity. You're often exposed to natural dangers as a result of sleeping outside.",
       "document": "srd-2024",
-      "cost": "0.00"
+      "cost": "0.00",
+      "detail": null
     }
   },
   {
@@ -15,10 +15,10 @@
     "pk": "srd-2024_lifestyle-squalid",
     "fields": {
       "name": "Lifestyle - Squalid",
-      "detail": "1 day",
       "desc": "You spend the bare minimum for your necessities. You might be exposed to unhealthy conditions and opportunistic criminals.",
       "document": "srd-2024",
-      "cost": "0.10"
+      "cost": "0.10",
+      "detail": "per day"
     }
   },
   {
@@ -26,10 +26,10 @@
     "pk": "srd-2024_lifestyle-poor",
     "fields": {
       "name": "Lifestyle - Poor",
-      "detail": "1 day",
       "desc": "You spend frugally for your necessities.",
       "document": "srd-2024",
-      "cost": "0.20"
+      "cost": "0.20",
+      "detail": "per day"
     }
   },
   {
@@ -37,10 +37,10 @@
     "pk": "srd-2024_lifestyle-modest",
     "fields": {
       "name": "Lifestyle - Modest",
-      "detail": "1 day",
       "desc": "You support yourself at an average level.",
       "document": "srd-2024",
-      "cost": "1.00"
+      "cost": "1.00",
+      "detail": "per day"
     }
   },
   {
@@ -48,10 +48,10 @@
     "pk": "srd-2024_lifestyle-comfortable",
     "fields": {
       "name": "Lifestyle - Comfortable",
-      "detail": "1 day",
       "desc": "You spend modestly for your necessities and enjoy a few luxuries.",
       "document": "srd-2024",
-      "cost": "2.00"
+      "cost": "2.00",
+      "detail": "per day"
     }
   },
   {
@@ -59,10 +59,10 @@
     "pk": "srd-2024_lifestyle-wealthy",
     "fields": {
       "name": "Lifestyle - Wealthy",
-      "detail": "1 day",
       "desc": "You're accustomed to the finer things in life and might have servants.",
       "document": "srd-2024",
-      "cost": "4.00"
+      "cost": "4.00",
+      "detail": "per day"
     }
   },
   {
@@ -70,10 +70,175 @@
     "pk": "srd-2024_lifestyle-aristocratic",
     "fields": {
       "name": "Lifestyle - Aristocratic",
-      "detail": "1 day",
       "desc": "You pay for the best and might have a staff that supports your lifestyle. Others notice your wealth and might encourage you to share it, either legally or otherwise.",
       "document": "srd-2024",
-      "cost": "10.00"
+      "cost": "10.00",
+      "detail": "per day"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_meal-squalid",
+    "fields": {
+      "name": "Meal (Squalid)",
+      "desc": "A basic meal of poor quality.",
+      "document": "srd-2024",
+      "cost": "0.01",
+      "detail": null
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_meal-poor",
+    "fields": {
+      "name": "Meal (Poor)",
+      "desc": "A simple meal of low quality.",
+      "document": "srd-2024",
+      "cost": "0.02",
+      "detail": null
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_meal-modest",
+    "fields": {
+      "name": "Meal (Modest)",
+      "desc": "A decent meal of average quality.",
+      "document": "srd-2024",
+      "cost": "0.10",
+      "detail": null
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_meal-comfortable",
+    "fields": {
+      "name": "Meal (Comfortable)",
+      "desc": "A good meal of above-average quality.",
+      "document": "srd-2024",
+      "cost": "0.20",
+      "detail": null
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_meal-wealthy",
+    "fields": {
+      "name": "Meal (Wealthy)",
+      "desc": "A fine meal of high quality.",
+      "document": "srd-2024",
+      "cost": "0.30",
+      "detail": null
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_meal-aristocratic",
+    "fields": {
+      "name": "Meal (Aristocratic)",
+      "desc": "An exquisite meal of the highest quality.",
+      "document": "srd-2024",
+      "cost": "0.60",
+      "detail": null
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_lodging-squalid",
+    "fields": {
+      "name": "Lodging - Squalid",
+      "desc": "Basic lodging in poor conditions.",
+      "document": "srd-2024",
+      "cost": "0.07",
+      "detail": "per day"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_lodging-poor",
+    "fields": {
+      "name": "Lodging - Poor",
+      "desc": "Simple lodging in modest conditions.",
+      "document": "srd-2024",
+      "cost": "0.10",
+      "detail": "per day"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_lodging-modest",
+    "fields": {
+      "name": "Lodging - Modest",
+      "desc": "Decent lodging in average conditions.",
+      "document": "srd-2024",
+      "cost": "0.50",
+      "detail": "per day"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_lodging-comfortable",
+    "fields": {
+      "name": "Lodging - Comfortable",
+      "desc": "Good lodging in above-average conditions.",
+      "document": "srd-2024",
+      "cost": "0.80",
+      "detail": "per day"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_lodging-wealthy",
+    "fields": {
+      "name": "Lodging - Wealthy",
+      "desc": "Fine lodging in high-quality conditions.",
+      "document": "srd-2024",
+      "cost": "2.00",
+      "detail": "per day"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_lodging-aristocratic",
+    "fields": {
+      "name": "Lodging - Aristocratic",
+      "desc": "Exquisite lodging in the finest conditions.",
+      "document": "srd-2024",
+      "cost": "4.00",
+      "detail": "per day"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_skilled-hireling",
+    "fields": {
+      "name": "Skilled Hireling",
+      "desc": "A skilled hireling who can perform tasks requiring proficiency (weapons, tools, or skills).",
+      "document": "srd-2024",
+      "cost": "2.00",
+      "detail": "per day"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_untrained-hireling",
+    "fields": {
+      "name": "Untrained Hireling",
+      "desc": "An untrained hireling who can perform basic labor and porter duties.",
+      "document": "srd-2024",
+      "cost": "0.20",
+      "detail": "per day"
+    }
+  },
+  {
+    "model": "api_v2.service",
+    "pk": "srd-2024_messenger",
+    "fields": {
+      "name": "Messenger",
+      "desc": "A messenger who will deliver a message to a destination.",
+      "document": "srd-2024",
+      "cost": "0.02",
+      "detail": "per mile"
     }
   },
   {
@@ -83,7 +248,8 @@
       "name": "Spellcasting (Cantrip)",
       "desc": "Casting of a cantrip spell.",
       "document": "srd-2024",
-      "cost": "30.00"
+      "cost": "30.00",
+      "detail": null
     }
   },
   {
@@ -93,7 +259,8 @@
       "name": "Spellcasting (Level 1)",
       "desc": "Casting of a 1st-level spell.",
       "document": "srd-2024",
-      "cost": "50.00"
+      "cost": "50.00",
+      "detail": null
     }
   },
   {
@@ -103,7 +270,8 @@
       "name": "Spellcasting (Level 2)",
       "desc": "Casting of a 2nd-level spell.",
       "document": "srd-2024",
-      "cost": "200.00"
+      "cost": "200.00",
+      "detail": null
     }
   },
   {
@@ -113,7 +281,8 @@
       "name": "Spellcasting (Level 3)",
       "desc": "Casting of a 3rd-level spell.",
       "document": "srd-2024",
-      "cost": "300.00"
+      "cost": "300.00",
+      "detail": null
     }
   },
   {
@@ -123,7 +292,8 @@
       "name": "Spellcasting (Level 4-5)",
       "desc": "Casting of a 4th or 5th-level spell.",
       "document": "srd-2024",
-      "cost": "2000.00"
+      "cost": "2000.00",
+      "detail": null
     }
   },
   {
@@ -133,7 +303,8 @@
       "name": "Spellcasting (Level 6-8)",
       "desc": "Casting of a 6th, 7th, or 8th-level spell.",
       "document": "srd-2024",
-      "cost": "20000.00"
+      "cost": "20000.00",
+      "detail": null
     }
   },
   {
@@ -143,40 +314,19 @@
       "name": "Spellcasting (Level 9)",
       "desc": "Casting of a 9th-level spell.",
       "document": "srd-2024",
-      "cost": "100000.00"
+      "cost": "100000.00",
+      "detail": null
     }
   },
   {
     "model": "api_v2.service",
-    "pk": "srd-2024_skilled-hireling",
+    "pk": "srd-2024_stabling-per-day",
     "fields": {
-      "name": "Skilled Hireling",
-      "detail": "per day",
-      "desc": "A skilled hireling who can perform tasks requiring proficiency (weapons, tools, or skills).",
+      "name": "Stabling (per day)",
+      "desc": "Daily stabling for a mount.",
       "document": "srd-2024",
-      "cost": "2.00"
-    }
-  },
-  {
-    "model": "api_v2.service",
-    "pk": "srd-2024_untrained-hireling",
-    "fields": {
-      "name": "Untrained Hireling",
-      "detail": "per day",
-      "desc": "An untrained hireling who can perform basic labor and porter duties.",
-      "document": "srd-2024",
-      "cost": "0.20"
-    }
-  },
-  {
-    "model": "api_v2.service",
-    "pk": "srd-2024_messenger",
-    "fields": {
-      "name": "Messenger",
-      "detail": "per mile",
-      "desc": "A messenger who will deliver a message to a destination.",
-      "document": "srd-2024",
-      "cost": "0.02"
+      "cost": "0.50",
+      "detail": null
     }
   }
 ]
