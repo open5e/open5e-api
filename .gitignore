@@ -1,24 +1,34 @@
+# Environment and configuration files
 local.env
-selfsigned.*
-
-**/.DS_Store
-__pycache__
-staticfiles/
-db\.sqlite3
-
-staticfiles/
-
-server/whoosh_index/
-
 *.local
-
-.vscode/
-
-# pycharm config
-.idea/
-
-# pyenv env file
 .python-version
 
+# SSL certificates
+selfsigned.*
+
+# OS-specific files
+**/.DS_Store
+
+# Python
+__pycache__
+
+# Database
+db\.sqlite3
+db.sqlite3-journal
+
+# Django static files
+staticfiles/
+
+# Search index
+server/whoosh_index/
+
+# IDE and editor configurations
+.vscode/
+.idea/
+
+# Test files
 api/tests/approved_files/*.recieved.*
+
+# Generated files
 openapi-schema.yml
+

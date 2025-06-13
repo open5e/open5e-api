@@ -92,7 +92,6 @@ To use the search function, you must build the search index by running the above
 pipenv run python manage.py quicksetup
 ```
 
-
 ## Run
 
 Run the server locally. This server is only for development and shall __not__ be used in production. The server will be available at `http://localhost:8000`.
