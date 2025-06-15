@@ -1,11 +1,9 @@
 [
 {
-  "model": "api.spelllist",
-  "pk": "cleric",
   "fields": {
-    "name": "cleric",
     "desc": "",
     "document": 32,
+    "name": "cleric",
     "page_no": null,
     "spells": [
       "accelerate",
@@ -230,15 +228,15 @@
       "write-memory",
       "zone-of-truth"
     ]
-  }
+  },
+  "model": "api.spelllist",
+  "pk": "cleric"
 },
 {
-  "model": "api.spelllist",
-  "pk": "druid",
   "fields": {
-    "name": "druid",
     "desc": "",
     "document": 32,
+    "name": "druid",
     "page_no": null,
     "spells": [
       "accelerate",
@@ -423,15 +421,15 @@
       "wind-wall",
       "zymurgic-aura"
     ]
-  }
+  },
+  "model": "api.spelllist",
+  "pk": "druid"
 },
 {
-  "model": "api.spelllist",
-  "pk": "ranger",
   "fields": {
-    "name": "ranger",
     "desc": "",
     "document": 32,
+    "name": "ranger",
     "page_no": null,
     "spells": [
       "abrupt-hug",
@@ -495,6 +493,8 @@
       "water-walk",
       "wind-wall"
     ]
-  }
+  },
+  "model": "api.spelllist",
+  "pk": "ranger"
 }
 ]

@@ -1,230 +1,230 @@
 [
 {
-  "model": "api_v2.environment",
-  "pk": "arctic",
   "fields": {
-    "name": "Arctic or Tundra",
+    "aquatic": false,
     "desc": "[None provided]",
     "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "interior": false,
+    "name": "Arctic or Tundra",
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "arctic"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "caves",
   "fields": {
-    "name": "Caves",
+    "aquatic": false,
     "desc": "Caves and caverns",
     "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": true
-  }
+    "interior": true,
+    "name": "Caves",
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "caves"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "coast",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": false,
     "name": "Coast",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "coast"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "desert",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": false,
     "name": "Desert",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "desert"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "forest",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": false,
     "name": "Forest or Jungle",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "forest"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "grassland",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": false,
     "name": "Grassland or Plains",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "grassland"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "hills",
   "fields": {
+    "aquatic": false,
+    "desc": "[None Provided]",
+    "document": "open5e-e",
+    "interior": false,
     "name": "Hills",
-    "desc": "[None Provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "hills"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "laboratory",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": true,
     "name": "Laboratory",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": true
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "laboratory"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "lake",
   "fields": {
+    "aquatic": true,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": false,
     "name": "Lake",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": true,
-    "planar": false,
-    "interior": false
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "lake"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "mountain",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": false,
     "name": "Mountain",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "mountain"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "ocean",
   "fields": {
-    "name": "Ocean",
-    "desc": "[None provided]",
-    "document": "open5e-e",
     "aquatic": true,
-    "planar": false,
-    "interior": false
-  }
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": false,
+    "name": "Ocean",
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "ocean"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "ruins",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": true,
     "name": "Ruins",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": true
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "ruins"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "sewer",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": true,
     "name": "Sewer",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": true
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "sewer"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "srd_feywild",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": false,
     "name": "Feywild",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "srd_feywild"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "swamp",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": false,
     "name": "Swamp or Marsh",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "swamp"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "temple",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": true,
     "name": "Temple",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": true
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "temple"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "tomb",
   "fields": {
+    "aquatic": false,
+    "desc": "[None provided]",
+    "document": "open5e-e",
+    "interior": true,
     "name": "Tomb",
-    "desc": "[None provided]",
-    "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": true
-  }
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "tomb"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "underworld",
   "fields": {
-    "name": "Underworld",
+    "aquatic": false,
     "desc": "[None Provided]",
     "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "interior": false,
+    "name": "Underworld",
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "underworld"
 },
 {
-  "model": "api_v2.environment",
-  "pk": "urban",
   "fields": {
-    "name": "Urban",
+    "aquatic": false,
     "desc": "[None provided]",
     "document": "open5e-e",
-    "aquatic": false,
-    "planar": false,
-    "interior": false
-  }
+    "interior": false,
+    "name": "Urban",
+    "planar": false
+  },
+  "model": "api_v2.environment",
+  "pk": "urban"
 }
 ]

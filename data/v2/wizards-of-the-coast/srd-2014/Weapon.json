@@ -1,557 +1,557 @@
 [
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_battleaxe",
   "fields": {
+    "damage_dice": "1d8",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Battleaxe",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "1d8",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_battleaxe"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_blowgun",
   "fields": {
-    "name": "Blowgun",
-    "document": "srd-2014",
-    "damage_type": "piercing",
     "damage_dice": "1",
-    "range": 25.0,
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
     "long_range": 100.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "name": "Blowgun",
+    "range": 25.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_blowgun"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_club",
   "fields": {
+    "damage_dice": "1d4",
+    "damage_type": "bludgeoning",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 0.0,
     "name": "Club",
-    "document": "srd-2014",
-    "damage_type": "bludgeoning",
-    "damage_dice": "1d4",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_club"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_crossbow-hand",
   "fields": {
+    "damage_dice": "1d6",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 120.0,
     "name": "Crossbow, hand",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d6",
-    "range": 30.0,
-    "long_range": 120.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 30.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_crossbow-hand"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_crossbow-heavy",
   "fields": {
-    "name": "Crossbow, heavy",
-    "document": "srd-2014",
-    "damage_type": "piercing",
     "damage_dice": "1d10",
-    "range": 100.0,
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
     "long_range": 400.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "name": "Crossbow, heavy",
+    "range": 100.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_crossbow-heavy"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_crossbow-light",
   "fields": {
+    "damage_dice": "1d8",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 320.0,
     "name": "Crossbow, light",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d8",
-    "range": 80.0,
-    "long_range": 320.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 80.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_crossbow-light"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_dagger",
   "fields": {
+    "damage_dice": "1d4",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 60.0,
     "name": "Dagger",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d4",
-    "range": 20.0,
-    "long_range": 60.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 20.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_dagger"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_dart",
   "fields": {
+    "damage_dice": "1d4",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 60.0,
     "name": "Dart",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d4",
-    "range": 20.0,
-    "long_range": 60.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 20.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_dart"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_flail",
   "fields": {
+    "damage_dice": "1d8",
+    "damage_type": "bludgeoning",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Flail",
-    "document": "srd-2014",
-    "damage_type": "bludgeoning",
-    "damage_dice": "1d8",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_flail"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_glaive",
   "fields": {
+    "damage_dice": "1d10",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Glaive",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "1d10",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_glaive"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_greataxe",
   "fields": {
+    "damage_dice": "1d12",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Greataxe",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "1d12",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_greataxe"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_greatclub",
   "fields": {
+    "damage_dice": "1d8",
+    "damage_type": "bludgeoning",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 0.0,
     "name": "Greatclub",
-    "document": "srd-2014",
-    "damage_type": "bludgeoning",
-    "damage_dice": "1d8",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_greatclub"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_greatsword",
   "fields": {
+    "damage_dice": "2d6",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Greatsword",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "2d6",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_greatsword"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_halberd",
   "fields": {
+    "damage_dice": "1d10",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Halberd",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "1d10",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_halberd"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_handaxe",
   "fields": {
+    "damage_dice": "1d6",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 60.0,
     "name": "Handaxe",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "1d6",
-    "range": 20.0,
-    "long_range": 60.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 20.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_handaxe"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_javelin",
   "fields": {
+    "damage_dice": "1d6",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 120.0,
     "name": "Javelin",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d6",
-    "range": 30.0,
-    "long_range": 120.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 30.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_javelin"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_lance",
   "fields": {
-    "name": "Lance",
-    "document": "srd-2014",
-    "damage_type": "piercing",
     "damage_dice": "1d12",
-    "range": 0.0,
-    "long_range": 0.0,
+    "damage_type": "piercing",
     "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
     "is_simple": false,
-    "is_improvised": false
-  }
+    "long_range": 0.0,
+    "name": "Lance",
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_lance"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_light-hammer",
   "fields": {
+    "damage_dice": "1d4",
+    "damage_type": "bludgeoning",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 60.0,
     "name": "Light hammer",
-    "document": "srd-2014",
-    "damage_type": "bludgeoning",
-    "damage_dice": "1d4",
-    "range": 20.0,
-    "long_range": 60.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 20.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_light-hammer"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_longbow",
   "fields": {
-    "name": "Longbow",
-    "document": "srd-2014",
-    "damage_type": "piercing",
     "damage_dice": "1d8",
-    "range": 150.0,
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
     "long_range": 600.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "name": "Longbow",
+    "range": 150.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_longbow"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_longsword",
   "fields": {
+    "damage_dice": "1d8",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Longsword",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "1d8",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_longsword"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_mace",
   "fields": {
+    "damage_dice": "1d6",
+    "damage_type": "bludgeoning",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 0.0,
     "name": "Mace",
-    "document": "srd-2014",
-    "damage_type": "bludgeoning",
-    "damage_dice": "1d6",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_mace"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_maul",
   "fields": {
-    "name": "Maul",
-    "document": "srd-2014",
-    "damage_type": "bludgeoning",
     "damage_dice": "2d6",
-    "range": 0.0,
-    "long_range": 0.0,
+    "damage_type": "bludgeoning",
     "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
     "is_simple": false,
-    "is_improvised": false
-  }
+    "long_range": 0.0,
+    "name": "Maul",
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_maul"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_morningstar",
   "fields": {
+    "damage_dice": "1d8",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Morningstar",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d8",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_morningstar"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_net",
   "fields": {
-    "name": "Net",
-    "document": "srd-2014",
-    "damage_type": "bludgeoning",
     "damage_dice": "0",
-    "range": 5.0,
+    "damage_type": "bludgeoning",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
     "long_range": 15.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "name": "Net",
+    "range": 5.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_net"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_pike",
   "fields": {
-    "name": "Pike",
-    "document": "srd-2014",
-    "damage_type": "piercing",
     "damage_dice": "1d10",
-    "range": 0.0,
-    "long_range": 0.0,
+    "damage_type": "piercing",
     "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
     "is_simple": false,
-    "is_improvised": false
-  }
+    "long_range": 0.0,
+    "name": "Pike",
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_pike"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_quarterstaff",
   "fields": {
+    "damage_dice": "1d6",
+    "damage_type": "bludgeoning",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 0.0,
     "name": "Quarterstaff",
-    "document": "srd-2014",
-    "damage_type": "bludgeoning",
-    "damage_dice": "1d6",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_quarterstaff"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_rapier",
   "fields": {
+    "damage_dice": "1d8",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Rapier",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d8",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_rapier"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_scimitar",
   "fields": {
+    "damage_dice": "1d6",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Scimitar",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "1d6",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_scimitar"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_shortbow",
   "fields": {
-    "name": "Shortbow",
-    "document": "srd-2014",
-    "damage_type": "piercing",
     "damage_dice": "1d6",
-    "range": 80.0,
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
     "long_range": 320.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "name": "Shortbow",
+    "range": 80.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_shortbow"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_shortsword",
   "fields": {
+    "damage_dice": "1d6",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "Shortsword",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "1d6",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_shortsword"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_sickle",
   "fields": {
+    "damage_dice": "1d4",
+    "damage_type": "slashing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 0.0,
     "name": "Sickle",
-    "document": "srd-2014",
-    "damage_type": "slashing",
-    "damage_dice": "1d4",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_sickle"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_sling",
   "fields": {
-    "name": "Sling",
-    "document": "srd-2014",
-    "damage_type": "bludgeoning",
     "damage_dice": "1d4",
-    "range": 30.0,
+    "damage_type": "bludgeoning",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
     "long_range": 120.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "name": "Sling",
+    "range": 30.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_sling"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_spear",
   "fields": {
+    "damage_dice": "1d6",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": true,
+    "long_range": 60.0,
     "name": "Spear",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d6",
-    "range": 20.0,
-    "long_range": 60.0,
-    "distance_unit": null,
-    "is_simple": true,
-    "is_improvised": false
-  }
+    "range": 20.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_spear"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_trident",
   "fields": {
+    "damage_dice": "1d6",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 60.0,
     "name": "Trident",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d6",
-    "range": 20.0,
-    "long_range": 60.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 20.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_trident"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_war-pick",
   "fields": {
+    "damage_dice": "1d8",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
+    "is_simple": false,
+    "long_range": 0.0,
     "name": "War Pick",
-    "document": "srd-2014",
-    "damage_type": "piercing",
-    "damage_dice": "1d8",
-    "range": 0.0,
-    "long_range": 0.0,
-    "distance_unit": null,
-    "is_simple": false,
-    "is_improvised": false
-  }
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_war-pick"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_warhammer",
   "fields": {
-    "name": "Warhammer",
-    "document": "srd-2014",
+    "damage_dice": "1d8",
     "damage_type": "bludgeoning",
-    "damage_dice": "1d8",
-    "range": 0.0,
-    "long_range": 0.0,
     "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
     "is_simple": false,
-    "is_improvised": false
-  }
+    "long_range": 0.0,
+    "name": "Warhammer",
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_warhammer"
 },
 {
-  "model": "api_v2.weapon",
-  "pk": "srd_whip",
   "fields": {
-    "name": "Whip",
-    "document": "srd-2014",
-    "damage_type": "slashing",
     "damage_dice": "1d4",
-    "range": 0.0,
-    "long_range": 0.0,
+    "damage_type": "slashing",
     "distance_unit": null,
+    "document": "srd-2014",
+    "is_improvised": false,
     "is_simple": false,
-    "is_improvised": false
-  }
+    "long_range": 0.0,
+    "name": "Whip",
+    "range": 0.0
+  },
+  "model": "api_v2.weapon",
+  "pk": "srd_whip"
 }
 ]
