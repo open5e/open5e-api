@@ -210,7 +210,7 @@ def write_queryset_data(filepath, queryset, format='json'):
 
         with open(output_filepath, 'w', encoding='utf-8') as f:
             if format=='json':
-                serializers.serialize("json", queryset, indent=2, stream=f)
+                serializers.serialize("json", queryset, indent=2, stream=f, sort_keys=True)
             if format=='csv':
                 # Create headers:
                 fieldnames = []
