@@ -1,7 +1,7 @@
 [
 {
   "model": "api_v2.itemcategory",
-  "pk": "Ring",
+  "pk": "ring",
   "fields": {
     "name": "Ring",
     "document": "srd-2014"
@@ -41,9 +41,9 @@
 },
 {
   "model": "api_v2.itemcategory",
-  "pk": "drawn-vehicle",
+  "pk": "land-vehicle",
   "fields": {
-    "name": "Drawn Vehicle",
+    "name": "Land Vehicle",
     "document": "srd-2014"
   }
 },
@@ -164,6 +164,22 @@
   "pk": "wondrous-item",
   "fields": {
     "name": "Wondrous Item",
+    "document": "srd-2014"
+  }
+},
+{
+  "model": "api_v2.itemcategory",
+  "pk": "service",
+  "fields": {
+    "name": "Service",
+    "document": "srd-2014"
+  }
+},
+{
+  "model": "api_v2.itemcategory",
+  "pk": "mount",
+  "fields": {
+    "name": "Mount",
     "document": "srd-2014"
   }
 }

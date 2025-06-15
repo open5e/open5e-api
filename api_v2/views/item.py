@@ -52,6 +52,7 @@ class ItemFilterSet(FilterSet):
             'rarity': ['exact', 'in'],
             'requires_attunement': ['iexact'],
             'category': ['in', 'exact'],
+            'document': ['in', 'exact'],
             'document__key': ['in','iexact'],
             'document__gamesystem__key': ['in','iexact'],
         }
