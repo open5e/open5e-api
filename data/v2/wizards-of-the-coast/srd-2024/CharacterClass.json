@@ -1,167 +1,178 @@
 [
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_bard",
-    "fields": {
-      "name": "Bard",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D8",
-      "caster_type": "FULL",
-      "saving_throws": [
-        "cha",
-        "dex"
-      ]
-    }
+{
+  "fields": {
+    "caster_type": "NONE",
+    "document": "srd-2024",
+    "hit_dice": "D12",
+    "name": "Barbarian",
+    "primary_abilities": [],
+    "saving_throws": [
+      "con",
+      "str"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_cleric",
-    "fields": {
-      "name": "Cleric",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D8",
-      "caster_type": "FULL",
-      "saving_throws": [
-        "cha",
-        "wis"
-      ]
-    }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_barbarian"
+},
+{
+  "fields": {
+    "caster_type": "FULL",
+    "document": "srd-2024",
+    "hit_dice": "D8",
+    "name": "Bard",
+    "primary_abilities": [],
+    "saving_throws": [
+      "cha",
+      "dex"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_druid",
-    "fields": {
-      "name": "Druid",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D8",
-      "caster_type": "FULL",
-      "saving_throws": [
-        "int",
-        "wis"
-      ]
-    }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_bard"
+},
+{
+  "fields": {
+    "caster_type": "FULL",
+    "document": "srd-2024",
+    "hit_dice": "D8",
+    "name": "Cleric",
+    "primary_abilities": [],
+    "saving_throws": [
+      "cha",
+      "wis"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_fighter",
-    "fields": {
-      "name": "Fighter",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D10",
-      "caster_type": "NONE",
-      "saving_throws": [
-        "str",
-        "dex"
-      ]
-    }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_cleric"
+},
+{
+  "fields": {
+    "caster_type": "FULL",
+    "document": "srd-2024",
+    "hit_dice": "D8",
+    "name": "Druid",
+    "primary_abilities": [],
+    "saving_throws": [
+      "int",
+      "wis"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_monk",
-    "fields": {
-      "name": "Monk",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D8",
-      "caster_type": "NONE",
-      "saving_throws": [
-        "dex",
-        "wis"
-      ]
-    }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_druid"
+},
+{
+  "fields": {
+    "caster_type": "NONE",
+    "document": "srd-2024",
+    "hit_dice": "D10",
+    "name": "Fighter",
+    "primary_abilities": [],
+    "saving_throws": [
+      "dex",
+      "str"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_barbarian",
-    "fields": {
-      "name": "Barbarian",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D12",
-      "caster_type": "NONE",
-      "saving_throws": [
-        "str",
-        "con"
-      ]
-    }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_fighter"
+},
+{
+  "fields": {
+    "caster_type": "NONE",
+    "document": "srd-2024",
+    "hit_dice": "D8",
+    "name": "Monk",
+    "primary_abilities": [],
+    "saving_throws": [
+      "dex",
+      "wis"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_paladin",
-    "fields": {
-      "name": "Paladin",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D10",
-      "caster_type": "HALF",
-      "saving_throws": [
-        "cha",
-        "wis"
-      ]
-    }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_monk"
+},
+{
+  "fields": {
+    "caster_type": "HALF",
+    "document": "srd-2024",
+    "hit_dice": "D10",
+    "name": "Paladin",
+    "primary_abilities": [],
+    "saving_throws": [
+      "cha",
+      "wis"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_ranger",
-    "fields": {
-      "name": "Ranger",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D10",
-      "caster_type": "HALF",
-      "saving_throws": [
-        "dex",
-        "str"
-      ]
-    }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_paladin"
+},
+{
+  "fields": {
+    "caster_type": "HALF",
+    "document": "srd-2024",
+    "hit_dice": "D10",
+    "name": "Ranger",
+    "primary_abilities": [],
+    "saving_throws": [
+      "dex",
+      "str"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_sorcerer",
-    "fields": {
-      "name": "Sorcerer",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D6",
-      "caster_type": "FULL",
-      "saving_throws": [
-        "cha",
-        "con"
-      ]
-    }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_ranger"
+},
+{
+  "fields": {
+    "caster_type": "FULL",
+    "document": "srd-2024",
+    "hit_dice": "D6",
+    "name": "Sorcerer",
+    "primary_abilities": [],
+    "saving_throws": [
+      "cha",
+      "con"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_warlock",
-    "fields": {
-      "name": "Warlock",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D8",
-      "caster_type": "PACT",
-      "saving_throws": [
-        "cha",
-        "wis"
-      ]
-    }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_sorcerer"
+},
+{
+  "fields": {
+    "caster_type": "PACT",
+    "document": "srd-2024",
+    "hit_dice": "D8",
+    "name": "Warlock",
+    "primary_abilities": [],
+    "saving_throws": [
+      "cha",
+      "wis"
+    ],
+    "subclass_of": null
   },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "srd-2024_wizard",
-    "fields": {
-      "name": "Wizard",
-      "document": "srd-2024",
-      "subclass_of": null,
-      "hit_dice": "D6",
-      "caster_type": "FULL",
-      "saving_throws": [
-        "int",
-        "wis"
-      ]
-    }
-  }
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_warlock"
+},
+{
+  "fields": {
+    "caster_type": "FULL",
+    "document": "srd-2024",
+    "hit_dice": "D6",
+    "name": "Wizard",
+    "primary_abilities": [],
+    "saving_throws": [
+      "int",
+      "wis"
+    ],
+    "subclass_of": null
+  },
+  "model": "api_v2.characterclass",
+  "pk": "srd-2024_wizard"
+}
 ]
