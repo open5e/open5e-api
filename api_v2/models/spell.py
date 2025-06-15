@@ -189,3 +189,8 @@ class SpellCastingOption(models.Model):
     
     shape_size = distance_field()
     # Null values mean this value is unchanged from the default casting option.
+    
+    desc = models.TextField(
+        null=True,
+        blank=True,
+        help_text='Description of complex casting option effects that cannot be captured in other fields.')

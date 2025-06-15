@@ -124,10 +124,11 @@ class Command(BaseCommand):
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document', 'GameSystem', 'License', 'Publisher','SearchResult']
+                    CONCEPT_MODEL_NAMES = ['ConditionConcept']  # These are synthetic/concept models not tied to documents
                     CHILD_MODEL_NAMES = ['SpeciesTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption','CreatureAction', 'CreatureTrait']
                     CHILD_CHILD_MODEL_NAMES = ['CreatureActionAttack']
                     
-                    if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
+                    if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES and model.__name__ not in CONCEPT_MODEL_NAMES:
                         modelq=None
                         if model.__name__ in CHILD_CHILD_MODEL_NAMES:
                             modelq = model.objects.filter(parent__parent__document=doc).order_by('pk')
@@ -147,6 +148,23 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.SUCCESS(
                     'Wrote {} to {}'.format(doc.key, doc_path)))
 
+        # Export concept models (synthetic objects that aggregate across systems)
+        concept_models = ['ConditionConcept']  # Add other concept models here as they're created
+        for concept_model_name in concept_models:
+            try:
+                model = apps.get_model('api_v2', concept_model_name)
+                concept_queryset = model.objects.all().order_by('pk')
+                concept_path = get_filepath_by_model(
+                    concept_model_name,
+                    'api_v2',
+                    base_path=options['dir'],
+                    format=options['format'])
+                write_queryset_data(concept_path, concept_queryset, format=options['format'])
+                self.stdout.write(self.style.SUCCESS(f'Exported {concept_model_name} concept objects'))
+            except LookupError:
+                # Model doesn't exist yet, skip it
+                self.stdout.write(self.style.WARNING(f'Concept model {concept_model_name} not found, skipping'))
+
         self.stdout.write(self.style.SUCCESS('Data for v2 data complete.'))
 
 
@@ -158,7 +176,7 @@ def get_filepath_by_model(model_name, app_label, pub_key=None, doc_key=None, bas
 
     if app_label == "api_v2":
         root_folder_name = 'v2'
-        root_models = ['License', 'GameSystem']
+        root_models = ['License', 'GameSystem', 'ConditionConcept']  # Concept models are exported at root level
         pub_models = ['Publisher']
         
         if model_name in root_models:

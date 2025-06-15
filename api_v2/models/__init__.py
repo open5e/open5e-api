@@ -42,6 +42,7 @@ from .language import Language
 from .alignment import Alignment
 
 from .condition import Condition
+from .condition import ConditionConcept
 
 from .spell import Spell
 from .spell import SpellCastingOption
