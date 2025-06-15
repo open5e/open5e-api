@@ -1,170 +1,184 @@
 [
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_arcane-warrior",
-    "fields": {
-      "name": "Arcane Warrior",
-      "document": "open5e",
-      "subclass_of": "srd_fighter",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_circle-of-the-many",
-    "fields": {
-      "name": "Circle of the Many",
-      "document": "open5e",
-      "subclass_of": "srd_druid",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_college-of-skalds",
-    "fields": {
-      "name": "College of Skalds",
-      "document": "open5e",
-      "subclass_of": "srd_bard",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_demise-domain",
-    "fields": {
-      "name": "Demise Domain",
-      "document": "open5e",
-      "subclass_of": "srd_cleric",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_eldritch-trickster",
-    "fields": {
-      "name": "Eldritch Trickster",
-      "document": "open5e",
-      "subclass_of": "srd_rogue",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_mischief-domain",
-    "fields": {
-      "name": "Mischief Domain",
-      "document": "open5e",
-      "subclass_of": "srd_cleric",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_oathless-betrayer",
-    "fields": {
-      "name": "Oathless Betrayer",
-      "document": "open5e",
-      "subclass_of": "srd_paladin",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_school-of-divining-and-soothsaying",
-    "fields": {
-      "name": "School of Divining and Soothsaying",
-      "document": "open5e",
-      "subclass_of": "srd_wizard",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_school-of-illusions-and-phantasms",
-    "fields": {
-      "name": "School of Illusions and Phantasms",
-      "document": "open5e",
-      "subclass_of": "srd_wizard",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_storm-domain",
-    "fields": {
-      "name": "Storm Domain",
-      "document": "open5e",
-      "subclass_of": "srd_cleric",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_the-ancient-fey-court",
-    "fields": {
-      "name": "The Ancient Fey Court",
-      "document": "open5e",
-      "subclass_of": "srd_warlock",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_the-great-elder-thing",
-    "fields": {
-      "name": "The Great Elder Thing",
-      "document": "open5e",
-      "subclass_of": "srd_warlock",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_way-of-shadowdancing",
-    "fields": {
-      "name": "Way of Shadowdancing",
-      "document": "open5e",
-      "subclass_of": "srd_monk",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
-  },
-  {
-    "model": "api_v2.characterclass",
-    "pk": "open5e_wyrd-magic",
-    "fields": {
-      "name": "Wyrd Magic",
-      "document": "open5e",
-      "subclass_of": "srd_sorcerer",
-      "hit_dice": null,
-      "caster_type": null,
-      "saving_throws": []
-    }
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_arcane-warrior",
+  "fields": {
+    "name": "Arcane Warrior",
+    "document": "open5e",
+    "subclass_of": "srd_fighter",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_circle-of-the-many",
+  "fields": {
+    "name": "Circle of the Many",
+    "document": "open5e",
+    "subclass_of": "srd_druid",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_college-of-skalds",
+  "fields": {
+    "name": "College of Skalds",
+    "document": "open5e",
+    "subclass_of": "srd_bard",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_demise-domain",
+  "fields": {
+    "name": "Demise Domain",
+    "document": "open5e",
+    "subclass_of": "srd_cleric",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_eldritch-trickster",
+  "fields": {
+    "name": "Eldritch Trickster",
+    "document": "open5e",
+    "subclass_of": "srd_rogue",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_mischief-domain",
+  "fields": {
+    "name": "Mischief Domain",
+    "document": "open5e",
+    "subclass_of": "srd_cleric",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_oathless-betrayer",
+  "fields": {
+    "name": "Oathless Betrayer",
+    "document": "open5e",
+    "subclass_of": "srd_paladin",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_school-of-divining-and-soothsaying",
+  "fields": {
+    "name": "School of Divining and Soothsaying",
+    "document": "open5e",
+    "subclass_of": "srd_wizard",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_school-of-illusions-and-phantasms",
+  "fields": {
+    "name": "School of Illusions and Phantasms",
+    "document": "open5e",
+    "subclass_of": "srd_wizard",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_storm-domain",
+  "fields": {
+    "name": "Storm Domain",
+    "document": "open5e",
+    "subclass_of": "srd_cleric",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_the-ancient-fey-court",
+  "fields": {
+    "name": "The Ancient Fey Court",
+    "document": "open5e",
+    "subclass_of": "srd_warlock",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_the-great-elder-thing",
+  "fields": {
+    "name": "The Great Elder Thing",
+    "document": "open5e",
+    "subclass_of": "srd_warlock",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_way-of-shadowdancing",
+  "fields": {
+    "name": "Way of Shadowdancing",
+    "document": "open5e",
+    "subclass_of": "srd_monk",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "open5e_wyrd-magic",
+  "fields": {
+    "name": "Wyrd Magic",
+    "document": "open5e",
+    "subclass_of": "srd_sorcerer",
+    "hit_dice": null,
+    "caster_type": null,
+    "saving_throws": [],
+    "primary_abilities": []
+  }
+}
 ]
