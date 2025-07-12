@@ -1,171 +1,171 @@
 [
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_padded-armor",
-    "fields": {
-      "name": "Padded Armor",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": true,
-      "strength_score_required": null,
-      "ac_base": 11,
-      "ac_add_dexmod": true,
-      "ac_cap_dexmod": null
-    }
+{
+  "fields": {
+    "ac_add_dexmod": true,
+    "ac_base": 14,
+    "ac_cap_dexmod": 2,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": false,
+    "name": "Breastplate",
+    "strength_score_required": null
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_leather-armor",
-    "fields": {
-      "name": "Leather Armor",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": false,
-      "strength_score_required": null,
-      "ac_base": 11,
-      "ac_add_dexmod": true,
-      "ac_cap_dexmod": null
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_breastplate"
+},
+{
+  "fields": {
+    "ac_add_dexmod": false,
+    "ac_base": 16,
+    "ac_cap_dexmod": null,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": true,
+    "name": "Chain Mail",
+    "strength_score_required": 13
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_studded-leather-armor",
-    "fields": {
-      "name": "Studded Leather Armor",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": false,
-      "strength_score_required": null,
-      "ac_base": 12,
-      "ac_add_dexmod": true,
-      "ac_cap_dexmod": null
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_chain-mail"
+},
+{
+  "fields": {
+    "ac_add_dexmod": true,
+    "ac_base": 13,
+    "ac_cap_dexmod": 2,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": false,
+    "name": "Chain Shirt",
+    "strength_score_required": null
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_hide-armor",
-    "fields": {
-      "name": "Hide Armor",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": false,
-      "strength_score_required": null,
-      "ac_base": 12,
-      "ac_add_dexmod": true,
-      "ac_cap_dexmod": 2
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_chain-shirt"
+},
+{
+  "fields": {
+    "ac_add_dexmod": true,
+    "ac_base": 15,
+    "ac_cap_dexmod": 2,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": true,
+    "name": "Half Plate Armor",
+    "strength_score_required": null
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_chain-shirt",
-    "fields": {
-      "name": "Chain Shirt",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": false,
-      "strength_score_required": null,
-      "ac_base": 13,
-      "ac_add_dexmod": true,
-      "ac_cap_dexmod": 2
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_half-plate-armor"
+},
+{
+  "fields": {
+    "ac_add_dexmod": true,
+    "ac_base": 12,
+    "ac_cap_dexmod": 2,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": false,
+    "name": "Hide Armor",
+    "strength_score_required": null
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_scale-mail",
-    "fields": {
-      "name": "Scale Mail",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": true,
-      "strength_score_required": null,
-      "ac_base": 14,
-      "ac_add_dexmod": true,
-      "ac_cap_dexmod": 2
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_hide-armor"
+},
+{
+  "fields": {
+    "ac_add_dexmod": true,
+    "ac_base": 11,
+    "ac_cap_dexmod": null,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": false,
+    "name": "Leather Armor",
+    "strength_score_required": null
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_breastplate",
-    "fields": {
-      "name": "Breastplate",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": false,
-      "strength_score_required": null,
-      "ac_base": 14,
-      "ac_add_dexmod": true,
-      "ac_cap_dexmod": 2
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_leather-armor"
+},
+{
+  "fields": {
+    "ac_add_dexmod": true,
+    "ac_base": 11,
+    "ac_cap_dexmod": null,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": true,
+    "name": "Padded Armor",
+    "strength_score_required": null
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_half-plate-armor",
-    "fields": {
-      "name": "Half Plate Armor",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": true,
-      "strength_score_required": null,
-      "ac_base": 15,
-      "ac_add_dexmod": true,
-      "ac_cap_dexmod": 2
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_padded-armor"
+},
+{
+  "fields": {
+    "ac_add_dexmod": false,
+    "ac_base": 18,
+    "ac_cap_dexmod": null,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": true,
+    "name": "Plate Armor",
+    "strength_score_required": 15
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_ring-mail",
-    "fields": {
-      "name": "Ring Mail",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": true,
-      "strength_score_required": null,
-      "ac_base": 14,
-      "ac_add_dexmod": false,
-      "ac_cap_dexmod": null
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_plate-armor"
+},
+{
+  "fields": {
+    "ac_add_dexmod": false,
+    "ac_base": 14,
+    "ac_cap_dexmod": null,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": true,
+    "name": "Ring Mail",
+    "strength_score_required": null
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_chain-mail",
-    "fields": {
-      "name": "Chain Mail",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": true,
-      "strength_score_required": 13,
-      "ac_base": 16,
-      "ac_add_dexmod": false,
-      "ac_cap_dexmod": null
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_ring-mail"
+},
+{
+  "fields": {
+    "ac_add_dexmod": true,
+    "ac_base": 14,
+    "ac_cap_dexmod": 2,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": true,
+    "name": "Scale Mail",
+    "strength_score_required": null
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_splint-armor",
-    "fields": {
-      "name": "Splint Armor",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": true,
-      "strength_score_required": 15,
-      "ac_base": 17,
-      "ac_add_dexmod": false,
-      "ac_cap_dexmod": null
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_scale-mail"
+},
+{
+  "fields": {
+    "ac_add_dexmod": false,
+    "ac_base": 2,
+    "ac_cap_dexmod": null,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": false,
+    "name": "Shield",
+    "strength_score_required": null
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_plate-armor",
-    "fields": {
-      "name": "Plate Armor",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": true,
-      "strength_score_required": 15,
-      "ac_base": 18,
-      "ac_add_dexmod": false,
-      "ac_cap_dexmod": null
-    }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_shield"
+},
+{
+  "fields": {
+    "ac_add_dexmod": false,
+    "ac_base": 17,
+    "ac_cap_dexmod": null,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": true,
+    "name": "Splint Armor",
+    "strength_score_required": 15
   },
-  {
-    "model": "api_v2.armor",
-    "pk": "srd-2024_shield",
-    "fields": {
-      "name": "Shield",
-      "document": "srd-2024",
-      "grants_stealth_disadvantage": false,
-      "strength_score_required": null,
-      "ac_base": 2,
-      "ac_add_dexmod": false,
-      "ac_cap_dexmod": null
-    }
-  }
+  "model": "api_v2.armor",
+  "pk": "srd-2024_splint-armor"
+},
+{
+  "fields": {
+    "ac_add_dexmod": true,
+    "ac_base": 12,
+    "ac_cap_dexmod": null,
+    "document": "srd-2024",
+    "grants_stealth_disadvantage": false,
+    "name": "Studded Leather Armor",
+    "strength_score_required": null
+  },
+  "model": "api_v2.armor",
+  "pk": "srd-2024_studded-leather-armor"
+}
 ]
