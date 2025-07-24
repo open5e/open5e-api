@@ -13,6 +13,7 @@ from .document import DocumentSummarySerializer
 from .language import LanguageSummarySerializer
 from .environment import EnvironmentSummarySerializer
 from .size import SizeSummarySerializer
+from .image import ImageSummarySerializer
 from drf_spectacular.utils import extend_schema_field, inline_serializer
 from drf_spectacular.types import OpenApiTypes
 
@@ -157,6 +158,8 @@ class CreatureSerializer(GameContentSerializer):
     languages = CreatureLanguageSerializer(source='*')
     environments = EnvironmentSummarySerializer(many=True)
     initiative_bonus = serializers.SerializerMethodField()
+    illustration = ImageSummarySerializer()
+
 
     class Meta:
         '''Serializer meta options.'''
@@ -199,7 +202,8 @@ class CreatureSerializer(GameContentSerializer):
             'actions',
             'traits',
             'creaturesets',
-            'environments'
+            'environments',
+            'illustration'
         ]
 
     @extend_schema_field(inline_serializer(

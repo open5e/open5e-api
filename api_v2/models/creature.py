@@ -1,4 +1,6 @@
 """The model for a creature."""
+import decimal
+
 from fractions import Fraction
 
 from django.db import models
@@ -9,6 +11,7 @@ from .abstracts import HasDescription, HasName, Modification
 from .abstracts import damage_die_count_field, damage_die_type_field
 from .abstracts import damage_bonus_field, key_field
 from .abstracts import distance_field, distance_unit_field
+from .image import HasIllustration
 from .object import Object
 from .condition import Condition
 from .damagetype import DamageType
@@ -16,14 +19,13 @@ from .document import FromDocument
 from .environment import Environment
 from .speed import HasSpeed
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES, ACTION_TYPES
-import decimal
 
 
 class CreatureType(HasName, HasDescription, FromDocument):
     """The Type of creature, such as Aberration."""
 
 
-class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocument):
+class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, HasIllustration, FromDocument):
     """
     This is the model for a Creature, per the 5e gamesystem.
 
@@ -151,7 +153,7 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
             "type": self.type.name,
             "size": self.size.name,   
         }
-        
+
     @property
     def challenge_rating_text(self):
         '''Challenge rating as text string representation of a fraction or integer. '''
@@ -203,6 +205,7 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, FromDocum
                 return xp_by_cr_lookup[str(Fraction(self.challenge_rating_decimal))]
             except:
                 return None
+
 
 class CreatureAction(HasName, HasDescription):
     """Describes an action available to a creature."""
@@ -265,6 +268,7 @@ class CreatureAction(HasName, HasDescription):
         text = self.name + '\n' + self.desc
 
         return text
+
 
 class CreatureActionAttack(HasName):
     """Describes an attack action used by a creature."""
@@ -337,7 +341,7 @@ class CreatureTrait(Modification):
     """
     key = key_field()
     parent = models.ForeignKey(Creature, on_delete=models.CASCADE, related_name="traits")
-    
+
 
 class CreatureSet(HasName, FromDocument):
     """Set that the creature belongs to."""
