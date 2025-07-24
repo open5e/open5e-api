@@ -3482,7 +3482,7 @@
 {
   "fields": {
     "action_type": "ACTION",
-    "desc": "_Melee Weapon Attack:_ +15 to hit, reach 10 ft., one target. _Hit:_ 22 (4d6+8) slashing damage.",
+    "desc": "_Melee Weapon Attack:_ +15 to hit, reach 10 ft., one target. _Hit:_ 15 (2d6+8) slashing damage.",
     "form_condition": null,
     "legendary_cost": null,
     "name": "Claw",
@@ -3617,7 +3617,7 @@
 {
   "fields": {
     "action_type": "LEGENDARY_ACTION",
-    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 22 DEX save or take 22 (4d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
+    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 22 DEX save or take 22 (2d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
     "form_condition": null,
     "legendary_cost": 2,
     "name": "Wing Attack",
@@ -3628,21 +3628,6 @@
   },
   "model": "api_v2.creatureaction",
   "pk": "bfrd_ancient-green-dragon_wing-attack"
-},
-{
-  "fields": {
-    "action_type": "ACTION",
-    "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 22 DEX save or take 22 (4d6+8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed without provoking opportunity attacks.",
-    "form_condition": null,
-    "legendary_cost": null,
-    "name": "Wing Attack (Costs 2 Actions)",
-    "order": null,
-    "parent": "bfrd_ancient-green-dragon",
-    "uses_param": null,
-    "uses_type": null
-  },
-  "model": "api_v2.creatureaction",
-  "pk": "bfrd_ancient-green-dragon_wing-attack-costs-2-actions"
 },
 {
   "fields": {
@@ -20702,7 +20687,7 @@
 {
   "fields": {
     "action_type": "ACTION",
-    "desc": "_Melee Weapon Attack:_ +7 to hit, reach 10 ft., one target. _Hit:_ 11 (2d6+4) piercing damage.",
+    "desc": "_Melee Weapon Attack:_ +7 to hit, reach 10 ft., one target. _Hit:_ 11 (2d6+4) slashing damage.",
     "form_condition": null,
     "legendary_cost": null,
     "name": "Claw",
