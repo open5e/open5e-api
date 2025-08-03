@@ -139,7 +139,7 @@ class ItemSerializer(GameContentSerializer):
     document = DocumentSummarySerializer()
     category = ItemCategorySummarySerializer()
     rarity = ItemRaritySerializer()
-    damage_immunities = DamageTypeSummarySerializer(many=True)
+    #damage_immunities = DamageTypeSummarySerializer(many=True)
     size = SizeSummarySerializer()
     weight_unit = serializers.SerializerMethodField()
     
@@ -149,7 +149,23 @@ class ItemSerializer(GameContentSerializer):
 
     class Meta:
         model = models.Item
-        fields = '__all__'
+        fields = [
+            'url',
+            'key',
+            'name',
+            'desc',
+            'category',
+            'rarity',
+            'is_magic_item',
+            'weapon',
+            'armor',
+            'size',
+            'weight',
+            'weight_unit',
+            'cost',
+            'requires_attunement',
+            'document',]
+
 
 class ItemSummarySerializer(GameContentSerializer):
     class Meta:
