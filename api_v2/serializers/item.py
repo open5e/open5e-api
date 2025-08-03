@@ -63,7 +63,7 @@ class WeaponPropertyAssignmentSerializer(GameContentSerializer):
 class WeaponSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
-    properties = WeaponPropertyAssignmentSerializer(many=True)
+    properties = serializers.SerializerMethodField()
     damage_type = DamageTypeSummarySerializer()
     ranged_attack_possible = serializers.ReadOnlyField()
     range_melee = serializers.ReadOnlyField()
@@ -77,6 +77,10 @@ class WeaponSerializer(GameContentSerializer):
     @extend_schema_field(OpenApiTypes.STR)
     def get_distance_unit(self, Weapon):
         return Weapon.get_distance_unit
+
+    def get_properties(self, instance):
+        properties = instance.properties.all().order_by('-property_id')
+        return WeaponPropertyAssignmentSerializer(properties, context={'request': None}, many=True).data
 
 class WeaponSummarySerializer(GameContentSerializer):
     '''
