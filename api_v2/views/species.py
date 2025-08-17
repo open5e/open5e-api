@@ -12,7 +12,7 @@ class SpeciesFilterSet(FilterSet):
         model = models.Species
         fields = {
             'key': ['in', 'iexact', 'exact'],
-            'name': ['iexact', 'exact'],
+            'name': ['iexact', 'exact', 'icontains'],
             'document__key': ['in', 'iexact', 'exact'],
             'document__gamesystem__key': ['in','iexact','exact'],
             'subspecies_of': ['isnull'],
