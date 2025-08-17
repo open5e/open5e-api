@@ -10,7 +10,7 @@ class FeatFilterSet(FilterSet):
         model = models.Feat
         fields = {
             'key': ['in', 'iexact', 'exact' ],
-            'name': ['iexact', 'exact'],
+            'name': ['iexact', 'exact', 'icontains'],
             'document__key': ['in','iexact','exact'],
             'document__gamesystem__key': ['in','iexact','exact'],
         }
