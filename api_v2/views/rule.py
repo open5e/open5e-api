@@ -7,9 +7,21 @@ from api_v2 import serializers
 
 from .mixins import EagerLoadingMixin
 
+class RuleFilterSet(FilterSet):
+    class Meta:
+        model = models.Rule
+        fields = {
+            'key': ['in', 'iexact', 'exact' ],
+            'name': ['iexact', 'exact', 'icontains'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
+        }
+
 class RuleViewSet(viewsets.ReadOnlyModelViewSet):
   queryset = models.Rule.objects.all()
   serializer_class = serializers.RuleSerializer
+  filterset_class = RuleFilterSet
+
 
 class RuleSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
   queryset = models.RuleSet.objects.all()
