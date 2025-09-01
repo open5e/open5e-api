@@ -81,11 +81,15 @@ class CreatureActionSerializer(GameContentSerializer):
 class CreatureTypeSerializer(GameContentSerializer):
     '''Serializer for the Creature Type object'''
     key = serializers.ReadOnlyField()
+    desc = serializers.SerializerMethodField()
 
     class Meta:
         '''Meta options for serializer.'''
         model = models.CreatureType
         fields = '__all__'
+    
+    def get_desc(self, CreatureType):
+        return CreatureType.get_desc.desc
 
 class CreatureTypeSummarySerializer(GameContentSerializer):
     '''
