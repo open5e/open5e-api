@@ -12,8 +12,12 @@ class AlignmentSerializer(GameContentSerializer):
     morality = serializers.ReadOnlyField()
     societal_attitude = serializers.ReadOnlyField()
     short_name = serializers.ReadOnlyField()
+    desc = serializers.SerializerMethodField()
     document = DocumentSerializer()
-    
+
     class Meta:
         model = models.Alignment
         fields = '__all__'
+
+    def get_desc(self, Alignment):
+        return Alignment.get_desc.desc

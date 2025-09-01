@@ -41,6 +41,7 @@ from .damagetype import DamageTypeDescription
 from .language import Language
 
 from .alignment import Alignment
+from .alignment import AlignmentDescription
 
 from .condition import Condition
 from .condition import ConditionConcept
