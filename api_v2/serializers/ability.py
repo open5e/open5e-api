@@ -7,13 +7,20 @@ from api_v2 import models
 from .abstracts import GameContentSerializer
 
 class SkillSerializer(serializers.ModelSerializer):
+    desc = serializers.SerializerMethodField()
+
     class Meta:
         model = models.Skill
         fields = ['key','name','desc']
 
+    def get_desc(self, Skill):
+        return Skill.get_desc.desc
+
 
 class AbilitySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    desc = serializers.SerializerMethodField()
+
     skills = SkillSerializer(
         many=True
     )
@@ -21,6 +28,10 @@ class AbilitySerializer(GameContentSerializer):
     class Meta:
         model = models.Ability
         fields = '__all__'
+
+    def get_desc(self, Ability):
+        return Ability.get_desc.desc
+
 
 class AbilitySummarySerializer(GameContentSerializer):
     '''
