@@ -36,6 +36,7 @@ from .document import GameSystem
 from .document import FromDocument
 
 from .damagetype import DamageType
+from .damagetype import DamageTypeDescription
 
 from .language import Language
 

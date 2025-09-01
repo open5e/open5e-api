@@ -90,6 +90,7 @@ admin.site.register(Publisher)
 admin.site.register(GameSystem)
 
 admin.site.register(DamageType)
+admin.site.register(DamageTypeDescription)
 
 admin.site.register(Language)
 

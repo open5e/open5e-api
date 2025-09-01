@@ -8,10 +8,15 @@ from .abstracts import GameContentSerializer
 
 class DamageTypeSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    desc = serializers.SerializerMethodField()
 
     class Meta:
         model = models.DamageType
         fields = '__all__'
+
+    def get_desc(self, DamageType):
+        return DamageType.get_desc
+
 
 class DamageTypeSummarySerializer(GameContentSerializer):
     '''
