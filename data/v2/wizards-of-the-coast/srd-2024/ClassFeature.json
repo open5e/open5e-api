@@ -491,6 +491,26 @@
 },
 {
   "fields": {
+    "desc": "You can channel divine energy directly from the Outer Planes to fuel magical effects. You start with two such effects: Divine Spark and Turn Undead, each of which is described below. Each time you use this class's Channel Divinity, choose which Channel Divinity effect from this class to create. You gain additional effect options at higher Cleric levels.\n\nYou can use this class's Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest. You gain additional uses when you reach certain Cleric levels, as shown in the Channel Divinity column of the Cleric Features table.\n\nIf a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class's Spellcasting feature.\n\n**Divine Spark.** As a Magic action, you point your Holy Symbol at another creature you can see within 30 feet of yourself and focus divine energy at it. Roll 1d8 and add your Wisdom modifier. You either restore Hit Points to the creature equal to that total or force the creature to make a Constitution saving throw. On a failed save, the creature takes Necrotic or Radiant damage (your choice) equal to that total. On a successful save, the creature takes half as much damage (round down).\n\nYou roll an additional d8 when you reach Cleric levels 7 (2d8), 13 (3d8), and 18 (4d8).\n\n**Turn Undead.** As a Magic action, you present your Holy Symbol and censure Undead creatures. Each Undead of your choice within 30 feet of you must make a Wisdom saving throw. If the creature fails its save, it has the Frightened and Incapacitated conditions for 1 minute. For that duration, it tries to move as far from you as it can on its turns. This effect ends early on the creature if it takes any damage, if you have the Incapacitated condition, or if you die.",
+    "document": "srd-2024",
+    "name": "Channel Divinity",
+    "parent": "srd-2024_cleric"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_cleric_channel-divinity"
+},
+{
+  "fields": {
+    "desc": "[Column data]",
+    "document": "srd-2024",
+    "name": "Channel Divinity",
+    "parent": "srd-2024_cleric"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_cleric_channel-divinity-uses"
+},
+{
+  "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Proficiency Bonus",
@@ -748,6 +768,26 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_monk_proficiency-bonus"
+},
+{
+  "fields": {
+    "desc": "You can channel divine energy directly from the Outer Planes, using it to fuel magical effects. You start with one such effect: Divine Sense, which is described below. Other Paladin features give additional Channel Divinity effect options. Each time you use this class's Channel Divinity, you choose which effect from this class to create.\n\nYou can use this class's Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest. You gain an additional use when you reach Paladin level 11.\n\nIf a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class's Spellcasting feature.\n\n**Divine Sense.** As a Bonus Action, you can open your awareness to detect Celestials, Fiends, and Undead. For the next 10 minutes or until you have the Incapacitated condition, you know the location of any creature of those types within 60 feet of yourself, and you know its creature type. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the *Hallow* spell.",
+    "document": "srd-2024",
+    "name": "Channel Divinity",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_channel-divinity"
+},
+{
+  "fields": {
+    "desc": "[Column data]",
+    "document": "srd-2024",
+    "name": "Channel Divinity",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_channel-divinity-uses"
 },
 {
   "fields": {
