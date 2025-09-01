@@ -15,7 +15,7 @@ class DamageTypeSerializer(GameContentSerializer):
         fields = '__all__'
 
     def get_desc(self, DamageType):
-        return DamageType.get_desc
+        return DamageType.get_desc.desc
 
 
 class DamageTypeSummarySerializer(GameContentSerializer):
