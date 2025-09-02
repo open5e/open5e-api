@@ -29,9 +29,9 @@ class Ability(HasName, FromDocument):
         verbose_name_plural = "abilities"
 
     @property
-    def get_desc(self):
+    def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return AbilityDescription.objects.filter(describes=self).first()
+        return AbilityDescription.objects.filter(describes=self).all()
 
 
 class AbilityDescription(HasDescription, FromDocument):
@@ -56,9 +56,9 @@ class Skill(HasName, FromDocument):
         verbose_name_plural = "skills"
 
     @property
-    def get_desc(self):
+    def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return SkillDescription.objects.filter(describes=self).first()
+        return SkillDescription.objects.filter(describes=self).all()
 
 
 class SkillDescription(HasDescription, FromDocument):

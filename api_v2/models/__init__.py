@@ -4,8 +4,11 @@ from .item import ItemCategory
 from .item import Item
 from .item import ItemSet
 from .item import ItemRarity
+
 from .abilities import Ability
+from .abilities import AbilityDescription
 from .abilities import Skill
+from .abilities import SkillDescription
 
 from .armor import Armor
 
