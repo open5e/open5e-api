@@ -25,9 +25,9 @@ class CreatureType(HasName, FromDocument):
     """The Type of creature, such as Aberration."""
 
     @property
-    def get_desc(self):
+    def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return CreatureTypeDescription.objects.filter(describes=self).first()
+        return CreatureTypeDescription.objects.filter(describes=self).all()
 
 
 class CreatureTypeDescription(HasDescription, FromDocument):

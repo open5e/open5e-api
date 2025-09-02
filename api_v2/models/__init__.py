@@ -27,6 +27,7 @@ from .creature import CreatureTrait
 from .creature import CreatureAction
 from .creature import CreatureActionAttack
 from .creature import CreatureType
+from .creature import CreatureTypeDescription
 from .creature import CreatureSet
 
 from .document import Document
