@@ -1,43 +1,28 @@
 {
-    "desc": "Chaotic good (CG) creatures act as their conscience directs, with little regard for what others expect.  Copper dragons, many elves, and unicorns are chaotic good.",
+    "descriptions": [
+        {
+            "desc": "Chaotic good (CG) creatures act as their conscience directs, with little regard for what others expect.  Copper dragons, many elves, and unicorns are chaotic good.",
+            "document": "http://localhost:8000/v2/documents/srd-2014/"
+        }
+    ],
     "document": {
-        "author": "Mike Mearls, Jeremy Crawford, Chris Perkins, Rodney Thompson, Peter Lee, James Wyatt, Robert J. Schwalb, Bruce R. Cordell, Chris Sims, and Steve Townshend, based on original material by E. Gary Gygax and Dave Arneson.",
-        "desc": "This document is related to the core concepts of 5e for all gamesystems and documents. For example, Charisma as a concept is shared across all implementations of 5e. It was initially defined by Wizards of the Coast (in SRD 2014), and then adopted in all other subsequent add-ons and documents.",
         "display_name": "5e Core",
-        "distance_unit": "feet",
         "gamesystem": {
             "key": "5e-2014",
             "name": "5th Edition 2014",
             "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
         },
         "key": "core",
-        "licenses": [
-            {
-                "key": "cc-by-40",
-                "name": "Creative Commons Attribution 4.0",
-                "url": "http://localhost:8000/v2/licenses/cc-by-40/"
-            },
-            {
-                "key": "ogl-10a",
-                "name": "OPEN GAME LICENSE Version 1.0a",
-                "url": "http://localhost:8000/v2/licenses/ogl-10a/"
-            }
-        ],
         "name": "5e Core Concepts",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-        "publication_date": "2014-01-01T00:00:00",
         "publisher": {
             "key": "open5e",
             "name": "Open5e",
             "url": "http://localhost:8000/v2/publishers/open5e/"
-        },
-        "url": "http://localhost:8000/v2/documents/core/",
-        "weight_unit": null
+        }
     },
     "key": "chaotic-good",
     "morality": "good",
-    "name": "Chaotic Good",
     "short_name": "CG",
-    "societal_attitude": "chaotic",
-    "url": "http://localhost:8000/v2/alignments/chaotic-good/"
+    "societal_attitude": "chaotic"
 }
