@@ -30,9 +30,9 @@ class Alignment(HasName, FromDocument):
         return self.name.split(" ")[0].lower()
 
     @property
-    def get_desc(self):
+    def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return AlignmentDescription.objects.filter(describes=self).first()
+        return AlignmentDescription.objects.filter(describes=self).all()
 
 
 class AlignmentDescription(HasDescription, FromDocument):

@@ -4,6 +4,7 @@ from rest_framework import serializers
 from api_v2 import models
 
 class GameContentSerializer(serializers.HyperlinkedModelSerializer):  
+
     """
     Much of the logic included in the GameContentSerializer is intended to 
     support manipulating data returned by the serializer via query parameters.
@@ -102,4 +103,13 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
         return super().to_representation(instance)
 
     class Meta:
+        abstract = True
+
+
+class DescriptionSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    description = serializers.ReadOnlyField()
+    
+    class Meta:
+        model = None
         abstract = True
