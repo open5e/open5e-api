@@ -2778,5 +2778,235 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_hunter_superior-hunters-defense"
+},
+{
+  "fields": {
+    "desc": "[Column data]",
+    "document": "srd-2024",
+    "name": "Sneak Attack",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_sneak-attack-column-data"
+},
+{
+  "fields": {
+    "desc": "You gain Expertise in two of your skill proficiencies of your choice. Sleight of Hand and Stealth are recommended if you have proficiency in them.\n\nAt Rogue level 6, you gain Expertise in two more of your skill proficiencies of your choice.",
+    "document": "srd-2024",
+    "name": "Expertise",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_expertise"
+},
+{
+  "fields": {
+    "desc": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack roll if you have Advantage on the roll and the attack uses a Finesse or a Ranged weapon. The extra damage's type is the same as the weapon's type.\n\nYou don't need Advantage on the attack roll if at least one of your allies is within 5 feet of the target, the ally doesn't have the Incapacitated condition, and you don't have Disadvantage on the attack roll.\n\nThe extra damage increases as you gain Rogue levels, as shown in the Sneak Attack column of the Rogue Features table.",
+    "document": "srd-2024",
+    "name": "Sneak Attack",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_sneak-attack"
+},
+{
+  "fields": {
+    "desc": "You picked up various languages in the communities where you plied your roguish talents. You know Thieves' Cant and one other language of your choice, which you choose from the language tables in \"Character Creation.\"",
+    "document": "srd-2024",
+    "name": "Thieves' Cant",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_thieves-cant"
+},
+{
+  "fields": {
+    "desc": "Your training with weapons allows you to use the mastery properties of two kinds of weapons of your choice with which you have proficiency, such as Daggers and Shortbows.\n\nWhenever you finish a Long Rest, you can change the kinds of weapons you chose. For example, you could switch to using the mastery properties of Scimitars and Shortswords.",
+    "document": "srd-2024",
+    "name": "Weapon Mastery",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_weapon-mastery"
+},
+{
+  "fields": {
+    "desc": "Your quick thinking and agility allow you to move and act quickly. On your turn, you can take one of the following actions as a Bonus Action: Dash, Disengage, or Hide.",
+    "document": "srd-2024",
+    "name": "Cunning Action",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_cunning-action"
+},
+{
+  "fields": {
+    "desc": "You gain a Rogue subclass of your choice. The Thief subclass is detailed after this class's description. A subclass is a specialization that grants you features at certain Rogue levels. For the rest of your career, you gain each of your subclass's features that are of your Rogue level or lower.",
+    "document": "srd-2024",
+    "name": "Rogue Subclass",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_rogue-subclass"
+},
+{
+  "fields": {
+    "desc": "As a Bonus Action, you give yourself Advantage on your next attack roll on the current turn. You can use this feature only if you haven't moved during this turn, and after you use it, your Speed is 0 until the end of the current turn.",
+    "document": "srd-2024",
+    "name": "Steady Aim",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_steady-aim"
+},
+{
+  "fields": {
+    "desc": "You've developed cunning ways to use your Sneak Attack. When you deal Sneak Attack damage, you can add one of the following Cunning Strike effects. Each effect has a die cost, which is the number of Sneak Attack damage dice you must forgo to add the effect. You remove the die before rolling, and the effect occurs immediately after the attack's damage is dealt. For example, if you add the Poison effect, remove 1d6 from the Sneak Attack's damage before rolling.\n\nIf a Cunning Strike effect requires a saving throw, the DC equals 8 plus your Dexterity modifier and Proficiency Bonus.\n\n**Poison (Cost: 1d6).** You add a toxin to your strike, forcing the target to make a Constitution saving throw. On a failed save, the target has the Poisoned condition for 1 minute. At the end of each of its turns, the Poisoned target repeats the save, ending the effect on itself on a success.\n\nTo use this effect, you must have a Poisoner's Kit on your person.\n\n**Trip (Cost: 1d6).** If the target is Large or smaller, it must succeed on a Dexterity saving throw or have the Prone condition.\n\n**Withdraw (Cost: 1d6).** Immediately after the attack, you move up to half your Speed without provoking Opportunity Attacks.",
+    "document": "srd-2024",
+    "name": "Cunning Strike",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_cunning-strike"
+},
+{
+  "fields": {
+    "desc": "When an attacker that you can see hits you with an attack roll, you can take a Reaction to halve the attack's damage against you (round down).",
+    "document": "srd-2024",
+    "name": "Uncanny Dodge",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_uncanny-dodge"
+},
+{
+  "fields": {
+    "desc": "You can nimbly dodge out of the way of certain dangers. When you're subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw and only half damage if you fail. You can't use this feature if you have the Incapacitated condition.",
+    "document": "srd-2024",
+    "name": "Evasion",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_evasion"
+},
+{
+  "fields": {
+    "desc": "Whenever you make an ability check that uses one of your skill or tool proficiencies, you can treat a d20 roll of 9 or lower as a 10.",
+    "document": "srd-2024",
+    "name": "Reliable Talent",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_reliable-talent"
+},
+{
+  "fields": {
+    "desc": "You can use up to two Cunning Strike effects when you deal Sneak Attack damage, paying the die cost for each effect.",
+    "document": "srd-2024",
+    "name": "Improved Cunning Strike",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_improved-cunning-strike"
+},
+{
+  "fields": {
+    "desc": "You've practiced new ways to use your Sneak Attack deviously. The following effects are now among your Cunning Strike options.\n\n**Daze (Cost: 2d6).** The target must succeed on a Constitution saving throw, or on its next turn, it can do only one of the following: move or take an action or a Bonus Action.\n\n**Knock Out (Cost: 6d6).** The target must succeed on a Constitution saving throw, or it has the Unconscious condition for 1 minute or until it takes any damage. The Unconscious target repeats the save at the end of each of its turns, ending the effect on itself on a success.\n\n**Obscure (Cost: 3d6).** The target must succeed on a Dexterity saving throw, or it has the Blinded condition until the end of its next turn.",
+    "document": "srd-2024",
+    "name": "Devious Strikes",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_devious-strikes"
+},
+{
+  "fields": {
+    "desc": "Your cunning mind is exceptionally difficult to control. You gain proficiency in Wisdom and Charisma saving throws.",
+    "document": "srd-2024",
+    "name": "Slippery Mind",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_slippery-mind"
+},
+{
+  "fields": {
+    "desc": "You're so evasive that attackers rarely gain the upper hand against you. No attack roll can have Advantage against you unless you have the Incapacitated condition.",
+    "document": "srd-2024",
+    "name": "Elusive",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_elusive"
+},
+{
+  "fields": {
+    "desc": "You gain an Epic Boon feat (see \"Feats\") or another feat of your choice for which you qualify. Boon of the Night Spirit is recommended.",
+    "document": "srd-2024",
+    "name": "Epic Boon",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_epic-boon"
+},
+{
+  "fields": {
+    "desc": "You have a marvelous knack for succeeding when you need to. If you fail a D20 Test, you can turn the roll into a 20.\n\nOnce you use this feature, you can't use it again until you finish a Short or Long Rest.",
+    "document": "srd-2024",
+    "name": "Stroke of Luck",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_stroke-of-luck"
+},
+{
+  "fields": {
+    "desc": "As a Bonus Action, you can do one of the following.\n\n**Sleight of Hand.** Make a Dexterity (Sleight of Hand) check to pick a lock or disarm a trap with Thieves' Tools or to pick a pocket.\n\n**Use an Object.** Take the Utilize action, or take the Magic action to use a magic item that requires that action.",
+    "document": "srd-2024",
+    "name": "Fast Hands",
+    "parent": "srd-2024_thief"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_thief_fast-hands"
+},
+{
+  "fields": {
+    "desc": "You've trained to get into especially hard-to-reach places, granting you these benefits.\n\n**Climber.** You gain a Climb Speed equal to your Speed.\n\n**Jumper.** You can determine your jump distance using your Dexterity rather than your Strength.",
+    "document": "srd-2024",
+    "name": "Second-Story Work",
+    "parent": "srd-2024_thief"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_thief_second-story-work"
+},
+{
+  "fields": {
+    "desc": "You gain the following Cunning Strike option. *Stealth Attack (Cost: 1d6).* If you have the Hide action's Invisible condition, this attack doesn't end that condition on you if you end the turn behind Three-Quarters Cover or Total Cover.",
+    "document": "srd-2024",
+    "name": "Supreme Sneak",
+    "parent": "srd-2024_thief"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_thief_supreme-sneak"
+},
+{
+  "fields": {
+    "desc": "You've learned how to maximize use of magic items, granting you the following benefits.\n\n**Attunement.** You can attune to up to four magic items at once.\n\n**Charges.** Whenever you use a magic item property that expends charges, roll 1d6. On a roll of 6, you use the property without expending the charges.\n\n**Scrolls.** You can use any *Spell Scroll*, using Intelligence as your spellcasting ability for the spell. If the spell is a cantrip or a level 1 spell, you can cast it reliably. If the scroll contains a higher-level spell, you must first succeed on an Intelligence (Arcana) check (DC 10 plus the spell's level). On a successful check, you cast the spell from the scroll. On a failed check, the scroll disintegrates.",
+    "document": "srd-2024",
+    "name": "Use Magic Device",
+    "parent": "srd-2024_thief"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_thief_use-magic-device"
+},
+{
+  "fields": {
+    "desc": "You are adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal Initiative and your second turn at your Initiative minus 10.",
+    "document": "srd-2024",
+    "name": "Thief's Reflexes",
+    "parent": "srd-2024_thief"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_thief_thiefs-reflexes"
 }
 ]
