@@ -13,9 +13,9 @@ class DamageType(HasName, FromDocument):
     damage resistance, rely on the types.
     """
     @property
-    def get_desc(self):
+    def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return DamageTypeDescription.objects.filter(describes=self).first()
+        return DamageTypeDescription.objects.filter(describes=self).all()
 
     class Meta:
         """To assist with the UI layer."""

@@ -5,18 +5,20 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .abstracts import DescriptionSerializer
+
+class DamageTypeDescriptionSerializer(DescriptionSerializer):
+    class Meta:
+        model=models.DamageTypeDescription
+        fields=['desc','document']
 
 class DamageTypeSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    desc = serializers.SerializerMethodField()
+    descriptions = DamageTypeDescriptionSerializer(many=True)
 
     class Meta:
         model = models.DamageType
         fields = '__all__'
-
-    def get_desc(self, DamageType):
-        return DamageType.get_desc.desc
-
 
 class DamageTypeSummarySerializer(GameContentSerializer):
     '''
