@@ -2278,5 +2278,225 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_prepared-spells"
+},
+{
+  "fields": {
+    "desc": "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you finish a Long Rest. With that pool, you can restore a total number of Hit Points equal to five times your Paladin level.\n\nAs a Bonus Action, you can touch a creature (which could be yourself) and draw power from the pool of healing to restore a number of Hit Points to that creature, up to the maximum amount remaining in the pool.\n\nYou can also expend 5 Hit Points from the pool of healing power to remove the Poisoned condition from the creature; those points don't also restore Hit Points to the creature.",
+    "document": "srd-2024",
+    "name": "Lay On Hands",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_lay-on-hands"
+},
+{
+  "fields": {
+    "desc": "You have learned to cast spells through prayer and meditation. See \"Spells\" for the rules on spellcasting. The information below details how you use those rules with Paladin spells, which appear in the Paladin spell list later in the class's description.\n\n**Spell Slots.** The Paladin Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.\n\n**Prepared Spells of Level 1+**. You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Paladin spells. *Heroism* and *Searing Smite* are recommended.\n\nThe number of spells on your list increases as you gain Paladin levels, as shown in the Prepared Spells column of the Paladin Features table. Whenever that number increases, choose additional Paladin spells until the number of spells on your list matches the number in the Paladin Features table. The chosen spells must be of a level for which you have spell slots. For example, if you're a level 5 Paladin, your list of prepared spells can include six Paladin spells of level 1 or 2 in any combination.\n\nIf another Paladin feature gives you spells that you always have prepared, those spells don't count against the number of spells you can prepare with this feature, but those spells otherwise count as Paladin spells for you.\n\n**Changing Your Prepared Spells.** Whenever you finish a Long Rest, you can replace one spell on your list with another Paladin spell for which you have spell slots.\n\n**Spellcasting Ability.** Charisma is your spellcasting ability for your Paladin spells.\n\n**Spellcasting Focus.** You can use a Holy Symbol as a Spellcasting Focus for your Paladin spells.",
+    "document": "srd-2024",
+    "name": "Spellcasting",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_spellcasting"
+},
+{
+  "fields": {
+    "desc": "Your training with weapons allows you to use the mastery properties of two kinds of weapons of your choice with which you have proficiency, such as Longswords and Javelins.\n\nWhenever you finish a Long Rest, you can change the kinds of weapons you chose. For example, you could switch to using the mastery properties of Halberds and Flails.",
+    "document": "srd-2024",
+    "name": "Weapon Mastery",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_weapon-mastery"
+},
+{
+  "fields": {
+    "desc": "You gain a Fighting Style feat of your choice (see \"Feats\" for feats). Instead of choosing one of those feats, you can choose the option below.\n\n**Blessed Warrior.** You learn two Cleric cantrips of your choice (see the Cleric class's section for a list of Cleric spells). *Guidance* and *Sacred Flame* are recommended. The chosen cantrips count as Paladin spells for you, and Charisma is your spellcasting ability for them. Whenever you gain a Paladin level, you can replace one of these cantrips with another Cleric cantrip.",
+    "document": "srd-2024",
+    "name": "Fighting Style",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_fighting-style"
+},
+{
+  "fields": {
+    "desc": "You always have the *Divine Smite* spell prepared. In addition, you can cast it without expending a spell slot, but you must finish a Long Rest before you can cast it in this way again.",
+    "document": "srd-2024",
+    "name": "Paladin's Smite",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_paladins-smite"
+},
+{
+  "fields": {
+    "desc": "You gain a Paladin subclass of your choice. The Oath of Devotion subclass is detailed after this class's description. A subclass is a specialization that grants you features at certain Paladin levels. For the rest of your career, you gain each of your subclass's features that are of your Paladin level or lower.",
+    "document": "srd-2024",
+    "name": "Paladin Subclass",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_paladin-subclass"
+},
+{
+  "fields": {
+    "desc": "You can attack twice instead of once whenever you take the Attack action on your turn.",
+    "document": "srd-2024",
+    "name": "Extra Attack",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_extra-attack"
+},
+{
+  "fields": {
+    "desc": "You can call on the aid of an otherworldly steed. You always have the *Find Steed* spell prepared.\n\nYou can also cast the spell once without expending a spell slot, and you regain the ability to do so when you finish a Long Rest.",
+    "document": "srd-2024",
+    "name": "Faithful Steed",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_faithful-steed"
+},
+{
+  "fields": {
+    "desc": "You radiate a protective, unseeable aura in a 10-foot Emanation that originates from you. The aura is inactive while you have the Incapacitated condition.\n\nYou and your allies in the aura gain a bonus to saving throws equal to your Charisma modifier (minimum bonus of +1).\n\nIf another Paladin is present, a creature can benefit from only one Aura of Protection at a time; the creature chooses which aura while in them.",
+    "document": "srd-2024",
+    "name": "Aura of Protection",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_aura-of-protection"
+},
+{
+  "fields": {
+    "desc": "As a Magic action, you can expend one use of this class's Channel Divinity to overwhelm foes with awe. As you present your Holy Symbol or weapon, you can target a number of creatures equal to your Charisma modifier (minimum of one creature) that you can see within 60 feet of yourself. Each target must succeed on a Wisdom saving throw or have the Frightened condition for 1 minute or until it takes any damage. While Frightened in this way, a target can do only one of the following on its turns: move, take an action, or take a Bonus Action.",
+    "document": "srd-2024",
+    "name": "Abjure Foes",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_abjure-foes"
+},
+{
+  "fields": {
+    "desc": "You and your allies have Immunity to the Frightened condition while in your Aura of Protection. If a Frightened ally enters the aura, that condition has no effect on that ally while there.",
+    "document": "srd-2024",
+    "name": "Aura of Courage",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_aura-of-courage"
+},
+{
+  "fields": {
+    "desc": "Your strikes now carry supernatural power. When you hit a target with an attack roll using a Melee weapon or an Unarmed Strike, the target takes an extra 1d8 Radiant damage.",
+    "document": "srd-2024",
+    "name": "Radiant Strikes",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_radiant-strikes"
+},
+{
+  "fields": {
+    "desc": "When you use Lay On Hands on a creature, you can also remove one or more of the following conditions from the creature: Blinded, Charmed, Deafened, Frightened, Paralyzed, or Stunned. You must expend 5 Hit Points from the healing pool of Lay On Hands for each of these conditions you remove; those points don't also restore Hit Points to the creature.",
+    "document": "srd-2024",
+    "name": "Restoring Touch",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_restoring-touch"
+},
+{
+  "fields": {
+    "desc": "",
+    "document": "srd-2024",
+    "name": "",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_"
+},
+{
+  "fields": {
+    "desc": "Your Aura of Protection is now a 30-foot Emanation.",
+    "document": "srd-2024",
+    "name": "Aura Expansion",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_aura-expansion"
+},
+{
+  "fields": {
+    "desc": "You gain an Epic Boon feat (see \"Feats\") or another feat of your choice for which you qualify. Boon of Truesight is recommended.",
+    "document": "srd-2024",
+    "name": "Epic Boon",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_epic-boon"
+},
+{
+  "fields": {
+    "desc": "This section presents the Paladin spell list. The spells are organized by spell level and then alphabetized, and each spell's school of magic is listed. In the Special column, *C* means the spell requires Concentration, *R* means it's a Ritual, and *M* means it requires a specific Material component.\n\nTable: Level 1 Paladin Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Bless|Enchantment|C, M|\n|Command|Enchantment|—|\n|Cure Wounds|Abjuration|—|\n|Detect Evil and Good|Divination|C|\n|Detect Magic|Divination|C, R|\n|Detect Poison and Disease|Divination|C, R|\n|Divine Favor|Transmutation|—|\n|Divine Smite|Evocation|—|\n|Heroism|Enchantment|C|\n|Protection from Evil and Good|Abjuration|C, M|\n|Purify Food and Drink|Transmutation|R|\n|Searing Smite|Evocation|—|\n|Shield of Faith|Abjuration|C|\n\nTable: Level 2 Paladin Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Aid|Abjuration|—|\n|Find Steed|Conjuration|—|\n|Gentle Repose|Necromancy|R, M|\n|Lesser Restoration|Abjuration|—|\n|Locate Object|Divination|C|\n|Magic Weapon|Transmutation|—|\n|Prayer of Healing|Abjuration|—|\n|Protection from Poison|Abjuration|—|\n|Shining Smite|Transmutation|C|\n|Warding Bond|Abjuration|M|\n|Zone of Truth|Enchantment|—|\n\nTable: Level 3 Paladin Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Create Food and Water|Conjuration|—|\n|Daylight|Evocation|—|\n|Dispel Magic|Abjuration|—|\n|Magic Circle|Abjuration|M|\n|Remove Curse|Abjuration|—|\n|Revivify|Necromancy|M|\n\nTable: Level 4 Paladin Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Aura of Life|Abjuration|C|\n|Banishment|Abjuration|C|\n|Death Ward|Abjuration|—|\n|Locate Creature|Divination|C|\n\nTable: Level 5 Paladin Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Dispel Evil and Good|Abjuration|C|\n|Geas|Enchantment|—|\n|Greater Restoration|Abjuration|M|\n|Raise Dead|Necromancy|M|",
+    "document": "srd-2024",
+    "name": "Paladin Spell List",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_spell-list"
+},
+{
+  "fields": {
+    "desc": "The magic of your oath ensures you always have certain spells ready; when you reach a Paladin level specified in the Oath of Devotion Spells table, you thereafter always have the listed spells prepared.\n\nTable: Oath of Devotion Spells\n\n|Paladin Level|Spells|\n|---|---|\n|3|Protection from Evil and Good, Shield of Faith|\n|5|Aid, Zone of Truth|\n|9|Beacon of Hope, Dispel Magic|\n|13|Freedom of Movement, Guardian of Faith|\n|17|Commune, Flame Strike|",
+    "document": "srd-2024",
+    "name": "Oath of Devotion Spells",
+    "parent": "srd-2024_oath-of-devotion"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_oath-of-devotion_spells"
+},
+{
+  "fields": {
+    "desc": "When you take the Attack action, you can expend one use of your Channel Divinity to imbue one Melee weapon that you are holding with positive energy. For 10 minutes or until you use this feature again, you add your Charisma modifier to attack rolls you make with that weapon (minimum bonus of +1), and each time you hit with it, you cause it to deal its normal damage type or Radiant damage.\n\nThe weapon also emits Bright Light in a 20-foot radius and Dim Light 20 feet beyond that.\n\nYou can end this effect early (no action required). This effect also ends if you aren't carrying the weapon.",
+    "document": "srd-2024",
+    "name": "Sacred Weapon",
+    "parent": "srd-2024_oath-of-devotion"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_oath-of-devotion_sacred-weapon"
+},
+{
+  "fields": {
+    "desc": "You and your allies have Immunity to the Charmed condition while in your Aura of Protection. If a Charmed ally enters the aura, that condition has no effect on that ally while there.",
+    "document": "srd-2024",
+    "name": "Aura of Devotion",
+    "parent": "srd-2024_oath-of-devotion"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_oath-of-devotion_aura-of-devotion"
+},
+{
+  "fields": {
+    "desc": "Your magical smite now radiates protective energy. Whenever you cast *Divine Smite*, you and your allies have Half Cover while in your Aura of Protection. The aura has this benefit until the start of your next turn.",
+    "document": "srd-2024",
+    "name": "Smite of Protection",
+    "parent": "srd-2024_oath-of-devotion"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_oath-of-devotion_smite-of-protection"
+},
+{
+  "fields": {
+    "desc": "As a Bonus Action, you can imbue your Aura of Protection with holy power, granting the benefits below for 10 minutes or until you end them (no action required). Once you use this feature, you can't use it again until you finish a Long Rest. You can also restore your use of it by expending a level 5 spell slot (no action required).\n\n**Holy Ward.** You have Advantage on any saving throw you are forced to make by a Fiend or an Undead.\n\n**Radiant Damage.** Whenever an enemy starts its turn in the aura, that creature takes Radiant damage equal to your Charisma modifier plus your Proficiency Bonus.\n\n**Sunlight.** The aura is filled with Bright Light that is sunlight.",
+    "document": "srd-2024",
+    "name": "Holy Nimbus",
+    "parent": "srd-2024_oath-of-devotion"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_oath-of-devotion_holy-nimbus"
 }
 ]
