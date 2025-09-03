@@ -3008,5 +3008,175 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_rogue_thief_thiefs-reflexes"
+},
+{
+  "fields": {
+    "desc": "[Column data]",
+    "document": "srd-2024",
+    "name": "Sorcery Points",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_sorcery-points"
+},
+{
+  "fields": {
+    "desc": "Drawing from your innate magic, you can cast spells. See \"Spells\" for the rules on spellcasting. The information below details how you use those rules with Sorcerer spells, which appear in the Sorcerer spell list later in the class's description.\n\n**Cantrips.** You know four Sorcerer cantrips of your choice. *Light*, *Prestidigitation*, *Shocking Grasp*, and *Sorcerous Burst* are recommended. Whenever you gain a Sorcerer level, you can replace one of your cantrips from this feature with another Sorcerer cantrip of your choice.\n\nWhen you reach Sorcerer levels 4 and 10, you learn another Sorcerer cantrip of your choice, as shown in the Cantrips column of the Sorcerer Features table.\n\n**Spell Slots.** The Sorcerer Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.\n\n**Prepared Spells of Level 1+.** You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Sorcerer spells. *Burning Hands* and *Detect Magic* are recommended.\n\nThe number of spells on your list increases as you gain Sorcerer levels, as shown in the Prepared Spells column of the Sorcerer Features table. Whenever that number increases, choose additional Sorcerer spells until the number of spells on your list matches the number in the Sorcerer Features table. The chosen spells must be of a level for which you have spell slots. For example, if you're a level 3 Sorcerer, your list of prepared spells can include six Sorcerer spells of level 1 or 2 in any combination.\n\nIf another Sorcerer feature gives you spells that you always have prepared, those spells don't count against the number of spells you can prepare with this feature, but those spells otherwise count as Sorcerer spells for you.\n\n**Changing Your Prepared Spells.** Whenever you gain a Sorcerer level, you can replace one spell on your list with another Sorcerer spell for which you have spell slots.\n\n**Spellcasting Ability.** Charisma is your spellcasting ability for your Sorcerer spells.\n\n**Spellcasting Focus.** You can use an Arcane Focus as a Spellcasting Focus for your Sorcerer spells.",
+    "document": "srd-2024",
+    "name": "Spellcasting",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_spellcasting"
+},
+{
+  "fields": {
+    "desc": "An event in your past left an indelible mark on you, infusing you with simmering magic. As a Bonus Action, you can unleash that magic for 1 minute, during which you gain the following benefits:\n\n- The spell save DC of your Sorcerer spells increases by 1.\n- You have Advantage on the attack rolls of Sorcerer spells you cast.\n\nYou can use this feature twice, and you regain all expended uses of it when you finish a Long Rest.",
+    "document": "srd-2024",
+    "name": "Innate Sorcery",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_innate-sorcery"
+},
+{
+  "fields": {
+    "desc": "You can tap into the wellspring of magic within yourself. This wellspring is represented by Sorcery Points, which allow you to create a variety of magical effects.\n\nYou have 2 Sorcery Points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer Features table. You can't have more Sorcery Points than the number shown in the table for your level. You regain all expended Sorcery Points when you finish a Long Rest.\n\nYou can use your Sorcery Points to fuel the options below, along with other features, such as Metamagic, that use those points.\n\n**Converting Spell Slots to Sorcery Points.** You can expend a spell slot to gain a number of Sorcery Points equal to the slot's level (no action required).\n\n**Creating Spell Slots.** As a Bonus Action, you can transform unexpended Sorcery Points into one spell slot. The Creating Spell Slots table shows the cost of creating a spell slot of a given level, and it lists the minimum Sorcerer level you must be to create a slot. You can create a spell slot no higher than level 5.\n\nAny spell slot you create with this feature vanishes when you finish a Long Rest.\n\nTable: Creating Spell Slots\n\n|Spell Slot Level|Sorcery Point Cost|Min. Sorcerer Level|\n|---|---|---|\n|1|2|2|\n|2|3|3|\n|3|5|5|\n|4|6|7|\n|5|7|9|",
+    "document": "srd-2024",
+    "name": "Font of Magic",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_font-of-magic"
+},
+{
+  "fields": {
+    "desc": "Because your magic flows from within, you can alter your spells to suit your needs; you gain two Metamagic options of your choice from \"Metamagic Options\" later in this class's description. You use the chosen options to temporarily modify spells you cast. To use an option, you must spend the number of Sorcery Points that it costs.\n\nYou can use only one Metamagic option on a spell when you cast it unless otherwise noted in one of those options.\n\nWhenever you gain a Sorcerer level, you can replace one of your Metamagic options with one you don't know. You gain two more options at Sorcerer level 10 and two more at Sorcerer level 17.",
+    "document": "srd-2024",
+    "name": "Metamagic",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_metamagic"
+},
+{
+  "fields": {
+    "desc": "You gain a Sorcerer subclass of your choice. The Draconic Sorcery subclass is detailed after this class's description. A subclass is a specialization that grants you features at certain Sorcerer levels. For the rest of your career, you gain each of your subclass's features that are of your Sorcerer level or lower.",
+    "document": "srd-2024",
+    "name": "Sorcerer Subclass",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_sorcerer-subclass"
+},
+{
+  "fields": {
+    "desc": "If you have no uses of Innate Sorcery left, you can use it if you spend 2 Sorcery Points when you take the Bonus Action to activate it.\n\nIn addition, while your Innate Sorcery feature is active, you can use up to two of your Metamagic options on each spell you cast.",
+    "document": "srd-2024",
+    "name": "Sorcery Incarnate",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_sorcery-incarnate"
+},
+{
+  "fields": {
+    "desc": "When you finish a Short Rest, you can regain expended Sorcery Points, but no more than a number equal to half your Sorcerer level (round down). Once you use this feature, you can't do so again until you finish a Long Rest.",
+    "document": "srd-2024",
+    "name": "Sorcerous Restoration",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_sorcerous-restoration"
+},
+{
+  "fields": {
+    "desc": "You gain an Epic Boon feat (see \"Feats\") or another feat of your choice for which you qualify. Boon of Dimensional Travel is recommended.",
+    "document": "srd-2024",
+    "name": "Epic Boon",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_epic-boon"
+},
+{
+  "fields": {
+    "desc": "While your Innate Sorcery feature is active, you can use one Metamagic option on each of your turns without spending Sorcery Points on it.",
+    "document": "srd-2024",
+    "name": "Arcane Apotheosis",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_arcane-apotheosis"
+},
+{
+  "fields": {
+    "desc": "The following options are available to your Metamagic feature. The options are presented in alphabetical order.\n\n#### Careful Spell\n\n*Cost: 1 Sorcery Point*\n\nWhen you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, spend 1 Sorcery Point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell, and it takes no damage if it would normally take half damage on a successful save.\n\n#### Distant Spell\n\n*Cost: 1 Sorcery Point*\n\nWhen you cast a spell that has a range of at least 5 feet, you can spend 1 Sorcery Point to double the spell's range. Or when you cast a spell that has a range of Touch, you can spend 1 Sorcery Point to make the spell's range 30 feet.\n\n#### Empowered Spell\n\n*Cost: 1 Sorcery Point*\n\nWhen you roll damage for a spell, you can spend 1 Sorcery Point to reroll a number of the damage dice up to your Charisma modifier (minimum of one), and you must use the new rolls. You can use Empowered Spell even if you've already used a different Metamagic option during the casting of the spell.\n\n#### Extended Spell\n\n*Cost: 1 Sorcery Point*\n\nWhen you cast a spell that has a duration of 1 minute or longer, you can spend 1 Sorcery Point to double its duration to a maximum duration of 24 hours. If the affected spell requires Concentration, you have Advantage on any saving throw you make to maintain that Concentration.\n\n#### Heightened Spell\n\n*Cost: 2 Sorcery Points*\n\nWhen you cast a spell that forces a creature to make a saving throw, you can spend 2 Sorcery Points to give one target of the spell Disadvantage on saves against the spell.\n\n#### Quickened Spell\n\n*Cost: 2 Sorcery Points*\n\nWhen you cast a spell that has a casting time of an action, you can spend 2 Sorcery Points to change the casting time to a Bonus Action for this casting. You can't modify a spell in this way if you've already cast a level 1+ spell on the current turn, nor can you cast a level 1+ spell on this turn after modifying a spell in this way.\n\n#### Seeking Spell\n\n*Cost: 1 Sorcery Point*\n\nIf you make an attack roll for a spell and miss, you can spend 1 Sorcery Point to reroll the d20, and you must use the new roll. You can use Seeking Spell even if you've already used a different Metamagic option during the casting of the spell.\n\n#### Subtle Spell\n\n*Cost: 1 Sorcery Point*\n\nWhen you cast a spell, you can spend 1 Sorcery Point to cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell.\n\n#### Transmuted Spell\n\n*Cost: 1 Sorcery Point*\n\nWhen you cast a spell that deals a type of damage from the following list, you can spend 1 Sorcery Point to change that damage type to one of the other listed types: Acid, Cold, Fire, Lightning, Poison, Thunder.\n\n#### Twinned Spell\n\n*Cost: 1 Sorcery Point*\n\nWhen you cast a spell, such as *Charm Person*, that can be cast with a higher-level spell slot to target an additional creature, you can spend 1 Sorcery Point to increase the spell's effective level by 1.",
+    "document": "srd-2024",
+    "name": "Metamagic Options",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_metamagic-options"
+},
+{
+  "fields": {
+    "desc": "This section presents the Sorcerer spell list. The spells are organized by spell level and then alphabetized, and each spell's school of magic is listed. In the Special column, *C* means the spell requires Concentration, *R* means it's a Ritual, and *M* means it requires a specific Material component.\n\nTable: Cantrips (Level 0 Sorcerer Spells)\n\n|Spell|School|Special|\n|---|---|---|\n|Acid Splash|Evocation|—|\n|Chill Touch|Necromancy|—|\n|Dancing Lights|Illusion|C|\n|Elementalism|Transmutation|—|\n|Fire Bolt|Evocation|—|\n|Light|Evocation|—|\n|Mage Hand|Conjuration|—|\n|Mending|Transmutation|—|\n|Message|Transmutation|—|\n|Minor Illusion|Illusion|—|\n|Poison Spray|Necromancy|—|\n|Prestidigitation|Transmutation|—|\n|Ray of Frost|Evocation|—|\n|Shocking Grasp|Evocation|—|\n|Sorcerous Burst|Evocation|—|\n|True Strike|Divination|—|\n\nTable: Level 1 Sorcerer Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Burning Hands|Evocation|—|\n|Charm Person|Enchantment|—|\n|Chromatic Orb|Evocation|M|\n|Color Spray|Illusion|—|\n|Comprehend Languages|Divination|R|\n|Detect Magic|Divination|C, R|\n|Disguise Self|Illusion|—|\n|Expeditious Retreat|Transmutation|C|\n|False Life|Necromancy|–|\n|Feather Fall|Transmutation|—|\n|Fog Cloud|Conjuration|C|\n|Grease|Conjuration|—|\n|Ice Knife|Conjuration|—|\n|Jump|Transmutation|—|\n|Mage Armor|Abjuration|—|\n|Magic Missile|Evocation|—|\n|Ray of Sickness|Necromancy|—|\n|Shield|Abjuration|—|\n|Silent Image|Illusion|C|\n|Sleep|Enchantment|C|\n|Thunderwave|Evocation|—|\n\nTable: Level 2 Sorcerer Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Alter Self|Transmutation|C|\n|Blindness/Deafness|Transmutation|—|\n|Blur|Illusion|C|\n|Darkness|Evocation|C|\n|Darkvision|Transmutation|—|\n|Detect Thoughts|Divination|C|\n|Dragon's Breath|Transmutation|C|\n|Enhance Ability|Transmutation|C|\n|Enlarge/Reduce|Transmutation|C|\n|Flame Blade|Evocation|C|\n|Flaming Sphere|Evocation|C|\n|Gust of Wind|Evocation|C|\n|Hold Person|Enchantment|C|\n|Invisibility|Illusion|C|\n|Knock|Transmutation|—|\n|Levitate|Transmutation|C|\n|Magic Weapon|Transmutation|—|\n|Mirror Image|Illusion|—|\n|Misty Step|Conjuration|—|\n|Scorching Ray|Evocation|—|\n|See Invisibility|Divination|—|\n|Shatter|Evocation|—|\n|Spider Climb|Transmutation|C|\n|Suggestion|Enchantment|C|\n|Web|Conjuration|C|\n\nTable: Level 3 Sorcerer Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Blink|Transmutation|—|\n|Clairvoyance|Divination|C, M|\n|Counterspell|Abjuration|—|\n|Daylight|Evocation|—|\n|Dispel Magic|Abjuration|—|\n|Fear|Illusion|C|\n|Fireball|Evocation|—|\n|Fly|Transmutation|C|\n|Gaseous Form|Transmutation|C|\n|Haste|Transmutation|C|\n|Hypnotic Pattern|Illusion|C|\n|Lightning Bolt|Evocation|—|\n|Major Image|Illusion|C|\n|Protection from Energy|Abjuration|C|\n|Sleet Storm|Conjuration|C|\n|Slow|Transmutation|C|\n|Stinking Cloud|Conjuration|C|\n|Tongues|Divination|—|\n|Vampiric Touch|Necromancy|C|\n|Water Breathing|Transmutation|R|\n|Water Walk|Transmutation|R|\n\nTable: Level 4 Sorcerer Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Banishment|Abjuration|C|\n|Blight|Necromancy|—|\n|Charm Monster|Enchantment|—|\n|Confusion|Enchantment|C|\n|Dimension Door|Conjuration|—|\n|Dominate Beast|Enchantment|C|\n|Fire Shield|Evocation|—|\n|Greater Invisibility|Illusion|C|\n|Ice Storm|Evocation|—|\n|Polymorph|Transmutation|C|\n|Stoneskin|Transmutation|C, M|\n|Vitriolic Sphere|Evocation|—|\n|Wall of Fire|Evocation|C|\n\nTable: Level 5 Sorcerer Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Animate Objects|Transmutation|C|\n|Arcane Hand|Evocation|C|\n|Cloudkill|Conjuration|C|\n|Cone of Cold|Evocation|—|\n|Creation|Illusion|—|\n|Dominate Person|Enchantment|C|\n|Hold Monster|Enchantment|C|\n|Insect Plague|Conjuration|C|\n|Seeming|Illusion|—|\n|Telekinesis|Transmutation|C|\n|Teleportation Circle|Conjuration|M|\n|Wall of Stone|Evocation|C|\n\nTable: Level 6 Sorcerer Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Chain Lightning|Evocation|—|\n|Circle of Death|Necromancy|M|\n|Disintegrate|Transmutation|—|\n|Eyebite|Necromancy|C|\n|Flesh to Stone|Transmutation|C|\n|Freezing Sphere|Evocation|—|\n|Globe of Invulnerability|Abjuration|C|\n|Mass Suggestion|Enchantment|—|\n|Move Earth|Transmutation|C|\n|Sunbeam|Evocation|C|\n|True Seeing|Divination|M|\n|||\n\nTable: Level 7 Sorcerer Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Delayed Blast Fireball|Evocation|C|\n|Etherealness|Conjuration|—|\n|Finger of Death|Necromancy|—|\n|Fire Storm|Evocation|—|\n|Plane Shift|Conjuration|M|\n|Prismatic Spray|Evocation|—|\n|Reverse Gravity|Transmutation|C|\n|Teleport|Conjuration|—|\n\nTable: Level 8 Sorcerer Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Demiplane|Conjuration|—|\n|Dominate Monster|Enchantment|C|\n|Earthquake|Transmutation|C|\n|Incendiary Cloud|Conjuration|C|\n|Power Word Stun|Enchantment|—|\n|Sunburst|Evocation|—|\n\nTable: Level 9 Sorcerer Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Gate|Conjuration|C, M|\n|Meteor Swarm|Evocation|—|\n|Power Word Kill|Enchantment|—|\n|Time Stop|Transmutation|—|\n|Wish|Conjuration|—|",
+    "document": "srd-2024",
+    "name": "Sorcerer Spell List",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_sorcerer-spell-list"
+},
+{
+  "fields": {
+    "desc": "The magic in your body manifests physical traits of your draconic gift. Your Hit Point maximum increases by 3, and it increases by 1 whenever you gain another Sorcerer level.\n\nParts of you are also covered by dragon-like scales. While you aren't wearing armor, your base Armor Class equals 10 plus your Dexterity and Charisma modifiers.",
+    "document": "srd-2024",
+    "name": "Draconic Resilience",
+    "parent": "srd-2024_draconic-sorcery"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_draconic-sorcery_draconic-resilience"
+},
+{
+  "fields": {
+    "desc": "When you reach a Sorcerer level specified in the Draconic Spells table, you thereafter always have the listed spells prepared.\n\nTable: Draconic Spells\n\n|Sorcerer Level|Spells|\n|---|---|\n|3|Alter Self, Chromatic Orb, Command, Dragon's Breath|\n|5|Fear, Fly|\n|7|Arcane Eye, Charm Monster|\n|9|Legend Lore, Summon Dragon|",
+    "document": "srd-2024",
+    "name": "Draconic Spells",
+    "parent": "srd-2024_draconic-sorcery"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_draconic-sorcery_draconic-spells"
+},
+{
+  "fields": {
+    "desc": "Your draconic magic has an affinity with a damage type associated with dragons. Choose one of those types: Acid, Cold, Fire, Lightning, or Poison.\n\nYou have Resistance to that damage type, and when you cast a spell that deals damage of that type, you can add your Charisma modifier to one damage roll of that spell.",
+    "document": "srd-2024",
+    "name": "Elemental Affinity",
+    "parent": "srd-2024_draconic-sorcery"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_draconic-sorcery_elemental-affinity"
+},
+{
+  "fields": {
+    "desc": "As a Bonus Action, you can cause draconic wings to appear on your back. The wings last for 1 hour or until you dismiss them (no action required). For the duration, you have a Fly Speed of 60 feet.\n\nOnce you use this feature, you can't use it again until you finish a Long Rest unless you spend 3 Sorcery Points (no action required) to restore your use of it.",
+    "document": "srd-2024",
+    "name": "Dragon Wings",
+    "parent": "srd-2024_draconic-sorcery"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_draconic-sorcery_dragon-wings"
+},
+{
+  "fields": {
+    "desc": "You can cast *Summon Dragon* without a Material component. You can also cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.\n\nWhenever you start casting the spell, you can modify it so that it doesn't require Concentration. If you do so, the spell's duration becomes 1 minute for that casting.",
+    "document": "srd-2024",
+    "name": "Dragon Companion",
+    "parent": "srd-2024_draconic-sorcery"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_draconic-sorcery_dragon-companion"
 }
 ]
