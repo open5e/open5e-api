@@ -106,10 +106,7 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
         abstract = True
 
 
-class DescriptionSerializer(GameContentSerializer):
-    key = serializers.ReadOnlyField()
-    description = serializers.ReadOnlyField()
-    
+class DescriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = None
         abstract = True
