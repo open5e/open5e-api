@@ -107,6 +107,10 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class DescriptionSerializer(serializers.ModelSerializer):
+    gamesystem = serializers.SerializerMethodField()
     class Meta:
         model = None
         abstract = True
+
+    def get_gamesystem(self,obj):
+        return obj.document.gamesystem.key

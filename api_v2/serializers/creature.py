@@ -84,7 +84,7 @@ class CreatureActionSerializer(GameContentSerializer):
 class CreatureTypeDescriptionSerializer(DescriptionSerializer):
     class Meta:
         model=models.CreatureTypeDescription
-        fields=['desc','document']
+        fields=['desc','document','gamesystem']
 
 
 class CreatureTypeSerializer(GameContentSerializer):

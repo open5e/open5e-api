@@ -11,7 +11,7 @@ from .abstracts import DescriptionSerializer
 class SkillDescriptionSerializer(DescriptionSerializer):
     class Meta:
         model=models.SkillDescription
-        fields=['desc','document']
+        fields=['desc','document','gamesystem']
 
 
 class SkillSerializer(serializers.ModelSerializer):
@@ -25,7 +25,7 @@ class SkillSerializer(serializers.ModelSerializer):
 class AbilityDescriptionSerializer(DescriptionSerializer):
     class Meta:
         model=models.AbilityDescription
-        fields=['desc','document']
+        fields=['desc','document','gamesystem']
 
 
 class AbilitySerializer(GameContentSerializer):

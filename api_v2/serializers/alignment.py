@@ -11,7 +11,8 @@ from .document import DocumentSummarySerializer
 class AlignmentDescriptionSerializer(DescriptionSerializer):
     class Meta:
         model=models.AlignmentDescription
-        fields=['desc','document']
+        fields=['desc','document','gamesystem']
+
 
 class AlignmentSerializer(GameContentSerializer):
 

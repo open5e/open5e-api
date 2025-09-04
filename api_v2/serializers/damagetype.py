@@ -10,7 +10,7 @@ from .abstracts import DescriptionSerializer
 class DamageTypeDescriptionSerializer(DescriptionSerializer):
     class Meta:
         model = models.DamageTypeDescription
-        fields = ['desc','document']
+        fields = ['desc','document','gamesystem']
 
 
 class DamageTypeSerializer(GameContentSerializer):
