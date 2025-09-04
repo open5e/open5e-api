@@ -9,8 +9,9 @@ from .abstracts import DescriptionSerializer
 
 class DamageTypeDescriptionSerializer(DescriptionSerializer):
     class Meta:
-        model=models.DamageTypeDescription
-        fields=['desc','document']
+        model = models.DamageTypeDescription
+        fields = ['desc','document']
+
 
 class DamageTypeSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
