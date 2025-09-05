@@ -15,7 +15,7 @@ class DamageType(HasName, FromDocument):
     @property
     def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return DamageTypeDescription.objects.filter(describes=self).all()
+        return DamageTypeDescription.objects.filter(describes=self).all().order_by('pk')
 
     class Meta:
         """To assist with the UI layer."""

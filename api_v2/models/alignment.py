@@ -32,7 +32,7 @@ class Alignment(HasName, FromDocument):
     @property
     def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return AlignmentDescription.objects.filter(describes=self).all()
+        return AlignmentDescription.objects.filter(describes=self).all().order_by('pk')
 
 
 class AlignmentDescription(HasDescription, FromDocument):

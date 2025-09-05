@@ -27,7 +27,7 @@ class CreatureType(HasName, FromDocument):
     @property
     def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return CreatureTypeDescription.objects.filter(describes=self).all()
+        return CreatureTypeDescription.objects.filter(describes=self).all().order_by('pk')
 
 
 class CreatureTypeDescription(HasDescription, FromDocument):

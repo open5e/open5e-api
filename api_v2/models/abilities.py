@@ -31,7 +31,7 @@ class Ability(HasName, FromDocument):
     @property
     def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return AbilityDescription.objects.filter(describes=self).all()
+        return AbilityDescription.objects.filter(describes=self).all().order_by("pk")
 
 
 class AbilityDescription(HasDescription, FromDocument):
@@ -58,7 +58,7 @@ class Skill(HasName, FromDocument):
     @property
     def descriptions(self):
         """ Gets the description based on parameter, and then if none, global priority"""
-        return SkillDescription.objects.filter(describes=self).all()
+        return SkillDescription.objects.filter(describes=self).all().order_by("pk")
 
 
 class SkillDescription(HasDescription, FromDocument):
