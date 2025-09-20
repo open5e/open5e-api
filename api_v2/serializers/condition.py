@@ -12,7 +12,6 @@ class ConditionSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     document = DocumentSummarySerializer()
     icon = ImageSummarySerializer()
-    concept = serializers.SerializerMethodField()
     
     def get_concept(self, obj):
         # Find the concept this condition belongs to
@@ -48,7 +47,6 @@ class ConditionDetailSerializer(GameContentSerializer):
     document = DocumentSummarySerializer()
     icon = ImageSummarySerializer()
     gamesystem_key = serializers.SerializerMethodField()
-    concept = serializers.SerializerMethodField()
     
     def get_gamesystem_key(self, obj):
         return obj.document.gamesystem.key
@@ -69,7 +67,7 @@ class ConditionDetailSerializer(GameContentSerializer):
     
     class Meta:
         model = models.Condition
-        fields = ['name', 'key', 'url', 'desc', 'document', 'gamesystem_key', 'concept', 'icon']
+        fields = ['name', 'key', 'url', 'desc', 'document', 'gamesystem_key', 'icon']
 
 
 class ConditionSystemVariantSerializer(GameContentSerializer):
