@@ -101,13 +101,6 @@ admin.site.register(Alignment)
 
 admin.site.register(Condition)
 
-class ConditionConceptAdmin(admin.ModelAdmin):
-    list_display = ['key', 'name']
-    filter_horizontal = ['conditions']
-    search_fields = ['key', 'name', 'desc']
-    
-admin.site.register(ConditionConcept, ConditionConceptAdmin)
-
 admin.site.register(ClassFeatureItem)
 admin.site.register(ClassFeature, admin_class=ClassFeatureAdmin)
 admin.site.register(CharacterClass)
