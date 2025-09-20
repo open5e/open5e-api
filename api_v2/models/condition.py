@@ -1,6 +1,5 @@
 """The model for a condition."""
 from django.db import models
-from django.db.models import Q
 
 from .abstracts import HasName, HasDescription
 from .document import FromDocument
@@ -15,3 +14,8 @@ class Condition(HasName, HasDescription, HasIcon, FromDocument):
         """To assist with the UI layer."""
 
         verbose_name_plural = "conditions"
+
+
+class ConditionDescription(HasDescription, FromDocument):
+    """A description of the condition."""
+    describes = models.ForeignKey(Condition, on_delete=models.CASCADE)
