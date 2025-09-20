@@ -5,7 +5,7 @@ from .abstracts import HasName, HasDescription
 from .document import FromDocument
 from .image import HasIcon
 
-class Condition(HasName, HasDescription, HasIcon, FromDocument):
+class Condition(HasName, HasIcon, FromDocument):
     """
     This is the model for a condition.
     """
