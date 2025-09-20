@@ -10,6 +10,11 @@ class Condition(HasName, HasDescription, HasIcon, FromDocument):
     This is the model for a condition.
     """
 
+    @property
+    def descriptions(self):
+        """ Gets the description based on parameter, and then if none, global priority"""
+        return ConditionDescription.objects.filter(describes=self).all().order_by("pk")
+
     class Meta:
         """To assist with the UI layer."""
 

@@ -48,6 +48,7 @@ from .alignment import Alignment
 from .alignment import AlignmentDescription
 
 from .condition import Condition
+from .condition import ConditionDescription
 
 from .spell import Spell
 from .spell import SpellCastingOption
