@@ -65,7 +65,7 @@ class ClassFeature(HasName, HasDescription, FromDocument):
         return "{} ({})".format(self.name,self.parent.name)
 
 
-class CharacterClass(HasName, FromDocument):
+class CharacterClass(HasName, FromDocument, HasDescription):
     """The model for a character class or subclass."""
 
     subclass_of = models.ForeignKey('self',
