@@ -1,0 +1,218 @@
+[
+{
+  "fields": {
+    "desc": "Typical speakers are demons.",
+    "document": "core",
+    "is_exotic": true,
+    "is_secret": false,
+    "name": "Abyssal",
+    "script_language": "infernal"
+  },
+  "model": "api_v2.language",
+  "pk": "abyssal"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are celestials",
+    "document": "core",
+    "is_exotic": true,
+    "is_secret": false,
+    "name": "Celestial",
+    "script_language": "celestial"
+  },
+  "model": "api_v2.language",
+  "pk": "celestial"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are Humans.",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": false,
+    "name": "Common",
+    "script_language": "common"
+  },
+  "model": "api_v2.language",
+  "pk": "common"
+},
+{
+  "fields": {
+    "desc": "Typical speakers include aboleths and cloakers. It is only spoken.",
+    "document": "core",
+    "is_exotic": true,
+    "is_secret": false,
+    "name": "Deep Speech",
+    "script_language": null
+  },
+  "model": "api_v2.language",
+  "pk": "deep-speech"
+},
+{
+  "fields": {
+    "desc": "Typical speakers include dragons and dragonborn.",
+    "document": "core",
+    "is_exotic": true,
+    "is_secret": false,
+    "name": "Draconic",
+    "script_language": "draconic"
+  },
+  "model": "api_v2.language",
+  "pk": "draconic"
+},
+{
+  "fields": {
+    "desc": "The secret language of druids. Those who know it can speak the language and use it to leave hidden messages. Those who know this language automatically spot such a message. Others spot the message’s presence with a successful DC 15 Wisdom (Perception) check but can’t decipher it without magic.",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": true,
+    "name": "Druidic",
+    "script_language": null
+  },
+  "model": "api_v2.language",
+  "pk": "druidic"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are dwarves.",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": false,
+    "name": "Dwarvish",
+    "script_language": "dwarvish"
+  },
+  "model": "api_v2.language",
+  "pk": "dwarvish"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are elves.",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": false,
+    "name": "Elvish",
+    "script_language": "elvish"
+  },
+  "model": "api_v2.language",
+  "pk": "elvish"
+},
+{
+  "fields": {
+    "desc": "Typical speakers include ogres, and giants.",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": false,
+    "name": "Giant",
+    "script_language": "dwarvish"
+  },
+  "model": "api_v2.language",
+  "pk": "giant"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are gnomes.",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": false,
+    "name": "Gnomish",
+    "script_language": "dwarvish"
+  },
+  "model": "api_v2.language",
+  "pk": "gnomish"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are goblinoids.",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": false,
+    "name": "Goblin",
+    "script_language": "dwarvish"
+  },
+  "model": "api_v2.language",
+  "pk": "goblin"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are halflings.",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": false,
+    "name": "Halfling",
+    "script_language": "common"
+  },
+  "model": "api_v2.language",
+  "pk": "halfling"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are devils.",
+    "document": "core",
+    "is_exotic": true,
+    "is_secret": false,
+    "name": "Infernal",
+    "script_language": "infernal"
+  },
+  "model": "api_v2.language",
+  "pk": "infernal"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are orcs",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": false,
+    "name": "Orc",
+    "script_language": "dwarvish"
+  },
+  "model": "api_v2.language",
+  "pk": "orc"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are elementals.",
+    "document": "core",
+    "is_exotic": true,
+    "is_secret": false,
+    "name": "Primordial",
+    "script_language": "dwarvish"
+  },
+  "model": "api_v2.language",
+  "pk": "primordial"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are fey creatures.",
+    "document": "core",
+    "is_exotic": true,
+    "is_secret": false,
+    "name": "Sylvan",
+    "script_language": "elvish"
+  },
+  "model": "api_v2.language",
+  "pk": "sylvan"
+},
+{
+  "fields": {
+    "desc": "A secret mix of dialect, jargon, and code that allows the speaker to hide messages in seemingly normal conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.",
+    "document": "core",
+    "is_exotic": false,
+    "is_secret": true,
+    "name": "Thieves' Cant",
+    "script_language": null
+  },
+  "model": "api_v2.language",
+  "pk": "thieves-cant"
+},
+{
+  "fields": {
+    "desc": "Typical speakers are underworld traders.",
+    "document": "core",
+    "is_exotic": true,
+    "is_secret": false,
+    "name": "Undercommon",
+    "script_language": "elvish"
+  },
+  "model": "api_v2.language",
+  "pk": "undercommon"
+}
+]

@@ -90,6 +90,7 @@ admin.site.register(Publisher)
 admin.site.register(GameSystem)
 
 admin.site.register(DamageType)
+admin.site.register(DamageTypeDescription)
 
 admin.site.register(Language)
 
@@ -99,13 +100,6 @@ admin.site.register(Skill)
 admin.site.register(Alignment)
 
 admin.site.register(Condition)
-
-class ConditionConceptAdmin(admin.ModelAdmin):
-    list_display = ['key', 'name']
-    filter_horizontal = ['conditions']
-    search_fields = ['key', 'name', 'desc']
-    
-admin.site.register(ConditionConcept, ConditionConceptAdmin)
 
 admin.site.register(ClassFeatureItem)
 admin.site.register(ClassFeature, admin_class=ClassFeatureAdmin)

@@ -4,6 +4,7 @@ from rest_framework import serializers
 from api_v2 import models
 
 class GameContentSerializer(serializers.HyperlinkedModelSerializer):  
+
     """
     Much of the logic included in the GameContentSerializer is intended to 
     support manipulating data returned by the serializer via query parameters.
@@ -103,3 +104,13 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         abstract = True
+
+
+class DescriptionSerializer(serializers.ModelSerializer):
+    gamesystem = serializers.SerializerMethodField()
+    class Meta:
+        model = None
+        abstract = True
+
+    def get_gamesystem(self,obj):
+        return obj.document.gamesystem.key

@@ -5,15 +5,33 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .abstracts import DescriptionSerializer
+
+
+class SkillDescriptionSerializer(DescriptionSerializer):
+    class Meta:
+        model=models.SkillDescription
+        fields=['desc','document','gamesystem']
+
 
 class SkillSerializer(serializers.ModelSerializer):
+    descriptions = SkillDescriptionSerializer(many=True)
+
     class Meta:
         model = models.Skill
-        fields = ['key','name','desc']
+        fields = '__all__'
+
+
+class AbilityDescriptionSerializer(DescriptionSerializer):
+    class Meta:
+        model=models.AbilityDescription
+        fields=['desc','document','gamesystem']
 
 
 class AbilitySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    descriptions = AbilityDescriptionSerializer(many=True)
+
     skills = SkillSerializer(
         many=True
     )
@@ -21,6 +39,8 @@ class AbilitySerializer(GameContentSerializer):
     class Meta:
         model = models.Ability
         fields = '__all__'
+
+
 
 class AbilitySummarySerializer(GameContentSerializer):
     '''

@@ -4,8 +4,11 @@ from .item import ItemCategory
 from .item import Item
 from .item import ItemSet
 from .item import ItemRarity
+
 from .abilities import Ability
+from .abilities import AbilityDescription
 from .abilities import Skill
+from .abilities import SkillDescription
 
 from .armor import Armor
 
@@ -27,6 +30,7 @@ from .creature import CreatureTrait
 from .creature import CreatureAction
 from .creature import CreatureActionAttack
 from .creature import CreatureType
+from .creature import CreatureTypeDescription
 from .creature import CreatureSet
 
 from .document import Document
@@ -36,13 +40,15 @@ from .document import GameSystem
 from .document import FromDocument
 
 from .damagetype import DamageType
+from .damagetype import DamageTypeDescription
 
 from .language import Language
 
 from .alignment import Alignment
+from .alignment import AlignmentDescription
 
 from .condition import Condition
-from .condition import ConditionConcept
+from .condition import ConditionDescription
 
 from .spell import Spell
 from .spell import SpellCastingOption
