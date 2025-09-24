@@ -31,6 +31,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Strength|\n|Hit Point Die|D12 per Barbarian level|\n|Saving Throw Proficiencies|Strength and Constitution|\n|Skill Proficiencies|Choose 2: Animal Handling, Athletics, Intimidation, Nature, Perception, or Survival|\n|Weapon Proficiencies|Simple and Martial weapons|\n|Armor Training|Light and Medium armor and Shields|\n|Starting Equipment|Choose A or B: (A) Greataxe, 4 Handaxes, Explorer's Pack, and 15 GP; or (B) 75 GP|",
+    "document": "srd-2024",
+    "name": "Core Barbarian Traits",
+    "parent": "srd-2024_barbarian"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_barbarian_core-traits"
+},
+{
+  "fields": {
     "desc": "You gain an uncanny sense of when things aren't as they should be, giving you an edge when you dodge perils. You have Advantage on Dexterity saving throws unless you have the Incapacitated condition.",
     "document": "srd-2024",
     "name": "Danger Sense",
@@ -48,16 +58,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_barbarian_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Greataxe, 4 Handaxes, Explorer's Pack, and 15 GP; or (B) 75 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_barbarian"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_barbarian_equipment"
 },
 {
   "fields": {
@@ -311,6 +311,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Charisma|\n|Hit Point Die|D8 per Bard level|\n|Saving Throw Proficiencies|Dexterity and Charisma|\n|Skill Proficiencies|Choose any 3 skills|\n|Weapon Proficiencies|Simple weapons|\n|Tool Proficiencies|Choose 3 Musical Instruments|\n|Armor Training|Light armor|\n|Starting Equipment|Choose A or B: (A) Leather Armor, 2 Daggers, Musical Instrument of your choice, Entertainer's Pack, and 19 GP; or (B) 90 GP|",
+    "document": "srd-2024",
+    "name": "Core Bard Traits",
+    "parent": "srd-2024_cleric"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_bard_core-traits"
+},
+{
+  "fields": {
     "desc": "You can use musical notes or words of power to disrupt mind-influencing effects. If you or a creature within 30 feet of you fails a saving throw against an effect that applies the Charmed or Frightened condition, you can take a Reaction to cause the save to be rerolled, and the new roll has Advantage.",
     "document": "srd-2024",
     "name": "Countercharm",
@@ -328,16 +338,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_bard_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Leather Armor, 2 Daggers, Musical Instrument of your choice, Entertainer's Pack, and 19 GP; or (B) 90 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_bard"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_bard_equipment"
 },
 {
   "fields": {
@@ -591,6 +591,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Wisdom|\n|Hit Point Die|D8 per Cleric level|\n|Saving Throw Proficiencies|Wisdom and Charisma|\n|Skill Proficiencies|Choose 2: History, Insight, Medicine, Persuasion, or Religion|\n|Weapon Proficiencies|Simple weapons|\n|Armor Training|Light and Medium armor and Shields|\n|Starting Equipment|Choose A or B: (A) Chain Shirt, Shield, Mace, Holy Symbol, Priest's Pack, and 7 GP; or (B) 110 GP|",
+    "document": "srd-2024",
+    "name": "Cleric Subclasses",
+    "parent": "srd-2024_cleric"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_cleric_core-traits"
+},
+{
+  "fields": {
     "desc": "You can call on your deity or pantheon to intervene on your behalf. As a Magic action, choose any Cleric spell of level 5 or lower that doesn't require a Reaction to cast. As part of the same action, you cast that spell without expending a spell slot or needing Material components. You can't use this feature again until you finish a Long Rest.",
     "document": "srd-2024",
     "name": "Divine Intervention",
@@ -618,16 +628,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_cleric_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Chain Shirt, Shield, Mace, Holy Symbol, Priest's Pack, and 7 GP; or (B) 110 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_cleric"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_cleric_equipment"
 },
 {
   "fields": {
@@ -961,6 +961,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Wisdom|\n|Hit Point Die|D8 per Druid level|\n|Saving Throw Proficiencies|Intelligence and Wisdom|\n|Skill Proficiencies|Choose 2: Animal Handling, Arcana, Insight, Medicine, Na ture, Perception, Religion, or Survival|\n|Weapon Proficiencies|Simple weapons|\n|Tool Proficiencies|Herbalism Kit|\n|Armor Training|Light armor and Shields|\n|Starting Equipment|Choose A or B: (A) Leather Ar mor, Shield, Sickle, Druidic Focus (Quarterstaff), Explorer's Pack, Herbalism Kit, and 9 GP; or (B) 50 GP|",
+    "document": "srd-2024",
+    "name": "Core Druid Traits",
+    "parent": "srd-2024_druid"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_druid_core-traits"
+},
+{
+  "fields": {
     "desc": "This section presents the Druid spell list. The spells are organized by spell level and then alphabetized, and each spell's school of magic is listed. In the Special column, *C* means the spell requires Concentration, *R* means it's a Ritual, and *M* means it requires a specific Material component.\n\nTable: Cantrips (Level 0 Druid Spells)\n\n|School|Special|\n|---|---|\n|Transmutation|—|\n|Transmutation|—|\n|Divination|C|\n|Transmutation|—|\n|Transmutation|—|\n|Necromancy|—|\n|Conjuration|—|\n|Abjuration|C|\n|Transmutation|—|\n|Necromancy|—|\n|Evocation|—|\n|||\n\nTable: Level 1 Druid Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Animal Friendship|Enchantment|—|\n|Charm Person|Enchantment|—|\n|Create or Destroy Water|Transmutation|—|\n|Cure Wounds|Abjuration|—|\n|Detect Magic|Divination|C, R|\n|Detect Poison and Disease|Divination|C, R|\n|Entangle|Conjuration|C|\n|Faerie Fire|Evocation|C|\n|Fog Cloud|Conjuration|C|\n|Goodberry|Conjuration|—|\n|Healing Word|Abjuration|—|\n|Ice Knife|Conjuration|—|\n|Jump|Transmutation|—|\n|Longstrider|Transmutation|—|\n|Protection from Evil and Good|Abjuration|C, M|\n|Purify Food and Drink|Transmutation|R|\n|Speak with Animals|Divination|R|\n|Thunderwave|Evocation|—|\n\nTable: Level 2 Druid Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Aid|Abjuration|—|\n|Animal Messenger|Enchantment|R|\n|Augury|Divination|R, M|\n|Barkskin|Transmutation|—|\n|Continual Flame|Evocation|M|\n|Darkvision|Transmutation|—|\n|Enhance Ability|Transmutation|C|\n|Enlarge/Reduce|Transmutation|C|\n|Find Traps|Divination|—|\n|Flame Blade|Evocation|C|",
     "document": "srd-2024",
     "name": "Druid Spell List",
@@ -1008,16 +1018,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_druid_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Leather Ar mor, Shield, Sickle, Druidic Fo cus (Quarterstaff), Explorer's Pack, Herbalism Kit, and 9 GP; or (B) 50 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_druid"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_druid_equipment"
 },
 {
   "fields": {
@@ -1281,6 +1281,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Strength or Dexterity|\n|Hit Point Die|D10 per Fighter level|\n|Saving Throw Proficiencies|Strength and Constitution|\n|Skill Proficiencies|Choose 2: Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Persuasion, Perception, or Survival|\n|Weapon Proficiencies|Simple and Martial weapons|\n|Armor Training|Light, Medium, and Heavy armor and Shields|\n|Starting Equipment|Choose A, B, or C: (A) Chain Mail, Greatsword, Flail, 8 Javelins, Dungeoneer's Pack, and 4 GP; (B) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Dungeoneer's Pack, and 11 GP; or (C) 155 GP|",
+    "document": "srd-2024",
+    "name": "Core Fighter Traits",
+    "parent": "srd-2024_fighter"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_fighter_core-traits"
+},
+{
+  "fields": {
     "desc": "You gain an Epic Boon feat (see \"Feats\") or another feat of your choice for which you qualify. Boon of Combat Prowess is recommended.",
     "document": "srd-2024",
     "name": "Epic Boon",
@@ -1288,16 +1298,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_fighter_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A, B, or C: (A) Chain Mail, Greatsword, Flail, 8 Javelins, Dungeoneer's Pack, and 4 GP; (B) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Dungeoneer's Pack, and 11 GP; or (C) 155 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_fighter"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_fighter_equipment"
 },
 {
   "fields": {
@@ -1481,6 +1481,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Dexterity and Wisdom|\n|Hit Point Die|D8 per Monk level|\n|Saving Throw Proficiencies|Strength and Dexterity|\n|Skill Proficiencies|Choose 2: Acrobatics, Athletics, History, Insight, Religion, or Stealth|\n|Weapon Proficiencies|Simple weapons and Martial weapons that have the Light property|\n|Tool Proficiencies|Choose one type of Artisan's Tools or Musical Instrument|\n|Armor Training|None|\n|Starting Equipment|Choose A or B: (A) Spear, 5 Daggers, Artisan's Tools or Musical Instrument chosen for the tool proficiency above, Explorer's Pack, and 11 GP; or (B) 50 GP|",
+    "document": "srd-2024",
+    "name": "Core Monk Traits",
+    "parent": "srd-2024_monk"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_monk_core-traits"
+},
+{
+  "fields": {
     "desc": "When an attack roll hits you and its damage includes Bludgeoning, Piercing, or Slashing damage, you can take a Reaction to reduce the attack's total damage against you. The reduction equals 1d10 plus your Dexterity modifier and Monk level.\n\nIf you reduce the damage to 0, you can expend 1 Focus Point to redirect some of the attack's force. If you do so, choose a creature you can see within 5 feet of yourself if the attack was a melee attack or a creature you can see within 60 feet of yourself that isn't behind Total Cover if the attack was a ranged attack. That creature must succeed on a Dexterity saving throw or take damage equal to two rolls of your Martial Arts die plus your Dexterity modifier. The damage is the same type dealt by the attack.",
     "document": "srd-2024",
     "name": "Deflect Attacks",
@@ -1528,16 +1538,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_monk_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Spear, 5 Daggers, Artisan's Tools or Musical Instrument chosen for the tool proficiency above, Explorer's Pack, and 11 GP; or (B) 50 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_monk"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_monk_equipment"
 },
 {
   "fields": {
@@ -1751,16 +1751,6 @@
 },
 {
   "fields": {
-    "desc": "",
-    "document": "srd-2024",
-    "name": "",
-    "parent": "srd-2024_paladin"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_paladin_"
-},
-{
-  "fields": {
     "desc": "You gain the Ability Score Improvement feat (see \"Feats\") or another feat of your choice for which you qualify. You gain this feature again at Paladin levels 8, 12, and 16.",
     "document": "srd-2024",
     "name": "Ability Score Improvement",
@@ -1831,6 +1821,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Strength and Charisma|\n|Hit Point Die|D10 per Paladin level|\n|Saving Throw Proficiencies|Wisdom and Charisma|\n|Skill Proficiencies|Choose 2: Athletics, Insight, Intimidation, Medicine, Persuasion, or Religion|\n|Weapon Proficiencies|Simple and Martial weapons|\n|Armor Training|Light, Medium, and Heavy armor and Shields|\n|Starting Equipment|Choose A or B: (A) Chain Mail, Shield, Longsword, 6 Javelins, Holy Symbol, Priest's Pack, and 9 GP; or (B) 150 GP|",
+    "document": "srd-2024",
+    "name": "Core Paladin Traits",
+    "parent": "srd-2024_paladin"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_paladin_core-traits"
+},
+{
+  "fields": {
     "desc": "You gain an Epic Boon feat (see \"Feats\") or another feat of your choice for which you qualify. Boon of Truesight is recommended.",
     "document": "srd-2024",
     "name": "Epic Boon",
@@ -1838,16 +1838,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_paladin_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Chain Mail, Shield, Longsword, 6 Javelins, Holy Symbol, Priest's Pack, and 9 GP; or (B) 150 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_paladin"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_paladin_equipment"
 },
 {
   "fields": {
@@ -2131,6 +2121,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Dexterity and Wisdom|\n|Hit Point Die|D10 per Ranger level|\n|Saving Throw Proficiencies|Strength and Dexterity|\n|Skill Proficiencies|Choose 3: Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, or Survival|\n|Weapon Proficiencies|Simple and Martial weapons|\n|Armor Training|Light and Medium armor and Shields|\n|Starting Equipment|Choose A or B: (A) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Ar rows, Quiver, Druidic Focus (sprig of mistletoe), Explorer's Pack, and 7 GP; or (B) 150 GP|",
+    "document": "srd-2024",
+    "name": "Core Ranger Traits",
+    "parent": "srd-2024_ranger"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_ranger_core-traits"
+},
+{
+  "fields": {
     "desc": "Thanks to your travels, you gain the following benefits.\n\n**Expertise.** Choose one of your skill proficiencies with which you lack Expertise. You gain Expertise in that skill.\n\n**Languages.** You know two languages of your choice from the language tables in \"Character Creation.\"",
     "document": "srd-2024",
     "name": "Deft Explorer",
@@ -2148,16 +2148,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Ar rows, Quiver, Druidic Focus (sprig of mistletoe), Explorer's Pack, and 7 GP; or (B) 150 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_ranger"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_ranger_equipment"
 },
 {
   "fields": {
@@ -2451,6 +2441,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Dexterity|\n|Hit Point Die|D8 per Rogue level|\n|Saving Throw Proficiencies|Dexterity and Intelligence|\n|Skill Proficiencies|Choose 4: Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Persuasion, Sleight of Hand, or Stealth|\n|Weapon Proficiencies|Simple weapons and Martial weapons that have the Finesse or Light property|\n|Tool Proficiencies|Thieves' Tools|\n|Armor Training|Light armor|\n|Starting Equipment|Choose A or B: (A) Leather Armor, 2 Daggers, Shortsword, Shortbow, 20 Arrows, Quiver, Thieves' Tools, Burglar's Pack, and 8 GP; or (B) 100 GP|",
+    "document": "srd-2024",
+    "name": "Core Rogue Traits",
+    "parent": "srd-2024_rogue"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_rogue_core-traits"
+},
+{
+  "fields": {
     "desc": "Your quick thinking and agility allow you to move and act quickly. On your turn, you can take one of the following actions as a Bonus Action: Dash, Disengage, or Hide.",
     "document": "srd-2024",
     "name": "Cunning Action",
@@ -2498,16 +2498,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_rogue_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Leather Armor, 2 Daggers, Shortsword, Shortbow, 20 Arrows, Quiver, Thieves' Tools, Burglar's Pack, and 8 GP; or (B) 100 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_rogue"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_rogue_equipment"
 },
 {
   "fields": {
@@ -2731,6 +2721,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Charisma|\n|Hit Point Die|D6 per Sorcerer level|\n|Saving Throw Proficiencies|Constitution and Charisma|\n|Skill Proficiencies|Choose 2: Arcana, Deception, Insight, Intimidation, Persuasion, or Religion|\n|Weapon Proficiencies|Simple weapons|\n|Armor Training|None|\n|Starting Equipment|Choose A or B: (A) Spear, 2 Daggers, Arcane Focus (crystal), Dungeoneer's Pack, and 28 GP; or (B) 50 GP|",
+    "document": "srd-2024",
+    "name": "Core Sorcerer Traits",
+    "parent": "srd-2024_sorcerer"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_sorcerer_core-traits"
+},
+{
+  "fields": {
     "desc": "The magic in your body manifests physical traits of your draconic gift. Your Hit Point maximum increases by 3, and it increases by 1 whenever you gain another Sorcerer level.\n\nParts of you are also covered by dragon-like scales. While you aren't wearing armor, your base Armor Class equals 10 plus your Dexterity and Charisma modifiers.",
     "document": "srd-2024",
     "name": "Draconic Resilience",
@@ -2788,16 +2788,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Spear, 2 Daggers, Arcane Focus (crystal), Dungeoneer's Pack, and 28 GP; or (B) 50 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_sorcerer"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_sorcerer_equipment"
 },
 {
   "fields": {
@@ -3041,6 +3031,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Charisma|\n|Hit Point Die|D8 per Warlock level|\n|Saving Throw Proficiencies|Wisdom and Charisma|\n|Skill Proficiencies|Choose 2: Arcana, Deception, History, Intimidation, Investigation, Nature, or Religion|\n|Weapon Proficiencies|Simple weapons|\n|Armor Training|Light armor|\n|Starting Equipment|Choose A or B: (A) Leather Armor, Sickle, 2 Daggers, Ar cane Focus (orb), Book (occult lore), Scholar's Pack, and 15 GP; or (B) 100 GP|",
+    "document": "srd-2024",
+    "name": "Core Warlock Traits",
+    "parent": "srd-2024_warlock"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_warlock_core-traits"
+},
+{
+  "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Eldritch Invocations",
@@ -3088,16 +3088,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_warlock_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) Leather Armor, Sickle, 2 Daggers, Ar cane Focus (orb), Book (occult lore), Scholar's Pack, and 15 GP; or (B) 100 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_warlock"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_warlock_equipment"
 },
 {
   "fields": {
@@ -3271,6 +3261,16 @@
 },
 {
   "fields": {
+    "desc": "|||\n|---|---|\n|Primary Ability|Intelligence|\n|Hit Point Die|D6 per Wizard level|\n|Saving Throw Proficiencies|Intelligence and Wisdom|\n|Skill Proficiencies|Choose 2: Arcana, History, In sight, Investigation, Medicine, Nature, or Religion|\n|Weapon Proficiencies|Simple weapons|\n|Armor Training|None|\n|Starting Equipment|Choose A or B: (A) 2 Daggers, Arcane Focus (Quarterstaff), Robe, Spellbook, Scholar's Pack, and 5 GP; or (B) 55 GP|",
+    "document": "srd-2024",
+    "name": "Core Wizard Traits",
+    "parent": "srd-2024_wizard"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_wizard_core-traits"
+},
+{
+  "fields": {
     "desc": "You gain an Epic Boon feat (see \"Feats\") or another feat of your choice for which you qualify. Boon of Spell Recall is recommended.",
     "document": "srd-2024",
     "name": "Epic Boon",
@@ -3278,16 +3278,6 @@
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_epic-boon"
-},
-{
-  "fields": {
-    "desc": "Choose A or B: (A) 2 Daggers, Arcane Focus (Quarterstaff), Robe, Spellbook, Scholar's Pack, and 5 GP; or (B) 55 GP",
-    "document": "srd-2024",
-    "name": "Equipment",
-    "parent": "srd-2024_wizard"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "srd-2024_wizard_equipment"
 },
 {
   "fields": {
