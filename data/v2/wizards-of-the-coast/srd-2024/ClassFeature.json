@@ -911,6 +911,56 @@
 },
 {
   "fields": {
+    "desc": "Whenever you finish a Long Rest, choose one type of land: arid, polar, temperate, or tropical. Consult the table below that corresponds to the chosen type; you have the spells listed for your Druid level and lower prepared.\n\nTable: Arid Land\n\n|Druid Level|Circle Spells|\n|---|---|\n|3|Blur, Burning Hands, Fire Bolt|\n|5|Fireball|\n|7|Blight|\n|9|Wall of Stone|\n\nTable: Polar Land\n|Druid Level|Circle Spells|\n|---|---|\n|3|Fog Cloud, Hold Person, Ray of Frost|\n|5|Sleet Storm|\n|7|Ice Storm|\n|9|Cone of Cold|\n\nTable: Temperate Land\n|Druid Level|Circle Spells|\n|---|---|\n|3|Misty Step, Shocking Grasp, Sleep|\n|5|Lightning Bolt|\n|7|Freedom of Movement|\n|9|Tree Stride|\n\nTable: Tropical Land\n|Druid Level|Circle Spells|\n|---|---|\n|3|Acid Splash, Ray of Sickness, Web|\n|5|Stinking Cloud|\n|7|Polymorph|\n|9|Insect Plague|",
+    "document": "srd-2024",
+    "name": "Circle of the Land Spells",
+    "parent": "srd-2024_circle-of-the-land"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_druid_circle-of-the-land_spell-list"
+},
+{
+  "fields": {
+    "desc": "As a Magic action, you can expend a use of your Wild Shape and choose a point within 60 feet of yourself. Vitality-giving flowers and life-draining thorns appear for a moment in a 10-foot-radius Sphere centered on that point. Each creature of your choice in the Sphere must make a Constitution saving throw against your spell save DC, taking 2d6 Necrotic damage on a failed save or half as much damage on a successful one. One creature of your choice in that area regains 2d6 Hit Points.\n\nThe damage and healing increase by 1d6 when you reach Druid levels 10 (3d6) and 14 (4d6).",
+    "document": "srd-2024",
+    "name": "Land's Aid",
+    "parent": "srd-2024_circle-of-the-land"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_druid_circle-of-the-land_lands-aid"
+},
+{
+  "fields": {
+    "desc": "You can cast one of the level 1+ spells that you have prepared from your Circle Spells feature without expending a spell slot, and you must finish a Long Rest before you do so again.\n\nIn addition, when you finish a Short Rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your Druid level (round up), and none of them can be level 6+. For example, if you're a level 6 Druid, you can recover up to three levels' worth of spell slots. You can recover a level 3 spell slot, a level 2 and a level 1 spell slot, or three level 1 spell slots. Once you recover spell slots with this feature, you can't do so again until you finish a Long Rest.",
+    "document": "srd-2024",
+    "name": "Natural Recovery",
+    "parent": "srd-2024_circle-of-the-land"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_druid_circle-of-the-land_natural-recovery"
+},
+{
+  "fields": {
+    "desc": "You can cast one of the level 1+ spells that you have prepared from your Circle Spells feature without expending a spell slot, and you must finish a Long Rest before you do so again.\n\nIn addition, when you finish a Short Rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your Druid level (round up), and none of them can be level 6+. For example, if you're a level 6 Druid, you can recover up to three levels' worth of spell slots. You can recover a level 3 spell slot, a level 2 and a level 1 spell slot, or three level 1 spell slots. Once you recover spell slots with this feature, you can't do so again until you finish a Long Rest.",
+    "document": "srd-2024",
+    "name": "Nature's Sanctuary",
+    "parent": "srd-2024_circle-of-the-land"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_druid_circle-of-the-land_natures-sanctuary"
+},
+{
+  "fields": {
+    "desc": "As a Magic action, you can expend a use of your Wild Shape and cause spectral trees and vines to appear in a 15-foot Cube on the ground within 120 feet of yourself. They last there for 1 minute or until you have the Incapacitated condition or die. You and your allies have Half Cover while in that area, and your allies gain the current Resistance of your Nature's Ward while there.\n\nAs a Bonus Action, you can move the Cube up to 60 feet to ground within 120 feet of yourself.",
+    "document": "srd-2024",
+    "name": "Nature's Ward",
+    "parent": "srd-2024_circle-of-the-land"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "srd-2024_druid_circle-of-the-land_natures-ward"
+},
+{
+  "fields": {
     "desc": "This section presents the Druid spell list. The spells are organized by spell level and then alphabetized, and each spell's school of magic is listed. In the Special column, *C* means the spell requires Concentration, *R* means it's a Ritual, and *M* means it requires a specific Material component.\n\nTable: Cantrips (Level 0 Druid Spells)\n\n|School|Special|\n|---|---|\n|Transmutation|—|\n|Transmutation|—|\n|Divination|C|\n|Transmutation|—|\n|Transmutation|—|\n|Necromancy|—|\n|Conjuration|—|\n|Abjuration|C|\n|Transmutation|—|\n|Necromancy|—|\n|Evocation|—|\n|||\n\nTable: Level 1 Druid Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Animal Friendship|Enchantment|—|\n|Charm Person|Enchantment|—|\n|Create or Destroy Water|Transmutation|—|\n|Cure Wounds|Abjuration|—|\n|Detect Magic|Divination|C, R|\n|Detect Poison and Disease|Divination|C, R|\n|Entangle|Conjuration|C|\n|Faerie Fire|Evocation|C|\n|Fog Cloud|Conjuration|C|\n|Goodberry|Conjuration|—|\n|Healing Word|Abjuration|—|\n|Ice Knife|Conjuration|—|\n|Jump|Transmutation|—|\n|Longstrider|Transmutation|—|\n|Protection from Evil and Good|Abjuration|C, M|\n|Purify Food and Drink|Transmutation|R|\n|Speak with Animals|Divination|R|\n|Thunderwave|Evocation|—|\n\nTable: Level 2 Druid Spells\n\n|Spell|School|Special|\n|---|---|---|\n|Aid|Abjuration|—|\n|Animal Messenger|Enchantment|R|\n|Augury|Divination|R, M|\n|Barkskin|Transmutation|—|\n|Continual Flame|Evocation|M|\n|Darkvision|Transmutation|—|\n|Enhance Ability|Transmutation|C|\n|Enlarge/Reduce|Transmutation|C|\n|Find Traps|Divination|—|\n|Flame Blade|Evocation|C|",
     "document": "srd-2024",
     "name": "Druid Spell List",
