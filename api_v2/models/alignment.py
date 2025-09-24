@@ -7,7 +7,7 @@ from .document import FromDocument
 from drf_spectacular.utils import extend_schema_field
 from drf_spectacular.types import OpenApiTypes
 
-class Alignment(HasName, HasDescription, FromDocument):
+class Alignment(HasName, FromDocument):
     """This is the model for an alignment, which is way to describe the 
     moral and personal attitudes of a creature."""
 
@@ -28,3 +28,12 @@ class Alignment(HasName, HasDescription, FromDocument):
     @extend_schema_field(OpenApiTypes.STR)
     def societal_attitude(self):
         return self.name.split(" ")[0].lower()
+
+    @property
+    def descriptions(self):
+        """ Gets the description based on parameter, and then if none, global priority"""
+        return AlignmentDescription.objects.filter(describes=self).all().order_by('pk')
+
+
+class AlignmentDescription(HasDescription, FromDocument):
+    describes = models.ForeignKey(Alignment, on_delete=models.CASCADE)

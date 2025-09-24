@@ -21,8 +21,18 @@ from .speed import HasSpeed
 from .enums import CREATURE_ATTACK_TYPES, CREATURE_USES_TYPES, ACTION_TYPES
 
 
-class CreatureType(HasName, HasDescription, FromDocument):
+class CreatureType(HasName, FromDocument):
     """The Type of creature, such as Aberration."""
+
+    @property
+    def descriptions(self):
+        """ Gets the description based on parameter, and then if none, global priority"""
+        return CreatureTypeDescription.objects.filter(describes=self).all().order_by('pk')
+
+
+class CreatureTypeDescription(HasDescription, FromDocument):
+    describes = models.ForeignKey(CreatureType, on_delete=models.CASCADE)
+
 
 
 class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, HasIllustration, FromDocument):

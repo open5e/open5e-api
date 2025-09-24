@@ -7,6 +7,7 @@ from rest_framework import serializers
 from api_v2 import models
 
 from .abstracts import GameContentSerializer
+from .abstracts import DescriptionSerializer
 from .damagetype import DamageTypeSummarySerializer
 from .condition import ConditionSummarySerializer
 from .document import DocumentSummarySerializer
@@ -48,6 +49,7 @@ class CreatureActionAttackSerializer(GameContentSerializer):
     def get_distance_unit(self, CreatureActionAttack):
         return CreatureActionAttack.get_distance_unit
 
+
 class CreatureActionSerializer(GameContentSerializer):
     attacks = CreatureActionAttackSerializer(many=True, read_only=True)
     usage_limits = serializers.SerializerMethodField()
@@ -78,14 +80,23 @@ class CreatureActionSerializer(GameContentSerializer):
                 'param': obj.uses_param
             }
 
+
+class CreatureTypeDescriptionSerializer(DescriptionSerializer):
+    class Meta:
+        model=models.CreatureTypeDescription
+        fields=['desc','document','gamesystem']
+
+
 class CreatureTypeSerializer(GameContentSerializer):
     '''Serializer for the Creature Type object'''
     key = serializers.ReadOnlyField()
+    descriptions = CreatureTypeDescriptionSerializer(many=True)
 
     class Meta:
         '''Meta options for serializer.'''
         model = models.CreatureType
         fields = '__all__'
+
 
 class CreatureTypeSummarySerializer(GameContentSerializer):
     '''
@@ -103,6 +114,7 @@ class CreatureTraitSerializer(GameContentSerializer):
         model = models.CreatureTrait
         fields = ['name', 'desc']
 
+
 class CreatureLanguageSerializer(GameContentSerializer):
     as_string = serializers.CharField(source="languages_desc")
     data = LanguageSummarySerializer(source="languages", many=True)
@@ -110,6 +122,7 @@ class CreatureLanguageSerializer(GameContentSerializer):
     class Meta:
         model = models.Creature
         fields = ['as_string', 'data']
+
 
 class CreatureResistancesAndImmunitiesSerializer(GameContentSerializer):
     '''This serializer formats a Creature's damage modifier as a single obj '''
@@ -134,6 +147,7 @@ class CreatureResistancesAndImmunitiesSerializer(GameContentSerializer):
             'condition_immunities_display',
             'condition_immunities',
         ]
+
 
 class CreatureSerializer(GameContentSerializer):
     '''The serializer for the Creature object.'''
@@ -407,6 +421,7 @@ class CreatureSerializer(GameContentSerializer):
     @extend_schema_field(OpenApiTypes.INT)
     def get_initiative_bonus(self, creature):
         return creature.get_initiative_bonus()
+
 
 class CreatureSetSerializer(GameContentSerializer):
     '''Serializer for the Creature Set object'''

@@ -138,6 +138,7 @@ class HasDescription(models.Model):
     """This is the definition of a description."""
 
     desc = models.TextField(
+        blank=True,
         help_text='Description of the game content item. Markdown.')
 
     class Meta:

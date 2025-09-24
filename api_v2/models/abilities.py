@@ -10,7 +10,7 @@ from django.core.validators import MinValueValidator
 from .abstracts import HasName, HasDescription
 from .document import FromDocument
 
-class Ability(HasName, HasDescription, FromDocument):
+class Ability(HasName, FromDocument):
     """
     This is the definition of the Ability class.
     """
@@ -28,8 +28,18 @@ class Ability(HasName, HasDescription, FromDocument):
 
         verbose_name_plural = "abilities"
 
+    @property
+    def descriptions(self):
+        """ Gets the description based on parameter, and then if none, global priority"""
+        return AbilityDescription.objects.filter(describes=self).all().order_by("pk")
 
-class Skill(HasName, HasDescription, FromDocument):
+
+class AbilityDescription(HasDescription, FromDocument):
+    """A description of the ability"""
+    describes = models.ForeignKey(Ability, on_delete=models.CASCADE)
+
+
+class Skill(HasName, FromDocument):
     """
     This is the definition of the skill class.
     """
@@ -44,3 +54,13 @@ class Skill(HasName, HasDescription, FromDocument):
         """To assist with the UI layer."""
 
         verbose_name_plural = "skills"
+
+    @property
+    def descriptions(self):
+        """ Gets the description based on parameter, and then if none, global priority"""
+        return SkillDescription.objects.filter(describes=self).all().order_by("pk")
+
+
+class SkillDescription(HasDescription, FromDocument):
+    """A description of the skill"""
+    describes = models.ForeignKey(Skill, on_delete=models.CASCADE)
