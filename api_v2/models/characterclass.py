@@ -56,11 +56,12 @@ class ClassFeature(HasName, HasDescription, FromDocument):
         ('CLASS_TABLE_DATA', 'CLASS_TABLE_DATA'),
         ('PROFICIENCIES', 'PROFICIENCIES'),
         ('PROFICIENCY_BONUS', 'PROFICIENCY_BONUS'),
+        ('STARTING_EQUIPMENT', 'STARTING_EQUIPMENT'),
         ('SPELL_SLOTS', 'SPELL_SLOTS'),
     ]
 
     feature_type = models.CharField(
-        default='CLASS_FEATURE',
+        default='CLASS_LEVEL_FEATURE',
         choices=FEATURE_TYPES,
         max_length=32,
         help_text="The type that best represents this Class Feature",

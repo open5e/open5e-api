@@ -34,7 +34,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Strength|\n|Hit Point Die|D12 per Barbarian level|\n|Saving Throw Proficiencies|Strength and Constitution|\n|Skill Proficiencies|Choose 2: Animal Handling, Athletics, Intimidation, Nature, Perception, or Survival|\n|Weapon Proficiencies|Simple and Martial weapons|\n|Armor Training|Light and Medium armor and Shields|\n|Starting Equipment|Choose A or B: (A) Greataxe, 4 Handaxes, Explorer's Pack, and 15 GP; or (B) 75 GP|",
     "document": "srd-2024",
     "name": "Core Barbarian Traits",
-    "parent": "srd-2024_barbarian"
+    "parent": "srd-2024_barbarian",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_barbarian_core-traits"
@@ -163,6 +164,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "PROFICIENCY_BONUS",
     "name": "Proficiency Bonus",
     "parent": "srd-2024_barbarian"
   },
@@ -183,6 +185,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Rage Damage",
     "parent": "srd-2024_barbarian"
   },
@@ -193,6 +196,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Rages",
     "parent": "srd-2024_barbarian"
   },
@@ -243,6 +247,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Weapon Mastery",
     "parent": "srd-2024_barbarian"
   },
@@ -283,6 +288,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Bardic Die",
     "parent": "srd-2024_bard"
   },
@@ -304,7 +310,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Cantrips",
-    "parent": "srd-2024_bard"
+    "parent": "srd-2024_bard",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_bard_cantrips"
@@ -314,7 +321,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Charisma|\n|Hit Point Die|D8 per Bard level|\n|Saving Throw Proficiencies|Dexterity and Charisma|\n|Skill Proficiencies|Choose any 3 skills|\n|Weapon Proficiencies|Simple weapons|\n|Tool Proficiencies|Choose 3 Musical Instruments|\n|Armor Training|Light armor|\n|Starting Equipment|Choose A or B: (A) Leather Armor, 2 Daggers, Musical Instrument of your choice, Entertainer's Pack, and 19 GP; or (B) 90 GP|",
     "document": "srd-2024",
     "name": "Core Bard Traits",
-    "parent": "srd-2024_cleric"
+    "parent": "srd-2024_bard",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_bard_core-traits"
@@ -383,6 +391,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Prepared Spells",
     "parent": "srd-2024_bard"
   },
@@ -393,6 +402,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "PROFICIENCY_BONUS",
     "name": "Proficiency Bonus",
     "parent": "srd-2024_bard"
   },
@@ -403,6 +413,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "1st",
     "parent": "srd-2024_bard"
   },
@@ -413,6 +424,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "2nd",
     "parent": "srd-2024_bard"
   },
@@ -423,6 +435,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "3rd",
     "parent": "srd-2024_bard"
   },
@@ -433,6 +446,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "4th",
     "parent": "srd-2024_bard"
   },
@@ -443,6 +457,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "5th",
     "parent": "srd-2024_bard"
   },
@@ -453,6 +468,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "6th",
     "parent": "srd-2024_bard"
   },
@@ -463,6 +479,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "7th",
     "parent": "srd-2024_bard"
   },
@@ -473,6 +490,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "8th",
     "parent": "srd-2024_bard"
   },
@@ -483,6 +501,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "9th",
     "parent": "srd-2024_bard"
   },
@@ -544,7 +563,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Cantrips",
-    "parent": "srd-2024_cleric"
+    "parent": "srd-2024_cleric",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_cleric_cantrips"
@@ -563,6 +583,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Channel Divinity",
     "parent": "srd-2024_cleric"
   },
@@ -594,7 +615,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Wisdom|\n|Hit Point Die|D8 per Cleric level|\n|Saving Throw Proficiencies|Wisdom and Charisma|\n|Skill Proficiencies|Choose 2: History, Insight, Medicine, Persuasion, or Religion|\n|Weapon Proficiencies|Simple weapons|\n|Armor Training|Light and Medium armor and Shields|\n|Starting Equipment|Choose A or B: (A) Chain Shirt, Shield, Mace, Holy Symbol, Priest's Pack, and 7 GP; or (B) 110 GP|",
     "document": "srd-2024",
     "name": "Cleric Subclasses",
-    "parent": "srd-2024_cleric"
+    "parent": "srd-2024_cleric",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_cleric_core-traits"
@@ -704,7 +726,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Prepared Spells",
-    "parent": "srd-2024_cleric"
+    "parent": "srd-2024_cleric",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_cleric_prepared-spells"
@@ -713,6 +736,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "PROFICIENCY_BONUS",
     "name": "Proficiency Bonus",
     "parent": "srd-2024_cleric"
   },
@@ -733,6 +757,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "1st",
     "parent": "srd-2024_cleric"
   },
@@ -743,6 +768,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "2nd",
     "parent": "srd-2024_cleric"
   },
@@ -753,6 +779,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "3rd",
     "parent": "srd-2024_cleric"
   },
@@ -763,6 +790,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "4th",
     "parent": "srd-2024_cleric"
   },
@@ -773,6 +801,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "5th",
     "parent": "srd-2024_cleric"
   },
@@ -783,6 +812,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "6th",
     "parent": "srd-2024_cleric"
   },
@@ -793,6 +823,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "7th",
     "parent": "srd-2024_cleric"
   },
@@ -803,6 +834,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "8th",
     "parent": "srd-2024_cleric"
   },
@@ -813,6 +845,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "9th",
     "parent": "srd-2024_cleric"
   },
@@ -904,7 +937,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Cantrips",
-    "parent": "srd-2024_druid"
+    "parent": "srd-2024_druid",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_druid_cantrips"
@@ -964,7 +998,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Wisdom|\n|Hit Point Die|D8 per Druid level|\n|Saving Throw Proficiencies|Intelligence and Wisdom|\n|Skill Proficiencies|Choose 2: Animal Handling, Arcana, Insight, Medicine, Na ture, Perception, Religion, or Survival|\n|Weapon Proficiencies|Simple weapons|\n|Tool Proficiencies|Herbalism Kit|\n|Armor Training|Light armor and Shields|\n|Starting Equipment|Choose A or B: (A) Leather Ar mor, Shield, Sickle, Druidic Focus (Quarterstaff), Explorer's Pack, Herbalism Kit, and 9 GP; or (B) 50 GP|",
     "document": "srd-2024",
     "name": "Core Druid Traits",
-    "parent": "srd-2024_druid"
+    "parent": "srd-2024_druid",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_druid_core-traits"
@@ -1034,7 +1069,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Prepared Spells",
-    "parent": "srd-2024_druid"
+    "parent": "srd-2024_druid",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_druid_prepared-spells"
@@ -1053,6 +1089,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "PROFICIENCY_BONUS",
     "name": "Proficiency Bonus",
     "parent": "srd-2024_druid"
   },
@@ -1063,6 +1100,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "1st",
     "parent": "srd-2024_druid"
   },
@@ -1073,6 +1111,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "2nd",
     "parent": "srd-2024_druid"
   },
@@ -1083,6 +1122,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "3rd",
     "parent": "srd-2024_druid"
   },
@@ -1093,6 +1133,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "4th",
     "parent": "srd-2024_druid"
   },
@@ -1103,6 +1144,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "5th",
     "parent": "srd-2024_druid"
   },
@@ -1113,6 +1155,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "6th",
     "parent": "srd-2024_druid"
   },
@@ -1123,6 +1166,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "7th",
     "parent": "srd-2024_druid"
   },
@@ -1133,6 +1177,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "8th",
     "parent": "srd-2024_druid"
   },
@@ -1143,6 +1188,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "9th",
     "parent": "srd-2024_druid"
   },
@@ -1284,7 +1330,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Strength or Dexterity|\n|Hit Point Die|D10 per Fighter level|\n|Saving Throw Proficiencies|Strength and Constitution|\n|Skill Proficiencies|Choose 2: Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Persuasion, Perception, or Survival|\n|Weapon Proficiencies|Simple and Martial weapons|\n|Armor Training|Light, Medium, and Heavy armor and Shields|\n|Starting Equipment|Choose A, B, or C: (A) Chain Mail, Greatsword, Flail, 8 Javelins, Dungeoneer's Pack, and 4 GP; (B) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Dungeoneer's Pack, and 11 GP; or (C) 155 GP|",
     "document": "srd-2024",
     "name": "Core Fighter Traits",
-    "parent": "srd-2024_fighter"
+    "parent": "srd-2024_fighter",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_fighter_core-traits"
@@ -1343,6 +1390,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "PROFICIENCY_BONUS",
     "name": "Proficiency Bonus",
     "parent": "srd-2024_fighter"
   },
@@ -1363,6 +1411,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Second Wind",
     "parent": "srd-2024_fighter"
   },
@@ -1443,6 +1492,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Weapon Mastery",
     "parent": "srd-2024_fighter"
   },
@@ -1484,7 +1534,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Dexterity and Wisdom|\n|Hit Point Die|D8 per Monk level|\n|Saving Throw Proficiencies|Strength and Dexterity|\n|Skill Proficiencies|Choose 2: Acrobatics, Athletics, History, Insight, Religion, or Stealth|\n|Weapon Proficiencies|Simple weapons and Martial weapons that have the Light property|\n|Tool Proficiencies|Choose one type of Artisan's Tools or Musical Instrument|\n|Armor Training|None|\n|Starting Equipment|Choose A or B: (A) Spear, 5 Daggers, Artisan's Tools or Musical Instrument chosen for the tool proficiency above, Explorer's Pack, and 11 GP; or (B) 50 GP|",
     "document": "srd-2024",
     "name": "Core Monk Traits",
-    "parent": "srd-2024_monk"
+    "parent": "srd-2024_monk",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_monk_core-traits"
@@ -1563,6 +1614,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Focus Points",
     "parent": "srd-2024_monk"
   },
@@ -1593,6 +1645,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Martial Arts",
     "parent": "srd-2024_monk"
   },
@@ -1633,6 +1686,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "PROFICIENCY_BONUS",
     "name": "Proficiency Bonus",
     "parent": "srd-2024_monk"
   },
@@ -1813,6 +1867,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Channel Divinity",
     "parent": "srd-2024_paladin"
   },
@@ -1824,7 +1879,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Strength and Charisma|\n|Hit Point Die|D10 per Paladin level|\n|Saving Throw Proficiencies|Wisdom and Charisma|\n|Skill Proficiencies|Choose 2: Athletics, Insight, Intimidation, Medicine, Persuasion, or Religion|\n|Weapon Proficiencies|Simple and Martial weapons|\n|Armor Training|Light, Medium, and Heavy armor and Shields|\n|Starting Equipment|Choose A or B: (A) Chain Mail, Shield, Longsword, 6 Javelins, Holy Symbol, Priest's Pack, and 9 GP; or (B) 150 GP|",
     "document": "srd-2024",
     "name": "Core Paladin Traits",
-    "parent": "srd-2024_paladin"
+    "parent": "srd-2024_paladin",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_paladin_core-traits"
@@ -1954,7 +2010,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Prepared Spells",
-    "parent": "srd-2024_paladin"
+    "parent": "srd-2024_paladin",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_paladin_prepared-spells"
@@ -1963,6 +2020,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "PROFICIENCY_BONUS",
     "name": "Proficiency Bonus",
     "parent": "srd-2024_paladin"
   },
@@ -1993,6 +2051,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "1st",
     "parent": "srd-2024_paladin"
   },
@@ -2003,6 +2062,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "2nd",
     "parent": "srd-2024_paladin"
   },
@@ -2013,6 +2073,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "3rd",
     "parent": "srd-2024_paladin"
   },
@@ -2023,6 +2084,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "4th",
     "parent": "srd-2024_paladin"
   },
@@ -2033,6 +2095,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "SPELL_SLOTS",
     "name": "5th",
     "parent": "srd-2024_paladin"
   },
@@ -2124,7 +2187,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Dexterity and Wisdom|\n|Hit Point Die|D10 per Ranger level|\n|Saving Throw Proficiencies|Strength and Dexterity|\n|Skill Proficiencies|Choose 3: Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, or Survival|\n|Weapon Proficiencies|Simple and Martial weapons|\n|Armor Training|Light and Medium armor and Shields|\n|Starting Equipment|Choose A or B: (A) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Ar rows, Quiver, Druidic Focus (sprig of mistletoe), Explorer's Pack, and 7 GP; or (B) 150 GP|",
     "document": "srd-2024",
     "name": "Core Ranger Traits",
-    "parent": "srd-2024_ranger"
+    "parent": "srd-2024_ranger",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_core-traits"
@@ -2183,6 +2247,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Favored Enemy",
     "parent": "srd-2024_ranger"
   },
@@ -2294,7 +2359,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Prepared Spells",
-    "parent": "srd-2024_ranger"
+    "parent": "srd-2024_ranger",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_prepared-spells"
@@ -2304,7 +2370,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Proficiency Bonus",
-    "parent": "srd-2024_ranger"
+    "parent": "srd-2024_ranger",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_proficiency-bonus"
@@ -2344,7 +2411,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "1st",
-    "parent": "srd-2024_ranger"
+    "parent": "srd-2024_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_slots-1st"
@@ -2354,7 +2422,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "2nd",
-    "parent": "srd-2024_ranger"
+    "parent": "srd-2024_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_slots-2nd"
@@ -2364,7 +2433,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "3rd",
-    "parent": "srd-2024_ranger"
+    "parent": "srd-2024_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_slots-3rd"
@@ -2374,7 +2444,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "4th",
-    "parent": "srd-2024_ranger"
+    "parent": "srd-2024_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_slots-4th"
@@ -2384,7 +2455,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "5th",
-    "parent": "srd-2024_ranger"
+    "parent": "srd-2024_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_ranger_slots-5th"
@@ -2444,7 +2516,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Dexterity|\n|Hit Point Die|D8 per Rogue level|\n|Saving Throw Proficiencies|Dexterity and Intelligence|\n|Skill Proficiencies|Choose 4: Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Persuasion, Sleight of Hand, or Stealth|\n|Weapon Proficiencies|Simple weapons and Martial weapons that have the Finesse or Light property|\n|Tool Proficiencies|Thieves' Tools|\n|Armor Training|Light armor|\n|Starting Equipment|Choose A or B: (A) Leather Armor, 2 Daggers, Shortsword, Shortbow, 20 Arrows, Quiver, Thieves' Tools, Burglar's Pack, and 8 GP; or (B) 100 GP|",
     "document": "srd-2024",
     "name": "Core Rogue Traits",
-    "parent": "srd-2024_rogue"
+    "parent": "srd-2024_rogue",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_rogue_core-traits"
@@ -2534,7 +2607,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Proficiency Bonus",
-    "parent": "srd-2024_rogue"
+    "parent": "srd-2024_rogue",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_rogue_proficiency-bonus"
@@ -2583,6 +2657,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Sneak Attack",
     "parent": "srd-2024_rogue"
   },
@@ -2714,7 +2789,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Cantrips",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_cantrips"
@@ -2724,7 +2800,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Charisma|\n|Hit Point Die|D6 per Sorcerer level|\n|Saving Throw Proficiencies|Constitution and Charisma|\n|Skill Proficiencies|Choose 2: Arcana, Deception, Insight, Intimidation, Persuasion, or Religion|\n|Weapon Proficiencies|Simple weapons|\n|Armor Training|None|\n|Starting Equipment|Choose A or B: (A) Spear, 2 Daggers, Arcane Focus (crystal), Dungeoneer's Pack, and 28 GP; or (B) 50 GP|",
     "document": "srd-2024",
     "name": "Core Sorcerer Traits",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_core-traits"
@@ -2834,7 +2911,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Prepared Spells",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_prepared-spells"
@@ -2844,7 +2922,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Proficiency Bonus",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_proficiency-bonus"
@@ -2854,7 +2933,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "1st",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_slots-1st"
@@ -2864,7 +2944,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "2nd",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_slots-2nd"
@@ -2874,7 +2955,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "3rd",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_slots-3rd"
@@ -2884,7 +2966,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "4th",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_slots-4th"
@@ -2894,7 +2977,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "5th",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_slots-5th"
@@ -2904,7 +2988,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "6th",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_slots-6th"
@@ -2914,7 +2999,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "7th",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_slots-7th"
@@ -2924,7 +3010,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "8th",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_slots-8th"
@@ -2934,7 +3021,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "9th",
-    "parent": "srd-2024_sorcerer"
+    "parent": "srd-2024_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_sorcerer_slots-9th"
@@ -2983,6 +3071,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Sorcery Points",
     "parent": "srd-2024_sorcerer"
   },
@@ -3014,7 +3103,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Cantrips",
-    "parent": "srd-2024_warlock"
+    "parent": "srd-2024_warlock",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_warlock_cantrips"
@@ -3034,7 +3124,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Charisma|\n|Hit Point Die|D8 per Warlock level|\n|Saving Throw Proficiencies|Wisdom and Charisma|\n|Skill Proficiencies|Choose 2: Arcana, Deception, History, Intimidation, Investigation, Nature, or Religion|\n|Weapon Proficiencies|Simple weapons|\n|Armor Training|Light armor|\n|Starting Equipment|Choose A or B: (A) Leather Armor, Sickle, 2 Daggers, Ar cane Focus (orb), Book (occult lore), Scholar's Pack, and 15 GP; or (B) 100 GP|",
     "document": "srd-2024",
     "name": "Core Warlock Traits",
-    "parent": "srd-2024_warlock"
+    "parent": "srd-2024_warlock",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_warlock_core-traits"
@@ -3043,6 +3134,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Eldritch Invocations",
     "parent": "srd-2024_warlock"
   },
@@ -3174,7 +3266,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Prepared Spells",
-    "parent": "srd-2024_warlock"
+    "parent": "srd-2024_warlock",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_warlock_prepared-spells"
@@ -3184,7 +3277,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Proficiency Bonus",
-    "parent": "srd-2024_warlock"
+    "parent": "srd-2024_warlock",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_warlock_proficiency-bonus"
@@ -3193,6 +3287,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Slot Level",
     "parent": "srd-2024_warlock"
   },
@@ -3203,6 +3298,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2024",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Spell Slots",
     "parent": "srd-2024_warlock"
   },
@@ -3254,7 +3350,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Cantrips",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_cantrips"
@@ -3264,7 +3361,8 @@
     "desc": "|||\n|---|---|\n|Primary Ability|Intelligence|\n|Hit Point Die|D6 per Wizard level|\n|Saving Throw Proficiencies|Intelligence and Wisdom|\n|Skill Proficiencies|Choose 2: Arcana, History, In sight, Investigation, Medicine, Nature, or Religion|\n|Weapon Proficiencies|Simple weapons|\n|Armor Training|None|\n|Starting Equipment|Choose A or B: (A) 2 Daggers, Arcane Focus (Quarterstaff), Robe, Spellbook, Scholar's Pack, and 5 GP; or (B) 55 GP|",
     "document": "srd-2024",
     "name": "Core Wizard Traits",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "CORE_TRAITS_TABLE"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_core-traits"
@@ -3344,7 +3442,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Prepared Spells",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_prepared-spells"
@@ -3354,7 +3453,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "Proficiency Bonus",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_proficiency-bonus"
@@ -3394,7 +3494,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "1st",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_slots-1st"
@@ -3404,7 +3505,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "2nd",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_slots-2nd"
@@ -3414,7 +3516,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "3rd",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_slots-3rd"
@@ -3424,7 +3527,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "4th",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_slots-4th"
@@ -3434,7 +3538,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "5th",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_slots-5th"
@@ -3444,7 +3549,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "6th",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_slots-6th"
@@ -3454,7 +3560,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "7th",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_slots-7th"
@@ -3464,7 +3571,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "8th",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_slots-8th"
@@ -3474,7 +3582,8 @@
     "desc": "[Column data]",
     "document": "srd-2024",
     "name": "9th",
-    "parent": "srd-2024_wizard"
+    "parent": "srd-2024_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd-2024_wizard_slots-9th"
