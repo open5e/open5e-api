@@ -1,11 +1,9 @@
 [
 {
-  "model": "api.spelllist",
-  "pk": "bard",
   "fields": {
-    "name": "bard",
     "desc": "",
     "document": 31,
+    "name": "bard",
     "page_no": null,
     "spells": [
       "abhorrent-apparition",
@@ -169,15 +167,15 @@
       "write-memory",
       "zone-of-truth"
     ]
-  }
+  },
+  "model": "api.spelllist",
+  "pk": "bard"
 },
 {
-  "model": "api.spelllist",
-  "pk": "sorcerer",
   "fields": {
-    "name": "sorcerer",
     "desc": "",
     "document": 31,
+    "name": "sorcerer",
     "page_no": null,
     "spells": [
       "abhorrent-apparition",
@@ -346,15 +344,15 @@
       "web",
       "wish"
     ]
-  }
+  },
+  "model": "api.spelllist",
+  "pk": "sorcerer"
 },
 {
-  "model": "api.spelllist",
-  "pk": "warlock",
   "fields": {
-    "name": "warlock",
     "desc": "",
     "document": 31,
+    "name": "warlock",
     "page_no": null,
     "spells": [
       "acid-rain",
@@ -531,15 +529,15 @@
       "wall-of-fire",
       "wotans-rede"
     ]
-  }
+  },
+  "model": "api.spelllist",
+  "pk": "warlock"
 },
 {
-  "model": "api.spelllist",
-  "pk": "wizard",
   "fields": {
-    "name": "wizard",
     "desc": "",
     "document": 31,
+    "name": "wizard",
     "page_no": null,
     "spells": [
       "abhorrent-apparition",
@@ -903,6 +901,8 @@
       "wish",
       "write-memory"
     ]
-  }
+  },
+  "model": "api.spelllist",
+  "pk": "wizard"
 }
 ]

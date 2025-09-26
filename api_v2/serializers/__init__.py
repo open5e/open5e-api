@@ -6,6 +6,7 @@ from .item import ItemSerializer
 from .item import ItemRaritySerializer
 from .item import ItemSetSerializer
 from .item import ItemCategorySerializer
+from .item import WeaponPropertySerializer
 
 from .background import BackgroundBenefitSerializer
 from .background import BackgroundSerializer
@@ -18,8 +19,8 @@ from .document import DocumentSerializer
 from .feat import FeatBenefitSerializer
 from .feat import FeatSerializer
 
-from .race import RaceTraitSerializer
-from .race import RaceSerializer
+from .species import SpeciesTraitSerializer
+from .species import SpeciesSerializer
 
 from .creature import CreatureSerializer
 from .creature import CreatureTypeSerializer
@@ -50,3 +51,5 @@ from .ability import SkillSerializer
 from .rule import RuleSerializer, RuleSetSerializer
 
 from .image import ImageSerializer
+
+from .service import ServiceSerializer

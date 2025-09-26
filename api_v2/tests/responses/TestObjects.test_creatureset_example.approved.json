@@ -18,16 +18,18 @@
                             "damage_bonus": null,
                             "damage_die_count": null,
                             "damage_die_type": null,
-                            "damage_type": "thunder",
+                            "damage_type": {
+                                "key": "thunder",
+                                "name": "Thunder",
+                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                            },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
                             "extra_damage_die_count": null,
                             "extra_damage_die_type": null,
                             "extra_damage_type": null,
-                            "key": "srd_camel_bite_bite-attack",
                             "long_range": null,
                             "name": "Bite attack",
-                            "parent": "srd_camel_bite",
                             "range": null,
                             "reach": 5.0,
                             "target_creature_only": false,
@@ -35,14 +37,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_camel_bite",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Bite",
-                    "order": 0,
-                    "parent": "srd_camel",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -52,55 +51,48 @@
             "category": "Miscellaneous Creatures",
             "challenge_rating_decimal": "0.125",
             "challenge_rating_text": "1/8",
-            "condition_immunities": [],
             "creaturesets": [
                 "http://localhost:8000/v2/creaturesets/common-mounts/"
             ],
-            "damage_immunities": [],
-            "damage_resistances": [],
-            "damage_vulnerabilities": [],
             "darkvision_range": null,
             "document": {
+                "display_name": "5e 2014 Rules",
                 "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
+                    "key": "5e-2014",
+                    "name": "5th Edition 2014",
+                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
                 },
-                "key": "srd",
-                "name": "Systems Reference Document",
+                "key": "srd-2014",
+                "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
+                    "name": "Wizards of the Coast",
+                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
                 }
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "desert",
                     "name": "Desert",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/desert/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
             "experience_points": 25,
             "hit_dice": "2d10+4",
             "hit_points": 15,
+            "illustration": null,
             "initiative_bonus": -1,
             "key": "srd_camel",
-            "languages": [],
+            "languages": {
+                "as_string": "",
+                "data": []
+            },
             "modifiers": {
                 "charisma": -3,
                 "constitution": 2,
@@ -110,10 +102,19 @@
                 "wisdom": -1
             },
             "name": "Camel",
-            "nonmagical_attack_immunity": false,
-            "nonmagical_attack_resistance": false,
             "normal_sight_range": 10560.0,
             "passive_perception": 9,
+            "proficiency_bonus": null,
+            "resistances_and_immunities": {
+                "condition_immunities": [],
+                "condition_immunities_display": "",
+                "damage_immunities": [],
+                "damage_immunities_display": "",
+                "damage_resistances": [],
+                "damage_resistances_display": "",
+                "damage_vulnerabilities": [],
+                "damage_vulnerabilities_display": ""
+            },
             "saving_throws": {
                 "charisma": 0,
                 "constitution": 0,
@@ -130,7 +131,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/large/",
+            "size": {
+                "key": "large",
+                "name": "Large",
+                "url": "http://localhost:8000/v2/sizes/large/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -189,7 +194,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_camel/"
         },
         {
@@ -209,34 +218,37 @@
             "category": "Miscellaneous Creatures",
             "challenge_rating_decimal": "0.000",
             "challenge_rating_text": "0",
-            "condition_immunities": [],
             "creaturesets": [
                 "http://localhost:8000/v2/creaturesets/common-mounts/"
             ],
-            "damage_immunities": [],
-            "damage_resistances": [],
-            "damage_vulnerabilities": [],
             "darkvision_range": null,
             "document": {
+                "display_name": "5e 2014 Rules",
                 "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
+                    "key": "5e-2014",
+                    "name": "5th Edition 2014",
+                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
                 },
-                "key": "srd",
-                "name": "Systems Reference Document",
+                "key": "srd-2014",
+                "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
+                    "name": "Wizards of the Coast",
+                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
                 }
             },
             "environments": [],
             "experience_points": 0,
             "hit_dice": null,
             "hit_points": 11,
+            "illustration": null,
             "initiative_bonus": 0,
             "key": "srd_donkey",
-            "languages": [],
+            "languages": {
+                "as_string": "",
+                "data": []
+            },
             "modifiers": {
                 "charisma": -3,
                 "constitution": 1,
@@ -246,10 +258,19 @@
                 "wisdom": 0
             },
             "name": "Donkey",
-            "nonmagical_attack_immunity": false,
-            "nonmagical_attack_resistance": false,
             "normal_sight_range": null,
             "passive_perception": 10,
+            "proficiency_bonus": null,
+            "resistances_and_immunities": {
+                "condition_immunities": [],
+                "condition_immunities_display": "",
+                "damage_immunities": [],
+                "damage_immunities_display": "",
+                "damage_resistances": [],
+                "damage_resistances_display": "",
+                "damage_vulnerabilities": [],
+                "damage_vulnerabilities_display": ""
+            },
             "saving_throws": {
                 "charisma": 0,
                 "constitution": 0,
@@ -266,7 +287,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/medium/",
+            "size": {
+                "key": "medium",
+                "name": "Medium",
+                "url": "http://localhost:8000/v2/sizes/medium/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -325,7 +350,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_donkey/"
         },
         {
@@ -346,16 +375,18 @@
                             "damage_bonus": null,
                             "damage_die_count": 2,
                             "damage_die_type": "D4",
-                            "damage_type": "thunder",
+                            "damage_type": {
+                                "key": "thunder",
+                                "name": "Thunder",
+                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                            },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
                             "extra_damage_die_count": null,
                             "extra_damage_die_type": null,
                             "extra_damage_type": null,
-                            "key": "srd_draft-horse_hooves_hooves-attack",
                             "long_range": null,
                             "name": "Hooves attack",
-                            "parent": "srd_draft-horse_hooves",
                             "range": null,
                             "reach": 5.0,
                             "target_creature_only": false,
@@ -363,14 +394,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_draft-horse_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_draft-horse",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -380,45 +408,43 @@
             "category": "Miscellaneous Creatures",
             "challenge_rating_decimal": "0.250",
             "challenge_rating_text": "1/4",
-            "condition_immunities": [],
             "creaturesets": [
                 "http://localhost:8000/v2/creaturesets/common-mounts/"
             ],
-            "damage_immunities": [],
-            "damage_resistances": [],
-            "damage_vulnerabilities": [],
             "darkvision_range": null,
             "document": {
+                "display_name": "5e 2014 Rules",
                 "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
+                    "key": "5e-2014",
+                    "name": "5th Edition 2014",
+                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
                 },
-                "key": "srd",
-                "name": "Systems Reference Document",
+                "key": "srd-2014",
+                "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
+                    "name": "Wizards of the Coast",
+                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
                 }
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
             "experience_points": 50,
             "hit_dice": "3d10+3",
             "hit_points": 19,
+            "illustration": null,
             "initiative_bonus": 0,
             "key": "srd_draft-horse",
-            "languages": [],
+            "languages": {
+                "as_string": "",
+                "data": []
+            },
             "modifiers": {
                 "charisma": -2,
                 "constitution": 1,
@@ -428,10 +454,19 @@
                 "wisdom": 0
             },
             "name": "Draft Horse",
-            "nonmagical_attack_immunity": false,
-            "nonmagical_attack_resistance": false,
             "normal_sight_range": 10560.0,
             "passive_perception": 10,
+            "proficiency_bonus": null,
+            "resistances_and_immunities": {
+                "condition_immunities": [],
+                "condition_immunities_display": "",
+                "damage_immunities": [],
+                "damage_immunities_display": "",
+                "damage_resistances": [],
+                "damage_resistances_display": "",
+                "damage_vulnerabilities": [],
+                "damage_vulnerabilities_display": ""
+            },
             "saving_throws": {
                 "charisma": 0,
                 "constitution": 0,
@@ -448,7 +483,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/large/",
+            "size": {
+                "key": "large",
+                "name": "Large",
+                "url": "http://localhost:8000/v2/sizes/large/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -507,7 +546,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_draft-horse/"
         },
         {
@@ -528,16 +571,18 @@
                             "damage_bonus": null,
                             "damage_die_count": 3,
                             "damage_die_type": "D8",
-                            "damage_type": "thunder",
+                            "damage_type": {
+                                "key": "thunder",
+                                "name": "Thunder",
+                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                            },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
                             "extra_damage_die_count": null,
                             "extra_damage_die_type": null,
                             "extra_damage_type": null,
-                            "key": "srd_elephant_gore_gore-attack",
                             "long_range": null,
                             "name": "Gore attack",
-                            "parent": "srd_elephant_gore",
                             "range": null,
                             "reach": 5.0,
                             "target_creature_only": false,
@@ -545,14 +590,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) piercing damage.",
-                    "form_condition": null,
-                    "key": "srd_elephant_gore",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Gore",
-                    "order": 0,
-                    "parent": "srd_elephant",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 },
                 {
                     "action_type": "ACTION",
@@ -562,16 +604,18 @@
                             "damage_bonus": null,
                             "damage_die_count": 3,
                             "damage_die_type": "D10",
-                            "damage_type": "thunder",
+                            "damage_type": {
+                                "key": "thunder",
+                                "name": "Thunder",
+                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                            },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
                             "extra_damage_die_count": null,
                             "extra_damage_die_type": null,
                             "extra_damage_type": null,
-                            "key": "srd_elephant_stomp_stomp-attack",
                             "long_range": null,
                             "name": "Stomp attack",
-                            "parent": "srd_elephant_stomp",
                             "range": null,
                             "reach": 5.0,
                             "target_creature_only": true,
@@ -579,14 +623,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +8 to hit, reach 5 ft., one prone creature. Hit: 22 (3d10 + 6) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_elephant_stomp",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Stomp",
-                    "order": 1,
-                    "parent": "srd_elephant",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 1,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -596,65 +637,53 @@
             "category": "Miscellaneous Creatures",
             "challenge_rating_decimal": "4.000",
             "challenge_rating_text": "4",
-            "condition_immunities": [],
             "creaturesets": [
                 "http://localhost:8000/v2/creaturesets/common-mounts/"
             ],
-            "damage_immunities": [],
-            "damage_resistances": [],
-            "damage_vulnerabilities": [],
             "darkvision_range": null,
             "document": {
+                "display_name": "5e 2014 Rules",
                 "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
+                    "key": "5e-2014",
+                    "name": "5th Edition 2014",
+                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
                 },
-                "key": "srd",
-                "name": "Systems Reference Document",
+                "key": "srd-2014",
+                "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
+                    "name": "Wizards of the Coast",
+                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
                 }
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "desert",
                     "name": "Desert",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/desert/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "forest",
                     "name": "Forest or Jungle",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/forest/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "grassland",
                     "name": "Grassland or Plains",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/grassland/"
                 }
             ],
             "experience_points": 1100,
             "hit_dice": "8d12+24",
             "hit_points": 76,
+            "illustration": null,
             "initiative_bonus": -1,
             "key": "srd_elephant",
-            "languages": [],
+            "languages": {
+                "as_string": "",
+                "data": []
+            },
             "modifiers": {
                 "charisma": -2,
                 "constitution": 3,
@@ -664,10 +693,19 @@
                 "wisdom": 0
             },
             "name": "Elephant",
-            "nonmagical_attack_immunity": false,
-            "nonmagical_attack_resistance": false,
             "normal_sight_range": 10560.0,
             "passive_perception": 10,
+            "proficiency_bonus": null,
+            "resistances_and_immunities": {
+                "condition_immunities": [],
+                "condition_immunities_display": "",
+                "damage_immunities": [],
+                "damage_immunities_display": "",
+                "damage_resistances": [],
+                "damage_resistances_display": "",
+                "damage_vulnerabilities": [],
+                "damage_vulnerabilities_display": ""
+            },
             "saving_throws": {
                 "charisma": 0,
                 "constitution": 0,
@@ -684,7 +722,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/huge/",
+            "size": {
+                "key": "huge",
+                "name": "Huge",
+                "url": "http://localhost:8000/v2/sizes/huge/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -743,16 +785,16 @@
             "traits": [
                 {
                     "desc": "If the elephant moves at least 20 ft. straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the elephant can make one stomp attack against it as a bonus action.",
-                    "key": "srd_elephant_trampling-charge",
-                    "name": "Trampling Charge",
-                    "parent": "http://localhost:8000/v2/creatures/srd_elephant/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_elephant_trampling-charge/"
+                    "name": "Trampling Charge"
                 }
             ],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_elephant/"
         },
         {
@@ -773,16 +815,18 @@
                             "damage_bonus": null,
                             "damage_die_count": 1,
                             "damage_die_type": "D6",
-                            "damage_type": "thunder",
+                            "damage_type": {
+                                "key": "thunder",
+                                "name": "Thunder",
+                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                            },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
                             "extra_damage_die_count": null,
                             "extra_damage_die_type": null,
                             "extra_damage_type": null,
-                            "key": "srd_mastiff_bite_bite-attack",
                             "long_range": null,
                             "name": "Bite attack",
-                            "parent": "srd_mastiff_bite",
                             "range": null,
                             "reach": 5.0,
                             "target_creature_only": false,
@@ -790,14 +834,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
-                    "form_condition": null,
-                    "key": "srd_mastiff_bite",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Bite",
-                    "order": 0,
-                    "parent": "srd_mastiff",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -807,65 +848,53 @@
             "category": "Miscellaneous Creatures",
             "challenge_rating_decimal": "0.125",
             "challenge_rating_text": "1/8",
-            "condition_immunities": [],
             "creaturesets": [
                 "http://localhost:8000/v2/creaturesets/common-mounts/"
             ],
-            "damage_immunities": [],
-            "damage_resistances": [],
-            "damage_vulnerabilities": [],
             "darkvision_range": null,
             "document": {
+                "display_name": "5e 2014 Rules",
                 "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
+                    "key": "5e-2014",
+                    "name": "5th Edition 2014",
+                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
                 },
-                "key": "srd",
-                "name": "Systems Reference Document",
+                "key": "srd-2014",
+                "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
+                    "name": "Wizards of the Coast",
+                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
                 }
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "forest",
                     "name": "Forest or Jungle",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/forest/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None Provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "hills",
                     "name": "Hills",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/hills/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
             "experience_points": 25,
             "hit_dice": "1d8+1",
             "hit_points": 5,
+            "illustration": null,
             "initiative_bonus": 2,
             "key": "srd_mastiff",
-            "languages": [],
+            "languages": {
+                "as_string": "",
+                "data": []
+            },
             "modifiers": {
                 "charisma": -2,
                 "constitution": 1,
@@ -875,10 +904,19 @@
                 "wisdom": 1
             },
             "name": "Mastiff",
-            "nonmagical_attack_immunity": false,
-            "nonmagical_attack_resistance": false,
             "normal_sight_range": 10560.0,
             "passive_perception": 13,
+            "proficiency_bonus": null,
+            "resistances_and_immunities": {
+                "condition_immunities": [],
+                "condition_immunities_display": "",
+                "damage_immunities": [],
+                "damage_immunities_display": "",
+                "damage_resistances": [],
+                "damage_resistances_display": "",
+                "damage_vulnerabilities": [],
+                "damage_vulnerabilities_display": ""
+            },
             "saving_throws": {
                 "charisma": 0,
                 "constitution": 0,
@@ -895,7 +933,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/medium/",
+            "size": {
+                "key": "medium",
+                "name": "Medium",
+                "url": "http://localhost:8000/v2/sizes/medium/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -954,16 +996,16 @@
             "traits": [
                 {
                     "desc": "The mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
-                    "key": "srd_mastiff_keen-hearing-and-smell",
-                    "name": "Keen Hearing and Smell",
-                    "parent": "http://localhost:8000/v2/creatures/srd_mastiff/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_mastiff_keen-hearing-and-smell/"
+                    "name": "Keen Hearing and Smell"
                 }
             ],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_mastiff/"
         },
         {
@@ -984,16 +1026,18 @@
                             "damage_bonus": null,
                             "damage_die_count": 1,
                             "damage_die_type": "D4",
-                            "damage_type": "thunder",
+                            "damage_type": {
+                                "key": "thunder",
+                                "name": "Thunder",
+                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                            },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
                             "extra_damage_die_count": null,
                             "extra_damage_die_type": null,
                             "extra_damage_type": null,
-                            "key": "srd_mule_hooves_hooves-attack",
                             "long_range": null,
                             "name": "Hooves attack",
-                            "parent": "srd_mule_hooves",
                             "range": null,
                             "reach": 5.0,
                             "target_creature_only": false,
@@ -1001,14 +1045,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_mule_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_mule",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -1018,65 +1059,53 @@
             "category": "Miscellaneous Creatures",
             "challenge_rating_decimal": "0.125",
             "challenge_rating_text": "1/8",
-            "condition_immunities": [],
             "creaturesets": [
                 "http://localhost:8000/v2/creaturesets/common-mounts/"
             ],
-            "damage_immunities": [],
-            "damage_resistances": [],
-            "damage_vulnerabilities": [],
             "darkvision_range": null,
             "document": {
+                "display_name": "5e 2014 Rules",
                 "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
+                    "key": "5e-2014",
+                    "name": "5th Edition 2014",
+                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
                 },
-                "key": "srd",
-                "name": "Systems Reference Document",
+                "key": "srd-2014",
+                "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
+                    "name": "Wizards of the Coast",
+                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
                 }
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "grassland",
                     "name": "Grassland or Plains",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/grassland/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None Provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "hills",
                     "name": "Hills",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/hills/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
             "experience_points": 25,
             "hit_dice": "2d8+2",
             "hit_points": 11,
+            "illustration": null,
             "initiative_bonus": 0,
             "key": "srd_mule",
-            "languages": [],
+            "languages": {
+                "as_string": "",
+                "data": []
+            },
             "modifiers": {
                 "charisma": -3,
                 "constitution": 1,
@@ -1086,10 +1115,19 @@
                 "wisdom": 0
             },
             "name": "Mule",
-            "nonmagical_attack_immunity": false,
-            "nonmagical_attack_resistance": false,
             "normal_sight_range": 10560.0,
             "passive_perception": 10,
+            "proficiency_bonus": null,
+            "resistances_and_immunities": {
+                "condition_immunities": [],
+                "condition_immunities_display": "",
+                "damage_immunities": [],
+                "damage_immunities_display": "",
+                "damage_resistances": [],
+                "damage_resistances_display": "",
+                "damage_vulnerabilities": [],
+                "damage_vulnerabilities_display": ""
+            },
             "saving_throws": {
                 "charisma": 0,
                 "constitution": 0,
@@ -1106,7 +1144,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/medium/",
+            "size": {
+                "key": "medium",
+                "name": "Medium",
+                "url": "http://localhost:8000/v2/sizes/medium/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -1165,24 +1207,20 @@
             "traits": [
                 {
                     "desc": "The mule is considered to be a Large animal for the purpose of determining its carrying capacity.",
-                    "key": "srd_mule_beast-of-burden",
-                    "name": "Beast of Burden",
-                    "parent": "http://localhost:8000/v2/creatures/srd_mule/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_mule_beast-of-burden/"
+                    "name": "Beast of Burden"
                 },
                 {
                     "desc": "The mule has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
-                    "key": "srd_mule_sure-footed",
-                    "name": "Sure-Footed",
-                    "parent": "http://localhost:8000/v2/creatures/srd_mule/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_mule_sure-footed/"
+                    "name": "Sure-Footed"
                 }
             ],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_mule/"
         },
         {
@@ -1203,16 +1241,18 @@
                             "damage_bonus": null,
                             "damage_die_count": 2,
                             "damage_die_type": "D4",
-                            "damage_type": "thunder",
+                            "damage_type": {
+                                "key": "thunder",
+                                "name": "Thunder",
+                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                            },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
                             "extra_damage_die_count": null,
                             "extra_damage_die_type": null,
                             "extra_damage_type": null,
-                            "key": "srd_pony_hooves_hooves-attack",
                             "long_range": null,
                             "name": "Hooves attack",
-                            "parent": "srd_pony_hooves",
                             "range": null,
                             "reach": 5.0,
                             "target_creature_only": false,
@@ -1220,14 +1260,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_pony_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_pony",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -1237,55 +1274,48 @@
             "category": "Miscellaneous Creatures",
             "challenge_rating_decimal": "0.125",
             "challenge_rating_text": "1/8",
-            "condition_immunities": [],
             "creaturesets": [
                 "http://localhost:8000/v2/creaturesets/common-mounts/"
             ],
-            "damage_immunities": [],
-            "damage_resistances": [],
-            "damage_vulnerabilities": [],
             "darkvision_range": null,
             "document": {
+                "display_name": "5e 2014 Rules",
                 "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
+                    "key": "5e-2014",
+                    "name": "5th Edition 2014",
+                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
                 },
-                "key": "srd",
-                "name": "Systems Reference Document",
+                "key": "srd-2014",
+                "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
+                    "name": "Wizards of the Coast",
+                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
                 }
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "mountain",
                     "name": "Mountain",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/mountain/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
             "experience_points": 25,
             "hit_dice": "2d8+2",
             "hit_points": 11,
+            "illustration": null,
             "initiative_bonus": 0,
             "key": "srd_pony",
-            "languages": [],
+            "languages": {
+                "as_string": "",
+                "data": []
+            },
             "modifiers": {
                 "charisma": -2,
                 "constitution": 1,
@@ -1295,10 +1325,19 @@
                 "wisdom": 0
             },
             "name": "Pony",
-            "nonmagical_attack_immunity": false,
-            "nonmagical_attack_resistance": false,
             "normal_sight_range": 10560.0,
             "passive_perception": 10,
+            "proficiency_bonus": null,
+            "resistances_and_immunities": {
+                "condition_immunities": [],
+                "condition_immunities_display": "",
+                "damage_immunities": [],
+                "damage_immunities_display": "",
+                "damage_resistances": [],
+                "damage_resistances_display": "",
+                "damage_vulnerabilities": [],
+                "damage_vulnerabilities_display": ""
+            },
             "saving_throws": {
                 "charisma": 0,
                 "constitution": 0,
@@ -1315,7 +1354,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/medium/",
+            "size": {
+                "key": "medium",
+                "name": "Medium",
+                "url": "http://localhost:8000/v2/sizes/medium/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -1374,7 +1417,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_pony/"
         },
         {
@@ -1395,16 +1442,18 @@
                             "damage_bonus": null,
                             "damage_die_count": 2,
                             "damage_die_type": "D4",
-                            "damage_type": "thunder",
+                            "damage_type": {
+                                "key": "thunder",
+                                "name": "Thunder",
+                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                            },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
                             "extra_damage_die_count": null,
                             "extra_damage_die_type": null,
                             "extra_damage_type": null,
-                            "key": "srd_riding-horse_hooves_hooves-attack",
                             "long_range": null,
                             "name": "Hooves attack",
-                            "parent": "srd_riding-horse_hooves",
                             "range": null,
                             "reach": 5.0,
                             "target_creature_only": false,
@@ -1412,14 +1461,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_riding-horse_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_riding-horse",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -1429,55 +1475,48 @@
             "category": "Miscellaneous Creatures",
             "challenge_rating_decimal": "0.250",
             "challenge_rating_text": "1/4",
-            "condition_immunities": [],
             "creaturesets": [
                 "http://localhost:8000/v2/creaturesets/common-mounts/"
             ],
-            "damage_immunities": [],
-            "damage_resistances": [],
-            "damage_vulnerabilities": [],
             "darkvision_range": null,
             "document": {
+                "display_name": "5e 2014 Rules",
                 "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
+                    "key": "5e-2014",
+                    "name": "5th Edition 2014",
+                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
                 },
-                "key": "srd",
-                "name": "Systems Reference Document",
+                "key": "srd-2014",
+                "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
+                    "name": "Wizards of the Coast",
+                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
                 }
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "grassland",
                     "name": "Grassland or Plains",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/grassland/"
                 },
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
             "experience_points": 50,
             "hit_dice": "2d10+2",
             "hit_points": 13,
+            "illustration": null,
             "initiative_bonus": 0,
             "key": "srd_riding-horse",
-            "languages": [],
+            "languages": {
+                "as_string": "",
+                "data": []
+            },
             "modifiers": {
                 "charisma": -2,
                 "constitution": 1,
@@ -1487,10 +1526,19 @@
                 "wisdom": 0
             },
             "name": "Riding Horse",
-            "nonmagical_attack_immunity": false,
-            "nonmagical_attack_resistance": false,
             "normal_sight_range": 10560.0,
             "passive_perception": 10,
+            "proficiency_bonus": null,
+            "resistances_and_immunities": {
+                "condition_immunities": [],
+                "condition_immunities_display": "",
+                "damage_immunities": [],
+                "damage_immunities_display": "",
+                "damage_resistances": [],
+                "damage_resistances_display": "",
+                "damage_vulnerabilities": [],
+                "damage_vulnerabilities_display": ""
+            },
             "saving_throws": {
                 "charisma": 0,
                 "constitution": 0,
@@ -1507,7 +1555,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/large/",
+            "size": {
+                "key": "large",
+                "name": "Large",
+                "url": "http://localhost:8000/v2/sizes/large/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -1566,7 +1618,11 @@
             "traits": [],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_riding-horse/"
         },
         {
@@ -1587,16 +1643,18 @@
                             "damage_bonus": null,
                             "damage_die_count": 2,
                             "damage_die_type": "D6",
-                            "damage_type": "thunder",
+                            "damage_type": {
+                                "key": "thunder",
+                                "name": "Thunder",
+                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                            },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
                             "extra_damage_die_count": null,
                             "extra_damage_die_type": null,
                             "extra_damage_type": null,
-                            "key": "srd_warhorse_hooves_hooves-attack",
                             "long_range": null,
                             "name": "Hooves attack",
-                            "parent": "srd_warhorse_hooves",
                             "range": null,
                             "reach": 5.0,
                             "target_creature_only": false,
@@ -1604,14 +1662,11 @@
                         }
                     ],
                     "desc": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
-                    "form_condition": null,
-                    "key": "srd_warhorse_hooves",
-                    "legendary_cost": 1,
+                    "legendary_action_cost": 1,
+                    "limited_to_form": null,
                     "name": "Hooves",
-                    "order": 0,
-                    "parent": "srd_warhorse",
-                    "uses_param": null,
-                    "uses_type": null
+                    "order_in_statblock": 0,
+                    "usage_limits": null
                 }
             ],
             "alignment": "unaligned",
@@ -1621,45 +1676,43 @@
             "category": "Miscellaneous Creatures",
             "challenge_rating_decimal": "0.500",
             "challenge_rating_text": "1/2",
-            "condition_immunities": [],
             "creaturesets": [
                 "http://localhost:8000/v2/creaturesets/common-mounts/"
             ],
-            "damage_immunities": [],
-            "damage_resistances": [],
-            "damage_vulnerabilities": [],
             "darkvision_range": null,
             "document": {
+                "display_name": "5e 2014 Rules",
                 "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
+                    "key": "5e-2014",
+                    "name": "5th Edition 2014",
+                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
                 },
-                "key": "srd",
-                "name": "Systems Reference Document",
+                "key": "srd-2014",
+                "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
+                    "name": "Wizards of the Coast",
+                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
                 }
             },
             "environments": [
                 {
-                    "aquatic": false,
-                    "desc": "[None provided]",
-                    "document": "http://localhost:8000/v2/documents/open5e-e/",
-                    "interior": false,
                     "key": "urban",
                     "name": "Urban",
-                    "planar": false,
                     "url": "http://localhost:8000/v2/environments/urban/"
                 }
             ],
             "experience_points": 100,
             "hit_dice": "3d10+3",
             "hit_points": 19,
+            "illustration": null,
             "initiative_bonus": 1,
             "key": "srd_warhorse",
-            "languages": [],
+            "languages": {
+                "as_string": "",
+                "data": []
+            },
             "modifiers": {
                 "charisma": -2,
                 "constitution": 1,
@@ -1669,10 +1722,19 @@
                 "wisdom": 1
             },
             "name": "Warhorse",
-            "nonmagical_attack_immunity": false,
-            "nonmagical_attack_resistance": false,
             "normal_sight_range": 10560.0,
             "passive_perception": 11,
+            "proficiency_bonus": null,
+            "resistances_and_immunities": {
+                "condition_immunities": [],
+                "condition_immunities_display": "",
+                "damage_immunities": [],
+                "damage_immunities_display": "",
+                "damage_resistances": [],
+                "damage_resistances_display": "",
+                "damage_vulnerabilities": [],
+                "damage_vulnerabilities_display": ""
+            },
             "saving_throws": {
                 "charisma": 0,
                 "constitution": 0,
@@ -1689,7 +1751,11 @@
                 "strength": 0,
                 "wisdom": 0
             },
-            "size": "http://localhost:8000/v2/sizes/large/",
+            "size": {
+                "key": "large",
+                "name": "Large",
+                "url": "http://localhost:8000/v2/sizes/large/"
+            },
             "skill_bonuses": {
                 "acrobatics": 0,
                 "animal_handling": 0,
@@ -1748,20 +1814,20 @@
             "traits": [
                 {
                     "desc": "If the horse moves at least 20 ft. straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action.",
-                    "key": "srd_warhorse_trampling-charge",
-                    "name": "Trampling Charge",
-                    "parent": "http://localhost:8000/v2/creatures/srd_warhorse/",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/creaturetraits/srd_warhorse_trampling-charge/"
+                    "name": "Trampling Charge"
                 }
             ],
             "tremorsense_range": null,
             "truesight_range": null,
-            "type": "http://localhost:8000/v2/creaturetypes/beast/",
+            "type": {
+                "key": "beast",
+                "name": "Beast",
+                "url": "http://localhost:8000/v2/creaturetypes/beast/"
+            },
             "url": "http://localhost:8000/v2/creatures/srd_warhorse/"
         }
     ],
-    "document": "http://localhost:8000/v2/documents/srd/",
+    "document": "http://localhost:8000/v2/documents/srd-2014/",
     "key": "common-mounts",
     "name": "Common Mounts",
     "url": "http://localhost:8000/v2/creaturesets/common-mounts/"

@@ -22,12 +22,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 
 ]
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
+
 # SECURITY WARNING: keep the secret key used in production secret!
 assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env or local OS!"
 SECRET_KEY = os.environ["SECRET_KEY"]
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
 
 # Flags to include v1 data and index.
 INCLUDE_V1_DATA = True
@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'api_v2',
     'search',
 	'drf_spectacular',
+    'drf_spectacular_sidecar',
 
     # downloaded modules
     "rest_framework",
@@ -216,13 +217,26 @@ SECURE_PROXY_SSL_HEADER = (
 )  # This setting allows the header from NGINX to tell us that the request is secured.
 
 SPECTACULAR_SETTINGS = {
+    'VERSION' : 'development',
     'TITLE': 'Open5e',
-    'DESCRIPTION': 'The Open5e API includes all monsters and spells from the SRD and other',
-    'SERVERS': [{'url': 'https://api.open5e.com', 'description': 'Production server'}],
+    'DESCRIPTION': 'The Open5e API. See [https://github.com/open5e/open5e-api] for more information.',
+    'SERVERS': [
+        {'url': 'https://api.open5e.com', 'description': 'Production server'},
+        {'url': 'https://api-beta.open5e.com', 'description': 'Beta server'},
+        {'url': 'http://localhost:8000', 'description': 'Localhost'}],
 	'PREPROCESSING_HOOKS': [
         'server.oas.custom_preprocessing_hook'
     ],
     'POSTPROCESSING_HOOKS': [
         'server.oas.custom_postprocessing_hook'
     ],
+    'SWAGGER_UI_DIST': 'SIDECAR',
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
+    'SORT_OPERATIONS': False,  
+    'SORT_OPERATION_PARAMETERS': False,  # Preserve parameter order from code
+    'SWAGGER_UI_SETTINGS': {
+        'operationsSorter': None,  
+        'tagsSorter': None,        
+    }
 }

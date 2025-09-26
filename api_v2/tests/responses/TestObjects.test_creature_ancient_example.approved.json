@@ -16,16 +16,22 @@
                     "damage_bonus": null,
                     "damage_die_count": 2,
                     "damage_die_type": "D10",
-                    "damage_type": "thunder",
+                    "damage_type": {
+                        "key": "thunder",
+                        "name": "Thunder",
+                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                    },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
                     "extra_damage_die_count": null,
                     "extra_damage_die_type": null,
-                    "extra_damage_type": "thunder",
-                    "key": "srd_ancient-red-dragon_bite_bite-attack",
+                    "extra_damage_type": {
+                        "key": "thunder",
+                        "name": "Thunder",
+                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                    },
                     "long_range": null,
                     "name": "Bite attack",
-                    "parent": "srd_ancient-red-dragon_bite",
                     "range": null,
                     "reach": 15.0,
                     "target_creature_only": false,
@@ -33,14 +39,11 @@
                 }
             ],
             "desc": "Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage plus 14 (4d6) fire damage.",
-            "form_condition": null,
-            "key": "srd_ancient-red-dragon_bite",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Bite",
-            "order": 1,
-            "parent": "srd_ancient-red-dragon",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 1,
+            "usage_limits": null
         },
         {
             "action_type": "ACTION",
@@ -50,16 +53,18 @@
                     "damage_bonus": null,
                     "damage_die_count": 2,
                     "damage_die_type": "D6",
-                    "damage_type": "thunder",
+                    "damage_type": {
+                        "key": "thunder",
+                        "name": "Thunder",
+                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                    },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
                     "extra_damage_die_count": null,
                     "extra_damage_die_type": null,
                     "extra_damage_type": null,
-                    "key": "srd_ancient-red-dragon_claw_claw-attack",
                     "long_range": null,
                     "name": "Claw attack",
-                    "parent": "srd_ancient-red-dragon_claw",
                     "range": null,
                     "reach": 10.0,
                     "target_creature_only": false,
@@ -67,66 +72,51 @@
                 }
             ],
             "desc": "Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit: 17 (2d6 + 10) slashing damage.",
-            "form_condition": null,
-            "key": "srd_ancient-red-dragon_claw",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Claw",
-            "order": 2,
-            "parent": "srd_ancient-red-dragon",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 2,
+            "usage_limits": null
         },
         {
             "action_type": "LEGENDARY_ACTION",
             "attacks": [],
             "desc": "The dragon makes a Wisdom (Perception) check.",
-            "form_condition": null,
-            "key": "srd_ancient-red-dragon_detect",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Detect",
-            "order": 0,
-            "parent": "srd_ancient-red-dragon",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 0,
+            "usage_limits": null
         },
         {
             "action_type": "ACTION",
             "attacks": [],
             "desc": "The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 91 (26d6) fire damage on a failed save, or half as much damage on a successful one.",
-            "form_condition": null,
-            "key": "srd_ancient-red-dragon_fire-breath",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Fire Breath",
-            "order": 5,
-            "parent": "srd_ancient-red-dragon",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 5,
+            "usage_limits": null
         },
         {
             "action_type": "ACTION",
             "attacks": [],
             "desc": "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.",
-            "form_condition": null,
-            "key": "srd_ancient-red-dragon_frightful-presence",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Frightful Presence",
-            "order": 4,
-            "parent": "srd_ancient-red-dragon",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 4,
+            "usage_limits": null
         },
         {
             "action_type": "ACTION",
             "attacks": [],
             "desc": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
-            "form_condition": null,
-            "key": "srd_ancient-red-dragon_multiattack",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Multiattack",
-            "order": 0,
-            "parent": "srd_ancient-red-dragon",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 0,
+            "usage_limits": null
         },
         {
             "action_type": "ACTION",
@@ -136,16 +126,18 @@
                     "damage_bonus": null,
                     "damage_die_count": 2,
                     "damage_die_type": "D8",
-                    "damage_type": "thunder",
+                    "damage_type": {
+                        "key": "thunder",
+                        "name": "Thunder",
+                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                    },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
                     "extra_damage_die_count": null,
                     "extra_damage_die_type": null,
                     "extra_damage_type": null,
-                    "key": "srd_ancient-red-dragon_tail_tail-attack",
                     "long_range": null,
                     "name": "Tail attack",
-                    "parent": "srd_ancient-red-dragon_tail",
                     "range": null,
                     "reach": 20.0,
                     "target_creature_only": false,
@@ -153,40 +145,31 @@
                 }
             ],
             "desc": "Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) bludgeoning damage.",
-            "form_condition": null,
-            "key": "srd_ancient-red-dragon_tail",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Tail",
-            "order": 3,
-            "parent": "srd_ancient-red-dragon",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 3,
+            "usage_limits": null
         },
         {
             "action_type": "LEGENDARY_ACTION",
             "attacks": [],
             "desc": "The dragon makes a tail attack.",
-            "form_condition": null,
-            "key": "srd_ancient-red-dragon_tail-attack",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Tail Attack",
-            "order": 1,
-            "parent": "srd_ancient-red-dragon",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 1,
+            "usage_limits": null
         },
         {
             "action_type": "LEGENDARY_ACTION",
             "attacks": [],
             "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
-            "form_condition": null,
-            "key": "srd_ancient-red-dragon_wing-attack",
-            "legendary_cost": 2,
+            "legendary_action_cost": 2,
+            "limited_to_form": null,
             "name": "Wing Attack",
-            "order": 2,
-            "parent": "srd_ancient-red-dragon",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 2,
+            "usage_limits": null
         }
     ],
     "alignment": "chaotic evil",
@@ -196,106 +179,59 @@
     "category": "Monsters",
     "challenge_rating_decimal": "24.000",
     "challenge_rating_text": "24",
-    "condition_immunities": [],
     "creaturesets": [],
-    "damage_immunities": [
-        {
-            "desc": "Red dragons breathe fire, and many spells conjure flames to deal fire damage.",
-            "document": "http://localhost:8000/v2/documents/srd/",
-            "key": "fire",
-            "name": "Fire",
-            "url": "http://localhost:8000/v2/damagetypes/fire/"
-        }
-    ],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
     "darkvision_range": 120.0,
     "document": {
+        "display_name": "5e 2014 Rules",
         "gamesystem": {
-            "key": "o5e",
-            "name": "5th Edition"
+            "key": "5e-2014",
+            "name": "5th Edition 2014",
+            "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
         },
-        "key": "srd",
-        "name": "Systems Reference Document",
+        "key": "srd-2014",
+        "name": "System Reference Document 5.1",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
         "publisher": {
             "key": "wizards-of-the-coast",
-            "name": "Wizards of the Coast"
+            "name": "Wizards of the Coast",
+            "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
         }
     },
     "environments": [
         {
-            "aquatic": false,
-            "desc": "[None Provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "hills",
             "name": "Hills",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/hills/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "mountain",
             "name": "Mountain",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/mountain/"
         }
     ],
     "experience_points": 62000,
     "hit_dice": "28d20+252",
     "hit_points": 546,
+    "illustration": null,
     "initiative_bonus": 0,
     "key": "srd_ancient-red-dragon",
-    "languages": [
-        {
-            "desc": "Typical speakers are Humans.",
-            "document": {
-                "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
-                },
-                "key": "srd",
-                "name": "Systems Reference Document",
-                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-                "publisher": {
-                    "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
-                }
+    "languages": {
+        "as_string": "Common, Draconic",
+        "data": [
+            {
+                "desc": "Typical speakers are Humans.",
+                "key": "common",
+                "name": "Common",
+                "url": "http://localhost:8000/v2/languages/common/"
             },
-            "is_exotic": false,
-            "is_secret": false,
-            "key": "common",
-            "name": "Common",
-            "script_language": "http://localhost:8000/v2/languages/common/",
-            "url": "http://localhost:8000/v2/languages/common/"
-        },
-        {
-            "desc": "Typical speakers include dragons and dragonborn.",
-            "document": {
-                "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
-                },
-                "key": "srd",
-                "name": "Systems Reference Document",
-                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-                "publisher": {
-                    "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
-                }
-            },
-            "is_exotic": true,
-            "is_secret": false,
-            "key": "draconic",
-            "name": "Draconic",
-            "script_language": "http://localhost:8000/v2/languages/draconic/",
-            "url": "http://localhost:8000/v2/languages/draconic/"
-        }
-    ],
+            {
+                "desc": "Typical speakers include dragons and dragonborn.",
+                "key": "draconic",
+                "name": "Draconic",
+                "url": "http://localhost:8000/v2/languages/draconic/"
+            }
+        ]
+    },
     "modifiers": {
         "charisma": 6,
         "constitution": 9,
@@ -305,10 +241,25 @@
         "wisdom": 2
     },
     "name": "Ancient Red Dragon",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
     "normal_sight_range": 10560.0,
     "passive_perception": 26,
+    "proficiency_bonus": null,
+    "resistances_and_immunities": {
+        "condition_immunities": [],
+        "condition_immunities_display": "",
+        "damage_immunities": [
+            {
+                "key": "fire",
+                "name": "Fire",
+                "url": "http://localhost:8000/v2/damagetypes/fire/"
+            }
+        ],
+        "damage_immunities_display": "fire",
+        "damage_resistances": [],
+        "damage_resistances_display": "",
+        "damage_vulnerabilities": [],
+        "damage_vulnerabilities_display": ""
+    },
     "saving_throws": {
         "charisma": 13,
         "constitution": 16,
@@ -323,7 +274,11 @@
         "strength": 10,
         "wisdom": 9
     },
-    "size": "http://localhost:8000/v2/sizes/gargantuan/",
+    "size": {
+        "key": "gargantuan",
+        "name": "Gargantuan",
+        "url": "http://localhost:8000/v2/sizes/gargantuan/"
+    },
     "skill_bonuses": {
         "perception": 16,
         "stealth": 7
@@ -368,15 +323,15 @@
     "traits": [
         {
             "desc": "If the dragon fails a saving throw, it can choose to succeed instead.",
-            "key": "srd_ancient-red-dragon_legendary-resistance-3day",
-            "name": "Legendary Resistance (3/Day)",
-            "parent": "http://localhost:8000/v2/creatures/srd_ancient-red-dragon/",
-            "type": null,
-            "url": "http://localhost:8000/v2/creaturetraits/srd_ancient-red-dragon_legendary-resistance-3day/"
+            "name": "Legendary Resistance (3/Day)"
         }
     ],
     "tremorsense_range": null,
     "truesight_range": null,
-    "type": "http://localhost:8000/v2/creaturetypes/dragon/",
+    "type": {
+        "key": "dragon",
+        "name": "Dragon",
+        "url": "http://localhost:8000/v2/creaturetypes/dragon/"
+    },
     "url": "http://localhost:8000/v2/creatures/srd_ancient-red-dragon/"
 }

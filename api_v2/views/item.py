@@ -1,28 +1,60 @@
 from rest_framework import viewsets
+from django_filters import FilterSet, BooleanFilter
 
-from django_filters import FilterSet
-from django_filters import BooleanFilter
-
-from api_v2 import models
-from api_v2 import serializers
+from api_v2 import models, serializers
 from .mixins import EagerLoadingMixin
 
 class ItemFilterSet(FilterSet):
-    is_magic_item = BooleanFilter(field_name='rarity', lookup_expr='isnull', exclude=True)
+    ''' Filter set for the Item model. Used in the ItemViewSet below '''
+
+    is_magic_item = BooleanFilter(
+        label='Magic Items',
+        field_name='rarity',
+        lookup_expr='isnull',
+        exclude=True
+    )
+
+    is_weapon = BooleanFilter(
+        label='Weapons',
+        field_name='weapon',
+        lookup_expr='isnull',
+        exclude=True
+    )
+
+    is_armor = BooleanFilter(
+        label='Armor',
+        field_name='armor',
+        lookup_expr='isnull',
+        exclude=True
+    )
+    
+    # Weapon property filter factory method
+    def weapon_property_filter(property_name):
+        return lambda queryset, name, value: (
+            queryset.filter(weapon__properties__property__name__iexact=property_name)
+        )
+
+    # Filters for weapon properties (using the factory method defined above)
+    is_light = BooleanFilter(label='Light Weapons', method=weapon_property_filter('light'))
+    is_versatile = BooleanFilter(label='Versatile Weapons', method=weapon_property_filter('versatile'))
+    is_thrown = BooleanFilter(label='Thrown Weapons', method=weapon_property_filter('thrown'))
+    is_finesse = BooleanFilter(label='Finesse Weapons', method = weapon_property_filter('finesse'))
+    is_two_handed = BooleanFilter(label='Two-handed Weapons', method=weapon_property_filter('two-handed'))
 
     class Meta:
         model = models.Item
         fields = {
-            'key': ['in', 'iexact', 'exact'],
-            'name': ['iexact', 'exact', 'icontains'],
+            'key': ['in', 'iexact'],
+            'name': ['iexact', 'icontains'],
             'desc': ['icontains'],
             'cost': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'rarity': ['exact', 'in'],
-            'requires_attunement': ['exact'],
+            'requires_attunement': ['iexact'],
             'category': ['in', 'exact'],
-            'document__key': ['in','iexact','exact'],
-            'document__gamesystem__key': ['in','iexact','exact'],
+            'document': ['in', 'exact'],
+            'document__key': ['in','iexact'],
+            'document__gamesystem__key': ['in','iexact'],
         }
 
 
@@ -44,7 +76,12 @@ class ItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
         'damage_resistances',
         'damage_vulnerabilities',
         'document',
+        'weapon__properties',
+        'weapon__damage_type',
+        'weapon__document',
+        'weapon__properties__property',
         'rarity',
+        'size',
     ]
 
 class ItemRarityViewSet(viewsets.ReadOnlyModelViewSet):
@@ -104,30 +141,27 @@ class ItemCategoryViewSet(viewsets.ReadOnlyModelViewSet):
 
 class WeaponFilterSet(FilterSet):
 
+    # returns a filter method to a given WeaponProperty
+    def weapon_property_filter(property_name):
+        return lambda queryset, name, value: (
+            queryset.filter(properties__property__name__iexact=property_name)
+        )
+
+    is_light = BooleanFilter(label='Is Light', method=weapon_property_filter('light'))
+    is_versatile = BooleanFilter(label='Is Versatile', method=weapon_property_filter('versatile'))
+    is_thrown = BooleanFilter(label='Is Thrown', method=weapon_property_filter('thrown'))
+    is_finesse = BooleanFilter(label='Is Finesse', method = weapon_property_filter('finesse'))
+    is_two_handed = BooleanFilter(label='Is Two-handed', method=weapon_property_filter('two-handed'))
+
     class Meta:
         model = models.Weapon
         fields = {
-            'key': ['in', 'iexact', 'exact' ],
-            'name': ['iexact', 'exact'],
-            'document__key': ['in','iexact','exact'],
-            'document__gamesystem__key': ['in','iexact','exact'],
-            'damage_dice': ['in','iexact','exact'],
-            'versatile_dice': ['in','iexact','exact'],
-            'reach': ['exact','lt','lte','gt','gte'],
-            'range': ['exact','lt','lte','gt','gte'],
-            'long_range': ['exact','lt','lte','gt','gte'],
-            'is_finesse': ['exact'],
-            'is_thrown': ['exact'],
-            'is_two_handed': ['exact'],
-            'requires_ammunition': ['exact'],
-            'requires_loading': ['exact'],
-            'is_heavy': ['exact'],
-            'is_light': ['exact'],
-            'is_lance': ['exact'],
-            'is_net': ['exact'],
-            'is_simple': ['exact'],
-            'is_improvised': ['exact']
-            }
+            'key': ['in', 'iexact'],
+            'name': ['iexact'],
+            'document__key': ['in','iexact'],
+            'document__gamesystem__key': ['in','iexact'],
+            'damage_dice': ['in','iexact'],
+        }
 
 
 class WeaponViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
@@ -139,7 +173,7 @@ class WeaponViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.WeaponSerializer
     filterset_class = WeaponFilterSet
 
-    prefetch_related_fields = ['document']
+    prefetch_related_fields = ['document', 'damage_type', 'properties__property']
 
 class ArmorFilterSet(FilterSet):
 

@@ -1,5 +1,8 @@
 
 import argparse
+import pickle
+
+from pathlib import Path
 
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
@@ -9,6 +12,7 @@ from django.db import connection
 from api import models as v1
 from api_v2 import models as v2
 from search import models as search
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 class Command(BaseCommand):
     """Implementation for the `manage.py `index_v1` subcommand."""
@@ -56,7 +60,7 @@ class Command(BaseCommand):
 
     def load_v2_content(self, model):
         results = []
-        standard_v2_models = ['Item','Spell','Creature','CharacterClass','Race','Feat','Condition','Background','Environment', 'Rule']
+        standard_v2_models = ['Item','Spell','Creature','CharacterClass','Species','Feat','Background','Environment', 'Rule']
 
         if model.__name__ in standard_v2_models:
             for o in model.objects.all():
@@ -102,6 +106,20 @@ class Command(BaseCommand):
                 "SELECT document_pk,object_pk,object_name,object_model,text,schema_version " +
                 "FROM search_searchresult")
 
+    def build_vector_index(self):
+        """Create a TF-IDF matrix for vector search and store it to disk."""
+        qs = search.SearchResult.objects.all().order_by("id")
+        if not qs:
+            return
+        docs = [f"{o.object_name} {o.text}" for o in qs]
+        ids = [o.id for o in qs]
+        names = [o.object_name for o in qs]
+        vectorizer = TfidfVectorizer()
+        matrix = vectorizer.fit_transform(docs)
+        index_data = {"ids": ids, "names": names, "matrix": matrix, "vectorizer": vectorizer}
+        with Path("server/vector_index.pkl").open("wb") as fh:
+            pickle.dump(index_data, fh)
+
     def check_fts_enabled(self):
         #import sqlite3
         with connection.cursor() as cursor:
@@ -143,7 +161,7 @@ class Command(BaseCommand):
             self.load_content(v2.Spell,"v2")
             self.load_content(v2.Creature,"v2")
             self.load_content(v2.CharacterClass,"v2")
-            self.load_content(v2.Race,"v2")
+            self.load_content(v2.Species,"v2")
             self.load_content(v2.Feat,"v2")
             self.load_content(v2.Condition,"v2")
             self.load_content(v2.Background,"v2")
@@ -152,6 +170,9 @@ class Command(BaseCommand):
 
         # Take the content table's current data and load it into the index.
         self.load_index()
+
+        # Also build the vector search index from the loaded content.
+        self.build_vector_index()
 
         # Unload content table (saves storage space.)
         self.unload_all_content()

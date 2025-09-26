@@ -124,10 +124,10 @@ class Command(BaseCommand):
 
                 for model in app_models:
                     SKIPPED_MODEL_NAMES = ['Document', 'GameSystem', 'License', 'Publisher','SearchResult']
-                    CHILD_MODEL_NAMES = ['RaceTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption','CreatureAction', 'CreatureTrait']
+                    CHILD_MODEL_NAMES = ['SpeciesTrait', 'FeatBenefit', 'BackgroundBenefit', 'ClassFeatureItem', 'SpellCastingOption','CreatureAction', 'CreatureTrait']
                     CHILD_CHILD_MODEL_NAMES = ['CreatureActionAttack']
                     
-                    if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES:
+                    if model._meta.app_label == 'api_v2' and model.__name__ not in SKIPPED_MODEL_NAMES and model.__name__ not in CONCEPT_MODEL_NAMES:
                         modelq=None
                         if model.__name__ in CHILD_CHILD_MODEL_NAMES:
                             modelq = model.objects.filter(parent__parent__document=doc).order_by('pk')
@@ -158,7 +158,7 @@ def get_filepath_by_model(model_name, app_label, pub_key=None, doc_key=None, bas
 
     if app_label == "api_v2":
         root_folder_name = 'v2'
-        root_models = ['License', 'GameSystem']
+        root_models = ['License', 'GameSystem']  # Concept models are exported at root level
         pub_models = ['Publisher']
         
         if model_name in root_models:
@@ -192,7 +192,7 @@ def write_queryset_data(filepath, queryset, format='json'):
 
         with open(output_filepath, 'w', encoding='utf-8') as f:
             if format=='json':
-                serializers.serialize("json", queryset, indent=2, stream=f)
+                serializers.serialize("json", queryset, indent=2, stream=f, sort_keys=True)
             if format=='csv':
                 # Create headers:
                 fieldnames = []

@@ -16,16 +16,18 @@
                     "damage_bonus": null,
                     "damage_die_count": 1,
                     "damage_die_type": "D6",
-                    "damage_type": "thunder",
+                    "damage_type": {
+                        "key": "thunder",
+                        "name": "Thunder",
+                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                    },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
                     "extra_damage_die_count": null,
                     "extra_damage_die_type": null,
                     "extra_damage_type": null,
-                    "key": "srd_goblin_scimitar_scimitar-attack",
                     "long_range": null,
                     "name": "Scimitar attack",
-                    "parent": "srd_goblin_scimitar",
                     "range": null,
                     "reach": 5.0,
                     "target_creature_only": false,
@@ -33,14 +35,11 @@
                 }
             ],
             "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
-            "form_condition": null,
-            "key": "srd_goblin_scimitar",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Scimitar",
-            "order": 0,
-            "parent": "srd_goblin",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 0,
+            "usage_limits": null
         },
         {
             "action_type": "ACTION",
@@ -50,16 +49,18 @@
                     "damage_bonus": null,
                     "damage_die_count": 1,
                     "damage_die_type": "D6",
-                    "damage_type": "thunder",
+                    "damage_type": {
+                        "key": "thunder",
+                        "name": "Thunder",
+                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                    },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
                     "extra_damage_die_count": null,
                     "extra_damage_die_type": null,
                     "extra_damage_type": null,
-                    "key": "srd_goblin_shortbow_shortbow-attack",
                     "long_range": 320.0,
                     "name": "Shortbow attack",
-                    "parent": "srd_goblin_shortbow",
                     "range": 80.0,
                     "reach": null,
                     "target_creature_only": false,
@@ -67,14 +68,11 @@
                 }
             ],
             "desc": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
-            "form_condition": null,
-            "key": "srd_goblin_shortbow",
-            "legendary_cost": 1,
+            "legendary_action_cost": 1,
+            "limited_to_form": null,
             "name": "Shortbow",
-            "order": 1,
-            "parent": "srd_goblin",
-            "uses_param": null,
-            "uses_type": null
+            "order_in_statblock": 1,
+            "usage_limits": null
         }
     ],
     "alignment": "neutral evil",
@@ -84,208 +82,114 @@
     "category": "Monsters",
     "challenge_rating_decimal": "0.250",
     "challenge_rating_text": "1/4",
-    "condition_immunities": [],
     "creaturesets": [],
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
     "darkvision_range": 60.0,
     "document": {
+        "display_name": "5e 2014 Rules",
         "gamesystem": {
-            "key": "o5e",
-            "name": "5th Edition"
+            "key": "5e-2014",
+            "name": "5th Edition 2014",
+            "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
         },
-        "key": "srd",
-        "name": "Systems Reference Document",
+        "key": "srd-2014",
+        "name": "System Reference Document 5.1",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
         "publisher": {
             "key": "wizards-of-the-coast",
-            "name": "Wizards of the Coast"
+            "name": "Wizards of the Coast",
+            "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
         }
     },
     "environments": [
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "arctic",
             "name": "Arctic or Tundra",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/arctic/"
         },
         {
-            "aquatic": false,
-            "desc": "Caves and caverns",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": true,
             "key": "caves",
             "name": "Caves",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/caves/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "desert",
             "name": "Desert",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/desert/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "forest",
             "name": "Forest or Jungle",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/forest/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "grassland",
             "name": "Grassland or Plains",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/grassland/"
         },
         {
-            "aquatic": false,
-            "desc": "[None Provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "hills",
             "name": "Hills",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/hills/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "mountain",
             "name": "Mountain",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/mountain/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": true,
             "key": "ruins",
             "name": "Ruins",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/ruins/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": true,
             "key": "sewer",
             "name": "Sewer",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/sewer/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "srd_feywild",
             "name": "Feywild",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/srd_feywild/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "swamp",
             "name": "Swamp or Marsh",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/swamp/"
         },
         {
-            "aquatic": false,
-            "desc": "[None Provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "underworld",
             "name": "Underworld",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/underworld/"
         },
         {
-            "aquatic": false,
-            "desc": "[None provided]",
-            "document": "http://localhost:8000/v2/documents/open5e-e/",
-            "interior": false,
             "key": "urban",
             "name": "Urban",
-            "planar": false,
             "url": "http://localhost:8000/v2/environments/urban/"
         }
     ],
     "experience_points": 50,
     "hit_dice": "2d6",
     "hit_points": 7,
+    "illustration": null,
     "initiative_bonus": 2,
     "key": "srd_goblin",
-    "languages": [
-        {
-            "desc": "Typical speakers are Humans.",
-            "document": {
-                "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
-                },
-                "key": "srd",
-                "name": "Systems Reference Document",
-                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-                "publisher": {
-                    "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
-                }
+    "languages": {
+        "as_string": "Common, Goblin",
+        "data": [
+            {
+                "desc": "Typical speakers are Humans.",
+                "key": "common",
+                "name": "Common",
+                "url": "http://localhost:8000/v2/languages/common/"
             },
-            "is_exotic": false,
-            "is_secret": false,
-            "key": "common",
-            "name": "Common",
-            "script_language": "http://localhost:8000/v2/languages/common/",
-            "url": "http://localhost:8000/v2/languages/common/"
-        },
-        {
-            "desc": "Typical speakers are goblinoids.",
-            "document": {
-                "gamesystem": {
-                    "key": "o5e",
-                    "name": "5th Edition"
-                },
-                "key": "srd",
-                "name": "Systems Reference Document",
-                "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-                "publisher": {
-                    "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast"
-                }
-            },
-            "is_exotic": false,
-            "is_secret": false,
-            "key": "goblin",
-            "name": "Goblin",
-            "script_language": "http://localhost:8000/v2/languages/dwarvish/",
-            "url": "http://localhost:8000/v2/languages/goblin/"
-        }
-    ],
+            {
+                "desc": "Typical speakers are goblinoids.",
+                "key": "goblin",
+                "name": "Goblin",
+                "url": "http://localhost:8000/v2/languages/goblin/"
+            }
+        ]
+    },
     "modifiers": {
         "charisma": -1,
         "constitution": 0,
@@ -295,10 +199,19 @@
         "wisdom": -1
     },
     "name": "Goblin",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
     "normal_sight_range": 10560.0,
     "passive_perception": 9,
+    "proficiency_bonus": null,
+    "resistances_and_immunities": {
+        "condition_immunities": [],
+        "condition_immunities_display": "",
+        "damage_immunities": [],
+        "damage_immunities_display": "",
+        "damage_resistances": [],
+        "damage_resistances_display": "",
+        "damage_vulnerabilities": [],
+        "damage_vulnerabilities_display": ""
+    },
     "saving_throws": {},
     "saving_throws_all": {
         "charisma": -1,
@@ -308,7 +221,11 @@
         "strength": -1,
         "wisdom": -1
     },
-    "size": "http://localhost:8000/v2/sizes/small/",
+    "size": {
+        "key": "small",
+        "name": "Small",
+        "url": "http://localhost:8000/v2/sizes/small/"
+    },
     "skill_bonuses": {
         "stealth": 6
     },
@@ -350,15 +267,15 @@
     "traits": [
         {
             "desc": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns.",
-            "key": "srd_goblin_nimble-escape",
-            "name": "Nimble Escape",
-            "parent": "http://localhost:8000/v2/creatures/srd_goblin/",
-            "type": null,
-            "url": "http://localhost:8000/v2/creaturetraits/srd_goblin_nimble-escape/"
+            "name": "Nimble Escape"
         }
     ],
     "tremorsense_range": null,
     "truesight_range": null,
-    "type": "http://localhost:8000/v2/creaturetypes/humanoid/",
+    "type": {
+        "key": "humanoid",
+        "name": "Humanoid",
+        "url": "http://localhost:8000/v2/creaturetypes/humanoid/"
+    },
     "url": "http://localhost:8000/v2/creatures/srd_goblin/"
 }

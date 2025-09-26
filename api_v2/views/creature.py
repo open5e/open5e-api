@@ -65,14 +65,15 @@ class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     queryset = models.Creature.objects.all().order_by('pk')
     serializer_class = serializers.CreatureSerializer
     filterset_class = CreatureFilterSet
-
-    select_related_fields = []
     
     prefetch_related_fields = [
         'actions',
         'actions__attacks',
+        'actions__attacks__damage_type',
+        'actions__attacks__extra_damage_type',
         'creaturesets',
         'condition_immunities',
+        'condition_immunities__icon',
         'damage_immunities',
         'damage_resistances',
         'damage_vulnerabilities',
@@ -81,13 +82,10 @@ class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
         'document__gamesystem',
         'environments',
         'languages',
-        'languages__document',
         'type',
         'size',
-        'size__document',
         'traits',
     ]
-
 
 class CreatureTypeFilterSet(FilterSet):
     class Meta:
@@ -144,7 +142,3 @@ class CreatureSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
         'creatures__type',
         'creatures__languages',
     ]
-
-class CreatureTraitViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.CreatureTrait.objects.all().order_by('pk')
-    serializer_class = serializers.CreatureTraitSerializer

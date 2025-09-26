@@ -1,4 +1,4 @@
-"""The model for an image with metadata."""
+"""The model for an image with metadata. Includes abstracts."""
 
 
 from django.db import models
@@ -15,6 +15,14 @@ class Image(HasName, FromDocument):
         help_text='Relative path of the file, to be used in static file resolution.'
     )
 
+    alt_text = models.TextField(
+        help_text='A short textual description of the image. Important for accessibility',
+    )
+
+    attribution = models.TextField(
+        help_text='Attribution information for this image. Who drew it and where we can find more of thier work?',
+    )
+
     type = models.CharField(
         blank=True,
         null=True,
@@ -24,16 +32,31 @@ class Image(HasName, FromDocument):
     )
 
     def __str__(self):
-        return (self.document.name + " - " + self.name)
+        return self.document.name + " - " + self.name
 
     @property
-    def file_url(self):
+    def file_url(self)->str:
+        """Returns a relative path to the related file."""
         return static(self.file_path)
+
+    class Meta:
+        ordering = ['key']
 
 
 class HasIcon(models.Model):
     """The model inherited for defining an icon for another object type."""
-    icon = models.ForeignKey(Image, 
+    icon = models.ForeignKey(Image,
+                            blank=True,
+                            null=True,
+                            on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True
+
+
+class HasIllustration(models.Model):
+    """The model inherited for defining an illustration for another object type."""
+    illustration = models.ForeignKey(Image,
                             blank=True,
                             null=True,
                             on_delete=models.CASCADE)

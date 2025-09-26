@@ -5,7 +5,6 @@ from .background import BackgroundFilterSet, BackgroundViewSet
 from .creature import CreatureFilterSet, CreatureViewSet
 from .creature import CreatureTypeViewSet
 from .creature import CreatureSetViewSet
-from .creature import CreatureTraitViewSet
 
 from .document import DocumentViewSet
 from .document import GameSystemViewSet
@@ -14,7 +13,7 @@ from .document import LicenseViewSet
 
 from .feat import FeatFilterSet, FeatViewSet
 
-from .race import RaceFilterSet, RaceViewSet
+from .species import SpeciesFilterSet, SpeciesViewSet
 
 from .item import ItemFilterSet, ItemViewSet
 from .item import ItemSetFilterSet, ItemSetViewSet
@@ -47,3 +46,7 @@ from .ability import AbilityFilterSet, AbilityViewSet
 from .ability import SkillFilterSet, SkillViewSet
 
 from .image import ImageViewSet
+
+from .weaponproperty import WeaponPropertyViewSet
+
+from .service import ServiceViewSet

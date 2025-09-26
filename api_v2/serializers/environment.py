@@ -12,3 +12,13 @@ class EnvironmentSerializer(GameContentSerializer):
     class Meta:
         model = models.Environment
         fields = '__all__'
+
+class EnvironmentSummarySerializer(GameContentSerializer):
+    '''
+    A slimmer EnvironmentSerializer, designed to serialize Enviroment FKs on
+    other serializers. ie. The `environments` field on the CreatureSerializer.
+    Not intended to be used directly in a ModelViewset.
+    '''
+    class Meta:
+        model = models.Environment
+        fields = ['name', 'key', 'url']

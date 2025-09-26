@@ -42,7 +42,7 @@ class TestObjects:
 
     # /DOCUMENTS ENDPOINT
     def test_document_example(self):
-        path="/v2/documents/srd/"
+        path="/v2/documents/srd-2014/"
         self._verify(path)
 
     # /LICENSES ENDPOINT
@@ -58,6 +58,10 @@ class TestObjects:
     # /WEAPONS ENDPOINT
     def test_weapon_example(self):
         path="/v2/weapons/srd_shortsword/"
+        self._verify(path)
+
+    def test_weapon_with_mastery_example(self):
+        path="/v2/weapons/srd-2024_longsword/"
         self._verify(path)
 
     # /ARMOR ENDPOINT
@@ -80,9 +84,9 @@ class TestObjects:
         path="/v2/feats/srd_grappler/"
         self._verify(path)
 
-    # /RACES ENDPOINT
-    def test_races_example(self):
-        path="/v2/races/srd_halfling/"
+    # /SPECIES ENDPOINT
+    def test_species_example(self):
+        path="/v2/species/srd_halfling/"
         self._verify(path)
 
     # /CREATURES ENDPOINT
@@ -173,4 +177,21 @@ class TestObjects:
     # SKILLS ENDPOINT
     def test_skill_example(self):
         path="/v2/skills/insight/"
+        self._verify(path)
+
+    # WEAPONPROPERTIES ENDPOINT
+    def test_weaponproperty_standard_example(self):
+        path="/v2/weaponproperties/srd-2014_finesse-wp/"
+        self._verify(path)
+
+    def test_weaponproperty_mastery_example(self):
+        path="/v2/weaponproperties/srd-2024_cleave-mastery/"
+        self._verify(path)
+
+    def test_weaponproperties_mastery_filter(self):
+        path="/v2/weaponproperties/?type=Mastery&limit=3"
+        self._verify(path)
+
+    def test_weaponproperties_standard_filter(self):
+        path="/v2/weaponproperties/?type__isnull=true&document__key=srd-2024&limit=3"
         self._verify(path)

@@ -1,20 +1,25 @@
 {
     "caster_type": null,
+    "desc": "",
     "document": {
+        "display_name": "5e 2014 Rules",
         "gamesystem": {
-            "key": "o5e",
-            "name": "5th Edition"
+            "key": "5e-2014",
+            "name": "5th Edition 2014",
+            "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
         },
-        "key": "srd",
-        "name": "Systems Reference Document",
+        "key": "srd-2014",
+        "name": "System Reference Document 5.1",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
         "publisher": {
             "key": "wizards-of-the-coast",
-            "name": "Wizards of the Coast"
+            "name": "Wizards of the Coast",
+            "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
         }
     },
     "features": [
         {
+            "data_for_class_table": [],
             "desc": "Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools to disarm a trap or open a lock, or take the Use an Object action.",
             "feature_type": "CLASS_FEATURE",
             "gained_at": [
@@ -24,10 +29,10 @@
                 }
             ],
             "key": "srd_thief_fast-hands",
-            "name": "Fast Hands",
-            "table_data": []
+            "name": "Fast Hands"
         },
         {
+            "data_for_class_table": [],
             "desc": "When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement.\r\n\r\nIn addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.",
             "feature_type": "CLASS_FEATURE",
             "gained_at": [
@@ -37,10 +42,10 @@
                 }
             ],
             "key": "srd_thief_second-story-work",
-            "name": "Second-Story Work",
-            "table_data": []
+            "name": "Second-Story Work"
         },
         {
+            "data_for_class_table": [],
             "desc": "Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn.",
             "feature_type": "CLASS_FEATURE",
             "gained_at": [
@@ -50,10 +55,10 @@
                 }
             ],
             "key": "srd_thief_supreme-sneak",
-            "name": "Supreme Sneak",
-            "table_data": []
+            "name": "Supreme Sneak"
         },
         {
+            "data_for_class_table": [],
             "desc": "When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised.",
             "feature_type": "CLASS_FEATURE",
             "gained_at": [
@@ -63,10 +68,10 @@
                 }
             ],
             "key": "srd_thief_thiefs-reflexes",
-            "name": "Thief's Reflexes",
-            "table_data": []
+            "name": "Thief's Reflexes"
         },
         {
+            "data_for_class_table": [],
             "desc": "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items.",
             "feature_type": "CLASS_FEATURE",
             "gained_at": [
@@ -76,14 +81,18 @@
                 }
             ],
             "key": "srd_thief_use-magic-device",
-            "name": "Use Magic Device",
-            "table_data": []
+            "name": "Use Magic Device"
         }
     ],
     "hit_dice": null,
     "key": "srd_thief",
     "name": "Thief",
+    "primary_abilities": [],
     "saving_throws": [],
-    "subclass_of": "http://localhost:8000/v2/classes/srd_rogue/",
+    "subclass_of": {
+        "key": "srd_rogue",
+        "name": "Rogue",
+        "url": "http://localhost:8000/v2/classes/srd_rogue/"
+    },
     "url": "http://localhost:8000/v2/classes/srd_thief/"
 }

@@ -4,6 +4,7 @@ from rest_framework import serializers
 from api_v2 import models
 
 class GameContentSerializer(serializers.HyperlinkedModelSerializer):  
+
     """
     Much of the logic included in the GameContentSerializer is intended to 
     support manipulating data returned by the serializer via query parameters.
@@ -84,65 +85,32 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
             return self.parent._context.get("dynamic_params", {})
         return self._context.get("dynamic_params", {})
 
-    def handle_depth_serialization(self, instance, representation):
-        """
-        Handles the serialization of fields based on the current depth 
-        compared to the maximum allowed depth. This function modifies 
-        the representation to include only URLs for nested serializers 
-        when the maximum depth is reached.
-        """
-        max_depth = self._context.get("max_depth", 0)
-        current_depth = self._context.get("current_depth", 0)
-
-        # if we reach the maximum depth, nested serializers return their pk (url)
-        if current_depth >= max_depth:
-            for field_name, field in self.fields.items():
-                if isinstance(field, serializers.HyperlinkedModelSerializer):
-                    nested_representation = representation.get(field_name)
-                    if nested_representation and "url" in nested_representation:
-                        representation[field_name] = nested_representation["url"]
-            return representation
-        
-        # otherwise, pass depth to children serializers
-        for field_name, field in self.fields.items():
-            # Guard clause: make sure the child is a GameContentSerializer
-            if not isinstance(field, GameContentSerializer):
-                continue
-
-            nested_instance = getattr(instance, field_name)
-            nested_serializer = field.__class__(nested_instance, context={
-                **self._context,
-                "current_depth": current_depth + 1,
-                "max_depth": max_depth,
-            })
-
-            # Ensure dynamic params are specific to the child serializer
-            child_dynamic_params = self.get_or_create_dynamic_params(field_name)
-            nested_serializer._context['dynamic_params'] = child_dynamic_params
-            representation[field_name] = nested_serializer.data
-        return representation
-        
-
     def __init__(self, *args, **kwargs):
         request = kwargs.get("context", {}).get("request")
         super().__init__(*args, **kwargs)
 
+        # Request is only present on root serializer
         if request:
-            self._context["max_depth"] = int(request.query_params.get("depth", 0))
             dynamic_params = self.get_dynamic_params_for_root(request)
             self._context.update({"dynamic_params": dynamic_params})
 
     def to_representation(self, instance):
+        # if dynamic params are present, rmv requested fields and pass params 
+        # to child serializers
         if dynamic_params := self.get_dynamic_params().copy():
             self.remove_unwanted_fields(dynamic_params)
             self.set_dynamic_params_for_children(dynamic_params)
-
-        representation = super().to_representation(instance)
-
-        representation = self.handle_depth_serialization(instance, representation)
-
-        return representation
-
+        return super().to_representation(instance)
 
     class Meta:
         abstract = True
+
+
+class DescriptionSerializer(serializers.ModelSerializer):
+    gamesystem = serializers.SerializerMethodField()
+    class Meta:
+        model = None
+        abstract = True
+
+    def get_gamesystem(self,obj):
+        return obj.document.gamesystem.key

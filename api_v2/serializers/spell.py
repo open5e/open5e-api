@@ -16,6 +16,15 @@ class SpellSchoolSerializer(GameContentSerializer):
         model = models.SpellSchool
         fields='__all__'
 
+class SpellSchoolSummarySerializer(GameContentSerializer):
+    '''
+    A slimmer SpellSchoolSerializer, designed to serialize Spell School FKs on 
+    other serializers. ie. The `school` field on the SpellSerializer. Not
+    intended to be used directly in a ModelViewset.
+    '''
+    class Meta:
+        model = models.SpellSchool
+        fields = ['name', 'key', 'url']
 
 class SpellCastingOptionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,7 +36,7 @@ class SpellSerializer(GameContentSerializer):
     document = DocumentSummarySerializer()
     key = serializers.ReadOnlyField()
     casting_options = SpellCastingOptionSerializer(many=True)
-    school = SpellSchoolSerializer()
+    school = SpellSchoolSummarySerializer()
     classes = CharacterClassSummarySerializer(many=True)
     
     range_unit = serializers.SerializerMethodField()

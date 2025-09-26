@@ -5,7 +5,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from .enums import MODIFICATION_TYPES, DIE_TYPES
-from .enums import DISTANCE_UNIT_TYPES
+from .enums import DISTANCE_UNIT_TYPES, WEIGHT_UNIT_TYPES
 from .enums import ABILITY_SCORE_MAXIMUM
 from .enums import SAVING_THROW_MAXIMUM, SAVING_THROW_MINIMUM
 from .enums import SKILL_BONUS_MINIMUM, SKILL_BONUS_MAXIMUM
@@ -64,6 +64,15 @@ def distance_unit_field():
         max_length=20,
         choices=DISTANCE_UNIT_TYPES,
         help_text='What distance unit the relevant field uses.'
+    )
+
+def weight_unit_field():
+    return models.CharField(
+        null=True,
+        blank=True,
+        max_length=20,
+        choices=WEIGHT_UNIT_TYPES,
+        help_text='What weight unit the relevant field uses.'
     )
 
 # Define a field representing an ability score
@@ -129,6 +138,7 @@ class HasDescription(models.Model):
     """This is the definition of a description."""
 
     desc = models.TextField(
+        blank=True,
         help_text='Description of the game content item. Markdown.')
 
     class Meta:
@@ -156,7 +166,7 @@ class Modification(HasName, HasDescription):
     """
     This is the definition of a modification abstract base class.
 
-    A modification class will be reimplemented from Feat, Race, Background, etc.
+    A modification class will be reimplemented from Feat, Species, Background, etc.
     Basically it describes any sort of modification to a character in 5e.
     """
 
@@ -455,3 +465,23 @@ class HasSenses(models.Model):
     class Meta:
         abstract = True
 
+
+class HasPrice(models.Model):
+    """
+    The HasPrice abstract class is inherited by other models that have a price;
+    items, services, etc.
+
+    When inherited, it add the 'cost' field to the derived model
+    """
+    
+    cost = models.DecimalField(
+        null=True,  # Allow an unspecified cost.
+        default=None,
+        max_digits=10,
+        decimal_places=2,  # Only track down to 2 decimal places.
+        validators=[MinValueValidator(decimal.Decimal(0.0))],
+        help_text='Number representing the cost of the object.'
+    )
+
+    class Meta:
+        abstract = True

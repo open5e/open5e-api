@@ -15,6 +15,9 @@ class SearchResultSerializer(serializers.ModelSerializer):
     object = serializers.SerializerMethodField(method_name='get_object')
     document = serializers.SerializerMethodField(method_name='get_document')
     route = serializers.SerializerMethodField(method_name='get_route')
+    match_type = serializers.CharField(read_only=True)
+    matched_term = serializers.CharField(read_only=True, allow_null=True)
+    match_score = serializers.FloatField(read_only=True, allow_null=True)
 
     class Meta:
         model = models.SearchResult
@@ -27,7 +30,10 @@ class SearchResultSerializer(serializers.ModelSerializer):
             'schema_version',
             'route',
             'text',
-            'highlighted']
+            'highlighted',
+            'match_type',
+            'matched_term',
+            'match_score']
 
     # The following override is replaced in a postproccessing hook defined in oas.py. I couldn't figure out how to get a oneof in here
     @extend_schema_field(OpenApiTypes.STR)
@@ -54,8 +60,8 @@ class SearchResultSerializer(serializers.ModelSerializer):
                 result_detail = v2.Spell.objects.get(pk=obj.object_pk)
             if obj.object_model == 'CharacterClass':
                 result_detail = v2.CharacterClass.objects.get(pk=obj.object_pk)
-            if obj.object_model == 'Race':
-                result_detail = v2.Race.objects.get(pk=obj.object_pk)
+            if obj.object_model == 'Species':
+                result_detail = v2.Species.objects.get(pk=obj.object_pk)
 
         if result_detail is not None:
             return result_detail.search_result_extra_fields()
@@ -93,6 +99,7 @@ class SearchResultSerializer(serializers.ModelSerializer):
         route_lookup = {
             "CharacterClass":"classes",
             "CharClass":"classes",
+            "Species": "species",
         }
 
         if obj.object_model in route_lookup.keys():

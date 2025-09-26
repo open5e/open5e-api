@@ -3,20 +3,22 @@
     "document": {
         "gamesystem": {
             "key": "o5e",
-            "name": "5th Edition"
+            "name": "5th Edition",
+            "url": "http://localhost:8000/v2/gamesystems/o5e/"
         },
-        "key": "srd",
-        "name": "Systems Reference Document",
+        "key": "srd-2014",
+        "name": "System Reference Document 5.1",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
         "publisher": {
             "key": "wizards-of-the-coast",
-            "name": "Wizards of the Coast"
+            "name": "Wizards of the Coast",
+            "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
         }
     },
-    "is_subrace": false,
+    "is_subspecies": false,
     "key": "srd_halfling",
     "name": "Halfling",
-    "subrace_of": null,
+    "subspecies_of": null,
     "traits": [
         {
             "desc": "Your Dexterity score increases by 2.",
@@ -55,5 +57,5 @@
             "name": "Halfling Nimbleness"
         }
     ],
-    "url": "http://localhost:8000/v2/races/srd_halfling/"
+    "url": "http://localhost:8000/v2/species/srd_halfling/"
 }

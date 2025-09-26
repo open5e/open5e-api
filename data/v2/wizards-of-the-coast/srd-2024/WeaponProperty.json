@@ -1,0 +1,172 @@
+[
+{
+  "fields": {
+    "desc": "You can use a weapon that has the Ammunition property to make a ranged attack only if you have ammunition to fire from it. The type of ammunition required is specified with the weapon's range. Each attack expends one piece of ammunition. Drawing the ammunition is part of the attack (you need a free hand to load a one-handed weapon). After a fight, you can spend 1 minute to recover half the ammunition (round down) you used in the fight; the rest is lost.",
+    "document": "srd-2024",
+    "name": "Ammunition",
+    "type": null
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_ammunition-wp"
+},
+{
+  "fields": {
+    "desc": "If you hit a creature with a melee attack roll using this weapon, you can make a melee attack roll with the weapon against a second creature within 5 feet of the first that is also within your reach. On a hit, the second creature takes the weapon's damage, but don't add your ability modifier to that damage unless that modifier is negative. You can make this extra attack only once per turn.",
+    "document": "srd-2024",
+    "name": "Cleave",
+    "type": "Mastery"
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_cleave-mastery"
+},
+{
+  "fields": {
+    "desc": "When making an attack with a Finesse weapon, use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.",
+    "document": "srd-2024",
+    "name": "Finesse",
+    "type": null
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_finesse-wp"
+},
+{
+  "fields": {
+    "desc": "If your attack roll with this weapon misses a creature, you can deal damage to that creature equal to the ability modifier you used to make the attack roll. This damage is the same type dealt by the weapon, and the damage can be increased only by increasing the ability modifier.",
+    "document": "srd-2024",
+    "name": "Graze",
+    "type": "Mastery"
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_graze-mastery"
+},
+{
+  "fields": {
+    "desc": "You have Disadvantage on attack rolls with a Heavy weapon if it's a Melee weapon and your Strength score isn't at least 13 or if it's a Ranged weapon and your Dexterity score isn't at least 13.",
+    "document": "srd-2024",
+    "name": "Heavy",
+    "type": null
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_heavy-wp"
+},
+{
+  "fields": {
+    "desc": "When you take the Attack action on your turn and attack with a Light weapon, you can make one extra attack as a Bonus Action later on the same turn. That extra attack must be made with a different Light weapon, and you don't add your ability modifier to the extra attack's damage unless that modifier is negative.",
+    "document": "srd-2024",
+    "name": "Light",
+    "type": null
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_light-wp"
+},
+{
+  "fields": {
+    "desc": "You can fire only one piece of ammunition from a Loading weapon when you use an action, a Bonus Action, or a Reaction to fire it, regardless of the number of attacks you can normally make.",
+    "document": "srd-2024",
+    "name": "Loading",
+    "type": null
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_loading-wp"
+},
+{
+  "fields": {
+    "desc": "When you make the extra attack of the Light property, you can make it as part of the Attack action instead of as a Bonus Action. You can make this extra attack only once per turn.",
+    "document": "srd-2024",
+    "name": "Nick",
+    "type": "Mastery"
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_nick-mastery"
+},
+{
+  "fields": {
+    "desc": "If you hit a creature with this weapon, you can push the creature up to 10 feet straight away from yourself if it is Large or smaller.",
+    "document": "srd-2024",
+    "name": "Push",
+    "type": "Mastery"
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_push-mastery"
+},
+{
+  "fields": {
+    "desc": "A Reach weapon adds 5 feet to your reach when you attack with it, as well as when determining your reach for Opportunity Attacks with it.",
+    "document": "srd-2024",
+    "name": "Reach",
+    "type": null
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_reach-wp"
+},
+{
+  "fields": {
+    "desc": "If you hit a creature with this weapon, that creature has Disadvantage on its next attack roll before the start of your next turn.",
+    "document": "srd-2024",
+    "name": "Sap",
+    "type": "Mastery"
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_sap-mastery"
+},
+{
+  "fields": {
+    "desc": "If you hit a creature with this weapon and deal damage to it, you can reduce its Speed by 10 feet until the start of your next turn. If the creature is hit more than once by weapons that have this property, the Speed reduction doesn't exceed 10 feet.",
+    "document": "srd-2024",
+    "name": "Slow",
+    "type": "Mastery"
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_slow-mastery"
+},
+{
+  "fields": {
+    "desc": "If a weapon has the Thrown property, you can throw the weapon to make a ranged attack, and you can draw that weapon as part of the attack. If the weapon is a Melee weapon, use the same ability modifier for the attack and damage rolls that you use for a melee attack with that weapon.",
+    "document": "srd-2024",
+    "name": "Thrown",
+    "type": null
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_thrown-wp"
+},
+{
+  "fields": {
+    "desc": "If you hit a creature with this weapon, you can force the creature to make a Constitution saving throw (DC 8 plus the ability modifier used to make the attack roll and your Proficiency Bonus). On a failed save, the creature has the Prone condition.",
+    "document": "srd-2024",
+    "name": "Topple",
+    "type": "Mastery"
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_topple-mastery"
+},
+{
+  "fields": {
+    "desc": "A Two-Handed weapon requires two hands when you attack with it.",
+    "document": "srd-2024",
+    "name": "Two-Handed",
+    "type": null
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_two-handed-wp"
+},
+{
+  "fields": {
+    "desc": "A Versatile weapon can be used with one or two hands. A damage value in parentheses appears with the property. The weapon deals that damage when used with two hands to make a melee attack.",
+    "document": "srd-2024",
+    "name": "Versatile",
+    "type": null
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_versatile-wp"
+},
+{
+  "fields": {
+    "desc": "If you hit a creature with this weapon and deal damage to the creature, you have Advantage on your next attack roll against that creature before the end of your next turn.",
+    "document": "srd-2024",
+    "name": "Vex",
+    "type": "Mastery"
+  },
+  "model": "api_v2.weaponproperty",
+  "pk": "srd-2024_vex-mastery"
+}
+]

@@ -4,6 +4,7 @@
         {
             "concentration": null,
             "damage_roll": null,
+            "desc": null,
             "duration": null,
             "range": null,
             "shape_size": null,
@@ -15,19 +16,23 @@
     "classes": [
         {
             "key": "srd_bard",
-            "name": "Bard"
+            "name": "Bard",
+            "url": "http://localhost:8000/v2/classes/srd_bard/"
         },
         {
             "key": "srd_sorcerer",
-            "name": "Sorcerer"
+            "name": "Sorcerer",
+            "url": "http://localhost:8000/v2/classes/srd_sorcerer/"
         },
         {
             "key": "srd_warlock",
-            "name": "Warlock"
+            "name": "Warlock",
+            "url": "http://localhost:8000/v2/classes/srd_warlock/"
         },
         {
             "key": "srd_wizard",
-            "name": "Wizard"
+            "name": "Wizard",
+            "url": "http://localhost:8000/v2/classes/srd_wizard/"
         }
     ],
     "concentration": false,
@@ -35,16 +40,19 @@
     "damage_types": [],
     "desc": "This spell is a minor magical trick that novice spellcasters use for practice. You create one of the following magical effects within 'range': \n- You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor. \n- You instantaneously light or snuff out a candle, a torch, or a small campfire. \n- You instantaneously clean or soil an object no larger than 1 cubic foot. \n- You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour. \n- You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour. \n- You create a nonmagical trinket or an illusory image that can fit in your hand and that lasts until the end of your next turn. \nIf you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
     "document": {
+        "display_name": "5e 2014 Rules",
         "gamesystem": {
-            "key": "o5e",
-            "name": "5th Edition"
+            "key": "5e-2014",
+            "name": "5th Edition 2014",
+            "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
         },
-        "key": "srd",
-        "name": "Systems Reference Document",
+        "key": "srd-2014",
+        "name": "System Reference Document 5.1",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
         "publisher": {
             "key": "wizards-of-the-coast",
-            "name": "Wizards of the Coast"
+            "name": "Wizards of the Coast",
+            "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
         }
     },
     "duration": "1 hour",
@@ -62,7 +70,11 @@
     "reaction_condition": null,
     "ritual": false,
     "saving_throw_ability": "",
-    "school": "http://localhost:8000/v2/spellschools/transmutation/",
+    "school": {
+        "key": "transmutation",
+        "name": "Transmutation",
+        "url": "http://localhost:8000/v2/spellschools/transmutation/"
+    },
     "shape_size": null,
     "shape_size_unit": "feet",
     "shape_type": null,

@@ -6,14 +6,18 @@ from .item import ItemSet
 from .item import ItemRarity
 
 from .abilities import Ability
+from .abilities import AbilityDescription
 from .abilities import Skill
+from .abilities import SkillDescription
 
 from .armor import Armor
 
 from .weapon import Weapon
+from .weapon import WeaponProperty
+from .weapon import WeaponPropertyAssignment
 
-from .race import RaceTrait
-from .race import Race
+from .species import SpeciesTrait
+from .species import Species
 
 from .feat import FeatBenefit
 from .feat import Feat
@@ -26,6 +30,7 @@ from .creature import CreatureTrait
 from .creature import CreatureAction
 from .creature import CreatureActionAttack
 from .creature import CreatureType
+from .creature import CreatureTypeDescription
 from .creature import CreatureSet
 
 from .document import Document
@@ -35,12 +40,15 @@ from .document import GameSystem
 from .document import FromDocument
 
 from .damagetype import DamageType
+from .damagetype import DamageTypeDescription
 
 from .language import Language
 
 from .alignment import Alignment
+from .alignment import AlignmentDescription
 
 from .condition import Condition
+from .condition import ConditionDescription
 
 from .spell import Spell
 from .spell import SpellCastingOption
@@ -58,4 +66,6 @@ from .speed import HasSpeed
 
 from .rule import Rule, RuleSet
 
-from .image import Image
+from .image import Image, HasIcon, HasIllustration
+
+from .service import Service

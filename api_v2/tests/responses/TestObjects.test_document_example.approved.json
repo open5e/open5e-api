@@ -1,22 +1,34 @@
 {
     "author": "Mike Mearls, Jeremy Crawford, Chris Perkins, Rodney Thompson, Peter Lee, James Wyatt, Robert J. Schwalb, Bruce R. Cordell, Chris Sims, and Steve Townshend, based on original material by E. Gary Gygax and Dave Arneson.",
-    "desc": "The Systems Reference Document (SRD) contains guidelines for publishing content under the Open-Gaming License (OGL) or Creative Commons. The Dungeon Masters Guild also provides self-publishing opportunities for individuals and groups.",
+    "desc": "The System Reference Document (SRD) contains guidelines for publishing content under the Open-Gaming License (OGL) or Creative Commons. The Dungeon Masters Guild also provides self-publishing opportunities for individuals and groups.",
+    "display_name": "5e 2014 Rules",
     "distance_unit": "feet",
-    "gamesystem": "http://localhost:8000/v2/gamesystems/o5e/",
-    "key": "srd",
+    "gamesystem": {
+        "key": "5e-2014",
+        "name": "5th Edition 2014",
+        "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+    },
+    "key": "srd-2014",
     "licenses": [
         {
             "key": "cc-by-40",
-            "name": "Creative Commons Attribution 4.0"
+            "name": "Creative Commons Attribution 4.0",
+            "url": "http://localhost:8000/v2/licenses/cc-by-40/"
         },
         {
             "key": "ogl-10a",
-            "name": "OPEN GAME LICENSE Version 1.0a"
+            "name": "OPEN GAME LICENSE Version 1.0a",
+            "url": "http://localhost:8000/v2/licenses/ogl-10a/"
         }
     ],
-    "name": "Systems Reference Document",
+    "name": "System Reference Document 5.1",
     "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
-    "published_at": "2023-01-23T00:00:00",
-    "publisher": "http://localhost:8000/v2/publishers/wizards-of-the-coast/",
-    "url": "http://localhost:8000/v2/documents/srd/"
+    "publication_date": "2023-01-23T00:00:00",
+    "publisher": {
+        "key": "wizards-of-the-coast",
+        "name": "Wizards of the Coast",
+        "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+    },
+    "url": "http://localhost:8000/v2/documents/srd-2014/",
+    "weight_unit": "lb"
 }
