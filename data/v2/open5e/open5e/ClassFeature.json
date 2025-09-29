@@ -221,6 +221,66 @@
 },
 {
   "fields": {
+    "desc": "Once you reach 2nd level, you gain the power to create an illusory double of yourself with the Channel Divinity class feature. You may use your action to manifest the illusion in an unoccupied space visible to you and within 30 feet of yourself. You must concentrate to maintain the illusion as if it were a spell, and you can do so for up to 1 minute. On your turn, you can use a bonus action to move up to 30 feet, but it must remain in your view and cannot move more than 120 feet away from you.\n\nWhile you maintain the illusion, when you cast a spell, you can use the position of the illusion rather than your own for determining range, area of effect, and line of sight. However, you cannot actually “see” through the illusion’s eyes, so you must rely on your own vision if the spell requires you to see a target or space.\n\nYour illusion can disorient foes, so you gain advantage on attack rolls against any creature that can see the illusion if both you and the illusion are within 5 feet of the creature.",
+    "document": "open5e",
+    "name": "Channel Divinity: Double Trouble",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_channel-divinity-double-trouble"
+},
+{
+  "fields": {
+    "desc": "Beginning at 6th level, with your Channel Divinity feature, you can use an action to become invisible. This invisibility lasts until the end of your next turn, or if you cast a spell or attack.",
+    "document": "open5e",
+    "name": "Channel Divinity: Walk Unseen",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_channel-divinity-walk-unseen"
+},
+{
+  "fields": {
+    "desc": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level, the extra damage increases to 2d8.",
+    "document": "open5e",
+    "name": "Divine Strike",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_divine-strike"
+},
+{
+  "fields": {
+    "desc": "Starting at 17th level, your Double Trouble feature becomes more potent. Instead of one double, you can create up to four, and you can move as many of them as you like on your turn with a bonus action following the rules outlined in that feature.",
+    "document": "open5e",
+    "name": "Double Trouble Doubled",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_double-trouble-doubled"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                           |\r\n|--------------|----------------------------------|\r\n| 1st          | charm person, disguise self      |\r\n| 3rd          | mirror image, pass without trace |\r\n| 5th          | blink, dispel magic              |\r\n| 7th          | dimension door, polymorph        |\r\n| 9th          | dominate person, modify memory   |",
+    "document": "open5e",
+    "name": "Mischeif Domain Spells (table)",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_mischeif-domain-spells-table"
+},
+{
+  "fields": {
+    "desc": "At 1st level, when you choose this domain, you can endow others with the power to make mischief. As an action, you may touch a willing creature, and that creature gains advantage when making Dexterity (Stealth) checks for the next hour. The effect ends early if you use the feature on a different creature. You may not use this feature on yourself.",
+    "document": "open5e",
+    "name": "Spreader of Mischief",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_spreader-of-mischief"
+},
+{
+  "fields": {
     "desc": "Starting at 7th level, you add your Charisma modifier to damage rolls from melee weapons (with a minimum bonus of +1). Creatures of the fiend or undead type within 10 feet of you also gain this bonus, but the bonus does not stack with the same bonus from another paladin.\n\nAt 18th level, the range of this aura increases to 30 feet.",
     "document": "open5e",
     "name": "Aura of Loathing",
