@@ -101,7 +101,7 @@
 },
 {
   "fields": {
-    "desc": "When you choose this domain at 1st level, you gain the martial weapon proficiency.\n\n#### Death’s Cut\n\nYour connection to death means that your necromantic powers can cut through more foes. You learn an additional cantrip of the necromancy school from any class spell list. When you cast any necromancy cantrip that targets a single creature, you can target a second creature within the spell’s range if it is within 5 feet of the first target.\n\n#### Channel Divinity: Killing Touch\n\nBeginning at 2nd level, when one of your melee attacks hit a creature, you can make use of your Channel Divinity to add necrotic damage equal to your cleric level times two, plus 5.\n\n#### Death Comes for All\n\nJust as death comes for all creatures, at 6th level your deathly powers affect even those who could normally withstand them. You ignore a creature’s necrotic resistance when you deal damage via spells or your Channel Divinity.",
+    "desc": "When you choose this domain at 1st level, you gain the martial weapon proficiency.",
     "document": "open5e",
     "name": "Bonus Proficiency",
     "parent": "open5e_demise-domain"
@@ -111,13 +111,63 @@
 },
 {
   "fields": {
-    "desc": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 necrotic damage to the target. When you reach 14th level, the extra damage increases to 2d8.\n\n#### Improved Death’s Cut\n\nBeginning at 17th level, your Death’s Cut feature can apply to spells of the necromancy school of up to 5th-level in addition to cantrips. However, you must double the amount of material components used if the spell calls for them.",
+    "desc": "Beginning at 2nd level, when one of your melee attacks hit a creature, you can make use of your Channel Divinity to add necrotic damage equal to your cleric level times two, plus 5.",
+    "document": "open5e",
+    "name": "Channel Divinity: Killing Touch",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_channel-divinity-killing-touch"
+},
+{
+  "fields": {
+    "desc": "Just as death comes for all creatures, at 6th level your deathly powers affect even those who could normally withstand them. You ignore a creature’s necrotic resistance when you deal damage via spells or your Channel Divinity.",
+    "document": "open5e",
+    "name": "Death Comes for All",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_death-comes-for-all"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                                  |\r\n|--------------|-----------------------------------------|\r\n| 1st          | false life, ray of sickness             |\r\n| 3rd          | blindness/deafness, ray of enfeeblement |\r\n| 5th          | animate dead, vampiric touch            |\r\n| 7th          | blight, death ward                      |\r\n| 9th          | antilife shell, cloudkill               |",
+    "document": "open5e",
+    "name": "Death Domain Spells (table)",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_death-domain-spells-table"
+},
+{
+  "fields": {
+    "desc": "Your connection to death means that your necromantic powers can cut through more foes. You learn an additional cantrip of the necromancy school from any class spell list. When you cast any necromancy cantrip that targets a single creature, you can target a second creature within the spell’s range if it is within 5 feet of the first target.",
+    "document": "open5e",
+    "name": "Death’s Cut",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_deaths-cut"
+},
+{
+  "fields": {
+    "desc": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 necrotic damage to the target. When you reach 14th level, the extra damage increases to 2d8.",
     "document": "open5e",
     "name": "Divine Strike",
     "parent": "open5e_demise-domain"
   },
   "model": "api_v2.classfeature",
   "pk": "open5e_demise-domain_divine-strike"
+},
+{
+  "fields": {
+    "desc": "Beginning at 17th level, your Death’s Cut feature can apply to spells of the necromancy school of up to 5th-level in addition to cantrips. However, you must double the amount of material components used if the spell calls for them.",
+    "document": "open5e",
+    "name": "Improved Death’s Cut",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_improved-deaths-cut"
 },
 {
   "fields": {
