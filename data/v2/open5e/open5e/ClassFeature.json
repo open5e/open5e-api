@@ -281,13 +281,53 @@
 },
 {
   "fields": {
-    "desc": "Starting at 2nd level when you choose this school, you only need to spend half as much time and gold as normal in order to copy a spell into your spellbook if the spell is from the divination school.\n\n#### Premonition\n\nAlso at 2nd level, you begin to see in your dreams brief images of events yet to unfold. After finishing a long rest, you can make two d20 rolls and keep track of the results for later. Any time before the next time you complete a long rest, when you or a creature visible to you is about to make an ability check, attack roll, or saving throw, you can choose to stop the roll from happening and instead use one of the results from your premonition.\n\nYou can only use this feature once per turn, and after you have used a result from your premonition, you cannot use it again. Any result not used before your next long rest are lost as false premonitions and cannot be used either.\n\n#### Soothing Savant\n\nStarting at 6th level, you are so skilled at soothsaying that you gain more spellcasting power when you use your divinations. Any time you use a spell slot to cast a divination spell of at least 2nd level, you regain one of your spell slots that you’ve expended for the day. A spell slot regained in this way must be lower than 6th level as well as lower than the spell level you used to activate the feature.\n\n#### Extrasensory Perception\n\nBeginning at 10th level, you can extend your senses beyond their normal capabilities. At any time, you may choose one of the following options and gain the associated benefit until you take a short or a long rest or are incapacitated. You can only use this feature once per short or long rest.\n\n***Ether Sight.*** You can see creatures and objects on the Ethereal Plane up to 60 feet away.\n\n***Script Sight.*** You can comprehend writing in any language as if it were written in your native tongue.\n\n***Shadow Sight.*** You get darkvision with a range up to 60 feet, or increase the range of your darkvision to 60 feet if you already have it.\n\n***Unseen Sight.*** You gain the power to see invisible creatures and objects as if they were visible at a range of 10 feet within your line of sight.\n\n#### Premonition Addition\n\nBeginning at 14th level, when you use your Premonition feature, you may roll and record the results of three d20s as your resting hours fill with further visions.",
+    "desc": "Starting at 2nd level when you choose this school, you only need to spend half as much time and gold as normal in order to copy a spell into your spellbook if the spell is from the divination school.",
     "document": "open5e",
     "name": "Expert Diviner",
     "parent": "open5e_school-of-divining-and-soothsaying"
   },
   "model": "api_v2.classfeature",
   "pk": "open5e_school-of-divining-and-soothsaying_expert-diviner"
+},
+{
+  "fields": {
+    "desc": "Beginning at 10th level, you can extend your senses beyond their normal capabilities. At any time, you may choose one of the following options and gain the associated benefit until you take a short or a long rest or are incapacitated. You can only use this feature once per short or long rest.\n\n***Ether Sight.*** You can see creatures and objects on the Ethereal Plane up to 60 feet away.\n\n***Script Sight.*** You can comprehend writing in any language as if it were written in your native tongue.\n\n***Shadow Sight.*** You get darkvision with a range up to 60 feet, or increase the range of your darkvision to 60 feet if you already have it.\n\n***Unseen Sight.*** You gain the power to see invisible creatures and objects as if they were visible at a range of 10 feet within your line of sight.",
+    "document": "open5e",
+    "name": "Extrasensory Perception",
+    "parent": "open5e_school-of-divining-and-soothsaying"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-divining-and-soothsaying_extrasensory-perception"
+},
+{
+  "fields": {
+    "desc": "Also at 2nd level, you begin to see in your dreams brief images of events yet to unfold. After finishing a long rest, you can make two d20 rolls and keep track of the results for later. Any time before the next time you complete a long rest, when you or a creature visible to you is about to make an ability check, attack roll, or saving throw, you can choose to stop the roll from happening and instead use one of the results from your premonition.\n\nYou can only use this feature once per turn, and after you have used a result from your premonition, you cannot use it again. Any result not used before your next long rest are lost as false premonitions and cannot be used either.",
+    "document": "open5e",
+    "name": "Premonition",
+    "parent": "open5e_school-of-divining-and-soothsaying"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-divining-and-soothsaying_premonition"
+},
+{
+  "fields": {
+    "desc": "Beginning at 14th level, when you use your Premonition feature, you may roll and record the results of three d20s as your resting hours fill with further visions.",
+    "document": "open5e",
+    "name": "Premonition Addition",
+    "parent": "open5e_school-of-divining-and-soothsaying"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-divining-and-soothsaying_premonition_addition"
+},
+{
+  "fields": {
+    "desc": "Starting at 6th level, you are so skilled at soothsaying that you gain more spellcasting power when you use your divinations. Any time you use a spell slot to cast a divination spell of at least 2nd level, you regain one of your spell slots that you’ve expended for the day. A spell slot regained in this way must be lower than 6th level as well as lower than the spell level you used to activate the feature.",
+    "document": "open5e",
+    "name": "Soothsaying Savant",
+    "parent": "open5e_school-of-divining-and-soothsaying"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-divining-and-soothsaying_soothsaying-savant"
 },
 {
   "fields": {
