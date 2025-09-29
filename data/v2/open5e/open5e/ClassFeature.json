@@ -611,6 +611,56 @@
 },
 {
   "fields": {
+    "desc": "Starting at 14th level, you gain the ability to flood a creature’s mind with the cosmic presence of your terrible patron. As an action, you can touch a humanoid that is incapacitated, causing it to be charmed by you. You can speak to this thrall telepathically as long as both of you remain on the same plane of existence. The charm has no end duration, but can be negated by a remove curse spell or another power that removes the charmed condition. You relinquish the charm the next time you use this feature.",
+    "document": "open5e",
+    "name": "Cosmic Enthrallment",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_cosmic-enthrallment"
+},
+{
+  "fields": {
+    "desc": "The Great Elder Thing lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.\n\n**Great Elder Thing Expanded Spells (table)**\n\n| Spell Level | Spells                               |\r\n|-------------|----------------------------------|\r\n| 1st         | dissonant whispers, hideous laughter |\r\n| 2nd         | detect thoughts, phantasmal force    |\r\n| 3rd         | clairvoyance, sending                |\r\n| 4th         | dominate beast, black tentacles      |\r\n| 5th         | dominate person, telekinesis         |",
+    "document": "open5e",
+    "name": "Expanded Spell List",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_expanded-spell-list"
+},
+{
+  "fields": {
+    "desc": "Starting at 6th level, you can briefly react with an impossible speed. As a reaction, triggered by an enemy attack roll targeting you, you force the creature to make the roll with disadvantage. If the enemy attack ends up missing, then you gain advantage on the next attack roll you make against that creature until the end of your next turn. You can only use this feature once per short or long rest.",
+    "document": "open5e",
+    "name": "Inhuman Reflex",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_inhuman_reflex"
+},
+{
+  "fields": {
+    "desc": "At 10th level, your thoughts become shielded against others. Your mind cannot be read by magic, telepathy, or other methods without your consent. You also become resistant to the psychic damage type, and if you do suffer psychic damage, you deal the same amount of psychic damage to the creature which dealt it to you.",
+    "document": "open5e",
+    "name": "Mental Barrier",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_mental-barrier"
+},
+{
+  "fields": {
+    "desc": "Beginning at 1st level, you can push your thoughts into other minds, speaking telepathically to a creature within 30 feet as long as you can see that creature. The creature must know some language to hear your projections, but it does not need to speak the same language as you.",
+    "document": "open5e",
+    "name": "Outward Cerebration",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_outward_cerebration"
+},
+{
+  "fields": {
     "desc": "Starting at 6th level, you can use shadows to instantly transport yourself a short distance via the plane of shadows. As a bonus action, you can teleport from your space to another unoccupied space that you can see within 60 feet, as long as both spaces are in dim light or darkness. After using this ability, you gain advantage on your next melee attack until the end of the turn.",
     "document": "open5e",
     "name": "Dark Passage",
