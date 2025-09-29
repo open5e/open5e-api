@@ -561,6 +561,56 @@
 },
 {
   "fields": {
+    "desc": "Starting at 10th level, you can not only resist certain enchantments but also turn them back against your foes. You gain immunity to the charmed condition. Any time a creature casts a spell or uses an ability that would charm you, you can use a reaction to attempt a counter charm. The creature that targeted you must make a Wisdom saving throw versus your warlock spell save DC. On a failure, the creature becomes charmed by you for 1 minute, but the effect ends if they take any damage.",
+    "document": "open5e",
+    "name": "Counter Enchantment",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_counter-enchantment"
+},
+{
+  "fields": {
+    "desc": "Beginning at 1st level, you are able to take on a fey aspect that can both enchant and terrify. You may use an action to force all creatures within a 10-foot cube that originates from you to make a Wisdom saving throw using your warlock spell save DC. Until the end of your next turn, you can choose for all the creatures that fail their saving throw to become either charmed by you or frightened of you.\n\nAfter using this feature, you cannot use it again until after finishing a short or long rest.",
+    "document": "open5e",
+    "name": "Courtier’s Aspect",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_courtiers-aspect"
+},
+{
+  "fields": {
+    "desc": "The Ancient Fey Court lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.\n\n**Ancient Fey Court Expanded Spells (table)**\n\n| Spell Level | Spells                               |\r\n|-------------|----------------------------------|\r\n| 1st         | faerie fire, sleep                   |\r\n| 2nd         | calm emotions, phantasmal force      |\r\n| 3rd         | blink, plant growth                  |\r\n| 4th         | dominate beast, greater invisibility |\r\n| 5th         | dominate person, seeming             |",
+    "document": "open5e",
+    "name": "Expanded Spell List",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_expanded-spell-list"
+},
+{
+  "fields": {
+    "desc": "At 6th level, you can seemingly disappear after an enemy hits you. You can use your reaction after you suffer damage to teleport to an unoccupied space that you can see within 60 feet. When you appear in the new space, you are invisible and remain so until you attack, cast a spell, or until the beginning of your next turn.\n\nAfter using this feature, you cannot use it again until after finishing a short or long rest.",
+    "document": "open5e",
+    "name": "Shroud of Mists",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_shroud-of-mists"
+},
+{
+  "fields": {
+    "desc": "Beginning at 14th level, you can expertly weave fey magic to trap a creature in a waking dream. You can use an action to target any creature up to 60 feet from you that you can see, and that creature makes a Wisdom saving throw versus your warlock spell save DC. If the target fails the saving throw, you choose whether to make it charmed by you or frightened you while you maintain concentration for up to 1 minute or until the creature takes damage. During this time, the target cannot see or hear any creatures other than you, and it perceives its surroundings as an illusory realm that you control.\n\nAfter using this feature, you cannot use it again until after finishing a short or long rest.",
+    "document": "open5e",
+    "name": "Waking Dream",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_waking-dream"
+},
+{
+  "fields": {
     "desc": "Starting at 6th level, you can use shadows to instantly transport yourself a short distance via the plane of shadows. As a bonus action, you can teleport from your space to another unoccupied space that you can see within 60 feet, as long as both spaces are in dim light or darkness. After using this ability, you gain advantage on your next melee attack until the end of the turn.",
     "document": "open5e",
     "name": "Dark Passage",
