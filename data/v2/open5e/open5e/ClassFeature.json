@@ -558,5 +558,45 @@
   },
   "model": "api_v2.classfeature",
   "pk": "open5e_storm-domain_tempests-rebuke"
+},
+{
+  "fields": {
+    "desc": "Starting at 6th level, you can use shadows to instantly transport yourself a short distance via the plane of shadows. As a bonus action, you can teleport from your space to another unoccupied space that you can see within 60 feet, as long as both spaces are in dim light or darkness. After using this ability, you gain advantage on your next melee attack until the end of the turn.",
+    "document": "open5e",
+    "name": "Dark Passage",
+    "parent": "open5e_way-of-shadowdancing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_way-of-shadowdancing_dark-passage"
+},
+{
+  "fields": {
+    "desc": "At 3rd level, you can channel your ki to cast a selection of spells tied to the plane of shadow. You learn the cantrip *minor illusion*. You can also use an action and 2 ki points to cast any of the following spells without the need for material components: *darkness*, *darkvision*, *silence*, and *pass without trace*.",
+    "document": "open5e",
+    "name": "Magic of Shadow",
+    "parent": "open5e_way-of-shadowdancing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_way-of-shadowdancing_magic-of-shadow"
+},
+{
+  "fields": {
+    "desc": "When you reach 17th level, you can make an extra attack against a distracted enemy. If a creature other than you hits a target within 5 feet of you with an attack, you may use a reaction to make a melee attack against the same target.",
+    "document": "open5e",
+    "name": "Shadow Strike",
+    "parent": "open5e_way-of-shadowdancing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_way-of-shadowdancing_shadow-strike"
+},
+{
+  "fields": {
+    "desc": "Starting at 11th level, you can suffuse your presence with the shadows around you and walk unseen. If you are in dim light or darkness, you can use an action and become invisible. You become visible if you are exposed to bright light, or if you cast a spell or make an attack.",
+    "document": "open5e",
+    "name": "Walk Unseen",
+    "parent": "open5e_way-of-shadowdancing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_way-of-shadowdancing_walk-unseen"
 }
 ]
