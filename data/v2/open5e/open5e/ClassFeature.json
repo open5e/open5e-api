@@ -61,6 +61,56 @@
 },
 {
   "fields": {
+    "desc": "Starting at 14th level, your skinchanging powers have become so potent that you can constantly change your appearance. You gain the at will ability to cast the spell *alter self*.",
+    "document": "open5e",
+    "name": "Multitude of Faces",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_multitude-of-faces"
+},
+{
+  "fields": {
+    "desc": "Beginning at 6th level, when you are in beast shape, your attacks are considered magical for determining a target’s immunity or resistance to them.",
+    "document": "open5e",
+    "name": "Nature’s Talon",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_natures-talon"
+},
+{
+  "fields": {
+    "desc": "When you choose this circle at 2nd level, you gain more control over your Wild Shape ability and can use it more effectively in combat. On your turn, you can use the Wild Shape ability as a bonus action instead of as an action. While you are in beast form, you can also expend a spell slot as a bonus action in order to heal the beast shape’s hit points. You can heal 1d8 hit points for each level of the spell slot that you expended in this way.",
+    "document": "open5e",
+    "name": "Resilient Transformation",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_resilient-transformation"
+},
+{
+  "fields": {
+    "desc": "By 10th level, when you use your Wild Shape ability, you may expend an additional use. When you do so, instead of transforming into a beast, you may transform into a CR 5 elemental: choose air, earth, fire, or water.",
+    "document": "open5e",
+    "name": "Shape of the Elements",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_shape-of-the-elements"
+},
+{
+  "fields": {
+    "desc": "Your circle also allows you to transform into more powerful beast forms than other druids. At 2nd level, you can choose a beast with a challenge rating up to 1 when you use your Wild Shape ability, but you must follow the other level limitations for the movement speeds of your beast form. At 3rd level and thereafter, you can choose beasts with a challenge rating of up to one third of your druid level, rounding down.\n\n**Beast Shapes for Circle of the Many (table)**\n\n| Level | Max. CR | Limitations | Example |\r\n|---------|-------------|----------------|--------------|\r\n| 2nd    | 1            | No flying or swimming speed | Brown bear |\r\n| 4th     | 1            | No flying speed | Giant octopus |\r\n| 6th     | 2            | No flying speed | Rhinoceros |\r\n| 8th     | 2            | —               | Giant vampire bat |\r\n| 9th     | 3            | —               | Killer whale |\r\n| 12th   | 4            | —               | Elephant |\r\n| 15th   | 5            | —               | Giant crocodile |\r\n| 18th   | 6            | —               | Mammoth |",
+    "document": "open5e",
+    "name": "Strengthened Transformation",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_strengthened-transformation"
+},
+{
+  "fields": {
     "desc": "At 6th level, you can unleash even more fury in combat. When you use the attack action, you can make two attacks instead of one.",
     "document": "open5e",
     "name": "Battle Fury",
