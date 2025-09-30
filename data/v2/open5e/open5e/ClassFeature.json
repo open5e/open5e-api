@@ -61,6 +61,56 @@
 },
 {
   "fields": {
+    "desc": "Starting at 14th level, your skinchanging powers have become so potent that you can constantly change your appearance. You gain the at will ability to cast the spell *alter self*.",
+    "document": "open5e",
+    "name": "Multitude of Faces",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_multitude-of-faces"
+},
+{
+  "fields": {
+    "desc": "Beginning at 6th level, when you are in beast shape, your attacks are considered magical for determining a target’s immunity or resistance to them.",
+    "document": "open5e",
+    "name": "Nature’s Talon",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_natures-talon"
+},
+{
+  "fields": {
+    "desc": "When you choose this circle at 2nd level, you gain more control over your Wild Shape ability and can use it more effectively in combat. On your turn, you can use the Wild Shape ability as a bonus action instead of as an action. While you are in beast form, you can also expend a spell slot as a bonus action in order to heal the beast shape’s hit points. You can heal 1d8 hit points for each level of the spell slot that you expended in this way.",
+    "document": "open5e",
+    "name": "Resilient Transformation",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_resilient-transformation"
+},
+{
+  "fields": {
+    "desc": "By 10th level, when you use your Wild Shape ability, you may expend an additional use. When you do so, instead of transforming into a beast, you may transform into a CR 5 elemental: choose air, earth, fire, or water.",
+    "document": "open5e",
+    "name": "Shape of the Elements",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_shape-of-the-elements"
+},
+{
+  "fields": {
+    "desc": "Your circle also allows you to transform into more powerful beast forms than other druids. At 2nd level, you can choose a beast with a challenge rating up to 1 when you use your Wild Shape ability, but you must follow the other level limitations for the movement speeds of your beast form. At 3rd level and thereafter, you can choose beasts with a challenge rating of up to one third of your druid level, rounding down.\n\n**Beast Shapes for Circle of the Many (table)**\n\n| Level | Max. CR | Limitations | Example |\r\n|---------|-------------|----------------|--------------|\r\n| 2nd    | 1            | No flying or swimming speed | Brown bear |\r\n| 4th     | 1            | No flying speed | Giant octopus |\r\n| 6th     | 2            | No flying speed | Rhinoceros |\r\n| 8th     | 2            | —               | Giant vampire bat |\r\n| 9th     | 3            | —               | Killer whale |\r\n| 12th   | 4            | —               | Elephant |\r\n| 15th   | 5            | —               | Giant crocodile |\r\n| 18th   | 6            | —               | Mammoth |",
+    "document": "open5e",
+    "name": "Strengthened Transformation",
+    "parent": "open5e_circle-of-the-many"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_circle-of-the-many_strengthened-transformation"
+},
+{
+  "fields": {
     "desc": "At 6th level, you can unleash even more fury in combat. When you use the attack action, you can make two attacks instead of one.",
     "document": "open5e",
     "name": "Battle Fury",
@@ -101,7 +151,7 @@
 },
 {
   "fields": {
-    "desc": "When you choose this domain at 1st level, you gain the martial weapon proficiency.\n\n#### Death’s Cut\n\nYour connection to death means that your necromantic powers can cut through more foes. You learn an additional cantrip of the necromancy school from any class spell list. When you cast any necromancy cantrip that targets a single creature, you can target a second creature within the spell’s range if it is within 5 feet of the first target.\n\n#### Channel Divinity: Killing Touch\n\nBeginning at 2nd level, when one of your melee attacks hit a creature, you can make use of your Channel Divinity to add necrotic damage equal to your cleric level times two, plus 5.\n\n#### Death Comes for All\n\nJust as death comes for all creatures, at 6th level your deathly powers affect even those who could normally withstand them. You ignore a creature’s necrotic resistance when you deal damage via spells or your Channel Divinity.",
+    "desc": "When you choose this domain at 1st level, you gain the martial weapon proficiency.",
     "document": "open5e",
     "name": "Bonus Proficiency",
     "parent": "open5e_demise-domain"
@@ -111,13 +161,63 @@
 },
 {
   "fields": {
-    "desc": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 necrotic damage to the target. When you reach 14th level, the extra damage increases to 2d8.\n\n#### Improved Death’s Cut\n\nBeginning at 17th level, your Death’s Cut feature can apply to spells of the necromancy school of up to 5th-level in addition to cantrips. However, you must double the amount of material components used if the spell calls for them.",
+    "desc": "Beginning at 2nd level, when one of your melee attacks hit a creature, you can make use of your Channel Divinity to add necrotic damage equal to your cleric level times two, plus 5.",
+    "document": "open5e",
+    "name": "Channel Divinity: Killing Touch",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_channel-divinity-killing-touch"
+},
+{
+  "fields": {
+    "desc": "Just as death comes for all creatures, at 6th level your deathly powers affect even those who could normally withstand them. You ignore a creature’s necrotic resistance when you deal damage via spells or your Channel Divinity.",
+    "document": "open5e",
+    "name": "Death Comes for All",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_death-comes-for-all"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                                  |\r\n|--------------|-----------------------------------------|\r\n| 1st          | false life, ray of sickness             |\r\n| 3rd          | blindness/deafness, ray of enfeeblement |\r\n| 5th          | animate dead, vampiric touch            |\r\n| 7th          | blight, death ward                      |\r\n| 9th          | antilife shell, cloudkill               |",
+    "document": "open5e",
+    "name": "Death Domain Spells (table)",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_death-domain-spells-table"
+},
+{
+  "fields": {
+    "desc": "Your connection to death means that your necromantic powers can cut through more foes. You learn an additional cantrip of the necromancy school from any class spell list. When you cast any necromancy cantrip that targets a single creature, you can target a second creature within the spell’s range if it is within 5 feet of the first target.",
+    "document": "open5e",
+    "name": "Death’s Cut",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_deaths-cut"
+},
+{
+  "fields": {
+    "desc": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 necrotic damage to the target. When you reach 14th level, the extra damage increases to 2d8.",
     "document": "open5e",
     "name": "Divine Strike",
     "parent": "open5e_demise-domain"
   },
   "model": "api_v2.classfeature",
   "pk": "open5e_demise-domain_divine-strike"
+},
+{
+  "fields": {
+    "desc": "Beginning at 17th level, your Death’s Cut feature can apply to spells of the necromancy school of up to 5th-level in addition to cantrips. However, you must double the amount of material components used if the spell calls for them.",
+    "document": "open5e",
+    "name": "Improved Death’s Cut",
+    "parent": "open5e_demise-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_demise-domain_improved-deaths-cut"
 },
 {
   "fields": {
@@ -168,6 +268,66 @@
   },
   "model": "api_v2.classfeature",
   "pk": "open5e_eldritch-trickster_spellcasting"
+},
+{
+  "fields": {
+    "desc": "Once you reach 2nd level, you gain the power to create an illusory double of yourself with the Channel Divinity class feature. You may use your action to manifest the illusion in an unoccupied space visible to you and within 30 feet of yourself. You must concentrate to maintain the illusion as if it were a spell, and you can do so for up to 1 minute. On your turn, you can use a bonus action to move up to 30 feet, but it must remain in your view and cannot move more than 120 feet away from you.\n\nWhile you maintain the illusion, when you cast a spell, you can use the position of the illusion rather than your own for determining range, area of effect, and line of sight. However, you cannot actually “see” through the illusion’s eyes, so you must rely on your own vision if the spell requires you to see a target or space.\n\nYour illusion can disorient foes, so you gain advantage on attack rolls against any creature that can see the illusion if both you and the illusion are within 5 feet of the creature.",
+    "document": "open5e",
+    "name": "Channel Divinity: Double Trouble",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_channel-divinity-double-trouble"
+},
+{
+  "fields": {
+    "desc": "Beginning at 6th level, with your Channel Divinity feature, you can use an action to become invisible. This invisibility lasts until the end of your next turn, or if you cast a spell or attack.",
+    "document": "open5e",
+    "name": "Channel Divinity: Walk Unseen",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_channel-divinity-walk-unseen"
+},
+{
+  "fields": {
+    "desc": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level, the extra damage increases to 2d8.",
+    "document": "open5e",
+    "name": "Divine Strike",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_divine-strike"
+},
+{
+  "fields": {
+    "desc": "Starting at 17th level, your Double Trouble feature becomes more potent. Instead of one double, you can create up to four, and you can move as many of them as you like on your turn with a bonus action following the rules outlined in that feature.",
+    "document": "open5e",
+    "name": "Double Trouble Doubled",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_double-trouble-doubled"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                           |\r\n|--------------|----------------------------------|\r\n| 1st          | charm person, disguise self      |\r\n| 3rd          | mirror image, pass without trace |\r\n| 5th          | blink, dispel magic              |\r\n| 7th          | dimension door, polymorph        |\r\n| 9th          | dominate person, modify memory   |",
+    "document": "open5e",
+    "name": "Mischeif Domain Spells (table)",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_mischeif-domain-spells-table"
+},
+{
+  "fields": {
+    "desc": "At 1st level, when you choose this domain, you can endow others with the power to make mischief. As an action, you may touch a willing creature, and that creature gains advantage when making Dexterity (Stealth) checks for the next hour. The effect ends early if you use the feature on a different creature. You may not use this feature on yourself.",
+    "document": "open5e",
+    "name": "Spreader of Mischief",
+    "parent": "open5e_mischief-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_mischief-domain_spreader-of-mischief"
 },
 {
   "fields": {
@@ -231,13 +391,53 @@
 },
 {
   "fields": {
-    "desc": "Starting at 2nd level when you choose this school, you only need to spend half as much time and gold as normal in order to copy a spell into your spellbook if the spell is from the divination school.\n\n#### Premonition\n\nAlso at 2nd level, you begin to see in your dreams brief images of events yet to unfold. After finishing a long rest, you can make two d20 rolls and keep track of the results for later. Any time before the next time you complete a long rest, when you or a creature visible to you is about to make an ability check, attack roll, or saving throw, you can choose to stop the roll from happening and instead use one of the results from your premonition.\n\nYou can only use this feature once per turn, and after you have used a result from your premonition, you cannot use it again. Any result not used before your next long rest are lost as false premonitions and cannot be used either.\n\n#### Soothing Savant\n\nStarting at 6th level, you are so skilled at soothsaying that you gain more spellcasting power when you use your divinations. Any time you use a spell slot to cast a divination spell of at least 2nd level, you regain one of your spell slots that you’ve expended for the day. A spell slot regained in this way must be lower than 6th level as well as lower than the spell level you used to activate the feature.\n\n#### Extrasensory Perception\n\nBeginning at 10th level, you can extend your senses beyond their normal capabilities. At any time, you may choose one of the following options and gain the associated benefit until you take a short or a long rest or are incapacitated. You can only use this feature once per short or long rest.\n\n***Ether Sight.*** You can see creatures and objects on the Ethereal Plane up to 60 feet away.\n\n***Script Sight.*** You can comprehend writing in any language as if it were written in your native tongue.\n\n***Shadow Sight.*** You get darkvision with a range up to 60 feet, or increase the range of your darkvision to 60 feet if you already have it.\n\n***Unseen Sight.*** You gain the power to see invisible creatures and objects as if they were visible at a range of 10 feet within your line of sight.\n\n#### Premonition Addition\n\nBeginning at 14th level, when you use your Premonition feature, you may roll and record the results of three d20s as your resting hours fill with further visions.",
+    "desc": "Starting at 2nd level when you choose this school, you only need to spend half as much time and gold as normal in order to copy a spell into your spellbook if the spell is from the divination school.",
     "document": "open5e",
     "name": "Expert Diviner",
     "parent": "open5e_school-of-divining-and-soothsaying"
   },
   "model": "api_v2.classfeature",
   "pk": "open5e_school-of-divining-and-soothsaying_expert-diviner"
+},
+{
+  "fields": {
+    "desc": "Beginning at 10th level, you can extend your senses beyond their normal capabilities. At any time, you may choose one of the following options and gain the associated benefit until you take a short or a long rest or are incapacitated. You can only use this feature once per short or long rest.\n\n***Ether Sight.*** You can see creatures and objects on the Ethereal Plane up to 60 feet away.\n\n***Script Sight.*** You can comprehend writing in any language as if it were written in your native tongue.\n\n***Shadow Sight.*** You get darkvision with a range up to 60 feet, or increase the range of your darkvision to 60 feet if you already have it.\n\n***Unseen Sight.*** You gain the power to see invisible creatures and objects as if they were visible at a range of 10 feet within your line of sight.",
+    "document": "open5e",
+    "name": "Extrasensory Perception",
+    "parent": "open5e_school-of-divining-and-soothsaying"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-divining-and-soothsaying_extrasensory-perception"
+},
+{
+  "fields": {
+    "desc": "Also at 2nd level, you begin to see in your dreams brief images of events yet to unfold. After finishing a long rest, you can make two d20 rolls and keep track of the results for later. Any time before the next time you complete a long rest, when you or a creature visible to you is about to make an ability check, attack roll, or saving throw, you can choose to stop the roll from happening and instead use one of the results from your premonition.\n\nYou can only use this feature once per turn, and after you have used a result from your premonition, you cannot use it again. Any result not used before your next long rest are lost as false premonitions and cannot be used either.",
+    "document": "open5e",
+    "name": "Premonition",
+    "parent": "open5e_school-of-divining-and-soothsaying"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-divining-and-soothsaying_premonition"
+},
+{
+  "fields": {
+    "desc": "Beginning at 14th level, when you use your Premonition feature, you may roll and record the results of three d20s as your resting hours fill with further visions.",
+    "document": "open5e",
+    "name": "Premonition Addition",
+    "parent": "open5e_school-of-divining-and-soothsaying"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-divining-and-soothsaying_premonition_addition"
+},
+{
+  "fields": {
+    "desc": "Starting at 6th level, you are so skilled at soothsaying that you gain more spellcasting power when you use your divinations. Any time you use a spell slot to cast a divination spell of at least 2nd level, you regain one of your spell slots that you’ve expended for the day. A spell slot regained in this way must be lower than 6th level as well as lower than the spell level you used to activate the feature.",
+    "document": "open5e",
+    "name": "Soothsaying Savant",
+    "parent": "open5e_school-of-divining-and-soothsaying"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-divining-and-soothsaying_soothsaying-savant"
 },
 {
   "fields": {
@@ -341,6 +541,16 @@
 },
 {
   "fields": {
+    "desc": "Cleric Level | Spells                               |\r\n|———————|————————————————|\r\n| 1st          | fog cloud, thunderwave          |\r\n| 3rd          | gust of wind, shatter           |\r\n| 5th          | call lightning, sleet storm     |\r\n| 7th          | control water, ice storm        |\r\n| 9th          | destructive wave, insect plague |",
+    "document": "open5e",
+    "name": "Storm Domain Spells (table)",
+    "parent": "open5e_storm-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_storm-domain_storm-domain-spells-table"
+},
+{
+  "fields": {
     "desc": "Also starting at 1st level, you can strike back at your adversaries with thunder and lightning. If a creature hits you with an attack, you can use your reaction to target it with this ability. The creature must be within 5 feet of you, and you must be able to see it. The creature must make a Dexterity saving throw, taking 2d8 damage on a failure. On a success, the creature takes only half damage. You may choose to deal either lightning or thunder damage with this ability.\n\nYou may use this feature a number of times equal to your Wisdom modifier (at least once). When you finish a long rest, you regain your expended uses.",
     "document": "open5e",
     "name": "Tempest’s Rebuke",
@@ -348,5 +558,195 @@
   },
   "model": "api_v2.classfeature",
   "pk": "open5e_storm-domain_tempests-rebuke"
+},
+{
+  "fields": {
+    "desc": "Starting at 10th level, you can not only resist certain enchantments but also turn them back against your foes. You gain immunity to the charmed condition. Any time a creature casts a spell or uses an ability that would charm you, you can use a reaction to attempt a counter charm. The creature that targeted you must make a Wisdom saving throw versus your warlock spell save DC. On a failure, the creature becomes charmed by you for 1 minute, but the effect ends if they take any damage.",
+    "document": "open5e",
+    "name": "Counter Enchantment",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_counter-enchantment"
+},
+{
+  "fields": {
+    "desc": "Beginning at 1st level, you are able to take on a fey aspect that can both enchant and terrify. You may use an action to force all creatures within a 10-foot cube that originates from you to make a Wisdom saving throw using your warlock spell save DC. Until the end of your next turn, you can choose for all the creatures that fail their saving throw to become either charmed by you or frightened of you.\n\nAfter using this feature, you cannot use it again until after finishing a short or long rest.",
+    "document": "open5e",
+    "name": "Courtier’s Aspect",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_courtiers-aspect"
+},
+{
+  "fields": {
+    "desc": "The Ancient Fey Court lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.\n\n**Ancient Fey Court Expanded Spells (table)**\n\n| Spell Level | Spells                               |\r\n|-------------|----------------------------------|\r\n| 1st         | faerie fire, sleep                   |\r\n| 2nd         | calm emotions, phantasmal force      |\r\n| 3rd         | blink, plant growth                  |\r\n| 4th         | dominate beast, greater invisibility |\r\n| 5th         | dominate person, seeming             |",
+    "document": "open5e",
+    "name": "Expanded Spell List",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_expanded-spell-list"
+},
+{
+  "fields": {
+    "desc": "At 6th level, you can seemingly disappear after an enemy hits you. You can use your reaction after you suffer damage to teleport to an unoccupied space that you can see within 60 feet. When you appear in the new space, you are invisible and remain so until you attack, cast a spell, or until the beginning of your next turn.\n\nAfter using this feature, you cannot use it again until after finishing a short or long rest.",
+    "document": "open5e",
+    "name": "Shroud of Mists",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_shroud-of-mists"
+},
+{
+  "fields": {
+    "desc": "Beginning at 14th level, you can expertly weave fey magic to trap a creature in a waking dream. You can use an action to target any creature up to 60 feet from you that you can see, and that creature makes a Wisdom saving throw versus your warlock spell save DC. If the target fails the saving throw, you choose whether to make it charmed by you or frightened you while you maintain concentration for up to 1 minute or until the creature takes damage. During this time, the target cannot see or hear any creatures other than you, and it perceives its surroundings as an illusory realm that you control.\n\nAfter using this feature, you cannot use it again until after finishing a short or long rest.",
+    "document": "open5e",
+    "name": "Waking Dream",
+    "parent": "open5e_the-ancient-fey-court"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-ancient-fey-court_waking-dream"
+},
+{
+  "fields": {
+    "desc": "Starting at 14th level, you gain the ability to flood a creature’s mind with the cosmic presence of your terrible patron. As an action, you can touch a humanoid that is incapacitated, causing it to be charmed by you. You can speak to this thrall telepathically as long as both of you remain on the same plane of existence. The charm has no end duration, but can be negated by a remove curse spell or another power that removes the charmed condition. You relinquish the charm the next time you use this feature.",
+    "document": "open5e",
+    "name": "Cosmic Enthrallment",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_cosmic-enthrallment"
+},
+{
+  "fields": {
+    "desc": "The Great Elder Thing lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.\n\n**Great Elder Thing Expanded Spells (table)**\n\n| Spell Level | Spells                               |\r\n|-------------|----------------------------------|\r\n| 1st         | dissonant whispers, hideous laughter |\r\n| 2nd         | detect thoughts, phantasmal force    |\r\n| 3rd         | clairvoyance, sending                |\r\n| 4th         | dominate beast, black tentacles      |\r\n| 5th         | dominate person, telekinesis         |",
+    "document": "open5e",
+    "name": "Expanded Spell List",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_expanded-spell-list"
+},
+{
+  "fields": {
+    "desc": "Starting at 6th level, you can briefly react with an impossible speed. As a reaction, triggered by an enemy attack roll targeting you, you force the creature to make the roll with disadvantage. If the enemy attack ends up missing, then you gain advantage on the next attack roll you make against that creature until the end of your next turn. You can only use this feature once per short or long rest.",
+    "document": "open5e",
+    "name": "Inhuman Reflex",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_inhuman_reflex"
+},
+{
+  "fields": {
+    "desc": "At 10th level, your thoughts become shielded against others. Your mind cannot be read by magic, telepathy, or other methods without your consent. You also become resistant to the psychic damage type, and if you do suffer psychic damage, you deal the same amount of psychic damage to the creature which dealt it to you.",
+    "document": "open5e",
+    "name": "Mental Barrier",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_mental-barrier"
+},
+{
+  "fields": {
+    "desc": "Beginning at 1st level, you can push your thoughts into other minds, speaking telepathically to a creature within 30 feet as long as you can see that creature. The creature must know some language to hear your projections, but it does not need to speak the same language as you.",
+    "document": "open5e",
+    "name": "Outward Cerebration",
+    "parent": "open5e_the-great-elder-thing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_the-great-elder-thing_outward_cerebration"
+},
+{
+  "fields": {
+    "desc": "Starting at 6th level, you can use shadows to instantly transport yourself a short distance via the plane of shadows. As a bonus action, you can teleport from your space to another unoccupied space that you can see within 60 feet, as long as both spaces are in dim light or darkness. After using this ability, you gain advantage on your next melee attack until the end of the turn.",
+    "document": "open5e",
+    "name": "Dark Passage",
+    "parent": "open5e_way-of-shadowdancing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_way-of-shadowdancing_dark-passage"
+},
+{
+  "fields": {
+    "desc": "At 3rd level, you can channel your ki to cast a selection of spells tied to the plane of shadow. You learn the cantrip *minor illusion*. You can also use an action and 2 ki points to cast any of the following spells without the need for material components: *darkness*, *darkvision*, *silence*, and *pass without trace*.",
+    "document": "open5e",
+    "name": "Magic of Shadow",
+    "parent": "open5e_way-of-shadowdancing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_way-of-shadowdancing_magic-of-shadow"
+},
+{
+  "fields": {
+    "desc": "When you reach 17th level, you can make an extra attack against a distracted enemy. If a creature other than you hits a target within 5 feet of you with an attack, you may use a reaction to make a melee attack against the same target.",
+    "document": "open5e",
+    "name": "Shadow Strike",
+    "parent": "open5e_way-of-shadowdancing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_way-of-shadowdancing_shadow-strike"
+},
+{
+  "fields": {
+    "desc": "Starting at 11th level, you can suffuse your presence with the shadows around you and walk unseen. If you are in dim light or darkness, you can use an action and become invisible. You become visible if you are exposed to bright light, or if you cast a spell or make an attack.",
+    "document": "open5e",
+    "name": "Walk Unseen",
+    "parent": "open5e_way-of-shadowdancing"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_way-of-shadowdancing_walk-unseen"
+},
+{
+  "fields": {
+    "desc": "Starting at 14th level, you learn to influence your magic’s unpredictable effects to a small degree. Any time while rolling on the Flood of Chaos table, you may roll twice, choosing either result.",
+    "document": "open5e",
+    "name": "Direct the Flood of Chaos",
+    "parent": "open5e_wyrd-magic"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_wyrd-magic_direct-the-flood-of-chaos"
+},
+{
+  "fields": {
+    "desc": "Beginning at 1st level when you select this bloodline, you sometimes release a flood of magical energy with your spellcasting. The Game Master can tell you to roll 1d20 at any time right after you cast a sorcerer spell that is not a cantrip. If the result is a 1, you then roll 1d100 on the Flood of Chaos table to determine an additional magical effect at random. A Flood of Chaos can happen at most once per turn.\n\nSometimes a Flood of Chaos forces you to cast a spell. Unlike normal spells, you cannot apply any Metamagic to them, and they do not require concentration, instead lasting the full duration.\n\n**Flood of Chaos (table)**\n\n| d100  | Effect |\r\n|---------|----------|\r\n| 01-02 | For the next minute, roll again on this table at the beginning of your turn, but ignore this result if rolled again during this time. |\r\n| 03-04 | You are able to see invisible creatures within your line of sight for the next minute. |\r\n| 05-06 | The Game Master chooses a sentient construct of CR 2 or less to materialize within 5 feet of you in an unoccupied space. The Game Master controls the construct for the next minute, at which point it disappears. |\r\n| 07-08 | You cast a 3rd level fireball with yourself at the center of the area of effect. |\r\n| 09-10 | You cast the spell magic missile as if from a 5th level spell slot. |\r\n| 11-12 | Your total height changes by 1d10 inches, to a minimum of 1 inch tall. Your height decreases on an odd roll and increases on an even roll. |\r\n| 13-14 | You cast the spell confusion with yourself at the center of the area of effect. |\r\n| 15-16 | At the beginning of your turn, you gain up to 5 hit points, not exceeding your maximum. This effect lasts for one minute. |\r\n| 17-18 | A beard of feathers grows from your face. The feathers erupt in all directions if you sneeze. |\r\n| 19-20 | You cast the spell grease with yourself at the center of the area of effect. |\r\n| 21-22 | For the next minute, whenever you cast a spell that requires a saving throw, creatures targeted by the spell have disadvantage on the saving throw. |\r\n| 23-24 | The color of your skin changes to a vivid bluish hue, unless your skin was already blue, in which case it turns a vibrant red. This effect can be ended by a remove curse spell. |\r\n| 25-26 | For the next minute, you gain an additional eye in the center of your forehead. You gain advantage on Wisdom (Perception) checks using sight for the duration. |\r\n| 27-28 | You spells that have a casting time of one action are instead cast as a bonus action for one minute. |\r\n| 29-30 | You choose an unoccupied space within 60 feet and instantly teleport to it. |\r\n| 31-32 | You are magically conveyed to a random spot on the Astral Plane. At the end of your next turn, you return to your previous location, or the nearest unoccupied space. |\r\n| 33-34 | The first damage dealing spell you cast in the next minute deals maximum damage. |\r\n| 35-36 | Your total age changes by 1d10 years, to a minimum of 1 year old. Your age decreases on an odd roll and increases on an even roll. |\r\n| 37-38 | 1d6 flumphs that are frightened of you materialize within a 60 foot radius around you. The Game Master controls the flumphs for the next minute, at which point they disappear. |\r\n| 39-40 | Roll 2d10. You gain that many hit points, not exceeding your maximum. |\r\n| 41-42 | You are transformed into a plant in a tiny pot, you become vulnerable to all damage types and are incapacitated but keep your current hit point total. You change back at the start of your next turn or if you are reduced to 0 hit points. |\r\n| 43-44 | You gain the ability to teleport as a bonus action once per turn. The teleportation range is 20 feet at maximum, and you lose the ability after one minute. |\r\n| 45-46 | You cast the spell levitate with yourself as the target. |\r\n| 47-48 | A unicorn materializes within 5 feet of you in an unoccupied space. The Game Master controls the unicorn for the next minute, at which point it disappears. |\r\n| 49-50 | For one minute, you are unable to speak and emit rosy colored bubbles if you open your mouth. |\r\n| 51-52 | For one minute, you are protected by an incorporeal magic shield which gives you +2 to your AC and makes you immune to the spell magic missile. |\r\n| 53-54 | For 5d6 days, you cannot become intoxicated from alcohol regardless of how much you drink. |\r\n| 55-56 | You lose all of your hair, and it regrows 24 hours later. |\r\n| 57-58 | Any time you touch a flammable object in the next minute that is not worn or carried by another creature, the object immediately ignites. |\r\n| 59-60 | You gain back a spell slot of the lowest level you have expended for the day. |\r\n| 61-62 | You lose control of the volume of your voice for one minute. Whenever you speak, it is at shouting volume. |\r\n| 63-64 | You cast the spell fog cloud with yourself at the center of the area of effect. |\r\n| 65-66 | You deal 4d10 lightning damage to up to three creatures of your choice in a radius of 30 feet from you. |\r\n| 67-68 | You become frightened of whatever creature is closest to you. The effect ends at the end of your next turn. |\r\n| 69-70 | All creatures in a 30 foot radius centered on you become invisible. The effect ends on each creature after a minute, or if the creature attacks or casts a spell. |\r\n| 71-72 | For one minute, you have resistance to all types of damage. |\r\n| 73-74 | The Game Master randomly chooses one creature within a 60 foot radius of you. For the next 1d4 hours, the creature is poisoned. |\r\n| 75-76 | For one minute, you glow luminously. The area within 30 feet of you is considered to be brightly lit, and a creature within 5 feet of you at the end of its turn becomes blinded, regaining its sight at the end of its next turn. |\r\n| 77-78 | You cast the spell polymorph with yourself on the target. You may make a saving throw against your own save DC. On a failure, you became for the duration a 0 CR creature with no attacks such as a sheep. |\r\n| 79-80 | For one minute, an illusion of floating flower petals and flying butterflies appears in a 10 foot radius around you and moves with you. |\r\n| 81-82 | You are able to instantly use an additional action. |\r\n| 83-84 | All creatures in a 30 radius of you, excluding you, suffer 1d10 necrotic damage. However much damage is dealt by this effect, you gain that many hit points, not exceeding your hit point maximum. |\r\n| 85-86 | You cast the spell mirror image with yourself as the target. |\r\n| 87-88 | You cast the spell fly with a random creature as the target. The creature cannot be more than 60 feet away from you. |\r\n| 89-90 | You turn invisible, and though not silenced, other creatures are unable to hear you. The effect ends after one minute, or if you attack or cast any spell. |\r\n| 91-92 | Any time during the next minute, if you are killed, you are affected by the spell reincarnate. |\r\n| 93-94 | You become one size larger, reverting after one minute. |\r\n| 95-96 | All creatures in a 30 foot radius from you, including yourself, become vulnerable to piercing damage. The effect ends after one minute. |\r\n| 97-98 | In the area around you, a quiet and otherworldly melody can be heard for one minute. |\r\n| 99-00 | Your total available sorcery points increases to your maximum daily limit. |",
+    "document": "open5e",
+    "name": "Flood of Chaos",
+    "parent": "open5e_wyrd-magic"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_wyrd-magic_flood-of-chaos"
+},
+{
+  "fields": {
+    "desc": "At 18th level, you can infuse your damage dealing spells with extra energy. Once per turn, after you have rolled damage from a spell, you may choose one die on which you rolled the largest possible value. You can roll this die again, adding both results to the final damage total.",
+    "document": "open5e",
+    "name": "Magical Deluge",
+    "parent": "open5e_wyrd-magic"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_wyrd-magic_magical-deluge"
+},
+{
+  "fields": {
+    "desc": "At 6th level, you can subtly manipulate another creature’s luck for good or ill. When you see another creature make an ability check, attack roll, or saving throw, you can use 2 sorcery points as a reaction to roll 1d4. You choose to either add the result to or subtract it from the creature’s roll, doing so after the roll has been made but before any effects occur resulting from the roll.",
+    "document": "open5e",
+    "name": "Tip the Scales of Fate",
+    "parent": "open5e_wyrd-magic"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_wyrd-magic_tip-the-scales-of-fate"
+},
+{
+  "fields": {
+    "desc": "Also beginning at 1st level, you can weave the endless possibilities of fate in order to give yourself advantage on a single ability check, attack roll, or saving throw. After you use this feature, you cannot do so again until after you finish a long rest. However, you gain use of the feature immediately if the Game Master has you roll on the Flood of Chaos table for casting a 1st level or higher sorcerer spell.",
+    "document": "open5e",
+    "name": "Wyrd Weaver",
+    "parent": "open5e_wyrd-magic"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_wyrd-magic_wyrd-weaver"
 }
 ]

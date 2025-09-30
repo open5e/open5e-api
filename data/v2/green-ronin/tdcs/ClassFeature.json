@@ -11,6 +11,16 @@
 },
 {
   "fields": {
+    "desc": "Cleric Level | Spells                                | \r\n |--------------|-------------------------------------------| \r\n | 1st          | *sleep*, *ray of sickness*                | \r\n | 3rd          | *ray of enfeeblement*, *crown of madness* | \r\n | 5th          | *haste*, *slow*                           | \r\n | 7th          | *blight*, *stoneskin*                     | \r\n | 9th          | *dominate person*, *hold monster*         |",
+    "document": "tdcs",
+    "name": "Blood Domain Spells (table)",
+    "parent": "tdcs_blood-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "tdcs_blood-domain_blood-domain-spells-table"
+},
+{
+  "fields": {
     "desc": "At 1st Level, you gain proficiency with martial weapons.",
     "document": "tdcs",
     "name": "Bonus Proficiencies",
@@ -31,7 +41,7 @@
 },
 {
   "fields": {
-    "desc": "Starting at 6th level, you can use your Channel Divinity to focus on a sample of blood from a creature that is at least 2 ounces, and that has been spilt no longer than a week ago. As an action, you can focus on the blood of the creature to form a bond and gain information about their current circumstances. You know their approximate distance and direction from you, as well as their general state of health, as long as they are within 10 miles of you. You can maintain Concentration on this bond for up to 1 hour.\nDuring your bond, you can spend an action to attempt to connect with the bonded creature’s senses. The target makes a Constitution saving throw against your spell save DC. If they succeed, the connection is resisted, ending the bond. You suffer 2d6 necrotic damage. Upon a failed saving throw, you can choose to either see through the eyes of or hear through their ears of the target for a number of rounds equal to your Wisdom modifier (minimum of 1). During this time, you are blind or deaf (respectively) with regard to your own senses. Once this connection ends, the Crimson Bond is lost.\n\n **Health State Examples**\n | 100%    | Untouched            | \n | 99%-50% | Injured              | \n | 49%-1%  | Heavily Wounded      | \n | 0%      | Unconscious or Dying | \n | –       | Dead                 |",
+    "desc": "Starting at 6th level, you can use your Channel Divinity to focus on a sample of blood from a creature that is at least 2 ounces, and that has been spilt no longer than a week ago. As an action, you can focus on the blood of the creature to form a bond and gain information about their current circumstances. You know their approximate distance and direction from you, as well as their general state of health, as long as they are within 10 miles of you. You can maintain Concentration on this bond for up to 1 hour.\nDuring your bond, you can spend an action to attempt to connect with the bonded creature’s senses. The target makes a Constitution saving throw against your spell save DC. If they succeed, the connection is resisted, ending the bond. You suffer 2d6 necrotic damage. Upon a failed saving throw, you can choose to either see through the eyes of or hear through their ears of the target for a number of rounds equal to your Wisdom modifier (minimum of 1). During this time, you are blind or deaf (respectively) with regard to your own senses. Once this connection ends, the Crimson Bond is lost.\n\n **Health State Examples**\n\n| 100%    | Untouched            |\r\n| 99%-50% | Injured              |\r\n| 49%-1%  | Heavily Wounded      |\r\n| 0%      | Unconscious or Dying |\r\n| –       | Dead                 |",
     "document": "tdcs",
     "name": "Channel Divinity: Crimson Bond",
     "parent": "tdcs_blood-domain"
