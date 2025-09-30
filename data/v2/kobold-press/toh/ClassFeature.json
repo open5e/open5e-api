@@ -1421,6 +1421,17 @@
 },
 {
   "fields": {
+    "desc": "Cleric Level | Spells                                 |\r\n|--------------|----------------------------------------|\r\n| 1st          | *bloodbound*, *illuminate spoor*       |\r\n| 3rd          | *instant snare*, *mark prey*           |\r\n| 5th          | *going in circles*, *tracer*           |\r\n| 7th          | *heart-seeking arrow*, *hunting stand* |\r\n| 9th          | *harrying hounds*, *maim*              |",
+    "document": "toh",
+    "name": "Hunt Domain Spells",
+    "parent": "toh_hunt-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_hunt-domain_hunt-domain-spells"
+},
+
+{
+  "fields": {
     "desc": "Starting at 6th level, when an ally within 30 feet of you makes a weapon attack roll against a creature you attacked within this round, you can use your reaction to grant that ally advantage on the attack roll.",
     "document": "toh",
     "name": "Pack Hunter",
@@ -1608,6 +1619,16 @@
   },
   "model": "api_v2.classfeature",
   "pk": "toh_mercy-domain_hand-of-grace-and-execution"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                              |\r\n|--------------|-------------------------------------|\r\n| 1st          | *divine favor*, *healing word*      |\r\n| 3rd          | *aid*, *ray of enfeeblement*        |\r\n| 5th          | *bardo*, *revivify*                 |\r\n| 7th          | *death ward*, *sacrificial healing* |\r\n| 9th          | *antilife shell*, *raise dead*      |",
+    "document": "toh",
+    "name": "Mercy Domain Spells",
+    "parent": "toh_mercy-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_mercy-domain_mercy-domain-spells"
 },
 {
   "fields": {
@@ -2401,6 +2422,16 @@
 },
 {
   "fields": {
+    "desc": "You gain domain spells at the cleric levels listed in the Portal Domain Spells table. See the Divine Domain class feature for how domain spells work.\n\n**Portal Domain Spells**\n\n| Cleric Level | Spells                                    |\r\n|--------------|-------------------------------------------|\r\n| 1st          | *adjust position*, *expeditious retreat*  |\r\n| 3rd          | *glyph of shifting*, *misty step*         |\r\n| 5th          | *dimensional shove*, *portal jaunt*       |\r\n| 7th          | *dimension door*, *reposition*            |\r\n| 9th          | *pierce the veil*, *teleportation circle* |",
+    "document": "toh",
+    "name": "Domain Spells",
+    "parent": "toh_portal-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_portal-domain_domain-spells"
+},
+{
+  "fields": {
     "desc": "At 1st level, you learn to forge a bond between yourself and another creature. At the end of a short or long rest, you can touch one willing creature, establishing a magical bond between you. While bonded to a creature, you know the direction to the creature, though not its exact location, as long as you are both on the same plane of existence. As an action, you can teleport the bonded creature to an unoccupied space within 5 feet of you or to the nearest unoccupied space, provided the bonded creature is willing and within a number of miles of you equal to your proficiency bonus. Alternatively, you can teleport yourself to an unoccupied space within 5 feet of the bonded creature.\n  Once you teleport a creature in this way, you can't use this feature again until you finish a long rest. You can have only one bonded creature at a time. If you bond yourself to a new creature, the bond on the previous creature ends. Otherwise, the bond lasts until you die or dismiss it as an action.",
     "document": "toh",
     "name": "Portal Bond",
@@ -2861,6 +2892,16 @@
 },
 {
   "fields": {
+    "desc": "Cleric Level | Spells                                              |\r\n|--------------|-----------------------------------------------------|\r\n| 1st          | *charm person*, *find familiar* (snakes only)       |\r\n| 3rd          | *enthrall*, *protection from poison*                |\r\n| 5th          | *conjure animals* (snakes only), *hypnotic pattern* |\r\n| 7th          | *freedom of movement*, *polymorph* (snakes only)    |\r\n| 9th          | *dominate person*, *mislead*                        |",
+    "document": "toh",
+    "name": "Serpent Domain Spells",
+    "parent": "toh_serpent-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_serpent-domain_serpent-domain-spells"
+},
+{
+  "fields": {
     "desc": "Starting at 6th level, you are immune to the poisoned condition and have resistance to poison damage.",
     "document": "toh",
     "name": "Serpent's Blood",
@@ -2938,6 +2979,16 @@
   },
   "model": "api_v2.classfeature",
   "pk": "toh_shadow-domain_potent-spellcasting"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                                    |\r\n|--------------|-------------------------------------------|\r\n| 1st          | *bane*, *false life*                      |\r\n| 3rd          | *blindness/deafness*, *darkness*          |\r\n| 5th          | *blink*, *fear*                           |\r\n| 7th          | *black tentacles*, *greater invisibility* |\r\n| 9th          | *cone of cold*, *dream*                   |",
+    "document": "toh",
+    "name": "Shadow Domain Spells",
+    "parent": "toh_shadow-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_shadow-domain_shadow-domain-spells"
 },
 {
   "fields": {
@@ -3531,6 +3582,16 @@
 },
 {
   "fields": {
+    "desc": "Cleric Level | Spells  |\r\n|--------------|---------|\r\n| 1st          | *detect poison and disease*, *speak with animals* (vermin only)  |\r\n| 3rd          | *spider climb*, *web*  |\r\n| 5th          | *conjure animals* (vermin only), *fear*  |\r\n| 7th          | *dominate beast* (vermin only), *giant insect*  |\r\n| 9th          | *contagion*, *insect plague*  |",
+    "document": "toh",
+    "name": "Vermin Domain Spells",
+    "parent": "toh_vermin-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_vermin-domain_vermin-domain-spells"
+},
+{
+  "fields": {
     "desc": "At 17th level, you become a natural lycanthrope. You use the statistics of a wererat, though your form can take on insectoid aspects, such as mandibles, compound eyes, or antennae, instead of rat aspects; whichever aspects are most appropriate for your deity. Your alignment doesn't change as a result of this lycanthropy, and you can't spread the disease of lycanthropy.",
     "document": "toh",
     "name": "Verminform Blessing",
@@ -4008,6 +4069,16 @@
   },
   "model": "api_v2.classfeature",
   "pk": "toh_wind-domain_stormshield"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                                                        |\r\n|--------------|---------------------------------------------------------------|\r\n| 1st          | *feather fall*, *thunderwave*                                 |\r\n| 3rd          | *gust of wind*, *misty step*                                  |\r\n| 5th          | *fly*, *wind wall*                                            |\r\n| 7th          | *conjure minor elementals* (air only), *freedom of movement*  |\r\n| 9th          | *cloudkill*, *conjure elemental* (air only)                   |",
+    "document": "toh",
+    "name": "Wind Domain Spells",
+    "parent": "toh_wind-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_wind-domain_wind-domain-spells"
 },
 {
   "fields": {
