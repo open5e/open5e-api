@@ -3061,16 +3061,6 @@
 },
 {
   "fields": {
-    "desc": "You learn three cantrips of your choice from the cleric spell list. You learn another cleric cantrip of your choice at 10th level.\n\n**Soulspy Spellcasting**\n| Rouge Level  | Cantrips Known | Spells Known | 1st | 2nd | 3rd | 4th | \n|--------------|----------------|--------------|-----|-----|-----|-----| \n| 3rd          | 3              | 3              | 2   | -   | -   | -   | \n| 4th          | 3              | 4              | 3   | -   | -   | -   | \n| 5th          | 3              | 4              | 3   | -   | -   | -   | \n| 6th          | 3              | 4              | 3   | -   | -   | -   | \n| 7th          | 3              | 5              | 4   | 2   | -   | -   | \n| 8th          | 3              | 6              | 4   | 2   | -   | -   | \n| 9th          | 3              | 6              | 4   | 2   | -   | -   | \n| 10th         | 4              | 7              | 4   | 3   | -   | -   | \n| 11th         | 4              | 8              | 4   | 3   | -   | -   | \n| 12th         | 4              | 8              | 4   | 3   | -   | -   | \n| 13th         | 4              | 9              | 4   | 3   | 2   | -   | \n| 14th         | 4              | 10             | 4   | 3   | 2   | -   | \n| 15th         | 4              | 10             | 4   | 3   | 2   | -   | \n| 16th         | 4              | 11             | 4   | 3   | 3   | -   | \n| 17th         | 4              | 11             | 4   | 3   | 3   | -   | \n| 18th         | 4              | 11             | 4   | 3   | 3   | -   | \n| 19th         | 4              | 12             | 4   | 3   | 3   | 1   | \n| 20th         | 4              | 13             | 4   | 3   | 3   | 1   |",
-    "document": "toh",
-    "name": "Cantrips",
-    "parent": "toh_soulspy"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "toh_soulspy_cantrips"
-},
-{
-  "fields": {
     "desc": "Starting at 3rd level, you can use an action to create a symbol of your deity that hovers within 5 feet of you. The symbol is a Tiny object that is visible but invulnerable and intangible, and it lasts for 1 minute, until you die, or until you dismiss it (no action required). While this symbol is active, you gain the following benefits: \n* Your Divine Symbol functions as a spellcasting focus for your cleric spells. \n* As a bonus action, you can turn the symbol into thieves- tools, which you can use to pick locks, disarm traps, or any other activities that would normally require such tools. While your Divine Symbol is functioning in this way, it loses all other properties listed here. You can change it from thieves- tools back to its symbol form as a bonus action. \n* The symbol sheds bright light in a 10-foot radius and dim light for an additional 10 feet. You can extinguish or restore the light as a bonus action. When you extinguish the symbol-s light, you can also snuff out one candle, torch, or other nonmagical light source within 10 feet of you. \n* When you create this symbol, and as an action on each of your turns while the symbol is active, you can force the symbol to shoot divine energy at a creature you can see within 30 feet of you. Make a ranged spell attack. On a hit, the target takes 1d8 radiant or necrotic damage (your choice). When you reach certain levels in this class, the symbol-s damage increases: at 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
     "document": "toh",
     "name": "Divine Symbol",
@@ -3101,43 +3091,13 @@
 },
 {
   "fields": {
-    "desc": "The Soulspy Spellcasting table shows how many spell slots you have to cast your cleric spells of 1st level and higher. To cast one of these spells, you must expend one of these slots at the spell-s level or higher. You regain all expended spell slots when you finish a long rest.\n\nFor example, if you know the 1st-level spell *inflict wounds* and have a 1st-level and a 2nd-level spell slot available, you can cast *inflict wounds* using either slot.",
-    "document": "toh",
-    "name": "Spell Slots",
-    "parent": "toh_soulspy"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "toh_soulspy_spell-slots"
-},
-{
-  "fields": {
-    "desc": "When you reach 3rd level, you gain the ability to cast spells drawn from the magic of a divine entity.",
+    "desc": "When you reach 3rd level, you gain the ability to cast spells drawn from the magic of a divine entity.\n\n##### Cantrips\nYou learn three cantrips of your choice from the cleric spell list. You learn another cleric cantrip of your choice at 10th level.\n\n**Soulspy Spellcasting**\n\n| Rouge Level  | Cantrips Known | Spells Known | 1st | 2nd | 3rd | 4th |\r\n|--------------|----------------|--------------|-----|-----|-----|-----|\r\n| 3rd          | 3              | 3              | 2   | -   | -   | -   |\r\n| 4th          | 3              | 4              | 3   | -   | -   | -   |\r\n| 5th          | 3              | 4              | 3   | -   | -   | -   |\r\n| 6th          | 3              | 4              | 3   | -   | -   | -   |\r\n| 7th          | 3              | 5              | 4   | 2   | -   | -   |\r\n| 8th          | 3              | 6              | 4   | 2   | -   | -   |\r\n| 9th          | 3              | 6              | 4   | 2   | -   | -   |\r\n| 10th         | 4              | 7              | 4   | 3   | -   | -   |\r\n| 11th         | 4              | 8              | 4   | 3   | -   | -   |\r\n| 12th         | 4              | 8              | 4   | 3   | -   | -   |\r\n| 13th         | 4              | 9              | 4   | 3   | 2   | -   |\r\n| 14th         | 4              | 10             | 4   | 3   | 2   | -   |\r\n| 15th         | 4              | 10             | 4   | 3   | 2   | -   |\r\n| 16th         | 4              | 11             | 4   | 3   | 3   | -   |\r\n| 17th         | 4              | 11             | 4   | 3   | 3   | -   |\r\n| 18th         | 4              | 11             | 4   | 3   | 3   | -   |\r\n| 19th         | 4              | 12             | 4   | 3   | 3   | 1   |\r\n| 20th         | 4              | 13             | 4   | 3   | 3   | 1   |\n\n##### Spell Slots\nThe Soulspy Spellcasting table shows how many spell slots you have to cast your cleric spells of 1st level and higher. To cast one of these spells, you must expend one of these slots at the spell-s level or higher. You regain all expended spell slots when you finish a long rest.\n\nFor example, if you know the 1st-level spell *inflict wounds* and have a 1st-level and a 2nd-level spell slot available, you can cast *inflict wounds* using either slot.\n\n##### Spells Known of 1st-Level and Higher\nYou know three 1st-level cleric spells of your choice, two of which you must choose from the abjuration and necromancy spells on the cleric spell list. The Spells Known column of the Soulspy Spellcasting table shows when you learn more cleric spells of 1st level or higher. Each of these spells must be an abjuration or necromancy spell and must be of a level for which you have spell slots. The spells you learn at 8th, 14th, and 20th level can be from any school of magic.\n  When you gain a level in this class, you can choose one of the cleric spells you know and replace it with another spell from the cleric spell list. The new spell must be of a level for which you have spell slots, and it must be an abjuration or necromancy spell, unless you-re replacing the spell you gained at 3rd, 8th, 14th, or 20th level.\n\n##### Spellcasting Ability\nWisdom is your spellcasting ability for your cleric spells. You learn your spells through meditation and prayer to the powerful forces that guide your actions. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.\n\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\n\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier",
     "document": "toh",
     "name": "Spellcasting",
     "parent": "toh_soulspy"
   },
   "model": "api_v2.classfeature",
   "pk": "toh_soulspy_spellcasting"
-},
-{
-  "fields": {
-    "desc": "Wisdom is your spellcasting ability for your cleric spells. You learn your spells through meditation and prayer to the powerful forces that guide your actions. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.\n\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\n\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier",
-    "document": "toh",
-    "name": "Spellcasting Ability",
-    "parent": "toh_soulspy"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "toh_soulspy_spellcasting-ability"
-},
-{
-  "fields": {
-    "desc": "You know three 1st-level cleric spells of your choice, two of which you must choose from the abjuration and necromancy spells on the cleric spell list. The Spells Known column of the Soulspy Spellcasting table shows when you learn more cleric spells of 1st level or higher. Each of these spells must be an abjuration or necromancy spell and must be of a level for which you have spell slots. The spells you learn at 8th, 14th, and 20th level can be from any school of magic.\n  When you gain a level in this class, you can choose one of the cleric spells you know and replace it with another spell from the cleric spell list. The new spell must be of a level for which you have spell slots, and it must be an abjuration or necromancy spell, unless you-re replacing the spell you gained at 3rd, 8th, 14th, or 20th level.",
-    "document": "toh",
-    "name": "Spells Known of 1st-Level and Higher",
-    "parent": "toh_soulspy"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "toh_soulspy_spells-known-of-1st-level-and-higher"
 },
 {
   "fields": {
