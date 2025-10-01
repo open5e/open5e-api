@@ -491,6 +491,56 @@
 },
 {
   "fields": {
+    "desc": "Beginning at 14th level, you are able to take control of the undead, even if you did not create them with your own magic. You can use your action to target an undead creature within 60 feet of you that you can see. If the target fails a Charisma saving throw versus your wizard spell save DC, its attitude towards you becomes friendly and it obeys any commands you issue it until the next time you use this feature. If the target succeeds its saving throw, it becomes permanently immune to this effect.\n\nIf the undead creature’s Intelligence score is 8 or higher, it makes the saving throw to resist control with advantage. If its Intelligence score is 12 or higher and it fails its first saving throw, it can repeat the save to break free once every hour it remains under your control.",
+    "document": "open5e",
+    "name": "Control Undead",
+    "parent": "open5e_school-of-necrotic-arts"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-necrotic-arts_control-undead"
+},
+{
+  "fields": {
+    "desc": "Already at 2nd level, you become adept at harvesting the animus from living beings killed by your spells. Up to once per turn, when you use a spell of 1st level or higher to kill at least one creature, you may regain lost hit points up to twice the level of the spell used. If the spell in question belongs to the necromancy school, you may instead regain hit points up to three times the level of the spell. This ability is not triggered by killing creatures without a life force, namely constructs and the undead.",
+    "document": "open5e",
+    "name": "Dark Reaper",
+    "parent": "open5e_school-of-necrotic-arts"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-necrotic-arts_dark-reaper"
+},
+{
+  "fields": {
+    "desc": "Starting at 2nd level when you choose this school, you only need to spend half as much time and gold as normal in order to copy a spell into your spellbook if the spell is from the abjuration school.",
+    "document": "open5e",
+    "name": "Expert Necromancer",
+    "parent": "open5e_school-of-necrotic-arts"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-necrotic-arts_expert-necromancer"
+},
+{
+  "fields": {
+    "desc": "At 10th level, your familiarity with the necrotic arts has hardened you against some of their effects. You gain resistance against necrotic damage, and your hit point maximum can never be reduced.",
+    "document": "open5e",
+    "name": "Necrotic Acclimation",
+    "parent": "open5e_school-of-necrotic-arts"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-necrotic-arts_necrotic-acclimation"
+},
+{
+  "fields": {
+    "desc": "When you reach 6th level, if you do not already know the spell *animate dead*, you add it to your spell book. When you cast this spell, you may target one more pile of bones or corpse than specified by the spell’s description, creating an additional minion of the appropriate type.\n\nIn addition, any undead you create with a spell from the necromancy school gains the following benefits:\n\n* Increase the creature’s hit point maximum by a number equal to your wizard class levels.\n* When making weapon damage rolls, the creature adds your proficiency bonus to the total.",
+    "document": "open5e",
+    "name": "Undead Minions",
+    "parent": "open5e_school-of-necrotic-arts"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-necrotic-arts_undead-minions"
+},
+{
+  "fields": {
     "desc": "When you choose this domain at 1st level, you gain proficiency with heavy armor as well as with martial weapons.",
     "document": "open5e",
     "name": "Bonus Proficiency",
