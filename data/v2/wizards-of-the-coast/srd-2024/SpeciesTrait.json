@@ -328,5 +328,71 @@
   },
   "model": "api_v2.speciestrait",
   "pk": "srd-2024_goliath_powerful-build"
+},
+{
+  "fields": {
+    "desc": "Small (about 2–3 feet tall) ",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_halfling",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_halfling",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_speed"
+},
+{
+  "fields": {
+    "desc": "You have Advantage on saving throws you make to avoid or end the Frightened condition.",
+    "name": "Brave",
+    "order": 3,
+    "parent": "srd-2024_halfling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_brave"
+},
+{
+  "fields": {
+    "desc": "You can move through the space of any creature that is a size larger than you, but you can't stop in the same space.",
+    "name": "Halfling Nimbleness",
+    "order": 4,
+    "parent": "srd-2024_halfling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_halfling-nimbleness"
+},
+{
+  "fields": {
+    "desc": "When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.",
+    "name": "Luck",
+    "order": 5,
+    "parent": "srd-2024_halfling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_luck"
+},
+{
+  "fields": {
+    "desc": "You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you.",
+    "name": "Naturally Stealthy",
+    "order": 6,
+    "parent": "srd-2024_halfling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_naturally-stealthy"
 }
 ]
