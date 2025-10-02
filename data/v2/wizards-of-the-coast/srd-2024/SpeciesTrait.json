@@ -449,5 +449,60 @@
   },
   "model": "api_v2.speciestrait",
   "pk": "srd-2024_human_versatile"
+},
+{
+  "fields": {
+    "desc": "Medium (about 6–7 feet tall)",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_orc",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_orc",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_speed"
+},
+{
+  "fields": {
+    "desc": "You can take the Dash action as a Bonus Action. When you do so, you gain a number of Temporary Hit Points equal to your Proficiency Bonus.\n\nYou can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Short or Long Rest.",
+    "name": "Adrenaline Rush",
+    "order": 3,
+    "parent": "srd-2024_orc",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_adrenaline-rush"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 120 feet.",
+    "name": "Darkvision",
+    "order": 4,
+    "parent": "srd-2024_orc",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_darkvision"
+},
+{
+  "fields": {
+    "desc": "When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 Hit Point instead. Once you use this trait, you can't do so again until you finish a Long Rest.",
+    "name": "Relentless Endurance",
+    "order": 5,
+    "parent": "srd-2024_orc",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_relentless-endurance"
 }
 ]
