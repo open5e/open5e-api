@@ -1,0 +1,79 @@
+[
+{
+  "fields": {
+    "desc": "Medium (about 5–7 feet tall)",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_dragonborn",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_dragonborn",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_speed"
+},
+{
+  "fields": {
+    "desc": "Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and Damage Resistance traits as well as your appearance.\n\nTable: Draconic Ancestors\n\n| Dragon | Damage Type |\n|---|---|\n| Black | Acid |\n| Blue | Lightning |\n| Brass |Fire |\n| Bronze | Lightning |\n| Copper | Acid|\n|Gold|Fire|\n|Green|Poison|\n|Red|Fire|\n|Silver|Cold|\n|White|Cold|",
+    "name": "Draconic Ancestry",
+    "order": 3,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_draconic-ancestry"
+},
+{
+  "fields": {
+    "desc": "When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).\n\nYou can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.",
+    "name": "Breath Weapon",
+    "order": 4,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_breath-weapon"
+},
+{
+  "fields": {
+    "desc": "You have Resistance to the damage type determined by your Draconic Ancestry trait.",
+    "name": "Damage Resistance",
+    "order": 5,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_damage-resistance"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 60 feet",
+    "name": "Darkvision",
+    "order": 6,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_darkvision"
+},
+{
+  "fields": {
+    "desc": "When you reach character level 5, you can channel draconic magic to give yourself temporary flight. As a Bonus Action, you sprout spectral wings on your back that last for 10 minutes or until you retract the wings (no action required) or have the Incapacitated condition. During that time, you have a Fly Speed equal to your Speed. Your wings appear to be made of the same energy as your Breath Weapon. Once you use this trait, you can't use it again until you finish a Long Rest.",
+    "name": "Draconic Flight",
+    "order": 7,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_draconic-flight"
+}
+]
