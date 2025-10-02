@@ -14,6 +14,24 @@ class SpeciesTrait(Modification):
     key = key_field()
     parent = models.ForeignKey('Species', on_delete=models.CASCADE)
 
+    SPECIES_FEATURE_TYPES = [
+        ('ABILITY_MODS', 'ABILITY_MODS'),
+        ('SIZE', 'SIZE'),
+        ('SPEED', 'SPEED'),
+    ]
+
+    type = models.CharField(
+        blank=True,
+        null=True,
+        max_length=16,
+        choices=SPECIES_FEATURE_TYPES,
+    )
+
+    order = models.SmallIntegerField(
+        blank=True,
+        null=True,
+        help_text='The position in the list of features that a feature appears in its source statblock'
+    )
 
 class Species(HasName, HasDescription, FromDocument):
     """
