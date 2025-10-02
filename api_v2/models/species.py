@@ -33,6 +33,9 @@ class SpeciesTrait(Modification):
         help_text='The position in the list of features that a feature appears in its source statblock'
     )
 
+    class Meta:
+        ordering = ['parent', 'order']
+
 class Species(HasName, HasDescription, FromDocument):
     """
     This is the model for a species or sub-species.
