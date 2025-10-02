@@ -75,5 +75,71 @@
   },
   "model": "api_v2.speciestrait",
   "pk": "srd-2024_dragonborn_draconic-flight"
+},
+{
+  "fields": {
+    "desc": "Medium (about 4–5 feet tall) ",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_dwarf",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_dwarf",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_speed"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 120 feet.",
+    "name": "Darkvision",
+    "order": 3,
+    "parent": "srd-2024_dwarf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_darkvision"
+},
+{
+  "fields": {
+    "desc": "You have Resistance to Poison damage. You also have Advantage on saving throws you make to avoid or end the Poisoned condition.",
+    "name": "Dwarven Resilience",
+    "order": 4,
+    "parent": "srd-2024_dwarf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_dwarven-resilience"
+},
+{
+  "fields": {
+    "desc": "Your Hit Point maximum increases by 1, and it increases by 1 again whenever you gain a level.",
+    "name": "Dwarven Toughness",
+    "order": 5,
+    "parent": "srd-2024_dwarf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_dwarven-toughness"
+},
+{
+  "fields": {
+    "desc": "As a Bonus Action, you gain Tremorsense with a range of 60 feet for 10 minutes. You must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked.\n\nYou can use this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.",
+    "name": "Stonecunning",
+    "order": 6,
+    "parent": "srd-2024_dwarf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_stonecunning"
 }
 ]
