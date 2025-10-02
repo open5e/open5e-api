@@ -504,5 +504,60 @@
   },
   "model": "api_v2.speciestrait",
   "pk": "srd-2024_orc_relentless-endurance"
+},
+{
+  "fields": {
+    "desc": "Medium (about 4–7 feet tall) or Small (about 3–4 feet tall), chosen when you select this species",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_tiefling",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_tiefling",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_speed"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 60 feet.",
+    "name": "Darkvision",
+    "order": 3,
+    "parent": "srd-2024_tiefling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_darkvision"
+},
+{
+  "fields": {
+    "desc": "You are the recipient of a legacy that grants you supernatural abilities. Choose a legacy from the Fiendish Legacies table. You gain the level 1 benefit of the chosen legacy.\n\nWhen you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy).\n\n**Table: Fiendish Legacies**\n\n|Legacy|Level 1|Level 3|Level 5|\n|---|---|---|---|\n|Abyssal|You have Resistance to Poison damage. You also know the Poison Spray cantrip.|Ray of Sickness|Hold Person|\n|Chthonic|You have Resistance to Necrotic damage. You also know the Chill Touch cantrip.|False Life|Ray of Enfeeblement|\n|Infernal|You have Resistance to Fire damage. You also know the Fire Bolt cantrip.|Hellish Rebuke|Darkness|",
+    "name": "Fiendish Legacy",
+    "order": 4,
+    "parent": "srd-2024_tiefling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_fiendish-legacy"
+},
+{
+  "fields": {
+    "desc": "You know the *Thaumaturgy* cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy trait.",
+    "name": "Otherworldly Presence",
+    "order": 5,
+    "parent": "srd-2024_tiefling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_otherworldly-presence"
 }
 ]
