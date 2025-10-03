@@ -1421,6 +1421,17 @@
 },
 {
   "fields": {
+    "desc": "Cleric Level | Spells                                 |\r\n|--------------|----------------------------------------|\r\n| 1st          | *bloodbound*, *illuminate spoor*       |\r\n| 3rd          | *instant snare*, *mark prey*           |\r\n| 5th          | *going in circles*, *tracer*           |\r\n| 7th          | *heart-seeking arrow*, *hunting stand* |\r\n| 9th          | *harrying hounds*, *maim*              |",
+    "document": "toh",
+    "name": "Hunt Domain Spells",
+    "parent": "toh_hunt-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_hunt-domain_hunt-domain-spells"
+},
+
+{
+  "fields": {
     "desc": "Starting at 6th level, when an ally within 30 feet of you makes a weapon attack roll against a creature you attacked within this round, you can use your reaction to grant that ally advantage on the attack roll.",
     "document": "toh",
     "name": "Pack Hunter",
@@ -1488,6 +1499,16 @@
   },
   "model": "api_v2.classfeature",
   "pk": "toh_hunter-in-darkness_the-hunter-in-darkness-and-your-pact-boons"
+},
+{
+  "fields": {
+    "desc": "When you choose this archetype at 3rd level, you gain proficiency in the Insight, Nature, or Survival skill (your choice).",
+    "document": "toh",
+    "name": "Bonus Proficiency",
+    "parent": "toh_legionary"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_legionary_bonus-proficiency"
 },
 {
   "fields": {
@@ -1598,6 +1619,16 @@
   },
   "model": "api_v2.classfeature",
   "pk": "toh_mercy-domain_hand-of-grace-and-execution"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                              |\r\n|--------------|-------------------------------------|\r\n| 1st          | *divine favor*, *healing word*      |\r\n| 3rd          | *aid*, *ray of enfeeblement*        |\r\n| 5th          | *bardo*, *revivify*                 |\r\n| 7th          | *death ward*, *sacrificial healing* |\r\n| 9th          | *antilife shell*, *raise dead*      |",
+    "document": "toh",
+    "name": "Mercy Domain Spells",
+    "parent": "toh_mercy-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_mercy-domain_mercy-domain-spells"
 },
 {
   "fields": {
@@ -2391,6 +2422,16 @@
 },
 {
   "fields": {
+    "desc": "You gain domain spells at the cleric levels listed in the Portal Domain Spells table. See the Divine Domain class feature for how domain spells work.\n\n**Portal Domain Spells**\n\n| Cleric Level | Spells                                    |\r\n|--------------|-------------------------------------------|\r\n| 1st          | *adjust position*, *expeditious retreat*  |\r\n| 3rd          | *glyph of shifting*, *misty step*         |\r\n| 5th          | *dimensional shove*, *portal jaunt*       |\r\n| 7th          | *dimension door*, *reposition*            |\r\n| 9th          | *pierce the veil*, *teleportation circle* |",
+    "document": "toh",
+    "name": "Domain Spells",
+    "parent": "toh_portal-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_portal-domain_domain-spells"
+},
+{
+  "fields": {
     "desc": "At 1st level, you learn to forge a bond between yourself and another creature. At the end of a short or long rest, you can touch one willing creature, establishing a magical bond between you. While bonded to a creature, you know the direction to the creature, though not its exact location, as long as you are both on the same plane of existence. As an action, you can teleport the bonded creature to an unoccupied space within 5 feet of you or to the nearest unoccupied space, provided the bonded creature is willing and within a number of miles of you equal to your proficiency bonus. Alternatively, you can teleport yourself to an unoccupied space within 5 feet of the bonded creature.\n  Once you teleport a creature in this way, you can't use this feature again until you finish a long rest. You can have only one bonded creature at a time. If you bond yourself to a new creature, the bond on the previous creature ends. Otherwise, the bond lasts until you die or dismiss it as an action.",
     "document": "toh",
     "name": "Portal Bond",
@@ -2851,6 +2892,16 @@
 },
 {
   "fields": {
+    "desc": "Cleric Level | Spells                                              |\r\n|--------------|-----------------------------------------------------|\r\n| 1st          | *charm person*, *find familiar* (snakes only)       |\r\n| 3rd          | *enthrall*, *protection from poison*                |\r\n| 5th          | *conjure animals* (snakes only), *hypnotic pattern* |\r\n| 7th          | *freedom of movement*, *polymorph* (snakes only)    |\r\n| 9th          | *dominate person*, *mislead*                        |",
+    "document": "toh",
+    "name": "Serpent Domain Spells",
+    "parent": "toh_serpent-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_serpent-domain_serpent-domain-spells"
+},
+{
+  "fields": {
     "desc": "Starting at 6th level, you are immune to the poisoned condition and have resistance to poison damage.",
     "document": "toh",
     "name": "Serpent's Blood",
@@ -2928,6 +2979,16 @@
   },
   "model": "api_v2.classfeature",
   "pk": "toh_shadow-domain_potent-spellcasting"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                                    |\r\n|--------------|-------------------------------------------|\r\n| 1st          | *bane*, *false life*                      |\r\n| 3rd          | *blindness/deafness*, *darkness*          |\r\n| 5th          | *blink*, *fear*                           |\r\n| 7th          | *black tentacles*, *greater invisibility* |\r\n| 9th          | *cone of cold*, *dream*                   |",
+    "document": "toh",
+    "name": "Shadow Domain Spells",
+    "parent": "toh_shadow-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_shadow-domain_shadow-domain-spells"
 },
 {
   "fields": {
@@ -3051,16 +3112,6 @@
 },
 {
   "fields": {
-    "desc": "You learn three cantrips of your choice from the cleric spell list. You learn another cleric cantrip of your choice at 10th level.\n\n**Soulspy Spellcasting**\n| Rouge Level  | Cantrips Known | Spells Known | 1st | 2nd | 3rd | 4th | \n|--------------|----------------|--------------|-----|-----|-----|-----| \n| 3rd          | 3              | 3              | 2   | -   | -   | -   | \n| 4th          | 3              | 4              | 3   | -   | -   | -   | \n| 5th          | 3              | 4              | 3   | -   | -   | -   | \n| 6th          | 3              | 4              | 3   | -   | -   | -   | \n| 7th          | 3              | 5              | 4   | 2   | -   | -   | \n| 8th          | 3              | 6              | 4   | 2   | -   | -   | \n| 9th          | 3              | 6              | 4   | 2   | -   | -   | \n| 10th         | 4              | 7              | 4   | 3   | -   | -   | \n| 11th         | 4              | 8              | 4   | 3   | -   | -   | \n| 12th         | 4              | 8              | 4   | 3   | -   | -   | \n| 13th         | 4              | 9              | 4   | 3   | 2   | -   | \n| 14th         | 4              | 10             | 4   | 3   | 2   | -   | \n| 15th         | 4              | 10             | 4   | 3   | 2   | -   | \n| 16th         | 4              | 11             | 4   | 3   | 3   | -   | \n| 17th         | 4              | 11             | 4   | 3   | 3   | -   | \n| 18th         | 4              | 11             | 4   | 3   | 3   | -   | \n| 19th         | 4              | 12             | 4   | 3   | 3   | 1   | \n| 20th         | 4              | 13             | 4   | 3   | 3   | 1   |",
-    "document": "toh",
-    "name": "Cantrips",
-    "parent": "toh_soulspy"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "toh_soulspy_cantrips"
-},
-{
-  "fields": {
     "desc": "Starting at 3rd level, you can use an action to create a symbol of your deity that hovers within 5 feet of you. The symbol is a Tiny object that is visible but invulnerable and intangible, and it lasts for 1 minute, until you die, or until you dismiss it (no action required). While this symbol is active, you gain the following benefits: \n* Your Divine Symbol functions as a spellcasting focus for your cleric spells. \n* As a bonus action, you can turn the symbol into thieves- tools, which you can use to pick locks, disarm traps, or any other activities that would normally require such tools. While your Divine Symbol is functioning in this way, it loses all other properties listed here. You can change it from thieves- tools back to its symbol form as a bonus action. \n* The symbol sheds bright light in a 10-foot radius and dim light for an additional 10 feet. You can extinguish or restore the light as a bonus action. When you extinguish the symbol-s light, you can also snuff out one candle, torch, or other nonmagical light source within 10 feet of you. \n* When you create this symbol, and as an action on each of your turns while the symbol is active, you can force the symbol to shoot divine energy at a creature you can see within 30 feet of you. Make a ranged spell attack. On a hit, the target takes 1d8 radiant or necrotic damage (your choice). When you reach certain levels in this class, the symbol-s damage increases: at 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
     "document": "toh",
     "name": "Divine Symbol",
@@ -3091,43 +3142,13 @@
 },
 {
   "fields": {
-    "desc": "The Soulspy Spellcasting table shows how many spell slots you have to cast your cleric spells of 1st level and higher. To cast one of these spells, you must expend one of these slots at the spell-s level or higher. You regain all expended spell slots when you finish a long rest.\n\nFor example, if you know the 1st-level spell *inflict wounds* and have a 1st-level and a 2nd-level spell slot available, you can cast *inflict wounds* using either slot.",
-    "document": "toh",
-    "name": "Spell Slots",
-    "parent": "toh_soulspy"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "toh_soulspy_spell-slots"
-},
-{
-  "fields": {
-    "desc": "When you reach 3rd level, you gain the ability to cast spells drawn from the magic of a divine entity.",
+    "desc": "When you reach 3rd level, you gain the ability to cast spells drawn from the magic of a divine entity.\n\n##### Cantrips\nYou learn three cantrips of your choice from the cleric spell list. You learn another cleric cantrip of your choice at 10th level.\n\n**Soulspy Spellcasting**\n\n| Rouge Level  | Cantrips Known | Spells Known | 1st | 2nd | 3rd | 4th |\r\n|--------------|----------------|--------------|-----|-----|-----|-----|\r\n| 3rd          | 3              | 3              | 2   | -   | -   | -   |\r\n| 4th          | 3              | 4              | 3   | -   | -   | -   |\r\n| 5th          | 3              | 4              | 3   | -   | -   | -   |\r\n| 6th          | 3              | 4              | 3   | -   | -   | -   |\r\n| 7th          | 3              | 5              | 4   | 2   | -   | -   |\r\n| 8th          | 3              | 6              | 4   | 2   | -   | -   |\r\n| 9th          | 3              | 6              | 4   | 2   | -   | -   |\r\n| 10th         | 4              | 7              | 4   | 3   | -   | -   |\r\n| 11th         | 4              | 8              | 4   | 3   | -   | -   |\r\n| 12th         | 4              | 8              | 4   | 3   | -   | -   |\r\n| 13th         | 4              | 9              | 4   | 3   | 2   | -   |\r\n| 14th         | 4              | 10             | 4   | 3   | 2   | -   |\r\n| 15th         | 4              | 10             | 4   | 3   | 2   | -   |\r\n| 16th         | 4              | 11             | 4   | 3   | 3   | -   |\r\n| 17th         | 4              | 11             | 4   | 3   | 3   | -   |\r\n| 18th         | 4              | 11             | 4   | 3   | 3   | -   |\r\n| 19th         | 4              | 12             | 4   | 3   | 3   | 1   |\r\n| 20th         | 4              | 13             | 4   | 3   | 3   | 1   |\n\n##### Spell Slots\nThe Soulspy Spellcasting table shows how many spell slots you have to cast your cleric spells of 1st level and higher. To cast one of these spells, you must expend one of these slots at the spell-s level or higher. You regain all expended spell slots when you finish a long rest.\n\nFor example, if you know the 1st-level spell *inflict wounds* and have a 1st-level and a 2nd-level spell slot available, you can cast *inflict wounds* using either slot.\n\n##### Spells Known of 1st-Level and Higher\nYou know three 1st-level cleric spells of your choice, two of which you must choose from the abjuration and necromancy spells on the cleric spell list. The Spells Known column of the Soulspy Spellcasting table shows when you learn more cleric spells of 1st level or higher. Each of these spells must be an abjuration or necromancy spell and must be of a level for which you have spell slots. The spells you learn at 8th, 14th, and 20th level can be from any school of magic.\n  When you gain a level in this class, you can choose one of the cleric spells you know and replace it with another spell from the cleric spell list. The new spell must be of a level for which you have spell slots, and it must be an abjuration or necromancy spell, unless you-re replacing the spell you gained at 3rd, 8th, 14th, or 20th level.\n\n##### Spellcasting Ability\nWisdom is your spellcasting ability for your cleric spells. You learn your spells through meditation and prayer to the powerful forces that guide your actions. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.\n\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\n\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier",
     "document": "toh",
     "name": "Spellcasting",
     "parent": "toh_soulspy"
   },
   "model": "api_v2.classfeature",
   "pk": "toh_soulspy_spellcasting"
-},
-{
-  "fields": {
-    "desc": "Wisdom is your spellcasting ability for your cleric spells. You learn your spells through meditation and prayer to the powerful forces that guide your actions. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.\n\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\n\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier",
-    "document": "toh",
-    "name": "Spellcasting Ability",
-    "parent": "toh_soulspy"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "toh_soulspy_spellcasting-ability"
-},
-{
-  "fields": {
-    "desc": "You know three 1st-level cleric spells of your choice, two of which you must choose from the abjuration and necromancy spells on the cleric spell list. The Spells Known column of the Soulspy Spellcasting table shows when you learn more cleric spells of 1st level or higher. Each of these spells must be an abjuration or necromancy spell and must be of a level for which you have spell slots. The spells you learn at 8th, 14th, and 20th level can be from any school of magic.\n  When you gain a level in this class, you can choose one of the cleric spells you know and replace it with another spell from the cleric spell list. The new spell must be of a level for which you have spell slots, and it must be an abjuration or necromancy spell, unless you-re replacing the spell you gained at 3rd, 8th, 14th, or 20th level.",
-    "document": "toh",
-    "name": "Spells Known of 1st-Level and Higher",
-    "parent": "toh_soulspy"
-  },
-  "model": "api_v2.classfeature",
-  "pk": "toh_soulspy_spells-known-of-1st-level-and-higher"
 },
 {
   "fields": {
@@ -3558,6 +3579,16 @@
   },
   "model": "api_v2.classfeature",
   "pk": "toh_vermin-domain_the-unseen"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells  |\r\n|--------------|---------|\r\n| 1st          | *detect poison and disease*, *speak with animals* (vermin only)  |\r\n| 3rd          | *spider climb*, *web*  |\r\n| 5th          | *conjure animals* (vermin only), *fear*  |\r\n| 7th          | *dominate beast* (vermin only), *giant insect*  |\r\n| 9th          | *contagion*, *insect plague*  |",
+    "document": "toh",
+    "name": "Vermin Domain Spells",
+    "parent": "toh_vermin-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_vermin-domain_vermin-domain-spells"
 },
 {
   "fields": {
@@ -4038,6 +4069,16 @@
   },
   "model": "api_v2.classfeature",
   "pk": "toh_wind-domain_stormshield"
+},
+{
+  "fields": {
+    "desc": "Cleric Level | Spells                                                        |\r\n|--------------|---------------------------------------------------------------|\r\n| 1st          | *feather fall*, *thunderwave*                                 |\r\n| 3rd          | *gust of wind*, *misty step*                                  |\r\n| 5th          | *fly*, *wind wall*                                            |\r\n| 7th          | *conjure minor elementals* (air only), *freedom of movement*  |\r\n| 9th          | *cloudkill*, *conjure elemental* (air only)                   |",
+    "document": "toh",
+    "name": "Wind Domain Spells",
+    "parent": "toh_wind-domain"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "toh_wind-domain_wind-domain-spells"
 },
 {
   "fields": {
