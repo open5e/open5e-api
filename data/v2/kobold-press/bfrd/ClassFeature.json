@@ -1,0 +1,212 @@
+[
+{
+  "fields": {
+    "desc": "When you touch a magic item or some other magic-imbued object, you learn its properties and how to use it, whether it requires attunement to use, and how many charges it has (if any). You learn whether any spells are affecting the item and what they are. If the item was created by a spell, you learn which spell created it.",
+    "document": "bfrd",
+    "name": "Eyes of the Maker",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_eyes-of-the-maker"
+},
+{
+  "fields": {
+    "desc": "You learn how to craft a shard of creation, which is a Tiny magical object with many uses that appears on your person. In its base state, the shard appears as a constantly shifting, fluid-like bundle of plasma.\n\nThe shard vanishes instantly if you are slain or if it is not in your possession for more than 24 consecutive hours. If the shard is destroyed or you lose it, you can perform a 1-hour ritual to create a replacement. This ritual can be performed as part of a short or long rest.\n\nThe shard has a number of charges equal to your INT modifier (minimum of 1), and you regain all expended charges when you finish a long rest. Charges can be spent to activate the following properties.\n\n**Inspire**. When you make an ability check while touching the shard (regardless of its current form), you can spend 1 charge to roll a d6 and add the number rolled to your check result.\n\n**Transform**. While touching the shard, you can use an action to transform it into any type of nonmagical weapon or shield or into any object of Medium size or smaller. The object appears in an unoccupied space within 10 feet of you, but the chosen space must contain a surface or liquid capable of supporting the object. If the object you create is of an appropriate size to be worn or held, you can choose for the object to appear in your hand or on your person. The total value (in gold pieces) of an object created can’t be more than 20 × your mechanist level.\n\nA transformed shard remains in its new form until you die, use an action to return it to its original state, or use an action to transform it again. No matter what shape the shard assumes, those who handle the shard can sense something strange about its nature. The shard can’t be passed off as a typical item for purposes of buying and selling.",
+    "document": "bfrd",
+    "name": "Shard of Creation",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_shard-of-creation"
+},
+{
+  "fields": {
+    "desc": "You gain the ability to channel magical energy into items. To use this ability, you must spend 1 hour focusing on the item that you wish to augment while remaining in physical contact with it (which can be done as part of a short or long rest).\n\nYou gain two augment effects of your choice. Augment effect options are detailed at the end of the class description. At certain mechanist levels, you gain additional augment effects of your choice, as shown in the Augment Effects Known column of the **Mechanist Progression** table.\n\nWhen you use this ability, choose an effect from those you know. Regardless of the effect, an augmented item is considered a magic item while the effect remains active. You can apply these effects to existing magic items, and any bonuses or features granted by an augment effect stack with any properties a magic item already possesses.\n\nUnless specified otherwise, a chosen effect lasts indefinitely, but as an action, you can touch an item to end an ongoing effect that you created. You can have effects active on multiple items, provided you spend the required time focusing on each item individually. However, an item can only bear one effect at a time. Multiple uses of the same effect don’t stack.\n\nThe maximum number of items you can affect with this feature at one time is listed in the Augmented Items column of the **Mechanist Progression** table. If you try to exceed your maximum, you must choose an ongoing effect to end.\n\nYou can also augment your transformed shard of creation, provided its form meets the requirements for the chosen effect. The effect remains with the shard when it transforms as long as the new form remains compatible—if not, the effect immediately ends.",
+    "document": "bfrd",
+    "name": "Augment",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_augment"
+},
+{
+  "fields": {
+    "desc": "Your mechanical expertise allows you to use items more efficiently in the chaos of battle. You can use a bonus action to take the Use an Object action or to perform a weapon option.",
+    "document": "bfrd",
+    "name": "Efficient Action",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_efficient-action"
+},
+{
+  "fields": {
+    "desc": "Choose a subclass that reflects your relationship to your craft, either Metallurgist or Spellwright. Your choice grants you features at 3rd, 7th, 11th, and 15th level.",
+    "document": "bfrd",
+    "name": "Mechanist Subclass",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_mechanist-subclass"
+},
+{
+  "fields": {
+    "desc": "Choose one of the following improvements (ability scores can’t be raised above 20 with this feature):\n\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n Increase one ability score by 1 and select a talent from either the martial or the technical talents list.",
+    "document": "bfrd",
+    "name": "Improvement",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_improvement"
+},
+{
+  "fields": {
+    "desc": "Your physical prowess has grown. On your turn, you can make two attacks when you take the Attack action.",
+    "document": "bfrd",
+    "name": "Multiattack",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_multiattack"
+},
+{
+  "fields": {
+    "desc": "You can now use your Augment feature more rapidly. As a bonus action, you can touch an item and imbue it with a known augment effect of your choice. You remain bound by all other restrictions of the Augment feature, including number of items.\n\nYou can use your Rapid Augment feature a number of times equal to your INT modifier and regain all expended uses when you finish a long rest.",
+    "document": "bfrd",
+    "name": "Rapid Augment",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_rapid-augment"
+},
+{
+  "fields": {
+    "desc": "Your growing insight into the nature of reality allows you greater control over your Shard of Creation feature. You receive the following enhancements to its given properties.\n\n**Inspire**.Your bonus to ability checks is now 1d8 (instead of 1d6).\n\n**Transform**. You can now transform the shard into any Large or smaller tool or nonmagical object. All other restrictions still apply, including the limit on the gold piece value.",
+    "document": "bfrd",
+    "name": "Greater Creation",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_greater-creation"
+},
+{
+  "fields": {
+    "desc": "Your commitment to the mechanist’s path grants you a powerful new ability. Choose one of the following heroic boons:\n\n- **Curse of Unmaking**. As an action, you can make a melee spell attack using your augment attack modifier (see **Augment Effects**) against a creature or item within reach. On a successful hit, the target becomes cursed so that it is vulnerable to all damage. If the target is a creature, it can attempt a CON save against your augment save DC (see **Augment Effects**) each time it takes a new instance of damage, ending the curse on a success. Once you use this feature, you must finish a long rest before you can use it again.\n**Mend the Broken**. As an action, you touch a creature or item and cause it to magically regain a number of hit points equal to 5 × your mechanist level. This effect also repairs any catastrophic damage suffered by the target, such as lost limbs, missing parts, or other harm that would ordinarily be irreparable. If the item doesn’t have a hit point total, your touch restores it to working order as best it can with the pieces available. This feature can’t restore expended charges on magic items or restore magical properties to nonmagical items that were once magical. Once you use this feature, you must finish a long rest before you can use it again.",
+    "document": "bfrd",
+    "name": "Heroic Boon",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_heroic-boon"
+},
+{
+  "fields": {
+    "desc": "As long as you have at least 1 minute of uninterrupted focus on a task, when you make an ability check, treat any d20 roll of 9 or lower as though you rolled a 10.\n\nNormal activity like moving doesn’t interrupt focus, but attacking, taking damage, or participating in anything that requires initiative order does interrupt focus.",
+    "document": "bfrd",
+    "name": "Engineer's Insight",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_engineers-insight"
+},
+{
+  "fields": {
+    "desc": "You can now use your Rapid Augment feature on items you can see within 60 feet of you. (You no longer need to touch them.)\n\nIn addition, if an effect from your Augment feature would typically require you to touch the item to activate its properties, you no longer need to do so as long as the item is within 60 feet of you. You don’t need to see the item to activate its properties in this way.",
+    "document": "bfrd",
+    "name": "Ranged Augment",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_ranged-augment"
+},
+{
+  "fields": {
+    "desc": "When you would take damage from an attack, you can use a reaction to take the Use an Object action.",
+    "document": "bfrd",
+    "name": "Always Prepared",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_always-prepared"
+},
+{
+  "fields": {
+    "desc": "Your growing insight into the nature of reality allows you greater control over your Shard of Creation feature. You receive the following enhancements to its given properties.\n\n**Inspire**. Your bonus to ability checks is now 1d10 (instead of 1d8).\n\n**Transform**. You can now transform the shard into any item— including structures and vehicles—of Huge size or smaller. You are no longer bound by any cost restrictions when choosing a form.",
+    "document": "bfrd",
+    "name": "Perfect Creation",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_perfect-creation"
+},
+{
+  "fields": {
+    "desc": "Your commitment to the mechanist’s path grants you a powerful new ability. You gain the following epic boon:\n\n- **Creative Engine**. You gain a +1 bonus to your saves for each effect from your Augment feature currently active on items within 60 feet of you. If you fail a save while any of those items are within 60 feet of you, you can automatically end one of those effects (your choice) to succeed on the save instead.",
+    "document": "bfrd",
+    "name": "Epic Boon",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_epic-boon"
+},
+{
+  "fields": {
+    "desc": "[Column data]",
+    "document": "bfrd",
+    "name": "Proficiency Bonus",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_proficiency-bonus"
+},
+{
+  "fields": {
+    "desc": "[Column data]",
+    "document": "bfrd",
+    "name": "Augment Effects Known",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_augment-effects-known"
+},
+{
+  "fields": {
+    "desc": "[Column data]",
+    "document": "bfrd",
+    "name": "Augment Effects Known",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_augmented-items"
+},
+{
+  "fields": {
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n\n- **(a)** a martial weapon and a shield or **(b)** two simple weapons\n\n- Light crossbow and 20 bolts\n**(a)** scale mail or **(b)** leather armor\n\nTinker tools and a dungeoneer’s pack",
+    "document": "bfrd",
+    "name": "Starting Equipment",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_equipment"
+},
+{
+  "fields": {
+    "desc": "**Armor:** Light armor, medium armor, shields\n\n**Weapons:** Simple weapons, martial weapons\n\n**Tools:** Tinker tools and two additional tools your choice\n\n**Saving Throws:** CON, INT\n\n**Skills:** Choose two from Arcana, History, Investigation, Perception, and Sleight of Hand",
+    "document": "bfrd",
+    "name": "Proficiencies",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_proficiencies"
+},
+{
+  "fields": {
+    "desc": "This section lists the effects available for mechanists to learn and use with their Augment feature. Each option lists the type of item required for the effect to function and provides a description of how the effect works. Any effects that require an action to activate their properties can be activated with the Use an Object action.\n\nSome effects require you to make an attack roll or require your target to make a save. The attack bonus and save DC for these is calculated as follows:\n\n**Augment save DC** = 8 + your proficiency bonus (PB) + your Intelligence (INT) modifier\n\n**Augment attack modifier** = your proficiency bonus (PB) + your Intelligence (INT) modifier\n\n### Adhesive\n\n*Item Requirement: Large or Smaller Equipment or Object that Isn’t Being Worn or Held*\n\nYou imbue an item with the ability to stick to surfaces. While the item is within 30 feet of you, you can use an action to speak a command word and affix the item to a solid surface it is touching. The chosen surface can’t be part of a creature.\n\nWhile affixed, the item can support up to 1,000 pounds of weight. If additional weight is added, the item detaches from the surface (falling or moving as appropriate).\n\nA creature can spend an action to attempt to remove the affixed item with a STR (Athletics) check. The DC for this check equals 8 + your PB + your INT modifier. If a creature succeeds on this check, the item detaches from the surface.\n\nIf the item isn’t forcefully detached, it remains attached for 24 hours or until you use an action to detach it. If the item is detached by any means, its adhesive properties can’t be activated again until you finish a long rest.\n\n### Collapsible\n\n*Item Requirement: Large or Smaller Item that Isn’t Being Worn, Held, or Fixed in Place*\n\nYou imbue an item with the ability to become smaller. While you touch the item, you can use an action to reduce its size. When you do so, the target is halved in all dimensions, its weight is reduced to 1/8 of normal, and it decreases its size category by one, such as from Medium to Small. The target’s size can’t be reduced further by multiple uses of this feature. As an action, you can touch the target and cause it to return to its original size.\n\n**At Higher Levels**. Once you reach 9th level in the mechanist class, you can affect Huge or smaller items that meet the other requirements.\n\n### Detecting\n\n*Item Requirement: Goggles, Glasses, Spyglass, or Similar Equipment or Object with a Transparent Surface*\n\nYou imbue an item with magical capabilities to enhance perception. While you touch the item, you can use an action to activate one of the listed effects. You must equip, wear, or actively look through the augmented item to gain the benefit of the chosen effect:\n\n- **Darkvision**. You gain darkvision out to a range of 30 feet.\n- **Invisi-Vision**. You can see invisible creatures and items as if they were visible. You are also aware of any creatures within 30 feet of you or if any creatures come within 30 feet of you, regardless of lighting conditions.\n- **Magic Vision**. You gain the benefits of the detect magic spell within 30 feet of you.\n- **X-Ray Vision**. You gain the ability to see through solid material within 30 feet of you. To you, solid items within that radius appear transparent and don’t prevent light from passing through them. The vision can penetrate 1 foot of stone, 1 inch of common metal, or up to 3 feet of wood or dirt. Thicker substances block your vision, as does a thin sheet of lead.\n\nWhile the augmented item is activated, you can use an action to deactivate it or switch the type of vision the item bestows. You can keep the item activated for up to 1 minute, all at once or in several shorter spans, each one using a minimum of 6 seconds (1 round) from the duration. The effect fully recharges when you finish a long rest.\n\n**At Higher Levels**. Once you reach 9th level in the mechanist class, the range of all vision effects increases to 60 feet.\n\n### Empowered\n\n*Item Requirement: Weapon*\n\nYou imbue a weapon with offensive power. The weapon gains a +1 bonus to attack and damage rolls. If it wasn’t already magical, it is now. If it was already magical, this bonus stacks with any existing bonuses.\n\n**At Higher Levels**. Once you reach 9th level in the mechanist class, the attack and damage bonus increases to +2. At 15th level, it becomes +3.\n\n### Illusive\n\n*Item Requirement: Large or Smaller Item*\n\nYou imbue an item with the ability to mask its true appearance. While you touch the target, you can use an action to cause the item to appear as a different item of the same size and general composition. You can’t use this feature to change a target’s overall nature. For instance, a vehicle must always appear as another kind of vehicle, and equipment must appear as some other kind of equipment. Otherwise, the extent of the illusion is up to you.\n\nThe change in appearance doesn't hold up to physical inspection. For example, if you use this effect to make a sharpened sword seem dull, anyone who touched the blade would be harmed as if they touched a fine-edged blade.\n\nTo discern whether an item is disguised, a creature can use its action to inspect the item and must succeed on an INT (Investigation) check against your augment save DC.\n\n**At Higher Levels**. Once you reach 9th level in the mechanist class, you can affect Huge or smaller items.\n\n### Loading\n\n*Item Requirement: Weapon with the Ammunition Property*\n\nYou imbue an item with the ability to conjure magic ammunition. When you wield the weapon, an appropriate piece of ammunition magically appears in place as you attack. Any damage dealt by this ammunition is considered magical.\n\nIf you use this effect on a weapon with the Loading property, you don’t need to spend any time reloading the weapon.\n\n### Phosphorescent\n\n*Item Requirement: Small or Smaller Item that Can Be Worn or Held*\n\nYou imbue an item with the ability to glow. While the item is on your person, you can use an action to cause the item to emit bright light in a 20-foot radius and dim light for an additional 20 feet. When you first activate the item, you can choose whether this light shines normally or whether it can only be seen by a number of creatures of your choice within 30 feet of you. The maximum number of creatures you can include equals your INT modifier. The light can be any color you choose\n\nYou can cause the item to stop emitting light at any time (no action required).\n\n**At Higher Levels**. Once you reach 9th level in the mechanist class, the radius increases to bright light in a 30-foot radius and dim light for an additional 30 feet. You can choose for the bright light to be sunlight.\n\n### Propulsive\n\n*Item Requirement: Armor (not Shields) or Small or Smaller Object that Can Be Worn*\n\nYou imbue an item with the ability to increase the wearer’s speed. While wearing the augmented item, your base movement speed is increased by 5 feet.\n\nIn addition, while you wear the item, you can use an action to move vertically up to 10 feet and remain suspended there for up to 1 minute. You can repeat this action on subsequent turns, rising up to an additional 10 feet each time you do so.\n\nWhile suspended, you can move only by pushing or pulling against a fixed item or surface within reach (such as a wall or ceiling), which allows you to move as if you were climbing. When this effect ends or you choose to end it (no action required), you float gently to the ground if you are still aloft, and you can’t activate this Augment effect again until you finish a long rest.\n\n**At Higher Levels**. Once you reach 9th level in the mechanist class, the movement speed bonus increases to 10 feet. At 15th level, it becomes 20 feet.\n\n### Protean\n\n*Item Requirement: Weapon*\n\nYou imbue a weapon with the ability to change its damage type. When you successfully deal damage with the augmented weapon, you can replace the weapon’s damage type with another type of your choice. Damage altered in this way is always considered magical for purposes of overcoming resistances and immunities.\n\nYou can use this augment effect a number of times equal to your PB and regain all expended uses when you finish a long rest.\n\n### Reactive\n\n*Item Requirement: Large or Smaller Item that Isn’t Being Worn, Held, or Fixed in Place*\n\nYou imbue an item with the ability to detect specific triggers and react in one of several ways. While you touch the item, you can use an action to set or change the item’s trigger and reaction.\n\nYou can set the item to trigger when a creature you specify comes within 30 feet of it. This can be a specific creature you have met, such as “Jon the messenger,” a general visual description, such as “anyone wearing a city watch uniform,” or a creature type, such as “Celestials.” Your GM has final say on what is reasonable for a trigger.\n\nWhen triggered, you instantly become mentally aware that the item has been triggered, and the item can react in one of the following ways. At your GM’s discretion, an item might be able to react in other comparable ways:\n\n**Recording**. The item begins to record everything it can “see” and “hear” within 60 feet of it for the next hour, perceiving as a creature with typical vision or hearing could. After 1 hour, the item ceases to record new information and stores the recording until the item is no longer augmented or until you use an action to set a new trigger or reaction. While a recording is stored, you or any creature of your choosing can touch the item to mentally see and hear anything contained in the recording.\n\n**Sound**. The item emits a sound for up to 1 minute that can be heard to a range of 60 feet (you choose quality and range), such as the sound of ringing bells or a set of bird calls. Alternatively, you can cause it to emit a pre- determined message of 25 words or less in your own voice.\n\n**At Higher Levels**. Once you reach 9th level in the mechanist class, the item can react when a specified creature comes within 60 feet of it.\n\n### Reinforced\n\n*Item Requirement: Item with Hit Points*\n\nYou fortify an item. The target’s hit points and hit point maximum increase by an amount equal to 5 × your mechanist level. If the item is destroyed while this effect is active, the effect ends\n\n### Returning\n\n*Target: Equipment or Object that Can Fit in the Hand and Isn’t Being Worn or Held*\n\nYou imbue an item with the ability to return to your hand. While the augmented item is within 60 feet, you can cause it to instantly teleport into your hand (no action required). You must have at least one hand free for this ability to function.\n\n**At Higher Levels**. Once you reach 9th level in the mechanist class, you can affect an item up to 120 feet away from you. At 15th level, you can affect an item anywhere on the same plane as you.\n\n### Repellant\n\n*Item Requirement: Shield*\n\nYou imbue an item with the ability to repel attackers. When a Large or smaller creature hits you with a melee attack, you can use your reaction to force the target to make a STR save against your augment save DC. On a failure, the creature is pushed 15 feet away from you. If the creature encounters a solid surface (like a wall) before moving the full amount, it takes 1d6 bludgeoning for each 10-foot increment it moved.\n\n**At Higher Levels**. Once you reach 9th level in the mechanist class, a target that fails its save is pushed 30 feet away from you.",
+    "document": "bfrd",
+    "name": "Augmentation Effects",
+    "parent": "bfrd_mechanist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_mechanist_augmentation-effects"
+}
+]
