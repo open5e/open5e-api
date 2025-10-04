@@ -181,7 +181,7 @@
 },
 {
   "fields": {
-    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n\n- **(a)** a martial weapon and a shield or **(b)** two simple weapons\n\n- Light crossbow and 20 bolts\n**(a)** scale mail or **(b)** leather armor\n\nTinker tools and a dungeoneer’s pack",
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n\n- **(a)** a martial weapon and a shield or **(b)** two simple weapons\n- Light crossbow and 20 bolts\n**(a)** scale mail or **(b)** leather armor\nTinker tools and a dungeoneer’s pack",
     "document": "bfrd",
     "name": "Starting Equipment",
     "parent": "bfrd_mechanist"
@@ -208,5 +208,55 @@
   },
   "model": "api_v2.classfeature",
   "pk": "bfrd_mechanist_augmentation-effects"
+},
+{
+  "fields": {
+    "desc": "You gain the following unique effect for your Augment feature. This effect can’t be replaced and doesn’t count against the number of effects that you know, as shown in the Augment Effects Known column of the Mechanist Progression table.\n\n### Absorbing\n\n*Item Requirement: Armor or Shield*\n\nYou empower armor or a shield with the ability to absorb and adapt to different damage types. When you take a single instance of acid, cold, fire, force, lightning, poison, or thunder damage while wearing or wielding the item, you can use your reaction to reduce the damage taken by an amount equal to twice your INT modifier. You then gain resistance to the triggering damage type for 1 minute or until you use this feature to absorb a different damage type.\n\nYou can use this feature a number of times equal to your PB, regaining all expended charges when you finish a long rest.",
+    "document": "bfrd",
+    "name": "Augment: Absorbing",
+    "parent": "bfrd_metallurgist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_metallurgist_augment-absorbing"
+},
+{
+  "fields": {
+    "desc": "You learn to transmute armor into a mystical form. If you spend 1 hour of uninterrupted focus in contact with a nonmagical suit of armor (which can be done as part of a short or long rest), you can transmute that armor into a suit of mystic metal. The transformation lasts until you choose to end it or until you use this feature to transmute a different suit of armor.\n\nAny ongoing effects from your Augment feature on the armor automatically end when the armor reverts to its normal state. If anyone other than you attempts to don the mystic metal, it instantly reverts to its normal state.\n\nOnce transformed, the mystic metal resembles a head-to- toe suit of metallic armor, but you choose its color, style, and other cosmetic details. Regardless of appearance, mystic metal armor is not made of natural materials such as metal or wood. Therefore, it isn’t affected by magic like the heat metal spell or abilities like that of a rust monster. The mystic metal is lightweight and doesn’t hinder movement, and you are considered proficient with it.\n\nYour mystic metal functions as a magic suit of armor with the following properties:\n\n- Each gauntlet of the armor functions as a simple melee weapon with the Light property (which you are proficient with). You can choose whether you use your STR or INT modifier to determine the attack bonus and damage dealt by the gauntlets. On a successful hit, a gauntlet deals 1d6 + your STR or INT modifier (your choice) magical bludgeoning damage.\n- If it is on the same plane as you, you can use a bonus action to summon the armor. When you do so, you choose whether the armor appears in an unoccupied space within 5 feet of you or if it appears on you, fully donned. If you are already wearing armor when you summon the mystic metal armor, it can’t appear on you.\n- While worn, the armor is attached to your body and can’t be removed against your will.\nWhile you wear the armor, your AC equals 13 + your INT modifier.\n\nCreatures who handle or inspect the mystic metal can tell it isn’t a true magic item. Otherwise, it follows the rules of a typical magic item.",
+    "document": "bfrd",
+    "name": "Mystic Metal",
+    "parent": "bfrd_metallurgist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_metallurgist_mystic-metal"
+},
+{
+  "fields": {
+    "desc": "You learn to upgrade the offensive capabilities of your Mystic Metal feature. While wearing the armor, you gain the following benefits:\n\n- When you deal damage with a weapon attack, you deal an additional 1d6 force damage. This extra damage increases at higher levels, becoming 1d8 at 9th level and 1d10 at 15th level.\nWhen you make a weapon attack, you score a critical hit on a roll of 19 or 20.",
+    "document": "bfrd",
+    "name": "Heavy Hitter",
+    "parent": "bfrd_metallurgist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_metallurgist_heavy-hitter"
+},
+{
+  "fields": {
+    "desc": "While wearing the armor from your Mystic Metal feature, you have proficiency in the Athletics skill, and you have advantage on any check made to initiate a grapple or shove, or to perform any weapon option that requires a STR check.\n\nIn addition, if you move at least 15 feet on your turn before making a melee weapon attack, you have advantage on the attack roll.",
+    "document": "bfrd",
+    "name": "Juggernaut",
+    "parent": "bfrd_metallurgist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_metallurgist_juggernaut"
+},
+{
+  "fields": {
+    "desc": "While wearing the armor from your Mystic Metal feature, you can use a bonus action to transform it into a nigh-impervious state for 1 minute. If you are reduced to 0 HP, you can choose for the Full Metal feature to automatically activate (no action required).\n\nWhile this state is active, you are immune to bludgeoning, piercing, and slashing damage, and you have resistance to all other damage types.\n\nOnce this state is used, you can’t activate it again until you complete a long rest.",
+    "document": "bfrd",
+    "name": "Full Metal",
+    "parent": "bfrd_metallurgist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_metallurgist_full-metal"
 }
 ]
