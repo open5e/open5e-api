@@ -50,17 +50,22 @@ class ClassFeature(HasName, HasDescription, FromDocument):
 
     parent = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, related_name="features")
 
-    # Infer the type of this feature based on the `key`
-    @property
-    def feature_type(self) -> str:
-        if "core-traits" in self.key:       return "CORE_TRAITS_TABLE"
-        if "proficiency-bonus" in self.key: return "PROFICIENCY_BONUS"
-        if "proficiencies" in self.key:     return "PROFICIENCIES"
-        if "equipment" in self.key:         return "STARTING_EQUIPMENT"
-        if "_slots-" in self.key:           return "SPELL_SLOTS"
-        if "_spells-known" in self.key:     return "SPELLS_KNOWN"
-        if "_cantrips-known" in self.key:   return "CANTRIPS_KNOWN"
-        return "CLASS_FEATURE"              # <- base-case
+    FEATURE_TYPES = [
+        ('CORE_TRAITS_TABLE', 'CORE_TRAITS_TABLE'),
+        ('CLASS_LEVEL_FEATURE', 'CLASS_LEVEL_FEATURE'),
+        ('CLASS_TABLE_DATA', 'CLASS_TABLE_DATA'),
+        ('PROFICIENCIES', 'PROFICIENCIES'),
+        ('PROFICIENCY_BONUS', 'PROFICIENCY_BONUS'),
+        ('STARTING_EQUIPMENT', 'STARTING_EQUIPMENT'),
+        ('SPELL_SLOTS', 'SPELL_SLOTS'),
+    ]
+
+    feature_type = models.CharField(
+        default='CLASS_LEVEL_FEATURE',
+        choices=FEATURE_TYPES,
+        max_length=32,
+        help_text="The type that best represents this Class Feature",
+    )
 
     def __str__(self):
         return "{} ({})".format(self.name,self.parent.name)
