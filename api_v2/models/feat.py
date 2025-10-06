@@ -1,6 +1,6 @@
 """The model for a feat."""
 from django.db import models
-from .abstracts import HasName, HasDescription, HasPrerequisite, Modification
+from .abstracts import HasName, HasDescription, HasPrerequisite, Modification, key_field
 from .document import FromDocument
 
 FEAT_TYPES = [
@@ -12,8 +12,16 @@ FEAT_TYPES = [
 
 class FeatBenefit(Modification):
     """This is the model for an individual benefit of a feat."""
-
+    key = key_field()
     parent = models.ForeignKey('Feat', on_delete=models.CASCADE)
+    order = models.SmallIntegerField(
+        blank=True,
+        null=True,
+        help_text='The position in the list of features that this feature appears in its source statblock'
+    )
+
+    class Meta:
+        ordering = ['parent', 'order']
 
 
 class Feat(HasName, HasDescription, HasPrerequisite, FromDocument):
