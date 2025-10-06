@@ -34,7 +34,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a greataxe or (*b*) any martial melee weapon\r\n* (*a*) two handaxes or (*b*) any simple weapon\r\n* An explorer’s pack and four javelins",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_barbarian"
+    "parent": "srd_barbarian",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_barbarian_equipment"
@@ -114,7 +115,8 @@
     "desc": "**Armor:** Light armor, medium armor, shields\r\n**Weapons:** Simple weapons, martial weapons\r\n**Tools:** None\r\n**Saving Throws:** Strength, Constitution\r\n**Skills:** Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_barbarian"
+    "parent": "srd_barbarian",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_barbarian_proficiencies"
@@ -124,7 +126,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_barbarian"
+    "parent": "srd_barbarian",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_barbarian_proficiency-bonus"
@@ -224,7 +227,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Cantrips Known",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_cantrips-known"
@@ -244,7 +248,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a rapier, (*b*) a longsword, or (*c*) any simple weapon\r\n* (*a*) a diplomat’s pack or (*b*) an entertainer’s pack\r\n* (*a*) a lute or (*b*) any other musical instrument\r\n* Leather armor and a dagger",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_equipment"
@@ -294,7 +299,8 @@
     "desc": "**Armor:** Light armor\r\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\r\n**Tools:** Three musical instruments of your choice\r\n**Saving Throws:** Dexterity, Charisma\r\n**Skills:** Choose any three",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_proficiencies"
@@ -304,7 +310,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_proficiency-bonus"
@@ -314,7 +321,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "1st",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_slots-1st"
@@ -324,7 +332,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "2nd",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_slots-2nd"
@@ -334,7 +343,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "3rd",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_slots-3rd"
@@ -344,7 +354,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "4th",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_slots-4th"
@@ -354,7 +365,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "5th",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_slots-5th"
@@ -364,7 +376,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "6th",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_slots-6th"
@@ -374,7 +387,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "7th",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_slots-7th"
@@ -384,7 +398,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "8th",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_slots-8th"
@@ -394,7 +409,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "9th",
-    "parent": "srd_bard"
+    "parent": "srd_bard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_bard_slots-9th"
@@ -564,7 +580,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Cantrips Known",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_cantrips-known"
@@ -614,7 +631,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a mace or (*b*) a warhammer (if proficient)\r\n* (*a*) scale mail, (*b*) leather armor, or (*c*) chain mail (if proficient)\r\n* (*a*) a light crossbow and 20 bolts or (*b*) any simple weapon\r\n* (*a*) a priest’s pack or (*b*) an explorer’s pack\r\n* A shield and a holy symbol",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_equipment"
@@ -624,7 +642,8 @@
     "desc": "**Armor:** Light armor, medium armor, shields\r\n**Weapons:** Simple weapons\r\n**Tools:** None\r\n**Saving Throws:** Wisdom, Charisma\r\n**Skills:** Choose two from History, Insight, Medicine, Persuasion, and Religion",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_proficiencies"
@@ -634,7 +653,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_proficiency-bonus"
@@ -644,7 +664,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "1st",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_slots-1st"
@@ -654,7 +675,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "2nd",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_slots-2nd"
@@ -664,7 +686,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "3rd",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_slots-3rd"
@@ -674,7 +697,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "4th",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_slots-4th"
@@ -684,7 +708,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "5th",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_slots-5th"
@@ -694,7 +719,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "6th",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_slots-6th"
@@ -704,7 +730,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "7th",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_slots-7th"
@@ -714,7 +741,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "8th",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_slots-8th"
@@ -724,7 +752,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "9th",
-    "parent": "srd_cleric"
+    "parent": "srd_cleric",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_cleric_slots-9th"
@@ -864,7 +893,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Cantrips Known",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_cantrips-known"
@@ -894,7 +924,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a wooden shield or (*b*) any simple weapon\r\n* (*a*) a scimitar or (*b*) any simple melee weapon\r\n* Leather armor, an explorer’s pack, and a druidic focus",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_equipment"
@@ -904,7 +935,8 @@
     "desc": "**Armor:** Light armor, medium armor, shields (druids will not wear armor or use shields made of metal)\r\n**Weapons:** Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears \r\n**Tools:** Herbalism kit\r\n**Saving Throws:** Intelligence, Wisdom\r\n**Skills:** Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_proficiencies"
@@ -914,7 +946,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_proficiency-bonus"
@@ -924,7 +957,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "1st",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_slots-1st"
@@ -934,7 +968,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "2nd",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_slots-2nd"
@@ -944,7 +979,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "3rd",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_slots-3rd"
@@ -954,7 +990,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "4th",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_slots-4th"
@@ -964,7 +1001,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "5th",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_slots-5th"
@@ -974,7 +1012,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "6th",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_slots-6th"
@@ -984,7 +1023,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "7th",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_slots-7th"
@@ -994,7 +1034,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "8th",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_slots-8th"
@@ -1004,7 +1045,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "9th",
-    "parent": "srd_druid"
+    "parent": "srd_druid",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_druid_slots-9th"
@@ -1064,7 +1106,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) chain mail or (*b*) leather armor, longbow, and 20 arrows\r\n* (*a*) a martial weapon and a shield or (*b*) two martial weapons\r\n* (*a*) a light crossbow and 20 bolts or (*b*) two handaxes\r\n* (*a*) a dungeoneer’s pack or (*b*) an explorer’s pack",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_fighter"
+    "parent": "srd_fighter",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_fighter_equipment"
@@ -1114,7 +1157,8 @@
     "desc": "**Armor:** All armor, shields\r\n**Weapons:** Simple weapons, martial weapons\r\n**Tools:** None\r\n**Saving Throws:** Strength, Constitution\r\n**Skills:** Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_fighter"
+    "parent": "srd_fighter",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_fighter_proficiencies"
@@ -1124,7 +1168,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_fighter"
+    "parent": "srd_fighter",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_fighter_proficiency-bonus"
@@ -1294,7 +1339,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a shortsword or (*b*) any simple weapon\r\n* (*a*) a dungeoneer’s pack or (*b*) an explorer’s pack\r\n* 10 darts",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_monk"
+    "parent": "srd_monk",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_monk_equipment"
@@ -1384,7 +1430,8 @@
     "desc": "**Armor:** None\r\n**Weapons:** Simple weapons, shortswords\r\n**Tools:** Choose one type of artisan’s tools or one musical instrument\r\n**Saving Throws:** Strength, Dexterity\r\n**Skills:** Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_monk"
+    "parent": "srd_monk",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_monk_proficiencies"
@@ -1394,7 +1441,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_monk"
+    "parent": "srd_monk",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_monk_proficiency-bonus"
@@ -1614,7 +1662,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a martial weapon and a shield or (*b*) two martial weapons\r\n* (*a*) five javelins or (*b*) any simple melee weapon\r\n* (*a*) a priest’s pack or (*b*) an explorer’s pack\r\n* Chain mail and a holy symbol",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_paladin"
+    "parent": "srd_paladin",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_paladin_equipment"
@@ -1664,7 +1713,8 @@
     "desc": "**Armor:** All armor, shields\r\n**Weapons:** Simple weapons, martial weapons\r\n**Tools:** None\r\n**Saving Throws:** Wisdom, Charisma\r\n**Skills:** Choose two from Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_paladin"
+    "parent": "srd_paladin",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_paladin_proficiencies"
@@ -1674,7 +1724,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_paladin"
+    "parent": "srd_paladin",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_paladin_proficiency-bonus"
@@ -1694,7 +1745,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "1st",
-    "parent": "srd_paladin"
+    "parent": "srd_paladin",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_paladin_slots-1st"
@@ -1704,7 +1756,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "2nd",
-    "parent": "srd_paladin"
+    "parent": "srd_paladin",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_paladin_slots-2nd"
@@ -1714,7 +1767,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "3rd",
-    "parent": "srd_paladin"
+    "parent": "srd_paladin",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_paladin_slots-3rd"
@@ -1724,7 +1778,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "4th",
-    "parent": "srd_paladin"
+    "parent": "srd_paladin",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_paladin_slots-4th"
@@ -1734,7 +1789,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "5th",
-    "parent": "srd_paladin"
+    "parent": "srd_paladin",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_paladin_slots-5th"
@@ -1804,7 +1860,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) scale mail or (*b*) leather armor\r\n* (*a*) two shortswords or (*b*) two simple melee weapons\r\n* (*a*) a dungeoneer’s pack or (*b*) an explorer’s pack\r\n* A longbow and a quiver of 20 arrows",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_ranger"
+    "parent": "srd_ranger",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_ranger_equipment"
@@ -1904,7 +1961,8 @@
     "desc": "**Armor:** Light armor, medium armor, shields\r\n**Weapons:** Simple weapons, martial weapons\r\n**Tools:** None\r\n**Saving Throws:** Strength, Dexterity\r\n**Skills:** Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_ranger"
+    "parent": "srd_ranger",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_ranger_proficiencies"
@@ -1914,7 +1972,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_ranger"
+    "parent": "srd_ranger",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_ranger_proficiency-bonus"
@@ -1934,7 +1993,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "1st",
-    "parent": "srd_ranger"
+    "parent": "srd_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_ranger_slots-1st"
@@ -1944,7 +2004,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "2nd",
-    "parent": "srd_ranger"
+    "parent": "srd_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_ranger_slots-2nd"
@@ -1954,7 +2015,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "3rd",
-    "parent": "srd_ranger"
+    "parent": "srd_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_ranger_slots-3rd"
@@ -1964,7 +2026,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "4th",
-    "parent": "srd_ranger"
+    "parent": "srd_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_ranger_slots-4th"
@@ -1974,7 +2037,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "5th",
-    "parent": "srd_ranger"
+    "parent": "srd_ranger",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_ranger_slots-5th"
@@ -2054,7 +2118,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a rapier or (*b*) a shortsword\r\n* (*a*) a shortbow and quiver of 20 arrows or (*b*) a shortsword\r\n* (*a*) a burglar’s pack, (*b*) a dungeoneer’s pack, or (*c*) an explorer’s pack\r\n* (*a*) Leather armor, two daggers, and thieves’ tools",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_rogue"
+    "parent": "srd_rogue",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_rogue_equipment"
@@ -2084,7 +2149,8 @@
     "desc": "**Armor:** Light armor\r\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\r\n**Tools:** Thieves’ tools\r\n**Saving Throws:** Dexterity, Intelligence\r\n**Skills:** Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_rogue"
+    "parent": "srd_rogue",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_rogue_proficiencies"
@@ -2094,7 +2160,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_rogue"
+    "parent": "srd_rogue",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_rogue_proficiency-bonus"
@@ -2234,7 +2301,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Cantrips Known",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_cantrips-known"
@@ -2244,7 +2312,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a light crossbow and 20 bolts or (*b*) any simple weapon\r\n* (*a*) a component pouch or (*b*) an arcane focus\r\n* (*a*) a dungeoneer’s pack or (*b*) an explorer’s pack\r\n* Two daggers",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_equipment"
@@ -2274,7 +2343,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_proficiency-bonus"
@@ -2284,7 +2354,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "1st",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_slots-1st"
@@ -2294,7 +2365,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "2nd",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_slots-2nd"
@@ -2304,7 +2376,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "3rd",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_slots-3rd"
@@ -2314,7 +2387,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "4th",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_slots-4th"
@@ -2324,7 +2398,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "5th",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_slots-5th"
@@ -2334,7 +2409,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "6th",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_slots-6th"
@@ -2344,7 +2420,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "7th",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_slots-7th"
@@ -2354,7 +2431,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "8th",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_slots-8th"
@@ -2364,7 +2442,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "9th",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorcerer_slots-9th"
@@ -2424,7 +2503,8 @@
     "desc": "**Armor:** None\r\n**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows\r\n**Tools:** None\r\n**Saving Throws:** Constitution, Charisma\r\n**Skills:** Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_sorcerer"
+    "parent": "srd_sorcerer",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_sorceror_proficiencies"
@@ -2544,7 +2624,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Cantrips Known",
-    "parent": "srd_warlock"
+    "parent": "srd_warlock",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_warlock_cantrips-known"
@@ -2584,7 +2665,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a light crossbow and 20 bolts or (*b*) any simple weapon\r\n* (*a*) a component pouch or (*b*) an arcane focus\r\n* (*a*) a scholar’s pack or (*b*) a dungeoneer’s pack\r\n* Leather armor, any simple weapon, and two daggers",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_warlock"
+    "parent": "srd_warlock",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_warlock_equipment"
@@ -2644,7 +2726,8 @@
     "desc": "**Armor:** Light armor\r\n**Weapons:** Simple weapons\r\n**Tools:** None\r\n**Saving Throws:** Wisdom, Charisma\r\n**Skills:** Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_warlock"
+    "parent": "srd_warlock",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_warlock_proficiencies"
@@ -2654,7 +2737,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_warlock"
+    "parent": "srd_warlock",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_warlock_proficiency-bonus"
@@ -2673,6 +2757,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2014",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Spell Slots",
     "parent": "srd_warlock"
   },
@@ -2683,6 +2768,7 @@
   "fields": {
     "desc": "[Column data]",
     "document": "srd-2014",
+    "feature_type": "CLASS_TABLE_DATA",
     "name": "Spells Known",
     "parent": "srd_warlock"
   },
@@ -2764,7 +2850,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Cantrips Known",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "CLASS_TABLE_DATA"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_cantrips-known"
@@ -2774,7 +2861,8 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\r\n* (*a*) a quarterstaff or (*b*) a dagger\r\n* (*a*) a component pouch or (*b*) an arcane focus\r\n* (*a*) a scholar’s pack or (*b*) an explorer’s pack\r\n* A spellbook",
     "document": "srd-2014",
     "name": "Equipment",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "STARTING_EQUIPMENT"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_equipment"
@@ -2784,7 +2872,8 @@
     "desc": "**Armor:** None\r\n**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows\r\n**Tools:** None\r\n**Saving Throws:** Intelligence, Wisdom\r\n**Skills:** Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion",
     "document": "srd-2014",
     "name": "Proficiencies",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "PROFICIENCIES"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_proficiencies"
@@ -2794,7 +2883,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "Proficiency Bonus",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "PROFICIENCY_BONUS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_proficiency-bonus"
@@ -2814,7 +2904,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "1st",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_slots-1st"
@@ -2824,7 +2915,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "2nd",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_slots-2nd"
@@ -2834,7 +2926,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "3rd",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_slots-3rd"
@@ -2844,7 +2937,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "4th",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_slots-4th"
@@ -2854,7 +2948,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "5th",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_slots-5th"
@@ -2864,7 +2959,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "6th",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_slots-6th"
@@ -2874,7 +2970,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "7th",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_slots-7th"
@@ -2884,7 +2981,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "8th",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_slots-8th"
@@ -2894,7 +2992,8 @@
     "desc": "[Column data]",
     "document": "srd-2014",
     "name": "9th",
-    "parent": "srd_wizard"
+    "parent": "srd_wizard",
+    "feature_type": "SPELL_SLOTS"
   },
   "model": "api_v2.classfeature",
   "pk": "srd_wizard_slots-9th"

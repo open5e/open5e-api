@@ -11,7 +11,7 @@ class SpeciesTraitSerializer(GameContentSerializer):
 
     class Meta:
         model = models.SpeciesTrait
-        fields = ['name', 'desc']
+        fields = ['name', 'desc', 'type', 'order']
 
 
 class SpeciesSerializer(GameContentSerializer):
