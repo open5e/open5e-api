@@ -1,0 +1,563 @@
+[
+{
+  "fields": {
+    "desc": "Medium (about 5–7 feet tall)",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_dragonborn",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_dragonborn",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_speed"
+},
+{
+  "fields": {
+    "desc": "Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and Damage Resistance traits as well as your appearance.\n\nTable: Draconic Ancestors\n\n| Dragon | Damage Type |\n|---|---|\n| Black | Acid |\n| Blue | Lightning |\n| Brass |Fire |\n| Bronze | Lightning |\n| Copper | Acid|\n|Gold|Fire|\n|Green|Poison|\n|Red|Fire|\n|Silver|Cold|\n|White|Cold|",
+    "name": "Draconic Ancestry",
+    "order": 3,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_draconic-ancestry"
+},
+{
+  "fields": {
+    "desc": "When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).\n\nYou can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.",
+    "name": "Breath Weapon",
+    "order": 4,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_breath-weapon"
+},
+{
+  "fields": {
+    "desc": "You have Resistance to the damage type determined by your Draconic Ancestry trait.",
+    "name": "Damage Resistance",
+    "order": 5,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_damage-resistance"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 60 feet",
+    "name": "Darkvision",
+    "order": 6,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_darkvision"
+},
+{
+  "fields": {
+    "desc": "When you reach character level 5, you can channel draconic magic to give yourself temporary flight. As a Bonus Action, you sprout spectral wings on your back that last for 10 minutes or until you retract the wings (no action required) or have the Incapacitated condition. During that time, you have a Fly Speed equal to your Speed. Your wings appear to be made of the same energy as your Breath Weapon. Once you use this trait, you can't use it again until you finish a Long Rest.",
+    "name": "Draconic Flight",
+    "order": 7,
+    "parent": "srd-2024_dragonborn",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dragonborn_draconic-flight"
+},
+{
+  "fields": {
+    "desc": "Medium (about 4–5 feet tall) ",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_dwarf",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_dwarf",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_speed"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 120 feet.",
+    "name": "Darkvision",
+    "order": 3,
+    "parent": "srd-2024_dwarf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_darkvision"
+},
+{
+  "fields": {
+    "desc": "You have Resistance to Poison damage. You also have Advantage on saving throws you make to avoid or end the Poisoned condition.",
+    "name": "Dwarven Resilience",
+    "order": 4,
+    "parent": "srd-2024_dwarf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_dwarven-resilience"
+},
+{
+  "fields": {
+    "desc": "Your Hit Point maximum increases by 1, and it increases by 1 again whenever you gain a level.",
+    "name": "Dwarven Toughness",
+    "order": 5,
+    "parent": "srd-2024_dwarf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_dwarven-toughness"
+},
+{
+  "fields": {
+    "desc": "As a Bonus Action, you gain Tremorsense with a range of 60 feet for 10 minutes. You must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked.\n\nYou can use this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.",
+    "name": "Stonecunning",
+    "order": 6,
+    "parent": "srd-2024_dwarf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_dwarf_stonecunning"
+},
+{
+  "fields": {
+    "desc": "Medium (about 5–6 feet tall)",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_elf",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_elf_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_elf",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_elf_speed"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 60 feet.",
+    "name": "Darkvision",
+    "order": 3,
+    "parent": "srd-2024_elf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_elf_darkvision"
+},
+{
+  "fields": {
+    "desc": "You are part of a lineage that grants you supernatural abilities. Choose a lineage from the Elven Lineages table. You gain the level 1 benefit of that lineage.\n\nWhen you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level.\n\nTable: Elven Lineages\n\n|Lineage|Level 1|Level 3|Level 5|\n|---|---|---|---|\n|Drow|The range of your Darkvision increases to 120 feet. You also know the Dancing Lights cantrip.|Faerie Fire|Darkness|\n|High Elf|You know the Prestidigitation cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Wizard spell list.|Detect Magic|Misty Step|\n|Wood Elf|Your Speed increases to 35 feet. You also know the Druidcraft cantrip.|Longstrider|Pass without Trace|\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage).",
+    "name": "Elven Lineage",
+    "order": 4,
+    "parent": "srd-2024_elf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_elf_elven-lineage"
+},
+{
+  "fields": {
+    "desc": "You have Advantage on saving throws you make to avoid or end the Charmed condition.",
+    "name": "Fey Ancestry",
+    "order": 5,
+    "parent": "srd-2024_elf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_elf_fey-ancestry"
+},
+{
+  "fields": {
+    "desc": "You have proficiency in the Insight, Perception, or Survival skill.",
+    "name": "Keen Senses",
+    "order": 6,
+    "parent": "srd-2024_elf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_elf_keen-senses"
+},
+{
+  "fields": {
+    "desc": "You don't need to sleep, and magic can't put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.",
+    "name": "Trance",
+    "order": 7,
+    "parent": "srd-2024_elf",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_elf_trance"
+},
+{
+  "fields": {
+    "desc": "Small (about 3–4 feet tall)",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_gnome",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_gnome_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_gnome",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_gnome_speed"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 60 feet.",
+    "name": "Darkvision",
+    "order": 3,
+    "parent": "srd-2024_gnome",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_gnome_darkvision"
+},
+{
+  "fields": {
+    "desc": "You have Advantage on Intelligence, Wisdom, and Charisma saving throws.",
+    "name": "Gnomish Cunning",
+    "order": 4,
+    "parent": "srd-2024_gnome",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_gnome_gnomish-cunning"
+},
+{
+  "fields": {
+    "desc": "You are part of a lineage that grants you supernatural abilities. Choose one of the following options; whichever one you choose, Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage):\n\n**Forest Gnome.** You know the *Minor Illusion* cantrip. You also always have the *Speak with Animals* spell prepared. You can cast it without a spell slot a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest. You can also use any spell slots you have to cast the spell.\n\n**Rock Gnome.** You know the *Mending* and *Prestidigitation* cantrips. In addition, you can spend 10 minutes casting *Prestidigitation* to create a Tiny clockwork device (AC 5, 1 HP), such as a toy, fire starter, or music box. When you create the device, you determine its function by choosing one effect from *Prestidigitation*; the device produces that effect whenever you or another creature takes a Bonus Action to activate it with a touch. If the chosen effect has options within it, you choose one of those options for the device when you create it. For example, if you choose the spell's ignite-extinguish effect, you determine whether the device ignites or extinguishes fire; the device doesn't do both. You can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a Utilize action.",
+    "name": "Gnomish Lineage",
+    "order": 5,
+    "parent": "srd-2024_gnome",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_gnome_gnomish-lineage"
+},
+{
+  "fields": {
+    "desc": "Medium (about 7–8 feet tall)",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_goliath",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_goliath_size"
+},
+{
+  "fields": {
+    "desc": "35 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_goliath",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_goliath_speed"
+},
+{
+  "fields": {
+    "desc": "You are descended from Giants. Choose one of the following benefits—a supernatural boon from your ancestry; you can use the chosen benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest:\n\n**Cloud's Jaunt (Cloud Giant)**. As a Bonus Action, you magically teleport up to 30 feet to an unoccupied space you can see.\n\n**Fire's Burn (Fire Giant)**. When you hit a target with an attack roll and deal damage to it, you can also deal 1d10 Fire damage to that target.\n\n**Frost's Chill (Frost Giant)**. When you hit a target with an attack roll and deal damage to it, you can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of your next turn.\n\n**Hill's Tumble (Hill Giant)**. When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the Prone condition.\n\n**Stone's Endurance (Stone Giant)**. When you take damage, you can take a Reaction to roll 1d12. Add your Constitution modifier to the number rolled and reduce the damage by that total.\n\n**Storm's Thunder (Storm Giant)**. When you take damage from a creature within 60 feet of you, you can take a Reaction to deal 1d8 Thunder damage to that creature.",
+    "name": "Giant Ancestry",
+    "order": 3,
+    "parent": "srd-2024_goliath",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_goliath_giant-ancestry"
+},
+{
+  "fields": {
+    "desc": "Starting at character level 5, you can change your size to Large as a Bonus Action if you're in a big enough space. This transformation lasts for 10 minutes or until you end it (no action required). For that duration, you have Advantage on Strength checks, and your Speed increases by 10 feet. Once you use this trait, you can't use it again until you finish a Long Rest.",
+    "name": "Large Form",
+    "order": 4,
+    "parent": "srd-2024_goliath",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_goliath_large-form"
+},
+{
+  "fields": {
+    "desc": "You have Advantage on any ability check you make to end the Grappled condition. You also count as one size larger when determining your carrying capacity.",
+    "name": "Powerful Build",
+    "order": 5,
+    "parent": "srd-2024_goliath",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_goliath_powerful-build"
+},
+{
+  "fields": {
+    "desc": "Small (about 2–3 feet tall) ",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_halfling",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_halfling",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_speed"
+},
+{
+  "fields": {
+    "desc": "You have Advantage on saving throws you make to avoid or end the Frightened condition.",
+    "name": "Brave",
+    "order": 3,
+    "parent": "srd-2024_halfling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_brave"
+},
+{
+  "fields": {
+    "desc": "You can move through the space of any creature that is a size larger than you, but you can't stop in the same space.",
+    "name": "Halfling Nimbleness",
+    "order": 4,
+    "parent": "srd-2024_halfling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_halfling-nimbleness"
+},
+{
+  "fields": {
+    "desc": "When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.",
+    "name": "Luck",
+    "order": 5,
+    "parent": "srd-2024_halfling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_luck"
+},
+{
+  "fields": {
+    "desc": "You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you.",
+    "name": "Naturally Stealthy",
+    "order": 6,
+    "parent": "srd-2024_halfling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_halfling_naturally-stealthy"
+},
+{
+  "fields": {
+    "desc": "Medium (about 4–7 feet tall) or Small (about 2–4 feet tall), chosen when you select this species",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_human",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_human_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_human",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_human_speed"
+},
+{
+  "fields": {
+    "desc": "You gain Heroic Inspiration whenever you finish a Long Rest.",
+    "name": "Resourceful",
+    "order": 3,
+    "parent": "srd-2024_human",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_human_resourceful"
+},
+{
+  "fields": {
+    "desc": "You gain proficiency in one skill of your choice.",
+    "name": "Skillful",
+    "order": 4,
+    "parent": "srd-2024_human",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_human_skillful"
+},
+{
+  "fields": {
+    "desc": "You gain an Origin feat of your choice (see \"Feats\"). Skilled is recommended.",
+    "name": "Versatile",
+    "order": 5,
+    "parent": "srd-2024_human",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_human_versatile"
+},
+{
+  "fields": {
+    "desc": "Medium (about 6–7 feet tall)",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_orc",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_orc",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_speed"
+},
+{
+  "fields": {
+    "desc": "You can take the Dash action as a Bonus Action. When you do so, you gain a number of Temporary Hit Points equal to your Proficiency Bonus.\n\nYou can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Short or Long Rest.",
+    "name": "Adrenaline Rush",
+    "order": 3,
+    "parent": "srd-2024_orc",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_adrenaline-rush"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 120 feet.",
+    "name": "Darkvision",
+    "order": 4,
+    "parent": "srd-2024_orc",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_darkvision"
+},
+{
+  "fields": {
+    "desc": "When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 Hit Point instead. Once you use this trait, you can't do so again until you finish a Long Rest.",
+    "name": "Relentless Endurance",
+    "order": 5,
+    "parent": "srd-2024_orc",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_orc_relentless-endurance"
+},
+{
+  "fields": {
+    "desc": "Medium (about 4–7 feet tall) or Small (about 3–4 feet tall), chosen when you select this species",
+    "name": "Size",
+    "order": 1,
+    "parent": "srd-2024_tiefling",
+    "type": "SIZE"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_size"
+},
+{
+  "fields": {
+    "desc": "30 feet",
+    "name": "Speed",
+    "order": 2,
+    "parent": "srd-2024_tiefling",
+    "type": "SPEED"
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_speed"
+},
+{
+  "fields": {
+    "desc": "You have Darkvision with a range of 60 feet.",
+    "name": "Darkvision",
+    "order": 3,
+    "parent": "srd-2024_tiefling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_darkvision"
+},
+{
+  "fields": {
+    "desc": "You are the recipient of a legacy that grants you supernatural abilities. Choose a legacy from the Fiendish Legacies table. You gain the level 1 benefit of the chosen legacy.\n\nWhen you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy).\n\n**Table: Fiendish Legacies**\n\n|Legacy|Level 1|Level 3|Level 5|\n|---|---|---|---|\n|Abyssal|You have Resistance to Poison damage. You also know the Poison Spray cantrip.|Ray of Sickness|Hold Person|\n|Chthonic|You have Resistance to Necrotic damage. You also know the Chill Touch cantrip.|False Life|Ray of Enfeeblement|\n|Infernal|You have Resistance to Fire damage. You also know the Fire Bolt cantrip.|Hellish Rebuke|Darkness|",
+    "name": "Fiendish Legacy",
+    "order": 4,
+    "parent": "srd-2024_tiefling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_fiendish-legacy"
+},
+{
+  "fields": {
+    "desc": "You know the *Thaumaturgy* cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy trait.",
+    "name": "Otherworldly Presence",
+    "order": 5,
+    "parent": "srd-2024_tiefling",
+    "type": null
+  },
+  "model": "api_v2.speciestrait",
+  "pk": "srd-2024_tiefling_otherworldly-presence"
+}
+]
