@@ -1,8 +1,7 @@
 """The model for a species, sub-species, and it's traits."""
 
 from django.db import models
-from .abstracts import HasName, HasDescription, HasPrerequisite
-from .abstracts import Modification
+from .abstracts import HasName, HasDescription, HasPrerequisite, Modification, key_field
 from .document import FromDocument
 from drf_spectacular.utils import extend_schema_field
 from drf_spectacular.types import OpenApiTypes
@@ -12,9 +11,30 @@ class SpeciesTrait(Modification):
 
     It inherits from modification, which is an abstract concept.
     """
-
+    key = key_field()
     parent = models.ForeignKey('Species', on_delete=models.CASCADE)
 
+    SPECIES_FEATURE_TYPES = [
+        ('ABILITY_MODS', 'ABILITY_MODS'),
+        ('SIZE', 'SIZE'),
+        ('SPEED', 'SPEED'),
+    ]
+
+    type = models.CharField(
+        blank=True,
+        null=True,
+        max_length=16,
+        choices=SPECIES_FEATURE_TYPES,
+    )
+
+    order = models.SmallIntegerField(
+        blank=True,
+        null=True,
+        help_text='The position in the list of features that a feature appears in its source statblock'
+    )
+
+    class Meta:
+        ordering = ['parent', 'order']
 
 class Species(HasName, HasDescription, FromDocument):
     """

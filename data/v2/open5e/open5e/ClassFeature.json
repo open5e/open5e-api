@@ -1,6 +1,56 @@
 [
 {
   "fields": {
+    "desc": "You may use your Reaction to have your Arcane Aegis take the damage dealt to a creature up to 30 feet from you that you can see. If the damage sustained exceeds the current Hit Points of the aegis, the creature takes any further damage once the aegis reaches 0 hit points.  If the creature has Vulnerabilities or Resistances to the type of damage being taken, apply these when calculating the damage taken by the aegis.",
+    "document": "open5e",
+    "name": "Aegis Extension",
+    "parent": "open5e_abjurationist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_abjurationist_aegis-extension"
+},
+{
+  "fields": {
+    "desc": "You always have the spells *Dispel Magic* and *Counterspell* prepared. When you use a spell slot to cast one of these spells, if you fail to stop an opposing spell, then you do not expend the spell slot.\n\nYou can also cast *Dispel Magic* as a Bonus Action, adding your Proficiency Bonus to the spell’s ability check.",
+    "document": "open5e",
+    "name": "Anti-Magician",
+    "parent": "open5e_abjurationist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_abjurationist_anti-magician"
+},
+{
+  "fields": {
+    "desc": "You can use the power of your school’s spells to ward yourself against damage. When you cast an Abjuration spell of at least 1st level, you may siphon a portion of the spell’s magic to create an Arcane Aegis. The aegis lasts until the next time you finish a Long Rest and takes damage that would be directed at you. The aegis has a Hit Point maximum of two times your Wizard level + your Intelligence modifier; if the damage sustained exceeds the current Hit Points of the aegis, then you suffer any further damage once the aegis reaches 0 Hit Points, but the aegis still exists. If you have Vulnerabilities or Resistances to the type of damage being taken, apply these when calculating the damage taken by the aegis.\n\nAny time you use a spell slot to cast another Abjuration spell of at least 1st level, the aegis regains Hit Points equal to the spell’s level times two, up to its Hit Point maximum. You may also use a Bonus Action to expend a spell slot and your aegis regains Hit Points equal to twice the level of the slot, up to its Hit Point maximum.\n\nOnce it has been created, you cannot create a new aegis until after you finish a Long Rest.",
+    "document": "open5e",
+    "name": "Arcane Aegis",
+    "parent": "open5e_abjurationist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_abjurationist_arcane-aegis"
+},
+{
+  "fields": {
+    "desc": "When you choose this subclass at 3rd level, add two Abjuration spells from the Wizard spell list to your spellbook for free. Both spells must be level 2 or lower.\n\nAt every level thereafter in this class when you gain a new level of spell slots, you may add one more Abjuration spell from the Wizard spell list to your spellbook for free. You may not choose a spell of a level for which you do not have spell slots.",
+    "document": "open5e",
+    "name": "Expert Abjurer",
+    "parent": "open5e_abjurationist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_abjurationist_expert-abjurer"
+},
+{
+  "fields": {
+    "desc": "You have Resistance to all damage from spells and you gain Advantage on any saving throw to resist a spell’s effects.",
+    "document": "open5e",
+    "name": "Resistance to Magic",
+    "parent": "open5e_abjurationist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_abjurationist_resistance-to-magic"
+},
+{
+  "fields": {
     "desc": "Starting at 10th level, foes you strike in combat become more susceptible to your magical offensives as well. Creatures suffer disadvantage on a saving throw against your spells if you have hit them with a weapon attack. This effect only lasts until the end of your next turn after hitting the creature, and only applies to the first saving throw they make against one of your spells during this time.",
     "document": "open5e",
     "name": "Arcane Strike",
@@ -388,6 +438,56 @@
   },
   "model": "api_v2.classfeature",
   "pk": "open5e_oathless-betrayer_unearthly-barrier"
+},
+{
+  "fields": {
+    "desc": "Starting at 10th level, add your proficiency bonus to any ability checks made as part of the casting of an abjuration spell (as with the spells *counterspell* and *dispel magic*).",
+    "document": "open5e",
+    "name": "Abjuration Proficiency",
+    "parent": "open5e_school-of-abjuring-and-warding"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-abjuring-and-warding_abjuration-proficiency"
+},
+{
+  "fields": {
+    "desc": "At 6th level, you can extend your Arcane Aegis to protect nearby allies. You may use your reaction to have the aegis take the damage dealt to a creature up to 30 feet from you that you can see. If the damage sustained exceeds the current hit points of the aegis, the creature takes any further damage once the aegis reaches 0 hit points.",
+    "document": "open5e",
+    "name": "Aegis Extension",
+    "parent": "open5e_school-of-abjuring-and-warding"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-abjuring-and-warding_aegis-extension"
+},
+{
+  "fields": {
+    "desc": "Beginning at 2nd level, you can use the power of your school’s spells to ward yourself against damage. When you cast an abjuration spell of at least 1st level, you may siphon a portion of the spell’s magic to create an Arcane Aegis. The aegis lasts until the next time you finish a long rest and takes damage that would be directed at you. The aegis has a hit point maximum of two times your wizard level + your Intelligence modifier; if the damage sustained exceeds the current hit points of the aegis, then you suffer any further damage once the aegis reaches 0 hit points, but the aegis still exists.\n\nAny time you cast another abjuration spell of at least 1st level, the aegis regains hit points equal to the spell’s level times two, up to its hit point maximum.\n\nOnce it has been created, you cannot create a new aegis until after you finish a long rest.",
+    "document": "open5e",
+    "name": "Arcane Aegis",
+    "parent": "open5e_school-of-abjuring-and-warding"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-abjuring-and-warding_arcane-aegis"
+},
+{
+  "fields": {
+    "desc": "Starting at 2nd level when you choose this school, you only need to spend half as much time and gold as normal in order to copy a spell into your spellbook if the spell is from the abjuration school.",
+    "document": "open5e",
+    "name": "Expert Abjurer",
+    "parent": "open5e_school-of-abjuring-and-warding"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-abjuring-and-warding_expert-abjurer"
+},
+{
+  "fields": {
+    "desc": "Beginning at 14th level, you are resistant to all damage from spells and you gain advantage on any saving throw to resist a spell’s effects.",
+    "document": "open5e",
+    "name": "Resistance to Magic",
+    "parent": "open5e_school-of-abjuring-and-warding"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "open5e_school-of-abjuring-and-warding_resistance-to-magic"
 },
 {
   "fields": {
