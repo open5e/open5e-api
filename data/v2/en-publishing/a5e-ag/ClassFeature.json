@@ -246,5 +246,95 @@
   },
   "model": "api_v2.classfeature",
   "pk": "a5e_marshal_rouse-the-troops"
+},
+{
+  "fields": {
+    "desc": "Starting at 12th level, the lessons you've learned on the battlefield become useful tools beyond the realm of combat. Choose one of the following:\n\n## Calm\nWhen you first meet an NPC, you can choose to remain silent and communicate through nonverbal cues. So long as the NPC has a CR lower than your level, you remain silent for 1 minute, and the NPC stays within sight of you for the duration, they act as if you succeeded on an Intimidation check.\n\nIn addition, you gain an expertise die on Insight checks.\n\n## Resolute\nWhenever you make an Intelligence, Wisdom, or Charisma check against a creature and fail, you gain an expertise die on your next Intelligence, Wisdom, or Charisma check made against that creature.\n\n## Responsive\nWhen you overhear an interesting conversation between NPCs, you can interject so seamlessly and casually that the speakers think they already know you, answering one question you ask before realizing that they don't. In addition, you gain an expertise die on Persuasion checks.",
+    "document": "a5e-ag",
+    "name": "Commanding Demeanor",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_commanding-demeanor"
+},
+{
+  "fields": {
+    "desc": "Starting at 13th level, you and creatures you choose have advantage on saving throws against the charmed or frightened conditions while within your Commanding Presence.",
+    "document": "a5e-ag",
+    "name": "Dauntless",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_dauntless"
+},
+{
+  "fields": {
+    "desc": "Also at 13th level, you gain an average, grade 4 stronghold (castle, house, or training hall). Unlike normal strongholds, you can't sell this stronghold",
+    "document": "a5e-ag",
+    "name": "Stronghold",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_stronghold"
+},
+{
+  "fields": {
+    "desc": "Starting at 14th level, you can use the Help action as a bonus action. In addition, when you take the Help action, choose one of the following effects:\n\n- One frightened creature within 30 feet that can hear or see you is no longer frightened.\n- One creature within 5 feet gains temporary hit points equal to your Charisma modifier (minimum 1).\n- You touch a living creature that has 0 hit points. The creature regains 1 hit point.",
+    "document": "a5e-ag",
+    "name": "Advantageous Action",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_advantageous-action"
+},
+{
+  "fields": {
+    "desc": "At 16th level, your stronghold is upgraded to grade 5.",
+    "document": "a5e-ag",
+    "name": "Greater Stronghold",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_greater-stronghold"
+},
+{
+  "fields": {
+    "desc": "Beginning at 17th level, you can focus your mind to identify any enemy's weaknesses. Once per rest, you can use a bonus action to choose one creature you can see within 60 feet and expose a flaw in its defenses. Until the end of your next turn, any creature that can hear or see you has advantage on attack rolls made against that creature, and their attacks and spells deal an extra 6 damage to it.",
+    "document": "a5e-ag",
+    "name": "Critical Weakness",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_critical-weakness"
+},
+{
+  "fields": {
+    "desc": "Starting at 18th level, you choose one of the following:\n\n## Hero\nNobles and royalty treat you as an equal, granting you free food, lodging, and a place in their court for a number of days up to your marshal level.\n\n## Iconoclast\nWhenever you arrive in a settlement, you are visited by 1d4+1 bards, scholars, and sages who ask you to recount your recent exploits. In exchange, they each either share a piece of information they think might be relevant to your current quest or make an Intelligence, Wisdom, or Charisma check (with a +5 bonus) to answer a specific question on your behalf.\n\n## Slaughterer\nBandit and pirate captains, crimelords, intelligent monsters of ill intent, and even fiends know who you are and that you are a valuable ally, doing their best to persuade you to take up the sword against their enemies. Whenever you encounter such a creature, it spends its first action (even in combat) declaring that it knows of your prowess and offering an alliance.",
+    "document": "a5e-ag",
+    "name": "Impressive Reputation",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_impresive-reputation"
+},
+{
+  "fields": {
+    "desc": "At 20th level, creatures within your Commanding Presence add your Charisma modifier (minimum 1) to saving throws. Additionally, choose one of the following:\n\n## Commander's Expertise\nWhenever a creature uses your Commanding Presence to make an attack or use a combat maneuver, it gains an expertise die. If the combat maneuver has a save DC, it increases by an amount equal to the result of the expertise die. This expertise die can be increased to a maximum of a d12.\n\n## Feedback Loop\nWhenever a creature uses your Commanding Presence and successfully hits a target, you gain a reaction. You must use this reaction before the start of your next turn or it is lost.\n\n## Rapid Deployment\nAfter initiative is rolled and until combat ends, your Speed increases by 20 feet, and creatures you choose that can see or hear you increase their Speed by 20 feet.",
+    "document": "a5e-ag",
+    "name": "Legendary Commander",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_legendary-commander"
+},
+{
+  "fields": {
+    "desc": "Also at 20th level, your stronghold is upgraded to grade 6.",
+    "document": "a5e-ag",
+    "name": "Supreme Stronghold",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_supreme-stronghold"
 }
 ]
