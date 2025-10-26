@@ -96,5 +96,95 @@
   },
   "model": "api_v2.classfeature",
   "pk": "a5e_marshal_starting-equipment"
+},
+{
+  "fields": {
+    "desc": "Starting at 1st level, you have a Commanding Presence that extends from you in a 10-foot radius.\n\nWhen you take the Attack action, you can forgo making one attack to allow a creature within range of your Commanding Presence to make an attack instead. If the target can hear or see you, it can use its reaction to either cast a cantrip or make one weapon attack.\n\nThe radius of your Commanding Presence increases to 20 feet at 5th level, 30 feet at 10th level, 45 feet at 15th level, and 60 feet at 20th level.",
+    "document": "a5e-ag",
+    "name": "Commanding Presence",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_commanding-presence"
+},
+{
+  "fields": {
+    "desc": "Also starting at 1st level, you can use a bonus action to choose a creature within 30 feet of you. If the target can hear or see you, it regains hit points equal to 1d8 + your marshal level. Once you use this feature, you must finish a long rest before you can use it again\n\nYou can target two creatures simultaneously with this feature at 3rd level, and starting at 7th level you regain use of this feature after finishing a short or long rest",
+    "document": "a5e-ag",
+    "name": "Rallying Surge",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_rallying-surge"
+},
+{
+  "fields": {
+    "desc": "At 2nd level, you gain the ability to use combat maneuvers. You gain proficiency in two combat traditions from the following list: Biting Zephyr, Mirror's Glint, Mist and Shade, Rapid Current, Razor's Edge, Sanguine Knot, Spirited Steed, Unending Wheel. You learn two maneuvers of your choice from traditions you are proficient with.\n\nYou gain an exertion pool equal to twice your proficiency bonus, and you regain any spent exertion when you finish a rest. You use your maneuvers by spending points from your exertion pool. The Maneuvers Known column of the Marshal table shows when you learn more maneuvers from a tradition you are proficient with, while the Maneuver Degree column shows the highest-degree maneuver you can select at a given level.\n\nAdditionally, whenever you learn a new maneuver, you can choose one of the maneuvers you know and replace it with another maneuver of the same degree from a tradition you are proficient with.",
+    "document": "a5e-ag",
+    "name": "Combat Maneuvers",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_combat-maneuvers"
+},
+{
+  "fields": {
+    "desc": "Also at 2nd level, you learn a lesson of war of your choice. Your lessons are detailed at the end of the class description. The Lessons Known column of the Marshal table shows when you learn more lessons of war.",
+    "document": "a5e-ag",
+    "name": "Lessons of War",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_lessons-of-war"
+},
+{
+  "fields": {
+    "desc": "At 3rd level, you choose an archetype that focuses on the military stratagems you devise. Your choice grants you features at 3rd level and again at 7th, 11th, 15th, and 18th level.",
+    "document": "a5e-ag",
+    "name": "Marshal Archetype",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_marshal-archetype"
+},
+{
+  "fields": {
+    "desc": "Also at 3rd level, you can use a bonus action to choose a creature you can see within 30 feet. Until the start of your next turn, creatures able to hear or see you gain an expertise die on attacks made against that creature.",
+    "document": "a5e-ag",
+    "name": "Mark Foe",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_mark-foe"
+},
+{
+  "fields": {
+    "desc": "Starting at 5th level, you learn one combat maneuver from the Sanguine Knot tradition. The degree of this maneuver can't be higher than the highest-degree maneuver you can learn. This combat maneuver does not count against the number of combat maneuvers that you know.\n\nIn addition, when a creature makes an attack granted by your Commanding Presence, it can simultaneously use one Sanguine Knot combat maneuver that you know. If the creature does not have any exertion points to spend on combat maneuvers, it does not require exertion points for that use but it can't benefit from Combat Directives again until it finishes a rest.",
+    "document": "a5e-ag",
+    "name": "Combat Directives",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_combat-directives"
+},
+{
+  "fields": {
+    "desc": "Starting at 5th level, when you take the Attack action on your turn, you can attack twice instead of once. At 11th level, you can attack three times instead of once.",
+    "document": "a5e-ag",
+    "name": "Extra Attack",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_extra-attack"
+},
+{
+  "fields": {
+    "desc": "At 5th level, you gain one inexperienced follower. At 10th, 15th, and 20th level, you gain an additional follower, or one of your followers becomes more experienced. If one of your followers dies, after 1 month you receive word that their replacement is ready to join you.",
+    "document": "a5e-ag",
+    "name": "Followers",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_followers"
 }
 ]
