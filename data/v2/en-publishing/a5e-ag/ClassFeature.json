@@ -74,5 +74,27 @@
   },
   "model": "api_v2.classfeature",
   "pk": "a5e_marshal_ability-score-improvement"
+},
+{
+  "fields": {
+    "desc": "**Armor:** Light armor, medium armor, heavy armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Wisdom, Charisma\n**Skills:** Choose two from Athletics, History, Insight, Intimidation, Medicine, Perception, and Persuasion",
+    "feature_type": "PROFICIENCIES",
+    "document": "a5e-ag",
+    "name": "Proficiencies",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_proficiencies"
+},
+{
+  "fields": {
+    "desc": "You begin the game with 200 gp. You can select your own gear or choose one of the following equipment packages. Also consult the Suggested Equipment section of your chosen background.\n\n- **Skirmisher’s Set (Cost 193 gp):** 6 javelins, longsword, hauberk, light shield, explorer's pack\n- **Soldier's Set (Cost 111 gp):** Battleaxe, scimitar, 2 spears,longbow and quiver with 20 arrows, padded leather, dungeoneer's pack",
+    "feature_type": "STARTING_EQUIPMENT",
+    "document": "a5e-ag",
+    "name": "Equipment",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_starting-equipment"
 }
 ]
