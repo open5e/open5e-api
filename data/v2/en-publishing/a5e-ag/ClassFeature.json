@@ -186,5 +186,65 @@
   },
   "model": "api_v2.classfeature",
   "pk": "a5e_marshal_followers"
+},
+{
+  "fields": {
+    "desc": "Beginning at 6th level, when you roll initiative, you and each creature you choose within your Commanding Presence gains anexpertise die to their initiative roll.\n\nAdditionally, when you roll for initiative, you can switch your result with that of any ally you can see.",
+    "document": "a5e-ag",
+    "name": "Call to Arms",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_call-to-arms"
+},
+{
+  "fields": {
+    "desc": "At 6th level, you add half your proficiency bonus to your Prestige rating.\n\nIn addition, your reputation strongly affects how you are perceived, and when it becomes known that you are in a settlement, people treat you accordingly. At the Narrator's discretion, there may be settlements (such as an enemy's war camp) where you can't utilize this feature. Choose one of the following:\n\n## Famous\nWhen you arrive in a settlement, after you reveal who you are, local authority figures seek you out to make\n\n## Infamous\nWhen you arrive in a settlement, after you reveal who you are, common folk hurry to get out of your way, and when you corner a commoner to ask about something local, they rapidly tell you whatever details they think you might want to know. In addition, you gain an expertise die on Intimidation checks.\n\n## Maverick\nWhen you arrive in a settlement, after you reveal who you are, the local watch starts keeping an eye on you. Heads of illegal organizations might introduce themselves to you if they have goals well suited to your talents. Additionally, guards expect you're up to no good and are quick to leave their posts to follow you.",
+    "document": "a5e-ag",
+    "name": "Marshal Renown",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_marshal-renown"
+},
+{
+  "fields": {
+    "desc": "Also at 6th level, whenever you learn a new lesson of war or replace an existing one, you can instead choose from fighter soldiering knacks.",
+    "document": "a5e-ag",
+    "name": "Versatile Exploration",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_versatile-exploration"
+},
+{
+  "fields": {
+    "desc": "Beginning at 9th level, once per long rest, when a creature you can see that can hear or see you fails an ability check or saving throw, you can use your reaction to allow them to reroll the triggering ability check or saving throw.\n\nStarting at 13th level, you regain use of this feature after finishing a short or long rest.",
+    "document": "a5e-ag",
+    "name": "Spur Ally",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_spur-ally"
+},
+{
+  "fields": {
+    "desc": "Starting at 10th level, your capacity to direct your companions broadens. Choose one tradition that you know combat maneuvers from. You are able to use Combat Directives to grant uses of combat maneuvers from the chosen tradition.\n\nAt 15th level, choose a second tradition that you know combat maneuvers from.",
+    "document": "a5e-ag",
+    "name": "Expanded Directives",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_expanded-directives"
+},
+{
+  "fields": {
+    "desc": "Also starting at 10th level, you can spend 1 minute speaking words of encouragement and support to reinvigorate your companions. Each creature of your choice that can hear or understand you can spend any number of Hit Dice to regain hit points without having to finish a short rest. In addition, each creature spends at least one Hit Die in this way can remove one level of fatigue or strife it is currently suffering. Once a creature has removed a level of fatigue or strife in this way, it can't do so again until it finishes a long rest.",
+    "document": "a5e-ag",
+    "name": "Rouse the Troops",
+    "parent": "a5e_marshal"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_marshal_rouse-the-troops"
 }
 ]
