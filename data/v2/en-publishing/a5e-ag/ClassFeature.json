@@ -457,5 +457,55 @@
   },
   "model": "api_v2.classfeature",
   "pk": "a5e_swift-strategist_unbound-horde"
+},
+{
+  "fields": {
+    "desc": "Starting at 3rd level when you choose this archetype, whenever you roll initiative, you gain a tactics die, which is a d4. While you have this die, when a creature within 60 feet that can hear or see you would make an attack, you can roll the tactics die and add the result to that creature's attack roll. Once rolled, the tactics die is lost until you regain it at the start of your next turn. The tactics die disappears when the combat ends.\n\nIf you start your turn and no one has rolled the tactics die, you can trade out the die for a die of the next larger size, such that a d4 becomes a d6, a d6 becomes a d8, and so on, up to a maximum of d12.",
+    "document": "a5e-ag",
+    "name": "Tactical Edge",
+    "parent": "a5e_talented-tactician"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_talented-tactician_tactical-edge"
+},
+{
+  "fields": {
+    "desc": "At 7th level, choose either Culture, History, or Nature. You gain proficiency in the chosen skill and an expertise die on checks made using that skill.",
+    "document": "a5e-ag",
+    "name": "Student of War",
+    "parent": "a5e_talented-tactician"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_talented-tactician_student-of-war"
+},
+{
+  "fields": {
+    "desc": "Starting at 11th level, you devise a set of communication cues. Any creature with whom you've shared these cues—usually taking 10 minutes of discussion and practice—does not need to share a language with you to benefit from this feature.\n\nAdditionally, you can use a bonus action on your turn to spend 5 exertion points and make it easier for you and your allies to help each other with certain skills. For the next 10 minutes, your chosen allies can take theHelp action as a bonus action to help each other. This coordination requires you to maintain concentration (as if concentrating on a spell), and both chosen creatures—the one helping and the one making the ability check—must be within 30 feet of you at the time the ability check is made.\n\nEach turn, you can use your bonus action to change which creatures benefit from the coordination each turn. The skills that can benefit from this feature are Acrobatics, Animal Handling, Athletics, Deception, Insight, Intimidation, Investigation, Stealth, and Survival.\n\nIf you have proficiency in Stealth, this coordination can happen silently via surreptitious signals. If you have proficiency in Deception, this coordination can happen as a series of code words interspersed with other conversation. An onlooker needs to succeed on an Insight check contested by your ability check—whether Stealth or Deception—to realize the coordination is taking place.",
+    "document": "a5e-ag",
+    "name": "Operations Leader",
+    "parent": "a5e_talented-tactician"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_talented-tactician_operations-leader"
+},
+{
+  "fields": {
+    "desc": "At 15th level, choose one of the following.\n\n## More Tactical\n\nWhenever you gain a tactics die, you gain an additional tactics die, to a maximum of two dice. The second tactics die can be used like the first and increases size in the manner described under the Tactical Edge class feature.\n\n## Tactical Efficacy\nYour tactics die begins at d6. When you reach 20th level, your tactics die begins at d8. After the tactics die is rolled, when regained it reverts to a d4.",
+    "document": "a5e-ag",
+    "name": "Superior Tactics",
+    "parent": "a5e_talented-tactician"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_talented-tactician_superior-tactics"
+},
+{
+  "fields": {
+    "desc": "At 18th level, choose one of the following.\n\n## Dig Deeper\nYou can use a bonus action on your turn to allow a creature to regain the use of an origin trait or class feature that would normally be regained by finishing a short rest. You can use this feature twice, and you regain all expended uses when you finish a long rest.\n\n## Reach Further\nWhile you are conscious, when a creature you choose within the radius of your Commanding Presence would drop to 0 hit points, that creature can use its reaction to roll your tactics die and gain temporary hit points equal to the result plus your Charisma modifier (minimum 1). Once a creature has benefited from your tactics die in this way, it can't do so again until it finishes a long rest.",
+    "document": "a5e-ag",
+    "name": "Hidden Resources",
+    "parent": "a5e_talented-tactician"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_talented-tactician_hidden-resources"
 }
 ]
