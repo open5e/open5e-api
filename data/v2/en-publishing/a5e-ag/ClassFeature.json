@@ -397,5 +397,65 @@
   },
   "model": "api_v2.classfeature",
   "pk": "a5e_gambling-general_canny-adversary"
+},
+{
+  "fields": {
+    "desc": "At 3rd level when you select this archetype, choose one of the following.\n\n## Fast Feet\nWhenever a creature starts its turn within your Commanding Presence, you can choose to increase that creature's Speed by 5 feet until the end of its turn.\n\n## Fast Retreat\nOnce per round when you take the Attack action, you can forgo making one attack to allow a creature within your Commanding Presence to move up to half its Speed without provoking opportunity attacks.",
+    "document": "a5e-ag",
+    "name": "Make Haste",
+    "parent": "a5e_swift-strategist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_swift-strategist_make-haste"
+},
+{
+  "fields": {
+    "desc": "Also at 3rd level, you increase your speed by 10 feet whenever you're wearing light or no armor and not wielding a shield. In addition, when your movement would provoke an opportunity attack, you impose disadvantage on the attack roll made against you.\n\nAt 15th level, the increase to your speed becomes 20 feet.",
+    "document": "a5e-ag",
+    "name": "Skirmisher",
+    "parent": "a5e_swift-strategist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_swift-strategist_skirmisher"
+},
+{
+  "fields": {
+    "desc": "At 7th level, choose either Acrobatics or Athletics. Creatures you choose within your Commanding Presence add your Charisma modifier (minimum +1) to checks using the chosen skill.",
+    "document": "a5e-ag",
+    "name": "Nimble Troops",
+    "parent": "a5e_swift-strategist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_swift-strategist_nimble-troops"
+},
+{
+  "fields": {
+    "desc": "At 11th level, choose one of the following:\n\n## Miraculous Protector\nWhen a creature within your Commanding Presence is critically hit, you can use your reaction to become the target of the attack instead. Once you have used this feature, you cannot do so again until you finish a rest.\n\n## Take Cover\nWhen you and at least one other creature within your Commanding Presence would make a saving throw, you can choose to make your saving throw with disadvantage. If you do, creatures you choose within your Commanding Presence make that saving throw with advantage.",
+    "document": "a5e-ag",
+    "name": "Glorious Sacrifice",
+    "parent": "a5e_swift-strategist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_swift-strategist_glorious-sacrifice"
+},
+{
+  "fields": {
+    "desc": "At 15th level, choose one of the following:\n\n## Fortifying Encouragement\nWhenever you succeed on a saving throw, you can choose one friendly creature within 60 feet of you. If the target can see or hear you, it the target gains temporary hit points equal to 5 + your Charisma modifier.\n\n## Get Them Out\nWhen a creature within your Commanding Presence would make a saving throw against an area effect, you can use your reaction to shout at them, and that creature can use its reaction to move up to half its Speed. If the creature ends its movement outside the area, the area effect has no effect on them. Once you use this feature, you can't do so again until you finish a long rest.",
+    "document": "a5e-ag",
+    "name": "Portentous Escape",
+    "parent": "a5e_swift-strategist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_swift-strategist_portentous-escape"
+},
+{
+  "fields": {
+    "desc": "At 18th level, choose one of the following.\n\n## Among the Ranks\nCreatures you choose have disadvantage on opportunity attacks made against creatures within your Commanding Presence\n\n## March Together\nThe first time you move on your turn, each creature you choose that is within your Commanding Presence can use its reaction to move up to 10 feet, provided the creature's Speed is at least 10 feet.",
+    "document": "a5e-ag",
+    "name": "Unbound Horde",
+    "parent": "a5e_swift-strategist"
+  },
+  "model": "api_v2.classfeature",
+  "pk": "a5e_swift-strategist_unbound-horde"
 }
 ]
