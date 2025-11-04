@@ -39,4 +39,4 @@ class Rule(HasName, HasDescription, FromDocument):
   )
 
   class Meta:
-    ordering = ['key']
+    ordering = ['index']
