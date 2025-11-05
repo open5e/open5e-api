@@ -12,6 +12,15 @@ class Document(HasName, HasDescription):
 
     key = key_field()
 
+    type = models.TextField(
+        choices=[
+            ("SOURCE", "Source"),
+            ("MISC", "Miscellaneous")
+        ],
+        help_text='Whether this Document is a published data source, or general resources',
+        default="SOURCE",
+    )
+
     licenses = models.ManyToManyField(
         "License",
         help_text="Licenses that the content has been released under.")
@@ -128,7 +137,7 @@ class FromDocument(models.Model):
         primary_key=True,
         max_length=100,
         help_text="Unique key for the Item.")
-
+    
     def as_text(self):
         return "{}\n\n{}".format(self.name, self.desc)
 
