@@ -11401,11 +11401,63 @@
     "damage_immunities": [],
     "damage_resistances": [],
     "damage_vulnerabilities": [],
-    "desc": "While holding this wand, you gain a bonus to spell attack rolls determined by the wand's rarity. In addition, you ignore Half Cover when making a spell attack roll.",
+    "desc": "While holding this wand, you gain a bonus to spell attack rolls determined by the wand's rarity (Uncommon +1, Rare +2, Very Rare +3). In addition, you ignore Half Cover when making a spell attack roll.",
     "document": "srd-2024",
     "hit_dice": null,
     "hit_points": 0,
-    "name": "Wand of the War Mage, +1, +2, or +3",
+    "name": "Wand of the War Mage +1",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "uncommon",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "0.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_wand-of-the-war-mage-plus-1"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "wand",
+    "cost": "0.00",
+    "damage_immunities": [],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While holding this wand, you gain a bonus to spell attack rolls determined by the wand's rarity (Uncommon +1, Rare +2, Very Rare +3). In addition, you ignore Half Cover when making a spell attack roll.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Wand of the War Mage +2",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "0.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_wand-of-the-war-mage-plus-2"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "wand",
+    "cost": "0.00",
+    "damage_immunities": [],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While holding this wand, you gain a bonus to spell attack rolls determined by the wand's rarity (Uncommon +1, Rare +2, Very Rare +3). In addition, you ignore Half Cover when making a spell attack roll.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Wand of the War Mage +3",
     "nonmagical_attack_immunity": false,
     "nonmagical_attack_resistance": false,
     "rarity": "very-rare",
@@ -11415,7 +11467,7 @@
     "weight": "0.000"
   },
   "model": "api_v2.item",
-  "pk": "srd-2024_wand-of-the-war-mage-1-2-or-3"
+  "pk": "srd-2024_wand-of-the-war-mage-plus-3"
 },
 {
   "fields": {
