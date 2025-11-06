@@ -362,32 +362,6 @@
     "damage_immunities": [],
     "damage_resistances": [],
     "damage_vulnerabilities": [],
-    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|------|-------------|\n| 1    | Acid        |\n| 2    | Cold        |\n| 3    | Fire        |\n| 4    | Force       |\n| 5    | Lightning   |\n| 6    | Necrotic    |\n| 7    | Poison      |\n| 8    | Psychic     |\n| 9    | Radiant     |\n| 10   | Thunder     |",
-    "document": "srd-2024",
-    "hit_dice": null,
-    "hit_points": 0,
-    "name": "Armor of Resistance",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
-    "rarity": "rare",
-    "requires_attunement": true,
-    "size": "tiny",
-    "weapon": null,
-    "weight": "0.000"
-  },
-  "model": "api_v2.item",
-  "pk": "srd-2024_armor-of-resistance"
-},
-{
-  "fields": {
-    "armor": null,
-    "armor_class": 0,
-    "armor_detail": "",
-    "category": "armor",
-    "cost": "0.00",
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
     "desc": "While wearing this armor, you have Resistance to one of the following damage types: Bludgeoning, Piercing, or Slashing. The GM chooses the type or determines it randomly. Curse. This armor is cursed, a fact that is revealed only when the Identify spell is cast on the armor or you attune to it. Attuning to the armor curses you until you are targeted by a Remove Curse spell or similar magic; removing the armor fails to end the curse. While cursed, you have Vulnerability to two of the three damage types associated with the armor (not the one to which it grants Resistance).",
     "document": "srd-2024",
     "hit_dice": null,
@@ -16783,5 +16757,353 @@
   },
   "model": "api_v2.item",
   "pk": "srd-2024_mithral-armor-splint"
+},
+{
+  "fields": {
+    "armor": "srd-2024_breastplate",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Breastplate)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "20.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-breastplate"
+},
+{
+  "fields": {
+    "armor": "srd-2024_chain-mail",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Chain Mail)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "55.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-chain-mail"
+},
+{
+  "fields": {
+    "armor": "srd-2024_chain-shirt",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Chain Shirt)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "20.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-chain-shirt"
+},
+{
+  "fields": {
+    "armor": "srd-2024_half-plate-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Half Plate)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "40.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-half-plate"
+},
+{
+  "fields": {
+    "armor": "srd-2024_hide-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Hide Armor)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "12.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-hide-armor"
+},
+{
+  "fields": {
+    "armor": "srd-2024_leather-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Leather Armor)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "10.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-leather"
+},
+{
+  "fields": {
+    "armor": "srd-2024_padded-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Padded)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "8.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-padded"
+},
+{
+  "fields": {
+    "armor": "srd-2024_plate-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Plate)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "65.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-plate"
+},
+{
+  "fields": {
+    "armor": "srd-2024_ring-mail",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Ring Mail)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "40.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-ring-mail"
+},
+{
+  "fields": {
+    "armor": "srd-2024_scale-mail",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Scale Mail)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "45.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-scale-mail"
+},
+{
+  "fields": {
+    "armor": "srd-2024_splint-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Splint)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "60.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-splint"
+},
+{
+  "fields": {
+    "armor": "srd-2024_studded-leather-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n| 1d10 | Damage Type |\n|---|---|\n|1|Acid|\n|2|Cold|\n|3|Fire|\n|4|Force|\n|5|Lightning|\n|6|Necrotic|\n|7| Poison|\n|8|Psychic|\n|9|Radiant|\n|10|Thunder|",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Armor of Resistance (Studded Leather)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "13.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_armor-of-resistance-studded-leather"
 }
 ]
