@@ -4008,32 +4008,6 @@
     "armor_class": 0,
     "armor_detail": "",
     "category": "weapon",
-    "cost": "0.00",
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
-    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon. When you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
-    "document": "srd-2024",
-    "hit_dice": null,
-    "hit_points": 0,
-    "name": "Giant Slayer",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
-    "rarity": "rare",
-    "requires_attunement": false,
-    "size": "tiny",
-    "weapon": null,
-    "weight": "0.000"
-  },
-  "model": "api_v2.item",
-  "pk": "srd-2024_giant-slayer"
-},
-{
-  "fields": {
-    "armor": null,
-    "armor_class": 0,
-    "armor_detail": "",
-    "category": "weapon",
     "cost": "20.00",
     "damage_immunities": [
       "poison",
@@ -4378,17 +4352,43 @@
     "document": "srd-2024",
     "hit_dice": null,
     "hit_points": 0,
-    "name": "Hammer of Thunderbolts",
+    "name": "Hammer of Thunderbolts (Warhammer)",
     "nonmagical_attack_immunity": false,
     "nonmagical_attack_resistance": false,
     "rarity": "legendary",
     "requires_attunement": true,
     "size": "tiny",
-    "weapon": null,
+    "weapon": "srd-2024_warhammer",
     "weight": "0.000"
   },
   "model": "api_v2.item",
-  "pk": "srd-2024_hammer-of-thunderbolts"
+  "pk": "srd-2024_hammer-of-thunderbolts-warhammer"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": "0.00",
+    "damage_immunities": [],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon. The weapon has 5 charges. You can expend 1 charge and make a ranged attack with the weapon, hurling it as if it had the Thrown property with a normal range of 20 feet and a long range of 60 feet. If the attack hits, the weapon unleashes a thunderclap audible out to 300 feet. The target and every creature within 30 feet of it other than you must succeed on a DC 17 Constitution saving throw or have the Stunned condition until the end of your next turn. Immediately after hitting or missing, the weapon flies back to your hand. The weapon regains 1d4 + 1 expended charges daily at dawn. Giant's Bane. While you are attuned to the weapon and wearing either a Belt of Giant Strength or Gauntlets of Ogre Power to which you are also attuned, you gain the following benefits: Giants' Bane. When you roll a 20 on the d20 for an attack roll made with this weapon against a Giant, the creature must succeed on a DC 17 Constitution saving throw or die. Might of Giants. The Strength score bestowed by your Belt of Giant Strength or Gauntlets of Ogre Power increases by 4, to a maximum of 30.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Hammer of Thunderbolts (Maul)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "legendary",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_maul",
+    "weight": "0.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_hammer-of-thunderbolts-maul"
 },
 {
   "fields": {
@@ -21522,5 +21522,1107 @@
   },
   "model": "api_v2.item",
   "pk": "srd-2024_flame-tongue-whip"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Battleaxe)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_battleaxe",
+    "weight": "4.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-battleaxe"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Blowgun)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_blowgun",
+    "weight": "1.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-blowgun"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Club)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_club",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-club"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Dagger)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_dagger",
+    "weight": "1.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-dagger"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Dart)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_dart",
+    "weight": "1.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-dart"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Flail)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_flail",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-flail"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Glaive)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_glaive",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-glaive"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Greataxe)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_greataxe",
+    "weight": "7.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-greataxe"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Greatclub)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_greatclub",
+    "weight": "10.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-greatclub"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Greatsword)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_greatsword",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-greatsword"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Halberd)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_halberd",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-halberd"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Hand Crossbow)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_hand-crossbow",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-hand-crossbow"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Handaxe)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_handaxe",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-handaxe"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Heavy Crossbow)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_heavy-crossbow",
+    "weight": "18.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-heavy-crossbow"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Javelin)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_javelin",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-javelin"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Lance)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_lance",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-lance"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Light Crossbow)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_light-crossbow",
+    "weight": "5.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-light-crossbow"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Light Hammer)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_light-hammer",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-light-hammer"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Longbow)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_longbow",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-longbow"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Longsword)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_longsword",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-longsword"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Mace)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_mace",
+    "weight": "4.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-mace"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Maul)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_maul",
+    "weight": "10.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-maul"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Morningstar)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_morningstar",
+    "weight": "4.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-morningstar"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Musket)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_musket",
+    "weight": "10.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-musket"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Pike)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_pike",
+    "weight": "18.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-pike"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Pistol)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_pistol",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-pistol"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Quarterstaff)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_quarterstaff",
+    "weight": "4.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-quarterstaff"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Rapier)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_rapier",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-rapier"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Scimitar)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_scimitar",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-scimitar"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Shortbow)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_shortbow",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-shortbow"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Shortsword)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_shortsword",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-shortsword"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Sickle)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_sickle",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-sickle"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Sling)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_sling",
+    "weight": "0.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-sling"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Spear)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_spear",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-spear"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Trident)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_trident",
+    "weight": "4.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-trident"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (War Pick)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_war-pick",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-war-pick"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Warhammer)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_warhammer",
+    "weight": "5.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-warhammer"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.\n\nWhen you hit a Giant with this weapon, the Giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or have the Prone condition.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Giant Slayer (Whip)",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": "srd-2024_whip",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_giant-slayer-whip"
 }
 ]
