@@ -10774,58 +10774,6 @@
     "armor": null,
     "armor_class": 0,
     "armor_detail": "",
-    "category": "weapon",
-    "cost": "0.00",
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
-    "desc": "When you attack an object with this magic weapon and hit, maximize your weapon damage dice against the target. When you attack a creature with this weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 14 Slashing damage and gains 1 Exhaustion level.",
-    "document": "srd-2024",
-    "hit_dice": null,
-    "hit_points": 0,
-    "name": "Sword of Sharpness",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
-    "rarity": "very-rare",
-    "requires_attunement": true,
-    "size": "tiny",
-    "weapon": null,
-    "weight": "0.000"
-  },
-  "model": "api_v2.item",
-  "pk": "srd-2024_sword-of-sharpness"
-},
-{
-  "fields": {
-    "armor": null,
-    "armor_class": 0,
-    "armor_detail": "",
-    "category": "weapon",
-    "cost": "0.00",
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
-    "desc": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
-    "document": "srd-2024",
-    "hit_dice": null,
-    "hit_points": 0,
-    "name": "Sword of Wounding",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
-    "rarity": "rare",
-    "requires_attunement": true,
-    "size": "tiny",
-    "weapon": null,
-    "weight": "0.000"
-  },
-  "model": "api_v2.item",
-  "pk": "srd-2024_sword-of-wounding"
-},
-{
-  "fields": {
-    "armor": null,
-    "armor_class": 0,
-    "armor_detail": "",
     "category": "wondrous-item",
     "cost": "0.00",
     "damage_immunities": [],
@@ -11231,58 +11179,6 @@
   },
   "model": "api_v2.item",
   "pk": "srd-2024_vial"
-},
-{
-  "fields": {
-    "armor": null,
-    "armor_class": 0,
-    "armor_detail": "",
-    "category": "weapon",
-    "cost": "0.00",
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
-    "desc": "This magic weapon deals an extra 2d6 damage to any creature it hits. This extra damage is of the same type as the weapon's normal damage.",
-    "document": "srd-2024",
-    "hit_dice": null,
-    "hit_points": 0,
-    "name": "Vicious Weapon",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
-    "rarity": "rare",
-    "requires_attunement": false,
-    "size": "tiny",
-    "weapon": null,
-    "weight": "0.000"
-  },
-  "model": "api_v2.item",
-  "pk": "srd-2024_vicious-weapon"
-},
-{
-  "fields": {
-    "armor": null,
-    "armor_class": 0,
-    "armor_detail": "",
-    "category": "weapon",
-    "cost": "0.00",
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
-    "desc": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon. In addition, the weapon ignores Resistance to Slashing damage. When you use this weapon to attack a creature that has at least one head and roll a 20 on the d20 for the attack roll, you cut off one of the creature's heads. The creature dies if it can't survive without the lost head. A creature is immune to this effect if it has Immunity to Slashing damage, if it doesn't have or need a head, or if the GM decides that the creature is too big for its head to be cut off with this weapon. Such a creature instead takes an extra 30 Slashing damage from the hit. If the creature has Legendary Resistance, it can expend one daily use of that trait to avoid losing its head, taking the extra damage instead.",
-    "document": "srd-2024",
-    "hit_dice": null,
-    "hit_points": 0,
-    "name": "Vorpal Sword",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
-    "rarity": "legendary",
-    "requires_attunement": true,
-    "size": "tiny",
-    "weapon": null,
-    "weight": "0.000"
-  },
-  "model": "api_v2.item",
-  "pk": "srd-2024_vorpal-sword"
 },
 {
   "fields": {
@@ -25132,5 +25028,411 @@
   },
   "model": "api_v2.item",
   "pk": "srd-2024_shortsword-of-life-stealing"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Glaive of Wounding",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_glaive",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_glaive-of-wounding"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Greatsword of Wounding",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_greatsword",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_greatsword-of-wounding"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Longsword of Wounding",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_longsword",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_longsword-of-wounding"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Rapier of Wounding",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_rapier",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_rapier-of-wounding"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Scimitar of Wounding",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_scimitar",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_scimitar-of-wounding"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you hit a creature with an attack using this magic weapon, the target takes an extra 2d6 Necrotic damage and must succeed on a DC 15 Constitution saving throw or be unable to regain Hit Points for 1 hour. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Shortsword of Wounding",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_shortsword",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_shortsword-of-wounding"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack an object with this magic weapon and hit, maximize your weapon damage dice against the target.\n\nWhen you attack a creature with this weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 14 Slashing damage and gains 1 Exhaustion level.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Glaive of Sharpness",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_glaive",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_glaive-of-sharpness"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack an object with this magic weapon and hit, maximize your weapon damage dice against the target.\n\nWhen you attack a creature with this weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 14 Slashing damage and gains 1 Exhaustion level.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Greatsword of Sharpness",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_greatsword",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_greatsword-of-sharpness"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack an object with this magic weapon and hit, maximize your weapon damage dice against the target.\n\nWhen you attack a creature with this weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 14 Slashing damage and gains 1 Exhaustion level.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Longsword of Sharpness",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_longsword",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_longsword-of-sharpness"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack an object with this magic weapon and hit, maximize your weapon damage dice against the target.\n\nWhen you attack a creature with this weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 14 Slashing damage and gains 1 Exhaustion level.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Scimitar of Sharpness",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_scimitar",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_scimitar-of-sharpness"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon. In addition, the weapon ignores Resistance to Slashing damage.\n\nWhen you use this weapon to attack a creature that has at least one head and roll a 20 on the d20 for the attack roll, you cut off one of the creature's heads. The creature dies if it can't survive without the lost head. A creature is immune to this effect if it has Immunity to Slashing damage, if it doesn't have or need a head, or if the GM decides that the creature is too big for its head to be cut off with this weapon. Such a creature instead takes an extra 30 Slashing damage from the hit. If the creature has Legendary Resistance, it can expend one daily use of that trait to avoid losing its head, taking the extra damage instead.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Vorpal Glaive",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "legendary",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_glaive",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_vorpal-glaive"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon. In addition, the weapon ignores Resistance to Slashing damage.\n\nWhen you use this weapon to attack a creature that has at least one head and roll a 20 on the d20 for the attack roll, you cut off one of the creature's heads. The creature dies if it can't survive without the lost head. A creature is immune to this effect if it has Immunity to Slashing damage, if it doesn't have or need a head, or if the GM decides that the creature is too big for its head to be cut off with this weapon. Such a creature instead takes an extra 30 Slashing damage from the hit. If the creature has Legendary Resistance, it can expend one daily use of that trait to avoid losing its head, taking the extra damage instead.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Vorpal Greatsword",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "legendary",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_greatsword",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_vorpal-greatsword"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon. In addition, the weapon ignores Resistance to Slashing damage.\n\nWhen you use this weapon to attack a creature that has at least one head and roll a 20 on the d20 for the attack roll, you cut off one of the creature's heads. The creature dies if it can't survive without the lost head. A creature is immune to this effect if it has Immunity to Slashing damage, if it doesn't have or need a head, or if the GM decides that the creature is too big for its head to be cut off with this weapon. Such a creature instead takes an extra 30 Slashing damage from the hit. If the creature has Legendary Resistance, it can expend one daily use of that trait to avoid losing its head, taking the extra damage instead.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Vorpal Longsword",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "legendary",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_longsword",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_vorpal-longsword"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "You gain a +3 bonus to attack rolls and damage rolls made with this magic weapon. In addition, the weapon ignores Resistance to Slashing damage.\n\nWhen you use this weapon to attack a creature that has at least one head and roll a 20 on the d20 for the attack roll, you cut off one of the creature's heads. The creature dies if it can't survive without the lost head. A creature is immune to this effect if it has Immunity to Slashing damage, if it doesn't have or need a head, or if the GM decides that the creature is too big for its head to be cut off with this weapon. Such a creature instead takes an extra 30 Slashing damage from the hit. If the creature has Legendary Resistance, it can expend one daily use of that trait to avoid losing its head, taking the extra damage instead.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Vorpal Scimitar",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "legendary",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_scimitar",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_vorpal-scimitar"
 }
 ]
