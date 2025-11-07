@@ -2679,32 +2679,6 @@
     "armor": null,
     "armor_class": 0,
     "armor_detail": "",
-    "category": "armor",
-    "cost": "0.00",
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
-    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes. Curse. Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
-    "document": "srd-2024",
-    "hit_dice": null,
-    "hit_points": 0,
-    "name": "Demon Armor",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
-    "rarity": "very-rare",
-    "requires_attunement": true,
-    "size": "tiny",
-    "weapon": null,
-    "weight": "0.000"
-  },
-  "model": "api_v2.item",
-  "pk": "srd-2024_demon-armor"
-},
-{
-  "fields": {
-    "armor": null,
-    "armor_class": 0,
-    "armor_detail": "",
     "category": "wondrous-item",
     "cost": "0.00",
     "damage_immunities": [],
@@ -3058,7 +3032,7 @@
 },
 {
   "fields": {
-    "armor": null,
+    "armor": "srd-2024_plate-armor",
     "armor_class": 0,
     "armor_detail": "",
     "category": "armor",
@@ -3081,6 +3055,32 @@
   },
   "model": "api_v2.item",
   "pk": "srd-2024_dwarven-plate"
+},
+{
+  "fields": {
+    "armor": "srd-2024_half-plate-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": "0.00",
+    "damage_immunities": [],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +2 bonus to Armor Class. In addition, if an effect moves you against your will along the ground, you can take a Reaction to reduce the distance you are moved by up to 10 feet.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Dwarven Half Plate",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": false,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "0.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_dwarven-half-plate"
 },
 {
   "fields": {
@@ -20229,5 +20229,353 @@
   },
   "model": "api_v2.item",
   "pk": "srd-2024_defender-whip"
+},
+{
+  "fields": {
+    "armor": "srd-2024_breastplate",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Breastplate",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "20.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-breastplate"
+},
+{
+  "fields": {
+    "armor": "srd-2024_chain-mail",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Chain Mail",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "55.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-chain-mail"
+},
+{
+  "fields": {
+    "armor": "srd-2024_chain-shirt",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Chain Shirt",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "20.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-chain-shirt"
+},
+{
+  "fields": {
+    "armor": "srd-2024_half-plate-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Half Plate Armor",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "40.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-half-plate-armor"
+},
+{
+  "fields": {
+    "armor": "srd-2024_hide-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Hide Armor",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "12.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-hide-armor"
+},
+{
+  "fields": {
+    "armor": "srd-2024_leather-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Leather Armor",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "10.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-leather-armor"
+},
+{
+  "fields": {
+    "armor": "srd-2024_padded-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Padded Armor",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "8.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-padded-armor"
+},
+{
+  "fields": {
+    "armor": "srd-2024_plate-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Plate Armor",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "65.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-plate-armor"
+},
+{
+  "fields": {
+    "armor": "srd-2024_ring-mail",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Ring Mail",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "40.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-ring-mail"
+},
+{
+  "fields": {
+    "armor": "srd-2024_scale-mail",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Scale Mail",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "45.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-scale-mail"
+},
+{
+  "fields": {
+    "armor": "srd-2024_splint-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Splint Armor",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "60.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-splint-armor"
+},
+{
+  "fields": {
+    "armor": "srd-2024_studded-leather-armor",
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "armor",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "While wearing this armor, you gain a +1 bonus to Armor Class, and you know Abyssal. In addition, the armor's clawed gauntlets allow your Unarmed Strikes to deal 1d8 Slashing damage instead of the usual Bludgeoning damage, and you gain a +1 bonus to the attack and damage rolls of your Unarmed Strikes.\n\n**Curse.** Once you don this cursed armor, you can't doff it unless you are targeted by a Remove Curse spell or similar magic. While wearing the armor, you have Disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Demon Studded Leather Armor",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "very-rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": null,
+    "weight": "13.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_demon-studded-leather-armor"
 }
 ]
