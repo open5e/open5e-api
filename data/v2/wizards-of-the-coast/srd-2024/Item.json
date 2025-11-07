@@ -10779,32 +10779,6 @@
     "damage_immunities": [],
     "damage_resistances": [],
     "damage_vulnerabilities": [],
-    "desc": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
-    "document": "srd-2024",
-    "hit_dice": null,
-    "hit_points": 0,
-    "name": "Sword of Life Stealing",
-    "nonmagical_attack_immunity": false,
-    "nonmagical_attack_resistance": false,
-    "rarity": "rare",
-    "requires_attunement": true,
-    "size": "tiny",
-    "weapon": null,
-    "weight": "0.000"
-  },
-  "model": "api_v2.item",
-  "pk": "srd-2024_sword-of-life-stealing"
-},
-{
-  "fields": {
-    "armor": null,
-    "armor_class": 0,
-    "armor_detail": "",
-    "category": "weapon",
-    "cost": "0.00",
-    "damage_immunities": [],
-    "damage_resistances": [],
-    "damage_vulnerabilities": [],
     "desc": "When you attack an object with this magic weapon and hit, maximize your weapon damage dice against the target. When you attack a creature with this weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 14 Slashing damage and gains 1 Exhaustion level.",
     "document": "srd-2024",
     "hit_dice": null,
@@ -24984,5 +24958,179 @@
   },
   "model": "api_v2.item",
   "pk": "srd-2024_nine-lives-stealer-whip"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Glaive of Life Stealing",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_glaive",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_glaive-of-life-stealing"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Greatsword of Life Stealing",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_greatsword",
+    "weight": "6.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_greatsword-of-life-stealing"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Longsword of Life Stealing",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_longsword",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_longsword-of-life-stealing"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Rapier of Life Stealing",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_rapier",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_rapier-of-life-stealing"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Scimitar of Life Stealing",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_scimitar",
+    "weight": "3.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_scimitar-of-life-stealing"
+},
+{
+  "fields": {
+    "armor": null,
+    "armor_class": 0,
+    "armor_detail": "",
+    "category": "weapon",
+    "cost": 0.0,
+    "damage_immunities": [
+      "poison",
+      "psychic"
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "desc": "When you attack a creature with this magic weapon and roll a 20 on the d20 for the attack roll, that target takes an extra 15 Necrotic damage if it isn't a Construct or an Undead, and you gain Temporary Hit Points equal to the amount of Necrotic damage taken.",
+    "document": "srd-2024",
+    "hit_dice": null,
+    "hit_points": 0,
+    "name": "Shortsword of Life Stealing",
+    "nonmagical_attack_immunity": false,
+    "nonmagical_attack_resistance": false,
+    "rarity": "rare",
+    "requires_attunement": true,
+    "size": "tiny",
+    "weapon": "srd-2024_shortsword",
+    "weight": "2.000"
+  },
+  "model": "api_v2.item",
+  "pk": "srd-2024_shortsword-of-life-stealing"
 }
 ]
