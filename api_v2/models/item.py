@@ -55,6 +55,12 @@ class Item(Object, HasDescription, FromDocument, HasPrice):
         default=False,  # An item is not magical unless specified.
         help_text='If the item requires attunement.')
 
+    attunement_detail = models.CharField(
+        null=True,
+        blank=True,
+        max_length=128,
+    )
+
     rarity = models.ForeignKey(
         "ItemRarity",
         null=True,
