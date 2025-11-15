@@ -57,6 +57,21 @@ class ItemFilterSet(FilterSet):
             'document__gamesystem__key': ['in','iexact'],
         }
 
+# used in ItemViewSet and MagicItemViewSet - factored out for DRYness
+item_prefetch_fields = [
+    'armor',
+    'category',
+    'damage_immunities',
+    'damage_resistances',
+    'damage_vulnerabilities',
+    'document',
+    'weapon__properties',
+    'weapon__damage_type',
+    'weapon__document',
+    'weapon__properties__property',
+    'rarity',
+    'size',
+]
 
 class ItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
@@ -69,20 +84,20 @@ class ItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     filterset_class = ItemFilterSet
 
     select_related_fields = ['armor', 'weapon']
-    prefetch_related_fields = [
-        'armor',
-        'category',
-        'damage_immunities',
-        'damage_resistances',
-        'damage_vulnerabilities',
-        'document',
-        'weapon__properties',
-        'weapon__damage_type',
-        'weapon__document',
-        'weapon__properties__property',
-        'rarity',
-        'size',
-    ]
+    prefetch_related_fields = item_prefetch_fields
+
+class MagicItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+    """
+    list: API endpoint for returning a list of magic items.
+
+    retrieve: API endpoint for returning a particular magic item.
+    """
+    queryset = models.Item.objects.filter(rarity__isnull=False).order_by('pk')
+    serializer_class = serializers.ItemSerializer
+    filterset_class = ItemFilterSet
+    
+    select_related_fields = ['armor', 'weapon']
+    prefetch_related_fields = item_prefetch_fields
 
 class ItemRarityViewSet(viewsets.ReadOnlyModelViewSet):
     """
