@@ -1,0 +1,74 @@
+[
+{
+  "fields": {
+    "desc": "The three main pillars of D&D play are social interaction, exploration, and combat. Whichever one you're experiencing, the game unfolds according to this basic pattern:\n\n1. **The Game Master Describes a Scene**. The GM tells the players where their adventurers are and what's around them (how many doors lead out of a room, what's on a table, and so on).\n2. **The Players Describe What Their Characters Do.** Typically, the characters stick together as they travel through a dungeon or another environment. Sometimes different adventurers do different things: one adventurer might search a treasure chest while a second examines a mysterious symbol engraved on a wall and a third keeps watch for monsters. Outside combat, the GM ensures that every character has a chance to act and decides how to resolve their activity. In combat, the characters take turns.\n3. **The GM Narrates the Results of the Adventurers' Actions.** Sometimes resolving a task is easy. If an adventurer walks across a room and tries to open a door, the GM might say the door opens and describe what lies beyond. But the door might be locked, the floor might hide a trap, or some other circumstance might make it challenging for an adventurer to complete a task. In those cases, the GM might ask the player to roll a die to help determine what happens. Describing the results often leads to another decision point, which brings the game back to step 1.\n\nThis pattern holds during every game session (each time you sit down to play D&D), whether the adventurers are talking to a noble, exploring a ruin, or fighting a dragon. In certain situations—particularly combat—the action is more structured, and everyone takes turns.\n\n> **Exceptions Supersede General Rules**\n> General rules govern each part of the game. For example, the combat rules tell you that melee attacks use Strength and ranged attacks use Dexterity. That's a general rule, and a general rule is in effect as long as something in the game doesn't explicitly say otherwise.\n> The game also includes elements—class features, feats, weapon properties, spells, magic items, monster abilities, and the like—that sometimes contradict a general rule. When an exception and a general rule disagree, the exception wins. For example, if a feature says you can make melee attacks using your Charisma, you can do so, even though that statement disagrees with the general rule.",
+    "document": "srd-2024",
+    "name": "Rhythm of Play"
+  },
+  "model": "api_v2.ruleset",
+  "pk": "srd-2024_rhythm-of-play"
+},
+{
+  "fields": {
+    "desc": "All creatures — characters and monsters—have six abilities that measure physical and mental characteristics, as shown on the Ability Descriptions table.\n\n| Ability | Score Measures … |\n|---|---|\n| Strength | Physical might |\n| Dexterity | Agility, reflexes, and balance|\n| Constitution | Health and stamina |\n| Intelligence | Reasoning and memory |\n| Wisdom | Perceptiveness and mental fortitude |\n| Charisma | Confidence, poise, and charm |",
+    "document": "srd-2024",
+    "name": "The Six Abilities"
+  },
+  "model": "api_v2.ruleset",
+  "pk": "srd-2024_the-six-abilities"
+},
+{
+  "fields": {
+    "desc": "When the outcome of an action is uncertain, the game uses a d20 roll to determine success or failure. These rolls are called D20 Tests, and they come in three kinds: ability checks, saving throws, and attack rolls. They follow these steps:\n\n1. **Roll 1d20.** You always want to roll high. If the roll has Advantage or Disadvantage (described later in “Playing the Game”), you roll two d20s, but you use the number from only one of them—the higher one if you have Advantage or the lower one if you have Disadvantage.\n2. **Add Modifiers.** Add these modifiers to the number rolled on the d20:\n* **The Relevant Ability Modifier.** “Playing the Game” and “Rules Glossary” explain which ability modifiers to use for various D20 Tests.\n* **Your Proficiency Bonus If Relevant.** Each creature has a Proficiency Bonus, a number added when making a D20 Test that uses something, such as a skill, in which the creature has proficiency. See “Proficiency” later in “Playing the Game.”\n* **Circumstantial Bonuses and Penalties.** A class feature, a spell, or another rule might give a bonus or penalty to the die roll.",
+    "document": "srd-2024",
+    "name": "D20 Tests"
+  },
+  "model": "api_v2.ruleset",
+  "pk": "srd-2024_d20-tests"
+},
+{
+  "fields": {
+    "desc": "Characters and monsters are good at various things. Some are skilled with many weapons, while others can use only a few. Some are better at understanding people’s motives, and others are better at unlocking the secrets of the multiverse. All creatures have a Proficiency Bonus, which reflects the impact that training has on the creature’s capabilities. A character’s Proficiency Bonus increases as the character gains levels (described in “Character Creation”). A monster’s Proficiency Bonus is based on its Challenge Rating (see “Rules Glossary”). The Proficiency Bonus table shows how the bonus is determined.\n\nThis bonus is applied to a D20 Test when the creature has proficiency in a skill, in a saving throw, or with an item that the creature uses to make the D20 Test. The bonus is also used for spell attacks and for calculating the DC of saving throws for spells.\n\nTable: Proficiency Bonus\n\n|Level or CR|Bonus|\n|---|---|\n|Up to 4|+2|\n|5–8|+3|\n|9–12|+4|\n|13–16|+5|\n|17–20|+6|\n|21–24|+7|\n|25–28|+8|\n|29–30|+9|",
+    "document": "srd-2024",
+    "name": "Proficiency"
+  },
+  "model": "api_v2.ruleset",
+  "pk": "srd-2024_proficiency"
+},
+{
+  "fields": {
+    "desc": "During their adventures, player characters meet many different people and face some monsters that would rather talk than fight. In those situations, it’s time for social interaction, which takes many forms. For example, you might try to convince a burglar to confess to wrongdoing or try to flatter a guard. The Game Master assumes the roles of any nonplayer characters who are participating.\n\nAn NPC’s attitude toward your character is Friendly, Indifferent, or Hostile, as defined in “Rules Glossary.” Friendly NPCs are predisposed to help, and Hostile ones are inclined to hinder.\n\nSocial interactions progress in two ways: through **roleplaying** and **ability checks**.",
+    "document": "srd-2024",
+    "name": "Social Interaction"
+  },
+  "model": "api_v2.ruleset",
+  "pk": "srd-2024_social-interaction"
+},
+{
+  "fields": {
+    "desc": "Exploration involves delving into places that are dangerous and full of mystery. The rules in this section detail some of the ways adventurers interact with the environment in such places.",
+    "document": "srd-2024",
+    "name": "Exploration"
+  },
+  "model": "api_v2.ruleset",
+  "pk": "srd-2024_exploration"
+},
+{
+  "fields": {
+    "desc": "Adventurers encounter many dangerous monsters and nefarious villains. In those moments, combat often breaks out.",
+    "document": "srd-2024",
+    "name": "Combat"
+  },
+  "model": "api_v2.ruleset",
+  "pk": "srd-2024_combat"
+},
+{
+  "fields": {
+    "desc": "Injury and death are frequent threats, as detailed in the following rules.",
+    "document": "srd-2024",
+    "name": "Damage and Healing"
+  },
+  "model": "api_v2.ruleset",
+  "pk": "srd-2024_damage-and-healing"
+}
+]
