@@ -164,6 +164,7 @@ class ItemSerializer(GameContentSerializer):
             'weight_unit',
             'cost',
             'requires_attunement',
+            'attunement_detail',
             'document',]
 
 
