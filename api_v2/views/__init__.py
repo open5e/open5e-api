@@ -15,7 +15,7 @@ from .feat import FeatFilterSet, FeatViewSet
 
 from .species import SpeciesFilterSet, SpeciesViewSet
 
-from .item import ItemFilterSet, ItemViewSet
+from .item import ItemFilterSet, ItemViewSet, MagicItemViewSet
 from .item import ItemSetFilterSet, ItemSetViewSet
 from .item import ItemCategoryViewSet
 from .item import ItemRarityViewSet
