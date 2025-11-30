@@ -82,6 +82,7 @@ MODIFICATION_TYPES = [
     ("language", "Language"),
     ("equipment", "Equipment"),
     ("feature", "Feature"),  # Used in Backgrounds
+    ("feat", "Feat"), # Used in D&D 2024 Backgrounds
     ("suggested_characteristics", "Suggested Characteristics"),  # Used in Backgrounds
     ("adventures_and_advancement", "Adventures and Advancement"),  # Used in A5e Backgrounds
     ("connection_and_memento", "Connection and Memento")]  # Used in A5e Backgrounds
