@@ -81,4 +81,4 @@ class DocumentSummarySerializer(GameContentSerializer):
 
     class Meta:
         model = models.Document
-        fields = ['name', 'key', 'display_name', 'publisher', 'gamesystem', 'permalink']
+        fields = ['name', 'key', 'type', 'display_name', 'publisher', 'gamesystem', 'permalink']
