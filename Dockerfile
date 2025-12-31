@@ -20,8 +20,9 @@ RUN echo "discovery.type: single-node" >> /etc/elasticsearch/elasticsearch.yml &
     echo "xpack.security.enabled: false" >> /etc/elasticsearch/elasticsearch.yml && \
     echo "network.host: 0.0.0.0" >> /etc/elasticsearch/elasticsearch.yml
 
-# Create non-root user for Elasticsearch
-RUN useradd -r -s /bin/false elasticsearch && \
+# Ensure Elasticsearch directories exist and have correct permissions
+# Note: The elasticsearch package already creates the elasticsearch user
+RUN mkdir -p /var/lib/elasticsearch /var/log/elasticsearch && \
     chown -R elasticsearch:elasticsearch /etc/elasticsearch /var/lib/elasticsearch /var/log/elasticsearch
 
 RUN mkdir -p /opt/services/open5e-api
