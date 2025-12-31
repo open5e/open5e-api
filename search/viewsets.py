@@ -15,7 +15,7 @@ from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 
-from .services import ElasticsearchSearchService, ML_DEPENDENCIES_AVAILABLE
+from .services import ElasticsearchSearchService
 
 logger = logging.getLogger(__name__)
 
@@ -94,10 +94,20 @@ def _create_highlighted_text(text: str, query: str) -> str:
 class SearchViewSet(ViewSet):
     """
     ViewSet for performing searches across Open5e content.
-    Supports text, fuzzy, and vector search (when ML dependencies are available).
+    Supports text, fuzzy, and vector search.
     """
     
     pagination_class = SearchPagination
+    
+    @property
+    def paginator(self):
+        """Return the paginator instance associated with the view."""
+        if not hasattr(self, '_paginator'):
+            if self.pagination_class is None:
+                self._paginator = None
+            else:
+                self._paginator = self.pagination_class()
+        return self._paginator
     
     @extend_schema(
         parameters=[
@@ -141,39 +151,33 @@ class SearchViewSet(ViewSet):
         query = request.query_params.get('query', '').strip()
         if not query:
             return Response(
-                {
-                    'error': 'Query parameter is required',
-                    'ml_available': ML_DEPENDENCIES_AVAILABLE,
-                    'available_search_types': ['text', 'fuzzy'] + (['vector'] if ML_DEPENDENCIES_AVAILABLE else [])
-                },
+                {'error': 'Query parameter is required'},
                 status=status.HTTP_400_BAD_REQUEST
             )
         
-        # Parse search parameters
-        limit = min(int(request.query_params.get('limit', 50)), 1000)
+        # Parse search parameters  
         search_types_param = request.query_params.get('search_types', '')
-        highlight = request.query_params.get('highlight', 'false').lower() == 'true'
+        highlight = request.query_params.get('highlight', 'true').lower() == 'true'
         
         # Parse search types
         if search_types_param:
             search_types = [t.strip() for t in search_types_param.split(',') if t.strip()]
-            # Filter out vector search if ML dependencies not available
-            if not ML_DEPENDENCIES_AVAILABLE and 'vector' in search_types:
-                search_types = [t for t in search_types if t != 'vector']
         else:
             search_types = None  # Use service defaults
         
         try:
-            # Perform search
-            results = search_service.search(
+            # Get all results first (reasonable limit for Elasticsearch)
+            search_response = search_service.search(
                 query=query,
-                limit=limit,
+                limit=2000,  # Reasonable limit that stays within Elasticsearch constraints
                 search_types=search_types
             )
             
-            # Format results
+            all_results = search_response['results']
+            
+            # Format all results first
             formatted_results = []
-            for result in results:
+            for result in all_results:
                 formatted_result = {
                     'name': result.name,
                     'description': result.description,
@@ -186,8 +190,58 @@ class SearchViewSet(ViewSet):
                 
                 # Add highlighting if requested
                 if highlight:
-                    formatted_result['highlighted_name'] = _create_highlighted_text(result.name, query)
-                    formatted_result['highlighted_description'] = _create_highlighted_text(result.description, query)
+                    highlighted_text = None
+                    
+                    # Use Elasticsearch highlighting if available, otherwise fall back to manual highlighting
+                    if result.highlighted_content:
+                        # Extract highlighted content from Elasticsearch highlighting
+                        highlighted_snippets = result.highlighted_content
+                        
+                        # The first snippet usually contains the name and beginning of description
+                        if highlighted_snippets:
+                            first_snippet = highlighted_snippets[0]
+                            lines = first_snippet.split('\n')
+                            if lines:
+                                # First line should contain the highlighted name
+                                highlighted_name = lines[0].strip()
+                                # Check if the name actually contains highlighting
+                                if '<em>' in highlighted_name:
+                                    highlighted_text = highlighted_name.replace('<em>', '<span class="highlighted">').replace('</em>', '</span>')
+                                else:
+                                    # If name doesn't have highlights, use the description content
+                                    if len(lines) > 1:
+                                        highlighted_description = '\n'.join(lines[1:]).strip()
+                                        # Add other snippets to description
+                                        for snippet in highlighted_snippets[1:]:
+                                            highlighted_description += '\n' + snippet
+                                        highlighted_text = highlighted_description.replace('<em>', '<span class="highlighted">').replace('</em>', '</span>')
+                                    else:
+                                        # Fallback to just the highlighted name even without <em> tags
+                                        highlighted_text = highlighted_name
+                    else:
+                        # Check if this is a fuzzy search with matched substring
+                        if result.search_type == 'fuzzy' and hasattr(result, 'fuzzy_matched_substring') and result.fuzzy_matched_substring:
+                            # Highlight the matched substring in the name
+                            highlighted_text = result.name.replace(
+                                result.fuzzy_matched_substring, 
+                                f'<span class="highlighted">{result.fuzzy_matched_substring}</span>'
+                            )
+                        else:
+                            # Fall back to manual highlighting - check which field has matches
+                            highlighted_name = _create_highlighted_text(result.name, query)
+                            highlighted_description = _create_highlighted_text(result.description, query)
+                            
+                            # Choose the field that actually contains highlighting
+                            if '<span class="highlighted">' in highlighted_name:
+                                highlighted_text = highlighted_name
+                            elif '<span class="highlighted">' in highlighted_description:
+                                highlighted_text = highlighted_description
+                            else:
+                                # If neither has highlights, default to name
+                                highlighted_text = result.name
+                    
+                    if highlighted_text:
+                        formatted_result['highlighted'] = highlighted_text
                 
                 # Add indexed fields if available
                 if result.indexed_fields:
@@ -195,26 +249,36 @@ class SearchViewSet(ViewSet):
                 
                 formatted_results.append(formatted_result)
             
-            # Calculate response time
-            response_time = round((time.time() - start_time) * 1000, 1)
+            # Apply DRF pagination
+            paginator = self.paginator
+            if paginator is not None:
+                page = paginator.paginate_queryset(formatted_results, request)
+                if page is not None:
+                    # Calculate response time
+                    response_time = round((time.time() - start_time) * 1000, 1)
+                    
+                    # Add metadata to paginated response
+                    response = paginator.get_paginated_response(page)
+                    response.data['meta'] = {
+                        'query': query,
+                        'response_time_ms': response_time,
+                        'search_types_used': search_types or ['text', 'fuzzy', 'vector'],
+                        'highlighting_enabled': highlight,
+                    }
+                    return response
             
-            # Prepare response
+            # Fallback if no pagination
+            response_time = round((time.time() - start_time) * 1000, 1)
             response_data = {
                 'count': len(formatted_results),
                 'results': formatted_results,
                 'meta': {
                     'query': query,
-                    'limit': limit,
                     'response_time_ms': response_time,
-                    'search_types_used': search_types or (['text', 'fuzzy'] + (['vector'] if ML_DEPENDENCIES_AVAILABLE else [])),
-                    'ml_available': ML_DEPENDENCIES_AVAILABLE,
+                    'search_types_used': search_types or ['text', 'fuzzy', 'vector'],
                     'highlighting_enabled': highlight,
                 }
             }
-            
-            # Add ML status message if not available
-            if not ML_DEPENDENCIES_AVAILABLE:
-                response_data['meta']['notice'] = 'ML dependencies are being installed in the background. Vector search will be available shortly.'
             
             return Response(response_data, status=status.HTTP_200_OK)
             
@@ -224,8 +288,7 @@ class SearchViewSet(ViewSet):
                 {
                     'error': 'Search failed',
                     'details': str(e),
-                    'query': query,
-                    'ml_available': ML_DEPENDENCIES_AVAILABLE
+                    'query': query
                 },
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
@@ -252,18 +315,17 @@ class SearchViewSet(ViewSet):
             return Response(
                 {
                     'error': 'Failed to get search statistics',
-                    'details': str(e),
-                    'ml_available': ML_DEPENDENCIES_AVAILABLE
+                    'details': str(e)
                 },
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
     
     @action(detail=False, methods=['get'])
     def health(self, request):
-        """Check search service health and ML availability."""
+        """Check search service health."""
         try:
             # Test basic search functionality
-            test_results = search_service.search(
+            test_response = search_service.search(
                 query="test",
                 limit=1,
                 search_types=['text']  # Just test basic functionality
@@ -271,14 +333,10 @@ class SearchViewSet(ViewSet):
             
             health_status = {
                 'status': 'healthy',
-                'ml_available': ML_DEPENDENCIES_AVAILABLE,
-                'available_search_types': ['text', 'fuzzy'] + (['vector'] if ML_DEPENDENCIES_AVAILABLE else []),
-                'basic_search_working': len(test_results) >= 0,  # Even 0 results is OK
+                'available_search_types': ['text', 'fuzzy', 'vector'],
+                'basic_search_working': len(test_response['results']) >= 0,  # Even 0 results is OK
                 'timestamp': time.time()
             }
-            
-            if not ML_DEPENDENCIES_AVAILABLE:
-                health_status['message'] = 'Running with basic search functionality. ML features installing in background.'
             
             return Response(health_status, status=status.HTTP_200_OK)
             
@@ -288,7 +346,6 @@ class SearchViewSet(ViewSet):
                 {
                     'status': 'unhealthy',
                     'error': str(e),
-                    'ml_available': ML_DEPENDENCIES_AVAILABLE,
                     'timestamp': time.time()
                 },
                 status=status.HTTP_503_SERVICE_UNAVAILABLE

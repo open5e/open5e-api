@@ -3,10 +3,7 @@ Search indexes for Elasticsearch with vector support.
 """
 import json
 from haystack import indexes
-from sentence_transformers import SentenceTransformer
-
-# Load the sentence transformer model for embeddings
-embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+from .services import get_tfidf_vectorizer
 
 
 class BaseSearchIndex(indexes.SearchIndex):
@@ -49,7 +46,7 @@ class BaseSearchIndex(indexes.SearchIndex):
         return 'v2'
     
     def prepare_embedding_vector(self, obj):
-        """Generate embedding vector for semantic search."""
+        """Generate TF-IDF vector for semantic search."""
         try:
             # Combine name and description for embedding
             text_for_embedding = f"{obj.name}"
@@ -58,13 +55,17 @@ class BaseSearchIndex(indexes.SearchIndex):
             elif hasattr(obj, 'description') and obj.description:
                 text_for_embedding += f" {obj.description}"
             
-            # Generate embedding
-            embedding = embedding_model.encode(text_for_embedding)
-            
-            # Return as JSON string (Elasticsearch will handle the dense_vector mapping)
-            return json.dumps(embedding.tolist())
+            # Generate TF-IDF vector
+            vectorizer = get_tfidf_vectorizer()
+            if vectorizer is not None:
+                tfidf_vector = vectorizer.transform([text_for_embedding])
+                # Convert sparse matrix to dense array and then to list
+                dense_vector = tfidf_vector.toarray()[0]
+                return json.dumps(dense_vector.tolist())
+            else:
+                return "[]"
         except Exception as e:
-            print(f"Error generating embedding for {obj.name}: {e}")
+            print(f"Error generating TF-IDF vector for {obj.name}: {e}")
             return "[]"
 
 

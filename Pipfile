@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "5.*"
+django = "~=5.0"
 djangorestframework = "*"
 django-filter = "*"
 django-cors-headers = "*"
@@ -13,13 +13,10 @@ requests = "*"
 whitenoise = "*"
 gunicorn = "*"
 drf-spectacular = {extras = ["sidecar"], version = "*"}
-elasticsearch = "*"
+elasticsearch = ">=7.0.0,<8.0.0"
 django-haystack = "*"
-# ML dependencies moved to runtime installation:
-# numpy = "*"
-# scikit-learn = "*"
-# sentence-transformers = "*"
-# torch = "*"
+numpy = "<2.0"
+scikit-learn = "*"
 
 [dev-packages]
 pytest = "*"
