@@ -124,19 +124,21 @@ pipenv run python manage.py spectacular --color --file openapi-schema.yml` to bu
 ```
 
 # Contributing
-See [contribution guide](CONTRIBUTING.md).
+
+We welcome contributions! Please join our [Discord](https://discord.gg/9RNE2rY) to coordinate with the team, or check out the [issue board](https://github.com/open5e/open5e-api/issues) to see what's being worked on.
 # Tests
 
-Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository. These tests require that the api is [running](##run) at `http://localhost:8000`.
+Tests are located in `api/tests` and `api_v2/tests`. Run them before pushing new changes. Tests require the API to be [running](##run) at `http://localhost:8000`.
 
 ```bash
 pipenv run pytest
 ```
 
 ## Approval tests
-Approval tests are run against the approved files in `api/tests/approved_files` as `*.approved.*` . If a test fails then the recieved input will be stored in a `*.recieved.*` file. If you wish to approve the changes, replace the old approved file with the recieved file.
+Approval tests compare API responses against pre-approved JSON files in `api_v2/tests/responses/*.approved.json`. If a test fails, the received response is saved as `*.received.json`. To approve changes, rename the received file to replace the approved file.
 
-Recieved files shall not be included in the git repo.
+Received files should not be committed to git.
+
 
 # Deployment
 
