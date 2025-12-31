@@ -1,6 +1,5 @@
 name: open5e-api
 services:
-  # Elasticsearch service
   - name: elasticsearch
     image:
       registry_type: DOCKER_HUB
@@ -26,20 +25,22 @@ services:
       success_threshold: 1
       failure_threshold: 3
 
-  # Your Django API service
   - name: api
     github:
-      repo: open5e/open5e-api  # Update with your actual repo
-      branch: main                     # Update with your branch
-    build_command: npm run build       # Update if your build command is different
-    run_command: npm run start         # Update if your start command is different
+      repo: open5e/open5e-api
+      branch: main
+    buildpack:
+      name: heroku/python
+    build_command: npm run build
+    run_command: npm run start
     http_port: 8080
     instance_count: 1
-    instance_size_slug: basic-xxs      # Adjust size as needed
+    instance_size_slug: basic-xxs
     envs:
       - key: ELASTICSEARCH_URL
-        value: "http://elasticsearch:9200/"  # Internal service name - DO Apps resolves this automatically
-      # Add your other environment variables here (SECRET_KEY, etc.)
+        value: "http://elasticsearch:9200/"
+      - key: PYTHON_VERSION
+        value: "3.11"
     health_check:
       http_path: "/"
       initial_delay_seconds: 60
@@ -47,4 +48,3 @@ services:
       timeout_seconds: 10
       success_threshold: 1
       failure_threshold: 3
-
