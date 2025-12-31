@@ -1,567 +1,354 @@
-"""Search implementation with exact, fuzzy, and vector search."""
-import pickle
+"""
+Search ViewSets for Open5e API v2.
+Provides backward-compatible search functionality using Elasticsearch.
+"""
+import time
+import logging
 import re
-from concurrent.futures import ThreadPoolExecutor
-from pathlib import Path
-from urllib.parse import urlencode
+from collections import defaultdict
+from typing import Dict, Any, List
 
-from rapidfuzz import process, fuzz
-from rest_framework import viewsets
+from rest_framework import status
+from rest_framework.viewsets import ViewSet
+from rest_framework.decorators import action
 from rest_framework.response import Response
-from drf_spectacular.utils import extend_schema, extend_schema_view, OpenApiParameter, OpenApiExample
-from drf_spectacular.types import OpenApiTypes
+from rest_framework.pagination import PageNumberPagination
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 
-from search import models, serializers
-from search.apps import SearchConfig
+from .services import ElasticsearchSearchService
+
+logger = logging.getLogger(__name__)
+
+# Initialize search service
+search_service = ElasticsearchSearchService()
+
+# Cache for highlighting patterns to avoid recompiling regexes
+_highlight_pattern_cache = {}
+_highlight_cache_size = 100
 
 
-class ResultsWithMetadata(list):
-    """Custom list that can hold search metadata and behaves like a QuerySet."""
-    def __init__(self, items, metadata=None):
-        super().__init__(items)
-        self._search_metadata = metadata
-        # Add model attribute to satisfy DRF expectations
-        self.model = models.SearchResult
+class SearchPagination(PageNumberPagination):
+    """Custom pagination for search results."""
+    page_size = 50
+    page_size_query_param = 'limit'
+    max_page_size = 1000
 
 
-@extend_schema_view(
-    list=extend_schema(
-        operation_id="search_list",
-        summary="Search across D&D 5E content",
-        description="""
-        Search across all Open5e content and objects.
-
-        If multiple search types are requested, the results are first sorted, then merged & deduplicated in order of decreasing precision:
-        - Exact matches(name first, then other fields)
-        - Fuzzy matches (similarity, descending)
-        - Vector matches (similarity, descending)
-
-        """,
-        parameters=[
-            OpenApiParameter(
-                name="query",
-                type=OpenApiTypes.STR,
-                location=OpenApiParameter.QUERY,
-                required=True,
-                description="The search term to find. Required parameter.",
-                examples=[
-                    OpenApiExample("Existing term", value="fireball"),
-                    OpenApiExample("Typo example", value="firbal"),
-                    OpenApiExample("Multi-word", value="magic weapon"),
-                ]
-            ),
-            OpenApiParameter(
-                name="strict",
-                type=OpenApiTypes.BOOL,
-                location=OpenApiParameter.QUERY,
-                required=False,
-                description="Strict mode: only return explicitly requested search types. When false (default), exact search always runs with fuzzy fallback if no results found.",
-                examples=[
-                    OpenApiExample("Strict mode", value="true"),
-                    OpenApiExample("Default mode", value="false"),
-                ]
-            ),
-            OpenApiParameter(
-                name="fuzzy",
-                type=OpenApiTypes.BOOL,
-                location=OpenApiParameter.QUERY,
-                required=False,
-                description="Include fuzzy individual word matches in name fields only. Default: false (but used as fallback in default mode).",
-                examples=[
-                    OpenApiExample("Enable fuzzy matching", value="true"),
-                    OpenApiExample("Disable fuzzy matching", value="false"),
-                ]
-            ),
-            OpenApiParameter(
-                name="vector",
-                type=OpenApiTypes.BOOL,
-                location=OpenApiParameter.QUERY,
-                required=False,
-                description="Include vector search results against name + description. Finds semantically similar content using TF-IDF similarity. Default: false.",
-                examples=[
-                    OpenApiExample("Enable vector", value="true"),
-                    OpenApiExample("Disable vector", value="false"),
-                ]
-            ),
-            OpenApiParameter(
-                name="object_model",
-                type=OpenApiTypes.STR,
-                location=OpenApiParameter.QUERY,
-                required=False,
-                description="Filter results to specific content type. Default: all types.",
-                examples=[
-                    OpenApiExample("Spells only", value="Spell"),
-                    OpenApiExample("Creatures only", value="Creature"),
-                    OpenApiExample("Items only", value="Item"),
-                    OpenApiExample("All types", value="%"),
-                ]
-            ),
-            OpenApiParameter(
-                name="document_pk",
-                type=OpenApiTypes.STR,
-                location=OpenApiParameter.QUERY,
-                required=False,
-                description="Filter results to specific document. Use document key/slug. Default: all documents.",
-                examples=[
-                    OpenApiExample("SRD only", value="srd-2014"),
-                    OpenApiExample("All documents", value="%"),
-                ]
-            ),
-            OpenApiParameter(
-                name="schema",
-                type=OpenApiTypes.STR,
-                location=OpenApiParameter.QUERY,
-                required=False,
-                description="API schema version to search. Default: 'v2'.",
-                examples=[
-                    OpenApiExample("API v2", value="v2"),
-                    OpenApiExample("API v1", value="v1"),
-                ]
-            ),
-        ],
-        responses={
-            200: serializers.SearchResultSerializer(many=True),
-            400: "Bad request - missing or invalid query parameter"
-        },
-        examples=[
-            OpenApiExample(
-                "Default search",
-                summary="Basic search with exact + fuzzy fallback",
-                description="Searches for 'fireball' using exact text search, with fuzzy fallback if no exact matches",
-                value={
-                    "query": "fireball"
-                }
-            ),
-            OpenApiExample(
-                "Fuzzy search for typo",
-                summary="Explicit fuzzy search for handling typos",
-                description="Searches for 'firbal' using fuzzy search to handle the typo and find 'fireball'",
-                value={
-                    "query": "firbal",
-                    "fuzzy": "true"
-                }
-            ),
-            OpenApiExample(
-                "Vector semantic search",
-                summary="Add semantic similarity search",
-                description="Finds exact matches for 'healing' and content semantically similar to 'healing' using vector search",
-                value={
-                    "query": "healing",
-                    "vector": "true"
-                }
-            ),
-            OpenApiExample(
-                "Strict mode - vector only",
-                summary="Strict mode: vector only search",
-                description="Returns only vector matches for 'fire' eg. 'heat', 'flame', 'scorching'",
-                value={
-                    "query": "fire",
-                    "strict": "true",
-                    "vector": "true"
-                }
-            ),
-            OpenApiExample(
-                "Combined search modes",
-                summary="Multiple search types combined",
-                description="Combines exact, fuzzy, and vector search for comprehensive results",
-                value={
-                    "query": "magic",
-                    "fuzzy": "true",
-                    "vector": "true"
-                }
-            ),
-            OpenApiExample(
-                "Filtered search",
-                summary="Search filtered to specific content type",
-                description="Search for dragons but only in creature content",
-                value={
-                    "query": "dragon",
-                    "object_model": "Creature"
-                }
-            ),
-        ]
-    )
-)
-class SearchResultViewSet(viewsets.ReadOnlyModelViewSet):
-    """Unified search across exact text, fuzzy, and vector search methods."""
-
-    serializer_class = serializers.SearchResultSerializer
+class SearchViewSet(ViewSet):
+    """
+    Search ViewSet providing backward-compatible search functionality.
+    Matches the expected Open5e API format.
+    """
     
-    # Configuration constants
-    VECTOR_INDEX_PATH = Path('server/vector_index.pkl')
-    FUZZY_THRESHOLD = 75
-    VECTOR_THRESHOLD = 0.05
-    BASE_SELECT_FIELDS = "document_pk, object_pk, object_name, object_model, text, schema_version"
-    WHERE_FILTERS = "schema_version LIKE %s AND document_pk LIKE %s AND object_model LIKE %s"
+    pagination_class = SearchPagination
 
-    def _parse_parameters(self):
-        """Parse search parameters from request."""
-        return {
-            'query': self.request.query_params.get('query'),
-            'include_vector': self.request.query_params.get("vector", "false").lower() in ["1", "true", "yes"],
-            'include_fuzzy': self.request.query_params.get("fuzzy", "false").lower() in ["1", "true", "yes"],
-            'strict': self.request.query_params.get("strict", "false").lower() in ["1", "true", "yes"],
-            'schema_version': self.request.query_params.get("schema", "v2"),
-            'document_pk': self.request.query_params.get("document_pk", '%'),
-            'object_model': self.request.query_params.get("object_model", '%')
-        }
-
-    def _load_index(self):
-        """Get the pre-loaded search index from app configuration."""
-        if SearchConfig.vector_index is None:
-            # Fallback: load on demand if not pre-loaded
-            if not hasattr(SearchResultViewSet, '_fallback_index'):
-                with self.VECTOR_INDEX_PATH.open('rb') as f:
-                    SearchResultViewSet._fallback_index = pickle.load(f)
-            return SearchResultViewSet._fallback_index
+    @extend_schema(
+        operation_id="search_content",
+        summary="Search all content",
+        description="Search across all D&D content with text, fuzzy, and vector search capabilities",
+        parameters=[
+            OpenApiParameter("query", str, description="Search query", required=True),
+            OpenApiParameter("q", str, description="Search query (alias for 'query')", required=False),
+            OpenApiParameter("limit", int, description="Results per page (default: 50, max: 1000)", required=False),
+            OpenApiParameter("page", int, description="Page number", required=False),
+            OpenApiParameter("search_types", str, description="Comma-separated: text,fuzzy,vector", required=False),
+            OpenApiParameter("object_type", str, description="Filter by object type", required=False),
+            OpenApiParameter("document", str, description="Filter by document", required=False),
+        ],
+    )
+    def list(self, request):
+        """Main search endpoint with backward compatibility."""
+        start_time = time.time()
         
-        return SearchConfig.vector_index
-
-    def _execute_search_query(self, sql, params):
-        """Execute a search query with error handling."""
-        try:
-            return list(models.SearchResult.objects.raw(sql, params))
-        except Exception:
-            return []
-
-    def _build_name_lookup_query(self, matched_names, schema_version, document_pk, object_model):
-        """Build SQL query for looking up results by object names."""
-        placeholders = ','.join(['%s'] * len(matched_names))
-        sql = f"""
-            SELECT 1 as id, 0 as rank, text as highlighted,
-                   {self.BASE_SELECT_FIELDS}
-            FROM search_index
-            WHERE object_name IN ({placeholders})
-              AND {self.WHERE_FILTERS}
-            ORDER BY object_name
-        """
-        params = matched_names + [schema_version, document_pk, object_model]
-        return sql, params
-
-    def _exact_search(self, query, schema_version, document_pk, object_model):
-        """Exact text search using SQLite FTS5."""
-        sql = f"""
-            SELECT 1 as id,
-                   rank,
-                   snippet(search_index, 4, '<span class="highlighted">', '</span>', '...', 20) as highlighted,
-                   {self.BASE_SELECT_FIELDS}
-            FROM search_index 
-            WHERE {self.WHERE_FILTERS}
-              AND search_index MATCH %s
-              AND rank MATCH 'bm25(1.0, 1.0, 10.0)'
-            ORDER BY rank
-        """
+        # Get query from either 'query' or 'q' parameter for backward compatibility
+        query = request.query_params.get('query', '').strip()
+        if not query:
+            query = request.query_params.get('q', '').strip()
         
-        results = self._execute_search_query(sql, [schema_version, document_pk, object_model, query])
-        # Exact search gets perfect score of 1.0 and the query as matched_term for consistency
-        return [(r.object_pk, r.highlighted, query, 1.0) for r in results]
-
-    def _build_word_index(self, names):
-        """Build mapping of words to names for fuzzy search."""
-        word_to_names = {}
-        for name in names:
-            # Split name into words (handle spaces, hyphens, etc.)
-            words = re.findall(r'\b\w+\b', name.lower())
-            for word in words:
-                if word not in word_to_names:
-                    word_to_names[word] = []
-                word_to_names[word].append(name)
-        return word_to_names
-
-    def _find_fuzzy_matches(self, query, word_to_names):
-        """Find fuzzy matches and return sorted name matches."""
-        all_words = list(word_to_names.keys())
+        if not query:
+            return Response({
+                'error': 'Query parameter "query" is required',
+                'results': [],
+                'count': 0
+            }, status=status.HTTP_400_BAD_REQUEST)
         
-        # Fuzzy match query against individual words (case-insensitive)
-        word_matches = process.extract(query.lower(), all_words, scorer=fuzz.ratio)
-        good_word_matches = [(word, score) for word, score, _ in word_matches if score >= self.FUZZY_THRESHOLD]
+        # Parse parameters
+        limit = min(int(request.query_params.get('limit', 50)), 1000)
+        page = int(request.query_params.get('page', 1))
         
-        if not good_word_matches:
-            return []
+        # Calculate offset for pagination
+        offset = (page - 1) * limit
         
-        # Collect all names that contain good word matches, with their best scores
-        name_scores = {}
-        for word, score in good_word_matches:
-            for name in word_to_names[word]:
-                # Keep the highest score for each name
-                if name not in name_scores or score > name_scores[name]['score']:
-                    name_scores[name] = {'score': score, 'matched_word': word}
+        # Parse search types
+        search_types_param = request.query_params.get('search_types', 'text,fuzzy,vector')
+        search_types = [t.strip() for t in search_types_param.split(',')]
+        valid_types = {'text', 'fuzzy', 'vector'}
+        search_types = [t for t in search_types if t in valid_types]
+        if not search_types:
+            search_types = ['text', 'fuzzy', 'vector']
         
-        # Convert to list and sort
-        name_matches = [(name, info['score'], info['matched_word']) for name, info in name_scores.items()]
-        
-        # Sort matches: exact word matches first, then by similarity score (descending)
-        def sort_key(match):
-            name, score, matched_word = match
-            # Check if query exactly matches the word (case insensitive)
-            is_exact_word_match = query.lower() == matched_word.lower()
-            # Return tuple: (exact_word_priority, negative_score) for sorting
-            return (0 if is_exact_word_match else 1, -score)
-        
-        name_matches.sort(key=sort_key)
-        return name_matches
-
-    def _process_name_matches(self, name_matches, schema_version, document_pk, object_model):
-        """Process name matches into ordered results."""
-        if not name_matches:
-            return []
-            
-        # Get results for matched names
-        match_name_to_info = {match[0]: {'term': match[2], 'score': match[1] / 100.0} for match in name_matches}  # Convert to 0-1 range
-        matched_names = [match[0] for match in name_matches]
-        
-        sql, params = self._build_name_lookup_query(matched_names, schema_version, document_pk, object_model)
-        results = self._execute_search_query(sql, params)
-        
-        # Return with proper ordering based on our sorted matches
-        name_to_result = {r.object_name: r for r in results}
-        ordered_results = []
-        for name in matched_names:
-            if name in name_to_result:
-                result = name_to_result[name]
-                match_info = match_name_to_info[name]
-                ordered_results.append((result.object_pk, result.highlighted, match_info['term'], match_info['score']))
-        
-        return ordered_results
-
-    def _fuzzy_search(self, query, schema_version, document_pk, object_model):
-        """Fuzzy search using RapidFuzz against individual words."""
-        index = self._load_index()
-        names = index['names']
-        
-        word_to_names = self._build_word_index(names)
-        name_matches = self._find_fuzzy_matches(query, word_to_names)
-        return self._process_name_matches(name_matches, schema_version, document_pk, object_model)
-
-    def _vector_search(self, query, schema_version, document_pk, object_model):
-        """Vector search using TF-IDF."""
-        index = self._load_index()
-        vectorizer = index['vectorizer'] 
-        matrix = index['matrix']
-        
-        # Get similarity scores
-        query_vec = vectorizer.transform([query])
-        scores = (matrix @ query_vec.T).toarray().ravel()
-        best_indices = scores.argsort()[::-1]
-        
-        # Filter by threshold and track scores
-        good_results = []
-        for i in best_indices:
-            if scores[i] > self.VECTOR_THRESHOLD:
-                good_results.append((i, scores[i]))
-        
-        if not good_results:
-            return []
-            
-        # Get matched names with their scores
-        matched_data = [(index['names'][i], score) for i, score in good_results]
-        matched_names = [name for name, score in matched_data]
-        
-        sql, params = self._build_name_lookup_query(matched_names, schema_version, document_pk, object_model)
-        results = self._execute_search_query(sql, params)
-        
-        # Create mapping from name to score
-        name_to_score = dict(matched_data)
-        
-        # Return with vector similarity scores as match_score, no matched_term for vector
-        result_list = []
-        for result in results:
-            score = name_to_score.get(result.object_name, 0.0)
-            result_list.append((result.object_pk, result.highlighted, None, score))
-        
-        return result_list
-
-    def _highlight_text(self, text, query_or_term):
-        """Add highlighting to text for fuzzy/vector results."""
-        if not text or not query_or_term:
-            return text
-            
-        # Split query/term into words
-        words = [w.strip() for w in re.split(r'\s+', query_or_term.lower()) if w.strip()]
-        if not words:
-            return text
-            
-        # Create pattern and highlight
-        escaped_words = [re.escape(word) for word in words]
-        pattern = r'\b(' + '|'.join(escaped_words) + r')\b'
+        # Parse filters
+        filters = {}
+        if request.query_params.get('object_type'):
+            filters['object_type'] = request.query_params.get('object_type')
+        if request.query_params.get('document'):
+            filters['document_name'] = request.query_params.get('document')
         
         try:
-            return re.sub(
-                pattern, 
-                r'<span class="highlighted">\1</span>', 
-                text, 
-                flags=re.IGNORECASE
+            # Perform search with pagination
+            results = search_service.search(
+                query=query,
+                limit=limit + offset,  # Get more results to handle pagination
+                search_types=search_types,
+                boost_factors={'text': 1.0, 'fuzzy': 0.5, 'vector': 0.3},
+                filters=filters
             )
-        except Exception:
-            return text
-
-    def _merge_results(self, exact_results, fuzzy_results, vector_results, params):
-        """Fast merge of pre-sorted result lists with deduplication."""
-        # Fast merge with priority: exact > fuzzy > vector
-        # Each list is already sorted correctly, just combine and dedupe
-        seen_pks = set()
-        merged_data = []
-        match_types = []
-        
-        # Process in priority order: exact, fuzzy, vector
-        for results, match_type in [(exact_results, 'exact'), (fuzzy_results, 'fuzzy'), (vector_results, 'vector')]:
-            for result_tuple in results:
-                pk = result_tuple[0]
-                if pk not in seen_pks:
-                    seen_pks.add(pk)
-                    merged_data.append(result_tuple)
-                    match_types.append(match_type)
-        
-        if not merged_data:
-            return []
-        
-        # Build simple lookup query - no complex CASE statements needed
-        pks = [r[0] for r in merged_data]
-        placeholders = ','.join(['%s'] * len(pks))
-        
-        sql = f"""
-            SELECT 1 as id, object_pk, object_name, object_model, text, document_pk, schema_version
-            FROM search_index
-            WHERE object_pk IN ({placeholders})
-              AND {self.WHERE_FILTERS}
-        """
-        
-        params_list = pks + [params['schema_version'], params['document_pk'], params['object_model']]
-        raw_results = self._execute_search_query(sql, params_list)
-        
-        # Create lookup map for fast access
-        pk_to_raw = {r.object_pk: r for r in raw_results}
-        
-        # Build final results in correct order with all metadata
-        final_results = []
-        for i, (result_tuple, match_type) in enumerate(zip(merged_data, match_types)):
-            pk, highlighted, matched_term, score = result_tuple
             
-            if pk in pk_to_raw:
-                raw_result = pk_to_raw[pk]
-                
-                # Set the core attributes
-                raw_result.id = 1
-                raw_result.rank = i  # Preserve merge order
-                raw_result.match_type = match_type
-                raw_result.matched_term = matched_term
-                raw_result.match_score = score
-                
-                # Set highlighting
-                if match_type == 'exact':
-                    # Use the FTS5 highlighting for exact matches
-                    raw_result.highlighted = highlighted
-                elif match_type == 'fuzzy' and matched_term:
-                    # Highlight the matched term for fuzzy results
-                    raw_result.highlighted = self._highlight_text(raw_result.text, matched_term)
+            # Apply pagination
+            paginated_results = results[offset:offset + limit]
+            total_count = len(results)
+            
+            # Convert to expected format
+            formatted_results = []
+            for result in paginated_results:
+                # Determine match type based on search type and score
+                if 'text' in result.search_type and result.score > 10:
+                    match_type = "exact"
+                    matched_term = self._extract_matched_term(query, result.name)
                 else:
-                    # Highlight the original query for vector results
-                    raw_result.highlighted = self._highlight_text(raw_result.text, params['query'])
+                    match_type = "fuzzy" if 'fuzzy' in result.search_type else "semantic"
+                    matched_term = query.lower()
                 
-                final_results.append(raw_result)
-        
-        return final_results
+                # Get object details
+                object_details = self._get_object_details(result)
+                
+                formatted_result = {
+                    "document": {
+                        "key": self._get_document_key(result.document_name),
+                        "name": result.document_name
+                    },
+                    "object_pk": self._get_object_pk(result),
+                    "object_name": result.name,
+                    "object": object_details,
+                    "object_model": result.object_type,
+                    "schema_version": result.schema_version,
+                    "route": self._get_route(result.object_type),
+                    "text": result.description or result.name,
+                    "highlighted": self._create_highlighted_text(result, query),
+                    "match_type": match_type,
+                    "matched_term": matched_term,
+                    "match_score": min(round(result.score / 25, 1), 1.0)  # Normalize to 0-1
+                }
+                formatted_results.append(formatted_result)
+            
+            # Build pagination URLs
+            base_url = request.build_absolute_uri().split('?')[0]
+            next_url = None
+            prev_url = None
+            
+            if offset + limit < total_count:
+                next_page = page + 1
+                next_url = f"{base_url}?query={query}&page={next_page}&limit={limit}"
+                if filters.get('object_type'):
+                    next_url += f"&object_type={filters['object_type']}"
+                if filters.get('document_name'):
+                    next_url += f"&document={filters['document_name']}"
+            
+            if page > 1:
+                prev_page = page - 1
+                prev_url = f"{base_url}?query={query}&page={prev_page}&limit={limit}"
+                if filters.get('object_type'):
+                    prev_url += f"&object_type={filters['object_type']}"
+                if filters.get('document_name'):
+                    prev_url += f"&document={filters['document_name']}"
+            
+            # Determine if we have exact matches
+            exact_matches = any(r['match_type'] == 'exact' for r in formatted_results)
+            
+            search_time = round((time.time() - start_time) * 1000, 1)
+            
+            return Response({
+                "count": total_count,
+                "next": next_url,
+                "previous": prev_url,
+                "results": formatted_results,
+                "search_metadata": {
+                    "exact_matches": exact_matches,
+                    "search_time_ms": search_time,
+                    "search_types": search_types
+                }
+            })
+            
+        except Exception as e:
+            logger.error(f"Search error for query '{query}': {e}", exc_info=True)
+            return Response({
+                'error': f'Search failed: {str(e)}',
+                'results': [],
+                'count': 0
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    def _filter_results(self, results, params):
-        """Filter results based on search parameters."""
-        if params['strict']:
-            # Strict mode: only requested types
-            return [r for r in results if (
-                (not params['include_vector'] and not params['include_fuzzy'] and getattr(r, 'match_type', '') == 'exact') or
-                (params['include_fuzzy'] and getattr(r, 'match_type', '') == 'fuzzy') or
-                (params['include_vector'] and getattr(r, 'match_type', '') == 'vector')
-            )]
+    def _extract_matched_term(self, query: str, name: str) -> str:
+        """Extract the matched term from the query."""
+        query_words = query.lower().split()
+        name_words = name.lower().split()
+        
+        for word in query_words:
+            if any(word in name_word for name_word in name_words):
+                return word
+        return query_words[0] if query_words else query
+
+    def _get_object_details(self, result) -> Dict[str, Any]:
+        """Get object-specific details based on type."""
+        details = {}
+        
+        if result.object_type == "Spell":
+            # Extract spell details from search data if available
+            details = {"school": "Unknown", "level": 0}
+            # TODO: Extract from actual object data when available
+        elif result.object_type == "Creature":
+            details = {"cr": "Unknown", "type": "Unknown", "size": "Unknown"}
+        elif result.object_type == "Item":
+            details = {"rarity": "Unknown", "type": "Unknown"}
+        
+        return details
+
+    def _get_object_pk(self, result) -> str:
+        """Generate object primary key from result."""
+        # Create a consistent object_pk format
+        doc_key = self._get_document_key(result.document_name)
+        name_key = result.name.lower().replace(' ', '-').replace("'", "")
+        return f"{doc_key}_{name_key}"
+
+    def _get_document_key(self, document_name: str) -> str:
+        """Convert document name to key format."""
+        doc_key_map = {
+            "5e 2014 Rules": "srd-2014",
+            "System Reference Document 5.1": "srd-2014", 
+            "Adventurer's Guide": "a5e-ag",
+            "Monstrous Menagerie": "a5e-mm",
+            "Tome of Beasts": "tob",
+            "Tome of Beasts 2": "tob2",
+            "Tome of Beasts 3": "tob3",
+            "Deep Magic for 5th Edition": "deepm",
+            "Vault of Magic": "vault"
+        }
+        return doc_key_map.get(document_name, document_name.lower().replace(' ', '-'))
+
+    def _get_route(self, object_type: str) -> str:
+        """Get API route for object type."""
+        route_map = {
+            "Spell": "v2/spells/",
+            "Creature": "v2/creatures/",
+            "Item": "v2/items/",
+            "Background": "v2/backgrounds/",
+            "Feat": "v2/feats/",
+            "Species": "v2/species/",
+            "CharacterClass": "v2/classes/"
+        }
+        return route_map.get(object_type, "v2/")
+
+    def _create_highlighted_text(self, result, query: str) -> str:
+        """Create highlighted text with HTML spans around matched terms."""
+        text = result.description or result.name
+        
+        # Cache key for this query to avoid recomputing
+        cache_key = query.lower().strip()
+        
+        # Get or create regex pattern for highlighting
+        if cache_key not in _highlight_pattern_cache:
+            # Create optimized regex pattern for highlighting
+            query_words = [word.strip() for word in query.lower().split() if word.strip()]
+            if not query_words:
+                return self._create_excerpt(text, 0, 100)
+            
+            # Escape special regex characters and create alternation pattern
+            escaped_words = [re.escape(word) for word in query_words]
+            pattern = r'\b(' + '|'.join(escaped_words) + r')\b'
+            
+            try:
+                compiled_pattern = re.compile(pattern, re.IGNORECASE)
+                _highlight_pattern_cache[cache_key] = (compiled_pattern, query_words)
+                
+                # Maintain cache size limit
+                if len(_highlight_pattern_cache) > _highlight_cache_size:
+                    # Remove oldest entry
+                    oldest_key = next(iter(_highlight_pattern_cache))
+                    del _highlight_pattern_cache[oldest_key]
+                    
+            except re.error:
+                # Fallback for malformed regex - use simple word matching
+                _highlight_pattern_cache[cache_key] = (None, query_words)
+        
+        pattern, query_words = _highlight_pattern_cache[cache_key]
+        
+        # Find best excerpt position based on matches
+        text_lower = text.lower()
+        best_pos = 0
+        
+        # Find the first match position for excerpt centering
+        for word in query_words:
+            pos = text_lower.find(word)
+            if pos != -1:
+                best_pos = pos
+                break
+        
+        # Create excerpt around the match
+        excerpt_start = max(0, best_pos - 60)
+        excerpt_end = min(len(text), best_pos + 150)
+        excerpt = text[excerpt_start:excerpt_end]
+        
+        # Apply HTML highlighting efficiently
+        if pattern:
+            # Use regex replacement for complex patterns
+            highlighted_excerpt = pattern.sub(
+                r'<span class="highlighted">\1</span>', 
+                excerpt
+            )
         else:
-            # Normal mode: include exact and fuzzy (already filtered), but vector only if requested
-            return [r for r in results if (
-                getattr(r, 'match_type', '') == 'exact' or
-                getattr(r, 'match_type', '') == 'fuzzy' or
-                (getattr(r, 'match_type', '') == 'vector' and params['include_vector'])
-            )]
+            # Fallback to simple string replacement for performance
+            highlighted_excerpt = excerpt
+            for word in query_words:
+                if len(word) >= 2:  # Only highlight meaningful words
+                    # Case-insensitive replacement with word boundaries
+                    word_pattern = re.compile(r'\b' + re.escape(word) + r'\b', re.IGNORECASE)
+                    highlighted_excerpt = word_pattern.sub(
+                        f'<span class="highlighted">{word}</span>',
+                        highlighted_excerpt,
+                        count=3  # Limit replacements to avoid overhead
+                    )
+        
+        # Add ellipsis indicators
+        if excerpt_start > 0:
+            highlighted_excerpt = "..." + highlighted_excerpt
+        if excerpt_end < len(text):
+            highlighted_excerpt = highlighted_excerpt + "..."
+        
+        return highlighted_excerpt
+    
+    def _create_excerpt(self, text: str, center_pos: int, length: int) -> str:
+        """Create a text excerpt centered around a position."""
+        start = max(0, center_pos - length // 2)
+        end = min(len(text), start + length)
+        excerpt = text[start:end]
+        
+        if start > 0:
+            excerpt = "..." + excerpt
+        if end < len(text):
+            excerpt = excerpt + "..."
+        
+        return excerpt
 
-    def _build_metadata(self, all_results, final_results, params):
-        """Build simple search metadata."""
-        exact_count = sum(1 for r in all_results if getattr(r, 'match_type', '') == 'exact')
-        
-        metadata = {
-            'exact_matches': exact_count > 0
-        }
-            
-        return metadata
-
-    def get_queryset(self):
-        """Main search logic - simplified."""
-        params = self._parse_parameters()
-        
-        if not params['query']:
-            queryset = models.SearchResult.objects.none()
-            queryset._search_metadata = {
-                'exact_matches': False
-            }
-            return queryset
-        
-        search_args = (params['query'], params['schema_version'], params['document_pk'], params['object_model'])
-        
-        # Determine which searches to run
-        searches_to_run = ['exact']  # Always start with exact
-        
-        # Add explicitly requested searches
-        if params['include_fuzzy']:
-            searches_to_run.append('fuzzy')
-        if params['include_vector']:
-            searches_to_run.append('vector')
-        
-        # Run initial searches in parallel
-        search_functions = {
-            'exact': self._exact_search,
-            'fuzzy': self._fuzzy_search,
-            'vector': self._vector_search
-        }
-        
-        results = {}
-        with ThreadPoolExecutor(max_workers=len(searches_to_run)) as executor:
-            futures = {
-                search_type: executor.submit(search_functions[search_type], *search_args)
-                for search_type in searches_to_run
-            }
-            
-            for search_type, future in futures.items():
-                results[search_type] = future.result()
-        
-        # Fallback logic: if exact found nothing and we're not in strict mode and fuzzy wasn't explicitly requested
-        exact_results = results.get('exact', [])
-        if len(exact_results) == 0 and not params['strict'] and not params['include_fuzzy']:
-            results['fuzzy'] = self._fuzzy_search(*search_args)
-        
-        # Extract results with empty list defaults
-        fuzzy_results = results.get('fuzzy', [])
-        vector_results = results.get('vector', [])
-
-        # Merge and process results
-        all_results = self._merge_results(exact_results, fuzzy_results, vector_results, params)
-        final_results = self._filter_results(all_results, params)
-        metadata = self._build_metadata(all_results, final_results, params)
-        
-        # Return results with metadata
-        return ResultsWithMetadata(final_results, metadata)
-
-    def list(self, request, *args, **kwargs):
-        """Return search results with metadata."""
-        queryset = self.get_queryset()
-        metadata = getattr(queryset, '_search_metadata', None)
-        
-        # Handle pagination
-        page = self.paginate_queryset(queryset)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            paginated_response = self.get_paginated_response(serializer.data)
-            if metadata:
-                paginated_response.data['search_metadata'] = metadata
-            return paginated_response
-        
-        # Non-paginated response
-        serializer = self.get_serializer(queryset, many=True)
-        response_data = {'results': serializer.data, 'count': len(serializer.data)}
-        if metadata:
-            response_data['search_metadata'] = metadata
-        return Response(response_data)
+    @extend_schema(
+        operation_id="search_stats",
+        summary="Get search statistics",
+        description="Get information about the search index",
+    )
+    @action(detail=False, methods=['GET'])
+    def stats(self, request):
+        """Get search index statistics."""
+        try:
+            stats = search_service.get_stats()
+            return Response(stats)
+        except Exception as e:
+            logger.error(f"Error getting search stats: {e}")
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR) 

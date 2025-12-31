@@ -186,3 +186,7 @@ cd api_v2/tests/responses/ && for file in *.received.json; do mv "$file" "${file
 - RESTful endpoints: `/v2/modelname/` and `/v2/modelname/key/`
 - Consistent field naming across models
 - Rich relationship serialization (nested objects, not just IDs)
+
+### Documentation
+- Avoid obvious documentation, only document what is not immediately obvious from names
+- Include swagger spec where appropriate

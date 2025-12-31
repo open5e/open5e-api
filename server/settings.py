@@ -66,8 +66,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'api',
     'api_v2',
-    'search',
-	'drf_spectacular',
+    'search.apps.SearchConfig',
+    'haystack',
+    'drf_spectacular',
     'drf_spectacular_sidecar',
 
     # downloaded modules
@@ -239,4 +240,39 @@ SPECTACULAR_SETTINGS = {
         'operationsSorter': None,  
         'tagsSorter': None,        
     }
+}
+
+# Haystack Configuration for Elasticsearch
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch7_backend.Elasticsearch7SearchEngine',
+        'URL': 'http://127.0.0.1:9200/',
+        'INDEX_NAME': 'open5e_search',
+        'KWARGS': {
+            'verify_certs': False,
+        }
+    },
+}
+
+# Haystack settings
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+    },
+    'loggers': {
+        'search.services': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
 }
