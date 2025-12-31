@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    container_name: open5e-api
+    ports:
+      - "8080:8080"
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-here}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/v2/spells/?limit=1 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    mem_limit: 1g
+    mem_reservation: 512m

@@ -14,15 +14,16 @@ class Command(BaseCommand):
     """Implementation for the `manage.py quicksetup` subcommand."""
 
     def add_arguments(self, parser: argparse.ArgumentParser):
-        """Define arguments for the `manage.py quicksetup` subcommand."""
-
-        # Named (optional) arguments.
         parser.add_argument(
             "--noindex",
             action="store_true",
-            help="Flushes all existing database data before adding new objects.",
+            help="Skip unpacking/building search indexes.",
         )
-
+        parser.add_argument(
+            "--rebuild-index",
+            action="store_true",
+            help="Force rebuild indexes from data (slow, ~2-3 min).",
+        )
         parser.add_argument(
             "--clean",
             action="store_true",
@@ -56,15 +57,7 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.ERROR(
                     'QUICKSETUP FAILED - Fix foreign key constraint violations before proceeding.'
                 ))
-                return  # Exit without showing "API setup complete"
-            
-            if not options['noindex']:
-                if settings.BUILD_V1_INDEX:
-                    build_haystack_index()
-            else:
-                self.stdout.write("Skipping v1 index build because of --noindex")
-        else:
-            self.stdout.write('Skipping v1 database population.')
+                return
 
         if settings.INCLUDE_V2_DATA:
             self.stdout.write('Populating the v2 database...')
@@ -77,73 +70,76 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.ERROR(
                     'QUICKSETUP FAILED - Fix foreign key constraint violations before proceeding.'
                 ))
-                return  # Exit without showing "API setup complete"
+                return
 
-            if not options['noindex']:
-                if settings.BUILD_V2_INDEX:
-                    self.stdout.write('Building the v2 index with both v1 and v2 data.')
-                    build_v1v2_searchindex()
-            else:
-                self.stdout.write('Skipping v2 index build because of --noindex.')
+            if options['noindex']:
+                self.stdout.write('Skipping indexes because of --noindex.')
+            elif options['rebuild_index']:
+                self.stdout.write('Rebuilding search indexes from data (this takes 2-3 min)...')
+                build_search_index()
+            elif settings.BUILD_V2_INDEX:
+                self.stdout.write('Setting up search indexes...')
+                setup_search_index()
 
         self.stdout.write(self.style.SUCCESS('API setup complete.'))
 
 
-def migrate_db() -> None:
-    """Migrate the local database as needed to incorporate new model updates.
-    This command is added primarily to assist in local development, because
-    checking out and changing branches results in unclean model/dbs."""
-
+def migrate_db():
     call_command('makemigrations')
     call_command('migrate')
 
-def is_dirty() ->None:
-    # TODO switch these over to server settings values.
-    is_dirty=False
-    if Path('./server/whoosh_index').is_dir():
+
+def is_dirty():
+    is_dirty = False
+    if Path('whoosh_index').is_dir():
         print("Found whoosh_index")
-        is_dirty=True
+        is_dirty = True
     if Path(settings.STATIC_ROOT).is_dir():
         print("Found static root")
-        is_dirty=True
+        is_dirty = True
     if Path(settings.DATABASES['default']['NAME']).exists():
         print("Found db file")
-        is_dirty=True
+        is_dirty = True
     return is_dirty
 
-def clean_dir() ->None:
-    if Path('./server/whoosh_index').is_dir():
-        shutil.rmtree(Path('./server/whoosh_index'))
+
+def clean_dir():
+    if Path('whoosh_index').is_dir():
+        shutil.rmtree(Path('whoosh_index'))
     if Path(settings.STATIC_ROOT).is_dir():
         shutil.rmtree(Path(settings.STATIC_ROOT))
     if Path(settings.DATABASES['default']['NAME']).exists():
         Path(settings.DATABASES['default']['NAME']).unlink()
-    vector_index = Path('server/vector_index.pkl')
-    if vector_index.exists():
-        vector_index.unlink()
+    if Path('server/vector_index.pkl').exists():
+        Path('server/vector_index.pkl').unlink()
 
-def import_v1() -> None:
-    """Import the v1 apps' database models."""
+
+def import_v1():
     call_command('import', '--dir', 'data/v1')
 
 
-def import_v2() -> None:
-    """Import the v2 apps' database models."""
+def import_v2():
     call_command('import', '--dir', 'data/v2')
 
 
-def collect_static() -> None:
-    """Collect static files in a single location."""
+def collect_static():
     call_command('collectstatic', '--noinput')
 
 
-def build_haystack_index() -> None:
-    """Freshen the haystack search indexes. This is an internal haystack
-    API that is being called, and only applies to v1 data."""
-    print("THIS ENTIRE COMMAND HAS BEEN DEPRECATED! EXPECT ERRORS.")
-    call_command('update_index', '--remove')
+def build_search_index():
+    call_command('buildindex', '--v1', '--v2')
 
-def build_v1v2_searchindex() -> None:
-    """Builds the custom search index defined in the api_v2 management
-    commands. Only adds the v1 data."""
-    call_command('buildindex','--v1','--v2')
+
+def setup_search_index():
+    """Unpack pre-built indexes if available, otherwise build from scratch."""
+    archive_dir = Path("search/indexes")
+    whoosh_archive = archive_dir / "whoosh_index.tar.gz"
+    vector_archive = archive_dir / "vector_index.pkl.gz"
+    
+    if whoosh_archive.exists() and vector_archive.exists():
+        print("Unpacking pre-built indexes...")
+        call_command('indexctl', 'unpack')
+    else:
+        print("No pre-built indexes found, building from scratch...")
+        print("(This takes 2-3 min. Run 'manage.py indexctl pack' to avoid this next time.)")
+        build_search_index()

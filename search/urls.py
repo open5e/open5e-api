@@ -5,7 +5,7 @@ from rest_framework import routers
 from search import viewsets
 
 search_router = routers.DefaultRouter()
-search_router.register('',viewsets.SearchResultViewSet, basename='search')
+search_router.register('', viewsets.SearchViewSet, basename='search')
 
 urlpatterns = [
     path('v2/search/', include(search_router.urls)),

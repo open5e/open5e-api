@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "5.*"
+django = "~=5.0"
 djangorestframework = "*"
 django-filter = "*"
 django-cors-headers = "*"
@@ -13,9 +13,10 @@ requests = "*"
 whitenoise = "*"
 gunicorn = "*"
 drf-spectacular = {extras = ["sidecar"], version = "*"}
-numpy = "*"
-rapidfuzz = "*"
-scikit-learn = "*"
+django-haystack = "*"
+Whoosh = "*"
+numpy = "<2.0"
+spacy = ">=3.0"
 
 [dev-packages]
 pytest = "*"

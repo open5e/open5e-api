@@ -74,23 +74,30 @@ pipenv install --dev
 
 ## Build
 
-Crate a local database and import game content. 
+Create a local database, import game content, and set up search indexes:
+
 ```bash
-pipenv run python manage.py quicksetup --noindex
+pipenv run python manage.py quicksetup
 ```
 
-To make sure the API is always using your updated code, this command must be run again if:
-- You add/remove/edit Game Content
-- You edit Python code
-- You switch git branches
+Run this again if you switch git branches or pull new changes.
 
 
 ### Search Indexing
 
-To use the search function, you must build the search index by running the above command without the `--noindex` flag.
+Search indexes are pre-built and included in the repo. Running `quicksetup` unpacks them automatically:
+
 ```bash
 pipenv run python manage.py quicksetup
 ```
+
+If you've changed data in `data/`, rebuild the indexes before committing:
+
+```bash
+pipenv run python manage.py quickindex
+```
+
+This takes 2-3 minutes and updates `search/indexes/` which should be committed with your data changes.
 
 ## Run
 
@@ -117,19 +124,21 @@ pipenv run python manage.py spectacular --color --file openapi-schema.yml` to bu
 ```
 
 # Contributing
-See [contribution guide](CONTRIBUTING.md).
+
+We welcome contributions! Please join our [Discord](https://discord.gg/9RNE2rY) to coordinate with the team, or check out the [issue board](https://github.com/open5e/open5e-api/issues) to see what's being worked on.
 # Tests
 
-Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository. These tests require that the api is [running](##run) at `http://localhost:8000`.
+Tests are located in `api/tests` and `api_v2/tests`. Run them before pushing new changes. Tests require the API to be [running](##run) at `http://localhost:8000`.
 
 ```bash
 pipenv run pytest
 ```
 
 ## Approval tests
-Approval tests are run against the approved files in `api/tests/approved_files` as `*.approved.*` . If a test fails then the recieved input will be stored in a `*.recieved.*` file. If you wish to approve the changes, replace the old approved file with the recieved file.
+Approval tests compare API responses against pre-approved JSON files in `api_v2/tests/responses/*.approved.json`. If a test fails, the received response is saved as `*.received.json`. To approve changes, rename the received file to replace the approved file.
 
-Recieved files shall not be included in the git repo.
+Received files should not be committed to git.
+
 
 # Deployment
 

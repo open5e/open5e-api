@@ -46,28 +46,59 @@ python manage.py migrate                # Apply migrations
 python manage.py collectstatic         # Static files
 ```
 
+### Search Index Management
+The search system uses three indexes: SQLite FTS5, Whoosh (Haystack), and spaCy vector embeddings.
+
+```bash
+# Rebuild all search indexes (2-3 minutes, use for CI/deployment)
+pipenv run python manage.py quickindex
+
+# Lower-level commands:
+pipenv run python manage.py buildindex --v1 --v2  # Build indexes from scratch
+pipenv run python manage.py indexctl pack         # Pack indexes for distribution
+pipenv run python manage.py indexctl unpack       # Unpack indexes after clone
+```
+
+- **quickindex**: Convenience command that runs `buildindex --v1 --v2` then `indexctl pack`
+- Packed indexes stored in `search/indexes/` (committed to repo)
+- After running `quickindex`, commit `search/indexes/` and `search/index_manifest.json`
+- Background re-indexing runs ~60s after server startup (configurable via `SEARCH_INDEX_REFRESH_DELAY`)
+
 ### Fixture Data Loading
 - Fixtures are automatically loaded by quicksetup
 - Data format: JSON files with Django fixture format
 - v2 fixtures in `data/v2/publisher/document/` structure
+- Each document folder contains model-specific JSON files (e.g., `Spell.json`, `SpellCastingOption.json`)
 
-## Testing System (APPROVAL TESTS)
+### Spell Data Structure
+- `Spell.json` - Core spell definitions with `higher_level` text field
+- `SpellCastingOption.json` - Structured casting options (slot levels, damage scaling, etc.)
+- **Rule**: Every spell with `higher_level` text must have corresponding entries in `SpellCastingOption.json`
+- Casting option types: `default`, `slot_level_1` through `slot_level_9`, `player_level_5/11/17` for cantrips
 
-### How Approval Tests Work
-The project uses **approval testing** - tests compare actual API responses against pre-approved JSON files.
+## Testing System
 
-#### Test Structure
+### Test Types
+1. **Approval Tests** - Compare API responses against pre-approved JSON files
+2. **Data Integrity Tests** - Validate relationships and completeness of fixture data
+
+### Test Structure
 - Tests in: `api_v2/tests/test_objects.py`
 - Approved responses: `api_v2/tests/responses/*.approved.json`
 - Failed test responses: `api_v2/tests/responses/*.received.json`
 
-#### Running Tests
+### Running Tests
 ```bash
 # Requires running server for integration tests
-python manage.py runserver 8000 &
-python -m pytest api_v2/tests/test_objects.py -v
+pipenv run python manage.py runserver 8000 &
+pipenv run pytest api_v2/tests/ -v
 pkill -f "python manage.py runserver"  # Stop server
 ```
+
+### Data Integrity Tests (`TestSpellCastingOptions`)
+- `test_all_spells_with_higher_level_have_casting_options` - Validates every spell with `higher_level` text has casting options
+- `test_no_duplicate_casting_option_types` - Ensures no spell has duplicate casting option types
+- **When adding new spells**: If the spell has `higher_level` text, you must also add entries to `SpellCastingOption.json`
 
 #### Updating Test Expectations (IMPORTANT PATTERN)
 When API responses change (like adding new fields):
@@ -160,10 +191,13 @@ pkill -f "python manage.py runserver"
 
 ```bash
 # Full development reset
-python manage.py quicksetup --clean --noindex
+pipenv run python manage.py quicksetup --clean --noindex
+
+# Run all tests
+pipenv run pytest api_v2/tests/ -v
 
 # Run specific test
-python -m pytest api_v2/tests/test_objects.py::TestObjects::test_document_example -v
+pipenv run pytest api_v2/tests/test_objects.py::TestObjects::test_document_example -v
 
 # Find fixture files
 find data/v2/ -name "*.json" | grep -i document
@@ -173,6 +207,7 @@ curl -s "http://localhost:8000/v2/documents/srd-2024/" | python -m json.tool
 
 # Update all failing tests at once
 cd api_v2/tests/responses/ && for file in *.received.json; do mv "$file" "${file%.received.json}.approved.json"; done
+
 ```
 
 ## Project Conventions
@@ -186,3 +221,7 @@ cd api_v2/tests/responses/ && for file in *.received.json; do mv "$file" "${file
 - RESTful endpoints: `/v2/modelname/` and `/v2/modelname/key/`
 - Consistent field naming across models
 - Rich relationship serialization (nested objects, not just IDs)
+
+### Documentation
+- Avoid obvious documentation, only document what is not immediately obvious from names
+- Include swagger spec where appropriate

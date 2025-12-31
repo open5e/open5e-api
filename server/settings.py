@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     # downloaded modules
     "rest_framework",
     "django_filters",
+    "haystack",
 ]
 
 
@@ -215,6 +216,20 @@ SECURE_PROXY_SSL_HEADER = (
     "HTTP_X_FORWARDED_PROTO",
     "https",
 )  # This setting allows the header from NGINX to tell us that the request is secured.
+
+# Haystack search configuration (using Whoosh - pure Python, no external service needed)
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    },
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = 'search.signal_processor.ConditionalSignalProcessor'
+
+# Background re-index after startup (set delay to 0 to disable)
+SEARCH_INDEX_REFRESH_DELAY = int(os.environ.get('SEARCH_INDEX_REFRESH_DELAY', 60))
+SEARCH_INDEX_REFRESH_VECTOR = os.environ.get('SEARCH_INDEX_REFRESH_VECTOR', 'true').lower() in ('true', '1', 'yes')
 
 SPECTACULAR_SETTINGS = {
     'VERSION' : 'development',

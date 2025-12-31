@@ -2,19 +2,24 @@ FROM python:3.11-slim
 
 RUN mkdir -p /opt/services/open5e-api
 WORKDIR /opt/services/open5e-api
-# copy our project code
 
-# install our dependencies
+# Install dependencies
 RUN pip install pipenv gunicorn
+
+# Copy project files
 COPY . /opt/services/open5e-api
 
-RUN pipenv install
+# Install all dependencies from Pipfile
+RUN pipenv install -v
 
-# migrate the db, load content, and index it
-RUN pipenv run python manage.py quicksetup
+# Download spaCy model for semantic search
+RUN pipenv run python -m spacy download en_core_web_md
 
-# remove .env file (set your env vars via docker-compose.yml or your hosting provider)
-RUN rm .env
+# Remove .env file (set your env vars via docker-compose.yml or your hosting provider)
+RUN rm -f .env
 
-#run gunicorn.
-CMD ["pipenv", "run", "gunicorn","-b", ":8888", "server.wsgi:application"]
+# Run setup (SECRET_KEY only needed at build time for collectstatic/migrations)
+RUN SECRET_KEY=insecure-dummy-key pipenv run python manage.py quicksetup
+
+# Run gunicorn
+CMD ["pipenv", "run", "gunicorn", "-b", ":8080", "--workers", "2", "--timeout", "120", "server.wsgi:application"]
