@@ -1,6 +1,6 @@
 """
 Search ViewSets for Open5e API v2.
-Provides backward-compatible search functionality using Elasticsearch.
+Provides text, fuzzy, and semantic vector search.
 """
 import time
 import logging
@@ -15,12 +15,12 @@ from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 
-from .services import ElasticsearchSearchService
+from .services import search_service
 
 logger = logging.getLogger(__name__)
 
 # Initialize search service
-search_service = ElasticsearchSearchService()
+# search_service is imported from services module
 
 # Cache for highlighting patterns to avoid recompiling regexes
 _highlight_pattern_cache = {}
@@ -166,10 +166,10 @@ class SearchViewSet(ViewSet):
             search_types = None  # Use service defaults
         
         try:
-            # Get all results first (reasonable limit for Elasticsearch)
+            # Get all results
             search_response = search_service.search(
                 query=query,
-                limit=2000,  # Reasonable limit that stays within Elasticsearch constraints
+                limit=2000,
                 search_types=search_types
             )
             
@@ -192,9 +192,8 @@ class SearchViewSet(ViewSet):
                 if highlight:
                     highlighted_text = None
                     
-                    # Use Elasticsearch highlighting if available, otherwise fall back to manual highlighting
+                    # Use search highlighting if available
                     if result.highlighted_content:
-                        # Extract highlighted content from Elasticsearch highlighting
                         highlighted_snippets = result.highlighted_content
                         
                         # The first snippet usually contains the name and beginning of description

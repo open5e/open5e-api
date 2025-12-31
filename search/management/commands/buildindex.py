@@ -2,6 +2,7 @@ import argparse
 import pickle
 import gc
 
+import numpy as np
 from pathlib import Path
 
 from django.core.management import call_command
@@ -12,7 +13,6 @@ from django.db import connection, transaction
 from api import models as v1
 from api_v2 import models as v2
 from search import models as search
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 class Command(BaseCommand):
     """Implementation for the `manage.py `index_v1` subcommand."""
@@ -116,83 +116,97 @@ class Command(BaseCommand):
                 "FROM search_searchresult")
 
     def build_vector_index(self):
-        """Create a TF-IDF matrix for vector search and store it to disk with memory optimization."""
-        print("Building TF-IDF vector index...")
+        """Create word embeddings using spaCy for semantic search."""
+        print("Building semantic vector index with spaCy...")
+        
+        try:
+            import spacy
+        except ImportError:
+            print("ERROR: spacy not installed. Run: pipenv install spacy")
+            return
+        
+        # Load spaCy model with word vectors
+        print("Loading spaCy model (en_core_web_md)...")
+        try:
+            nlp = spacy.load("en_core_web_md")
+        except OSError:
+            print("Downloading spaCy model en_core_web_md...")
+            import subprocess
+            subprocess.run(["python", "-m", "spacy", "download", "en_core_web_md"], check=True)
+            nlp = spacy.load("en_core_web_md")
+        
+        # Disable components we don't need for speed
+        nlp.disable_pipes("ner", "parser")
         
         qs = search.SearchResult.objects.all().order_by("id")
         total_count = qs.count()
         
         if not total_count:
-            print("No documents found for TF-IDF indexing")
+            print("No documents found for semantic indexing")
             return
         
-        print(f"Processing {total_count} documents for TF-IDF...")
+        print(f"Processing {total_count} documents...")
         
-        # Process in smaller batches to reduce memory usage
-        batch_size = 1000
-        all_docs = []
-        all_ids = []
+        all_embeddings = []
         all_names = []
+        all_metadata = []
         
+        batch_size = 500
         for offset in range(0, total_count, batch_size):
             batch_qs = qs[offset:offset + batch_size]
-            batch_docs = []
-            batch_ids = []
-            batch_names = []
+            batch_texts = []
             
             for o in batch_qs:
-                text = f"{o.object_name} {o.text or ''}"
-                # Limit text length to prevent memory issues
-                if len(text) > 1000:
-                    text = text[:1000]
+                # Use name + first part of description
+                text = o.object_name
+                if o.text:
+                    text += " " + o.text[:200]
                 
-                batch_docs.append(text)
-                batch_ids.append(o.id)
-                batch_names.append(o.object_name)
+                batch_texts.append(text)
+                all_names.append(o.object_name)
+                all_metadata.append({
+                    'object_type': o.object_model,
+                    'document_pk': o.document_pk,
+                    'schema_version': o.schema_version,
+                    'description': (o.text or '')[:500]
+                })
             
-            all_docs.extend(batch_docs)
-            all_ids.extend(batch_ids)
-            all_names.extend(batch_names)
+            # Process batch with spaCy's pipe for efficiency
+            for doc in nlp.pipe(batch_texts, batch_size=50):
+                # Average word vectors, ignoring words without vectors
+                vectors = [token.vector for token in doc if token.has_vector]
+                if vectors:
+                    avg_vector = np.mean(vectors, axis=0)
+                    # Normalize for cosine similarity
+                    norm = np.linalg.norm(avg_vector)
+                    if norm > 0:
+                        avg_vector = avg_vector / norm
+                    all_embeddings.append(avg_vector)
+                else:
+                    # Zero vector for documents with no recognized words
+                    all_embeddings.append(np.zeros(nlp.vocab.vectors_length))
             
-            print(f"Processed batch {offset//batch_size + 1}/{(total_count-1)//batch_size + 1}")
-            
-            # Clean up batch variables
-            del batch_docs, batch_ids, batch_names
+            print(f"Processed {min(offset + batch_size, total_count)}/{total_count} documents")
             gc.collect()
         
-        # Create TF-IDF vectorizer with memory-friendly settings
-        print("Creating TF-IDF vectorizer...")
-        vectorizer = TfidfVectorizer(
-            max_features=2000,  # Reduced from 5000 to save memory
-            stop_words='english',
-            ngram_range=(1, 1),  # Only unigrams to save memory
-            min_df=2,
-            max_df=0.8,
-            lowercase=True,
-            strip_accents='unicode'
-        )
-        
-        print("Fitting TF-IDF vectorizer...")
-        # Keep sparse matrix to save memory
-        matrix = vectorizer.fit_transform(all_docs)
-        
-        print(f"TF-IDF matrix shape: {matrix.shape}")
+        embeddings = np.array(all_embeddings)
+        print(f"Embedding shape: {embeddings.shape}")
         print("Saving vector index to disk...")
         
         index_data = {
-            "ids": all_ids, 
-            "names": all_names, 
-            "matrix": matrix,  # Keep as sparse matrix
-            "vectorizer": vectorizer
+            "names": all_names,
+            "metadata": all_metadata,
+            "embeddings": embeddings,
+            "vector_size": nlp.vocab.vectors_length
         }
         
         with Path("server/vector_index.pkl").open("wb") as fh:
             pickle.dump(index_data, fh)
         
-        print("Vector index saved successfully")
+        print("Semantic vector index saved successfully")
         
-        # Clean up large variables
-        del all_docs, all_ids, all_names, matrix, index_data
+        # Clean up
+        del all_embeddings, all_names, all_metadata, embeddings, index_data, nlp
         gc.collect()
 
     def check_fts_enabled(self):
@@ -262,6 +276,11 @@ class Command(BaseCommand):
         self.build_vector_index()
         print("✅ Vector index built")
 
+        # Build Whoosh index for Haystack text/fuzzy search
+        print("=== Building Whoosh search index ===")
+        self.build_whoosh_index()
+        print("✅ Whoosh index built")
+
         # Unload content table (saves storage space.)
         print("=== Cleaning up ===")
         self.unload_all_content()
@@ -269,3 +288,11 @@ class Command(BaseCommand):
         
         print("=== buildindex command completed successfully ===")
         print("Total SearchResult objects:", search.SearchResult.objects.all().count())
+    
+    def build_whoosh_index(self):
+        """Build the Whoosh index for Haystack text search."""
+        try:
+            call_command('rebuild_index', '--noinput')
+        except Exception as e:
+            print(f"Warning: Could not build Whoosh index: {e}")
+            print("Text search may fall back to SQLite FTS")

@@ -66,14 +66,14 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'api',
     'api_v2',
-    'search.apps.SearchConfig',
-    'haystack',
-    'drf_spectacular',
+    'search',
+	'drf_spectacular',
     'drf_spectacular_sidecar',
 
     # downloaded modules
     "rest_framework",
     "django_filters",
+    "haystack",
 ]
 
 
@@ -217,6 +217,18 @@ SECURE_PROXY_SSL_HEADER = (
     "https",
 )  # This setting allows the header from NGINX to tell us that the request is secured.
 
+# Haystack search configuration (using Whoosh - pure Python, no external service needed)
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    },
+}
+
+# Disable automatic signal-based indexing during data loading
+# We'll rebuild the index manually after loading data
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.BaseSignalProcessor'
+
 SPECTACULAR_SETTINGS = {
     'VERSION' : 'development',
     'TITLE': 'Open5e',
@@ -240,39 +252,4 @@ SPECTACULAR_SETTINGS = {
         'operationsSorter': None,  
         'tagsSorter': None,        
     }
-}
-
-# Haystack Configuration for Elasticsearch
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.elasticsearch7_backend.Elasticsearch7SearchEngine',
-        'URL': os.environ.get('ELASTICSEARCH_URL', 'http://127.0.0.1:9200/'),
-        'INDEX_NAME': 'open5e_search',
-        'KWARGS': {
-            'verify_certs': False,
-        }
-    },
-}
-
-# Haystack settings
-HAYSTACK_SIGNAL_PROCESSOR = 'search.signal_processor.ConditionalSignalProcessor'
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'root': {
-        'handlers': ['console'],
-    },
-    'loggers': {
-        'search.services': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-    },
 }

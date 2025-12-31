@@ -1,24 +1,19 @@
 """
-Search indexes for Elasticsearch with vector support.
+Search indexes for Whoosh text search.
+Vector search is handled separately via spaCy word embeddings.
 """
-import json
 from haystack import indexes
-from .services import get_tfidf_vectorizer
 
 
 class BaseSearchIndex(indexes.SearchIndex):
-    """Base search index with common fields and vector embedding."""
+    """Base search index with common fields for text search."""
     
-    # Text fields for traditional search
     text = indexes.CharField(document=True, use_template=True)
     name = indexes.CharField(model_attr='name')
     description = indexes.CharField()
     object_type = indexes.CharField()
     document_name = indexes.CharField()
     schema_version = indexes.CharField()
-    
-    # Vector field for semantic search (stored as JSON string)
-    embedding_vector = indexes.CharField(indexed=False)
     
     def prepare_description(self, obj):
         """Prepare description field from various sources."""
@@ -38,7 +33,6 @@ class BaseSearchIndex(indexes.SearchIndex):
             if hasattr(obj, 'document') and obj.document:
                 return obj.document.display_name_or_name
         except Exception:
-            # During fixture loading, related objects might not exist yet
             pass
         return "Unknown"
     
@@ -46,40 +40,10 @@ class BaseSearchIndex(indexes.SearchIndex):
         """Get schema version."""
         try:
             if hasattr(obj, 'document') and obj.document:
-                # API v2 doesn't seem to have a schema_version field, default to v2
                 return getattr(obj.document, 'schema_version', 'v2') or 'v2'
         except Exception:
-            # During fixture loading, related objects might not exist yet
             pass
         return 'v2'
-    
-    def prepare_embedding_vector(self, obj):
-        """Generate TF-IDF vector for semantic search."""
-        try:
-            # Combine name and description for embedding
-            text_for_embedding = f"{obj.name}"
-            if hasattr(obj, 'desc') and obj.desc:
-                text_for_embedding += f" {obj.desc}"
-            elif hasattr(obj, 'description') and obj.description:
-                text_for_embedding += f" {obj.description}"
-            
-            # Generate TF-IDF vector
-            vectorizer = get_tfidf_vectorizer()
-            if vectorizer is not None:
-                # Check if vectorizer is fitted
-                if hasattr(vectorizer, 'vocabulary_') and vectorizer.vocabulary_:
-                    tfidf_vector = vectorizer.transform([text_for_embedding])
-                    # Convert sparse matrix to dense array and then to list
-                    dense_vector = tfidf_vector.toarray()[0]
-                    return json.dumps(dense_vector.tolist())
-                else:
-                    # Vectorizer not fitted yet (e.g., during initial data loading)
-                    return "[]"
-            else:
-                return "[]"
-        except Exception as e:
-            # Silently handle TF-IDF generation errors during setup
-            return "[]"
 
 
 class SpellIndex(BaseSearchIndex, indexes.Indexable):

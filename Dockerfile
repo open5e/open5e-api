@@ -12,12 +12,14 @@ COPY . /opt/services/open5e-api
 # Install all dependencies from Pipfile
 RUN pipenv install -v
 
+# Download spaCy model for semantic search
+RUN pipenv run python -m spacy download en_core_web_md
+
 # Remove .env file (set your env vars via docker-compose.yml or your hosting provider)
 RUN rm -f .env
 
-# Copy startup script
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+# Run setup
+RUN pipenv run python manage.py quicksetup
 
-# Run startup script (handles migrations, quicksetup, and gunicorn)
-CMD ["/start.sh"]
+# Run gunicorn
+CMD ["pipenv", "run", "gunicorn", "-b", ":8080", "--workers", "2", "--timeout", "120", "server.wsgi:application"]

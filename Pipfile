@@ -13,10 +13,10 @@ requests = "*"
 whitenoise = "*"
 gunicorn = "*"
 drf-spectacular = {extras = ["sidecar"], version = "*"}
-elasticsearch = ">=7.0.0,<8.0.0"
 django-haystack = "*"
+Whoosh = "*"
 numpy = "<2.0"
-scikit-learn = "*"
+spacy = ">=3.0"
 
 [dev-packages]
 pytest = "*"

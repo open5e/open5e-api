@@ -15,16 +15,6 @@ class SearchConfig(AppConfig):
     
     def ready(self):
         """Initialize search components when Django starts."""
-        try:
-            logger.info("Initializing search components...")
-            from .services import get_tfidf_vectorizer
-            
-            # Only initialize the vectorizer factory, don't build index during startup
-            # This prevents hanging when Elasticsearch is not available during Django startup
-            logger.info("TF-IDF vectorizer factory initialized")
-            
-            # Vector index will be built lazily on first search request
-            logger.info("Search components initialized successfully")
-        except Exception as e:
-            logger.error(f"Error initializing search components: {e}")
-            # Don't crash the app if search initialization fails
+        # Search components are loaded lazily on first use
+        # No initialization needed during Django startup
+        logger.info("Search app ready - components will load on first use")
