@@ -1,7 +1,28 @@
 FROM python:3.11-slim
 
-# Add system dependencies for building packages
-RUN apt-get update && apt-get install -y build-essential curl && rm -rf /var/lib/apt/lists/*
+# Install system dependencies including those needed for Elasticsearch
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    wget \
+    gnupg \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Elasticsearch
+RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add - && \
+    echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-8.x.list && \
+    apt-get update && \
+    apt-get install -y elasticsearch && \
+    rm -rf /var/lib/apt/lists/*
+
+# Configure Elasticsearch for single-node setup
+RUN echo "discovery.type: single-node" >> /etc/elasticsearch/elasticsearch.yml && \
+    echo "xpack.security.enabled: false" >> /etc/elasticsearch/elasticsearch.yml && \
+    echo "network.host: 0.0.0.0" >> /etc/elasticsearch/elasticsearch.yml
+
+# Create non-root user for Elasticsearch
+RUN useradd -r -s /bin/false elasticsearch && \
+    chown -R elasticsearch:elasticsearch /etc/elasticsearch /var/lib/elasticsearch /var/log/elasticsearch
 
 RUN mkdir -p /opt/services/open5e-api
 WORKDIR /opt/services/open5e-api
@@ -22,6 +43,9 @@ RUN rm -f .env
 # Create startup script
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
+
+# Expose ports
+EXPOSE 8080 9200
 
 # Run startup script
 CMD ["/start.sh"]
