@@ -29,18 +29,13 @@ services:
     github:
       repo: open5e/open5e-api
       branch: main
-    buildpack:
-      name: heroku/python
-    build_command: npm run build
-    run_command: npm run start
+    dockerfile_path: Dockerfile
     http_port: 8080
     instance_count: 1
     instance_size_slug: basic-xxs
     envs:
       - key: ELASTICSEARCH_URL
         value: "http://elasticsearch:9200/"
-      - key: PYTHON_VERSION
-        value: "3.11"
     health_check:
       http_path: "/"
       initial_delay_seconds: 60
