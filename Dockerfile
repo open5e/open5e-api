@@ -18,8 +18,8 @@ RUN pipenv run python -m spacy download en_core_web_md
 # Remove .env file (set your env vars via docker-compose.yml or your hosting provider)
 RUN rm -f .env
 
-# Run setup
-RUN pipenv run python manage.py quicksetup
+# Run setup (SECRET_KEY only needed at build time for collectstatic/migrations)
+RUN SECRET_KEY=insecure-dummy-key pipenv run python manage.py quicksetup
 
 # Run gunicorn
 CMD ["pipenv", "run", "gunicorn", "-b", ":8080", "--workers", "2", "--timeout", "120", "server.wsgi:application"]
