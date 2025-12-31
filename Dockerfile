@@ -1,5 +1,7 @@
 FROM python:3.11-slim
 
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
+
 RUN mkdir -p /opt/services/open5e-api
 WORKDIR /opt/services/open5e-api
 # copy our project code

@@ -14,8 +14,11 @@ whitenoise = "*"
 gunicorn = "*"
 drf-spectacular = {extras = ["sidecar"], version = "*"}
 numpy = "*"
-rapidfuzz = "*"
 scikit-learn = "*"
+elasticsearch = "*"
+sentence-transformers = "*"
+torch = "*"
+django-haystack = "*"
 
 [dev-packages]
 pytest = "*"

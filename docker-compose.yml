@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  elasticsearch:
+    image: elasticsearch:8.11.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+
+  web:
+    build: .
+    ports:
+      - "8888:8888"
+    environment:
+      - SECRET_KEY=your-secret-key-change-this
+    depends_on:
+      - elasticsearch 
