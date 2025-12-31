@@ -80,7 +80,7 @@ class Command(BaseCommand):
                 higher_level = spell.get('fields', {}).get('higher_level', '')
                 
                 # Check if spell has higher_level text but no casting options
-                if higher_level and pk not in spells_with_options:
+                if higher_level.strip() and pk not in spells_with_options:
                     issues_in_file.append({
                         'name': name,
                         'pk': pk,
@@ -98,9 +98,11 @@ class Command(BaseCommand):
                     self.stdout.write(self.style.ERROR(
                         f'  ✗ {issue["name"]} (level {issue["level"]}, pk: {issue["pk"]})'
                     ))
-                    self.stdout.write(
-                        f'    Higher Level: {issue["higher_level"][:MAX_DESCRIPTION_LENGTH]}...'
-                    )
+                    # Truncate description if needed
+                    desc = issue["higher_level"]
+                    if len(desc) > MAX_DESCRIPTION_LENGTH:
+                        desc = desc[:MAX_DESCRIPTION_LENGTH] + '...'
+                    self.stdout.write(f'    Higher Level: {desc}')
         
         # Final report
         self.stdout.write('\n' + '=' * 70)
