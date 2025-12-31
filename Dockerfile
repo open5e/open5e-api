@@ -20,9 +20,11 @@ RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | gpg --dearmo
 RUN sed -i '/^discovery.type:/d' /etc/elasticsearch/elasticsearch.yml && \
     sed -i '/^xpack.security.enabled:/d' /etc/elasticsearch/elasticsearch.yml && \
     sed -i '/^network.host:/d' /etc/elasticsearch/elasticsearch.yml && \
+    sed -i '/^xpack.entitlement.enabled:/d' /etc/elasticsearch/elasticsearch.yml && \
     echo "discovery.type: single-node" >> /etc/elasticsearch/elasticsearch.yml && \
     echo "xpack.security.enabled: false" >> /etc/elasticsearch/elasticsearch.yml && \
-    echo "network.host: 0.0.0.0" >> /etc/elasticsearch/elasticsearch.yml
+    echo "network.host: 0.0.0.0" >> /etc/elasticsearch/elasticsearch.yml && \
+    echo "xpack.entitlement.enabled: false" >> /etc/elasticsearch/elasticsearch.yml
 
 # Ensure Elasticsearch directories exist and have correct permissions
 # Note: The elasticsearch package already creates the elasticsearch user
