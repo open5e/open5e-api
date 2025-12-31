@@ -3,6 +3,13 @@ set -e
 
 echo "Starting Open5e API..."
 
+# Generate SECRET_KEY if not provided
+if [ -z "${SECRET_KEY:-}" ]; then
+    echo "SECRET_KEY not set, generating random key..."
+    export SECRET_KEY=$(python3 -c 'import secrets; print(secrets.token_urlsafe(50))')
+    echo "Generated SECRET_KEY for this session"
+fi
+
 # Check if Elasticsearch is installed in this container
 if [ -f /usr/share/elasticsearch/bin/elasticsearch ]; then
     echo "Elasticsearch detected in container, starting it..."
