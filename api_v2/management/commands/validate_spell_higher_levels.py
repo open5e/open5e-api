@@ -8,6 +8,9 @@ from pathlib import Path
 
 from django.core.management.base import BaseCommand
 
+# Maximum length for truncated text in output
+MAX_DESCRIPTION_LENGTH = 100
+
 
 class Command(BaseCommand):
     """Validate that spells with higher_level text have casting options."""
@@ -96,7 +99,7 @@ class Command(BaseCommand):
                         f'  ✗ {issue["name"]} (level {issue["level"]}, pk: {issue["pk"]})'
                     ))
                     self.stdout.write(
-                        f'    Higher Level: {issue["higher_level"][:100]}...'
+                        f'    Higher Level: {issue["higher_level"][:MAX_DESCRIPTION_LENGTH]}...'
                     )
         
         # Final report
