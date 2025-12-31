@@ -436,42 +436,106 @@ class ElasticsearchSearchService:
         """Perform text-based search with timing."""
         start_time = time.time()
         
-        sqs_start = time.time()
-        sqs = SearchQuerySet().filter(content=query).highlight()
-        sqs_time = (time.time() - sqs_start) * 1000
-        logger.debug(f"Text SQS filter: {sqs_time:.1f}ms")
-        
-        # Apply filters
-        filter_start = time.time()
-        if filters:
-            for field, value in filters.items():
-                sqs = sqs.filter(**{field: value})
-        filter_time = (time.time() - filter_start) * 1000
-        logger.debug(f"Text filtering: {filter_time:.1f}ms")
-        
-        # Execute query and convert results
-        execute_start = time.time()
-        results = []
-        for result in sqs[:limit * 2]:  # Get more for deduplication
-            if hasattr(result, 'name') and result.name:
-                # Get highlighted content if available
-                highlighted = getattr(result, 'highlighted', None)
-                results.append(SearchResult(
-                    name=result.name,
-                    description=getattr(result, 'description', '') or '',
-                    object_type=getattr(result, 'object_type', 'Unknown'),
-                    document_name=getattr(result, 'document_name', 'Unknown'),
-                    schema_version=getattr(result, 'schema_version', 'v2'),
-                    score=25.0,  # High score for exact text matches
-                    search_type='text',
-                    indexed_fields=self._extract_indexed_fields(result),
-                    highlighted_content=highlighted if highlighted else None
-                ))
-        execute_time = (time.time() - execute_start) * 1000
-        logger.debug(f"Text execution: {execute_time:.1f}ms")
+        # Check if Elasticsearch is available first
+        if not self._is_elasticsearch_available():
+            logger.info("Elasticsearch not available, using SQLite FTS")
+            results = self._sqlite_fts_search(query, limit)
+        else:
+            try:
+                # Try Elasticsearch first
+                sqs_start = time.time()
+                sqs = SearchQuerySet().filter(content=query).highlight()
+                sqs_time = (time.time() - sqs_start) * 1000
+                logger.debug(f"Text SQS filter: {sqs_time:.1f}ms")
+                
+                # Apply filters
+                filter_start = time.time()
+                if filters:
+                    for field, value in filters.items():
+                        sqs = sqs.filter(**{field: value})
+                filter_time = (time.time() - filter_start) * 1000
+                logger.debug(f"Text filtering: {filter_time:.1f}ms")
+                
+                # Execute query and convert results - this is where Elasticsearch connection happens
+                execute_start = time.time()
+                results = []
+                sqs_results = list(sqs[:limit * 2])  # Force execution here to catch connection errors
+                for result in sqs_results:  # Get more for deduplication
+                    if hasattr(result, 'name') and result.name:
+                        # Get highlighted content if available
+                        highlighted = getattr(result, 'highlighted', None)
+                        results.append(SearchResult(
+                            name=result.name,
+                            description=getattr(result, 'description', '') or '',
+                            object_type=getattr(result, 'object_type', 'Unknown'),
+                            document_name=getattr(result, 'document_name', 'Unknown'),
+                            schema_version=getattr(result, 'schema_version', 'v2'),
+                            score=25.0,  # High score for exact text matches
+                            search_type='text',
+                            indexed_fields=self._extract_indexed_fields(result),
+                            highlighted_content=highlighted if highlighted else None
+                        ))
+                execute_time = (time.time() - execute_start) * 1000
+                logger.debug(f"Text execution: {execute_time:.1f}ms")
+                
+            except Exception as e:
+                logger.warning(f"Elasticsearch search failed, falling back to SQLite FTS: {e}")
+                # Fall back to SQLite FTS
+                results = self._sqlite_fts_search(query, limit)
         
         total_time = (time.time() - start_time) * 1000
         logger.debug(f"Text search total: {total_time:.1f}ms, {len(results)} results")
+        
+        return results
+    
+    def _is_elasticsearch_available(self) -> bool:
+        """Check if Elasticsearch is available."""
+        try:
+            import socket
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(1)  # 1 second timeout
+            result = sock.connect_ex(('127.0.0.1', 9200))
+            sock.close()
+            return result == 0
+        except Exception:
+            return False
+    
+    def _sqlite_fts_search(self, query: str, limit: int) -> List[SearchResult]:
+        """Fallback search using SQLite FTS5."""
+        from django.db import connection
+        
+        results = []
+        try:
+            with connection.cursor() as cursor:
+                # Escape the query for FTS5
+                escaped_query = query.replace('"', '""')
+                
+                # Perform FTS search
+                cursor.execute(
+                    'SELECT object_name, object_model, schema_version, document_pk '
+                    'FROM search_index '
+                    'WHERE search_index MATCH %s '
+                    'ORDER BY rank '
+                    'LIMIT %s',
+                    [f'"{escaped_query}"', limit]
+                )
+                
+                fts_results = cursor.fetchall()
+                
+                for name, model, schema, doc_pk in fts_results:
+                    results.append(SearchResult(
+                        name=name,
+                        description='',  # FTS doesn't store full description easily accessible
+                        object_type=model,
+                        document_name=doc_pk,  # Using doc_pk as document name for now
+                        schema_version=schema,
+                        score=20.0,  # Good score for FTS matches
+                        search_type='text',
+                        indexed_fields={}
+                    ))
+                
+        except Exception as e:
+            logger.error(f"SQLite FTS search failed: {e}")
         
         return results
     
