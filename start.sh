@@ -14,22 +14,24 @@ if [ -f /usr/share/elasticsearch/bin/elasticsearch ]; then
     # Start Elasticsearch in the background as elasticsearch user
     # Elasticsearch refuses to run as root, so we must run as elasticsearch user
     # Disable entitlements to avoid Attach API issues in containers
+    # Set both environment variable and JVM system property
     export ES_ENTITLEMENTS_ENABLED=false
+    export ES_JAVA_OPTS="${ES_JAVA_OPTS:--Xms512m -Xmx512m} -Des.entitlements.enabled=false"
     # Disable set -e temporarily to handle command failures gracefully
     set +e
     if command -v runuser >/dev/null 2>&1; then
-        runuser -u elasticsearch -- env ES_ENTITLEMENTS_ENABLED=false /usr/share/elasticsearch/bin/elasticsearch -d -p /var/run/elasticsearch/elasticsearch.pid
+        runuser -u elasticsearch -- env ES_ENTITLEMENTS_ENABLED=false ES_JAVA_OPTS="${ES_JAVA_OPTS}" /usr/share/elasticsearch/bin/elasticsearch -d -p /var/run/elasticsearch/elasticsearch.pid
         ES_STARTED=$?
     elif command -v su >/dev/null 2>&1; then
-        su -s /bin/bash elasticsearch -c "ES_ENTITLEMENTS_ENABLED=false /usr/share/elasticsearch/bin/elasticsearch -d -p /var/run/elasticsearch/elasticsearch.pid"
+        su -s /bin/bash elasticsearch -c "export ES_ENTITLEMENTS_ENABLED=false && export ES_JAVA_OPTS=\"${ES_JAVA_OPTS}\" && /usr/share/elasticsearch/bin/elasticsearch -d -p /var/run/elasticsearch/elasticsearch.pid"
         ES_STARTED=$?
     elif command -v sudo >/dev/null 2>&1; then
-        sudo -u elasticsearch env ES_ENTITLEMENTS_ENABLED=false /usr/share/elasticsearch/bin/elasticsearch -d -p /var/run/elasticsearch/elasticsearch.pid
+        sudo -u elasticsearch env ES_ENTITLEMENTS_ENABLED=false ES_JAVA_OPTS="${ES_JAVA_OPTS}" /usr/share/elasticsearch/bin/elasticsearch -d -p /var/run/elasticsearch/elasticsearch.pid
         ES_STARTED=$?
     else
         echo "WARNING: No suitable command found to run as elasticsearch user (tried runuser, su, sudo)"
         echo "Attempting to start as current user (may fail if running as root)..."
-        ES_ENTITLEMENTS_ENABLED=false /usr/share/elasticsearch/bin/elasticsearch -d -p /var/run/elasticsearch/elasticsearch.pid
+        ES_ENTITLEMENTS_ENABLED=false ES_JAVA_OPTS="${ES_JAVA_OPTS}" /usr/share/elasticsearch/bin/elasticsearch -d -p /var/run/elasticsearch/elasticsearch.pid
         ES_STARTED=$?
     fi
     set -e
