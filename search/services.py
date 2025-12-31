@@ -111,9 +111,32 @@ def get_vector_index():
     logger.info("Building TF-IDF vector index...")
     start_time = time.time()
     
-    # Get all documents for vector indexing
-    from haystack.query import SearchQuerySet
-    sqs = SearchQuerySet().all()
+    # Get all documents for vector indexing with simple connection test
+    try:
+        from haystack.query import SearchQuerySet
+        
+        # Simple connection test - if this fails quickly, skip vector search
+        try:
+            # Try to get just one result to test the connection
+            sqs = SearchQuerySet().all()
+            test_result = next(iter(sqs[:1]), None)  # Get first result or None
+            if test_result is None:
+                logger.warning("No documents found in Elasticsearch for vector indexing")
+                _vector_index_loaded = True
+                _vector_index = None
+                return None
+        except Exception as e:
+            logger.warning(f"Could not connect to Elasticsearch for vector indexing: {e}")
+            logger.info("Vector search will be disabled until Elasticsearch is available")
+            _vector_index_loaded = True  # Mark as "loaded" to prevent retrying
+            _vector_index = None
+            return None
+            
+    except ImportError:
+        logger.warning("Haystack not available, vector search disabled")
+        _vector_index_loaded = True
+        _vector_index = None
+        return None
     
     names = []
     documents = []

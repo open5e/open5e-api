@@ -1,0 +1,52 @@
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    wget \
+    curl \
+    gnupg \
+    supervisor \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Elasticsearch
+RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add - && \
+    echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-8.x.list && \
+    apt-get update && \
+    apt-get install -y elasticsearch && \
+    rm -rf /var/lib/apt/lists/*
+
+# Configure Elasticsearch for single-node setup
+RUN echo "discovery.type: single-node" >> /etc/elasticsearch/elasticsearch.yml && \
+    echo "xpack.security.enabled: false" >> /etc/elasticsearch/elasticsearch.yml && \
+    echo "network.host: 0.0.0.0" >> /etc/elasticsearch/elasticsearch.yml
+
+# Create non-root user for Elasticsearch
+RUN useradd -r -s /bin/false elasticsearch && \
+    chown -R elasticsearch:elasticsearch /etc/elasticsearch /var/lib/elasticsearch /var/log/elasticsearch
+
+# Setup Django app
+RUN mkdir -p /opt/services/open5e-api
+WORKDIR /opt/services/open5e-api
+
+# Install Python dependencies
+RUN pip install pipenv gunicorn
+
+# Copy project files
+COPY . /opt/services/open5e-api
+
+# Install all dependencies from Pipfile
+RUN pipenv install -v
+
+# Create supervisor configuration
+COPY supervisor.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Setup script to start services and initialize data
+COPY start.sh /opt/start.sh
+RUN chmod +x /opt/start.sh
+
+# Expose ports
+EXPOSE 8080 9200
+
+# Run supervisor to manage both services
+CMD ["/opt/start.sh"] 

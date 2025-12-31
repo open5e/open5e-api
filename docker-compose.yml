@@ -1,20 +1,42 @@
-version: '3.8'
-
 services:
   elasticsearch:
     image: elasticsearch:8.11.0
+    container_name: elasticsearch
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - http.max_content_length=100mb
+      - indices.memory.index_buffer_size=20%
     ports:
       - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s && curl -f http://localhost:9200/_cat/nodes?format=json | grep -q '\"name\"' || exit 1"]
+      interval: 15s
+      timeout: 30s
+      retries: 10
+      start_period: 60s
 
   web:
     build: .
+    container_name: open5e-api
     ports:
-      - "8888:8888"
+      - "8080:8080"
     environment:
-      - SECRET_KEY=your-secret-key-change-this
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-here}
+      - ELASTICSEARCH_URL=http://elasticsearch:9200/
     depends_on:
-      - elasticsearch 
+      elasticsearch:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/v2/spells/?limit=1 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    mem_limit: 1g
+    mem_reservation: 512m
+
+volumes:
+  elasticsearch_data: 

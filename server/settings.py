@@ -246,7 +246,7 @@ SPECTACULAR_SETTINGS = {
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.elasticsearch7_backend.Elasticsearch7SearchEngine',
-        'URL': 'http://127.0.0.1:9200/',
+        'URL': os.environ.get('ELASTICSEARCH_URL', 'http://127.0.0.1:9200/'),
         'INDEX_NAME': 'open5e_search',
         'KWARGS': {
             'verify_certs': False,
