@@ -255,7 +255,7 @@ HAYSTACK_CONNECTIONS = {
 }
 
 # Haystack settings
-HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+HAYSTACK_SIGNAL_PROCESSOR = 'search.signal_processor.ConditionalSignalProcessor'
 
 LOGGING = {
     'version': 1,

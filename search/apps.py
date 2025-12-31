@@ -17,11 +17,11 @@ class SearchConfig(AppConfig):
         """Initialize search components when Django starts."""
         try:
             logger.info("Initializing search components...")
-            from .services import get_tfidf_vectorizer, get_vector_index
+            from .services import get_tfidf_vectorizer
             
-            # Initialize TF-IDF vectorizer and build index
+            # Initialize TF-IDF vectorizer (doesn't require Elasticsearch)
             get_tfidf_vectorizer()
-            get_vector_index()
+            # Skip vector index building during startup - it will be built on first search
             
             logger.info("Search components initialized successfully")
         except Exception as e:

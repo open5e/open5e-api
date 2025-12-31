@@ -34,15 +34,23 @@ class BaseSearchIndex(indexes.SearchIndex):
     
     def prepare_document_name(self, obj):
         """Get document name."""
-        if hasattr(obj, 'document') and obj.document:
-            return obj.document.display_name_or_name
+        try:
+            if hasattr(obj, 'document') and obj.document:
+                return obj.document.display_name_or_name
+        except Exception:
+            # During fixture loading, related objects might not exist yet
+            pass
         return "Unknown"
     
     def prepare_schema_version(self, obj):
         """Get schema version."""
-        if hasattr(obj, 'document') and obj.document:
-            # API v2 doesn't seem to have a schema_version field, default to v2
-            return getattr(obj.document, 'schema_version', 'v2') or 'v2'
+        try:
+            if hasattr(obj, 'document') and obj.document:
+                # API v2 doesn't seem to have a schema_version field, default to v2
+                return getattr(obj.document, 'schema_version', 'v2') or 'v2'
+        except Exception:
+            # During fixture loading, related objects might not exist yet
+            pass
         return 'v2'
     
     def prepare_embedding_vector(self, obj):
@@ -58,14 +66,19 @@ class BaseSearchIndex(indexes.SearchIndex):
             # Generate TF-IDF vector
             vectorizer = get_tfidf_vectorizer()
             if vectorizer is not None:
-                tfidf_vector = vectorizer.transform([text_for_embedding])
-                # Convert sparse matrix to dense array and then to list
-                dense_vector = tfidf_vector.toarray()[0]
-                return json.dumps(dense_vector.tolist())
+                # Check if vectorizer is fitted
+                if hasattr(vectorizer, 'vocabulary_') and vectorizer.vocabulary_:
+                    tfidf_vector = vectorizer.transform([text_for_embedding])
+                    # Convert sparse matrix to dense array and then to list
+                    dense_vector = tfidf_vector.toarray()[0]
+                    return json.dumps(dense_vector.tolist())
+                else:
+                    # Vectorizer not fitted yet (e.g., during initial data loading)
+                    return "[]"
             else:
                 return "[]"
         except Exception as e:
-            print(f"Error generating TF-IDF vector for {obj.name}: {e}")
+            # Silently handle TF-IDF generation errors during setup
             return "[]"
 
 
