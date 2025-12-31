@@ -62,7 +62,7 @@ pipenv run python manage.py indexctl unpack       # Unpack indexes after clone
 - **quickindex**: Convenience command that runs `buildindex --v1 --v2` then `indexctl pack`
 - Packed indexes stored in `search/indexes/` (committed to repo)
 - After running `quickindex`, commit `search/indexes/` and `search/index_manifest.json`
-- GitHub Action `rebuild_search_index.yml` can trigger index rebuilds
+- Background re-indexing runs ~60s after server startup (configurable via `SEARCH_INDEX_REFRESH_DELAY`)
 
 ### Fixture Data Loading
 - Fixtures are automatically loaded by quicksetup

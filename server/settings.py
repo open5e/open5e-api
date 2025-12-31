@@ -225,9 +225,11 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-# Disable automatic signal-based indexing during data loading
-# We'll rebuild the index manually after loading data
 HAYSTACK_SIGNAL_PROCESSOR = 'search.signal_processor.ConditionalSignalProcessor'
+
+# Background re-index after startup (set delay to 0 to disable)
+SEARCH_INDEX_REFRESH_DELAY = int(os.environ.get('SEARCH_INDEX_REFRESH_DELAY', 60))
+SEARCH_INDEX_REFRESH_VECTOR = os.environ.get('SEARCH_INDEX_REFRESH_VECTOR', 'true').lower() in ('true', '1', 'yes')
 
 SPECTACULAR_SETTINGS = {
     'VERSION' : 'development',

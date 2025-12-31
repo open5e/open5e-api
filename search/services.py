@@ -1,9 +1,3 @@
-"""
-Search services for Open5e API.
-- Text search: Whoosh/Haystack for exact and partial word matches
-- Fuzzy search: Edit distance for typo tolerance  
-- Vector search: spaCy word embeddings for semantic similarity
-"""
 import time
 import logging
 import pickle
@@ -16,48 +10,43 @@ from haystack.query import SearchQuerySet
 
 logger = logging.getLogger(__name__)
 
-# Global state
 _vector_index = None
 _vector_index_loaded = False
 _spacy_model = None
-
-# Caches
 _query_embedding_cache = {}
 _fuzzy_search_cache = {}
 
 
 def get_vector_index():
-    """Load the pre-built semantic vector index from disk."""
     global _vector_index, _vector_index_loaded
-    
+
     if _vector_index_loaded:
         return _vector_index
-    
+
     _vector_index_loaded = True
-    
+
     try:
         from pathlib import Path
         from django.conf import settings
-        
+
         index_path = Path(settings.BASE_DIR) / "server" / "vector_index.pkl"
-        
+
         if not index_path.exists():
             logger.warning(f"Vector index not found at {index_path}")
             _vector_index = None
             return None
-            
-        logger.info("Loading semantic vector index...")
+
+        logger.info("Loading vector index...")
         start_time = time.time()
-        
+
         with index_path.open("rb") as fh:
             _vector_index = pickle.load(fh)
-        
-        load_time = time.time() - start_time
+
         if 'embeddings' in _vector_index:
-            logger.info(f"Loaded {len(_vector_index['embeddings'])} embeddings in {load_time:.2f}s")
-        
+            logger.info(f"Loaded {len(_vector_index['embeddings'])} embeddings in {time.time() - start_time:.2f}s")
+
         return _vector_index
-        
+
     except Exception as e:
         logger.error(f"Failed to load vector index: {e}")
         _vector_index = None
@@ -65,34 +54,30 @@ def get_vector_index():
 
 
 def get_spacy_model():
-    """Get or load the spaCy model for query embedding."""
     global _spacy_model
-    
+
     if _spacy_model is not None:
         return _spacy_model
-    
+
     try:
         import spacy
-        
-        logger.info("Loading spaCy model: en_core_web_md")
+        logger.info("Loading spaCy model")
         _spacy_model = spacy.load("en_core_web_md")
         _spacy_model.select_pipes(disable=["ner", "parser"])
         return _spacy_model
-        
     except ImportError:
-        logger.warning("spaCy not installed, vector search disabled")
+        logger.warning("spaCy not installed")
         return None
     except OSError:
-        logger.warning("spaCy model en_core_web_md not found, vector search disabled")
+        logger.warning("spaCy model not found")
         return None
     except Exception as e:
-        logger.error(f"Failed to load spaCy model: {e}")
+        logger.error(f"Failed to load spaCy: {e}")
         return None
 
 
 @dataclass
 class SearchResult:
-    """Represents a search result with score and metadata."""
     name: str
     description: str
     object_type: str
@@ -106,16 +91,14 @@ class SearchResult:
 
 
 class SearchService:
-    """Search service combining text, fuzzy, and semantic vector search."""
 
     def _calculate_edit_distance(self, s1: str, s2: str) -> int:
-        """Calculate Levenshtein distance between two strings."""
         if len(s1) < len(s2):
             return self._calculate_edit_distance(s2, s1)
-        
+
         if len(s2) == 0:
             return len(s1)
-        
+
         previous_row = list(range(len(s2) + 1))
         for i, c1 in enumerate(s1):
             current_row = [i + 1]
@@ -125,36 +108,34 @@ class SearchService:
                 substitutions = previous_row[j] + (c1 != c2)
                 current_row.append(min(insertions, deletions, substitutions))
             previous_row = current_row
-        
+
         return previous_row[-1]
 
     def _calculate_fuzzy_score(self, query: str, result_name: str, max_score: float = 20.0) -> float:
-        """Calculate distance-based score for fuzzy matches."""
         query_norm = query.lower().strip()
         name_norm = result_name.lower().strip()
-        
+
         distance = self._calculate_edit_distance(query_norm, name_norm)
         max_len = max(len(query_norm), len(name_norm))
-        
+
         if max_len == 0:
             return max_score
-        
+
         relative_distance = distance / max_len
         score = max_score * (1.0 - relative_distance)
-        
+
         return max(score, 1.0)
 
     def search(
-        self, 
-        query: str, 
+        self,
+        query: str,
         limit: int = 50,
         search_types: List[str] = None,
         boost_factors: Dict[str, float] = None,
         filters: Dict[str, Any] = None
     ) -> Dict[str, Any]:
-        """Perform search combining text, fuzzy, and semantic vector search."""
         start_time = time.time()
-        
+
         if search_types is None:
             search_types = ['text', 'fuzzy', 'vector']
         
@@ -204,7 +185,6 @@ class SearchService:
         }
 
     def _text_search(self, query: str, limit: int, filters: Dict[str, Any] = None) -> List[SearchResult]:
-        """Text search using Whoosh/Haystack."""
         try:
             sqs = SearchQuerySet().filter(content=query)
             
@@ -232,7 +212,6 @@ class SearchService:
             return self._sqlite_fts_search(query, limit)
 
     def _sqlite_fts_search(self, query: str, limit: int) -> List[SearchResult]:
-        """Fallback to SQLite FTS5."""
         from django.db import connection
         
         results = []
@@ -262,7 +241,6 @@ class SearchService:
         return results
 
     def _fuzzy_search(self, query: str, limit: int, filters: Dict[str, Any] = None) -> List[SearchResult]:
-        """Fuzzy search using edit distance on document names."""
         global _fuzzy_search_cache
         
         cache_key = f"{query.lower()}:{limit}"
@@ -286,7 +264,6 @@ class SearchService:
         for idx, name in enumerate(names):
             name_lower = name.lower()
             
-            # Pre-filter: first letter must match, or query appears as substring
             if name_lower.startswith(query_first) or query_lower in name_lower:
                 score = self._calculate_fuzzy_score(query, name)
                 if score > 5.0:  # Require closer match
@@ -315,7 +292,6 @@ class SearchService:
         return results
 
     def _vector_search(self, query: str, limit: int, filters: Dict[str, Any] = None) -> List[SearchResult]:
-        """Semantic vector search using spaCy word embeddings."""
         global _query_embedding_cache
         
         vector_index = get_vector_index()
@@ -373,7 +349,6 @@ class SearchService:
         return results
 
     def _extract_indexed_fields(self, result) -> Dict[str, Any]:
-        """Extract indexed fields from a Haystack result."""
         field_mappings = {
             'Spell': ['level', 'school', 'casting_time', 'spell_range', 'components', 'duration', 'classes'],
             'Creature': ['size', 'creature_type', 'challenge_rating', 'armor_class', 'hit_points'],
@@ -393,7 +368,6 @@ class SearchService:
         return indexed_fields
 
     def _deduplicate_results(self, results: List[SearchResult]) -> List[SearchResult]:
-        """Deduplicate by name, keeping highest score."""
         seen = {}
         for result in results:
             key = result.name.lower()
@@ -402,7 +376,6 @@ class SearchService:
         return list(seen.values())
 
     def get_stats(self) -> Dict[str, Any]:
-        """Get search index statistics."""
         try:
             vector_index = get_vector_index()
             
