@@ -379,10 +379,41 @@ class SearchViewSet(ViewSet):
                 )
                 return highlighted_name
         
-        # Strategy 2: Look for longest common substring
+        # Strategy 2: For fuzzy matches, prioritize highlighting whole words that are similar
+        # Split name into words and find the word most similar to the query
+        name_words = name.split()
+        best_word = None
+        best_score = 0
+        
+        for word in name_words:
+            word_lower = word.lower()
+            # Calculate similarity - prefer shorter edit distance relative to word length
+            distance = self._calculate_word_similarity(query, word_lower)
+            
+            # Score based on similarity (lower distance = higher score)
+            max_len = max(len(query), len(word_lower))
+            if max_len > 0:
+                similarity = 1.0 - (distance / max_len)
+                # Bonus for words that contain the query or vice versa
+                if query in word_lower or word_lower in query:
+                    similarity += 0.3
+                
+                if similarity > best_score and similarity > 0.4:  # Minimum similarity threshold
+                    best_score = similarity
+                    best_word = word
+        
+        # If we found a good word match, highlight it
+        if best_word:
+            highlighted_name = highlighted_name.replace(
+                best_word,
+                f'<span class="highlighted">{best_word}</span>',
+                1
+            )
+            return highlighted_name
+        
+        # Strategy 3: Fall back to longest common substring for very different matches
         max_len = 0
         best_match_start = 0
-        best_match_query_start = 0
         
         # Find longest common substring between query and name
         for i in range(len(query)):
@@ -396,9 +427,8 @@ class SearchViewSet(ViewSet):
                 if length > max_len and length >= 3:  # At least 3 characters
                     max_len = length
                     best_match_start = j
-                    best_match_query_start = i
         
-        # If we found a good match, highlight it
+        # If we found a reasonable substring match, highlight it
         if max_len >= 3:
             actual_match = name[best_match_start:best_match_start + max_len]
             highlighted_name = highlighted_name.replace(
@@ -408,23 +438,29 @@ class SearchViewSet(ViewSet):
             )
             return highlighted_name
         
-        # Strategy 3: Highlight individual matching characters (for very fuzzy matches)
-        # Look for query words that appear in the name
-        query_words = query.split()
-        for word in query_words:
-            if len(word) >= 3 and word in name_lower:
-                # Find the actual case version in the original name
-                word_start = name_lower.find(word)
-                if word_start != -1:
-                    actual_word = name[word_start:word_start + len(word)]
-                    highlighted_name = highlighted_name.replace(
-                        actual_word,
-                        f'<span class="highlighted">{actual_word}</span>',
-                        1
-                    )
-                    return highlighted_name
-        
         return highlighted_name
+
+    def _calculate_word_similarity(self, word1: str, word2: str) -> int:
+        """Calculate edit distance between two words (simpler version for individual words)."""
+        if len(word1) > len(word2):
+            word1, word2 = word2, word1
+        
+        if len(word1) == 0:
+            return len(word2)
+        
+        # Use a simplified distance calculation for performance
+        distances = list(range(len(word1) + 1))
+        
+        for i2, c2 in enumerate(word2):
+            new_distances = [i2 + 1]
+            for i1, c1 in enumerate(word1):
+                if c1 == c2:
+                    new_distances.append(distances[i1])
+                else:
+                    new_distances.append(1 + min(distances[i1], distances[i1 + 1], new_distances[-1]))
+            distances = new_distances
+        
+        return distances[-1]
 
     def _create_vector_highlighted_text(self, result, query: str) -> str:
         """Create highlighted text for vector search results."""
@@ -472,16 +508,17 @@ class SearchViewSet(ViewSet):
         excerpt_end = min(len(text), best_pos + 150)
         excerpt = text[excerpt_start:excerpt_end]
         
-        # Highlight exact word matches in the excerpt
+        # Highlight word matches in the excerpt (both exact words and substrings)
         highlighted_excerpt = excerpt
         for word in query_words:
             if len(word) >= 2:
-                # Case-insensitive replacement with word boundaries
-                word_pattern = re.compile(r'\b' + re.escape(word) + r'\b', re.IGNORECASE)
+                # Use a simple approach: find all instances of the word (case-insensitive)
+                # This will highlight both standalone words and substrings
+                word_pattern = re.compile(re.escape(word), re.IGNORECASE)
                 highlighted_excerpt = word_pattern.sub(
                     r'<span class="highlighted">\g<0></span>',
                     highlighted_excerpt,
-                    count=3  # Limit replacements to avoid overhead
+                    count=5
                 )
         
         # Add ellipsis indicators
@@ -554,12 +591,12 @@ class SearchViewSet(ViewSet):
             highlighted_excerpt = excerpt
             for word in query_words:
                 if len(word) >= 2:  # Only highlight meaningful words
-                    # Case-insensitive replacement with word boundaries
-                    word_pattern = re.compile(r'\b' + re.escape(word) + r'\b', re.IGNORECASE)
+                    # Highlight all instances of the word (both exact and substring matches)
+                    word_pattern = re.compile(re.escape(word), re.IGNORECASE)
                     highlighted_excerpt = word_pattern.sub(
-                        f'<span class="highlighted">{word}</span>',
+                        r'<span class="highlighted">\g<0></span>',
                         highlighted_excerpt,
-                        count=3  # Limit replacements to avoid overhead
+                        count=5
                     )
         
         # Add ellipsis indicators
