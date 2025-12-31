@@ -95,18 +95,21 @@ class SearchViewSet(ViewSet):
             filters['document_name'] = request.query_params.get('document')
         
         try:
-            # Perform search with pagination
-            results = search_service.search(
+            # First, get a larger set of results to determine total count
+            # We need to get enough results to handle pagination properly
+            max_results_for_pagination = 2000  # Reasonable limit for pagination
+            
+            all_results = search_service.search(
                 query=query,
-                limit=limit + offset,  # Get more results to handle pagination
+                limit=max_results_for_pagination,
                 search_types=search_types,
                 boost_factors={'text': 1.0, 'fuzzy': 0.5, 'vector': 0.3},
                 filters=filters
             )
             
-            # Apply pagination
-            paginated_results = results[offset:offset + limit]
-            total_count = len(results)
+            # Get true total count and apply pagination
+            total_count = len(all_results)
+            paginated_results = all_results[offset:offset + limit]
             
             # Convert to expected format
             formatted_results = []
@@ -134,10 +137,10 @@ class SearchViewSet(ViewSet):
                     "schema_version": result.schema_version,
                     "route": self._get_route(result.object_type),
                     "text": result.description or result.name,
-                    "highlighted": self._create_highlighted_text(result, query),
+                    "highlighted": self._create_highlighted_text(result, query, match_type),
                     "match_type": match_type,
                     "matched_term": matched_term,
-                    "match_score": min(round(result.score / 25, 1), 1.0)  # Normalize to 0-1
+                    "match_score": self._normalize_score(result.score, result.search_type)
                 }
                 formatted_results.append(formatted_result)
             
@@ -187,6 +190,22 @@ class SearchViewSet(ViewSet):
                 'count': 0
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+    def _normalize_score(self, score: float, search_type: str) -> float:
+        """Normalize scores to 0-1 range based on search type."""
+        if search_type == 'text':
+            # Text scores are around 25.0
+            return min(round(score / 25.0, 2), 1.0)
+        elif search_type == 'fuzzy':
+            # Fuzzy scores now range from 1.0 to 20.0 based on edit distance
+            return min(round(score / 20.0, 2), 1.0)
+        elif search_type == 'vector':
+            # Vector scores are now in 0-20 range (similarity * 20)
+            # So divide by 20 to normalize
+            return min(round(score / 20.0, 2), 1.0)
+        else:
+            # Default normalization
+            return min(round(score / 25.0, 2), 1.0)
+
     def _extract_matched_term(self, query: str, name: str) -> str:
         """Extract the matched term from the query."""
         query_words = query.lower().split()
@@ -198,17 +217,65 @@ class SearchViewSet(ViewSet):
         return query_words[0] if query_words else query
 
     def _get_object_details(self, result) -> Dict[str, Any]:
-        """Get object-specific details based on type."""
+        """Get object-specific details from search result indexed fields."""
         details = {}
         
+        # Use the indexed_fields that were extracted from the Haystack search result
+        indexed_fields = getattr(result, 'indexed_fields', {})
+        
         if result.object_type == "Spell":
-            # Extract spell details from search data if available
-            details = {"school": "Unknown", "level": 0}
-            # TODO: Extract from actual object data when available
+            # Extract spell details from indexed fields
+            details = {
+                "school": indexed_fields.get('school', 'Unknown'),
+                "level": int(indexed_fields.get('level', 0))
+            }
+            
+            # Add additional spell fields if available
+            if 'casting_time' in indexed_fields:
+                details["casting_time"] = indexed_fields['casting_time']
+            if 'spell_range' in indexed_fields:
+                details["range"] = indexed_fields['spell_range']
+            if 'duration' in indexed_fields:
+                details["duration"] = indexed_fields['duration']
+            if 'components' in indexed_fields:
+                details["components"] = indexed_fields['components']
+            if 'classes' in indexed_fields:
+                details["classes"] = indexed_fields['classes']
+                
         elif result.object_type == "Creature":
-            details = {"cr": "Unknown", "type": "Unknown", "size": "Unknown"}
+            # Extract creature details from indexed fields
+            details = {
+                "cr": indexed_fields.get('challenge_rating', 'Unknown'),
+                "type": indexed_fields.get('creature_type', 'Unknown'),
+                "size": indexed_fields.get('size', 'Unknown')
+            }
+            
+            # Add additional creature fields if available
+            if 'armor_class' in indexed_fields:
+                details["armor_class"] = indexed_fields['armor_class']
+            if 'hit_points' in indexed_fields:
+                details["hit_points"] = indexed_fields['hit_points']
+                
         elif result.object_type == "Item":
-            details = {"rarity": "Unknown", "type": "Unknown"}
+            # Extract item details from indexed fields
+            details = {
+                "rarity": indexed_fields.get('rarity', 'Unknown'),
+                "type": indexed_fields.get('item_type', 'Unknown')
+            }
+            
+            # Add additional item fields if available
+            if 'requires_attunement' in indexed_fields:
+                details["requires_attunement"] = indexed_fields['requires_attunement']
+                
+        elif result.object_type == "CharacterClass":
+            # Extract class details from indexed fields
+            details = {
+                "hit_die": indexed_fields.get('hit_die', 'Unknown')
+            }
+            
+        elif result.object_type in ["Background", "Feat", "Species"]:
+            # These types don't have additional specific fields in the current indexes
+            details = {}
         
         return details
 
@@ -247,8 +314,186 @@ class SearchViewSet(ViewSet):
         }
         return route_map.get(object_type, "v2/")
 
-    def _create_highlighted_text(self, result, query: str) -> str:
+    def _create_highlighted_text(self, result, query: str, match_type: str = None) -> str:
         """Create highlighted text with HTML spans around matched terms."""
+        # Use the determined match_type or fall back to search_type
+        if match_type is None:
+            match_type = getattr(result, 'search_type', 'exact')
+        
+        # For fuzzy results, try to highlight the name that matched fuzzily
+        if match_type == 'fuzzy':
+            return self._create_fuzzy_highlighted_text(result, query)
+        
+        # For vector/semantic results, highlight any query words that appear
+        elif match_type == 'semantic':
+            return self._create_vector_highlighted_text(result, query)
+        
+        # For text/exact results, use the existing logic
+        else:
+            return self._create_text_highlighted_text(result, query)
+
+    def _create_fuzzy_highlighted_text(self, result, query: str) -> str:
+        """Create highlighted text for fuzzy search results."""
+        # For fuzzy results, the name is what matched fuzzily
+        name = result.name
+        text = result.description or result.name
+        query_lower = query.lower().strip()
+        name_lower = name.lower()
+        
+        # Strategy 1: Highlight the name itself since it's the fuzzy match
+        # We'll highlight the closest matching parts
+        highlighted_name = self._highlight_fuzzy_match_in_name(name, query_lower)
+        
+        # If we successfully highlighted the name, use it
+        if '<span class="highlighted">' in highlighted_name:
+            if result.description and len(result.description) > len(name):
+                description_snippet = result.description[:120]
+                return f"{highlighted_name}. {description_snippet}{'...' if len(result.description) > 120 else ''}"
+            else:
+                return highlighted_name
+        
+        # Strategy 2: Look for any exact query words in the description
+        query_words = [word.strip().lower() for word in query.lower().split() if word.strip() and len(word.strip()) > 2]
+        if query_words:
+            return self._highlight_query_words_in_text(text, query_words)
+        
+        # Strategy 3: At minimum, highlight the name itself to show what matched
+        return f'<span class="highlighted">{name}</span>. {text[:100]}{"..." if len(text) > 100 else ""}'
+    
+    def _highlight_fuzzy_match_in_name(self, name: str, query: str) -> str:
+        """Highlight the closest matching parts of a name for fuzzy search."""
+        name_lower = name.lower()
+        highlighted_name = name
+        
+        # Strategy 1: Look for the query as a substring
+        if query in name_lower:
+            # Find the position and highlight it
+            start_pos = name_lower.find(query)
+            if start_pos != -1:
+                # Extract the actual casing from the original name
+                actual_match = name[start_pos:start_pos + len(query)]
+                highlighted_name = highlighted_name.replace(
+                    actual_match, 
+                    f'<span class="highlighted">{actual_match}</span>',
+                    1
+                )
+                return highlighted_name
+        
+        # Strategy 2: Look for longest common substring
+        max_len = 0
+        best_match_start = 0
+        best_match_query_start = 0
+        
+        # Find longest common substring between query and name
+        for i in range(len(query)):
+            for j in range(len(name_lower)):
+                length = 0
+                while (i + length < len(query) and 
+                       j + length < len(name_lower) and 
+                       query[i + length] == name_lower[j + length]):
+                    length += 1
+                
+                if length > max_len and length >= 3:  # At least 3 characters
+                    max_len = length
+                    best_match_start = j
+                    best_match_query_start = i
+        
+        # If we found a good match, highlight it
+        if max_len >= 3:
+            actual_match = name[best_match_start:best_match_start + max_len]
+            highlighted_name = highlighted_name.replace(
+                actual_match,
+                f'<span class="highlighted">{actual_match}</span>',
+                1
+            )
+            return highlighted_name
+        
+        # Strategy 3: Highlight individual matching characters (for very fuzzy matches)
+        # Look for query words that appear in the name
+        query_words = query.split()
+        for word in query_words:
+            if len(word) >= 3 and word in name_lower:
+                # Find the actual case version in the original name
+                word_start = name_lower.find(word)
+                if word_start != -1:
+                    actual_word = name[word_start:word_start + len(word)]
+                    highlighted_name = highlighted_name.replace(
+                        actual_word,
+                        f'<span class="highlighted">{actual_word}</span>',
+                        1
+                    )
+                    return highlighted_name
+        
+        return highlighted_name
+
+    def _create_vector_highlighted_text(self, result, query: str) -> str:
+        """Create highlighted text for vector search results."""
+        # For vector results, highlight any query words that appear in the text
+        # This won't be perfect since vector search finds semantic matches,
+        # but it's better than no highlighting
+        text = result.description or result.name
+        query_words = [word.strip().lower() for word in query.lower().split() if word.strip() and len(word.strip()) > 2]
+        
+        return self._highlight_query_words_in_text(text, query_words)
+
+    def _highlight_query_words_in_text(self, text: str, query_words: List[str]) -> str:
+        """Highlight query words in text and create an appropriate excerpt."""
+        if not query_words:
+            return self._create_excerpt(text, 0, 150)
+        
+        text_lower = text.lower()
+        best_pos = 0
+        matches_found = []
+        
+        # Find positions of all query word matches
+        for word in query_words:
+            pos = text_lower.find(word)
+            if pos != -1:
+                matches_found.append((pos, word))
+                if not best_pos:  # Use first match for centering
+                    best_pos = pos
+        
+        # If no exact matches found, try partial matches for semantic context
+        if not matches_found:
+            for word in query_words:
+                for i in range(len(text_lower) - len(word) + 1):
+                    # Look for words that contain the query word as substring
+                    if word in text_lower[i:i+20]:  # Check in a small window
+                        word_start = text_lower.find(' ', max(0, i-10))
+                        word_end = text_lower.find(' ', i+20)
+                        if word_start != -1 and word_end != -1:
+                            best_pos = word_start
+                            break
+                if best_pos:
+                    break
+        
+        # Create excerpt around the best match position
+        excerpt_start = max(0, best_pos - 75)
+        excerpt_end = min(len(text), best_pos + 150)
+        excerpt = text[excerpt_start:excerpt_end]
+        
+        # Highlight exact word matches in the excerpt
+        highlighted_excerpt = excerpt
+        for word in query_words:
+            if len(word) >= 2:
+                # Case-insensitive replacement with word boundaries
+                word_pattern = re.compile(r'\b' + re.escape(word) + r'\b', re.IGNORECASE)
+                highlighted_excerpt = word_pattern.sub(
+                    r'<span class="highlighted">\g<0></span>',
+                    highlighted_excerpt,
+                    count=3  # Limit replacements to avoid overhead
+                )
+        
+        # Add ellipsis indicators
+        if excerpt_start > 0:
+            highlighted_excerpt = "..." + highlighted_excerpt
+        if excerpt_end < len(text):
+            highlighted_excerpt = highlighted_excerpt + "..."
+        
+        return highlighted_excerpt
+
+    def _create_text_highlighted_text(self, result, query: str) -> str:
+        """Create highlighted text for text search results (original logic)."""
         text = result.description or result.name
         
         # Cache key for this query to avoid recomputing

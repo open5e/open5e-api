@@ -173,7 +173,7 @@ def get_vector_index():
 
 @dataclass
 class SearchResult:
-    """Represents a search result."""
+    """Represents a search result with indexed field data."""
     name: str
     description: str
     object_type: str
@@ -181,6 +181,12 @@ class SearchResult:
     schema_version: str
     score: float
     search_type: str
+    # Additional indexed fields for different object types
+    indexed_fields: Dict[str, Any] = None
+    
+    def __post_init__(self):
+        if self.indexed_fields is None:
+            self.indexed_fields = {}
 
 
 class ElasticsearchSearchService:
@@ -190,6 +196,79 @@ class ElasticsearchSearchService:
         """Initialize the search service."""
         self.embedding_model = get_embedding_model()
     
+    def _extract_indexed_fields(self, result) -> Dict[str, Any]:
+        """Extract all indexed fields from a Haystack search result."""
+        indexed_fields = {}
+        
+        # Define the fields we want to extract based on object type
+        field_mappings = {
+            'Spell': ['level', 'school', 'casting_time', 'spell_range', 'components', 'duration', 'classes'],
+            'Creature': ['size', 'creature_type', 'challenge_rating', 'armor_class', 'hit_points'],
+            'Item': ['item_type', 'rarity', 'requires_attunement'],
+            'CharacterClass': ['hit_die'],
+            'Background': [],
+            'Feat': [],
+            'Species': []
+        }
+        
+        # Get the object type and corresponding fields
+        object_type = getattr(result, 'object_type', 'Unknown')
+        fields_to_extract = field_mappings.get(object_type, [])
+        
+        # Extract each field if it exists
+        for field in fields_to_extract:
+            if hasattr(result, field):
+                value = getattr(result, field)
+                if value:  # Only include non-empty values
+                    indexed_fields[field] = value
+        
+        return indexed_fields
+
+    def _calculate_edit_distance(self, s1: str, s2: str) -> int:
+        """Calculate Levenshtein distance between two strings."""
+        if len(s1) < len(s2):
+            return self._calculate_edit_distance(s2, s1)
+        
+        if len(s2) == 0:
+            return len(s1)
+        
+        # Create distance matrix
+        previous_row = list(range(len(s2) + 1))
+        for i, c1 in enumerate(s1):
+            current_row = [i + 1]
+            for j, c2 in enumerate(s2):
+                # Cost of insertions, deletions, or substitutions
+                insertions = previous_row[j + 1] + 1
+                deletions = current_row[j] + 1
+                substitutions = previous_row[j] + (c1 != c2)
+                current_row.append(min(insertions, deletions, substitutions))
+            previous_row = current_row
+        
+        return previous_row[-1]
+
+    def _calculate_fuzzy_score(self, query: str, result_name: str, max_score: float = 20.0) -> float:
+        """Calculate distance-based score for fuzzy matches."""
+        # Normalize strings for comparison
+        query_norm = query.lower().strip()
+        name_norm = result_name.lower().strip()
+        
+        # Calculate edit distance
+        distance = self._calculate_edit_distance(query_norm, name_norm)
+        
+        # Calculate relative distance (0-1)
+        max_len = max(len(query_norm), len(name_norm))
+        if max_len == 0:
+            return max_score
+        
+        relative_distance = distance / max_len
+        
+        # Convert to score (higher score for lower distance)
+        # Score ranges from max_score (perfect match) down to 1.0 (high distance)
+        score = max_score * (1.0 - relative_distance)
+        
+        # Ensure minimum score of 1.0 for any fuzzy match
+        return max(score, 1.0)
+
     def search(
         self, 
         query: str, 
@@ -314,7 +393,8 @@ class ElasticsearchSearchService:
                     document_name=getattr(result, 'document_name', 'Unknown'),
                     schema_version=getattr(result, 'schema_version', 'v2'),
                     score=25.0,  # High score for exact text matches
-                    search_type='text'
+                    search_type='text',
+                    indexed_fields=self._extract_indexed_fields(result)
                 ))
         execute_time = (time.time() - execute_start) * 1000
         logger.debug(f"Text execution: {execute_time:.1f}ms")
@@ -370,14 +450,17 @@ class ElasticsearchSearchService:
         
         for result in sqs[:fetch_limit]:
             if hasattr(result, 'name') and result.name:
+                # Calculate distance-based score for this fuzzy match
+                fuzzy_score = self._calculate_fuzzy_score(query, result.name)
                 results.append(SearchResult(
                     name=result.name,
                     description=getattr(result, 'description', '') or '',
                     object_type=getattr(result, 'object_type', 'Unknown'),
                     document_name=getattr(result, 'document_name', 'Unknown'),
                     schema_version=getattr(result, 'schema_version', 'v2'),
-                    score=15.0,  # Medium score for fuzzy matches
-                    search_type='fuzzy'
+                    score=fuzzy_score,  # Distance-based score for fuzzy matches
+                    search_type='fuzzy',
+                    indexed_fields=self._extract_indexed_fields(result)
                 ))
         
         execute_time = (time.time() - execute_start) * 1000
@@ -450,7 +533,7 @@ class ElasticsearchSearchService:
             
             results = []
             for idx in top_indices:
-                if idx < len(vector_index['objects']) and similarities[idx] > 0.15:  # Lower threshold
+                if idx < len(vector_index['objects']) and similarities[idx] > 0.3:  # Balanced threshold for relevance
                     obj = vector_index['objects'][idx]
                     results.append(SearchResult(
                         name=getattr(obj, 'name', 'Unknown'),
@@ -459,7 +542,8 @@ class ElasticsearchSearchService:
                         document_name=getattr(obj, 'document_name', 'Unknown'),
                         schema_version=getattr(obj, 'schema_version', 'v2'),
                         score=float(similarities[idx]) * 15,  # Slightly lower scaling
-                        search_type='vector'
+                        search_type='vector',
+                        indexed_fields=self._extract_indexed_fields(obj)
                     ))
             
             top_time = (time.time() - top_start) * 1000
