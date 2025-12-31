@@ -136,7 +136,7 @@ class Command(BaseCommand):
             nlp = spacy.load("en_core_web_md")
         
         # Disable components we don't need for speed
-        nlp.disable_pipes("ner", "parser")
+        nlp.select_pipes(disable=["ner", "parser"])
         
         qs = search.SearchResult.objects.all().order_by("id")
         total_count = qs.count()

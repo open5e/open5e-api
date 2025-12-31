@@ -76,7 +76,7 @@ def get_spacy_model():
         
         logger.info("Loading spaCy model: en_core_web_md")
         _spacy_model = spacy.load("en_core_web_md")
-        _spacy_model.disable_pipes("ner", "parser")
+        _spacy_model.select_pipes(disable=["ner", "parser"])
         return _spacy_model
         
     except ImportError:
@@ -281,13 +281,15 @@ class SearchService:
         
         scored = []
         query_lower = query.lower()
+        query_first = query_lower[0] if query_lower else ''
         
         for idx, name in enumerate(names):
             name_lower = name.lower()
             
-            if any(w in name_lower for w in query_lower.split() if len(w) > 2):
+            # Pre-filter: first letter must match, or query appears as substring
+            if name_lower.startswith(query_first) or query_lower in name_lower:
                 score = self._calculate_fuzzy_score(query, name)
-                if score > 3.0:
+                if score > 5.0:  # Require closer match
                     scored.append((idx, score, name))
         
         scored.sort(key=lambda x: x[1], reverse=True)

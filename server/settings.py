@@ -227,7 +227,7 @@ HAYSTACK_CONNECTIONS = {
 
 # Disable automatic signal-based indexing during data loading
 # We'll rebuild the index manually after loading data
-HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.BaseSignalProcessor'
+HAYSTACK_SIGNAL_PROCESSOR = 'search.signal_processor.ConditionalSignalProcessor'
 
 SPECTACULAR_SETTINGS = {
     'VERSION' : 'development',
