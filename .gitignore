@@ -19,9 +19,10 @@ db.sqlite3-journal
 # Django static files
 staticfiles/
 
-# Search indexes
+# Search indexes (unpacked - these are generated from search/indexes/)
 server/whoosh_index/
 whoosh_index/
+server/vector_index.pkl
 
 # IDE and editor configurations
 .vscode/
@@ -32,8 +33,6 @@ api/tests/approved_files/*.recieved.*
 
 # Generated files
 openapi-schema.yml
-
-server/vector_index.pkl
 
 # Temporary files for magic items update
 temp_magic_items/

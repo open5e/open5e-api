@@ -8,16 +8,16 @@ from pathlib import Path
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
-from django.db import connection, transaction
+from django.db import connection
 
 from api import models as v1
 from api_v2 import models as v2
 from search import models as search
 
 class Command(BaseCommand):
-    """Implementation for the `manage.py `index_v1` subcommand."""
+    """Build search indexes for text, fuzzy, and semantic search."""
 
-    help = 'Build the v1 search index.'
+    help = 'Build the search indexes (FTS, Whoosh, and vector).'
 
     def add_arguments(self, parser: argparse.ArgumentParser):
         """Define arguments for the `manage.py quicksetup` subcommand."""
@@ -194,7 +194,7 @@ class Command(BaseCommand):
         print("Saving vector index to disk...")
         
         index_data = {
-            "names": all_names,
+            "names": all_names, 
             "metadata": all_metadata,
             "embeddings": embeddings,
             "vector_size": nlp.vocab.vectors_length

@@ -74,23 +74,30 @@ pipenv install --dev
 
 ## Build
 
-Crate a local database and import game content. 
+Create a local database, import game content, and set up search indexes:
+
 ```bash
-pipenv run python manage.py quicksetup --noindex
+pipenv run python manage.py quicksetup
 ```
 
-To make sure the API is always using your updated code, this command must be run again if:
-- You add/remove/edit Game Content
-- You edit Python code
-- You switch git branches
+Run this again if you switch git branches or pull new changes.
 
 
 ### Search Indexing
 
-To use the search function, you must build the search index by running the above command without the `--noindex` flag.
+Search indexes are pre-built and included in the repo. Running `quicksetup` unpacks them automatically:
+
 ```bash
 pipenv run python manage.py quicksetup
 ```
+
+If you've changed data in `data/`, rebuild the indexes before committing:
+
+```bash
+pipenv run python manage.py quickindex
+```
+
+This takes 2-3 minutes and updates `search/indexes/` which should be committed with your data changes.
 
 ## Run
 

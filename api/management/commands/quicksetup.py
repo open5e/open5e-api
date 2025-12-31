@@ -17,7 +17,12 @@ class Command(BaseCommand):
         parser.add_argument(
             "--noindex",
             action="store_true",
-            help="Skip building search indexes.",
+            help="Skip unpacking/building search indexes.",
+        )
+        parser.add_argument(
+            "--rebuild-index",
+            action="store_true",
+            help="Force rebuild indexes from data (slow, ~2-3 min).",
         )
         parser.add_argument(
             "--clean",
@@ -67,12 +72,14 @@ class Command(BaseCommand):
                 ))
                 return
 
-            if not options['noindex']:
-                if settings.BUILD_V2_INDEX:
-                    self.stdout.write('Building the search index...')
-                    build_search_index()
-            else:
-                self.stdout.write('Skipping index build because of --noindex.')
+            if options['noindex']:
+                self.stdout.write('Skipping indexes because of --noindex.')
+            elif options['rebuild_index']:
+                self.stdout.write('Rebuilding search indexes from data (this takes 2-3 min)...')
+                build_search_index()
+            elif settings.BUILD_V2_INDEX:
+                self.stdout.write('Setting up search indexes...')
+                setup_search_index()
 
         self.stdout.write(self.style.SUCCESS('API setup complete.'))
 
@@ -121,3 +128,18 @@ def collect_static():
 
 def build_search_index():
     call_command('buildindex', '--v1', '--v2')
+
+
+def setup_search_index():
+    """Unpack pre-built indexes if available, otherwise build from scratch."""
+    archive_dir = Path("search/indexes")
+    whoosh_archive = archive_dir / "whoosh_index.tar.gz"
+    vector_archive = archive_dir / "vector_index.pkl.gz"
+    
+    if whoosh_archive.exists() and vector_archive.exists():
+        print("Unpacking pre-built indexes...")
+        call_command('indexctl', 'unpack')
+    else:
+        print("No pre-built indexes found, building from scratch...")
+        print("(This takes 2-3 min. Run 'manage.py indexctl pack' to avoid this next time.)")
+        build_search_index()

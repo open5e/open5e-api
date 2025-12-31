@@ -1,0 +1,75 @@
+name: "Rebuild Search Index"
+
+# Runs when data files change on staging
+# Rebuilds indexes, commits them, then triggers the build workflow
+on:
+  push:
+    branches:
+      - staging
+    paths:
+      - 'data/**'
+
+jobs:
+  rebuild-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pipenv
+        run: pip install pipenv
+
+      - name: Cache pipenv virtualenv
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/virtualenvs
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('Pipfile.lock') }}
+
+      - name: Install dependencies
+        run: pipenv install --deploy
+
+      - name: Download spaCy model
+        run: pipenv run python -m spacy download en_core_web_md
+
+      - name: Check if indexes are stale
+        id: check
+        run: |
+          if pipenv run python manage.py indexctl check; then
+            echo "stale=false" >> $GITHUB_OUTPUT
+          else
+            echo "stale=true" >> $GITHUB_OUTPUT
+          fi
+        env:
+          SECRET_KEY: "github-actions-build-key"
+
+      - name: Rebuild and pack indexes
+        if: steps.check.outputs.stale == 'true'
+        run: |
+          echo "Indexes are stale, rebuilding..."
+          pipenv run python manage.py quicksetup --rebuild-index
+          pipenv run python manage.py indexctl pack
+        env:
+          SECRET_KEY: "github-actions-build-key"
+
+      - name: Commit updated indexes
+        if: steps.check.outputs.stale == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add search/indexes/ search/index_manifest.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Rebuild search indexes
+
+            Triggered by data changes in ${{ github.sha }}"
+            git push
+          fi
+

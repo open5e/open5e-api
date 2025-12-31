@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 # Global state
 _vector_index = None
 _vector_index_loaded = False
-_sentence_model = None
+_spacy_model = None
 
 # Caches
 _query_embedding_cache = {}
@@ -45,7 +45,7 @@ def get_vector_index():
             logger.warning(f"Vector index not found at {index_path}")
             _vector_index = None
             return None
-        
+            
         logger.info("Loading semantic vector index...")
         start_time = time.time()
         
@@ -66,19 +66,18 @@ def get_vector_index():
 
 def get_spacy_model():
     """Get or load the spaCy model for query embedding."""
-    global _sentence_model
+    global _spacy_model
     
-    if _sentence_model is not None:
-        return _sentence_model
+    if _spacy_model is not None:
+        return _spacy_model
     
     try:
         import spacy
         
         logger.info("Loading spaCy model: en_core_web_md")
-        _sentence_model = spacy.load("en_core_web_md")
-        # Disable components we don't need
-        _sentence_model.disable_pipes("ner", "parser")
-        return _sentence_model
+        _spacy_model = spacy.load("en_core_web_md")
+        _spacy_model.disable_pipes("ner", "parser")
+        return _spacy_model
         
     except ImportError:
         logger.warning("spaCy not installed, vector search disabled")
@@ -108,7 +107,7 @@ class SearchResult:
 
 class SearchService:
     """Search service combining text, fuzzy, and semantic vector search."""
-    
+
     def _calculate_edit_distance(self, s1: str, s2: str) -> int:
         """Calculate Levenshtein distance between two strings."""
         if len(s1) < len(s2):
@@ -153,9 +152,7 @@ class SearchService:
         boost_factors: Dict[str, float] = None,
         filters: Dict[str, Any] = None
     ) -> Dict[str, Any]:
-        """
-        Perform search combining text, fuzzy, and semantic vector search.
-        """
+        """Perform search combining text, fuzzy, and semantic vector search."""
         start_time = time.time()
         
         if search_types is None:
@@ -168,7 +165,6 @@ class SearchService:
         
         all_results = []
         
-        # Run searches in parallel
         with ThreadPoolExecutor(max_workers=3) as executor:
             futures = {}
             
@@ -192,7 +188,6 @@ class SearchService:
                 except Exception as e:
                     logger.error(f"Error in {search_type} search: {e}")
         
-        # Deduplicate and sort
         unique_results = self._deduplicate_results(all_results)
         unique_results.sort(key=lambda x: x.score, reverse=True)
         
@@ -284,14 +279,12 @@ class SearchService:
         names = vector_index.get('names', [])
         metadata = vector_index.get('metadata', [])
         
-        # Score all names by edit distance
         scored = []
         query_lower = query.lower()
         
         for idx, name in enumerate(names):
             name_lower = name.lower()
             
-            # Quick filter
             if any(w in name_lower for w in query_lower.split() if len(w) > 2):
                 score = self._calculate_fuzzy_score(query, name)
                 if score > 3.0:
@@ -333,12 +326,10 @@ class SearchService:
             logger.debug("spaCy model not available")
             return []
         
-        # Get or compute query embedding
         cache_key = query.lower().strip()
         if cache_key in _query_embedding_cache:
             query_embedding = _query_embedding_cache[cache_key]
         else:
-            # Average word vectors for query
             doc = nlp(query)
             vectors = [token.vector for token in doc if token.has_vector]
             if vectors:
@@ -354,11 +345,9 @@ class SearchService:
             if len(_query_embedding_cache) > 100:
                 _query_embedding_cache.pop(next(iter(_query_embedding_cache)))
         
-        # Compute similarities
         embeddings = vector_index['embeddings']
         similarities = np.dot(embeddings, query_embedding)
         
-        # Get top results
         top_indices = np.argsort(similarities)[-limit * 2:][::-1]
         
         names = vector_index.get('names', [])
@@ -366,7 +355,7 @@ class SearchService:
         
         results = []
         for idx in top_indices:
-            if similarities[idx] > 0.3:  # Minimum similarity threshold
+            if similarities[idx] > 0.3:
                 meta = metadata[idx] if idx < len(metadata) else {}
                 results.append(SearchResult(
                     name=names[idx],
@@ -374,7 +363,7 @@ class SearchService:
                     object_type=meta.get('object_type', 'Unknown'),
                     document_name=meta.get('document_pk', 'Unknown'),
                     schema_version=meta.get('schema_version', 'v2'),
-                    score=float(similarities[idx]) * 25,  # Scale to match text scores
+                    score=float(similarities[idx]) * 25,
                     search_type='vector',
                     indexed_fields={}
                 ))
@@ -432,5 +421,4 @@ class SearchService:
             return {'error': str(e)}
 
 
-# Global instance
 search_service = SearchService()
