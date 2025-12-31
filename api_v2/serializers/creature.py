@@ -174,7 +174,6 @@ class CreatureSerializer(GameContentSerializer):
     initiative_bonus = serializers.SerializerMethodField()
     illustration = ImageSummarySerializer()
 
-
     class Meta:
         '''Serializer meta options.'''
         model = models.Creature
@@ -396,8 +395,8 @@ class CreatureSerializer(GameContentSerializer):
             # todo: model typed as any
             "crawl": serializers.StringRelatedField(),
             "hover": serializers.BooleanField(),
-            "fly": serializers.FloatField(),
-            "burrow": serializers.FloatField(),
+            "fly": serializers.IntegerField(allow_null=True),
+            "burrow": serializers.IntegerField(allow_null=True),
             # todo: model typed as any
             "climb": serializers.StringRelatedField(),
             # todo: model typed as any
