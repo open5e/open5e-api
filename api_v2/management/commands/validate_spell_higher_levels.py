@@ -54,14 +54,26 @@ class Command(BaseCommand):
             option_file = spell_file.replace('Spell.json', 'SpellCastingOption.json')
             
             # Load spells
-            with open(spell_file, 'r') as f:
-                spells = json.load(f)
+            try:
+                with open(spell_file, 'r', encoding='utf-8') as f:
+                    spells = json.load(f)
+            except (IOError, json.JSONDecodeError) as e:
+                self.stdout.write(self.style.ERROR(
+                    f'Error loading {spell_file}: {e}'
+                ))
+                continue
             
             # Load casting options if the file exists
             casting_options = []
             if Path(option_file).exists():
-                with open(option_file, 'r') as f:
-                    casting_options = json.load(f)
+                try:
+                    with open(option_file, 'r', encoding='utf-8') as f:
+                        casting_options = json.load(f)
+                except (IOError, json.JSONDecodeError) as e:
+                    self.stdout.write(self.style.ERROR(
+                        f'Error loading {option_file}: {e}'
+                    ))
+                    continue
             
             # Create a set of spell PKs that have casting options
             spells_with_options = set()
