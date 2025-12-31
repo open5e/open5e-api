@@ -13,12 +13,13 @@ requests = "*"
 whitenoise = "*"
 gunicorn = "*"
 drf-spectacular = {extras = ["sidecar"], version = "*"}
-numpy = "*"
-scikit-learn = "*"
 elasticsearch = "*"
-sentence-transformers = "*"
-torch = "*"
 django-haystack = "*"
+# ML dependencies moved to runtime installation:
+# numpy = "*"
+# scikit-learn = "*"
+# sentence-transformers = "*"
+# torch = "*"
 
 [dev-packages]
 pytest = "*"

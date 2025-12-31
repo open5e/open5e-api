@@ -9,10 +9,19 @@ from dataclasses import dataclass
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from functools import lru_cache
 
-import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
+# Graceful imports for ML dependencies
+try:
+    import numpy as np
+    from sklearn.metrics.pairwise import cosine_similarity
+    from sentence_transformers import SentenceTransformer
+    ML_DEPENDENCIES_AVAILABLE = True
+except ImportError:
+    ML_DEPENDENCIES_AVAILABLE = False
+    np = None
+    cosine_similarity = None
+    SentenceTransformer = None
+
 from haystack.query import SearchQuerySet
-from sentence_transformers import SentenceTransformer
 
 logger = logging.getLogger(__name__)
 
@@ -32,148 +41,167 @@ _fuzzy_cache_size = 50  # Smaller cache for fuzzy results
 def get_embedding_model():
     """Get the singleton embedding model instance with better caching."""
     global _embedding_model
+    
+    if not ML_DEPENDENCIES_AVAILABLE:
+        logger.warning("ML dependencies not available. Vector search disabled.")
+        return None
+        
     if _embedding_model is None:
-        logger.info("Loading sentence transformer model...")
-        start_time = time.time()
-        
-        # Load with optimizations
-        _embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
-        
-        # Warm up the model with a dummy encode to load everything into memory
-        _ = _embedding_model.encode("warmup")
-        
-        load_time = time.time() - start_time
-        logger.info(f"Sentence transformer loaded and warmed up in {load_time:.2f}s")
+        try:
+            logger.info("Loading sentence transformer model...")
+            start_time = time.time()
+            
+            # Load with optimizations
+            _embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+            
+            # Warm up the model with a dummy encode to load everything into memory
+            _ = _embedding_model.encode("warmup")
+            
+            load_time = time.time() - start_time
+            logger.info(f"Sentence transformer loaded and warmed up in {load_time:.2f}s")
+        except Exception as e:
+            logger.error(f"Error loading sentence transformer: {e}")
+            return None
+            
     return _embedding_model
 
-
-def get_cached_query_embedding(query: str) -> np.ndarray:
-    """Get query embedding with caching to avoid repeated computation."""
+def get_cached_query_embedding(query: str):
+    """Get cached query embedding or generate new one."""
     global _query_embedding_cache
     
-    # Normalize query for caching (lowercase, trimmed)
-    cache_key = query.lower().strip()[:100]  # Truncate for consistent caching
+    if not ML_DEPENDENCIES_AVAILABLE:
+        return None
+        
+    # Normalize query for cache key
+    cache_key = query.lower().strip()
     
-    # Check cache first
     if cache_key in _query_embedding_cache:
-        logger.debug(f"Using cached embedding for query: '{cache_key[:20]}...'")
+        logger.debug(f"Using cached embedding for: '{query[:20]}...'")
         return _query_embedding_cache[cache_key]
     
     # Generate new embedding
-    start_time = time.time()
     model = get_embedding_model()
-    
-    # Optimize encoding: disable progress bar, use float32
-    embedding = model.encode(
-        cache_key, 
-        show_progress_bar=False,
-        convert_to_tensor=False,
-        normalize_embeddings=True  # Pre-normalize for faster cosine similarity
-    ).astype(np.float32)
-    
-    embed_time = (time.time() - start_time) * 1000
-    logger.debug(f"Generated new embedding in {embed_time:.1f}ms for: '{cache_key[:20]}...'")
-    
-    # Cache the result
-    _query_embedding_cache[cache_key] = embedding
-    
-    # Maintain cache size limit (simple LRU by removing oldest)
-    if len(_query_embedding_cache) > _max_cache_size:
-        # Remove oldest entry (simple approach - could use OrderedDict for true LRU)
-        oldest_key = next(iter(_query_embedding_cache))
-        del _query_embedding_cache[oldest_key]
-        logger.debug(f"Removed oldest cached embedding: '{oldest_key[:20]}...'")
-    
-    return embedding
-
+    if model is None:
+        return None
+        
+    try:
+        start_time = time.time()
+        embedding = model.encode(query, normalize_embeddings=True)
+        embed_time = (time.time() - start_time) * 1000
+        logger.debug(f"Generated new embedding in {embed_time:.1f}ms for: '{query[:20]}...'")
+        
+        # Cache the embedding
+        _query_embedding_cache[cache_key] = embedding
+        
+        # Maintain cache size using LRU eviction
+        if len(_query_embedding_cache) > _max_cache_size:
+            # Remove oldest entry (first in dict for Python 3.7+)
+            oldest_key = next(iter(_query_embedding_cache))
+            del _query_embedding_cache[oldest_key]
+            logger.debug(f"Removed oldest query embedding from cache")
+        
+        return embedding
+    except Exception as e:
+        logger.error(f"Error generating embedding: {e}")
+        return None
 
 def get_vector_index():
     """Get or build the vector index with proper caching."""
     global _vector_index, _vector_index_loaded
     
+    if not ML_DEPENDENCIES_AVAILABLE:
+        logger.warning("ML dependencies not available. Vector index disabled.")
+        return None
+    
     # Return cached index if already loaded
     if _vector_index_loaded and _vector_index is not None:
         return _vector_index
     
-    logger.info("Building optimized vector index...")
-    start_time = time.time()
-    
-    # Get all documents for vector indexing - LIMIT to reduce size
-    from haystack.query import SearchQuerySet
-    sqs = SearchQuerySet().all()
-    
-    names = []
-    embeddings = []
-    objects = []
-    
-    model = get_embedding_model()
-    
-    # Process in batches for better performance
-    batch_size = 50  # Smaller batches for memory efficiency
-    count = 0
-    max_docs = 1000  # Reduce to 1000 docs for faster builds
-    
-    batch_texts = []
-    batch_objects = []
-    
-    for result in sqs:
-        if hasattr(result, 'name') and result.name and count < max_docs:
-            # Create text for embedding (name + description)
-            text = result.name
-            if hasattr(result, 'description') and result.description:
-                text += " " + result.description[:50]  # Even shorter description
-            
-            batch_texts.append(text)
-            batch_objects.append(result)
-            count += 1
-            
-            # Process batch
-            if len(batch_texts) >= batch_size:
-                # Generate embeddings in batch (much faster)
-                batch_embeddings = model.encode(
-                    batch_texts,
-                    show_progress_bar=False,
-                    normalize_embeddings=True  # Normalize for faster similarity computation
-                )
+    try:
+        logger.info("Building optimized vector index...")
+        start_time = time.time()
+        
+        # Get all documents for vector indexing - LIMIT to reduce size
+        from haystack.query import SearchQuerySet
+        sqs = SearchQuerySet().all()
+        
+        names = []
+        embeddings = []
+        objects = []
+        
+        model = get_embedding_model()
+        if model is None:
+            return None
+        
+        # Process in batches for better performance
+        batch_size = 50  # Smaller batches for memory efficiency
+        count = 0
+        max_docs = 1000  # Reduce to 1000 docs for faster builds
+        
+        batch_texts = []
+        batch_objects = []
+        
+        for result in sqs:
+            if hasattr(result, 'name') and result.name and count < max_docs:
+                # Create text for embedding (name + description)
+                text = result.name
+                if hasattr(result, 'description') and result.description:
+                    text += " " + result.description[:50]  # Even shorter description
                 
-                for i, embedding in enumerate(batch_embeddings):
-                    names.append(batch_objects[i].name)
-                    embeddings.append(embedding)
-                    objects.append(batch_objects[i])
+                batch_texts.append(text)
+                batch_objects.append(result)
+                count += 1
                 
-                batch_texts = []
-                batch_objects = []
-    
-    # Process remaining batch
-    if batch_texts:
-        batch_embeddings = model.encode(
-            batch_texts,
-            show_progress_bar=False,
-            normalize_embeddings=True  # Normalize for faster similarity computation
-        )
-        for i, embedding in enumerate(batch_embeddings):
-            names.append(batch_objects[i].name)
-            embeddings.append(embedding)
-            objects.append(batch_objects[i])
-    
-    _vector_index = {
-        'names': names,
-        'embeddings': np.array(embeddings, dtype=np.float32),  # Use float32 for speed
-        'objects': objects
-    }
-    
-    # Mark as loaded to prevent rebuilding
-    _vector_index_loaded = True
-    
-    build_time = time.time() - start_time
-    logger.info(f"Optimized vector index built: ({len(names)}, {len(embeddings[0]) if embeddings else 0}) in {build_time:.2f}s")
-    
-    return _vector_index
-
+                # Process batch
+                if len(batch_texts) >= batch_size:
+                    # Generate embeddings in batch (much faster)
+                    batch_embeddings = model.encode(
+                        batch_texts,
+                        show_progress_bar=False,
+                        normalize_embeddings=True  # Normalize for faster similarity computation
+                    )
+                    
+                    for i, embedding in enumerate(batch_embeddings):
+                        names.append(batch_objects[i].name)
+                        embeddings.append(embedding)
+                        objects.append(batch_objects[i])
+                    
+                    batch_texts = []
+                    batch_objects = []
+        
+        # Process remaining batch
+        if batch_texts:
+            batch_embeddings = model.encode(
+                batch_texts,
+                show_progress_bar=False,
+                normalize_embeddings=True  # Normalize for faster similarity computation
+            )
+            for i, embedding in enumerate(batch_embeddings):
+                names.append(batch_objects[i].name)
+                embeddings.append(embedding)
+                objects.append(batch_objects[i])
+        
+        _vector_index = {
+            'names': names,
+            'embeddings': np.array(embeddings, dtype=np.float32),  # Use float32 for speed
+            'objects': objects
+        }
+        
+        # Mark as loaded to prevent rebuilding
+        _vector_index_loaded = True
+        
+        build_time = time.time() - start_time
+        logger.info(f"Optimized vector index built: {_vector_index['embeddings'].shape} in {build_time:.2f}s")
+        
+        return _vector_index
+        
+    except Exception as e:
+        logger.error(f"Error building vector index: {e}")
+        return None
 
 @dataclass
 class SearchResult:
-    """Represents a search result with indexed field data."""
+    """Represents a search result with score and metadata."""
     name: str
     description: str
     object_type: str
@@ -181,20 +209,18 @@ class SearchResult:
     schema_version: str
     score: float
     search_type: str
-    # Additional indexed fields for different object types
     indexed_fields: Dict[str, Any] = None
-    
-    def __post_init__(self):
-        if self.indexed_fields is None:
-            self.indexed_fields = {}
-
 
 class ElasticsearchSearchService:
     """Search service using Elasticsearch with vector capabilities."""
     
     def __init__(self):
         """Initialize the search service."""
-        self.embedding_model = get_embedding_model()
+        if ML_DEPENDENCIES_AVAILABLE:
+            self.embedding_model = get_embedding_model()
+        else:
+            self.embedding_model = None
+            logger.warning("ML dependencies not available. Running with text search only.")
     
     def _extract_indexed_fields(self, result) -> Dict[str, Any]:
         """Extract all indexed fields from a Haystack search result."""
@@ -293,7 +319,12 @@ class ElasticsearchSearchService:
         overall_start = time.time()
         
         if search_types is None:
-            search_types = ['text', 'fuzzy', 'vector']
+            # Adjust default search types based on ML availability
+            if ML_DEPENDENCIES_AVAILABLE:
+                search_types = ['text', 'fuzzy', 'vector']
+            else:
+                search_types = ['text', 'fuzzy']
+                logger.info("ML dependencies not available, using text and fuzzy search only")
         
         if boost_factors is None:
             boost_factors = {'text': 1.0, 'fuzzy': 0.5, 'vector': 0.3}
@@ -313,7 +344,7 @@ class ElasticsearchSearchService:
             if 'fuzzy' in search_types:
                 futures['fuzzy'] = executor.submit(self._fuzzy_search, query, limit, filters)
             
-            if 'vector' in search_types:
+            if 'vector' in search_types and ML_DEPENDENCIES_AVAILABLE:
                 futures['vector'] = executor.submit(self._vector_search, query, limit, filters)
             
             # Collect results
@@ -485,6 +516,10 @@ class ElasticsearchSearchService:
         """Perform optimized vector-based semantic search with timing."""
         start_time = time.time()
         
+        if not ML_DEPENDENCIES_AVAILABLE:
+            logger.debug("ML dependencies not available, skipping vector search")
+            return []
+        
         try:
             # Quick optimization: Cache query embeddings for repeated queries
             embed_start = time.time()
@@ -493,18 +528,22 @@ class ElasticsearchSearchService:
             truncated_query = query[:100] if len(query) > 100 else query
             
             query_embedding = get_cached_query_embedding(truncated_query)
+            if query_embedding is None:
+                logger.debug("Could not generate query embedding, skipping vector search")
+                return []
+                
             embed_time = (time.time() - embed_start) * 1000
             logger.debug(f"Query embedding: {embed_time:.1f}ms")
             
             # Get vector index (should be cached now)
             index_start = time.time()
             vector_index = get_vector_index()
+            if vector_index is None or len(vector_index['embeddings']) == 0:
+                logger.debug("Vector index not available, skipping vector search")
+                return []
+                
             index_time = (time.time() - index_start) * 1000
             logger.debug(f"Vector index access: {index_time:.1f}ms")
-            
-            if len(vector_index['embeddings']) == 0:
-                logger.warning("Vector index is empty")
-                return []
             
             # Calculate similarities more efficiently
             similarity_start = time.time()
@@ -523,7 +562,7 @@ class ElasticsearchSearchService:
             top_start = time.time()
             
             # Use argpartition for faster top-k selection
-            k = min(limit * 2, len(similarities))  # Get 2x limit for filtering
+            k = min(limit * 2, len(similarities))
             if k > 0:
                 top_indices = np.argpartition(similarities, -k)[-k:]
                 # Sort only the top results
@@ -577,18 +616,38 @@ class ElasticsearchSearchService:
     def get_stats(self) -> Dict[str, Any]:
         """Get search index statistics."""
         try:
-            vector_index = get_vector_index()
-            sqs = SearchQuerySet().all()
-            
-            return {
-                'total_documents': len(vector_index['names']),
-                'vector_dimensions': vector_index['embeddings'].shape[1] if len(vector_index['embeddings']) > 0 else 0,
-                'elasticsearch_documents': len(list(sqs[:100])),  # Sample to avoid loading all
-                'embedding_model': 'all-MiniLM-L6-v2'
+            stats = {
+                'ml_dependencies_available': ML_DEPENDENCIES_AVAILABLE,
+                'embedding_model': 'all-MiniLM-L6-v2' if ML_DEPENDENCIES_AVAILABLE else 'Not available',
             }
+            
+            if ML_DEPENDENCIES_AVAILABLE:
+                vector_index = get_vector_index()
+                if vector_index:
+                    stats.update({
+                        'total_documents': len(vector_index['names']),
+                        'vector_dimensions': vector_index['embeddings'].shape[1] if len(vector_index['embeddings']) > 0 else 0,
+                    })
+                else:
+                    stats.update({
+                        'total_documents': 0,
+                        'vector_dimensions': 0,
+                    })
+            
+            # Always try to get elasticsearch stats
+            try:
+                sqs = SearchQuerySet().all()
+                stats['elasticsearch_documents'] = len(list(sqs[:100]))  # Sample to avoid loading all
+            except Exception as e:
+                stats['elasticsearch_documents'] = f'Error: {e}'
+            
+            return stats
         except Exception as e:
             logger.error(f"Error getting stats: {e}")
-            return {'error': str(e)}
+            return {
+                'error': str(e),
+                'ml_dependencies_available': ML_DEPENDENCIES_AVAILABLE
+            }
 
 
 # Global search service instance
