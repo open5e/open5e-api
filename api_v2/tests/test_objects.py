@@ -5,6 +5,44 @@ from typing import Callable
 
 API_BASE = f"http://localhost:8000"
 
+
+class TestSpellCastingOptions:
+    """Tests to validate spell casting options data integrity."""
+
+    def test_all_spells_with_higher_level_have_casting_options(self):
+        """Every spell with higher_level text should have at least one casting option."""
+        response = requests.get(
+            f"{API_BASE}/v2/spells/?limit=1000",
+            headers={'Accept': 'application/json'}
+        ).json()
+        
+        spells_missing_options = []
+        for spell in response['results']:
+            if spell.get('higher_level') and not spell.get('casting_options'):
+                spells_missing_options.append(spell['key'])
+        
+        assert not spells_missing_options, \
+            f"Spells with higher_level but no casting_options: {spells_missing_options}"
+
+    def test_no_duplicate_casting_option_types(self):
+        """No spell should have duplicate casting option types."""
+        response = requests.get(
+            f"{API_BASE}/v2/spells/?limit=1000",
+            headers={'Accept': 'application/json'}
+        ).json()
+        
+        spells_with_duplicates = []
+        for spell in response['results']:
+            casting_options = spell.get('casting_options', [])
+            types = [opt['type'] for opt in casting_options]
+            if len(types) != len(set(types)):
+                duplicates = [t for t in types if types.count(t) > 1]
+                spells_with_duplicates.append(f"{spell['name']}: {set(duplicates)}")
+        
+        assert not spells_with_duplicates, \
+            f"Spells with duplicate casting option types: {spells_with_duplicates}"
+
+
 class TestObjects:
 
     def _verify(self, endpoint: str, transformer: Callable[[dict], None] = None):
