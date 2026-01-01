@@ -23,25 +23,25 @@ class HasSpeed(models.Model):
 
     def get_fly(self):
         if self.fly is None:
-            return 0.0
+            return 0
         return self.fly
 
     def get_burrow(self):
         if self.burrow is None:
-            return 0.0
+            return 0
         return self.burrow
     
     def get_climb(self):
         if self.climb is None:
-            return self.walk / 2 # Climb speed is half of walk speed.
+            return self.walk // 2  # Climb speed is half of walk speed (integer division)
         return self.climb
 
     def get_crawl(self):
-        return self.walk / 2
+        return self.walk // 2  # Integer division
 
     def get_swim(self):
         if self.swim is None:
-            return self.walk / 2 # Swim speed is half of walk speed.
+            return self.walk // 2  # Swim speed is half of walk speed (integer division)
         return self.swim
 
     def get_unit(self):
@@ -85,17 +85,13 @@ class HasSpeed(models.Model):
         fields={
             # todo: model typed as any
             "unit": serializers.StringRelatedField(),
-            # todo: model typed as any
-            "walk": serializers.StringRelatedField(),
-            # todo: model typed as any
-            "crawl": serializers.StringRelatedField(),
+            "walk": serializers.IntegerField(),
+            "crawl": serializers.IntegerField(),
             "hover": serializers.BooleanField(),
-            "fly": serializers.FloatField(),
-            "burrow": serializers.FloatField(),
-            # todo: model typed as any
-            "climb": serializers.StringRelatedField(),
-            # todo: model typed as any
-            "swim": serializers.StringRelatedField(),  
+            "fly": serializers.IntegerField(allow_null=True),
+            "burrow": serializers.IntegerField(allow_null=True),
+            "climb": serializers.IntegerField(allow_null=True),
+            "swim": serializers.IntegerField(allow_null=True),
         }
     ))
     def get_speed_all(self):

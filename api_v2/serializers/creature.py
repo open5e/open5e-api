@@ -174,7 +174,6 @@ class CreatureSerializer(GameContentSerializer):
     initiative_bonus = serializers.SerializerMethodField()
     illustration = ImageSummarySerializer()
 
-
     class Meta:
         '''Serializer meta options.'''
         model = models.Creature
@@ -391,17 +390,13 @@ class CreatureSerializer(GameContentSerializer):
         fields={
             # todo: model typed as any
             "unit": serializers.StringRelatedField(),
-            # todo: model typed as any
-            "walk": serializers.StringRelatedField(),
-            # todo: model typed as any
-            "crawl": serializers.StringRelatedField(),
+            "walk": serializers.IntegerField(),
+            "crawl": serializers.IntegerField(),
             "hover": serializers.BooleanField(),
-            "fly": serializers.FloatField(),
-            "burrow": serializers.FloatField(),
-            # todo: model typed as any
-            "climb": serializers.StringRelatedField(),
-            # todo: model typed as any
-            "swim": serializers.StringRelatedField(),  
+            "fly": serializers.IntegerField(allow_null=True),
+            "burrow": serializers.IntegerField(allow_null=True),
+            "climb": serializers.IntegerField(allow_null=True),
+            "swim": serializers.IntegerField(allow_null=True),
         }
     ))
     def get_speed_all(self, creature):
