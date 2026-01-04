@@ -19,15 +19,15 @@
     "action_type": "ACTION",
     "desc": "Wisdom Saving Throw: DC 16, one creature the aboleth can see within 30 feet. Failure: The target has the Charmed condition until the aboleth dies or is on a different plane of existence from the target. While Charmed, the target acts as an ally to the aboleth and is under its control while within 60 feet of it. In addition, the aboleth and the target can communicate telepathically with each other over any distance. The target repeats the save whenever it takes damage as well as after every 24 hours it spends at least 1 mile away from the aboleth, ending the effect on itself on a success.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Dominate Mind (2/Day)",
+    "legendary_cost": null,
+    "name": "Dominate Mind",
     "order": 3,
     "parent": "srd-2024_aboleth",
     "uses_param": 2,
     "uses_type": "PER_DAY"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_aboleth_dominate-mind-2-day"
+  "pk": "srd-2024_aboleth_dominate-mind"
 },
 {
   "fields": {
@@ -49,7 +49,7 @@
     "action_type": "ACTION",
     "desc": "The aboleth makes two Tentacle attacks and uses either Consume Memories or Dominate Mind if available.",
     "form_condition": null,
-    "legendary_cost": 1,
+    "legendary_cost": null,
     "name": "Multiattack",
     "order": 0,
     "parent": "srd-2024_aboleth",
@@ -94,15 +94,15 @@
     "action_type": "ACTION",
     "desc": "Dexterity Saving Throw: DC 18, each creature in a 60-foot-long, 5-foot-wide Line. Failure: 54 (12d8) Acid damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Acid Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Acid Breath",
     "order": 2,
     "parent": "srd-2024_adult-black-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-black-dragon_acid-breath-recharge-5-6"
+  "pk": "srd-2024_adult-black-dragon_acid-breath-recharge"
 },
 {
   "fields": {
@@ -214,15 +214,15 @@
     "action_type": "ACTION",
     "desc": "Dexterity Saving Throw: DC 19, each creature in a 90-foot-long, 5-foot-wide Line. Failure: 60 (11d10) Lightning damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Lightning Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Lightning Breath",
     "order": 2,
     "parent": "srd-2024_adult-blue-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-blue-dragon_lightning-breath-recharge-5-6"
+  "pk": "srd-2024_adult-blue-dragon_lightning-breath"
 },
 {
   "fields": {
@@ -319,15 +319,15 @@
     "action_type": "ACTION",
     "desc": "Dexterity Saving Throw: DC 18, each creature in a 60-foot-long, 5-foot-wide Line. Failure: 45 (10d8) Fire damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_adult-brass-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-brass-dragon_fire-breath-recharge-5-6"
+  "pk": "srd-2024_adult-brass-dragon_fire-breath"
 },
 {
   "fields": {
@@ -439,15 +439,15 @@
     "action_type": "ACTION",
     "desc": "Dexterity Saving Throw: DC 19, each creature in a 90-foot-long, 5-foot-wide Line. Failure: 55 (10d10) Lightning damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Lightning Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Lightning Breath",
     "order": 2,
     "parent": "srd-2024_adult-bronze-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-bronze-dragon_lightning-breath-recharge-5-6"
+  "pk": "srd-2024_adult-bronze-dragon_lightning-breath"
 },
 {
   "fields": {
@@ -544,15 +544,15 @@
     "action_type": "ACTION",
     "desc": "Dexterity Saving Throw: DC 18, each creature in an 60-foot-long, 5-foot-wide Line. Failure: 54 (12d8) Acid damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Acid Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Acid Breath",
     "order": 2,
     "parent": "srd-2024_adult-copper-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-copper-dragon_acid-breath-recharge-5-6"
+  "pk": "srd-2024_adult-copper-dragon_acid-breath"
 },
 {
   "fields": {
@@ -680,14 +680,14 @@
     "desc": "Dexterity Saving Throw: DC 21, each creature in a 60-foot Cone. Failure: 66 (12d10) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_adult-gold-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-gold-dragon_fire-breath-recharge-5-6"
+  "pk": "srd-2024_adult-gold-dragon_fire-breath"
 },
 {
   "fields": {
@@ -830,14 +830,14 @@
     "desc": "Constitution Saving Throw: DC 18, each creature in a 60-foot Cone. Failure: 56 (16d6) Poison damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Poison Breath (Recharge 5-6)",
+    "name": "Poison Breath",
     "order": 2,
     "parent": "srd-2024_adult-green-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-green-dragon_poison-breath-recharge-5-6"
+  "pk": "srd-2024_adult-green-dragon_poison-breath"
 },
 {
   "fields": {
@@ -920,14 +920,14 @@
     "desc": "Dexterity Saving Throw: DC 21, each creature in a 60-foot Cone. Failure: 59 (17d6) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_adult-red-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-red-dragon_fire-breath-recharge-5-6"
+  "pk": "srd-2024_adult-red-dragon_fire-breath"
 },
 {
   "fields": {
@@ -1010,14 +1010,14 @@
     "desc": "Constitution Saving Throw: DC 20, each creature in a 60-foot Cone. Failure: 54 (12d8) Cold damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Cold Breath (Recharge 5-6)",
+    "name": "Cold Breath",
     "order": 2,
     "parent": "srd-2024_adult-silver-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-silver-dragon_cold-breath-recharge-5-6"
+  "pk": "srd-2024_adult-silver-dragon_cold-breath"
 },
 {
   "fields": {
@@ -1114,15 +1114,15 @@
     "action_type": "ACTION",
     "desc": "Constitution Saving Throw: DC 19, each creature in a 60-foot Cone. Failure: 54 (12d8) Cold damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Cold Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Cold Breath",
     "order": 2,
     "parent": "srd-2024_adult-white-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_adult-white-dragon_cold-breath-recharge-5-6"
+  "pk": "srd-2024_adult-white-dragon_cold-breath"
 },
 {
   "fields": {
@@ -1234,15 +1234,15 @@
     "action_type": "ACTION",
     "desc": "Strength Saving Throw: DC 13, one Medium or smaller creature in the elemental's space. Failure: 24 (4d10 + 2) Thunder damage, and the target is pushed up to 20 feet straight away from the elemental and has the Prone condition. Success: Half damage only.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Whirlwind (Recharge 4-6)",
+    "legendary_cost": null,
+    "name": "Whirlwind",
     "order": 2,
     "parent": "srd-2024_air-elemental",
     "uses_param": 4,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_air-elemental_whirlwind-recharge-4-6"
+  "pk": "srd-2024_air-elemental_whirlwind"
 },
 {
   "fields": {
@@ -1280,14 +1280,14 @@
     "desc": "Dexterity Saving Throw: DC 22, each creature in a 90-foot-long, 10-foot-wide Line. Failure: 67 (15d8) Acid damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Acid Breath (Recharge 5-6)",
+    "name": "Acid Breath",
     "order": 2,
     "parent": "srd-2024_ancient-black-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-black-dragon_acid-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-black-dragon_acid-breath"
 },
 {
   "fields": {
@@ -1400,14 +1400,14 @@
     "desc": "Dexterity Saving Throw: DC 23, each creature in a 120-foot-long, 10-foot-wide Line. Failure: 88 (16d10) Lightning damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Lightning Breath (Recharge 5-6)",
+    "name": "Lightning Breath",
     "order": 2,
     "parent": "srd-2024_ancient-blue-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-blue-dragon_lightning-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-blue-dragon_lightning-breath"
 },
 {
   "fields": {
@@ -1504,22 +1504,22 @@
     "action_type": "ACTION",
     "desc": "Dexterity Saving Throw: DC 21, each creature in a 90-foot-long, 5-foot-wide Line. Failure: 58 (13d8) Fire damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_ancient-brass-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-brass-dragon_fire-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-brass-dragon_fire-breath"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "The dragon makes three Rend attacks. It can replace one attack with a use of (A) Sleep Breath or (B) Spellcasting to cast Scorching Ray (level 3 version).",
     "form_condition": null,
-    "legendary_cost": 1,
+    "legendary_cost": null,
     "name": "Multiattack",
     "order": 0,
     "parent": "srd-2024_ancient-brass-dragon",
@@ -1625,14 +1625,14 @@
     "desc": "Dexterity Saving Throw: DC 23, each creature in a 120-foot-long, 10-foot-wide Line. Failure: 82 (15d10) Lightning damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Lightning Breath (Recharge 5-6)",
+    "name": "Lightning Breath",
     "order": 2,
     "parent": "srd-2024_ancient-bronze-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-bronze-dragon_lightning-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-bronze-dragon_lightning-breath"
 },
 {
   "fields": {
@@ -1730,14 +1730,14 @@
     "desc": "Dexterity Saving Throw: DC 22, each creature in an 90-foot-long, 10-foot-wide Line. Failure: 63 (14d8) Acid damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Acid Breath (Recharge 5-6)",
+    "name": "Acid Breath",
     "order": 2,
     "parent": "srd-2024_ancient-copper-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-copper-dragon_acid-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-copper-dragon_acid-breath"
 },
 {
   "fields": {
@@ -1865,14 +1865,14 @@
     "desc": "Dexterity Saving Throw: DC 24, each creature in a 90-foot Cone. Failure: 71 (13d10) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_ancient-gold-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-gold-dragon_fire-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-gold-dragon_fire-breath"
 },
 {
   "fields": {
@@ -2015,14 +2015,14 @@
     "desc": "Constitution Saving Throw: DC 22, each creature in a 90-foot Cone. Failure: 77 (22d6) Poison damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Poison Breath (Recharge 5-6)",
+    "name": "Poison Breath",
     "order": 2,
     "parent": "srd-2024_ancient-green-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-green-dragon_poison-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-green-dragon_poison-breath"
 },
 {
   "fields": {
@@ -2105,14 +2105,14 @@
     "desc": "Dexterity Saving Throw: DC 24, each creature in a 90-foot Cone. Failure: 91 (26d6) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_ancient-red-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-red-dragon_fire-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-red-dragon_fire-breath"
 },
 {
   "fields": {
@@ -2195,14 +2195,14 @@
     "desc": "Constitution Saving Throw: DC 24, each creature in a 90-foot Cone. Failure: 67 (15d8) Cold damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Cold Breath (Recharge 5-6)",
+    "name": "Cold Breath",
     "order": 2,
     "parent": "srd-2024_ancient-silver-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-silver-dragon_cold-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-silver-dragon_cold-breath"
 },
 {
   "fields": {
@@ -2300,14 +2300,14 @@
     "desc": "Constitution Saving Throw: DC 22, each creature in a 90-foot Cone. Failure: 63 (14d8) Cold damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Cold Breath (Recharge 5-6)",
+    "name": "Cold Breath",
     "order": 2,
     "parent": "srd-2024_ancient-white-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ancient-white-dragon_cold-breath-recharge-5-6"
+  "pk": "srd-2024_ancient-white-dragon_cold-breath"
 },
 {
   "fields": {
@@ -2450,14 +2450,14 @@
     "desc": "Dexterity Saving Throw: DC 12, each creature in a 30-foot-long, 5-foot-wide Line. Failure: 14 (4d6) Acid damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Acid Spray (Recharge 6)",
+    "name": "Acid Spray",
     "order": 1,
     "parent": "srd-2024_ankheg",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ankheg_acid-spray-recharge-6"
+  "pk": "srd-2024_ankheg_acid-spray"
 },
 {
   "fields": {
@@ -2540,14 +2540,14 @@
     "desc": "Ranged Attack Roll: +5, range 25/50 ft. 10 (2d6 + 3) Bludgeoning damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Rock (Recharge 6)",
+    "name": "Rock",
     "order": 2,
     "parent": "srd-2024_ape",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ape_rock-recharge-6"
+  "pk": "srd-2024_ape_rock"
 },
 {
   "fields": {
@@ -3050,14 +3050,14 @@
     "desc": "Dexterity Saving Throw: DC 16, each creature in a 90-foot-long, 5-foot-wide Line. Failure: 66 (12d10) Lightning damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Lightning Breath (Recharge 5-6)",
+    "name": "Lightning Breath",
     "order": 3,
     "parent": "srd-2024_behir",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_behir_lightning-breath-recharge-5-6"
+  "pk": "srd-2024_behir_lightning-breath"
 },
 {
   "fields": {
@@ -3125,14 +3125,14 @@
     "desc": "Dexterity Saving Throw: DC 11, each creature in a 15-foot-long, 5-foot-wide Line. Failure: 22 (5d8) Acid damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Acid Breath (Recharge 5-6)",
+    "name": "Acid Breath",
     "order": 2,
     "parent": "srd-2024_black-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_black-dragon-wyrmling_acid-breath-recharge-5-6"
+  "pk": "srd-2024_black-dragon-wyrmling_acid-breath"
 },
 {
   "fields": {
@@ -3215,14 +3215,14 @@
     "desc": "Dexterity Saving Throw: DC 12, each creature in a 30-foot-long, 5-foot-wide Line. Failure: 21 (6d6) Lightning damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Lightning Breath (Recharge 5-6)",
+    "name": "Lightning Breath",
     "order": 2,
     "parent": "srd-2024_blue-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_blue-dragon-wyrmling_lightning-breath-recharge-5-6"
+  "pk": "srd-2024_blue-dragon-wyrmling_lightning-breath"
 },
 {
   "fields": {
@@ -3320,14 +3320,14 @@
     "desc": "Dexterity Saving Throw: DC 11, each creature in a 20-foot-long, 5-foot-wide Line. Failure: 14 (4d6) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 1,
     "parent": "srd-2024_brass-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_brass-dragon-wyrmling_fire-breath-recharge-5-6"
+  "pk": "srd-2024_brass-dragon-wyrmling_fire-breath"
 },
 {
   "fields": {
@@ -3365,14 +3365,14 @@
     "desc": "Dexterity Saving Throw: DC 12, each creature in a 40-foot-long, 5-foot-wide Line. Failure: 16 (3d10) Lightning damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Lightning Breath (Recharge 5-6)",
+    "name": "Lightning Breath",
     "order": 2,
     "parent": "srd-2024_bronze-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_bronze-dragon-wyrmling_lightning-breath-recharge-5-6"
+  "pk": "srd-2024_bronze-dragon-wyrmling_lightning-breath"
 },
 {
   "fields": {
@@ -3740,14 +3740,14 @@
     "desc": "Dexterity Saving Throw: DC 15, each creature in a 15-foot Cone. Failure: 31 (7d8) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 4,
     "parent": "srd-2024_chimera",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_chimera_fire-breath-recharge-5-6"
+  "pk": "srd-2024_chimera_fire-breath"
 },
 {
   "fields": {
@@ -4025,14 +4025,14 @@
     "desc": "Dexterity Saving Throw: DC 11, each creature in a 20-foot-long, 5-foot-wide Line. Failure: 18 (4d8) Acid damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Acid Breath (Recharge 5-6)",
+    "name": "Acid Breath",
     "order": 1,
     "parent": "srd-2024_copper-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_copper-dragon-wyrmling_acid-breath-recharge-5-6"
+  "pk": "srd-2024_copper-dragon-wyrmling_acid-breath"
 },
 {
   "fields": {
@@ -4204,15 +4204,15 @@
     "action_type": "ACTION",
     "desc": "Magical darkness fills a 15-foot Emanation originating from the darkmantle. This effect lasts while the darkmantle maintains Concentration on it, up to 10 minutes. Darkvision can't penetrate this area, and no light can illuminate it.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Darkness Aura (1/Day)",
+    "legendary_cost": null,
+    "name": "Darkness Aura",
     "order": 1,
     "parent": "srd-2024_darkmantle",
     "uses_param": 1,
     "uses_type": "PER_DAY"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_darkmantle_darkness-aura-1-day"
+  "pk": "srd-2024_darkmantle_darkness-aura"
 },
 {
   "fields": {
@@ -4445,14 +4445,14 @@
     "desc": "Wisdom Saving Throw: DC 12, each creature in a 15-foot Emanation originating from the doppelganger that can see the doppelganger. Failure: The target has the Frightened condition and repeats the save at the end of each of its turns, ending the effect on itself on a success. After 1 minute, it succeeds automatically.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Unsettling Visage (Recharge 6)",
+    "name": "Unsettling Visage",
     "order": 2,
     "parent": "srd-2024_doppelganger",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_doppelganger_unsettling-visage-recharge-6"
+  "pk": "srd-2024_doppelganger_unsettling-visage"
 },
 {
   "fields": {
@@ -4505,14 +4505,14 @@
     "desc": "Constitution Saving Throw: DC 19, each creature in a 60-foot Cone. Failure: 56 (16d6) Fire damage. Success: Half damage. Failure or Success: Being underwater doesn't grant Resistance to this Fire damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Steam Breath (Recharge 5-6)",
+    "name": "Steam Breath",
     "order": 3,
     "parent": "srd-2024_dragon-turtle",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_dragon-turtle_steam-breath-recharge-5-6"
+  "pk": "srd-2024_dragon-turtle_steam-breath"
 },
 {
   "fields": {
@@ -4534,8 +4534,8 @@
     "action_type": "ACTION",
     "desc": "Constitution Saving Throw: DC 11, each creature in a 10-foot Emanation originating from the dretch. Failure: The target has the Poisoned condition until the end of its next turn. While Poisoned, the creature can take either an action or a Bonus Action on its turn, not both, and it can't take Reactions.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Fetid Cloud (1/Day)",
+    "legendary_cost": null,
+    "name": "Fetid Cloud",
     "order": 1,
     "parent": "srd-2024_dretch",
     "uses_param": 1,
@@ -4730,14 +4730,14 @@
     "desc": "Dexterity Saving Throw: DC 10, each creature in a 15-foot Cone. Failure: The target has the Blinded condition until the end of the mephit's next turn.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Blinding Breath (Recharge 6)",
+    "name": "Blinding Breath",
     "order": 1,
     "parent": "srd-2024_dust-mephit",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_dust-mephit_blinding-breath-recharge-6"
+  "pk": "srd-2024_dust-mephit_blinding-breath"
 },
 {
   "fields": {
@@ -4759,8 +4759,8 @@
     "action_type": "ACTION",
     "desc": "The mephit casts the Sleep spell, requiring no spell components and using Charisma as the spellcasting ability (spell save DC 10). - At Will: - 1/Day Each: Sleep",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Sleep (1/Day)",
+    "legendary_cost": null,
+    "name": "Sleep",
     "order": 2,
     "parent": "srd-2024_dust-mephit",
     "uses_param": 1,
@@ -4938,16 +4938,16 @@
   "fields": {
     "action_type": "ACTION",
     "desc": "Strength Saving Throw: DC 16, one creature the erinyes can see within 120 feet. Failure: 14 (4d6) Force damage, and the target has the Restrained condition until the rope is destroyed, the erinyes uses a Bonus Action to release the target, or the erinyes uses Entangling Rope again.",
-    "form_condition": null,
+    "form_condition": "Requires Magic Rope",
     "legendary_cost": 1,
-    "name": "Entangling Rope (Requires Magic Rope)",
+    "name": "Entangling Rope",
     "order": 2,
     "parent": "srd-2024_erinyes",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_erinyes_entangling-rope-requires-magic-rope"
+  "pk": "srd-2024_erinyes_entangling-rope"
 },
 {
   "fields": {
@@ -5030,14 +5030,14 @@
     "desc": "Dexterity Saving Throw: DC 12, one Large or smaller creature the ettercap can see within 30 feet. Failure: The target has the Restrained condition until the web is destroyed (AC 10; HP 5; Vulnerability to Fire damage; Immunity to Bludgeoning, Poison, and Psychic damage).",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Web Strand (Recharge 5-6)",
+    "name": "Web Strand",
     "order": 3,
     "parent": "srd-2024_ettercap",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ettercap_web-strand-recharge-5-6"
+  "pk": "srd-2024_ettercap_web-strand"
 },
 {
   "fields": {
@@ -5405,14 +5405,14 @@
     "desc": "Charisma Saving Throw: DC 13, one Humanoid the ghost can see within 5 feet. Failure: The target is possessed by the ghost; the ghost disappears, and the target has the Incapacitated condition and loses control of its body. The ghost now controls the body, but the target retains awareness. The ghost can't be targeted by any attack, spell, or other effect, except ones that specifically target Undead. The ghost's game statistics are the same, except it uses the possessed target's Speed, as well as the target's Strength, Dexterity, and Constitution modifiers. The possession lasts until the body drops to 0 Hit Points or the ghost leaves as a Bonus Action. When the possession ends, the ghost appears in an unoccupied space within 5 feet of the target, and the target is immune to this ghost's Possession for 24 hours. Success: The target is immune to this ghost's Possession for 24 hours.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Possession (Recharge 6)",
+    "name": "Possession",
     "order": 3,
     "parent": "srd-2024_ghost",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ghost_possession-recharge-6"
+  "pk": "srd-2024_ghost_possession"
 },
 {
   "fields": {
@@ -5480,14 +5480,14 @@
     "desc": "The ape hurls a boulder at a point it can see within 90 feet. Dexterity Saving Throw: DC 17, each creature in a 5-foot-radius Sphere [Area of Effect]|XPHB|Sphere centered on that point. Failure: 24 (7d6) Bludgeoning damage. If the target is a Large or smaller creature, it has the Prone condition. Success: Half damage only.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Boulder Toss (Recharge 6)",
+    "name": "Boulder Toss",
     "order": 2,
     "parent": "srd-2024_giant-ape",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_giant-ape_boulder-toss-recharge-6"
+  "pk": "srd-2024_giant-ape_boulder-toss"
 },
 {
   "fields": {
@@ -5990,14 +5990,14 @@
     "desc": "Dexterity Saving Throw: DC 13, one creature the spider can see within 60 feet. Failure: The target has the Restrained condition until the web is destroyed (AC 10; HP 5; Vulnerability to Fire damage; Immunity to Poison and Psychic damage).",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Web (Recharge 5-6)",
+    "name": "Web",
     "order": 1,
     "parent": "srd-2024_giant-spider",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_giant-spider_web-recharge-5-6"
+  "pk": "srd-2024_giant-spider_web"
 },
 {
   "fields": {
@@ -6125,14 +6125,14 @@
     "desc": "Dexterity Saving Throw: DC 10, each creature in a 10-foot-radius Sphere [Area of Effect]|XPHB|Sphere centered on a point within 30 feet. Failure: 7 (2d6) Radiant damage, and the target has the Blinded condition until the end of the mouther's next turn.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Blinding Spittle (Recharge 5-6)",
+    "name": "Blinding Spittle",
     "order": 1,
     "parent": "srd-2024_gibbering-mouther",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_gibbering-mouther_blinding-spittle-recharge-5-6"
+  "pk": "srd-2024_gibbering-mouther_blinding-spittle"
 },
 {
   "fields": {
@@ -6380,14 +6380,14 @@
     "desc": "Dexterity Saving Throw: DC 13, each creature in a 15-foot Cone. Failure: 22 (4d10) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_gold-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_gold-dragon-wyrmling_fire-breath-recharge-5-6"
+  "pk": "srd-2024_gold-dragon-wyrmling_fire-breath"
 },
 {
   "fields": {
@@ -6455,14 +6455,14 @@
     "desc": "Constitution Saving Throw: DC 15, each creature in a 30-foot Cone. First Failure The target has the Restrained condition and repeats the save at the end of its next turn if it is still Restrained, ending the effect on itself on a success. Second Failure The target has the Petrified condition instead of the Restrained condition.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Petrifying Breath (Recharge 5-6)",
+    "name": "Petrifying Breath",
     "order": 1,
     "parent": "srd-2024_gorgon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_gorgon_petrifying-breath-recharge-5-6"
+  "pk": "srd-2024_gorgon_petrifying-breath"
 },
 {
   "fields": {
@@ -6500,14 +6500,14 @@
     "desc": "Constitution Saving Throw: DC 11, each creature in a 15-foot Cone. Failure: 21 (6d6) Poison damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Poison Breath (Recharge 5-6)",
+    "name": "Poison Breath",
     "order": 2,
     "parent": "srd-2024_green-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_green-dragon-wyrmling_poison-breath-recharge-5-6"
+  "pk": "srd-2024_green-dragon-wyrmling_poison-breath"
 },
 {
   "fields": {
@@ -6800,14 +6800,14 @@
     "desc": "Dexterity Saving Throw: DC 14, each creature in a 30-foot Cone. Failure: 28 (8d6) damage of the type chosen for the Draconic Origin trait. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Dragon's Breath (Recharge 5-6)",
+    "name": "Dragon's Breath",
     "order": 2,
     "parent": "srd-2024_half-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_half-dragon_dragon's-breath-recharge-5-6"
+  "pk": "srd-2024_half-dragon_dragon's-breath"
 },
 {
   "fields": {
@@ -6890,14 +6890,14 @@
     "desc": "Dexterity Saving Throw: DC 12, each creature in a 15-foot Cone. Failure: 17 (5d6) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_hell-hound",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_hell-hound_fire-breath-recharge-5-6"
+  "pk": "srd-2024_hell-hound_fire-breath"
 },
 {
   "fields": {
@@ -7280,14 +7280,14 @@
     "desc": "The devil casts Wall of Ice (level 8 version), requiring no spell components and using Intelligence as the spellcasting ability (spell save DC 17). - At Will:",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Ice Wall (Recharge 6)",
+    "name": "Ice Wall",
     "order": 3,
     "parent": "srd-2024_ice-devil",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ice-devil_ice-wall-recharge-6"
+  "pk": "srd-2024_ice-devil_ice-wall"
 },
 {
   "fields": {
@@ -7339,15 +7339,15 @@
     "action_type": "ACTION",
     "desc": "The mephit casts Fog Cloud, requiring no spell components and using Charisma as the spellcasting ability. - At Will: - 1/Day Each: Fog Cloud",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Fog Cloud (1/Day)",
+    "legendary_cost": null,
+    "name": "Fog Cloud",
     "order": 2,
     "parent": "srd-2024_ice-mephit",
     "uses_param": 1,
     "uses_type": "PER_DAY"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ice-mephit_fog-cloud-1-day"
+  "pk": "srd-2024_ice-mephit_fog-cloud"
 },
 {
   "fields": {
@@ -7355,14 +7355,14 @@
     "desc": "Constitution Saving Throw: DC 10, each creature in a 15-foot Cone. Failure: 7 (3d4) Cold damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Frost Breath (Recharge 6)",
+    "name": "Frost Breath",
     "order": 1,
     "parent": "srd-2024_ice-mephit",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_ice-mephit_frost-breath-recharge-6"
+  "pk": "srd-2024_ice-mephit_frost-breath"
 },
 {
   "fields": {
@@ -7550,14 +7550,14 @@
     "desc": "Constitution Saving Throw: DC 18, each creature in a 60-foot Cone. Failure: 55 (10d10) Poison damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Poison Breath (Recharge 6)",
+    "name": "Poison Breath",
     "order": 3,
     "parent": "srd-2024_iron-golem",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_iron-golem_poison-breath-recharge-6"
+  "pk": "srd-2024_iron-golem_poison-breath"
 },
 {
   "fields": {
@@ -8060,14 +8060,14 @@
     "desc": "Dexterity Saving Throw: DC 11, each creature in a 15-foot Cone. Failure: 7 (2d6) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 6)",
+    "name": "Fire Breath",
     "order": 1,
     "parent": "srd-2024_magma-mephit",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_magma-mephit_fire-breath-recharge-6"
+  "pk": "srd-2024_magma-mephit_fire-breath"
 },
 {
   "fields": {
@@ -8405,14 +8405,14 @@
     "desc": "Melee Attack Roll: +6, reach 5 ft. 18 (4d6 + 4) Piercing damage. If the target is a Large or smaller creature and the minotaur moved 10+ feet straight toward it immediately before the hit, the target takes an extra 10 (3d6) Piercing damage and has the Prone condition.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Gore (Recharge 5-6)",
+    "name": "Gore",
     "order": 1,
     "parent": "srd-2024_minotaur-of-baphomet",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_minotaur-of-baphomet_gore-recharge-5-6"
+  "pk": "srd-2024_minotaur-of-baphomet_gore"
 },
 {
   "fields": {
@@ -8703,16 +8703,16 @@
   "fields": {
     "action_type": "ACTION",
     "desc": "While on the Ethereal Plane, the hag casts Dream, using the same spellcasting ability as Spellcasting. Only the hag can serve as the spell's messenger, and the target must be a creature the hag can see on the Material Plane. The spell fails and is wasted if the target is under the effect of the Protection from Evil and Good spell or within a Magic Circle spell. If the target takes damage from the Dream spell, the target's Hit Point maximum decreases by an amount equal to that damage. If the spell kills the target, its soul is trapped in the hag's soul bag, and the target can't be raised from the dead until its soul is released. - At Will: - 1/Day Each: Dream, Protection from Evil and Good, Magic Circle",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Nightmare Haunting (1/Day; Requires Soul Bag)",
+    "form_condition": "Requires Soul Bag",
+    "legendary_cost": null,
+    "name": "Nightmare Haunting",
     "order": 3,
     "parent": "srd-2024_night-hag",
     "uses_param": 1,
     "uses_type": "PER_DAY"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_night-hag_nightmare-haunting-1-day;-requires-soul-bag"
+  "pk": "srd-2024_night-hag_nightmare-haunting"
 },
 {
   "fields": {
@@ -9229,15 +9229,15 @@
     "action_type": "ACTION",
     "desc": "The pit fiend casts Fireball (level 5 version) twice, requiring no Material components and using Charisma as the spellcasting ability (spell save DC 21). It can replace one Fireball with Hold Monster (level 7 version) or Wall of Fire. - At Will:",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Hellfire Spellcasting (Recharge 4-6)",
+    "legendary_cost": null,
+    "name": "Hellfire Spellcasting",
     "order": 4,
     "parent": "srd-2024_pit-fiend",
     "uses_param": 4,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_pit-fiend_hellfire-spellcasting-recharge-4-6"
+  "pk": "srd-2024_pit-fiend_hellfire-spellcasting"
 },
 {
   "fields": {
@@ -9619,15 +9619,15 @@
     "action_type": "ACTION",
     "desc": "Wisdom Saving Throw: DC 10, one creature within 20 feet. Failure: The target has the Frightened condition. At the end of each of its turns, the target repeats the save, ending the effect on itself on a success. After 1 minute, it succeeds automatically.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Scare (1/Day)",
+    "legendary_cost": null,
+    "name": "Scare",
     "order": 1,
     "parent": "srd-2024_quasit",
     "uses_param": 1,
     "uses_type": "PER_DAY"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_quasit_scare-1-day"
+  "pk": "srd-2024_quasit_scare"
 },
 {
   "fields": {
@@ -9650,14 +9650,14 @@
     "desc": "Wisdom Saving Throw: DC 18, each enemy in a 30-foot Emanation originating from the rakshasa. Failure: 28 (8d6) Psychic damage, and the target has the Frightened and Incapacitated conditions until the start of the rakshasa's next turn.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Baleful Command (Recharge 5-6)",
+    "name": "Baleful Command",
     "order": 2,
     "parent": "srd-2024_rakshasa",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_rakshasa_baleful-command-recharge-5-6"
+  "pk": "srd-2024_rakshasa_baleful-command"
 },
 {
   "fields": {
@@ -9740,14 +9740,14 @@
     "desc": "Dexterity Saving Throw: DC 13, each creature in a 15-foot Cone. Failure: 24 (7d6) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_red-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_red-dragon-wyrmling_fire-breath-recharge-5-6"
+  "pk": "srd-2024_red-dragon-wyrmling_fire-breath"
 },
 {
   "fields": {
@@ -10220,14 +10220,14 @@
     "desc": "Wisdom Saving Throw: DC 11, one Frightened creature the hag can see within 30 feet. Failure: If the target has 20 Hit Points or fewer, it drops to 0 Hit Points. Otherwise, the target takes 13 (3d8) Psychic damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Death Glare (Recharge 5-6)",
+    "name": "Death Glare",
     "order": 1,
     "parent": "srd-2024_sea-hag",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_sea-hag_death-glare-recharge-5-6"
+  "pk": "srd-2024_sea-hag_death-glare"
 },
 {
   "fields": {
@@ -10355,14 +10355,14 @@
     "desc": "Constitution Saving Throw: DC 13, each creature in a 15-foot Cone. Failure: 18 (4d8) Cold damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Cold Breath (Recharge 5-6)",
+    "name": "Cold Breath",
     "order": 2,
     "parent": "srd-2024_silver-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_silver-dragon-wyrmling_cold-breath-recharge-5-6"
+  "pk": "srd-2024_silver-dragon-wyrmling_cold-breath"
 },
 {
   "fields": {
@@ -10580,14 +10580,14 @@
     "desc": "Wisdom Saving Throw: DC 16, each enemy in a 300-foot Emanation originating from the sphinx. Failure: 35 (10d6) Psychic damage, and the target has the Incapacitated condition until the start of the sphinx's next turn.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Mind-Rending Roar (Recharge 5-6)",
+    "name": "Mind-Rending Roar",
     "order": 2,
     "parent": "srd-2024_sphinx-of-lore",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_sphinx-of-lore_mind-rending-roar-recharge-5-6"
+  "pk": "srd-2024_sphinx-of-lore_mind-rending-roar"
 },
 {
   "fields": {
@@ -10684,15 +10684,15 @@
     "action_type": "ACTION",
     "desc": "The sphinx emits a magical roar. Whenever it roars, the roar has a different effect, as detailed below (the sequence resets when it takes a Long Rest): - First Roar: Wisdom Saving Throw: DC 20, each enemy in a 500-foot Emanation originating from the sphinx. Failure: The target has the Frightened condition for 1 minute. - Second Roar: Wisdom Saving Throw: DC 20, each enemy in a 500-foot Emanation originating from the sphinx. Failure: The target has the Paralyzed condition, and it repeats the save at the end of each of its turns, ending the effect on itself on a success. After 1 minute, it succeeds automatically. - Third Roar: Constitution Saving Throw: DC 20, each enemy in a 500-foot Emanation originating from the sphinx. Failure: 44 (8d10) Thunder damage, and the target has the Prone condition. Success: Half damage only.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Roar (3/Day)",
+    "legendary_cost": null,
+    "name": "Roar",
     "order": 2,
     "parent": "srd-2024_sphinx-of-valor",
     "uses_param": 3,
     "uses_type": "PER_DAY"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_sphinx-of-valor_roar-3-day"
+  "pk": "srd-2024_sphinx-of-valor_roar"
 },
 {
   "fields": {
@@ -10925,14 +10925,14 @@
     "desc": "Constitution Saving Throw: DC 10, each creature in a 15-foot Cone. Failure: 5 (2d4) Fire damage, and the target's Speed decreases by 10 feet until the end of the mephit's next turn. Success: Half damage only. Failure or Success: Being underwater doesn't grant Resistance to this Fire damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Steam Breath (Recharge 6)",
+    "name": "Steam Breath",
     "order": 1,
     "parent": "srd-2024_steam-mephit",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_steam-mephit_steam-breath-recharge-6"
+  "pk": "srd-2024_steam-mephit_steam-breath"
 },
 {
   "fields": {
@@ -11045,14 +11045,14 @@
     "desc": "Dexterity Saving Throw: DC 18, each creature in a 10-foot-radius, 40-foot-high Cylinder [Area of Effect]|XPHB|Cylinder originating from a point the giant can see within 500 feet. Failure: 55 (10d10) Lightning damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Lightning Storm (Recharge 5-6)",
+    "name": "Lightning Storm",
     "order": 3,
     "parent": "srd-2024_storm-giant",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_storm-giant_lightning-storm-recharge-5-6"
+  "pk": "srd-2024_storm-giant_lightning-storm"
 },
 {
   "fields": {
@@ -11270,14 +11270,14 @@
     "desc": "Wisdom Saving Throw: DC 10, one creature in the swarm's space. Failure: The target has the Deafened condition until the start of the swarm's next turn. While Deafened, the target also has Disadvantage on ability checks and attack rolls.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Cacophony (Recharge 6)",
+    "name": "Cacophony",
     "order": 1,
     "parent": "srd-2024_swarm-of-ravens",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_swarm-of-ravens_cacophony-recharge-6"
+  "pk": "srd-2024_swarm-of-ravens_cacophony"
 },
 {
   "fields": {
@@ -11375,14 +11375,14 @@
     "desc": "Constitution Saving Throw: DC 27, each creature and each object that isn't being worn or carried in a 150-foot Cone. Failure: 78 (12d12) Thunder damage, and the target has the Deafened and Frightened conditions until the end of its next turn. Success: Half damage only.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Thunderous Bellow (Recharge 5-6)",
+    "name": "Thunderous Bellow",
     "order": 4,
     "parent": "srd-2024_tarrasque",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_tarrasque_thunderous-bellow-recharge-5-6"
+  "pk": "srd-2024_tarrasque_thunderous-bellow"
 },
 {
   "fields": {
@@ -11494,15 +11494,15 @@
     "action_type": "ACTION",
     "desc": "The treant magically animates up to two trees it can see within 60 feet of itself. Each tree uses the Treant stat block, except it has Intelligence and Charisma scores of 1, it can't speak, and it lacks this action. The tree takes its turn immediately after the treant on the same Initiative count, and it obeys the treant. A tree remains animate for 1 day or until it dies, the treant dies, or it is more than 120 feet from the treant. The tree then takes root if possible.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Animate Trees (1/Day)",
+    "legendary_cost": null,
+    "name": "Animate Trees",
     "order": 3,
     "parent": "srd-2024_treant",
     "uses_param": 1,
     "uses_type": "PER_DAY"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_treant_animate-trees-1-day"
+  "pk": "srd-2024_treant_animate-trees"
 },
 {
   "fields": {
@@ -11853,9 +11853,9 @@
   "fields": {
     "action_type": "ACTION",
     "desc": "Constitution Saving Throw: DC 17, one creature within 5 feet that is willing or that has the Grappled, Incapacitated, or Restrained condition. Failure: 6 (1d4 + 4) Piercing damage plus 13 (3d8) Necrotic damage. The target's Hit Point maximum decreases by an amount equal to the Necrotic damage taken, and the vampire regains Hit Points equal to that amount. A Humanoid reduced to 0 Hit Points by this damage and then buried rises the following sunset as a Vampire Spawn under the vampire's control.",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Bite (Bat or Vampire Form Only)",
+    "form_condition": "Bat or Vampire Form Only",
+    "legendary_cost": null,
+    "name": "Bite",
     "order": 2,
     "parent": "srd-2024_vampire",
     "uses_param": null,
@@ -11883,31 +11883,31 @@
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +9, reach 5 ft. 8 (1d8 + 4) Bludgeoning damage plus 7 (2d6) Necrotic damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 14) from one of two hands.",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Grave Strike (Vampire Form Only)",
+    "form_condition": "Vampire Form Only",
+    "legendary_cost": null,
+    "name": "Grave Strike",
     "order": 1,
     "parent": "srd-2024_vampire",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_vampire_grave-strike-vampire-form-only"
+  "pk": "srd-2024_vampire_grave-strike"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "The vampire makes two Grave Strike attacks and uses Bite.",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Multiattack (Vampire Form Only)",
+    "form_condition": "Vampire Form Only",
+    "legendary_cost": null,
+    "name": "Multiattack",
     "order": 0,
     "parent": "srd-2024_vampire",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_vampire_multiattack-vampire-form-only"
+  "pk": "srd-2024_vampire_multiattack"
 },
 {
   "fields": {
@@ -11989,30 +11989,30 @@
     "action_type": "ACTION",
     "desc": "Constitution Saving Throw: DC 15, each creature in a 20-foot Emanation originating from the vrock. Failure: The target has the Poisoned condition and repeats the save at the end of each of its turns, ending the effect on itself on a success. While Poisoned, the target takes 5 (1d10) Poison damage at the start of each of its turns. Emptying a flask of Holy Water on the target ends the effect early.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Spores (Recharge 6)",
+    "legendary_cost": null,
+    "name": "Spores",
     "order": 2,
     "parent": "srd-2024_vrock",
     "uses_param": 6,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_vrock_spores-recharge-6"
+  "pk": "srd-2024_vrock_spores"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "Constitution Saving Throw: DC 15, each creature in a 20-foot Emanation originating from the vrock (demons succeed automatically). Failure: 10 (3d6) Thunder damage, and the target has the Stunned condition until the end of the vrock's next turn.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Stunning Screech (1/Day)",
+    "legendary_cost": null,
+    "name": "Stunning Screech",
     "order": 3,
     "parent": "srd-2024_vrock",
     "uses_param": 1,
     "uses_type": "PER_DAY"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_vrock_stunning-screech-1-day"
+  "pk": "srd-2024_vrock_stunning-screech"
 },
 {
   "fields": {
@@ -12139,7 +12139,7 @@
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +7, reach 5 ft. 13 (2d8 + 4) Bludgeoning damage. If the target is a Medium or smaller creature, it has the Prone condition.",
     "form_condition": null,
-    "legendary_cost": 1,
+    "legendary_cost": null,
     "name": "Slam",
     "order": 1,
     "parent": "srd-2024_water-elemental",
@@ -12154,15 +12154,15 @@
     "action_type": "ACTION",
     "desc": "Strength Saving Throw: DC 15, each creature in the elemental's space. Failure: 22 (4d8 + 4) Bludgeoning damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 14). Until the grapple ends, the target has the Restrained condition, is suffocating unless it can breathe water, and takes 9 (2d8) Bludgeoning damage at the start of each of the elemental's turns. The elemental can grapple one Large creature or up to two Medium or smaller creatures at a time with Whelm. As an action, a creature within 5 feet of the elemental can pull a creature out of it by succeeding on a DC 14 Strength (Athletics) check. Success: Half damage only.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Whelm (Recharge 4-6)",
+    "legendary_cost": null,
+    "name": "Whelm",
     "order": 2,
     "parent": "srd-2024_water-elemental",
     "uses_param": 4,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_water-elemental_whelm-recharge-4-6"
+  "pk": "srd-2024_water-elemental_whelm"
 },
 {
   "fields": {
@@ -12183,31 +12183,31 @@
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +7, reach 5 ft. 17 (2d12 + 4) Piercing damage. If the target is a Humanoid, it is subjected to the following effect. Constitution Saving Throw: DC 14. Failure: The target is cursed. If the cursed target drops to 0 Hit Points, it instead becomes a Werebear under the DM's control and has 10 Hit Points. Success: The target is immune to this werebear's curse for 24 hours.",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Bite (Bear or Hybrid Form Only)",
+    "form_condition": "Bear or Hybrid Form Only",
+    "legendary_cost": null,
+    "name": "Bite",
     "order": 1,
     "parent": "srd-2024_werebear",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_werebear_bite-bear-or-hybrid-form-only"
+  "pk": "srd-2024_werebear_bite"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee or Ranged Attack Roll: +7, reach 5 ft or range 20/60 ft. 14 (3d6 + 4) Slashing damage.",
-    "form_condition": null,
+    "form_condition": "Humanoid or Hybrid Form Only",
     "legendary_cost": 1,
-    "name": "Handaxe (Humanoid or Hybrid Form Only)",
+    "name": "Handaxe",
     "order": 2,
     "parent": "srd-2024_werebear",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_werebear_handaxe-humanoid-or-hybrid-form-only"
+  "pk": "srd-2024_werebear_handaxe"
 },
 {
   "fields": {
@@ -12228,46 +12228,46 @@
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +7, reach 5 ft. 13 (2d8 + 4) Slashing damage.",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Rend (Bear or Hybrid Form Only)",
+    "form_condition": "Bear or Hybrid Form Only",
+    "legendary_cost": null,
+    "name": "Rend",
     "order": 3,
     "parent": "srd-2024_werebear",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_werebear_rend-bear-or-hybrid-form-only"
+  "pk": "srd-2024_werebear_rend"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +5, reach 5 ft. 12 (2d8 + 3) Piercing damage. If the target is a Humanoid, it is subjected to the following effect. Constitution Saving Throw: DC 12. Failure: The target is cursed. If the cursed target drops to 0 Hit Points, it instead becomes a Wereboar under the DM's control and has 10 Hit Points. Success: The target is immune to this wereboar's curse for 24 hours.",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Gore (Boar or Hybrid Form Only)",
+    "form_condition": "Boar or Hybrid Form Only",
+    "legendary_cost": null,
+    "name": "Gore",
     "order": 1,
     "parent": "srd-2024_wereboar",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_wereboar_gore-boar-or-hybrid-form-only"
+  "pk": "srd-2024_wereboar_gore"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee or Ranged Attack Roll: +5, reach 5 ft. or range 30/120 ft. 13 (3d6 + 3) Piercing damage.",
-    "form_condition": null,
+    "form_condition": "Humanoid or Hybrid Form Only",
     "legendary_cost": 1,
-    "name": "Javelin (Humanoid or Hybrid Form Only)",
+    "name": "Javelin",
     "order": 2,
     "parent": "srd-2024_wereboar",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_wereboar_javelin-humanoid-or-hybrid-form-only"
+  "pk": "srd-2024_wereboar_javelin"
 },
 {
   "fields": {
@@ -12288,46 +12288,46 @@
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +5, reach 5 ft. 10 (2d6 + 3) Piercing damage. If the target is a Medium or smaller creature and the wereboar moved 20+ feet straight toward it immediately before the hit, the target takes an extra 7 (2d6) Piercing damage and has the Prone condition.",
-    "form_condition": null,
+    "form_condition": "Boar or Hybrid Form Only",
     "legendary_cost": 1,
-    "name": "Tusk (Boar or Hybrid Form Only)",
+    "name": "Tusk",
     "order": 3,
     "parent": "srd-2024_wereboar",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_wereboar_tusk-boar-or-hybrid-form-only"
+  "pk": "srd-2024_wereboar_tusk"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +5, reach 5 ft. 8 (2d4 + 3) Piercing damage. If the target is a Humanoid, it is subjected to the following effect. Constitution Saving Throw: DC 11. Failure: The target is cursed. If the cursed target drops to 0 Hit Points, it instead becomes a Wererat under the DM's control and has 10 Hit Points. Success: The target is immune to this wererat's curse for 24 hours.",
-    "form_condition": null,
+    "form_condition": "Rat or Hybrid Form Only",
     "legendary_cost": 1,
-    "name": "Bite (Rat or Hybrid Form Only)",
+    "name": "Bite ",
     "order": 1,
     "parent": "srd-2024_wererat",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_wererat_bite-rat-or-hybrid-form-only"
+  "pk": "srd-2024_wererat_bite"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "Ranged Attack Roll: +5, range 30/120 ft. 6 (1d6 + 3) Piercing damage.",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Hand Crossbow (Humanoid or Hybrid Form Only)",
+    "form_condition": "Humanoid or Hybrid Form Only",
+    "legendary_cost": null,
+    "name": "Hand Crossbow",
     "order": 3,
     "parent": "srd-2024_wererat",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_wererat_hand-crossbow-humanoid-or-hybrid-form-only"
+  "pk": "srd-2024_wererat_hand-crossbow"
 },
 {
   "fields": {
@@ -12363,38 +12363,38 @@
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +5, reach 5 ft. 12 (2d8 + 3) Piercing damage. If the target is a Humanoid, it is subjected to the following effect. Constitution Saving Throw: DC 13. Failure: The target is cursed. If the cursed target drops to 0 Hit Points, it instead becomes a Weretiger under the DM's control and has 10 Hit Points. Success: The target is immune to this weretiger's curse for 24 hours.",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Bite (Tiger or Hybrid Form Only)",
+    "form_condition": "Tiger or Hybrid Form Only",
+    "legendary_cost": null,
+    "name": "Bite",
     "order": 1,
     "parent": "srd-2024_weretiger",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_weretiger_bite-tiger-or-hybrid-form-only"
+  "pk": "srd-2024_weretiger_bite"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "Ranged Attack Roll: +4, range 150/600 ft. 11 (2d8 + 2) Piercing damage.",
-    "form_condition": null,
+    "form_condition": "Humanoid or Hybrid Form Only",
     "legendary_cost": 1,
-    "name": "Longbow (Humanoid or Hybrid Form Only)",
+    "name": "Longbow",
     "order": 3,
     "parent": "srd-2024_weretiger",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_weretiger_longbow-humanoid-or-hybrid-form-only"
+  "pk": "srd-2024_weretiger_longbow"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "The weretiger makes two attacks, using Scratch or Longbow in any combination. It can replace one attack with a Bite attack.",
     "form_condition": null,
-    "legendary_cost": 1,
+    "legendary_cost": null,
     "name": "Multiattack",
     "order": 0,
     "parent": "srd-2024_weretiger",
@@ -12423,31 +12423,31 @@
   "fields": {
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +5, reach 5 ft. 12 (2d8 + 3) Piercing damage. If the target is a Humanoid, it is subjected to the following effect. Constitution Saving Throw: DC 12. Failure: The target is cursed. If the cursed target drops to 0 Hit Points, it instead becomes a Werewolf under the DM's control and has 10 Hit Points. Success: The target is immune to this werewolf's curse for 24 hours.",
-    "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Bite (Wolf or Hybrid Form Only)",
+    "form_condition": "Wolf or Hybrid Form Only",
+    "legendary_cost": null,
+    "name": "Bite",
     "order": 1,
     "parent": "srd-2024_werewolf",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_werewolf_bite-wolf-or-hybrid-form-only"
+  "pk": "srd-2024_werewolf_bite"
 },
 {
   "fields": {
     "action_type": "ACTION",
     "desc": "Ranged Attack Roll: +4, range 150/600 ft. 11 (2d8 + 2) Piercing damage.",
-    "form_condition": null,
+    "form_condition": "Humanoid or Hybrid Form Only",
     "legendary_cost": 1,
-    "name": "Longbow (Humanoid or Hybrid Form Only)",
+    "name": "Longbow",
     "order": 3,
     "parent": "srd-2024_werewolf",
     "uses_param": null,
     "uses_type": null
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_werewolf_longbow-humanoid-or-hybrid-form-only"
+  "pk": "srd-2024_werewolf_longbow"
 },
 {
   "fields": {
@@ -12469,7 +12469,7 @@
     "action_type": "ACTION",
     "desc": "Melee Attack Roll: +5, reach 5 ft. 10 (2d6 + 3) Slashing damage.",
     "form_condition": null,
-    "legendary_cost": 1,
+    "legendary_cost": null,
     "name": "Scratch",
     "order": 2,
     "parent": "srd-2024_werewolf",
@@ -12485,14 +12485,14 @@
     "desc": "Constitution Saving Throw: DC 12, each creature in a 15-foot Cone. Failure: 22 (5d8) Cold damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Cold Breath (Recharge 5-6)",
+    "name": "Cold Breath",
     "order": 2,
     "parent": "srd-2024_white-dragon-wyrmling",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_white-dragon-wyrmling_cold-breath-recharge-5-6"
+  "pk": "srd-2024_white-dragon-wyrmling_cold-breath"
 },
 {
   "fields": {
@@ -12620,14 +12620,14 @@
     "desc": "Constitution Saving Throw: DC 12, each creature in a 15-foot Cone. Failure: 18 (4d8) Cold damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Cold Breath (Recharge 5-6)",
+    "name": "Cold Breath",
     "order": 1,
     "parent": "srd-2024_winter-wolf",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_winter-wolf_cold-breath-recharge-5-6"
+  "pk": "srd-2024_winter-wolf_cold-breath"
 },
 {
   "fields": {
@@ -12784,15 +12784,15 @@
     "action_type": "ACTION",
     "desc": "Dexterity Saving Throw: DC 14, each creature in a 30-foot-long, 5-foot-wide Line. Failure: 49 (14d6) Acid damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Acid Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Acid Breath",
     "order": 2,
     "parent": "srd-2024_young-black-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-black-dragon_acid-breath-recharge-5-6"
+  "pk": "srd-2024_young-black-dragon_acid-breath"
 },
 {
   "fields": {
@@ -12830,14 +12830,14 @@
     "desc": "Dexterity Saving Throw: DC 16, each creature in a 60-foot-long, 5-foot-wide Line. Failure: 55 (10d10) Lightning damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Lightning Breath (Recharge 5-6)",
+    "name": "Lightning Breath",
     "order": 2,
     "parent": "srd-2024_young-blue-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-blue-dragon_lightning-breath-recharge-5-6"
+  "pk": "srd-2024_young-blue-dragon_lightning-breath"
 },
 {
   "fields": {
@@ -12875,14 +12875,14 @@
     "desc": "Dexterity Saving Throw: DC 14, each creature in a 40-foot-long, 5-foot-wide Line. Failure: 38 (11d6) Fire damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_young-brass-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-brass-dragon_fire-breath-recharge-5-6"
+  "pk": "srd-2024_young-brass-dragon_fire-breath"
 },
 {
   "fields": {
@@ -12935,14 +12935,14 @@
     "desc": "Dexterity Saving Throw: DC 15, each creature in a 60-foot-long, 5-foot-wide Line. Failure: 49 (9d10) Lightning damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Lightning Breath (Recharge 5-6)",
+    "name": "Lightning Breath",
     "order": 2,
     "parent": "srd-2024_young-bronze-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-bronze-dragon_lightning-breath-recharge-5-6"
+  "pk": "srd-2024_young-bronze-dragon_lightning-breath"
 },
 {
   "fields": {
@@ -12995,14 +12995,14 @@
     "desc": "Dexterity Saving Throw: DC 14, each creature in a 40-foot-long, 5-foot-wide Line. Failure: 40 (9d8) Acid damage. Success: Half damage.",
     "form_condition": null,
     "legendary_cost": 1,
-    "name": "Acid Breath (Recharge 5-6)",
+    "name": "Acid Breath",
     "order": 2,
     "parent": "srd-2024_young-copper-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-copper-dragon_acid-breath-recharge-5-6"
+  "pk": "srd-2024_young-copper-dragon_acid-breath"
 },
 {
   "fields": {
@@ -13054,15 +13054,15 @@
     "action_type": "ACTION",
     "desc": "Dexterity Saving Throw: DC 17, each creature in a 30-foot Cone. Failure: 55 (10d10) Fire damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_young-gold-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-gold-dragon_fire-breath-recharge-5-6"
+  "pk": "srd-2024_young-gold-dragon_fire-breath"
 },
 {
   "fields": {
@@ -13129,15 +13129,15 @@
     "action_type": "ACTION",
     "desc": "Constitution Saving Throw: DC 14, each creature in a 30-foot Cone. Failure: 42 (12d6) Poison damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Poison Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Poison Breath",
     "order": 2,
     "parent": "srd-2024_young-green-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-green-dragon_poison-breath-recharge-5-6"
+  "pk": "srd-2024_young-green-dragon_poison-breath"
 },
 {
   "fields": {
@@ -13159,15 +13159,15 @@
     "action_type": "ACTION",
     "desc": "Dexterity Saving Throw: DC 17, each creature in a 30-foot Cone. Failure: 56 (16d6) Fire damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Fire Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Fire Breath",
     "order": 2,
     "parent": "srd-2024_young-red-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-red-dragon_fire-breath-recharge-5-6"
+  "pk": "srd-2024_young-red-dragon_fire-breath"
 },
 {
   "fields": {
@@ -13204,15 +13204,15 @@
     "action_type": "ACTION",
     "desc": "Constitution Saving Throw: DC 17, each creature in a 30-foot Cone. Failure: 49 (11d8) Cold damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Cold Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Cold Breath",
     "order": 2,
     "parent": "srd-2024_young-silver-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-silver-dragon_cold-breath-recharge-5-6"
+  "pk": "srd-2024_young-silver-dragon_cold-breath"
 },
 {
   "fields": {
@@ -13264,15 +13264,15 @@
     "action_type": "ACTION",
     "desc": "Constitution Saving Throw: DC 15, each creature in a 30-foot Cone. Failure: 40 (9d8) Cold damage. Success: Half damage.",
     "form_condition": null,
-    "legendary_cost": 1,
-    "name": "Cold Breath (Recharge 5-6)",
+    "legendary_cost": null,
+    "name": "Cold Breath",
     "order": 2,
     "parent": "srd-2024_young-white-dragon",
     "uses_param": 5,
-    "uses_type": "RECHARGE"
+    "uses_type": "RECHARGE_ON_ROLL"
   },
   "model": "api_v2.creatureaction",
-  "pk": "srd-2024_young-white-dragon_cold-breath-recharge-5-6"
+  "pk": "srd-2024_young-white-dragon_cold-breath"
 },
 {
   "fields": {
