@@ -1,0 +1,221 @@
+[
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_desert-runner_skill-proficiencies",
+    "fields": {
+      "name": "Skill Proficiencies",
+      "desc": "Perception, Survival",
+      "parent": "spg_desert-runner",
+      "type": "skill_proficiency"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_desert-runner_tool-proficiencies",
+    "fields": {
+      "name": "Tool Proficiencies",
+      "desc": "Herbalist kit",
+      "parent": "spg_desert-runner",
+      "type": "tool_proficiency"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_desert-runner_languages",
+    "fields": {
+      "name": "Languages",
+      "desc": "One of your choice",
+      "parent": "spg_desert-runner",
+      "type": "language"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_desert-runner_equipment",
+    "fields": {
+      "name": "Equipment",
+      "desc": "Traveler's clothes, herbalist kit, waterskin, pouch with 10 gp",
+      "parent": "spg_desert-runner",
+      "type": "equipment"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_desert-runner_nomad",
+    "fields": {
+      "name": "Nomad",
+      "desc": "Living in the open desert has allowed your body to adapt to a range of environmental conditions. You can survive on 1 gallon of water in hot conditions (or 1/2 gallon in normal conditions) without being forced to make Constitution saving throws, and you are considered naturally adapted to hot climates. You can read the environment to predict natural weather patterns and temperatures for the next 24 hours, allowing you to cross dangerous terrain at the best times. The accuracy of your predictions is up to the GM, but they should be reliable unless affected by magic or unforeseeable events, such as distant earthquakes or volcanic eruptions.",
+      "parent": "spg_desert-runner",
+      "type": "feature"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_desert-runner_suggested-characteristics",
+    "fields": {
+      "name": "Suggested Characteristics",
+      "desc": "Those raised among the desert tribes can be the friendliest of humanoids—knowing allies are better than enemies in that harsh environment—or territorial and warlike, believing that protecting food and water sources by force is the only way to survive.\n\n| d8 | Personality Trait |\n|---|---|\n| 1 | I'm much happier sleeping under the stars than in a bed in a stuffy caravanserai. |\n| 2 | It's always best to help a traveler in need; one day it might be you. |\n| 3 | I am slow to trust strangers, but I'm extremely loyal to my friends. |\n| 4 | If there's a camel race, I'm the first to saddle up! |\n| 5 | I always have a tale or poem to share at the campfire. |\n| 6 | I don't like sleeping in the same place more than two nights in a row. |\n| 7 | I've been troubled by strange dreams for the last month. I am determined to uncover their meaning. |\n| 8 | I feel lonelier in a crowded city than I do out on the empty desert sands. |\n\n| d6 | Ideal |\n|---|---|\n| 1 | Greater Good. The needs of the whole tribe outweigh those of the individuals who are part of it. (Good) |\n| 2 | Nature. I must do what I can to protect the beautiful wilderness from those who would do it harm. (Neutral) |\n| 3 | Tradition. I am duty-bound to follow my tribe's age-old route through the desert. (Lawful) |\n| 4 | Change. Things seldom stay the same and we must always be prepared to go with the flow. (Chaotic) |\n| 5 | Honor. If I behave dishonorably, my actions will bring shame upon the entire tribe. (Lawful) |\n| 6 | Greed. Seize what you want if no one gives it to you freely. (Evil) |\n\n| d6 | Bond |\n|---|---|\n| 1 | I am the last living member of my tribe, and I cannot let their deaths go unavenged. |\n| 2 | I follow the sab siraat path of my tribe; it will bring me to the Hidden World when the time comes. |\n| 3 | My best friend has been sold into slavery to the salt devils, and I need to rescue them before it is too late. |\n| 4 | A nature spirit saved my life when I was dying of thirst in the desert. |\n| 5 | My takoba sword is my most prized possession; for over two centuries, it's been handed down from generation to generation. |\n| 6 | I have sworn revenge on the sheikh who unjustly banished me from the tribe. |\n\n| d6 | Flaw |\n|---|---|\n| 1 | I enjoy the company of camels more than people. |\n| 2 | I can be loud and boorish after a few wineskins. |\n| 3 | If I feel insulted, I'll refuse to speak to anyone for several hours. |\n| 4 | I enjoy violence and mayhem a bit too much. |\n| 5 | You can't rely on me in a crisis. |\n| 6 | I betrayed my brother to the followers of Boreas to save my own skin. |",
+      "parent": "spg_desert-runner",
+      "type": "suggested_characteristics"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_freebooter_skill-proficiencies",
+    "fields": {
+      "name": "Skill Proficiencies",
+      "desc": "Athletics, Survival",
+      "parent": "spg_freebooter",
+      "type": "skill_proficiency"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_freebooter_tool-proficiencies",
+    "fields": {
+      "name": "Tool Proficiencies",
+      "desc": "Navigator's tools, vehicles (water)",
+      "parent": "spg_freebooter",
+      "type": "tool_proficiency"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_freebooter_equipment",
+    "fields": {
+      "name": "Equipment",
+      "desc": "A pirate flag from your ship, several tattoos, 50 feet of rope, a set of traveler's clothes, and a belt pouch containing 10 gp",
+      "parent": "spg_freebooter",
+      "type": "equipment"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_freebooter_a-friendly-face-in-every-port",
+    "fields": {
+      "name": "A Friendly Face in Every Port",
+      "desc": "Your reputation precedes you. Whenever you visit a port city in the southern lands, you can always find someone who knows of (or has sailed on) your former ship and is familiar with its captain and crew. They are willing to provide you and your traveling companions with a roof over your head, a bed for the night, and a decent meal. If you have a reputation for cruelty and savagery, your host is probably afraid of you and will be keen for you to leave as soon as possible. Otherwise, you receive a warm welcome, and your host keeps your presence a secret if required. They may also provide you with useful information about recent goings-on in the city, including which ships have been in and out of port.",
+      "parent": "spg_freebooter",
+      "type": "feature"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_freebooter_suggested-characteristics",
+    "fields": {
+      "name": "Suggested Characteristics",
+      "desc": "Freebooters are a boisterous lot, but their personalities include freedom-loving mavericks and mindless thugs. Nonetheless, sailing a ship requires discipline, so freebooters tend to be reliable and aware of their role on board, even if they do their own thing once fighting breaks out. Most still yearn for the sea; some feel shame or regret for past deeds.\n\n| d8 | Personality Trait |\n|---|---|\n| 1 | I'm happiest when I'm on a gentle rocking vessel, staring at the distant horizon. |\n| 2 | Every time we hoisted the mainsail and raised the pirate flag, I felt butterflies in my stomach. |\n| 3 | I have lovers in a dozen different ports. Most of them don't know about the others. |\n| 4 | Being a pirate has taught me more swear words and bawdy jokes than I ever knew existed. I like to try them out when I meet new people. |\n| 5 | One day I hope to have enough gold to fill a tub so I can bathe in it. |\n| 6 | There's nothing I enjoy more than a good scrap—the bloodier, the better. |\n| 7 | When a storm is blowing and the rain is lashing down on the deck, I'll be out there getting drenched. It makes me feel so alive! |\n| 8 | Nothing makes me more annoyed than a badly tied knot. |\n\n| d6 | Ideal |\n|---|---|\n| 1 | Freedom. No one tells me what to do or where to go. Apart from the captain. (Chaotic) |\n| 2 | Greed. I'm only in it for the booty. I'll gladly stab anyone stupid enough to stand in my way. (Evil) |\n| 3 | Comradery. My former shipmates are my family. I'll do anything for them. (Neutral) |\n| 4 | Greater Good. No man has the right to enslave another, or to profit from slavery. (Good) |\n| 5 | Code. I may be on dry land now, but I still stick to the Freebooter's Code. (Lawful) |\n| 6 | Aspiration. One day I'll return to the sea as the captain of my own ship. (Any) |\n\n| d6 | Bond |\n|---|---|\n| 1 | Captain Spiceblood and the raiders rescued me from a slaver ship. I owe them my life. |\n| 2 | I still feel a deep attachment to my ship. Some nights I dream her figurehead is talking to me. |\n| 3 | I was the ship's captain until the crew mutinied and threw me overboard to feed the sharks. I swam to a small island and survived. Vengeance will be mine! |\n| 4 | 300 years ago, when the dragons attacked the city, I fled on a minotaur fleet. I arrived back in the ruined city a few weeks ago on the same ship and can remember nothing of the voyage. |\n| 5 | I fell asleep when I was supposed to be on watch, allowing our ship to be taken by surprise. I still have nightmares about my shipmates who died in the fighting. |\n| 6 | One of my shipmates was captured and sold into slavery. I need to rescue them from the orchards on the coast. |\n\n| d6 | Flaw |\n|---|---|\n| 1 | I'm terrified by the desert. Not enough water, far too much sand. |\n| 2 | I drink too much and end up starting barroom brawls. |\n| 3 | I killed one of my shipmates and took his share of the loot. |\n| 4 | I take unnecessary risks and often put my friends in danger. |\n| 5 | I sold captives taken at sea to jinnborn traders. |\n| 6 | Most of the time, I find it impossible to tell the truth. |",
+      "parent": "spg_freebooter",
+      "type": "suggested_characteristics"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_scoundrel_skill-proficiencies",
+    "fields": {
+      "name": "Skill Proficiencies",
+      "desc": "Athletics, Sleight of Hand",
+      "parent": "spg_scoundrel",
+      "type": "skill_proficiency"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_scoundrel_tool-proficiencies",
+    "fields": {
+      "name": "Tool Proficiencies",
+      "desc": "One type of gaming set, thieves' tools",
+      "parent": "spg_scoundrel",
+      "type": "tool_proficiency"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_scoundrel_equipment",
+    "fields": {
+      "name": "Equipment",
+      "desc": "A bag of 1,000 ball bearings, a pet monkey wearing a tiny fez, a set of common clothes, and a pouch containing 10 gp",
+      "parent": "spg_scoundrel",
+      "type": "equipment"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_scoundrel_urban-explorer",
+    "fields": {
+      "name": "Urban Explorer",
+      "desc": "You are familiar with the layout and rhythms of towns and cities. When you arrive in a new city, you can quickly locate places to stay, where to buy good quality gear, and other facilities. You can shake off pursuers when you are being chased through the streets or across the rooftops. You have a knack for leading pursuers into a crowded market filled with stalls piled high with breakable merchandise, or down a narrow alley just as a dung cart is coming in the other direction. When you make a d20 roll for a Chase Complication (see DMG), you can choose to do so with a -5 penalty, making it more likely for the participant behind you to run into a complication.",
+      "parent": "spg_scoundrel",
+      "type": "feature"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_scoundrel_suggested-characteristics",
+    "fields": {
+      "name": "Suggested Characteristics",
+      "desc": "Despite their poor upbringing, scoundrels tend to live a charmed life—never far from trouble, but usually coming out on top. Many are thrill-seekers who delight in taunting their opponents before making a flashy and daring escape. Most are generally good-hearted, but some are self-centered to the point of arrogance.\n\n| d8 | Personality Trait |\n|---|---|\n| 1 | Flashing a big smile often gets me out of trouble. |\n| 2 | If I can just keep them talking, it will give me time to escape. |\n| 3 | I get fidgety if I have to sit still for more than ten minutes or so. |\n| 4 | Whatever I do, I try to do it with style and panache. |\n| 5 | I don't hold back when there's free food and drink on offer. |\n| 6 | Nothing gets me more annoyed than being ignored. |\n| 7 | I always sit with my back to the wall and my eyes on the exits. |\n| 8 | Why walk down the street when you can run across the rooftops? |\n\n| d6 | Ideal |\n|---|---|\n| 1 | Freedom. Ropes and chains are made to be broken. Locks are made to be picked. Doors are meant to be opened. (Chaotic) |\n| 2 | Community. We need to look out for one another and keep everyone safe. (Lawful) |\n| 3 | Charity. I share my wealth with those who need it the most. (Good) |\n| 4 | Friendship. My friends matter more to me than lofty ideals. (Neutral) |\n| 5 | Aspiration. One day my wondrous deeds will be known from the river lands to the southern plains. (Any) |\n| 6 | Greed. I'll stop at nothing to get what I want. (Evil) |\n\n| d6 | Bond |\n|---|---|\n| 1 | My elder sibling taught me how to find a safe hiding place in the city. This saved my life at least once. |\n| 2 | I stole money from someone who couldn't afford to lose it and now they're destitute. One day I'll make it up to them. |\n| 3 | The street kids in my hometown are my true family. |\n| 4 | My mother gave me an old brass lamp. I polish it every night before going to sleep. |\n| 5 | When I was young, I was too scared to leap from the tallest tower in my hometown onto the hay cart beneath. I'll try again some day. |\n| 6 | A city guardsman let me go when he should have arrested me for stealing. I am forever in their debt. |\n\n| d6 | Flaw |\n|---|---|\n| 1 | If there's a lever to pull, I'll pull it. |\n| 2 | It's not stealing if nobody realizes it's gone. |\n| 3 | If I don't like the odds, I'm out of there. |\n| 4 | I often don't know when to shut up. |\n| 5 | I filched a pipe from a priest of Eshu. Now I think the god has cursed me. |\n| 6 | I grow angry when someone else steals the limelight. |",
+      "parent": "spg_scoundrel",
+      "type": "suggested_characteristics"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_servant-of-the-jinn_skill-proficiencies",
+    "fields": {
+      "name": "Skill Proficiencies",
+      "desc": "Insight and one other skill determined by your role",
+      "parent": "spg_servant-of-the-jinn",
+      "type": "skill_proficiency"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_servant-of-the-jinn_tool-proficiencies",
+    "fields": {
+      "name": "Tool Proficiencies",
+      "desc": "One type of tools, determined by your role",
+      "parent": "spg_servant-of-the-jinn",
+      "type": "tool_proficiency"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_servant-of-the-jinn_languages",
+    "fields": {
+      "name": "Languages",
+      "desc": "Choose one from Aquan, Auran, Ignan or Terran",
+      "parent": "spg_servant-of-the-jinn",
+      "type": "language"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_servant-of-the-jinn_equipment",
+    "fields": {
+      "name": "Equipment",
+      "desc": "A set of tools or a musical instrument (one of your choice), a scroll of commendation from your former master, a set of fine clothes, a small brass lamp, and a pouch containing 10 gp",
+      "parent": "spg_servant-of-the-jinn",
+      "type": "equipment"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_servant-of-the-jinn_marked-by-the-jinn",
+    "fields": {
+      "name": "Marked by the Jinn",
+      "desc": "Spending so long in the presence of the jinn or noble genies has left its mark on you. This mark isn't noticeable to most creatures, but genies and elementals sense that you have spent time at the courts of the jinn and are favorably disposed toward you when you first interact with them. Your affinity for jinn and geniekind also makes it easier for you to identify their influence on the world. You have advantage on Intelligence checks or saving throws to recognize items and magic created by genies and to see through their illusions and trickery.",
+      "parent": "spg_servant-of-the-jinn",
+      "type": "feature"
+    }
+  },
+  {
+    "model": "api_v2.backgroundbenefit",
+    "pk": "spg_servant-of-the-jinn_suggested-characteristics",
+    "fields": {
+      "name": "Suggested Characteristics",
+      "desc": "The wonders witnessed by the servants of the jinn often shape their outlook on life once they return to their homes in the southern lands. Time spent on the elemental planes can create powerful bonds or lead to unusual quirks.\n\n| d8 | Personality Trait |\n|---|---|\n| 1 | I always bow deeply to show respect to those in authority. |\n| 2 | I miss the hustle and bustle and splendor of the court. |\n| 3 | You hear a lot of strange things when you're standing on guard outside the seraglio. |\n| 4 | Cutting corners just creates more corners. Do it properly or don't do it all. |\n| 5 | I worked for three days with only an hour's sleep to make sure my master's party was the most sensational ever thrown. I'd do it all over again in a heartbeat. |\n| 6 | You can get away with a lot if you flash a winning smile while you do it. |\n| 7 | Life was much easier when I had someone constantly telling me what to do. |\n| 8 | Be careful what you wish for, particularly when an efreeti is the one granting the wish. |\n\n| d6 | Ideal |\n|---|---|\n| 1 | Professionalism. I take pride in my appearance and how I conduct myself in public. (Lawful) |\n| 2 | Freedom. Never again will I serve another. From now on, I answer to no one. (Chaotic) |\n| 3 | Respect. All people, regardless of their station in life, deserve respect. (Good) |\n| 4 | Greed. I will stop at nothing to have my own wondrous palace floating high above the clouds. (Evil) |\n| 5 | Fellowship. The bonds formed between comrades when you serve together under a cruel and demanding master will never be broken. (Any) |\n| 6 | Duty. It is our duty to work diligently to make something of our lives. (Neutral) |\n\n| d6 | Bond |\n|---|---|\n| 1 | One day I will return to the City of Brass and bring my favorite hell hound home. |\n| 2 | I will treasure the copper hookah my master gave me for my dedicated service until the day I die. |\n| 3 | I yearn to look once more upon the glowing gemstones that light the tunnels through the Plane of Earth to the magnificent palace of the jinn. |\n| 4 | I tasted the fruit served by Sultan Hajani the Benevolent at the Oasis of Figs once and will never forget it. |\n| 5 | Although it is hard to be this far away from them, everything I do is for my family back home. |\n| 6 | My true love still serves the jinn at the Court of Many-Hued Exquisite Corals. I'm determined to find a way to free them from service so we can be together. |\n\n| d6 | Flaw |\n|---|---|\n| 1 | I obey those in authority without thinking. |\n| 2 | 1,001 days of service has made me an expert shirker. |\n| 3 | I picked up expensive tastes in food, drink, and clothes at court and am never satisfied. |\n| 4 | I am incredibly indiscreet and can't be trusted with a secret. |\n| 5 | Rich people don't notice if a few of their things go missing. |\n| 6 | Life is very dull if you don't roll the dice. |",
+      "parent": "spg_servant-of-the-jinn"
+    }
+  }
+]
