@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from django_filters import FilterSet, BooleanFilter
 
 from api_v2 import models, serializers
-from .mixins import EagerLoadingMixin
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class ItemFilterSet(FilterSet):
     ''' Filter set for the Item model. Used in the ItemViewSet below '''
@@ -73,7 +73,7 @@ item_prefetch_fields = [
     'size',
 ]
 
-class ItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class ItemViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of items.
 
@@ -86,7 +86,7 @@ class ItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     select_related_fields = ['armor', 'weapon']
     prefetch_related_fields = item_prefetch_fields
 
-class MagicItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class MagicItemViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of magic items.
 
@@ -99,7 +99,7 @@ class MagicItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     select_related_fields = ['armor', 'weapon']
     prefetch_related_fields = item_prefetch_fields
 
-class ItemRarityViewSet(viewsets.ReadOnlyModelViewSet):
+class ItemRarityViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of item rarities.
 
@@ -122,7 +122,7 @@ class ItemSetFilterSet(FilterSet):
         }
 
 
-class ItemSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class ItemSetViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """"
     list: API Endpoint for returning a set of itemsets.
 
@@ -144,7 +144,7 @@ class ItemSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
         'items__weapon__document'
     ]
 
-class ItemCategoryViewSet(viewsets.ReadOnlyModelViewSet):
+class ItemCategoryViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """"
     list: API Endpoint for returning a set of item categories.
 
@@ -179,7 +179,7 @@ class WeaponFilterSet(FilterSet):
         }
 
 
-class WeaponViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class WeaponViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of weapons.
     retrieve: API endpoint for returning a particular weapon.
@@ -208,7 +208,7 @@ class ArmorFilterSet(FilterSet):
         }
 
 
-class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
+class ArmorViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of armor.
     retrieve: API endpoint for returning a particular armor.

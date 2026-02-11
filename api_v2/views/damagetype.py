@@ -2,8 +2,8 @@ from rest_framework import viewsets
 
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
+from api_v2 import models, serializers
+from .mixins import ExcludeFieldsMixin
 
 
 class DamageTypeFilterSet(FilterSet):
@@ -17,7 +17,7 @@ class DamageTypeFilterSet(FilterSet):
         }
 
 
-class DamageTypeViewSet(viewsets.ReadOnlyModelViewSet):
+class DamageTypeViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of damage types.
     retrieve: API endpoint for returning a particular damage type.

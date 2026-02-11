@@ -2,9 +2,9 @@
 from rest_framework import viewsets
 from django_filters import FilterSet, CharFilter
 from django.db.models import JSONField
-from .mixins import EagerLoadingMixin
-from api_v2 import models
-from api_v2 import serializers
+
+from api_v2 import models, serializers
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 
 
@@ -30,7 +30,7 @@ class DocumentFilterSet(FilterSet):
             }
         }
 
-class DocumentViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class DocumentViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of documents.
     retrieve: API endpoint for returning a particular document.
@@ -43,7 +43,7 @@ class DocumentViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     prefetch_related_fields = ['licenses', 'gamesystem', 'publisher']
 
 
-class PublisherViewSet(viewsets.ReadOnlyModelViewSet):
+class PublisherViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of publishers.
     retrieve: API endpoint for returning a particular publisher.

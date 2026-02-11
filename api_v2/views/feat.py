@@ -1,9 +1,8 @@
 from rest_framework import viewsets
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
-from .mixins import EagerLoadingMixin
+from api_v2 import models, serializers
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class FeatFilterSet(FilterSet):
     class Meta:
@@ -16,7 +15,7 @@ class FeatFilterSet(FilterSet):
         }
 
 
-class FeatViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class FeatViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of feats.
     retrieve: API endpoint for returning a particular feat.
