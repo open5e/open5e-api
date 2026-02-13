@@ -16,14 +16,6 @@ erDiagram
     TEXT copyright
   }
 
-  api_manifest {
-    INTEGER id
-    VARCHAR filename
-    VARCHAR type
-    VARCHAR hash
-    DATETIME created_at
-  }
-
   auth_group {
     INTEGER id
     VARCHAR name
