@@ -243,7 +243,7 @@
     "desc": "You touch a piece of worn armor or clothing and imbue it with magic. The creature wearing this imbued item gains 4 temporary hit points. When these temporary hit points are exhausted, at the start of the creature's next turn it will gain hit points equal to 1 hit point less than the previous amount gained from this spell (for example, from 4 to 3), until no temporary hit points would be gained and the spell ends. Temporary hit points from this spell are lost when this spell ends",
     "document": "kccc",
     "duration": "1 hour",
-    "higher_level": "The initial temporary hit points increases by 1 for each slot level above 1st.",
+    "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, the initial temporary hit points increase by 1 for each slot level above 1st.",
     "level": 1,
     "material": false,
     "material_consumed": false,
@@ -1563,7 +1563,7 @@
     "casting_time": "1 reaction",
     "classes": [],
     "concentration": false,
-    "damage_roll": "d",
+    "damage_roll": "",
     "damage_types": [
       ""
     ],
@@ -1600,7 +1600,7 @@
       "srd_wizard"
     ],
     "concentration": false,
-    "damage_roll": "d",
+    "damage_roll": "6d6",
     "damage_types": [
       "piercing"
     ],
@@ -1789,7 +1789,7 @@
     "desc": "You invoke a sudden fear within a creature you can see within range. The target creature must succeed a Wisdom saving throw, or become _frightened_ for the duration. The frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     "document": "kccc",
     "duration": "1 minute",
-    "higher_level": "When you cast this spell using a 2nd level or higher, you can target one additional creature for each slot above 1st.",
+    "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot above 1st.",
     "level": 1,
     "material": false,
     "material_consumed": false,
@@ -1968,7 +1968,7 @@
     "desc": "You draw an ethereal mark in the air at a point within range. Creatures within 10 feet of this glyph have resistance to all damage, but when any creature in the rune’s radius takes damage, the rune takes an equal amount. The glyph has 10 hit points. If the glyph is destroyed, it fades without detonating and the spell ends.\n\nAs an action, you can detonate the glyph. Any creature within 15 feet of this glyph must make a Dexterity saving throw, or take force damage equal to half the amount of damage the glyph has absorbed. After using this action, the spell ends.\n\nYou can end the spell early by deactivating it with a bonus action.",
     "document": "kccc",
     "duration": "1 minute",
-    "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, the glyph's hit points increas by 5 for each slot level above 1st.",
+    "higher_level": "When you cast this spell using a spell slot of 2nd level or higher, the glyph's hit points increase by 5 for each slot level above 1st.",
     "level": 1,
     "material": false,
     "material_consumed": false,
@@ -2137,6 +2137,8 @@
     "ritual": false,
     "school": "conjuration",
     "somatic": true,
+    "target_count": 1,
+    "target_type": "creature",
     "verbal": false
   },
   "model": "api_v2.spell",
@@ -2211,7 +2213,7 @@
     "saving_throw_ability": "dex",
     "school": "evocation",
     "somatic": true,
-    "target_count": 30,
+    "target_count": 1,
     "target_type": "creature",
     "verbal": true
   },
@@ -2703,7 +2705,7 @@
     "desc": "You manipulate the nature of your body with magic temporarily giving it new properties. You can select three of the following properties:\n\n -  Your body becomes malleable and amorphous. You have advantage on saves and checks against grapples and the restrained condition, you do not suffer disadvantage from squeezing into smaller spaces, and you can squeeze through openings two sizes smaller than you.\n- You grow one additional appendage. This appendage serves as an arm and a hand, though it can take the shape of an arm, tentacle, or similar appendage.\n- You extend the length of your limbs, increasing the reach on melee attacks, touch spells, and object interactions by 5 feet.\n- Your flesh hardens, your base AC becomes 14 + your dexterity modifier if it is not already higher.\n- You grow more resilient, adapting against one external threat. You gain advantage on one type of saving throw of your choice.\n- You adapt your body to an aquatic environment, sprouting gills and growing webbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed.\n- Your body grows ablative armor. You gain temporary hit points equal to your spellcasting ability modifier at the start of each of your turns.\n- You can grow one size larger or smaller.\n- You sprout wings. You gain a flying speed of 30 feet.\n- You grow a natural weapon; this weapon can have the statistics of any martial melee weapon without the thrown property, and takes on a form vaguely reminiscent of it. You have proficiency with this weapon, and are considered to be holding it. You can use your spellcasting modifier in place of your Strength or Dexterity modifier for attack and damage rolls with this natural weapon. The natural weapon is magic and you have a +1 bonus to the attack and damage rolls you make using it.\n\nFor the duration of the spell, you can use an action to change one or all of the properties, losing the benefits of your previously selected properties and gaining the benefits of the new selected properties.",
     "document": "kccc",
     "duration": "10 minutes",
-    "higher_level": "When you cast this spell using a spell slot of 4th or higher, you can select one additional property from the list of options, with one additional property per spell level above 3rd.\n\n&nbsp;",
+    "higher_level": "When you cast this spell using a spell slot of 4th level or higher, you can select one additional property from the list of options, with one additional property per spell level above 3rd.\n\n&nbsp;",
     "level": 3,
     "material": true,
     "material_consumed": false,
@@ -3299,7 +3301,7 @@
     "shape_size_unit": "",
     "shape_type": "radius",
     "somatic": true,
-    "target_count": 1,
+    "target_count": 5,
     "target_type": "point",
     "verbal": true
   },
