@@ -8,30 +8,6 @@ from api import models
 from api import serializers
 from api import filters
 
-
-
-class ManifestViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    list: API endpoint for returning a list of of manifests.
-
-    For each data source file, there is a corresponding manifest containing an
-    MD5 hash of the data inside that file. When we update our data files, the
-    corresponding manifest's hash changes. If you host a service that
-    automatically downloads data from Open5e, you can periodically check
-    the manifests to determine whether your data is out of date.
-
-    retrieve: API endpoint for returning a particular manifest.
-
-    For each data source file, there is a corresponding manifest containing an
-    MD5 hash of the data inside that file. When we update our data files, the
-    corresponding manifest's hash changes. If you host a service that
-    automatically downloads data from Open5e, you can periodically check
-    the manifests to determine whether your data is out of date.
-    """
-    queryset = models.Manifest.objects.all().order_by("pk")
-    serializer_class = serializers.ManifestSerializer
-
-
 @api_view()
 def get_version(_):
     """
