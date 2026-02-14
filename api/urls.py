@@ -23,6 +23,5 @@ router.register(r'armor',views.ArmorViewSet)
 
 urlpatterns = [
     path('', include(router.urls)), #Consider removing this after a while.
-    path('version/', views.get_version, name="version"),
     path('v1/', include(router.urls))
     ]
