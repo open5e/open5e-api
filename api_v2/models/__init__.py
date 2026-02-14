@@ -33,6 +33,8 @@ from .creature import CreatureType
 from .creature import CreatureTypeDescription
 from .creature import CreatureSet
 
+from .crossreference import CrossReference
+
 from .document import Document
 from .document import License
 from .document import Publisher

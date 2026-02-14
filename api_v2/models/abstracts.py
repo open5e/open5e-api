@@ -2,6 +2,7 @@
 from math import floor
 
 from django.db import models
+from django.contrib.contenttypes.fields import GenericRelation
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from .enums import MODIFICATION_TYPES, DIE_TYPES
@@ -135,11 +136,22 @@ class HasName(models.Model):
 
 
 class HasDescription(models.Model):
-    """This is the definition of a description."""
+    """
+    This is the definition of a description.
+
+    Objects with a description can have crossreferences: anchor-text links from
+    spans in their desc to other content (e.g. Spell, Item, Condition).
+    """
 
     desc = models.TextField(
         blank=True,
         help_text='Description of the game content item. Markdown.')
+
+    crossreferences = GenericRelation(
+        'api_v2.CrossReference',
+        content_type_field='source_content_type',
+        object_id_field='source_object_key',
+    )
 
     class Meta:
         abstract = True
