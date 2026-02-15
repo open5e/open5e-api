@@ -1,7 +1,7 @@
 """
-Re-export cross-reference logic from scripts.crossreference.core for backwards compatibility.
+Re-export crossreference logic from scripts.crossreference.core for backwards compatibility.
 
-Management commands find_crossref_candidates and delete_crossreferences delegate to
+Management commands find_crossreference_candidates and delete_crossreferences delegate to
 scripts/crossreference/find_candidates.py and delete_crossreferences.py.
 """
 
