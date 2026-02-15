@@ -66,6 +66,7 @@ def run(
             ref_ct, ref_key = ref_url_to_ct_key[ref_url]
             to_create.append(
                 CrossReference(
+                    document=doc,
                     source_content_type_id=src_ct_id,
                     source_object_key=source_object_key,
                     reference_content_type=ref_ct,
