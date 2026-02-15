@@ -12,7 +12,7 @@ from scripts.crossreference.apply_crossreferences import run as run_apply_crossr
 class Command(BaseCommand):
     help = (
         "Create CrossReference rows from text-matching for the given document. "
-        "Use --dry-run to preview; use --replace to delete existing crossrefs for "
+        "Use --dry-run to preview; use --replace to delete existing crossreferences for "
         "the document before creating."
     )
 
@@ -43,7 +43,7 @@ class Command(BaseCommand):
         parser.add_argument(
             "--replace",
             action="store_true",
-            help="Delete existing crossrefs whose source is in this document before creating.",
+            help="Delete existing crossreferences whose source is in this document before creating.",
         )
 
     def handle(self, *args, **options):

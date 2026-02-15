@@ -196,7 +196,7 @@ def load_blacklist(file_path: str | None) -> set[str]:
 
 
 def _model_has_description(model) -> bool:
-    """Return True if the model has a desc field (i.e. can be a crossref source)."""
+    """Return True if the model has a desc field (i.e. can be a crossreference source)."""
     return any(f.name == "desc" for f in model._meta.get_fields())
 
 
@@ -249,7 +249,7 @@ def get_crossreferences_by_source_document(
     reference_blacklist = reference_blacklist or set()
 
     pairs = get_source_models_and_filters_for_document(doc, model_name=source_model_name)
-    crossref_ids = []
+    crossreference_ids = []
 
     for model, filter_kwargs in pairs:
         ct = ContentType.objects.get_for_model(model)
@@ -266,11 +266,11 @@ def get_crossreferences_by_source_document(
             qs = qs.exclude(source_object_key__in=source_blacklist)
         if reference_blacklist:
             qs = qs.exclude(reference_object_key__in=reference_blacklist)
-        crossref_ids.extend(qs.values_list("pk", flat=True))
+        crossreference_ids.extend(qs.values_list("pk", flat=True))
 
-    if not crossref_ids:
+    if not crossreference_ids:
         return CrossReference.objects.none()
-    return CrossReference.objects.filter(pk__in=crossref_ids)
+    return CrossReference.objects.filter(pk__in=crossreference_ids)
 
 
 def get_all_crossreferences_for_document(doc):

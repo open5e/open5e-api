@@ -22,7 +22,7 @@ def run(
     style_success=None,
 ):
     """
-    Resolve document, load blacklists, get crossref queryset, then delete (or dry-run).
+    Resolve document, load blacklists, get crossreference queryset, then delete (or dry-run).
 
     stdout: object with .write(str). If None, print() is used.
     style_success: callable(str) -> str for success message. If None, identity.

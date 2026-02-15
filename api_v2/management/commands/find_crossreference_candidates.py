@@ -1,5 +1,5 @@
 """
-Find objects in a document that are candidates for adding cross-references.
+Find objects in a document that are candidates for adding crossreferences.
 
 Delegates to scripts/crossreference/find_candidates.py.
 """
@@ -12,7 +12,7 @@ from scripts.crossreference.find_candidates import run as run_find_candidates
 class Command(BaseCommand):
     help = (
         "List objects with descriptions in a document that are candidates for "
-        "adding cross-references. Output to console."
+        "adding crossreferences. Output to console."
     )
 
     def add_arguments(self, parser):

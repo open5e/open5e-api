@@ -30,7 +30,7 @@ def run(
     """
     Run text-matching for the document, then create CrossReference rows (or report counts if dry_run).
 
-    If replace_existing, delete existing crossrefs whose source is in the document first.
+    If replace_existing, delete existing crossreferences whose source is in the document first.
     stdout: object with .write(str). If None, print() is used.
     style_success: callable(str) -> str for success message. If None, identity.
     """

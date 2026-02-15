@@ -1,7 +1,7 @@
 """
-Find cross-reference candidates for a document; optionally write report files and print top 10.
+Find crossreference candidates for a document; optionally write report files and print top 10.
 
-Called by management command find_crossref_candidates.
+Called by management command find_crossreference_candidates.
 """
 
 from scripts.crossreference.core import (
@@ -60,11 +60,11 @@ def run(
             name = getattr(obj, "name", "") or ""
             desc_len = len(obj.desc) if obj.desc else 0
             try:
-                crossref_count = obj.crossreferences.count()
+                crossreference_count = obj.crossreferences.count()
             except Exception:
-                crossref_count = 0
+                crossreference_count = 0
             candidates.append(
-                (model.__name__, pk_str, name, desc_len, crossref_count)
+                (model.__name__, pk_str, name, desc_len, crossreference_count)
             )
 
     if sources_report_path and references_report_path:
@@ -103,8 +103,8 @@ def run(
     write(
         "Candidates (objects with description; source-blacklist applied):"
     )
-    for model_name, key, name, desc_len, crossref_count in candidates:
+    for model_name, key, name, desc_len, crossreference_count in candidates:
         write(
-            f"  {model_name}\t{key}\t{name}\t{desc_len}\t{crossref_count}"
+            f"  {model_name}\t{key}\t{name}\t{desc_len}\t{crossreference_count}"
         )
     write(f"Total: {len(candidates)} candidates.")

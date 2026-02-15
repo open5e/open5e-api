@@ -1,5 +1,5 @@
 """
-Delete groups of cross-references by source document.
+Delete groups of crossreferences by source document.
 
 Delegates to scripts/crossreference/delete_crossreferences.py.
 """
@@ -21,25 +21,25 @@ class Command(BaseCommand):
             "--document",
             type=str,
             required=True,
-            help="Document key; delete crossrefs whose source is in this document.",
+            help="Document key; delete crossreferences whose source is in this document.",
         )
         parser.add_argument(
             "--model",
             type=str,
             default=None,
-            help="If set, only delete crossrefs whose source is this model (e.g. Spell, Item).",
+            help="If set, only delete crossreferences whose source is this model (e.g. Spell, Item).",
         )
         parser.add_argument(
             "--source-blacklist",
             type=str,
             default=None,
-            help="Path to file; do not delete crossrefs whose source key is in this set.",
+            help="Path to file; do not delete crossreferences whose source key is in this set.",
         )
         parser.add_argument(
             "--reference-blacklist",
             type=str,
             default=None,
-            help="Path to file; do not delete crossrefs whose reference key is in this set.",
+            help="Path to file; do not delete crossreferences whose reference key is in this set.",
         )
         parser.add_argument(
             "--dry-run",
