@@ -1,16 +1,12 @@
 """
 Delete groups of cross-references by source document.
 
-Optionally restrict by source model and/or protect sources/references via blacklists.
+Delegates to scripts/crossreference/delete_crossreferences.py.
 """
 
 from django.core.management.base import BaseCommand, CommandError
 
-from api_v2.crossreference_utils import (
-    get_crossreferences_by_source_document,
-    get_document,
-    load_blacklist,
-)
+from scripts.crossreference.delete_crossreferences import run as run_delete_crossreferences
 
 
 class Command(BaseCommand):
@@ -53,37 +49,17 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         doc_key = options["document"]
-        model_name = options["model"]
-        source_blacklist_path = options["source_blacklist"]
-        reference_blacklist_path = options["reference_blacklist"]
-        dry_run = options["dry_run"]
-
         try:
-            doc = get_document(doc_key)
+            run_delete_crossreferences(
+                doc_key,
+                model_name=options["model"],
+                source_blacklist_path=options["source_blacklist"],
+                reference_blacklist_path=options["reference_blacklist"],
+                dry_run=options["dry_run"],
+                stdout=self.stdout,
+                style_success=self.style.SUCCESS,
+            )
         except Exception as e:
-            raise CommandError(f"Document not found: {doc_key} ({e})")
-
-        source_blacklist = load_blacklist(source_blacklist_path)
-        reference_blacklist = load_blacklist(reference_blacklist_path)
-
-        qs = get_crossreferences_by_source_document(
-            doc,
-            source_model_name=model_name,
-            source_blacklist=source_blacklist,
-            reference_blacklist=reference_blacklist,
-        )
-        count = qs.count()
-
-        if dry_run:
-            self.stdout.write(
-                f"Would delete {count} crossreferences (source document {doc_key}). "
-                "Run without --dry-run to delete."
-            )
-            return
-
-        qs.delete()
-        self.stdout.write(
-            self.style.SUCCESS(
-                f"Deleted {count} crossreferences (source document {doc_key})."
-            )
-        )
+            if type(e).__name__ == "DoesNotExist" or "not found" in str(e).lower():
+                raise CommandError(f"Document not found: {doc_key} ({e})") from e
+            raise

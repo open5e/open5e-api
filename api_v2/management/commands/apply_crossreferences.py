@@ -1,18 +1,19 @@
 """
-Find objects in a document that are candidates for adding cross-references.
+Apply suggested cross-references to the database from text-matching.
 
-Delegates to scripts/crossreference/find_candidates.py.
+Delegates to scripts/crossreference/apply_crossreferences.py.
 """
 
 from django.core.management.base import BaseCommand, CommandError
 
-from scripts.crossreference.find_candidates import run as run_find_candidates
+from scripts.crossreference.apply_crossreferences import run as run_apply_crossreferences
 
 
 class Command(BaseCommand):
     help = (
-        "List objects with descriptions in a document that are candidates for "
-        "adding cross-references. Output to console."
+        "Create CrossReference rows from text-matching for the given document. "
+        "Use --dry-run to preview; use --replace to delete existing crossrefs for "
+        "the document before creating."
     )
 
     def add_arguments(self, parser):
@@ -20,7 +21,7 @@ class Command(BaseCommand):
             "--document",
             type=str,
             required=True,
-            help="Document key (e.g. srd-2014).",
+            help="Document key (e.g. srd-2024).",
         )
         parser.add_argument(
             "--source-blacklist",
@@ -35,27 +36,25 @@ class Command(BaseCommand):
             help="Path to file with reference keys to exclude (one per line).",
         )
         parser.add_argument(
-            "--sources-report",
-            type=str,
-            default=None,
-            help="Write JSON report of source URLs and their crossreference_to list (most first).",
+            "--dry-run",
+            action="store_true",
+            help="Only print what would be created; do not create.",
         )
         parser.add_argument(
-            "--references-report",
-            type=str,
-            default=None,
-            help="Write JSON report of reference URLs and their crossreference_from list (most first).",
+            "--replace",
+            action="store_true",
+            help="Delete existing crossrefs whose source is in this document before creating.",
         )
 
     def handle(self, *args, **options):
         doc_key = options["document"]
         try:
-            run_find_candidates(
+            run_apply_crossreferences(
                 doc_key,
                 source_blacklist_path=options["source_blacklist"],
                 reference_blacklist_path=options["reference_blacklist"],
-                sources_report_path=options["sources_report"],
-                references_report_path=options["references_report"],
+                dry_run=options["dry_run"],
+                replace_existing=options["replace"],
                 stdout=self.stdout,
                 style_success=self.style.SUCCESS,
             )
