@@ -377,6 +377,15 @@ _CONTEXT_SUGGESTS_SHIELD_ITEM = frozenset({
 _CONTEXT_SUGGESTS_CROSSBOW_ITEM = frozenset({
     "light crossbow", "heavy crossbow", "hand crossbow",
 })
+# "Acid" here is damage type, not the Acid item (vial).
+_CONTEXT_SUGGESTS_ACID_DAMAGE_TYPE = frozenset({
+    " acid damage", "acid damage", "resistance to acid", "immunity to acid",
+    "vulnerability to acid", "acid resistance", "acid immunity",
+})
+# "Chain" here is part of "Chain Lightning" (spell), not the Chain item.
+_CONTEXT_SUGGESTS_CHAIN_LIGHTNING_SPELL = frozenset({
+    "chain lightning",
+})
 
 
 def _match_context_mismatch(
@@ -425,6 +434,10 @@ def _match_context_mismatch(
         return any(phrase in context for phrase in _CONTEXT_SUGGESTS_SPELL)
     if model_name == "Item" and ref_lower == "shield":
         return any(phrase in context for phrase in _CONTEXT_SUGGESTS_SPELL)
+    if model_name == "Item" and ref_lower == "acid":
+        return any(phrase in context for phrase in _CONTEXT_SUGGESTS_ACID_DAMAGE_TYPE)
+    if model_name == "Item" and ref_lower == "chain":
+        return any(phrase in context for phrase in _CONTEXT_SUGGESTS_CHAIN_LIGHTNING_SPELL)
     return False
 
 
