@@ -103,26 +103,26 @@ CHILD_MODEL_NAMES = [
 CHILD_CHILD_MODEL_NAMES = ["CreatureActionAttack"]
 
 # Models that can be mentioned in descriptions (reference targets for text-matching).
+# CHILD_*, CHILD_CHILD_*, and any model with "Description" in the name are excluded (see get_reference_models_and_filters_for_document).
 REFERENCE_MODEL_NAMES = [
     "Spell",
     "Item",
     "Condition",
-    "ConditionDescription",
     "Feat",
     "Rule",
     "RuleSet",
     "WeaponProperty",
-    "DamageTypeDescription",
-    "AbilityDescription",
-    "SkillDescription",
-    "AlignmentDescription",
-    "CreatureTypeDescription",
     "Language",
     "Environment",
     "Background",
     "Species",
     "CharacterClass",
     "ClassFeature",
+    "DamageType",
+    "Alignment",
+    "CreatureType",
+    "Ability",
+    "Skill",
 ]
 
 
@@ -135,12 +135,17 @@ def get_reference_models_and_filters_for_document(doc):
     """
     Return (model, filter_kwargs) for all api_v2 models that are in REFERENCE_MODEL_NAMES,
     have a name field, and belong to the given document.
+    Child and grandchild models (CHILD_*) and any model whose name includes "Description" are excluded as references.
     """
     result = []
     for model in apps.get_models():
         if model._meta.app_label != "api_v2":
             continue
         if model.__name__ not in REFERENCE_MODEL_NAMES:
+            continue
+        if model.__name__ in CHILD_MODEL_NAMES or model.__name__ in CHILD_CHILD_MODEL_NAMES:
+            continue
+        if "Description" in model.__name__:
             continue
         if not _model_has_name(model):
             continue
@@ -204,7 +209,6 @@ def get_source_models_and_filters_for_document(doc, model_name: str | None = Non
     """
     Return a list of (model, filter_kwargs) for all api_v2 models that have
     HasDescription (desc field) and belong to the given document.
-
     doc: Document instance.
     model_name: If set, only include this model (e.g. 'Spell', 'Item').
 
@@ -510,6 +514,7 @@ def identify_crossreferences_from_text(
             src_url = build_object_url(src_ct, pk_str)
             key_src = (src_ct.id, pk_str)
             seen_refs = set()
+            seen_ref_names_per_source: dict[tuple[int, str], set[str]] = {}
             parents_to_skip = _get_parent_keys_to_skip(obj)
 
             for ref_ct, ref_key, ref_name, pattern in ref_candidates:
@@ -541,6 +546,13 @@ def identify_crossreferences_from_text(
                 key_ref = (ref_ct.id, ref_key)
                 if (key_src, key_ref) in seen_refs:
                     continue
+                # Only one link per distinct reference name per source (e.g. one "Proficiency" from acid)
+                ref_name_lower = ref_name.lower()
+                if key_src not in seen_ref_names_per_source:
+                    seen_ref_names_per_source[key_src] = set()
+                if ref_name_lower in seen_ref_names_per_source[key_src]:
+                    continue
+                seen_ref_names_per_source[key_src].add(ref_name_lower)
                 seen_refs.add((key_src, key_ref))
                 ref_url = build_object_url(ref_ct, ref_key)
 

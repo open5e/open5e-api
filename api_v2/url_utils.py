@@ -3,28 +3,31 @@ Build v2 API URLs for cross-reference targets using the same URLconf as the API.
 
 Uses the api_v2 router as source of truth for top-level resources, plus a small
 fallback map for nested reference models that do not have their own viewset.
+For models whose name includes "Description" (e.g. AbilityDescription), the URL
+resolves to the parent object (e.g. Ability) via the "describes" FK.
 """
 
+from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
 
 
-# Nested reference models (no own viewset) -> basename for their resource URL.
-# Used only when the reference's content type is not in the router-derived map.
+# Nested reference models (no own viewset) -> DRF router basename for reverse().
+# Must match the viewset basename (e.g. "characterclass" for /v2/classes/), not the URL prefix.
 REFERENCE_MODEL_TO_BASENAME = {
-    "AbilityDescription": "abilities",
-    "SkillDescription": "skills",
+    "AbilityDescription": "ability",
+    "SkillDescription": "skill",
     "SpeciesTrait": "species",
-    "FeatBenefit": "feats",
-    "BackgroundBenefit": "backgrounds",
-    "CreatureTrait": "creatures",
-    "CreatureAction": "creatures",
-    "CreatureTypeDescription": "creaturetypes",
-    "DamageTypeDescription": "damagetypes",
-    "AlignmentDescription": "alignments",
-    "ConditionDescription": "conditions",
-    "SpellCastingOption": "spells",
-    "ClassFeature": "classes",
-    "ClassFeatureItem": "classes",
+    "FeatBenefit": "feat",
+    "BackgroundBenefit": "background",
+    "CreatureTrait": "creature",
+    "CreatureAction": "creature",
+    "CreatureTypeDescription": "creaturetype",
+    "DamageTypeDescription": "damagetype",
+    "AlignmentDescription": "alignment",
+    "ConditionDescription": "condition",
+    "SpellCastingOption": "spell",
+    "ClassFeature": "characterclass",
+    "ClassFeatureItem": "characterclass",
 }
 
 
@@ -52,9 +55,9 @@ def _get_basename_for_object(model, object_key):
     if model.__name__ == "Item":
         try:
             obj = model.objects.get(pk=object_key)
-            return "magicitems" if obj.is_magic_item else "items"
+            return "magicitems" if obj.is_magic_item else "item"
         except model.DoesNotExist:
-            return "items"
+            return "item"
     model_to_basename = _get_model_to_basename()
     basename = model_to_basename.get(model)
     if basename is None:
@@ -62,8 +65,34 @@ def _get_basename_for_object(model, object_key):
     return basename
 
 
+def _resolve_to_parent_if_description(content_type, object_key):
+    """
+    For models that are nested under a parent resource, resolve to the parent so the
+    URL points at the parent object. Used for:
+    - *Description models (e.g. AbilityDescription) via the "describes" FK.
+    - ClassFeature via the "parent" FK (CharacterClass).
+    Returns (parent_content_type, parent_pk) or (content_type, object_key) unchanged.
+    """
+    model = content_type.model_class() if content_type else None
+    if model is None:
+        return content_type, object_key
+    name = model.__name__
+    if "Description" not in name and name != "ClassFeature":
+        return content_type, object_key
+    try:
+        obj = model.objects.get(pk=object_key)
+    except model.DoesNotExist:
+        return content_type, object_key
+    parent = getattr(obj, "describes", None) or getattr(obj, "parent", None)
+    if parent is None:
+        return content_type, object_key
+    parent_ct = ContentType.objects.get_for_model(parent)
+    return parent_ct, str(parent.pk)
+
+
 def _build_object_url(content_type, object_key, request=None):
     """Build v2 API URL for the given content type and key. Returns None if no basename."""
+    content_type, object_key = _resolve_to_parent_if_description(content_type, object_key)
     model = content_type.model_class() if content_type else None
     if model is None:
         return None
