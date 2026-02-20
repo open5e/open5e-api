@@ -5,6 +5,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 
 from .document import Document
+from api_v2.url_utils import get_reference_url, get_source_url
 
 
 class CrossReference(models.Model):
@@ -51,6 +52,14 @@ class CrossReference(models.Model):
         max_length=100,
         help_text="The text in the source's description to highlight and link to the reference.",
     )
+
+    def reference_api_url(self, request=None):
+        """Return the v2 API URL for the object this CrossReference points to (the reference)."""
+        return get_reference_url(self, request) or ""
+
+    def source_api_url(self, request=None):
+        """Return the v2 API URL for the object that contains this link (the source)."""
+        return get_source_url(self, request) or ""
 
     class Meta:
         verbose_name_plural = "crossreferences"

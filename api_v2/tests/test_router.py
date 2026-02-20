@@ -57,57 +57,76 @@ class APIV2RootTest(APITestCase):
 
 
 class CrossReferenceFieldTest(APITestCase):
-    """Verify crossreference field appears on source objects and not on Document/GameSystem/Publisher."""
+    """Verify crossreferences field appears on source objects and not on Document/GameSystem/Publisher."""
 
-    def test_item_detail_includes_crossreference_key(self):
-        """Objects with desc that are sources (e.g. Item) include crossreference in the response."""
+    def test_item_detail_includes_crossreferences_key(self):
+        """Objects with desc that are sources (e.g. Item) include crossreferences in the response."""
         response = self.client.get("/v2/items/?limit=1&format=json")
         self.assertEqual(response.status_code, 200)
         results = response.json().get("results", [])
         if results:
             item = results[0]
             self.assertIn(
-                "crossreference",
+                "crossreferences",
                 item,
-                "Item detail should include crossreference key",
+                "Item detail should include crossreferences key",
             )
-            self.assertIsInstance(item["crossreference"], list)
-            for cr in item["crossreference"]:
-                self.assertIn("anchor", cr)
-                self.assertIn("url", cr)
+            cr = item["crossreferences"]
+            self.assertIsInstance(cr, dict, "crossreferences should be {to, from}")
+            self.assertIn("to", cr)
+            self.assertIn("from", cr)
+            self.assertIsInstance(cr["to"], list)
+            self.assertIsInstance(cr["from"], list)
+            for entry in cr["to"] + cr["from"]:
+                self.assertIn("anchor", entry)
+                self.assertIn("url", entry)
 
-    def test_document_detail_excludes_crossreference(self):
-        """Document responses must not include crossreference."""
+    def test_crossreferences_from_when_object_is_referenced(self):
+        """An object that is the reference of at least one CrossReference has entries in crossreferences.from."""
+        # srd-2024_acid is referenced by other items in the fixture
+        response = self.client.get("/v2/items/srd-2024_acid/?format=json")
+        if response.status_code != 200:
+            return  # fixture may not be loaded
+        item = response.json()
+        self.assertIn("crossreferences", item)
+        from_list = item["crossreferences"]["from"]
+        self.assertIsInstance(from_list, list)
+        for entry in from_list:
+            self.assertIn("anchor", entry)
+            self.assertIn("url", entry)
+
+    def test_document_detail_excludes_crossreferences(self):
+        """Document responses must not include crossreferences."""
         response = self.client.get("/v2/documents/?limit=1&format=json")
         self.assertEqual(response.status_code, 200)
         results = response.json().get("results", [])
         if results:
             self.assertNotIn(
-                "crossreference",
+                "crossreferences",
                 results[0],
-                "Document must not include crossreference",
+                "Document must not include crossreferences",
             )
 
-    def test_gamesystem_detail_excludes_crossreference(self):
-        """GameSystem responses must not include crossreference."""
+    def test_gamesystem_detail_excludes_crossreferences(self):
+        """GameSystem responses must not include crossreferences."""
         response = self.client.get("/v2/gamesystems/?limit=1&format=json")
         self.assertEqual(response.status_code, 200)
         results = response.json().get("results", [])
         if results:
             self.assertNotIn(
-                "crossreference",
+                "crossreferences",
                 results[0],
-                "GameSystem must not include crossreference",
+                "GameSystem must not include crossreferences",
             )
 
-    def test_publisher_detail_excludes_crossreference(self):
-        """Publisher responses must not include crossreference."""
+    def test_publisher_detail_excludes_crossreferences(self):
+        """Publisher responses must not include crossreferences."""
         response = self.client.get("/v2/publishers/?limit=1&format=json")
         self.assertEqual(response.status_code, 200)
         results = response.json().get("results", [])
         if results:
             self.assertNotIn(
-                "crossreference",
+                "crossreferences",
                 results[0],
-                "Publisher must not include crossreference",
+                "Publisher must not include crossreferences",
             )

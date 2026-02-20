@@ -1,9 +1,6 @@
 """Abstract serializers."""
 from rest_framework import serializers
 
-from api_v2 import models
-from api_v2.url_utils import get_reference_url
-
 
 def _is_crossreference_source(instance):
     """Return True if this object is a crossreference source (has desc, exclude Document/GameSystem/Publisher)."""
@@ -115,14 +112,7 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
         data = super().to_representation(instance)
         if _is_crossreference_source(instance):
             request = self.context.get("request")
-            qs = instance.crossreferences.select_related("reference_content_type")
-            data["crossreference"] = [
-                {
-                    "anchor": cr.anchor,
-                    "url": get_reference_url(cr, request) or "",
-                }
-                for cr in qs
-            ]
+            data["crossreferences"] = instance.get_crossreferences_to_from(request)
         return data
 
     class Meta:

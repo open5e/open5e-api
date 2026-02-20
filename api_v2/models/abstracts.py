@@ -153,6 +153,31 @@ class HasDescription(models.Model):
         object_id_field='source_object_key',
     )
 
+    def get_crossreferences_to_from(self, request=None):
+        """
+        Return crossreferences as {"to": [...], "from": [...]}, each entry
+        {"anchor": str, "url": str}. Used by the API serializer.
+        """
+        from django.contrib.contenttypes.models import ContentType
+
+        from api_v2.models import CrossReference
+
+        to_qs = self.crossreferences.select_related("reference_content_type")
+        to_list = [
+            {"anchor": cr.anchor, "url": cr.reference_api_url(request)}
+            for cr in to_qs
+        ]
+        ref_ct = ContentType.objects.get_for_model(self)
+        from_qs = CrossReference.objects.filter(
+            reference_content_type=ref_ct,
+            reference_object_key=str(self.pk),
+        ).select_related("source_content_type")
+        from_list = [
+            {"anchor": cr.anchor, "url": cr.source_api_url(request)}
+            for cr in from_qs
+        ]
+        return {"to": to_list, "from": from_list}
+
     class Meta:
         abstract = True
 
