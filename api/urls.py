@@ -6,7 +6,6 @@ from api import views
 from server.routers import DocumentedDefaultRouter
 
 router = DocumentedDefaultRouter()
-router.register(r'manifest', views.ManifestViewSet)
 router.register(r'spells', views.SpellViewSet)
 router.register(r'spelllist',views.SpellListViewSet)
 router.register(r'monsters', views.MonsterViewSet)
@@ -24,6 +23,5 @@ router.register(r'armor',views.ArmorViewSet)
 
 urlpatterns = [
     path('', include(router.urls)), #Consider removing this after a while.
-    path('version/', views.get_version, name="version"),
     path('v1/', include(router.urls))
     ]

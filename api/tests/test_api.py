@@ -56,8 +56,6 @@ class TestAPIRoot:
     def test_magicitems(self):
         self._verify("/magicitems")
 
-    # /manifest is excluded because it's too volatile
-
     def test_monsters(self):
         pass
     # This test is flaky, and fails on one machine, but passes on another.
