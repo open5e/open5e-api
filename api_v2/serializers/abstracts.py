@@ -94,11 +94,13 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
         return {k: v for k, v in query_params if self.is_param_dynamic(k)}
 
     def _is_root_or_list_item_serializer(self):
-        """True if this serializer is the root or a list item (not nested)."""
-        return (
-            self.parent is None
-            or isinstance(self.parent, serializers.ListSerializer)
-        )
+        """True if this serializer is the root or a top-level list item (not nested)."""
+        if self.parent is None:
+            return True
+        if isinstance(self.parent, serializers.ListSerializer):
+            # Only treat as "list item" when the list itself is the root (e.g. list view)
+            return self.parent.parent is None
+        return False
 
     def get_dynamic_params(self):
         """

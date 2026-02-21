@@ -149,3 +149,57 @@ class CrossReferenceFieldTest(APITestCase):
                 cls,
                 "Nested class must not include crossreferences",
             )
+
+    def test_list_items_include_crossreferences(self):
+        """Items in a top-level list view (e.g. GET /backgrounds/) must include crossreferences."""
+        response = self.client.get("/v2/backgrounds/?limit=1&format=json")
+        self.assertEqual(response.status_code, 200)
+        results = response.json().get("results", [])
+        if results:
+            self.assertIn(
+                "crossreferences",
+                results[0],
+                "List item (background) should include crossreferences",
+            )
+
+    def test_nested_many_relations_omit_crossreferences(self):
+        """Nested many-relations (e.g. benefits, features, actions) must not include crossreferences."""
+        # Background detail: benefits must not have crossreferences
+        response = self.client.get("/v2/backgrounds/srd_acolyte/?format=json")
+        if response.status_code == 200:
+            data = response.json()
+            self.assertIn("crossreferences", data, "Root background should include crossreferences")
+            for benefit in data.get("benefits", []):
+                self.assertNotIn(
+                    "crossreferences",
+                    benefit,
+                    "Nested background benefit must not include crossreferences",
+                )
+        # Class detail: features must not have crossreferences
+        response = self.client.get("/v2/classes/srd_barbarian/?format=json")
+        if response.status_code == 200:
+            data = response.json()
+            self.assertIn("crossreferences", data, "Root class should include crossreferences")
+            for feature in data.get("features", []):
+                self.assertNotIn(
+                    "crossreferences",
+                    feature,
+                    "Nested class feature must not include crossreferences",
+                )
+        # Creature detail: actions and traits must not have crossreferences
+        response = self.client.get("/v2/creatures/srd_goblin/?format=json")
+        if response.status_code == 200:
+            data = response.json()
+            self.assertIn("crossreferences", data, "Root creature should include crossreferences")
+            for action in data.get("actions", []):
+                self.assertNotIn(
+                    "crossreferences",
+                    action,
+                    "Nested creature action must not include crossreferences",
+                )
+            for trait in data.get("traits", []):
+                self.assertNotIn(
+                    "crossreferences",
+                    trait,
+                    "Nested creature trait must not include crossreferences",
+                )
