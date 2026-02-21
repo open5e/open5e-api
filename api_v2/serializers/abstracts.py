@@ -94,6 +94,19 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
             return self.parent._context.get("dynamic_params", {})
         return self._context.get("dynamic_params", {})
 
+    def get_fields(self):
+        """Add crossreferences only for root or list-item serializers (not nested)."""
+        fields = super().get_fields()
+        if self.parent is None or isinstance(self.parent, serializers.ListSerializer):
+            fields["crossreferences"] = serializers.SerializerMethodField()
+        return fields
+
+    def get_crossreferences(self, obj):
+        """Return crossreferences for API output; None for non-sources."""
+        if not _is_crossreference_source(obj):
+            return None
+        return obj.get_crossreferences_to_from(self.context.get("request"))
+
     def __init__(self, *args, **kwargs):
         request = kwargs.get("context", {}).get("request")
         super().__init__(*args, **kwargs)
@@ -110,9 +123,9 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
             self.remove_unwanted_fields(dynamic_params)
             self.set_dynamic_params_for_children(dynamic_params)
         data = super().to_representation(instance)
-        if _is_crossreference_source(instance):
-            request = self.context.get("request")
-            data["crossreferences"] = instance.get_crossreferences_to_from(request)
+        # Omit crossreferences key when null so non-sources (e.g. Document) have no key
+        if data.get("crossreferences") is None:
+            data.pop("crossreferences", None)
         return data
 
     class Meta:

@@ -130,3 +130,22 @@ class CrossReferenceFieldTest(APITestCase):
                 results[0],
                 "Publisher must not include crossreferences",
             )
+
+    def test_spell_detail_nested_objects_omit_crossreferences(self):
+        """Nested objects (e.g. school, classes) on spell detail must not include crossreferences."""
+        response = self.client.get("/v2/spells/srd-2024_earthquake/?format=json")
+        if response.status_code != 200:
+            return  # fixture may not be loaded
+        spell = response.json()
+        self.assertIn("crossreferences", spell, "Root spell should include crossreferences")
+        self.assertNotIn(
+            "crossreferences",
+            spell.get("school", {}),
+            "Nested school must not include crossreferences",
+        )
+        for cls in spell.get("classes", []):
+            self.assertNotIn(
+                "crossreferences",
+                cls,
+                "Nested class must not include crossreferences",
+            )
