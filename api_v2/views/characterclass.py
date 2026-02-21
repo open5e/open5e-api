@@ -1,13 +1,10 @@
 """Viewset and Filterset for the CharacterClass Serializers."""
 from rest_framework import viewsets
 
-from django_filters import FilterSet
-from django_filters import BooleanFilter
-from .mixins import EagerLoadingMixin
+from django_filters import FilterSet, BooleanFilter
 
-from api_v2 import models
-from api_v2 import serializers
-
+from api_v2 import models, serializers
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class CharacterClassFilterSet(FilterSet):
     is_subclass = BooleanFilter(field_name='subclass_of', lookup_expr='isnull', exclude=True)
@@ -23,7 +20,7 @@ class CharacterClassFilterSet(FilterSet):
         }
 
 
-class CharacterClassViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class CharacterClassViewSet(ExcludeFieldsMixin, EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of classes.
     retrieve: API endpoint for returning a particular class.
