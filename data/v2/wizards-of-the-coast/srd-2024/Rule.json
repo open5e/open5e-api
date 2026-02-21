@@ -490,5 +490,185 @@
   },
   "model": "api_v2.rule",
   "pk": "srd-2024_damage-and-healing_temporary-hit-points"
+},
+{
+  "fields": {
+    "desc": "Choose a class, and write it on your character sheet. The Class Overview table summarizes the classes. See \"Classes\" for the classes' details.\n\n| Class | Likes | Primary Ability | Complexity |\n|---|---|---|---|\n| Barbarian | Battle | Strength | Average |\n| Bard | Performing | Charisma | High |\n| Cleric | Gods | Wisdom | Average |\n| Druid | Nature | Wisdom | High |\n| Fighter | Weapons | Strength or Dexterity | Low |\n| Monk | Unarmed combat | Dexterity and Wisdom | High |\n| Paladin | Defense | Strength and Charisma | Average |\n| Ranger | Survival | Dexterity and Wisdom | Average |\n| Rogue | Stealth | Dexterity | Low |\n| Sorcerer | Power | Charisma | High |\n| Warlock | Occult lore | Charisma | High |\n| Wizard | Spellbooks | Intelligence | Average|\n\n### Write Your Level\n\nWrite your character's level on your character sheet. Typically, a character starts at level 1 and advances in level by adventuring and gaining Experience Points (XP).\n\n**Write Your XP.** Also record your Experience Points. A level 1 character has 0 XP.\n\n**Starting at a Higher Level.** Your GM might start you at a higher level. If you start at level 3 or higher, write your chosen subclass on your character sheet. See the \"Starting at Higher Levels\" section later in \"Character Creation\" for more information.\n\n### Note Armor Training\n\nYour class might give you training with certain categories of armor. Note your armor training on your character sheet. Armor training with a kind of armor means you can wear that armor effectively, gaining defensive bonuses from it. The categories of armor are described in \"Equipment.\"",
+    "document": "srd-2024",
+    "index": 1,
+    "initialHeaderLevel": 2,
+    "name": "Step 1: Choose Class",
+    "ruleset": "srd-2024_create-your-character"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_create-your-character_choose-class"
+},
+{
+  "fields": {
+    "desc": "Determining your character's origin involves choosing a background, a species, and two languages.\n\nA character's background represents the place and occupation that were most formative for the character. The combination of background, species, and languages provides fertile soil for your imagination as you ponder your character's earliest days.\n\n### Choose a Background\n\nChoose your character's background, and write it on your character sheet. You can choose any of the backgrounds detailed in \"Character Origins,\" and your GM might offer additional backgrounds as options.\n\nThe background you choose influences step 3, when you determine your character's ability scores. If you're having trouble choosing, the Ability Scores and Backgrounds table shows which backgrounds benefit which ability scores. Look for your class's primary ability there.\n\n| Ability | Background |\n|---|---|\n| Strength | Soldier |\n| Dexterity | Soldier |\n| Constitution | Soldier |\n| Intelligence | Acolyte |\n| Wisdom | Acolyte |\n| Charisma | Acolyte |\n\n**Record Your Feat.** A background gives you a feat, which grants your character particular capabilities. Feats are detailed in \"Feats.\" Write the feat on your character sheet.\n\n**Note Proficiencies.** Your background gives proficiency in two skills and with one tool. Record this information on your character sheet.\n\nYour class also gives proficiencies. Check your class description in \"Classes\" and note the proficiencies on your character sheet.\n\nThe features table in your class description shows your Proficiency Bonus (described in \"Playing the Game\"), which is +2 for a level 1 character. Note this number on your character sheet. You'll fill in other numbers connected to these proficiencies in step 5.\n\n### Choose Starting Equipment\n\nYour background and class both provide starting equipment. Any coins that you gain at this step can be immediately spent on equipment from \"Equipment.\"\n\nRecord your chosen equipment on your character sheet. Equipment is described in \"Equipment\", but for now you can just write it all down and look up the specifics in \"Equipment\" later. Note any coins you have left after purchasing your equipment.\n\n### Choose a Species\n\nChoose a species for your character. The following species options are detailed in \"Character Origins\": Dragonborn, Dwarf, Elf, Gnome, Goliath, Halfling, Human, Orc, and Tiefling. Once you've chosen a species, write it on your character sheet. Then record your species' traits.\n\nYour character's size and Speed are determined by the character's species; record these in the appropriate places on your character sheet as well (you may write just the first letter of your size).\n\n### Imagine Your Past and Present\n\nLet your character's background and species inspire how you imagine their past. That past fed into the character's present. With that in mind, consider answers to the following questions as your character:\n\n- Who raised you?\n- Who was your dearest childhood friend?\n- Did you grow up with a pet?\n- Have you fallen in love? If so, with whom?\n- Did you join an organization, such as a guild or religion? If so, are you still a member of it?\n- What elements of your past inspire you to go on adventures now?\n\n### Choose Languages\n\nYour character knows at least three languages: Common plus two languages you roll or choose from the Standard Languages table. Knowledge of a language means your character can communicate in it, read it, and write it. Your class and other features might also give you languages.\n\nThe Standard Languages table lists languages that are widespread in the setting. Every player character knows Common. The other standard languages originated with the first members of the most prominent species in the setting and have since spread widely.\n\n| 1d12| Language|\n|---|---|\n| — | Common |\n| 1 | Common Sign Language |\n| 2 | Draconic |\n| 3–4 | Dwarvish |\n| 5–6 | Elvish|\n| 7 |Giant|\n|8|Gnomish|\n|9|Goblin|\n|10–11|Halfling|\n|12|Orc|\n\nThe Rare Languages table lists languages that are either secret or derived from other planes of existence and thus less widespread in the worlds of the Material Plane. Some features let a character learn a rare language.\n\n| Language| Language|\n|---|---|\n| Abyssal| Primordial*|\n| Celestial| Sylvan|\n| Deep Speech | Thieves' Cant |\n| Druidic | Undercommon |\n| Infernal| |\n\n (Primordial includes the Aquan, Auran, Ignan, and Terran dialects. Creatures that know one of these dialects can communicate with those that know a different one.)",
+    "document": "srd-2024",
+    "index": 2,
+    "initialHeaderLevel": 2,
+    "name": "Step 2: Character Origin",
+    "ruleset": "srd-2024_create-your-character"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_create-your-character_character-origin"
+},
+{
+  "fields": {
+    "desc": "To determine your character's ability scores, you first generate a set of six numbers using the instructions below and then assign them to your six abilities. \"Playing the Game\" explains what each ability means.\n\n### Generate Your Scores\n\nDetermine your ability scores by using one of the following three methods. Your GM might prefer you to use a particular one.\n\n**Standard Array.** Use the following six scores for your abilities: 15, 14, 13, 12, 10, 8.\n\n**Random Generation.** Roll four d6s and record the total of the highest three dice. Do this five more times, so you have six numbers.\n\n**Point Cost.** You have 27 points to spend on your ability scores. The cost of each score is shown on the Ability Score Point Costs table. For example, a score of 14 costs 7 of your 27 points.\n\n| Score | Cost | Score | Cost |\n|---|---|---|---|\n| 8| 0| 12| 4|\n| 9| 1| 13| 5|\n| 10| 2| 14| 7|\n| 11| 3| 15| 9|\n\n### Assign Ability Scores\n\nOnce you've generated six scores, assign them to Strength, Dexterity, Constitution, Intelligence, Wisdom, and Charisma, keeping in mind your class's primary ability. Fill in the ability modifiers as well.\n\nIf you're using the Standard Array option, consult the Standard Array by Class table for suggestions on where to assign scores for your character's class. The table puts the highest scores in a class's main abilities. If you used a different method to generate the scores, you may still use this table to guide where you place your highest and lowest scores.\n\n| Class | Str. | Dex. | Con. | Int. | Wis. | Cha. |\n|---|---|---|---|---|---|---|\n| Barbarian | 15| 13| 14| 10| 12| 8|\n| Bard| 8| 14| 12| 13| 10| 15|\n| Cleric| 14| 8| 13| 10| 15| 12|\n| Druid| 8| 12| 14| 13| 15| 10|\n| Fighter| 15| 14| 13| 8| 10| 12|\n| Monk| 12| 15| 13| 10| 14| 8|\n| Paladin| 15| 10| 13| 8| 12| 14|\n| Ranger| 12| 15| 13| 8| 14| 10|\n| Rogue| 12| 15| 13| 14| 10| 8|\n| Sorcerer| 10| 13| 14| 8| 12| 15|\n| Warlock| 8| 14| 13| 12| 10| 15|\n| Wizard| 8| 12| 13| 15| 14| 10|\n\n### Adjust Ability Scores\n\nAfter assigning your ability scores, adjust them according to your background. Your background lists three abilities; increase one of those scores by 2 and a different one by 1, or increase all three by 1. None of these increases can raise a score above 20.\n\nSome players like to increase their class's primary ability, while others prefer to increase a low score.\n\n### Determine Ability Modifiers\n\nFinally, determine your ability modifiers using the Ability Scores and Modifiers table. Write the modifier next to each of your scores.\n\n| Score | Modifier | Score | Modifier |\n|---|---|---|---|\n| 3| −4| 12–13 | +1|\n| 4–5| −3| 14–15| +2|\n| 6–7| −2| 16–17 | +3|\n| 8–9| −1| 18–19 | +4|\n| 10–11| +0| 20| +5|",
+    "document": "srd-2024",
+    "index": 3,
+    "initialHeaderLevel": 2,
+    "name": "Step 3: Ability Scores",
+    "ruleset": "srd-2024_create-your-character"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_create-your-character_ability-scores"
+},
+{
+  "fields": {
+    "desc": "Choose your character's alignment from the options below, and note it on your character sheet.\n\nThe game assumes that player characters aren't of an evil alignment. Check with your GM before making an evil character.\n\n### The Nine Alignments\n\nA creature's alignment broadly describes its ethical attitudes and ideals. Alignment is a combination of two factors: one identifies morality (good, evil, or neutral), and the other describes attitudes toward order (lawful, chaotic, or neutral).\n\nThe summaries of the alignments below describe the typical behavior of a creature with that alignment; individuals can vary from that behavior.\n\n_Lawful Good (LG)._ Lawful Good creatures endeavor to do the right thing as expected by society. Someone who fights injustice and protects the innocent without hesitation is probably Lawful Good.\n\n_Neutral Good (NG)._ Neutral Good creatures do the best they can, working within rules but not feeling bound by them. A kindly person who helps others according to their needs is probably Neutral Good.\n\n_Chaotic Good (CG)._ Chaotic Good creatures act as their conscience directs with little regard for what others expect. A rebel who waylays a cruel baron's tax collectors and uses the stolen money to help the poor is probably Chaotic Good.\n\n_Lawful Neutral (LN)._ Lawful Neutral individuals act in accordance with law, tradition, or personal codes. Someone who follows a disciplined rule of life—and isn't swayed either by the demands of those in need or by the temptations of evil—is probably Lawful Neutral.\n\n_Neutral (N)._ Neutral is the alignment of those who prefer to avoid moral questions and don't take sides, doing what seems best at the time. Someone who's bored by moral debate is probably Neutral.\n\n_Chaotic Neutral (CN)._ Chaotic Neutral creatures follow their whims, valuing their personal freedom above all else. A scoundrel who wanders the land living by their wits is probably Chaotic Neutral.\n\n_Lawful Evil (LE)._ Lawful Evil creatures methodically take what they want within the limits of a code of tradition, loyalty, or order. An aristocrat exploiting citizens while scheming for power is probably Lawful Evil.\n\n_Neutral Evil (NE)._ Neutral Evil is the alignment of those who are untroubled by the harm they cause as they pursue their desires. A criminal who robs and murders as they please is probably Neutral Evil.\n\n_Chaotic Evil (CE)._ Chaotic Evil creatures act with arbitrary violence, spurred by their hatred or bloodlust. A villain pursuing schemes of vengeance and havoc is probably Chaotic Evil.\n\n_Unaligned Creatures._ Most creatures that lack the capacity for rational thought don't have alignments; they are unaligned. Sharks are savage predators, for example, but they aren't evil; they are unaligned.",
+    "document": "srd-2024",
+    "index": 4,
+    "initialHeaderLevel": 2,
+    "name": "Step 4: Alignment",
+    "ruleset": "srd-2024_create-your-character"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_create-your-character_alignment"
+},
+{
+  "fields": {
+    "desc": "Now fill in the rest of your character sheet.\n\n### Record Class Features\n\nLook at your class's feature table in \"Classes,\" and write down the level 1 features. The class features are detailed there too.\n\nSome class features offer choices. Make sure to read all your features and make any offered choices.\n\n### Fill In Numbers\n\nNote these numbers on your character sheet.\n\n**Saving Throws.** For the saving throws you have proficiency in, add your Proficiency Bonus to the appropriate ability modifier and note the total. Some players also like to note the modifier for saving throws they're not proficient in, which is just the relevant ability modifier.\n\n**Skills.** For skills you have proficiency in, add your Proficiency Bonus to the ability modifier associated with that skill, and note the total. You might also wish to note the modifier for skills you're not proficient in, which is just the relevant ability modifier.\n\n**Passive Perception.** Sometimes your GM will determine whether your character notices something without asking you to make a Wisdom (Perception) check; the GM uses your Passive Perception instead. Passive Perception is a score that reflects a general awareness of your surroundings when you're not actively looking for something. Use this formula to determine your Passive Perception score:\n\n*Passive Perception* = 10 + Wisdom (Perception) check modifier\n\nInclude all modifiers that apply to your Wisdom (Perception) checks. For example, if your character has a Wisdom of 15 and proficiency in the Perception skill, you have a Passive Perception of 14 (10 + 2 for your Wisdom modifier + 2 for proficiency).\n\n**Hit Points.** Your class and Constitution modifier determine your Hit Point maximum at level 1, as shown on the Level 1 Hit Points by Class table.\n\n|Class|Hit Point Maximum|\n|---|---|\n|Barbarian|12 + Con. modifier|\n|Fighter, Paladin, or Ranger|10 + Con. modifier|\n|Bard, Cleric, Druid, Monk, Rogue, or Warlock|8 + Con. modifier|\n| Sorcerer or Wizard| 6 + Con. modifier|\n\nThe character sheet includes room to note your current Hit Points when you take damage, as well as any Temporary Hit Points you might gain. There's also space to track Death Saving Throws.\n\n**Hit Point Dice.** Your class's description tells you the die type of your character's Hit Point Dice (or Hit Dice for short); write this on your character sheet. At level 1, your character has 1 Hit Die. You can spend Hit Dice during a Short Rest to recover Hit Points. Your character sheet also includes space to note how many Hit Dice you've spent.\n\n**Initiative.** Write your Dexterity modifier in the space for Initiative on your character sheet.\n\n**Armor Class.** Without armor or a shield, your base Armor Class is 10 plus your Dexterity modifier. If your starting equipment includes armor or a Shield (or both), calculate your AC using the rules in \"Equipment.\" A class feature might give you a different way to calculate your AC.\n\n**Attacks.** In the Weapons & Damage Cantrips section of the character sheet, write your starting weapons. The attack roll bonus for a weapon with which you have proficiency is one of the following unless a weapon's property says otherwise:\n\n*Melee attack bonus* = Strength modifier + Proficiency Bonus\n\n*Ranged attack bonus* = Dexterity modifier + Proficiency Bonus\n\nLook up the damage and properties of your weapons in \"Equipment.\" You add the same ability modifier you use for attacks with a weapon to your damage rolls with that weapon.\n\n**Spellcasting.** Note both the saving throw DC for your spells and the attack bonus for attacks you make with them, using these formulas:\n\n*Spell save DC* = 8 + spellcasting ability modifier + Proficiency Bonus\n\n*Spell attack bonus* = spellcasting ability modifier + Proficiency Bonus\n\nYour spellcasting ability modifier for a spell is determined by whatever feature gives you the ability to cast the spell.\n\n**Spell Slots, Cantrips, and Prepared Spells.** If your class gives you the Spellcasting or Pact Magic feature, your class features table shows the number of spell slots you have available, how many cantrips you know, and how many spells you can prepare. Choose your cantrips and prepared spells, and note them—along with your number of spell slots—on your character sheet.",
+    "document": "srd-2024",
+    "index": 5,
+    "initialHeaderLevel": 2,
+    "name": "Step 5: Character Creation Details",
+    "ruleset": "srd-2024_create-your-character"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_create-your-character_character-creation-details"
+},
+{
+  "fields": {
+    "desc": "When you gain a level, follow these steps:\n\n1. **Choose a Class.** Most characters advance in the same class. However, you might decide to gain a level in another class using the rules in the \"Multiclassing\" section.\n2. **Adjust Hit Points and Hit Point Dice.** Each time you gain a level, you gain an additional Hit Die. Roll that die, add your Constitution modifier to the roll, and add the total (minimum of 1) to your Hit Point maximum. Instead of rolling, you can use the fixed value shown in the Fixed Hit Points by Class table.\n\n|Class|Hit Points per Level|\n|---|---|\n|Barbarian|7 + Con. modifier|\n|Fighter, Paladin, or Ranger|6 + Con. modifier|\n|Bard, Cleric, Druid, Monk, Rogue, or Warlock|5 + Con. modifier|\n|Sorcerer or Wizard|4 + Con. modifier|\n\n3. **Record New Class Features.** Look at your class features table in \"Classes\", and note the features you gain at your new level in that class. Make any choices offered by a new feature.\n\n4. **Adjust Proficiency Bonus.** A character's Proficiency Bonus increases at certain levels, as shown in the Character Advancement table and your class features table in \"Classes.\" When your Proficiency Bonus increases, increase all the numbers on your character sheet that include your Proficiency Bonus.\n5. **Adjust Ability Modifiers.** If you choose a feat that increases one or more of your ability scores, your ability modifier also changes if the new score is an even number. When that happens, adjust all the numbers on your character sheet that use that ability modifier. When your Constitution modifier increases by 1, your Hit Point maximum increases by 1 for each level you have attained. For example, if a character reaches level 8 and increases their Constitution score from 17 to 18, the Constitution modifier increases to +4. The character's Hit Point maximum then increases by 8, in addition to the Hit Points gained for reaching level 8.\n\n## Tiers of Play\n\nWith each new level, characters acquire new capabilities that equip them to handle greater challenges. As characters advance in level, the tone of the game also changes, and the stakes of the campaign get higher. It's helpful to think of a character's (and a campaign's) arc in terms of four tiers of play, describing the journey from a level 1 character just beginning an adventuring career to the epic heights of level 20. These tiers don't have any rules associated with them; they point to the fact that the play experience evolves as characters gain levels.\n\n### Tier 1 (Levels 1–4)\n\nIn tier 1, characters are apprentice adventurers, though they are already set apart from the broader populace by virtue of their extraordinary abilities. They learn their starting class features and choose a subclass. The threats they face usually pose a danger to local farmsteads or villages.\n\n### Tier 2 (Levels 5–10)\n\nIn tier 2, characters are full-fledged adventurers. Spellcasters gain iconic spells such as *Fireball*, *Lightning Bolt*, and *Raise Dead*. Most weapon-focused classes gain the ability to make multiple attacks in a round. The characters now face dangers that threaten cities and kingdoms.\n\n### Tier 3 (Levels 11–16)\n\nIn tier 3, characters have reached a level of power that makes them special among adventurers. At level 11, many spellcasters learn reality-altering spells. Other characters gain features that allow them to make more attacks or to do more impressive things with those attacks. These adventurers often confront threats to whole regions.\n\n### Tier 4 (Levels 17–20)\n\nAt tier 4, characters achieve the pinnacle of their class features, becoming heroic archetypes. The fate of the world or even the order of the multiverse might hang in the balance during their adventures.",
+    "document": "srd-2024",
+    "index": 6,
+    "initialHeaderLevel": 2,
+    "name": "Gaining a Level",
+    "ruleset": "srd-2024_create-your-character"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_create-your-character_gaining-a-level"
+},
+{
+  "fields": {
+    "desc": "Your GM might start your group's characters at a level higher than 1. It is particularly recommended to start at level 3 if your group is composed of seasoned D&D players.\n\n### Creating Your Character\n\nCreating a higher-level character uses the same character-creation steps outlined in this chapter and the rules for advancing beyond level 1 provided in the \"Level Advancement\" section. You begin with the minimum amount of XP required to reach your starting level. For example, if the GM starts you at level 10, you have 64,000 XP.\n\n### Bonus Feats at Level 20\n\nA GM can use feats as a form of advancement after characters reach level 20 to provide greater power to characters who have no more levels to gain. With this approach, each character gains one feat of their choice for every 30,000 XP the character earns above 355,000 XP. Epic Boon feats are especially appropriate for these bonus feats, but a player can choose any feat for which their level 20 character qualifies.\n\n### Starting Equipment\n\nThe GM decides whether your character starts with more than the standard equipment for a level 1 character, possibly even one or more magic items. The Starting Equipment at Higher Levels table is a guide for the GM.\n\nAlso, check with your GM about what equipment is available for you to buy with your starting money. For example, the firearms described in \"Equipment\" are too expensive for level 1 characters, but they might be available for purchase if your GM allows them.\n\n|Starting Level|Equipment and Money|Magic Items|\n|---|---|---|\n|2–4|Normal starting equipment|1 Common|\n|5–10|500 GP plus 1d10 × 25 GP plus normal starting equipment|1 Common, 1 Uncommon|\n|11–16|5,000 gp plus 1d10 × 250 GP plus normal starting equipment| 2 Common, 3 Uncommon, 1 Rare|\n|17–20|20,000 GP plus 1d10 × 250 GP plus normal starting equipment| 2 Common, 4 Uncommon, 3 Rare, 1 Very Rare|",
+    "document": "srd-2024",
+    "index": 7,
+    "initialHeaderLevel": 2,
+    "name": "Starting at Higher Levels",
+    "ruleset": "srd-2024_create-your-character"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_create-your-character_starting-at-higher-levels"
+},
+{
+  "fields": {
+    "desc": "To qualify for a new class, you must have a score of at least 13 in the primary ability of the new class and your current classes. For example, a Barbarian who decides to multiclass into the Druid class must have Strength and Wisdom scores of 13 or higher, since Strength is the primary ability for Barbarians and Wisdom is the primary ability for Druids.",
+    "document": "srd-2024",
+    "index": 1,
+    "initialHeaderLevel": 2,
+    "name": "Prerequisites",
+    "ruleset": "srd-2024_multiclassing"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_multiclassing_prerequisties"
+},
+{
+  "fields": {
+    "desc": "The Experience Point cost to gain a level is based on your total character level, not your level in a particular class, as shown in the Character Advancement table in \"Character Creation.\" For example, if you are a level 6 Cleric / level 1 Fighter, you must gain enough XP to reach level 8 before you can take your second level as a Fighter or your seventh level as a Cleric.",
+    "document": "srd-2024",
+    "index": 2,
+    "initialHeaderLevel": 2,
+    "name": "Experience Points",
+    "ruleset": "srd-2024_multiclassing"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_multiclassing_experience-points"
+},
+{
+  "fields": {
+    "desc": "You gain the Hit Points from your new class as described for levels after 1. You gain the level 1 Hit Points for a class only when your total character level is 1.\n\nAdd together the Hit Dice granted by all your classes to form your pool of Hit Dice. If these dice are the same die type, you can pool them together. For example, both the Fighter and the Paladin have a d10 Hit Die, so if you are a level 5 Fighter / level 5 Paladin, you have ten d10 Hit Dice. If your classes give you Hit Dice of different types, track them separately. If you are a level 5 Cleric / level 5 Paladin, for example, you have five d8 Hit Dice and five d10 Hit Dice.",
+    "document": "srd-2024",
+    "index": 3,
+    "initialHeaderLevel": 2,
+    "name": "Hit Points and Hit Point Dice",
+    "ruleset": "srd-2024_multiclassing"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_multiclassing_hit-points"
+},
+{
+  "fields": {
+    "desc": "When you gain your first level in a class other than your initial class, you gain only some of the new class's starting proficiencies, as detailed in each class's description in \"Classes.\"\n\n",
+    "document": "srd-2024",
+    "index": 4,
+    "initialHeaderLevel": 2,
+    "name": "Proficiencies",
+    "ruleset": "srd-2024_multiclassing"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_multiclassing_proficiencies"
+},
+{
+  "fields": {
+    "desc": "When you gain a new level in a class, you get its features for that level. A few features have additional rules when you're multiclassing. Check the information about multiclassing included in each of your classes' descriptions.\n\nSpecial rules apply to Extra Attack, Spellcasting, and features (such as Unarmored Defense) that give you alternative ways to calculate your Armor Class.",
+    "document": "srd-2024",
+    "index": 5,
+    "initialHeaderLevel": 2,
+    "name": "Class Features",
+    "ruleset": "srd-2024_multiclassing"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_multiclassing_class-features"
+},
+{
+  "fields": {
+    "desc": "If you have multiple ways to calculate your Armor Class, you can benefit from only one at a time. For example, a Monk/Sorcerer with a Monk's Unarmored Defense feature and a Sorcerer's Draconic Resilience feature must choose only one of those features as a way to calculate Armor Class.",
+    "document": "srd-2024",
+    "index": 6,
+    "initialHeaderLevel": 2,
+    "name": "Armor Class",
+    "ruleset": "srd-2024_multiclassing"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_multiclassing_armor-class"
+},
+{
+  "fields": {
+    "desc": "If you gain the Extra Attack feature from more than one class, the features don't stack. You can't make more than two attacks with this feature unless you have a feature that says you can (such as the Fighter's Two Extra Attacks feature).\n\nSimilarly, the Warlock's Thirsting Blade invocation, which grants you the Extra Attack feature with your pact weapon, doesn't give you additional attacks if you also have Extra Attack.",
+    "document": "srd-2024",
+    "index": 7,
+    "initialHeaderLevel": 2,
+    "name": "Extra Attack",
+    "ruleset": "srd-2024_multiclassing"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_multiclassing_extra-attack"
+},
+{
+  "fields": {
+    "desc": "Your capacity for spellcasting depends partly on your combined levels in all your spellcasting classes and partly on your individual levels in those classes. Once you have the Spellcasting feature from more than one class, use the rules below. If you multiclass but have the Spellcasting feature from only one class, follow the rules for that class.\n\n**Spells Prepared.** You determine what spells you can prepare for each class individually, as if you were a single-classed member of that class. If you are a level 4 Ranger / level 3 Sorcerer, for example, you can prepare five level 1 Ranger spells, and you can prepare six Sorcerer spells of level 1 or 2 (as well as four Sorcerer cantrips).\n\nEach spell you prepare is associated with one of your classes, and you use the spellcasting ability of that class when you cast the spell.\n\n**Cantrips.** If a cantrip of yours increases in power at higher levels, the increase is based on your total character level, not your level in a particular class, unless the spell says otherwise.\n\n**Spell Slots.** You determine your available spell slots by adding together the following:\n\n- All your levels in the Bard, Cleric, Druid, Sorcerer, and Wizard classes\n- Half your levels (round up) in the Paladin and Ranger classes\n\nThen look up this total level in the Level column of the Multiclass Spellcaster table. You use the slots for that level to cast spells of an appropriate level from any class whose Spellcasting feature you have.\n\nThis table might give you spell slots of a higher level than the spells you prepare. You can use those slots but only to cast your lower-level spells. If a lower-level spell that you cast, like *Burning Hands*, has an enhanced effect when cast at a higher level, you can use the enhanced effect as normal.\n\nFor example, if you are a level 4 Ranger / level 3 Sorcerer, you count as a level 5 character when determining your spell slots, counting all your levels as a Sorcerer and half your Ranger levels. As shown in the Multiclass Spellcaster table, you have four level 1 spell slots, three level 2 slots, and two level 3 slots. However, you can't prepare any level 3 spells, nor can you prepare any level 2 Ranger spells. You can use the spell slots of those levels to cast the spells you do prepare—and potentially enhance their effects.\n\n**Pact Magic.** If you have the Pact Magic feature from the Warlock class and the Spellcasting feature, you can use the spell slots you gain from Pact Magic to cast spells you have prepared from classes with the Spellcasting feature, and you can use the spell slots you gain from the Spellcasting feature to cast Warlock spells you have prepared.\n\n|Level|1|2|3|4|5|6|7|8|9|\n|---|---|---|---|---|---|---|---|---|---|\n|1|2|—|—|—|—|—|—|—|—|\n|2|3|—|—|—|—|—|—|—|—|\n|3|4|2|—|—|—|—|—|—|—|\n|4|4|3|—|—|—|—|—|—|—|\n|5|4|3|2|—|—|—|—|—|—|\n|6|4|3|3|—|—|—|—|—|—|\n|7|4|3|3|1|—|—|—|—|—|\n|8|4|3|3|2|—|—|—|—|—|\n|9|4|3|3|3|1|—|—|—|—|\n|10|4|3|3|3|2|—|—|—|—|\n|11|4|3|3|3|2|1|—|—|—|\n|12|4|3|3|3|2|1|—|—|—|\n|13|4|3|3|3|2|1|1|—|—|\n|14|4|3|3|3|2|1|1|—|—|\n|15|4|3|3|3|2|1|1|1|—|\n|16|4|3|3|3|2|1|1|1|—|\n|17|4|3|3|3|2|1|1|1|1|\n|18|4|3|3|3|3|1|1|1|1|\n|19|4|3|3|3|3|2|1|1|1|\n|20|4|3|3|3|3|2|2|1|1|",
+    "document": "srd-2024",
+    "index": 8,
+    "initialHeaderLevel": 2,
+    "name": "Spellcasting",
+    "ruleset": "srd-2024_multiclassing"
+  },
+  "model": "api_v2.rule",
+  "pk": "srd-2024_multiclassing_spellcasting"
 }
 ]
