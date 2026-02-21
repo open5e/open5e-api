@@ -142,7 +142,13 @@ class Command(BaseCommand):
                             doc_key=doc.key,
                             base_path=options['dir'],
                             format=options['format'])
-                        write_queryset_data(model_path, modelq, format=options['format'])
+                        # CrossReference fixtures use natural keys for ContentType (loaddata supports them).
+                        write_queryset_data(
+                            model_path,
+                            modelq,
+                            format=options['format'],
+                            use_natural_foreign_keys=(model.__name__ == 'CrossReference'),
+                        )
 
                 self.stdout.write(self.style.SUCCESS(
                     'Wrote {} to {}'.format(doc.key, doc_path)))
@@ -182,7 +188,7 @@ def get_filepath_by_model(model_name, app_label, pub_key=None, doc_key=None, bas
             return "/".join((base_path, root_folder_name, doc_key, model_name+file_ext))
 
 
-def write_queryset_data(filepath, queryset, format='json'):
+def write_queryset_data(filepath, queryset, format='json', use_natural_foreign_keys=False):
     if queryset.count() > 0:
         dir = os.path.dirname(filepath)
         if not os.path.exists(dir):
@@ -192,7 +198,14 @@ def write_queryset_data(filepath, queryset, format='json'):
 
         with open(output_filepath, 'w', encoding='utf-8') as f:
             if format=='json':
-                serializers.serialize("json", queryset, indent=2, stream=f, sort_keys=True)
+                serializers.serialize(
+                    "json",
+                    queryset,
+                    indent=2,
+                    stream=f,
+                    sort_keys=True,
+                    use_natural_foreign_keys=use_natural_foreign_keys,
+                )
             if format=='csv':
                 # Create headers:
                 fieldnames = []

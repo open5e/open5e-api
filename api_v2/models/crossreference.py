@@ -3,9 +3,16 @@
 from django.db import models
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from django.utils.text import slugify
 
 from .document import Document
 from api_v2.url_utils import get_reference_url, get_source_url
+
+
+def _crossreference_key_for(source_object_key, anchor, reference_object_key):
+    """Return deterministic key for a CrossReference. Used by model and migration."""
+    slug = slugify(anchor)[:80] if anchor else ""
+    return f"{source_object_key}_{slug}_{reference_object_key}"
 
 
 class CrossReference(models.Model):
@@ -15,6 +22,12 @@ class CrossReference(models.Model):
     The source is the object that contains the description. The reference is the object 
     being linked to. document is always the source object's document.
     """
+
+    key = models.CharField(
+        primary_key=True,
+        max_length=300,
+        help_text="Deterministic key: source_object_key_slugified_anchor_reference_object_key.",
+    )
 
     document = models.ForeignKey(
         Document,
@@ -53,6 +66,11 @@ class CrossReference(models.Model):
         help_text="The text in the source's description to highlight and link to the reference.",
     )
 
+    @staticmethod
+    def key_for(source_object_key, anchor, reference_object_key):
+        """Return the deterministic primary key for this (source, anchor, reference)."""
+        return _crossreference_key_for(source_object_key, anchor, reference_object_key)
+
     def reference_api_url(self, request=None):
         """Return the v2 API URL for the object this CrossReference points to (the reference)."""
         return get_reference_url(self, request) or ""
@@ -63,7 +81,7 @@ class CrossReference(models.Model):
 
     class Meta:
         verbose_name_plural = "crossreferences"
-        ordering = ["source_content_type", "source_object_key", "id"]
+        ordering = ["source_content_type", "source_object_key", "key"]
         indexes = [
             models.Index(fields=["document"]),
             models.Index(fields=["source_content_type", "source_object_key"]),
