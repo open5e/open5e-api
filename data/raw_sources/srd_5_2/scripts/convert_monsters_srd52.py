@@ -567,6 +567,126 @@ def parse_actions(text: str, creature_pk: str) -> Tuple[List[Dict[str, Any]], Li
     
     return actions, all_attacks
 
+def parse_bonus_actions(text: str, creature_pk: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """Parse creature bonus actions and return both actions and attacks."""
+    actions = []
+    all_attacks = []
+    order = 0
+    
+    # Find bonus actions section
+    bonus_actions_match = re.search(r'### Bonus Actions\s*\n(.*?)(?=### |$)', text, re.DOTALL)
+    if bonus_actions_match:
+        bonus_actions_text = bonus_actions_match.group(1)
+        
+        # Split by action headers (***Name.***)
+        action_pattern = r'\*\*\*([^*]+)\.\*\*\*\s*(.*?)(?=\*\*\*|$)'
+        action_matches = re.findall(action_pattern, bonus_actions_text, re.DOTALL)
+        
+        for action_name, action_desc in action_matches:
+            action_name = clean_text(action_name)
+            action_desc = clean_text(action_desc)
+            
+            if action_name and action_desc:
+                action_pk = f"{creature_pk}_{action_name.lower().replace(' ', '-').replace('(', '').replace(')', '').replace('/', '-')}"
+                
+                # Determine uses
+                uses_type = None
+                uses_param = None
+                
+                if 'recharge' in action_name.lower():
+                    uses_type = "RECHARGE"
+                    recharge_match = re.search(r'recharge\s+(\d+)', action_name.lower())
+                    if recharge_match:
+                        uses_param = int(recharge_match.group(1))
+                elif '/day' in action_name.lower():
+                    uses_type = "PER_DAY"
+                    day_match = re.search(r'(\d+)/day', action_name.lower())
+                    if day_match:
+                        uses_param = int(day_match.group(1))
+                
+                actions.append({
+                    "model": "api_v2.creatureaction",
+                    "pk": action_pk,
+                    "fields": {
+                        "name": action_name,
+                        "desc": action_desc,
+                        "parent": creature_pk,
+                        "uses_type": uses_type,
+                        "uses_param": uses_param,
+                        "action_type": "BONUS_ACTION",
+                        "form_condition": None,
+                        "order": order
+                    }
+                })
+                
+                # Parse attacks from description
+                attacks = parse_attack_from_description(action_desc, action_name, action_pk)
+                all_attacks.extend(attacks)
+                
+                order += 1
+    
+    return actions, all_attacks
+
+def parse_reactions(text: str, creature_pk: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """Parse creature reactions and return both actions and attacks."""
+    actions = []
+    all_attacks = []
+    order = 0
+    
+    # Find reactions section
+    reactions_match = re.search(r'### Reactions\s*\n(.*?)(?=### |$)', text, re.DOTALL)
+    if reactions_match:
+        reactions_text = reactions_match.group(1)
+        
+        # Split by action headers (***Name.***)
+        action_pattern = r'\*\*\*([^*]+)\.\*\*\*\s*(.*?)(?=\*\*\*|$)'
+        action_matches = re.findall(action_pattern, reactions_text, re.DOTALL)
+        
+        for action_name, action_desc in action_matches:
+            action_name = clean_text(action_name)
+            action_desc = clean_text(action_desc)
+            
+            if action_name and action_desc:
+                action_pk = f"{creature_pk}_{action_name.lower().replace(' ', '-').replace('(', '').replace(')', '').replace('/', '-')}"
+                
+                # Determine uses
+                uses_type = None
+                uses_param = None
+                
+                if 'recharge' in action_name.lower():
+                    uses_type = "RECHARGE"
+                    recharge_match = re.search(r'recharge\s+(\d+)', action_name.lower())
+                    if recharge_match:
+                        uses_param = int(recharge_match.group(1))
+                elif '/day' in action_name.lower():
+                    uses_type = "PER_DAY"
+                    day_match = re.search(r'(\d+)/day', action_name.lower())
+                    if day_match:
+                        uses_param = int(day_match.group(1))
+                
+                actions.append({
+                    "model": "api_v2.creatureaction",
+                    "pk": action_pk,
+                    "fields": {
+                        "name": action_name,
+                        "desc": action_desc,
+                        "parent": creature_pk,
+                        "uses_type": uses_type,
+                        "uses_param": uses_param,
+                        "action_type": "REACTION",
+                        "form_condition": None,
+                        "order": order
+                    }
+                })
+                
+                # Parse attacks from description
+                attacks = parse_attack_from_description(action_desc, action_name, action_pk)
+                all_attacks.extend(attacks)
+                
+                order += 1
+    
+    return actions, all_attacks
+
 def parse_legendary_actions(text: str, creature_pk: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     """Parse legendary actions and return both actions and attacks."""
     actions = []
@@ -721,9 +841,11 @@ def parse_monster(monster_text: str) -> Tuple[Dict[str, Any], List[Dict[str, Any
     traits = parse_traits(full_text, creature_pk)
     actions, action_attacks = parse_actions(full_text, creature_pk)
     legendary_actions, legendary_attacks = parse_legendary_actions(full_text, creature_pk)
+    bonus_actions, bonus_action_attacks = parse_bonus_actions(full_text, creature_pk)
+    reactions, reaction_attacks = parse_reactions(full_text, creature_pk)
     
-    all_actions = actions + legendary_actions
-    all_attacks = action_attacks + legendary_attacks
+    all_actions = actions + legendary_actions + bonus_actions + reactions
+    all_attacks = action_attacks + legendary_attacks + bonus_action_attacks + reaction_attacks
     
     return creature_data, traits, all_actions, all_attacks
 
@@ -731,7 +853,7 @@ def main():
     """Main function to convert monsters and animals."""
     monster_file = Path("../sections/13_monsters_az.md")
     animal_file = Path("../sections/14_animals.md")
-    output_dir = Path("../../../v2/wizards-of-the-coast/srd-2024/")
+    output_dir = Path("../../../v2/wizards-of-the-coast/temp/")
     
     if not monster_file.exists():
         print(f"Error: Monster file {monster_file} not found")
