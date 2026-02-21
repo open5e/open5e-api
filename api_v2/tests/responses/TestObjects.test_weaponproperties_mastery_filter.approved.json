@@ -4,6 +4,10 @@
     "previous": null,
     "results": [
         {
+            "crossreferences": {
+                "from": [],
+                "to": []
+            },
             "desc": "If you hit a creature with a melee attack roll using this weapon, you can make a melee attack roll with the weapon against a second creature within 5 feet of the first that is also within your reach. On a hit, the second creature takes the weapon's damage, but don't add your ability modifier to that damage unless that modifier is negative. You can make this extra attack only once per turn.",
             "document": "http://localhost:8000/v2/documents/srd-2024/",
             "key": "srd-2024_cleave-mastery",
@@ -12,6 +16,10 @@
             "url": "http://localhost:8000/v2/weaponproperties/srd-2024_cleave-mastery/"
         },
         {
+            "crossreferences": {
+                "from": [],
+                "to": []
+            },
             "desc": "If your attack roll with this weapon misses a creature, you can deal damage to that creature equal to the ability modifier you used to make the attack roll. This damage is the same type dealt by the weapon, and the damage can be increased only by increasing the ability modifier.",
             "document": "http://localhost:8000/v2/documents/srd-2024/",
             "key": "srd-2024_graze-mastery",
@@ -20,6 +28,15 @@
             "url": "http://localhost:8000/v2/weaponproperties/srd-2024_graze-mastery/"
         },
         {
+            "crossreferences": {
+                "from": [],
+                "to": [
+                    {
+                        "anchor": "Light",
+                        "url": "http://localhost:8000/v2/weaponproperties/srd-2024_light-wp/"
+                    }
+                ]
+            },
             "desc": "When you make the extra attack of the Light property, you can make it as part of the Attack action instead of as a Bonus Action. You can make this extra attack only once per turn.",
             "document": "http://localhost:8000/v2/documents/srd-2024/",
             "key": "srd-2024_nick-mastery",
