@@ -76,6 +76,16 @@ def run(
                 )
             )
 
+    # Deduplicate by key (same key can occur when different source content types share a pk, e.g. ClassFeature and CreatureTrait).
+    seen_keys = set()
+    deduped = []
+    for cr in to_create:
+        if cr.key in seen_keys:
+            continue
+        seen_keys.add(cr.key)
+        deduped.append(cr)
+    to_create = deduped
+
     if dry_run:
         replace_count = 0
         if replace_existing:

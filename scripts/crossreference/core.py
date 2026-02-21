@@ -26,7 +26,7 @@ EXCLUDED_REFERENCE_NAMES = frozenset({"1st", "2nd", "3rd", "4th", "5th", "6th", 
 # Reference names that are ambiguous (common word vs named entity). When these appear
 # lowercase in text we exclude the match unless context suggests the entity (e.g. spell).
 AMBIGUOUS_REFERENCE_NAMES_NEEDING_CONTEXT = frozenset({
-    "fly", "sleep", "light", "resistance",
+    "fly", "sleep", "light", "resistance", "magic weapon", "armor",
 })
 
 
