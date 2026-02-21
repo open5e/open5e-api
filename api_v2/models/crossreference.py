@@ -1,4 +1,4 @@
-"""The model for a Crossreference."""
+"""The model for a CrossReference."""
 
 from django.db import models
 from django.contrib.contenttypes.fields import GenericForeignKey
@@ -22,11 +22,11 @@ class CrossReference(models.Model):
         help_text="Document the source object belongs to (denormalized for filtering).",
     )
 
-    # Source: the object that with the description
+    # Source: the object that has the description
     source_content_type = models.ForeignKey(
         ContentType,
         on_delete=models.CASCADE,
-        related_name="Crossreferences_as_source",
+        related_name="crossreferences_as_source",
         help_text="The model of the object that contains the description.",
     )
     source_object_key = models.CharField(
@@ -39,8 +39,8 @@ class CrossReference(models.Model):
     reference_content_type = models.ForeignKey(
         ContentType,
         on_delete=models.CASCADE,
-        related_name="Crossreferences_as_reference",
-        help_text="The model of the object this Crossreference points to.",
+        related_name="crossreferences_as_reference",
+        help_text="The model of the object this CrossReference points to.",
     )
     reference_object_key = models.CharField(
         max_length=100,
