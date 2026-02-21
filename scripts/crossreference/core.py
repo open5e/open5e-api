@@ -23,6 +23,12 @@ EXCLUDED_KEY_SUBSTRINGS = ("spellcasting-levels",)
 # Reference names that are never suggested as links (e.g. ordinal table headers like "1st", "6th").
 EXCLUDED_REFERENCE_NAMES = frozenset({"1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"})
 
+# Reference names that are ambiguous (common word vs named entity). When these appear
+# lowercase in text we exclude the match unless context suggests the entity (e.g. spell).
+AMBIGUOUS_REFERENCE_NAMES_NEEDING_CONTEXT = frozenset({
+    "fly", "sleep", "light", "resistance",
+})
+
 
 # Map api_v2 model name to URL path segment (router basename) for building /v2/{basename}/{pk}/.
 MODEL_TO_URL_BASENAME = {
@@ -339,11 +345,14 @@ def _get_parent_keys_to_skip(obj) -> set[tuple[int, str]]:
 def _match_likely_common_word(ref_name: str, matched_text: str) -> bool:
     """
     Return True if this match is likely the common word rather than the named entity.
-    When the reference name is capitalized (e.g. "Fly", "Sleep") but the occurrence
-    in the source is all lowercase ("fly", "sleep"), treat it as the common word
-    and exclude it to reduce false positives.
+    Only applies to ambiguous names (see AMBIGUOUS_REFERENCE_NAMES_NEEDING_CONTEXT):
+    when such a reference name is capitalized (e.g. "Fly", "Resistance") but the
+    occurrence in the source is all lowercase ("fly", "resistance"), treat it as
+    the common word and exclude it to reduce false positives.
     """
     if not ref_name or not matched_text:
+        return False
+    if ref_name.lower() not in AMBIGUOUS_REFERENCE_NAMES_NEEDING_CONTEXT:
         return False
     if not any(c.isupper() for c in ref_name):
         return False
