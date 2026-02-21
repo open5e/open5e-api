@@ -99,6 +99,9 @@ class Document(HasName, HasDescription):
 
         return stats
 
+    def is_crossreference_source(self):
+        return False
+
 
 class License(HasName, HasDescription):
     key = models.CharField(
@@ -128,6 +131,9 @@ class GameSystem(HasName, HasDescription):
         blank=True,
         help_text="Short code prepended to content keys."
     )
+
+    def is_crossreference_source(self):
+        return False
 
 
 class FromDocument(models.Model):

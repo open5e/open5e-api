@@ -178,6 +178,13 @@ class HasDescription(models.Model):
         ]
         return {"to": to_list, "from": from_list}
 
+    def is_crossreference_source(self):
+        """
+        Return True if this instance should expose crossreferences in the API.
+        Override to return False for models that have desc but should not (e.g. Document, GameSystem).
+        """
+        return True
+
     class Meta:
         abstract = True
 

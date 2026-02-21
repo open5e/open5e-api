@@ -2,16 +2,6 @@
 from rest_framework import serializers
 
 
-def _is_crossreference_source(instance):
-    """Return True if this object is a crossreference source (has desc, exclude Document/GameSystem/Publisher)."""
-    if not hasattr(instance, "crossreferences"):
-        return False
-    name = instance.__class__.__name__
-    if name in ("Document", "GameSystem", "Publisher"):
-        return False
-    return True
-
-
 class GameContentSerializer(serializers.HyperlinkedModelSerializer):  
 
     """
@@ -103,7 +93,7 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
 
     def get_crossreferences(self, obj):
         """Return crossreferences for API output; None for non-sources."""
-        if not _is_crossreference_source(obj):
+        if not (hasattr(obj, "is_crossreference_source") and obj.is_crossreference_source()):
             return None
         return obj.get_crossreferences_to_from(self.context.get("request"))
 
