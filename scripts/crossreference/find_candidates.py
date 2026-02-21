@@ -9,6 +9,7 @@ from scripts.crossreference.core import (
     get_source_models_and_filters_for_document,
     load_blacklist,
     write_crossreference_report_files,
+    _is_crossreference_source,
 )
 
 
@@ -53,6 +54,8 @@ def run(
         for obj in qs:
             pk = getattr(obj, "pk", None)
             if pk is None:
+                continue
+            if not _is_crossreference_source(obj):
                 continue
             pk_str = str(pk)
             if pk_str in source_blacklist:

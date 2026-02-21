@@ -84,13 +84,6 @@ def build_object_url(content_type: ContentType, object_key: str) -> str:
 
 
 # Model classification for document scoping (aligned with export command).
-SKIPPED_MODEL_NAMES = [
-    "Document",
-    "GameSystem",
-    "License",
-    "Publisher",
-    "SearchResult",
-]
 CHILD_MODEL_NAMES = [
     "SpeciesTrait",
     "FeatBenefit",
@@ -205,6 +198,15 @@ def _model_has_description(model) -> bool:
     return any(f.name == "desc" for f in model._meta.get_fields())
 
 
+def _is_crossreference_source(obj) -> bool:
+    """Return True if this object should be treated as a crossreference source (API and scripts)."""
+    return bool(
+        getattr(obj, "is_crossreference_source", None)
+        and callable(getattr(obj, "is_crossreference_source", None))
+        and obj.is_crossreference_source()
+    )
+
+
 def get_source_models_and_filters_for_document(doc, model_name: str | None = None):
     """
     Return a list of (model, filter_kwargs) for all api_v2 models that have
@@ -213,12 +215,11 @@ def get_source_models_and_filters_for_document(doc, model_name: str | None = Non
     model_name: If set, only include this model (e.g. 'Spell', 'Item').
 
     Each filter_kwargs is suitable for model.objects.filter(**filter_kwargs).
+    Callers must filter iterated objects by _is_crossreference_source(obj).
     """
     result = []
     for model in apps.get_models():
         if model._meta.app_label != "api_v2":
-            continue
-        if model.__name__ in SKIPPED_MODEL_NAMES:
             continue
         if not _model_has_description(model):
             continue
@@ -230,6 +231,9 @@ def get_source_models_and_filters_for_document(doc, model_name: str | None = Non
         elif model.__name__ in CHILD_MODEL_NAMES:
             filter_kwargs = {"parent__document": doc}
         else:
+            # Only include models that belong to a document (have document FK).
+            if not any(f.name == "document" for f in model._meta.get_fields()):
+                continue
             filter_kwargs = {"document": doc}
 
         result.append((model, filter_kwargs))
@@ -257,9 +261,11 @@ def get_crossreferences_by_source_document(
 
     for model, filter_kwargs in pairs:
         ct = ContentType.objects.get_for_model(model)
-        keys_in_scope = set(
-            model.objects.filter(**filter_kwargs).values_list("pk", flat=True)
-        )
+        qs = model.objects.filter(**filter_kwargs)
+        keys_in_scope = set()
+        for obj in qs.iterator(chunk_size=500):
+            if _is_crossreference_source(obj):
+                keys_in_scope.add(str(obj.pk))
         if not keys_in_scope:
             continue
         qs = CrossReference.objects.filter(
@@ -521,6 +527,8 @@ def identify_crossreferences_from_text(
                 continue
             if any(sub in pk_str for sub in EXCLUDED_KEY_SUBSTRINGS):
                 continue
+            if not _is_crossreference_source(obj):
+                continue
             desc = obj.desc or ""
             desc_len = len(desc)
             src_ct = ContentType.objects.get_for_model(model)
@@ -615,6 +623,8 @@ def build_crossreference_reports(
                 pk_str = str(obj.pk)
                 if pk_str in source_blacklist:
                     continue
+                if not _is_crossreference_source(obj):
+                    continue
                 ct = ContentType.objects.get_for_model(model)
                 url = build_object_url(ct, pk_str)
                 key_src = (ct.id, pk_str)
@@ -668,6 +678,8 @@ def build_crossreference_reports(
         ):
             pk_str = str(obj.pk)
             if pk_str in source_blacklist:
+                continue
+            if not _is_crossreference_source(obj):
                 continue
             ct = ContentType.objects.get_for_model(model)
             url = build_object_url(ct, pk_str)

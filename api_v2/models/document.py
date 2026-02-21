@@ -110,6 +110,9 @@ class License(HasName, HasDescription):
         help_text="Unique key for the License."
     )
 
+    def is_crossreference_source(self):
+        return False
+
 
 class Publisher(HasName):
     key = models.CharField(
