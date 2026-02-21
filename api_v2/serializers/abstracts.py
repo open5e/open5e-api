@@ -1,5 +1,23 @@
 """Abstract serializers."""
+from drf_spectacular.utils import extend_schema_field, inline_serializer
 from rest_framework import serializers
+
+
+class _CrossReferenceLinkSerializer(serializers.Serializer):
+    """One link in crossreferences to/from lists; for OpenAPI schema only."""
+
+    anchor = serializers.CharField()
+    url = serializers.URLField()
+
+
+# OpenAPI schema for crossreferences: { "to": [{ anchor, url }], "from": [...] }
+_crossreferences_schema = inline_serializer(
+    name="CrossReferences",
+    fields={
+        "to": _CrossReferenceLinkSerializer(many=True),
+        "from": _CrossReferenceLinkSerializer(many=True),
+    },
+)
 
 
 class GameContentSerializer(serializers.HyperlinkedModelSerializer):  
@@ -98,6 +116,7 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
             fields["crossreferences"] = serializers.SerializerMethodField()
         return fields
 
+    @extend_schema_field(_crossreferences_schema)
     def get_crossreferences(self, obj):
         """Return crossreferences for API output; None for non-sources."""
         if not (hasattr(obj, "is_crossreference_source") and obj.is_crossreference_source()):
