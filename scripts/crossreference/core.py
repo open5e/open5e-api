@@ -184,27 +184,21 @@ def load_blacklist(file_path: str | None) -> set[str]:
     """
     Load a blacklist from a file: one object key per line (stripped, empty lines skipped).
     If file_path is None or file is missing, return empty set.
-    Relative paths are resolved against the project root (Django BASE_DIR) when the
-    path as given does not exist, so blacklists load correctly regardless of cwd.
+    Relative paths are always resolved against the project root (Django BASE_DIR) so
+    blacklists load correctly regardless of current working directory.
     """
     if not file_path:
         return set()
     path = Path(file_path)
-    if not path.exists():
-        # Resolve relative paths against project root so blacklists load regardless of cwd
+    if not path.is_absolute():
         try:
             from django.conf import settings
             root = Path(settings.BASE_DIR)
-            if not path.is_absolute():
-                alt = root / path
-                if alt.exists():
-                    path = alt
-                else:
-                    return set()
-            else:
-                return set()
+            path = (root / path).resolve()
         except Exception:
             return set()
+    if not path.exists():
+        return set()
     keys = set()
     with open(path, encoding="utf-8") as f:
         for line in f:

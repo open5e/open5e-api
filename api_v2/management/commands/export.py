@@ -143,11 +143,13 @@ class Command(BaseCommand):
                             base_path=options['dir'],
                             format=options['format'])
                         # CrossReference fixtures use natural keys for ContentType (loaddata supports them).
+                        # Always write CrossReference so stale rows (e.g. blacklisted refs) are removed from the fixture.
                         write_queryset_data(
                             model_path,
                             modelq,
                             format=options['format'],
                             use_natural_foreign_keys=(model.__name__ == 'CrossReference'),
+                            always_write_if_empty=(model.__name__ == 'CrossReference'),
                         )
 
                 self.stdout.write(self.style.SUCCESS(
@@ -188,8 +190,9 @@ def get_filepath_by_model(model_name, app_label, pub_key=None, doc_key=None, bas
             return "/".join((base_path, root_folder_name, doc_key, model_name+file_ext))
 
 
-def write_queryset_data(filepath, queryset, format='json', use_natural_foreign_keys=False):
-    if queryset.count() > 0:
+def write_queryset_data(filepath, queryset, format='json', use_natural_foreign_keys=False, always_write_if_empty=False):
+    count = queryset.count()
+    if count > 0 or always_write_if_empty:
         dir = os.path.dirname(filepath)
         if not os.path.exists(dir):
             os.makedirs(dir)
@@ -197,16 +200,19 @@ def write_queryset_data(filepath, queryset, format='json', use_natural_foreign_k
         output_filepath = filepath
 
         with open(output_filepath, 'w', encoding='utf-8') as f:
-            if format=='json':
-                serializers.serialize(
-                    "json",
-                    queryset,
-                    indent=2,
-                    stream=f,
-                    sort_keys=True,
-                    use_natural_foreign_keys=use_natural_foreign_keys,
-                )
-            if format=='csv':
+            if format == 'json':
+                if count > 0:
+                    serializers.serialize(
+                        "json",
+                        queryset,
+                        indent=2,
+                        stream=f,
+                        sort_keys=True,
+                        use_natural_foreign_keys=use_natural_foreign_keys,
+                    )
+                else:
+                    f.write("[]")
+            if format == 'csv' and count > 0:
                 # Create headers:
                 fieldnames = []
                 for field in queryset.first().__dict__.keys():

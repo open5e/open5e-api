@@ -37,8 +37,46 @@
     ],
     "concentration": false,
     "crossreferences": {
-        "from": [],
-        "to": []
+        "from": [
+            {
+                "anchor": "Prestidigitation",
+                "url": "http://localhost:8000/v2/creatures/srd_archmage_spellcasting/"
+            },
+            {
+                "anchor": "Prestidigitation",
+                "url": "http://localhost:8000/v2/creatures/srd_gynosphinx_spellcasting/"
+            },
+            {
+                "anchor": "Prestidigitation",
+                "url": "http://localhost:8000/v2/creatures/srd_lich_spellcasting/"
+            },
+            {
+                "anchor": "Prestidigitation",
+                "url": "http://localhost:8000/v2/creatures/srd_mage_spellcasting/"
+            }
+        ],
+        "to": [
+            {
+                "anchor": "Candle",
+                "url": "http://localhost:8000/v2/items/srd_candle/"
+            },
+            {
+                "anchor": "Range",
+                "url": "http://localhost:8000/v2/rules/srd_attacking_range/"
+            },
+            {
+                "anchor": "Symbol",
+                "url": "http://localhost:8000/v2/spells/srd_symbol/"
+            },
+            {
+                "anchor": "Time",
+                "url": "http://localhost:8000/v2/rulesets/srd_time/"
+            },
+            {
+                "anchor": "Torch",
+                "url": "http://localhost:8000/v2/items/srd_torch/"
+            }
+        ]
     },
     "damage_roll": "",
     "damage_types": [],
