@@ -67,7 +67,6 @@ class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     filterset_class = CreatureFilterSet
     
     prefetch_related_fields = [
-        'crossreferences__reference_content_type',
         'actions',
         'actions__attacks',
         'actions__attacks__damage_type',

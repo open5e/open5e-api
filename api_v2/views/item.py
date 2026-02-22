@@ -190,7 +190,7 @@ class WeaponViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.WeaponSerializer
     filterset_class = WeaponFilterSet
 
-    prefetch_related_fields = ['crossreferences__reference_content_type', 'document', 'damage_type', 'properties__property']
+    prefetch_related_fields = ['document', 'damage_type', 'properties__property']
 
 class ArmorFilterSet(FilterSet):
 
