@@ -26,5 +26,5 @@ class FeatViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     filterset_class = FeatFilterSet
 
     select_related_fields = []
-    prefetch_related_fields = ['benefits', 'document']
+    prefetch_related_fields = ['crossreferences__reference_content_type', 'benefits', 'document']
 

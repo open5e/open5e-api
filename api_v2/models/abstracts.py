@@ -153,22 +153,13 @@ class HasDescription(models.Model):
         object_id_field='source_object_key',
     )
 
-    def get_crossreferences_to_from(self):
+    def get_crossreferences_to(self):
         """
-        Return crossreferences as {"to": [...], "from": [...]} of CrossReference
-        instances. The serializer formats them for the API (anchor, url).
+        Return crossreferences where this object is the source (links from this
+        object to others). The serializer formats them for the API (anchor, url).
+        Prefetch-friendly: use obj.crossreferences.all() when prefetch_related is used.
         """
-        from django.contrib.contenttypes.models import ContentType
-
-        from api_v2.models import CrossReference
-
-        to_qs = self.crossreferences.select_related("reference_content_type")
-        ref_ct = ContentType.objects.get_for_model(self)
-        from_qs = CrossReference.objects.filter(
-            reference_content_type=ref_ct,
-            reference_object_key=str(self.pk),
-        ).select_related("source_content_type")
-        return {"to": list(to_qs), "from": list(from_qs)}
+        return list(self.crossreferences.select_related("reference_content_type"))
 
     def is_crossreference_source(self):
         """

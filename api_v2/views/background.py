@@ -28,6 +28,7 @@ class BackgroundViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     filterset_class = BackgroundFilterSet
 
     prefetch_related_fields = [
+        'crossreferences__reference_content_type',
         'benefits',
         'document',
         'document__publisher',

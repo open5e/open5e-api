@@ -40,6 +40,7 @@ class SpellViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
 
     select_related_fields = ['document']
     prefetch_related_fields = [
+        'crossreferences__reference_content_type',
         'classes',
         'document',
         'school',

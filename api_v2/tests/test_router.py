@@ -72,28 +72,12 @@ class CrossReferenceFieldTest(APITestCase):
                 "Item detail should include crossreferences key",
             )
             cr = item["crossreferences"]
-            self.assertIsInstance(cr, dict, "crossreferences should be {to, from}")
+            self.assertIsInstance(cr, dict, "crossreferences should be {to: [...]}")
             self.assertIn("to", cr)
-            self.assertIn("from", cr)
             self.assertIsInstance(cr["to"], list)
-            self.assertIsInstance(cr["from"], list)
-            for entry in cr["to"] + cr["from"]:
+            for entry in cr["to"]:
                 self.assertIn("anchor", entry)
                 self.assertIn("url", entry)
-
-    def test_crossreferences_from_when_object_is_referenced(self):
-        """An object that is the reference of at least one CrossReference has entries in crossreferences.from."""
-        # srd-2024_acid is referenced by other items in the fixture
-        response = self.client.get("/v2/items/srd-2024_acid/?format=json")
-        if response.status_code != 200:
-            return  # fixture may not be loaded
-        item = response.json()
-        self.assertIn("crossreferences", item)
-        from_list = item["crossreferences"]["from"]
-        self.assertIsInstance(from_list, list)
-        for entry in from_list:
-            self.assertIn("anchor", entry)
-            self.assertIn("url", entry)
 
     def test_document_detail_excludes_crossreferences(self):
         """Document responses must not include crossreferences."""

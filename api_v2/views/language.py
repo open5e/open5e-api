@@ -32,6 +32,7 @@ class LanguageViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
 
     select_related_fields = []
     prefetch_related_fields = [
+        'crossreferences__reference_content_type',
         'document',
         'document__gamesystem',
         'document__publisher',

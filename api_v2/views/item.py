@@ -59,6 +59,7 @@ class ItemFilterSet(FilterSet):
 
 # used in ItemViewSet and MagicItemViewSet - factored out for DRYness
 item_prefetch_fields = [
+    'crossreferences__reference_content_type',
     'armor',
     'category',
     'damage_immunities',
@@ -133,6 +134,7 @@ class ItemSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     filterset_class = ItemSetFilterSet
 
     prefetch_related_fields = [
+        'crossreferences__reference_content_type',
         'items',
         'items__document',
         'items__damage_resistances',
@@ -188,7 +190,7 @@ class WeaponViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.WeaponSerializer
     filterset_class = WeaponFilterSet
 
-    prefetch_related_fields = ['document', 'damage_type', 'properties__property']
+    prefetch_related_fields = ['crossreferences__reference_content_type', 'document', 'damage_type', 'properties__property']
 
 class ArmorFilterSet(FilterSet):
 

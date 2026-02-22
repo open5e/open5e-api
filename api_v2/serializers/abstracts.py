@@ -4,18 +4,17 @@ from rest_framework import serializers
 
 
 class _CrossReferenceLinkSerializer(serializers.Serializer):
-    """One link in crossreferences to/from lists; defines API shape and serialization."""
+    """One link in crossreferences.to; defines API shape and serialization."""
 
     anchor = serializers.CharField()
     url = serializers.URLField()
 
 
-# OpenAPI schema for crossreferences: { "to": [{ anchor, url }], "from": [...] }
+# OpenAPI schema for crossreferences: { "to": [{ anchor, url }] }
 _crossreferences_schema = inline_serializer(
     name="CrossReferences",
     fields={
         "to": _CrossReferenceLinkSerializer(many=True),
-        "from": _CrossReferenceLinkSerializer(many=True),
     },
 )
 
@@ -120,22 +119,16 @@ class GameContentSerializer(serializers.HyperlinkedModelSerializer):
 
     @extend_schema_field(_crossreferences_schema)
     def get_crossreferences(self, obj):
-        """Return crossreferences for API output; None for non-sources."""
+        """Return crossreferences for API output; None for non-sources. Uses obj.crossreferences (prefetch-friendly)."""
         if not (hasattr(obj, "is_crossreference_source") and obj.is_crossreference_source()):
             return None
-        raw = obj.get_crossreferences_to_from()
         request = self.context.get("request")
         to_links = [
             {"anchor": cr.anchor, "url": cr.reference_api_url(request)}
-            for cr in raw["to"]
-        ]
-        from_links = [
-            {"anchor": cr.anchor, "url": cr.source_api_url(request)}
-            for cr in raw["from"]
+            for cr in obj.crossreferences.all()
         ]
         return {
             "to": _CrossReferenceLinkSerializer(instance=to_links, many=True).data,
-            "from": _CrossReferenceLinkSerializer(instance=from_links, many=True).data,
         }
 
     def __init__(self, *args, **kwargs):
