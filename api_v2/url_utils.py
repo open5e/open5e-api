@@ -40,7 +40,9 @@ def _get_model_to_basename():
         queryset = getattr(viewset, "queryset", None)
         if queryset is not None:
             model = getattr(queryset, "model", None)
-            if model is not None:
+            if model is not None and model not in result:
+                # Keep the first basename registered for a model as the canonical
+                # one for URL building (e.g. Item -> "items", not "magicitems").
                 result[model] = basename
     return result
 
@@ -49,15 +51,10 @@ def _get_basename_for_object(model, object_key):
     """
     Return the API basename for this model and primary key.
 
-    Item uses two endpoints: magicitems for magic items (rarity set), items otherwise.
-    Other models use the router/REFERENCE_MODEL_TO_BASENAME.
+    Uses the DRF router as the primary source of truth (first-registered
+    basename for each model), and falls back to REFERENCE_MODEL_TO_BASENAME
+    for nested reference models without their own queryset.
     """
-    if model.__name__ == "Item":
-        try:
-            obj = model.objects.get(pk=object_key)
-            return "magicitems" if obj.is_magic_item else "item"
-        except model.DoesNotExist:
-            return "item"
     model_to_basename = _get_model_to_basename()
     basename = model_to_basename.get(model)
     if basename is None:
@@ -112,8 +109,7 @@ def get_reference_url(crossreference, request=None):
 
     Uses Django's reverse() with the api_v2 router (model -> basename from
     router.registry) and REFERENCE_MODEL_TO_BASENAME for nested reference
-    models. For Item, uses magicitems vs items by is_magic_item. If request
-    is provided, returns an absolute URI.
+    models. If request is provided, returns an absolute URI.
     """
     return _build_object_url(
         crossreference.reference_content_type,
@@ -127,8 +123,8 @@ def get_source_url(crossreference, request=None):
     Return the v2 API URL for the source object of this CrossReference.
 
     The source is the object that contains the description and the link.
-    Same basename logic as get_reference_url (including Item -> magicitems/items).
-    If request is provided, returns an absolute URI. Returns None if no URL.
+    Same basename logic as get_reference_url. If request is provided, returns
+    an absolute URI. Returns None if no URL.
     """
     return _build_object_url(
         crossreference.source_content_type,

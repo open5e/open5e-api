@@ -1,5 +1,9 @@
 
+from django.test import SimpleTestCase
 from rest_framework.test import APITestCase
+
+from api_v2 import models as v2_models
+from api_v2 import url_utils
 
 
 class APIV2RootTest(APITestCase):
@@ -187,3 +191,18 @@ class CrossReferenceFieldTest(APITestCase):
                     trait,
                     "Nested creature trait must not include crossreferences",
                 )
+
+
+class RouterBasenameTests(SimpleTestCase):
+    """Ensure that each model has a single canonical basename for URL building."""
+
+    def test_item_uses_items_basename_for_urls(self):
+        """
+        The Item model has multiple viewsets (items, magicitems). For URL building
+        we always use the first-registered basename, which is 'items'.
+        """
+        model_to_basename = url_utils._get_model_to_basename()
+        self.assertEqual(
+            model_to_basename.get(v2_models.Item),
+            "items",
+        )
