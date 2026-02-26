@@ -76,6 +76,10 @@ class SpellListFilter(CommonFilterSet):
 
 
 class MonsterFilter(CommonFilterSet):
+    environments = django_filters.CharFilter(
+        field_name="environments_json", lookup_expr="icontains"
+    )
+
     class Meta:
         model = models.Monster
         fields = {
@@ -91,6 +95,7 @@ class MonsterFilter(CommonFilterSet):
             "hit_points": ["exact", "range", "gt", "gte", "lt", "lte"],
             "armor_class": ["exact", "range", "gt", "gte", "lt", "lte"],
             "type": ["iexact", "exact", "in", "icontains"],
+            "environments_json": ["iexact", "exact", "in", "icontains"],
             "size": ["iexact", "exact", "in", "icontains"],
             "page_no": ["exact", "range", "gt", "gte", "lt", "lte"],
             "document__slug": [
