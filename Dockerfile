@@ -8,6 +8,9 @@ WORKDIR /opt/services/open5e-api
 RUN pip install pipenv gunicorn
 COPY . /opt/services/open5e-api
 
+# assert that debug is off to avoid errors due to missing dev dependencies
+ENV OPEN5E_DEBUG=False
+
 RUN pipenv install
 
 # migrate the db, load content, and index it

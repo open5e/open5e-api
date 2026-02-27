@@ -23,7 +23,7 @@ STATICFILES_DIRS = [
 
 ]
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("OPEN5E_DEBUG", "") != "False"
+DEBUG = os.environ.get("OPEN5E_DEBUG", "False") == "True"
 
 # SECURITY WARNING: keep the secret key used in production secret!
 assert "SECRET_KEY" in os.environ, "Set SECRET_KEY in your .env or local OS!"
