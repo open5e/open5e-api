@@ -92,16 +92,9 @@ MIDDLEWARE = [
 
 # Debug toolbar can interfere w/ tests, so only configure when we aren't testing
 TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
-
-if not TESTING:
-    INSTALLED_APPS = [
-        *INSTALLED_APPS,
-        "debug_toolbar",
-    ]
-    MIDDLEWARE = [
-        *MIDDLEWARE,
-        "debug_toolbar.middleware.DebugToolbarMiddleware",
-    ]
+if not TESTING and DEBUG:
+    INSTALLED_APPS += ["debug_toolbar"]
+    MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
 
 INTERNAL_IPS = ["127.0.0.1"]
 
