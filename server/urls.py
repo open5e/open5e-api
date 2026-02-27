@@ -37,8 +37,6 @@ urlpatterns+=[
 
 if settings.DEBUG is True:
     urlpatterns.append(path('admin/', admin.site.urls))
-
-if settings.DEBUG and not settings.TESTING:
     try:
         from debug_toolbar.toolbar import debug_toolbar_urls
         urlpatterns += debug_toolbar_urls()

@@ -91,8 +91,8 @@ MIDDLEWARE = [
 
 
 # Debug toolbar can interfere w/ tests, so only configure when we aren't testing
-TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
-if not TESTING and DEBUG:
+# TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
+if DEBUG:
     INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
 
