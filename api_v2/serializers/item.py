@@ -149,6 +149,7 @@ class ItemSerializer(GameContentSerializer):
 
     class Meta:
         model = models.Item
+        extra_kwargs = {"url": {"view_name": "items-detail"}}
         fields = [
             'url',
             'key',
@@ -171,6 +172,7 @@ class ItemSerializer(GameContentSerializer):
 class ItemSummarySerializer(GameContentSerializer):
     class Meta:
         model = models.Item
+        extra_kwargs = {"url": {"view_name": "items-detail"}}
         fields = ['name', 'key', 'url']
 
 
