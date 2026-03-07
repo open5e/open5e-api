@@ -133,6 +133,42 @@ class ItemCategorySummarySerializer(GameContentSerializer):
 
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
+    weapon = WeaponSummarySerializer()
+    armor = ArmorSummarySerializer()
+    document = DocumentSummarySerializer()
+    category = ItemCategorySummarySerializer()
+    #damage_immunities = DamageTypeSummarySerializer(many=True)
+    size = SizeSummarySerializer()
+    weight_unit = serializers.SerializerMethodField()
+    
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_weight_unit(self, item):
+        return item.get_weight_unit()
+
+    class Meta:
+        model = models.Item
+        fields = [
+            'url',
+            'key',
+            'name',
+            'desc',
+            'category',
+            'weapon',
+            'armor',
+            'size',
+            'weight',
+            'weight_unit',
+            'cost',
+            'document',]
+
+
+class ItemSummarySerializer(GameContentSerializer):
+    class Meta:
+        model = models.Item
+        fields = ['name', 'key', 'url']
+
+class MagicItemSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
     is_magic_item = serializers.ReadOnlyField()
     weapon = WeaponSummarySerializer()
     armor = ArmorSummarySerializer()
@@ -148,7 +184,7 @@ class ItemSerializer(GameContentSerializer):
         return item.get_weight_unit()
 
     class Meta:
-        model = models.Item
+        model = models.MagicItem
         fields = [
             'url',
             'key',
@@ -166,13 +202,6 @@ class ItemSerializer(GameContentSerializer):
             'requires_attunement',
             'attunement_detail',
             'document',]
-
-
-class ItemSummarySerializer(GameContentSerializer):
-    class Meta:
-        model = models.Item
-        fields = ['name', 'key', 'url']
-
 
 
 class ItemSetSerializer(GameContentSerializer):

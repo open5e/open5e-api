@@ -75,7 +75,6 @@ INSTALLED_APPS = [
     "django_filters",
 ]
 
-
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
@@ -89,6 +88,12 @@ MIDDLEWARE = [
     "server.middleware.NewRelicMiddleware",
     "server.middleware.ResponseWarningHeaderMiddleware"
 ]
+
+
+INSTALLED_APPS += ["debug_toolbar"]
+MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
+
+INTERNAL_IPS = ["127.0.0.1"]
 
 ROOT_URLCONF = "server.urls"
 
