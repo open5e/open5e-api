@@ -3,8 +3,7 @@
     "attunement_detail": null,
     "category": {
         "key": "weapon",
-        "name": "Weapon",
-        "url": "http://localhost:8000/v2/itemcategories/weapon/"
+        "name": "Weapon"
     },
     "cost": "50.00",
     "desc": "A longbow.",
@@ -12,16 +11,14 @@
         "display_name": "5e 2014 Rules",
         "gamesystem": {
             "key": "5e-2014",
-            "name": "5th Edition 2014",
-            "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+            "name": "5th Edition 2014"
         },
         "key": "srd-2014",
         "name": "System Reference Document 5.1",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
         "publisher": {
             "key": "wizards-of-the-coast",
-            "name": "Wizards of the Coast",
-            "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+            "name": "Wizards of the Coast"
         },
         "type": "SOURCE"
     },
@@ -32,16 +29,13 @@
     "requires_attunement": false,
     "size": {
         "key": "tiny",
-        "name": "Tiny",
-        "url": "http://localhost:8000/v2/sizes/tiny/"
+        "name": "Tiny"
     },
-    "url": "http://localhost:8000/v2/items/srd_longbow/",
     "weapon": {
         "damage_dice": "1d8",
         "damage_type": {
             "key": "piercing",
-            "name": "Piercing",
-            "url": "http://localhost:8000/v2/damagetypes/piercing/"
+            "name": "Piercing"
         },
         "distance_unit": "feet",
         "is_improvised": false,
@@ -55,8 +49,7 @@
                 "property": {
                     "desc": "You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack (you need a free hand to load a one-\u00ad\u2010\u2011handed weapon). At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.\n\nIf you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon (see \u201cImprovised Weapons\u201d later in the section). A sling must be loaded to deal any damage when used in this way.",
                     "name": "Ammunition",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/weaponproperties/srd-2014_ammunition-wp/"
+                    "type": null
                 }
             },
             {
@@ -64,12 +57,10 @@
                 "property": {
                     "desc": "This weapon requires two hands when you attack with it.",
                     "name": "Two-Handed",
-                    "type": null,
-                    "url": "http://localhost:8000/v2/weaponproperties/srd-2014_two-handed-wp/"
+                    "type": null
                 }
             }
-        ],
-        "url": "http://localhost:8000/v2/weapons/srd_longbow/"
+        ]
     },
     "weight": "2.000",
     "weight_unit": "lb"
