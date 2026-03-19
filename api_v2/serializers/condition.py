@@ -34,7 +34,7 @@ class ConditionSummarySerializer(GameContentSerializer):
     '''
     class Meta:
         model = models.Condition
-        fields = ['name', 'key', 'url']
+        fields = ['name', 'key']
 
 
 class ConditionDetailSerializer(GameContentSerializer):
@@ -50,5 +50,5 @@ class ConditionDetailSerializer(GameContentSerializer):
 
     class Meta:
         model = models.Condition
-        fields = ['name', 'key', 'url',  'document', 'gamesystem_key', 'icon']
+        fields = ['name', 'key', 'document', 'gamesystem_key', 'icon']
 

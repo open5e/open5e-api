@@ -23,4 +23,4 @@ class LanguageSummarySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     class Meta:
         model = models.Language
-        fields = ['name', 'key', 'url', 'desc']
+        fields = ['name', 'key', 'desc']
