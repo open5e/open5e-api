@@ -117,7 +117,7 @@ pipenv run python manage.py spectacular --color --file openapi-schema.yml` to bu
 ```
 
 # Contributing
-See [contribution guide](CONTRIBUTING.md).
+See [contribution guide](.github/CONTRIBUTING.md).
 # Tests
 
 Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository. These tests require that the api is [running](##run) at `http://localhost:8000`.

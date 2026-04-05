@@ -24,7 +24,7 @@ class SpellSchoolSummarySerializer(GameContentSerializer):
     '''
     class Meta:
         model = models.SpellSchool
-        fields = ['name', 'key', 'url']
+        fields = ['name', 'key']
 
 class SpellCastingOptionSerializer(serializers.ModelSerializer):
     class Meta:

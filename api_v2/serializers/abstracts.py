@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 from api_v2 import models
 
-class GameContentSerializer(serializers.HyperlinkedModelSerializer):  
+class GameContentSerializer(serializers.ModelSerializer):  
 
     """
     Much of the logic included in the GameContentSerializer is intended to 

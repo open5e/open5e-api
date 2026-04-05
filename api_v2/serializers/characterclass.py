@@ -78,7 +78,7 @@ class CharacterClassSummarySerializer(GameContentSerializer):
     '''
     class Meta:
         model = models.CharacterClass
-        fields = ['name', 'key', 'url']
+        fields = ['name', 'key']
 
 class CharacterClassSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
