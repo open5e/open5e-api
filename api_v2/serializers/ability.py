@@ -50,4 +50,4 @@ class AbilitySummarySerializer(GameContentSerializer):
     '''
     class Meta:
         model = models.Ability
-        fields = ['name', 'url']
+        fields = ['name']

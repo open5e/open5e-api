@@ -105,7 +105,7 @@ class CreatureTypeSummarySerializer(GameContentSerializer):
     '''
     class Meta:
         model = models.CreatureType
-        fields = ['name', 'key', 'url']
+        fields = ['name', 'key']
 
 
 class CreatureTraitSerializer(GameContentSerializer):
@@ -178,7 +178,6 @@ class CreatureSerializer(GameContentSerializer):
         '''Serializer meta options.'''
         model = models.Creature
         fields = [
-            'url',
             'key',
             'name',
             'document',

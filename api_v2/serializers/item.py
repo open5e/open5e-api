@@ -33,7 +33,6 @@ class ArmorSummarySerializer(GameContentSerializer):
         fields = [
             'name',
             'key',
-            'url',
             'category',
             'ac_base',
             'ac_display',
@@ -46,12 +45,12 @@ class ArmorSummarySerializer(GameContentSerializer):
 class WeaponPropertySerializer(GameContentSerializer):
     class Meta:
         model = models.WeaponProperty
-        fields = ['key', 'name', 'desc', 'document', 'url', 'type']
+        fields = ['key', 'name', 'desc', 'document', 'type']
 
 class WeaponPropertySummarySerializer(GameContentSerializer):
     class Meta:
         model = models.WeaponProperty
-        fields = ['name', 'type', 'url', 'desc']
+        fields = ['name', 'type', 'desc']
 
 class WeaponPropertyAssignmentSerializer(GameContentSerializer):
     property = WeaponPropertySummarySerializer()
@@ -99,7 +98,6 @@ class WeaponSummarySerializer(GameContentSerializer):
         fields = [
             'name',
             'key',
-            'url',
             'damage_type',
             'damage_dice',
             'properties',
@@ -117,7 +115,7 @@ class WeaponSummarySerializer(GameContentSerializer):
 class ItemRaritySerializer(GameContentSerializer):
     class Meta:
         model = models.ItemRarity
-        fields = ['name', 'url', 'key', 'rank']
+        fields = ['name', 'key', 'rank']
 
 class ItemCategorySerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
@@ -129,7 +127,7 @@ class ItemCategorySerializer(GameContentSerializer):
 class ItemCategorySummarySerializer(GameContentSerializer):
     class Meta:
         model = models.ItemCategory
-        fields = ['name', 'key', 'url']
+        fields = ['name', 'key']
 
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
@@ -148,7 +146,6 @@ class ItemSerializer(GameContentSerializer):
     class Meta:
         model = models.Item
         fields = [
-            'url',
             'key',
             'name',
             'desc',
@@ -165,7 +162,7 @@ class ItemSerializer(GameContentSerializer):
 class ItemSummarySerializer(GameContentSerializer):
     class Meta:
         model = models.Item
-        fields = ['name', 'key', 'url']
+        fields = ['name', 'key']
 
 class MagicItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
@@ -186,7 +183,6 @@ class MagicItemSerializer(GameContentSerializer):
     class Meta:
         model = models.MagicItem
         fields = [
-            'url',
             'key',
             'name',
             'desc',

@@ -32,4 +32,4 @@ class SizeSummarySerializer(GameContentSerializer):
     '''
     class Meta:
         model = models.Size
-        fields = ['name', 'key', 'url']
+        fields = ['name', 'key']
