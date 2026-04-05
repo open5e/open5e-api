@@ -183,7 +183,6 @@ class MagicItemSerializer(GameContentSerializer):
     class Meta:
         model = models.MagicItem
         fields = [
-            'url',
             'key',
             'name',
             'desc',
