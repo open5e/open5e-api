@@ -53,7 +53,7 @@ class TestObjects:
 
     # /ITEMS ENDPOINT
     def test_item_example(self):
-        path="/v2/items/srd_apparatus-of-the-crab/"
+        path="/v2/magicitems/srd_apparatus-of-the-crab/"
         self._verify(path)
 
     def test_item_melee_weapon_example(self):

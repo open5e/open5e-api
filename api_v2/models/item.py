@@ -24,13 +24,10 @@ class ItemCategory(HasName, FromDocument):
     """A class describing categories of items."""
 
 
-class Item(Object, HasDescription, FromDocument, HasPrice):
+class ItemBase(models.Model):
     """
-    This is the model for an Item, which is an object that can be used.
-
-    This extends the object model, but adds cost, and is_magical.
+    Common inheritance of Item and MagicItem models
     """
-
     weapon = models.ForeignKey(
         Weapon,
         on_delete=models.CASCADE,
@@ -48,11 +45,34 @@ class Item(Object, HasDescription, FromDocument, HasPrice):
     category = models.ForeignKey(
         ItemCategory,
         on_delete=models.CASCADE,
-        null=False)
+        null=False
+    )
 
+    damage_vulnerabilities = models.ManyToManyField(DamageType,
+        related_name="%(class)s_damage_vulnerabilities")
+
+    damage_immunities = models.ManyToManyField(DamageType,
+        related_name="%(class)s_damage_immunities")
+
+    damage_resistances = models.ManyToManyField(DamageType,
+        related_name="%(class)s_damage_resistances")
+    
+    class Meta:
+        abstract = True
+
+class Item(ItemBase, Object, HasDescription, FromDocument, HasPrice):
+    """
+    This is the model for an Item, which is an object that can be used.
+
+    This extends the object model, but adds cost, and is_magical.
+    """
+    pass
+
+
+class MagicItem(ItemBase, Object, HasDescription, FromDocument, HasPrice):
     requires_attunement = models.BooleanField(
         null=False,
-        default=False,  # An item is not magical unless specified.
+        default=False,
         help_text='If the item requires attunement.')
 
     attunement_detail = models.CharField(
@@ -66,27 +86,6 @@ class Item(Object, HasDescription, FromDocument, HasPrice):
         null=True,
         on_delete=models.CASCADE,
         help_text="Rarity object.")
-
-    damage_vulnerabilities = models.ManyToManyField(DamageType,
-        related_name="item_damage_vulnerabilities")
-
-    damage_immunities = models.ManyToManyField(DamageType,
-        related_name="item_damage_immunities")
-
-    damage_resistances = models.ManyToManyField(DamageType,
-        related_name="item_damage_resistances")
-
-    @property 
-    @extend_schema_field(OpenApiTypes.BOOL)
-    def is_magic_item(self):
-        return self.rarity is not None
-
-    def search_result_extra_fields(self):
-        return {
-            "is_magic_item": self.is_magic_item,
-            "type": self.category.name if self.is_magic_item else None,
-            "rarity": self.rarity.name if self.is_magic_item else None,
-        }
 
 
 class ItemSet(HasName, HasDescription, FromDocument):
