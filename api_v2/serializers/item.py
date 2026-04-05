@@ -131,12 +131,10 @@ class ItemCategorySummarySerializer(GameContentSerializer):
 
 class ItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    is_magic_item = serializers.ReadOnlyField()
     weapon = WeaponSummarySerializer()
     armor = ArmorSummarySerializer()
     document = DocumentSummarySerializer()
     category = ItemCategorySummarySerializer()
-    rarity = ItemRaritySerializer()
     #damage_immunities = DamageTypeSummarySerializer(many=True)
     size = SizeSummarySerializer()
     weight_unit = serializers.SerializerMethodField()
@@ -152,6 +150,44 @@ class ItemSerializer(GameContentSerializer):
             'name',
             'desc',
             'category',
+            'weapon',
+            'armor',
+            'size',
+            'weight',
+            'weight_unit',
+            'cost',
+            'document',]
+
+
+class ItemSummarySerializer(GameContentSerializer):
+    class Meta:
+        model = models.Item
+        fields = ['name', 'key']
+
+class MagicItemSerializer(GameContentSerializer):
+    key = serializers.ReadOnlyField()
+    is_magic_item = serializers.ReadOnlyField()
+    weapon = WeaponSummarySerializer()
+    armor = ArmorSummarySerializer()
+    document = DocumentSummarySerializer()
+    category = ItemCategorySummarySerializer()
+    rarity = ItemRaritySerializer()
+    #damage_immunities = DamageTypeSummarySerializer(many=True)
+    size = SizeSummarySerializer()
+    weight_unit = serializers.SerializerMethodField()
+    
+    @extend_schema_field(OpenApiTypes.STR)
+    def get_weight_unit(self, item):
+        return item.get_weight_unit()
+
+    class Meta:
+        model = models.MagicItem
+        fields = [
+            'url',
+            'key',
+            'name',
+            'desc',
+            'category',
             'rarity',
             'is_magic_item',
             'weapon',
@@ -163,13 +199,6 @@ class ItemSerializer(GameContentSerializer):
             'requires_attunement',
             'attunement_detail',
             'document',]
-
-
-class ItemSummarySerializer(GameContentSerializer):
-    class Meta:
-        model = models.Item
-        fields = ['name', 'key']
-
 
 
 class ItemSetSerializer(GameContentSerializer):
