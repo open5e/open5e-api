@@ -164,7 +164,6 @@ class CreatureSerializer(GameContentSerializer):
     traits = CreatureTraitSerializer(many=True, read_only=True)
     speed = serializers.SerializerMethodField()
     speed_all = serializers.SerializerMethodField()
-    challenge_rating_text = serializers.SerializerMethodField()
     experience_points = serializers.SerializerMethodField()
     document = DocumentSummarySerializer()
     type = CreatureTypeSummarySerializer()
@@ -183,8 +182,7 @@ class CreatureSerializer(GameContentSerializer):
             'document',
             'type',
             'size',
-            'challenge_rating_decimal',
-            'challenge_rating_text',
+            'challenge_rating',
             'proficiency_bonus',
             'speed',
             'speed_all',
@@ -401,11 +399,6 @@ class CreatureSerializer(GameContentSerializer):
     def get_speed_all(self, creature):
         '''Implicit speed helper method.'''
         return creature.get_speed_all()
-
-    # todo: model typed as any
-    @extend_schema_field(OpenApiTypes.STR)
-    def get_challenge_rating_text(self, creature):
-        return creature.challenge_rating_text
 
     # todo: model typed as any
     @extend_schema_field(OpenApiTypes.INT)

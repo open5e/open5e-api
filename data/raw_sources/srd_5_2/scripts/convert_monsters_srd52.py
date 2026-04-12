@@ -821,7 +821,7 @@ def parse_monster(monster_text: str) -> Tuple[Dict[str, Any], List[Dict[str, Any
             "category": "Monsters",
             "subcategory": None,
             "alignment": alignment,
-            "challenge_rating_decimal": basic_stats.get('challenge_rating_decimal', "0.125"),
+            "challenge_rating": basic_stats.get('challenge_rating', "0.125"),
             "experience_points_integer": None,
             "languages": languages,
             "damage_vulnerabilities": vulnerabilities,
