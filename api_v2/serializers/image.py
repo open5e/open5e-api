@@ -9,7 +9,7 @@ from api_v2 import models
 class ImageSummarySerializer(GameContentSerializer):
     class Meta:
         model = models.Image
-        fields = ['name', 'key', 'url', 'file_url', 'alt_text', 'attribution']
+        fields = ['name', 'key', 'file_url', 'alt_text', 'attribution']
 
 class ImageSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()

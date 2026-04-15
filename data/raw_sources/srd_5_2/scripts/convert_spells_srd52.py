@@ -35,6 +35,9 @@ def parse_casting_time(casting_time: str) -> tuple[str, Optional[str]]:
     if "Reaction" in casting_time:
         # Extract reaction condition if present
         reaction_match = re.search(r'Reaction\s*\((.*?)\)', casting_time)
+        # If no parentheses found, capture everything after "Reaction,"
+        if not reaction_match:
+            reaction_match = re.search(r'Reaction,?\s*(.*)', casting_time)
         if reaction_match:
             return "reaction", reaction_match.group(1)
         return "reaction", None

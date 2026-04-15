@@ -2,10 +2,8 @@ from rest_framework import viewsets
 
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
-
-from .mixins import EagerLoadingMixin
+from api_v2 import models, serializers
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class AlignmentFilterSet(FilterSet):
     class Meta:
@@ -17,7 +15,7 @@ class AlignmentFilterSet(FilterSet):
             'document__gamesystem__key': ['in','iexact','exact'],
         }
 
-class AlignmentViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class AlignmentViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of alignments.
     retrieve: API endpoint for returning a particular alignment.

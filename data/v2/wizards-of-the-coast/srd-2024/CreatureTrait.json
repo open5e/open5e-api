@@ -1391,7 +1391,7 @@
 },
 {
   "fields": {
-    "desc": "The mouther babbles incoherently while it doesn't have the Incapacitated condition. Wisdom Saving Throw: DC 10, any creature that starts its turn within 20 feet of the mouther while it is babbling. Failure: The target rolls 1d8 to determine what it does during the current turn: - 1-4: The target does nothing. - 5-6: The target takes no action or Bonus Action and uses all its movement to move in a random direction. - 7-8: The target makes a melee attack against a randomly determined creature within its reach or does nothing if it can't make such an attack.",
+    "desc": "The mouther babbles incoherently while it doesn't have the Incapacitated condition. Wisdom Saving Throw: DC 10, any creature that starts its turn within 20 feet of the mouther while it is babbling. Failure: The target rolls 1d8 to determine what it does during the current turn:\n\n- 1-4: The target does nothing.\n- 5-6: The target takes no action or Bonus Action and uses all its movement to move in a random direction.\n- 7-8: The target makes a melee attack against a randomly determined creature within its reach or does nothing if it can't make such an attack.",
     "name": "Gibbering",
     "parent": "srd-2024_gibbering-mouther",
     "type": null
@@ -2951,7 +2951,7 @@
 },
 {
   "fields": {
-    "desc": "The vampire has these weaknesses: - Forbiddance: The vampire can't enter a residence without an invitation from an occupant. - Running Water: The vampire takes 20 Acid damage if it ends its turn in running water. - Stake to the Heart: The vampire is destroyed if a weapon that deals Piercing damage is driven into the vampire's heart while the vampire has the Incapacitated condition. - Sunlight: The vampire takes 20 Radiant damage if it starts its turn in sunlight. While in sunlight, it has Disadvantage on attack rolls and ability checks.",
+    "desc": "The vampire has these weaknesses:\n\n- **Forbiddance:** The vampire can't enter a residence without an invitation from an occupant.\n- **Running Water:** The vampire takes 20 Acid damage if it ends its turn in running water.\n- **Stake to the Heart:** The vampire is destroyed if a weapon that deals Piercing damage is driven into the vampire's heart while the vampire has the Incapacitated condition.\n- **Sunlight:** The vampire takes 20 Radiant damage if it starts its turn in sunlight. While in sunlight, it has Disadvantage on attack rolls and ability checks.",
     "name": "Vampire Weakness",
     "parent": "srd-2024_vampire-spawn",
     "type": null
@@ -2991,7 +2991,7 @@
 },
 {
   "fields": {
-    "desc": "The vampire has these weaknesses: - Forbiddance: The vampire can't enter a residence without an invitation from an occupant. - Running Water: The vampire takes 20 Acid damage if it ends its turn in running water. - Stake to the Heart: If a weapon that deals Piercing damage is driven into the vampire's heart while the vampire has the Incapacitated condition in its resting place, the vampire has the Paralyzed condition until the weapon is removed. - Sunlight: The vampire takes 20 Radiant damage if it starts its turn in sunlight. While in sunlight, it has Disadvantage on attack rolls and ability checks.",
+    "desc": "The vampire has these weaknesses:\n\n- **Forbiddance:** The vampire can't enter a residence without an invitation from an occupant.\n- **Running Water:** The vampire takes 20 Acid damage if it ends its turn in running water.\n- **Stake to the Heart:** If a weapon that deals Piercing damage is driven into the vampire's heart while the vampire has the Incapacitated condition in its resting place, the vampire has the Paralyzed condition until the weapon is removed.\n- **Sunlight:** The vampire takes 20 Radiant damage if it starts its turn in sunlight. While in sunlight, it has Disadvantage on attack rolls and ability checks.",
     "name": "Vampire Weakness",
     "parent": "srd-2024_vampire",
     "type": null
@@ -3238,5 +3238,25 @@
   },
   "model": "api_v2.creaturetrait",
   "pk": "srd-2024_zombie_undead-fortitude"
+},
+{
+  "fields": {
+    "desc": "The octopus can move through a space as narrow as 1 inch without expending extra movement to do so.",
+    "name": "Compression",
+    "parent": "srd-2024_octopus",
+    "type": null
+  },
+  "model": "api_v2.creaturetrait",
+  "pk": "srd-2024_octopus_compression"
+},
+{
+  "fields": {
+    "desc": "The octopus can breathe only underwater.",
+    "name": "Water Breathing",
+    "parent": "srd-2024_octopus",
+    "type": null
+  },
+  "model": "api_v2.creaturetrait",
+  "pk": "srd-2024_octopus_water-breathing"
 }
 ]

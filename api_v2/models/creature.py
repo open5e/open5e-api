@@ -112,10 +112,8 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, HasIllust
         help_text="Conditions that this creature is immune to."
         )
 
-    challenge_rating_decimal = models.DecimalField(
+    challenge_rating = models.FloatField(
         null=False,
-        max_digits=10,
-        decimal_places=3,
         validators=[MinValueValidator(decimal.Decimal(0.0)),MaxValueValidator(decimal.Decimal(30.0))],
         help_text="Challenge Rating field as a decimal number."
     )
@@ -159,16 +157,11 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, HasIllust
 
     def search_result_extra_fields(self):
         return {
-            "cr": self.challenge_rating_text,
+            "cr": self.challenge_rating,
             "type": self.type.name,
             "size": self.size.name,   
         }
-
-    @property
-    def challenge_rating_text(self):
-        '''Challenge rating as text string representation of a fraction or integer. '''
-        return str(Fraction(self.challenge_rating_decimal))
-
+    
     @property
     def experience_points(self):
         if self.experience_points_integer is not None:
@@ -212,7 +205,7 @@ class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, HasIllust
             }
 
             try:
-                return xp_by_cr_lookup[str(Fraction(self.challenge_rating_decimal))]
+                return xp_by_cr_lookup[str(Fraction(self.challenge_rating))]
             except:
                 return None
 

@@ -50,10 +50,10 @@ def key_field():
     )
 
 def distance_field(null=True):
-    return models.FloatField(
+    return models.IntegerField(
         null=null,
         blank=True,
-        validators=[MinValueValidator(decimal.Decimal(0.0))],
+        validators=[MinValueValidator(0)],
         help_text="Used to measure distance."
     )
 

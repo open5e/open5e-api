@@ -2598,7 +2598,7 @@ In addition, the target can spend 5 feet of movement to automatically escape fro
 
 **_Using a Higher-Level Spell Slot._** You can target one additional creature for each spell slot level above 4.
 
-### Freezing Sphere
+#### Freezing Sphere
 
 *Level 6 Evocation (Sorcerer, Wizard)*
 

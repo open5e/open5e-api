@@ -18,8 +18,7 @@
                     "damage_die_type": "D10",
                     "damage_type": {
                         "key": "thunder",
-                        "name": "Thunder",
-                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                        "name": "Thunder"
                     },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
@@ -27,13 +26,12 @@
                     "extra_damage_die_type": null,
                     "extra_damage_type": {
                         "key": "thunder",
-                        "name": "Thunder",
-                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                        "name": "Thunder"
                     },
                     "long_range": null,
                     "name": "Bite attack",
                     "range": null,
-                    "reach": 15.0,
+                    "reach": 15,
                     "target_creature_only": false,
                     "to_hit_mod": 17
                 }
@@ -55,8 +53,7 @@
                     "damage_die_type": "D6",
                     "damage_type": {
                         "key": "thunder",
-                        "name": "Thunder",
-                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                        "name": "Thunder"
                     },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
@@ -66,7 +63,7 @@
                     "long_range": null,
                     "name": "Claw attack",
                     "range": null,
-                    "reach": 10.0,
+                    "reach": 10,
                     "target_creature_only": false,
                     "to_hit_mod": 17
                 }
@@ -92,11 +89,14 @@
             "action_type": "ACTION",
             "attacks": [],
             "desc": "The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 91 (26d6) fire damage on a failed save, or half as much damage on a successful one.",
-            "legendary_action_cost": 1,
+            "legendary_action_cost": null,
             "limited_to_form": null,
             "name": "Fire Breath",
             "order_in_statblock": 5,
-            "usage_limits": null
+            "usage_limits": {
+                "param": 5,
+                "type": "RECHARGE_ON_ROLL"
+            }
         },
         {
             "action_type": "ACTION",
@@ -128,8 +128,7 @@
                     "damage_die_type": "D8",
                     "damage_type": {
                         "key": "thunder",
-                        "name": "Thunder",
-                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                        "name": "Thunder"
                     },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
@@ -139,7 +138,7 @@
                     "long_range": null,
                     "name": "Tail attack",
                     "range": null,
-                    "reach": 20.0,
+                    "reach": 20,
                     "target_creature_only": false,
                     "to_hit_mod": 17
                 }
@@ -175,39 +174,34 @@
     "alignment": "chaotic evil",
     "armor_class": 22,
     "armor_detail": "natural armor",
-    "blindsight_range": 60.0,
+    "blindsight_range": 60,
     "category": "Monsters",
-    "challenge_rating_decimal": "24.000",
-    "challenge_rating_text": "24",
+    "challenge_rating": 24.0,
     "creaturesets": [],
-    "darkvision_range": 120.0,
+    "darkvision_range": 120,
     "document": {
         "display_name": "5e 2014 Rules",
         "gamesystem": {
             "key": "5e-2014",
-            "name": "5th Edition 2014",
-            "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+            "name": "5th Edition 2014"
         },
         "key": "srd-2014",
         "name": "System Reference Document 5.1",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
         "publisher": {
             "key": "wizards-of-the-coast",
-            "name": "Wizards of the Coast",
-            "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+            "name": "Wizards of the Coast"
         },
         "type": "SOURCE"
     },
     "environments": [
         {
             "key": "hills",
-            "name": "Hills",
-            "url": "http://localhost:8000/v2/environments/hills/"
+            "name": "Hills"
         },
         {
             "key": "mountain",
-            "name": "Mountain",
-            "url": "http://localhost:8000/v2/environments/mountain/"
+            "name": "Mountain"
         }
     ],
     "experience_points": 62000,
@@ -222,14 +216,12 @@
             {
                 "desc": "Typical speakers are Humans.",
                 "key": "common",
-                "name": "Common",
-                "url": "http://localhost:8000/v2/languages/common/"
+                "name": "Common"
             },
             {
                 "desc": "Typical speakers include dragons and dragonborn.",
                 "key": "draconic",
-                "name": "Draconic",
-                "url": "http://localhost:8000/v2/languages/draconic/"
+                "name": "Draconic"
             }
         ]
     },
@@ -242,7 +234,7 @@
         "wisdom": 2
     },
     "name": "Ancient Red Dragon",
-    "normal_sight_range": 10560.0,
+    "normal_sight_range": 10560,
     "passive_perception": 26,
     "proficiency_bonus": null,
     "resistances_and_immunities": {
@@ -251,8 +243,7 @@
         "damage_immunities": [
             {
                 "key": "fire",
-                "name": "Fire",
-                "url": "http://localhost:8000/v2/damagetypes/fire/"
+                "name": "Fire"
             }
         ],
         "damage_immunities_display": "fire",
@@ -277,8 +268,7 @@
     },
     "size": {
         "key": "gargantuan",
-        "name": "Gargantuan",
-        "url": "http://localhost:8000/v2/sizes/gargantuan/"
+        "name": "Gargantuan"
     },
     "skill_bonuses": {
         "perception": 16,
@@ -305,20 +295,20 @@
         "survival": 2
     },
     "speed": {
-        "climb": 40.0,
-        "fly": 80.0,
+        "climb": 40,
+        "fly": 80,
         "unit": "feet",
-        "walk": 40.0
+        "walk": 40
     },
     "speed_all": {
-        "burrow": 0.0,
-        "climb": 40.0,
-        "crawl": 20.0,
-        "fly": 80.0,
+        "burrow": 0,
+        "climb": 40,
+        "crawl": 20,
+        "fly": 80,
         "hover": false,
-        "swim": 20.0,
+        "swim": 20,
         "unit": "feet",
-        "walk": 40.0
+        "walk": 40
     },
     "subcategory": "Dragons, Chromatic",
     "traits": [
@@ -331,8 +321,6 @@
     "truesight_range": null,
     "type": {
         "key": "dragon",
-        "name": "Dragon",
-        "url": "http://localhost:8000/v2/creaturetypes/dragon/"
-    },
-    "url": "http://localhost:8000/v2/creatures/srd_ancient-red-dragon/"
+        "name": "Dragon"
+    }
 }

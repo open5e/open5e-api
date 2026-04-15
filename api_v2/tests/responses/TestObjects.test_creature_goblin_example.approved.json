@@ -18,8 +18,7 @@
                     "damage_die_type": "D6",
                     "damage_type": {
                         "key": "thunder",
-                        "name": "Thunder",
-                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                        "name": "Thunder"
                     },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
@@ -29,7 +28,7 @@
                     "long_range": null,
                     "name": "Scimitar attack",
                     "range": null,
-                    "reach": 5.0,
+                    "reach": 5,
                     "target_creature_only": false,
                     "to_hit_mod": 4
                 }
@@ -51,17 +50,16 @@
                     "damage_die_type": "D6",
                     "damage_type": {
                         "key": "thunder",
-                        "name": "Thunder",
-                        "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                        "name": "Thunder"
                     },
                     "distance_unit": "feet",
                     "extra_damage_bonus": null,
                     "extra_damage_die_count": null,
                     "extra_damage_die_type": null,
                     "extra_damage_type": null,
-                    "long_range": 320.0,
+                    "long_range": 320,
                     "name": "Shortbow attack",
-                    "range": 80.0,
+                    "range": 80,
                     "reach": null,
                     "target_creature_only": false,
                     "to_hit_mod": 4
@@ -80,92 +78,76 @@
     "armor_detail": "leather armor, shield",
     "blindsight_range": null,
     "category": "Monsters",
-    "challenge_rating_decimal": "0.250",
-    "challenge_rating_text": "1/4",
+    "challenge_rating": 0.25,
     "creaturesets": [],
-    "darkvision_range": 60.0,
+    "darkvision_range": 60,
     "document": {
         "display_name": "5e 2014 Rules",
         "gamesystem": {
             "key": "5e-2014",
-            "name": "5th Edition 2014",
-            "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+            "name": "5th Edition 2014"
         },
         "key": "srd-2014",
         "name": "System Reference Document 5.1",
         "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
         "publisher": {
             "key": "wizards-of-the-coast",
-            "name": "Wizards of the Coast",
-            "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+            "name": "Wizards of the Coast"
         },
         "type": "SOURCE"
     },
     "environments": [
         {
             "key": "arctic",
-            "name": "Arctic or Tundra",
-            "url": "http://localhost:8000/v2/environments/arctic/"
+            "name": "Arctic or Tundra"
         },
         {
             "key": "caves",
-            "name": "Caves",
-            "url": "http://localhost:8000/v2/environments/caves/"
+            "name": "Caves"
         },
         {
             "key": "desert",
-            "name": "Desert",
-            "url": "http://localhost:8000/v2/environments/desert/"
+            "name": "Desert"
         },
         {
             "key": "forest",
-            "name": "Forest or Jungle",
-            "url": "http://localhost:8000/v2/environments/forest/"
+            "name": "Forest or Jungle"
         },
         {
             "key": "grassland",
-            "name": "Grassland or Plains",
-            "url": "http://localhost:8000/v2/environments/grassland/"
+            "name": "Grassland or Plains"
         },
         {
             "key": "hills",
-            "name": "Hills",
-            "url": "http://localhost:8000/v2/environments/hills/"
+            "name": "Hills"
         },
         {
             "key": "mountain",
-            "name": "Mountain",
-            "url": "http://localhost:8000/v2/environments/mountain/"
+            "name": "Mountain"
         },
         {
             "key": "ruins",
-            "name": "Ruins",
-            "url": "http://localhost:8000/v2/environments/ruins/"
+            "name": "Ruins"
         },
         {
             "key": "sewer",
-            "name": "Sewer",
-            "url": "http://localhost:8000/v2/environments/sewer/"
+            "name": "Sewer"
         },
         {
             "key": "srd_feywild",
-            "name": "Feywild",
-            "url": "http://localhost:8000/v2/environments/srd_feywild/"
+            "name": "Feywild"
         },
         {
             "key": "swamp",
-            "name": "Swamp or Marsh",
-            "url": "http://localhost:8000/v2/environments/swamp/"
+            "name": "Swamp or Marsh"
         },
         {
             "key": "underworld",
-            "name": "Underworld",
-            "url": "http://localhost:8000/v2/environments/underworld/"
+            "name": "Underworld"
         },
         {
             "key": "urban",
-            "name": "Urban",
-            "url": "http://localhost:8000/v2/environments/urban/"
+            "name": "Urban"
         }
     ],
     "experience_points": 50,
@@ -180,14 +162,12 @@
             {
                 "desc": "Typical speakers are Humans.",
                 "key": "common",
-                "name": "Common",
-                "url": "http://localhost:8000/v2/languages/common/"
+                "name": "Common"
             },
             {
                 "desc": "Typical speakers are goblinoids.",
                 "key": "goblin",
-                "name": "Goblin",
-                "url": "http://localhost:8000/v2/languages/goblin/"
+                "name": "Goblin"
             }
         ]
     },
@@ -200,7 +180,7 @@
         "wisdom": -1
     },
     "name": "Goblin",
-    "normal_sight_range": 10560.0,
+    "normal_sight_range": 10560,
     "passive_perception": 9,
     "proficiency_bonus": null,
     "resistances_and_immunities": {
@@ -224,8 +204,7 @@
     },
     "size": {
         "key": "small",
-        "name": "Small",
-        "url": "http://localhost:8000/v2/sizes/small/"
+        "name": "Small"
     },
     "skill_bonuses": {
         "stealth": 6
@@ -252,17 +231,17 @@
     },
     "speed": {
         "unit": "feet",
-        "walk": 30.0
+        "walk": 30
     },
     "speed_all": {
-        "burrow": 0.0,
-        "climb": 15.0,
-        "crawl": 15.0,
-        "fly": 0.0,
+        "burrow": 0,
+        "climb": 15,
+        "crawl": 15,
+        "fly": 0,
         "hover": false,
-        "swim": 15.0,
+        "swim": 15,
         "unit": "feet",
-        "walk": 30.0
+        "walk": 30
     },
     "subcategory": null,
     "traits": [
@@ -275,8 +254,6 @@
     "truesight_range": null,
     "type": {
         "key": "humanoid",
-        "name": "Humanoid",
-        "url": "http://localhost:8000/v2/creaturetypes/humanoid/"
-    },
-    "url": "http://localhost:8000/v2/creatures/srd_goblin/"
+        "name": "Humanoid"
+    }
 }

@@ -1,11 +1,10 @@
 """ The view for an Environment. """
 
 from rest_framework import viewsets
-
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
+from api_v2 import models, serializers
+from .mixins import ExcludeFieldsMixin
 
 
 class EnvironmentFilterSet(FilterSet):
@@ -20,7 +19,7 @@ class EnvironmentFilterSet(FilterSet):
 
 
 
-class EnvironmentViewSet(viewsets.ReadOnlyModelViewSet):
+class EnvironmentViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of environments.
     retrieve: API endpoint for returning a particular environment.

@@ -20,8 +20,7 @@
                             "damage_die_type": null,
                             "damage_type": {
                                 "key": "thunder",
-                                "name": "Thunder",
-                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                                "name": "Thunder"
                             },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
@@ -31,7 +30,7 @@
                             "long_range": null,
                             "name": "Bite attack",
                             "range": null,
-                            "reach": 5.0,
+                            "reach": 5,
                             "target_creature_only": false,
                             "to_hit_mod": 5
                         }
@@ -49,39 +48,34 @@
             "armor_detail": "",
             "blindsight_range": null,
             "category": "Miscellaneous Creatures",
-            "challenge_rating_decimal": "0.125",
-            "challenge_rating_text": "1/8",
+            "challenge_rating": 0.125,
             "creaturesets": [
-                "http://localhost:8000/v2/creaturesets/common-mounts/"
+                "common-mounts"
             ],
             "darkvision_range": null,
             "document": {
                 "display_name": "5e 2014 Rules",
                 "gamesystem": {
                     "key": "5e-2014",
-                    "name": "5th Edition 2014",
-                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+                    "name": "5th Edition 2014"
                 },
                 "key": "srd-2014",
                 "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast",
-                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+                    "name": "Wizards of the Coast"
                 },
                 "type": "SOURCE"
             },
             "environments": [
                 {
                     "key": "desert",
-                    "name": "Desert",
-                    "url": "http://localhost:8000/v2/environments/desert/"
+                    "name": "Desert"
                 },
                 {
                     "key": "urban",
-                    "name": "Urban",
-                    "url": "http://localhost:8000/v2/environments/urban/"
+                    "name": "Urban"
                 }
             ],
             "experience_points": 25,
@@ -103,7 +97,7 @@
                 "wisdom": -1
             },
             "name": "Camel",
-            "normal_sight_range": 10560.0,
+            "normal_sight_range": 10560,
             "passive_perception": 9,
             "proficiency_bonus": null,
             "resistances_and_immunities": {
@@ -134,8 +128,7 @@
             },
             "size": {
                 "key": "large",
-                "name": "Large",
-                "url": "http://localhost:8000/v2/sizes/large/"
+                "name": "Large"
             },
             "skill_bonuses": {
                 "acrobatics": 0,
@@ -179,17 +172,17 @@
             },
             "speed": {
                 "unit": "feet",
-                "walk": 50.0
+                "walk": 50
             },
             "speed_all": {
-                "burrow": 0.0,
-                "climb": 25.0,
-                "crawl": 25.0,
-                "fly": 0.0,
+                "burrow": 0,
+                "climb": 25,
+                "crawl": 25,
+                "fly": 0,
                 "hover": false,
-                "swim": 25.0,
+                "swim": 25,
                 "unit": "feet",
-                "walk": 50.0
+                "walk": 50
             },
             "subcategory": null,
             "traits": [],
@@ -197,10 +190,8 @@
             "truesight_range": null,
             "type": {
                 "key": "beast",
-                "name": "Beast",
-                "url": "http://localhost:8000/v2/creaturetypes/beast/"
-            },
-            "url": "http://localhost:8000/v2/creatures/srd_camel/"
+                "name": "Beast"
+            }
         },
         {
             "ability_scores": {
@@ -217,26 +208,23 @@
             "armor_detail": "",
             "blindsight_range": null,
             "category": "Miscellaneous Creatures",
-            "challenge_rating_decimal": "0.000",
-            "challenge_rating_text": "0",
+            "challenge_rating": 0.0,
             "creaturesets": [
-                "http://localhost:8000/v2/creaturesets/common-mounts/"
+                "common-mounts"
             ],
             "darkvision_range": null,
             "document": {
                 "display_name": "5e 2014 Rules",
                 "gamesystem": {
                     "key": "5e-2014",
-                    "name": "5th Edition 2014",
-                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+                    "name": "5th Edition 2014"
                 },
                 "key": "srd-2014",
                 "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast",
-                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+                    "name": "Wizards of the Coast"
                 },
                 "type": "SOURCE"
             },
@@ -291,8 +279,7 @@
             },
             "size": {
                 "key": "medium",
-                "name": "Medium",
-                "url": "http://localhost:8000/v2/sizes/medium/"
+                "name": "Medium"
             },
             "skill_bonuses": {
                 "acrobatics": 0,
@@ -336,17 +323,17 @@
             },
             "speed": {
                 "unit": "feet",
-                "walk": 0.0
+                "walk": 0
             },
             "speed_all": {
-                "burrow": 0.0,
-                "climb": 0.0,
-                "crawl": 0.0,
-                "fly": 0.0,
+                "burrow": 0,
+                "climb": 0,
+                "crawl": 0,
+                "fly": 0,
                 "hover": false,
-                "swim": 0.0,
+                "swim": 0,
                 "unit": "feet",
-                "walk": 0.0
+                "walk": 0
             },
             "subcategory": null,
             "traits": [],
@@ -354,10 +341,8 @@
             "truesight_range": null,
             "type": {
                 "key": "beast",
-                "name": "Beast",
-                "url": "http://localhost:8000/v2/creaturetypes/beast/"
-            },
-            "url": "http://localhost:8000/v2/creatures/srd_donkey/"
+                "name": "Beast"
+            }
         },
         {
             "ability_scores": {
@@ -379,8 +364,7 @@
                             "damage_die_type": "D4",
                             "damage_type": {
                                 "key": "thunder",
-                                "name": "Thunder",
-                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                                "name": "Thunder"
                             },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
@@ -390,7 +374,7 @@
                             "long_range": null,
                             "name": "Hooves attack",
                             "range": null,
-                            "reach": 5.0,
+                            "reach": 5,
                             "target_creature_only": false,
                             "to_hit_mod": 6
                         }
@@ -408,34 +392,30 @@
             "armor_detail": "",
             "blindsight_range": null,
             "category": "Miscellaneous Creatures",
-            "challenge_rating_decimal": "0.250",
-            "challenge_rating_text": "1/4",
+            "challenge_rating": 0.25,
             "creaturesets": [
-                "http://localhost:8000/v2/creaturesets/common-mounts/"
+                "common-mounts"
             ],
             "darkvision_range": null,
             "document": {
                 "display_name": "5e 2014 Rules",
                 "gamesystem": {
                     "key": "5e-2014",
-                    "name": "5th Edition 2014",
-                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+                    "name": "5th Edition 2014"
                 },
                 "key": "srd-2014",
                 "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast",
-                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+                    "name": "Wizards of the Coast"
                 },
                 "type": "SOURCE"
             },
             "environments": [
                 {
                     "key": "urban",
-                    "name": "Urban",
-                    "url": "http://localhost:8000/v2/environments/urban/"
+                    "name": "Urban"
                 }
             ],
             "experience_points": 50,
@@ -457,7 +437,7 @@
                 "wisdom": 0
             },
             "name": "Draft Horse",
-            "normal_sight_range": 10560.0,
+            "normal_sight_range": 10560,
             "passive_perception": 10,
             "proficiency_bonus": null,
             "resistances_and_immunities": {
@@ -488,8 +468,7 @@
             },
             "size": {
                 "key": "large",
-                "name": "Large",
-                "url": "http://localhost:8000/v2/sizes/large/"
+                "name": "Large"
             },
             "skill_bonuses": {
                 "acrobatics": 0,
@@ -533,17 +512,17 @@
             },
             "speed": {
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "speed_all": {
-                "burrow": 0.0,
-                "climb": 20.0,
-                "crawl": 20.0,
-                "fly": 0.0,
+                "burrow": 0,
+                "climb": 20,
+                "crawl": 20,
+                "fly": 0,
                 "hover": false,
-                "swim": 20.0,
+                "swim": 20,
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "subcategory": null,
             "traits": [],
@@ -551,10 +530,8 @@
             "truesight_range": null,
             "type": {
                 "key": "beast",
-                "name": "Beast",
-                "url": "http://localhost:8000/v2/creaturetypes/beast/"
-            },
-            "url": "http://localhost:8000/v2/creatures/srd_draft-horse/"
+                "name": "Beast"
+            }
         },
         {
             "ability_scores": {
@@ -576,8 +553,7 @@
                             "damage_die_type": "D8",
                             "damage_type": {
                                 "key": "thunder",
-                                "name": "Thunder",
-                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                                "name": "Thunder"
                             },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
@@ -587,7 +563,7 @@
                             "long_range": null,
                             "name": "Gore attack",
                             "range": null,
-                            "reach": 5.0,
+                            "reach": 5,
                             "target_creature_only": false,
                             "to_hit_mod": 8
                         }
@@ -609,8 +585,7 @@
                             "damage_die_type": "D10",
                             "damage_type": {
                                 "key": "thunder",
-                                "name": "Thunder",
-                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                                "name": "Thunder"
                             },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
@@ -620,7 +595,7 @@
                             "long_range": null,
                             "name": "Stomp attack",
                             "range": null,
-                            "reach": 5.0,
+                            "reach": 5,
                             "target_creature_only": true,
                             "to_hit_mod": 8
                         }
@@ -638,44 +613,38 @@
             "armor_detail": "natural armor",
             "blindsight_range": null,
             "category": "Miscellaneous Creatures",
-            "challenge_rating_decimal": "4.000",
-            "challenge_rating_text": "4",
+            "challenge_rating": 4.0,
             "creaturesets": [
-                "http://localhost:8000/v2/creaturesets/common-mounts/"
+                "common-mounts"
             ],
             "darkvision_range": null,
             "document": {
                 "display_name": "5e 2014 Rules",
                 "gamesystem": {
                     "key": "5e-2014",
-                    "name": "5th Edition 2014",
-                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+                    "name": "5th Edition 2014"
                 },
                 "key": "srd-2014",
                 "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast",
-                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+                    "name": "Wizards of the Coast"
                 },
                 "type": "SOURCE"
             },
             "environments": [
                 {
                     "key": "desert",
-                    "name": "Desert",
-                    "url": "http://localhost:8000/v2/environments/desert/"
+                    "name": "Desert"
                 },
                 {
                     "key": "forest",
-                    "name": "Forest or Jungle",
-                    "url": "http://localhost:8000/v2/environments/forest/"
+                    "name": "Forest or Jungle"
                 },
                 {
                     "key": "grassland",
-                    "name": "Grassland or Plains",
-                    "url": "http://localhost:8000/v2/environments/grassland/"
+                    "name": "Grassland or Plains"
                 }
             ],
             "experience_points": 1100,
@@ -697,7 +666,7 @@
                 "wisdom": 0
             },
             "name": "Elephant",
-            "normal_sight_range": 10560.0,
+            "normal_sight_range": 10560,
             "passive_perception": 10,
             "proficiency_bonus": null,
             "resistances_and_immunities": {
@@ -728,8 +697,7 @@
             },
             "size": {
                 "key": "huge",
-                "name": "Huge",
-                "url": "http://localhost:8000/v2/sizes/huge/"
+                "name": "Huge"
             },
             "skill_bonuses": {
                 "acrobatics": 0,
@@ -773,17 +741,17 @@
             },
             "speed": {
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "speed_all": {
-                "burrow": 0.0,
-                "climb": 20.0,
-                "crawl": 20.0,
-                "fly": 0.0,
+                "burrow": 0,
+                "climb": 20,
+                "crawl": 20,
+                "fly": 0,
                 "hover": false,
-                "swim": 20.0,
+                "swim": 20,
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "subcategory": null,
             "traits": [
@@ -796,10 +764,8 @@
             "truesight_range": null,
             "type": {
                 "key": "beast",
-                "name": "Beast",
-                "url": "http://localhost:8000/v2/creaturetypes/beast/"
-            },
-            "url": "http://localhost:8000/v2/creatures/srd_elephant/"
+                "name": "Beast"
+            }
         },
         {
             "ability_scores": {
@@ -821,8 +787,7 @@
                             "damage_die_type": "D6",
                             "damage_type": {
                                 "key": "thunder",
-                                "name": "Thunder",
-                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                                "name": "Thunder"
                             },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
@@ -832,7 +797,7 @@
                             "long_range": null,
                             "name": "Bite attack",
                             "range": null,
-                            "reach": 5.0,
+                            "reach": 5,
                             "target_creature_only": false,
                             "to_hit_mod": 3
                         }
@@ -850,44 +815,38 @@
             "armor_detail": "",
             "blindsight_range": null,
             "category": "Miscellaneous Creatures",
-            "challenge_rating_decimal": "0.125",
-            "challenge_rating_text": "1/8",
+            "challenge_rating": 0.125,
             "creaturesets": [
-                "http://localhost:8000/v2/creaturesets/common-mounts/"
+                "common-mounts"
             ],
             "darkvision_range": null,
             "document": {
                 "display_name": "5e 2014 Rules",
                 "gamesystem": {
                     "key": "5e-2014",
-                    "name": "5th Edition 2014",
-                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+                    "name": "5th Edition 2014"
                 },
                 "key": "srd-2014",
                 "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast",
-                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+                    "name": "Wizards of the Coast"
                 },
                 "type": "SOURCE"
             },
             "environments": [
                 {
                     "key": "forest",
-                    "name": "Forest or Jungle",
-                    "url": "http://localhost:8000/v2/environments/forest/"
+                    "name": "Forest or Jungle"
                 },
                 {
                     "key": "hills",
-                    "name": "Hills",
-                    "url": "http://localhost:8000/v2/environments/hills/"
+                    "name": "Hills"
                 },
                 {
                     "key": "urban",
-                    "name": "Urban",
-                    "url": "http://localhost:8000/v2/environments/urban/"
+                    "name": "Urban"
                 }
             ],
             "experience_points": 25,
@@ -909,7 +868,7 @@
                 "wisdom": 1
             },
             "name": "Mastiff",
-            "normal_sight_range": 10560.0,
+            "normal_sight_range": 10560,
             "passive_perception": 13,
             "proficiency_bonus": null,
             "resistances_and_immunities": {
@@ -940,8 +899,7 @@
             },
             "size": {
                 "key": "medium",
-                "name": "Medium",
-                "url": "http://localhost:8000/v2/sizes/medium/"
+                "name": "Medium"
             },
             "skill_bonuses": {
                 "acrobatics": 0,
@@ -985,17 +943,17 @@
             },
             "speed": {
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "speed_all": {
-                "burrow": 0.0,
-                "climb": 20.0,
-                "crawl": 20.0,
-                "fly": 0.0,
+                "burrow": 0,
+                "climb": 20,
+                "crawl": 20,
+                "fly": 0,
                 "hover": false,
-                "swim": 20.0,
+                "swim": 20,
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "subcategory": null,
             "traits": [
@@ -1008,10 +966,8 @@
             "truesight_range": null,
             "type": {
                 "key": "beast",
-                "name": "Beast",
-                "url": "http://localhost:8000/v2/creaturetypes/beast/"
-            },
-            "url": "http://localhost:8000/v2/creatures/srd_mastiff/"
+                "name": "Beast"
+            }
         },
         {
             "ability_scores": {
@@ -1033,8 +989,7 @@
                             "damage_die_type": "D4",
                             "damage_type": {
                                 "key": "thunder",
-                                "name": "Thunder",
-                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                                "name": "Thunder"
                             },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
@@ -1044,7 +999,7 @@
                             "long_range": null,
                             "name": "Hooves attack",
                             "range": null,
-                            "reach": 5.0,
+                            "reach": 5,
                             "target_creature_only": false,
                             "to_hit_mod": 2
                         }
@@ -1062,44 +1017,38 @@
             "armor_detail": "",
             "blindsight_range": null,
             "category": "Miscellaneous Creatures",
-            "challenge_rating_decimal": "0.125",
-            "challenge_rating_text": "1/8",
+            "challenge_rating": 0.125,
             "creaturesets": [
-                "http://localhost:8000/v2/creaturesets/common-mounts/"
+                "common-mounts"
             ],
             "darkvision_range": null,
             "document": {
                 "display_name": "5e 2014 Rules",
                 "gamesystem": {
                     "key": "5e-2014",
-                    "name": "5th Edition 2014",
-                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+                    "name": "5th Edition 2014"
                 },
                 "key": "srd-2014",
                 "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast",
-                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+                    "name": "Wizards of the Coast"
                 },
                 "type": "SOURCE"
             },
             "environments": [
                 {
                     "key": "grassland",
-                    "name": "Grassland or Plains",
-                    "url": "http://localhost:8000/v2/environments/grassland/"
+                    "name": "Grassland or Plains"
                 },
                 {
                     "key": "hills",
-                    "name": "Hills",
-                    "url": "http://localhost:8000/v2/environments/hills/"
+                    "name": "Hills"
                 },
                 {
                     "key": "urban",
-                    "name": "Urban",
-                    "url": "http://localhost:8000/v2/environments/urban/"
+                    "name": "Urban"
                 }
             ],
             "experience_points": 25,
@@ -1121,7 +1070,7 @@
                 "wisdom": 0
             },
             "name": "Mule",
-            "normal_sight_range": 10560.0,
+            "normal_sight_range": 10560,
             "passive_perception": 10,
             "proficiency_bonus": null,
             "resistances_and_immunities": {
@@ -1152,8 +1101,7 @@
             },
             "size": {
                 "key": "medium",
-                "name": "Medium",
-                "url": "http://localhost:8000/v2/sizes/medium/"
+                "name": "Medium"
             },
             "skill_bonuses": {
                 "acrobatics": 0,
@@ -1197,17 +1145,17 @@
             },
             "speed": {
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "speed_all": {
-                "burrow": 0.0,
-                "climb": 20.0,
-                "crawl": 20.0,
-                "fly": 0.0,
+                "burrow": 0,
+                "climb": 20,
+                "crawl": 20,
+                "fly": 0,
                 "hover": false,
-                "swim": 20.0,
+                "swim": 20,
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "subcategory": null,
             "traits": [
@@ -1224,10 +1172,8 @@
             "truesight_range": null,
             "type": {
                 "key": "beast",
-                "name": "Beast",
-                "url": "http://localhost:8000/v2/creaturetypes/beast/"
-            },
-            "url": "http://localhost:8000/v2/creatures/srd_mule/"
+                "name": "Beast"
+            }
         },
         {
             "ability_scores": {
@@ -1249,8 +1195,7 @@
                             "damage_die_type": "D4",
                             "damage_type": {
                                 "key": "thunder",
-                                "name": "Thunder",
-                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                                "name": "Thunder"
                             },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
@@ -1260,7 +1205,7 @@
                             "long_range": null,
                             "name": "Hooves attack",
                             "range": null,
-                            "reach": 5.0,
+                            "reach": 5,
                             "target_creature_only": false,
                             "to_hit_mod": 4
                         }
@@ -1278,39 +1223,34 @@
             "armor_detail": "",
             "blindsight_range": null,
             "category": "Miscellaneous Creatures",
-            "challenge_rating_decimal": "0.125",
-            "challenge_rating_text": "1/8",
+            "challenge_rating": 0.125,
             "creaturesets": [
-                "http://localhost:8000/v2/creaturesets/common-mounts/"
+                "common-mounts"
             ],
             "darkvision_range": null,
             "document": {
                 "display_name": "5e 2014 Rules",
                 "gamesystem": {
                     "key": "5e-2014",
-                    "name": "5th Edition 2014",
-                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+                    "name": "5th Edition 2014"
                 },
                 "key": "srd-2014",
                 "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast",
-                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+                    "name": "Wizards of the Coast"
                 },
                 "type": "SOURCE"
             },
             "environments": [
                 {
                     "key": "mountain",
-                    "name": "Mountain",
-                    "url": "http://localhost:8000/v2/environments/mountain/"
+                    "name": "Mountain"
                 },
                 {
                     "key": "urban",
-                    "name": "Urban",
-                    "url": "http://localhost:8000/v2/environments/urban/"
+                    "name": "Urban"
                 }
             ],
             "experience_points": 25,
@@ -1332,7 +1272,7 @@
                 "wisdom": 0
             },
             "name": "Pony",
-            "normal_sight_range": 10560.0,
+            "normal_sight_range": 10560,
             "passive_perception": 10,
             "proficiency_bonus": null,
             "resistances_and_immunities": {
@@ -1363,8 +1303,7 @@
             },
             "size": {
                 "key": "medium",
-                "name": "Medium",
-                "url": "http://localhost:8000/v2/sizes/medium/"
+                "name": "Medium"
             },
             "skill_bonuses": {
                 "acrobatics": 0,
@@ -1408,17 +1347,17 @@
             },
             "speed": {
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "speed_all": {
-                "burrow": 0.0,
-                "climb": 20.0,
-                "crawl": 20.0,
-                "fly": 0.0,
+                "burrow": 0,
+                "climb": 20,
+                "crawl": 20,
+                "fly": 0,
                 "hover": false,
-                "swim": 20.0,
+                "swim": 20,
                 "unit": "feet",
-                "walk": 40.0
+                "walk": 40
             },
             "subcategory": null,
             "traits": [],
@@ -1426,10 +1365,8 @@
             "truesight_range": null,
             "type": {
                 "key": "beast",
-                "name": "Beast",
-                "url": "http://localhost:8000/v2/creaturetypes/beast/"
-            },
-            "url": "http://localhost:8000/v2/creatures/srd_pony/"
+                "name": "Beast"
+            }
         },
         {
             "ability_scores": {
@@ -1451,8 +1388,7 @@
                             "damage_die_type": "D4",
                             "damage_type": {
                                 "key": "thunder",
-                                "name": "Thunder",
-                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                                "name": "Thunder"
                             },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
@@ -1462,7 +1398,7 @@
                             "long_range": null,
                             "name": "Hooves attack",
                             "range": null,
-                            "reach": 5.0,
+                            "reach": 5,
                             "target_creature_only": false,
                             "to_hit_mod": 5
                         }
@@ -1480,39 +1416,34 @@
             "armor_detail": "",
             "blindsight_range": null,
             "category": "Miscellaneous Creatures",
-            "challenge_rating_decimal": "0.250",
-            "challenge_rating_text": "1/4",
+            "challenge_rating": 0.25,
             "creaturesets": [
-                "http://localhost:8000/v2/creaturesets/common-mounts/"
+                "common-mounts"
             ],
             "darkvision_range": null,
             "document": {
                 "display_name": "5e 2014 Rules",
                 "gamesystem": {
                     "key": "5e-2014",
-                    "name": "5th Edition 2014",
-                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+                    "name": "5th Edition 2014"
                 },
                 "key": "srd-2014",
                 "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast",
-                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+                    "name": "Wizards of the Coast"
                 },
                 "type": "SOURCE"
             },
             "environments": [
                 {
                     "key": "grassland",
-                    "name": "Grassland or Plains",
-                    "url": "http://localhost:8000/v2/environments/grassland/"
+                    "name": "Grassland or Plains"
                 },
                 {
                     "key": "urban",
-                    "name": "Urban",
-                    "url": "http://localhost:8000/v2/environments/urban/"
+                    "name": "Urban"
                 }
             ],
             "experience_points": 50,
@@ -1534,7 +1465,7 @@
                 "wisdom": 0
             },
             "name": "Riding Horse",
-            "normal_sight_range": 10560.0,
+            "normal_sight_range": 10560,
             "passive_perception": 10,
             "proficiency_bonus": null,
             "resistances_and_immunities": {
@@ -1565,8 +1496,7 @@
             },
             "size": {
                 "key": "large",
-                "name": "Large",
-                "url": "http://localhost:8000/v2/sizes/large/"
+                "name": "Large"
             },
             "skill_bonuses": {
                 "acrobatics": 0,
@@ -1610,17 +1540,17 @@
             },
             "speed": {
                 "unit": "feet",
-                "walk": 60.0
+                "walk": 60
             },
             "speed_all": {
-                "burrow": 0.0,
-                "climb": 30.0,
-                "crawl": 30.0,
-                "fly": 0.0,
+                "burrow": 0,
+                "climb": 30,
+                "crawl": 30,
+                "fly": 0,
                 "hover": false,
-                "swim": 30.0,
+                "swim": 30,
                 "unit": "feet",
-                "walk": 60.0
+                "walk": 60
             },
             "subcategory": null,
             "traits": [],
@@ -1628,10 +1558,8 @@
             "truesight_range": null,
             "type": {
                 "key": "beast",
-                "name": "Beast",
-                "url": "http://localhost:8000/v2/creaturetypes/beast/"
-            },
-            "url": "http://localhost:8000/v2/creatures/srd_riding-horse/"
+                "name": "Beast"
+            }
         },
         {
             "ability_scores": {
@@ -1653,8 +1581,7 @@
                             "damage_die_type": "D6",
                             "damage_type": {
                                 "key": "thunder",
-                                "name": "Thunder",
-                                "url": "http://localhost:8000/v2/damagetypes/thunder/"
+                                "name": "Thunder"
                             },
                             "distance_unit": "feet",
                             "extra_damage_bonus": null,
@@ -1664,7 +1591,7 @@
                             "long_range": null,
                             "name": "Hooves attack",
                             "range": null,
-                            "reach": 5.0,
+                            "reach": 5,
                             "target_creature_only": false,
                             "to_hit_mod": 6
                         }
@@ -1682,34 +1609,30 @@
             "armor_detail": "",
             "blindsight_range": null,
             "category": "Miscellaneous Creatures",
-            "challenge_rating_decimal": "0.500",
-            "challenge_rating_text": "1/2",
+            "challenge_rating": 0.5,
             "creaturesets": [
-                "http://localhost:8000/v2/creaturesets/common-mounts/"
+                "common-mounts"
             ],
             "darkvision_range": null,
             "document": {
                 "display_name": "5e 2014 Rules",
                 "gamesystem": {
                     "key": "5e-2014",
-                    "name": "5th Edition 2014",
-                    "url": "http://localhost:8000/v2/gamesystems/5e-2014/"
+                    "name": "5th Edition 2014"
                 },
                 "key": "srd-2014",
                 "name": "System Reference Document 5.1",
                 "permalink": "https://dnd.wizards.com/resources/systems-reference-document",
                 "publisher": {
                     "key": "wizards-of-the-coast",
-                    "name": "Wizards of the Coast",
-                    "url": "http://localhost:8000/v2/publishers/wizards-of-the-coast/"
+                    "name": "Wizards of the Coast"
                 },
                 "type": "SOURCE"
             },
             "environments": [
                 {
                     "key": "urban",
-                    "name": "Urban",
-                    "url": "http://localhost:8000/v2/environments/urban/"
+                    "name": "Urban"
                 }
             ],
             "experience_points": 100,
@@ -1731,7 +1654,7 @@
                 "wisdom": 1
             },
             "name": "Warhorse",
-            "normal_sight_range": 10560.0,
+            "normal_sight_range": 10560,
             "passive_perception": 11,
             "proficiency_bonus": null,
             "resistances_and_immunities": {
@@ -1762,8 +1685,7 @@
             },
             "size": {
                 "key": "large",
-                "name": "Large",
-                "url": "http://localhost:8000/v2/sizes/large/"
+                "name": "Large"
             },
             "skill_bonuses": {
                 "acrobatics": 0,
@@ -1807,17 +1729,17 @@
             },
             "speed": {
                 "unit": "feet",
-                "walk": 60.0
+                "walk": 60
             },
             "speed_all": {
-                "burrow": 0.0,
-                "climb": 30.0,
-                "crawl": 30.0,
-                "fly": 0.0,
+                "burrow": 0,
+                "climb": 30,
+                "crawl": 30,
+                "fly": 0,
                 "hover": false,
-                "swim": 30.0,
+                "swim": 30,
                 "unit": "feet",
-                "walk": 60.0
+                "walk": 60
             },
             "subcategory": null,
             "traits": [
@@ -1830,14 +1752,11 @@
             "truesight_range": null,
             "type": {
                 "key": "beast",
-                "name": "Beast",
-                "url": "http://localhost:8000/v2/creaturetypes/beast/"
-            },
-            "url": "http://localhost:8000/v2/creatures/srd_warhorse/"
+                "name": "Beast"
+            }
         }
     ],
-    "document": "http://localhost:8000/v2/documents/srd-2014/",
+    "document": "srd-2014",
     "key": "common-mounts",
-    "name": "Common Mounts",
-    "url": "http://localhost:8000/v2/creaturesets/common-mounts/"
+    "name": "Common Mounts"
 }

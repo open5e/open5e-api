@@ -11,8 +11,8 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: pipenv
@@ -37,7 +37,7 @@ jobs:
       - name: Sanitize branch name
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF##*/} | tr '/' '-')" >> $GITHUB_ENV
       - name: Build Docker image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           push: false
           tags: open5e-api:${{ env.BRANCH_NAME }}

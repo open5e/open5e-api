@@ -2,9 +2,8 @@ from rest_framework import viewsets
 
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
-from .mixins import EagerLoadingMixin
+from api_v2 import models, serializers
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class ConditionFilterSet(FilterSet):
     class Meta:
@@ -17,7 +16,7 @@ class ConditionFilterSet(FilterSet):
         }
 
 
-class ConditionViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class ConditionViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of conditions.
     retrieve: API endpoint for returning a particular condition.

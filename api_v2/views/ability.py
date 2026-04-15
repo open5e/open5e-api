@@ -2,9 +2,8 @@ from rest_framework import viewsets
 
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
-from .mixins import EagerLoadingMixin
+from api_v2 import models, serializers
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class AbilityFilterSet(FilterSet):
     class Meta:
@@ -37,7 +36,7 @@ class SkillFilterSet(FilterSet):
         }
 
 
-class SkillViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class SkillViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of skills.
     retrieve: API endpoint for returning a particular skill.

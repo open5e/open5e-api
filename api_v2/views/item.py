@@ -2,17 +2,16 @@ from rest_framework import viewsets
 from django_filters import FilterSet, BooleanFilter
 
 from api_v2 import models, serializers
-from .mixins import EagerLoadingMixin
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
+
+# Weapon property filter factory method
+def weapon_property_filter(property_name, prefix="weapon__"):
+    return lambda queryset, name, value: (
+        queryset.filter(**{f'{prefix}properties__property__name__iexact': property_name})
+    )
 
 class ItemFilterSet(FilterSet):
-    ''' Filter set for the Item model. Used in the ItemViewSet below '''
-
-    is_magic_item = BooleanFilter(
-        label='Magic Items',
-        field_name='rarity',
-        lookup_expr='isnull',
-        exclude=True
-    )
+    """ Filter set for the Item model. Used in the ItemViewSet below """
 
     is_weapon = BooleanFilter(
         label='Weapons',
@@ -20,19 +19,13 @@ class ItemFilterSet(FilterSet):
         lookup_expr='isnull',
         exclude=True
     )
-
+    
     is_armor = BooleanFilter(
         label='Armor',
         field_name='armor',
         lookup_expr='isnull',
         exclude=True
     )
-    
-    # Weapon property filter factory method
-    def weapon_property_filter(property_name):
-        return lambda queryset, name, value: (
-            queryset.filter(weapon__properties__property__name__iexact=property_name)
-        )
 
     # Filters for weapon properties (using the factory method defined above)
     is_light = BooleanFilter(label='Light Weapons', method=weapon_property_filter('light'))
@@ -49,31 +42,14 @@ class ItemFilterSet(FilterSet):
             'desc': ['icontains'],
             'cost': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
-            'rarity': ['exact', 'in'],
-            'requires_attunement': ['iexact'],
             'category': ['in', 'exact'],
             'document': ['in', 'exact'],
             'document__key': ['in','iexact'],
             'document__gamesystem__key': ['in','iexact'],
         }
 
-# used in ItemViewSet and MagicItemViewSet - factored out for DRYness
-item_prefetch_fields = [
-    'armor',
-    'category',
-    'damage_immunities',
-    'damage_resistances',
-    'damage_vulnerabilities',
-    'document',
-    'weapon__properties',
-    'weapon__damage_type',
-    'weapon__document',
-    'weapon__properties__property',
-    'rarity',
-    'size',
-]
 
-class ItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class ItemViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of items.
 
@@ -83,23 +59,58 @@ class ItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.ItemSerializer
     filterset_class = ItemFilterSet
 
+    item_prefetch_fields = [
+        'armor',
+        'category',
+        'damage_immunities',
+        'damage_resistances',
+        'damage_vulnerabilities',
+        'document',
+        'weapon__properties',
+        'weapon__damage_type',
+        'weapon__document',
+        'weapon__properties__property',
+        'size',
+    ]
+
     select_related_fields = ['armor', 'weapon']
     prefetch_related_fields = item_prefetch_fields
 
-class MagicItemViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+
+class MagicItemFilterSet(ItemFilterSet):
+    """
+    FilterSet for MagicItemViewSet. Inherits from ItemFilterSet and adds in
+    MagicItem exclusive fields.
+    """
+    requires_attunement = BooleanFilter(
+        label='Requires Attunement',
+        field_name='requires_attunement',
+    )
+
+    class Meta(ItemFilterSet.Meta):
+        model = models.MagicItem
+        fields = {
+            **ItemFilterSet.Meta.fields,
+            'rarity': ['exact', 'in'],
+            'requires_attunement': ['exact'],
+        }
+
+
+class MagicItemViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of magic items.
 
     retrieve: API endpoint for returning a particular magic item.
     """
-    queryset = models.Item.objects.filter(rarity__isnull=False).order_by('pk')
-    serializer_class = serializers.ItemSerializer
-    filterset_class = ItemFilterSet
+    queryset = models.MagicItem.objects.order_by('pk')
+    serializer_class = serializers.MagicItemSerializer
+    filterset_class = MagicItemFilterSet
     
     select_related_fields = ['armor', 'weapon']
-    prefetch_related_fields = item_prefetch_fields
+    prefetch_related_fields = ItemViewSet.item_prefetch_fields + ['rarity']
 
-class ItemRarityViewSet(viewsets.ReadOnlyModelViewSet):
+
+class ItemRarityViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of item rarities.
 
@@ -109,9 +120,8 @@ class ItemRarityViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.ItemRaritySerializer
 
 
-
 class ItemSetFilterSet(FilterSet):
-
+    
     class Meta:
         model = models.ItemSet
         fields = {
@@ -122,8 +132,8 @@ class ItemSetFilterSet(FilterSet):
         }
 
 
-class ItemSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
-    """"
+class ItemSetViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
+    """
     list: API Endpoint for returning a set of itemsets.
 
     retrieve: API endpoint for return a particular itemset.
@@ -144,8 +154,9 @@ class ItemSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
         'items__weapon__document'
     ]
 
-class ItemCategoryViewSet(viewsets.ReadOnlyModelViewSet):
-    """"
+
+class ItemCategoryViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
+    """
     list: API Endpoint for returning a set of item categories.
 
     retrieve: API endpoint for return a particular item categories.
@@ -156,17 +167,11 @@ class ItemCategoryViewSet(viewsets.ReadOnlyModelViewSet):
 
 class WeaponFilterSet(FilterSet):
 
-    # returns a filter method to a given WeaponProperty
-    def weapon_property_filter(property_name):
-        return lambda queryset, name, value: (
-            queryset.filter(properties__property__name__iexact=property_name)
-        )
-
-    is_light = BooleanFilter(label='Is Light', method=weapon_property_filter('light'))
-    is_versatile = BooleanFilter(label='Is Versatile', method=weapon_property_filter('versatile'))
-    is_thrown = BooleanFilter(label='Is Thrown', method=weapon_property_filter('thrown'))
-    is_finesse = BooleanFilter(label='Is Finesse', method = weapon_property_filter('finesse'))
-    is_two_handed = BooleanFilter(label='Is Two-handed', method=weapon_property_filter('two-handed'))
+    is_light = BooleanFilter(label='Is Light', method=weapon_property_filter('light', prefix=''))
+    is_versatile = BooleanFilter(label='Is Versatile', method=weapon_property_filter('versatile', prefix=''))
+    is_thrown = BooleanFilter(label='Is Thrown', method=weapon_property_filter('thrown', prefix=''))
+    is_finesse = BooleanFilter(label='Is Finesse', method = weapon_property_filter('finesse', prefix=''))
+    is_two_handed = BooleanFilter(label='Is Two-handed', method=weapon_property_filter('two-handed', prefix=''))
 
     class Meta:
         model = models.Weapon
@@ -179,7 +184,7 @@ class WeaponFilterSet(FilterSet):
         }
 
 
-class WeaponViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class WeaponViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of weapons.
     retrieve: API endpoint for returning a particular weapon.
@@ -189,6 +194,7 @@ class WeaponViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
     filterset_class = WeaponFilterSet
 
     prefetch_related_fields = ['document', 'damage_type', 'properties__property']
+
 
 class ArmorFilterSet(FilterSet):
 
@@ -208,7 +214,7 @@ class ArmorFilterSet(FilterSet):
         }
 
 
-class ArmorViewSet(viewsets.ReadOnlyModelViewSet):
+class ArmorViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of armor.
     retrieve: API endpoint for returning a particular armor.

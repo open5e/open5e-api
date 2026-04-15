@@ -2,6 +2,7 @@
 
 from .item import ItemCategory
 from .item import Item
+from .item import MagicItem
 from .item import ItemSet
 from .item import ItemRarity
 
