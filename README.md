@@ -24,6 +24,16 @@
 
 <br/>
 
+# Announcement: API V2 has officially launched, and V1 is now in  maintenance. Calls now require a server prefix
+
+If you are using the old V1 API, you will need to prefix your calls with /v1/ (eg. api.open5e.com/v1/monsters). This should resolve issues for anyone currently consuming v1 API and having issues with their site.
+
+This has come after many months of dicussion within our discord and on this repo (and the inclusion of a 299 deprecation warning in every response header). Unfortunately, since we do not require registration for API keys, we have no way to contact consumers other than to update and hope folks find their way here when things break.
+
+The v1 API is now in maintenance, and will not recieve content or functionality updates. We recommend migrating to v2, but will keep the v1 running for as long as it doesn't consume too much resources to do so.
+
+All v1 content is still available for hosting your own version, if required
+
 # Table of contents
 
 - [Table of contents](#table-of-contents)
