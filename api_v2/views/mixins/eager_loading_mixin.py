@@ -2,15 +2,15 @@ class EagerLoadingMixin:
   """
   Mixin to apply eager loading optimisations to a ViewSet.
   
-  Dynamically applies `select_related()` for ForeignKey fields and 
-  `prefetch_related()` from ManyToMany/reverse relationships. This improves 
-  query efficiency and prevents N+1 problems
+  Handles the running of `select_related()` (for ForeignKey fields) and 
+  `prefetch_related()` (from ManyToMany/reverse relationships) queryset methods
+  to allow developers to solve N+1 problems on Open5e endpoints.
   
   ## Usage
   1. Make sure your ViewSet inherits from `EagerLoadingMixin` before its base
   class (ie. ReadOnlyModelViewSet).
   2. Re-define `select_related_fields` and `prefetch_related_fields` lists on 
-  the child ViewSet to specify relationships to optimise.
+  the child ViewSet to specify relationships to select related / pre-fetch.
   
   ## Usage Example
   ```
@@ -34,7 +34,7 @@ class EagerLoadingMixin:
     queryset = super().get_queryset()
 
     # Check fields included or excluded via query parameter. We use this data 
-    # so that only we only eagerly load fields actually returned by the API.
+    # so that we only eagerly load fields actually returned by the API.
     requested_fields = self.parse_requested_fields()
     excluded_fields = self.parse_excluded_fields()
     
@@ -73,12 +73,12 @@ class EagerLoadingMixin:
     'requested_fields' or 'excluded_fields'. Used to remove fields from eager 
     loading if they are not returned by API call to avoid unnecessary DB calls
     """
-    
     # avoids mutable default argument issues: set to empty list if param missing
     requested_fields = requested_fields or []
     excluded_fields = excluded_fields or []
 
     def field_matches(field, targets):
+      # Returns True if 'field' equals any 'target', or is a child path of one
       return any(field == target or field.startswith(target + '__') for target in targets)
 
     if requested_fields:

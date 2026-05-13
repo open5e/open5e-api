@@ -1,11 +1,11 @@
 class ExcludeFieldsMixin:
   """
   This Mixin supports dynamically excluding returned fields of serializers that
-  inherit from it via the `?exclude` query parameter on. 
+  inherit from it via the `?exclude` query parameter. 
   
   Syntactically similar to the default `?field` DRF query parameter. Nested 
-  fields are similarly controlled via the '__' operator (see Examples).
-
+  fields are similarly excluded via the '__' operator (see Examples).
+  
   ## Usage
   1. Make sure your ViewSet inherits from `ExcludeFieldsMixin` before its base
   class (ie. ReadOnlyModelViewSet).
@@ -45,7 +45,7 @@ class ExcludeFieldsMixin:
     if not fields_to_exclude:
       return serializer_class
 
-    # Walks the serializer tree removeing fields at each level flagged for removal.
+    # Walks the serializer tree removing fields at each level flagged for removal.
     # 'path' tracks where we are in the tree, which we use as a key to index into 
     # 'fields_to_exclude' to check which fields to remove. We then recurse into 
     # nested serializers and apply the same logic.
