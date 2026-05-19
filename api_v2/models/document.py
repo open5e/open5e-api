@@ -145,9 +145,7 @@ class FromDocument(models.Model):
         return reverse(self.__name__, kwargs={"pk": self.pk})
 
     def search_result_extra_fields(self):
-        return {
-            "school":self.school.key,
-        }
+        return
 
     class Meta:
         abstract = True
