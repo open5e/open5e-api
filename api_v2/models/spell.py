@@ -41,6 +41,8 @@ class Spell(HasName, HasDescription, FromDocument):
 
     # Casting target requirements of the spell instance SHOULD BE A LIST
     target_type = models.TextField(
+        null=True,
+        blank=True,
         choices = SPELL_TARGET_TYPE_CHOICES,
         help_text='Spell target type key.')
 

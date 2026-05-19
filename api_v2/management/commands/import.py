@@ -2,6 +2,7 @@ import os
 import json
 import glob
 
+from django.apps import apps
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 from django.db import IntegrityError, connection
@@ -53,28 +54,38 @@ class Command(BaseCommand):
                 
                 # Check constraints after all data is loaded
                 self._check_constraints()
-                self.stdout.write('All foreign key constraints validated successfully.')
-                
+                self.stdout.write(self.style.SUCCESS('All foreign key constraints validated successfully.'))
+
+                # Validate choice fields on all models
+                self._validate_choices()
+                self.stdout.write(self.style.SUCCESS('All choice field constraints validated successfully.'))
+
             except IntegrityError as e:
                 # Re-enable foreign key checks even if there was an error
                 self._enable_foreign_key_checks()
-                
-                self.stdout.write(self.style.ERROR(
-                    f'Data import completed but foreign key constraint validation failed.'
-                ))
-                self.stdout.write(self.style.ERROR(f'Error details: {e}'))
-                
-                # Extract and format the violation details for a clear worklist
-                if "Foreign key constraint violations found:" in str(e):
-                    violations = str(e).split("Foreign key constraint violations found:\n")[1]
+
+                error_str = str(e)
+                if "Foreign key constraint violations found:" in error_str:
+                    violations = error_str.split("Foreign key constraint violations found:\n")[1]
                     self.stdout.write(self.style.ERROR('\nFOREIGN KEY CONSTRAINT VIOLATIONS - WORKLIST:'))
                     for violation in violations.split('\n'):
                         if violation.strip():
                             self.stdout.write(self.style.ERROR(f'  • {violation}'))
-                
-                self.stdout.write(self.style.ERROR(
-                    '\nData import FAILED due to foreign key constraint violations.'
-                ))
+                    self.stdout.write(self.style.ERROR(
+                        '\nData import FAILED due to foreign key constraint violations.'
+                    ))
+                elif "Choice field constraint violations found:" in error_str:
+                    violations = error_str.split("Choice field constraint violations found:\n")[1]
+                    self.stdout.write(self.style.ERROR('\nCHOICE FIELD CONSTRAINT VIOLATIONS - WORKLIST:'))
+                    for violation in violations.split('\n'):
+                        if violation.strip():
+                            self.stdout.write(self.style.ERROR(f'  • {violation}'))
+                    self.stdout.write(self.style.ERROR(
+                        '\nData import FAILED due to choice field constraint violations.'
+                    ))
+                else:
+                    self.stdout.write(self.style.ERROR(f'Data import FAILED: {e}'))
+
                 self.stdout.write(self.style.WARNING(
                     'Fix the above violations and re-run the import.'
                 ))
@@ -115,6 +126,30 @@ class Command(BaseCommand):
                     pass
         except Exception as e:
             raise IntegrityError(f"Foreign key constraint validation failed: {e}")
+
+    def _validate_choices(self):
+        """Check that all choice-constrained fields contain only valid values."""
+        violations = []
+        for model in apps.get_app_config('api_v2').get_models():
+            choice_fields = [
+                f for f in model._meta.get_fields()
+                if hasattr(f, 'choices') and f.choices
+            ]
+            if not choice_fields:
+                continue
+            valid_values = {f.name: {k for k, _ in f.choices} for f in choice_fields}
+            for obj in model.objects.all():
+                for field in choice_fields:
+                    value = getattr(obj, field.name)
+                    if value is not None and value not in valid_values[field.name]:
+                        violations.append(
+                            f"{model.__name__} pk={obj.pk!r}: "
+                            f"{field.name}={value!r} not in choices"
+                        )
+        if violations:
+            raise IntegrityError(
+                "Choice field constraint violations found:\n" + "\n".join(violations)
+            )
 
     def _load_files_individually(self, fixture_filepaths):
         """Load fixture files one by one to identify which one causes the foreign key error."""
