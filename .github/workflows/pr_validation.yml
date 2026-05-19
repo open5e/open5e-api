@@ -16,6 +16,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
+          prune-cache: false
       - name: Install Python
         run: uv python install 3.11
       - name: Install dependencies
