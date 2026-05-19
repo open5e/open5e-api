@@ -1,7 +1,10 @@
 name: Clear Cloudflare Cache After Deployments
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Build and deploy"]
+    types:
+      - completed
     branches:
       - main
       - staging
