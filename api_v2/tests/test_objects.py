@@ -6,6 +6,42 @@ from typing import Callable
 API_BASE = f"http://localhost:8000"
 
 
+VALID_CASTING_TIME = {
+    'reaction', 'bonus-action', 'action', 'turn', 'round',
+    '1minute', '5minutes', '10minutes',
+    '1hour', '4hours', '7hours', '8hours', '9hours', '12hours', '24hours',
+    '1week',
+}
+VALID_TARGET_TYPE = {'creature', 'object', 'point', 'area'}
+VALID_SHAPE_TYPE = {'cone', 'cube', 'cylinder', 'line', 'sphere'}
+VALID_DURATION = {
+    'instantaneous', 'instantaneous or special',
+    '1 turn', '1 round', 'concentration + 1 round',
+    '2 rounds', '3 rounds', '4 rounds', '1d4+2 rounds', '5 rounds', '6 rounds', '10 rounds',
+    'up to 1 minute', '1 minute', '1 minute, or until expended', '1 minute, until expended',
+    '5 minutes', '10 minutes', '1 minute or 1 hour',
+    'up to 1 hour', '1 hour', '1 hour or until triggered',
+    '2 hours', '3 hours', '1d10 hours', '6 hours', '2-12 hours', 'up to 8 hours', '8 hours',
+    '1 hour/caster level', '10 hours', '12 hours',
+    '24 hours or until the target attempts a third death saving throw', '24 hours',
+    '1 day', '3 days', '5 days', '7 days', '10 days', '13 days', '30 days',
+    '1 year', 'special',
+    'until dispelled or destroyed', 'until destroyed', 'until dispelled',
+    'until cured or dispelled', 'until dispelled or triggered',
+    'permanent until discharged', 'permanent; one generation', 'permanent',
+}
+
+
+def _fetch_all_spells():
+    spells = []
+    url = f"{API_BASE}/v2/spells/?limit=500"
+    while url:
+        data = requests.get(url, headers={'Accept': 'application/json'}).json()
+        spells.extend(data['results'])
+        url = data.get('next')
+    return spells
+
+
 class TestSpellCastingOptions:
     """Tests to validate spell casting options data integrity."""
 
@@ -41,6 +77,42 @@ class TestSpellCastingOptions:
         
         assert not spells_with_duplicates, \
             f"Spells with duplicate casting option types: {spells_with_duplicates}"
+
+    def test_all_spell_casting_times_are_valid(self):
+        """All spells must have a casting_time value that matches the enumerated choices."""
+        violations = [
+            f"{s['key']}: casting_time={s['casting_time']!r}"
+            for s in _fetch_all_spells()
+            if s.get('casting_time') not in VALID_CASTING_TIME
+        ]
+        assert not violations, f"Spells with invalid casting_time: {violations}"
+
+    def test_all_spell_target_types_are_valid(self):
+        """All spells with a target_type must use an enumerated choice value."""
+        violations = [
+            f"{s['key']}: target_type={s['target_type']!r}"
+            for s in _fetch_all_spells()
+            if s.get('target_type') is not None and s['target_type'] not in VALID_TARGET_TYPE
+        ]
+        assert not violations, f"Spells with invalid target_type: {violations}"
+
+    def test_all_spell_shape_types_are_valid(self):
+        """All spells with a shape_type must use an enumerated choice value."""
+        violations = [
+            f"{s['key']}: shape_type={s['shape_type']!r}"
+            for s in _fetch_all_spells()
+            if s.get('shape_type') is not None and s['shape_type'] not in VALID_SHAPE_TYPE
+        ]
+        assert not violations, f"Spells with invalid shape_type: {violations}"
+
+    def test_all_spell_durations_are_valid(self):
+        """All spells must have a duration value that matches the enumerated choices."""
+        violations = [
+            f"{s['key']}: duration={s['duration']!r}"
+            for s in _fetch_all_spells()
+            if s.get('duration') not in VALID_DURATION
+        ]
+        assert not violations, f"Spells with invalid duration: {violations}"
 
 
 class TestObjects:
