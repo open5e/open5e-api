@@ -2,10 +2,8 @@ from rest_framework import viewsets
 
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
-
-from .mixins import EagerLoadingMixin
+from api_v2 import models, serializers
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class SpeciesFilterSet(FilterSet):
     class Meta:
@@ -20,7 +18,7 @@ class SpeciesFilterSet(FilterSet):
         }
 
 
-class SpeciesViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class SpeciesViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of species.
     retrieve: API endpoint for returning a particular species.

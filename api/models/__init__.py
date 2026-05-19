@@ -1,7 +1,6 @@
 """
 The initialization for models for open5e's api.
 """
-from .models import Manifest
 from .models import Document
 from .models import GameContent
 from .models import CharClass

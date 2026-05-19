@@ -2,10 +2,8 @@ from rest_framework import viewsets
 
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
-
-from .mixins import EagerLoadingMixin
+from api_v2 import models, serializers
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class WeaponPropertyFilterSet(FilterSet):
     class Meta:
@@ -18,7 +16,7 @@ class WeaponPropertyFilterSet(FilterSet):
             'document__gamesystem__key': ['in', 'iexact', 'exact'],
         }
 
-class WeaponPropertyViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class WeaponPropertyViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
   queryset = models.WeaponProperty.objects.all()
   serializer_class = serializers.WeaponPropertySerializer
   filterset_class = WeaponPropertyFilterSet

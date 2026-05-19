@@ -21,4 +21,4 @@ class EnvironmentSummarySerializer(GameContentSerializer):
     '''
     class Meta:
         model = models.Environment
-        fields = ['name', 'key', 'url']
+        fields = ['name', 'key']

@@ -2,10 +2,9 @@ from rest_framework import viewsets
 
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
+from api_v2 import models, serializers
 
-from .mixins import EagerLoadingMixin
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class RuleFilterSet(FilterSet):
     class Meta:
@@ -17,7 +16,7 @@ class RuleFilterSet(FilterSet):
             'document__gamesystem__key': ['in','iexact','exact'],
         }
 
-class RuleViewSet(viewsets.ReadOnlyModelViewSet):
+class RuleViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     queryset = models.Rule.objects.all()
     serializer_class = serializers.RuleSerializer
     filterset_class = RuleFilterSet
@@ -32,7 +31,7 @@ class RuleSetFilterSet(FilterSet):
             'document__gamesystem__key': ['in', 'exact'],
         }
 
-class RuleSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class RuleSetViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     queryset = models.RuleSet.objects.all()
     serializer_class = serializers.RuleSetSerializer
     filterset_class = RuleSetFilterSet

@@ -2,10 +2,8 @@ from rest_framework import viewsets
 
 from django_filters import FilterSet
 
-from api_v2 import models
-from api_v2 import serializers
-
-from .mixins import EagerLoadingMixin
+from api_v2 import models, serializers
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class CreatureFilterSet(FilterSet):
     '''This is the filterset class for creatures.'''
@@ -21,7 +19,7 @@ class CreatureFilterSet(FilterSet):
             'category': ['exact', 'iexact'],
             'subcategory': ['exact', 'iexact'],
             'type': ['exact'],
-            'challenge_rating_decimal': ['exact','lt','lte','gt','gte'],
+            'challenge_rating': ['exact','lt','lte','gt','gte'],
             'armor_class': ['exact','lt','lte','gt','gte'],
             'ability_score_strength': ['exact','lt','lte','gt','gte'],
             'ability_score_dexterity': ['exact','lt','lte','gt','gte'],
@@ -57,7 +55,7 @@ class CreatureFilterSet(FilterSet):
         }
 
 
-class CreatureViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class CreatureViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creatures.
     retrieve: API endpoint for returning a particular creature.
@@ -119,7 +117,7 @@ class CreatureSetFilterSet(FilterSet):
         }
 
 
-class CreatureSetViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class CreatureSetViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creature sets, which is similar to tags.
     retrieve: API endpoint for returning a particular creature set.

@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -24,7 +24,7 @@ jobs:
         working-directory: ${{ github.workspace }}
 
       - name: Upload release asset
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
           name: codebase
 

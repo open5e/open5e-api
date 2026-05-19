@@ -4,7 +4,7 @@ from django_filters import FilterSet
 
 from api_v2 import models
 from api_v2 import serializers
-from .mixins import EagerLoadingMixin
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class SpellFilterSet(FilterSet):
     class Meta:
@@ -29,7 +29,7 @@ class SpellFilterSet(FilterSet):
             'casting_time': ['in', 'iexact', 'exact'],
         }
 
-class SpellViewSet(EagerLoadingMixin, viewsets.ReadOnlyModelViewSet):
+class SpellViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of spells.
     retrieve: API endpoint for returning a particular spell.

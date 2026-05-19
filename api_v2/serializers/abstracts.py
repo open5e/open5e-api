@@ -19,7 +19,7 @@ _crossreferences_schema = inline_serializer(
 )
 
 
-class GameContentSerializer(serializers.HyperlinkedModelSerializer):  
+class GameContentSerializer(serializers.ModelSerializer):  
 
     """
     Much of the logic included in the GameContentSerializer is intended to 

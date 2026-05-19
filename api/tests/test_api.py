@@ -26,12 +26,12 @@ class TestAPIRoot:
 
     # Specific tests like these should be aimed at spots where there have been bugs before, to prevent regression.
     def test_magic_missile(self):
-        self._verify(f"/spells/magic-missile/")
+        self._verify(f"/v1/spells/magic-missile/")
 
     # Endpoint tests ensure that the basic structure and count of the objects does not change by accident. It's not a comprehensive test of all items.
 
     def test_armor(self):
-        self._verify("/armor")
+        self._verify("/v1/armor")
 
     def test_backgrounds(self):
         # This test is flaky, and fails on one machine, but passes on another.
@@ -45,18 +45,16 @@ class TestAPIRoot:
         #self._verify("/classes")
 
     def test_conditions(self):
-        self._verify("/conditions")
+        self._verify("/v1/conditions")
 
     def test_documents(self):
-        self._verify("/documents")
+        self._verify("/v1/documents")
 
     def test_feats(self):
-        self._verify("/feats")
+        self._verify("/v1/feats")
 
     def test_magicitems(self):
-        self._verify("/magicitems")
-
-    # /manifest is excluded because it's too volatile
+        self._verify("/v1/magicitems")
 
     def test_monsters(self):
         pass
@@ -64,7 +62,7 @@ class TestAPIRoot:
         #self._verify("/monsters", scrub_img_url)
 
     def test_planes(self):
-        self._verify("/planes")
+        self._verify("/v1/planes")
 
     def test_races(self):
         # This test is flaky, and fails on one machine, but passes on another.
@@ -72,10 +70,10 @@ class TestAPIRoot:
         #self._verify("/races")
 
     def test_sections(self):
-        self._verify("/sections")
+        self._verify("/v1/sections")
 
     def test_spelllist(self):
-        self._verify("/spelllist")
+        self._verify("/v1/spelllist")
 
     def test_spells(self):
         # This test is flaky, and fails on one machine, but passes on another.
@@ -83,5 +81,5 @@ class TestAPIRoot:
         #self._verify("/spells")
 
     def test_weapons(self):
-        self._verify("/weapons")
+        self._verify("/v1/weapons")
 

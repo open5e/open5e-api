@@ -872,7 +872,7 @@
 {
   "fields": {
     "action_type": "ACTION",
-    "desc": "The dragon casts one of the following spells, requiring no Material components and using Charisma as the spellcasting ability (spell save DC 17):\n- **At Will:** Detect Magic, Mind Spike -\n**1/Day Each:** Geas",
+    "desc": "The dragon casts one of the following spells, requiring no Material components and using Charisma as the spellcasting ability (spell save DC 17):\n- **At Will:** Detect Magic, Mind Spike\n- **1/Day Each:** Geas",
     "form_condition": null,
     "legendary_cost": null,
     "name": "Spellcasting",
@@ -13318,5 +13318,1420 @@
   },
   "model": "api_v2.creatureaction",
   "pk": "srd-2024_zombie_slam"
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_archmage_misty-step-3-day",
+  "fields": {
+    "name": "Misty Step",
+    "desc": "The mage casts Misty Step, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_archmage",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_assassin_cunning-action",
+  "fields": {
+    "name": "Cunning Action",
+    "desc": "The assassin takes the Dash, Disengage, or Hide action.",
+    "parent": "srd-2024_assassin",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_balor_teleport",
+  "fields": {
+    "name": "Teleport",
+    "desc": "The balor teleports itself or a willing demon within 10 feet of itself up to 60 feet to an unoccupied space the balor can see.",
+    "parent": "srd-2024_balor",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_basilisk_petrifying-gaze-recharge-4-6",
+  "fields": {
+    "name": "Petrifying Gaze (Recharge 4-6)",
+    "desc": "Constitution Saving Throw: DC 12, each creature in a 30-foot Cone. If the basilisk sees its reflection within the Cone, the basilisk must make this save. First Failure The target has the Restrained condition and repeats the save at the end of its next turn if it is still Restrained, ending the effect on itself on a success. Second Failure The target has the Petrified condition instead of the Restrained condition.",
+    "parent": "srd-2024_basilisk",
+    "uses_type": "RECHARGE",
+    "uses_param": 4,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_behir_swallow",
+  "fields": {
+    "name": "Swallow",
+    "desc": "Dexterity Saving Throw: DC 18, one Large or smaller creature Grappled by the behir (the behir can have only one creature swallowed at a time). Failure: The behir swallows the target, which is no longer Grappled. While swallowed, a creature has the Blinded and Restrained conditions, has Cover|XPHB|Total Cover against attacks and other effects outside the behir, and takes 21 (6d6) Acid damage at the start of each of the behir's turns. If the behir takes 30 damage or more on a single turn from the swallowed creature, the behir must succeed on a DC 14 Constitution saving throw at the end of that turn or regurgitate the creature, which falls in a space within 10 feet of the behir and has the Prone condition. If the behir dies, a swallowed creature is no longer Restrained and can escape from the corpse by using 15 feet of movement, exiting Prone.",
+    "parent": "srd-2024_behir",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_blink-dog_teleport-recharge-4-6",
+  "fields": {
+    "name": "Teleport (Recharge 4-6)",
+    "desc": "The dog teleports up to 40 feet to an unoccupied space it can see.",
+    "parent": "srd-2024_blink-dog",
+    "uses_type": "RECHARGE",
+    "uses_param": 4,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_bugbear-stalker_quick-grapple",
+  "fields": {
+    "name": "Quick Grapple",
+    "desc": "Dexterity Saving Throw: DC 13, one Medium or smaller creature the bugbear can see within 10 feet. Failure: The target has the Grappled condition (escape DC 13).",
+    "parent": "srd-2024_bugbear-stalker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_bulette_leap",
+  "fields": {
+    "name": "Leap",
+    "desc": "The bulette jumps up to 30 feet by spending 10 feet of movement.",
+    "parent": "srd-2024_bulette",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_centaur-trooper_trampling-charge-recharge-5-6",
+  "fields": {
+    "name": "Trampling Charge",
+    "desc": "The centaur moves up to its Speed without provoking Opportunity Attacks and can move through the spaces of Medium or smaller creatures. Each creature whose space the centaur enters is targeted once by the following effect. Strength Saving Throw: DC 14. Failure: 7 (1d6 + 4) Bludgeoning damage, and the target has the Prone condition.",
+    "parent": "srd-2024_centaur-trooper",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_clay-golem_hasten-recharge-5-6",
+  "fields": {
+    "name": "Hasten",
+    "desc": "The golem takes the Dash and Disengage actions.",
+    "parent": "srd-2024_clay-golem",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_cloaker_moan",
+  "fields": {
+    "name": "Moan",
+    "desc": "Wisdom Saving Throw: DC 13, each creature in a 60-foot Emanation originating from the cloaker. Failure: The target has the Frightened condition until the end of the cloaker's next turn. Success: The target is immune to this cloaker's Moan for the next 24 hours.",
+    "parent": "srd-2024_cloaker",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_cloaker_phantasms-recharge-after-a-short-or-long-rest",
+  "fields": {
+    "name": "Phantasms (Recharge after a Short or Long Rest)",
+    "desc": "The cloaker casts the Mirror Image spell, requiring no spell components and using Wisdom as the spellcasting ability. The spell ends early if the cloaker starts or ends its turn in Bright Light.",
+    "parent": "srd-2024_cloaker",
+    "uses_type": "RECHARGE",
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_cloud-giant_misty-step",
+  "fields": {
+    "name": "Misty Step",
+    "desc": "The giant casts the Misty Step spell, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_cloud-giant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_couatl_divine-aid-2-day",
+  "fields": {
+    "name": "Divine Aid",
+    "desc": "The couatl casts Bless, Lesser Restoration, or Sanctuary, requiring no spell components and using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_couatl",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_cultist-fanatic_spiritual-weapon-2-day",
+  "fields": {
+    "name": "Spiritual Weapon",
+    "desc": "The cultist casts the Spiritual Weapon spell, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_cultist-fanatic",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_deva_divine-aid-2-day",
+  "fields": {
+    "name": "Divine Aid",
+    "desc": "The deva casts Cure Wounds, Lesser Restoration, or Remove Curse, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_deva",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_doppelganger_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "The doppelganger shape-shifts into a Medium or Small Humanoid, or it returns to its true form. Its game statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed.",
+    "parent": "srd-2024_doppelganger",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_drider_magic-of-the-spider-queen-recharge-5-6",
+  "fields": {
+    "name": "Magic of the Spider Queen",
+    "desc": "The drider casts Darkness, Faerie Fire, or Web, requiring no Material components and using Wisdom as the spellcasting ability (spell save DC 14).",
+    "parent": "srd-2024_drider",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_dryad_tree-stride",
+  "fields": {
+    "name": "Tree Stride",
+    "desc": "If within 5 feet of a Large or bigger tree, the dryad teleports to an unoccupied space within 5 feet of a second Large or bigger tree that is within 60 feet of the previous tree.",
+    "parent": "srd-2024_dryad",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_ettercap_reel",
+  "fields": {
+    "name": "Reel",
+    "desc": "The ettercap pulls one creature within 30 feet of itself that is Restrained by its Web Strand up to 25 feet straight toward itself.",
+    "parent": "srd-2024_ettercap",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_frost-giant_war-cry-recharge-5-6",
+  "fields": {
+    "name": "War Cry",
+    "desc": "The giant or one creature of its choice that can see or hear it gains 16 (2d10 + 5) Temporary Hit Points and has Advantage on attack rolls until the start of the giant's next turn.",
+    "parent": "srd-2024_frost-giant",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_gnoll-warrior_rampage-1-day",
+  "fields": {
+    "name": "Rampage",
+    "desc": "Immediately after dealing damage to a creature that is already Bloodied, the gnoll moves up to half its Speed, and it makes one Rend attack.",
+    "parent": "srd-2024_gnoll-warrior",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_goblin-boss_nimble-escape",
+  "fields": {
+    "name": "Nimble Escape",
+    "desc": "The goblin takes the Disengage or Hide action.",
+    "parent": "srd-2024_goblin-boss",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_goblin-minion_nimble-escape",
+  "fields": {
+    "name": "Nimble Escape",
+    "desc": "The goblin takes the Disengage or Hide action.",
+    "parent": "srd-2024_goblin-minion",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_goblin-warrior_nimble-escape",
+  "fields": {
+    "name": "Nimble Escape",
+    "desc": "The goblin takes the Disengage or Hide action.",
+    "parent": "srd-2024_goblin-warrior",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_gorgon_trample",
+  "fields": {
+    "name": "Trample",
+    "desc": "Dexterity Saving Throw: DC 16, one creature within 5 feet that has the Prone condition. Failure: 16 (2d10 + 5) Bludgeoning damage. Success: Half damage.",
+    "parent": "srd-2024_gorgon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_half-dragon_leap",
+  "fields": {
+    "name": "Leap",
+    "desc": "The half-dragon jumps up to 30 feet by spending 10 feet of movement.",
+    "parent": "srd-2024_half-dragon",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_hezrou_leap",
+  "fields": {
+    "name": "Leap",
+    "desc": "The hezrou jumps up to 30 feet by spending 10 feet of movement.",
+    "parent": "srd-2024_hezrou",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_incubus_nightmare-recharge-6",
+  "fields": {
+    "name": "Nightmare",
+    "desc": "Wisdom Saving Throw: DC 15, one creature the incubus can see within 60 feet. Failure: If the target has 20 Hit Points or fewer, it has the Unconscious condition for 1 hour, until it takes damage, or until a creature within 5 feet of it takes an action to wake it. Otherwise, the target takes 18 (4d8) Psychic damage.",
+    "parent": "srd-2024_incubus",
+    "uses_type": "RECHARGE",
+    "uses_param": 6,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_lamia_leap",
+  "fields": {
+    "name": "Leap",
+    "desc": "The lamia jumps up to 30 feet by spending 10 feet of movement.",
+    "parent": "srd-2024_lamia",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_mage_misty-step-3-day",
+  "fields": {
+    "name": "Misty Step",
+    "desc": "The mage casts Misty Step, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_mage",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_magmin_ignited-illumination",
+  "fields": {
+    "name": "Ignited Illumination",
+    "desc": "The magmin sets itself ablaze or extinguishes its flames. While ablaze, the magmin sheds Bright Light in a 10-foot radius and Dim Light for an additional 10 feet.",
+    "parent": "srd-2024_magmin",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_marilith_teleport-recharge-5-6",
+  "fields": {
+    "name": "Teleport",
+    "desc": "The marilith teleports up to 120 feet to an unoccupied space it can see.",
+    "parent": "srd-2024_marilith",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_medusa_petrifying-gaze-recharge-5-6",
+  "fields": {
+    "name": "Petrifying Gaze",
+    "desc": "Constitution Saving Throw: DC 13, each creature in a 30-foot Cone. If the medusa sees its reflection in the Cone, the medusa must make this save. First Failure The target has the Restrained condition and repeats the save at the end of its next turn if it is still Restrained, ending the effect on itself on a success. Second Failure The target has the Petrified condition instead of the Restrained condition.",
+    "parent": "srd-2024_medusa",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_mimic_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "The mimic shape-shifts to resemble a Medium or Small object while retaining its game statistics, or it returns to its true blob form. Any equipment it is wearing or carrying isn't transformed.",
+    "parent": "srd-2024_mimic",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_nalfeshnee_horror-nimbus-recharge-5-6",
+  "fields": {
+    "name": "Horror Nimbus",
+    "desc": "Wisdom Saving Throw: DC 15, each creature in a 15-foot Emanation originating from the nalfeshnee. Failure: 28 (8d6) Psychic damage, and the target has the Frightened condition for 1 minute, until it takes damage, or until it ends its turn with the nalfeshnee out of line of sight. Success: The target is immune to this nalfeshnee's Horror Nimbus for 24 hours.",
+    "parent": "srd-2024_nalfeshnee",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_night-hag_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "The hag shape-shifts into a Small or Medium Humanoid, or it returns to its true form. Other than its size, its game statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed.",
+    "parent": "srd-2024_night-hag",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_oni_invisibility",
+  "fields": {
+    "name": "Invisibility",
+    "desc": "The oni casts Invisibility on itself, requiring no spell components and using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_oni",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_phase-spider_ethereal-jaunt",
+  "fields": {
+    "name": "Ethereal Jaunt",
+    "desc": "The spider teleports from the Material Plane to the Ethereal Plane or vice versa.",
+    "parent": "srd-2024_phase-spider",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_pirate-captain_captain's-charm",
+  "fields": {
+    "name": "Captain's Charm",
+    "desc": "Wisdom Saving Throw: DC 14, one creature the pirate can see within 30 feet. Failure: The target has the Charmed condition until the start of the pirate's next turn.",
+    "parent": "srd-2024_pirate-captain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_planetar_divine-aid-2-day",
+  "fields": {
+    "name": "Divine Aid",
+    "desc": "The planetar casts Cure Wounds, Invisibility, Lesser Restoration, or Remove Curse, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_planetar",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_priest-acolyte_divine-aid-1-day",
+  "fields": {
+    "name": "Divine Aid",
+    "desc": "The priest casts Bless, Healing Word, or Sanctuary, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_priest-acolyte",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_priest_divine-aid-3-day",
+  "fields": {
+    "name": "Divine Aid",
+    "desc": "The priest casts Bless, Dispel Magic, Healing Word, or Lesser Restoration, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_priest",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_purple-worm_swallow",
+  "fields": {
+    "name": "Swallow",
+    "desc": "Strength Saving Throw: DC 19, one Large or smaller creature Grappled by the worm (it can have up to three creatures swallowed at a time). Failure: The target is swallowed by the worm, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions, has Cover|XPHB|Total Cover against attacks and other effects outside the worm, and takes 17 (5d6) Acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 5 feet of the worm and has the Prone condition. If the worm dies, any swallowed creature no longer has the Restrained condition and can escape from the corpse using 20 feet of movement, exiting Prone.",
+    "parent": "srd-2024_purple-worm",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_remorhaz_swallow",
+  "fields": {
+    "name": "Swallow",
+    "desc": "Strength Saving Throw: DC 19, one Large or smaller creature Grappled by the remorhaz (it can have up to two creatures swallowed at a time). Failure: The target is swallowed by the remorhaz, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions, it has Cover|XPHB|Total Cover against attacks and other effects outside the remorhaz, and it takes 10 (3d6) Acid damage plus 10 (3d6) Fire damage at the start of each of the remorhaz's turns. If the remorhaz takes 30 damage or more on a single turn from a creature inside it, the remorhaz must succeed on a DC 15 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 5 feet of the remorhaz and has the Prone condition. If the remorhaz dies, any swallowed creature no longer has the Restrained condition and can escape from the corpse by using 15 feet of movement, exiting Prone.",
+    "parent": "srd-2024_remorhaz",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_roc_swoop-recharge-5-6",
+  "fields": {
+    "name": "Swoop",
+    "desc": "If the roc has a creature Grappled, the roc flies up to half its Fly Speed without provoking Opportunity Attacks and drops that creature.",
+    "parent": "srd-2024_roc",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_sahuagin-warrior_aquatic-charge",
+  "fields": {
+    "name": "Aquatic Charge",
+    "desc": "The sahuagin swims up to its Swim Speed straight toward an enemy it can see.",
+    "parent": "srd-2024_sahuagin-warrior",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_shadow_shadow-stealth",
+  "fields": {
+    "name": "Shadow Stealth",
+    "desc": "While in Dim Light or darkness, the shadow takes the Hide action.",
+    "parent": "srd-2024_shadow",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_solar_divine-aid-3-day",
+  "fields": {
+    "name": "Divine Aid",
+    "desc": "The solar casts Cure Wounds (level 2 version), Lesser Restoration, or Remove Curse, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_solar",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_spy_cunning-action",
+  "fields": {
+    "name": "Cunning Action",
+    "desc": "The spy takes the Dash, Disengage, or Hide action.",
+    "parent": "srd-2024_spy",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_stone-golem_slow-recharge-5-6",
+  "fields": {
+    "name": "Slow",
+    "desc": "The golem casts the Slow spell, requiring no spell components and using Constitution as the spellcasting ability (spell save DC 17).",
+    "parent": "srd-2024_stone-golem",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_succubus_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "The succubus shape-shifts to resemble a Medium or Small Humanoid or back into its true form. Its game statistics are the same in each form, except its Fly Speed is available only in its true form. Any equipment it's wearing or carrying isn't transformed.",
+    "parent": "srd-2024_succubus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_tarrasque_swallow",
+  "fields": {
+    "name": "Swallow",
+    "desc": "Strength Saving Throw: DC 27, one Large or smaller creature Grappled by the tarrasque (it can have up to six creatures swallowed at a time). Failure: The target is swallowed, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions and can't teleport, it has Cover|XPHB|Total Cover against attacks and other effects outside the tarrasque, and it takes 56 (16d6) Acid damage at the start of each of the tarrasque's turns. If the tarrasque takes 60 damage or more on a single turn from a creature inside it, the tarrasque must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 10 feet of the tarrasque and has the Prone condition. If the tarrasque dies, any swallowed creature no longer has the Restrained condition and can escape from the corpse using 20 feet of movement, exiting Prone.",
+    "parent": "srd-2024_tarrasque",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_troll_charge",
+  "fields": {
+    "name": "Charge",
+    "desc": "The troll moves up to half its Speed straight toward an enemy it can see.",
+    "parent": "srd-2024_troll",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_unicorn_unicorn's-blessing-3-day",
+  "fields": {
+    "name": "Unicorn's Blessing",
+    "desc": "The unicorn touches another creature with its horn and casts Cure Wounds or Lesser Restoration on that creature, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_unicorn",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_vampire-familiar_deathless-agility",
+  "fields": {
+    "name": "Deathless Agility",
+    "desc": "The familiar takes the Dash or Disengage action.",
+    "parent": "srd-2024_vampire-familiar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_vampire_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "If the vampire isn't in sunlight or running water, it shape-shifts into a Tiny bat (Speed 5 ft., Fly Speed 30 ft.) or a Medium cloud of mist (Speed 5 ft., Fly Speed 20 ft. [hover]), or it returns to its vampire form. Anything it is wearing transforms with it. While in bat form, the vampire can't speak. Its game statistics, other than its size and Speed, are unchanged. While in mist form, the vampire can't take any actions, speak, or manipulate objects. It is weightless and can enter an enemy's space and stop there. If air can pass through a space, the mist can do so, but it can't pass through liquid. It has Resistance to all damage, except the damage it takes from sunlight.",
+    "parent": "srd-2024_vampire",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_vampire_charm-recharge-5-6",
+  "fields": {
+    "name": "Charm",
+    "desc": "The vampire casts Charm Person, requiring no spell components and using Charisma as the spellcasting ability (spell save DC 17), and the duration is 24 hours. The Charmed target is a willing recipient of the vampire's Bite, the damage of which doesn't end the spell. When the spell ends, the target is unaware it was Charmed by the vampire.",
+    "parent": "srd-2024_vampire",
+    "uses_type": "RECHARGE",
+    "uses_param": 5,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_vampire-spawn_deathless-agility",
+  "fields": {
+    "name": "Deathless Agility",
+    "desc": "The vampire takes the Dash or Disengage action.",
+    "parent": "srd-2024_vampire-spawn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_werebear_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "The werebear shape-shifts into a Large bear-humanoid hybrid form or a Large bear, or it returns to its true humanoid form. Its game statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed.",
+    "parent": "srd-2024_werebear",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_wereboar_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "The wereboar shape-shifts into a Medium boar-humanoid hybrid or a Small boar, or it returns to its true humanoid form. Its game statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed.",
+    "parent": "srd-2024_wereboar",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_wererat_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "The wererat shape-shifts into a Medium rat-humanoid hybrid or a Small rat, or it returns to its true humanoid form. Its game statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed.",
+    "parent": "srd-2024_wererat",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_weretiger_prowl-tiger-or-hybrid-form-only",
+  "fields": {
+    "name": "Prowl (Tiger or Hybrid Form Only)",
+    "desc": "The weretiger moves up to its Speed without provoking Opportunity Attacks. At the end of this movement, the weretiger can take the Hide action.",
+    "parent": "srd-2024_weretiger",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_weretiger_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "The weretiger shape-shifts into a Large tiger-humanoid hybrid or a Large tiger, or it returns to its true humanoid form. Its game statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed.",
+    "parent": "srd-2024_weretiger",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_werewolf_shape-shift",
+  "fields": {
+    "name": "Shape-Shift",
+    "desc": "The werewolf shape-shifts into a Large wolf-humanoid hybrid or a Medium wolf, or it returns to its true humanoid form. Its game statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed.",
+    "parent": "srd-2024_werewolf",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_will-o-wisp_consume-life",
+  "fields": {
+    "name": "Consume Life",
+    "desc": "Constitution Saving Throw: DC 10, one living creature the wisp can see within 5 feet that has 0 Hit Points. Failure: The target dies, and the wisp regains 10 (3d6) Hit Points.",
+    "parent": "srd-2024_will-o-wisp",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_will-o-wisp_vanish",
+  "fields": {
+    "name": "Vanish",
+    "desc": "The wisp and its light have the Invisible condition until the wisp's Concentration ends on this effect, which ends early immediately after the wisp makes an attack roll or uses Consume Life.",
+    "parent": "srd-2024_will-o-wisp",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 1
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_xorn_charge",
+  "fields": {
+    "name": "Charge",
+    "desc": "The xorn moves up to its Speed or Burrow Speed straight toward an enemy it can sense.",
+    "parent": "srd-2024_xorn",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_elephant_trample",
+  "fields": {
+    "name": "Trample",
+    "desc": "Dexterity Saving Throw: DC 16, one creature within 5 feet that has the Prone condition. Failure: 17 (2d10 + 6) Bludgeoning damage. Success: Half damage.",
+    "parent": "srd-2024_elephant",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_giant-ape_leap",
+  "fields": {
+    "name": "Leap",
+    "desc": "The ape jumps up to 30 feet by spending 10 feet of movement.",
+    "parent": "srd-2024_giant-ape",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_giant-hyena_rampage-1-day",
+  "fields": {
+    "name": "Rampage",
+    "desc": "Immediately after dealing damage to a creature that was already Bloodied, the hyena can move up to half its Speed, and it makes one Bite attack.",
+    "parent": "srd-2024_giant-hyena",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_giant-seahorse_bubble-dash",
+  "fields": {
+    "name": "Bubble Dash",
+    "desc": "While underwater, the seahorse moves up to half its Swim Speed without provoking Opportunity Attacks.",
+    "parent": "srd-2024_giant-seahorse",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_mammoth_trample",
+  "fields": {
+    "name": "Trample",
+    "desc": "Dexterity Saving Throw: DC 18, one creature within 5 feet that has the Prone condition. Failure: 29 (4d10 + 7) Bludgeoning damage. Success: Half damage.",
+    "parent": "srd-2024_mammoth",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_panther_nimble-escape",
+  "fields": {
+    "name": "Nimble Escape",
+    "desc": "The panther takes the Disengage or Hide action.",
+    "parent": "srd-2024_panther",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_saber-toothed-tiger_nimble-escape",
+  "fields": {
+    "name": "Nimble Escape",
+    "desc": "The tiger takes the Disengage or Hide action.",
+    "parent": "srd-2024_saber-toothed-tiger",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_tiger_nimble-escape",
+  "fields": {
+    "name": "Nimble Escape",
+    "desc": "The tiger takes the Disengage or Hide action.",
+    "parent": "srd-2024_tiger",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "BONUS_ACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_archmage_protective-magic",
+  "fields": {
+    "name": "Protective Magic",
+    "desc": "The archmage casts Counterspell or Shield in response to the spell's trigger, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_archmage",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_lich_protective-magic",
+  "fields": {
+    "name": "Protective Magic",
+    "desc": "The lich casts Counterspell or Shield in response to the spell's trigger, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_lich",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_mage_protective-magic",
+  "fields": {
+    "name": "Protective Magic",
+    "desc": "The mage casts Counterspell or Shield in response to the spell's trigger, using the same spellcasting ability as Spellcasting.",
+    "parent": "srd-2024_mage",
+    "uses_type": "PER_DAY",
+    "uses_param": 3,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_bandit-captain_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "The captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon.",
+    "parent": "srd-2024_bandit-captain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_black-pudding-split",
+  "fields": {
+    "name": "Parry",
+    "desc": "_Trigger:_ While the pudding is Large or Medium and has 10+ Hit Points, it becomes Bloodied or is subjected to Lightning or Slashing damage. _Response:_ The pudding splits into two new Black Puddings. Each new pudding is one size smaller than the original pudding and acts on its Initiative. The original pudding’s Hit Points are divided evenly between the new puddings (round down).",
+    "parent": "srd-2024_black-pudding",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_chain-devil_unnerving-gaze",
+  "fields": {
+    "name": "Unnerving Gaze",
+    "desc": "_Trigger:_ A creature the devil can see starts its turn within 30 feet of the devil and can see the devil. _Response––Wisdom Saving Throw:_ DC 15, the triggering creature. _Failure:_ The target has the Frightened condition until the end of its turn. _Success:_ The target is immune to this devil’s Unnerving Gaze for 24 hours.",
+    "parent": "srd-2024_chain-devil",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_erinyes_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "_Trigger:_ The erinyes is hit by a melee attack roll while holding a weapon. _Response:_ The erinyes adds 4 to its AC against that attack, possibly causing it to miss.",
+    "parent": "srd-2024_erinyes",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_shrieker-fungus_shriek",
+  "fields": {
+    "name": "Shriek",
+    "desc": "_Trigger:_ A creature or a source of Bright Light moves within 30 feet of the shrieker. _Response:_ The shrieker emits a shriek audible within 300 feet of itself for 1 minute or until the shrieker dies.",
+    "parent": "srd-2024_shrieker-fungus",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_gladiator_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "_Trigger:_ The gladiator is hit by a melee attack roll while holding a weapon. _Response:_ The gladiator adds 3 to its AC against that attack, possibly causing it to miss.",
+    "parent": "srd-2024_gladiator",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_goblin-boss_redirect-attack",
+  "fields": {
+    "name": "Redirect Attack",
+    "desc": "_Trigger:_ A creature the goblin can see makes an attack roll against it. _Response:_ The goblin chooses a Small or Medium ally within 5 feet of itself. The goblin and that ally swap places, and the ally becomes the target of the attack instead.",
+    "parent": "srd-2024_goblin-boss",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_knight_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "_Trigger:_ The knight is hit by a melee attack roll while holding a weapon. _Response:_ The knight adds 2 to its AC against that attack, possibly causing it to miss.",
+    "parent": "srd-2024_knight",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_marilith_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "_Trigger:_ The marilith is hit by a melee attack roll while holding a weapon. _Response:_ The marilith adds 5 to its AC against that attack, possibly causing it to miss.",
+    "parent": "srd-2024_marilith",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_mummy-lord_whirlwind-of-sand",
+  "fields": {
+    "name": "Whirlwind of Sand",
+    "desc": "_Trigger:_ The mummy is hit by an attack roll. _Response:_ The mummy adds 2 to its AC against the attack, possibly causing the attack to miss, and the mummy teleports up to 60 feet to an unoccupied space it can see. Each creature of its choice that it can see within 5 feet of its destination space has the Blinded condition until the end of the mummy’s next turn.",
+    "parent": "srd-2024_mummy-lord",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_nalfeshnee-pursuit",
+  "fields": {
+    "name": "Pursuit",
+    "desc": "_Trigger:_ Another creature the nalfeshnee can see ends its move within 120 feet of the nalfeshnee. _Response:_ The nalfeshnee uses Teleport, but its destination space must be within 10 feet of the triggering creature.",
+    "parent": "srd-2024_nalfeshnee",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_noble_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "_Trigger_: The noble is hit by a melee attack roll while holding a weapon. _Response:_ The noble adds 2 to its AC against that attack, possibly causing it to miss.",
+    "parent": "srd-2024_noble",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_ochre-jelly_split",
+  "fields": {
+    "name": "Split",
+    "desc": "_Trigger:_ While the jelly is Large or Medium and has 10+ Hit Points, it becomes Bloodied or is subjected to Lightning or Slashing damage. _Response:_ The jelly splits into two new Ochre Jellies. Each new jelly is one size smaller than the original jelly and acts on its Initiative. The original jelly’s Hit Points are divided evenly between the new jellies (round down).",
+    "parent": "srd-2024_ochre-jelly",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_pirate-captain_riposte",
+  "fields": {
+    "name": "Riposte",
+    "desc": "_Trigger:_ The pirate is hit by a melee attack roll while holding a weapon. _Response:_ The pirate adds 3 to its AC against that attack, possibly causing it to miss. On a miss, the pirate makes one Rapier attack against the triggering creature if within range.",
+    "parent": "srd-2024_pirate-captain",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_rust-monster_reflexive-antennae",
+  "fields": {
+    "name": "Reflexive Antennae",
+    "desc": "_Trigger:_ An attack roll hits the rust monster. _Response:_ The rust monster uses **Antennae**.",
+    "parent": "srd-2024_rust-monster",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_shield-guardian_protection",
+  "fields": {
+    "name": "Protection",
+    "desc": "_Trigger:_ An attack roll hits the wearer of the guardian’s amulet while the wearer is within 5 feet of the guardian. _Response:_ The wearer gains a +5 bonus to AC, including against the triggering attack and possibly causing it to miss, until the start of the guardian’s next turn.",
+    "parent": "srd-2024_shield-guardian",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_sphinx-of-wonder_burst-of-ingenuity",
+  "fields": {
+    "name": "Burst of Ingenuity",
+    "desc": "_Trigger:_ The sphinx or another creature within 30 feet makes an ability check or a saving throw. _Response:_ The sphinx adds 2 to the roll.",
+    "parent": "srd-2024_sphinx-of-wonder",
+    "uses_type": "PER_DAY",
+    "uses_param": 2,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_stone-giant_deflect-missile",
+  "fields": {
+    "name": "Deflect Missile",
+    "desc": "_Trigger:_ The giant is hit by a ranged attack roll and takes Bludgeoning, Piercing, or Slashing damage from it. _Response:_ The giant reduces the damage it takes from the attack by 11 (1d10 + 6), and if that damage is reduced to 0, the giant can redirect some of the attack’s force. _Dexterity Saving Throw:_ DC 17, one creature the giant can see within 60 feet. Failure: 11 (1d10 + 6) Force damage.",
+    "parent": "srd-2024_stone-giant",
+    "uses_type": "RECHARGE_ON_ROLL",
+    "uses_param": 5,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_warrior-veteran_parry",
+  "fields": {
+    "name": "Parry",
+    "desc": "_Trigger:_ The warrior is hit by a melee attack roll while holding a weapon. _Response:_ The warrior adds 2 to its AC against that attack, possibly causing it to miss.",
+    "parent": "srd-2024_warrior-veteran",
+    "uses_type": null,
+    "uses_param": null,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_giant-octopus_ink-cloud",
+  "fields": {
+    "name": "Ink Cloud",
+    "desc": "_Trigger:_ The octopus takes damage while underwater. _Response:_ The octopus releases ink that fills a 10-foot Cube centered on itself, and the octopus moves up to its Swim Speed. The Cube is Heavily Obscured for 1 minute or until a strong current or similar effect disperses the ink.",
+    "parent": "srd-2024_giant-octopus",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_octopus_ink-cloud",
+  "fields": {
+    "name": "Ink Cloud",
+    "desc": "_Trigger:_ A creature ends its turn within 5 feet of the octopus while underwater. Response: The octopus releases ink that fills a 5-foot Cube centered on itself, and the octopus moves up to its Swim Speed. The Cube is Heavily Obscured for 1 minute or until a strong current or similar effect disperses the ink.",
+    "parent": "srd-2024_octopus",
+    "uses_type": "PER_DAY",
+    "uses_param": 1,
+    "action_type": "REACTION",
+    "form_condition": null,
+    "order": 0
+  }
+},
+{
+  "model": "api_v2.creatureaction",
+  "pk": "srd-2024_octopus_tentacles",
+  "fields": {
+    "action_type": "ACTION",
+    "desc": "Melee Attack Roll: +4, reach 5 ft. Hit: 1 Bludgeoning damage.",
+    "name": "Tentacles",
+    "legendary_cost": null,
+    "form_condition": null,
+    "parent": "srd-2024_octopus",
+    "uses_type": null,
+    "uses_param": null,
+    "order": 0
+  }
 }
 ]
