@@ -99,6 +99,9 @@ class Document(HasName, HasDescription):
 
         return stats
 
+    def is_crossreference_source(self):
+        return False
+
 
 class License(HasName, HasDescription):
     key = models.CharField(
@@ -106,6 +109,9 @@ class License(HasName, HasDescription):
         max_length=100,
         help_text="Unique key for the License."
     )
+
+    def is_crossreference_source(self):
+        return False
 
 
 class Publisher(HasName):
@@ -128,6 +134,9 @@ class GameSystem(HasName, HasDescription):
         blank=True,
         help_text="Short code prepended to content keys."
     )
+
+    def is_crossreference_source(self):
+        return False
 
 
 class FromDocument(models.Model):
