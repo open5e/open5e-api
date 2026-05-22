@@ -2,6 +2,7 @@
 import sys
 import os
 import pytest
+from unittest.mock import patch, MagicMock
 
 # Make the parsers package importable without installing it
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', '..'))
@@ -12,6 +13,7 @@ from data.raw_sources.srd_5_2.parsers.base import (
     parse_cost,
     parse_dice,
     extract_section,
+    extract_full_text,
 )
 
 
@@ -30,6 +32,10 @@ class TestCleanText:
 
     def test_passthrough_normal_text(self):
         assert clean_text("Acid Arrow") == "Acid Arrow"
+
+    def test_replaces_unicode_minus_sign(self):
+        # U+2212 MINUS SIGN appears in PDF ability score modifiers like "−8"
+        assert clean_text("−8") == "-8"
 
 
 class TestSlugify:
@@ -88,6 +94,14 @@ class TestParseDice:
         assert parse_dice("") is None
         assert parse_dice("some text") is None
 
+    def test_with_unicode_minus_bonus(self):
+        # PDF ability modifiers use U+2212 MINUS SIGN, not ASCII hyphen-minus
+        assert parse_dice("1d8−1") == {"count": 1, "die": 8, "bonus": -1}
+
+    def test_with_uppercase_d(self):
+        assert parse_dice("2D6") == {"count": 2, "die": 6, "bonus": 0}
+        assert parse_dice("1D8+2") == {"count": 1, "die": 8, "bonus": 2}
+
 
 class TestExtractSection:
     def test_extracts_between_markers(self):
@@ -107,3 +121,24 @@ class TestExtractSection:
         with pytest.raises(ValueError, match="end marker"):
             import re
             extract_section("START here", re.compile(r"START"), re.compile(r"MISSING"))
+
+
+class TestExtractFullText:
+    def test_injects_table_row_sentinels(self):
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = "page text"
+        fake_page.extract_tables.return_value = [[["27", "14", "25"]]]
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            result = extract_full_text("dummy.pdf")
+        assert "§TABLE_ROW§27|14|25§" in result
+        assert "page text" in result
+
+    def test_skips_empty_table_rows(self):
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = "text"
+        fake_page.extract_tables.return_value = [[[None, None, None]]]
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            result = extract_full_text("dummy.pdf")
+        assert "§TABLE_ROW§" not in result

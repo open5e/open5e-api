@@ -12,16 +12,16 @@ LIGATURE_MAP = {
     "ﬄ": "ffl",
 }
 
-# Unicode en-dash used as minus sign in PDF ability score modifiers
-_EN_DASH = "−"
+# Unicode minus sign (U+2212) used in PDF ability score modifiers
+_MINUS_SIGN = "−"
 
 
 def clean_text(s: str) -> str:
-    """Strip ligatures, soft hyphens, en-dash → ASCII minus, normalize whitespace."""
+    """Strip ligatures, soft hyphens, Unicode minus sign (U+2212) → ASCII minus, normalize whitespace."""
     for ligature, replacement in LIGATURE_MAP.items():
         s = s.replace(ligature, replacement)
     s = s.replace("\xad", "")  # soft hyphen
-    s = s.replace(_EN_DASH, "-")  # en-dash → ASCII minus
+    s = s.replace(_MINUS_SIGN, "-")  # Unicode minus sign (U+2212) → ASCII minus
     s = unicodedata.normalize("NFC", s)
     s = re.sub(r"\s+", " ", s).strip()
     return s
@@ -30,7 +30,7 @@ def clean_text(s: str) -> str:
 def slugify(name: str) -> str:
     """Normalize a name to a URL-safe slug for dict-key matching."""
     s = clean_text(name).lower()
-    s = re.sub(r"[^\w\s-]", "", s)
+    s = re.sub(r"[^a-zA-Z0-9\s-]", "", s)
     s = re.sub(r"\s+", "-", s.strip())
     s = re.sub(r"-+", "-", s)
     return s
@@ -45,10 +45,10 @@ def parse_cost(s: str) -> dict | None:
 
 
 def parse_dice(s: str) -> dict | None:
-    """Parse '2d6+3' or '1d8-1' (also with en-dash) into {"count": int, "die": int, "bonus": int}."""
-    # Normalize en-dash to ASCII minus before matching
-    s = s.replace(_EN_DASH, "-")
-    m = re.search(r"(\d+)d(\d+)([+-]\d+)?", s)
+    """Parse '2d6+3' or '1d8-1' (also with Unicode minus sign U+2212) into {"count": int, "die": int, "bonus": int}."""
+    # Normalize Unicode minus sign (U+2212) to ASCII minus before matching
+    s = s.replace(_MINUS_SIGN, "-")
+    m = re.search(r"(\d+)[dD](\d+)([+-]\d+)?", s)
     if not m:
         return None
     return {
