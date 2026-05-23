@@ -71,6 +71,7 @@ _TRUESIGHT_RE = re.compile(r"Truesight\s+(\d+)", re.IGNORECASE)
 # Creature names use GillSans-SemiBold at size >= 14 (18 = section header, 15 = creature name)
 _CREATURE_NAME_MIN_SIZE = 14.0
 _CREATURE_NAME_FONT = "GillSans-SemiBold"
+_CREATURE_NAME_SMALLCAPS_SUFFIX = "SC700"
 
 
 @dataclass(frozen=True)
@@ -304,7 +305,7 @@ def _is_creature_name_char(char: dict) -> bool:
     size = char.get("size", 0)
     return (
         _CREATURE_NAME_FONT in fontname
-        and "SC700" not in fontname
+        and _CREATURE_NAME_SMALLCAPS_SUFFIX not in fontname
         and size >= _CREATURE_NAME_MIN_SIZE
     )
 
@@ -448,7 +449,7 @@ def extract_creatures_from_pdf(pdf_path: str) -> list[CreatureRecord]:
 
     if len(records) < 250:
         raise ValueError(
-            f"Creature parser produced only {len(records)} creatures — expected >=250. "
+            f"Creature parser produced only {len(records)} creatures — expected ≥250. "
             "Check section boundary detection and column/font extraction."
         )
     return records
