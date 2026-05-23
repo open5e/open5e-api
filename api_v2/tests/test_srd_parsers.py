@@ -142,3 +142,101 @@ class TestExtractFullText:
             mock_open.return_value.__enter__.return_value.pages = [fake_page]
             result = extract_full_text("dummy.pdf")
         assert "§TABLE_ROW§" not in result
+
+
+from data.raw_sources.srd_5_2.parsers.spells import extract_spells, SpellRecord
+
+# This sample mirrors actual pdfplumber column-extracted text format.
+# Level format is "Level N School (Classes)" or "School Cantrip (Classes)"
+# Casting Time field is "Action" not "1 action"
+SAMPLE_SPELL_TEXT = """\
+Spell Descriptions
+
+Acid Arrow
+Level 2 Evocation (Wizard)
+Casting Time: Action
+Range: 90 feet
+Components: V, S, M (powdered rhubarb leaf and an adder's stomach)
+Duration: Instantaneous
+A shimmering green arrow streaks toward a target within range.
+At Higher Levels. When you cast this spell using a spell slot of 3rd
+level or higher, you deal additional acid damage.
+
+Aid
+Level 2 Abjuration (Cleric, Druid, Paladin, Ranger)
+Casting Time: Action
+Range: 30 feet
+Components: V, S, M (a tiny strip of white cloth)
+Duration: 8 hours (concentration)
+Your spell bolsters your allies with toughness and resolve.
+
+Alarm
+Level 1 Abjuration (Ranger, Wizard)
+Ritual
+Casting Time: 1 minute
+Range: 30 feet
+Components: V, S, M (a tiny bell and a piece of fine silver wire)
+Duration: 8 hours
+You set an alarm against unwanted intrusion.
+
+Appendix A: Conditions
+"""
+
+
+class TestExtractSpells:
+    def test_finds_acid_arrow(self):
+        spells = extract_spells(SAMPLE_SPELL_TEXT)
+        names = [s.name for s in spells]
+        assert "Acid Arrow" in names
+
+    def test_finds_aid(self):
+        spells = extract_spells(SAMPLE_SPELL_TEXT)
+        names = [s.name for s in spells]
+        assert "Aid" in names
+
+    def test_spell_level(self):
+        spells = {s.name: s for s in extract_spells(SAMPLE_SPELL_TEXT)}
+        assert spells["Acid Arrow"].level == 2
+
+    def test_cantrip_level_is_zero(self):
+        # Cantrips don't appear in the sample but test the level parser
+        from data.raw_sources.srd_5_2.parsers.spells import _parse_level
+        assert _parse_level("Evocation Cantrip (Wizard)") == 0
+
+    def test_spell_school(self):
+        spells = {s.name: s for s in extract_spells(SAMPLE_SPELL_TEXT)}
+        assert spells["Acid Arrow"].school == "evocation"
+
+    def test_spell_casting_time(self):
+        spells = {s.name: s for s in extract_spells(SAMPLE_SPELL_TEXT)}
+        assert spells["Acid Arrow"].casting_time == "Action"
+
+    def test_spell_range(self):
+        spells = {s.name: s for s in extract_spells(SAMPLE_SPELL_TEXT)}
+        assert spells["Acid Arrow"].range_text == "90 feet"
+
+    def test_spell_verbal_component(self):
+        spells = {s.name: s for s in extract_spells(SAMPLE_SPELL_TEXT)}
+        assert spells["Acid Arrow"].verbal is True
+        assert spells["Acid Arrow"].somatic is True
+        assert spells["Acid Arrow"].material is True
+
+    def test_spell_concentration(self):
+        spells = {s.name: s for s in extract_spells(SAMPLE_SPELL_TEXT)}
+        # Aid duration is "8 hours (concentration)"
+        assert spells["Aid"].concentration is True
+        assert spells["Acid Arrow"].concentration is False
+
+    def test_spell_ritual(self):
+        spells = {s.name: s for s in extract_spells(SAMPLE_SPELL_TEXT)}
+        assert spells["Alarm"].ritual is True
+        assert spells["Acid Arrow"].ritual is False
+
+    def test_higher_level_extracted(self):
+        spells = {s.name: s for s in extract_spells(SAMPLE_SPELL_TEXT)}
+        assert spells["Acid Arrow"].higher_level is not None
+        assert "3rd" in spells["Acid Arrow"].higher_level
+
+    def test_sanity_check_raises_on_empty(self):
+        with pytest.raises(ValueError, match="fewer than 300"):
+            extract_spells("no spells here")
