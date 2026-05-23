@@ -144,7 +144,7 @@ class TestExtractFullText:
         assert "§TABLE_ROW§" not in result
 
 
-from data.raw_sources.srd_5_2.parsers.spells import extract_spells, SpellRecord
+from data.raw_sources.srd_5_2.parsers.spells import extract_spells, SpellRecord, extract_spells_from_pdf
 
 # This sample mirrors actual pdfplumber column-extracted text format.
 # Level format is "Level N School (Classes)" or "School Cantrip (Classes)"
@@ -240,3 +240,37 @@ class TestExtractSpells:
     def test_sanity_check_raises_on_empty(self):
         with pytest.raises(ValueError, match="found no spells"):
             extract_spells("no spells here")
+
+
+class TestExtractSpellsFromPdf:
+    def test_raises_when_no_spells_found(self):
+        """extract_spells_from_pdf raises ValueError when PDF has no spell section or insufficient spells."""
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = "Some text without spell descriptions"
+        fake_page.chars = []
+        fake_page.width = 600
+        fake_page.height = 800
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            with pytest.raises(ValueError, match="expected ≥300"):
+                extract_spells_from_pdf("dummy.pdf")
+
+    def test_calls_pdfplumber_open(self):
+        """extract_spells_from_pdf successfully calls pdfplumber and handles pages."""
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = "Spell Descriptions\n\nSome content here"
+        fake_page.chars = []
+        fake_page.width = 600
+        fake_page.height = 800
+
+        with patch("pdfplumber.open") as mock_open:
+            mock_pdf = MagicMock()
+            mock_pdf.pages = [fake_page]
+            mock_open.return_value.__enter__.return_value = mock_pdf
+
+            # This should call pdfplumber.open and iterate pages
+            with pytest.raises(ValueError, match="expected ≥300"):
+                extract_spells_from_pdf("dummy.pdf")
+
+            # Verify pdfplumber.open was called with the right path
+            mock_open.assert_called_once_with("dummy.pdf")

@@ -58,26 +58,6 @@ def _is_level_school_line(line: str) -> bool:
     return has_level or has_cantrip
 
 
-def _looks_like_spell_name(line: str) -> bool:
-    """Return True if a line could be a spell name (not body text)."""
-    line = line.strip()
-    if not line:
-        return False
-    if not line[0].isupper():
-        return False
-    # Body text ends with punctuation
-    if line[-1] in ".,:;!?)":
-        return False
-    if len(line) > 50:
-        return False
-    words = line.split()
-    if len(words) > 6:
-        return False
-    if re.match(r"^\d", line):
-        return False
-    return True
-
-
 def _parse_level(level_line: str) -> int:
     """Return level from a level/school line.
 
@@ -247,12 +227,13 @@ def _is_spell_name_char(char: dict) -> bool:
     fontname = char.get("fontname", "")
     size = char.get("size", 0)
     # Spell names use GillSans-SemiBold at size ~12 or GillSans-SemiBold-SC700 at size ~8-12
-    if "GillSans-SemiBold" in fontname and size >= 7.0:
+    if any(font in fontname for font in _SPELL_NAME_FONTS) and size >= 7.0:
         # Exclude field labels (GillSans-SemiBold at size 9.5) and page numbers (size 11)
         # Spell names are at size 12 (or 8.4 for SC700 small caps)
         if "SC700" in fontname:
             return True  # Small caps spell names (like "Acid Splash")
         # For regular GillSans-SemiBold, size must be ~12 (not 9.5 for labels or 11 for page#)
+        # 7.0 is below SC700 body text (~8.4), above noise
         if size >= 11.5:
             return True
     return False
