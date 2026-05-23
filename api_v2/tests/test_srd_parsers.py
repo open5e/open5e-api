@@ -409,3 +409,149 @@ class TestExtractCreaturesFromPdf:
             with pytest.raises(ValueError, match="expected ≥250"):
                 extract_creatures_from_pdf("dummy.pdf")
             mock_open.assert_called_once_with("dummy.pdf")
+
+
+from data.raw_sources.srd_5_2.parsers.items import (
+    extract_weapons, extract_armor, extract_magic_items,
+    WeaponRecord, ArmorRecord, MagicItemRecord,
+)
+
+# Real PDF format: one weapon per line — Name Damage Properties Mastery Weight Cost
+SAMPLE_WEAPON_TEXT = """\
+Weapons
+Name Damage Properties Mastery Weight Cost
+Simple Melee Weapons
+Club 1d4 Bludgeoning Light Slow 2 lb. 1 SP
+Dagger 1d4 Piercing Finesse, Light, Thrown (Range 20/60) Nick 1 lb. 2 GP
+Martial Ranged Weapons
+Blowgun 1 Piercing Ammunition (Range 25/100; Needle), Loading Vex 1 lb. 10 GP
+Armor
+"""
+
+# Real PDF format: Name ACspec StrReq Stealth Weight Cost
+SAMPLE_ARMOR_TEXT = """\
+Armor
+Armor Armor Class (AC) Strength Stealth Weight Cost
+Light Armor (1 Minute to Don or Doff)
+Leather Armor 11 + Dex modifier — — 10 lb. 10 GP
+Medium Armor (5 Minutes to Don and 1 Minute to Doff)
+Chain Shirt 13 + Dex modifier (max 2) — — 20 lb. 50 GP
+Heavy Armor (10 Minutes to Don and 5 Minutes to Doff)
+Chain Mail 16 Str 13 Disadvantage 55 lb. 75 GP
+Tools
+"""
+
+# Real PDF format: Name line then Type, Rarity (Requires Attunement) line
+SAMPLE_MAGIC_ITEM_TEXT = """\
+Magic Items A-Z
+
+Bag of Holding
+Wondrous Item, Uncommon
+
+Cloak of Protection
+Cloak, Uncommon (Requires Attunement)
+
+Vorpal Sword
+Weapon (Any Sword That Deals Slashing Damage), Legendary (Requires Attunement)
+
+Spells
+"""
+
+
+class TestExtractWeapons:
+    def test_finds_dagger(self):
+        weapons = extract_weapons(SAMPLE_WEAPON_TEXT)
+        names = [w.name for w in weapons]
+        assert "Dagger" in names
+
+    def test_finds_club(self):
+        weapons = extract_weapons(SAMPLE_WEAPON_TEXT)
+        names = [w.name for w in weapons]
+        assert "Club" in names
+
+    def test_weapon_damage_type(self):
+        weapons = {w.name: w for w in extract_weapons(SAMPLE_WEAPON_TEXT)}
+        assert weapons["Dagger"].damage_type == "piercing"
+        assert weapons["Club"].damage_type == "bludgeoning"
+
+    def test_weapon_cost(self):
+        weapons = {w.name: w for w in extract_weapons(SAMPLE_WEAPON_TEXT)}
+        assert weapons["Dagger"].cost == {"amount": 2.0, "unit": "gp"}
+        assert weapons["Club"].cost == {"amount": 1.0, "unit": "sp"}
+
+    def test_weapon_damage_dice(self):
+        weapons = {w.name: w for w in extract_weapons(SAMPLE_WEAPON_TEXT)}
+        assert weapons["Dagger"].damage == {"count": 1, "die": 4, "bonus": 0}
+
+    def test_blowgun_damage_is_none_or_flat(self):
+        # Blowgun does "1 Piercing" — no dice, so damage may be None
+        weapons = {w.name: w for w in extract_weapons(SAMPLE_WEAPON_TEXT)}
+        assert "Blowgun" in weapons
+        assert weapons["Blowgun"].damage_type == "piercing"
+
+    def test_sanity_check_raises_on_empty(self):
+        with pytest.raises(ValueError, match="found no weapons"):
+            extract_weapons("no weapons here")
+
+
+class TestExtractArmor:
+    def test_finds_leather_armor(self):
+        armor = extract_armor(SAMPLE_ARMOR_TEXT)
+        names = [a.name for a in armor]
+        assert "Leather Armor" in names
+
+    def test_finds_chain_mail(self):
+        armor = extract_armor(SAMPLE_ARMOR_TEXT)
+        names = [a.name for a in armor]
+        assert "Chain Mail" in names
+
+    def test_light_armor_ac(self):
+        armor = {a.name: a for a in extract_armor(SAMPLE_ARMOR_TEXT)}
+        assert armor["Leather Armor"].ac_base == 11
+        assert armor["Leather Armor"].ac_add_dex is True
+        assert armor["Leather Armor"].ac_cap_dex is None
+        assert armor["Leather Armor"].stealth_disadvantage is False
+        assert armor["Leather Armor"].strength_required is None
+
+    def test_medium_armor_with_cap(self):
+        armor = {a.name: a for a in extract_armor(SAMPLE_ARMOR_TEXT)}
+        assert armor["Chain Shirt"].ac_base == 13
+        assert armor["Chain Shirt"].ac_add_dex is True
+        assert armor["Chain Shirt"].ac_cap_dex == 2
+
+    def test_heavy_armor_ac(self):
+        armor = {a.name: a for a in extract_armor(SAMPLE_ARMOR_TEXT)}
+        assert armor["Chain Mail"].ac_base == 16
+        assert armor["Chain Mail"].ac_add_dex is False
+        assert armor["Chain Mail"].strength_required == 13
+        assert armor["Chain Mail"].stealth_disadvantage is True
+
+    def test_sanity_check_raises_on_empty(self):
+        with pytest.raises(ValueError, match="found no armor"):
+            extract_armor("no armor here")
+
+
+class TestExtractMagicItems:
+    def test_finds_bag_of_holding(self):
+        items = extract_magic_items(SAMPLE_MAGIC_ITEM_TEXT)
+        names = [i.name for i in items]
+        assert "Bag of Holding" in names
+
+    def test_finds_cloak_of_protection(self):
+        items = extract_magic_items(SAMPLE_MAGIC_ITEM_TEXT)
+        names = [i.name for i in items]
+        assert "Cloak of Protection" in names
+
+    def test_magic_item_rarity(self):
+        items = {i.name: i for i in extract_magic_items(SAMPLE_MAGIC_ITEM_TEXT)}
+        assert items["Bag of Holding"].rarity == "uncommon"
+        assert items["Vorpal Sword"].rarity == "legendary"
+
+    def test_magic_item_attunement(self):
+        items = {i.name: i for i in extract_magic_items(SAMPLE_MAGIC_ITEM_TEXT)}
+        assert items["Bag of Holding"].requires_attunement is False
+        assert items["Cloak of Protection"].requires_attunement is True
+
+    def test_sanity_check_raises_on_empty(self):
+        with pytest.raises(ValueError, match="found no magic items"):
+            extract_magic_items("no items here")
