@@ -364,3 +364,41 @@ class TestExtractCreatures:
     def test_sanity_check_raises_on_empty(self):
         with pytest.raises(ValueError, match="found no creatures"):
             extract_creatures("no creatures here")
+
+    def test_creature_fractional_challenge_rating(self):
+        from data.raw_sources.srd_5_2.parsers.creatures import _parse_cr
+        assert _parse_cr("1/4") == pytest.approx(0.25)
+        assert _parse_cr("1/2") == pytest.approx(0.5)
+        assert _parse_cr("1/8") == pytest.approx(0.125)
+
+
+from data.raw_sources.srd_5_2.parsers.creatures import extract_creatures_from_pdf
+
+
+class TestExtractCreaturesFromPdf:
+    def test_raises_when_no_creatures_found(self):
+        """extract_creatures_from_pdf raises ValueError when fewer than 250 creatures parsed."""
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = "Some text without monster section"
+        fake_page.chars = []
+        fake_page.width = 600
+        fake_page.height = 800
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            with pytest.raises(ValueError, match="expected >=250"):
+                extract_creatures_from_pdf("dummy.pdf")
+
+    def test_calls_pdfplumber_open(self):
+        """extract_creatures_from_pdf calls pdfplumber.open with the given path."""
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = "Some text without monster section"
+        fake_page.chars = []
+        fake_page.width = 600
+        fake_page.height = 800
+        with patch("pdfplumber.open") as mock_open:
+            mock_pdf = MagicMock()
+            mock_pdf.pages = [fake_page]
+            mock_open.return_value.__enter__.return_value = mock_pdf
+            with pytest.raises(ValueError, match="expected >=250"):
+                extract_creatures_from_pdf("dummy.pdf")
+            mock_open.assert_called_once_with("dummy.pdf")

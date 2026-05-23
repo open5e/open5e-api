@@ -52,13 +52,13 @@ _ABILITY_INT_WIS_CHA_RE = re.compile(
 )
 
 _DAMAGE_IMMUNITIES_RE = re.compile(
-    r"(?:Damage\s+)?Immunities\s+(.+?)(?:\n|$)", re.IGNORECASE
+    r"Damage\s+Immunities\s+(.+?)(?:\n|$)", re.IGNORECASE
 )
 _DAMAGE_RESISTANCES_RE = re.compile(
-    r"(?:Damage\s+)?Resistances\s+(.+?)(?:\n|$)", re.IGNORECASE
+    r"Damage\s+Resistances\s+(.+?)(?:\n|$)", re.IGNORECASE
 )
 _DAMAGE_VULNERABILITIES_RE = re.compile(
-    r"(?:Damage\s+)?Vulnerabilities\s+(.+?)(?:\n|$)", re.IGNORECASE
+    r"Damage\s+Vulnerabilities\s+(.+?)(?:\n|$)", re.IGNORECASE
 )
 _CONDITION_IMMUNITIES_RE = re.compile(
     r"Condition\s+Immunities\s+(.+?)(?:\n|$)", re.IGNORECASE
@@ -70,6 +70,7 @@ _TRUESIGHT_RE = re.compile(r"Truesight\s+(\d+)", re.IGNORECASE)
 # Font identification for creature names in the SRD PDF
 # Creature names use GillSans-SemiBold at size >= 14 (18 = section header, 15 = creature name)
 _CREATURE_NAME_MIN_SIZE = 14.0
+_CREATURE_NAME_FONT = "GillSans-SemiBold"
 
 
 @dataclass(frozen=True)
@@ -301,9 +302,8 @@ def _is_creature_name_char(char: dict) -> bool:
     """Return True if this PDF character is part of a creature name (by font)."""
     fontname = char.get("fontname", "")
     size = char.get("size", 0)
-    # Creature names use GillSans-SemiBold at size >= 14 (no SC700)
     return (
-        "GillSans-SemiBold" in fontname
+        _CREATURE_NAME_FONT in fontname
         and "SC700" not in fontname
         and size >= _CREATURE_NAME_MIN_SIZE
     )
