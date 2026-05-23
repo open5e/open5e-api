@@ -413,6 +413,7 @@ class TestExtractCreaturesFromPdf:
 
 from data.raw_sources.srd_5_2.parsers.items import (
     extract_weapons, extract_armor, extract_magic_items,
+    extract_weapons_from_pdf, extract_armor_from_pdf, extract_magic_items_from_pdf,
     WeaponRecord, ArmorRecord, MagicItemRecord,
 )
 
@@ -483,11 +484,23 @@ class TestExtractWeapons:
         weapons = {w.name: w for w in extract_weapons(SAMPLE_WEAPON_TEXT)}
         assert weapons["Dagger"].damage == {"count": 1, "die": 4, "bonus": 0}
 
-    def test_blowgun_damage_is_none_or_flat(self):
-        # Blowgun does "1 Piercing" — no dice, so damage may be None
+    def test_blowgun_flat_damage_is_none(self):
         weapons = {w.name: w for w in extract_weapons(SAMPLE_WEAPON_TEXT)}
-        assert "Blowgun" in weapons
+        assert weapons["Blowgun"].damage is None
         assert weapons["Blowgun"].damage_type == "piercing"
+
+    def test_finds_light_hammer(self):
+        # Light Hammer starts with "Light" — must not be skipped by section-header filter
+        text = """\
+Weapons
+Name Damage Properties Mastery Weight Cost
+Simple Melee Weapons
+Light Hammer 1d4 Bludgeoning Light, Thrown (Range 20/60) Nick 2 lb. 2 GP
+Armor
+"""
+        weapons = extract_weapons(text)
+        names = [w.name for w in weapons]
+        assert "Light Hammer" in names
 
     def test_sanity_check_raises_on_empty(self):
         with pytest.raises(ValueError, match="found no weapons"):
@@ -552,6 +565,125 @@ class TestExtractMagicItems:
         assert items["Bag of Holding"].requires_attunement is False
         assert items["Cloak of Protection"].requires_attunement is True
 
+    def test_multiline_name_not_duplicated(self):
+        # "and Location" is a continuation of the previous name — should NOT appear as its own item
+        text = """\
+Magic Items A-Z
+
+Amulet of Proof against Detection
+and Location
+Wondrous Item, Uncommon (Requires Attunement)
+
+Spells
+"""
+        items = extract_magic_items(text)
+        names = [i.name for i in items]
+        assert "Amulet of Proof against Detection and Location" in names
+        assert not any("and Location" == n for n in names)
+        assert not any(n.startswith("and ") for n in names)
+
     def test_sanity_check_raises_on_empty(self):
         with pytest.raises(ValueError, match="found no magic items"):
             extract_magic_items("no items here")
+
+
+# Minimal weapon text with only 1 weapon (fewer than 30) to trigger ≥30 guard
+_FEW_WEAPONS_TEXT = """\
+Weapons
+Name Damage Properties Mastery Weight Cost
+Simple Melee Weapons
+Dagger 1d4 Piercing Finesse, Light, Thrown (Range 20/60) Nick 1 lb. 2 GP
+Armor
+"""
+
+# Minimal armor text with only 1 entry (fewer than 10) to trigger ≥10 guard
+_FEW_ARMOR_TEXT = """\
+Armor
+Armor Armor Class (AC) Strength Stealth Weight Cost
+Light Armor (1 Minute to Don or Doff)
+Leather Armor 11 + Dex modifier — — 10 lb. 10 GP
+Tools
+"""
+
+
+class TestExtractWeaponsFromPdf:
+    def test_raises_when_no_weapons_found(self):
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = _FEW_WEAPONS_TEXT
+        fake_page.extract_tables.return_value = []
+        fake_page.chars = []
+        fake_page.width = 600
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            with pytest.raises(ValueError, match="expected ≥30"):
+                extract_weapons_from_pdf("dummy.pdf")
+
+    def test_calls_pdfplumber_open(self):
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = _FEW_WEAPONS_TEXT
+        fake_page.extract_tables.return_value = []
+        fake_page.chars = []
+        fake_page.width = 600
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            with pytest.raises(ValueError, match="expected ≥30"):
+                extract_weapons_from_pdf("dummy.pdf")
+            mock_open.assert_called_once_with("dummy.pdf")
+
+
+class TestExtractArmorFromPdf:
+    def test_raises_when_no_armor_found(self):
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = _FEW_ARMOR_TEXT
+        fake_page.extract_tables.return_value = []
+        fake_page.chars = []
+        fake_page.width = 600
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            with pytest.raises(ValueError, match="expected ≥10"):
+                extract_armor_from_pdf("dummy.pdf")
+
+    def test_calls_pdfplumber_open(self):
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = _FEW_ARMOR_TEXT
+        fake_page.extract_tables.return_value = []
+        fake_page.chars = []
+        fake_page.width = 600
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            with pytest.raises(ValueError, match="expected ≥10"):
+                extract_armor_from_pdf("dummy.pdf")
+            mock_open.assert_called_once_with("dummy.pdf")
+
+
+class TestExtractMagicItemsFromPdf:
+    def test_raises_when_no_magic_items_found(self):
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = "Some text without magic items"
+        fake_page.chars = []
+        fake_page.width = 600
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            with pytest.raises(ValueError, match="expected ≥200"):
+                extract_magic_items_from_pdf("dummy.pdf")
+
+    def test_enters_magic_items_section_when_detected(self):
+        """extract_magic_items_from_pdf enters extraction when section heading found."""
+        # Build a fake page that has the GillSans-SemiBold size-18 heading char
+        # but no actual item data → 0 items → raises
+        fake_heading_char = {
+            "text": "M",
+            "fontname": "GillSans-SemiBold",
+            "size": 18.0,
+            "x0": 50.0,
+            "top": 100.0,
+        }
+        fake_page = MagicMock()
+        fake_page.extract_text.return_value = "Magic Items A-Z"
+        fake_page.chars = [fake_heading_char]
+        fake_page.width = 600
+        with patch("pdfplumber.open") as mock_open:
+            mock_open.return_value.__enter__.return_value.pages = [fake_page]
+            with pytest.raises(ValueError, match="expected ≥200"):
+                extract_magic_items_from_pdf("dummy.pdf")
+            mock_open.assert_called_once_with("dummy.pdf")

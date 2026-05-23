@@ -28,7 +28,7 @@ _WEAPONS_END_RE = re.compile(r"^Armor\s*$", re.MULTILINE)
 _ARMOR_START_RE = re.compile(r"^Armor\s*$", re.MULTILINE)
 _ARMOR_END_RE = re.compile(r"^Tools\s*$", re.MULTILINE)
 
-_MAGIC_ITEMS_START_RE = re.compile(r"Magic Items\s+A", re.IGNORECASE)
+_MAGIC_ITEMS_START_RE = re.compile(r"^Magic Items\s+A(?:-|–)Z", re.IGNORECASE | re.MULTILINE)
 _MAGIC_ITEMS_END_RE = re.compile(
     r"^(?:Monsters|Spells|Appendix|Chapter|Index|Part\s+\d|Rules\s+Glossary)",
     re.IGNORECASE | re.MULTILINE,
@@ -91,8 +91,7 @@ _ATTUNEMENT_RE = re.compile(r"requires\s+attunement", re.IGNORECASE)
 
 # Sub-section header lines to skip (not weapon entries)
 _WEAPON_SKIP_RE = re.compile(
-    r"^(?:Name\b|Simple\b|Martial\b|Light\b|Heavy\b|Medium\b|"
-    r"Ranged\b|Melee\b|Name\s+Damage)",
+    r"^(?:Name(?:\s+Damage)?\b|Simple\s+(?:Melee|Ranged)|Martial\s+(?:Melee|Ranged))",
     re.IGNORECASE,
 )
 
@@ -375,6 +374,8 @@ def _pairs_from_tagged_lines(tagged_lines: list[tuple[int, str, str]]) -> list[t
             if abs(tagged_lines[j][0] - y) < 30:  # within ~30pts = wrapped line
                 name = name + " " + tagged_lines[j][1]
                 j += 1
+        # Remember how far ahead the name consumed so we advance past it next iteration
+        next_i = j
 
         # Find the next rarity line (skip body text between name and rarity)
         rarity_text = ""
@@ -391,7 +392,7 @@ def _pairs_from_tagged_lines(tagged_lines: list[tuple[int, str, str]]) -> list[t
 
         if rarity_text and _RARITY_RE.search(rarity_text):
             results.append((name.strip(), rarity_text.strip()))
-        i += 1
+        i = next_i
 
     return results
 
@@ -461,6 +462,17 @@ def extract_magic_items(full_text: str) -> list[MagicItemRecord]:
                     records.append(rec)
                 i += 2
                 continue
+            # Multi-line name: line i+1 is a name continuation, line i+2 has the rarity
+            if i + 2 < len(non_empty) and not _RARITY_RE.search(next_line):
+                _, rarity_line = non_empty[i + 2]
+                if _RARITY_RE.search(rarity_line):
+                    combined_name = line.strip() + " " + next_line.strip()
+                    rec = _parse_magic_item_pair(combined_name, rarity_line)
+                    if rec and rec.name not in seen:
+                        seen.add(rec.name)
+                        records.append(rec)
+                    i += 3
+                    continue
         i += 1
 
     if not records:
@@ -481,7 +493,7 @@ def _is_magic_items_section_heading(page) -> bool:
     ]
     if not size18_chars:
         return False
-    text = "".join(c["text"] for c in sorted(size18_chars, key=lambda c: c["x0"]))
+    text = "".join(c["text"] for c in sorted(size18_chars, key=lambda c: (c["top"], c["x0"])))
     return bool(re.search(r"Magic Items", text, re.IGNORECASE))
 
 
