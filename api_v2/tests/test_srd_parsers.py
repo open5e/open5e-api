@@ -238,5 +238,5 @@ class TestExtractSpells:
         assert "3rd" in spells["Acid Arrow"].higher_level
 
     def test_sanity_check_raises_on_empty(self):
-        with pytest.raises(ValueError, match="fewer than 300"):
+        with pytest.raises(ValueError, match="found no spells"):
             extract_spells("no spells here")

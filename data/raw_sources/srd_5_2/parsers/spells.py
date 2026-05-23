@@ -204,16 +204,17 @@ class SpellRecord:
 def extract_spells(full_text: str) -> list[SpellRecord]:
     """Parse spell records from extracted (single-column) text.
 
-    For the real PDF, use extract_spells_from_pdf() which handles two-column layout.
-    This function is also used by unit tests with synthetic single-column samples.
+    Unit-test helper that parses pre-extracted single-column text.
+    For the real PDF, use extract_spells_from_pdf() which handles two-column layout
+    and enforces a ≥300 spell minimum.
 
     Raises ValueError if no spells are found (sanity check for empty input).
     """
     records = _extract_spells_no_check(full_text)
     if len(records) == 0:
         raise ValueError(
-            f"Spell parser produced only {len(records)} spells — fewer than 300 expected "
-            "for the full SRD. For the real PDF, call extract_spells_from_pdf() instead."
+            "Spell parser found no spells in the provided text. "
+            "For production use, call extract_spells_from_pdf() which enforces ≥300."
         )
     return records
 
