@@ -274,3 +274,93 @@ class TestExtractSpellsFromPdf:
 
             # Verify pdfplumber.open was called with the right path
             mock_open.assert_called_once_with("dummy.pdf")
+
+
+from data.raw_sources.srd_5_2.parsers.creatures import extract_creatures, CreatureRecord
+
+# Sample text matching actual pdfplumber extract_text() output format
+# Note: AC, HP format is short-form ("AC 17", "HP 21"), not labeled fields
+# Note: Ability scores are abbreviated ("Str", "Dex") with modifiers inline
+SAMPLE_CREATURE_TEXT = """\
+Monsters A-Z
+
+Adult Black Dragon
+Huge Dragon (Chromatic), Chaotic Evil
+AC 22 Initiative +7 (17) HP 367 (21d12+147)
+Speed 40 ft., fly 80 ft., swim 40 ft.
+Str 27 +8 +8 Dex 14 +2 +7 Con 25 +7 +12
+Int 16 +3 +3 Wis 13 +1 +6 Cha 17 +3 +3
+Darkvision 120 ft., Passive Perception 21
+Languages Common, Draconic
+CR 21 (XP 33,000; PB +7)
+
+Banshee
+Medium Undead, Chaotic Evil
+AC 12 Initiative +2 (12) HP 58 (13d8)
+Speed 0 ft., fly 40 ft. (hover)
+Str 1 -5 -5 Dex 14 +2 +2 Con 10 +0 +0
+Int 12 +1 +1 Wis 11 +0 +0 Cha 17 +3 +3
+Damage Resistances Acid, Fire, Lightning, Thunder; Bludgeoning, Piercing, Slashing
+Damage Immunities Cold, Necrotic, Poison
+Condition Immunities Charmed, Exhaustion, Frightened, Grappled, Paralyzed
+Darkvision 60 ft., Passive Perception 10
+Languages Common, Elvish
+CR 4 (XP 1,100; PB +2)
+
+Appendix: Conditions
+"""
+
+
+class TestExtractCreatures:
+    def test_finds_adult_black_dragon(self):
+        creatures = extract_creatures(SAMPLE_CREATURE_TEXT)
+        names = [c.name for c in creatures]
+        assert "Adult Black Dragon" in names
+
+    def test_finds_banshee(self):
+        creatures = extract_creatures(SAMPLE_CREATURE_TEXT)
+        names = [c.name for c in creatures]
+        assert "Banshee" in names
+
+    def test_creature_size_and_type(self):
+        creatures = {c.name: c for c in extract_creatures(SAMPLE_CREATURE_TEXT)}
+        assert creatures["Adult Black Dragon"].size == "Huge"
+        assert creatures["Adult Black Dragon"].type == "dragon"
+
+    def test_creature_armor_class(self):
+        creatures = {c.name: c for c in extract_creatures(SAMPLE_CREATURE_TEXT)}
+        assert creatures["Adult Black Dragon"].armor_class == 22
+
+    def test_creature_hit_points(self):
+        creatures = {c.name: c for c in extract_creatures(SAMPLE_CREATURE_TEXT)}
+        assert creatures["Adult Black Dragon"].hit_points == 367
+
+    def test_creature_ability_scores(self):
+        creatures = {c.name: c for c in extract_creatures(SAMPLE_CREATURE_TEXT)}
+        assert creatures["Adult Black Dragon"].strength == 27
+        assert creatures["Adult Black Dragon"].dexterity == 14
+
+    def test_creature_challenge_rating(self):
+        creatures = {c.name: c for c in extract_creatures(SAMPLE_CREATURE_TEXT)}
+        assert creatures["Adult Black Dragon"].challenge_rating == 21.0
+        assert creatures["Banshee"].challenge_rating == 4.0
+
+    def test_creature_walk_speed(self):
+        creatures = {c.name: c for c in extract_creatures(SAMPLE_CREATURE_TEXT)}
+        assert creatures["Adult Black Dragon"].walk == 40
+        assert creatures["Adult Black Dragon"].fly == 80
+        assert creatures["Adult Black Dragon"].swim == 40
+
+    def test_creature_hover(self):
+        creatures = {c.name: c for c in extract_creatures(SAMPLE_CREATURE_TEXT)}
+        assert creatures["Banshee"].hover is True
+        assert creatures["Adult Black Dragon"].hover is False
+
+    def test_creature_damage_immunities(self):
+        creatures = {c.name: c for c in extract_creatures(SAMPLE_CREATURE_TEXT)}
+        immunities = [i.lower() for i in creatures["Banshee"].damage_immunities]
+        assert "cold" in immunities
+
+    def test_sanity_check_raises_on_empty(self):
+        with pytest.raises(ValueError, match="found no creatures"):
+            extract_creatures("no creatures here")
