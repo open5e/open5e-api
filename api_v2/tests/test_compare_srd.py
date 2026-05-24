@@ -87,6 +87,26 @@ class TestCompareRecords:
         result = compare_records("spells", pdf, db, skip_fields=SKIP)
         assert result.mismatches == []
 
+    def test_pdf_and_db_counts(self):
+        pdf = [_make_spell("Fireball"), _make_spell("Acid Arrow")]
+        db = [
+            {"name": "Fireball", "level": 1, "school__name": "evocation",
+             "casting_time": "Action", "range_text": "60 feet",
+             "verbal": True, "somatic": True, "material": False,
+             "duration": "Instantaneous", "concentration": False, "ritual": False},
+            {"name": "Acid Arrow", "level": 2, "school__name": "evocation",
+             "casting_time": "Action", "range_text": "90 feet",
+             "verbal": True, "somatic": True, "material": True,
+             "duration": "Instantaneous", "concentration": False, "ritual": False},
+            {"name": "Extra Spell", "level": 1, "school__name": "evocation",
+             "casting_time": "Action", "range_text": "60 feet",
+             "verbal": True, "somatic": True, "material": False,
+             "duration": "Instantaneous", "concentration": False, "ritual": False},
+        ]
+        result = compare_records("spells", pdf, db, skip_fields=SKIP)
+        assert result.pdf_count == 2
+        assert result.db_count == 3
+
     def test_float_comparison_within_tolerance(self):
         """Challenge rating 0.25 vs 0.25000001 should not mismatch."""
         from data.raw_sources.srd_5_2.parsers.creatures import CreatureRecord

@@ -171,7 +171,7 @@ def extract_weapons(full_text: str) -> list[WeaponRecord]:
 
 def extract_weapons_from_pdf(pdf_path: str) -> list[WeaponRecord]:
     """Extract weapons from the real SRD PDF. Raises ValueError if fewer than 30 found."""
-    from .base import extract_full_text  # avoid circular at module load time
+    from .base import extract_full_text  # deferred import
     full_text = extract_full_text(pdf_path)
     records = extract_weapons(full_text)
     if len(records) < 30:
@@ -286,7 +286,7 @@ def extract_armor(full_text: str) -> list[ArmorRecord]:
 
 def extract_armor_from_pdf(pdf_path: str) -> list[ArmorRecord]:
     """Extract armor from the real SRD PDF. Raises ValueError if fewer than 10 found."""
-    from .base import extract_full_text  # avoid circular at module load time
+    from .base import extract_full_text  # deferred import
     full_text = extract_full_text(pdf_path)
     records = extract_armor(full_text)
     if len(records) < 10:

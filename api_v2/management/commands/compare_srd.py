@@ -2,6 +2,7 @@
 from __future__ import annotations
 import os
 import time
+import traceback
 import concurrent.futures
 from dataclasses import dataclass
 from typing import Any
@@ -222,6 +223,8 @@ def _run_magic_item_comparison(pdf_path: str, document: str) -> ComparisonResult
     return compare_records("magic_items", pdf_records, db_records, SKIP_FIELDS["magic_items"])
 
 
+# "items" (adventuring gear) is not in _RUNNERS because the SRD adventuring gear
+# items do not have a dedicated model in api_v2 that maps cleanly to PDF records.
 _RUNNERS = {
     "spells": _run_spell_comparison,
     "creatures": _run_creature_comparison,
@@ -239,7 +242,10 @@ _RUNNERS = {
 def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> None:
     console = Console()
 
-    summary = Table(title=f"SRD 5.2 PDF vs Database  (completed in {elapsed:.1f}s)")
+    def _fmt(n):
+        return "[green]0[/green]" if n == 0 else str(n)
+
+    summary = Table(title=f"SRD 5.2 PDF vs Database (completed in {elapsed:.1f}s)")
     summary.add_column("Entity type", style="bold")
     summary.add_column("In PDF", justify="right")
     summary.add_column("In DB", justify="right")
@@ -248,8 +254,6 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
     summary.add_column("Mismatches", justify="right")
 
     for name, result in results.items():
-        def _fmt(n):
-            return f"[green]0[/green]" if n == 0 else str(n)
         summary.add_row(
             name,
             str(result.pdf_count),
@@ -328,6 +332,8 @@ class Command(BaseCommand):
         start = time.monotonic()
         results: dict[str, ComparisonResult] = {}
 
+        failed: list[str] = []
+
         with concurrent.futures.ThreadPoolExecutor() as executor:
             futures = {
                 executor.submit(_RUNNERS[etype], pdf_path, document): etype
@@ -339,6 +345,11 @@ class Command(BaseCommand):
                     results[etype] = future.result()
                 except Exception as exc:
                     self.stderr.write(f"  ERROR comparing {etype}: {exc}")
+                    traceback.print_exc()
+                    failed.append(etype)
+
+        if failed:
+            raise CommandError(f"Comparisons failed for: {', '.join(failed)}")
 
         elapsed = time.monotonic() - start
         _render_results(
