@@ -345,7 +345,7 @@ class Command(BaseCommand):
                     results[etype] = future.result()
                 except Exception as exc:
                     self.stderr.write(f"  ERROR comparing {etype}: {exc}")
-                    traceback.print_exc()
+                    self.stderr.write(traceback.format_exc())
                     failed.append(etype)
 
         if failed:
