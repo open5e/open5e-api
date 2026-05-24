@@ -669,18 +669,22 @@ class TestExtractMagicItemsFromPdf:
 
     def test_enters_magic_items_section_when_detected(self):
         """extract_magic_items_from_pdf enters extraction when section heading found."""
-        # Build a fake page that has the GillSans-SemiBold size-18 heading char
-        # but no actual item data → 0 items → raises
-        fake_heading_char = {
-            "text": "M",
-            "fontname": "GillSans-SemiBold",
-            "size": 18.0,
-            "x0": 50.0,
-            "top": 100.0,
-        }
+        # Provide all chars of "Magic Items" at size 18 so _is_magic_items_section_heading
+        # returns True, triggering section entry. No item data → 0 items → raises.
+        heading_text = "Magic Items"
+        heading_chars = [
+            {
+                "text": ch,
+                "fontname": "GillSans-SemiBold",
+                "size": 18.0,
+                "x0": float(i * 8),
+                "top": 100.0,
+            }
+            for i, ch in enumerate(heading_text)
+        ]
         fake_page = MagicMock()
         fake_page.extract_text.return_value = "Magic Items A-Z"
-        fake_page.chars = [fake_heading_char]
+        fake_page.chars = heading_chars
         fake_page.width = 600
         with patch("pdfplumber.open") as mock_open:
             mock_open.return_value.__enter__.return_value.pages = [fake_page]
