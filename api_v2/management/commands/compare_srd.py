@@ -1,6 +1,7 @@
 """Management command to compare SRD PDF content against the database."""
 from __future__ import annotations
 import os
+import re
 import time
 import traceback
 import concurrent.futures
@@ -103,21 +104,54 @@ SKIP_FIELDS: dict[str, set[str]] = {
 # ---------------------------------------------------------------------------
 
 
+# Issue 1 (duration): strips "Concentration, up to " / "Up to " prefixes so PDF
+# durations like "Concentration, up to 1 minute" match DB value "1 minute".
+_DURATION_PREFIX_RE = re.compile(
+    r"^(?:concentration,?\s+)?up\s+to\s+", re.IGNORECASE
+)
+# Issue 1 (duration): normalises plural time units to singular to match DB convention
+# ("8 hours" → "8 hour", "10 minutes" → "10 minute", etc.).
+_TIME_PLURAL_RE = re.compile(
+    r"\b(hour|minute|day|round|week|month|year)s\b", re.IGNORECASE
+)
+# Issue A (casting_time): DB stores bare unit without count ("minute" not "1 minute").
+# Applied only inside _values_equal when field=="casting_time".
+_CAST_TIME_COUNT_RE = re.compile(r"^\d+\s+")
+
+
 def _normalize(value: Any) -> Any:
     if isinstance(value, str):
-        return clean_text(value).lower().strip()
+        s = clean_text(value).lower().strip()
+        # Issue 1 — duration prefix / plural
+        s = _DURATION_PREFIX_RE.sub("", s)
+        s = _TIME_PLURAL_RE.sub(r"\1", s)
+        # Issue D — "Reaction, which you take…" and "Bonus Action, which you take immedi-"
+        # (PDF line-wrap artifact): strip ", which …" suffix before further transforms.
+        s = re.sub(r",\s+which\b.*$", "", s)
+        # Issue B — "Bonus Action" → DB slug "bonus-action"
+        s = re.sub(r"\bbonus action\b", "bonus-action", s)
+        # Issue C — DB stores ritual as a separate boolean; strip " or Ritual" suffix
+        s = re.sub(r"\s+or\s+ritual\b.*$", "", s)
+        return s
     if isinstance(value, (list, tuple)):
         return sorted(_normalize(v) for v in value)
     return value
 
 
-def _values_equal(a: Any, b: Any) -> bool:
+def _values_equal(a: Any, b: Any, field: str = "") -> bool:
     if isinstance(a, float) or isinstance(b, float):
         try:
             return abs(float(a) - float(b)) < 0.001
         except (TypeError, ValueError):
             return False
-    return _normalize(a) == _normalize(b)
+    na, nb = _normalize(a), _normalize(b)
+    # Issue A — casting_time: DB strips leading count ("1 minute" → "minute")
+    if field == "casting_time":
+        if isinstance(na, str):
+            na = _CAST_TIME_COUNT_RE.sub("", na)
+        if isinstance(nb, str):
+            nb = _CAST_TIME_COUNT_RE.sub("", nb)
+    return na == nb
 
 
 def compare_records(
@@ -145,7 +179,7 @@ def compare_records(
                 continue
             pdf_val = getattr(pdf_rec, field, None)
             db_val = db_rec.get(db_key)
-            if not _values_equal(pdf_val, db_val):
+            if not _values_equal(pdf_val, db_val, field=field):
                 mismatches.append(FieldMismatch(
                     entity_name=pdf_rec.name,
                     field=field,
@@ -157,6 +191,250 @@ def compare_records(
         entity_type=entity_type,
         pdf_count=len(pdf_by_slug),
         db_count=len(db_by_slug),
+        missing=missing,
+        extra=extra,
+        mismatches=mismatches,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Enchantment-aware magic item comparison
+# ---------------------------------------------------------------------------
+
+# The 52 item types that appear in "[ItemType] (+X)" DB entries correspond to three
+# PDF enchantment categories (Weapon, Armor, Shield), with Ammunition mapping directly.
+# Rarity is determined by bonus level: +1=Uncommon, +2=Rare, +3=Very Rare.
+_BONUS_WEAPON_TYPES: frozenset[str] = frozenset({
+    "battleaxe", "blowgun", "club", "dagger", "dart", "flail", "glaive", "greataxe",
+    "greatclub", "greatsword", "halberd", "hand crossbow", "handaxe", "heavy crossbow",
+    "javelin", "lance", "light crossbow", "light hammer", "longbow", "longsword", "mace",
+    "maul", "morningstar", "musket", "pike", "pistol", "quarterstaff", "rapier",
+    "scimitar", "shortbow", "shortsword", "sickle", "sling", "spear", "trident",
+    "war pick", "warhammer", "whip",
+})
+_BONUS_ARMOR_TYPES: frozenset[str] = frozenset({
+    "breastplate", "chain mail", "chain shirt", "half plate armor", "hide armor",
+    "leather armor", "padded armor", "plate armor", "ring mail", "scale mail",
+    "splint armor", "studded leather armor",
+})
+
+# Single-word weapon or armor type suffixes that the DB appends to enchantment names.
+# e.g. "Flame Tongue Longsword" → strip "Longsword" → enchantment "Flame Tongue"
+# e.g. "Elven Chain Mail" → strip "Mail" → enchantment "Elven Chain"
+_ITEM_TYPE_SUFFIXES: frozenset[str] = frozenset({
+    # Weapons
+    "battleaxe", "club", "dagger", "dart", "flail", "glaive", "greataxe", "greatclub",
+    "greatsword", "halberd", "handaxe", "javelin", "lance", "longsword", "mace", "maul",
+    "morningstar", "pike", "quarterstaff", "rapier", "scimitar", "shortbow", "shortsword",
+    "sickle", "sling", "spear", "trident", "warhammer", "whip", "longbow", "blowgun",
+    "musket", "pistol",
+    # Armor words that appear as last word in compound names
+    "breastplate", "mail", "shirt", "armor", "leather", "padded", "splint",
+})
+
+# Sword-like weapon types that the DB uses when expanding PDF's generic "Sword of X".
+# e.g. "Longsword of Sharpness" / "Glaive of Life Stealing" → normalise to "sword-of-X"
+_SWORD_EXPANDABLES: frozenset[str] = frozenset({
+    "glaive", "greatsword", "longsword", "rapier", "scimitar", "shortsword",
+})
+
+# Slugs of "of X" suffixes that identify the SRD's multi-weapon-type enchantments.
+# Only these trigger Pass 4 normalisation — actual named items like "Scimitar of Speed"
+# are excluded because "of-speed" is not in this set.
+_SWORD_OF_ENCHANTMENT_SLUGS: frozenset[str] = frozenset({
+    "of-life-stealing", "of-sharpness", "of-wounding",
+})
+
+# Generic item-category words that sometimes appear at the end of PDF enchantment names
+# e.g. "Berserker Axe" → base enchantment "Berserker"; DB has "Berserker Battleaxe"
+_GENERIC_CATEGORY_SUFFIXES: frozenset[str] = frozenset({
+    "axe", "sword", "armor", "chain", "weapon", "shield",
+})
+
+
+def _db_enchantment_slug(db_name: str) -> str:
+    """Derive the enchantment slug from a DB magic item name.
+
+    Passes applied in priority order:
+
+    1. "[ItemType] (+X)": maps to generic PDF category
+       ("weapon", "armor", "shield", "ammunition").
+    1b. "[Name] +N" trailing bonus (no parens): strip the bonus suffix.
+       e.g. "Wand of the War Mage +1" → "wand-of-the-war-mage".
+    1c. "Ammunition of [CreatureType] Slaying": normalise to "ammunition-of-slaying".
+    2. Strip parenthetical: "Adamantine Armor (Breastplate)" → "Adamantine Armor".
+    3. Strip trailing item-type suffix (two-word checked before single-word, only
+       without a parenthetical): "Flame Tongue War Pick" → "Flame Tongue".
+    4. Normalise "[sword-expandable weapon] of X" → "Sword of X" so that the DB's
+       many specific weapon type expansions match the PDF's generic "Sword of X" entry.
+    """
+    # Pass 1: bonus-enhancement "[ItemType] (+X)" → generic category
+    m = re.match(r"^(.+)\s*\(\+\d\)$", db_name)
+    if m:
+        item_type = m.group(1).strip().lower()
+        if item_type == "ammunition":
+            return "ammunition"
+        if item_type == "shield":
+            return "shield"
+        if item_type in _BONUS_WEAPON_TYPES:
+            return "weapon"
+        if item_type in _BONUS_ARMOR_TYPES:
+            return "armor"
+
+    # Pass 1b: "[Name] +N" trailing space-plus-digit (not parenthesised) → strip
+    stripped = re.sub(r"\s+\+\d+\s*$", "", db_name).strip()
+    if stripped != db_name:
+        return _db_enchantment_slug(stripped)
+
+    # Pass 1c: "Ammunition of [CreatureType] Slaying" → "ammunition-of-slaying"
+    if re.match(r"^Ammunition\s+of\s+\S+\s+Slaying$", db_name, re.IGNORECASE):
+        return "ammunition-of-slaying"
+
+    # Pass 2: strip parenthetical
+    had_paren = bool(re.search(r"\s*\([^)]*\)\s*$", db_name))
+    base = re.sub(r"\s*\([^)]*\)\s*$", "", db_name).strip()
+
+    # Pass 3: strip trailing item-type suffix (only when no parenthetical was present).
+    # Two-word weapon types (e.g. "War Pick", "Light Hammer") are checked first.
+    if not had_paren:
+        words = base.split()
+        if len(words) >= 3:
+            two_word = (words[-2] + " " + words[-1]).lower()
+            if two_word in _BONUS_WEAPON_TYPES:
+                base = " ".join(words[:-2]).strip()
+            elif words[-1].lower() in _ITEM_TYPE_SUFFIXES:
+                base = " ".join(words[:-1]).strip()
+        elif len(words) == 2 and words[-1].lower() in _ITEM_TYPE_SUFFIXES:
+            base = words[0].strip()
+
+    # Pass 4: normalise "[sword-expandable weapon] of X" → "Sword of X", but only for
+    # the known multi-weapon-type enchantments (Life Stealing, Sharpness, Wounding).
+    # Named items like "Scimitar of Speed" are excluded by the slug whitelist.
+    parts = base.split(None, 1)
+    if (len(parts) == 2
+            and parts[0].lower() in _SWORD_EXPANDABLES
+            and parts[1].lower().startswith("of ")):
+        if slugify(parts[1]) in _SWORD_OF_ENCHANTMENT_SLUGS:
+            base = "Sword " + parts[1]
+
+    return slugify(base)
+
+
+def _enchantment_slugs_match(pdf_slug: str, db_slug: str) -> bool:
+    """True when the two slugs refer to the same enchantment concept.
+
+    Exact match covers most cases.  A soft match handles PDF names that include a
+    trailing generic item-category word absent from the DB slug, e.g.:
+      PDF "berserker-axe"  ↔  DB "berserker"   (generic "axe" stripped from PDF)
+      PDF "dancing-sword"  ↔  DB "dancing"      (generic "sword" stripped from PDF)
+    """
+    if pdf_slug == db_slug:
+        return True
+    if pdf_slug.startswith(db_slug + "-"):
+        suffix = pdf_slug[len(db_slug) + 1:]
+        if suffix in _GENERIC_CATEGORY_SUFFIXES:
+            return True
+    return False
+
+
+def compare_magic_item_enchantments(
+    pdf_records: list,
+    db_records: list[dict],
+    skip_fields: set[str],
+) -> ComparisonResult:
+    """Compare PDF magic item enchantments against DB records.
+
+    Rather than matching on exact name, this function operates at the
+    *enchantment* level:
+    - PDF records use enchantment_name (bonus-variant suffix stripped from name).
+    - DB records are grouped by their derived enchantment name (parenthetical and
+      trailing item-type word stripped).
+
+    This means "Weapon, +1, +2, or +3" (PDF enchantment "Weapon") correctly
+    aligns with the DB's many specific "+1" weapon entries, and "Adamantine Armor"
+    aligns with "Adamantine Armor (Breastplate)", "(Chain Mail)", etc.
+    """
+    # PDF: keyed by enchantment slug.  Strip any parenthetical from the enchantment name
+    # (e.g. "Stone of Good Luck (Luckstone)" → "Stone of Good Luck") before slugifying
+    # so that DB entries without the parenthetical still match.
+    pdf_by_esl: dict[str, Any] = {}
+    for r in pdf_records:
+        clean = re.sub(r"\s*\([^)]*\)", "", r.enchantment_name).strip()
+        esl = slugify(clean)
+        pdf_by_esl.setdefault(esl, r)  # first seen wins for duplicates
+
+    # DB: group by enchantment slug
+    db_groups: dict[str, list[dict]] = {}
+    for r in db_records:
+        esl = _db_enchantment_slug(r["name"])
+        db_groups.setdefault(esl, []).append(r)
+
+    # Build a sorted list of all DB enchantment slugs for look-up
+    db_esls: list[str] = sorted(db_groups)
+
+    def _pdf_in_db(pdf_slug: str) -> bool:
+        return any(_enchantment_slugs_match(pdf_slug, ds) for ds in db_esls)
+
+    def _db_in_pdf(db_slug: str) -> bool:
+        return any(_enchantment_slugs_match(ps, db_slug) for ps in pdf_by_esl)
+
+    missing = sorted(
+        pdf_by_esl[s].enchantment_name
+        for s in pdf_by_esl
+        if not _pdf_in_db(s)
+    )
+    extra_names: list[str] = []
+    for db_slug, group in db_groups.items():
+        if not _db_in_pdf(db_slug):
+            # Report a human-readable enchantment name for the extra group.
+            # Mirror _db_enchantment_slug's normalization but preserve casing.
+            raw = group[0]["name"]
+            had_paren = bool(re.search(r"\s*\([^)]*\)\s*$", raw))
+            ench_name = re.sub(r"\s*\([^)]*\)\s*$", "", raw).strip()
+            if not had_paren:
+                words = ench_name.split()
+                if len(words) >= 3:
+                    two_word = (words[-2] + " " + words[-1]).lower()
+                    if two_word in _BONUS_WEAPON_TYPES:
+                        ench_name = " ".join(words[:-2]).strip()
+                    elif words[-1].lower() in _ITEM_TYPE_SUFFIXES:
+                        ench_name = " ".join(words[:-1]).strip()
+                elif len(words) == 2 and words[-1].lower() in _ITEM_TYPE_SUFFIXES:
+                    ench_name = words[0].strip()
+            extra_names.append(ench_name)
+    extra = sorted(set(extra_names))
+
+    # Field comparison: for each PDF enchantment, compare against a representative
+    # DB record from its matching group.
+    field_map = _FIELD_MAPS.get("magic_items", {})
+    mismatches: list[FieldMismatch] = []
+    for pdf_slug, pdf_rec in pdf_by_esl.items():
+        # Find matching DB group
+        matched_group: list[dict] | None = None
+        for db_slug, group in db_groups.items():
+            if _enchantment_slugs_match(pdf_slug, db_slug):
+                matched_group = group
+                break
+        if matched_group is None:
+            continue
+        db_rep = matched_group[0]  # representative record
+        for field, db_key in field_map.items():
+            if field in skip_fields:
+                continue
+            pdf_val = getattr(pdf_rec, field, None)
+            db_val = db_rep.get(db_key)
+            if not _values_equal(pdf_val, db_val, field=field):
+                mismatches.append(FieldMismatch(
+                    entity_name=pdf_rec.enchantment_name,
+                    field=field,
+                    pdf_value=pdf_val,
+                    db_value=db_val,
+                ))
+
+    return ComparisonResult(
+        entity_type="magic_items",
+        pdf_count=len(pdf_by_esl),
+        db_count=len(db_records),
         missing=missing,
         extra=extra,
         mismatches=mismatches,
@@ -220,7 +498,7 @@ def _run_magic_item_comparison(pdf_path: str, document: str) -> ComparisonResult
     db_records = list(MagicItem.objects.filter(document_id=document).values(
         "name", "rarity__name", "requires_attunement",
     ))
-    return compare_records("magic_items", pdf_records, db_records, SKIP_FIELDS["magic_items"])
+    return compare_magic_item_enchantments(pdf_records, db_records, SKIP_FIELDS["magic_items"])
 
 
 # "items" (adventuring gear) is not in _RUNNERS because the SRD adventuring gear
@@ -294,7 +572,7 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
 
 DEFAULT_PDF = os.path.normpath(os.path.join(
     os.path.dirname(__file__),
-    "../../../../data/raw_sources/srd_5_2/SRD_CC_v5.2.pdf",
+    "../../../data/raw_sources/srd_5_2/SRD_CC_v5.2.pdf",
 ))
 
 
