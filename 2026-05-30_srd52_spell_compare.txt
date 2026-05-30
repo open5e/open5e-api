@@ -1,0 +1,41 @@
+Vector index file not found: server/vector_index.pkl
+         SRD 5.2 PDF vs Database (completed in 15.9s)          
+┏━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━┓
+┃ Entity type ┃ In PDF ┃ In DB ┃ Missing ┃ Extra ┃ Mismatches ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━┩
+│ spells      │    339 │   340 │       0 │     1 │         26 │
+└─────────────┴────────┴───────┴─────────┴───────┴────────────┘
+╭─────────────────────────────────────────────────────── Extra in DB — spells ────────────────────────────────────────────────────────╮
+│ • Thunderwavea                                                                                                                      │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+                             Field mismatches — spells                             
+┏━━━━━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Entity          ┃ Page ┃ Field         ┃ PDF value                   ┃ DB value ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━┩
+│ Contagion       │  119 │ verbal        │ True                        │ False    │
+│ Contagion       │  119 │ somatic       │ True                        │ False    │
+│ Divine Smite    │  125 │ verbal        │ True                        │ False    │
+│ Find Familiar   │  130 │ casting_time  │ 1 hour or Ritual            │ action   │
+│ Find Steed      │  130 │ verbal        │ True                        │ False    │
+│ Find Steed      │  130 │ somatic       │ True                        │ False    │
+│ Forbiddance     │  133 │ casting_time  │ 10 minutes or Ritual        │ action   │
+│ Forcecage       │  134 │ casting_time  │ Action                      │ hour     │
+│ Forcecage       │  134 │ range_text    │ 100 feet                    │          │
+│ Forcecage       │  134 │ verbal        │ True                        │ False    │
+│ Forcecage       │  134 │ somatic       │ True                        │ False    │
+│ Forcecage       │  134 │ material      │ True                        │ False    │
+│ Forcecage       │  134 │ duration      │ Concentration, up to 1 hour │          │
+│ Forcecage       │  134 │ concentration │ True                        │ False    │
+│ Jump            │  143 │ verbal        │ True                        │ False    │
+│ Jump            │  143 │ somatic       │ True                        │ False    │
+│ Jump            │  143 │ material      │ True                        │ False    │
+│ Plant Growth    │  153 │ casting_time  │ Action (Overgrowth) or      │ hour     │
+│ Power Word Heal │  154 │ verbal        │ True                        │ False    │
+│ Power Word Kill │  154 │ verbal        │ True                        │ False    │
+│ Resistance      │  158 │ verbal        │ True                        │ False    │
+│ Resistance      │  158 │ somatic       │ True                        │ False    │
+│ Searing Smite   │  160 │ verbal        │ True                        │ False    │
+│ Shining Smite   │  162 │ verbal        │ True                        │ False    │
+│ Sorcerous Burst │  163 │ verbal        │ True                        │ False    │
+│ Sorcerous Burst │  163 │ somatic       │ True                        │ False    │
+└─────────────────┴──────┴───────────────┴─────────────────────────────┴──────────┘

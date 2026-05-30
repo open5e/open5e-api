@@ -925,3 +925,64 @@ class TestExtractMagicItemsFromPdf:
             with pytest.raises(ValueError, match="expected ≥200"):
                 extract_magic_items_from_pdf("dummy.pdf")
             mock_open.assert_called_once_with("dummy.pdf")
+
+
+from data.raw_sources.srd_5_2.parsers.classes import ClassRecord, extract_classes
+
+
+class TestExtractClasses:
+    def test_extracts_hit_dice(self):
+        text = """
+Barbarian
+Core Barbarian Traits
+Primary Ability Strength
+Hit Point Die D12 per Barbarian level
+Saving Throw Strength and Constitution
+"""
+        records = extract_classes(text)
+        assert any(r.name == "Barbarian" and r.hit_dice == "d12" for r in records)
+
+    def test_extracts_multiple_classes(self):
+        text = """
+Hit Point Die D12 per Barbarian level
+Hit Point Die D8 per Bard level
+Hit Point Die D6 per Wizard level
+"""
+        records = extract_classes(text)
+        assert len(records) == 3
+        by_name = {r.name: r for r in records}
+        assert by_name["Barbarian"].hit_dice == "d12"
+        assert by_name["Bard"].hit_dice == "d8"
+        assert by_name["Wizard"].hit_dice == "d6"
+
+    def test_hit_dice_lowercased(self):
+        """hit_dice is always lowercase for comparison with DB values."""
+        records = extract_classes("Hit Point Die D10 per Fighter level")
+        assert records[0].hit_dice == "d10"
+
+    def test_sanity_check_raises_on_empty(self):
+        import pytest
+        with pytest.raises(ValueError, match="found no classes"):
+            extract_classes("")
+
+    def test_single_word_class_name_captured(self):
+        """Regex captures the single class name word correctly."""
+        records = extract_classes("Hit Point Die D8 per Rogue level")
+        assert any(r.name == "Rogue" for r in records)
+
+
+class TestExtractClassesFromPdf:
+    def test_raises_when_no_classes_found(self):
+        import pytest
+        from unittest.mock import patch, MagicMock
+        from data.raw_sources.srd_5_2.parsers.classes import extract_classes_from_pdf
+        mock_page = MagicMock()
+        mock_page.extract_text.return_value = "No classes here"
+        mock_page.page_number = 1
+        mock_pdf = MagicMock()
+        mock_pdf.pages = [mock_page]
+        mock_pdf.__enter__ = lambda s: s
+        mock_pdf.__exit__ = MagicMock(return_value=False)
+        with patch("pdfplumber.open", return_value=mock_pdf):
+            with pytest.raises(ValueError, match="expected ≥10"):
+                extract_classes_from_pdf("fake.pdf")

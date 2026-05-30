@@ -1,0 +1,47 @@
+Vector index file not found: server/vector_index.pkl
+         SRD 5.2 PDF vs Database (completed in 31.2s)          
+┏━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━┓
+┃ Entity type ┃ In PDF ┃ In DB ┃ Missing ┃ Extra ┃ Mismatches ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━┩
+│ creatures   │    306 │   330 │       1 │    25 │          5 │
+└─────────────┴────────┴───────┴─────────┴───────┴────────────┘
+╭──────────────────────────────────── Missing from DB — creatures ─────────────────────────────────────╮
+│ • Giant Fly (p. 221)                                                                                 │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭────────────────────────────────────── Extra in DB — creatures ───────────────────────────────────────╮
+│ • Archelon                                                                                           │
+│ • Bandit Captain                                                                                     │
+│ • Black Dragon Wyrmling                                                                              │
+│ • Chain Devil                                                                                        │
+│ • Darkmantle                                                                                         │
+│ • Draft Horse                                                                                        │
+│ • Frost Giant                                                                                        │
+│ • Gelatinous Cube                                                                                    │
+│ • Giant Centipede                                                                                    │
+│ • Giant Spider                                                                                       │
+│ • Giant Wasp                                                                                         │
+│ • Imp                                                                                                │
+│ • Knight                                                                                             │
+│ • Octopus                                                                                            │
+│ • Owl                                                                                                │
+│ • Phase Spider                                                                                       │
+│ • Pit Fiend                                                                                          │
+│ • Pony                                                                                               │
+│ • Purple Worm                                                                                        │
+│ • Rhinoceros                                                                                         │
+│ • Spider                                                                                             │
+│ • Stirge                                                                                             │
+│ • Vampire Spawn                                                                                      │
+│ • White Dragon Wyrmling                                                                              │
+│ • Will-o'-Wisp                                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────╯
+                    Field mismatches — creatures                     
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Entity           ┃ Page ┃ Field            ┃ PDF value ┃ DB value ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━┩
+│ Clay Golem       │  271 │ walk             │ 30        │ 20       │
+│ Flying Snake     │  345 │ challenge_rating │ 0.125     │ 0.25     │
+│ Panther          │  355 │ challenge_rating │ 0.25      │ 1.0      │
+│ Swarm of Insects │  358 │ fly              │ 20        │ None     │
+│ Swarm of Rats    │  359 │ challenge_rating │ 0.25      │ 1.0      │
+└──────────────────┴──────┴──────────────────┴───────────┴──────────┘
