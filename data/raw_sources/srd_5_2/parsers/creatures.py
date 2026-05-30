@@ -317,15 +317,17 @@ def _is_creature_name_char(char: dict) -> bool:
     )
 
 
-def _extract_column_blocks(page, left_col: bool) -> list[tuple[str, str]]:
+def _extract_column_blocks(page, left_col: bool) -> tuple[list[tuple[str, str]], str]:
     """Extract (name, block_text) pairs from one column of a PDF page.
 
     Uses character-level x-position filtering to separate columns, and font
     identification to locate creature name boundaries.
 
-    Returns a list of (creature_name, block_text) tuples for creatures whose
-    stat block starts in this column. Group-header names (no stat block) are
-    returned with empty block text and filtered out later.
+    Returns (blocks, preamble) where:
+    - blocks is a list of (creature_name, block_text) tuples for creatures
+      whose stat block starts in this column.
+    - preamble is any non-name text that appears before the first creature name
+      in this column (a stat-block continuation from the previous column).
     """
     page_w = float(page.width)
     half = page_w / 2
@@ -337,7 +339,7 @@ def _extract_column_blocks(page, left_col: bool) -> list[tuple[str, str]]:
         col_chars = [c for c in chars if c["x0"] >= half - 2]
 
     if not col_chars:
-        return []
+        return [], ""
 
     col_chars.sort(key=lambda c: (c["top"], c["x0"]))
 
@@ -376,6 +378,7 @@ def _extract_column_blocks(page, left_col: bool) -> list[tuple[str, str]]:
     current_name: str | None = None
     current_lines: list[str] = []
     last_large_name: str | None = None  # most recent size >= 17 name
+    preamble_lines: list[str] = []  # non-name text before first creature name
 
     for _y, text, is_name, max_size in lines:
         if is_name:
@@ -405,11 +408,13 @@ def _extract_column_blocks(page, left_col: bool) -> list[tuple[str, str]]:
         else:
             if current_name is not None:
                 current_lines.append(text)
+            else:
+                preamble_lines.append(text)
 
     if current_name is not None:
         blocks.append((current_name, "\n".join(current_lines)))
 
-    return blocks
+    return blocks, "\n".join(preamble_lines)
 
 
 def extract_creatures_from_pdf(pdf_path: str) -> list[CreatureRecord]:
@@ -437,9 +442,23 @@ def extract_creatures_from_pdf(pdf_path: str) -> list[CreatureRecord]:
                 continue
             # Creatures run to end of PDF — no end boundary
 
+            left_col_last_idx: int | None = None
             for left_col in (True, False):
-                col_blocks = _extract_column_blocks(page, left_col=left_col)
+                col_blocks, preamble = _extract_column_blocks(page, left_col=left_col)
+                # Right-column preamble: stat-block text that appeared before any
+                # creature name (e.g. ability scores for a creature whose name is at
+                # the bottom of the left column). Stitch it onto the last incomplete
+                # left-column block (one missing CR) if that block is on this page.
+                if not left_col and preamble and left_col_last_idx is not None:
+                    old_name, old_text, old_page = all_blocks[left_col_last_idx]
+                    if not _CR_RE.search(old_text):
+                        all_blocks[left_col_last_idx] = (
+                            old_name, old_text + "\n" + preamble, old_page
+                        )
+                first_new = len(all_blocks)
                 all_blocks.extend((name, block, page_num) for name, block in col_blocks)
+                if left_col and col_blocks:
+                    left_col_last_idx = len(all_blocks) - 1
 
     records: list[CreatureRecord] = []
     seen_names: set[str] = set()
