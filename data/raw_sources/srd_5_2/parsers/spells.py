@@ -34,7 +34,7 @@ SCHOOLS = {
 }
 
 _FIELD_RE = re.compile(
-    r"^(Casting Time|Range|Components|Duration):\s*(.+)$", re.MULTILINE
+    r"^(Casting Time|Range|Components?|Duration):[ \t]*(.+)$", re.MULTILINE
 )
 _HIGHER_LEVEL_RE = re.compile(
     r"(?:At Higher Levels|Using a Higher-Level Spell Slot)[.\s]*(.+?)(?=\n\n|\Z)",
@@ -95,6 +95,43 @@ def _parse_components(components_str: str) -> tuple[bool, bool, bool, str | None
     return verbal, somatic, material, mat_specified
 
 
+_COMPACT_LABEL_ONLY_RE = re.compile(
+    r"^(Casting Time|Range|Components?|Duration):[ \t]*$"
+)
+
+
+def _parse_compact_fields(block: str) -> dict[str, str]:
+    """Pair label-only lines with the next standalone value lines (compact stats format).
+
+    In the compact two-column stats box some PDF cantrips use, field labels
+    appear on their own lines and the corresponding values appear as bare text
+    lines that follow (possibly interleaved with other label lines due to
+    column-layout rendering order).  We collect all label-only lines in order
+    and all non-label, non-empty lines that follow the first label, then pair
+    them position-by-position.
+    """
+    labels: list[str] = []
+    for m in re.finditer(r"^(Casting Time|Range|Components?|Duration):[ \t]*$", block, re.MULTILINE):
+        key = "Components" if m.group(1) == "Component" else m.group(1)
+        labels.append(key)
+    if not labels:
+        return {}
+
+    first_label = re.search(r"^(Casting Time|Range|Components?|Duration):[ \t]*$", block, re.MULTILINE)
+    after_first = block[first_label.start():]
+
+    values: list[str] = []
+    for line in after_first.splitlines():
+        stripped = line.strip()
+        if not stripped or _COMPACT_LABEL_ONLY_RE.match(stripped):
+            continue
+        values.append(stripped)
+        if len(values) >= len(labels):
+            break
+
+    return {label: values[i] for i, label in enumerate(labels) if i < len(values)}
+
+
 def _parse_block(block: str) -> "SpellRecord | None":
     """Parse a single spell block into a SpellRecord. Returns None if not a valid spell."""
     lines = [line.strip() for line in block.strip().splitlines() if line.strip()]
@@ -133,7 +170,18 @@ def _parse_block(block: str) -> "SpellRecord | None":
 
     fields: dict[str, str] = {}
     for fm in _FIELD_RE.finditer(block):
-        fields[fm.group(1)] = fm.group(2).strip()
+        key = "Components" if fm.group(1) == "Component" else fm.group(1)
+        fields[key] = fm.group(2).strip()
+
+    # Fallback for compact two-column stats format (e.g. Chill Touch) where
+    # field labels appear alone on their lines and values appear as subsequent
+    # standalone lines.  Triggered when Casting Time is absent or captured a
+    # field label name (symptom of the cross-line \s* mis-match).
+    ct = fields.get("Casting Time", "")
+    if not ct or re.match(r"^(Casting Time|Range|Components?|Duration):", ct):
+        compact = _parse_compact_fields(block)
+        if compact.get("Casting Time"):
+            fields = compact
 
     if not fields.get("Casting Time"):
         return None
@@ -222,6 +270,16 @@ def _extract_spells_no_check(full_text: str) -> list[SpellRecord]:
     return records
 
 
+def _is_compact_stats_label_char(char: dict) -> bool:
+    """Return True if char uses Cambria-Bold (compact-stats field label font).
+
+    Some cantrips/spells use a two-column compact stats box where field labels
+    are set in Cambria-Bold and values in regular Cambria.  Separating these
+    two fonts prevents the chars from interleaving when sorted by x-position.
+    """
+    return char.get("fontname", "").split("+")[-1] == "Cambria-Bold"
+
+
 def _is_spell_name_char(char: dict) -> bool:
     """Return True if this PDF character is part of a spell name (by font)."""
     fontname = char.get("fontname", "")
@@ -239,15 +297,18 @@ def _is_spell_name_char(char: dict) -> bool:
     return False
 
 
-def _extract_column_chars_as_blocks(page, left_col: bool) -> list[str]:
+def _extract_column_chars_as_blocks(page, left_col: bool) -> tuple[bool, list[str]]:
     """Extract spell text blocks from one column of a PDF page using font-aware parsing.
 
     Uses character-level x-position filtering to separate columns cleanly,
     and font identification to locate spell name boundaries.
 
-    Returns a list of text blocks, each starting with a spell name line.
-    When the column starts mid-spell (no spell name boundary), returns the
-    continuation text as a single block with no leading name.
+    Returns (first_is_continuation, blocks).
+    first_is_continuation is True when content was collected before the first
+    spell-name boundary — i.e., this column starts mid-spell and the first
+    block is a page-break continuation of the previous column's last spell.
+    The caller should merge that first block onto all_blocks[-1] rather than
+    appending it as a new independent block.
     """
     page_w = float(page.width)
     half = page_w / 2
@@ -261,7 +322,7 @@ def _extract_column_chars_as_blocks(page, left_col: bool) -> list[str]:
         col_chars = [c for c in chars if c["x0"] >= half - 2]
 
     if not col_chars:
-        return []
+        return False, []
 
     # Sort by y then x
     col_chars.sort(key=lambda c: (c["top"], c["x0"]))
@@ -302,19 +363,35 @@ def _extract_column_chars_as_blocks(page, left_col: bool) -> list[str]:
                 if body_text:
                     lines.append((y0 + 0.001, body_text, False))
         else:
-            # All same type (body/level/field text)
-            line_chars.sort(key=lambda c: c["x0"])
-            text = "".join(c["text"] for c in line_chars).strip()
-            if text:
-                lines.append((y0, text, False))
+            # Check for compact-stats format: Cambria-Bold label chars mixed with
+            # regular Cambria value chars on the same y-line.  Separating them
+            # prevents the two strings from interleaving when sorted by x-position
+            # (e.g. "Duration:" + "Touch" → "Duratio Tno:uch").
+            compact_label = [c for c in line_chars if _is_compact_stats_label_char(c)]
+            compact_value = [c for c in line_chars if not _is_compact_stats_label_char(c)]
+            if compact_label and compact_value:
+                compact_label.sort(key=lambda c: c["x0"])
+                compact_value.sort(key=lambda c: c["x0"])
+                label_text = "".join(c["text"] for c in compact_label).strip()
+                value_text = "".join(c["text"] for c in compact_value).strip()
+                if label_text:
+                    lines.append((y0, label_text, False))
+                if value_text:
+                    lines.append((y0 + 0.001, value_text, False))
+            else:
+                line_chars.sort(key=lambda c: c["x0"])
+                text = "".join(c["text"] for c in line_chars).strip()
+                if text:
+                    lines.append((y0, text, False))
 
     # Now split into blocks at each spell name line
     # A spell name line followed by what looks like a level line starts a new block
     blocks: list[str] = []
     current_block_lines: list[str] = []
-    found_first_spell = False
+    spell_started = False
+    first_block_is_continuation = False
 
-    for j, (y, text, is_name) in enumerate(lines):
+    for j, (_, text, is_name) in enumerate(lines):
         if is_name:
             # Check if a level line appears within the next several lines
             # (there may be a "at higher levels" body-text line between the spell name
@@ -334,8 +411,11 @@ def _extract_column_chars_as_blocks(page, left_col: bool) -> list[str]:
                 # Start of a new spell
                 if current_block_lines:
                     blocks.append("\n".join(current_block_lines))
+                    if not spell_started:
+                        # Content accumulated before the first spell name: page-break continuation
+                        first_block_is_continuation = True
                 current_block_lines = [text]
-                found_first_spell = True
+                spell_started = True
             else:
                 # Name-font text but not followed by level line — could be a section header
                 # or a stat block header; append to current block
@@ -346,7 +426,11 @@ def _extract_column_chars_as_blocks(page, left_col: bool) -> list[str]:
     if current_block_lines:
         blocks.append("\n".join(current_block_lines))
 
-    return blocks
+    # If no spell name was ever found, the entire column is continuation content
+    if not spell_started and blocks:
+        first_block_is_continuation = True
+
+    return first_block_is_continuation, blocks
 
 
 def _reconstruct_name_from_chars(name_chars: list[dict]) -> str:
@@ -379,6 +463,12 @@ def _reconstruct_name_from_chars(name_chars: list[dict]) -> str:
     return "".join(parts).strip()
 
 
+def _block_is_incomplete(block: str) -> bool:
+    """Return True if block has Casting Time but no Components — i.e., split mid-spell."""
+    return (bool(re.search(r"^Casting Time:", block, re.MULTILINE)) and
+            not bool(re.search(r"^Components?:", block, re.MULTILINE)))
+
+
 def extract_spells_from_pdf(pdf_path: str) -> list[SpellRecord]:
     """Font-aware, column-aware spell extraction from the SRD PDF.
 
@@ -390,6 +480,12 @@ def extract_spells_from_pdf(pdf_path: str) -> list[SpellRecord]:
     Raises ValueError if fewer than 300 spells are found.
     """
     all_blocks: list[str] = []
+    # Tracks the index of the most recent block that has Casting Time but no
+    # Components — i.e., a spell split across a column/page boundary.  When a
+    # continuation column is detected we merge into this block rather than
+    # blindly using all_blocks[-1], which may have been displaced by complete
+    # spell blocks from an intervening column.
+    last_incomplete_idx: int | None = None
 
     with pdfplumber.open(pdf_path) as pdf:
         in_spell_section = False
@@ -403,10 +499,30 @@ def extract_spells_from_pdf(pdf_path: str) -> list[SpellRecord]:
             if _SECTION_END_RE.search(full_page_text):
                 break
 
-            # Extract both columns separately using font-aware char extraction
             for left_col in (True, False):
-                col_blocks = _extract_column_chars_as_blocks(page, left_col=left_col)
-                all_blocks.extend(col_blocks)
+                first_is_continuation, col_blocks = _extract_column_chars_as_blocks(
+                    page, left_col=left_col
+                )
+                if not col_blocks:
+                    continue
+
+                if first_is_continuation:
+                    if last_incomplete_idx is not None:
+                        all_blocks[last_incomplete_idx] += "\n" + col_blocks[0]
+                        if not _block_is_incomplete(all_blocks[last_incomplete_idx]):
+                            last_incomplete_idx = None
+                    elif all_blocks:
+                        all_blocks[-1] += "\n" + col_blocks[0]
+                    else:
+                        all_blocks.append(col_blocks[0])
+                    remaining = col_blocks[1:]
+                else:
+                    remaining = col_blocks
+
+                for block in remaining:
+                    all_blocks.append(block)
+                    if _block_is_incomplete(block):
+                        last_incomplete_idx = len(all_blocks) - 1
 
     records: list[SpellRecord] = []
     seen_names: set[str] = set()

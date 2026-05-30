@@ -67,6 +67,10 @@ class MagicItemRecord:
     """A single magic item entry parsed from the SRD magic items section."""
 
     name: str
+    # Enchantment name: the magical property, with bonus-variant suffix stripped.
+    # For unique items this equals name. For items like "Weapon, +1, +2, or +3"
+    # the enchantment_name is "Weapon" — the property that can be applied to any weapon.
+    enchantment_name: str
     rarity: str            # "common", "uncommon", "rare", "very rare", "legendary", "artifact"
     requires_attunement: bool
 
@@ -83,6 +87,11 @@ _RARITY_RE = re.compile(
     r"\b(very\s+rare|uncommon|common|legendary|artifact|rare)\b", re.IGNORECASE
 )
 _ATTUNEMENT_RE = re.compile(r"requires\s+attunement", re.IGNORECASE)
+# Strips ", +1, +2, or +3" style bonus-variant suffixes to derive enchantment_name.
+# Matches optional leading comma, then one or more "+N" items optionally joined by ", or +N".
+_BONUS_VARIANT_RE = re.compile(
+    r",?\s*\+\d+(?:\s*,\s*\+\d+)*(?:\s*,?\s*or\s+\+\d+)?\s*$"
+)
 
 
 # ---------------------------------------------------------------------------
@@ -211,6 +220,10 @@ def _parse_armor_line(line: str) -> ArmorRecord | None:
     """
     line = clean_text(line)
     if not line or _ARMOR_SKIP_RE.match(line):
+        return None
+
+    # Vehicle table rows always contain a speed ("mph"); armor rows never do.
+    if "mph" in line:
         return None
 
     # Skip shield entry ("+2 — — ...")
@@ -429,7 +442,13 @@ def _parse_magic_item_pair(name: str, rarity_line: str) -> MagicItemRecord | Non
     # Normalise "very  rare" → "very rare" (extra space from PDF join)
     rarity = re.sub(r"\s+", " ", rarity)
     requires_attunement = bool(_ATTUNEMENT_RE.search(rarity_line))
-    return MagicItemRecord(name=name, rarity=rarity, requires_attunement=requires_attunement)
+    enchantment_name = _BONUS_VARIANT_RE.sub("", name).strip()
+    return MagicItemRecord(
+        name=name,
+        enchantment_name=enchantment_name,
+        rarity=rarity,
+        requires_attunement=requires_attunement,
+    )
 
 
 def extract_magic_items(full_text: str) -> list[MagicItemRecord]:

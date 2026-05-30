@@ -144,7 +144,10 @@ class TestExtractFullText:
         assert "§TABLE_ROW§" not in result
 
 
-from data.raw_sources.srd_5_2.parsers.spells import extract_spells, SpellRecord, extract_spells_from_pdf
+from data.raw_sources.srd_5_2.parsers.spells import (
+    extract_spells, SpellRecord, extract_spells_from_pdf,
+    _extract_column_chars_as_blocks,
+)
 
 # This sample mirrors actual pdfplumber column-extracted text format.
 # Level format is "Level N School (Classes)" or "School Cantrip (Classes)"
@@ -241,6 +244,84 @@ class TestExtractSpells:
         with pytest.raises(ValueError, match="found no spells"):
             extract_spells("no spells here")
 
+    def test_field_value_not_captured_across_newline(self):
+        """_FIELD_RE must not swallow a newline and grab the next label as a value.
+
+        Old regex used r'\\s*' which matched '\\n', so 'Casting Time:\\nRange:\\n'
+        produced casting_time='Range:' instead of no match.
+        """
+        from data.raw_sources.srd_5_2.parsers.spells import _parse_compact_fields
+        # Mirrors the font-separated block the PDF extractor produces for Chill Touch:
+        # label-only lines (Cambria-Bold) interleaved with value lines (Cambria regular).
+        # "Action" appears before "Duration:" because it was separated at the same y.
+        block = (
+            "ChillTouch\n"
+            "Necromancy Cantrip (Wizard)\n"
+            "Casting Time:\n"
+            "Range:\n"
+            "Components:\n"
+            "Action\n"       # CT value appears between Components: and Duration:
+            "Duration:\n"
+            "Touch\n"        # Range value follows Duration: label
+            "V, S\n"
+            "Instantaneous\n"
+            "Body text here.\n"
+        )
+        fields = _parse_compact_fields(block)
+        assert fields.get("Casting Time") == "Action"
+        assert fields.get("Range") == "Touch"
+        assert fields.get("Components") == "V, S"
+        assert fields.get("Duration") == "Instantaneous"
+
+    def test_compact_stats_format_parses_correctly(self):
+        """Compact two-column stats (Chill Touch style) parsed via queue fallback."""
+        # Mirrors actual font-separated block: label-only lines interleaved with values.
+        text = """\
+Spell Descriptions
+
+ChillTouch
+Necromancy Cantrip (Sorcerer, Warlock, Wizard)
+Casting Time:
+Range:
+Components:
+Action
+Duration:
+Touch
+V, S
+Instantaneous
+Channeling the chill of the grave, make a melee spell attack.
+"""
+        spells = {s.name: s for s in extract_spells(text)}
+        assert "ChillTouch" in spells
+        ct = spells["ChillTouch"]
+        assert ct.casting_time == "Action"
+        assert ct.range_text == "Touch"
+        assert ct.verbal is True
+        assert ct.somatic is True
+        assert ct.material is False
+        assert ct.duration == "Instantaneous"
+
+    def test_component_singular_parsed_as_components(self):
+        """PDF typo 'Component:' (no trailing s) is accepted and parsed correctly."""
+        text = """\
+Spell Descriptions
+
+Barkskin
+Level 2 Transmutation (Druid, Ranger)
+Casting Time: Bonus Action
+Range: Touch
+Component: V, S, M (a handful of bark)
+Duration: 1 hour
+You touch a willing creature.
+"""
+        spells = {s.name: s for s in extract_spells(text)}
+        assert "Barkskin" in spells
+        bs = spells["Barkskin"]
+        assert bs.verbal is True
+        assert bs.somatic is True
+        assert bs.material is True
+        assert bs.material_specified == "a handful of bark"
+
 
 class TestExtractSpellsFromPdf:
     def test_raises_when_no_spells_found(self):
@@ -274,6 +355,88 @@ class TestExtractSpellsFromPdf:
 
             # Verify pdfplumber.open was called with the right path
             mock_open.assert_called_once_with("dummy.pdf")
+
+
+def _name_chars(text: str, top: float, x0_start: float = 50.0) -> list[dict]:
+    """Fake pdfplumber chars for a spell name (GillSans-SemiBold size=12)."""
+    return [
+        {"fontname": "GillSans-SemiBold", "size": 12.0, "text": ch,
+         "x0": x0_start + i * 8, "top": top}
+        for i, ch in enumerate(text)
+    ]
+
+
+def _body_chars(text: str, top: float, x0_start: float = 50.0) -> list[dict]:
+    """Fake pdfplumber chars for body/field text (Cambria size=10)."""
+    return [
+        {"fontname": "Cambria", "size": 10.0, "text": ch,
+         "x0": x0_start + i * 6, "top": top}
+        for i, ch in enumerate(text)
+    ]
+
+
+def _fake_page(chars: list[dict], width: float = 600.0) -> MagicMock:
+    page = MagicMock()
+    page.width = width
+    page.chars = chars
+    return page
+
+
+class TestExtractColumnContinuation:
+    """Tests for page-break continuation detection in _extract_column_chars_as_blocks."""
+
+    def test_no_continuation_when_column_starts_with_spell_name(self):
+        """first_is_continuation is False when the column opens with a spell name."""
+        chars = (
+            _name_chars("Fireball", top=100.0) +
+            _body_chars("Level 3 Evocation (Wizard)", top=115.0)
+        )
+        first_is_cont, blocks = _extract_column_chars_as_blocks(
+            _fake_page(chars), left_col=True
+        )
+        assert first_is_cont is False
+        assert any("Fireball" in b for b in blocks)
+
+    def test_detects_continuation_when_column_starts_with_body_text(self):
+        """first_is_continuation is True when body text precedes the first spell name."""
+        chars = (
+            _body_chars("Components: V, S, M (a malachite sphere)", top=100.0) +
+            _name_chars("AcidSplash", top=200.0) +
+            _body_chars("Evocation Cantrip (Wizard)", top=215.0)
+        )
+        first_is_cont, blocks = _extract_column_chars_as_blocks(
+            _fake_page(chars), left_col=True
+        )
+        assert first_is_cont is True
+        assert "Components" in blocks[0]
+
+    def test_entire_column_continuation_when_no_spell_name_found(self):
+        """first_is_continuation is True when the column has no spell name at all."""
+        chars = (
+            _body_chars("Duration: Concentration, up to 1 hour", top=100.0) +
+            _body_chars("You create a shimmering field...", top=115.0)
+        )
+        first_is_cont, blocks = _extract_column_chars_as_blocks(
+            _fake_page(chars), left_col=True
+        )
+        assert first_is_cont is True
+        assert len(blocks) == 1
+
+    def test_right_column_same_page_column_break(self):
+        """Same-page column break: right column starts with continuation of a left-column spell."""
+        # x0_start >= 300 places chars in the right column (page width=600, half=300)
+        chars = (
+            _body_chars("Components: V, S, M (a piece of bark)", top=100.0, x0_start=310.0) +
+            _body_chars("Duration: 1 hour", top=115.0, x0_start=310.0) +
+            _name_chars("Blur", top=200.0, x0_start=310.0) +
+            _body_chars("Level 2 Illusion (Wizard)", top=215.0, x0_start=310.0)
+        )
+        first_is_cont, blocks = _extract_column_chars_as_blocks(
+            _fake_page(chars), left_col=False
+        )
+        assert first_is_cont is True
+        assert "Components" in blocks[0]
+        assert "Blur" in blocks[1]
 
 
 from data.raw_sources.srd_5_2.parsers.creatures import extract_creatures, CreatureRecord
@@ -378,6 +541,54 @@ class TestExtractCreatures:
     def test_sanity_check_raises_on_empty(self):
         with pytest.raises(ValueError, match="found no creatures"):
             extract_creatures("no creatures here")
+
+    def test_form_only_speed_uses_base_walk(self):
+        """Lycanthrope 'X ft. (bear form only)' must not overwrite the base walk speed."""
+        text = """\
+Monsters A-Z
+
+Werebear
+Medium or Small Monstrosity (Lycanthrope), Neutral Good
+AC 15 Initiative +0 (10)
+HP 135 (18d8 + 54)
+Speed 30 ft., 40 ft. (bear form only), Climb 30 ft. (bear form only)
+Str 19 +4 +4 Dex 10 +0 +0 Con 17 +3 +3
+Int 11 +0 +0 Wis 12 +1 +1 Cha 12 +1 +1
+CR 5 (XP 1,800; PB +3)
+
+Appendix
+"""
+        creatures = {c.name: c for c in extract_creatures(text)}
+        werebear = creatures["Werebear"]
+        assert werebear.walk == 30
+        assert werebear.climb == 30
+
+    def test_unsigned_save_in_compact_ability_row(self):
+        """INT/WIS/CHA parsed correctly when the INT save is unsigned in compact format.
+
+        PDF renders 'Int 6-22WIS 11+0+3Cha 12+1+1' when mod=-2 and save=+2 — the
+        leading '+' on the save is dropped, producing '-22' which the old greedy
+        regex consumed as a single number, causing all three stats to default to 10.
+        """
+        text = """\
+Monsters A-Z
+
+Young White Dragon
+Large Dragon (Chromatic), Chaotic Evil
+AC 17 Initiative +3 (13)
+HP 123 (13d10 + 52)
+Speed 40 ft., Burrow 20 ft., Fly 80 ft., Swim 40 ft.
+Str 18+4+4Dex 10+0+3Con 18+4+4
+Int 6-22WIS 11+0+3Cha 12+1+1
+CR 6 (2,300 XP; PB +3)
+
+Appendix
+"""
+        creatures = {c.name: c for c in extract_creatures(text)}
+        dragon = creatures["Young White Dragon"]
+        assert dragon.intelligence == 6
+        assert dragon.wisdom == 11
+        assert dragon.charisma == 12
 
 from data.raw_sources.srd_5_2.parsers.creatures import extract_creatures_from_pdf
 
@@ -585,6 +796,29 @@ Spells
     def test_sanity_check_raises_on_empty(self):
         with pytest.raises(ValueError, match="found no magic items"):
             extract_magic_items("no items here")
+
+    def test_enchantment_name_unique_item(self):
+        """Unique items have enchantment_name == name."""
+        items = {i.name: i for i in extract_magic_items(SAMPLE_MAGIC_ITEM_TEXT)}
+        assert items["Bag of Holding"].enchantment_name == "Bag of Holding"
+        assert items["Vorpal Sword"].enchantment_name == "Vorpal Sword"
+
+    def test_enchantment_name_strips_bonus_variant(self):
+        """', +1, +2, or +3' suffix is stripped from enchantment_name."""
+        text = """\
+Magic Items A-Z
+
+Weapon, +1, +2, or +3
+Weapon (Any), Uncommon (+1), Rare (+2), or Very Rare (+3)
+
+Wand of the War Mage, +1, +2, or +3
+Wand, Uncommon (+1)
+
+Spells
+"""
+        items = {i.name: i for i in extract_magic_items(text)}
+        assert items["Weapon, +1, +2, or +3"].enchantment_name == "Weapon"
+        assert items["Wand of the War Mage, +1, +2, or +3"].enchantment_name == "Wand of the War Mage"
 
 
 # Minimal weapon text with only 1 weapon (fewer than 30) to trigger ≥30 guard

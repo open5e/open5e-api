@@ -32,21 +32,24 @@ _HP_RE = re.compile(r"\bHP\s+(\d+)")
 _CR_RE = re.compile(r"\bCR\s+([\d/]+)")
 _SPEED_RE = re.compile(r"\bSpeed\b(.+?)(?:\n|$)", re.IGNORECASE)
 
-# Ability score lines come in two formats:
-# 1. Single-column: "Str 27 +8 +8 Dex 14 +2 +7 Con 25 +7 +12" (spaces between values)
-# 2. Column-extracted: "Str 27+8+8Dex 14+2+7Con 25+7+12" (no spaces between values)
-# Use a flexible pattern that handles both.
-_MOD = r"[+\-]\d+"
+# Ability score lines come in three formats:
+# 1. Spaced:   "Str 27 +8 +8 Dex 14 +2 +7 Con 25 +7 +12"
+# 2. Compact:  "Str 27+8+8Dex 14+2+7Con 25+7+12"
+# 3. Mixed-sign compact: "Int 6-22WIS 11+0+3Cha 12+1+1" — negative mod followed by
+#    unsigned positive save produces "6-22" (the PDF omits the + on the save), which
+#    would cause [+\-]\d+ to greedily consume "-22" instead of "-2".
+# Fix: use [^a-zA-Z]* between ability keywords so MOD+SAVE are consumed together
+# without needing to parse them individually.
 _SCORE = r"(\d+)"
 _ABILITY_STR_DEX_CON_RE = re.compile(
-    rf"Str\s+{_SCORE}\s*{_MOD}\s*{_MOD}\s*"
-    rf"Dex\s+{_SCORE}\s*{_MOD}\s*{_MOD}\s*"
+    rf"Str\s+{_SCORE}[^a-zA-Z]*"
+    rf"Dex\s+{_SCORE}[^a-zA-Z]*"
     rf"Con\s+{_SCORE}",
     re.IGNORECASE,
 )
 _ABILITY_INT_WIS_CHA_RE = re.compile(
-    rf"Int\s+{_SCORE}\s*{_MOD}\s*{_MOD}\s*"
-    rf"Wis\s+{_SCORE}\s*{_MOD}\s*{_MOD}\s*"
+    rf"Int\s+{_SCORE}[^a-zA-Z]*"
+    rf"Wis\s+{_SCORE}[^a-zA-Z]*"
     rf"Cha\s+{_SCORE}",
     re.IGNORECASE,
 )
@@ -139,7 +142,9 @@ def _parse_speed(s: str) -> dict:
             result["burrow"] = v
         elif "climb" in p:
             result["climb"] = v
-        else:
+        elif "(" not in p:
+            # Skip form-specific walk speeds like "40 ft. (bear form only)";
+            # the base walking speed (no qualifier) is listed first.
             result["walk"] = v
     return result
 
