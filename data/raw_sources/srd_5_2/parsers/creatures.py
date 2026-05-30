@@ -442,23 +442,17 @@ def extract_creatures_from_pdf(pdf_path: str) -> list[CreatureRecord]:
                 continue
             # Creatures run to end of PDF — no end boundary
 
-            left_col_last_idx: int | None = None
             for left_col in (True, False):
                 col_blocks, preamble = _extract_column_blocks(page, left_col=left_col)
-                # Right-column preamble: stat-block text that appeared before any
-                # creature name (e.g. ability scores for a creature whose name is at
-                # the bottom of the left column). Stitch it onto the last incomplete
-                # left-column block (one missing CR) if that block is on this page.
-                if not left_col and preamble and left_col_last_idx is not None:
-                    old_name, old_text, old_page = all_blocks[left_col_last_idx]
+                # Preamble: stat-block text before the first creature name in this
+                # column.  It is a continuation of the previous incomplete block,
+                # whether that block ended at the left column of this page (same-page
+                # cross-column) or at the right column of the previous page (cross-page).
+                if preamble and all_blocks:
+                    old_name, old_text, old_page = all_blocks[-1]
                     if not _CR_RE.search(old_text):
-                        all_blocks[left_col_last_idx] = (
-                            old_name, old_text + "\n" + preamble, old_page
-                        )
-                first_new = len(all_blocks)
+                        all_blocks[-1] = (old_name, old_text + "\n" + preamble, old_page)
                 all_blocks.extend((name, block, page_num) for name, block in col_blocks)
-                if left_col and col_blocks:
-                    left_col_last_idx = len(all_blocks) - 1
 
     records: list[CreatureRecord] = []
     seen_names: set[str] = set()
