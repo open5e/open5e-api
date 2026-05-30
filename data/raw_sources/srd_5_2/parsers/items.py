@@ -12,6 +12,7 @@ PDF layout notes (SRD 5.2):
   cleanly, processing each column independently.
 """
 from __future__ import annotations
+import dataclasses
 import re
 from dataclasses import dataclass
 import pdfplumber
@@ -73,6 +74,7 @@ class MagicItemRecord:
     enchantment_name: str
     rarity: str            # "common", "uncommon", "rare", "very rare", "legendary", "artifact"
     requires_attunement: bool
+    page_number: int = 0  # PDF page where the item entry starts (0 = unknown)
 
 
 # ---------------------------------------------------------------------------
@@ -537,6 +539,7 @@ def extract_magic_items_from_pdf(pdf_path: str) -> list[MagicItemRecord]:
     with pdfplumber.open(pdf_path) as pdf:
         in_section = False
         for page in pdf.pages:
+            page_num: int = page.page_number
             if not in_section:
                 if _is_magic_items_section_heading(page):
                     in_section = True
@@ -551,7 +554,7 @@ def extract_magic_items_from_pdf(pdf_path: str) -> list[MagicItemRecord]:
                 rec = _parse_magic_item_pair(name, rarity_line)
                 if rec:
                     seen.add(rec.name)
-                    records.append(rec)
+                    records.append(dataclasses.replace(rec, page_number=page_num))
 
     if len(records) < 200:
         raise ValueError(

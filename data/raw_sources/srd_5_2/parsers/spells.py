@@ -15,6 +15,7 @@ Font taxonomy for this PDF (SRD 5.2):
   Cambria-BoldItalic size=10    -> "Using a Higher-Level Spell Slot." header
 """
 from __future__ import annotations
+import dataclasses
 import re
 from dataclasses import dataclass
 import pdfplumber
@@ -227,6 +228,7 @@ class SpellRecord:
     concentration: bool
     ritual: bool
     higher_level: str | None
+    page_number: int = 0  # PDF page where the spell entry starts (0 = unknown)
 
 
 def extract_spells(full_text: str) -> list[SpellRecord]:
@@ -479,7 +481,8 @@ def extract_spells_from_pdf(pdf_path: str) -> list[SpellRecord]:
 
     Raises ValueError if fewer than 300 spells are found.
     """
-    all_blocks: list[str] = []
+    # Each entry is (block_text, pdf_page_number_where_spell_starts).
+    all_blocks: list[tuple[str, int]] = []
     # Tracks the index of the most recent block that has Casting Time but no
     # Components — i.e., a spell split across a column/page boundary.  When a
     # continuation column is detected we merge into this block rather than
@@ -490,6 +493,7 @@ def extract_spells_from_pdf(pdf_path: str) -> list[SpellRecord]:
     with pdfplumber.open(pdf_path) as pdf:
         in_spell_section = False
         for page in pdf.pages:
+            page_num: int = page.page_number
             full_page_text = page.extract_text() or ""
             if not in_spell_section:
                 if _SECTION_START_RE.search(full_page_text):
@@ -508,29 +512,32 @@ def extract_spells_from_pdf(pdf_path: str) -> list[SpellRecord]:
 
                 if first_is_continuation:
                     if last_incomplete_idx is not None:
-                        all_blocks[last_incomplete_idx] += "\n" + col_blocks[0]
-                        if not _block_is_incomplete(all_blocks[last_incomplete_idx]):
+                        old_text, old_page = all_blocks[last_incomplete_idx]
+                        merged = old_text + "\n" + col_blocks[0]
+                        all_blocks[last_incomplete_idx] = (merged, old_page)
+                        if not _block_is_incomplete(merged):
                             last_incomplete_idx = None
                     elif all_blocks:
-                        all_blocks[-1] += "\n" + col_blocks[0]
+                        old_text, old_page = all_blocks[-1]
+                        all_blocks[-1] = (old_text + "\n" + col_blocks[0], old_page)
                     else:
-                        all_blocks.append(col_blocks[0])
+                        all_blocks.append((col_blocks[0], page_num))
                     remaining = col_blocks[1:]
                 else:
                     remaining = col_blocks
 
                 for block in remaining:
-                    all_blocks.append(block)
+                    all_blocks.append((block, page_num))
                     if _block_is_incomplete(block):
                         last_incomplete_idx = len(all_blocks) - 1
 
     records: list[SpellRecord] = []
     seen_names: set[str] = set()
-    for block in all_blocks:
+    for block, page_num in all_blocks:
         record = _parse_block(block)
         if record and record.name not in seen_names:
             seen_names.add(record.name)
-            records.append(record)
+            records.append(dataclasses.replace(record, page_number=page_num))
 
     if len(records) < 300:
         raise ValueError(

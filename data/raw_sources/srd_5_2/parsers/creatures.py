@@ -6,6 +6,7 @@ Two strategies:
 """
 from __future__ import annotations
 import re
+import dataclasses
 from dataclasses import dataclass
 import pdfplumber
 
@@ -106,6 +107,7 @@ class CreatureRecord:
     darkvision_range: int
     blindsight_range: int
     truesight_range: int
+    page_number: int = 0  # PDF page where the creature entry starts (0 = unknown)
 
 
 def _parse_cr(s: str) -> float:
@@ -420,11 +422,13 @@ def extract_creatures_from_pdf(pdf_path: str) -> list[CreatureRecord]:
 
     Raises ValueError if fewer than 250 creatures are found.
     """
-    all_blocks: list[tuple[str, str]] = []
+    # Each entry is (creature_name, block_text, pdf_page_number).
+    all_blocks: list[tuple[str, str, int]] = []
 
     with pdfplumber.open(pdf_path) as pdf:
         in_creature_section = False
         for page in pdf.pages:
+            page_num: int = page.page_number
             full_page_text = page.extract_text() or ""
             if not in_creature_section:
                 if _SECTION_START_RE.search(full_page_text):
@@ -435,12 +439,12 @@ def extract_creatures_from_pdf(pdf_path: str) -> list[CreatureRecord]:
 
             for left_col in (True, False):
                 col_blocks = _extract_column_blocks(page, left_col=left_col)
-                all_blocks.extend(col_blocks)
+                all_blocks.extend((name, block, page_num) for name, block in col_blocks)
 
     records: list[CreatureRecord] = []
     seen_names: set[str] = set()
 
-    for name, block in all_blocks:
+    for name, block, page_num in all_blocks:
         # Skip duplicate names (same creature appears at size-18 heading and
         # size-15 stat block; take the first occurrence that has a valid stat block)
         if name in seen_names:
@@ -450,7 +454,7 @@ def extract_creatures_from_pdf(pdf_path: str) -> list[CreatureRecord]:
         record = _parse_block(name, block_normalized)
         if record:
             seen_names.add(name)
-            records.append(record)
+            records.append(dataclasses.replace(record, page_number=page_num))
 
     if len(records) < 250:
         raise ValueError(

@@ -5,7 +5,7 @@ import re
 import time
 import traceback
 import concurrent.futures
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 from django.core.management.base import BaseCommand, CommandError
@@ -27,6 +27,7 @@ class FieldMismatch:
     field: str
     pdf_value: Any
     db_value: Any
+    page_number: int = 0  # PDF page where the entity appears (0 = unknown)
 
 
 @dataclass
@@ -37,6 +38,7 @@ class ComparisonResult:
     missing: list[str]
     extra: list[str]
     mismatches: list[FieldMismatch]
+    missing_pages: dict[str, int] = field(default_factory=dict)  # name → PDF page
 
 
 # ---------------------------------------------------------------------------
@@ -166,6 +168,10 @@ def compare_records(
 
     missing = sorted(pdf_by_slug[s].name for s in pdf_by_slug if s not in db_by_slug)
     extra = sorted(db_by_slug[s]["name"] for s in db_by_slug if s not in pdf_by_slug)
+    missing_pages = {
+        pdf_by_slug[s].name: getattr(pdf_by_slug[s], "page_number", 0)
+        for s in pdf_by_slug if s not in db_by_slug
+    }
 
     field_map = _FIELD_MAPS.get(entity_type, {})
     mismatches: list[FieldMismatch] = []
@@ -174,17 +180,19 @@ def compare_records(
             continue
         pdf_rec = pdf_by_slug[slug]
         db_rec = db_by_slug[slug]
-        for field, db_key in field_map.items():
-            if field in skip_fields:
+        page_num = getattr(pdf_rec, "page_number", 0)
+        for pdf_field, db_key in field_map.items():
+            if pdf_field in skip_fields:
                 continue
-            pdf_val = getattr(pdf_rec, field, None)
+            pdf_val = getattr(pdf_rec, pdf_field, None)
             db_val = db_rec.get(db_key)
-            if not _values_equal(pdf_val, db_val, field=field):
+            if not _values_equal(pdf_val, db_val, field=pdf_field):
                 mismatches.append(FieldMismatch(
                     entity_name=pdf_rec.name,
-                    field=field,
+                    field=pdf_field,
                     pdf_value=pdf_val,
                     db_value=db_val,
+                    page_number=page_num,
                 ))
 
     return ComparisonResult(
@@ -194,6 +202,7 @@ def compare_records(
         missing=missing,
         extra=extra,
         mismatches=mismatches,
+        missing_pages=missing_pages,
     )
 
 
@@ -383,6 +392,10 @@ def compare_magic_item_enchantments(
         for s in pdf_by_esl
         if not _pdf_in_db(s)
     )
+    missing_pages = {
+        pdf_by_esl[s].enchantment_name: getattr(pdf_by_esl[s], "page_number", 0)
+        for s in pdf_by_esl if not _pdf_in_db(s)
+    }
     extra_names: list[str] = []
     for db_slug, group in db_groups.items():
         if not _db_in_pdf(db_slug):
@@ -418,17 +431,19 @@ def compare_magic_item_enchantments(
         if matched_group is None:
             continue
         db_rep = matched_group[0]  # representative record
-        for field, db_key in field_map.items():
-            if field in skip_fields:
+        page_num = getattr(pdf_rec, "page_number", 0)
+        for pdf_field, db_key in field_map.items():
+            if pdf_field in skip_fields:
                 continue
-            pdf_val = getattr(pdf_rec, field, None)
+            pdf_val = getattr(pdf_rec, pdf_field, None)
             db_val = db_rep.get(db_key)
-            if not _values_equal(pdf_val, db_val, field=field):
+            if not _values_equal(pdf_val, db_val, field=pdf_field):
                 mismatches.append(FieldMismatch(
                     entity_name=pdf_rec.enchantment_name,
-                    field=field,
+                    field=pdf_field,
                     pdf_value=pdf_val,
                     db_value=db_val,
+                    page_number=page_num,
                 ))
 
     return ComparisonResult(
@@ -438,6 +453,7 @@ def compare_magic_item_enchantments(
         missing=missing,
         extra=extra,
         mismatches=mismatches,
+        missing_pages=missing_pages,
     )
 
 
@@ -544,8 +560,13 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
 
     for name, result in results.items():
         if result.missing:
+            lines = []
+            for n in result.missing:
+                page = result.missing_pages.get(n, 0)
+                suffix = f" (p. {page})" if page else ""
+                lines.append(f"• {n}{suffix}")
             console.print(Panel(
-                "\n".join(f"• {n}" for n in result.missing),
+                "\n".join(lines),
                 title=f"Missing from DB — {name}",
                 border_style="red",
             ))
@@ -558,11 +579,13 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
         if result.mismatches:
             t = Table(title=f"Field mismatches — {name}")
             t.add_column("Entity")
+            t.add_column("Page", justify="right")
             t.add_column("Field")
             t.add_column("PDF value", style="green")
             t.add_column("DB value", style="red")
             for mm in result.mismatches:
-                t.add_row(mm.entity_name, mm.field, str(mm.pdf_value), str(mm.db_value))
+                page_str = str(mm.page_number) if mm.page_number else "—"
+                t.add_row(mm.entity_name, page_str, mm.field, str(mm.pdf_value), str(mm.db_value))
             console.print(t)
 
 
