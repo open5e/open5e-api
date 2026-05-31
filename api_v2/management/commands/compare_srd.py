@@ -91,6 +91,7 @@ _FIELD_MAPS: dict[str, dict[str, str]] = {
         "requires_attunement": "requires_attunement",
         "desc": "desc",
     },
+    "items": {},
     "classes": {
         "hit_dice": "hit_dice",
     },
@@ -112,6 +113,7 @@ SKIP_FIELDS: dict[str, set[str]] = {
     "weapons": {"desc", "mastery_desc", "cost", "damage"},
     "armor": {"desc", "cost", "ac_cap_dex"},
     "magic_items": set(),
+    "items": set(),
     "classes": {"desc"},
     "feats": {"desc"},
     "species": {"desc"},
@@ -715,6 +717,25 @@ def _run_magic_item_comparison(pdf_path: str, document: str) -> ComparisonResult
     return compare_magic_item_enchantments(pdf_records, db_records, SKIP_FIELDS["magic_items"])
 
 
+_ITEM_EQUIPMENT_CATEGORIES = (
+    "Adventuring Gear", "Ammunition", "Spellcasting Focus",
+    "Equipment Pack", "Tools",
+)
+
+
+def _run_item_comparison(pdf_path: str, document: str) -> ComparisonResult:
+    from api_v2.models import Item
+    from data.raw_sources.srd_5_2.parsers.items import extract_gear_items_from_pdf
+    pdf_records = extract_gear_items_from_pdf(pdf_path)
+    db_records = list(
+        Item.objects.filter(
+            document_id=document,
+            category__name__in=_ITEM_EQUIPMENT_CATEGORIES,
+        ).values("name")
+    )
+    return compare_records("items", pdf_records, db_records, SKIP_FIELDS["items"])
+
+
 def _run_class_comparison(pdf_path: str, document: str) -> ComparisonResult:
     from api_v2.models import CharacterClass
     from data.raw_sources.srd_5_2.parsers.classes import extract_classes_from_pdf
@@ -766,6 +787,7 @@ _RUNNERS = {
     "weapons": _run_weapon_comparison,
     "armor": _run_armor_comparison,
     "magic_items": _run_magic_item_comparison,
+    "items": _run_item_comparison,
     "classes": _run_class_comparison,
     "feats": _run_feat_comparison,
     "species": _run_species_comparison,

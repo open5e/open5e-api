@@ -78,6 +78,15 @@ class MagicItemRecord:
     desc: str = ""        # body description text extracted from the same column
 
 
+@dataclass(frozen=True)
+class GearItemRecord:
+    """A single equipment/gear item parsed from the SRD equipment tables."""
+
+    name: str
+    cost_gp: float | None  # cost in gold pieces (None when 'Varies')
+    page_number: int = 0
+
+
 # ---------------------------------------------------------------------------
 # Shared helpers
 # ---------------------------------------------------------------------------
@@ -537,6 +546,122 @@ def extract_magic_items(full_text: str) -> list[MagicItemRecord]:
 
     if not records:
         raise ValueError("found no magic items in the provided text")
+    return records
+
+
+_GEAR_COST_RE = re.compile(r"([\d,]+(?:\.\d+)?)\s*(GP|SP|CP)", re.IGNORECASE)
+# Words that appear as table headers or section labels, not item names
+_GEAR_NON_ITEMS: frozenset[str] = frozenset({
+    "item", "type", "amount", "storage", "weight", "cost", "mount", "tack",
+    "trade", "cantrip", "service", "food", "drink", "inn", "lifestyle",
+})
+
+
+def _parse_cost_gp(cost_str: str) -> float | None:
+    """Parse a cost string like '25 GP', '5 SP', '2 CP' into gold pieces."""
+    if not cost_str:
+        return None
+    m = _GEAR_COST_RE.search(cost_str)
+    if not m:
+        return None
+    amount = float(m.group(1).replace(",", ""))
+    unit = m.group(2).lower()
+    if unit == "sp":
+        return amount / 10
+    if unit == "cp":
+        return amount / 100
+    return amount
+
+
+def _is_valid_gear_name(name: str) -> bool:
+    """Return True when a table cell looks like a real item name."""
+    s = name.strip()
+    if not s or len(s) < 2:
+        return False
+    if not s[0].isalpha():
+        return False
+    if s.lower() in _GEAR_NON_ITEMS:
+        return False
+    # Reject pure-digit strings (spell scroll level columns, etc.)
+    if re.fullmatch(r"[\d,\s]+", s):
+        return False
+    return True
+
+
+def _gear_section_heading(page) -> str:
+    """Return the text of any sz=18 GillSans-SemiBold heading on this page, or ''."""
+    size18_chars = [
+        c for c in page.chars
+        if "GillSans-SemiBold" in c.get("fontname", "")
+        and abs(c.get("size", 0) - 18.0) < 1.0
+    ]
+    if not size18_chars:
+        return ""
+    return "".join(
+        c["text"] for c in sorted(size18_chars, key=lambda c: (c["top"], c["x0"]))
+    )
+
+
+_GEAR_SECTION_END_RE = re.compile(
+    r"Mounts\s+and\s+Vehicles|Magic\s+Items|Lifestyle|Hirelings|Spellcasting\s+Services",
+    re.IGNORECASE,
+)
+
+
+def extract_gear_items_from_pdf(pdf_path: str) -> list[GearItemRecord]:
+    """Extract equipment/gear items from the SRD PDF using pdfplumber table detection.
+
+    Scans pages in the Adventuring Gear section (detected by font-aware heading)
+    collecting 3-column [Name, Weight, Cost] and 5-column [Name, Amount,
+    Container, Weight, Cost] tables.  Stops at 'Mounts and Vehicles' to avoid
+    picking up lifestyle/services tables.
+
+    Raises ValueError if fewer than 30 items are found.
+    """
+    records: list[GearItemRecord] = []
+    seen: set[str] = set()
+
+    with pdfplumber.open(pdf_path) as pdf:
+        in_section = False
+        for page in pdf.pages:
+            heading = _gear_section_heading(page)
+            if not in_section:
+                if re.search(r"Adventuring\s+Gear", heading, re.IGNORECASE):
+                    in_section = True
+            if not in_section:
+                continue
+            # Stop when we hit the next major section
+            if heading and _GEAR_SECTION_END_RE.search(heading):
+                break
+
+            page_num = page.page_number
+            for table in page.extract_tables():
+                if not table or not table[0]:
+                    continue
+                row = table[0]
+                ncols = len(row)
+                # 3-col: [Name, Weight, Cost]
+                # 5-col: [Name, Amount, Container, Weight, Cost]  (ammunition)
+                if ncols not in (3, 5):
+                    continue
+                name = clean_text(row[0] or "")
+                cost_str = clean_text(row[-1] or "")
+                if not _is_valid_gear_name(name):
+                    continue
+                cost_gp = _parse_cost_gp(cost_str)
+                key = name.lower()
+                if key not in seen:
+                    seen.add(key)
+                    records.append(GearItemRecord(
+                        name=name,
+                        cost_gp=cost_gp,
+                        page_number=page_num,
+                    ))
+
+    if len(records) < 30:
+        raise ValueError(
+            f"Gear item parser produced only {len(records)} items — expected ≥30."
+        )
     return records
 
 
