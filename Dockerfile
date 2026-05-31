@@ -14,8 +14,16 @@ FROM python:3.11-slim
 
 WORKDIR /opt/services/open5e-api
 
-COPY --from=builder /build/.venv /opt/services/open5e-api/.venv
-COPY --from=builder /build /opt/services/open5e-api
+COPY --from=builder /build/.venv ./.venv
+COPY --from=builder /build/server ./server
+COPY --from=builder /build/api ./api
+COPY --from=builder /build/api_v2 ./api_v2
+COPY --from=builder /build/search ./search
+COPY --from=builder /build/templates ./templates
+COPY --from=builder /build/staticfiles ./staticfiles
+COPY --from=builder /build/db.sqlite3 ./db.sqlite3
+COPY --from=builder /build/manage.py ./manage.py
+COPY --from=builder /build/newrelic.ini ./newrelic.ini
 
 ENV PATH="/opt/services/open5e-api/.venv/bin:$PATH"
 
