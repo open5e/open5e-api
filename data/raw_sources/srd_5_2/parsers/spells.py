@@ -353,6 +353,43 @@ def _extract_column_chars_as_blocks(page, left_col: bool) -> tuple[bool, list[st
             line_chars.append(col_chars[i])
             i += 1
 
+        # Split into y-sub-clusters when the group spans > 1.5 pts.
+        # This prevents the "At Higher Levels" / "Using a Higher-Level Spell Slot."
+        # header (Cambria-BoldItalic, rendered ~2.3 pts below the body line it
+        # immediately follows) from being interleaved with that body line's chars.
+        y_spread = (
+            max(c["top"] for c in line_chars) - min(c["top"] for c in line_chars)
+        )
+        if y_spread > 1.5:
+            # Split by y-gap: a gap of > 1 pt starts a new sub-cluster.
+            line_chars.sort(key=lambda c: c["top"])
+            clusters: list[list[dict]] = [[line_chars[0]]]
+            for c in line_chars[1:]:
+                if c["top"] - clusters[-1][-1]["top"] > 1.0:
+                    clusters.append([])
+                clusters[-1].append(c)
+            if len(clusters) > 1:
+                # Only split when the clusters have genuinely different font names.
+                # A y-spread within the same font (e.g. SC700 small-caps renders
+                # full-size capitals and small-cap letters at different baselines)
+                # is a normal rendering artefact and must NOT be split.
+                cluster_fonts = [
+                    frozenset(c.get("fontname", "") for c in cl)
+                    for cl in clusters
+                ]
+                all_fonts = frozenset().union(*cluster_fonts)
+                if len(all_fonts) > 1:
+                    # Emit each sub-cluster in ascending y-order (clusters are
+                    # already sorted by top because line_chars was sorted above).
+                    for cluster in clusters:
+                        cluster.sort(key=lambda c: c["x0"])
+                        cluster_text = "".join(c["text"] for c in cluster).strip()
+                        if cluster_text:
+                            cluster_y = cluster[0]["top"]
+                            is_name = any(_is_spell_name_char(c) for c in cluster)
+                            lines.append((cluster_y, cluster_text, is_name))
+                    continue  # skip the generic line-processing below for this group
+
         # Check if any chars in this line are spell name font
         has_spell_name_chars = any(_is_spell_name_char(c) for c in line_chars)
 
