@@ -196,6 +196,15 @@ def _parse_block(block: str) -> "SpellRecord | None":
     hl_m = _HIGHER_LEVEL_RE.search(block)
     higher_level = clean_text(hl_m.group(1).strip()) if hl_m else None
 
+    # Extract description: text after the last structured field line, before
+    # "At Higher Levels" (or end of block).  Rejoin PDF line-break hyphens so
+    # that "concentra-\ntion" becomes "concentration" for comparison purposes.
+    last_field_end = 0
+    for fm in _FIELD_RE.finditer(block):
+        last_field_end = fm.end()
+    desc_raw = block[last_field_end: hl_m.start() if hl_m else len(block)]
+    desc = clean_text(re.sub(r"(\w)-\s+(\w)", r"\1\2", desc_raw).strip())
+
     return SpellRecord(
         name=name,
         level=level,
@@ -210,6 +219,7 @@ def _parse_block(block: str) -> "SpellRecord | None":
         concentration=concentration,
         ritual=ritual,
         higher_level=higher_level,
+        desc=desc,
     )
 
 
@@ -229,6 +239,7 @@ class SpellRecord:
     ritual: bool
     higher_level: str | None
     page_number: int = 0  # PDF page where the spell entry starts (0 = unknown)
+    desc: str = ""        # body description text (de-hyphenated from PDF)
 
 
 def extract_spells(full_text: str) -> list[SpellRecord]:

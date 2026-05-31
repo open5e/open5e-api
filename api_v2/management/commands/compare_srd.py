@@ -6,6 +6,7 @@ import time
 import traceback
 import concurrent.futures
 from dataclasses import dataclass, field
+from difflib import SequenceMatcher
 from typing import Any
 
 from django.core.management.base import BaseCommand, CommandError
@@ -57,6 +58,7 @@ _FIELD_MAPS: dict[str, dict[str, str]] = {
         "duration": "duration",
         "concentration": "concentration",
         "ritual": "ritual",
+        "desc": "desc",
     },
     "creatures": {
         "armor_class": "armor_class",
@@ -100,7 +102,7 @@ _FIELD_MAPS: dict[str, dict[str, str]] = {
 }
 
 SKIP_FIELDS: dict[str, set[str]] = {
-    "spells": {"desc", "higher_level", "material_specified"},
+    "spells": {"higher_level", "material_specified"},
     "creatures": {"desc", "traits", "actions", "size", "type", "alignment",
                   "hit_dice", "hover", "damage_immunities", "damage_resistances",
                   "damage_vulnerabilities", "condition_immunities",
@@ -153,6 +155,40 @@ def _normalize(value: Any) -> Any:
     return value
 
 
+_DESC_SIMILARITY_THRESHOLD = 0.70
+_DESC_EMPTY_THRESHOLD = 50  # chars — below this, a description is treated as absent
+
+
+def _normalize_desc(text: str) -> str:
+    """Normalize description text for similarity comparison.
+
+    Removes PDF hyphenation line-break artifacts ("concentra-\\ntion" →
+    "concentration"), then applies standard whitespace normalization.
+    """
+    if not text:
+        return ""
+    text = re.sub(r"(\w)-\s+(\w)", r"\1\2", text)
+    return clean_text(text).lower().strip()
+
+
+def _descriptions_similar(pdf_desc: str, db_desc: str) -> bool:
+    """True when the two description texts are sufficiently similar.
+
+    Uses SequenceMatcher with a 0.70 threshold after normalization.  Both-empty
+    counts as matching.  If one side is empty and the other has substantial
+    content (≥50 chars after normalization), the result is a mismatch.
+    """
+    na = _normalize_desc(pdf_desc)
+    nb = _normalize_desc(db_desc)
+    if not na and not nb:
+        return True
+    # One side has content, the other is absent — mismatch only when the content
+    # side is substantial (avoids noise from stubs vs. genuinely empty fields).
+    if not na or not nb:
+        return max(len(na), len(nb)) < _DESC_EMPTY_THRESHOLD
+    return SequenceMatcher(None, na, nb).ratio() >= _DESC_SIMILARITY_THRESHOLD
+
+
 def _values_equal(a: Any, b: Any, field: str = "") -> bool:
     if isinstance(a, float) or isinstance(b, float):
         try:
@@ -199,7 +235,11 @@ def compare_records(
                 continue
             pdf_val = getattr(pdf_rec, pdf_field, None)
             db_val = db_rec.get(db_key)
-            if not _values_equal(pdf_val, db_val, field=pdf_field):
+            if pdf_field == "desc":
+                equal = _descriptions_similar(pdf_val or "", db_val or "")
+            else:
+                equal = _values_equal(pdf_val, db_val, field=pdf_field)
+            if not equal:
                 mismatches.append(FieldMismatch(
                     entity_name=pdf_rec.name,
                     field=pdf_field,
@@ -481,7 +521,7 @@ def _run_spell_comparison(pdf_path: str, document: str) -> ComparisonResult:
     pdf_records = extract_spells_from_pdf(pdf_path)
     db_records = list(Spell.objects.filter(document_id=document).values(
         "name", "level", "school__name", "casting_time", "range_text",
-        "verbal", "somatic", "material", "duration", "concentration", "ritual",
+        "verbal", "somatic", "material", "duration", "concentration", "ritual", "desc",
     ))
     return compare_records("spells", pdf_records, db_records, SKIP_FIELDS["spells"])
 
@@ -592,6 +632,15 @@ _RUNNERS = {
 # ---------------------------------------------------------------------------
 
 
+def _fmt_desc(value: Any) -> str:
+    """Format a description value for display: show char count + start of text."""
+    s = str(value) if value else ""
+    if not s:
+        return "(empty)"
+    preview = s[:60] + "…" if len(s) > 60 else s
+    return f"{len(s)} chars — {preview!r}"
+
+
 def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> None:
     console = Console()
 
@@ -644,7 +693,9 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
             t.add_column("DB value", style="red")
             for mm in result.mismatches:
                 page_str = str(mm.page_number) if mm.page_number else "—"
-                t.add_row(mm.entity_name, page_str, mm.field, str(mm.pdf_value), str(mm.db_value))
+                pdf_disp = _fmt_desc(mm.pdf_value) if mm.field == "desc" else str(mm.pdf_value)
+                db_disp = _fmt_desc(mm.db_value) if mm.field == "desc" else str(mm.db_value)
+                t.add_row(mm.entity_name, page_str, mm.field, pdf_disp, db_disp)
             console.print(t)
 
 

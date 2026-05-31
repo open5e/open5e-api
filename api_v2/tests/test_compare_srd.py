@@ -6,6 +6,8 @@ from api_v2.management.commands.compare_srd import (
     _normalize,
     _values_equal,
     _db_enchantment_slug,
+    _normalize_desc,
+    _descriptions_similar,
     FieldMismatch,
     ComparisonResult,
 )
@@ -509,3 +511,60 @@ class TestCompareSpecies:
         db = [{"name": "Dragonborn", "speed_text": "30 feet"}]
         result = compare_records("species", pdf, db, skip_fields=self.SKIP)
         assert "Elf" in result.missing
+
+
+class TestDescriptionComparison:
+    def test_normalize_desc_removes_line_break_hyphen(self):
+        """PDF line-break hyphenation ('concentra-\\ntion') is joined."""
+        assert _normalize_desc("concentra-\ntion") == "concentration"
+        assert _normalize_desc("non-\nmagical") == "nonmagical"
+
+    def test_normalize_desc_lowercases(self):
+        assert _normalize_desc("Fireball") == "fireball"
+
+    def test_normalize_desc_empty(self):
+        assert _normalize_desc("") == ""
+        assert _normalize_desc(None) == ""  # type: ignore[arg-type]
+
+    def test_descriptions_similar_both_empty(self):
+        assert _descriptions_similar("", "") is True
+
+    def test_descriptions_similar_identical(self):
+        text = "You set an alarm against intrusion."
+        assert _descriptions_similar(text, text) is True
+
+    def test_descriptions_similar_high_overlap(self):
+        """Minor formatting differences don't trigger a mismatch."""
+        a = "You create a shimmering hand of magical energy in an unoccupied space."
+        b = "You create a shimmering hand of magical energy in an unoccupied space!"
+        assert _descriptions_similar(a, b) is True
+
+    def test_descriptions_similar_db_empty_pdf_substantial(self):
+        """Non-empty PDF description vs empty DB description is a mismatch."""
+        pdf = "You set an alarm against intrusion. Choose a door, a window, or an area."
+        assert _descriptions_similar(pdf, "") is False
+
+    def test_descriptions_similar_both_short_stubs(self):
+        """Both sides having very short content counts as matching (both absent)."""
+        assert _descriptions_similar("stub", "stub") is True
+
+    def test_descriptions_similar_significant_truncation(self):
+        """DB description that is significantly shorter than PDF is a mismatch."""
+        pdf = "A " + "word " * 60  # ~300 chars
+        db = "A " + "word " * 20   # ~100 chars — similar start, truncated
+        # Ratio will be well below 0.70 due to length difference
+        assert _descriptions_similar(pdf, db) is False
+
+    def test_spell_desc_comparison_uses_similarity(self):
+        """compare_records uses _descriptions_similar for the 'desc' field."""
+        pdf = [_make_spell("Fireball", level=3)]
+        pdf[0] = pdf[0].__class__(
+            **{**pdf[0].__dict__, "desc": "A bright streak flashes to a point."}
+        )
+        db = [{"name": "Fireball", "level": 3, "school__name": "evocation",
+               "casting_time": "Action", "range_text": "60 feet",
+               "verbal": True, "somatic": True, "material": False,
+               "duration": "Instantaneous", "concentration": False, "ritual": False,
+               "desc": "A bright streak flashes to a point."}]
+        result = compare_records("spells", pdf, db, skip_fields={"higher_level", "material_specified"})
+        assert not any(m.field == "desc" for m in result.mismatches)
