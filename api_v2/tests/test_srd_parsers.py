@@ -1022,52 +1022,101 @@ class TestExtractFeats:
         )
 
     def test_extracts_origin_feat(self):
-        chars = self._feat_chars("Alert", "Origin Feat")
+        chars = (
+            self._feat_chars("Alert", "Origin Feat", y_name=100)
+            + self._feat_chars("Blessed One", "Origin Feat", y_name=130)
+            + self._feat_chars("Canny", "Origin Feat", y_name=160)
+            + self._feat_chars("Dragonborn", "Origin Feat", y_name=190)
+            + self._feat_chars("Fey Touched", "Origin Feat", y_name=220)
+        )
         page = self._make_page(chars)
         records = extract_feats([page])
-        assert len(records) == 1
-        r = records[0]
-        assert r.name == "Alert"
-        assert r.feat_type == "Origin"
-        assert r.prerequisite == ""
+        alert = [r for r in records if r.name == "Alert"][0]
+        assert alert.feat_type == "Origin"
+        assert alert.prerequisite == ""
 
     def test_extracts_general_feat_with_prerequisite(self):
-        chars = self._feat_chars(
-            "Ability Score Improvement", "General Feat", "Level 4+"
+        chars = (
+            self._feat_chars("Ability Score Improvement", "General Feat", "Level 4+", y_name=100)
+            + self._feat_chars("Actor", "General Feat", y_name=130)
+            + self._feat_chars("Alert", "General Feat", y_name=160)
+            + self._feat_chars("Crafter", "General Feat", y_name=190)
+            + self._feat_chars("Diplomat", "General Feat", y_name=220)
         )
         page = self._make_page(chars)
         records = extract_feats([page])
-        assert records[0].feat_type == "General"
-        assert records[0].prerequisite == "Level 4+"
+        asi = [r for r in records if r.name == "Ability Score Improvement"][0]
+        assert asi.feat_type == "General"
+        assert asi.prerequisite == "Level 4+"
 
     def test_extracts_fighting_style_feat(self):
-        chars = self._feat_chars(
-            "Archery", "Fighting Style Feat", "Fighting Style Feature"
+        chars = (
+            self._feat_chars("Archery", "Fighting Style Feat", "Fighting Style Feature", y_name=100)
+            + self._feat_chars("Blessed Warrior", "Fighting Style Feat", y_name=130)
+            + self._feat_chars("Defense", "Fighting Style Feat", y_name=160)
+            + self._feat_chars("Dueling", "Fighting Style Feat", y_name=190)
+            + self._feat_chars("Great Weapon Fighting", "Fighting Style Feat", y_name=220)
         )
         page = self._make_page(chars)
         records = extract_feats([page])
-        assert records[0].feat_type == "Fighting Style"
+        archery = [r for r in records if r.name == "Archery"][0]
+        assert archery.feat_type == "Fighting Style"
 
     def test_extracts_epic_boon_feat(self):
-        chars = self._feat_chars(
-            "Boon of Combat Prowess", "Epic Boon Feat", "Level 19+"
+        chars = (
+            self._feat_chars("Boon of Combat Prowess", "Epic Boon Feat", "Level 19+", y_name=100)
+            + self._feat_chars("Boon of Fortitude", "Epic Boon Feat", y_name=130)
+            + self._feat_chars("Boon of High Magic", "Epic Boon Feat", y_name=160)
+            + self._feat_chars("Boon of Irresistible Offense", "Epic Boon Feat", y_name=190)
+            + self._feat_chars("Boon of Spell Mastery", "Epic Boon Feat", y_name=220)
         )
         page = self._make_page(chars)
         records = extract_feats([page])
-        assert records[0].feat_type == "Epic Boon"
+        boon = [r for r in records if r.name == "Boon of Combat Prowess"][0]
+        assert boon.feat_type == "Epic Boon"
 
     def test_ignores_section_header_without_tag(self):
         """Group headers like 'Origin Feats' (sz=14 GillSans) are not feat names."""
-        chars = [("Origin Feats", "GillSans-SemiBold", 14, 50, 100)]
+        chars = (
+            [("Origin Feats", "GillSans-SemiBold", 14, 50, 100)]
+            + self._feat_chars("Alert", "Origin Feat", y_name=130)
+            + self._feat_chars("Blessed One", "Origin Feat", y_name=160)
+            + self._feat_chars("Canny", "Origin Feat", y_name=190)
+            + self._feat_chars("Dragonborn", "Origin Feat", y_name=220)
+            + self._feat_chars("Fey Touched", "Origin Feat", y_name=250)
+        )
         page = self._make_page(chars)
-        # sz=14 is not the feat-name size (12) → not recognised as a feat
+        # sz=14 is not the feat-name size (12) → section header is not recognised as a feat
         records = extract_feats([page])
-        assert records == []
+        names = [r.name for r in records]
+        assert "Origin Feats" not in names
+        assert "Alert" in names
 
-    def test_returns_empty_list_for_page_with_no_feat_chars(self):
+    def test_sanity_check_raises_on_empty(self):
+        import pytest
         from unittest.mock import MagicMock
         page = MagicMock()
         page.page_number = 1
         page.width = 600.0
         page.chars = []
-        assert extract_feats([page]) == []
+        with pytest.raises(ValueError, match="expected ≥5"):
+            extract_feats([page])
+
+
+class TestExtractFeatsFromPdf:
+    def test_raises_when_no_feats_found(self):
+        import pytest
+        from unittest.mock import patch, MagicMock
+        from data.raw_sources.srd_5_2.parsers.origins import extract_feats_from_pdf
+        mock_page = MagicMock()
+        mock_page.page_number = 1
+        mock_page.width = 600.0
+        mock_page.chars = []
+        mock_page.extract_text.return_value = "Feats\nsome content"
+        mock_pdf = MagicMock()
+        mock_pdf.pages = [mock_page]
+        mock_pdf.__enter__ = lambda s: s
+        mock_pdf.__exit__ = MagicMock(return_value=False)
+        with patch("pdfplumber.open", return_value=mock_pdf):
+            with pytest.raises(ValueError, match="expected ≥5"):
+                extract_feats_from_pdf("fake.pdf")

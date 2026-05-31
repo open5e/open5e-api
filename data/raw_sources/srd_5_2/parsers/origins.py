@@ -138,6 +138,10 @@ def extract_feats(pages: list) -> list[FeatRecord]:
 
                 idx += 1
 
+    if len(records) < 5:
+        raise ValueError(
+            f"Feat parser produced only {len(records)} feats — expected ≥5."
+        )
     return records
 
 
