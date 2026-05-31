@@ -1268,6 +1268,41 @@ class TestExtractSpecies:
         tiefling = next(r for r in records if r.name == "Tiefling")
         assert tiefling.page_number == 7
 
+    def test_ignores_sz12_entries_before_descriptions_header(self):
+        """sz=12 entries like 'Speed'/'Special Traits' in the intro section are skipped.
+
+        The implementation requires a sz=14 'Species Descriptions' header to appear
+        before any sz=12 text qualifies as a species name in that column.
+        """
+        from unittest.mock import MagicMock
+        import pytest
+        page = MagicMock()
+        page.page_number = 1
+        page.width = 600.0
+        page.extract_text.return_value = ""
+        # Intro false-positive at sz=12, followed by a Speed: row — should be ignored
+        # because no sz=14 "Species Descriptions" header precedes it in this column
+        fake_speed_chars = []
+        for i, ch in enumerate("Speed"):
+            fake_speed_chars.append({
+                "text": ch, "fontname": "XXXX+GillSans-SemiBold",
+                "size": 12.0, "x0": float(i * 6), "top": 100.0,
+            })
+        for i, ch in enumerate("Speed:"):
+            fake_speed_chars.append({
+                "text": ch, "fontname": "XXXX+GillSans-SemiBold",
+                "size": 10.0, "x0": float(i * 6), "top": 140.0,
+            })
+        for i, ch in enumerate(" 30 feet"):
+            fake_speed_chars.append({
+                "text": ch, "fontname": "XXXX+GillSans",
+                "size": 10.0, "x0": float(50 + i * 6), "top": 140.0,
+            })
+        page.chars = fake_speed_chars
+        # No sz=14 "Descriptions" header → intro Speed entry is not a species
+        with pytest.raises(ValueError, match="expected ≥3"):
+            extract_species([page])
+
     def test_sanity_check_raises_on_empty(self):
         import pytest
         from unittest.mock import MagicMock
