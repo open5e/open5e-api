@@ -1104,6 +1104,37 @@ class TestExtractFeats:
 
 
 class TestExtractFeatsFromPdf:
+    def _make_chapter_page(self, title, page_number=1):
+        """Build a mock page with a sz=26 GillSans-SemiBold chapter heading."""
+        from unittest.mock import MagicMock
+        chars = [
+            {"text": ch, "fontname": "XXXX+GillSans-SemiBold", "size": 26.0,
+             "x0": i * 8, "top": 40}
+            for i, ch in enumerate(title)
+        ]
+        page = MagicMock()
+        page.page_number = page_number
+        page.width = 600.0
+        page.chars = chars
+        page.extract_text.return_value = title
+        return page
+
+    def test_section_detection_enters_on_feats_heading(self):
+        """Pages before the 'Feats' chapter heading are skipped."""
+        from unittest.mock import patch, MagicMock
+        import pytest
+        from data.raw_sources.srd_5_2.parsers.origins import extract_feats_from_pdf
+        pre_page = self._make_chapter_page("Other Section", page_number=1)
+        feats_page = self._make_chapter_page("Feats", page_number=2)
+        mock_pdf = MagicMock()
+        mock_pdf.pages = [pre_page, feats_page]
+        mock_pdf.__enter__ = lambda s: s
+        mock_pdf.__exit__ = MagicMock(return_value=False)
+        with patch("pdfplumber.open", return_value=mock_pdf):
+            # feats_page has no feat chars — ≥5 or ≥10 error fires, proving we entered
+            with pytest.raises(ValueError, match="expected ≥"):
+                extract_feats_from_pdf("fake.pdf")
+
     def test_raises_when_no_feats_found(self):
         import pytest
         from unittest.mock import patch, MagicMock
