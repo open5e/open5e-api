@@ -429,10 +429,38 @@ def _extract_column_chars_as_blocks(page, left_col: bool) -> tuple[bool, list[st
                 if value_text:
                     lines.append((y0 + 0.001, value_text, False))
             else:
-                line_chars.sort(key=lambda c: c["x0"])
-                text = "".join(c["text"] for c in line_chars).strip()
-                if text:
-                    lines.append((y0, text, False))
+                # Section headings (GillSans-SemiBold at sub-spell-name sizes like 10.5)
+                # can land at the same y as an adjacent Cambria body-text line.
+                # The "Teleportation Outcome" table heading on page 168 is a known
+                # example: sz=10.5 GillSans-SemiBold + sz=10 Cambria at y-offset 0.01 pt.
+                # Splitting by font family before joining prevents character interleaving.
+                gs_bold = [
+                    c for c in line_chars
+                    if "GillSans-SemiBold" in c.get("fontname", "")
+                    and "SC700" not in c.get("fontname", "")
+                ]
+                cambria = [
+                    c for c in line_chars
+                    if "Cambria" in c.get("fontname", "")
+                    and "GillSans" not in c.get("fontname", "")
+                ]
+                if gs_bold and cambria:
+                    # A GillSans-SemiBold section/table heading (e.g. "Teleportation
+                    # Outcome", sz=10.5) has landed at the same y as a Cambria body
+                    # text line.  The heading is structural — only the Cambria body
+                    # text belongs in the spell description.  Discarding the heading
+                    # here also lets the de-hyphenation in _normalize_desc correctly
+                    # rejoin any split word (e.g. "Out-\ncome") that straddles the
+                    # heading insertion point.
+                    cambria.sort(key=lambda c: c["x0"])
+                    cb_text = "".join(c["text"] for c in cambria).strip()
+                    if cb_text:
+                        lines.append((y0, cb_text, False))
+                else:
+                    line_chars.sort(key=lambda c: c["x0"])
+                    text = "".join(c["text"] for c in line_chars).strip()
+                    if text:
+                        lines.append((y0, text, False))
 
     # Now split into blocks at each spell name line
     # A spell name line followed by what looks like a level line starts a new block
