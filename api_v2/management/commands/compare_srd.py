@@ -89,6 +89,7 @@ _FIELD_MAPS: dict[str, dict[str, str]] = {
     "magic_items": {
         "rarity": "rarity__name",
         "requires_attunement": "requires_attunement",
+        "desc": "desc",
     },
     "classes": {
         "hit_dice": "hit_dice",
@@ -110,7 +111,7 @@ SKIP_FIELDS: dict[str, set[str]] = {
                   "darkvision_range", "blindsight_range", "truesight_range"},
     "weapons": {"desc", "mastery_desc", "cost", "damage"},
     "armor": {"desc", "cost", "ac_cap_dex"},
-    "magic_items": {"desc"},
+    "magic_items": set(),
     "classes": {"desc"},
     "feats": {"desc"},
     "species": {"desc"},
@@ -622,7 +623,19 @@ def compare_magic_item_enchantments(
                 continue
             pdf_val = getattr(pdf_rec, pdf_field, None)
             db_val = db_rep.get(db_key)
-            if not _values_equal(pdf_val, db_val, field=pdf_field):
+            if pdf_field == "desc":
+                mismatch_type, _ratio = _compare_desc(pdf_val or "", db_val or "")
+                if mismatch_type == "match":
+                    continue
+                mismatches.append(FieldMismatch(
+                    entity_name=pdf_rec.enchantment_name,
+                    field=pdf_field,
+                    pdf_value=pdf_val,
+                    db_value=db_val,
+                    page_number=page_num,
+                    subtype=mismatch_type,
+                ))
+            elif not _values_equal(pdf_val, db_val, field=pdf_field):
                 mismatches.append(FieldMismatch(
                     entity_name=pdf_rec.enchantment_name,
                     field=pdf_field,
@@ -697,7 +710,7 @@ def _run_magic_item_comparison(pdf_path: str, document: str) -> ComparisonResult
     from data.raw_sources.srd_5_2.parsers.items import extract_magic_items_from_pdf
     pdf_records = extract_magic_items_from_pdf(pdf_path)
     db_records = list(MagicItem.objects.filter(document_id=document).values(
-        "name", "rarity__name", "requires_attunement",
+        "name", "rarity__name", "requires_attunement", "desc",
     ))
     return compare_magic_item_enchantments(pdf_records, db_records, SKIP_FIELDS["magic_items"])
 
@@ -793,15 +806,19 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
     summary.add_column("Missing", justify="right")
     summary.add_column("Extra", justify="right")
     summary.add_column("Mismatches", justify="right")
+    summary.add_column("Desc mismatches", justify="right")
 
     for name, result in results.items():
+        field_n = sum(1 for mm in result.mismatches if mm.field != "desc")
+        desc_n = sum(1 for mm in result.mismatches if mm.field == "desc")
         summary.add_row(
             name,
             str(result.pdf_count),
             str(result.db_count),
             _fmt(len(result.missing)),
             _fmt(len(result.extra)),
-            _fmt(len(result.mismatches)),
+            _fmt(field_n),
+            _fmt(desc_n),
         )
     console.print(summary)
 
@@ -823,27 +840,41 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
                 title=f"Extra in DB — {name}",
                 border_style="yellow",
             ))
-        if result.mismatches:
+        field_mm = [mm for mm in result.mismatches if mm.field != "desc"]
+        desc_mm = [mm for mm in result.mismatches if mm.field == "desc"]
+
+        if field_mm:
             t = Table(title=f"Field mismatches — {name}")
             t.add_column("Entity")
             t.add_column("Page", justify="right")
             t.add_column("Field")
             t.add_column("PDF value", style="green")
             t.add_column("DB value", style="red")
-            for mm in result.mismatches:
+            for mm in field_mm:
                 page_str = str(mm.page_number) if mm.page_number else "—"
-                if mm.field == "desc":
-                    _, ratio = _compare_desc(mm.pdf_value or "", mm.db_value or "")
-                    ctx = _desc_diff_context(mm.pdf_value or "", mm.db_value or "")
-                    pdf_disp = _fmt_desc(mm.pdf_value, ratio, ctx)
-                    db_disp = _fmt_desc(mm.db_value)
-                    field_disp = f"desc ({mm.subtype})" if mm.subtype else "desc"
-                else:
-                    pdf_disp = str(mm.pdf_value)
-                    db_disp = str(mm.db_value)
-                    field_disp = mm.field
-                t.add_row(mm.entity_name, page_str, field_disp, pdf_disp, db_disp)
+                t.add_row(mm.entity_name, page_str, mm.field, str(mm.pdf_value), str(mm.db_value))
             console.print(t)
+
+        if desc_mm:
+            dt = Table(title=f"Description mismatches — {name}")
+            dt.add_column("Entity")
+            dt.add_column("Page", justify="right")
+            dt.add_column("Type")
+            dt.add_column("PDF words [sim]", style="green")
+            dt.add_column("Context", style="yellow")
+            dt.add_column("DB words", style="red")
+            for mm in desc_mm:
+                page_str = str(mm.page_number) if mm.page_number else "—"
+                _, ratio = _compare_desc(mm.pdf_value or "", mm.db_value or "")
+                ctx = _desc_diff_context(mm.pdf_value or "", mm.db_value or "")
+                pdf_words = _to_word_tokens(_normalize_desc(mm.pdf_value or ""))
+                db_words = _to_word_tokens(_normalize_desc(
+                    _strip_markdown(mm.db_value or "")
+                ))
+                pdf_disp = f"{len(pdf_words)} [{ratio:.0%}]"
+                db_disp = str(len(db_words))
+                dt.add_row(mm.entity_name, page_str, mm.subtype or "—", pdf_disp, ctx, db_disp)
+            console.print(dt)
 
 
 # ---------------------------------------------------------------------------
@@ -875,13 +906,15 @@ def _render_markdown(results: dict[str, ComparisonResult], elapsed: float) -> No
     out: list[str] = []
 
     out.append(f"## SRD 5.2 PDF vs Database\n")
-    out.append("| Entity | In PDF | In DB | Missing | Extra | Mismatches |")
-    out.append("|--------|-------:|------:|--------:|------:|-----------:|")
+    out.append("| Entity | In PDF | In DB | Missing | Extra | Mismatches | Desc mismatches |")
+    out.append("|--------|-------:|------:|--------:|------:|-----------:|----------------:|")
     for name, result in results.items():
+        field_n = sum(1 for mm in result.mismatches if mm.field != "desc")
+        desc_n = sum(1 for mm in result.mismatches if mm.field == "desc")
         out.append(
             f"| {name} | {result.pdf_count} | {result.db_count}"
             f" | {len(result.missing)} | {len(result.extra)}"
-            f" | {len(result.mismatches)} |"
+            f" | {field_n} | {desc_n} |"
         )
     out.append("")
 
@@ -900,25 +933,37 @@ def _render_markdown(results: dict[str, ComparisonResult], elapsed: float) -> No
                 out.append(f"- {n}")
             out.append("")
 
-        if result.mismatches:
+        field_mm = [mm for mm in result.mismatches if mm.field != "desc"]
+        desc_mm = [mm for mm in result.mismatches if mm.field == "desc"]
+
+        if field_mm:
             out.append(f"### Field mismatches — {name}\n")
             out.append("| Entity | Page | Field | PDF value | DB value |")
             out.append("|--------|------|-------|-----------|----------|")
-            for mm in result.mismatches:
+            for mm in field_mm:
                 page_str = str(mm.page_number) if mm.page_number else "—"
-                if mm.field == "desc":
-                    _, ratio = _compare_desc(mm.pdf_value or "", mm.db_value or "")
-                    ctx = _desc_diff_context(mm.pdf_value or "", mm.db_value or "")
-                    pdf_disp = _fmt_desc_md(mm.pdf_value, ratio, ctx)
-                    db_disp = _fmt_desc_md(mm.db_value)
-                    field_disp = f"desc ({mm.subtype})" if mm.subtype else "desc"
-                else:
-                    pdf_disp = _md_cell(mm.pdf_value)
-                    db_disp = _md_cell(mm.db_value)
-                    field_disp = mm.field
                 out.append(
                     f"| {_md_cell(mm.entity_name)} | {page_str}"
-                    f" | {field_disp} | {pdf_disp} | {db_disp} |"
+                    f" | {mm.field} | {_md_cell(mm.pdf_value)} | {_md_cell(mm.db_value)} |"
+                )
+            out.append("")
+
+        if desc_mm:
+            out.append(f"### Description mismatches — {name}\n")
+            out.append("| Entity | Page | Type | PDF words | Similarity | Context | DB words |")
+            out.append("|--------|------|------|----------:|-----------:|---------|--------:|")
+            for mm in desc_mm:
+                page_str = str(mm.page_number) if mm.page_number else "—"
+                _, ratio = _compare_desc(mm.pdf_value or "", mm.db_value or "")
+                ctx = _desc_diff_context(mm.pdf_value or "", mm.db_value or "")
+                pdf_words = _to_word_tokens(_normalize_desc(mm.pdf_value or ""))
+                db_words = _to_word_tokens(_normalize_desc(
+                    _strip_markdown(mm.db_value or "")
+                ))
+                out.append(
+                    f"| {_md_cell(mm.entity_name)} | {page_str}"
+                    f" | {mm.subtype or '—'} | {len(pdf_words)} | {ratio:.0%}"
+                    f" | {_md_cell(ctx)} | {len(db_words)} |"
                 )
             out.append("")
 

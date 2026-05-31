@@ -75,6 +75,7 @@ class MagicItemRecord:
     rarity: str            # "common", "uncommon", "rare", "very rare", "legendary", "artifact"
     requires_attunement: bool
     page_number: int = 0  # PDF page where the item entry starts (0 = unknown)
+    desc: str = ""        # body description text extracted from the same column
 
 
 # ---------------------------------------------------------------------------
@@ -341,7 +342,8 @@ def _is_rarity_char(char: dict) -> bool:
 def _tagged_lines_for_col(chars: list[dict]) -> list[tuple[int, str, str]]:
     """Build ordered (y, text, tag) tagged lines from one column's characters.
 
-    Tags: 'name' for magic-item-name font, 'rarity' for italic font.
+    Tags: 'name' for magic-item-name font, 'rarity' for italic font,
+    'body' for all remaining chars (the description text).
     Callers must pre-filter chars to a single column before calling.
     """
     line_map: dict[int, list[dict]] = {}
@@ -354,6 +356,10 @@ def _tagged_lines_for_col(chars: list[dict]) -> list[tuple[int, str, str]]:
         line_chars = sorted(line_map[y], key=lambda c: c["x0"])
         name_chars = [c for c in line_chars if _is_magic_item_name_char(c)]
         rarity_chars = [c for c in line_chars if _is_rarity_char(c)]
+        body_chars = [
+            c for c in line_chars
+            if not _is_magic_item_name_char(c) and not _is_rarity_char(c)
+        ]
 
         if name_chars:
             text = "".join(c["text"] for c in name_chars).strip()
@@ -365,16 +371,25 @@ def _tagged_lines_for_col(chars: list[dict]) -> list[tuple[int, str, str]]:
             if text:
                 tagged.append((y, text, "rarity"))
 
+        if body_chars and not name_chars:
+            text = "".join(c["text"] for c in body_chars).strip()
+            if text:
+                tagged.append((y, text, "body"))
+
     return tagged
 
 
-def _pairs_from_tagged_lines(tagged_lines: list[tuple[int, str, str]]) -> list[tuple[str, str]]:
-    """Extract (name, rarity_line) pairs from an ordered list of tagged lines.
+def _pairs_from_tagged_lines(
+    tagged_lines: list[tuple[int, str, str]],
+) -> list[tuple[str, str, str]]:
+    """Extract (name, rarity_line, desc) triples from an ordered list of tagged lines.
 
     Handles multi-line names (e.g., "Amulet of Proof against Detection" +
-    "and Location") and multi-line rarity descriptions.
+    "and Location") and multi-line rarity descriptions.  Body text lines
+    that follow a rarity line (and precede the next item name) are joined
+    as the description.
     """
-    results: list[tuple[str, str]] = []
+    results: list[tuple[str, str, str]] = []
     i = 0
     while i < len(tagged_lines):
         y, text, tag = tagged_lines[i]
@@ -382,17 +397,22 @@ def _pairs_from_tagged_lines(tagged_lines: list[tuple[int, str, str]]) -> list[t
             i += 1
             continue
 
-        # Collect name continuation (next name line close in y = same item)
+        # Collect name continuation (next name line close in y = same item).
+        # A single intervening 'body' line is allowed: the previous item's last
+        # description sentence can land at a y-position between the two halves of
+        # a multi-line name due to the PDF's two-column rendering order.
         name = text
         j = i + 1
-        if j < len(tagged_lines) and tagged_lines[j][2] == "name":
-            if abs(tagged_lines[j][0] - y) < 30:  # within ~30pts = wrapped line
-                name = name + " " + tagged_lines[j][1]
-                j += 1
-        # Remember how far ahead the name consumed so we advance past it next iteration
+        j_look = j
+        if j_look < len(tagged_lines) and tagged_lines[j_look][2] == "body":
+            j_look += 1  # skip one trailing body line from the previous item
+        if j_look < len(tagged_lines) and tagged_lines[j_look][2] == "name":
+            if abs(tagged_lines[j_look][0] - y) < 30:  # within ~30pts = wrapped line
+                name = name + " " + tagged_lines[j_look][1]
+                j = j_look + 1
         next_i = j
 
-        # Find the next rarity line (skip body text between name and rarity)
+        # Find the next rarity line (skip any body text between name and rarity)
         rarity_text = ""
         while j < len(tagged_lines):
             if tagged_lines[j][2] == "rarity":
@@ -400,20 +420,36 @@ def _pairs_from_tagged_lines(tagged_lines: list[tuple[int, str, str]]) -> list[t
                 k = j + 1
                 if k < len(tagged_lines) and tagged_lines[k][2] == "rarity":
                     rarity_text = rarity_text + " " + tagged_lines[k][1]
+                    j = k
                 break
             if tagged_lines[j][2] == "name":
                 break  # hit next item before finding rarity — skip
             j += 1
 
-        if rarity_text and _RARITY_RE.search(rarity_text):
-            results.append((name.strip(), rarity_text.strip()))
+        if not (rarity_text and _RARITY_RE.search(rarity_text)):
+            i = next_i
+            continue
+
+        # Collect body lines after the rarity until the next item name
+        j += 1
+        desc_parts: list[str] = []
+        while j < len(tagged_lines):
+            t_tag = tagged_lines[j][2]
+            if t_tag == "name":
+                break
+            if t_tag == "body":
+                desc_parts.append(tagged_lines[j][1])
+            j += 1
+
+        desc = clean_text(" ".join(desc_parts))
+        results.append((name.strip(), rarity_text.strip(), desc))
         i = next_i
 
     return results
 
 
-def _extract_magic_items_from_page(page) -> list[tuple[str, str]]:
-    """Extract (name, rarity_line) pairs from a single PDF page.
+def _extract_magic_items_from_page(page) -> list[tuple[str, str, str]]:
+    """Extract (name, rarity_line, desc) triples from a single PDF page.
 
     Processes left and right columns independently to prevent cross-column
     name merges in the two-column layout.
@@ -423,7 +459,7 @@ def _extract_magic_items_from_page(page) -> list[tuple[str, str]]:
         return []
 
     page_mid = float(page.width) / 2.0
-    results: list[tuple[str, str]] = []
+    results: list[tuple[str, str, str]] = []
     for left_col in (True, False):
         col_chars = [c for c in chars if (c["x0"] < page_mid - 2) is left_col]
         tagged = _tagged_lines_for_col(col_chars)
@@ -432,8 +468,10 @@ def _extract_magic_items_from_page(page) -> list[tuple[str, str]]:
     return results
 
 
-def _parse_magic_item_pair(name: str, rarity_line: str) -> MagicItemRecord | None:
-    """Build a MagicItemRecord from a (name, rarity_line) pair."""
+def _parse_magic_item_pair(
+    name: str, rarity_line: str, desc: str = ""
+) -> MagicItemRecord | None:
+    """Build a MagicItemRecord from a (name, rarity_line, desc) triple."""
     name = clean_text(name)
     if not name:
         return None
@@ -450,6 +488,7 @@ def _parse_magic_item_pair(name: str, rarity_line: str) -> MagicItemRecord | Non
         enchantment_name=enchantment_name,
         rarity=rarity,
         requires_attunement=requires_attunement,
+        desc=desc,
     )
 
 
@@ -548,10 +587,10 @@ def extract_magic_items_from_pdf(pdf_path: str) -> list[MagicItemRecord]:
             if _is_monsters_section_start(page):
                 break
 
-            for name, rarity_line in _extract_magic_items_from_page(page):
+            for name, rarity_line, desc in _extract_magic_items_from_page(page):
                 if name in seen:
                     continue
-                rec = _parse_magic_item_pair(name, rarity_line)
+                rec = _parse_magic_item_pair(name, rarity_line, desc)
                 if rec:
                     seen.add(rec.name)
                     records.append(dataclasses.replace(rec, page_number=page_num))
