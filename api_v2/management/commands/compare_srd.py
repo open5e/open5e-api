@@ -784,6 +784,79 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
 
 
 # ---------------------------------------------------------------------------
+# Markdown rendering
+# ---------------------------------------------------------------------------
+
+
+def _md_cell(value: Any) -> str:
+    """Escape a value for use in a GitHub Markdown table cell (single line)."""
+    return str(value).replace("|", "\\|").replace("\n", " ").replace("\r", "")
+
+
+def _fmt_desc_md(value: Any, ratio: float | None = None) -> str:
+    """Format a description value for a markdown table cell."""
+    s = str(value) if value else ""
+    if not s:
+        return "(empty)"
+    ratio_str = f", {ratio:.0%} similar" if ratio is not None else ""
+    return f"{len(s)} chars{ratio_str}"
+
+
+def _render_markdown(results: dict[str, ComparisonResult], elapsed: float) -> None:
+    """Render comparison results as GitHub-flavoured markdown to stdout."""
+    out: list[str] = []
+
+    out.append(f"## SRD 5.2 PDF vs Database\n")
+    out.append("| Entity | In PDF | In DB | Missing | Extra | Mismatches |")
+    out.append("|--------|-------:|------:|--------:|------:|-----------:|")
+    for name, result in results.items():
+        out.append(
+            f"| {name} | {result.pdf_count} | {result.db_count}"
+            f" | {len(result.missing)} | {len(result.extra)}"
+            f" | {len(result.mismatches)} |"
+        )
+    out.append("")
+
+    for name, result in results.items():
+        if result.missing:
+            out.append(f"### Missing from DB — {name}\n")
+            for n in result.missing:
+                page = result.missing_pages.get(n, 0)
+                suffix = f" (p. {page})" if page else ""
+                out.append(f"- {n}{suffix}")
+            out.append("")
+
+        if result.extra:
+            out.append(f"### Extra in DB — {name}\n")
+            for n in result.extra:
+                out.append(f"- {n}")
+            out.append("")
+
+        if result.mismatches:
+            out.append(f"### Field mismatches — {name}\n")
+            out.append("| Entity | Page | Field | PDF value | DB value |")
+            out.append("|--------|------|-------|-----------|----------|")
+            for mm in result.mismatches:
+                page_str = str(mm.page_number) if mm.page_number else "—"
+                if mm.field == "desc":
+                    _, ratio = _compare_desc(mm.pdf_value or "", mm.db_value or "")
+                    pdf_disp = _fmt_desc_md(mm.pdf_value, ratio)
+                    db_disp = _fmt_desc_md(mm.db_value)
+                    field_disp = f"desc ({mm.subtype})" if mm.subtype else "desc"
+                else:
+                    pdf_disp = _md_cell(mm.pdf_value)
+                    db_disp = _md_cell(mm.db_value)
+                    field_disp = mm.field
+                out.append(
+                    f"| {_md_cell(mm.entity_name)} | {page_str}"
+                    f" | {field_disp} | {pdf_disp} | {db_disp} |"
+                )
+            out.append("")
+
+    print("\n".join(out))
+
+
+# ---------------------------------------------------------------------------
 # Command
 # ---------------------------------------------------------------------------
 
@@ -813,11 +886,20 @@ class Command(BaseCommand):
             default="all",
             help="Entity type to compare (default: all).",
         )
+        parser.add_argument(
+            "--format",
+            choices=["terminal", "markdown"],
+            default="terminal",
+            dest="output_format",
+            help="Output format: terminal (default, Rich-formatted) or markdown "
+                 "(GitHub-flavoured markdown suitable for pasting into issues).",
+        )
 
     def handle(self, *args, **options):
         pdf_path = options["pdf"]
         document = options["document"]
         entity = options["entity"]
+        output_format = options["output_format"]
 
         if not os.path.exists(pdf_path):
             raise CommandError(f"PDF not found: {pdf_path}")
@@ -847,7 +929,8 @@ class Command(BaseCommand):
             raise CommandError(f"Comparisons failed for: {', '.join(failed)}")
 
         elapsed = time.monotonic() - start
-        _render_results(
-            {k: results[k] for k in entity_types if k in results},
-            elapsed,
-        )
+        ordered = {k: results[k] for k in entity_types if k in results}
+        if output_format == "markdown":
+            _render_markdown(ordered, elapsed)
+        else:
+            _render_results(ordered, elapsed)
