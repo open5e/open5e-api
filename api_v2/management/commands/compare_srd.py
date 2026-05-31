@@ -28,7 +28,8 @@ class FieldMismatch:
     field: str
     pdf_value: Any
     db_value: Any
-    page_number: int = 0  # PDF page where the entity appears (0 = unknown)
+    page_number: int = 0   # PDF page where the entity appears (0 = unknown)
+    subtype: str = ""      # for desc fields: "text" or "format"
 
 
 @dataclass
@@ -155,15 +156,47 @@ def _normalize(value: Any) -> Any:
     return value
 
 
-_DESC_SIMILARITY_THRESHOLD = 0.70
-_DESC_EMPTY_THRESHOLD = 50  # chars — below this, a description is treated as absent
+_DESC_TEXT_THRESHOLD = 0.70   # below this → text content substantially differs
+_DESC_EMPTY_THRESHOLD = 50    # chars below which a description is treated as absent
+
+
+def _strip_markdown(text: str) -> str:
+    """Strip markdown syntax to produce the plain text a reader would see.
+
+    Applied to the DB side before comparison so that markdown formatting
+    differences don't inflate the apparent text distance.
+    """
+    if not text:
+        return ""
+    # ATX headers: ## Heading → Heading
+    text = re.sub(r"^#{1,6}\s+", "", text, flags=re.MULTILINE)
+    # Bold / italic: **x**, *x*, __x__, _x_
+    text = re.sub(r"\*{1,2}([^*\n]+)\*{1,2}", r"\1", text)
+    text = re.sub(r"_{1,2}([^_\n]+)_{1,2}", r"\1", text)
+    # Inline code: `code`
+    text = re.sub(r"`([^`\n]+)`", r"\1", text)
+    # Links / images: [label](url) → label
+    text = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    # Table separator rows: |---|---| (discard)
+    text = re.sub(r"^\|[-:| ]+\|$", "", text, flags=re.MULTILINE)
+    # Table data rows: | cell | cell | → cells joined with space
+    text = re.sub(r"\|([^|\n]+)", lambda m: m.group(1) + " ", text)
+    text = re.sub(r"\|$", "", text, flags=re.MULTILINE)
+    # Unordered / ordered list markers
+    text = re.sub(r"^\s*[-*+]\s+", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^\s*\d+[.)]\s+", "", text, flags=re.MULTILINE)
+    # Blockquotes and horizontal rules
+    text = re.sub(r"^>\s+", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^[-*_]{3,}\s*$", "", text, flags=re.MULTILINE)
+    return text
 
 
 def _normalize_desc(text: str) -> str:
-    """Normalize description text for similarity comparison.
+    """Normalize plain description text for similarity comparison.
 
-    Removes PDF hyphenation line-break artifacts ("concentra-\\ntion" →
-    "concentration"), then applies standard whitespace normalization.
+    Removes PDF line-break hyphenation ('concentra-\\ntion' → 'concentration'),
+    then applies standard clean_text and lowercasing.  Call _strip_markdown
+    on the DB side before this to compare content rather than formatting syntax.
     """
     if not text:
         return ""
@@ -171,22 +204,57 @@ def _normalize_desc(text: str) -> str:
     return clean_text(text).lower().strip()
 
 
-def _descriptions_similar(pdf_desc: str, db_desc: str) -> bool:
-    """True when the two description texts are sufficiently similar.
+def _pdf_has_list_content(pdf_text: str) -> bool:
+    """Heuristic: does the raw PDF text suggest enumerated list content?
 
-    Uses SequenceMatcher with a 0.70 threshold after normalization.  Both-empty
-    counts as matching.  If one side is empty and the other has substantial
-    content (≥50 chars after normalization), the result is a mismatch.
+    Looks for explicit bullet characters that pdfplumber extracts from the
+    PDF, or for numbered list patterns like '1.' / '1)' starting a line.
     """
-    na = _normalize_desc(pdf_desc)
-    nb = _normalize_desc(db_desc)
-    if not na and not nb:
+    if re.search(r"[•·◦▪▸►]", pdf_text):
         return True
-    # One side has content, the other is absent — mismatch only when the content
-    # side is substantial (avoids noise from stubs vs. genuinely empty fields).
-    if not na or not nb:
-        return max(len(na), len(nb)) < _DESC_EMPTY_THRESHOLD
-    return SequenceMatcher(None, na, nb).ratio() >= _DESC_SIMILARITY_THRESHOLD
+    return bool(re.search(r"^\s*\d+[.)]\s+\S", pdf_text, re.MULTILINE))
+
+
+def _db_has_markdown_lists(db_markdown: str) -> bool:
+    """True when the DB description contains explicit markdown list syntax."""
+    return bool(re.search(r"^\s*[-*+]\s+|^\s*\d+[.)]\s+", db_markdown, re.MULTILINE))
+
+
+def _compare_desc(pdf_text: str, db_markdown: str) -> tuple[str, float]:
+    """Compare a PDF plain-text description against a DB markdown description.
+
+    Returns ``(mismatch_type, similarity_ratio)`` where mismatch_type is one of:
+    - ``"match"``   — descriptions are equivalent at the content level
+    - ``"text"``    — content substantially differs after stripping markdown
+    - ``"format"``  — content is similar but PDF suggests list/table structure
+                      that the DB markdown does not encode
+
+    Strips markdown from the DB side before comparing so that syntax
+    differences do not inflate the apparent text distance.
+    """
+    db_plain = _strip_markdown(db_markdown or "")
+    pdf_norm = _normalize_desc(pdf_text or "")
+    db_norm = _normalize_desc(db_plain)
+
+    if not pdf_norm and not db_norm:
+        return "match", 1.0
+    if not pdf_norm or not db_norm:
+        # One side absent — only flag when the other has substantial content
+        if max(len(pdf_norm), len(db_norm)) < _DESC_EMPTY_THRESHOLD:
+            return "match", 1.0
+        return "text", 0.0
+
+    ratio = SequenceMatcher(None, pdf_norm, db_norm).ratio()
+
+    if ratio < _DESC_TEXT_THRESHOLD:
+        return "text", ratio
+
+    # Content is similar — check whether structural elements visible in the PDF
+    # (bullets, numbered lists) are properly encoded as markdown in the DB.
+    if _pdf_has_list_content(pdf_text or "") and not _db_has_markdown_lists(db_markdown or ""):
+        return "format", ratio
+
+    return "match", ratio
 
 
 def _values_equal(a: Any, b: Any, field: str = "") -> bool:
@@ -236,17 +304,25 @@ def compare_records(
             pdf_val = getattr(pdf_rec, pdf_field, None)
             db_val = db_rec.get(db_key)
             if pdf_field == "desc":
-                equal = _descriptions_similar(pdf_val or "", db_val or "")
+                mismatch_type, _ratio = _compare_desc(pdf_val or "", db_val or "")
+                if mismatch_type != "match":
+                    mismatches.append(FieldMismatch(
+                        entity_name=pdf_rec.name,
+                        field=pdf_field,
+                        pdf_value=pdf_val,
+                        db_value=db_val,
+                        page_number=page_num,
+                        subtype=mismatch_type,
+                    ))
             else:
-                equal = _values_equal(pdf_val, db_val, field=pdf_field)
-            if not equal:
-                mismatches.append(FieldMismatch(
-                    entity_name=pdf_rec.name,
-                    field=pdf_field,
-                    pdf_value=pdf_val,
-                    db_value=db_val,
-                    page_number=page_num,
-                ))
+                if not _values_equal(pdf_val, db_val, field=pdf_field):
+                    mismatches.append(FieldMismatch(
+                        entity_name=pdf_rec.name,
+                        field=pdf_field,
+                        pdf_value=pdf_val,
+                        db_value=db_val,
+                        page_number=page_num,
+                    ))
 
     return ComparisonResult(
         entity_type=entity_type,
@@ -632,13 +708,14 @@ _RUNNERS = {
 # ---------------------------------------------------------------------------
 
 
-def _fmt_desc(value: Any) -> str:
-    """Format a description value for display: show char count + start of text."""
+def _fmt_desc(value: Any, ratio: float | None = None) -> str:
+    """Format a description value for display: char count, optional ratio, preview."""
     s = str(value) if value else ""
     if not s:
         return "(empty)"
     preview = s[:60] + "…" if len(s) > 60 else s
-    return f"{len(s)} chars — {preview!r}"
+    ratio_str = f" [{ratio:.0%} sim]" if ratio is not None else ""
+    return f"{len(s)} chars{ratio_str} — {preview!r}"
 
 
 def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> None:
@@ -693,9 +770,16 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
             t.add_column("DB value", style="red")
             for mm in result.mismatches:
                 page_str = str(mm.page_number) if mm.page_number else "—"
-                pdf_disp = _fmt_desc(mm.pdf_value) if mm.field == "desc" else str(mm.pdf_value)
-                db_disp = _fmt_desc(mm.db_value) if mm.field == "desc" else str(mm.db_value)
-                t.add_row(mm.entity_name, page_str, mm.field, pdf_disp, db_disp)
+                if mm.field == "desc":
+                    _, ratio = _compare_desc(mm.pdf_value or "", mm.db_value or "")
+                    pdf_disp = _fmt_desc(mm.pdf_value, ratio)
+                    db_disp = _fmt_desc(mm.db_value)
+                    field_disp = f"desc ({mm.subtype})" if mm.subtype else "desc"
+                else:
+                    pdf_disp = str(mm.pdf_value)
+                    db_disp = str(mm.db_value)
+                    field_disp = mm.field
+                t.add_row(mm.entity_name, page_str, field_disp, pdf_disp, db_disp)
             console.print(t)
 
 

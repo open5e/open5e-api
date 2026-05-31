@@ -7,7 +7,8 @@ from api_v2.management.commands.compare_srd import (
     _values_equal,
     _db_enchantment_slug,
     _normalize_desc,
-    _descriptions_similar,
+    _strip_markdown,
+    _compare_desc,
     FieldMismatch,
     ComparisonResult,
 )
@@ -526,45 +527,90 @@ class TestDescriptionComparison:
         assert _normalize_desc("") == ""
         assert _normalize_desc(None) == ""  # type: ignore[arg-type]
 
-    def test_descriptions_similar_both_empty(self):
-        assert _descriptions_similar("", "") is True
+    def test_strip_markdown_bold(self):
+        assert _strip_markdown("**bold** text") == "bold text"
+        assert _strip_markdown("*italic* text") == "italic text"
 
-    def test_descriptions_similar_identical(self):
+    def test_strip_markdown_headers(self):
+        assert _strip_markdown("## Heading\nbody").strip() == "Heading\nbody"
+
+    def test_strip_markdown_list_markers(self):
+        md = "- Item A\n- Item B\n- Item C"
+        plain = _strip_markdown(md)
+        assert "Item A" in plain
+        assert "-" not in plain
+
+    def test_strip_markdown_preserves_content(self):
+        md = "**The target** takes 2d6 fire damage and has *disadvantage* on saves."
+        plain = _strip_markdown(md)
+        assert "The target" in plain
+        assert "2d6 fire damage" in plain
+        assert "**" not in plain and "*" not in plain
+
+    def test_compare_desc_match(self):
         text = "You set an alarm against intrusion."
-        assert _descriptions_similar(text, text) is True
+        mtype, ratio = _compare_desc(text, text)
+        assert mtype == "match"
+        assert ratio > 0.99
 
-    def test_descriptions_similar_high_overlap(self):
-        """Minor formatting differences don't trigger a mismatch."""
-        a = "You create a shimmering hand of magical energy in an unoccupied space."
-        b = "You create a shimmering hand of magical energy in an unoccupied space!"
-        assert _descriptions_similar(a, b) is True
+    def test_compare_desc_both_empty(self):
+        mtype, ratio = _compare_desc("", "")
+        assert mtype == "match"
+        assert ratio == 1.0
 
-    def test_descriptions_similar_db_empty_pdf_substantial(self):
-        """Non-empty PDF description vs empty DB description is a mismatch."""
+    def test_compare_desc_text_mismatch_truncation(self):
+        """Substantially shorter DB description is a text mismatch."""
+        pdf = "A " + "word " * 60      # ~300 chars
+        db = "A " + "word " * 20       # ~100 chars — truncated
+        mtype, ratio = _compare_desc(pdf, db)
+        assert mtype == "text"
+        assert ratio < 0.70
+
+    def test_compare_desc_text_mismatch_db_empty(self):
+        """Non-empty PDF description vs empty DB is a text mismatch."""
         pdf = "You set an alarm against intrusion. Choose a door, a window, or an area."
-        assert _descriptions_similar(pdf, "") is False
+        mtype, ratio = _compare_desc(pdf, "")
+        assert mtype == "text"
 
-    def test_descriptions_similar_both_short_stubs(self):
-        """Both sides having very short content counts as matching (both absent)."""
-        assert _descriptions_similar("stub", "stub") is True
+    def test_compare_desc_format_mismatch_missing_markdown_list(self):
+        """PDF with bullet chars but DB with no markdown list → format mismatch."""
+        pdf = "Choose one:\n• Option A\n• Option B\n• Option C"
+        db = "Choose one: Option A Option B Option C"  # same content, no list
+        mtype, ratio = _compare_desc(pdf, db)
+        assert mtype == "format"
 
-    def test_descriptions_similar_significant_truncation(self):
-        """DB description that is significantly shorter than PDF is a mismatch."""
-        pdf = "A " + "word " * 60  # ~300 chars
-        db = "A " + "word " * 20   # ~100 chars — similar start, truncated
-        # Ratio will be well below 0.70 due to length difference
-        assert _descriptions_similar(pdf, db) is False
+    def test_compare_desc_strips_markdown_before_comparing(self):
+        """Bold/italic in DB markdown should not count as text difference."""
+        pdf = "The target takes 2d6 fire damage and has disadvantage on saves."
+        db = "The target takes **2d6 fire** damage and has *disadvantage* on saves."
+        mtype, ratio = _compare_desc(pdf, db)
+        assert mtype == "match"
 
-    def test_spell_desc_comparison_uses_similarity(self):
-        """compare_records uses _descriptions_similar for the 'desc' field."""
+    def test_compare_desc_subtype_on_mismatch(self):
+        """compare_records sets subtype='text' on desc field mismatches."""
         pdf = [_make_spell("Fireball", level=3)]
         pdf[0] = pdf[0].__class__(
-            **{**pdf[0].__dict__, "desc": "A bright streak flashes to a point."}
+            **{**pdf[0].__dict__, "desc": "A " + "word " * 60}
         )
         db = [{"name": "Fireball", "level": 3, "school__name": "evocation",
                "casting_time": "Action", "range_text": "60 feet",
                "verbal": True, "somatic": True, "material": False,
                "duration": "Instantaneous", "concentration": False, "ritual": False,
-               "desc": "A bright streak flashes to a point."}]
+               "desc": "A " + "word " * 20}]
+        result = compare_records("spells", pdf, db, skip_fields={"higher_level", "material_specified"})
+        desc_mm = [m for m in result.mismatches if m.field == "desc"]
+        assert len(desc_mm) == 1
+        assert desc_mm[0].subtype == "text"
+
+    def test_compare_desc_no_mismatch_when_identical(self):
+        """compare_records produces no desc mismatch when content matches."""
+        desc = "A bright streak flashes to a point you choose within range."
+        pdf = [_make_spell("Fireball", level=3)]
+        pdf[0] = pdf[0].__class__(**{**pdf[0].__dict__, "desc": desc})
+        db = [{"name": "Fireball", "level": 3, "school__name": "evocation",
+               "casting_time": "Action", "range_text": "60 feet",
+               "verbal": True, "somatic": True, "material": False,
+               "duration": "Instantaneous", "concentration": False, "ritual": False,
+               "desc": desc}]
         result = compare_records("spells", pdf, db, skip_fields={"higher_level", "material_specified"})
         assert not any(m.field == "desc" for m in result.mismatches)
