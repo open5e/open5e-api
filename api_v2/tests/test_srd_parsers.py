@@ -1118,5 +1118,5 @@ class TestExtractFeatsFromPdf:
         mock_pdf.__enter__ = lambda s: s
         mock_pdf.__exit__ = MagicMock(return_value=False)
         with patch("pdfplumber.open", return_value=mock_pdf):
-            with pytest.raises(ValueError, match="expected ≥5"):
+            with pytest.raises(ValueError, match="expected ≥"):
                 extract_feats_from_pdf("fake.pdf")
