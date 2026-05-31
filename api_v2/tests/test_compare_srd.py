@@ -7,8 +7,10 @@ from api_v2.management.commands.compare_srd import (
     _values_equal,
     _db_enchantment_slug,
     _normalize_desc,
+    _to_word_tokens,
     _strip_markdown,
     _compare_desc,
+    _desc_diff_context,
     FieldMismatch,
     ComparisonResult,
 )
@@ -586,6 +588,20 @@ class TestDescriptionComparison:
         mtype, ratio = _compare_desc(pdf, db)
         assert mtype == "match"
 
+    def test_compare_desc_ignores_punctuation_differences(self):
+        """Word-level comparison: punctuation variants are not text mismatches."""
+        pdf = "The target makes a Dexterity saving throw — taking 8d6 damage."
+        db = "The target makes a Dexterity saving throw, taking 8d6 damage."
+        mtype, ratio = _compare_desc(pdf, db)
+        assert mtype == "match"
+
+    def test_compare_desc_strips_srd_page_footer(self):
+        """SRD page-footer text embedded in the PDF block is ignored."""
+        pdf = "You set an alarm. 107system reference document 5.2 Choose a door."
+        db = "You set an alarm. Choose a door."
+        mtype, ratio = _compare_desc(pdf, db)
+        assert mtype == "match"
+
     def test_compare_desc_subtype_on_mismatch(self):
         """compare_records sets subtype='text' on desc field mismatches."""
         pdf = [_make_spell("Fireball", level=3)]
@@ -614,3 +630,25 @@ class TestDescriptionComparison:
                "desc": desc}]
         result = compare_records("spells", pdf, db, skip_fields={"higher_level", "material_specified"})
         assert not any(m.field == "desc" for m in result.mismatches)
+
+    def test_desc_diff_context_truncation(self):
+        """Diff context identifies where DB is truncated."""
+        pdf = "The target makes a saving throw taking 8d6 fire damage on a fail."
+        db = "The target makes a saving throw"
+        ctx = _desc_diff_context(pdf, db)
+        assert "PDF extra" in ctx
+        assert "taking" in ctx or "8d6" in ctx
+
+    def test_desc_diff_context_divergence(self):
+        """Diff context shows the first word that differs."""
+        pdf = "You deal 8d6 fire damage to creatures in range."
+        db = "You deal 8d8 fire damage to creatures in range."
+        ctx = _desc_diff_context(pdf, db)
+        assert "diverges" in ctx
+        assert "8d6" in ctx or "8d8" in ctx
+
+    def test_to_word_tokens_strips_punctuation(self):
+        """Punctuation is stripped so '60-foot-radius' and '60 foot radius' tokenise the same."""
+        assert _to_word_tokens("60-foot-radius") == ["60", "foot", "radius"]
+        assert _to_word_tokens("saving throw,") == ["saving", "throw"]
+        assert _to_word_tokens("8d6") == ["8d6"]

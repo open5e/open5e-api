@@ -156,8 +156,8 @@ def _normalize(value: Any) -> Any:
     return value
 
 
-_DESC_TEXT_THRESHOLD = 0.70   # below this → text content substantially differs
-_DESC_EMPTY_THRESHOLD = 50    # chars below which a description is treated as absent
+_DESC_TEXT_THRESHOLD = 0.80   # word-level ratio below this → text content substantially differs
+_DESC_EMPTY_THRESHOLD = 10    # words below which a description is treated as absent
 
 
 def _strip_markdown(text: str) -> str:
@@ -191,17 +191,37 @@ def _strip_markdown(text: str) -> str:
     return text
 
 
+_SRD_FOOTER_RE = re.compile(
+    r"\d+\s*system\s+reference\s+document\s+[\d.]+", re.IGNORECASE
+)
+
+
 def _normalize_desc(text: str) -> str:
     """Normalize plain description text for similarity comparison.
 
-    Removes PDF line-break hyphenation ('concentra-\\ntion' → 'concentration'),
-    then applies standard clean_text and lowercasing.  Call _strip_markdown
-    on the DB side before this to compare content rather than formatting syntax.
+    - Strips SRD page-footer lines that the PDF extractor sometimes absorbs
+      into description blocks (e.g. '107system reference document 5.2').
+    - Re-joins PDF line-break hyphens ('concentra-\\ntion' → 'concentration').
+    - Applies standard clean_text and lowercasing.
+
+    Call _strip_markdown on the DB side before this.
     """
     if not text:
         return ""
+    text = _SRD_FOOTER_RE.sub(" ", text)
     text = re.sub(r"(\w)-\s+(\w)", r"\1\2", text)
     return clean_text(text).lower().strip()
+
+
+def _to_word_tokens(normalized_text: str) -> list[str]:
+    """Split normalized text into a word token list, stripping punctuation.
+
+    Comparing token lists rather than character strings makes the similarity
+    metric forgiving of punctuation variants (curly quotes, en/em dashes,
+    bullet characters, comma placement) while remaining sensitive to actual
+    content differences (wrong words, missing sentences, wrong numbers).
+    """
+    return re.sub(r"[^a-z0-9]", " ", normalized_text).split()
 
 
 def _pdf_has_list_content(pdf_text: str) -> bool:
@@ -223,38 +243,74 @@ def _db_has_markdown_lists(db_markdown: str) -> bool:
 def _compare_desc(pdf_text: str, db_markdown: str) -> tuple[str, float]:
     """Compare a PDF plain-text description against a DB markdown description.
 
-    Returns ``(mismatch_type, similarity_ratio)`` where mismatch_type is one of:
-    - ``"match"``   — descriptions are equivalent at the content level
-    - ``"text"``    — content substantially differs after stripping markdown
-    - ``"format"``  — content is similar but PDF suggests list/table structure
+    Returns ``(mismatch_type, word_similarity_ratio)`` where mismatch_type is:
+    - ``"match"``   — equivalent at the content level
+    - ``"text"``    — content substantially differs (wrong/missing words)
+    - ``"format"``  — content is similar but PDF has list/table structure
                       that the DB markdown does not encode
 
-    Strips markdown from the DB side before comparing so that syntax
-    differences do not inflate the apparent text distance.
+    Uses word-token-level SequenceMatcher rather than character-level so that
+    punctuation variants (bullets, quotes, dashes) and PDF extraction
+    artefacts (page footers, minor whitespace) don't inflate the distance.
     """
     db_plain = _strip_markdown(db_markdown or "")
     pdf_norm = _normalize_desc(pdf_text or "")
     db_norm = _normalize_desc(db_plain)
 
-    if not pdf_norm and not db_norm:
+    pdf_tokens = _to_word_tokens(pdf_norm)
+    db_tokens = _to_word_tokens(db_norm)
+
+    if not pdf_tokens and not db_tokens:
         return "match", 1.0
-    if not pdf_norm or not db_norm:
-        # One side absent — only flag when the other has substantial content
-        if max(len(pdf_norm), len(db_norm)) < _DESC_EMPTY_THRESHOLD:
+    if not pdf_tokens or not db_tokens:
+        if max(len(pdf_tokens), len(db_tokens)) < _DESC_EMPTY_THRESHOLD:
             return "match", 1.0
         return "text", 0.0
 
-    ratio = SequenceMatcher(None, pdf_norm, db_norm).ratio()
+    ratio = SequenceMatcher(None, pdf_tokens, db_tokens).ratio()
 
     if ratio < _DESC_TEXT_THRESHOLD:
         return "text", ratio
 
-    # Content is similar — check whether structural elements visible in the PDF
-    # (bullets, numbered lists) are properly encoded as markdown in the DB.
+    # Content is similar — check for missing markdown structure.
     if _pdf_has_list_content(pdf_text or "") and not _db_has_markdown_lists(db_markdown or ""):
         return "format", ratio
 
     return "match", ratio
+
+
+def _desc_diff_context(pdf_text: str, db_markdown: str, window: int = 8) -> str:
+    """Return a short snippet showing WHERE the two descriptions first diverge.
+
+    Compares at the word-token level so punctuation differences are invisible.
+    Returns an empty string when there is no divergence.
+    """
+    db_plain = _strip_markdown(db_markdown or "")
+    pdf_tokens = _to_word_tokens(_normalize_desc(pdf_text or ""))
+    db_tokens = _to_word_tokens(_normalize_desc(db_plain))
+
+    # Find the index of the first word that differs
+    first_diff = next(
+        (i for i, (p, d) in enumerate(zip(pdf_tokens, db_tokens)) if p != d),
+        None,
+    )
+
+    if first_diff is None:
+        # Texts agree up to the shorter one — the longer has extra content
+        shorter, longer, label = (
+            (pdf_tokens, db_tokens, "DB extra")
+            if len(pdf_tokens) < len(db_tokens)
+            else (db_tokens, pdf_tokens, "PDF extra")
+        )
+        if len(longer) <= len(shorter):
+            return ""
+        extra = " ".join(longer[len(shorter): len(shorter) + window])
+        return f"{label} at word {len(shorter) + 1}: '{extra}…'"
+
+    start = max(0, first_diff - 2)
+    pdf_ctx = " ".join(pdf_tokens[start: first_diff + window])
+    db_ctx = " ".join(db_tokens[start: first_diff + window])
+    return f"diverges at word {first_diff + 1} — PDF: '{pdf_ctx}…' | DB: '{db_ctx}…'"
 
 
 def _values_equal(a: Any, b: Any, field: str = "") -> bool:
@@ -708,14 +764,20 @@ _RUNNERS = {
 # ---------------------------------------------------------------------------
 
 
-def _fmt_desc(value: Any, ratio: float | None = None) -> str:
-    """Format a description value for display: char count, optional ratio, preview."""
+def _fmt_desc(value: Any, ratio: float | None = None, context: str = "") -> str:
+    """Format a description value for Rich terminal display.
+
+    Shows word count (more meaningful than char count for truncation), the
+    word-level similarity ratio, and — when available — the context string
+    from _desc_diff_context showing where the two versions diverge.
+    """
     s = str(value) if value else ""
     if not s:
         return "(empty)"
-    preview = s[:60] + "…" if len(s) > 60 else s
-    ratio_str = f" [{ratio:.0%} sim]" if ratio is not None else ""
-    return f"{len(s)} chars{ratio_str} — {preview!r}"
+    words = _to_word_tokens(_normalize_desc(s))
+    ratio_str = f" [{ratio:.0%}]" if ratio is not None else ""
+    suffix = f"\n{context}" if context else ""
+    return f"{len(words)} words{ratio_str}{suffix}"
 
 
 def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> None:
@@ -772,7 +834,8 @@ def _render_results(results: dict[str, ComparisonResult], elapsed: float) -> Non
                 page_str = str(mm.page_number) if mm.page_number else "—"
                 if mm.field == "desc":
                     _, ratio = _compare_desc(mm.pdf_value or "", mm.db_value or "")
-                    pdf_disp = _fmt_desc(mm.pdf_value, ratio)
+                    ctx = _desc_diff_context(mm.pdf_value or "", mm.db_value or "")
+                    pdf_disp = _fmt_desc(mm.pdf_value, ratio, ctx)
                     db_disp = _fmt_desc(mm.db_value)
                     field_disp = f"desc ({mm.subtype})" if mm.subtype else "desc"
                 else:
@@ -793,13 +856,18 @@ def _md_cell(value: Any) -> str:
     return str(value).replace("|", "\\|").replace("\n", " ").replace("\r", "")
 
 
-def _fmt_desc_md(value: Any, ratio: float | None = None) -> str:
-    """Format a description value for a markdown table cell."""
+def _fmt_desc_md(value: Any, ratio: float | None = None, context: str = "") -> str:
+    """Format a description value for a markdown table cell.
+
+    Shows word count, word-level similarity ratio, and diff context.
+    """
     s = str(value) if value else ""
     if not s:
         return "(empty)"
+    words = _to_word_tokens(_normalize_desc(s))
     ratio_str = f", {ratio:.0%} similar" if ratio is not None else ""
-    return f"{len(s)} chars{ratio_str}"
+    ctx_str = f" — {_md_cell(context)}" if context else ""
+    return f"{len(words)} words{ratio_str}{ctx_str}"
 
 
 def _render_markdown(results: dict[str, ComparisonResult], elapsed: float) -> None:
@@ -840,7 +908,8 @@ def _render_markdown(results: dict[str, ComparisonResult], elapsed: float) -> No
                 page_str = str(mm.page_number) if mm.page_number else "—"
                 if mm.field == "desc":
                     _, ratio = _compare_desc(mm.pdf_value or "", mm.db_value or "")
-                    pdf_disp = _fmt_desc_md(mm.pdf_value, ratio)
+                    ctx = _desc_diff_context(mm.pdf_value or "", mm.db_value or "")
+                    pdf_disp = _fmt_desc_md(mm.pdf_value, ratio, ctx)
                     db_disp = _fmt_desc_md(mm.db_value)
                     field_disp = f"desc ({mm.subtype})" if mm.subtype else "desc"
                 else:
