@@ -31,6 +31,7 @@ class CharacterClassViewSet(ExcludeFieldsMixin, EagerLoadingMixin, viewsets.Read
 
     select_related_fields = []
     prefetch_related_fields = [
+        'crossreferences__reference_content_type',
         'document',
         'features',
         'features__feature_items',

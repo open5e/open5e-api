@@ -1,7 +1,23 @@
 """Abstract serializers."""
+from drf_spectacular.utils import extend_schema_field, inline_serializer
 from rest_framework import serializers
 
-from api_v2 import models
+
+class _CrossReferenceLinkSerializer(serializers.Serializer):
+    """One link in crossreferences.to; defines API shape and serialization."""
+
+    anchor = serializers.CharField()
+    url = serializers.URLField()
+
+
+# OpenAPI schema for crossreferences: { "to": [{ anchor, url }] }
+_crossreferences_schema = inline_serializer(
+    name="CrossReferences",
+    fields={
+        "to": _CrossReferenceLinkSerializer(many=True),
+    },
+)
+
 
 class GameContentSerializer(serializers.ModelSerializer):  
 
@@ -76,6 +92,15 @@ class GameContentSerializer(serializers.ModelSerializer):
         query_params = request.query_params.items()
         return {k: v for k, v in query_params if self.is_param_dynamic(k)}
 
+    def _is_root_or_list_item_serializer(self):
+        """True if this serializer is the root or a top-level list item (not nested)."""
+        if self.parent is None:
+            return True
+        if isinstance(self.parent, serializers.ListSerializer):
+            # Only treat as "list item" when the list itself is the root (e.g. list view)
+            return self.parent.parent is None
+        return False
+
     def get_dynamic_params(self):
         """
         Returns dynamic parameters stored on the serializer context
@@ -84,6 +109,27 @@ class GameContentSerializer(serializers.ModelSerializer):
         if isinstance(self.parent, serializers.ListSerializer):
             return self.parent._context.get("dynamic_params", {})
         return self._context.get("dynamic_params", {})
+
+    def get_fields(self):
+        """Add crossreferences only for root or list-item serializers (not nested)."""
+        fields = super().get_fields()
+        if self._is_root_or_list_item_serializer():
+            fields["crossreferences"] = serializers.SerializerMethodField()
+        return fields
+
+    @extend_schema_field(_crossreferences_schema)
+    def get_crossreferences(self, obj):
+        """Return crossreferences for API output; None for non-sources. Uses obj.crossreferences (prefetch-friendly)."""
+        if not (hasattr(obj, "is_crossreference_source") and obj.is_crossreference_source()):
+            return None
+        request = self.context.get("request")
+        to_links = [
+            {"anchor": cr.anchor, "url": cr.reference_api_url(request)}
+            for cr in obj.crossreferences.all()
+        ]
+        return {
+            "to": _CrossReferenceLinkSerializer(instance=to_links, many=True).data,
+        }
 
     def __init__(self, *args, **kwargs):
         request = kwargs.get("context", {}).get("request")
@@ -100,7 +146,12 @@ class GameContentSerializer(serializers.ModelSerializer):
         if dynamic_params := self.get_dynamic_params().copy():
             self.remove_unwanted_fields(dynamic_params)
             self.set_dynamic_params_for_children(dynamic_params)
-        return super().to_representation(instance)
+        data = super().to_representation(instance)
+        # Omit crossreferences key when null so non-sources (e.g. Document) have no key
+        return {
+            k: v for k, v in data.items()
+            if not (k == "crossreferences" and v is None)
+        }
 
     class Meta:
         abstract = True

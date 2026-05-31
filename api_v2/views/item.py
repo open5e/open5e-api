@@ -48,6 +48,22 @@ class ItemFilterSet(FilterSet):
             'document__gamesystem__key': ['in','iexact'],
         }
 
+# used in ItemViewSet and MagicItemViewSet - factored out for DRYness
+item_prefetch_fields = [
+    'crossreferences__reference_content_type',
+    'armor',
+    'category',
+    'damage_immunities',
+    'damage_resistances',
+    'damage_vulnerabilities',
+    'document',
+    'weapon__properties',
+    'weapon__damage_type',
+    'weapon__document',
+    'weapon__properties__property',
+    'rarity',
+    'size',
+]
 
 class ItemViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
@@ -143,6 +159,7 @@ class ItemSetViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyMod
     filterset_class = ItemSetFilterSet
 
     prefetch_related_fields = [
+        'crossreferences__reference_content_type',
         'items',
         'items__document',
         'items__damage_resistances',

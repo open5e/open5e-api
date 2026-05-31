@@ -145,6 +145,7 @@ class ItemSerializer(GameContentSerializer):
 
     class Meta:
         model = models.Item
+        extra_kwargs = {"url": {"view_name": "items-detail"}}
         fields = [
             'key',
             'name',
@@ -162,7 +163,8 @@ class ItemSerializer(GameContentSerializer):
 class ItemSummarySerializer(GameContentSerializer):
     class Meta:
         model = models.Item
-        fields = ['name', 'key']
+        extra_kwargs = {"url": {"view_name": "items-detail"}}
+        fields = ['name', 'key', 'url']
 
 class MagicItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()

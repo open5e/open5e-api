@@ -244,13 +244,13 @@ class CreatureAction(HasName, HasDescription):
         help_text='The type of action used.'
     )
 
-    order = models.SmallIntegerField(
+    order_in_statblock = models.SmallIntegerField(
         blank=True,
         null=True,
         help_text='The position in the list of features that a feature appears in its source statblock'
     )
 
-    form_condition = models.CharField(
+    limited_to_form = models.CharField(
         blank=True,
         null=True,
         default=None,
@@ -258,7 +258,7 @@ class CreatureAction(HasName, HasDescription):
         help_text='Description of form-based conditions for this action.'
     )
 
-    legendary_cost = models.SmallIntegerField(
+    legendary_action_cost = models.SmallIntegerField(
         blank=True,
         null=True,
         default=None,
