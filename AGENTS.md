@@ -1,6 +1,6 @@
 This is a project that encodes 5th Edition Dungeons and Dragons rules into an API.
 
-To ingest data, it is best to run `manage.py quicksetup` from within the pipenv environment. You can check the readme.md for additional instructions about using this repo.
+To ingest data, it is best to run `uv run python manage.py quicksetup` from the project root. You can check the readme.md for additional instructions about using this repo.
 
 Before calling a task finished, always run scripts like `quicksetup` and tests, plus any other reasonable checks, to ensure that data can correctly be ingested and your changes work.
 

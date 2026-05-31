@@ -69,24 +69,23 @@ The API uses the Django REST Framework for it's browsability and ease of use whe
 ## Requirements
 
 - [Python 3.11](https://www.python.org/downloads/)
-
-- [Pipenv](https://pipenv.pypa.io/en/latest/installation.html)
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
 
 ## Dependencies
 
-Pipenv is used to install all required packages from the `Pipfile` at the project root. Use the following command after cloning the project or switching branches.
+uv is used to manage dependencies and run commands. Install all dependencies after cloning the project or switching branches:
 
 ```bash
-pipenv install --dev
+uv sync
 ```
 
 # Development
 
 ## Build
 
-Crate a local database and import game content. 
+Create a local database and import game content.
 ```bash
-pipenv run python manage.py quicksetup --noindex
+uv run python manage.py quicksetup --noindex
 ```
 
 To make sure the API is always using your updated code, this command must be run again if:
@@ -99,7 +98,7 @@ To make sure the API is always using your updated code, this command must be run
 
 To use the search function, you must build the search index by running the above command without the `--noindex` flag.
 ```bash
-pipenv run python manage.py quicksetup
+uv run python manage.py quicksetup
 ```
 
 ## Run
@@ -107,7 +106,7 @@ pipenv run python manage.py quicksetup
 Run the server locally. This server is only for development and shall __not__ be used in production. The server will be available at `http://localhost:8000`.
 
 ```bash
-pipenv run python manage.py runserver
+uv run python manage.py runserver
 ```
 
 ### Self-hosting
@@ -123,17 +122,17 @@ You can use our Dockerfile as inspiration, but it likely will not work without s
 
 After completing a build, you can generate an OAS file to be used by another application.
 ```bash
-pipenv run python manage.py spectacular --color --file openapi-schema.yml` to build the OAS file.
+uv run python manage.py spectacular --color --file openapi-schema.yml
 ```
 
 # Contributing
 See [contribution guide](.github/CONTRIBUTING.md).
 # Tests
 
-Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository. These tests require that the api is [running](##run) at `http://localhost:8000`.
+Tests are located in the `api/tests` directory. These should be run before pushing new changes to the main repository.
 
 ```bash
-pipenv run pytest
+uv run pytest
 ```
 
 ## Approval tests
