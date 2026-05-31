@@ -11,6 +11,8 @@ from api_v2.management.commands.compare_srd import (
 )
 from data.raw_sources.srd_5_2.parsers.spells import SpellRecord
 from data.raw_sources.srd_5_2.parsers.items import MagicItemRecord
+from data.raw_sources.srd_5_2.parsers.classes import ClassRecord
+from data.raw_sources.srd_5_2.parsers.origins import FeatRecord, SpeciesRecord
 
 
 def _make_magic_item(name, enchantment_name=None, rarity="uncommon", requires_attunement=False):
@@ -415,3 +417,95 @@ class TestCompareMagicItemEnchantments:
         result = compare_magic_item_enchantments(pdf, db, self.SKIP)
         assert result.missing == []
         assert result.extra == []
+
+
+def _make_class(name, hit_dice="d8"):
+    return ClassRecord(name=name, hit_dice=hit_dice)
+
+
+def _make_feat(name, feat_type="Origin", prerequisite=""):
+    return FeatRecord(name=name, feat_type=feat_type, prerequisite=prerequisite)
+
+
+def _make_species(name, speed_text="30 feet"):
+    return SpeciesRecord(name=name, speed_text=speed_text)
+
+
+class TestCompareClasses:
+    SKIP = {"desc"}
+
+    def test_hit_dice_case_insensitive(self):
+        """PDF 'd12' matches DB 'D12'."""
+        pdf = [_make_class("Barbarian", hit_dice="d12")]
+        db = [{"name": "Barbarian", "hit_dice": "D12"}]
+        result = compare_records("classes", pdf, db, skip_fields=self.SKIP)
+        assert result.mismatches == []
+
+    def test_hit_dice_mismatch_detected(self):
+        pdf = [_make_class("Barbarian", hit_dice="d8")]
+        db = [{"name": "Barbarian", "hit_dice": "D12"}]
+        result = compare_records("classes", pdf, db, skip_fields=self.SKIP)
+        assert any(m.field == "hit_dice" for m in result.mismatches)
+
+    def test_missing_class_detected(self):
+        pdf = [_make_class("Barbarian"), _make_class("Wizard")]
+        db = [{"name": "Barbarian", "hit_dice": "D12"}]
+        result = compare_records("classes", pdf, db, skip_fields=self.SKIP)
+        assert "Wizard" in result.missing
+
+    def test_extra_class_detected(self):
+        pdf = [_make_class("Barbarian")]
+        db = [{"name": "Barbarian", "hit_dice": "D12"}, {"name": "Mystic", "hit_dice": "D8"}]
+        result = compare_records("classes", pdf, db, skip_fields=self.SKIP)
+        assert "Mystic" in result.extra
+
+
+class TestCompareFeats:
+    SKIP = {"desc"}
+
+    def test_type_match(self):
+        pdf = [_make_feat("Alert", feat_type="Origin")]
+        db = [{"name": "Alert", "type": "Origin", "prerequisite": ""}]
+        result = compare_records("feats", pdf, db, skip_fields=self.SKIP)
+        assert result.mismatches == []
+
+    def test_type_mismatch_detected(self):
+        pdf = [_make_feat("Alert", feat_type="General")]
+        db = [{"name": "Alert", "type": "Origin", "prerequisite": ""}]
+        result = compare_records("feats", pdf, db, skip_fields=self.SKIP)
+        assert any(m.field == "feat_type" for m in result.mismatches)
+
+    def test_prerequisite_match(self):
+        # Ability Score Improvement genuinely has "Level 4+" as its only prerequisite
+        pdf = [_make_feat("Ability Score Improvement", feat_type="General", prerequisite="Level 4+")]
+        db = [{"name": "Ability Score Improvement", "type": "General", "prerequisite": "Level 4+"}]
+        result = compare_records("feats", pdf, db, skip_fields=self.SKIP)
+        assert result.mismatches == []
+
+    def test_prerequisite_mismatch_detected(self):
+        pdf = [_make_feat("Ability Score Improvement", prerequisite="Level 4+")]
+        db = [{"name": "Ability Score Improvement", "type": "General", "prerequisite": "Level 8+"}]
+        result = compare_records("feats", pdf, db, skip_fields=self.SKIP)
+        assert any(m.field == "prerequisite" for m in result.mismatches)
+
+
+class TestCompareSpecies:
+    SKIP = {"desc"}
+
+    def test_speed_text_match(self):
+        pdf = [_make_species("Dragonborn", speed_text="30 feet")]
+        db = [{"name": "Dragonborn", "speed_text": "30 feet"}]
+        result = compare_records("species", pdf, db, skip_fields=self.SKIP)
+        assert result.mismatches == []
+
+    def test_speed_mismatch_detected(self):
+        pdf = [_make_species("Elf", speed_text="35 feet")]
+        db = [{"name": "Elf", "speed_text": "30 feet"}]
+        result = compare_records("species", pdf, db, skip_fields=self.SKIP)
+        assert any(m.field == "speed_text" for m in result.mismatches)
+
+    def test_missing_species_detected(self):
+        pdf = [_make_species("Dragonborn"), _make_species("Elf")]
+        db = [{"name": "Dragonborn", "speed_text": "30 feet"}]
+        result = compare_records("species", pdf, db, skip_fields=self.SKIP)
+        assert "Elf" in result.missing

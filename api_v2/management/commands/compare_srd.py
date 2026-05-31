@@ -87,6 +87,16 @@ _FIELD_MAPS: dict[str, dict[str, str]] = {
         "rarity": "rarity__name",
         "requires_attunement": "requires_attunement",
     },
+    "classes": {
+        "hit_dice": "hit_dice",
+    },
+    "feats": {
+        "feat_type": "type",
+        "prerequisite": "prerequisite",
+    },
+    "species": {
+        "speed_text": "speed_text",
+    },
 }
 
 SKIP_FIELDS: dict[str, set[str]] = {
@@ -98,6 +108,9 @@ SKIP_FIELDS: dict[str, set[str]] = {
     "weapons": {"desc", "mastery_desc", "cost", "damage"},
     "armor": {"desc", "cost", "ac_cap_dex"},
     "magic_items": {"desc"},
+    "classes": {"desc"},
+    "feats": {"desc"},
+    "species": {"desc"},
 }
 
 
@@ -517,6 +530,49 @@ def _run_magic_item_comparison(pdf_path: str, document: str) -> ComparisonResult
     return compare_magic_item_enchantments(pdf_records, db_records, SKIP_FIELDS["magic_items"])
 
 
+def _run_class_comparison(pdf_path: str, document: str) -> ComparisonResult:
+    from api_v2.models import CharacterClass
+    from data.raw_sources.srd_5_2.parsers.classes import extract_classes_from_pdf
+    pdf_records = extract_classes_from_pdf(pdf_path)
+    db_records = list(
+        CharacterClass.objects.filter(document_id=document, subclass_of=None)
+        .values("name", "hit_dice")
+    )
+    return compare_records("classes", pdf_records, db_records, SKIP_FIELDS["classes"])
+
+
+def _run_feat_comparison(pdf_path: str, document: str) -> ComparisonResult:
+    from api_v2.models import Feat
+    from data.raw_sources.srd_5_2.parsers.origins import extract_feats_from_pdf
+    pdf_records = extract_feats_from_pdf(pdf_path)
+    db_records = list(
+        Feat.objects.filter(document_id=document)
+        .values("name", "type", "prerequisite")
+    )
+    return compare_records("feats", pdf_records, db_records, SKIP_FIELDS["feats"])
+
+
+def _run_species_comparison(pdf_path: str, document: str) -> ComparisonResult:
+    from api_v2.models import Species, SpeciesTrait
+    from data.raw_sources.srd_5_2.parsers.origins import extract_species_from_pdf
+    pdf_records = extract_species_from_pdf(pdf_path)
+    speed_by_name = {
+        t["parent__name"]: t["desc"]
+        for t in SpeciesTrait.objects.filter(
+            type="SPEED",
+            parent__document_id=document,
+            parent__subspecies_of=None,
+        ).values("parent__name", "desc")
+    }
+    db_records = [
+        {"name": s["name"], "speed_text": speed_by_name.get(s["name"], "")}
+        for s in Species.objects.filter(
+            document_id=document, subspecies_of=None
+        ).values("name")
+    ]
+    return compare_records("species", pdf_records, db_records, SKIP_FIELDS["species"])
+
+
 # "items" (adventuring gear) is not in _RUNNERS because the SRD adventuring gear
 # items do not have a dedicated model in api_v2 that maps cleanly to PDF records.
 _RUNNERS = {
@@ -525,6 +581,9 @@ _RUNNERS = {
     "weapons": _run_weapon_comparison,
     "armor": _run_armor_comparison,
     "magic_items": _run_magic_item_comparison,
+    "classes": _run_class_comparison,
+    "feats": _run_feat_comparison,
+    "species": _run_species_comparison,
 }
 
 
