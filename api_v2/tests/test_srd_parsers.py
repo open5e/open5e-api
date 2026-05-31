@@ -986,3 +986,88 @@ class TestExtractClassesFromPdf:
         with patch("pdfplumber.open", return_value=mock_pdf):
             with pytest.raises(ValueError, match="expected ≥10"):
                 extract_classes_from_pdf("fake.pdf")
+
+
+from data.raw_sources.srd_5_2.parsers.origins import FeatRecord, extract_feats
+
+
+class TestExtractFeats:
+    def _make_page(self, lines):
+        """Build mock pdfplumber page chars from (text, font, size, x, y) tuples."""
+        from unittest.mock import MagicMock
+        chars = []
+        for text, font, size, x, y in lines:
+            for i, ch in enumerate(text):
+                chars.append({
+                    "text": ch, "fontname": f"XXXX+{font}",
+                    "size": size, "x0": x + i * 6, "top": y,
+                })
+        page = MagicMock()
+        page.page_number = 1
+        page.width = 600.0
+        page.chars = chars
+        return page
+
+    def _feat_chars(self, name, category, prerequisite=None, x=50, y_name=100):
+        """Build chars for a feat entry matching the real SRD PDF font profile.
+
+        Feat names are GillSans-SemiBold sz=12; type tags are Cambria-Italic sz=10.
+        """
+        cat_text = category
+        if prerequisite:
+            cat_text += f" (Prerequisite: {prerequisite})"
+        return (
+            [(name, "GillSans-SemiBold", 12, x, y_name)]
+            + [(cat_text, "Cambria-Italic", 10, x, y_name + 14)]
+        )
+
+    def test_extracts_origin_feat(self):
+        chars = self._feat_chars("Alert", "Origin Feat")
+        page = self._make_page(chars)
+        records = extract_feats([page])
+        assert len(records) == 1
+        r = records[0]
+        assert r.name == "Alert"
+        assert r.feat_type == "Origin"
+        assert r.prerequisite == ""
+
+    def test_extracts_general_feat_with_prerequisite(self):
+        chars = self._feat_chars(
+            "Ability Score Improvement", "General Feat", "Level 4+"
+        )
+        page = self._make_page(chars)
+        records = extract_feats([page])
+        assert records[0].feat_type == "General"
+        assert records[0].prerequisite == "Level 4+"
+
+    def test_extracts_fighting_style_feat(self):
+        chars = self._feat_chars(
+            "Archery", "Fighting Style Feat", "Fighting Style Feature"
+        )
+        page = self._make_page(chars)
+        records = extract_feats([page])
+        assert records[0].feat_type == "Fighting Style"
+
+    def test_extracts_epic_boon_feat(self):
+        chars = self._feat_chars(
+            "Boon of Combat Prowess", "Epic Boon Feat", "Level 19+"
+        )
+        page = self._make_page(chars)
+        records = extract_feats([page])
+        assert records[0].feat_type == "Epic Boon"
+
+    def test_ignores_section_header_without_tag(self):
+        """Group headers like 'Origin Feats' (sz=14 GillSans) are not feat names."""
+        chars = [("Origin Feats", "GillSans-SemiBold", 14, 50, 100)]
+        page = self._make_page(chars)
+        # sz=14 is not the feat-name size (12) → not recognised as a feat
+        records = extract_feats([page])
+        assert records == []
+
+    def test_returns_empty_list_for_page_with_no_feat_chars(self):
+        from unittest.mock import MagicMock
+        page = MagicMock()
+        page.page_number = 1
+        page.width = 600.0
+        page.chars = []
+        assert extract_feats([page]) == []
