@@ -5,8 +5,8 @@ from rest_framework import routers
 from api_v2 import views
 
 router = routers.DefaultRouter()
-router.register(r'items',views.ItemViewSet)
-router.register(r'magicitems', views.MagicItemViewSet)
+router.register(r'items',views.ItemViewSet, basename='items')
+router.register(r'magicitems', views.MagicItemViewSet, basename="magicitems")
 router.register(r'itemsets',views.ItemSetViewSet)
 router.register(r'itemcategories',views.ItemCategoryViewSet)
 router.register(r'documents',views.DocumentViewSet)

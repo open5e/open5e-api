@@ -7,4 +7,4 @@ class ServiceViewSet(viewsets.ReadOnlyModelViewSet, EagerLoadingMixin, ExcludeFi
   queryset = models.Service.objects.all().order_by('pk')
   serializer_class = serializers.ServiceSerializer
 
-  prefetch_related_fields = ['document']
+  prefetch_related_fields = ['crossreferences__reference_content_type', 'document']

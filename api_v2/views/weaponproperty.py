@@ -21,4 +21,4 @@ class WeaponPropertyViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.Read
   serializer_class = serializers.WeaponPropertySerializer
   filterset_class = WeaponPropertyFilterSet
 
-  prefetch_related_fields = ['document']
+  prefetch_related_fields = ['crossreferences__reference_content_type', 'document']

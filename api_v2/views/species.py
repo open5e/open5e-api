@@ -29,6 +29,7 @@ class SpeciesViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyMod
 
     select_related_fields = []
     prefetch_related_fields = [
+        'crossreferences__reference_content_type',
         'document',
         'document__gamesystem',
         'traits',
