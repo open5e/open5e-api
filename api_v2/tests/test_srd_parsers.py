@@ -1151,3 +1151,194 @@ class TestExtractFeatsFromPdf:
         with patch("pdfplumber.open", return_value=mock_pdf):
             with pytest.raises(ValueError, match="expected ≥"):
                 extract_feats_from_pdf("fake.pdf")
+
+
+# ---------------------------------------------------------------------------
+# Species parser tests
+# ---------------------------------------------------------------------------
+
+from data.raw_sources.srd_5_2.parsers.origins import SpeciesRecord, extract_species
+
+
+class TestExtractSpecies:
+    # Real PDF font profile (verified against SRD CC v5.2):
+    #   Species names:  GillSans-SemiBold sz=12
+    #   Speed label:    GillSans-SemiBold sz=10  (e.g. "Speed:")
+    #   Speed value:    GillSans sz=10           (e.g. " 30 feet"), same row as label
+    _NAME_FONT = "GillSans-SemiBold"
+    _NAME_SIZE = 12
+    _LABEL_FONT = "GillSans-SemiBold"
+    _LABEL_SIZE = 10
+    _VALUE_FONT = "GillSans"
+    _VALUE_SIZE = 10
+
+    def _species_chars(self, name, speed_text, x=50, y=100):
+        """Return char dicts for one species entry: name (sz=12) + Speed: label+value (sz=10).
+
+        The Speed: label and its value are placed 40 pts below the name row.
+        """
+        chars = []
+        for i, ch in enumerate(name):
+            chars.append({
+                "text": ch,
+                "fontname": f"XXXX+{self._NAME_FONT}",
+                "size": float(self._NAME_SIZE),
+                "x0": float(x + i * 6),
+                "top": float(y),
+            })
+        speed_y = float(y + 40)
+        for i, ch in enumerate("Speed:"):
+            chars.append({
+                "text": ch,
+                "fontname": f"XXXX+{self._LABEL_FONT}",
+                "size": float(self._LABEL_SIZE),
+                "x0": float(x + i * 6),
+                "top": speed_y,
+            })
+        val_x = x + len("Speed:") * 6 + 4
+        for i, ch in enumerate(f" {speed_text}"):
+            chars.append({
+                "text": ch,
+                "fontname": f"XXXX+{self._VALUE_FONT}",
+                "size": float(self._VALUE_SIZE),
+                "x0": float(val_x + i * 6),
+                "top": speed_y,
+            })
+        return chars
+
+    def _make_page(self, entries, page_number=1):
+        """Build a mock page from a list of (name, speed_text, x, y) tuples.
+
+        Produces ≥1 fully-formed species entries (name + Speed: label+value).
+        page.width=600 so all entries with x<298 land in the left column.
+        """
+        from unittest.mock import MagicMock
+        chars = []
+        for name, speed, x, y in entries:
+            chars.extend(self._species_chars(name, speed, x=x, y=y))
+        page = MagicMock()
+        page.page_number = page_number
+        page.width = 600.0
+        page.chars = chars
+        page.extract_text.return_value = "\n".join(
+            f"{name}\nCreature Type: Humanoid\nSpeed: {speed}"
+            for name, speed, _, _ in entries
+        )
+        return page
+
+    def _three_species_pages(self, target_name, target_speed, target_page=1):
+        """Return pages containing target + two fillers, satisfying the ≥3 threshold."""
+        filler_entries = [("Elf", "30 feet", 50, 200), ("Orc", "30 feet", 50, 300)]
+        target_page_obj = self._make_page(
+            [(target_name, target_speed, 50, 100)] + filler_entries,
+            page_number=target_page,
+        )
+        return [target_page_obj]
+
+    def test_extracts_species_name_and_speed(self):
+        pages = self._three_species_pages("Dragonborn", "30 feet")
+        records = extract_species(pages)
+        dragonborn = next(r for r in records if r.name == "Dragonborn")
+        assert dragonborn.name == "Dragonborn"
+        assert dragonborn.speed_text == "30 feet"
+
+    def test_extracts_multiple_species(self):
+        page1 = self._make_page(
+            [("Dwarf", "30 feet", 50, 100), ("Gnome", "30 feet", 50, 200)],
+            page_number=1,
+        )
+        page2 = self._make_page(
+            [("Orc", "30 feet", 50, 100)],
+            page_number=2,
+        )
+        records = extract_species([page1, page2])
+        names = {r.name for r in records}
+        assert "Dwarf" in names
+        assert "Orc" in names
+
+    def test_goliath_has_35_feet_speed(self):
+        pages = self._three_species_pages("Goliath", "35 feet")
+        records = extract_species(pages)
+        goliath = next(r for r in records if r.name == "Goliath")
+        assert goliath.speed_text == "35 feet"
+
+    def test_page_number_recorded(self):
+        pages = self._three_species_pages("Tiefling", "30 feet", target_page=7)
+        records = extract_species(pages)
+        tiefling = next(r for r in records if r.name == "Tiefling")
+        assert tiefling.page_number == 7
+
+    def test_sanity_check_raises_on_empty(self):
+        import pytest
+        from unittest.mock import MagicMock
+        page = MagicMock()
+        page.page_number = 1
+        page.width = 600.0
+        page.chars = []
+        page.extract_text.return_value = ""
+        with pytest.raises(ValueError, match="expected ≥3"):
+            extract_species([page])
+
+
+class TestExtractSpeciesFromPdf:
+    def _make_chapter_page(self, title, page_number=1):
+        """Build a mock page with a sz=26 GillSans-SemiBold chapter heading."""
+        from unittest.mock import MagicMock
+        chars = [
+            {
+                "text": ch,
+                "fontname": "XXXX+GillSans-SemiBold",
+                "size": 26.0,
+                "x0": float(i * 8),
+                "top": 40.0,
+            }
+            for i, ch in enumerate(title)
+        ]
+        page = MagicMock()
+        page.page_number = page_number
+        page.width = 600.0
+        page.chars = chars
+        page.extract_text.return_value = title
+        return page
+
+    def test_raises_when_no_species_found(self):
+        import pytest
+        from unittest.mock import patch, MagicMock
+        from data.raw_sources.srd_5_2.parsers.origins import extract_species_from_pdf
+        mock_page = MagicMock()
+        mock_page.page_number = 1
+        mock_page.width = 600.0
+        mock_page.chars = [
+            {
+                "text": ch,
+                "fontname": "XXXX+GillSans-SemiBold",
+                "size": 26.0,
+                "x0": float(i * 8),
+                "top": 40.0,
+            }
+            for i, ch in enumerate("Character Origins")
+        ]
+        mock_page.extract_text.return_value = "Character Origins\nsome content"
+        mock_pdf = MagicMock()
+        mock_pdf.pages = [mock_page]
+        mock_pdf.__enter__ = lambda s: s
+        mock_pdf.__exit__ = MagicMock(return_value=False)
+        with patch("pdfplumber.open", return_value=mock_pdf):
+            with pytest.raises(ValueError, match="expected ≥"):
+                extract_species_from_pdf("fake.pdf")
+
+    def test_section_detection_stops_at_feats_heading(self):
+        """Pages from the 'Feats' chapter onward are excluded."""
+        import pytest
+        from unittest.mock import patch, MagicMock
+        from data.raw_sources.srd_5_2.parsers.origins import extract_species_from_pdf
+        origins_page = self._make_chapter_page("Character Origins", page_number=1)
+        feats_page = self._make_chapter_page("Feats", page_number=2)
+        mock_pdf = MagicMock()
+        mock_pdf.pages = [origins_page, feats_page]
+        mock_pdf.__enter__ = lambda s: s
+        mock_pdf.__exit__ = MagicMock(return_value=False)
+        with patch("pdfplumber.open", return_value=mock_pdf):
+            # Only origins_page is processed; it has no species → ValueError
+            with pytest.raises(ValueError, match="expected ≥"):
+                extract_species_from_pdf("fake.pdf")
