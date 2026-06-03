@@ -1,0 +1,29 @@
+[project]
+name = "open5e-api"
+version = "2.1.0"
+requires-python = "==3.11.*"
+dependencies = [
+    "django>=5.2,<5.3",
+    "djangorestframework",
+    "django-filter",
+    "django-cors-headers",
+    "newrelic",
+    "requests",
+    "whitenoise",
+    "gunicorn",
+    "drf-spectacular[sidecar]",
+    "numpy",
+    "rapidfuzz",
+    "scikit-learn",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-django",
+    "approvaltests",
+    "pytest-approvaltests",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "server.settings"
