@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api_v2', '0074_alter_creature_challenge_rating'),
+        ('api_v2', '0079_rename_creatureaction_fields'),
     ]
 
     operations = [
