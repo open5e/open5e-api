@@ -35,7 +35,7 @@ class CreatureTypeDescription(HasDescription, FromDocument):
 
 
 
-class Creature(Object, HasAbilities, HasSenses, HasLanguage, HasSpeed, HasIllustration, FromDocument):
+class Creature(Object, HasDescription, HasAbilities, HasSenses, HasLanguage, HasSpeed, HasIllustration, FromDocument):
     """
     This is the model for a Creature, per the 5e gamesystem.
 
