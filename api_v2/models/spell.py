@@ -13,7 +13,7 @@ from .characterclass import CharacterClass
 
 
 from .enums import SPELL_TARGET_TYPE_CHOICES
-from .enums import SPELL_TARGET_RANGE_CHOICES, SPELL_CASTING_TIME_CHOICES
+from .enums import SPELL_CASTING_TIME_CHOICES
 from .enums import SPELL_EFFECT_SHAPE_CHOICES, SPELL_EFFECT_DURATIONS
 from .enums import CASTING_OPTION_TYPES
 import decimal
@@ -46,8 +46,7 @@ class Spell(HasName, HasDescription, FromDocument):
         choices = SPELL_TARGET_TYPE_CHOICES,
         help_text='Spell target type key.')
 
-    range_text = models.TextField( # SWAP TO DISTANCE FIELD
-        choices = SPELL_TARGET_RANGE_CHOICES,
+    range_text = models.TextField(
         help_text='Spell target range.')
 
     range = distance_field()
