@@ -61,7 +61,6 @@ item_prefetch_fields = [
     'weapon__damage_type',
     'weapon__document',
     'weapon__properties__property',
-    'rarity',
     'size',
 ]
 
