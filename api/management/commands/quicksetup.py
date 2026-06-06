@@ -94,7 +94,6 @@ def migrate_db() -> None:
     This command is added primarily to assist in local development, because
     checking out and changing branches results in unclean model/dbs."""
 
-    call_command('makemigrations')
     call_command('migrate')
 
 def is_dirty() ->None:
