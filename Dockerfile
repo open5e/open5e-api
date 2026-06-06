@@ -1,19 +1,19 @@
-FROM python:3.11-slim AS builder
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim AS builder
 
 WORKDIR /opt/services/open5e-api
 
-COPY --from=ghcr.io/astral-sh/uv:0.10 /uv /usr/local/bin/uv
-
 ENV UV_LINK_MODE=copy \
-    UV_PYTHON_DOWNLOADS=never
+    UV_PYTHON_DOWNLOADS=never \
+    UV_COMPILE_BYTECODE=1
 
 COPY pyproject.toml uv.lock ./
 RUN uv sync --frozen --no-dev --no-install-project
 
 COPY . .
 RUN uv run python manage.py quicksetup
+RUN uv run python -m gunicorn --version
 
-FROM python:3.11-slim
+FROM python:3.11-slim-bookworm
 
 WORKDIR /opt/services/open5e-api
 
@@ -30,4 +30,6 @@ COPY --from=builder /opt/services/open5e-api/newrelic.ini ./newrelic.ini
 
 ENV PATH="/opt/services/open5e-api/.venv/bin:$PATH"
 
-CMD ["gunicorn", "-b", ":8888", "server.wsgi:application"]
+RUN python -m gunicorn --version
+
+CMD ["python", "-m", "gunicorn", "-b", ":8888", "server.wsgi:application"]

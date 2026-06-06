@@ -37,6 +37,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v6
       - name: Sanitize branch name
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF##*/} | tr '/' '-')" >> $GITHUB_ENV
       - name: Build Docker image
