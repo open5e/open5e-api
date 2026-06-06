@@ -45,7 +45,7 @@ All v1 content is still available for hosting your own version, if required
   * [Build](#build)
     + [Search Indexing](#search-indexing)
   * [Run](#run)
-  * [Building the OAS file](#building-the-oas-file)
+  * [OpenAPI Spec](#openapi-spec)
 - [Contributing](#contributing)
   * [Editing existing sources](#editing-existing-sources)
   * [Adding a new source](#adding-a-new-source)
@@ -118,12 +118,21 @@ gunicorn -b :8888 server.wsgi:application
 
 You can use our Dockerfile as inspiration, but it likely will not work without significant edits to your operating environment. We have customized our production environment to use it.
 
-## Building the OAS file
+## OpenAPI Spec
 
-After completing a build, you can generate an OAS file to be used by another application.
+`openapi-schema.yml` (at the repo root) is the canonical API contract for `/v2/`,
+generated from the serializers/views by drf-spectacular. It is committed to the
+repo so consumers and reviewers can read and diff the contract directly.
+
+CI verifies it stays in sync with the code on every PR into `staging-with-spec`.
+If you change a serializer, view, model, or schema-affecting setting, regenerate:
+
 ```bash
-uv run python manage.py spectacular --color --file openapi-schema.yml
+uv run python manage.py spectacular --file openapi-schema.yml
 ```
+
+Then commit the updated file. Do **not** hand-edit `openapi-schema.yml` — it is
+a build artifact.
 
 # Contributing
 See [contribution guide](.github/CONTRIBUTING.md).
