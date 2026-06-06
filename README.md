@@ -144,7 +144,7 @@ Recieved files shall not be included in the git repo.
 
 ## DigitalOcean
 
-This deployment has been tested using [DigitalOcean Apps](https://www.digitalocean.com/go/cloud-hosting) with Docker Hub.
+This deployment has been tested using [DigitalOcean Apps](https://www.digitalocean.com/go/cloud-hosting) with images from GitHub Container Registry (GHCR).
 
 To start up the server from scratch on a droplet:
 
