@@ -41,7 +41,7 @@ class SpellSerializer(GameContentSerializer):
     
     range_unit = serializers.SerializerMethodField()
     shape_size_unit = serializers.SerializerMethodField()
-
+    
     # todo: model typed as any
     @extend_schema_field(OpenApiTypes.STR)
     def get_range_unit(self, spell):
