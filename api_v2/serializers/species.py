@@ -8,10 +8,14 @@ from .abstracts import GameContentSerializer
 from .document import DocumentSummarySerializer
 
 class SpeciesTraitSerializer(GameContentSerializer):
-
+    crossreferences = serializers.SerializerMethodField(method_name='get_crossreferences_data')
+    def get_crossreferences_data(self, obj):
+        # delegate to parent implementation in GameContentSerializer
+        return self.get_crossreferences(obj)
+    
     class Meta:
         model = models.SpeciesTrait
-        fields = ['name', 'desc', 'type', 'order']
+        fields = ['name', 'desc', 'type', 'order', 'crossreferences']
 
 
 class SpeciesSerializer(GameContentSerializer):
