@@ -34,6 +34,7 @@ class CharacterClassViewSet(ExcludeFieldsMixin, EagerLoadingMixin, viewsets.Read
         'crossreferences__reference_content_type',
         'document',
         'features',
+        'features__crossreferences',
         'features__feature_items',
         'primary_abilities',
         'saving_throws',

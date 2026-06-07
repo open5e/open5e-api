@@ -33,5 +33,6 @@ class SpeciesViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyMod
         'document',
         'document__gamesystem',
         'traits',
+        'traits__crossreferences',
         'subspecies_of'
     ]
