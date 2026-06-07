@@ -29,6 +29,7 @@ class BackgroundViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnly
     prefetch_related_fields = [
         'crossreferences__reference_content_type',
         'benefits',
+        'benefits__crossreferences',
         'document',
         'document__publisher',
         'document__gamesystem'
