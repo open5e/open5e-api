@@ -22,6 +22,8 @@ jobs:
         run: uv python install 3.11
       - name: Install dependencies
         run: uv sync --locked
+      - name: Check migrations are up to date
+        run: uv run python manage.py makemigrations --check --dry-run
       - name: Run migrations
         run: uv run python manage.py quicksetup --noindex
       - name: Run Tests
@@ -36,6 +38,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v6
       - name: Sanitize branch name
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF##*/} | tr '/' '-')" >> $GITHUB_ENV
       - name: Build Docker image

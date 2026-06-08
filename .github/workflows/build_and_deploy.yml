@@ -4,31 +4,42 @@ on:
     branches:
       - staging
       - main
+    paths-ignore:
+      - 'README.md'
+      - 'docs/**'
+      - 'scripts/**'
+      - '.github/ISSUE_TEMPLATE/**'
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Login to Docker Hub
+      - uses: actions/checkout@v6
+      - name: Login to GHCR
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Set Docker image tag
-        run: | 
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set image tags
+        run: |
           echo "GITHUB_REF = $GITHUB_REF" > version.py
           echo "GITHUB_SHA = $GITHUB_SHA" >> version.py
-        
+
           if [[ $GITHUB_REF == refs/heads/main ]]; then
-            echo "DOCKER_IMAGE_TAG=latest" >> $GITHUB_ENV
+            echo "IMAGE_TAGS=ghcr.io/open5e/open5e-api:latest" >> $GITHUB_ENV
           elif [[ $GITHUB_REF == refs/heads/staging ]]; then
-            echo "DOCKER_IMAGE_TAG=staging" >> $GITHUB_ENV
+            echo "IMAGE_TAGS=ghcr.io/open5e/open5e-api:beta" >> $GITHUB_ENV
           fi
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: eepmoody/open5e-api:${{ env.DOCKER_IMAGE_TAG }}
+          tags: ${{ env.IMAGE_TAGS }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -52,6 +63,16 @@ jobs:
           DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
         run: ./scripts/do_app_deploy.sh
       - name: Run Smoke Test
-        run: | 
+        run: |
           APP_URL=$(jq -r '.app.live_url' ./app.json)
-          python3 ./scripts/smoke_test.py --url $APP_URL
+          echo "Waiting 60s for app rollout before smoke test..."
+          sleep 60
+          for attempt in 1 2 3 4 5 6; do
+            echo "Smoke test attempt ${attempt}..."
+            if python3 ./scripts/smoke_test.py --url "$APP_URL"; then
+              exit 0
+            fi
+            echo "Smoke test failed; retrying in 30s..."
+            sleep 30
+          done
+          exit 1

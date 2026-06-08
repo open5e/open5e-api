@@ -83,6 +83,11 @@ class CrossReferenceFieldTest(APITestCase):
                 self.assertIn("anchor", entry)
                 self.assertIn("url", entry)
 
+    def test_item_list_without_limit_returns_200(self):
+        """Smoke-test path: full paginated item list must not 500."""
+        response = self.client.get("/v2/items/?format=json")
+        self.assertEqual(response.status_code, 200)
+
     def test_document_detail_excludes_crossreferences(self):
         """Document responses must not include crossreferences."""
         response = self.client.get("/v2/documents/?limit=1&format=json")

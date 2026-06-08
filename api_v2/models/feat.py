@@ -7,7 +7,11 @@ FEAT_TYPES = [
     ('GENERAL', 'General'),
     ('ORIGIN', 'Origin'),
     ('FIGHTING_STYLE', 'Fighting Style'),
-    ('EPIC_BOON', 'Epic Boon')
+    ('EPIC_BOON', 'Epic Boon'),
+    ('General', 'General'),
+    ('Origin', 'Origin'),
+    ('Fighting Style', 'Fighting Style'),
+    ('Epic Boon', 'Epic Boon'),
 ]
 
 class FeatBenefit(Modification):

@@ -28,8 +28,8 @@ We have four major flows.
 | Pipeline | Trigger | Result | 
 | --- | --- | --- |
 | PR Validation | pull_request, push (except to staging, main) | Python tests are run, and docker image is built. |
-| Build and Deploy (Staging) | push (staging)| Docker image is built and pushed to DO staging app, as well as docker hub.|
-| Build and Deploy (Production) | push (main) | Docker image is built and pushed to DO production app, as well as docker hub.|
+| Build and Deploy (Staging) | push (staging)| Docker image is built and pushed to GHCR (`ghcr.io/open5e/open5e-api:beta`), then DO staging app is redeployed.|
+| Build and Deploy (Production) | push (main) | Docker image is built and pushed to GHCR (`ghcr.io/open5e/open5e-api:latest`), then DO production app is redeployed.|
 | Deploy Readme OpenAPI | push (main) | openAPI schema is pushed to readme.io.|
 
 

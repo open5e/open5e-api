@@ -61,7 +61,6 @@ item_prefetch_fields = [
     'weapon__damage_type',
     'weapon__document',
     'weapon__properties__property',
-    'rarity',
     'size',
 ]
 
@@ -74,20 +73,6 @@ class ItemViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelV
     queryset = models.Item.objects.all().order_by('pk')
     serializer_class = serializers.ItemSerializer
     filterset_class = ItemFilterSet
-
-    item_prefetch_fields = [
-        'armor',
-        'category',
-        'damage_immunities',
-        'damage_resistances',
-        'damage_vulnerabilities',
-        'document',
-        'weapon__properties',
-        'weapon__damage_type',
-        'weapon__document',
-        'weapon__properties__property',
-        'size',
-    ]
 
     select_related_fields = ['armor', 'weapon']
     prefetch_related_fields = item_prefetch_fields
@@ -123,7 +108,7 @@ class MagicItemViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyM
     filterset_class = MagicItemFilterSet
     
     select_related_fields = ['armor', 'weapon']
-    prefetch_related_fields = ItemViewSet.item_prefetch_fields + ['rarity']
+    prefetch_related_fields = item_prefetch_fields + ['rarity']
 
 
 class ItemRarityViewSet(ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):

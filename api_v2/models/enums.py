@@ -1,17 +1,27 @@
 
 # Standard set of dice used in 5e.
 DIE_TYPES = [
+    ("D3", "d3"),
     ("D4", "d4"),
     ("D6", "d6"),
     ("D8", "d8"),
     ("D10", "d10"),
     ("D12", "d12"),
     ("D20", "d20"),
+    ("d3", "d3"),
+    ("d4", "d4"),
+    ("d6", "d6"),
+    ("d8", "d8"),
+    ("d10", "d10"),
+    ("d12", "d12"),
+    ("d20", "d20"),
 ]
 
 DISTANCE_UNIT_TYPES = [
-    ("feet","feet"),
-    ("miles","miles"),
+    ("feet", "feet"),
+    ("ft", "ft"),
+    ("miles", "miles"),
+    ("any", "any"),
 ]
 
 WEIGHT_UNIT_TYPES = [
@@ -49,6 +59,7 @@ CREATURE_ATTACK_TYPES = [
 CASTER_TYPES = [
     ("FULL","Full"),
     ("HALF","Half"),
+    ("PACT","Pact"),
     ("NONE","None")
 ]
 
@@ -63,6 +74,7 @@ ACTION_TYPES = [
 # Monster action uses description.
 CREATURE_USES_TYPES = [
     ("PER_DAY", "X/Day"),
+    ("RECHARGE", "Recharge"),
     ("RECHARGE_ON_ROLL", "Recharge X-6"),
     ("RECHARGE_AFTER_REST", "Recharge after a Short or Long rest"),
 ]
