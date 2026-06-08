@@ -25,5 +25,8 @@ dev = [
     "pytest-approvaltests",
 ]
 
+[tool.uv]
+required-version = ">=0.10"
+
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "server.settings"
