@@ -70,6 +70,7 @@ class CreatureViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyMo
         'actions__attacks__damage_type',
         'actions__attacks__extra_damage_type',
         'creaturesets',
+        'crossreferences',
         'condition_immunities',
         'condition_immunities__icon',
         'damage_immunities',
