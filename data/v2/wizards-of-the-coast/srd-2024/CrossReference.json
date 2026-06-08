@@ -156,10 +156,10 @@
       "reference_object_key": "srd-2024_animate-dead",
       "reference_content_type": ["api_v2", "spell"],
       "source_content_type": ["api_v2", "creatureaction"],
-      "source_object_key": "srd-2024_lich"
+      "source_object_key": "srd-2024_lich_spellcasting"
     },
     "model": "api_v2.crossreference",
-    "pk": "srd-2024_lich_srd-2024_animate-dead_srd-2024_lich_spellcasting"
+    "pk": "srd-2024_lich_spellcasting_srd-2024_animate-dead"
   },
   {
     "fields": {
@@ -192,7 +192,7 @@
       "reference_object_key": "srd-2024_chain-lightning",
       "reference_content_type": ["api_v2", "spell"],
       "source_content_type": ["api_v2", "creatureaction"],
-      "source_object_key": "ssrd-2024_lich_spellcasting"
+      "source_object_key": "srd-2024_lich_spellcasting"
     },
     "model": "api_v2.crossreference",
     "pk": "srd-2024_lich_srd-2024_chain-lightning"
@@ -232,6 +232,30 @@
     },
     "model": "api_v2.crossreference",
     "pk": "srd-2024_lich_srd-2024_scrying"
+  },
+  {
+    "fields": {
+      "anchor": "Counterspell",
+      "document": "srd-2024",
+      "reference_object_key": "srd-2024_counterspell",
+      "reference_content_type": ["api_v2", "spell"],
+      "source_content_type": ["api_v2", "creatureaction"],
+      "source_object_key": "srd-2024_lich_protective-magic"
+    },
+    "model": "api_v2.crossreference",
+    "pk": "srd-2024_lich_protective-magic_srd-2024_counterspell"
+  },
+  {
+    "fields": {
+      "anchor": "Shield",
+      "document": "srd-2024",
+      "reference_object_key": "srd-2024_shield",
+      "reference_content_type": ["api_v2", "spell"],
+      "source_content_type": ["api_v2", "creatureaction"],
+      "source_object_key": "srd-2024_lich_protective-magic"
+    },
+    "model": "api_v2.crossreference",
+    "pk": "srd-2024_lich_protective-magic_srd-2024_shield"
   },
   {
     "fields": {
