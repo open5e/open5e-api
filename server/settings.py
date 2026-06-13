@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -91,6 +92,11 @@ MIDDLEWARE = [
     "server.middleware.NewRelicMiddleware",
     "server.middleware.ResponseWarningHeaderMiddleware"
 ]
+
+if DEBUG:
+    INSTALLED_APPS = [*INSTALLED_APPS, "debug_toolbar"]
+    MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware", *MIDDLEWARE]
+
 
 ROOT_URLCONF = "server.urls"
 
@@ -250,3 +256,9 @@ SPECTACULAR_SETTINGS = {
         'tagsSorter': None,        
     }
 }
+
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
