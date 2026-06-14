@@ -26,6 +26,11 @@ class ClassFeaturePrefetchSerializer(GameContentSerializer):
 class ClassFeatureSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
     feature_items = ClassFeaturePrefetchSerializer(many=True, read_only=True)
+    
+    # crossreferences are serialized on GameContentSerializer. This delegates to parent implementation
+    crossreferences = serializers.SerializerMethodField(method_name='get_crossreferences_data')
+    def get_crossreferences_data(self, obj):
+        return self.get_crossreferences(obj)
 
     def to_representation(self, instance):
         """
@@ -65,6 +70,7 @@ class ClassFeatureSerializer(GameContentSerializer):
             'key',
             'name',
             'desc',
+            'crossreferences',
             'feature_type',
             'feature_items'
         ]
