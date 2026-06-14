@@ -8,7 +8,7 @@ from .abstracts import GameContentSerializer
 from .document import DocumentSummarySerializer
 
 class BackgroundBenefitSerializer(GameContentSerializer):
-    # crossreferences are serialized GameContentSerializer. This delegates to parent implementation
+    # crossreferences are serialized in GameContentSerializer. This delegates to parent implementation
     crossreferences = serializers.SerializerMethodField(method_name='get_crossreferences_data')
     def get_crossreferences_data(self, obj):
         return self.get_crossreferences(obj)

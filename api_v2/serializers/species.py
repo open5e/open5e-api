@@ -8,9 +8,9 @@ from .abstracts import GameContentSerializer
 from .document import DocumentSummarySerializer
 
 class SpeciesTraitSerializer(GameContentSerializer):
+    # crossreferences are serialized on GameContentSerializer. This delegates to parent implementation
     crossreferences = serializers.SerializerMethodField(method_name='get_crossreferences_data')
     def get_crossreferences_data(self, obj):
-        # delegate to parent implementation in GameContentSerializer
         return self.get_crossreferences(obj)
     
     class Meta:
