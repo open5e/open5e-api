@@ -30,8 +30,10 @@ COPY --from=builder /opt/services/open5e-api/db.sqlite3 ./db.sqlite3
 COPY --from=builder /opt/services/open5e-api/manage.py ./manage.py
 COPY --from=builder /opt/services/open5e-api/newrelic.ini ./newrelic.ini
 
-ENV PATH="/opt/services/open5e-api/.venv/bin:$PATH"
+ENV PATH="/opt/services/open5e-api/.venv/bin:$PATH" \
+    WEB_CONCURRENCY=3 \
+    GUNICORN_TIMEOUT=120
 
 RUN python -m gunicorn --version
 
-CMD ["python", "-m", "gunicorn", "-b", ":8888", "server.wsgi:application"]
+CMD ["sh", "-c", "python -m gunicorn -b :8888 -w ${WEB_CONCURRENCY} --timeout ${GUNICORN_TIMEOUT} server.wsgi:application"]
