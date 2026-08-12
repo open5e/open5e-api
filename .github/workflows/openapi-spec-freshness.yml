@@ -1,0 +1,34 @@
+name: OpenAPI spec freshness
+
+on:
+  pull_request:
+
+jobs:
+  verify-spec-fresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          prune-cache: false
+
+      - name: Install Python
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Verify openapi-schema.yml matches code
+        run: |
+          uv run python manage.py spectacular --file openapi-schema.yml
+          if ! git diff --exit-code -- openapi-schema.yml; then
+            echo "::error::openapi-schema.yml is out of date with the code on this branch."
+            echo "::error::Regenerate locally with:"
+            echo "::error::  uv run python manage.py spectacular --file openapi-schema.yml"
+            echo "::error::Then commit the updated file and push."
+            exit 1
+          fi
+          echo "openapi-schema.yml is up to date."
