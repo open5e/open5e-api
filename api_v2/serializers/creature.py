@@ -54,11 +54,17 @@ class CreatureActionSerializer(GameContentSerializer):
     attacks = CreatureActionAttackSerializer(many=True, read_only=True)
     usage_limits = serializers.SerializerMethodField()
 
+    # crossreferences are serialized on GameContentSerializer. This delegates to parent implementation
+    crossreferences = serializers.SerializerMethodField(method_name='get_crossreferences_data')
+    def get_crossreferences_data(self, obj):
+        return self.get_crossreferences(obj)
+
     class Meta:
         model = models.CreatureAction
         fields = [
             'name',
             'desc',
+            'crossreferences',
             'attacks',
             'action_type',
             'order_in_statblock',

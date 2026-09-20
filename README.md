@@ -113,7 +113,7 @@ uv run python manage.py runserver
 If you would like to host the API yourself locally, we suggest using gunicorn as your wsgi server. Below is an equivalent command to what we use in production, which makes the server available at `http://localhost:8888`.
 
 ```bash
-gunicorn -b :8888 server.wsgi:application
+gunicorn -b :8888 -w 3 --timeout 120 server.wsgi:application
 ```
 
 You can use our Dockerfile as inspiration, but it likely will not work without significant edits to your operating environment. We have customized our production environment to use it.
