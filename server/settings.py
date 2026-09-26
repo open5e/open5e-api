@@ -142,7 +142,7 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
-        "LOCATION": os.path.join(BASE_DIR, "open5e_api_cache"),
+        "LOCATION": os.path.join(BASE_DIR, "api-cache"),
         "TIMEOUT": None,
         "OPTIONS": {
             "MAX_ENTRIES": 500000,

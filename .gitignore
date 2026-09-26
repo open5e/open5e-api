@@ -40,5 +40,8 @@ temp_magic_items/
 references_report.json
 sources_report.json
 
-# Cached Data
-open5e_api_cache/
+# Open5e API Cache
+# Uses .gitkeep to keep the folder structure in Git (for DO permissions) while
+# ignoring the cached data itself.
+api-cache/*
+!api-cache/.gitkeep
