@@ -54,6 +54,8 @@ class SearchResultSerializer(serializers.ModelSerializer):
         if obj.schema_version == 'v2':
             if obj.object_model == 'Item':
                 result_detail = v2.Item.objects.get(pk=obj.object_pk)
+            if obj.object_model == 'MagicItem':
+                result_detail = v2.MagicItem.objects.get(pk=obj.object_pk)
             if obj.object_model == 'Creature':
                 result_detail = v2.Creature.objects.get(pk=obj.object_pk)
             if obj.object_model == 'Spell':

@@ -60,7 +60,7 @@ class Command(BaseCommand):
 
     def load_v2_content(self, model):
         results = []
-        standard_v2_models = ['Item','Spell','Creature','CharacterClass','Species','Feat','Background','Environment', 'Rule']
+        standard_v2_models = ['Item','Spell','Creature','CharacterClass','Species','Feat','Background','Environment', 'Rule', 'MagicItem']
 
         if model.__name__ in standard_v2_models:
             for o in model.objects.all():
@@ -167,6 +167,7 @@ class Command(BaseCommand):
             self.load_content(v2.Background,"v2")
             self.load_content(v2.Environment,"v2")
             self.load_content(v2.Rule, "v2")
+            self.load_content(v2.MagicItem, "v2")
 
         # Take the content table's current data and load it into the index.
         self.load_index()
