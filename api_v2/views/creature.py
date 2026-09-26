@@ -3,7 +3,7 @@ from rest_framework import viewsets
 from django_filters import FilterSet
 
 from api_v2 import models, serializers
-from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
+from .mixins import EagerLoadingMixin, ExcludeFieldsMixin, CacheMixin
 
 class CreatureFilterSet(FilterSet):
     '''This is the filterset class for creatures.'''
@@ -55,7 +55,7 @@ class CreatureFilterSet(FilterSet):
         }
 
 
-class CreatureViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
+class CreatureViewSet(CacheMixin, EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyModelViewSet):
     """
     list: API endpoint for returning a list of creatures.
     retrieve: API endpoint for returning a particular creature.
