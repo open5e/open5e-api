@@ -76,8 +76,12 @@ class CacheControlMiddleware:
         if 'cookie' in response.get('Vary', '').lower():
             return False
 
-        if response.status_code == 200 and request.path.startswith('/v1/'):
-            return True
+        if response.status_code == 200:
+            # Only the JSON representation. Cloudflare ignores Vary, so an edge
+            # copy of the browsable API's HTML could be served to JSON clients.
+            return (request.path.startswith('/v1/')
+                    and response.get('Content-Type', '').startswith(
+                        'application/json'))
 
         return (response.status_code == 301
                 and getattr(request.resolver_match, 'url_name', None)

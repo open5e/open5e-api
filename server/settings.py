@@ -86,6 +86,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # First, so its response phase runs last and sees the final headers: the
+    # cookie guards in CacheControlMiddleware are dead unless it runs after the
+    # CSRF and session middleware have had their say.
+    "server.middleware.CacheControlMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -97,7 +101,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "server.middleware.NewRelicMiddleware",
     "server.middleware.ResponseWarningHeaderMiddleware",
-    "server.middleware.CacheControlMiddleware",
 ]
 
 if DEBUG:

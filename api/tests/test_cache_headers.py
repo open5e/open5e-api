@@ -40,6 +40,29 @@ class V1CachingTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers['Cache-Control'], EXPECTED)
 
+    def test_browsable_api_html_is_not_cacheable(self):
+        """Cloudflare ignores Vary, so a cached HTML copy could reach JSON clients.
+
+        The browsable API also sets a csrftoken cookie, which must never land in
+        a shared cache.
+        """
+        response = self.client.get('/v1/monsters/', HTTP_ACCEPT='text/html')
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.headers['Content-Type'].startswith('text/html'))
+        self.assertNotIn('Cache-Control', response.headers)
+
+    def test_middleware_runs_after_cookies_are_set(self):
+        """Regression: the cookie guards are dead if this runs too early.
+
+        Response middleware runs bottom-up, so CacheControlMiddleware has to be
+        ahead of the CSRF and session middleware to see their Set-Cookie.
+        """
+        response = self.client.get('/v1/monsters/', HTTP_ACCEPT='text/html')
+
+        self.assertTrue(response.cookies)
+        self.assertNotIn('Cache-Control', response.headers)
+
     def test_v2_is_untouched(self):
         response = self.client.get('/v2/creatures/', HTTP_ACCEPT='application/json')
 
@@ -56,7 +79,7 @@ class CacheControlGuardTest(SimpleTestCase):
         return CacheControlMiddleware(lambda _: response)(request)
 
     def _ok(self):
-        return HttpResponse(status=200)
+        return HttpResponse(status=200, content_type='application/json')
 
     def test_cacheable_baseline(self):
         self.assertEqual(self._apply(self._ok()).headers['Cache-Control'], EXPECTED)
@@ -74,6 +97,11 @@ class CacheControlGuardTest(SimpleTestCase):
     def test_set_cookie_is_skipped(self):
         response = self._ok()
         response.set_cookie('sessionid', 'secret')
+
+        self.assertNotIn('Cache-Control', self._apply(response).headers)
+
+    def test_non_json_is_skipped(self):
+        response = HttpResponse(status=200, content_type='text/html')
 
         self.assertNotIn('Cache-Control', self._apply(response).headers)
 
