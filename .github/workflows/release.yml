@@ -1,38 +1,238 @@
 name: Create Release
 
 on:
-  push:
-    tags:
-      - v[0-9]+.[0-9]+.[0-9]+
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Semver bump from the latest vMAJOR.MINOR.PATCH tag
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+concurrency:
+  group: create-release
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  GH_TOKEN: ${{ secrets.RELEASE_PAT }}
 
 jobs:
-  build_and_release:
+  prepare:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout staging
         uses: actions/checkout@v6
-
-      - name: Set up Python
-        uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          token: ${{ secrets.RELEASE_PAT }}
+          fetch-depth: 0
+          ref: staging
 
-      - name: Create ZIP archive
+      - name: Configure git
         run: |
-          cd dist
-          zip -r ../open5e-api-${{ github.ref }}.zip .
-        working-directory: ${{ github.workspace }}
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main staging --tags --force --verbose
 
-      - name: Upload release asset
-        uses: actions/upload-artifact@v6
-        with:
-          name: codebase
+      - name: Refuse overlapping release PRs
+        run: |
+          set -euo pipefail
+          gh pr list --repo "${GITHUB_REPOSITORY}" --base main --head staging --state open --json number,title > /tmp/open-prs.json
+          python3 <<'PY'
+          import json, re, sys
 
-      - uses: actions/create-release@v1
+          prs = json.load(open("/tmp/open-prs.json", encoding="utf-8"))
+          blocking = [p for p in prs if re.match(r"^Release v\d+\.\d+\.\d+$", p["title"])]
+          if blocking:
+              detail = ", ".join(f"#{p['number']} {p['title']}" for p in blocking)
+              sys.exit(f"A release PR is already open: {detail}. Close or merge it first.")
+          PY
+
+      - name: Merge main into staging
+        run: |
+          set -euxo pipefail
+          git merge origin/main --no-edit --verbose \
+            || { echo "Conflict merging main into staging. Resolve on staging and rerun."; exit 1; }
+
+      - name: Compute next version
+        id: version
+        run: |
+          set -euo pipefail
+          latest="$(git tag -l 'v*.*.*' | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1 || true)"
+          if [ -z "${latest}" ]; then
+            latest="v0.0.0"
+          fi
+          ver="${latest#v}"
+          IFS=. read -r major minor patch <<< "${ver}"
+          case "${{ github.event.inputs.bump }}" in
+            major) major=$((major + 1)); minor=0; patch=0 ;;
+            minor) minor=$((minor + 1)); patch=0 ;;
+            patch) patch=$((patch + 1)) ;;
+            *) echo "Unknown bump: ${{ github.event.inputs.bump }}"; exit 1 ;;
+          esac
+          next="${major}.${minor}.${patch}"
+          tag="v${next}"
+          if git rev-parse -q --verify "refs/tags/${tag}" >/dev/null; then
+            echo "Tag ${tag} already exists"; exit 1
+          fi
+          echo "previous=${latest}" >> "${GITHUB_OUTPUT}"
+          echo "version=${next}" >> "${GITHUB_OUTPUT}"
+          echo "tag=${tag}" >> "${GITHUB_OUTPUT}"
+          echo "Next release is ${tag} (from ${latest}, bump ${{ github.event.inputs.bump }})"
+
+      - name: Bump project version
+        run: |
+          set -euo pipefail
+          python3 - "${{ steps.version.outputs.version }}" <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+
+          version = sys.argv[1]
+          pyproject = Path("pyproject.toml")
+          text = pyproject.read_text(encoding="utf-8")
+          updated, count = re.subn(r'(?m)^version = "[^"]+"', f'version = "{version}"', text, count=1)
+          if count != 1:
+              raise SystemExit("Could not update version in pyproject.toml")
+          pyproject.write_text(updated, encoding="utf-8")
+
+          lock = Path("uv.lock")
+          lock_text = lock.read_text(encoding="utf-8")
+          lock_updated, lock_count = re.subn(
+              r'(name = "open5e-api"\nversion = ")[^"]+(")',
+              rf"\g<1>{version}\2",
+              lock_text,
+              count=1,
+          )
+          if lock_count != 1:
+              raise SystemExit("Could not update version in uv.lock")
+          lock.write_text(lock_updated, encoding="utf-8")
+          PY
+
+      - name: Commit version bump and push staging
+        run: |
+          set -euxo pipefail
+          git add pyproject.toml uv.lock
+          if git diff --cached --quiet; then
+            echo "Version files already at ${{ steps.version.outputs.version }}"
+          else
+            git commit -m "Bump version to ${{ steps.version.outputs.version }}"
+          fi
+          git push --verbose origin staging
+
+      - name: Tag staging and create prerelease
+        run: |
+          set -euxo pipefail
+          tag="${{ steps.version.outputs.tag }}"
+          git tag -a "${tag}" -m "Release ${tag}"
+          git push --verbose origin "${tag}"
+          notes_args=(--generate-notes)
+          previous="${{ steps.version.outputs.previous }}"
+          if [ "${previous}" != "v0.0.0" ]; then
+            notes_args+=(--notes-start-tag "${previous}")
+          fi
+          gh release create "${tag}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --title "${tag}" \
+            --prerelease \
+            "${notes_args[@]}"
+
+      - name: Open staging to main PR
+        run: |
+          set -euo pipefail
+          tag="${{ steps.version.outputs.tag }}"
+          gh pr create \
+            --repo "${GITHUB_REPOSITORY}" \
+            --base main \
+            --head staging \
+            --title "Release ${tag}" \
+            --body "$(cat <<EOF
+          ## Summary
+          Automated ${{ github.event.inputs.bump }} release **${tag}** from staging.
+
+          Merge with **Create a merge commit**. Do not squash or rebase.
+
+          The GitHub release is a prerelease until this PR is merged. After merge, this workflow marks it latest and merges main back into staging.
+
+          ## Test plan
+          - [ ] Review the staging → main diff
+          - [ ] Merge with a merge commit (not squash)
+          - [ ] Confirm production deploy on main
+          - [ ] Confirm the GitHub release is marked latest
+          EOF
+          )"
+          echo "Opened Release ${tag}" >> "${GITHUB_STEP_SUMMARY}"
+
+  finalize:
+    if: >
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.base.ref == 'main' &&
+      github.event.pull_request.head.ref == 'staging'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require release PR title
+        id: release
+        run: |
+          set -euo pipefail
+          title="${{ github.event.pull_request.title }}"
+          if [[ ! "${title}" =~ ^Release\ v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "skip=true" >> "${GITHUB_OUTPUT}"
+            echo "PR title is not a semver release; skipping finalize."
+            exit 0
+          fi
+          tag="${title#Release }"
+          echo "skip=false" >> "${GITHUB_OUTPUT}"
+          echo "tag=${tag}" >> "${GITHUB_OUTPUT}"
+
+      - name: Checkout
+        if: steps.release.outputs.skip != 'true'
+        uses: actions/checkout@v6
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          body_path: CHANGELOG.md # Optional: Path to a file containing release notes
-          draft: true # Set to true for draft releases
-          prerelease: ${{ contains(github.ref, '-alpha') || contains(github.ref, '-beta') }} # Set to true for pre-releases with specific tags
-          assets: ${{ github.workspace }}/open5e-api-${{ github.ref }}.zip
+          token: ${{ secrets.RELEASE_PAT }}
+          fetch-depth: 0
+          ref: staging
+
+      - name: Require merge commit
+        if: steps.release.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          sha="${{ github.event.pull_request.merge_commit_sha }}"
+          git fetch origin main --verbose
+          parents="$(git rev-list --parents -n 1 "${sha}")"
+          parent_count="$(wc -w <<< "${parents}")"
+          if [ "${parent_count}" -lt 3 ]; then
+            echo "Release PR was not a merge commit (found ${parent_count} fields, need 2 parents). Do not squash. Tag ${{ steps.release.outputs.tag }} was not marked latest."
+            exit 1
+          fi
+
+      - name: Mark release latest
+        if: steps.release.outputs.skip != 'true'
+        run: |
+          set -euxo pipefail
+          gh release edit "${{ steps.release.outputs.tag }}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --latest \
+            --prerelease=false
+
+      - name: Merge main back into staging
+        if: steps.release.outputs.skip != 'true'
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main staging --verbose
+          git merge origin/main --no-edit --verbose \
+            || { echo "Conflict merging main back into staging."; exit 1; }
+          git push --verbose origin staging
