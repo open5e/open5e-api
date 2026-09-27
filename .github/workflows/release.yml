@@ -1,38 +1,194 @@
-name: Create Release
+name: Release
 
 on:
-  push:
-    tags:
-      - v[0-9]+.[0-9]+.[0-9]+
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: "Version part to increment"
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: patch
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: create-release
+  cancel-in-progress: false
 
 jobs:
-  build_and_release:
+  release:
     runs-on: ubuntu-latest
+    environment: release
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Set up Python
-        uses: actions/setup-python@v6
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@v1
         with:
-          python-version: '3.11'
+          app-id: ${{ vars.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          repositories: ${{ github.event.repository.name }}
 
-      - name: Create ZIP archive
+      - name: Checkout staging
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: staging
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Refuse overlapping release PRs
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          cd dist
-          zip -r ../open5e-api-${{ github.ref }}.zip .
-        working-directory: ${{ github.workspace }}
+          set -euo pipefail
+          open_release_prs="$(gh pr list --repo "${GITHUB_REPOSITORY}" --base main --head staging --state open --json title --jq '.[] | select(.title | test("^Release v[0-9]+\\.[0-9]+\\.[0-9]+$")) | .title')"
+          if [[ -n "${open_release_prs}" ]]; then
+            echo "::error::A release PR is already open: ${open_release_prs}. Close or merge it first."
+            exit 1
+          fi
 
-      - name: Upload release asset
-        uses: actions/upload-artifact@v6
-        with:
-          name: codebase
+      - name: Sync main into staging
+        run: |
+          git config user.name "open5e-release-bot[bot]"
+          git config user.email "open5e-release-bot[bot]@users.noreply.github.com"
+          git fetch origin main staging --tags
+          git checkout staging
+          git pull origin staging
 
-      - uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          body_path: CHANGELOG.md # Optional: Path to a file containing release notes
-          draft: true # Set to true for draft releases
-          prerelease: ${{ contains(github.ref, '-alpha') || contains(github.ref, '-beta') }} # Set to true for pre-releases with specific tags
-          assets: ${{ github.workspace }}/open5e-api-${{ github.ref }}.zip
+          if git merge-base --is-ancestor origin/main HEAD; then
+            echo "staging already contains all of main"
+          else
+            echo "Merging main into staging before release"
+            if ! git merge origin/main --no-edit -m "chore: sync main into staging before release"; then
+              echo "::error::Could not merge main into staging."
+              echo "::error::Resolve conflicts on staging (keep staging's version for duplicate release changes), push, then re-run."
+              exit 1
+            fi
+            git push origin staging
+          fi
+
+      - name: Compute next version
+        id: version
+        env:
+          BUMP: ${{ inputs.bump }}
+        run: |
+          git fetch --tags origin
+          latest_tag="$(git tag -l 'v*.*.*' | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n1)"
+          latest_tag="${latest_tag:-v0.0.0}"
+          version="${latest_tag#v}"
+          IFS='.' read -r major minor patch <<< "$version"
+          major="${major:-0}"; minor="${minor:-0}"; patch="${patch:-0}"
+
+          case "$BUMP" in
+            major) major=$((major + 1)); minor=0; patch=0 ;;
+            minor) minor=$((minor + 1)); patch=0 ;;
+            patch) patch=$((patch + 1)) ;;
+            *) echo "::error::Unknown bump type: $BUMP"; exit 1 ;;
+          esac
+
+          new_version="${major}.${minor}.${patch}"
+          new_tag="v${new_version}"
+          if git rev-parse "refs/tags/${new_tag}" >/dev/null 2>&1; then
+            echo "::error::Tag ${new_tag} already exists"
+            exit 1
+          fi
+          echo "Previous tag: ${latest_tag} -> New version: ${new_tag}"
+          echo "previous_tag=${latest_tag}" >> "$GITHUB_OUTPUT"
+          echo "version=${new_version}" >> "$GITHUB_OUTPUT"
+          echo "tag=${new_tag}" >> "$GITHUB_OUTPUT"
+
+      - name: Bump project version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          python3 - "$VERSION" << 'PY'
+          import re
+          import sys
+          from pathlib import Path
+
+          version = sys.argv[1]
+
+          pyproject = Path("pyproject.toml")
+          text = pyproject.read_text(encoding="utf-8")
+          updated, count = re.subn(r'(?m)^version = "[^"]+"', f'version = "{version}"', text, count=1)
+          if count != 1:
+              raise SystemExit("Could not update version in pyproject.toml")
+          pyproject.write_text(updated, encoding="utf-8")
+
+          lock = Path("uv.lock")
+          lock_text = lock.read_text(encoding="utf-8")
+          lock_updated, lock_count = re.subn(
+              r'(name = "open5e-api"\nversion = ")[^"]+(")',
+              rf"\g<1>{version}\2",
+              lock_text,
+              count=1,
+          )
+          if lock_count != 1:
+              raise SystemExit("Could not update version in uv.lock")
+          lock.write_text(lock_updated, encoding="utf-8")
+          PY
+
+          git add pyproject.toml uv.lock
+          if git diff --cached --quiet; then
+            echo "Version files already at ${VERSION}"
+          else
+            git commit -m "Bump version to ${VERSION}"
+            git push origin staging
+          fi
+
+      - name: Resolve staging ref
+        id: refs
+        run: |
+          staging_sha="$(git rev-parse origin/staging)"
+          echo "staging_sha=${staging_sha}" >> "$GITHUB_OUTPUT"
+          echo "Release target: origin/staging @ ${staging_sha}"
+
+      - name: Create release tag on staging
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+          STAGING_SHA: ${{ steps.refs.outputs.staging_sha }}
+        run: |
+          git tag -a "$TAG" -m "Release $TAG" "$STAGING_SHA"
+          git push origin "$TAG"
+
+      - name: Create prerelease
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+          PREVIOUS_TAG: ${{ steps.version.outputs.previous_tag }}
+        run: |
+          notes_args=(--generate-notes)
+          if [[ "$PREVIOUS_TAG" != "v0.0.0" ]]; then
+            notes_args+=(--notes-start-tag "$PREVIOUS_TAG")
+          fi
+          gh release create "$TAG" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --title "$TAG" \
+            --prerelease \
+            "${notes_args[@]}"
+
+      - name: Open promotion PR (staging -> main)
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+          BUMP: ${{ inputs.bump }}
+        run: |
+          gh pr create \
+            --repo "${GITHUB_REPOSITORY}" \
+            --base main \
+            --head staging \
+            --title "Release ${TAG}" \
+            --body "$(cat <<EOF
+          Automated ${BUMP} release **${TAG}** from staging.
+
+          Merge with **Create a merge commit**. Do not squash or rebase — the finalize workflow checks for a real merge commit before marking the release as latest.
+
+          The GitHub release is a prerelease until this PR is merged. After merge, this stops being a prerelease and main is merged back into staging.
+          EOF
+          )" \
+          || echo "::warning::A promotion PR from staging to main may already be open."
