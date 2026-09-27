@@ -96,7 +96,9 @@ class CacheControlGuardTest(SimpleTestCase):
 
     def test_set_cookie_is_skipped(self):
         response = self._ok()
-        response.set_cookie('sessionid', 'secret')
+        # Flagged as a real session cookie would be. The guard only looks at
+        # whether any cookie is present, so the flags do not affect the test.
+        response.set_cookie('sessionid', 'secret', secure=True, httponly=True)
 
         self.assertNotIn('Cache-Control', self._apply(response).headers)
 
