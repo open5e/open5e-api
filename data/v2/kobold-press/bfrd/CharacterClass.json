@@ -28,5 +28,35 @@
   },
   "model": "api_v2.characterclass",
   "pk": "bfrd_metallurgist"
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_witch",
+  "fields": {
+    "name": "Witch",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "wis",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_witch-twilight-soul",
+  "fields": {
+    "desc": "Witches aligned with the coven of the Twilight Soul are the ultimate emissaries to the spirit realms, often compelled to serve as guardians and diplomats in matters where the physical and mystical worlds collide. Such witches are typically drawn to the Wyrd forces early in life through accident, magical circumstance, or tragedy that leaves an indelible stain upon their mortal spirit. Their craft is simply a realization of this natural affinity, learning to communicate and align with the spirits already drawn to their supernatural magnetism.",
+    "name": "Twilight Soul",
+    "document": "bfrd",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_witch"
+  }
 }
 ]

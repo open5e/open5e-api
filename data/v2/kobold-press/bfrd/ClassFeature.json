@@ -263,5 +263,329 @@
   },
   "model": "api_v2.classfeature",
   "pk": "bfrd_metallurgist_full-metal"
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_core-traits",
+  "fields": {
+    "name": "Core Witch Traits",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "|||\n|---|---|\n|Primary Ability|Wisdom|\n|Hit Point Die|D8 per Witch level|\n|Saving Throw Proficiencies|Wisdom and Charisma|\n|Skill Proficiencies|Choose 2: Animal Handling, Arcana, Medicine, Nature, Perception, Persuasion, Survival|\n|Weapon Proficiencies|Simple weapons|\n|Tool Proficiencies|Choose alchemist tools or herbalist tools|\n|Armor Training|Light armor|\n|Starting Equipment|Choose A or B for each: (A) Shortbow and 20 arrows or (B) any simple weapon; (A) a component pouch or (B) a wyrd focus; (A) a priest's pack or (B) an explorer's pack; plus Leather armor and a dagger|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_hex",
+  "fields": {
+    "name": "Hex",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "You curse a creature with a potent disruptive magical effect called a hex. As a bonus action, you can choose a creature within 60 feet of you, other than yourself, that can hear or see you. That creature gains one Hex die, a d6.\n\nOnce within the next 10 minutes, as a reaction when the creature makes an ability check, attack roll, or save, you can roll the Hex die, and the creature subtracts the number rolled from that check's total. Once the Hex die is rolled, it is lost. A creature can have only one Hex die assigned to it at a time.\n\nYou can use this feature a number of times equal to your WIS modifier, and you regain any expended uses when you finish a long rest. Your Hex die changes when you reach certain levels in the witch class, increasing to a d8 at 5th level, d10 at 9th, and d12 at 14th."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "As a conduit for wyrd power, you can cast Wyrd spells. See Spellcasting in the Player's Guide for general rules of spellcasting and for the Wyrd spell list.\n\n**Cantrips.** At 1st level, choose three cantrips from the Wyrd spell list to learn. You choose more Wyrd cantrips to learn at higher levels, as shown in the Cantrips Known column of the Witch Progression table.\n\n**Casting Spells.** You know several spells and can cast any of them by using a Wyrd spell slot of the spell's circle or higher. You don't need to prepare spells ahead of time.\n\nThe Witch Progression table shows how many spells you know and how many Wyrd spell slots you have at a given level. For example, at 3rd level, you have four 1st-circle slots and two 2nd-circle slots. If you know the 1st-circle spell guiding bolt and have a 1st-circle and a 2nd-circle spell slot available, you can cast guiding bolt using either slot. If you use a 1st-circle slot, you have three 1st-circle slots remaining.\n\nYou regain all used spell slots when you finish a long rest.\n\n**Spells Known of 1st Circle and Higher.** At 1st level, choose two 1st-circle spells from the Wyrd spell list to learn.\n\nThe Spells Known column of the Witch Progression table shows when you learn additional Wyrd spells. Each spell you choose must be from a circle for which you have Wyrd spell slots. For instance, when you reach 3rd level as a witch, you can learn one new Wyrd spell of 1st or 2nd circle.\n\nIn addition, when you gain a level of witch, you can choose one Wyrd spell you know and replace it with another spell of your choice from the Wyrd spell list. The replacement spell must be of a circle for which you have Wyrd spell slots.\n\n**Spellcasting Ability.** Wisdom (WIS) is your spellcasting ability. Your WIS modifier determines the save DC or the attack modifier for certain spells you cast:\n- Spell save DC = 8 + your proficiency bonus (PB) + your WIS modifier\n- Spell attack modifier = your proficiency bonus (PB) + your WIS modifier\n\n**Rituals.** You can also cast a type of long-form spell called a ritual. Rituals don't count against your known spell total, and they don't use up spell slots.\n\nAt 1st level, choose one ritual from the Wyrd ritual list. You learn more rituals at higher levels, as shown in the Rituals Known column of the Witch Progression table, but only from a circle for which you have spell slots. Rituals you learn don't count against the number of spells you learn at each level.\n\n**Spellcasting Focus.** You can use a wyrd focus as a spellcasting focus for your Wyrd spells. Unless stated otherwise, any of the witch's implements described in the Spirit Binding feature can also function as a spellcasting focus."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_rituals-known",
+  "fields": {
+    "name": "Rituals Known",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_slots-1st",
+  "fields": {
+    "name": "1st",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_slots-4th",
+  "fields": {
+    "name": "4th",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_slots-5th",
+  "fields": {
+    "name": "5th",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_slots-6th",
+  "fields": {
+    "name": "6th",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_slots-7th",
+  "fields": {
+    "name": "7th",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_slots-8th",
+  "fields": {
+    "name": "8th",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_slots-9th",
+  "fields": {
+    "name": "9th",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_shadow-craft",
+  "fields": {
+    "name": "Shadow Craft",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "Witches, perhaps more than other spellcasters, view ritual magic as the foundation of their craft. Your familiarity with ancient rites passed through generations gives you access to additional ritual spells. Choose one ritual from any spell list. Any ritual you choose must be of a circle equal to or lower than the highest-circle spell you can cast with your spell slots, as shown on the Witch Progression table.\n\nThe chosen rituals count as Wyrd rituals for you and are already included in the number in the Ritual Spells Known column at these levels on the Witch Progression table.\n\nYou learn one additional ritual spell from any source at 6th, 9th, 14th, and 18th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_spirit-binding",
+  "fields": {
+    "name": "Spirit Binding",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "You gain the ability to bind spirits into items to create mystical witch implements. To bind the spirits, you must spend 1 hour, which can be done as part of a short or long rest, focusing on the item you wish to transform into a witch's implement while remaining in physical contact with it.\n\nWhen you bind the spirits, choose an implement from those you know how to create and target a nonmagical item that meets the requirements listed in that implement's description. At the end of the hour, a spirit is successfully bound, and the item is transformed into a magic item that counts as a witch's implement for you. If you lose an implement or it is destroyed, you can repeat this ritual to bind a new spirit to a suitable replacement vessel. If a previous implement of the same type still exists when you perform this ritual, the binding ends on that previous object.\n\nIf an implement bestows a special benefit (called a secret) when you learn how to create it, that benefit remains active even if your implement is destroyed, deactivated, or otherwise temporarily rendered inactive.\n\nDue to the nature of the binding, implements you create are usable only by you. A spirit bound into a witch implement is instantly released if you die or if the implement is out of your possession for more than 24 consecutive hours. Otherwise, the spirit remains bound in that implement until you choose to unbind it (no action required) or until you perform this ritual on a different item to create the same type of implement. When a spirit is released from an implement, the item reverts back to its nonmagical state and no longer counts as a witch's implement for you.\n\nWhen you first gain this feature, you learn how to create two implements of your choice (from the options detailed at the end of this feature). As you gain levels in the witch class, you learn how to create additional types of implements. Choose an additional type of witch's implement from the options at 6th level and again at 13th level. You can have implements of different types active at the same time, provided you have performed the necessary spirit-binding ritual for each.\n\n## Brewer's Cauldron\n\n*Item Requirement: Handheld Cauldron, Kettle, or Other Portable Cooking Container*\n\nYou bind a spirit of vitality into a cauldron, kettle, or similar portable container.\n\n**Secret of Vitality.** When you learn how to create this implement, your hit point maximum increases by 2 for each witch level you have. After this initial bonus, your hit point maximum increases by 2 each time you gain a new witch level.\n\n**Brewed Concordance.** Over the course of 1 hour, which can be done as part of a short or long rest, you can use your cauldron to prepare a brew that fortifies the soul. This brew can be consumed by a number of creatures equal to your WIS modifier (minimum of 1). At the end of the hour, each creature that partook of the brew gains 1d8 temporary hit points, which last until expended or until the creature finishes its next long rest.\n\nOnce you reach 9th level in the witch class, the brew grants 1d12 temporary hit points to creatures that partook in the brew.\n\n**Superior Focus.** While using the cauldron as a spellcasting focus, spells you cast that restore hit points or grant temporary hit points restore additional hit points or grant additional temporary hit points equal to twice your proficiency bonus. If a spell both restores hit points and grants temporary hit points, you decide whether the bonus from this implement goes to restoring additional hit points or granting additional temporary hit points.\n\n## Hollow Blade\n\n*Item Requirement: Knife, Scissors, or Similar Cutting Implement*\n\nYou bind a spirit of sacrifice into a dagger, scissors, scalpel, or similar cutting instrument.\n\n**Magic Weapon.** While a spirit is bound within the blade, it counts as a +1 dagger when you wield it. When you attack with the weapon, you can use your WIS modifier, instead of STR or DEX, for attack and damage rolls.\n\nOnce you reach 9th level in the witch class, the hollow blade counts as a +2 dagger. At 15th level, it becomes a +3 dagger.\n\n**Pain Transference.** As a bonus action, you can touch the blade to a willing creature within 5 feet of you and end one of the following conditions currently affecting it: blinded, charmed, deafened, frightened, paralyzed, poisoned, or stunned. That condition is absorbed into the blade, where it remains until it is expelled or until you finish a short or long rest.\n\nWhen you hit a creature with the dagger, you can choose to forgo any damage it would deal and instead expel a condition stored within the blade. Unless the creature is immune or resistant to the expelled condition, it is immediately inflicted with the condition for up to 1 minute. If the creature is immune, the dagger has no effect. If the creature is resistant, it suffers the condition only if it fails a WIS save against your spell save DC. A creature afflicted with a condition from the dagger can attempt a WIS save against your spell save DC at the end of each of its turns, ending the condition on itself on a success.\n\n**Spell Breaker.** As an action, you can choose one creature, object, or magical effect within your reach. One spell of a circle equal to or less than the highest-circle spell you can cast (as per the Witch Progression table) on the target ends. If the spell you're attempting to break is of a higher circle, make an ability check using your spellcasting ability. The DC equals 10 + the spell's circle. On a successful check, the spell ends. Once you successfully end a spell with this implement, you can't do so again until you finish a long rest.\n\n## Nightflyer\n\n*Item Requirement: Broom, Staff, or Similarly Sized Branch from a Plant*\n\nYou bind a spirit of motion into a broom, staff, or similarly shaped branch from a plant.\n\n**Secret of Motion.** When you learn how to create this implement, your movement speed increases by 10 feet. In addition, as a bonus action, you can now take the Disengage or Dodge action on your turn.\n\n**Night's Journey.** As a bonus action while nightflyer is within 60 feet of you, you can animate it for up to 1 minute. You can also deactivate it as a bonus action. If you are ever more than 60 feet away from it, it deactivates. If it is flying when its duration expires, when you deactivate it, or when its magic is otherwise suppressed, it (and any passengers or cargo it is carrying) floats gently to the ground, descending at a rate of 60 feet per round until it lands.\n\nWhile animated, nightflyer gains a flying speed of 40 feet, can hover, and can carry up to 1,000 pounds of weight. On your turn, you can mentally command it to move up to its movement speed (no action required by you). It can't take other actions. You can spend half your movement to mount or dismount it while it is within 5 feet of you, and you can choose to allow other creatures within range to mount it, though only you can control its movement. Creatures mounted on it can't be grappled and are immune to the restrained condition.\n\nYou can animate nightflyer a number of times equal to your PB, and you regain all expended uses when you finish a long rest.\n\nOnce you reach 9th level in the witch class, nightflyer can remain animate for up to 1 hour (all at once or in several shorter flights, each one using a minimum of 1 minute from the duration), and its flying speed increases to 50 feet.\n\n**Swift Spell.** As a bonus action while you are holding or mounted on nightflyer, you can cast a spell that normally has a casting time of 1 action. You can't use this feature to cast two 1st-circle or higher spells on the same turn. You can use this feature a number of times equal to half your PB (rounded down), and you regain all expended uses when you finish a long rest.\n\n## Oracle's Aid\n\n*Item Requirement: Deck of Cards, Runestones, or Crystal Ball*\n\nYou bind a spirit of prophecy into a deck of cards, set of runestones, crystal ball, or similar fortune-telling device.\n\n**Secret of Prophecy.** When you first learn how to create this implement, you have advantage on initiative rolls, and you gain a bonus to AC equal to half your PB (rounded down). You lose this bonus to your AC while you are incapacitated.\n\n**Make Prediction.** When you make an ability check, attack roll, or save, you can choose to store the number rolled on the d20 within your oracle's aid. You then reroll the d20 and calculate the check result as normal, using that new roll. You can store up to a number of rolls equal to your WIS modifier in the oracle's aid. When you make an ability check, attack roll, or save and the oracle's aid has at least one result stored within it, you can choose to use a stored result instead of rolling the d20, removing that result from the oracle's aid. You can't use the stored rolls to modify the same check more than once. Any rolls you have stored in the oracle's aid disappear when you finish a long rest.\n\n**Spirit Consultation.** As an action, you can unleash the spirit within your oracle's aid to investigate a problem and return to you with solutions. For 1 minute, the spirit can answer up to three questions you ask of it. These questions can be about current events or the most likely result of a specific course of action you plan to take within the next 30 minutes. The answer to each question is a truthful one-word answer or short phrase, such as “yes,” “no,” “maybe,” “positive outcome likely,” “disaster ahead,” “irrelevant,” or “unclear” (if the spirit doesn't know the answer to the question). The spirit's knowledge of current events is limited to what is common knowledge in the region where you are asking the question. Therefore, the spirit can confirm the name of the local lord's lead advisor but not that the advisor is secretly a doppelganger. Once you use this feature, you can't do so again until you finish a long rest.\n\n## Soul Candle\n\n*Item Requirement: Candle, Lantern, or Similar Handheld Light Source*\n\nYou bind a spirit of light into a candle, which can be mounted on a candlestick, in a lantern, as part of a candelabra, or similar.\n\n**Mystic Flame.** As a bonus action while the candle is within 60 feet of you, you can mentally command it to light or extinguish itself. If you are ever more than 60 feet from the candle, it is automatically extinguished.\n\nWhile lit, the candle sheds a magical flame that is heatless and can be any color you choose. The light cast by the flame can be seen by only you and creatures you designate within 60 feet of you. When you first light the candle, you can choose for it to shed bright light anywhere from a minimum radius of 5 feet out to a maximum radius of 30 feet, and dim light for an additional number of feet equal to the chosen radius. Changing the color of the flame, the radius of the candle's light, or which creatures can see the candle's light doesn't require an action.\n\n**Soul Fire.** As an action while the soul candle is lit, you can cause it to burn with a supernatural substance called soul fire for up to 1 minute. While soul fire is active, the candle emits one of the following effects of your choice instead of bright or dim light:\n- Dark Sight. You can see normally in darkness, both magical and nonmagical, within the candle's radius.\n- Deep Sight. You can see through solid matter within the candle's radius. To you, solid objects within that radius appear transparent and don't prevent light from passing through them. This vision can penetrate 1 foot of stone, 1 inch of common metal, or up to 3 feet of wood or dirt. Thicker substances block this effect, as does a thin sheet of lead.\n- Heart Sight. You can see invisible creatures and objects within the candle's radius as if they were visible. In addition, you are aware of any creature within the candle's radius, revealing a creature's presence without necessarily allowing you to automatically see them, such as by making you aware of a creature on the other side of a door.\n- Magic Sight. You can sense the presence of magic within the candle's radius, and you see a faint aura around any visible creature or object in the area that bears magic, learning its school, if any. This effect otherwise works like the detect magic spell.\n\nYou can change the effect's radius as if it was light shed by the candle, as detailed previously, and you can end the effect early at any time on your turn (no action required). As a bonus action while soul fire is active, you can change which effect the soul candle emits. You can activate this feature a number of times equal to your PB, and you regain all expended uses when you finish a long rest.\n\n**Superior Focus.** While using the soul candle as a spellcasting focus, you have advantage on spell attack rolls against creatures within the candle's radius. You receive this bonus only while the candle is lit with either mystic flame or soul fire.\n\n## Spirit Book\n\n*Item Requirement: Book, Scroll, or Other Similar Item for Recording Information*\n\nYou bind a spirit of knowledge into a book, scroll, or other object suitable for recording information.\n\n**Secret of Knowledge.** When you first learn how to create this implement, choose three cantrips from any source spell list (though the three needn't be from the same list). If the chosen cantrips don't appear on the Wyrd source list, they still count as Wyrd spells for you. You can cast these cantrips just like normal cantrips, but they don't count against your number of cantrips known.\n\n**Book of Knowledge.** Whenever you gain a new spell slot from gaining a level in this class, one additional spell of your choice from any source spell list appears in your spirit book in a cipher that only you can read. While the spirit book is on your person, you can expend spell slots to cast these spells like any other spell you know. Each of these spells counts as a Wyrd spell for you, but it doesn't count against the number of spells you know.\n\nWhen you first learn how to create this implement, choose one spell of your choice from any source spell list for each circle of Wyrd spell you can cast, and these spells then appear in the book. For example, if you learn to create this implement at 6th level, you choose one 1st-circle spell, one 2nd-circle spell, and one 3rd-circle spell of your choice from any source spell list. You can replace a spell in the spirit book when you gain a witch level, and that replacement spell can be from any source spell list. Your spirit book can never contain more than one spell of each circle you can cast, to a maximum of 9 spells at 17th level.\n\n**Universal Language.** While holding the book, the spirit contained within it can translate languages for you, allowing you to read any written language and understand any language you hear.\n\nOnce you reach 9th level in the witch class, you can also speak and write in any language while holding the book.\n\n## Thundering Aegis\n\n*Item Requirement: Bell, Handheld Gong, Chime, or Other Percussion Instrument*\n\nYou bind a spirit of sound into a bell, gong, chime, or other percussion instrument.\n\n**Secret of Sound.** When you learn how to create this implement, you can no longer be surprised while you are conscious. You also gain proficiency in one of the following skills: Investigation or Perception. If you are already proficient in both of these skills, choose one. You double your proficiency bonus when you make a check with the chosen skill.\n\n**Chime of Revealing.** As an action while holding the thundering aegis, you can begin ringing it, banging it, or otherwise causing sound to issue from it, creating an audible soundscape that can be heard up to 60 feet away. As long as you can hear the sound created by your thundering aegis, you perceive your surroundings within 30 feet of you as if you had keensense—including being able to target creatures or objects within this radius with attacks and spells.\n\nAs a bonus action on each of your subsequent turns, you must continue ringing the bell, banging the gong, or similarly creating sound from the thundering aegis. Otherwise, this effect ends.\n\n**Chime of Deviation.** As an action, while holding the thundering aegis, you can create a note that holds certain types of creatures at bay. For 1 minute, whenever an Aberration, Celestial, Elemental, Fey, Fiend, or Undead starts its turn within 30 feet of you, it must succeed on a CHA save against your spell save DC or be unable to move any closer to you that turn. Once you use this feature of the thundering aegis, you can't do so again until you finish a short or long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_witch-subclass",
+  "fields": {
+    "name": "Witch Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "Choose a subclass that represents the coven you align with: Crimson Cord, Night Song, or Twilight Soul (detailed at the end of this class). Your choice grants you spells and other features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_coven-spells",
+  "fields": {
+    "name": "Coven Spells",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "Each witch subclass has a list of coven spells that you can access as soon as you can cast spells of that circle (as shown on the Witch Progression table). Once you gain such a spell, it is always on your list of known spells, and it doesn't count against the number of spells you know. However, casting a coven spell still expends a spell slot as normal. If one of these spells isn't on the Wyrd spell list, it still counts as a Wyrd spell for you. You can't replace coven spells when you gain a level of witch."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the magic talents list (see Player's Guide)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_greater-hex",
+  "fields": {
+    "name": "Greater Hex",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "You now regain all expended uses of your Hex feature when you finish a short or long rest.\n\nIn addition, you can now automatically give a creature a Hex die when you target it with a Wyrd spell of 1st circle or higher (instead of spending a separate bonus action). If you cast a spell that targets multiple creatures, you can hex any number of those creatures, but you must expend a use of the Hex feature for each creature you choose to affect in this way."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "Your commitment to the witch's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Bounty of Pentacles.** When you use a Hex die (see Hex feature) to reduce a creature's ability check, attack roll, or save, and the roll still succeeds, you automatically regain one expended Hex die. In addition, if you roll a 1 on the Hex die, the die isn't lost and remains active on the current target.\n- **Might of Swords.** Whenever you roll damage dice or roll dice to determine how many hit points an effect restores to a creature, you can reroll any die that resulted in a 1. You must use the new roll.\n- **Mysticism of Wands.** When you roll initiative, you can expend a use of your Hex feature to automatically give a Hex die to one creature you can see (no action required). In addition, as a reaction when a creature with one of your Hex dice is reduced to 0 HP, you can transfer the die to a different creature you can see within 60 feet of the original target.\n- **Recovery of Cups.** When you deal damage to a creature that has a Hex die (see Hex feature), you can cause yourself, or a creature you choose within 5 feet of the target, to regain hit points equal to half the damage you dealt (up to an amount equal to your witch level). This feature triggers only on damage dealt by you during your turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_otherworldly-form",
+  "fields": {
+    "name": "Otherworldly Form",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "Your connection to the Wyrd suffuses your being, infusing your physical form with otherworldly abilities. You gain the following benefits:\n- As a bonus action, you can magically alter your appearance, height, weight, and similar characteristics to that of a Medium or smaller Humanoid of another lineage. This effect otherwise works like the change appearance aspect of the alter self spell, except it doesn't require concentration and lasts until you die or choose to end it (no action required).\n- You can't be magically aged, and you suffer none of the frailty of old age. You can still die of old age, but your expected lifespan now becomes thrice that of the average lifespan of your lineage.\n- You have advantage on saves against spells or effects that would alter your form."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_witch",
+    "desc": "Your commitment to the witch's path grants you a powerful new ability. You gain one of the following epic boons:\n- **Spirit Avenger.** As a bonus action, if you start your turn with no uses of your Hex feature remaining, you can recover a number of uses equal to your WIS modifier (minimum of 1). Once you use this feature, you can't do so again until you finish a long rest.\n- **Spirit Guardian.** You gain a +1 bonus to saves for each active witch implement currently within 60 feet of you.\n- **Spirit Keeper.** When you are reduced to 0 HP or killed outright, you can instead release one of the spirits bound within one of your witch implements, causing it to revert to its nonmagical state. You then become conscious with a number of hit points equal to your witch level + your CON modifier."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch-twilight-soul_obscuring-hex",
+  "fields": {
+    "name": "Obscuring Hex",
+    "document": "bfrd",
+    "parent": "bfrd_witch-twilight-soul",
+    "desc": "When you first use your Hex feature to give a creature a Hex die, you become invisible to that creature for up to 1 minute. Whenever you deal damage to it, attack it, or cast a spell targeting the creature, it can attempt a WIS save against your spell save DC. On a success, you are no longer invisible to it."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch-twilight-soul_spirit-sentinel",
+  "fields": {
+    "name": "Spirit Sentinel",
+    "document": "bfrd",
+    "parent": "bfrd_witch-twilight-soul",
+    "desc": "You request the aid of a spirit that can assume a physical form. Over the course of 10 minutes, you can conduct a special ritual to give this spirit physical form. At the end of the ritual, the spirit appears in an unoccupied space within 10 feet of you. It assumes the appearance and overall characteristics of a Tiny Beast (most commonly a bat, raven, or cat), but its exact features and personality are up to you. While the spirit resembles an animal, it is not a true creature. It doesn't have its own statistics, and it can't act in any way beyond what is described here. The spirit can't be targeted by attacks, spells, or effects.\n\nAs an action while the spirit is active, you can cause it to disappear or reappear in an unoccupied space within 10 feet of you. When the spirit disappears, it takes refuge within you until you command it to appear again.\n\nThe spirit is destroyed if you die or if you move more than 100 feet away from it. If a spirit is destroyed, you must repeat the 10-minute ritual to give it physical form once again.\n\n**Casting.** When you cast a spell, you can choose to cast it from your current space or as if you were in the same space as the spirit. If another creature is in the spirit's space and the spell requires you to not be in the same space as a creature, you can choose one unoccupied space within 5 feet of the spirit instead. Similarly, if you cast a spell that requires you to see your target, you can target a creature the spirit can see, even if you can't see that target.\n\n**Communication.** You can telepathically communicate with the spirit. The spirit can't speak, but it understands all languages you do. The spirit can't write, but it can read all languages you can read.\n\n**Movement.** The spirit has a flying speed equal to your walking speed and can hover. It can move through creatures and objects as if they were difficult terrain, but it must always end its movement in an unoccupied space. If it would end its normal movement on your turn inside an object or creature, the spirit disappears and takes refuge within you until you command it to appear again.\n\n**Physicality.** While it appears to have a physical form, the spirit doesn't occupy its space, and creatures and objects can pass through it and occupy its space.\n\n**Senses.** The spirit has darkvision out to a range of 60 feet, and it can telepathically convey what it sees or senses to you. While the spirit is active, you can't be surprised, and you have advantage on Perception checks.\n\n**Controlling the Spirit.** On your turn, you can command the spirit to perform one of the following tasks (no action required). As a bonus action, you can have the spirit perform a second task (either the same task or a new one) on your turn:\n- Become Invisible. The spirit becomes invisible. This invisibility lasts until you command it to use Hinder or until you cast a spell through the spirit.\n- Hinder. The spirit invokes a minor curse on one hostile creature within 5 feet of it. That creature has disadvantage on the next attack roll or ability check it makes before the end of its next turn.\n- Move. You command the spirit to move up to its speed to an unoccupied space of your choice."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch-twilight-soul_coven-spells",
+  "fields": {
+    "name": "Twilight Soul Coven Spells",
+    "document": "bfrd",
+    "parent": "bfrd_witch-twilight-soul",
+    "desc": "You gain coven spells at the witch levels listed in the Twilight Soul Coven Spells table. See the Witch Subclass class feature for how these spells work.\n\n|Witch Level|Spells|\n|---|---|\n|3rd|detect evil and good, misty step, protection from evil and good, spirit ward*|\n|5th|blink, spirit guardians|\n|7th|banishment, spirit rend*|\n|9th|dispel evil and good, spirit double*|"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch-twilight-soul_ephemeral-shroud",
+  "fields": {
+    "name": "Ephemeral Shroud",
+    "document": "bfrd",
+    "parent": "bfrd_witch-twilight-soul",
+    "desc": "As a reaction when you would be hit by an attack that targets only you, you can teleport up to 60 feet to an unoccupied space you can see. The triggering attack misses.\n\nYou can use this feature a number of times equal to your PB, and you regain all expended uses when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch-twilight-soul_welcomed-spirits",
+  "fields": {
+    "name": "Welcomed Spirits",
+    "document": "bfrd",
+    "parent": "bfrd_witch-twilight-soul",
+    "desc": "You have cultivated deep bonds with all manner of spirits, and you can call upon this network to aid you—if you pay the price. You can perform a ceremony over the course of 10 minutes, at the end of which you can expend one or more Hit Dice to mimic the effects of one of the following spells without expending a spell slot or material components: augury (1 Hit Die), commune with nature (3 Hit Dice), or speak with dead (2 Hit Dice).\n\nYou can use these spells to speak with spirits specifically bound to your ancestors, your current geographical location, or creatures physically close to you, ignoring any range and target requirements of the spell. There is no guarantee the spirit you wish to speak to will be the spirit available to answer your call, but the ritual always summons the closest available match.\n\nAfter you use this feature to replicate a spell, this feature can't be used to replicate that same spell again until you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_witch-twilight-soul_soul-sanctum",
+  "fields": {
+    "name": "Soul Sanctum",
+    "document": "bfrd",
+    "parent": "bfrd_witch-twilight-soul",
+    "desc": "As an action, you can call nearby spirits to manifest and lend you their power for 1 minute. While the spirits are lending you their power, you gain the following benefits:\n- Each hostile creature that starts its turn within 10 feet of you or your Spirit Sentinel takes force damage equal to twice your PB.\n- Hostile creatures have disadvantage on attack rolls against you.\n- Hostile creatures within 10 feet of either you or the spirit from your Spirit Sentinel feature have disadvantage on saves against your spells.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
+  }
 }
 ]
