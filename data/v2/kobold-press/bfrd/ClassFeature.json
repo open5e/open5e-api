@@ -587,5 +587,259 @@
     "parent": "bfrd_witch-twilight-soul",
     "desc": "As an action, you can call nearby spirits to manifest and lend you their power for 1 minute. While the spirits are lending you their power, you gain the following benefits:\n- Each hostile creature that starts its turn within 10 feet of you or your Spirit Sentinel takes force damage equal to twice your PB.\n- Hostile creatures have disadvantage on attack rolls against you.\n- Hostile creatures within 10 feet of either you or the spirit from your Spirit Sentinel feature have disadvantage on saves against your spells.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_core-traits",
+  "fields": {
+    "name": "Core Vanguard Traits",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D12 per Vanguard level|\n|Saving Throw Proficiencies|Constitution and Charisma|\n|Skill Proficiencies|Choose 2: Animal Handling, Athletics, History, Insight, Intimidation, Medicine, Persuasion|\n|Weapon Proficiencies|Simple weapons, martial weapons|\n|Tool Proficiencies|None|\n|Armor Training|All armor and shields|\n|Starting Equipment|Choose A or B for each: (A) chain mail or (B) leather armor, longbow, and 20 arrows; (A) a martial weapon and a shield or (B) two martial weapons; (A) five javelins or (B) any simple melee weapon; (A) a diplomat's pack or (B) an explorer's pack|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_born-leader",
+  "fields": {
+    "name": "Born Leader",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Vanguards are natural leaders whose very presence inspires greatness in those around them. This inspiration can take many forms, but it is always tied to the values that drive a vanguard to fight and, by extension, to lead. Choose the quality that best represents your leadership with one of the following.\n\n**Authority.** A friendly creature that starts its turn within 5 feet of you is inspired by your authority. Until the end of its turn, each time that creature hits with a weapon attack, the weapon deals extra damage of the weapon's type equal to your PB. Creatures can benefit from this feature only while you are conscious. You also gain proficiency in the Intimidation skill. If you are already proficient, double your PB instead for checks made with that skill.\n\n**Community.** A friendly creature that ends its turn within 5 feet of you gains a bonus equal to your PB on the first save it makes before the start of its next turn. If a creature must make a save at the end of its turn from an ongoing effect, it can gain this bonus on that save if it ends its turn within 5 feet of you. Creatures can benefit from this feature only while you are conscious. You also gain proficiency in the Persuasion skill. If you are already proficient, double your PB instead for checks made with that skill."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_war-banner",
+  "fields": {
+    "name": "War Banner",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "When circumstances turn dire, you can conjure a mystical banner that enhances nearby allies or hinders encroaching enemies. You decide the exact appearance of the banner, but it typically resembles a battle standard emblazoned with your coat of arms or similar symbol that represents you in battle.\n\nYou start with two banner effects: Banner of Mercy and Black Flag. You gain a new effect at 6th level, and some vanguard subclasses grant additional effects (see Vanguard Subclass). Unless stated otherwise, creatures must be within 15 feet of the banner (15-foot-radius sphere) and able to see the banner to be affected by it.\n\nAs an action, while engaged in encounter gameplay (while in initiative order), you can plant a War Banner in an unoccupied space within 5 feet of you, choosing which banner effect you create when you do so. Once placed, the banner remains active for 1 minute. While active, the banner can't be moved from its space, physically interacted with, or damaged by any means. Creatures can freely move through the banner's space without impediment. The banner can't be targeted by spells or effects, and it doesn't count as any kind of item for the purposes of targeting.\n\nThe banner disappears and any of its active effects end early if you become incapacitated, use an action to place a new banner, move more than 120 feet away from the banner, or choose to end the effect (no action required).\n\nYou can use your War Banner feature to create a banner a number of times equal to your PB, regaining all expended uses when you finish a long rest. You can't have more than one banner active at any one time. If you create a second banner while the first is still active, the first banner disappears.\n\n**War Banner: Banner of Mercy.** You create a banner that shields your allies from harm. When you create this banner, it appears with a number of hit points equal to 10 × your vanguard level. When you or a friendly creature you can see within the banner's range takes damage, you can cause the banner to take any amount of that damage instead of the target (no action required). You can't cause the banner to take more damage than its current hit points. The banner can be used to reduce only damage from attacks that specifically target a creature, not area of effect attacks or spells, such as fireball.\n\nIf the banner is reduced to 0 HP, it is destroyed, and its effect immediately ends.\n\n**War Banner: Black Flag.** You create a banner that spurs your allies to give no quarter. When you or a friendly creature miss with an attack made against a creature you can see within the banner's range, the attacker can choose to reroll the attack. This feature can be used only to reroll attacks made during the attacker's turn, and it can't be used more than once on the same turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_war-banner-lucky-colors",
+  "fields": {
+    "name": "War Banner: Lucky Colors",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Starting at 6th level, you gain this third War Banner option.\n\nWhen you create this banner, it appears with a number of Luck equal to your CHA modifier (minimum of 1). Each time a friendly creature within the banner's range gains Luck, the banner gains the same amount of Luck, adding to its current total. The banner has no limit to the amount of Luck it can have at any one time.\n\nIf you choose to allow it, a friendly creature within the banner's range can spend Luck from the banner to modify a roll as if that creature had that Luck (see Luck Rules in the Player's Guide), which reduces the banner's total by the amount spent. A creature can use any combination of Luck it has accumulated normally and Luck from the banner to modify a roll, but it can't spend more than 5 Luck to modify the same roll. You must follow all other normal rules and restrictions when spending Luck from the banner."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_stratagems",
+  "fields": {
+    "name": "Stratagems",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Your leadership and strategic knowledge allow you and your allies to perform martial tactics called stratagems that can turn the tide of battle in your favor. When you gain this feature at 2nd level, you learn two stratagems of your choice. Stratagem options are detailed at the end of the vanguard class description (see Stratagems). At certain vanguard levels, you learn additional stratagems of your choice, as shown in the Stratagems Known column of the Vanguard Progression table.\n\nIn addition, when you gain a level in this class, you can choose one stratagem you know and replace it with another stratagem that you meet the prerequisites for.\n\nUnless otherwise noted, you can use only one stratagem on your turn, and creatures must be able to hear or see you to be targeted by your stratagems. You can use this feature to issue a number of stratagems equal to your CHA modifier, and you regain all expended uses when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_support-action",
+  "fields": {
+    "name": "Support Action",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Your honed situational awareness allows you to act quickly on the battlefield. As a bonus action, you can take the Disengage or Help action (see Actions in Combat in Player's Guide) or perform a weapon option (see Weapon Options in Player's Guide)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_vanguard-subclass",
+  "fields": {
+    "name": "Vanguard Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Choose a subclass that represents your leadership archetype: Bulwark, Herald, or Marshal (detailed at the end of this class). Your choice grants you features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the martial talents list (see Player's Guide)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_multiattack",
+  "fields": {
+    "name": "Multiattack",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Your physical prowess has grown. On your turn, you can make two attacks when you take the Attack action."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_superior-stratagems",
+  "fields": {
+    "name": "Superior Stratagems",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "You now regain all expended uses of your Stratagems feature when you finish a short or long rest.\n\nIn addition, you can now use your stratagems, specifically those that require an action to perform, when you take the Attack action. To do so, you must replace one of the attacks granted by your Multiattack with the use of an eligible stratagem."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_manifold-tactic",
+  "fields": {
+    "name": "Manifold Tactic",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "You can now use up to two different stratagems on your turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Your commitment to the vanguard's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Battle Standard.** When initiative is rolled, you can use your War Banner feature to place a banner within 5 feet of your starting position without expending a use of the feature. You can't use this ability if you are surprised.\n- **Combat Ingenuity.** Learn two additional stratagems (see Stratagems feature) of your choice. These don't count against your total stratagems known. When you gain a level in vanguard, you can choose to replace these stratagems as you would any other.\n- **Force of Personality.** Whenever you make an ability check with a skill, tool, or vehicle that you are proficient with, you can use your CHA modifier to calculate the check result instead of whatever ability modifier would normally apply.\n- **Unwavering Resolve.** When you roll an ability check or save to avoid becoming frightened or charmed, you can treat a roll of 9 or less as if you had rolled a 10 on the die. You gain the same benefit on checks made to end ongoing effects of the same types."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_valiant-commander",
+  "fields": {
+    "name": "Valiant Commander",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Your leadership capabilities are unparalleled. Gain one of the following benefits based on the Born Leader feature choice you made at 1st level.\n\n**Authority.** A friendly creature that starts its turn within 5 feet of you is empowered by your authority. Until the end of its turn, each time that creature hits with a weapon attack, the weapon now deals extra damage of the weapon's type equal to your PB + your CHA modifier. In addition, whenever you make a check with the Intimidation skill, you can treat any roll of 9 or lower as if you had rolled a 10 on the die.\n\n**Community.** A friendly creature that ends its turn within 5 feet of you now gains a bonus equal to your PB on all saves it makes before the start of its next turn. In addition, whenever you make a check with the Persuasion skill, you can treat any roll of 9 or lower as if you had rolled a 10 on the die."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_battlefield-resolve",
+  "fields": {
+    "name": "Battlefield Resolve",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "When you roll initiative and have no uses of your Stratagems feature remaining, you regain a number of uses equal to half your CHA modifier rounded down (minimum of 1).\n\nIn addition, when you roll a 20 on an attack roll or save, you regain 1 expended use of your Stratagem feature."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_banner-improvements",
+  "fields": {
+    "name": "Banner Improvements",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Banners you create with your War Banner feature can now affect creatures within 30 feet instead of 15 feet. Creatures within the banner's range no longer have to see the banner to be affected by it."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_stand-together",
+  "fields": {
+    "name": "Stand Together",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Your true strength lies in fighting beside your companions. You and friendly creatures within 5 feet of you have a cumulative +1 bonus to attack rolls and saves for each space within 5 feet of you occupied by at least one friendly creature."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "Your commitment to the vanguard's path grants you a powerful new ability. You gain one of the following epic boons:\n- **Enduring Art.** You can issue an unlimited number of stratagems (see Stratagems feature) on your turn, but you still must expend the necessary uses of the feature to do so.\n- **Strategist's Art.** If you start your turn with no uses of your Stratagems feature remaining, as either an action or a bonus action, you can recover a number of uses equal to your CHA modifier (minimum of 1). Once you use this feature, you can't do so again until you finish a long rest.\n- **Warlord's Art.** Whenever you or a friendly creature deal damage with an attack performed as part of a stratagem (see Stratagems feature), the attacker automatically deals the maximum possible damage. Damage dealt in this way ignores all damage resistances and immunities."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_stratagems-known",
+  "fields": {
+    "name": "Stratagems Known",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard_stratagem-options",
+  "fields": {
+    "name": "Stratagem Options",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard",
+    "desc": "This section lists the stratagems available for vanguards to learn. Each option lists the type of action required and provides a description for how the stratagem works, including any targets.\n\nStratagem options appear in alphabetical order.\n\n### Bolster\n\n*Action Type: Reaction*\n\nAs a reaction when a friendly creature that you can see within 30 feet of you fails a save, you can allow that creature to reroll the save and add your CHA modifier to the result. The target must take the result of the new roll.\n\n### Charge\n\n*Action Type: Action*\n\nYou designate one creature that you can see, and you move up to your speed in a straight line toward that creature. When you do so, any friendly creature within 15 feet of your starting position can use its reaction to also move up to its speed in a straight line toward that creature.\n\n### Close Ranks\n\n*Action Type: Action*\n\nYou command allies to tighten their formation. Until the start of your next turn, friendly creatures within 15 feet of you are immune to critical hits and can't be forced to move against their will. You have the same benefits while at least one friendly is in range.\n\n### Coordinated Strike\n\n*Action Type: Action*\n\nYou make a single weapon attack against a target you can see, adding your CHA modifier as a bonus to the attack roll. If the attack hits, you can direct one willing creature within 15 feet of the target to use its reaction to move up to 15 feet toward the target and make a single attack against the target, adding your CHA modifier as a bonus to its attack roll.\n\n### Counterstrike\n\n*Action Type: Reaction*\n\nAs a reaction when a hostile creature that you can see within 15 feet of you makes an attack against a friendly creature that you can see, you can move up to your speed toward the attacker and make a single melee weapon attack against it (if the target is within your reach).\n\n### Flank Position\n\n*Action Type: Action*\n\nYou create an opening for one of your allies. When you do so, designate one hostile creature within 5 feet of you and one friendly creature that can see or hear you within 30 feet of you. Until the start of your next turn, that friendly creature has advantage on all attack rolls made against that hostile creature while you remain within 5 feet of the hostile creature.\n\n### Goading Strike\n\n*Action Type: Action*\n\nYou make a single weapon attack against a target within 5 feet of you, adding your CHA modifier as a bonus to the attack roll. If the attack hits, the target has disadvantage on attack rolls against any creature within 5 feet of you (other than you) until the end of its next turn.\n\n### Inspiring Bellow\n\n*Action Type: Bonus Action*\n\nYou target one creature within 30 feet of you that can see or hear you. The target regains a number of hit points equal to your vanguard level + your CHA modifier.\n\n### Marching Orders\n\n*Action Type: Bonus Action*\n\nYou allow up to two friendly creatures that can see or hear you to move up to half their speed without provoking opportunity attacks from creatures within 5 feet of you.\n\n### Marshal Tactics\n\n*Action Type: Bonus Action*\n\nYou allow one friendly creature within 30 feet of you that can see or hear you to use its reaction to make a single weapon attack or cast a cantrip.\n\n### Raise Guard\n\n*Action Type: Reaction*\n\nAs a reaction when a friendly creature that you can see within 30 feet of you would be hit by an attack from a creature that you can see, you can grant the friendly creature a bonus to its AC equal to your CHA modifier, potentially turning a hit into a miss. Whether the attack hits or misses, the target retains the AC bonus until the start of your next turn.\n\n### Rally\n\n*Action Type: Action*\n\nYou inspire wounded allies to fight through their injuries. Each conscious friendly creature within 15 feet of you that can see or hear you gains temporary hit points equal to your PB + your CHA modifier.\n\n### Surround\n\n*Action Type: Action*\n\nYou command allies to surround a foe to prevent it from escaping. When you do so, choose one Huge or smaller creature you can see within 5 feet of you. Until the start of your next turn, the target's speed is reduced by 10 feet for each friendly creature (other than you) within 5 feet of the target, reducing the target's speed to no lower than 0 feet. This benefit ends early if you move more than 5 feet away from the target.\n\n### Tactical Reposition\n\n*Action Type: Bonus Action*\n\nYou switch positions with one willing creature that you can see within 10 feet of you. This movement doesn't provoke opportunity attacks and doesn't count against your available movement for the turn. To target a creature with this stratagem, neither you nor your target can be grappled, restrained, or otherwise unable to move.",
+    "feature_type": "CLASS_FEATURE_OPTION_LIST"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard-marshal_inspiring-leadership",
+  "fields": {
+    "name": "Inspiring Leadership",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard-marshal",
+    "desc": "When you use your Stratagems feature, you can choose one friendly creature that can see and hear you. That creature has advantage on the next attack roll it makes before the end of its next turn.\n\nThe number of creatures you can affect with this ability increases as you gain levels in the vanguard class. You can choose up to two creatures when you reach 7th level, three at 11th level, and four at 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard-marshal_war-banner",
+  "fields": {
+    "name": "War Banner",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard-marshal",
+    "desc": "You gain the following War Banner option.\n\n**War Banner: Banner of Coordination.** You create a banner that helps allies coordinate their strikes. A friendly creature that starts its turn within the banner's range gains a +1 bonus to attack rolls for each other friendly creature currently within the banner's range, up to your PB, until the start of its next turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard-marshal_generals-gambit",
+  "fields": {
+    "name": "General's Gambit",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard-marshal",
+    "desc": "When you or a friendly creature that you can see within 30 feet of you fails an ability check, attack roll, or save, you can expend and roll one of your vanguard Hit Dice. Add the number rolled to the check result, potentially turning a failure into a success.\n\nYou can use this feature to modify multiple checks on the same round, but you can't use this feature to modify the same check more than once."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard-marshal_comrade-in-arms",
+  "fields": {
+    "name": "Comrade in Arms",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard-marshal",
+    "desc": "Whenever you use your Inspiring Leadership feature to give at least one friendly creature advantage, you can also grant yourself advantage on the next attack roll you make before the end of that turn.\n\nIn addition, when a creature hits with an attack that has advantage from your Inspiring Leadership, the attack deals additional damage of the attack's type equal to your PB + your CHA modifier (minimum of 2)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_vanguard-marshal_battlefield-vigor",
+  "fields": {
+    "name": "Battlefield Vigor",
+    "document": "bfrd",
+    "parent": "bfrd_vanguard-marshal",
+    "desc": "You are the paragon of resilience on the battlefield. When you start your turn below half your hit point maximum but have at least 1 HP, you regain hit points equal to your PB + your CON modifier (minimum of 2)."
+  }
 }
 ]

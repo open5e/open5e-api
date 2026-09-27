@@ -58,5 +58,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_witch"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_vanguard",
+  "fields": {
+    "name": "Vanguard",
+    "document": "bfrd",
+    "hit_dice": "D12",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "con",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_vanguard-marshal",
+  "fields": {
+    "name": "Marshal",
+    "document": "bfrd",
+    "desc": "Marshals are considered by some to be the ultimate vanguards. They hone their martial and leadership skills to become beacons of authority on the battlefield that inspire undying loyalty in those they command. Those that chose this path inevitably leave their mark on history as knights of legend, ruthless conquerors, or brilliant generals.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_vanguard"
+  }
 }
 ]
