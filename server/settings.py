@@ -34,6 +34,12 @@ if not DEBUG and SECRET_KEY == _DEV_KEY:
     raise ValueError("SECRET_KEY env var must be set in production.")
 
 # Flags to include v1 data and index.
+# Edge/shared caches may hold v1 responses for a day: the data only changes on
+# deploy, and deploys purge the Cloudflare zone. Clients we cannot purge hold them
+# for five minutes.
+V1_CACHE_MAX_AGE = 300
+V1_CACHE_SHARED_MAX_AGE = 86400
+
 INCLUDE_V1_DATA = True
 BUILD_V1_INDEX = False
 
@@ -90,7 +96,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "server.middleware.NewRelicMiddleware",
-    "server.middleware.ResponseWarningHeaderMiddleware"
+    "server.middleware.ResponseWarningHeaderMiddleware",
+    "server.middleware.CacheControlMiddleware",
 ]
 
 if DEBUG:
