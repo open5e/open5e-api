@@ -1,0 +1,75 @@
+name: Finalize Release
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  publish-release:
+    if: >
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.head.ref == 'staging' &&
+      startsWith(github.event.pull_request.title, 'Release v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract version from PR title
+        id: version
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          version="$(echo "$PR_TITLE" | sed -E 's/^Release[[:space:]]+(v[0-9]+\.[0-9]+\.[0-9]+).*$/\1/')"
+          if [[ "$version" != v* ]]; then
+            echo "::error::Could not parse version from PR title: $PR_TITLE"
+            exit 1
+          fi
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+      - name: Require merge commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+        run: |
+          parents="$(gh api repos/${GITHUB_REPOSITORY}/commits/${MERGE_SHA} --jq '.parents | length')"
+          if [[ "$parents" -lt 2 ]]; then
+            echo "::error::Release PR was not merged as a merge commit (found ${parents} parent(s), need 2). Tag ${{ steps.version.outputs.version }} was NOT marked latest — fix the merge method and finalize manually."
+            exit 1
+          fi
+
+      - name: Mark release as published (clear prerelease flag)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release edit "$VERSION" \
+            --repo "${{ github.repository }}" \
+            --prerelease=false \
+            --latest
+
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          repositories: ${{ github.event.repository.name }}
+
+      - name: Checkout staging
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: staging
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Merge main back into staging
+        run: |
+          git config user.name "open5e-release-bot[bot]"
+          git config user.email "open5e-release-bot[bot]@users.noreply.github.com"
+          git fetch origin main staging
+          git merge origin/main --no-edit -m "chore: merge main back into staging after release" \
+            || { echo "::error::Conflict merging main back into staging after release. Resolve manually."; exit 1; }
+          git push origin staging

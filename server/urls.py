@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.urls import path
+from django.urls import path, re_path
 from django.contrib import admin
 from django.conf import settings
+from django.views.generic import RedirectView
 
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
@@ -28,6 +29,15 @@ urlpatterns = []
 urlpatterns+=v1_urls.urlpatterns
 urlpatterns+=v2_urls.urlpatterns
 urlpatterns+=search_urls.urlpatterns
+urlpatterns+=[
+    # Legacy unversioned endpoints were the v1 shape before versioning existed.
+    # Clients still hammering them get a permanent redirect instead of a 404.
+    # Cloudflare handles this at the edge; this is the origin fallback.
+    re_path(
+        r'^(?P<path>(?:monsters|spells)/.*)$',
+        RedirectView.as_view(
+            url='/v1/%(path)s', permanent=True, query_string=True),
+        name='legacy-v1-redirect'),]
 urlpatterns+=[
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:
