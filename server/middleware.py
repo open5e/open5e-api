@@ -1,5 +1,7 @@
 import newrelic.agent
 
+from django.conf import settings
+
 class NewRelicMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
@@ -29,3 +31,58 @@ class ResponseWarningHeaderMiddleware:
             response.headers['Warning'] = response_message
 
         return response
+
+class CacheControlMiddleware:
+    """Make cacheable v1 responses actually cacheable at the edge.
+
+    Without a freshness directive Cloudflare will not cache these responses: the
+    paths are extensionless, so its default behaviour treats them as dynamic. The
+    v1 data only changes on deploy, and deploys purge the zone
+    (scripts/clear_cloudflare_cache.sh), so the shared TTL can be generous while
+    `max-age` stays short enough to bound staleness in clients we cannot purge.
+
+    The legacy redirects are covered too. A cached 301 is served from the edge, so
+    the origin stops seeing that traffic at all - the same benefit the Cloudflare
+    redirect rule would have provided, kept here in version control instead.
+    """
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        response = self.get_response(request)
+
+        if self._is_cacheable(request, response):
+            response.headers['Cache-Control'] = (
+                f'public, max-age={settings.V1_CACHE_MAX_AGE}, '
+                f's-maxage={settings.V1_CACHE_SHARED_MAX_AGE}')
+
+        return response
+
+    def _is_cacheable(self, request, response):
+        if request.method not in ('GET', 'HEAD'):
+            return False
+
+        # Never widen the caching of a response that already asked for something
+        # specific, so a view can always opt out by setting its own header.
+        if response.has_header('Cache-Control'):
+            return False
+
+        # `public` would put per-user content in a shared cache. Nothing in v1 is
+        # user-specific today, but a session-bearing response must never be.
+        # Cookies live in `response.cookies`, not in a Set-Cookie header.
+        if response.cookies:
+            return False
+        if 'cookie' in response.get('Vary', '').lower():
+            return False
+
+        if response.status_code == 200:
+            # Only the JSON representation. Cloudflare ignores Vary, so an edge
+            # copy of the browsable API's HTML could be served to JSON clients.
+            return (request.path.startswith('/v1/')
+                    and response.get('Content-Type', '').startswith(
+                        'application/json'))
+
+        return (response.status_code == 301
+                and getattr(request.resolver_match, 'url_name', None)
+                == 'legacy-v1-redirect')
