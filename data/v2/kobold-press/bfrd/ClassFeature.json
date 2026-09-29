@@ -523,7 +523,7 @@
   "fields": {
     "name": "Energy Exchange",
     "document": "bfrd",
-    "parent": "bfrd_theurge-conduit",
+    "parent": "bfrd_conduit",
     "desc": "Your mastery of magical power allows you to transfer raw energy in various ways.\n\n**Exchange Life.** You can convert your own life force into raw magical power. As a bonus action, you can expend Hit Dice to recover an expended spell slot. When you do so, expend a number of Hit Dice equal to the circle of the spell slot you are attempting to recover. Roll the expended Hit Dice and add your CON modifier to the roll. You immediately lose hit points equal to the result, and your hit point maximum is reduced by that amount until you finish a long rest. If you have at least 1 HP remaining after losing these hit points, you successfully recover the spell slot.\n\n**Exchange Power.** You can control the energy within magic items. As an action, you can expend a spell slot to restore charges to a magic item you are touching. When you do so, the magic item regains expended charges equal to the circle of the spell slot expended, up to the item's maximum charges. This feature can't restore charges to items that don't have charges, such as a ring of feather falling, and it can't restore charges to consumables or items that cease to be magical once all their charges or uses are expended, such as the gem of brightness or restorative ointment (see Player's Guide for all items)."
   }
 },
@@ -533,7 +533,7 @@
   "fields": {
     "name": "Mystic Vitality",
     "document": "bfrd",
-    "parent": "bfrd_theurge-conduit",
+    "parent": "bfrd_conduit",
     "desc": "You can convert unspent magical energy into vitality. When you finish a long rest, you regain additional Hit Dice equal to half the number of unspent spell slots (rounded down) you had before finishing the long rest, up to your Hit Dice maximum (minimum of one Hit Die). For example, if you are a 6th-level theurge with three unspent spell slots, you would regain one additional expended Hit Die at the end of the long rest, in addition to the three Hit Dice you would normally recover after a long rest as a 6th-level character."
   }
 },
@@ -543,7 +543,7 @@
   "fields": {
     "name": "Metabolize",
     "document": "bfrd",
-    "parent": "bfrd_theurge-conduit",
+    "parent": "bfrd_conduit",
     "desc": "As a reaction when you suffer an instance of damage that isn't bludgeoning, piercing, or slashing, you can make a CON save. The DC for this save equals 10 or half the amount of damage you took, whichever number is higher. On a success, you store that energy potential within your body for up to 1 minute. Before the duration ends, you can expend this stored energy (no action required) as part of casting a 1st-circle or higher spell. When you do so, the spell is cast as if you expended a spell slot one circle higher than the slot used.\n\nYou can attempt to store magical energy in this way a number of times equal to your PB, but you can store only a single instance of energy potential at one time. You regain all expended uses when you finish a long rest."
   }
 },
@@ -553,7 +553,7 @@
   "fields": {
     "name": "Spell Surge",
     "document": "bfrd",
-    "parent": "bfrd_theurge-conduit",
+    "parent": "bfrd_conduit",
     "desc": "When you deal damage to a creature with an Arcane or Divine spell, you can expend one or more of your Hit Dice. Roll the expended dice and add your CON modifier. The creature takes additional damage of the spell's type equal to the result. If multiple creatures are damaged by the triggering spell, you choose which target takes the extra damage."
   }
 },
@@ -563,7 +563,7 @@
   "fields": {
     "name": "Nullify",
     "document": "bfrd",
-    "parent": "bfrd_theurge-conduit",
+    "parent": "bfrd_conduit",
     "desc": "As an action, you can suppress the magical potential of one creature or magic item within 120 feet of you. The suppression lasts for 1 minute or until you start your turn more than 120 feet away from the target. The effect also ends early if you become incapacitated.\n\nIf the suppressed target is a creature, each time it attempts to cast a spell or make a spell attack, it must make a CON save against your spell save DC. On a success, the spell or attack happens normally. On a failure, the spell or attack fails, expending a spell slot or use of the feature (if limited use).\n\nIf the suppressed target is a magic item, it functions as a nonmagical item of its type for the duration of your suppression. This effect otherwise works like the magic items aspect of the antimagic field spell.\n\nOnce you use this feature, you can't do so again until you finish a long rest."
   }
 },
@@ -804,7 +804,7 @@
   "fields": {
     "name": "Dark One's Blessing",
     "document": "bfrd",
-    "parent": "bfrd_warlock-fiend",
+    "parent": "bfrd_fiend",
     "desc": "When you reduce a hostile creature to 0 HP or when a hostile creature within 30 feet of you is reduced to 0 HP, you gain temporary hit points equal to your PB + your warlock level. These hit points last until expended or until you complete a long rest."
   }
 },
@@ -814,7 +814,7 @@
   "fields": {
     "name": "Fiend Pact Spells",
     "document": "bfrd",
-    "parent": "bfrd_warlock-fiend",
+    "parent": "bfrd_fiend",
     "desc": "You gain pact spells at the warlock levels listed in the Fiend Pact Spells table. See the Warlock Subclass class feature for how these spells work.\n\n|Warlock Level|Spells|\n|---|---|\n|3rd|burning hands, command|\n|5th|scorching ray, suggestion|\n|9th|fireball, stinking cloud|\n|13th|blight, wall of fire|\n|17th|dominate, flame strike|"
   }
 },
@@ -824,7 +824,7 @@
   "fields": {
     "name": "Dark One's Own Luck",
     "document": "bfrd",
-    "parent": "bfrd_warlock-fiend",
+    "parent": "bfrd_fiend",
     "desc": "You can call on your patron to alter fate in your favor. When you make an ability check or a save, you can use this feature to add 1d10 to your roll.\n\nOnce you use this feature, you can't use it again until you finish a short or long rest."
   }
 },
@@ -834,7 +834,7 @@
   "fields": {
     "name": "Fiendish Resilience",
     "document": "bfrd",
-    "parent": "bfrd_warlock-fiend",
+    "parent": "bfrd_fiend",
     "desc": "You can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature."
   }
 },
@@ -844,7 +844,7 @@
   "fields": {
     "name": "Hurl Through Hell",
     "document": "bfrd",
-    "parent": "bfrd_warlock-fiend",
+    "parent": "bfrd_fiend",
     "desc": "When you hit a creature with an attack, you can use this feature to instantly transport the target, causing it to disappear and hurtle through a nightmare landscape.\n\nAt the end of your next turn, the target returns to the space it previously occupied or to the nearest unoccupied space. If the target is not a Fiend, it takes 10d10 psychic damage as it reels from its horrific experience.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
   }
 },
@@ -1107,7 +1107,7 @@
   "fields": {
     "name": "Expanded Talent List",
     "document": "bfrd",
-    "parent": "bfrd_wizard-battle-mage",
+    "parent": "bfrd_battle-mage",
     "desc": "When your gain a new talent, you can select it from either the magic or the martial talents list."
   }
 },
@@ -1117,7 +1117,7 @@
   "fields": {
     "name": "Spell Ward",
     "document": "bfrd",
-    "parent": "bfrd_wizard-battle-mage",
+    "parent": "bfrd_battle-mage",
     "desc": "You can redirect a portion of your spellcasting energy into a defensive shield. When you cast an Arcane spell of 1st circle or higher, you can simultaneously weave a protective ward around yourself.\n\nWhile the ward is active, you gain the following benefits if you aren't wearing medium or heavy armor:\n- You gain a bonus to your armor class (AC) equal to your PB.\n- You have resistance to bludgeoning, piercing, and slashing damage.\n\nThe ward lasts for 1 minute, but ends early if you are knocked unconscious or if your turn ends and you haven't cast an Arcane spell of 1st circle or higher since your last turn. You can also choose to dismiss your ward at any time (no action required by you).\n\nYou can use this feature a number of times equal to your PB, and you regain all uses of it when you finish a long rest."
   }
 },
@@ -1127,7 +1127,7 @@
   "fields": {
     "name": "Tactical Caster",
     "document": "bfrd",
-    "parent": "bfrd_wizard-battle-mage",
+    "parent": "bfrd_battle-mage",
     "desc": "When you cast an Arcane spell that causes damage, you can choose yourself and any number of allies you can see to be immune to the damage caused by the spell. You can use this feature a number of times equal to your PB, and you regain all uses of it when you finish a long rest."
   }
 },
@@ -1137,7 +1137,7 @@
   "fields": {
     "name": "Contingency Plan",
     "document": "bfrd",
-    "parent": "bfrd_wizard-battle-mage",
+    "parent": "bfrd_battle-mage",
     "desc": "When you fail to hit a creature with a spell attack, you can use your reaction to redirect the spell toward a different target within the spell's range. You must make a new spell attack roll for the new target. If you miss the new target, you can't redirect again with the same spell attack."
   }
 },
@@ -1147,7 +1147,7 @@
   "fields": {
     "name": "Blasting Power",
     "document": "bfrd",
-    "parent": "bfrd_wizard-battle-mage",
+    "parent": "bfrd_battle-mage",
     "desc": "When you deal damage with an Arcane spell, you can reroll any 1s you roll on any number of the damage dice. You must take the new result for any dice rerolled in this way (even if the new result is also a 1)."
   }
 },
@@ -1157,7 +1157,7 @@
   "fields": {
     "name": "Counterstrike",
     "document": "bfrd",
-    "parent": "bfrd_wizard-battle-mage",
+    "parent": "bfrd_battle-mage",
     "desc": "When a creature succeeds on a save against an Arcane spell you cast and would take no damage or otherwise suffer no effects from the spell, it instead takes force damage equal to a number of d6 dice equal to the spell's circle + your INT modifier. For example, if you have an INT modifier of +4 and a creature succeeds and takes no damage from your 4th-circle spell, the creature still takes 4d6 + 4 force damage."
   }
 },
@@ -1351,7 +1351,7 @@
   "fields": {
     "name": "Frenzy",
     "document": "bfrd",
-    "parent": "bfrd_barbarian-berserker",
+    "parent": "bfrd_berserker",
     "desc": "You go into a frenzy when you rage. While raging, you can make a single melee weapon attack as a bonus action on each of your turns."
   }
 },
@@ -1361,7 +1361,7 @@
   "fields": {
     "name": "Ruthless Bearing",
     "document": "bfrd",
-    "parent": "bfrd_barbarian-berserker",
+    "parent": "bfrd_berserker",
     "desc": "Your ferocity looms at all times. You gain proficiency in the Intimidation skill. If you are already proficient, double your PB instead for Intimidation checks."
   }
 },
@@ -1371,7 +1371,7 @@
   "fields": {
     "name": "Mindless Rage",
     "document": "bfrd",
-    "parent": "bfrd_barbarian-berserker",
+    "parent": "bfrd_berserker",
     "desc": "While raging, you gain the following benefits:\n- You ignore any levels of exhaustion you currently suffer for the duration of your rage.\n- You can't be charmed or frightened. If you are already charmed or frightened when you enter a rage, the effect is suspended for the duration of the rage.\n- If you score a critical hit or reduce a creature to 0 HP, you gain a number of temporary hit points equal to your PB + your CON modifier. These hit points last until expended or until you finish a short or long rest."
   }
 },
@@ -1381,7 +1381,7 @@
   "fields": {
     "name": "Intimidating Presence",
     "document": "bfrd",
-    "parent": "bfrd_barbarian-berserker",
+    "parent": "bfrd_berserker",
     "desc": "Your weapon attacks deal an amount of additional damage, equal to your PB (of the same damage type as the weapon), to frightened creatures.\n\nIn addition, as a bonus action, you can attempt to frighten a number of creatures, up to your PB, within 30 feet of you that can see or hear you. Each target must make a WIS save (DC 8 + your PB + your CHA modifier + the number temporary hit points you currently have from your Mindless Rage feature). On a failure, a creature is frightened of you until the end of your next turn.\n\nOn subsequent turns, you can use your bonus action to extend the duration of this effect on each frightened creature until the end of your next turn. This effect ends if the creature ends its turn more than 60 feet away from you or can no longer see or hear you.\n\nIf the creature succeeds on its save, you can't use this feature on that creature again for 24 hours."
   }
 },
@@ -1391,7 +1391,7 @@
   "fields": {
     "name": "Retaliation",
     "document": "bfrd",
-    "parent": "bfrd_barbarian-berserker",
+    "parent": "bfrd_berserker",
     "desc": "When a creature hits or misses you with an attack, you can use your reaction to move up to half your speed toward that creature and make a single melee attack against it. If the creature is Large or larger, you have advantage on the attack roll."
   }
 }
