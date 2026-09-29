@@ -1160,5 +1160,239 @@
     "parent": "bfrd_wizard-battle-mage",
     "desc": "When a creature succeeds on a save against an Arcane spell you cast and would take no damage or otherwise suffer no effects from the spell, it instead takes force damage equal to a number of d6 dice equal to the spell's circle + your INT modifier. For example, if you have an INT modifier of +4 and a creature succeeds and takes no damage from your 4th-circle spell, the creature still takes 4d6 + 4 force damage."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_core-traits",
+  "fields": {
+    "name": "Core Barbarian Traits",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D12 per Barbarian level|\n|Saving Throw Proficiencies|Strength and Constitution|\n|Skill Proficiencies|Choose 2: Animal Handling, Athletics, Intimidation, Nature, Perception, Survival|\n|Weapon Proficiencies|Simple weapons, martial weapons|\n|Tool Proficiencies|Herbalist tools|\n|Armor Training|Light armor, medium armor, shields|\n|Starting Equipment|Choose A or B for each: (A) a greataxe or (B) any martial melee weapon; (A) two handaxes or (B) any simple weapon; plus an explorer's pack and four javelins|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_rage",
+  "fields": {
+    "name": "Rage",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "In battle, you fight with primal ferocity. On your turn, you can rage as a bonus action.\n\nWhile raging, you gain the following benefits if you aren't wearing heavy armor:\n- You have advantage on STR ability checks and saves.\n- When you make a melee weapon attack using STR, you gain a bonus to the damage roll, which increases as you gain levels as a barbarian (as shown in the Rage Damage column of the Barbarian Progression table). The damage type of this extra damage matches that of the weapon used to deal it.\n- You have resistance to bludgeoning, piercing, and slashing damage.\n\nIf you can cast spells, you can't cast them or concentrate on them while raging.\n\nYour rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature or taken damage from a hostile creature since the start of your last turn. You can also end your rage early with a bonus action on your turn.\n\nYou can rage a number of times equal to the number listed in the Barbarian Progression table. You regain all expended uses of Rage when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_unarmored-defense",
+  "fields": {
+    "name": "Unarmored Defense",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "While you aren't wearing any armor, your AC equals 13 + your CON modifier. (DEX doesn't factor into your AC for this class feature.) You can use a shield and still gain this benefit."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_danger-sense",
+  "fields": {
+    "name": "Danger Sense",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "You gain an uncanny sense of impending danger, giving you an edge when avoiding harm. You have advantage on DEX saves while you aren't blinded, deafened, or incapacitated."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_reckless-attack",
+  "fields": {
+    "name": "Reckless Attack",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "You can throw aside concern for defense in favor of ferocious attack. When you make an attack on your turn, you can decide to do it recklessly. Doing so gives you advantage on melee weapon attack rolls using STR during this turn, but attack rolls against you have advantage until the start of your next turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_barbarian-subclass",
+  "fields": {
+    "name": "Barbarian Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "Choose a subclass that reflects the path you walk, either Berserker or Wild Fury (detailed at the end of this class). Your choice grants you features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the martial talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_fast-movement",
+  "fields": {
+    "name": "Fast Movement",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "Your speed increases by 10 feet while you aren't wearing heavy armor. In addition, when you roll initiative, you can immediately move up to half your speed."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_multiattack",
+  "fields": {
+    "name": "Multiattack",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "Your physical prowess has grown. On your turn, you can make two attacks when you take the Attack action."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_feral-instinct",
+  "fields": {
+    "name": "Feral Instinct",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "Your honed instincts give you advantage on initiative rolls. In addition, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, if you enter a rage before doing anything else on that turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_brutal-critical",
+  "fields": {
+    "name": "Brutal Critical",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "You score a critical hit on a d20 roll of 19 or 20 with melee weapons and unarmed strikes. You also roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.\n\nThis extra damage increases to two additional dice at 13th level and three additional dice at 17th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "Your commitment to the barbarian's path grants you a powerful ability. Choose one of the following heroic boons:\n- **Instant Rage.** You can rage (no bonus action required) when you roll initiative and use your Fast Movement feature, if you have at least one use of Rage left to expend.\n- **Stubborn Rage.** Your rage ends only when its duration expires, you fall unconscious, or you choose to end it."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_relentless-rage",
+  "fields": {
+    "name": "Relentless Rage",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "Your rage lets you shrug off even lethal wounds. While raging, if you are reduced to 0 hit points, you can make a DC 10 CON save. On a success, you don't fall unconscious until your current rage ends. You still make death saves and can be killed outright if you take damage from a single source equal to your hit point maximum. Even if you fail three death saves during your rage, you only die if you end your turn with 0 hit points.\n\nEach time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_unyielding-might",
+  "fields": {
+    "name": "Unyielding Might",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "You have perfected the application of might and mettle. You gain the following benefits:\n- When you make an ability check or save using STR or CON, treat any d20 roll of 9 or lower as a 10.\n- Your melee weapon attacks deal additional damage, equal to your STR score, to objects and structures."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "Your commitment to the barbarian's path grants you a powerful new ability. You gain the following epic boon:\n- **Primal Champion.** You embody untamed power. Your STR and CON scores each increase by 4. Your maximum for those scores is now 24."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_rages",
+  "fields": {
+    "name": "Rages",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian_rage-damage",
+  "fields": {
+    "name": "Rage Damage",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian-berserker_frenzy",
+  "fields": {
+    "name": "Frenzy",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian-berserker",
+    "desc": "You go into a frenzy when you rage. While raging, you can make a single melee weapon attack as a bonus action on each of your turns."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian-berserker_ruthless-bearing",
+  "fields": {
+    "name": "Ruthless Bearing",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian-berserker",
+    "desc": "Your ferocity looms at all times. You gain proficiency in the Intimidation skill. If you are already proficient, double your PB instead for Intimidation checks."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian-berserker_mindless-rage",
+  "fields": {
+    "name": "Mindless Rage",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian-berserker",
+    "desc": "While raging, you gain the following benefits:\n- You ignore any levels of exhaustion you currently suffer for the duration of your rage.\n- You can't be charmed or frightened. If you are already charmed or frightened when you enter a rage, the effect is suspended for the duration of the rage.\n- If you score a critical hit or reduce a creature to 0 HP, you gain a number of temporary hit points equal to your PB + your CON modifier. These hit points last until expended or until you finish a short or long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian-berserker_intimidating-presence",
+  "fields": {
+    "name": "Intimidating Presence",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian-berserker",
+    "desc": "Your weapon attacks deal an amount of additional damage, equal to your PB (of the same damage type as the weapon), to frightened creatures.\n\nIn addition, as a bonus action, you can attempt to frighten a number of creatures, up to your PB, within 30 feet of you that can see or hear you. Each target must make a WIS save (DC 8 + your PB + your CHA modifier + the number temporary hit points you currently have from your Mindless Rage feature). On a failure, a creature is frightened of you until the end of your next turn.\n\nOn subsequent turns, you can use your bonus action to extend the duration of this effect on each frightened creature until the end of your next turn. This effect ends if the creature ends its turn more than 60 feet away from you or can no longer see or hear you.\n\nIf the creature succeeds on its save, you can't use this feature on that creature again for 24 hours."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_barbarian-berserker_retaliation",
+  "fields": {
+    "name": "Retaliation",
+    "document": "bfrd",
+    "parent": "bfrd_barbarian-berserker",
+    "desc": "When a creature hits or misses you with an attack, you can use your reaction to move up to half your speed toward that creature and make a single melee attack against it. If the creature is Large or larger, you have advantage on the attack roll."
+  }
 }
 ]

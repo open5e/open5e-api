@@ -47,7 +47,7 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "bfrd_theurge-conduit",
+  "pk": "bfrd_conduit",
   "fields": {
     "name": "Conduit",
     "document": "bfrd",
@@ -77,7 +77,7 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "bfrd_warlock-fiend",
+  "pk": "bfrd_fiend",
   "fields": {
     "name": "Fiend",
     "document": "bfrd",
@@ -107,7 +107,7 @@
 },
 {
   "model": "api_v2.characterclass",
-  "pk": "bfrd_wizard-battle-mage",
+  "pk": "bfrd_battle-mage",
   "fields": {
     "name": "Battle Mage",
     "document": "bfrd",
@@ -117,6 +117,36 @@
     "primary_abilities": [],
     "saving_throws": [],
     "subclass_of": "bfrd_wizard"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_barbarian",
+  "fields": {
+    "name": "Barbarian",
+    "document": "bfrd",
+    "hit_dice": "D12",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "str",
+      "con"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_berserker",
+  "fields": {
+    "name": "Berserker",
+    "document": "bfrd",
+    "desc": "Through primal rite or natural bloodthirst, some barbarians can work themselves into a rage so ferocious and explosively violent that it risks breaking their bodies. Berserkers may lose themselves in their frenzy, seething with raw brutality, embracing the blood-soaked battlefield, uncaring of their own safety.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_barbarian"
   }
 }
 ]
