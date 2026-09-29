@@ -88,5 +88,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_warlock"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_wizard",
+  "fields": {
+    "name": "Wizard",
+    "document": "bfrd",
+    "hit_dice": "D6",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "int",
+      "wis"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_wizard-battle-mage",
+  "fields": {
+    "name": "Battle Mage",
+    "document": "bfrd",
+    "desc": "Wizards who follow the Battle Mage tradition aren't interested in theoretical musings or tedious experiments. Instead, they pursue new ways to enhance their power so that they can destroy their foes (and defend their allies) with ever-greater efficiency.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_wizard"
+  }
 }
 ]

@@ -847,5 +847,318 @@
     "parent": "bfrd_warlock-fiend",
     "desc": "When you hit a creature with an attack, you can use this feature to instantly transport the target, causing it to disappear and hurtle through a nightmare landscape.\n\nAt the end of your next turn, the target returns to the space it previously occupied or to the nearest unoccupied space. If the target is not a Fiend, it takes 10d10 psychic damage as it reels from its horrific experience.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_core-traits",
+  "fields": {
+    "name": "Core Wizard Traits",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D6 per Wizard level|\n|Saving Throw Proficiencies|Intelligence and Wisdom|\n|Skill Proficiencies|Choose 2: Arcana, History, Insight, Investigation, Medicine, Religion|\n|Weapon Proficiencies|Simple weapons|\n|Tool Proficiencies|None|\n|Armor Training|None|\n|Starting Equipment|Choose A or B for each: (A) a quarterstaff or (B) a dagger; (A) a component pouch or (B) an arcane focus; (A) a scholar's pack or (B) an explorer's pack; plus a spellbook|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_arcane-recovery",
+  "fields": {
+    "name": "Arcane Recovery",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "You have learned to regain some of your magical energy by studying your spellbook. Once per day, when you finish a short rest, you can recover expended Arcane spell slots of your choice. Recovered spell slots can have a combined circle total equal to or less than half your wizard level (rounded up).\n\nFor example, if you're a 4th-level wizard, you can recover up to two circles' worth of spell slots. So you could choose to recover either a single 2nd-circle spell slot or two 1st-circle spell slots."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "As a student of Arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power.\n\n**Cantrips.** At 1st level, choose three cantrips from the Arcane spell list to learn. You choose more Arcane cantrips to learn at higher levels, as shown in the Cantrips Known column of the Wizard Progression table.\n\n**Spellbook.** At 1st level, your spellbook contains six 1st-circle Arcane spells of your choice. It is the repository of all the Arcane spells you know—except for your cantrips, which are so simple and well-rehearsed that you don't even need to write them down.\n\n**Preparing Spells.** You must prepare spells in advance before you can cast them. You can prepare any spell in your spellbook for which you have Arcane spell slots. (You determine which spell slots you can access by checking your level on the Wizard Progression table.) You can choose a number of spells equal to your INT modifier + your wizard level (minimum of one spell). This is your list of prepared spells from which you can cast.\n\nPreparing a new list of spells requires time studying your spellbook and re-memorizing incantations and gestures: at least 1 minute per spell circle for each spell you change. You can change your list of prepared spells as part of a long rest.\n\n**Casting Spells.** You have prepared a number of spells and can cast any of them by using an Arcane spell slot of the spell's circle or higher.\n\nThe Wizard Progression table shows how many Arcane spell slots you have at a given level. For example, at 3rd level, you have four 1st-circle and two 2nd-circle spell slots, and with a 16 INT, you can have six prepared spells of 1st or 2nd circle, in any combination. You only have two spell slots for 2nd-circle spells though, so if you prepare only 2nd-circle spells, you won't be able to use your 1st-circle spell slots at all.\n\nCasting a spell doesn't remove it from your list of prepared spells, it just uses up a spell slot. You regain all used spell slots when you finish a long rest.\n\n**Your Spellbook.** The spells you automatically add to your spellbook as you gain levels reflect the spell research you conduct on your own. However, you might find other spells during your adventures.\n\n*Copying a Spell into the Book.* When you find an Arcane spell of 1st circle or higher, you can add it to your spellbook if it is of a spell circle you can prepare and if you can make time to decipher and copy it. For each circle of the spell, the process takes 2 hours and costs 50 gp. Once you have spent this time and money, you can prepare the spell just like your other Arcane spells. Copying a spell from a scroll into your spellbook doesn't consume or destroy the scroll.\n\n*Replacing the Book.* You can copy a spell from your own spellbook into another book. This is faster and easier since you understand your own notation and already know how to cast the spell. You need spend only 1 hour and 10 gp for each circle of the copied spell.\n\nIf you lose your spellbook, you can use the same procedure to transcribe the spells you have prepared into a new spellbook. Filling out the remainder of your spellbook requires you to find new spells, as normal.\n\n**Learning Spells of 1st Circle and Higher.** Each time you gain a wizard level, you can add two Arcane spells of your choice to your spellbook for free. Each spell must be of a circle for which you have Arcane spell slots, as shown on the Wizard Progression table. During your adventures, you might also find other Arcane spells to add to your spellbook.\n\n**Spellcasting Ability.** Intelligence (INT) is your spellcasting ability. Your INT modifier determines the save DC or the attack modifier for certain spells you cast:\n- Spell save DC = 8 + your proficiency bonus (PB) + your INT modifier\n- Spell attack modifier = your proficiency bonus (PB) + your INT modifier\n\n**Rituals.** You can also cast a type of long-form spell called a ritual. Rituals don't need to be prepared, and they don't use up spell slots.\n\nAt 1st level, choose one ritual from the Arcane ritual list. You learn more rituals at higher levels, as shown in the Rituals Known column of the Wizard Progression table, but only from a circle for which you have spell slots. Rituals you learn don't count against the number of spells you learn at each level.\n\nRituals are contained in your spellbook alongside your regular spells, and new rituals written on spell scrolls can be copied into your spellbook like normal Arcane spells.\n\n**Spellcasting Focus.** You can use an arcane focus as a spellcasting focus for your Arcane spells."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_magic-sense",
+  "fields": {
+    "name": "Magic Sense",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "You learn to perceive magical workings. As an action, you can open your awareness to detect magical forces. Until the end of your next turn, you know the location of creatures with spellcasting ability, ongoing spell effects, or magic items within 30 feet of you. If the magical effect is the result of an ongoing spell, you learn which school of magic the spell belongs to.\n\nThis sense can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.\n\nYou can use this feature a number of times equal to your PB + 1. When you finish a long rest, you regain all uses."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_wizard-subclass",
+  "fields": {
+    "name": "Wizard Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "Choose a subclass that reflects your specialized field of magical study, either Battle Mage or Cantrip Adept (detailed at the end of this class). Your choice grants you features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the magic talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_rote-spell",
+  "fields": {
+    "name": "Rote Spell",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "Your continued practice of spellcraft has honed your mind, allowing you to affix a limited number of spells—called rote spells—in your mind. Choose one 1st-circle Arcane spell from your spellbook, and that spell is now a rote spell. You always have a rote spell prepared, and it doesn't count against the number of spells you can prepare during a long rest. Casting a rote spell still uses a spell slot as normal.\n\nOver the course of 8 hours or as part of a long rest, you can exchange one rote spell for a different Arcane spell of the same circle contained in your spellbook.\n\nAt higher levels, you can select more rote spells: you choose a 2nd-circle Arcane spell to become a rote spell at 9th level, a 3rd-circle Arcane spell at 13th, and a 4th-circle Arcane spell at 17th."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_superior-recovery",
+  "fields": {
+    "name": "Superior Recovery",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "When you use your Arcane Recovery feature, you can choose to swap out a number of prepared Arcane spells with different Arcane spells from your spellbook—in addition to recovering Arcane spell slots. You can swap out a number of prepared spells equal to half your PB (rounded down) in this way."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "Your commitment to the wizard's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Rite of the Ritualist.** When you learn a new ritual as part of gaining a level of wizard, you can choose it from any source of magic. In addition, you can now copy ritual spells from any source of magic into your spellbook. Any rituals gained in this way count as Arcane spells for you.\n- **Rite of the Source Master.** Choose the Divine, Primordial, or Wyrd source of magic. When you add new non-ritual spells to your spellbook as part of gaining a level of wizard (including the level you gain this feature), you can choose spells from the Arcane spell list or spells from your chosen source. Each spell must be a of a circle for which you have spell slots. In addition, you can now copy spells of your chosen source into your spellbook. Any spells gained in this way count as Arcane spells for you."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_spellguard",
+  "fields": {
+    "name": "Spellguard",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "Your knowledge of magic allows you to better assess the intentions and power of hostile spells and spell attacks, increasing your chance to avoid their effects. You have advantage on saves against spells and resistance to damage dealt by spells and spell attacks."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_spell-mastery",
+  "fields": {
+    "name": "Spell Mastery",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "You can cast each of your rote spells at their lowest circle once without expending a spell slot. Once you cast a rote spell, you can't cast that same spell in this way again until you finish a short or long rest.\n\nIf you want to cast any of your rote spells at a higher circle, you must expend an Arcane spell slot as normal."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "Your commitment to the wizard's path grants you a powerful new ability. You gain the following epic boon:\n- **Archmage.** When you cast a spell of 1st circle or higher and that spell expends an Arcane spell slot, you can choose to roll a d10. If the number rolled is higher than the circle of the expended spell slot, you automatically recover that slot. For example, if you expend a 1st-circle spell slot, a roll of 2 or higher on the d10 means that you recover that 1st-circle spell slot. Once you successfully recover a spell slot in this way, you can't use this feature again until you complete a short rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_rituals-known",
+  "fields": {
+    "name": "Rituals Known",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_slots-1st",
+  "fields": {
+    "name": "1st",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_slots-4th",
+  "fields": {
+    "name": "4th",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_slots-5th",
+  "fields": {
+    "name": "5th",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_slots-6th",
+  "fields": {
+    "name": "6th",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_slots-7th",
+  "fields": {
+    "name": "7th",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_slots-8th",
+  "fields": {
+    "name": "8th",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard_slots-9th",
+  "fields": {
+    "name": "9th",
+    "document": "bfrd",
+    "parent": "bfrd_wizard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard-battle-mage_expanded-talent-list",
+  "fields": {
+    "name": "Expanded Talent List",
+    "document": "bfrd",
+    "parent": "bfrd_wizard-battle-mage",
+    "desc": "When your gain a new talent, you can select it from either the magic or the martial talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard-battle-mage_spell-ward",
+  "fields": {
+    "name": "Spell Ward",
+    "document": "bfrd",
+    "parent": "bfrd_wizard-battle-mage",
+    "desc": "You can redirect a portion of your spellcasting energy into a defensive shield. When you cast an Arcane spell of 1st circle or higher, you can simultaneously weave a protective ward around yourself.\n\nWhile the ward is active, you gain the following benefits if you aren't wearing medium or heavy armor:\n- You gain a bonus to your armor class (AC) equal to your PB.\n- You have resistance to bludgeoning, piercing, and slashing damage.\n\nThe ward lasts for 1 minute, but ends early if you are knocked unconscious or if your turn ends and you haven't cast an Arcane spell of 1st circle or higher since your last turn. You can also choose to dismiss your ward at any time (no action required by you).\n\nYou can use this feature a number of times equal to your PB, and you regain all uses of it when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard-battle-mage_tactical-caster",
+  "fields": {
+    "name": "Tactical Caster",
+    "document": "bfrd",
+    "parent": "bfrd_wizard-battle-mage",
+    "desc": "When you cast an Arcane spell that causes damage, you can choose yourself and any number of allies you can see to be immune to the damage caused by the spell. You can use this feature a number of times equal to your PB, and you regain all uses of it when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard-battle-mage_contingency-plan",
+  "fields": {
+    "name": "Contingency Plan",
+    "document": "bfrd",
+    "parent": "bfrd_wizard-battle-mage",
+    "desc": "When you fail to hit a creature with a spell attack, you can use your reaction to redirect the spell toward a different target within the spell's range. You must make a new spell attack roll for the new target. If you miss the new target, you can't redirect again with the same spell attack."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard-battle-mage_blasting-power",
+  "fields": {
+    "name": "Blasting Power",
+    "document": "bfrd",
+    "parent": "bfrd_wizard-battle-mage",
+    "desc": "When you deal damage with an Arcane spell, you can reroll any 1s you roll on any number of the damage dice. You must take the new result for any dice rerolled in this way (even if the new result is also a 1)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_wizard-battle-mage_counterstrike",
+  "fields": {
+    "name": "Counterstrike",
+    "document": "bfrd",
+    "parent": "bfrd_wizard-battle-mage",
+    "desc": "When a creature succeeds on a save against an Arcane spell you cast and would take no damage or otherwise suffer no effects from the spell, it instead takes force damage equal to a number of d6 dice equal to the spell's circle + your INT modifier. For example, if you have an INT modifier of +4 and a creature succeeds and takes no damage from your 4th-circle spell, the creature still takes 4d6 + 4 force damage."
+  }
 }
 ]
