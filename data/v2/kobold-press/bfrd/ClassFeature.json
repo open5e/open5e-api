@@ -566,5 +566,286 @@
     "parent": "bfrd_theurge-conduit",
     "desc": "As an action, you can suppress the magical potential of one creature or magic item within 120 feet of you. The suppression lasts for 1 minute or until you start your turn more than 120 feet away from the target. The effect also ends early if you become incapacitated.\n\nIf the suppressed target is a creature, each time it attempts to cast a spell or make a spell attack, it must make a CON save against your spell save DC. On a success, the spell or attack happens normally. On a failure, the spell or attack fails, expending a spell slot or use of the feature (if limited use).\n\nIf the suppressed target is a magic item, it functions as a nonmagical item of its type for the duration of your suppression. This effect otherwise works like the magic items aspect of the antimagic field spell.\n\nOnce you use this feature, you can't do so again until you finish a long rest."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_core-traits",
+  "fields": {
+    "name": "Core Warlock Traits",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D8 per Warlock level|\n|Saving Throw Proficiencies|Wisdom and Charisma|\n|Skill Proficiencies|Choose 2: Arcana, Deception, History, Intimidation, Investigation, Nature, Religion|\n|Weapon Proficiencies|Simple weapons|\n|Tool Proficiencies|None|\n|Armor Training|Light armor, medium armor, shields|\n|Starting Equipment|Choose A or B for each: (A) a light crossbow and 20 bolts or (B) any simple weapon; (A) a component pouch or (B) a wyrd focus; (A) a scholar's pack or (B) a dungeoneer's pack; plus Leather armor, any simple weapon, and two daggers|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_eldritch-blast",
+  "fields": {
+    "name": "Eldritch Blast",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "As a result of binding yourself to otherworldly powers, you can conjure a baleful magical energy. As an action, you can send a beam of crackling eldritch power toward a creature within 120 feet of you. When you do so, make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage.\n\nUpon achieving higher levels of warlock, you can create more than one beam: two beams at 5th level, three at 9th, and four at 14th. You can direct the beams at the same or different target. You make a separate attack roll for each beam."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_pact-boon",
+  "fields": {
+    "name": "Pact Boon",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "The initial pact that grants you your warlock powers is sealed with the gift of a Pact Boon. You gain one of the following boons of your choice.\n\n## Pact of the Blade\n\nYou can use your action to create a pact weapon in your empty hand. You can choose the form that this melee weapon takes each time you create it. You have proficiency with it while you wield it. This weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. When you attack with the weapon, you can use your CHA modifier, instead of STR or DEX, for attack and damage rolls.\n\nYour pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.\n\nYou can transform an existing melee weapon into your pact weapon by performing a special ritual while you hold the weapon. You perform the ritual over the course of 1 hour, which can be done during a short or long rest. You can then dismiss the weapon, shunting it into an extradimensional space, and it appears when you create your pact weapon thereafter. You can't affect an artifact or a sentient weapon in this way. The weapon ceases being your pact weapon if you die, if you perform the 1-hour ritual on a different weapon, or if you use a 1-hour ritual to break your bond to it. The weapon appears at your feet if it is in the extradimensional space when the bond breaks.\n\n## Pact of the Chain\n\nYou learn a more potent version of the find familiar ritual and can cast it without the need for any material components. The spell doesn't count against your number of spells known. A familiar summoned with this feature has the following differences from a standard familiar summoned by the spell:\n- When you cast the spell, you can choose one of the normal familiar forms or one of the following special forms: blink dog, imp, pseudodragon, or quasit.\n- You can telepathically communicate or see through your familiar's eyes as long as it is on the same plane as you, ignoring the standard 100-foot range restriction. In addition, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.\n- Your familiar can attack. In combat, your familiar shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any commands, it takes the Dodge action and uses its move to avoid danger.\n\n## Pact of the Tome\n\nYou receive an eldritch grimoire called a Book of Shadows. You can use your Book of Shadows as a spellcasting focus for your spells. When you gain this feature, choose three cantrips from any source spell list (they don't have to be from the same list). While the book is on your person, you can cast those cantrips. These cantrips count as Wyrd spells for you.\n\nIf your Book of Shadows is lost or destroyed, you can perform a 1-hour ceremony to create a replacement. The replacement contains any spells previously transcribed within it. This ceremony can be performed as part of a short or long rest, and it destroys the previous grimoire—if it still exists. The book is unreadable by anyone but you, and it is instantly destroyed when you die."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_eldritch-invocations",
+  "fields": {
+    "name": "Eldritch Invocations",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "In your study of occult lore, you have unearthed eldritch invocations. These fragments of forbidden knowledge imbue you with magical abilities that abide beyond any mere spell duration.\n\nYou gain two eldritch invocations of your choice, though you must meet any prerequisites. Invocation options are detailed at the end of the class description. At certain warlock levels, you gain additional invocations of your choice, as shown in the Invocations Known column of the Warlock Progression table.\n\nIn addition, when you gain a level in this class, you can choose one invocation you know and replace it with another invocation that you meet the prerequisites for."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "Your eldritch power deepens, giving you the ability to cast Wyrd spells.\n\n**Cantrips.** At 2nd level, choose two cantrips from the Wyrd spell list to learn. You choose more Wyrd cantrips to learn at higher levels, as shown in the Cantrips Known column of the Warlock Progression table.\n\n**Casting Spells.** You know a small number of spells and can cast any of them by using a Wyrd spell slot of the spell's circle or higher. You don't need to prepare spells ahead of time.\n\nThe Warlock Progression table shows how many spells you know and how many spell slots you have per day at a given level. For example, at 5th level, you have four 1st-circle slots and two 2nd-circle slots. If you know the 1st-circle spell bane and have a 1st-circle and a 2nd-circle spell slot available, you can cast bane using either slot. If you use a 1st-circle slot, you have three 1st-circle slots remaining.\n\nYou regain all used spell slots when you finish a long rest.\n\n**Spells Known of 1st-Circle and Higher.** At 2nd level, choose two 1st-circle spells from the Wyrd spell list to learn.\n\nThe Spells Known column of the Warlock Progression table shows when you learn additional Wyrd spells. Each spell you choose must be from a circle for which you have Wyrd spell slots. For instance, when you reach 5th level as a warlock, you can learn one new Wyrd spell of 1st or 2nd circle.\n\nWhen you gain a level of warlock, you can choose one Wyrd spell you know and replace it with another spell of your choice from the Wyrd spell list. The replacement spell must be of a circle for which you have Wyrd spell slots.\n\n**Spellcasting Ability.** Charisma (CHA) is your spellcasting ability. Your CHA modifier determines the save DC or the attack modifier for certain spells you cast:\n- Spell save DC = 8 + your proficiency bonus (PB) + your CHA modifier\n- Spell attack modifier = your proficiency bonus (PB) + your CHA modifier\n\n**Spellcasting Focus.** You can use a wyrd focus as a spellcasting focus for your Wyrd spells."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_warlock-subclass",
+  "fields": {
+    "name": "Warlock Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "Choose a subclass that reflects the type of entity that becomes your patron, either Fiend or Reaper (detailed at the end of this class). Your choice grants you spells and other features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_pact-magic",
+  "fields": {
+    "name": "Pact Magic",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "**Pact Spells.** Each warlock subclass has a list of pact spells that you can access as soon as you can cast spells of that circle (as shown in the Warlock Progression table). Once you gain such a spell, it is always on your list of known spells and doesn't count against the number of spells you know. However, casting a pact spell still expends a Wyrd spell slot as normal. If one of these spells isn't on the Wyrd spell list, it still counts as a Wyrd spell for you. You can't replace pact spells when you gain a level of warlock.\n\n**Pact Magic.** Your patron gives you access to a special reservoir of power called Pact Magic. You can expend one use of Pact Magic to cast any Pact Spell you know without expending a spell slot, though they are always treated as cast at the highest-circle warlock spell slot you can access (see Warlock Progression).\n\nYou can use this feature twice, whether casting the same or different spells from your Pact Spells. You gain additional uses of Pact Magic at higher warlock levels: at 13th level, you can use it three times between rests, and at 17th level, you can use it four times between rests.\n\nYou regain all expended uses of Pact Magic when you finish a short or long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the magic talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_enhanced-boon",
+  "fields": {
+    "name": "Enhanced Boon",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "Your patron enhances your Pact Boon as a reward for your service. You gain one of the following enhancements as determined by your chosen Pact Boon. If you have more than one Pact Boon, choose which one is enhanced.\n\n## Pact of the Blade\n\nYou can attack with your pact weapon twice, instead of once, when you take the Attack action on your turn.\n\n## Pact of the Chain\n\nWhen you complete a short or long rest, your familiar gains temporary hit points equal to your PB + your CHA modifier. In addition, when you make an attack against a creature within 5 feet of your familiar, your familiar can use its reaction to give you advantage on the attack roll.\n\n## Pact of the Tome\n\nYou can now inscribe rituals into your Book of Shadows. Choose two rituals of 1st or 2nd circle (in any combination) from the Wyrd ritual list. The rituals appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen rituals.\n\nOn your adventures, you can add other Wyrd rituals you find to your Book of Shadows if a ritual's circle is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each circle of the ritual, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "Your commitment to the warlock's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Echoes of Knowledge.** You learn one 1st-circle and one 2nd-circle spell of your choice from any spell list, they count as Wyrd spells for you. The chosen spells can't be rituals, and they don't count against your total spells known. These spells are added to your list of Pact Spells and can be cast by expending a use of Pact Magic or by expending Wyrd spell slots as normal.\n- **Echoes of Power.** When you successfully hit with one of your Eldritch Blast beams and roll a 10 on the damage die, you can roll the d10 again and add the number rolled to the result as extra force damage dealt by that beam."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_patrons-favor",
+  "fields": {
+    "name": "Patron's Favor",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "You can call upon your patron's power by expending a use of your Pact Magic feature to cast any spell you know of 5th-circle or lower from any spell list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "Your commitment to the warlock's path grants you a powerful new ability. You gain the following epic boon:\n- **Eldritch Master.** If you start your turn with no uses of Pact Magic remaining, you can beseech your patron to immediately restore all expended uses (no action required). You must finish a long rest before you can use this feature again."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_invocations-known",
+  "fields": {
+    "name": "Invocations Known",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_slots-1st",
+  "fields": {
+    "name": "1st",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_slots-4th",
+  "fields": {
+    "name": "4th",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_slots-5th",
+  "fields": {
+    "name": "5th",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock_eldritch-invocation-options",
+  "fields": {
+    "name": "Eldritch Invocation Options",
+    "document": "bfrd",
+    "parent": "bfrd_warlock",
+    "desc": "This section lists the eldritch invocations available for warlocks to learn. If an invocation has prerequisites, you must meet them to learn it. You can learn the invocation at the same time that you meet its prerequisites.\n\nIf a prerequisite lists a level requirement, that is the minimum warlock level required (you can take it at higher warlock levels).\n\nInvocation options appear in alphabetical order.\n\n### Agonizing Blast\n\n*Prerequisite: None*\n\nWhen you use your Eldritch Blast feature, add your CHA modifier to the damage each beam deals on a successful hit.\n\n### Armor of Shadows\n\n*Prerequisite: None*\n\nWhile you aren't wearing armor or wielding a shield, your AC becomes 13 + your CHA modifier. This effect is suppressed while you are unconscious or in an area affected by an antimagic field spell.\n\n### Ascendant Step\n\n*Prerequisite: 9th Level*\n\nYou can cast the levitate spell on yourself as often as you wish, without expending a spell slot or material components.\n\n### Bewitching Whispers\n\n*Prerequisite: 7th Level*\n\nYou can cast the compulsion spell once without expending a spell slot or material components. You can't do so again until you finish a long rest.\n\n### Beyond Sight\n\n*Prerequisite: None*\n\nYou can see in dim light, darkness, and magical darkness as though it were bright light, to a range of 120 feet.\n\n### Boon Savant\n\n*Prerequisite: 7th-Level Warlock, Second Boon*\n\nYour second Pact Boon becomes more powerful, gaining the benefits detailed in your Enhanced Boon feature.\n\n### Chains of Carceri\n\n*Prerequisite: 15th Level*\n\nYou can cast the greater hold spell without expending a spell slot or material components. You can't do so again until you finish a long rest.\n\n### Dreadful Word\n\n*Prerequisite: 7th Level*\n\nYou can cast the confusion spell once without expending a spell slot or material components. You can't do so again until you finish a long rest.\n\n### Eldritch Burst\n\n*Prerequisite: None*\n\nYou gain the following benefits when you use your Eldritch Blast feature:\n- You don't have disadvantage on ranged spell attack rolls to hit a prone target if it is more than 5 feet away from you.\n- You don't have disadvantage on ranged spell attack rolls if you are within 5 feet of a hostile creature who can see you and who isn't incapacitated.\n\n### Eldritch Sight\n\n*Prerequisite: None*\n\nYou can cast the detect magic spell as often as you wish, without expending a spell slot.\n\n### Eldritch Spear\n\n*Prerequisite: None*\n\nWhen you use your Eldritch Blast feature, you can now target creatures within 300 feet of you.\n\n### Fiendish Vigor\n\n*Prerequisite: None*\n\nYou can cast the false life spell on yourself as often as you wish, without expending a spell slot or material components. You can cast it at the highest circle you have a Wyrd spell slot for (see Warlock Progression table).\n\n### Gaze of Two Minds\n\n*Prerequisite: None*\n\nYou can use your action to touch a willing Humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.\n\n### Lifedrinker\n\n*Prerequisite: 11th Level*\n\nWhen you hit a creature with a weapon attack, the creature takes additional necrotic damage equal to your CHA modifier (minimum of 1).\n\n### Mask of Many Faces\n\n*Prerequisite: None*\n\nYou can cast the disguise self spell as often as you wish, without expending a spell slot.\n\n### Mire the Mind\n\n*Prerequisite: 5th Level*\n\nYou can cast the slow spell without expending a spell slot or material components. You can't do so again until you finish a long rest.\n\n### Misty Visions\n\n*Prerequisite: None*\n\nYou can cast the silent image spell as often as you wish, without expending a spell slot or material components.\n\n### Mystic Arcanum\n\n*Prerequisite: 11th Level*\n\nYour patron bestows a magical secret called an arcanum. Choose one non-ritual spell from the Wyrd spell list as this arcanum. The highest circle spell you can choose is determined by your current warlock level, as shown in the Maximum Circle by Level table.\n\nYou can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can cast it in this way again. Alternatively, if your arcanum is of a circle for which you have spell slots, you can expend a spell slot to cast it as you would a standard spell.\n\nYou can take this invocation multiple times, choosing a different spell each time.\n\n|Warlock Level|Maximum Spell Circle of Arcanum|\n|---|---|\n|11th|6th Circle|\n|13th|7th Circle|\n|15th|8th Circle|\n|17th|9th Circle|\n\n### One with Shadows\n\n*Prerequisite: 5th Level*\n\nWhen you are in an area of dim light, darkness, or magical darkness, you can use your action to become invisible until you move or take an action or a reaction.\n\n### Otherworldly Leap\n\n*Prerequisite: 9th Level*\n\nYou can cast the longstrider spell on yourself as often as you wish, without expending a spell slot or material components.\n\n### Patron's Anchor\n\n*Prerequisite: None*\n\nWhen you make a CON save to maintain concentration on a Wyrd spell or a spell cast with an Eldritch Invocation, you can choose to make a CHA save instead. In addition, you have advantage on the first concentration save you make each round.\n\n### Repelling Blast\n\n*Prerequisite: None*\n\nWhen you successfully hit a creature with one or more beams created by your Eldritch Blast feature, you can push the creature up to 10 feet per beam away from you in a straight line (in addition to dealing damage). If this movement is interrupted by the target encountering a solid surface (such as being pushed into a stone wall), the target also takes 1d6 bludgeoning damage for each 10-foot increment it moved.\n\n### Sculptor of Flesh\n\n*Prerequisite: 7th Level*\n\nYou can cast the polymorph spell without expending a spell slot or material components. You can't do so again until you finish a long rest.\n\n### Second Boon\n\n*Prerequisite: 5th Level*\n\nYou gain the benefits of a second boon from the options described in the 1st level feature Pact Boon: Pact of the Blade, Pact of the Chain, or Pact of the Tome.\n\n### Sign of Ill Omen\n\n*Prerequisite: 5th Level*\n\nYou can cast the bestow curse spell without expending a spell slot or material components. You can't do so again until you finish a long rest.\n\n### Spirit Translator\n\n*Prerequisite: None*\n\nYou can cast the comprehend languages spell on yourself as often as you wish, without expending a spell slot or material components.\n\n### Stolen Knowledge\n\n*Prerequisite: None*\n\nYou gain proficiency in any two skills or tools of your choice (in any combination).\n\nYou can take this invocation multiple times, choosing different proficiencies each time.\n\n### Thief of Five Fates\n\n*Prerequisite: None*\n\nYou can cast bane as a 1st-circle spell as often as you wish, without expending a spell slot or material components.\n\n### Visions of Distant Realms\n\n*Prerequisite: 15th Level*\n\nYou can cast the arcane eye spell as often as you wish, without expending a spell slot or material components.\n\n### Whispers of the Grave\n\n*Prerequisite: 9th Level*\n\nYou can perform the speak with dead ritual as often as you wish, without a ritual book or material components.\n\n### Witch Sight\n\n*Prerequisite: 15th-Level*\n\nYou can see the true form of any creature with the Shapechanger tag or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.",
+    "feature_type": "CLASS_FEATURE_OPTION_LIST"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock-fiend_dark-ones-blessing",
+  "fields": {
+    "name": "Dark One's Blessing",
+    "document": "bfrd",
+    "parent": "bfrd_warlock-fiend",
+    "desc": "When you reduce a hostile creature to 0 HP or when a hostile creature within 30 feet of you is reduced to 0 HP, you gain temporary hit points equal to your PB + your warlock level. These hit points last until expended or until you complete a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock-fiend_fiend-pact-spells",
+  "fields": {
+    "name": "Fiend Pact Spells",
+    "document": "bfrd",
+    "parent": "bfrd_warlock-fiend",
+    "desc": "You gain pact spells at the warlock levels listed in the Fiend Pact Spells table. See the Warlock Subclass class feature for how these spells work.\n\n|Warlock Level|Spells|\n|---|---|\n|3rd|burning hands, command|\n|5th|scorching ray, suggestion|\n|9th|fireball, stinking cloud|\n|13th|blight, wall of fire|\n|17th|dominate, flame strike|"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock-fiend_dark-ones-own-luck",
+  "fields": {
+    "name": "Dark One's Own Luck",
+    "document": "bfrd",
+    "parent": "bfrd_warlock-fiend",
+    "desc": "You can call on your patron to alter fate in your favor. When you make an ability check or a save, you can use this feature to add 1d10 to your roll.\n\nOnce you use this feature, you can't use it again until you finish a short or long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock-fiend_fiendish-resilience",
+  "fields": {
+    "name": "Fiendish Resilience",
+    "document": "bfrd",
+    "parent": "bfrd_warlock-fiend",
+    "desc": "You can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_warlock-fiend_hurl-through-hell",
+  "fields": {
+    "name": "Hurl Through Hell",
+    "document": "bfrd",
+    "parent": "bfrd_warlock-fiend",
+    "desc": "When you hit a creature with an attack, you can use this feature to instantly transport the target, causing it to disappear and hurtle through a nightmare landscape.\n\nAt the end of your next turn, the target returns to the space it previously occupied or to the nearest unoccupied space. If the target is not a Fiend, it takes 10d10 psychic damage as it reels from its horrific experience.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
+  }
 }
 ]

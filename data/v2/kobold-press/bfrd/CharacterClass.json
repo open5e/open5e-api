@@ -58,5 +58,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_theurge"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_warlock",
+  "fields": {
+    "name": "Warlock",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "HALF",
+    "primary_abilities": [],
+    "saving_throws": [
+      "wis",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_warlock-fiend",
+  "fields": {
+    "name": "Fiend",
+    "document": "bfrd",
+    "desc": "Your patron is a greater fiend who holds dominion over lesser demons or devils. Fiendish patrons are uncontestably bound to the forces of evil—though the warlocks they choose rarely are. These patrons often delight in granting power to mortals, even if those mortals openly strive against their destructive aims. Whether these tendencies are exercises in corruption or serve a more nefarious design, few can say.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_warlock"
+  }
 }
 ]
