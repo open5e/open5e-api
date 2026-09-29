@@ -28,5 +28,35 @@
   },
   "model": "api_v2.characterclass",
   "pk": "bfrd_metallurgist"
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_theurge",
+  "fields": {
+    "name": "Theurge",
+    "document": "bfrd",
+    "hit_dice": "D6",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "int",
+      "wis"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_theurge-conduit",
+  "fields": {
+    "name": "Conduit",
+    "document": "bfrd",
+    "desc": "Theurges that embody the Conduit devotion, view all magic—regardless of source—as a natural extension of the life force that resides within all creatures. Conduits perceive the Arcane and Divine within themselves as readily as they feel their blood pumping through their veins, and they believe the deepest reserves of magical power lie within the soul. They translate these beliefs into practical applications, allowing them to exchange vitality for spellcasting potential and disrupt the magical energies within other creatures.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_theurge"
+  }
 }
 ]

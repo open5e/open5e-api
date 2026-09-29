@@ -263,5 +263,308 @@
   },
   "model": "api_v2.classfeature",
   "pk": "bfrd_metallurgist_full-metal"
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_core-traits",
+  "fields": {
+    "name": "Core Theurge Traits",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D6 per Theurge level|\n|Saving Throw Proficiencies|Intelligence and Wisdom|\n|Skill Proficiencies|Choose 2: Arcana, History, Insight, Investigation, Medicine, Religion|\n|Weapon Proficiencies|Simple weapons|\n|Tool Proficiencies|None|\n|Armor Training|None|\n|Starting Equipment|Choose A or B for each: (A) a quarterstaff or (B) a dagger; (A) a component pouch or (B) an arcane focus or holy symbol; (A) a scholar's pack or (B) an explorer's pack; plus a libram|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_spell-nexus",
+  "fields": {
+    "name": "Spell Nexus",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "As a bonus action while your libram is within 100 feet of you, you can open a magical conduit between you and it, allowing you to instantly replace one spell you currently have prepared with another spell of the same circle and same source transcribed within the libram. For example, if you're a 3rd-level theurge, you could instantly replace one 1st-circle Arcane spell you currently have prepared with another 1st-circle Arcane spell transcribed in your libram.\n\nYou can use this feature a number of times equal to your PB, and you regain all expended uses when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "As a student of Arcane and Divine magic, you have a theurgic libram containing spells that show the first glimmerings of your true power. See Spellcasting in the Player's Guide for general rules of spellcasting and for the Arcane and Divine spell lists.\n\n**Cantrips.** At 1st level, you know one cantrip of your choice from the Arcane spell list, one cantrip of your choice from the Divine spell list, and a third cantrip from either the Arcane or Divine spell list (your choice). You learn additional cantrips at higher levels that you can choose from either the Arcane or Divine lists, as shown in the Cantrips Known column of the Theurge Progression table.\n\n**Libram.** You learn how to craft a libram, which is a Tiny magical object that contains your spells. However, a theurge's libram is more than just a mere spellbook, it is a physical manifestation of a theurge's power and a mystic reservoir of the esoteric knowledge unlocked over the course of their magical studies.\n\nCreating a libram forges a bond between it and the theurge that transcends physical reality. The process stamps the theurge's soul with a mystic symbol that forever tethers the libram to its creator. This symbol is typically invisible to those with normal sight, but it is visible upon the theurge's skin when viewed with magical sight—or it might become visible when the theurge casts their spells. The exact appearance and placement of this mark is up to you, but traditionally, it appears as a golden third eye on the theurge's brow.\n\n*Libram's Appearance.* Your libram is a unique vessel for recording spells and other information. Most resemble books stamped with a theurge's personal symbol, but they can also take the form of scrolls, inscribed tablets, or similar objects that can be easily held. The exact appearance of a libram is a reflection of the theurge who created it, so the details are ultimately up to you.\n\n*Libram Spells.* When you first create your libram at 1st level, it contains six 1st-circle spells. You can choose these spells from the Arcane or Divine spell lists, but at least two of these spells must be from the Arcane spell list and at least two must be from the Divine spell list. Your libram is the repository of all the Arcane and Divine spells you know—except for your cantrips, which are so simple and well-rehearsed that you don't need to write them down.\n\nThe theurgic wisdom contained within your libram is incomprehensible to anyone but you, and other creatures can't read or copy any spells or text contained within it.\n\n*Destroying the Libram.* A libram doesn't have an AC, doesn't have hit points, and it can't be damaged or destroyed by conventional means. It can't be used or activated by any creature other than the theurge that created it, but it otherwise follows the rules of a standard magic item. If you die, your libram disintegrates after 24 hours.\n\n*Replacing the Libram.* If your libram is lost or destroyed, you can perform a 1-hour ceremony to create a replacement, which can be performed as part of a short or long rest. The contents of your replacement libram are identical to the contents of the previous one. If the previous libram still exists, it is destroyed the moment you complete the ceremony to create a replacement.\n\n**Preparing Spells.** You must prepare spells in advance before you can cast them. You can prepare any spell in your libram for which you have spell slots. You determine which spell slots you can access by checking your level on the Theurge Progression table. You can choose a number of spells equal to your INT modifier + your theurge level (minimum of one spell). This is your list of prepared spells from which you can cast.\n\nPreparing a new list of spells requires time studying your libram and re-memorizing incantations and gestures: at least 1 minute per spell circle for each spell you change. You can change your list of prepared spells as part of a long rest.\n\n**Casting Spells.** You have prepared a number of spells and can cast any of them by using a spell slot of the spell's circle or higher. The Theurge Progression table shows how many spell slots you have at a given level. For example, at 3rd level, you have four 1st-circle and two 2nd-circle spell slots, and with a 16 INT, you can have six prepared spells of 1st or 2nd circle, in any combination. You only have two spell slots for 2nd-circle spells though, so if you prepare only 2nd-circle spells, you won't be able to use your 1st-circle spell slots at all.\n\nCasting a spell doesn't remove it from your list of prepared spells, it just uses up a spell slot. You regain all used spell slots when you finish a long rest.\n\n**Learning Spells of 1st Circle and Higher.** Each time you gain a theurge level, you can add two spells of your choice to your libram: one of these spells must be from the Arcane spell list and one must be from the Divine spell list. Each spell must be of a circle for which you have spell slots, as shown on the Theurge Progression table.\n\nIn addition, when you gain a level of theurge, you can choose one Arcane or Divine spell in your libram and replace it with another spell from the same source (Arcane or Divine). The replacement spell must be of a circle for which you have spell slots.\n\n**Spellcasting Ability.** Intelligence (INT) is your spellcasting ability. Your INT modifier determines the save DC or the attack modifier for certain spells you cast:\n- Spell save DC = 8 + your proficiency bonus (PB) + your INT modifier\n- Spell attack modifier = your proficiency bonus (PB) + your INT modifier\n\n**Rituals.** You can also cast a type of long-form spell called a ritual. Rituals don't need to be prepared, and they don't use up spell slots.\n\nAt 1st level, choose one ritual from the Arcane or Divine ritual list. You learn more rituals at higher levels, as shown in the Rituals Known column of the Theurge Progression table, but only from a circle for which you have spell slots. Rituals you learn don't count against the number of spells you learn at each level.\n\nRituals are contained in your libram alongside your regular spells.\n\n**Spellcasting Focus.** You can use an arcane focus, a holy symbol, or your libram as a spellcasting focus for your Arcane and Divine spells."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_spellcraft",
+  "fields": {
+    "name": "Spellcraft",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "Your studies and experience using power from multiple magic sources gives you profound insight into the workings of magic. This insight is represented by a pool of Spellcraft dice. You have a number of spellcraft die equal to your INT modifier (minimum of 1), and these dice are d6s. You can't spend more than one Spellcraft die to modify the same roll.\n\nUnless specified otherwise, once you spend a Spellcraft die, you immediately roll it and add the number rolled as instructed. The die is then expended. You regain expended Spellcraft dice when you finish a short or long rest.\n\nYou can spend your Spellcraft dice in the following ways:\n- When you deal damage or restore hit points with a spell you cast, you can spend one Spellcraft die and deal additional damage of the type dealt by the spell or restore additional hit points equal to the result.\n- When you make a CON save to maintain concentration, you can spend one Spellcraft die and add the number rolled to the check result.\n- When you make an ability check to learn, decipher, or recall information about a spell, spellcaster, magic item, or magic effect, you can spend one Spellcraft die and add the number rolled to the check result.\n\nThe size of your Spellcraft die changes when you reach certain levels in this class. The die become a d8 at 9th level and a d10 at 17th."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_summon-libram",
+  "fields": {
+    "name": "Summon Libram",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "Your growing power deepens your mystic bond with your libram, allowing you to sense its location and summon it to your side.\n\nWhile your libram is on the same plane of existence as you, you can sense its location and know the exact amount of distance between you and it. If the libram is on a different plane, you know which plane but not its precise location on that plane.\n\nAs a bonus action if the libram is on the same plane of existence as you, you can summon it, causing it to appear in your hand or in the nearest unoccupied space within 5 feet of you (if you don't have a free hand)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_theurge-subclass",
+  "fields": {
+    "name": "Theurge Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "Choose a subclass that reflects your focused area of magical devotion: Conduit, Illuminary, or Source Spinner (detailed at the end of this class). Your choice grants you features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the magic talents list (see Player's Guide)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_spell-synthesis",
+  "fields": {
+    "name": "Spell Synthesis",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "Your profound understanding of magical duality allows you to tap into deep reserves of spellcasting power. You can expend a use of this feature to cast two prepared spells of 4th circle or lower on your turn as long as one spell is from the Arcane list and the other is from the Divine list and also either of the following circumstances are met:\n- You can cast a spell with a casting time of 1 action with the Cast a Spell action and a second spell with a casting time of 1 bonus action as your bonus action.\n- You can simultaneously cast two spells with a casting time of 1 action as part of the same Cast a Spell action.\n\nCasting spells in this way expends spell slots for each spell as normal. You can't cast a spell with a spell slot of 5th circle or higher with this feature, even if you could normally use a spell slot to cast the spell at a higher circle. Due to the intense effort simultaneous casting requires, you can't take reactions until the start of your next turn after activating your Spell Synthesis feature.\n\nOnce you use this feature, you must finish a short or long rest before you can use it again. Starting at 13th level, you can use it twice, and at 18th level, you can use it three times before taking a rest. Regardless of whether you have multiple uses available, you can't use this feature more than once on the same turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_superior-focus",
+  "fields": {
+    "name": "Superior Focus",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "You can simultaneously maintain two spells that require concentration. One spell must be from the Arcane spell list, and the other must be from the Divine spell list.\n\nWhile concentrating on two spells in this way, you must make a CON save (DC 10 + the highest-circle spell cast) to maintain concentration on these spells at the start of each of your turns. If you fail this save, both spells immediately end.\n\nIn addition, while concentrating on two spells, you have disadvantage on CON saves to maintain concentration whenever you take damage or suffer another effect that would potentially break concentration (this disadvantage doesn't apply to the CON saves you make at the start of each of your turns). Anything that causes you to lose concentration, including being incapacitated or killed, causes you to lose both spells."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "Your commitment to the theurge's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Careful Craft.** When you add one of your Spellcraft die (see Spellcraft feature) to an ability check or save and the roll still fails, the die isn't expended.\n- **Persistent Craft.** If a creature you can see succeeds on a save against one of your spells, you can expend a Spellcraft die (see Spellcraft feature) to force the creature to reroll the save, subtracting the number rolled on your Spellcraft die from the new check result.\n- **Precise Craft.** If you roll a 1 on a Spellcraft die (see Spellcraft feature), you can reroll the die, and you must take the new result. In addition, if you roll the maximum result on a Spellcraft die (such as an 8 on a d8), you can roll the die again and add both numbers rolled to your check result.\n- **Vicious Craft.** You gain an additional way to use your Spellcraft dice (see Spellcraft feature). When you cast a spell that requires you to make an attack roll, you can spend one Spellcraft die and add the number rolled to the check result."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_flawless-concentration",
+  "fields": {
+    "name": "Flawless Concentration",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "While maintaining concentration on one or more Arcane or Divine spells, you never have disadvantage on CON saves to maintain concentration, regardless of the damage you take, environmental phenomena, or any other features or effects.\n\nIn addition, if a creature deals damage to you with multiple attacks or effects on its turn, you no longer have to roll CON saves for each instance of damage it deals to maintain concentration. Instead, you need to make only one save against the instance with the highest DC to successfully maintain concentration."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "Your commitment to the theurge's path grants you a powerful new ability. You gain one of the following epic boons:\n- **Supreme Craft.** You can now expend up to two Spellcraft dice (see Spellcraft feature) to modify the same roll. If you end your turn with no Spellcraft dice remaining, you automatically recover one expended Spellcraft die.\n- **Supreme Focus.** When you make a CON save to maintain concentration, you can treat any d20 roll of 9 or lower as if you had rolled a 10 on the die. In addition, if you fail a CON save to maintain concentration while you are concentrating on two spells simultaneously, you lose concentration on only one spell instead of both (you choose which spell remains active).\n- **Supreme Unity.** If you start your turn with no uses of your Spell Synthesis feature remaining, you can combine raw power from your Arcane and Divine magic sources to immediately restore all expended uses (no action required). You must finish a long rest before you can use this feature again."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_rituals-known",
+  "fields": {
+    "name": "Rituals Known",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_slots-1st",
+  "fields": {
+    "name": "1st",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_slots-4th",
+  "fields": {
+    "name": "4th",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_slots-5th",
+  "fields": {
+    "name": "5th",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_slots-6th",
+  "fields": {
+    "name": "6th",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_slots-7th",
+  "fields": {
+    "name": "7th",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_slots-8th",
+  "fields": {
+    "name": "8th",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge_slots-9th",
+  "fields": {
+    "name": "9th",
+    "document": "bfrd",
+    "parent": "bfrd_theurge",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge-conduit_energy-exchange",
+  "fields": {
+    "name": "Energy Exchange",
+    "document": "bfrd",
+    "parent": "bfrd_theurge-conduit",
+    "desc": "Your mastery of magical power allows you to transfer raw energy in various ways.\n\n**Exchange Life.** You can convert your own life force into raw magical power. As a bonus action, you can expend Hit Dice to recover an expended spell slot. When you do so, expend a number of Hit Dice equal to the circle of the spell slot you are attempting to recover. Roll the expended Hit Dice and add your CON modifier to the roll. You immediately lose hit points equal to the result, and your hit point maximum is reduced by that amount until you finish a long rest. If you have at least 1 HP remaining after losing these hit points, you successfully recover the spell slot.\n\n**Exchange Power.** You can control the energy within magic items. As an action, you can expend a spell slot to restore charges to a magic item you are touching. When you do so, the magic item regains expended charges equal to the circle of the spell slot expended, up to the item's maximum charges. This feature can't restore charges to items that don't have charges, such as a ring of feather falling, and it can't restore charges to consumables or items that cease to be magical once all their charges or uses are expended, such as the gem of brightness or restorative ointment (see Player's Guide for all items)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge-conduit_mystic-vitality",
+  "fields": {
+    "name": "Mystic Vitality",
+    "document": "bfrd",
+    "parent": "bfrd_theurge-conduit",
+    "desc": "You can convert unspent magical energy into vitality. When you finish a long rest, you regain additional Hit Dice equal to half the number of unspent spell slots (rounded down) you had before finishing the long rest, up to your Hit Dice maximum (minimum of one Hit Die). For example, if you are a 6th-level theurge with three unspent spell slots, you would regain one additional expended Hit Die at the end of the long rest, in addition to the three Hit Dice you would normally recover after a long rest as a 6th-level character."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge-conduit_metabolize",
+  "fields": {
+    "name": "Metabolize",
+    "document": "bfrd",
+    "parent": "bfrd_theurge-conduit",
+    "desc": "As a reaction when you suffer an instance of damage that isn't bludgeoning, piercing, or slashing, you can make a CON save. The DC for this save equals 10 or half the amount of damage you took, whichever number is higher. On a success, you store that energy potential within your body for up to 1 minute. Before the duration ends, you can expend this stored energy (no action required) as part of casting a 1st-circle or higher spell. When you do so, the spell is cast as if you expended a spell slot one circle higher than the slot used.\n\nYou can attempt to store magical energy in this way a number of times equal to your PB, but you can store only a single instance of energy potential at one time. You regain all expended uses when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge-conduit_spell-surge",
+  "fields": {
+    "name": "Spell Surge",
+    "document": "bfrd",
+    "parent": "bfrd_theurge-conduit",
+    "desc": "When you deal damage to a creature with an Arcane or Divine spell, you can expend one or more of your Hit Dice. Roll the expended dice and add your CON modifier. The creature takes additional damage of the spell's type equal to the result. If multiple creatures are damaged by the triggering spell, you choose which target takes the extra damage."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_theurge-conduit_nullify",
+  "fields": {
+    "name": "Nullify",
+    "document": "bfrd",
+    "parent": "bfrd_theurge-conduit",
+    "desc": "As an action, you can suppress the magical potential of one creature or magic item within 120 feet of you. The suppression lasts for 1 minute or until you start your turn more than 120 feet away from the target. The effect also ends early if you become incapacitated.\n\nIf the suppressed target is a creature, each time it attempts to cast a spell or make a spell attack, it must make a CON save against your spell save DC. On a success, the spell or attack happens normally. On a failure, the spell or attack fails, expending a spell slot or use of the feature (if limited use).\n\nIf the suppressed target is a magic item, it functions as a nonmagical item of its type for the duration of your suppression. This effect otherwise works like the magic items aspect of the antimagic field spell.\n\nOnce you use this feature, you can't do so again until you finish a long rest."
+  }
 }
 ]
