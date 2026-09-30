@@ -178,5 +178,49 @@
     "saving_throws": [],
     "subclass_of": "bfrd_bard"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_cleric",
+  "fields": {
+    "name": "Cleric",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "wis",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_life-domain",
+  "fields": {
+    "name": "Life Domain",
+    "document": "bfrd",
+    "desc": "Gods of the Life domain celebrate natural cycles of life and death, exemplifying health and vitality. Devotees of this domain are encouraged to heal the wounded, care for the sick, and oppose the perversion of undeath.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_cleric"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_war-domain",
+  "fields": {
+    "name": "War Domain",
+    "document": "bfrd",
+    "desc": "Gods of the War domain celebrate strength, the glory of victory, and the thrill of competition. Those gods with evil or chaotic proclivities emphasize destruction and violence, but most societies and heroic characters worship war gods who honor courage and excellence in battle and cherish those who fight when the need is great.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_cleric"
+  }
 }
 ]
