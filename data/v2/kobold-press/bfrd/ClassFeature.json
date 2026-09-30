@@ -1394,5 +1394,339 @@
     "parent": "bfrd_berserker",
     "desc": "When a creature hits or misses you with an attack, you can use your reaction to move up to half your speed toward that creature and make a single melee attack against it. If the creature is Large or larger, you have advantage on the attack roll."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_core-traits",
+  "fields": {
+    "name": "Core Bard Traits",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D8 per Bard level|\n|Saving Throw Proficiencies|Dexterity and Charisma|\n|Skill Proficiencies|Any three skills of your choice|\n|Weapon Proficiencies|Simple weapons, martial weapons with the Finesse property|\n|Tool Proficiencies|One type of musical instrument and two other tools of your choice|\n|Armor Training|Light armor|\n|Starting Equipment|Choose A or B for each: (A) a rapier or (B) any simple weapon; (A) a diplomat's pack or (B) an entertainer's pack; (A) a musical instrument or (B) a different tool you are proficient with; plus Leather armor and a dagger|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_bardic-inspiration",
+  "fields": {
+    "name": "Bardic Inspiration",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "You can inspire others through stirring words, music, or other kinds of performance. As a bonus action on your turn, you can choose a creature within 60 feet of you, other than yourself, who can hear or see you. That creature gains one Bardic Inspiration die, a d6.\n\nOnce within the next 10 minutes, the creature can roll that die and add the number rolled to one ability check, attack roll, or save that it makes. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\n\nYou can use this feature a number of times equal to your CHA modifier. You regain any expended uses when you finish a long rest.\n\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, d10 at 9th, and d12 at 14th."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "As a conduit for arcane power, you can cast Arcane spells.\n\n## Cantrips\n\nAt 1st level, choose three cantrips from the Arcane spell list to learn. You choose more Arcane cantrips to learn at higher levels, as shown in the Cantrips Known column of the Bard Progression table.\n\n## Casting Spells\n\nYou know several spells and can cast any of them by using an Arcane spell slot of the spell's circle or higher. You don't need to prepare spells ahead of time.\n\nThe Bard Progression table shows how many spells you know and how many Arcane spell slots you have at a given level. For example, at 3rd level, you have four 1st-circle slots and two 2nd-circle slots. If you know the 1st-circle spell magic missile and have a 1st-circle and a 2nd-circle spell slot available, you can cast magic missile using either slot. If you use a 1st-circle slot, you have three 1st-circle slots remaining.\n\nYou regain all used spell slots when you finish a long rest.\n\n## Spells Known of 1st Circle and Higher\n\nAt 1st level, choose four 1st-circle spells that you know. Three of these spells must be from the Arcane spell list, but the fourth can be from any source spell list. Regardless of its source, it is an Arcane spell for you.\n\nThe Spells Known column of the Bard Progression table shows when you learn additional Arcane spells. Each spell you choose must be from a circle for which you have Arcane spell slots. For instance, when you reach 3rd level as a bard, you can learn one new Arcane spell of 1st or 2nd circle. The Magical Secrets feature also lets you learn spells from other sources at certain levels.\n\nIn addition, when you gain a level of bard, you can choose one Arcane spell you know and replace it with another spell of your choice from the Arcane spell list. The replacement spell must be of a circle for which you have Arcane spell slots.\n\n## Spellcasting Ability\n\nCharisma (CHA) is your spellcasting ability. Your CHA modifier determines the save DC or the attack modifier for certain spells you cast:\n- Spell save DC = 8 + your proficiency bonus (PB) + your CHA modifier\n- Spell attack modifier = your proficiency bonus (PB) + your CHA modifier\n\n## Rituals\n\nYou can also cast a type of long-form spell called a ritual. Rituals don't count against your known spell total, and they don't use up spell slots.\n\nAt 1st level, choose one ritual from any spell list—Arcane, Divine, Primordial, or Wyrd. Regardless of its source, it becomes an Arcane spell for you. You choose more rituals to learn at higher levels, as shown in the Rituals Known column of the Bard Progression table, but only from a circle for which you have spell slots. Rituals you learn don't count against the number of spells you learn at each level.\n\n## Spellcasting Focus\n\nYou can use a musical instrument or an arcane focus as a spellcasting focus for your Arcane spells. At your GM's discretion, you can use a suitable tool or object from a different tool kit you are proficient with as a spellcasting focus instead."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_bardic-performance",
+  "fields": {
+    "name": "Bardic Performance",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "You weave magic into ongoing performances to produce effects beyond spells. You start with two effects: Celebrate Life and Cutting Words. You gain a new effect at 6th level, and some bard subclasses grant additional effects. Unless stated otherwise, targets must be within 30 feet of you and be able to hear or see you (depending on the type of performance) to be affected.\n\nAs an action, you can use your Bardic Performance feature, choosing which performance effect you create when you do so. Once active, you can continue the performance for up to 1 minute, as long as you spend a bonus action at the start of each of your subsequent turns to maintain it. You can also choose to use your Bardic Inspiration feature as part of the same bonus action required to maintain this performance.\n\nYour performance ends early if you become incapacitated, silenced, use an action to begin a new performance, or choose to end the effect (no action required by you to do so).\n\nYou can use your Bardic Performance feature to start a new performance a number of times equal to your PB, regaining all expended uses when you finish a long rest.\n\n**Bardic Performance: Celebrate Life.** At 2nd level, while your Bardic Performance feature is active, allies within range can choose to expend one of their hit dice at the start of their turn. When they do so, they roll the expended die and recover a number of hit points equal to the number rolled + your CHA modifier.\n\nIn addition, allies within range have advantage on death saves, though they don't need to see or hear you to receive this benefit.\n\n**Bardic Performance: Cutting Words.** At 2nd level you gain a special reaction while your Bardic Performance feature is active. When a creature within range that you can see makes an ability check, attack roll, or damage roll, you can use your reaction to expend a use of your Bardic Inspiration feature, rolling the die and subtracting the number rolled from the creature's roll."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_bardic-performance-clarity-of-thought",
+  "fields": {
+    "name": "Bardic Performance: Clarity of Thought",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "Starting at 6th level, you gain this Bardic Performance option.\n\nWhile using your Bardic Performance feature, allies within 30 feet of you can't be charmed and have advantage on saves against being frightened. If an ally within range is already charmed or frightened when you begin your performance, it has advantage on any saves it makes to end the effect as long as your performance continues."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_expertise",
+  "fields": {
+    "name": "Expertise",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "Choose two of your skill proficiencies, or one skill proficiency and one tool proficiency. Double your PB for any ability check you make that uses either of the chosen proficiencies.\n\nAt 6th level, you can choose two more of your proficiencies (any combination of skills or tools) to gain this benefit."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_bard-subclass",
+  "fields": {
+    "name": "Bard Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "Choose a subclass that reflects the college you align with, either Lore or Victory (detailed at the end of this class). Your choice grants you features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the technical talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_font-of-inspiration",
+  "fields": {
+    "name": "Font of Inspiration",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "You now regain all expended uses of your Bardic Inspiration feature when you finish a short or long rest.\n\nIn addition, you can now use your Bardic Inspiration dice in a new way. When a creature within 60 feet of you that you can hear or see you fails an ability check, attack roll, or save, you can use your reaction to expend a use of your Bardic Inspiration feature. When you do, roll the Bardic Inspiration die and add the number rolled to the target's check total—potentially turning a failure into a success."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_magical-secrets",
+  "fields": {
+    "name": "Magical Secrets",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "You've picked up magical knowledge from just about everywhere. Choose two spells (or cantrips) from any spell list. A spell you choose must be of a circle you can cast with your spell slots, as shown on the Bard Progression table.\n\nThe chosen spells count as Arcane spells for you and are already included in the number in the Spells Known column at these levels on the Bard Progression table.\n\nYou learn two additional spells from any source at 13th level and again at 18th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "Your commitment to the bard's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Persistent Inspiration.** When a creature adds one of your Bardic Inspiration dice to an ability check, attack roll, or save, and the roll still fails, the die isn't lost and can be used again.\n- **Valiant Inspiration.** When a creature with one of your Bardic Inspiration dice successfully deals damage with an attack, the creature can expend and roll the die to deal extra damage equal to the number rolled. The extra damage is of the same type as that of the triggering attack (though the attacker chooses which type if there are more than one). Alternatively, when a creature with one of your Bardic Inspiration dice takes damage, the creature can use its reaction to expend and roll the die to reduce the amount of damage taken by an amount equal to the number rolled + your CHA modifier."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_grand-performance",
+  "fields": {
+    "name": "Grand Performance",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "Your Bardic Performance feature now affects creatures within 60 feet of you that can hear or see you."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "Your commitment to the bard's path grants you a powerful new ability. You gain the following epic boon:\n- **Curtain Call.** If you start your turn with no uses of your Bardic Inspiration feature remaining, you can use your bonus action to recover a number of uses equal to your CHA modifier (minimum of 1). This bonus action can be taken as part of the bonus action required to maintain your Bardic Performance feature. Once you use this feature, you can't do so again until you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_rituals-known",
+  "fields": {
+    "name": "Rituals Known",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_slots-1st",
+  "fields": {
+    "name": "1st",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_slots-4th",
+  "fields": {
+    "name": "4th",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_slots-5th",
+  "fields": {
+    "name": "5th",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_slots-6th",
+  "fields": {
+    "name": "6th",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_slots-7th",
+  "fields": {
+    "name": "7th",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_slots-8th",
+  "fields": {
+    "name": "8th",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard_slots-9th",
+  "fields": {
+    "name": "9th",
+    "document": "bfrd",
+    "parent": "bfrd_bard",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard-lore_bardic-performance-ode-to-heroes",
+  "fields": {
+    "name": "Bardic Performance: Ode to Heroes",
+    "document": "bfrd",
+    "parent": "bfrd_college-of-lore",
+    "desc": "You gain the following Bardic Performance option.\n\n## Bardic Performance: Ode to Heroes\n\nYou invoke songs and stories of legend to inspire your allies to new heights of heroism and to intimidate your foes. When you use your Bardic Performance feature, choose STR, DEX, CON, INT, WIS, or CHA. While your performance lasts, allies within range have advantage on ability checks that use that ability and enemies within range have disadvantage on ability checks that use that ability."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard-lore_expanded-talent-list",
+  "fields": {
+    "name": "Expanded Talent List",
+    "document": "bfrd",
+    "parent": "bfrd_college-of-lore",
+    "desc": "When you gain a new talent, you can select it from either the magic or the technical talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard-lore_jack-of-all-trades",
+  "fields": {
+    "name": "Jack of All Trades",
+    "document": "bfrd",
+    "parent": "bfrd_college-of-lore",
+    "desc": "You make it your business to collect lessons and practical guidance from the stories, songs, and cultures you encounter. You can add half your PB, rounded down, to any ability check you make that doesn't already include your PB."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard-lore_swift-ritual",
+  "fields": {
+    "name": "Swift Ritual",
+    "document": "bfrd",
+    "parent": "bfrd_college-of-lore",
+    "desc": "You can cast an Arcane ritual you know as an action, instead of using the ritual's listed casting time. You must still provide all other components necessary for the casting. Once used, you can't use this feature again until you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard-lore_magical-rites",
+  "fields": {
+    "name": "Magical Rites",
+    "document": "bfrd",
+    "parent": "bfrd_college-of-lore",
+    "desc": "You learn two ritual spells of your choice from any source list. Each spell you choose must be of a circle for which you have spell slots, as shown in the Bard Progression table.\n\nThe chosen rituals count as Arcane spells for you and aren't included in the number in the Rituals Known column of the Bard Progression table."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_bard-lore_peerless-skill",
+  "fields": {
+    "name": "Peerless Skill",
+    "document": "bfrd",
+    "parent": "bfrd_college-of-lore",
+    "desc": "When you make an ability check and have at least one use of your Bardic Inspiration feature available, you can use it to roll a Bardic Inspiration die and add the number rolled to your ability check. If you succeed on the check, you get to keep the Bardic Inspiration die, but if you fail the check, the die is expended."
+  }
 }
 ]

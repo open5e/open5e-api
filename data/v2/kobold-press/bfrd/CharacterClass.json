@@ -148,5 +148,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_barbarian"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_bard",
+  "fields": {
+    "name": "Bard",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "dex",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_college-of-lore",
+  "fields": {
+    "name": "College of Lore",
+    "document": "bfrd",
+    "desc": "Bards who align with the college of Lore value knowledge most highly. Many from this college are preoccupied with preserving ancient rituals, folklore, and stories—or recovering such things that were lost. These bards glean wisdom from all manner of cultures and sources, allowing them to utilize their magic and talents in novel ways.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_bard"
+  }
 }
 ]
