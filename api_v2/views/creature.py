@@ -66,6 +66,7 @@ class CreatureViewSet(EagerLoadingMixin, ExcludeFieldsMixin, viewsets.ReadOnlyMo
     
     prefetch_related_fields = [
         'actions',
+        'actions__crossreferences',
         'actions__attacks',
         'actions__attacks__damage_type',
         'actions__attacks__extra_damage_type',

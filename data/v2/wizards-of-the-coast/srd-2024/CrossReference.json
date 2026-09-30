@@ -520,5 +520,41 @@
     },
     "model": "api_v2.crossreference",
     "pk": "srd-2024_antipathysympathy_srd-2024_charmed"
+  },
+  {
+    "fields": {
+      "anchor": "Telekinesis",
+      "document": "srd-2024",
+      "reference_object_key": "srd-2024_telekinesis",
+      "reference_content_type": ["api_v2", "spell"],
+      "source_content_type": ["api_v2", "magicitem"],
+      "source_object_key": "srd-2024_ring-of-telekinesis"
+    },
+    "model": "api_v2.crossreference",
+    "pk": "srd-2024_ring-of-telekinesis_srd-2024_telekinesis"
+  },
+  {
+    "fields": {
+      "anchor": "Command",
+      "document": "srd-2024",
+      "reference_object_key": "srd-2024_command",
+      "reference_content_type": ["api_v2", "spell"],
+      "source_content_type": ["api_v2", "magicitem"],
+      "source_object_key": "srd-2024_wand-of-fear"
+    },
+    "model": "api_v2.crossreference",
+    "pk": "srd-2024_command_srd-2024_wand-of-fear"
+  },
+  {
+    "fields": {
+      "anchor": "Fear",
+      "document": "srd-2024",
+      "reference_object_key": "srd-2024_fear",
+      "reference_content_type": ["api_v2", "spell"],
+      "source_content_type": ["api_v2", "magicitem"],
+      "source_object_key": "srd-2024_wand-of-fear"
+    },
+    "model": "api_v2.crossreference",
+    "pk": "srd-2024_fear_srd-2024_wand-of-fear"
   }
 ]

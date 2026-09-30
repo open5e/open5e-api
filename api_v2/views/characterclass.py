@@ -1,13 +1,25 @@
 """Viewset and Filterset for the CharacterClass Serializers."""
 from rest_framework import viewsets
 
-from django_filters import FilterSet, BooleanFilter
+from django_filters import FilterSet, BooleanFilter, ModelChoiceFilter
 
 from api_v2 import models, serializers
 from .mixins import EagerLoadingMixin, ExcludeFieldsMixin
 
 class CharacterClassFilterSet(FilterSet):
+    """
+    Creates: a dropdown list for filtering data.
+    Creates: a Django filter that returns a queryset with related
+    foreign key objects loaded.
+    Ex: Fetch each child class + its parent class in the same query.
+
+    """
+
     is_subclass = BooleanFilter(field_name='subclass_of', lookup_expr='isnull', exclude=True)
+
+    # Stops Django from creating a query for every parent and instead
+    # loads the parent objects together with the CharacterClasses.
+    subclass_of_filter = ModelChoiceFilter(queryset = models.CharacterClass.objects.select_related('subclass_of'))
 
     class Meta:
         model = models.CharacterClass
@@ -16,7 +28,7 @@ class CharacterClassFilterSet(FilterSet):
             'name': ['iexact', 'exact','contains'],
             'document__key': ['in','iexact','exact'],
             'document__gamesystem__key': ['in','iexact','exact'],
-            'subclass_of': ['exact']
+            
         }
 
 
