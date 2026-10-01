@@ -2833,5 +2833,293 @@
     "parent": "bfrd_open-hand",
     "desc": "As an action, you can make a single unarmed strike against a creature. On a hit, you can spend 4 technique points to fill that creature with potentially lethal vibrations that last for a number of days equal to your monk level.\n\nFor the duration, so long as you and the target are on the same plane, you can use an action to end the vibrations, ripping the creature apart. When you do, the target must make a CON save. On a failure, the target takes force damage equal to 5 × your monk level and is paralyzed until the end of your next turn. On a success, the target is stunned for 1 minute, and at the end of each of their turns, and each time they take damage, the target can repeat the save, ending the effect on a success. A target that fails the save by 5 or more instantly dies.\n\nEach time you use this feature after the first, the technique cost to use it increases by 2. When you finish a long rest, the cost resets. This feature can affect only one target at a time."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_core-traits",
+  "fields": {
+    "name": "Core Paladin Traits",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D10 per Paladin level|\n|Saving Throw Proficiencies|Wisdom and Charisma|\n|Skill Proficiencies|Choose 2: Athletics, Insight, Intimidation, Medicine, Persuasion, Religion|\n|Weapon Proficiencies|Simple weapons, martial weapons|\n|Tool Proficiencies|None|\n|Armor Training|All armor and shields|\n|Starting Equipment|Choose A or B for each: (A) a martial weapon and a shield or (B) two martial weapons; (A) five javelins or (B) any simple melee weapon; (A) a priest's pack or (B) an explorer's pack; plus Chain mail and a holy symbol|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_divine-sense",
+  "fields": {
+    "name": "Divine Sense",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "During your turn, you can open your awareness to detect the presence of supernatural forces (no action required). For 1 minute, you know the location of any Celestial, Fiend, or Undead within 60 feet of you that isn't behind total cover. You know the creature type of any being whose presence you sense, but you don't know which specific creature it is. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated with the hallow spell.\n\nYou can use this feature a number of times equal to your PB + 1. When you finish a long rest, you regain all uses."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_lay-on-hands",
+  "fields": {
+    "name": "Lay on Hands",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to 5 × your paladin level.\n\nAs an action, you can touch a willing creature and draw from the pool to restore a number of hit points to that creature up to the maximum amount remaining in your pool. Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single use of this feature, expending hit points separately for each one.\n\nAs a bonus action, you can use this feature to affect yourself instead of a different creature. This feature has no effect on Constructs or Undead."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "At 2nd level, you enhance your martial prowess with the ability to cast Divine spells.\n\n**Casting Spells.** You know a small number of spells and can cast any of them by using a Divine spell slot of the spell's circle or higher. You don't need to prepare spells ahead of time.\n\nThe Paladin Progression table shows how many spells you know and how many Divine spell slots you have at a given level. For example, at 5th level, you have four 1st-circle slots and two 2nd-circle slots. If you know the 1st-circle spell bless and have a 1st-circle and a 2nd-circle spell slot available, you can cast bless using either slot. If you use a 1st-circle slot, you have three 1st-circle slots remaining.\n\nYou regain all used spell slots when you finish a long rest.\n\n**Spells Known of 1st Circle and Higher.** At 2nd level, choose two 1st-circle spells from the Divine spell list to learn.\n\nThe Spells Known column of the Paladin Progression table shows when you learn additional Divine spells. Each spell you choose must be from a circle for which you have Divine spell slots. For instance, when you reach 5th level as a paladin, you can learn one new Divine spell from the 1st or 2nd circle.\n\nIn addition, when you gain a level of paladin, you can choose one Divine spell you know and replace it with another spell of your choice from the Divine spell list. The replacement spell must be of a circle for which you have Divine spell slots.\n\n**Spellcasting Ability.** Charisma (CHA) is your spellcasting ability. Your CHA modifier determines the save DC or the attack modifier for certain spells you cast:\n- Spell save DC = 8 + your proficiency bonus (PB) + your CHA modifier\n- Spell attack modifier = your proficiency bonus (PB) + your CHA modifier\n\n**Spellcasting Focus.** You can use a holy symbol as a spellcasting focus for your Divine spells."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_divine-smite",
+  "fields": {
+    "name": "Divine Smite",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "Once per turn, when you hit a creature with a weapon attack, you can expend one spell slot to deal extra radiant damage to the target, in addition to the weapon's normal damage. The extra damage is 2d8 for a 1st-circle spell slot, plus 1d8 for each circle higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is a Fiend or Undead."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_martial-action",
+  "fields": {
+    "name": "Martial Action",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "Your tactical expertise allows you to act quickly on the battlefield. You can take a bonus action on each of your turns in combat to perform a weapon option or one of the martial actions granted by this feature.\n\nChoose one of the following martial actions that you know.\n\n## Guard\n\n*Requires Wielding a Shield*\n\nAs a bonus action, you raise your shield to intercept incoming attacks. Select one enemy creature within 5 feet of you. That creature has disadvantage on the first attack roll it makes against you or an ally within 5 feet of you before the start of your next turn.\n\n## Wind Up\n\n*Requires Wielding a Heavy or a Versatile Weapon with Both Hands*\n\nAs a bonus action, you ready a powerful attack against a nearby target. Select one target you can see within 10 feet of you. If you hit that target with a melee weapon attack before the end of your turn, the first such attack deals extra damage equal to your PB (of the same damage type as the weapon)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_paladin-subclass",
+  "fields": {
+    "name": "Paladin Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "Choose a subclass that reflects the oath you swear to uphold, either Devotion or Justice (detailed at the end of this class). Your choice grants you spells and other features at 3rd, 7th, 11th, and 15th level.\n\n**Oath Spells.** Each paladin subclass has a list of oath spells that you can access as soon as you can cast spells of that circle (as shown in the Paladin Progression table). Once you gain such a spell, it is always on your list of known spells, and it doesn't count against the number of spells you know. However, casting an oath spell still expends a Divine spell slot as normal.\n\nIf one of these spells isn't on the Divine spell list, it still counts as a Divine spell for you. You can't replace oath spells when you gain a level of paladin."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_channel-divinity",
+  "fields": {
+    "name": "Channel Divinity",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "Each paladin subclass gives you one or more ways to channel divine energy into magical effects, and each subclass explains how they work.\n\nWhen you use your Channel Divinity feature, choose which effect you want. Some of these effects require a save, and in those cases, the DC is equal to your spell save DC.\n\nBeginning at 13th level, you can use your Channel Divinity feature twice between rests, then three times at 18th level. When you finish a short or long rest, you regain any expended uses."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the martial talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_multiattack",
+  "fields": {
+    "name": "Multiattack",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "Your physical prowess has grown. On your turn, you can make two attacks when you take the Attack action."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_aura-of-protection",
+  "fields": {
+    "name": "Aura of Protection",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "When you or a friendly creature within 10 feet of you makes a save, the creature gains a bonus to the save equal to your CHA modifier (minimum bonus of +1). You must be conscious to grant this bonus. A creature can only receive the benefits of one Aura of Protection feature at a time (that is, auras from multiple paladins don't stack)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_aura-of-courage",
+  "fields": {
+    "name": "Aura of Courage",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "You and friendly creatures within 10 feet of you can't be frightened while you are conscious."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "Your commitment to the paladin's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Divine Recovery.** When you heal a creature with your Lay on Hands feature, the target can expend one of their hit dice, roll the die, and add their CON modifier to it. The target regains that many hit points, in addition to any healing received from Lay on Hands.\n- **Radiant Strikes.** Your every strike is divinely empowered. When you hit a creature with a weapon, the attack deals an extra 1d8 radiant damage. Fiends and Undead instead take 2d8 radiant damage. This extra damage stacks with any damage from your Divine Smite feature."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_cleansing-touch",
+  "fields": {
+    "name": "Cleansing Touch",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "You can use your action to end one spell on yourself or on one willing creature you touch.\n\nYou can use this feature a number of times equal to your CHA modifier (minimum of one). You regain expended uses when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_aura-improvements",
+  "fields": {
+    "name": "Aura Improvements",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "The range of your Aura of Protection and Aura of Courage features (and any auras granted by your paladin subclass) increases to 30 feet."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "Your commitment to the paladin's path grants you a powerful new ability. You gain the following epic boon:\n- **Aura of Salvation.** As an action, you can exude a calming reassurance for 1 hour. While the aura is active, you and friendly creatures within 30 feet of you have resistance to nonmagical damage and automatically succeed on death saving throws. A creature with at least 1 HP that starts its turn in the aura regains hit points equal to your CHA modifier. This effect ends early if you are incapacitated or die. Once used, you can't use it again until you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_slots-1st",
+  "fields": {
+    "name": "1st",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_slots-4th",
+  "fields": {
+    "name": "4th",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin_slots-5th",
+  "fields": {
+    "name": "5th",
+    "document": "bfrd",
+    "parent": "bfrd_paladin",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin-devotion_channel-divinity",
+  "fields": {
+    "name": "Channel Divinity",
+    "document": "bfrd",
+    "parent": "bfrd_oath-of-devotion",
+    "desc": "You gain the following two Channel Divinity options.\n\n## Channel Divinity: Sacred Weapon\n\nAs an action, you can imbue one weapon you are holding with positive energy. For 1 minute, you add your CHA modifier to attack rolls you make with that weapon (minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the effected weapon isn't already magical, it becomes magical for the duration.\n\nYou can end this effect on your turn (no action required). It ends early if you fall unconscious.\n\n## Channel Divinity: Sanctifying Light\n\nAs an action, you present your holy symbol and speak a prayer to bathe yourself in a flash of holy light. Each Aberration, Fey, Fiend, and Undead of your choice within 30 feet of you that can see you must make a CHA save. If the creature fails its save, it is blinded for 1 minute. At the end of each of its turns, a target can make a CON save, ending the effect for itself on a success."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin-devotion_devotion-oath-spells",
+  "fields": {
+    "name": "Devotion Oath Spells",
+    "document": "bfrd",
+    "parent": "bfrd_oath-of-devotion",
+    "desc": "You gain oath spells at the paladin levels listed in the Devotion Oath Spells table. See the Paladin Subclass class feature for how these spells work.\n\n|Paladin Level|Spells|\n|---|---|\n|3rd|sanctuary|\n|5th|warding bond|\n|9th|protection from energy|\n|13th|stoneskin|\n|17th|mass cure wounds|"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin-devotion_aura-of-devotion",
+  "fields": {
+    "name": "Aura of Devotion",
+    "document": "bfrd",
+    "parent": "bfrd_oath-of-devotion",
+    "desc": "You and friendly creatures within 10 feet of you can't be charmed while you are conscious. This aura is enhanced by the 17th-level Aura Improvements class feature."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin-devotion_purity-of-spirit",
+  "fields": {
+    "name": "Purity of Spirit",
+    "document": "bfrd",
+    "parent": "bfrd_oath-of-devotion",
+    "desc": "Your connection to divinity gives you constant protection from the influence of supernatural creatures. You always have the following protections against Aberrations, Celestials, Elementals, Fey, Fiends, Undead, and creatures with the Outsider tag:\n- Listed creatures have disadvantage on attack rolls against you.\n- You can use your Divine Sense feature to detect any listed creatures, not just Celestials, Fiends, and Undead.\n- You can't be charmed, frightened, or possessed by listed creatures."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_paladin-devotion_holy-nimbus",
+  "fields": {
+    "name": "Holy Nimbus",
+    "document": "bfrd",
+    "parent": "bfrd_oath-of-devotion",
+    "desc": "As an action, you can emanate a nimbus of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that. This light counts as true sunlight, such as when interacting with Sunlight Hypersensitivity, and it banishes areas of magical darkness created by the darkness spell or similar magic.\n\nWhen an enemy creature starts its turn in the bright light, it takes radiant damage equal to your paladin level. In addition, for the duration, you have advantage on saves.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
+  }
 }
 ]
