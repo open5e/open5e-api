@@ -3121,5 +3121,283 @@
     "parent": "bfrd_oath-of-devotion",
     "desc": "As an action, you can emanate a nimbus of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that. This light counts as true sunlight, such as when interacting with Sunlight Hypersensitivity, and it banishes areas of magical darkness created by the darkness spell or similar magic.\n\nWhen an enemy creature starts its turn in the bright light, it takes radiant damage equal to your paladin level. In addition, for the duration, you have advantage on saves.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_core-traits",
+  "fields": {
+    "name": "Core Ranger Traits",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D10 per Ranger level|\n|Saving Throw Proficiencies|Strength and Dexterity|\n|Skill Proficiencies|Choose 3: Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival|\n|Weapon Proficiencies|Simple weapons, martial weapons|\n|Tool Proficiencies|Choose herbalist tools, navigator tools, or trapper tools|\n|Armor Training|Light armor, medium armor, and shields|\n|Starting Equipment|Choose A or B for each: (A) scale mail or (B) leather armor; (A) two shortswords or (B) two simple weapons; (A) a dungeoneer's pack or (B) an explorer's pack; plus a longbow and quiver of 20 arrows|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_explorer",
+  "fields": {
+    "name": "Explorer",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "Your ability to deal with environmental challenges is unmatched. You gain the following benefits:\n- You gain either a climbing speed or swimming speed equal to your base movement speed.\n- You have advantage on checks to track a creature.\n- Your speed isn't halved when you move through nonmagical or magical difficult terrain. You suffer other penalties caused by moving through difficult terrain as normal."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_mystic-mark",
+  "fields": {
+    "name": "Mystic Mark",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "When you hit a creature with an attack roll, you can mystically mark it as your favored quarry. The creature remains marked for 1 minute, until you use this feature to mark a different creature, or until you become incapacitated.\n\nWhile a creature is marked (including for the attack that triggered the mark), you deal an extra 1d4 damage to it (of the same damage type as the weapon) each time you successfully hit it with a weapon attack.\n\nYou can use this feature a number of times equal to your PB. You regain all uses when you finish a long rest.\n\nThis extra damage increases as you gain ranger levels, becoming 1d6 at 6th level, 1d8 at 13th, and 1d10 at 17th."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_martial-action",
+  "fields": {
+    "name": "Martial Action",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "Your tactical expertise allows you to act quickly on the battlefield. You can take a bonus action on each of your turns in combat to perform a weapon option or one of the martial actions granted by this feature.\n\nChoose one of the following martial actions that you know.\n\n## Aim\n\n*Requires Wielding a Ranged or Thrown Weapon*\n\nAs a bonus action, you take the time to increase the effectiveness of your next ranged weapon attack. Select one target you can see. If you make a ranged weapon attack against that target before the end of your turn, double your PB for the first attack roll.\n\n## Quick Strike\n\n*Requires Wielding Two Light Weapons*\n\nAfter you take the Attack action on your turn and attack with a Light melee weapon that you're holding in one hand, you can use a bonus action to make two attacks with a different Light melee weapon that you're holding in the other hand—instead of the one attack typically granted by two-weapon fighting. Don't add your ability modifier to the damage of these additional attacks unless the modifier is negative."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "At 2nd level, you enhance your martial prowess with the ability to cast Primordial spells.\n\n**Casting Spells.** You know a small number of spells and can cast any of them by using a Primordial spell slot of the spell's circle or higher. You don't need to prepare spells ahead of time.\n\nThe Ranger Progression table shows how many spells you know and how many Primordial spell slots you have at a given level. For example, at 5th level, you have four 1st-circle slots and two 2nd-circle slots. If you know the 1st-circle spell animal friendship and have a 1st-circle and a 2nd-circle spell slot available, you can cast animal friendship using either slot. If you use a 1st-circle slot, you have three 1st-circle slots remaining.\n\nYou regain all used spell slots when you finish a long rest.\n\n**Spells Known of 1st Circle and Higher.** At 2nd level, choose two 1st-circle spells from the Primordial spell list that you know.\n\nThe Spells Known column of the Ranger Progression table shows when you learn additional Primordial spells. Each spell you choose must be from a circle for which you have Primordial spell slots. For instance, when you reach 5th level as a ranger, you can learn one new Primordial spell from the 1st or 2nd circle.\n\nIn addition, when you gain a level of ranger, you can choose one Primordial spell you know and replace it with another spell of your choice from the Primordial spell list. The replacement spell must be of a circle for which you have Primordial spell slots.\n\n**Spellcasting Ability.** Wisdom (WIS) is your spellcasting ability. Your WIS modifier determines the save DC or the attack modifier for certain spells you cast:\n- Spell save DC = 8 + your proficiency bonus (PB) + your WIS modifier\n- Spell attack modifier = your proficiency bonus (PB) + your WIS modifier\n\n**Spellcasting Focus.** You can use a druidic focus as a spellcasting focus for your Primordial spells."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_ranger-subclass",
+  "fields": {
+    "name": "Ranger Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "Choose a subclass that reflects your connection to the natural world, either Hunter or Pack Master (detailed at the end of this class). Your choice grants you spells and other features at 3rd, 7th, 11th, and 15th level.\n\n**Calling Spells.** Each ranger subclass has a list of calling spells that you can access as soon as you can cast spells of that circle (as shown in the Ranger Progression table). Once you gain such a spell, it is always on your list of known spells, and it doesn't count against the number of spells you know. However, casting a calling spell still expends a Primordial spell slot as normal.\n\nIf one of these spells isn't on the Primordial spell list, it still counts as a Primordial spell for you. You can't replace calling spells when you gain a level of ranger."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from either the martial or the technical talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_multiattack",
+  "fields": {
+    "name": "Multiattack",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "Your physical prowess has grown. On your turn, you can make two attacks when you take the Attack action."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_empowered-mark",
+  "fields": {
+    "name": "Empowered Mark",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "Your instincts have sharpened, granting you supernatural awareness of your quarry. While a creature marked by your Mystic Mark feature is within 60 feet of you, you know its exact location, and it can't gain advantage on attacks against you as a result of being invisible or otherwise unseen. In addition, when you attack a marked creature within 60 feet of you, an inability to see it doesn't impose disadvantage on your attack rolls against it."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_stalkers-step",
+  "fields": {
+    "name": "Stalker's Step",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "While you are in dim light, darkness, or are lightly obscured or heavily obscured by foliage, mist, or some other natural phenomenon, you can use a bonus action to magically become invisible, along with any equipment you are wearing or carrying, until the start of your next turn. This invisibility ends early if you attack or cast a spell.\n\nYou can use this feature a number of times equal to your PB and regain all uses when you complete a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "Your commitment to the ranger's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Path of the Predator.** When you roll initiative, you can expend a use of Mystic Mark to automatically mark one creature you can see, no attack required. In addition, if a marked creature is reduced to 0 HP, you can use your reaction to transfer the mark to a different creature you can see within 60 feet of the original target.\n- **Path of the Sage.** You learn two cantrips of your choice from the Primordial spell list. You also learn two ritual spells of your choice from the Primordial spell list. Both ritual spells must be from circles you have spell slots for, as shown on the Ranger Progression table. Ritual spells learned this way don't count against your total number of spells known. WIS is your spellcasting ability for cantrips and ritual spells learned in this way. When you gain a level of ranger, you can replace one of these cantrips and one of these rituals with another cantrip or ritual spell from the Primordial spell list, as long as the replacement ritual spell is still of a circle you have spell slots for."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_keensense",
+  "fields": {
+    "name": "Keensense",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "You have keensense to a range of 10 feet. Your keensense ceases to function while you are deafened or otherwise deprived of hearing."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_strider",
+  "fields": {
+    "name": "Strider",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "Your movement never provokes opportunity attacks, and you have advantage on any check made to resist an effect that would cause you to become grappled, restrained, or paralyzed or that would otherwise reduce your movement speed to 0 feet."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "Your commitment to the ranger's path grants you a powerful new ability. You gain the following epic boon:\n- **Foe Slayer.** You can add your WIS modifier to either the attack roll or the damage roll of each attack you make against a creature marked by your Mystic Mark on your turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_spells-known",
+  "fields": {
+    "name": "Spells Known",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_slots-1st",
+  "fields": {
+    "name": "1st",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_slots-4th",
+  "fields": {
+    "name": "4th",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger_slots-5th",
+  "fields": {
+    "name": "5th",
+    "document": "bfrd",
+    "parent": "bfrd_ranger",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger-hunter_hunter-calling-spells",
+  "fields": {
+    "name": "Hunter Calling Spells",
+    "document": "bfrd",
+    "parent": "bfrd_hunter",
+    "desc": "You gain calling spells at the ranger levels listed in the Hunter Calling Spells table. See the Ranger Subclass class feature for how these spells work.\n\n|Ranger Level|Spells|\n|---|---|\n|3rd|protection from evil and good|\n|5th|misty step|\n|9th|nondetection|\n|13th|banishment|\n|17th|greater hold|"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger-hunter_killer-instinct",
+  "fields": {
+    "name": "Killer Instinct",
+    "document": "bfrd",
+    "parent": "bfrd_hunter",
+    "desc": "As a bonus action, choose a creature within 60 feet of you that you can see. You immediately learn the creature's immunities, resistances, and vulnerabilities, or you learn if it has none. This feature doesn't function if the target is magically concealed by a nondetection spell or similar effect that counters divination magic.\n\nYou can use this feature a number of times equal to your PB and regain all uses of it when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger-hunter_relentless-pursuit",
+  "fields": {
+    "name": "Relentless Pursuit",
+    "document": "bfrd",
+    "parent": "bfrd_hunter",
+    "desc": "Your tenacity wears down even potent foes. When you hit a creature with a weapon attack, you deal extra damage if the target is below its hit point maximum. The extra damage is equal to the amount your Mystic Mark feature deals at your level and is of the same damage type as the weapon. You can deal this extra damage only once per turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger-hunter_favored-foe",
+  "fields": {
+    "name": "Favored Foe",
+    "document": "bfrd",
+    "parent": "bfrd_hunter",
+    "desc": "As part of a long rest, you can spend time reviewing your research and preparing to face a specific type of monster. Choose a type of enemy: Aberration, Beast, Celestial, Construct, Dragon, Elemental, Fey, Fiend, Giant, Monstrosity, Ooze, Plant, or Undead. For 24 hours, creatures of that type have disadvantage on attack rolls against you. You also have advantage on saves against being charmed, frightened, or possessed by them.\n\nAt the end of your next long rest, you can choose the same type of creature or a different creature type as your Favored Foe."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger-hunter_no-escape",
+  "fields": {
+    "name": "No Escape",
+    "document": "bfrd",
+    "parent": "bfrd_hunter",
+    "desc": "When a creature marked by your mystic mark attempts to move, you can use your reaction to magically teleport up to 30 feet. If you teleport to a space within your weapon's reach of the target, you can immediately make an opportunity attack as part of the same reaction."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_ranger-hunter_predators-shield",
+  "fields": {
+    "name": "Predator's Shield",
+    "document": "bfrd",
+    "parent": "bfrd_hunter",
+    "desc": "When you take damage from a creature you can see, you can use your reaction to supernaturally ward yourself against that creature for a short time. You have resistance to all damage dealt by the target for 1 minute, including resistance to the damage dealt by the triggering attack. This effect ends early if you become incapacitated.\n\nOnce used, this feature can't be used again until you finish a long rest."
+  }
 }
 ]

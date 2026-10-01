@@ -342,5 +342,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_paladin"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_ranger",
+  "fields": {
+    "name": "Ranger",
+    "document": "bfrd",
+    "hit_dice": "D10",
+    "caster_type": "HALF",
+    "primary_abilities": [],
+    "saving_throws": [
+      "str",
+      "dex"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_hunter",
+  "fields": {
+    "name": "Hunter",
+    "document": "bfrd",
+    "desc": "Rangers who heed the calling of the Hunter are no mere trappers or furriers. They are the last line of defense between the natural and the supernatural world. Hunters seek, stalk, and slay monstrous predators like outsiders, fiends, and undead who devastate populations with their malign magic.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_ranger"
+  }
 }
 ]
