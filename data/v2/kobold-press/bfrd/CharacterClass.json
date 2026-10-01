@@ -252,5 +252,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_druid"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_fighter",
+  "fields": {
+    "name": "Fighter",
+    "document": "bfrd",
+    "hit_dice": "D10",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "str",
+      "con"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_weapon-master",
+  "fields": {
+    "name": "Weapon Master",
+    "document": "bfrd",
+    "desc": "Most fighters feel a deep connection to their weapons, but none more so than the Weapon Master. For them, a favored bow or blade is a natural extension of their body and a trusted ally. Fighters who pursue this subclass learn to use their chosen arms with efficiency and artistry.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_fighter"
+  }
 }
 ]

@@ -2405,5 +2405,158 @@
     "parent": "bfrd_shifter",
     "desc": "You can now cast Primordial spells while in beast form, and your form doesn't hinder performing the somatic and verbal components of spells. You must still provide any required material components as normal."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_core-traits",
+  "fields": {
+    "name": "Core Fighter Traits",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D10 per Fighter level|\n|Saving Throw Proficiencies|Strength and Constitution|\n|Skill Proficiencies|Choose 2: Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, Survival|\n|Weapon Proficiencies|Simple weapons, martial weapons|\n|Tool Proficiencies|None|\n|Armor Training|All armor and shields|\n|Starting Equipment|Choose A or B for each: (A) chain mail or (B) leather armor, longbow, and 20 arrows; (A) a martial weapon and a shield or (B) two martial weapons; (A) a light crossbow and 20 bolts or (B) two handaxes; (A) a dungeoneer's pack or (B) an explorer's pack|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_last-stand",
+  "fields": {
+    "name": "Last Stand",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "When you take damage that would reduce your hit points to less than half your hit point maximum (rounded down), you can use your reaction to spend hit dice, up to a number equal to your PB. Immediately roll those hit dice. You regain hit points equal to the sum of all dice rolled + your CON modifier."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_martial-action",
+  "fields": {
+    "name": "Martial Action",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "Your tactical expertise allows you to act quickly on the battlefield. You can take a bonus action on each of your turns in combat to perform a weapon option or one of the martial actions granted by this feature.\n\nChoose one of the following martial actions that you know.\n\n## Aim\n\n*Requires Wielding a Ranged or Thrown Weapon*\n\nAs a bonus action, you take the time to increase the effectiveness of your next ranged weapon attack. Select one target you can see. If you make a ranged weapon attack against that target before the end of your turn, double your PB for the first attack roll.\n\n## Guard\n\n*Requires Wielding a Shield*\n\nAs a bonus action, you raise your shield to intercept incoming attacks. Select one enemy creature within 5 feet of you. That creature has disadvantage on the first attack roll it makes against you or an ally within 5 feet of you before the start of your next turn.\n\n## Quick Strike\n\n*Requires Wielding Two Light Weapons*\n\nAfter you take the Attack action on your turn and attack with a Light melee weapon that you're holding in one hand, you can use a bonus action to make two attacks with a different Light melee weapon that you're holding in the other hand—instead of the one attack typically granted by two-weapon fighting. Don't add your ability modifier to the damage of these additional attacks unless the modifier is negative.\n\n## Wind Up\n\n*Requires Wielding a Heavy or a Versatile Melee Weapon with Both Hands*\n\nAs a bonus action, you ready a powerful attack against a nearby target. Select one target you can see within 10 feet of you. If you hit that target with a melee weapon attack before the end of your turn, the first such attack deals extra damage equal to your PB (of the same damage type as the weapon)."
+  }
+},
+
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_action-surge",
+  "fields": {
+    "name": "Action Surge",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "When the need is great, you push your body to its absolute limit. On your turn, you can activate this feature to gain another action—in addition to the action and possible bonus action you regularly get on your turn.\n\nOnce you use this feature, you must complete a short or long rest before you can use it again. Starting at 13th level, you can use it twice before a rest but only once on the same turn. At 18th level, you can use it three times before a rest but only once on the same turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_fighter-subclass",
+  "fields": {
+    "name": "Fighter Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "Choose a subclass that reflects your role in battle, either Spell Blade or Weapon Master (detailed at the end of this class). Your choice grants you features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the martial talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_multiattack",
+  "fields": {
+    "name": "Multiattack",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "Your physical prowess has grown. On your turn, you can make two attacks when you take the Attack action.\n\nStarting at 9th level, you can make three attacks when you take the Attack action. At 17th level, you can make four."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "Your commitment to the fighter's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Defiant.** When you fail a save, you can instead choose to succeed on the save. You can use this feature once and regain the use of it when you finish a long rest. You can use it twice before a long rest at 13th level, and three times at 17th.\n- **Unstoppable.** When you start your turn, you can choose to end one of the following conditions affecting you: blinded, charmed, frightened, incapacitated, paralyzed, or stunned. You can use this feature a number of times equal to your PB, and you regain all expended uses when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "Your commitment to the fighter's path grants you a powerful new ability. You gain the following epic boon:\n- **Turn the Tide.** Once on each of your turns, when you hit a creature or object with a weapon attack on your turn, you can cause the attack to deal additional damage (of the same damage type as the weapon) equal to your STR or DEX score (your choice). The attack's damage ignores resistance and immunity, and it can't be reduced or avoided by any means."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_fighter",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter-weapon-master_mastery",
+  "fields": {
+    "name": "Mastery",
+    "document": "bfrd",
+    "parent": "bfrd_weapon-master",
+    "desc": "Choose three types of simple or martial weapons with which you have proficiency. You have mastered the use of those three weapons.\n\nOnce per turn, when you roll damage for an attack with a weapon you have mastered, you can reroll the weapon's damage dice and use either result.\n\nAlternatively, once per turn, when you use a weapon option for a weapon that you have mastered, you can roll the attack's damage even if the weapon option doesn't normally allow it."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter-weapon-master_stunts",
+  "fields": {
+    "name": "Stunts",
+    "document": "bfrd",
+    "parent": "bfrd_weapon-master",
+    "desc": "As part of your training, you've learned to use unique tactics with certain weapons. You gain access to special maneuvers called stunts.\n\nTo use a stunt, you must wield a weapon that matches the weapon type listed in the stunt description (if one is listed). You can only use one stunt per turn. You gain access to advanced stunts at higher levels.\n\nAll stunts listed are available to you at 3rd level. You can perform stunts a number of times equal to your PB + 1. After that, you must finish a short or long rest to regain expended uses.\n\n**Saves.** Some stunts require your target to make a save to resist its effects. The save DC for these stunts is calculated as follows:\n- Stunt save DC = 8 + your proficiency bonus (PB) + your STR or DEX modifier (your choice)\n\n## Stunt Options\n\nStunts are presented in alphabetical order.\n\n### Arcing Strike\n\n*Requires a Heavy Melee Weapon*\n\nWhen you deal damage with a heavy weapon wielded in both hands, you can also deal half the damage you dealt to a different target within reach that you can see. If the second target is an object, it takes the full damage instead. You can decide to use this after you know your damage roll.\n\n### Cheap Shot\n\n*Requires a Melee Weapon*\n\nWhen you successfully hit a target with a melee weapon as part of the Attack action, you can immediately make an unarmed strike against that target as part of the same Attack action.\n\n### Make It Count\n\nWhen you take the Attack action, you can make a single weapon attack with a +10 to the attack roll. On a hit, the attack deals additional damage equal to your fighter level. You can't make additional attacks as part of that Attack action, even if a feature like Multiattack would normally allow you to do so.\n\n### Parry\n\n*Requires a Melee Weapon*\n\nWhen a creature you can see hits you with a weapon attack, you can use your reaction to reduce the damage you take by 1d10 + your PB (to a minimum of 0 damage).\n\n### Redirect\n\nWhen you miss a target with a weapon attack, you can use your reaction to immediately reroll the attack, but you must select a different target you can see within 5 feet of the original target.\n\n### Riposte\n\n*Requires a Melee Weapon*\n\nWhen a creature you can see within range misses you with a weapon attack, you can use your reaction to immediately make a melee weapon attack against that creature.\n\n### Straight Through\n\n*Requires a Ranged Weapon*\n\nWhen you deal damage with a ranged weapon attack, you can also deal half the damage you dealt to a different target you can see within 5 feet of the original target. You can decide to use this after you know your damage roll.\n\n### Tactical Retreat\n\n*Requires a Melee Weapon*\n\nWhen you hit a creature with a weapon as part of the Attack action, you can immediately move up to half your speed as part of the same action without provoking opportunity attacks."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter-weapon-master_deadly-flourish",
+  "fields": {
+    "name": "Deadly Flourish",
+    "document": "bfrd",
+    "parent": "bfrd_weapon-master",
+    "desc": "Attacks made with weapons you have mastered through your Mastery feature score critical hits on rolls of 19 or 20. When you score a critical hit, you can use your reaction to do one of the following:\n- Make a ranged weapon attack against a number of creatures equal to your PB within 15 feet of the target hit by your critical hit.\n- Make a separate melee attack against each creature within 5 feet of you."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter-weapon-master_advanced-stunts",
+  "fields": {
+    "name": "Advanced Stunts",
+    "document": "bfrd",
+    "parent": "bfrd_weapon-master",
+    "desc": "The following powerful stunts are available to you whenever you could use a stunt.\n\n### Assassin's Ambush\n\nWhen you hit a creature, from which you are hidden, with a weapon attack, roll your weapon damage dice twice instead of once. On a critical hit, roll the weapon's damage dice three times instead of twice.\n\n### Bulwark\n\n*Requires a Shield*\n\nWhen you take damage from a spell or ability that requires a save, such as the fireball spell, you can use your reaction to reduce the damage dealt to you by an amount equal to your AC. Psychic damage can't be reduced by this stunt.\n\n### Felling Sweep\n\n*Requires a Heavy Melee Weapon*\n\nAs an action, you can make a single melee attack that targets each creature within reach, using a single attack and damage roll.\n\n### Preemptive Strike\n\n*Requires a Melee Weapon*\n\nWhen a creature comes within reach of your weapon, you can use your reaction to make a single attack against it. On a hit, the target's speed is reduced by 15 feet until the start of your next turn.\n\n### Rapid Release\n\n*Requires a Ranged or Thrown Weapon*\n\nAfter you take the Attack action, you can use a bonus action to make an additional attack with a ranged or thrown weapon. You can draw a thrown weapon as part of the attack.\n\n### Wrestler's Clutch\n\n*Requires a Melee Weapon*\n\nWhen you hit a creature with a melee attack, the creature must succeed on a STR save or become grappled by you. While this grapple persists, stunts you use against the grappled creature don't expend uses of your Stunts feature. This grapple ends if you attack another creature, the target escapes, or you end it (no action required)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_fighter-weapon-master_grand-finale",
+  "fields": {
+    "name": "Grand Finale",
+    "document": "bfrd",
+    "parent": "bfrd_weapon-master",
+    "desc": "When you roll initiative and have no uses of your Stunts feature remaining, you can regain 3 uses. You must complete a long rest before you can use this feature again."
+  }
 }
 ]
