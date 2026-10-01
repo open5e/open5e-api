@@ -2558,5 +2558,280 @@
     "parent": "bfrd_weapon-master",
     "desc": "When you roll initiative and have no uses of your Stunts feature remaining, you can regain 3 uses. You must complete a long rest before you can use this feature again."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_core-traits",
+  "fields": {
+    "name": "Core Monk Traits",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D8 per Monk level|\n|Saving Throw Proficiencies|Strength and Dexterity|\n|Skill Proficiencies|Choose 2: Acrobatics, Athletics, History, Insight, Religion, Stealth|\n|Weapon Proficiencies|Simple weapons, shortswords|\n|Tool Proficiencies|One of your choice|\n|Armor Training|None|\n|Starting Equipment|Choose A or B for each: (A) any simple weapon; (A) a dungeoneer's pack or (B) an explorer's pack; (A) 10 darts or (B) a sling|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_martial-arts",
+  "fields": {
+    "name": "Martial Arts",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "You have mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the Two-handed or Heavy property. You gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:\n- You can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk Progression table.\n- You can use DEX instead of STR for attack and damage rolls of your unarmed strikes and monk weapons.\n- When you are hit by a ranged weapon attack, you can use your reaction to reduce the damage you take from the attack by 1d10 + your DEX modifier + your monk level. If you reduce the damage to 0, you can catch the missile or thrown weapon if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack, with a normal range of 20 feet and a long range of 60 feet.\n- When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven't already taken a bonus action this turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_unarmored-defense",
+  "fields": {
+    "name": "Unarmored Defense",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "While you are wearing no armor and not wielding a shield, your AC equals 10 + your DEX modifier + your WIS modifier."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_techniques",
+  "fields": {
+    "name": "Techniques",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Your training gives you access to special techniques that allow you to amplify and manipulate the energy within yourself and the environment. Your ability to use this energy is represented by technique points. Your monk level determines the number of points you have, as shown in the Technique Points column of the **Monk Progression** table.\n\nYou can spend these points to fuel various techniques. You start knowing three techniques: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more technique features as you gain levels in this class.\n\nYou recover expended technique points when you finish a short or long rest. You must spend at least 30 minutes of the rest meditating to regain your technique points.\n\nSome of your techniques require your target to make a save to resist the technique's effects. The save DC is calculated as follows:\n\n**Technique save DC** = 8 + your proficiency bonus (PB) + your WIS modifier\n\n## Flurry of Blows\n\nImmediately after you use an action on your turn, you can spend 1 technique point to make two unarmed strikes or make one attack with a monk weapon as a bonus action.\n\n## Patient Defense\n\nYou can spend 1 technique point to take the Dodge action as a bonus action on your turn.\n\n## Step of the Wind\n\nYou can spend 1 technique point to take the Disengage or Dash action as a bonus action on your turn. When you do so, your jump distance is doubled until the start of your next turn."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_unarmored-movement",
+  "fields": {
+    "name": "Unarmored Movement",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Your speed increases by 10 feet while you aren't wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk Progression table."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_monk-subclass",
+  "fields": {
+    "name": "Monk Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Choose a subclass that reflects your method for connecting with the energies of the universe, either Flickering Dark or Open Hand (detailed at the end of this class). Your subclass grants you features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the martial talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_multiattack",
+  "fields": {
+    "name": "Multiattack",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Your physical prowess has grown. On your turn, you can make two attacks when you take the Attack action."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_stunning-strike",
+  "fields": {
+    "name": "Stunning Strike",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "You can interfere with the flow of energy in an opponent's body. Once per turn, when you successfully hit another creature with an unarmed strike or monk weapon, you can spend 1 technique point to attempt to stun your foe. When you do so, the target takes damage from your attack as normal and then it must succeed on a CON save or be stunned until the end of your next turn. Each time a stunned target takes damage, it can repeat the save, ending the stunned effect on a success."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_empowered-strikes",
+  "fields": {
+    "name": "Empowered Strikes",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_evasion",
+  "fields": {
+    "name": "Evasion",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "You can dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a DEX save to take only half damage, you instead take no damage if you succeed on the save and only half damage if you fail."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_perfect-motion",
+  "fields": {
+    "name": "Perfect Motion",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "While you aren't wearing armor or wielding a shield, you gain the following benefits:\n- When you fall, you can use your reaction to reduce any falling damage you would take by an amount equal to 5 × your monk level.\n- You can move along vertical surfaces and across liquids on your turn without falling during the move. If you end your movement or if your movement is interrupted while you are standing on a vertical surface or on liquid, you fall as normal."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Your commitment to the monk's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Purity of Body.** Your mastery of the energy flowing through your body makes you immune to disease, poison damage, and the poisoned condition. In addition, when you are reduced to 0 HP but not killed outright, you can instantly reset your hit point total to your current number of technique points. You can't recover hit points in this way again until you finish a long rest.\n- **Purity of Mind.** The clearness of your mind gives you advantage on Wisdom saves. As a bonus action, you can end one effect on yourself that is causing you to be charmed or frightened."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_astral-teachings",
+  "fields": {
+    "name": "Astral Teachings",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "As an action, you can expend 2 technique points to become proficient in one language, skill, tool, or weapon of your choice until you are incapacitated or use this feature again."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_diamond-soul",
+  "fields": {
+    "name": "Diamond Soul",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Your mastery of energy grants you proficiency in all saves. In addition, when you make a save and fail, you can spend 1 technique point to reroll it. You must take the second result."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_timeless-self",
+  "fields": {
+    "name": "Timeless Self",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Your spirit sustains you, body and mind. You gain the following benefits:\n- You can't be magically aged and suffer none of the frailty of old age. You can still die of old age, however.\n- You no longer need food or water.\n- Your ability scores and hit point maximum can't be lowered or reduced by any means short of a wish spell."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_empty-body",
+  "fields": {
+    "name": "Empty Body",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "You can use your action to spend 4 technique points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage. In addition, you can spend 8 technique points to cast the astral projection spell as an action (ignoring the standard casting time), without needing material components. When you do so, you can't take any other creatures with you."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "Your commitment to the monk's path grants you a powerful new ability. You gain the following epic boon:\n- **Boundless Technique.** When you roll for initiative, you regain up to 4 expended technique points. If you start your turn with no technique points remaining, you regain 2 technique points."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_martial-arts-die",
+  "fields": {
+    "name": "Martial Arts",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_technique-points",
+  "fields": {
+    "name": "Technique Points",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk_unarmored-movement-bonus",
+  "fields": {
+    "name": "Unarmored Movement",
+    "document": "bfrd",
+    "parent": "bfrd_monk",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk-open-hand_focus-intent",
+  "fields": {
+    "name": "Focus Intent",
+    "document": "bfrd",
+    "parent": "bfrd_open-hand",
+    "desc": "When you or a creature within 5 feet of you makes an ability check or attack roll, you can use your reaction to roll your martial arts die. The target gains a bonus or a penalty (your choice) to its roll equal to the number you rolled.\n\nYou can use this feature a number of times equal to your WIS modifier. You regain all expended uses when you finish a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk-open-hand_open-hand-technique",
+  "fields": {
+    "name": "Open Hand Technique",
+    "document": "bfrd",
+    "parent": "bfrd_open-hand",
+    "desc": "You can manipulate your enemy's energy with your own. When you hit a creature with one of the attacks granted by your Flurry of Blows technique, you can impose one of the following effects on that target:\n- It can't take reactions until the end of your next turn.\n- It must succeed on a DEX save or be knocked prone.\n- It must succeed on a STR save or be pushed up to 15 feet away from you."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk-open-hand_wholeness-of-body",
+  "fields": {
+    "name": "Wholeness of Body",
+    "document": "bfrd",
+    "parent": "bfrd_open-hand",
+    "desc": "When you roll initiative and have at least 1 hit point, you regain a number of hit points equal to your CON modifier + your monk level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk-open-hand_tranquil-soul",
+  "fields": {
+    "name": "Tranquil Soul",
+    "document": "bfrd",
+    "parent": "bfrd_open-hand",
+    "desc": "You have learned the way of war, so you may better walk the world in peace. As an action, you can spend 3 technique points to cast the sanctuary spell on yourself. The spell lasts until the end of your next short or long rest (or it can end early as normal)."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_monk-open-hand_quivering-palm",
+  "fields": {
+    "name": "Quivering Palm",
+    "document": "bfrd",
+    "parent": "bfrd_open-hand",
+    "desc": "As an action, you can make a single unarmed strike against a creature. On a hit, you can spend 4 technique points to fill that creature with potentially lethal vibrations that last for a number of days equal to your monk level.\n\nFor the duration, so long as you and the target are on the same plane, you can use an action to end the vibrations, ripping the creature apart. When you do, the target must make a CON save. On a failure, the target takes force damage equal to 5 × your monk level and is paralyzed until the end of your next turn. On a success, the target is stunned for 1 minute, and at the end of each of their turns, and each time they take damage, the target can repeat the save, ending the effect on a success. A target that fails the save by 5 or more instantly dies.\n\nEach time you use this feature after the first, the technique cost to use it increases by 2. When you finish a long rest, the cost resets. This feature can affect only one target at a time."
+  }
 }
 ]

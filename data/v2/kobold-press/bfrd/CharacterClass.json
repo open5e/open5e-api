@@ -282,5 +282,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_fighter"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_monk",
+  "fields": {
+    "name": "Monk",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "str",
+      "dex"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_open-hand",
+  "fields": {
+    "name": "Open Hand",
+    "document": "bfrd",
+    "desc": "Monks of the Open Hand hone their bodies to physical perfection. They learn techniques to push and trip their opponents, practice advanced meditation to protect them from harm, and develop secret techniques to transform their bodies into the ultimate weapon.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_monk"
+  }
 }
 ]
