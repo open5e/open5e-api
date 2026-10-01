@@ -222,5 +222,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_cleric"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_druid",
+  "fields": {
+    "name": "Druid",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "int",
+      "wis"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_shifter",
+  "fields": {
+    "name": "Shifter",
+    "document": "bfrd",
+    "desc": "Druids that align with the ring of the Shifter feel a deep connection to the animals that walk the world. Shifters delve into the mysteries of transformation, spending much of their time in the forms of the beasts they so admire. To you, there is no greater joy than feeling wind beneath your wings, stalking prey on padded paws, or swimming through crystalline depths.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_druid"
+  }
 }
 ]

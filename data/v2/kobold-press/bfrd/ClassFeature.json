@@ -2091,5 +2091,319 @@
     "parent": "bfrd_war-domain",
     "desc": "Once per turn, when you successfully hit a creature with a weapon or spell attack made with a Divine spell, you can treat the attack as if you rolled a critical hit."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_core-traits",
+  "fields": {
+    "name": "Core Druid Traits",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D8 per Druid level|\n|Saving Throw Proficiencies|Intelligence and Wisdom|\n|Skill Proficiencies|Choose 2: Animal Handling, Arcana, Insight, Medicine, Nature, Perception, Religion, Survival|\n|Weapon Proficiencies|Simple weapons|\n|Tool Proficiencies|Herbalist tools|\n|Armor Training|Light armor, medium armor, and shields|\n|Starting Equipment|Choose A or B for each: (A) a shield or (B) any simple weapon; (A) a sickle or (B) any simple melee weapon; plus Leather armor, an explorer's pack, and a druidic focus|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_spellcasting",
+  "fields": {
+    "name": "Spellcasting",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "As a conduit for primordial power, you can cast Primordial spells.\n\n**Cantrips.** At 1st level, choose three cantrips from the Primordial spell list to learn. You choose more Primordial cantrips to learn at higher levels, as shown in the Cantrips Known column of the Druid Progression table.\n\n**Preparing Spells.** You must prepare spells in advance before you can cast them. You can prepare any spell on the Primordial spell list from circles for which you have Primordial spell slots. (You determine which spell slots you can access by checking your level on the Druid Progression table). You can choose a number of spells equal to your WIS modifier + your druid level (minimum of one spell). This is your list of prepared spells from which you can cast.\n\nPreparing a new list of spells requires time spent in prayer and meditation: at least 1 minute per spell circle for each spell you change. You can change your list of prepared spells as part of a long rest.\n\n**Casting Spells.** You have prepared a number of spells and can cast any of them by using a Primordial spell slot of the spell's circle or higher.\n\nThe Druid Progression table shows how many Primordial spell slots you have per day at a given level. For example, at 3rd level, you have four 1st-circle and two 2nd-circle spell slots, and with a 16 WIS, you can have six prepared spells of 1st or 2nd circle, in any combination. You only have two spell slots for 2nd-circle spells though, so if you prepare only 2nd-circle spells, you won't be able to use your 1st-circle spell slots at all.\n\nCasting a spell doesn't remove it from your list of prepared spells, it just uses up a spell slot. You regain all used spell slots when you finish a long rest.\n\n**Spellcasting Ability.** Wisdom (WIS) is your spellcasting ability. Your WIS modifier determines the save DC or the attack modifier for certain spells you cast:\n- Spell save DC = 8 + your proficiency bonus (PB) + your WIS modifier\n- Spell attack modifier = your proficiency bonus (PB) + your WIS modifier\n\n**Rituals.** You can also cast a type of long-form spell called a ritual. Rituals don't need to be prepared, and they don't use up spell slots.\n\nAt 1st level, choose one ritual from the Primordial ritual list. You learn more rituals at higher levels, as shown in the Rituals Known column of the Druid Progression table, but only from a circle for which you have spell slots. Rituals you learn don't count against the number of spells you learn at each level.\n\n**Spellcasting Focus.** You can use a druidic focus as a spellcasting focus for your Primordial spells."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_druidic",
+  "fields": {
+    "name": "Druidic",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "You know Druidic, the secret language of druids. You can speak the language and use a system of natural elements to leave hidden messages that only other druids will understand. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful WIS (Perception) check but can't decipher it without magic."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_natures-gift",
+  "fields": {
+    "name": "Nature's Gift",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "You have learned to harness the ambient energy of nature and can redirect that energy to encourage growth and healing. As a bonus action, choose one creature within 5 feet of you (this can be you). When you do so, roll a number of d4s equal to your PB (minimum of 2d4). That creature regains hit points equal to the total rolled. This feature has no effect on Constructs or Undead.\n\nYou can use this feature a number of times per day equal to your PB. You recover expended uses when you complete a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_wild-shape",
+  "fields": {
+    "name": "Wild Shape",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "You gain the ability to channel energy directly from nature to produce effects beyond spells. You start with two effects: Beast Form and Draw Power. Some subclasses grant additional effects as you advance in levels, as noted in their descriptions.\n\nWhen you use your Wild Shape feature, simply choose which specific effect you want, such as Beast Form. Some of these effects require a save, and in those cases, the DC is equal to your druid spell save DC.\n\nBeginning at 2nd level, you can use your Wild Shape feature once until you finish a short or long rest, then twice between rests at 6th level, three times at 13th level, and four times at 18th level. When you finish a short or long rest, you regain all expended uses.\n\n## Wild Shape: Beast Form\n\nAs an action, you can magically assume the form of a Beast. When you first gain this feature, choose two Beasts of challenge rating (CR) 1/4 or less as your known forms. To select a known form, you must have seen or interacted with a Beast in your past. For example, a druid that hails from a desert environment is unlikely to be familiar enough with a sea-dwelling creature like a dolphin to select it as a known form. The Beast you choose can't have any legendary actions or lair actions.\n\nAs you advance in druid levels, you can choose more beast forms as shown in the Beast Forms Known column of the Druid Progression table.\n\nWhen you gain a level of druid, you can replace one known form with a different form of your choosing. Any new form you choose must abide by the form restrictions.\n\n## Wild Shape: Draw Power\n\nAs a bonus action, you can reshape the natural energies around you to draw them within yourself and recharge your spellcasting ability. When you do so, choose a single expended Primordial spell slot to recover. The recovered spell slot must be of a circle equal to or less than your proficiency bonus (PB). For example, a 5th-level druid with a PB of +3 could recover an expended 1st, 2nd, or 3rd-circle Primordial spell slot with this feature.\n\nYou can't use Draw Power while transformed by the Beast Form effect of your Wild Shape feature, even if you have multiple uses of Wild Shape available to expend.\n\n## Rules of Transformation\n\nYou can stay in a beast form for a number of hours equal to your PB. You then revert to your normal form unless you expend another use of Wild Shape. You can also choose to revert to your normal form as a bonus action. You automatically revert if you become unconscious, drop to 0 HP while in beast form, or die.\n\nWhile transformed, your game statistics are replaced by those of your new form, except you retain your INT, WIS, and CHA scores. You also retain your personality. If you make an ability check or save while in beast form, you can choose whether to use either your normal character proficiencies and PB or else use the Beast's listed ability modifier to determine the check total (without your PB in this case).\n\nYour hit points for the new form are set to a new amount dependent on the size of your new form, as shown in the Hit Points by Form Size table. When you revert to your normal form, you return to the number of hit points you had before you transformed. If you revert as a result of dropping to 0 HP, any excess damage carries over to your normal form. For example, if you take 10 damage while in beast form and your beast form has only 1 HP left, you revert to your normal form and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 HP, you remain conscious.\n\nYou are limited by the actions you can perform by the nature of your new form, and you can't speak or take any other action that requires hands or speech unless your new form is capable of such actions. You can't cast spells while transformed. However, transforming doesn't automatically break your concentration on a spell you've already cast or prevent you from taking actions that are part of an ongoing spell—such as those required by the call lightning spell.\n\nYour gear and anything you are wielding melds into your new form. You can't activate, use, or otherwise benefit from any of your gear while transformed.\n\n|Form Size|Hit Points|\n|---|---|\n|Tiny|2 + your PB|\n|Small|5 + your PB|\n|Medium|12 + your PB|\n|Large|22 + your PB|\n|Huge or Gargantuan|84 + your PB|"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_druid-subclass",
+  "fields": {
+    "name": "Druid Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "Choose a subclass that reflects your values and magical practices, either Leaf or Shifter (detailed at the end of this class). Your choice grants you spells and other features at 3rd, 7th, 11th, and 15th level.\n\n## Ring Spells\n\nEach subclass has a list of ring spells that you can access as soon as you can cast spells of that circle (as shown on the Druid Progression table). Once you gain such a spell, you always have it prepared, and it doesn't count against the number of spells you can prepare. However, casting a ring spell still expends a Primordial spell slot as normal.\n\nIf one of these spells isn't on the Primordial spell list, it still counts as a Primordial spell for you."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the magic talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_improved-beast-form",
+  "fields": {
+    "name": "Improved Beast Form",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "You can now use the Beast Form effect of your Wild Shape feature to assume more powerful beast forms. When you learn a new form, you can choose a Beast of CR 1/2 or less. At 9th level, you can assume the form of any Beast of CR 1 or less. At 14th level, you can assume the form of any Beast of CR 2 or less."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "Your commitment to the druid's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Rite of the Kingdom.** All Beasts and creatures with the Animal tag understand your speech, and you can understand their noises and motions as if they were speaking, even if they don't speak a language. This ability doesn't grant Beasts the intelligence to understand or communicate complex concepts, but you can share basic information with ease. Your GM has final say on what a particular creature can express. In addition, you have advantage on Charisma checks made to interact with or influence such creatures.\n- **Rite of the Shaper.** When you roll initiative and have no remaining uses of Wild Shape, you regain one use. Once you use this feature, you can't do so again until you complete a long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_natures-grace",
+  "fields": {
+    "name": "Nature's Grace",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "Your attunement to the natural energies of the world infuses your body, sustaining you and protecting you from unnatural harm. You gain the following benefits:\n- You can't be magically aged, and you suffer none of the frailty of old age. You can still die of old age though.\n- You no longer need food or water to survive.\n- Your ability scores and hit point maximum can't be lowered by any means short of a wish spell."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "Your commitment to the druid's path grants you a powerful new ability. You gain the following epic boon:\n- **Archdruid.** You can use the Beast Form effect of your Wild Shape feature an unlimited number of times. In addition, you can ignore the verbal and somatic components of Primordial spells, as well as any material components that lack a cost."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_beast-forms-known",
+  "fields": {
+    "name": "Beast Forms Known",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_cantrips-known",
+  "fields": {
+    "name": "Cantrips Known",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_rituals-known",
+  "fields": {
+    "name": "Rituals Known",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_slots-1st",
+  "fields": {
+    "name": "1st",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_slots-2nd",
+  "fields": {
+    "name": "2nd",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_slots-3rd",
+  "fields": {
+    "name": "3rd",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_slots-4th",
+  "fields": {
+    "name": "4th",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_slots-5th",
+  "fields": {
+    "name": "5th",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_slots-6th",
+  "fields": {
+    "name": "6th",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_slots-7th",
+  "fields": {
+    "name": "7th",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_slots-8th",
+  "fields": {
+    "name": "8th",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid_slots-9th",
+  "fields": {
+    "name": "9th",
+    "document": "bfrd",
+    "parent": "bfrd_druid",
+    "desc": "[Column data]",
+    "feature_type": "SPELL_SLOTS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid-shifter_potent-forms",
+  "fields": {
+    "name": "Potent Forms",
+    "document": "bfrd",
+    "parent": "bfrd_shifter",
+    "desc": "You can select more powerful creatures for the known forms used with the Beast Form effect of your Wild Shape feature. When you gain this feature, you can choose any Beast or creature with the Animal tag with a CR of 1 or lower as a known form, and you use the hit points of the creature when you use Beast Form, not the Hit Points by Form Size table.\n\nIn addition, you can now speak any language you know while in beast form—even if your chosen form would not typically allow you to do so. However, you still can't cast spells while transformed, even if a spell requires only a verbal component.\n\nAt higher druid levels, you can choose beast forms with a CR as high as your druid level divided by 3, rounded down (ignoring CR limitations in your Improved Beast Form feature). For example, upon achieving 6th level of druid, you can choose any Beast of CR 2 or lower as a known form, CR 3 or lower at 9th level, and so on—as shown in the Potent Forms table.\n\n|Druid Level|Max CR|Example|\n|---|---|---|\n|3rd|1|Wolf|\n|5th|1|Hippogriff|\n|6th|2|Pegasus|\n|9th|3|Owlbear|\n|12th|4|Elephant|\n|15th|5|Triceratops|\n|18th|6|Mammoth|"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid-shifter_quick-shift",
+  "fields": {
+    "name": "Quick Shift",
+    "document": "bfrd",
+    "parent": "bfrd_shifter",
+    "desc": "By delving into the mysteries of the shifters, you have learned to change form more rapidly. When you use the Beast Form effect of your Wild Shape feature, you can transform as a bonus action instead of as an action."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid-shifter_shifter-ring-spells",
+  "fields": {
+    "name": "Shifter Ring Spells",
+    "document": "bfrd",
+    "parent": "bfrd_shifter",
+    "desc": "You gain ring spells at the druid levels listed in the Shifter Ring Spells table. See the Druid Subclass class feature for how these spells work.\n\n|Druid Level|Spells|\n|---|---|\n|3rd|alter self, animal friendship, speak with animals|\n|5th|conjure animals, water breathing|\n|7th|giant insect, polymorph|\n|9th|dominate, insect plague|"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid-shifter_beasts-fury",
+  "fields": {
+    "name": "Beast's Fury",
+    "document": "bfrd",
+    "parent": "bfrd_shifter",
+    "desc": "Immediately after you take the Attack action on your turn while in beast form, you can use your bonus action to make a single unarmed strike with your claws, hooves, fangs, or whatever natural weapon suits your chosen form. This attack deals 1d6 + your PB damage, and you are considered proficient with it. You decide if this attack deals bludgeoning, piercing, or slashing damage when you first assume your beast form.\n\nIn addition, all damage you deal with melee weapon attacks while in beast form now counts as magical damage for the purposes of overcoming resistance or immunity to nonmagical damage."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid-shifter_elemental-infusion",
+  "fields": {
+    "name": "Elemental Infusion",
+    "document": "bfrd",
+    "parent": "bfrd_shifter",
+    "desc": "By expending two uses of the Beast Form effect of your Wild Shape feature, you can infuse your chosen form with one of the four elemental powers described here. Alternatively, you can use your reaction to spend one use of Wild Shape while already transformed by the Beast Form effect, either infusing yourself with one of the following powers or changing which power is active.\n\n**Air.** You gain a 90-foot flying (hover) speed and are resistant to lightning and thunder damage. You gain the following action:\n- Whirl (Recharge 4–6). Each Large or smaller creature within 5 feet of you must make a STR save (DC 10 + your PB). On a failure, a target takes 3d8 + your PB bludgeoning damage and is flung up to 20 feet away from you in a random direction and knocked prone. If a thrown target strikes a solid surface, it takes 3 (1d6) bludgeoning damage for every 10 feet it was thrown. If the target lands in the same space as another creature, that creature must succeed on a DC 13 DEX save or take the same damage and be knocked prone. The target is then prone in an adjacent unoccupied space. If the target's STR save is successful, a target takes half damage and isn't flung or knocked prone.\n\n**Earth.** You gain a 30-foot burrowing speed and can burrow through nonmagical, unworked earth and stone without disturbing the material you move through. You gain tremorsense to a range of 60 feet and are resistant to bludgeoning, piercing, and slashing damage. Melee attacks you make deal double damage to objects and structures.\n\n**Fire.** You shed bright light in a 30-foot-radius and dim light for an additional 30 feet. You are immune to fire damage. Melee attacks you make deal an additional 1d8 fire damage. When you deal fire damage to a flammable creature or object, you can choose whether it ignites—an ignited target takes 5 (1d10) fire damage at the start of each of its turns until a creature uses an action to douse it. Your GM determines what constitutes a flammable creature or object.\n\n**Water.** You gain a 90-foot swimming speed and can breathe underwater. You are resistant to cold and poison damage. You gain the following action:\n- Wave (Recharge 4–6). Each creature within 5 feet of you must make a STR save (DC 10 + your PB). On a failure, a target takes 2d8 + your PB bludgeoning damage. If a target is Large or smaller, it is also grappled (escape DC 14). Until this grapple ends, the target is restrained and unable to breathe unless it can breathe in water. On a successful STR save, a creature takes half damage and isn't grappled. At the start of each of your turns, each target grappled by you takes 2d8 + your PB bludgeoning damage. A creature within 5 feet of a grappled target can pull it out of the grapple if it expends an action to attempt a DC 14 STR (Athletics) check—freeing the target on a success."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_druid-shifter_manifold-mind",
+  "fields": {
+    "name": "Manifold Mind",
+    "document": "bfrd",
+    "parent": "bfrd_shifter",
+    "desc": "You can now cast Primordial spells while in beast form, and your form doesn't hinder performing the somatic and verbal components of spells. You must still provide any required material components as normal."
+  }
 }
 ]
