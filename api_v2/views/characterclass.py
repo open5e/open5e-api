@@ -19,7 +19,7 @@ class CharacterClassFilterSet(FilterSet):
 
     # Stops Django from creating a query for every parent and instead
     # loads the parent objects together with the CharacterClasses.
-    subclass_of_filter = ModelChoiceFilter(queryset = models.CharacterClass.objects.select_related('subclass_of'))
+    subclass_of = ModelChoiceFilter(queryset = models.CharacterClass.objects.select_related('subclass_of'))
 
     class Meta:
         model = models.CharacterClass
