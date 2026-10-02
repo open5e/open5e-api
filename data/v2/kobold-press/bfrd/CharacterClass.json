@@ -402,5 +402,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_rogue"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_sorcerer",
+  "fields": {
+    "name": "Sorcerer",
+    "document": "bfrd",
+    "hit_dice": "D6",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "con",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_draconic",
+  "fields": {
+    "name": "Draconic",
+    "document": "bfrd",
+    "desc": "Through lineage, bargain, or unrequited gift, the origins of your magic lie in the preternatural power of dragons. These beings, monumental in their age, power, and size, possess unshakeable bearing, unstoppable might, and mastery over the elements of the natural world.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_sorcerer"
+  }
 }
 ]
