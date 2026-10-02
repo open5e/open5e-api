@@ -8,6 +8,7 @@ from server import settings
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 from django.db import IntegrityError
+from django.core.cache import cache
 
 
 class Command(BaseCommand):
@@ -85,6 +86,9 @@ class Command(BaseCommand):
                     build_v1v2_searchindex()
             else:
                 self.stdout.write('Skipping v2 index build because of --noindex.')
+
+        self.stdout.write('Clearing cache...')
+        cache.clear()
 
         self.stdout.write(self.style.SUCCESS('API setup complete.'))
 
