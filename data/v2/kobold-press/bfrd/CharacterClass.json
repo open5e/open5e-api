@@ -31,6 +31,66 @@
 },
 {
   "model": "api_v2.characterclass",
+  "pk": "bfrd_witch",
+  "fields": {
+    "name": "Witch",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "wis",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_witch-twilight-soul",
+  "fields": {
+    "desc": "Witches aligned with the coven of the Twilight Soul are the ultimate emissaries to the spirit realms, often compelled to serve as guardians and diplomats in matters where the physical and mystical worlds collide. Such witches are typically drawn to the Wyrd forces early in life through accident, magical circumstance, or tragedy that leaves an indelible stain upon their mortal spirit. Their craft is simply a realization of this natural affinity, learning to communicate and align with the spirits already drawn to their supernatural magnetism.",
+    "name": "Twilight Soul",
+    "document": "bfrd",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_witch"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_vanguard",
+  "fields": {
+    "name": "Vanguard",
+    "document": "bfrd",
+    "hit_dice": "D12",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "con",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_vanguard-marshal",
+  "fields": {
+    "name": "Marshal",
+    "document": "bfrd",
+    "desc": "Marshals are considered by some to be the ultimate vanguards. They hone their martial and leadership skills to become beacons of authority on the battlefield that inspire undying loyalty in those they command. Those that chose this path inevitably leave their mark on history as knights of legend, ruthless conquerors, or brilliant generals.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_vanguard"
+  }
+},
+{
+  "model": "api_v2.characterclass",
   "pk": "bfrd_theurge",
   "fields": {
     "name": "Theurge",
