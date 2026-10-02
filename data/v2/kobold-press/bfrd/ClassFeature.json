@@ -3399,5 +3399,228 @@
     "parent": "bfrd_hunter",
     "desc": "When you take damage from a creature you can see, you can use your reaction to supernaturally ward yourself against that creature for a short time. You have resistance to all damage dealt by the target for 1 minute, including resistance to the damage dealt by the triggering attack. This effect ends early if you become incapacitated.\n\nOnce used, this feature can't be used again until you finish a long rest."
   }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_core-traits",
+  "fields": {
+    "name": "Core Rogue Traits",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "|||\n|---|---|\n|Hit Point Die|D8 per Rogue level|\n|Saving Throw Proficiencies|Dexterity and Intelligence|\n|Skill Proficiencies|Choose 4: Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, Stealth|\n|Weapon Proficiencies|Simple weapons, martial weapons with the Finesse property|\n|Tool Proficiencies|Thieves' tools|\n|Armor Training|Light armor|\n|Starting Equipment|Choose A or B for each: (A) a rapier or (B) a shortsword; (A) a shortbow and quiver of 20 arrows or (B) a shortsword; (A) a burglar's pack, (B) a dungeoneer's pack, or (C) an explorer's pack; plus Leather armor, two daggers, and a set of thieves' tools|",
+    "feature_type": "CORE_TRAITS_TABLE"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_expertise",
+  "fields": {
+    "name": "Expertise",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "Choose two of your skill proficiencies, or one skill proficiency and one tool proficiency. Double your PB for any ability check you make that uses either of the chosen proficiencies.\n\nAt 6th level, choose two more of your proficiencies (any combination of skills or tools) to gain this benefit."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_sneak-attack",
+  "fields": {
+    "name": "Sneak Attack",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "You know how to strike subtly and exploit a foe's distraction. Once on your turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The weapon you use must have the Finesse property or be a ranged weapon.\n\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.\n\nThe amount of your extra damage you deal increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue Progression table."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_thieves-cant",
+  "fields": {
+    "name": "Thieves' Cant",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "During your rogue training, you learned Thieves' Cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature who knows Thieves' Cant understands such messages. It takes four times longer to convey a message in Thieves' Cant than it does to speak the same idea plainly.\n\nIn addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether people in an area are easy marks or will provide a safe house for thieves on the run."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_cunning-action",
+  "fields": {
+    "name": "Cunning Action",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "Your quick thinking and agility allow you to move and act quickly. You can use a bonus action to take the Dash, Disengage, or Hide action."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_rogue-subclass",
+  "fields": {
+    "name": "Rogue Subclass",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "Choose a subclass that represents your specialized set of skills, either Enforcer or Thief (detailed at the end of this class). Your choice grants you features at 3rd, 7th, 11th, and 15th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_improvement",
+  "fields": {
+    "name": "Improvement",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "Choose one of the following improvements (ability scores can't be raised above 20 with this feature):\n- Increase a single ability score by 2.\n- Increase two different ability scores by 1 each.\n- Increase one ability score by 1 and select a talent from the technical talents list."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_uncanny-dodge",
+  "fields": {
+    "name": "Uncanny Dodge",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "When an attacker that you can see hits you with an attack, you can use your reaction to reduce the attack's damage against you by half."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_evasion",
+  "fields": {
+    "name": "Evasion",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "You can dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a DEX save to take only half damage, you instead take no damage if you succeed on the save and only half damage if you fail."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_reliable-talent",
+  "fields": {
+    "name": "Reliable Talent",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "You have refined your chosen skills until they approach perfection. When you make an ability check with a skill, tool, or vehicle that you have proficiency with, treat a d20 roll of 9 or lower as if you rolled a 10."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_heroic-boon",
+  "fields": {
+    "name": "Heroic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "Your commitment to the rogue's path grants you a powerful new ability. Choose one of the following heroic boons:\n- **Escape Artist.** When you are subjected to an effect that allows you to make any kind of save (including DEX saves) to take only half damage, you instead take no damage if you succeed on the save and only half damage if you fail.\n- **Jack of All Trades.** When you gain a new talent, you can choose it from any talent list. Immediately gain one talent of your choice (that you meet the prerequisites for) when you gain this feature."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_precise-critical",
+  "fields": {
+    "name": "Precise Critical",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "You score a critical hit on a d20 roll of 19 or 20 with ranged weapons and weapons with the Finesse property. In addition, you can roll one additional weapon damage die (not an additional Sneak Attack die) when determining the extra damage for a critical hit with a ranged weapon attack or attack made with a Finesse weapon.\n\nThis extra damage increases to two additional dice at 17th level."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_keensense",
+  "fields": {
+    "name": "Keensense",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "You have keensense to a range of 10 feet. Your keensense ceases to function while you are deafened or otherwise deprived of hearing."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_elusive",
+  "fields": {
+    "name": "Elusive",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "You are so evasive that attackers rarely gain the upper hand against you. While you aren't incapacitated, attack rolls can't have advantage against you, regardless of the source of advantage."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_epic-boon",
+  "fields": {
+    "name": "Epic Boon",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "Your commitment to the rogue's path grants you a powerful new ability. You gain the following epic boon:\n- **Stroke of Luck.** You have got it when it counts. If your attack misses a target within normal range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20. Once you use this feature, you can't use it again until you finish a short or long rest."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_proficiency-bonus",
+  "fields": {
+    "name": "Proficiency Bonus",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "[Column data]",
+    "feature_type": "PROFICIENCY_BONUS"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_rogue_sneak-attack-die",
+  "fields": {
+    "name": "Sneak Attack",
+    "document": "bfrd",
+    "parent": "bfrd_rogue",
+    "desc": "[Column data]",
+    "feature_type": "CLASS_TABLE_DATA"
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_thief_fast-hands",
+  "fields": {
+    "name": "Fast Hands",
+    "document": "bfrd",
+    "parent": "bfrd_thief",
+    "desc": "Experience has honed your skills, allowing you to accomplish precision work in a flash. In addition to its standard uses, you can now use the bonus action granted by your Cunning Action feature to do any of the following:\n- Make a DEX (Sleight of Hand) check.\n- Take the Use an Object action.\n- Use thieves' tools to attempt to disarm a trap or open a lock."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_thief_second-story-work",
+  "fields": {
+    "name": "Second-Story Work",
+    "document": "bfrd",
+    "parent": "bfrd_thief",
+    "desc": "You've never met a wall you couldn't conquer, and climbing them is second nature. You gain a climbing speed equal to your walking speed. If you already have a climbing speed when you gain this feature, it increases by 10 feet.\n\nIn addition, when you make a long jump, you cover a number of feet equal to your walking speed if you move at least 10 feet on foot immediately before the jump. When you make a standing long jump, you can leap half your walking speed. Either way, each foot you clear on the jump costs a foot of movement. In the event a STR (Athletics) check is required to clear or extend a jump, you can choose to make a DEX (Acrobatics) check instead."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_thief_appraising-eye",
+  "fields": {
+    "name": "Appraising Eye",
+    "document": "bfrd",
+    "parent": "bfrd_thief",
+    "desc": "You've developed an eye for quality. As an action, you can inspect any object within 10 feet of you that you can see to learn whether it is nonmagical or magical. If the object is nonmagical, you immediately learn its approximate value in gold pieces. You also learn whether the object is fake or could conceal other objects inside it (though you don't learn whether it is currently concealing objects or what those objects are).\n\nIf the object is magical, you can spend 1 minute examining it to learn its type, rarity, whether it is cursed, and if it requires attunement (and any specific attunement requirements it has). After you have examined a magic item in this way, you learn how to use it and can ignore any class or feature requirements that would normally prevent you from using it (though you still must abide by any level restrictions). If a magic item requires the use of a spellcasting ability, use your DEX to determine your spell save DC or spell attack bonus."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_thief_trap-specialist",
+  "fields": {
+    "name": "Trap Specialist",
+    "document": "bfrd",
+    "parent": "bfrd_thief",
+    "desc": "When you or a creature within 5 feet of you triggers a trap, you can use your reaction to roll an ability check to attempt to disarm the trap. If you are successful, the trap is disarmed and not triggered. If you are unsuccessful, the trap is triggered as normal.\n\nIn addition, you can now disarm any magical traps that would typically require the use of the dispel magic spell. When you do so, make an ability check using only your DEX modifier, without adding any other modifiers to the roll. If the result meets or exceeds the trap's DC (your GM has this number), it is disarmed as if you had successfully cast the dispel magic spell."
+  }
+},
+{
+  "model": "api_v2.classfeature",
+  "pk": "bfrd_thief_thiefs-reflexes",
+  "fields": {
+    "name": "Thief's Reflexes",
+    "document": "bfrd",
+    "parent": "bfrd_thief",
+    "desc": "You have become adept at laying ambushes and quickly escaping danger. Now, you can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature if you are surprised."
+  }
 }
 ]

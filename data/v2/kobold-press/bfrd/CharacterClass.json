@@ -372,5 +372,35 @@
     "saving_throws": [],
     "subclass_of": "bfrd_ranger"
   }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_rogue",
+  "fields": {
+    "name": "Rogue",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "dex",
+      "int"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_thief",
+  "fields": {
+    "name": "Thief",
+    "document": "bfrd",
+    "desc": "You have a reputation for quick thinking and quicker fingers. Leave throat-cutting and con-running to lesser scoundrels. You live to liberate treasures held under lock and key. The thrill of bypassing a sealed door, complex trap, or other “impassable” obstacle is the true prize—followed by the payday that comes from whatever you took.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_rogue"
+  }
 }
 ]
