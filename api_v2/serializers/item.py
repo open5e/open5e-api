@@ -64,8 +64,6 @@ class WeaponSerializer(GameContentSerializer):
     document = DocumentSummarySerializer()
     properties = serializers.SerializerMethodField()
     damage_type = DamageTypeSummarySerializer()
-    ranged_attack_possible = serializers.ReadOnlyField()
-    range_melee = serializers.ReadOnlyField()
     distance_unit = serializers.SerializerMethodField()
 
     class Meta:
@@ -77,6 +75,7 @@ class WeaponSerializer(GameContentSerializer):
     def get_distance_unit(self, Weapon):
         return Weapon.get_distance_unit
 
+    @extend_schema_field(WeaponPropertyAssignmentSerializer(many=True))
     def get_properties(self, instance):
         properties = instance.properties.all().order_by("pk")
         return WeaponPropertyAssignmentSerializer(properties, context={'request': None}, many=True).data
@@ -89,7 +88,6 @@ class WeaponSummarySerializer(GameContentSerializer):
     '''
     damage_type = DamageTypeSummarySerializer()
     is_martial = serializers.ReadOnlyField()
-    is_melee = serializers.ReadOnlyField()
     distance_unit = serializers.SerializerMethodField()
     properties = WeaponPropertyAssignmentSerializer(many=True, read_only=True)
 
@@ -101,7 +99,6 @@ class WeaponSummarySerializer(GameContentSerializer):
             'damage_type',
             'damage_dice',
             'properties',
-            'is_melee',
             'is_simple',
             'is_martial',
             'is_improvised',
@@ -168,7 +165,6 @@ class ItemSummarySerializer(GameContentSerializer):
 
 class MagicItemSerializer(GameContentSerializer):
     key = serializers.ReadOnlyField()
-    is_magic_item = serializers.ReadOnlyField()
     weapon = WeaponSummarySerializer()
     armor = ArmorSummarySerializer()
     document = DocumentSummarySerializer()
@@ -190,7 +186,6 @@ class MagicItemSerializer(GameContentSerializer):
             'desc',
             'category',
             'rarity',
-            'is_magic_item',
             'weapon',
             'armor',
             'size',
