@@ -8,7 +8,7 @@ from urllib.parse import urlencode
 from rapidfuzz import process, fuzz
 from rest_framework import viewsets
 from rest_framework.response import Response
-from drf_spectacular.utils import extend_schema, extend_schema_view, OpenApiParameter, OpenApiExample
+from drf_spectacular.utils import extend_schema, extend_schema_view, OpenApiParameter, OpenApiExample, OpenApiResponse
 from drf_spectacular.types import OpenApiTypes
 
 from search import models, serializers
@@ -121,7 +121,7 @@ class ResultsWithMetadata(list):
         ],
         responses={
             200: serializers.SearchResultSerializer(many=True),
-            400: "Bad request - missing or invalid query parameter"
+            400: OpenApiResponse(description="Bad request - missing or invalid query parameter")
         },
         examples=[
             OpenApiExample(
