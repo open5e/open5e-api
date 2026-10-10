@@ -80,15 +80,38 @@
     "extra_damage_die_count": null,
     "extra_damage_die_type": null,
     "extra_damage_type": null,
-    "long_range": 60.0,
-    "name": "Harpoon attack",
+    "long_range": null,
+    "name": "Harpoon Melee attack",
     "parent": "tdcs_waverider_harpoon",
-    "range": 20.0,
+    "range": null,
     "reach": 5.0,
     "target_creature_only": false,
     "to_hit_mod": 5
   },
   "model": "api_v2.creatureactionattack",
   "pk": "tdcs_waverider_harpoon_harpoon-attack"
+},
+{
+  "fields": {
+    "attack_type": "WEAPON",
+    "damage_bonus": 2,
+    "damage_die_count": 1,
+    "damage_die_type": "D6",
+    "damage_type": "piercing",
+    "distance_unit": null,
+    "extra_damage_bonus": null,
+    "extra_damage_die_count": null,
+    "extra_damage_die_type": null,
+    "extra_damage_type": null,
+    "long_range": 60.0,
+    "name": "Harpoon Ranged attack",
+    "parent": "tdcs_waverider_harpoon",
+    "range": 20.0,
+    "reach": null,
+    "target_creature_only": false,
+    "to_hit_mod": 5
+  },
+  "model": "api_v2.creatureactionattack",
+  "pk": "tdcs_waverider_harpoon_harpoon-ranged-attack"
 }
 ]

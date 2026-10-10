@@ -43,6 +43,8 @@ Fields for creature actions
   **Value:** Array of action objects (see below)
 
   If this action is an attack, the entries in this array define each possible attack variation.
+  A "Melee or Ranged" action, such as a thrown javelin, has a separate melee attack (with a reach)
+  and ranged attack (with a range), e.g. `"Javelin Melee attack"` and `"Javelin Ranged attack"`.
 
 
 Fields for creature attack actions

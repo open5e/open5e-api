@@ -701,16 +701,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Bone Shard attack",
+      "long_range": null,
+      "name": "Bone Shard Melee attack",
       "parent": "ccdx_alpha-yek_bone-shard",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_alpha-yek_bone-shard_bone-shard-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 2,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Bone Shard Ranged attack",
+      "parent": "ccdx_alpha-yek_bone-shard",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_alpha-yek_bone-shard_bone-shard-ranged-attack"
   },
   {
     "fields": {
@@ -2748,16 +2771,39 @@
       "extra_damage_die_count": 2,
       "extra_damage_die_type": "D6",
       "extra_damage_type": "poison",
-      "long_range": 60,
-      "name": "Trident attack",
+      "long_range": null,
+      "name": "Trident Melee attack",
       "parent": "ccdx_cueyatl-sea-priest_trident",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 2
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_cueyatl-sea-priest_trident_trident-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": null,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "poison",
+      "long_range": 60,
+      "name": "Trident Ranged attack",
+      "parent": "ccdx_cueyatl-sea-priest_trident",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 2
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_cueyatl-sea-priest_trident_trident-ranged-attack"
   },
   {
     "fields": {
@@ -2794,16 +2840,39 @@
       "extra_damage_die_count": 2,
       "extra_damage_die_type": "D6",
       "extra_damage_type": "poison",
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "ccdx_cueyatl_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 2
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_cueyatl_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": null,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "poison",
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "ccdx_cueyatl_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 2
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_cueyatl_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -2886,10 +2955,10 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "ccdx_darakhul-shadowmancer_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
@@ -2905,20 +2974,66 @@
       "damage_die_type": "D4",
       "damage_type": "piercing",
       "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "ccdx_darakhul-shadowmancer_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_darakhul-shadowmancer_dagger_dagger-ranged-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
       "extra_damage_bonus": 0,
       "extra_damage_die_count": 1,
       "extra_damage_die_type": "D8",
       "extra_damage_type": "cold",
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "ccdx_dark-eye_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_dark-eye_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 1,
+      "extra_damage_die_type": "D8",
+      "extra_damage_type": "cold",
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "ccdx_dark-eye_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_dark-eye_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -3622,16 +3737,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "ccdx_dvarapala_javelin",
-      "range": 20,
+      "range": null,
       "reach": 10,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_dvarapala_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 3,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Javelin Ranged attack",
+      "parent": "ccdx_dvarapala_javelin",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_dvarapala_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -4772,16 +4910,39 @@
       "extra_damage_die_count": 2,
       "extra_damage_die_type": "D8",
       "extra_damage_type": "necrotic",
-      "long_range": 60,
-      "name": "Ghostly Axe attack",
+      "long_range": null,
+      "name": "Ghostly Axe Melee attack",
       "parent": "ccdx_ghost-dwarf_ghostly-axe",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_ghost-dwarf_ghostly-axe_ghostly-axe-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": null,
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D8",
+      "extra_damage_type": "necrotic",
+      "long_range": 60,
+      "name": "Ghostly Axe Ranged attack",
+      "parent": "ccdx_ghost-dwarf_ghostly-axe",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_ghost-dwarf_ghostly-axe_ghostly-axe-ranged-attack"
   },
   {
     "fields": {
@@ -5370,16 +5531,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Poisoned Spear attack",
+      "long_range": null,
+      "name": "Poisoned Spear Melee attack",
       "parent": "ccdx_green-abyss-orc_poisoned-spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_green-abyss-orc_poisoned-spear_poisoned-spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Poisoned Spear Ranged attack",
+      "parent": "ccdx_green-abyss-orc_poisoned-spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_green-abyss-orc_poisoned-spear_poisoned-spear-ranged-attack"
   },
   {
     "fields": {
@@ -5416,16 +5600,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "ccdx_green-knight-of-the-woods_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_green-knight-of-the-woods_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "ccdx_green-knight-of-the-woods_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_green-knight-of-the-woods_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -6382,16 +6589,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "ccdx_kallikantzaros_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_kallikantzaros_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "ccdx_kallikantzaros_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_kallikantzaros_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -6750,16 +6980,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "ccdx_korrigan_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_korrigan_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "ccdx_korrigan_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_korrigan_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -7049,16 +7302,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 240,
-      "name": "Rock attack",
+      "long_range": null,
+      "name": "Rock Melee attack",
       "parent": "ccdx_laestrigonian-giant_rock",
-      "range": 60,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_laestrigonian-giant_rock_rock-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 5,
+      "damage_die_count": 2,
+      "damage_die_type": "D10",
+      "damage_type": "bludgeoning",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 240,
+      "name": "Rock Ranged attack",
+      "parent": "ccdx_laestrigonian-giant_rock",
+      "range": 60,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_laestrigonian-giant_rock_rock-ranged-attack"
   },
   {
     "fields": {
@@ -8015,16 +8291,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "ccdx_morko_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 3
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_morko_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 1,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "ccdx_morko_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 3
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_morko_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -9004,16 +9303,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Hammer attack",
+      "long_range": null,
+      "name": "Hammer Melee attack",
       "parent": "ccdx_pech-lithlord_hammer",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_pech-lithlord_hammer_hammer-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "bludgeoning",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Hammer Ranged attack",
+      "parent": "ccdx_pech-lithlord_hammer",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_pech-lithlord_hammer_hammer-ranged-attack"
   },
   {
     "fields": {
@@ -9050,16 +9372,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Hammer attack",
+      "long_range": null,
+      "name": "Hammer Melee attack",
       "parent": "ccdx_pech-stonemaster_hammer",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_pech-stonemaster_hammer_hammer-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "bludgeoning",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Hammer Ranged attack",
+      "parent": "ccdx_pech-stonemaster_hammer",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_pech-stonemaster_hammer_hammer-ranged-attack"
   },
   {
     "fields": {
@@ -9096,16 +9441,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Hammer attack",
+      "long_range": null,
+      "name": "Hammer Melee attack",
       "parent": "ccdx_pech_hammer",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_pech_hammer_hammer-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "bludgeoning",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Hammer Ranged attack",
+      "parent": "ccdx_pech_hammer",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_pech_hammer_hammer-ranged-attack"
   },
   {
     "fields": {
@@ -9671,16 +10039,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Ratatosk Shortspear attack",
+      "long_range": null,
+      "name": "Ratatosk Shortspear Melee attack",
       "parent": "ccdx_ratatosk-warlord_ratatosk-shortspear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_ratatosk-warlord_ratatosk-shortspear_ratatosk-shortspear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 2,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Ratatosk Shortspear Ranged attack",
+      "parent": "ccdx_ratatosk-warlord_ratatosk-shortspear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_ratatosk-warlord_ratatosk-shortspear_ratatosk-shortspear-ranged-attack"
   },
   {
     "fields": {
@@ -9740,16 +10131,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "ccdx_ratfolk-warlock_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_ratfolk-warlock_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "ccdx_ratfolk-warlock_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_ratfolk-warlock_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -10430,16 +10844,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Kitchen Knife attack",
+      "long_range": null,
+      "name": "Kitchen Knife Melee attack",
       "parent": "ccdx_shadow-goblin_kitchen-knife",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_shadow-goblin_kitchen-knife_kitchen-knife-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Kitchen Knife Ranged attack",
+      "parent": "ccdx_shadow-goblin_kitchen-knife",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_shadow-goblin_kitchen-knife_kitchen-knife-ranged-attack"
   },
   {
     "fields": {
@@ -10730,15 +11167,38 @@
       "extra_damage_die_type": null,
       "extra_damage_type": null,
       "long_range": null,
-      "name": "Paste attack",
+      "name": "Paste Melee attack",
       "parent": "ccdx_sigilian_paste",
-      "range": 60,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_sigilian_paste_paste-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "SPELL",
+      "damage_bonus": null,
+      "damage_die_count": null,
+      "damage_die_type": null,
+      "damage_type": null,
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": null,
+      "name": "Paste Ranged attack",
+      "parent": "ccdx_sigilian_paste",
+      "range": 60,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_sigilian_paste_paste-ranged-attack"
   },
   {
     "fields": {
@@ -11833,16 +12293,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "ccdx_trollking-grunt_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_trollking-grunt_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "ccdx_trollking-grunt_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_trollking-grunt_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -13305,16 +13788,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "ccdx_wizard-kobold_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_wizard-kobold_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "ccdx_wizard-kobold_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_wizard-kobold_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -13443,16 +13949,39 @@
       "extra_damage_die_count": 3,
       "extra_damage_die_type": "D6",
       "extra_damage_type": "poison",
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "ccdx_wyvern-knight_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_wyvern-knight_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 3,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "poison",
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "ccdx_wyvern-knight_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_wyvern-knight_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -13535,16 +14064,39 @@
       "extra_damage_die_count": 2,
       "extra_damage_die_type": "D6",
       "extra_damage_type": "lightning",
-      "long_range": 60,
-      "name": "Hidden Dagger attack",
+      "long_range": null,
+      "name": "Hidden Dagger Melee attack",
       "parent": "ccdx_xiphus_hidden-dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 8
     },
     "model": "api_v2.creatureactionattack",
     "pk": "ccdx_xiphus_hidden-dagger_hidden-dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 5,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "lightning",
+      "long_range": 60,
+      "name": "Hidden Dagger Ranged attack",
+      "parent": "ccdx_xiphus_hidden-dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 8
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "ccdx_xiphus_hidden-dagger_hidden-dagger-ranged-attack"
   },
   {
     "fields": {
