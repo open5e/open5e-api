@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import sys
+import tomllib
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -253,8 +254,12 @@ SECURE_PROXY_SSL_HEADER = (
     "https",
 )  # This setting allows the header from NGINX to tell us that the request is secured.
 
+# The release, bumped in pyproject.toml by the release workflow.
+with open(os.path.join(BASE_DIR, 'pyproject.toml'), 'rb') as f:
+    VERSION = tomllib.load(f)['project']['version']
+
 SPECTACULAR_SETTINGS = {
-    'VERSION' : 'development',
+    'VERSION' : VERSION,
     'TITLE': 'Open5e',
     'DESCRIPTION': 'The Open5e API. See [https://github.com/open5e/open5e-api] for more information.',
     'SERVERS': [

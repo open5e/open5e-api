@@ -24,6 +24,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 from api import urls as v1_urls
 from api_v2 import urls as v2_urls
 from search import urls as search_urls
+from server.health import health
 
 urlpatterns = []
 urlpatterns+=v1_urls.urlpatterns
@@ -39,6 +40,8 @@ urlpatterns+=[
             url='/v1/%(path)s', permanent=True, query_string=True),
         name='legacy-v1-redirect'),]
 urlpatterns+=[
+    # With or without the trailing slash, so monitors don't have to follow a redirect.
+    re_path(r'^health/?$', health, name='health'),
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:
     path('schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
