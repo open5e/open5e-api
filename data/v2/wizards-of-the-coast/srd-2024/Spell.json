@@ -440,7 +440,7 @@
     "pk": "srd-2024_antimagic-field",
     "fields": {
       "name": "Antimagic Field",
-      "desc": "An aura of antimagic surrounds you in 10-foot Emanation. No one can cast spells, take Magic actions, or create other magical effects inside the aura, and those things can't target or otherwise affect anything inside it. Magical properties of magic items don't work inside the aura or on anything inside it. Areas of effect created by spells or other magic can't extend into the aura, and no one can teleport into or out of it or use planar travel there. Portals close temporarily while in the aura. Ongoing spells, except those cast by an Artifact or a deity, are suppressed in the area. While an effect is suppressed, it doesn't function, but the time it spends suppressed counts against its duration.",
+      "desc": "An aura of antimagic surrounds you in 10-foot Emanation. No one can cast spells, take Magic actions, or create other magical effects inside the aura, and those things can't target or otherwise affect anything inside it. Magical properties of magic items don't work inside the aura or on anything inside it. Areas of effect created by spells or other magic can't extend into the aura, and no one can teleport into or out of it or use planar travel there. Portals close temporarily while in the aura. Ongoing spells, except those cast by an Artifact or a deity, are suppressed in the area. While an effect is suppressed, it doesn't function, but the time it spends suppressed counts against its duration.\n\nDispel Magic has no effect on the aura, and the auras created by different Antimagic Field spells don't nullify each other.",
       "document": "srd-2024",
       "level": 8,
       "school": "abjuration",
@@ -1926,7 +1926,7 @@
     "pk": "srd-2024_command",
     "fields": {
       "name": "Command",
-      "desc": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. Choose the command from these options:\n\n- **Drop.** The target drops whatever it is holding and then ends its turn.\n- **Flee.** The target spends its turn moving away from you by the fastest available means.\n- **Grovel.** The target has the Prone condition and then ends its turn.\n- **Halt.** On its turn, the target doesn't move and takes no action or Bonus Action.",
+      "desc": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. Choose the command from these options:\n\n- **Approach.** The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.\n- **Drop.** The target drops whatever it is holding and then ends its turn.\n- **Flee.** The target spends its turn moving away from you by the fastest available means.\n- **Grovel.** The target has the Prone condition and then ends its turn.\n- **Halt.** On its turn, the target doesn't move and takes no action or Bonus Action.",
       "document": "srd-2024",
       "level": 1,
       "school": "enchantment",
@@ -2246,7 +2246,7 @@
     "pk": "srd-2024_conjure-celestial",
     "fields": {
       "name": "Conjure Celestial",
-      "desc": "You conjure a spirit from the Upper Planes, which manifests as a pillar of light in a 10-foot-radius, 40-foot-high Cylinder centered on a point within range. For each creature you can see in the Cylinder, choose which of these lights shines on it: Until the spell ends, Bright Light fills the Cylinder, and when you move on your turn, you can also move the Cylinder up to 30 feet. Whenever the Cylinder moves into the space of a creature you can see and whenever a creature you can see enters the Cylinder or ends its turn there, you can bathe it in one of the lights. A creature can be affected by this spell only once per turn.",
+      "desc": "You conjure a spirit from the Upper Planes, which manifests as a pillar of light in a 10-foot-radius, 40-foot-high Cylinder centered on a point within range. For each creature you can see in the Cylinder, choose which of these lights shines on it:\n\n- **Healing Light.** The target regains Hit Points equal to 4d12 plus your spellcasting ability modifier.\n- **Searing Light.** The target makes a Dexterity saving throw, taking 6d12 Radiant damage on a failed save or half as much damage on a successful one.\n\nUntil the spell ends, Bright Light fills the Cylinder, and when you move on your turn, you can also move the Cylinder up to 30 feet. Whenever the Cylinder moves into the space of a creature you can see and whenever a creature you can see enters the Cylinder or ends its turn there, you can bathe it in one of the lights. A creature can be affected by this spell only once per turn.",
       "document": "srd-2024",
       "level": 7,
       "school": "conjuration",
@@ -5956,7 +5956,7 @@
     "pk": "srd-2024_greater-invisibility",
     "fields": {
       "name": "Greater Invisibility",
-      "desc": "",
+      "desc": "A creature you touch has the Invisible condition until the spell ends.",
       "document": "srd-2024",
       "level": 4,
       "school": "illusion",
@@ -6237,7 +6237,7 @@
     "pk": "srd-2024_hallow",
     "fields": {
       "name": "Hallow",
-      "desc": "You touch a point and infuse an area around it with holy or unholy power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect of Hallow. The affected area has the following effects.\n\n**_Hallowed Ward._** Choose any of these creature types: Aberration, Celestial, Elemental, Fey, Fiend, or Undead. Creatures of the chosen types can't willingly enter the area, and any creature that is possessed by or that has the Charmed or Frightened condition from such creatures isn't possessed, Charmed, or Frightened by them while in the area.\n\n**_Extra Effect._** You bind an extra effect to the area from the list below:\n\n- **_Courage._** Creatures of any types you choose can't gain the Frightened condition while in the area.\n- **_Darkness._** Darkness fills the area. Normal light, as well as magical light created by spells of a level lower than this spell, can't illuminate the area.\n - **_Daylight._** Bright light fills the area. Magical Darkness created by spells of a level lower than this spell can't extinguish the light.\n- **_Peaceful Rest._** Dead bodies interred in the area can't be turned into Undead.\n- **_Extradimensional Interference._** Creatures of any types you choose can't enter or exit the area using teleportation or interplanar travel.\n- **_Fear._** Creatures of any types you choose have the Frightened condition while in the area.\n- **_Silence._** No sound can emanate from within the area, and no sound can reach into it.\n- **_Tongues._** Creatures of any types you choose can communicate with any other creature in the area even if they don't share a common language.\n- **_Vulnerability._** Creatures of any types you choose have Vulnerability to one damage type of your choice while in the area.",
+      "desc": "You touch a point and infuse an area around it with holy or unholy power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect of Hallow. The affected area has the following effects.\n\n**_Hallowed Ward._** Choose any of these creature types: Aberration, Celestial, Elemental, Fey, Fiend, or Undead. Creatures of the chosen types can't willingly enter the area, and any creature that is possessed by or that has the Charmed or Frightened condition from such creatures isn't possessed, Charmed, or Frightened by them while in the area.\n\n**_Extra Effect._** You bind an extra effect to the area from the list below:\n\n- **_Courage._** Creatures of any types you choose can't gain the Frightened condition while in the area.\n- **_Darkness._** Darkness fills the area. Normal light, as well as magical light created by spells of a level lower than this spell, can't illuminate the area.\n- **_Daylight._** Bright light fills the area. Magical Darkness created by spells of a level lower than this spell can't extinguish the light.\n- **_Peaceful Rest._** Dead bodies interred in the area can't be turned into Undead.\n- **_Extradimensional Interference._** Creatures of any types you choose can't enter or exit the area using teleportation or interplanar travel.\n- **_Fear._** Creatures of any types you choose have the Frightened condition while in the area.\n- **_Resistance._** Creatures of any types you choose have Resistance to one damage type of your choice while in the area.\n- **_Silence._** No sound can emanate from within the area, and no sound can reach into it.\n- **_Tongues._** Creatures of any types you choose can communicate with any other creature in the area even if they don't share a common language.\n- **_Vulnerability._** Creatures of any types you choose have Vulnerability to one damage type of your choice while in the area.",
       "document": "srd-2024",
       "level": 5,
       "school": "abjuration",
@@ -7406,7 +7406,7 @@
     "pk": "srd-2024_knock",
     "fields": {
       "name": "Knock",
-      "desc": "A target that is held shut by a mundane lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If the object has multiple locks, only one of them is unlocked. If the target is held shut by Arcane Lock, that spell is suppressed for 10 minutes, during which time the target can be opened and closed. When you cast the spell, a loud knock, audible up to 300 feet away, emanates from the target.",
+      "desc": "Choose an object that you can see within range. The object can be a door, a box, a chest, a set of manacles, a padlock, or another object that contains a mundane or magical means that prevents access.\n\nA target that is held shut by a mundane lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If the object has multiple locks, only one of them is unlocked. If the target is held shut by Arcane Lock, that spell is suppressed for 10 minutes, during which time the target can be opened and closed. When you cast the spell, a loud knock, audible up to 300 feet away, emanates from the target.",
       "document": "srd-2024",
       "level": 2,
       "school": "transmutation",
@@ -8862,7 +8862,7 @@
     "pk": "srd-2024_moonbeam",
     "fields": {
       "name": "Moonbeam",
-      "desc": "When the Cylinder appears, each creature in it makes a Constitution saving throw. On a failed save, a creature takes 2d10 Radiant damage, and if the creature is shape-shifted (as a result of the Polymorph spell, for example), it reverts to its true form and can't shape-shift until it leaves the Cylinder. On a successful save, a creature takes half as much damage only. A creature also makes this save when the spell's area moves into its space and when it enters the spell's area or ends its turn there. A creature makes this save only once per turn.",
+      "desc": "A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high Cylinder centered on a point within range. Until the spell ends, Dim Light fills the Cylinder, and you can take a Magic action on later turns to move the Cylinder up to 60 feet.\n\nWhen the Cylinder appears, each creature in it makes a Constitution saving throw. On a failed save, a creature takes 2d10 Radiant damage, and if the creature is shape-shifted (as a result of the Polymorph spell, for example), it reverts to its true form and can't shape-shift until it leaves the Cylinder. On a successful save, a creature takes half as much damage only. A creature also makes this save when the spell's area moves into its space and when it enters the spell's area or ends its turn there. A creature makes this save only once per turn.",
       "document": "srd-2024",
       "level": 2,
       "school": "evocation",
