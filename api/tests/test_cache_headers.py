@@ -63,12 +63,6 @@ class V1CachingTest(TestCase):
         self.assertTrue(response.cookies)
         self.assertNotIn('Cache-Control', response.headers)
 
-    def test_v2_is_untouched(self):
-        response = self.client.get('/v2/creatures/', HTTP_ACCEPT='application/json')
-
-        self.assertEqual(response.status_code, 200)
-        self.assertNotIn('Cache-Control', response.headers)
-
 
 class CacheControlGuardTest(SimpleTestCase):
     """The guards that keep `public` from leaking per-user content."""
@@ -83,6 +77,15 @@ class CacheControlGuardTest(SimpleTestCase):
 
     def test_cacheable_baseline(self):
         self.assertEqual(self._apply(self._ok()).headers['Cache-Control'], EXPECTED)
+
+    def test_v2_path_is_skipped(self):
+        """The edge policy relies on v1 being frozen; v2 sets its own caching.
+
+        Tested on a bare response, since a v2 view that sets its own
+        Cache-Control would trip the existing-header guard before the path check.
+        """
+        self.assertNotIn(
+            'Cache-Control', self._apply(self._ok(), path='/v2/creatures/').headers)
 
     def test_non_get_is_skipped(self):
         self.assertNotIn(
