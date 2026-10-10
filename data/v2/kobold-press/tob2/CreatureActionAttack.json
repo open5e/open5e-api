@@ -1943,16 +1943,39 @@
       "extra_damage_die_count": 2,
       "extra_damage_die_type": "D8",
       "extra_damage_type": "cold",
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "tob2_boreas-chosen_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_boreas-chosen_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D8",
+      "extra_damage_type": "cold",
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "tob2_boreas-chosen_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_boreas-chosen_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -3990,16 +4013,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 30,
-      "name": "Aklys attack",
+      "long_range": null,
+      "name": "Aklys Melee attack",
       "parent": "tob2_derro-guard_aklys",
-      "range": 10,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_derro-guard_aklys_aklys-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 30,
+      "name": "Aklys Ranged attack",
+      "parent": "tob2_derro-guard_aklys",
+      "range": 10,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_derro-guard_aklys_aklys-ranged-attack"
   },
   {
     "fields": {
@@ -4036,16 +4082,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "tob2_derro-shadowseeker_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 8
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_derro-shadowseeker_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 5,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "tob2_derro-shadowseeker_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 8
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_derro-shadowseeker_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -4128,16 +4197,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "tob2_destroyer_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_destroyer_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "tob2_destroyer_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_destroyer_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -4381,16 +4473,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "tob2_egret-harpy_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_egret-harpy_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "tob2_egret-harpy_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_egret-harpy_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -4634,16 +4749,39 @@
       "extra_damage_die_count": 4,
       "extra_damage_die_type": "D6",
       "extra_damage_type": "poison",
-      "long_range": 60,
-      "name": "Dirk attack",
+      "long_range": null,
+      "name": "Dirk Melee attack",
       "parent": "tob2_far-dorocha_dirk",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_far-dorocha_dirk_dirk-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 4,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "poison",
+      "long_range": 60,
+      "name": "Dirk Ranged attack",
+      "parent": "tob2_far-dorocha_dirk",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_far-dorocha_dirk_dirk-ranged-attack"
   },
   {
     "fields": {
@@ -4933,16 +5071,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger (Humanoid or Fey Form Only) attack",
+      "long_range": null,
+      "name": "Dagger (Humanoid or Fey Form Only) Melee attack",
       "parent": "tob2_flithidir_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_flithidir_dagger-humanoid-or-fey-form-only_dagger-humanoid-or-fey-form-only-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger (Humanoid or Fey Form Only) Ranged attack",
+      "parent": "tob2_flithidir_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_flithidir_dagger-humanoid-or-fey-form-only_dagger-humanoid-or-fey-form-only-ranged-attack"
   },
   {
     "fields": {
@@ -7279,16 +7440,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "tob2_infernal-centaur_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_infernal-centaur_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "tob2_infernal-centaur_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_infernal-centaur_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -7394,16 +7578,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "tob2_initiate-of-the-elder-elementals_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_initiate-of-the-elder-elementals_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "tob2_initiate-of-the-elder-elementals_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_initiate-of-the-elder-elementals_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -7762,16 +7969,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Poison Barb attack",
+      "long_range": null,
+      "name": "Poison Barb Melee attack",
       "parent": "tob2_kezai_poison-barb",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_kezai_poison-barb_poison-barb-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Poison Barb Ranged attack",
+      "parent": "tob2_kezai_poison-barb",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_kezai_poison-barb_poison-barb-ranged-attack"
   },
   {
     "fields": {
@@ -7923,16 +8153,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "tob2_kobold-spellclerk_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_kobold-spellclerk_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "tob2_kobold-spellclerk_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_kobold-spellclerk_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -8935,16 +9188,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "tob2_mountain-strider_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_mountain-strider_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "tob2_mountain-strider_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_mountain-strider_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -9487,16 +9763,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "tob2_one-horned-ogre_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 8
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_one-horned-ogre_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 5,
+      "damage_die_count": 2,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "tob2_one-horned-ogre_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 8
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_one-horned-ogre_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -9763,16 +10062,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "tob2_otterfolk_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_otterfolk_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "tob2_otterfolk_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_otterfolk_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -10591,16 +10913,39 @@
       "extra_damage_die_count": 2,
       "extra_damage_die_type": "D6",
       "extra_damage_type": "fire",
-      "long_range": 60,
-      "name": "Trident attack",
+      "long_range": null,
+      "name": "Trident Melee attack",
       "parent": "tob2_salamander-monarch_trident",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 9
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_salamander-monarch_trident_trident-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 5,
+      "damage_die_count": 2,
+      "damage_die_type": "D8",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "fire",
+      "long_range": 60,
+      "name": "Trident Ranged attack",
+      "parent": "tob2_salamander-monarch_trident",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 9
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_salamander-monarch_trident_trident-ranged-attack"
   },
   {
     "fields": {
@@ -12086,16 +12431,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Chemical Burn attack",
+      "long_range": null,
+      "name": "Chemical Burn Melee attack",
       "parent": "tob2_strobing-fungus_chemical-burn",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_strobing-fungus_chemical-burn_chemical-burn-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 3,
+      "damage_die_type": "D6",
+      "damage_type": "acid",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Chemical Burn Ranged attack",
+      "parent": "tob2_strobing-fungus_chemical-burn",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_strobing-fungus_chemical-burn_chemical-burn-ranged-attack"
   },
   {
     "fields": {
@@ -12983,16 +13351,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "tob2_trollkin-raider_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 3
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_trollkin-raider_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 1,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "tob2_trollkin-raider_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 3
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_trollkin-raider_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -13880,16 +14271,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Trident (Humanoid or Hybrid Form Only) attack",
+      "long_range": null,
+      "name": "Trident (Humanoid or Hybrid Form Only) Melee attack",
       "parent": "tob2_wereshark_trident",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_wereshark_trident-humanoid-or-hybrid-form-only_trident-humanoid-or-hybrid-form-only-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Trident (Humanoid or Hybrid Form Only) Ranged attack",
+      "parent": "tob2_wereshark_trident",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_wereshark_trident-humanoid-or-hybrid-form-only_trident-humanoid-or-hybrid-form-only-ranged-attack"
   },
   {
     "fields": {
@@ -14110,16 +14524,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Handaxe attack",
+      "long_range": null,
+      "name": "Handaxe Melee attack",
       "parent": "tob2_wintergrim_handaxe",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "tob2_wintergrim_handaxe_handaxe-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "slashing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Handaxe Ranged attack",
+      "parent": "tob2_wintergrim_handaxe",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "tob2_wintergrim_handaxe_handaxe-ranged-attack"
   },
   {
     "fields": {

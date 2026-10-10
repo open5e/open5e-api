@@ -1806,15 +1806,38 @@
       "extra_damage_die_type": null,
       "extra_damage_type": null,
       "long_range": null,
-      "name": "Arcane Blast attack",
+      "name": "Arcane Blast Melee attack",
       "parent": "bfrd_archmage_arcane-blast",
-      "range": 60,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 9
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_archmage_arcane-blast_arcane-blast-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "SPELL",
+      "damage_bonus": 5,
+      "damage_die_count": 4,
+      "damage_die_type": "D10",
+      "damage_type": "force",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": null,
+      "name": "Arcane Blast Ranged attack",
+      "parent": "bfrd_archmage_arcane-blast",
+      "range": 60,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 9
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_archmage_arcane-blast_arcane-blast-ranged-attack"
   },
   {
     "fields": {
@@ -2242,16 +2265,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "bfrd_bandit-captain_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_bandit-captain_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "bfrd_bandit-captain_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_bandit-captain_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -3208,16 +3254,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "bfrd_bugbear-champion_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_bugbear-champion_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "bfrd_bugbear-champion_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_bugbear-champion_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -3277,16 +3346,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "bfrd_bugbear_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_bugbear_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "bfrd_bugbear_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_bugbear_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -4657,16 +4749,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "bfrd_duergar_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_duergar_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "bfrd_duergar_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_duergar_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -5876,16 +5991,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "bfrd_gladiator_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_gladiator_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 2,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "bfrd_gladiator_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_gladiator_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -5922,16 +6060,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "bfrd_gnoll_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_gnoll_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "bfrd_gnoll_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_gnoll_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -6451,16 +6612,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "bfrd_guard_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 3
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_guard_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 1,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "bfrd_guard_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 3
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_guard_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -7854,16 +8038,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "bfrd_knight_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_knight_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "bfrd_knight_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_knight_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -7924,15 +8131,61 @@
       "extra_damage_die_type": null,
       "extra_damage_type": null,
       "long_range": null,
-      "name": "Eldritch Burst attack",
+      "name": "Eldritch Burst Melee attack",
       "parent": "bfrd_kobold-witch_eldritch-burst",
-      "range": 60,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_kobold-witch_eldritch-burst_eldritch-burst-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "SPELL",
+      "damage_bonus": 4,
+      "damage_die_count": 2,
+      "damage_die_type": "D8",
+      "damage_type": "force",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": null,
+      "name": "Eldritch Burst Ranged attack",
+      "parent": "bfrd_kobold-witch_eldritch-burst",
+      "range": 60,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_kobold-witch_eldritch-burst_eldritch-burst-ranged-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": null,
+      "name": "Dagger Melee attack",
+      "parent": "bfrd_kobold_dagger",
+      "range": null,
+      "reach": 5,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_kobold_dagger_dagger-attack"
   },
   {
     "fields": {
@@ -7947,15 +8200,15 @@
       "extra_damage_die_type": null,
       "extra_damage_type": null,
       "long_range": 60,
-      "name": "Dagger attack",
+      "name": "Dagger Ranged attack",
       "parent": "bfrd_kobold_dagger",
       "range": 20,
-      "reach": 5,
+      "reach": null,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
-    "pk": "bfrd_kobold_dagger_dagger-attack"
+    "pk": "bfrd_kobold_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -8061,16 +8314,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "bfrd_lamia_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_lamia_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "bfrd_lamia_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_lamia_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -8154,15 +8430,38 @@
       "extra_damage_die_type": "D6",
       "extra_damage_type": "necrotic",
       "long_range": null,
-      "name": "Arcane Death Burst attack",
+      "name": "Arcane Death Burst Melee attack",
       "parent": "bfrd_lich_arcane-death-burst",
-      "range": 120,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 12
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_lich_arcane-death-burst_arcane-death-burst-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "SPELL",
+      "damage_bonus": 5,
+      "damage_die_count": 4,
+      "damage_die_type": "D8",
+      "damage_type": "force",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 5,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "necrotic",
+      "long_range": null,
+      "name": "Arcane Death Burst Ranged attack",
+      "parent": "bfrd_lich_arcane-death-burst",
+      "range": 120,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 12
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_lich_arcane-death-burst_arcane-death-burst-ranged-attack"
   },
   {
     "fields": {
@@ -8383,16 +8682,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "bfrd_lizardfolk-ruler_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_lizardfolk-ruler_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "bfrd_lizardfolk-ruler_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_lizardfolk-ruler_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -8521,16 +8843,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "bfrd_lizardfolk_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_lizardfolk_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "bfrd_lizardfolk_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_lizardfolk_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -8567,16 +8912,39 @@
       "extra_damage_die_count": 2,
       "extra_damage_die_type": "D8",
       "extra_damage_type": "force",
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "bfrd_mage-apprentice_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 3
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_mage-apprentice_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": null,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D8",
+      "extra_damage_type": "force",
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "bfrd_mage-apprentice_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 3
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_mage-apprentice_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -8613,16 +8981,39 @@
       "extra_damage_die_count": 3,
       "extra_damage_die_type": "D8",
       "extra_damage_type": "force",
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "bfrd_mage_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 3
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_mage_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": null,
+      "damage_die_count": 1,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 3,
+      "extra_damage_die_type": "D8",
+      "extra_damage_type": "force",
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "bfrd_mage_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 3
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_mage_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -8820,16 +9211,39 @@
       "extra_damage_die_count": 2,
       "extra_damage_die_type": "D6",
       "extra_damage_type": "fire",
-      "long_range": 60,
-      "name": "Dagger attack",
+      "long_range": null,
+      "name": "Dagger Melee attack",
       "parent": "bfrd_marilith_dagger",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 9
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_marilith_dagger_dagger-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 2,
+      "damage_die_type": "D4",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "fire",
+      "long_range": 60,
+      "name": "Dagger Ranged attack",
+      "parent": "bfrd_marilith_dagger",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 9
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_marilith_dagger_dagger-ranged-attack"
   },
   {
     "fields": {
@@ -8912,16 +9326,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Hasty Concoction attack",
+      "long_range": null,
+      "name": "Hasty Concoction Melee attack",
       "parent": "bfrd_master-alchemist_hasty-concoction",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 7
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_master-alchemist_hasty-concoction_hasty-concoction-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 3,
+      "damage_die_type": "D8",
+      "damage_type": null,
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Hasty Concoction Ranged attack",
+      "parent": "bfrd_master-alchemist_hasty-concoction",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 7
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_master-alchemist_hasty-concoction_hasty-concoction-ranged-attack"
   },
   {
     "fields": {
@@ -9165,16 +9602,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Harpoon attack",
+      "long_range": null,
+      "name": "Harpoon Melee attack",
       "parent": "bfrd_merrow_harpoon",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_merrow_harpoon_harpoon-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Harpoon Ranged attack",
+      "parent": "bfrd_merrow_harpoon",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_merrow_harpoon_harpoon-ranged-attack"
   },
   {
     "fields": {
@@ -9878,16 +10338,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "bfrd_ogre_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_ogre_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 4,
+      "damage_die_count": 2,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "bfrd_ogre_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_ogre_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -10062,16 +10545,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 120,
-      "name": "Javelin attack",
+      "long_range": null,
+      "name": "Javelin Melee attack",
       "parent": "bfrd_orc_javelin",
-      "range": 30,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_orc_javelin_javelin-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 120,
+      "name": "Javelin Ranged attack",
+      "parent": "bfrd_orc_javelin",
+      "range": 30,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_orc_javelin_javelin-ranged-attack"
   },
   {
     "fields": {
@@ -11304,16 +11810,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Trident attack",
+      "long_range": null,
+      "name": "Trident Melee attack",
       "parent": "bfrd_sahuagin_trident",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 3
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_sahuagin_trident_trident-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": null,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Trident Ranged attack",
+      "parent": "bfrd_sahuagin_trident",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 3
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_sahuagin_trident_trident-ranged-attack"
   },
   {
     "fields": {
@@ -11373,16 +11902,39 @@
       "extra_damage_die_count": 2,
       "extra_damage_die_type": "D6",
       "extra_damage_type": "fire",
-      "long_range": 60,
-      "name": "Trident attack",
+      "long_range": null,
+      "name": "Trident Melee attack",
       "parent": "bfrd_salamander_trident",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 6
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_salamander_trident_trident-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 3,
+      "damage_die_count": 2,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "fire",
+      "long_range": 60,
+      "name": "Trident Ranged attack",
+      "parent": "bfrd_salamander_trident",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 6
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_salamander_trident_trident-ranged-attack"
   },
   {
     "fields": {
@@ -11419,16 +11971,39 @@
       "extra_damage_die_count": 1,
       "extra_damage_die_type": "D6",
       "extra_damage_type": "necrotic",
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "bfrd_satarre_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_satarre_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 1,
+      "extra_damage_die_type": "D6",
+      "extra_damage_type": "necrotic",
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "bfrd_satarre_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_satarre_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -13536,15 +14111,38 @@
       "extra_damage_die_type": "D8",
       "extra_damage_type": "force",
       "long_range": null,
-      "name": "Artistic Flourish attack",
+      "name": "Artistic Flourish Melee attack",
       "parent": "bfrd_virtuoso-lich_artistic-flourish",
-      "range": 60,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 9
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_virtuoso-lich_artistic-flourish_artistic-flourish-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "SPELL",
+      "damage_bonus": 5,
+      "damage_die_count": 3,
+      "damage_die_type": "D8",
+      "damage_type": null,
+      "distance_unit": null,
+      "extra_damage_bonus": 0,
+      "extra_damage_die_count": 2,
+      "extra_damage_die_type": "D8",
+      "extra_damage_type": "force",
+      "long_range": null,
+      "name": "Artistic Flourish Ranged attack",
+      "parent": "bfrd_virtuoso-lich_artistic-flourish",
+      "range": 60,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 9
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_virtuoso-lich_artistic-flourish_artistic-flourish-ranged-attack"
   },
   {
     "fields": {
@@ -14156,16 +14754,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear (Humanoid Form Only) attack",
+      "long_range": null,
+      "name": "Spear (Humanoid Form Only) Melee attack",
       "parent": "bfrd_werewolf_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 4
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_werewolf_spear-humanoid-form-only_spear-humanoid-form-only-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 2,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear (Humanoid Form Only) Ranged attack",
+      "parent": "bfrd_werewolf_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 4
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_werewolf_spear-humanoid-form-only_spear-humanoid-form-only-ranged-attack"
   },
   {
     "fields": {
@@ -14294,16 +14915,39 @@
       "extra_damage_die_count": null,
       "extra_damage_die_type": null,
       "extra_damage_type": null,
-      "long_range": 60,
-      "name": "Spear attack",
+      "long_range": null,
+      "name": "Spear Melee attack",
       "parent": "bfrd_wild-warrior_spear",
-      "range": 20,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 3
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_wild-warrior_spear_spear-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "WEAPON",
+      "damage_bonus": 1,
+      "damage_die_count": 1,
+      "damage_die_type": "D6",
+      "damage_type": "piercing",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": 60,
+      "name": "Spear Ranged attack",
+      "parent": "bfrd_wild-warrior_spear",
+      "range": 20,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 3
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_wild-warrior_spear_spear-ranged-attack"
   },
   {
     "fields": {
@@ -14525,15 +15169,38 @@
       "extra_damage_die_type": null,
       "extra_damage_type": null,
       "long_range": null,
-      "name": "Psychic Burst attack",
+      "name": "Psychic Burst Melee attack",
       "parent": "bfrd_wyrdling_psychic-burst",
-      "range": 60,
+      "range": null,
       "reach": 5,
       "target_creature_only": false,
       "to_hit_mod": 5
     },
     "model": "api_v2.creatureactionattack",
     "pk": "bfrd_wyrdling_psychic-burst_psychic-burst-attack"
+  },
+  {
+    "fields": {
+      "attack_type": "SPELL",
+      "damage_bonus": 3,
+      "damage_die_count": 3,
+      "damage_die_type": "D6",
+      "damage_type": "psychic",
+      "distance_unit": null,
+      "extra_damage_bonus": null,
+      "extra_damage_die_count": null,
+      "extra_damage_die_type": null,
+      "extra_damage_type": null,
+      "long_range": null,
+      "name": "Psychic Burst Ranged attack",
+      "parent": "bfrd_wyrdling_psychic-burst",
+      "range": 60,
+      "reach": null,
+      "target_creature_only": false,
+      "to_hit_mod": 5
+    },
+    "model": "api_v2.creatureactionattack",
+    "pk": "bfrd_wyrdling_psychic-burst_psychic-burst-ranged-attack"
   },
   {
     "fields": {
