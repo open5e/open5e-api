@@ -18,9 +18,6 @@ class Command(BaseCommand):
                             "--dir",
                             type=str,
                             help="Directory to write files to.")
-        parser.add_argument("--skip-concepts",
-                            action="store_true",
-                            help="Skip automatic concept population after import.")
         parser.add_argument("--debug",
                             action="store_true",
                             help="Load files one by one to identify problematic data.")
@@ -177,14 +174,7 @@ class Command(BaseCommand):
                 ))
                 raise
 
-        call_command('loaddata', fixture_filepaths)
-        
-        # After loading data, populate concept objects to aggregate equivalent content across systems
-        if not options.get('skip_concepts', False):
-            self.stdout.write(self.style.SUCCESS('Data import complete. Now populating concept aggregations...'))
-            call_command('populate_concepts')
-        else:
-            self.stdout.write('Skipping concept population (--skip-concepts flag provided)')
+        self.stdout.write(self.style.SUCCESS(f'Successfully loaded all {loaded_count} files.'))
 
     def _analyze_problematic_file(self, filepath):
         """Analyze the problematic file to identify specific objects causing issues."""
