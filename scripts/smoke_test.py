@@ -15,11 +15,17 @@ def main():
         help='URL of the site to check.')
 
     args = parser.parse_args()
-    print("For a given input url, this goes and checks the root, and the /v1 and /v2")
+    print("For a given input url, this goes and checks /health, the root, and the /v1 and /v2")
     print("paths for 200 response codes. It is intended to be run post-deploy.")
 
-    # Check the root url.
+    # Check the instance is healthy (200 is pass or warn, 503 is fail).
     results = []
+    results.append(check_for_OK(args.url+'/health'))
+    health = requests.get(args.url+'/health').json()
+    print("Health: {} (version {}, release {})".format(
+        health.get('status'), health.get('version'), health.get('releaseId')))
+
+    # Check the root url.
     results.append(check_for_OK(args.url))
     # Check the /v1 paths
     results.append(check_for_OK(args.url+'/v1/'))
