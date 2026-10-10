@@ -519,7 +519,7 @@ def make_caa(ca, a):
     for word in ca.desc.replace("_","").split(" "):
         try:
             d = v2_models.DamageType.objects.get(key=word)
-            if dt is not None:
+            if dt is None:
                 dt = d
             else:
                 edt = d
