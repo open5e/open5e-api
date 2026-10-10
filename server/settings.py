@@ -261,7 +261,7 @@ with open(os.path.join(BASE_DIR, 'pyproject.toml'), 'rb') as f:
 SPECTACULAR_SETTINGS = {
     'VERSION' : VERSION,
     'TITLE': 'Open5e',
-    'DESCRIPTION': 'The Open5e API. See [https://github.com/open5e/open5e-api] for more information.',
+    'DESCRIPTION': 'The Open5e API. This document describes the v2 API; v1 is deprecated. See [https://github.com/open5e/open5e-api] for more information.',
     'SERVERS': [
         {'url': 'https://api.open5e.com', 'description': 'Production server'},
         {'url': 'https://api-beta.open5e.com', 'description': 'Beta server'},
