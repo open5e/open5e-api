@@ -163,5 +163,5 @@ class DescriptionSerializer(serializers.ModelSerializer):
         model = None
         abstract = True
 
-    def get_gamesystem(self,obj):
+    def get_gamesystem(self, obj) -> str:
         return obj.document.gamesystem.key

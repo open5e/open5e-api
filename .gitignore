@@ -39,3 +39,9 @@ server/vector_index.pkl
 temp_magic_items/
 references_report.json
 sources_report.json
+
+# Open5e API Cache
+# Uses .gitkeep to keep the folder structure in Git (for DO permissions) while
+# ignoring the cached data itself.
+api-cache/*
+!api-cache/.gitkeep

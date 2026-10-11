@@ -286,21 +286,6 @@
   },
   {
     "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "The dragon makes a Wisdom (Perception) check.",
-      "name": "Detect",
-      "parent": "tob-2023_adult-flame-dragon",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 1,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_adult-flame-dragon_detect"
-  },
-  {
-    "fields": {
       "action_type": "ACTION",
       "desc": "The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 19 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one. Each creature in that area must also succeed on a DC 18 Wisdom saving throw or go on a rampage for 1 minute. A rampaging creature must attack the nearest creature other than the dragon on its turn. If no other creature is near enough to move to and attack, the rampaging creature stalks off in a random direction, seeking a target for its rage. The rampaging creature can repeat the Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.",
       "name": "Fire Breath",
@@ -418,36 +403,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_adult-flame-dragon_tail"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "The dragon makes a Tail attack.",
-      "name": "Tail Attack",
-      "parent": "tob-2023_adult-flame-dragon",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_adult-flame-dragon_tail-attack"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 17 Dexterity saving throw or take 11 (2d6 + 4) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
-      "name": "Wing Attack",
-      "parent": "tob-2023_adult-flame-dragon",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 3,
-      "limited_to_form": null,
-      "legendary_action_cost": 2
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_adult-flame-dragon_wing-attack"
   },
   {
     "fields": {
@@ -1052,21 +1007,6 @@
   {
     "fields": {
       "action_type": "BONUS_ACTION",
-      "desc": "Akyishigal uses Spellcasting.",
-      "name": "Cast a Spell",
-      "parent": "tob-2023_akyishigal",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 3,
-      "limited_to_form": null,
-      "legendary_action_cost": 2
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_akyishigal_cast-a-spell"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
       "desc": "Akyishigal magically transforms into a Large or smaller insectoid Beast or back into his true form, which is a Fiend. His statistics, other than his size, are the same in each form. Any equipment he is wearing or carrying transforms with him. He reverts to his true form if he dies.",
       "name": "Change Shape",
       "parent": "tob-2023_akyishigal",
@@ -1156,21 +1096,6 @@
   },
   {
     "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Akyishigal moves up to half his speed and makes one Claw attack. This movement doesn't provoke opportunity attacks.",
-      "name": "Skitter",
-      "parent": "tob-2023_akyishigal",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": 2
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_akyishigal_skitter"
-  },
-  {
-    "fields": {
       "action_type": "ACTION",
       "desc": "Akyishigal casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save DC 17):\n\n- **At Will:** detect evil and good, pass without trace\n3/day: dispel magic, giant insect, insect plague\n1/day: contagion (filth fever only)",
       "name": "Spellcasting",
@@ -1183,21 +1108,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_akyishigal_spellcasting"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Akyishigal magically teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see.",
-      "name": "Teleport",
-      "parent": "tob-2023_akyishigal",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 1,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_akyishigal_teleport"
   },
   {
     "fields": {
@@ -1831,21 +1741,6 @@
   },
   {
     "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "The dragon makes a Wisdom (Perception) check.",
-      "name": "Detect",
-      "parent": "tob-2023_ancient-flame-dragon",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 1,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_ancient-flame-dragon_detect"
-  },
-  {
-    "fields": {
       "action_type": "ACTION",
       "desc": "The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 23 Dexterity saving throw, taking 91 (26d6) fire damage on a failed save, or half as much damage on a successful one. Each creature in that area must also succeed on a DC 21 Wisdom saving throw or go on a rampage for 1 minute. A rampaging creature must attack the nearest creature other than the dragon on its turn. If no other creature is near enough to move to and attack, the rampaging creature stalks off in a random direction, seeking a target for its rage. The rampaging creature can repeat the Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.",
       "name": "Fire Breath",
@@ -1963,36 +1858,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_ancient-flame-dragon_tail"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "The dragon makes a Tail attack.",
-      "name": "Tail Attack",
-      "parent": "tob-2023_ancient-flame-dragon",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_ancient-flame-dragon_tail-attack"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a DC 21 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
-      "name": "Wing Attack",
-      "parent": "tob-2023_ancient-flame-dragon",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 3,
-      "limited_to_form": null,
-      "legendary_action_cost": 2
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_ancient-flame-dragon_wing-attack"
   },
   {
     "fields": {
@@ -3826,21 +3691,6 @@
   },
   {
     "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "The Bear King lets out a blood-curdling roar. Each hostile creature within 60 feet of the Bear King and that can hear the roar must succeed on a DC 17 Wisdom saving throw or be frightened until the end of its next turn.",
-      "name": "Frightful Roar",
-      "parent": "tob-2023_bear-king",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 3,
-      "limited_to_form": null,
-      "legendary_action_cost": 2
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_bear-king_frightful-roar"
-  },
-  {
-    "fields": {
       "action_type": "ACTION",
       "desc": "Ranged Spell Attack: +8 to hit, range 120 ft., one target. Hit: 22 (4d8 + 4) radiant damage.",
       "name": "Honey Bolt",
@@ -3853,21 +3703,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_bear-king_honey-bolt"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "The Bear King throws a jar of magical honey at a creature he can see within 120 feet of him. The target must succeed on a DC 17 Dexterity saving throw or be restrained by sticky honey until the end of its next turn.",
-      "name": "Honey Toss",
-      "parent": "tob-2023_bear-king",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_bear-king_honey-toss"
   },
   {
     "fields": {
@@ -3928,21 +3763,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_bear-king_maul"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "The Bear King moves up to his speed without provoking opportunity attacks.",
-      "name": "Move",
-      "parent": "tob-2023_bear-king",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 1,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_bear-king_move"
   },
   {
     "fields": {
@@ -5222,21 +5042,6 @@
   {
     "fields": {
       "action_type": "BONUS_ACTION",
-      "desc": "Camazotz uses Spellcasting.",
-      "name": "Cast a Spell",
-      "parent": "tob-2023_camazotz",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 3,
-      "limited_to_form": null,
-      "legendary_action_cost": 2
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_camazotz_cast-a-spell"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
       "desc": "Camazotz magically transforms into a Large giant bat covered in smoldering ashes, or back into his true form, which is a Fiend. His statistics, other than his size, are the same in each form. Any equipment he is wearing or carrying transforms with him. He turns into a pile of greasy ash if destroyed.",
       "name": "Change Shape",
       "parent": "tob-2023_camazotz",
@@ -5263,36 +5068,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_camazotz_claw"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Camazotz makes a Wisdom (Perception) check.",
-      "name": "Detect",
-      "parent": "tob-2023_camazotz",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 1,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_camazotz_detect"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Camazotz beats his wings, extinguishing mundane and magical light sources. Each creature within 10 feet of Camazotz must succeed on a DC 22 Dexterity saving throw or take 14 (4d6) fire damage and be knocked prone.",
-      "name": "Fiery Wing Beat",
-      "parent": "tob-2023_camazotz",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 4,
-      "limited_to_form": null,
-      "legendary_action_cost": 2
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_camazotz_fiery-wing-beat"
   },
   {
     "fields": {
@@ -5368,21 +5143,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_camazotz_legendary-move"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Camazotz moves up to his speed, or he flies up to half his speed. This movement doesn't provoke opportunity attacks.",
-      "name": "Move",
-      "parent": "tob-2023_camazotz",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_camazotz_move"
   },
   {
     "fields": {
@@ -12556,21 +12316,6 @@
   },
   {
     "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Hraesvelgr makes a Fist or Talons attack.",
-      "name": "Attack",
-      "parent": "tob-2023_hraesvelgr",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 1,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_hraesvelgr_attack"
-  },
-  {
-    "fields": {
       "action_type": "ACTION",
       "desc": "Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 25 (4d8 + 7) piercing damage.",
       "name": "Beak",
@@ -12598,21 +12343,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_hraesvelgr_change-shape"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Hraesvelgr lets out an ear-splitting screech. Each creature within 30 feet of Hraesvelgr must succeed on a DC 19 Constitution saving throw or take 14 (4d6) thunder damage and be deafened until the end of its next turn.",
-      "name": "Ear-Splitting Screech",
-      "parent": "tob-2023_hraesvelgr",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 3,
-      "limited_to_form": "Roc Form Only",
-      "legendary_action_cost": 2
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_hraesvelgr_ear-splitting-screech"
   },
   {
     "fields": {
@@ -12688,21 +12418,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_hraesvelgr_legendary-move"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Hraesvelgr moves up to his speed, or flies up to half his flying speed if in roc form, without provoking opportunity attacks.",
-      "name": "Move",
-      "parent": "tob-2023_hraesvelgr",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_hraesvelgr_move"
   },
   {
     "fields": {
@@ -12916,21 +12631,6 @@
   },
   {
     "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "While inhabiting a Humanoid, Ia'Affrat consumes the host from the inside. The host takes 18 (4d8) necrotic damage, and Ia'Affrat regains hp equal to that amount.",
-      "name": "Consume Host",
-      "parent": "tob-2023_iaaffrat",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 3,
-      "limited_to_form": "Shapeless Form Only",
-      "legendary_action_cost": 3
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_iaaffrat_consume-host"
-  },
-  {
-    "fields": {
       "action_type": "ACTION",
       "desc": "Ranged Spell Attack: +11 to hit, range 120 ft., one target. Hit: 16 (3d6 + 6) fire damage plus 10 (3d6) poison damage.",
       "name": "Flaming Insect Bolt",
@@ -13033,36 +12733,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "tob-2023_iaaffrat_shape-swarm"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Ia'Affrat teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see.",
-      "name": "Teleport",
-      "parent": "tob-2023_iaaffrat",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 1,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_iaaffrat_teleport"
-  },
-  {
-    "fields": {
-      "action_type": "BONUS_ACTION",
-      "desc": "Ia'Affrat exhales 1d4 swarms of insects in spaces he can see within 30 feet. The swarms take their turns immediately after Ia'Affrat, and they are allies of Ia'Affrat, obeying his telepathic commands. They remain for 1 minute, until Ia'Affrat dies, or until Ia'Affrat dismisses them as a bonus action. Ia'Affrat can have no more than five swarms of insects under his control at a time.",
-      "name": "Vermin Breath",
-      "parent": "tob-2023_iaaffrat",
-      "uses_param": null,
-      "uses_type": null,
-      "order_in_statblock": 2,
-      "limited_to_form": "Humanoid Form Only",
-      "legendary_action_cost": 2
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "tob-2023_iaaffrat_vermin-breath"
   },
   {
     "fields": {

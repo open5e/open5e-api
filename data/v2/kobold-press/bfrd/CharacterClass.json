@@ -28,5 +28,469 @@
   },
   "model": "api_v2.characterclass",
   "pk": "bfrd_metallurgist"
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_witch",
+  "fields": {
+    "name": "Witch",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "wis",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_witch-twilight-soul",
+  "fields": {
+    "desc": "Witches aligned with the coven of the Twilight Soul are the ultimate emissaries to the spirit realms, often compelled to serve as guardians and diplomats in matters where the physical and mystical worlds collide. Such witches are typically drawn to the Wyrd forces early in life through accident, magical circumstance, or tragedy that leaves an indelible stain upon their mortal spirit. Their craft is simply a realization of this natural affinity, learning to communicate and align with the spirits already drawn to their supernatural magnetism.",
+    "name": "Twilight Soul",
+    "document": "bfrd",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_witch"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_vanguard",
+  "fields": {
+    "name": "Vanguard",
+    "document": "bfrd",
+    "hit_dice": "D12",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "con",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_vanguard-marshal",
+  "fields": {
+    "name": "Marshal",
+    "document": "bfrd",
+    "desc": "Marshals are considered by some to be the ultimate vanguards. They hone their martial and leadership skills to become beacons of authority on the battlefield that inspire undying loyalty in those they command. Those that chose this path inevitably leave their mark on history as knights of legend, ruthless conquerors, or brilliant generals.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_vanguard"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_theurge",
+  "fields": {
+    "name": "Theurge",
+    "document": "bfrd",
+    "hit_dice": "D6",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "int",
+      "wis"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_conduit",
+  "fields": {
+    "name": "Conduit",
+    "document": "bfrd",
+    "desc": "Theurges that embody the Conduit devotion, view all magic—regardless of source—as a natural extension of the life force that resides within all creatures. Conduits perceive the Arcane and Divine within themselves as readily as they feel their blood pumping through their veins, and they believe the deepest reserves of magical power lie within the soul. They translate these beliefs into practical applications, allowing them to exchange vitality for spellcasting potential and disrupt the magical energies within other creatures.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_theurge"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_warlock",
+  "fields": {
+    "name": "Warlock",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "HALF",
+    "primary_abilities": [],
+    "saving_throws": [
+      "wis",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_fiend",
+  "fields": {
+    "name": "Fiend",
+    "document": "bfrd",
+    "desc": "Your patron is a greater fiend who holds dominion over lesser demons or devils. Fiendish patrons are uncontestably bound to the forces of evil—though the warlocks they choose rarely are. These patrons often delight in granting power to mortals, even if those mortals openly strive against their destructive aims. Whether these tendencies are exercises in corruption or serve a more nefarious design, few can say.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_warlock"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_wizard",
+  "fields": {
+    "name": "Wizard",
+    "document": "bfrd",
+    "hit_dice": "D6",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "int",
+      "wis"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_battle-mage",
+  "fields": {
+    "name": "Battle Mage",
+    "document": "bfrd",
+    "desc": "Wizards who follow the Battle Mage tradition aren't interested in theoretical musings or tedious experiments. Instead, they pursue new ways to enhance their power so that they can destroy their foes (and defend their allies) with ever-greater efficiency.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_wizard"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_barbarian",
+  "fields": {
+    "name": "Barbarian",
+    "document": "bfrd",
+    "hit_dice": "D12",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "str",
+      "con"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_berserker",
+  "fields": {
+    "name": "Berserker",
+    "document": "bfrd",
+    "desc": "Through primal rite or natural bloodthirst, some barbarians can work themselves into a rage so ferocious and explosively violent that it risks breaking their bodies. Berserkers may lose themselves in their frenzy, seething with raw brutality, embracing the blood-soaked battlefield, uncaring of their own safety.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_barbarian"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_bard",
+  "fields": {
+    "name": "Bard",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "dex",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_college-of-lore",
+  "fields": {
+    "name": "College of Lore",
+    "document": "bfrd",
+    "desc": "Bards who align with the college of Lore value knowledge most highly. Many from this college are preoccupied with preserving ancient rituals, folklore, and stories—or recovering such things that were lost. These bards glean wisdom from all manner of cultures and sources, allowing them to utilize their magic and talents in novel ways.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_bard"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_cleric",
+  "fields": {
+    "name": "Cleric",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "wis",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_life-domain",
+  "fields": {
+    "name": "Life Domain",
+    "document": "bfrd",
+    "desc": "Gods of the Life domain celebrate natural cycles of life and death, exemplifying health and vitality. Devotees of this domain are encouraged to heal the wounded, care for the sick, and oppose the perversion of undeath.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_cleric"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_war-domain",
+  "fields": {
+    "name": "War Domain",
+    "document": "bfrd",
+    "desc": "Gods of the War domain celebrate strength, the glory of victory, and the thrill of competition. Those gods with evil or chaotic proclivities emphasize destruction and violence, but most societies and heroic characters worship war gods who honor courage and excellence in battle and cherish those who fight when the need is great.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_cleric"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_druid",
+  "fields": {
+    "name": "Druid",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "int",
+      "wis"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_shifter",
+  "fields": {
+    "name": "Shifter",
+    "document": "bfrd",
+    "desc": "Druids that align with the ring of the Shifter feel a deep connection to the animals that walk the world. Shifters delve into the mysteries of transformation, spending much of their time in the forms of the beasts they so admire. To you, there is no greater joy than feeling wind beneath your wings, stalking prey on padded paws, or swimming through crystalline depths.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_druid"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_fighter",
+  "fields": {
+    "name": "Fighter",
+    "document": "bfrd",
+    "hit_dice": "D10",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "str",
+      "con"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_weapon-master",
+  "fields": {
+    "name": "Weapon Master",
+    "document": "bfrd",
+    "desc": "Most fighters feel a deep connection to their weapons, but none more so than the Weapon Master. For them, a favored bow or blade is a natural extension of their body and a trusted ally. Fighters who pursue this subclass learn to use their chosen arms with efficiency and artistry.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_fighter"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_monk",
+  "fields": {
+    "name": "Monk",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "str",
+      "dex"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_open-hand",
+  "fields": {
+    "name": "Open Hand",
+    "document": "bfrd",
+    "desc": "Monks of the Open Hand hone their bodies to physical perfection. They learn techniques to push and trip their opponents, practice advanced meditation to protect them from harm, and develop secret techniques to transform their bodies into the ultimate weapon.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_monk"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_paladin",
+  "fields": {
+    "name": "Paladin",
+    "document": "bfrd",
+    "hit_dice": "D10",
+    "caster_type": "HALF",
+    "primary_abilities": [],
+    "saving_throws": [
+      "wis",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_oath-of-devotion",
+  "fields": {
+    "name": "Oath of Devotion",
+    "document": "bfrd",
+    "desc": "Swearing an oath of Devotion binds a paladin to the principles of duty, honor, justice, and order. These paladins define themselves as holy warriors or knights, pledged to further a righteous cause to which they devote themselves. They typically hold angels, resplendent servants of good, in high regard, often adorning their armor, shield, or weapon with their iconography.\n\n**Tenets of Devotion.** Though the exact words and strictures of the oath of Devotion vary, its paladins share these tenets.\n- *Compassion.* Protect the weak, aid the helpless, and show mercy to your enemies whenever you are able.\n- *Courage.* Though caution is wise, never fear to act.\n- *Duty.* Do always as you have sworn to do. Obey those who have authority over you.\n- *Honesty.* Never tell a lie when the truth will suffice. Your word is your sacred promise.\n- *Honor.* Treat others with fairness. Let your deeds prove your character.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_paladin"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_ranger",
+  "fields": {
+    "name": "Ranger",
+    "document": "bfrd",
+    "hit_dice": "D10",
+    "caster_type": "HALF",
+    "primary_abilities": [],
+    "saving_throws": [
+      "str",
+      "dex"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_hunter",
+  "fields": {
+    "name": "Hunter",
+    "document": "bfrd",
+    "desc": "Rangers who heed the calling of the Hunter are no mere trappers or furriers. They are the last line of defense between the natural and the supernatural world. Hunters seek, stalk, and slay monstrous predators like outsiders, fiends, and undead who devastate populations with their malign magic.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_ranger"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_rogue",
+  "fields": {
+    "name": "Rogue",
+    "document": "bfrd",
+    "hit_dice": "D8",
+    "caster_type": "NONE",
+    "primary_abilities": [],
+    "saving_throws": [
+      "dex",
+      "int"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_thief",
+  "fields": {
+    "name": "Thief",
+    "document": "bfrd",
+    "desc": "You have a reputation for quick thinking and quicker fingers. Leave throat-cutting and con-running to lesser scoundrels. You live to liberate treasures held under lock and key. The thrill of bypassing a sealed door, complex trap, or other “impassable” obstacle is the true prize—followed by the payday that comes from whatever you took.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_rogue"
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_sorcerer",
+  "fields": {
+    "name": "Sorcerer",
+    "document": "bfrd",
+    "hit_dice": "D6",
+    "caster_type": "FULL",
+    "primary_abilities": [],
+    "saving_throws": [
+      "con",
+      "cha"
+    ],
+    "subclass_of": null
+  }
+},
+{
+  "model": "api_v2.characterclass",
+  "pk": "bfrd_draconic",
+  "fields": {
+    "name": "Draconic",
+    "document": "bfrd",
+    "desc": "Through lineage, bargain, or unrequited gift, the origins of your magic lie in the preternatural power of dragons. These beings, monumental in their age, power, and size, possess unshakeable bearing, unstoppable might, and mastery over the elements of the natural world.",
+    "hit_dice": null,
+    "caster_type": null,
+    "primary_abilities": [],
+    "saving_throws": [],
+    "subclass_of": "bfrd_sorcerer"
+  }
 }
 ]

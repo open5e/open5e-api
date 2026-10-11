@@ -60,7 +60,7 @@ class DocumentSerializer(GameContentSerializer):
     gamesystem = GameSystemSummarySerializer(read_only=True)
     display_name = serializers.SerializerMethodField()
 
-    def get_display_name(self, obj):
+    def get_display_name(self, obj) -> str:
         return obj.display_name_or_name
 
     class Meta:
@@ -76,7 +76,7 @@ class DocumentSummarySerializer(GameContentSerializer):
     gamesystem = GameSystemSummarySerializer()
     display_name = serializers.SerializerMethodField()
 
-    def get_display_name(self, obj):
+    def get_display_name(self, obj) -> str:
         return obj.display_name_or_name
 
     class Meta:
