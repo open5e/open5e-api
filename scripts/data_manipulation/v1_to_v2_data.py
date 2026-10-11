@@ -84,7 +84,7 @@ def copy_actions_2(obj_v1, obj_v2):
         for a in json.loads(obj_v1.actions_json):
             at = "ACTION"
             form_condition = None
-            legendary_cost = 1
+            legendary_cost = None
             uses_type = None
             uses_param = None
             name = a['name']
