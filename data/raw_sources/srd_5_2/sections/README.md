@@ -1,5 +1,7 @@
 # D&D SRD 5.2 Sections
 
+> **Historical.** These files were used for the initial `srd-2024` import and don't match the official PDFs. Don't correct or re-import from them; check data against `../SRD_CC_v5.2.1.pdf` instead. See `../README.md`.
+
 This directory contains the D&D System Reference Document 5.2 split into individual files based on H1 (top-level) sections.
 
 ## Source Document
