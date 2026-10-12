@@ -14222,7 +14222,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "8d10",
+    "damage_roll": null,
     "desc": "Roll 8d10 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_color-spray",
@@ -14237,7 +14237,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "10d10",
+    "damage_roll": null,
     "desc": "Roll 10d10 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_color-spray",
@@ -14252,7 +14252,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "12d10",
+    "damage_roll": null,
     "desc": "Roll 12d10 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_color-spray",
@@ -14267,7 +14267,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "14d10",
+    "damage_roll": null,
     "desc": "Roll 14d10 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_color-spray",
@@ -14282,7 +14282,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "16d10",
+    "damage_roll": null,
     "desc": "Roll 16d10 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_color-spray",
@@ -14297,7 +14297,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "18d10",
+    "damage_roll": null,
     "desc": "Roll 18d10 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_color-spray",
@@ -14312,7 +14312,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "20d10",
+    "damage_roll": null,
     "desc": "Roll 20d10 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_color-spray",
@@ -14327,7 +14327,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "22d10",
+    "damage_roll": null,
     "desc": "Roll 22d10 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_color-spray",
@@ -14342,7 +14342,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "7d8",
+    "damage_roll": null,
     "desc": "Roll 7d8 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_sleep",
@@ -14357,7 +14357,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "9d8",
+    "damage_roll": null,
     "desc": "Roll 9d8 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_sleep",
@@ -14372,7 +14372,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "11d8",
+    "damage_roll": null,
     "desc": "Roll 11d8 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_sleep",
@@ -14387,7 +14387,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "13d8",
+    "damage_roll": null,
     "desc": "Roll 13d8 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_sleep",
@@ -14402,7 +14402,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "15d8",
+    "damage_roll": null,
     "desc": "Roll 15d8 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_sleep",
@@ -14417,7 +14417,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "17d8",
+    "damage_roll": null,
     "desc": "Roll 17d8 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_sleep",
@@ -14432,7 +14432,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "19d8",
+    "damage_roll": null,
     "desc": "Roll 19d8 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_sleep",
@@ -14447,7 +14447,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "21d8",
+    "damage_roll": null,
     "desc": "Roll 21d8 to find the total hit points affected.",
     "duration": null,
     "parent": "srd_sleep",
@@ -14957,7 +14957,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "+2",
+    "damage_roll": null,
     "desc": "The weapon gains a +2 bonus to attack rolls and damage rolls.",
     "duration": null,
     "parent": "srd_magic-weapon",
@@ -14972,7 +14972,7 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "+3",
+    "damage_roll": null,
     "desc": "The weapon gains a +3 bonus to attack rolls and damage rolls.",
     "duration": null,
     "parent": "srd_magic-weapon",
@@ -15043,5 +15043,155 @@
   },
   "model": "api_v2.spellcastingoption",
   "pk": 10967
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon twice as many creatures.",
+    "duration": null,
+    "parent": "srd_conjure-animals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10968
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon three times as many creatures.",
+    "duration": null,
+    "parent": "srd_conjure-animals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10969
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon twice as many creatures.",
+    "duration": null,
+    "parent": "srd_conjure-minor-elementals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10970
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon three times as many creatures.",
+    "duration": null,
+    "parent": "srd_conjure-minor-elementals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10971
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon twice as many creatures.",
+    "duration": null,
+    "parent": "srd_conjure-woodland-beings",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10972
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon three times as many creatures.",
+    "duration": null,
+    "parent": "srd_conjure-woodland-beings",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10973
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The weapon gains a +2 bonus to attack rolls and damage rolls.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10974
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The weapon gains a +3 bonus to attack rolls and damage rolls.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10975
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The weapon gains a +3 bonus to attack rolls and damage rolls.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10976
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The weapon gains a +3 bonus to attack rolls and damage rolls.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10977
 }
 ]
