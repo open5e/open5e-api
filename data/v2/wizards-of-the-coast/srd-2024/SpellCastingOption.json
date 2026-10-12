@@ -2300,7 +2300,7 @@
     "fields": {
       "parent": "srd-2024_conjure-celestial",
       "type": "slot_level_8",
-      "damage_roll": "2d12",
+      "damage_roll": "7d12",
       "target_count": null,
       "duration": null,
       "range": null,
@@ -2315,7 +2315,7 @@
     "fields": {
       "parent": "srd-2024_conjure-celestial",
       "type": "slot_level_9",
-      "damage_roll": "3d12",
+      "damage_roll": "8d12",
       "target_count": null,
       "duration": null,
       "range": null,
@@ -2998,21 +2998,6 @@
     },
     "model": "api_v2.spellcastingoption",
     "pk": 10175
-  },
-  {
-    "fields": {
-      "concentration": null,
-      "damage_roll": null,
-      "desc": "automatically dispels spells of 3rd level or lower",
-      "duration": null,
-      "parent": "srd-2024_dispel-magic",
-      "range": null,
-      "shape_size": null,
-      "target_count": null,
-      "type": "slot_level_3"
-    },
-    "model": "api_v2.spellcastingoption",
-    "pk": 10176
   },
   {
     "fields": {
@@ -4938,7 +4923,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "blocks spells of 5th level or lower",
+      "desc": "blocks spells of 6th level or lower",
       "duration": null,
       "parent": "srd-2024_globe-of-invulnerability",
       "range": null,
@@ -4953,7 +4938,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "blocks spells of 6th level or lower",
+      "desc": "blocks spells of 7th level or lower",
       "duration": null,
       "parent": "srd-2024_globe-of-invulnerability",
       "range": null,
@@ -4968,7 +4953,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "blocks spells of 7th level or lower",
+      "desc": "blocks spells of 8th level or lower",
       "duration": null,
       "parent": "srd-2024_globe-of-invulnerability",
       "range": null,
@@ -7232,8 +7217,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+2",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +2.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7247,8 +7232,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+2",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +2.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7262,8 +7247,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+2",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +2.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7277,8 +7262,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+3",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +3.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7292,8 +7277,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+3",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +3.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7307,8 +7292,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+3",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +3.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7322,8 +7307,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+3",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +3.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -10228,5 +10213,20 @@
     },
     "model": "api_v2.spellcastingoption",
     "pk": 10752
+  },
+  {
+    "fields": {
+      "concentration": null,
+      "damage_roll": null,
+      "desc": "The spell lasts until it is ended by one of the spells mentioned above.",
+      "duration": null,
+      "parent": "srd-2024_geas",
+      "range": null,
+      "shape_size": null,
+      "target_count": null,
+      "type": "slot_level_9"
+    },
+    "model": "api_v2.spellcastingoption",
+    "pk": 10978
   }
 ]
