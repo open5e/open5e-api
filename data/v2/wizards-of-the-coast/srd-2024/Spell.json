@@ -579,7 +579,10 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [],
+      "damage_types": [
+        "force",
+        "bludgeoning"
+      ],
       "duration": "1 minute",
       "shape_type": null,
       "shape_size": null,
@@ -815,9 +818,7 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [
-        "necrotic"
-      ],
+      "damage_types": [],
       "duration": "10 minutes",
       "shape_type": null,
       "shape_size": null,
@@ -2268,7 +2269,9 @@
       "saving_throw_ability": "dexterity",
       "attack_roll": false,
       "damage_roll": "6d12",
-      "damage_types": [],
+      "damage_types": [
+        "radiant"
+      ],
       "duration": "10 minutes",
       "shape_type": null,
       "shape_size": null,
@@ -2625,7 +2628,9 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [],
+      "damage_types": [
+        "bludgeoning"
+      ],
       "duration": "10 minutes",
       "shape_type": null,
       "shape_size": null,
@@ -5373,7 +5378,8 @@
       "attack_roll": false,
       "damage_roll": "5d10",
       "damage_types": [
-        "necrotic"
+        "necrotic",
+        "radiant"
       ],
       "duration": "1 day",
       "shape_type": null,
@@ -5493,9 +5499,7 @@
       "saving_throw_ability": "constitution",
       "attack_roll": false,
       "damage_roll": "10d6",
-      "damage_types": [
-        "cold"
-      ],
+      "damage_types": [],
       "duration": "1 hour",
       "shape_type": "sphere",
       "shape_size": 60,
@@ -5577,9 +5581,7 @@
       "saving_throw_ability": "constitution",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [
-        "slashing"
-      ],
+      "damage_types": [],
       "duration": "1 hour",
       "shape_type": null,
       "shape_size": null,
@@ -5744,7 +5746,11 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [],
+      "damage_types": [
+        "poison",
+        "piercing",
+        "bludgeoning"
+      ],
       "duration": "10 minutes",
       "shape_type": null,
       "shape_size": null,
@@ -5860,7 +5866,13 @@
       "saving_throw_ability": "dexterity",
       "attack_roll": false,
       "damage_roll": "5d8",
-      "damage_types": [],
+      "damage_types": [
+        "acid",
+        "cold",
+        "fire",
+        "lightning",
+        "thunder"
+      ],
       "duration": "until dispelled or triggered",
       "shape_type": null,
       "shape_size": null,
@@ -6577,9 +6589,7 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "2d10",
-      "damage_types": [
-        "poison"
-      ],
+      "damage_types": [],
       "duration": "instantaneous",
       "shape_type": "cube",
       "shape_size": 10,
@@ -8560,9 +8570,7 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [
-        "psychic"
-      ],
+      "damage_types": [],
       "duration": "24 hours",
       "shape_type": null,
       "shape_size": null,
@@ -9700,7 +9708,6 @@
       "damage_types": [
         "lightning",
         "fire",
-        "force",
         "poison",
         "acid",
         "cold"
@@ -9983,9 +9990,7 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [
-        "poison"
-      ],
+      "damage_types": [],
       "duration": "1 hour",
       "shape_type": null,
       "shape_size": null,
@@ -11258,9 +11263,7 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [
-        "thunder"
-      ],
+      "damage_types": [],
       "duration": "10 minutes",
       "shape_type": "sphere",
       "shape_size": 20,
@@ -11979,9 +11982,7 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [
-        "slashing"
-      ],
+      "damage_types": [],
       "duration": "1 hour",
       "shape_type": null,
       "shape_size": null,
@@ -12023,7 +12024,11 @@
       "attack_roll": false,
       "damage_roll": "2d6",
       "damage_types": [
-        "thunder"
+        "thunder",
+        "acid",
+        "lightning",
+        "bludgeoning",
+        "cold"
       ],
       "duration": "1 minute",
       "shape_type": null,
@@ -12103,7 +12108,14 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [],
+      "damage_types": [
+        "piercing",
+        "acid",
+        "cold",
+        "fire",
+        "lightning",
+        "poison"
+      ],
       "duration": "1 hour",
       "shape_type": null,
       "shape_size": null,
@@ -12227,7 +12239,9 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [],
+      "damage_types": [
+        "necrotic"
+      ],
       "duration": "until dispelled or triggered",
       "shape_type": "sphere",
       "shape_size": 60,
@@ -12346,7 +12360,9 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "1d100",
-      "damage_types": [],
+      "damage_types": [
+        "force"
+      ],
       "duration": "instantaneous",
       "shape_type": null,
       "shape_size": null,
@@ -13192,9 +13208,7 @@
       "saving_throw_ability": "dexterity",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [
-        "psychic"
-      ],
+      "damage_types": [],
       "duration": "10 minutes",
       "shape_type": null,
       "shape_size": null,
@@ -13478,9 +13492,7 @@
       "saving_throw_ability": "",
       "attack_roll": false,
       "damage_roll": "",
-      "damage_types": [
-        "slashing"
-      ],
+      "damage_types": [],
       "duration": "8 hours",
       "shape_type": null,
       "shape_size": null,
