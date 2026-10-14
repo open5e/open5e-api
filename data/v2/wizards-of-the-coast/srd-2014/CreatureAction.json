@@ -3377,21 +3377,6 @@
   {
     "fields": {
       "action_type": "ACTION",
-      "desc": "The demon chooses what to summon and attempts a magical summoning.\nA balor has a 50 percent chance of summoning 1d8 vrocks, 1d6 hezrous, 1d4 glabrezus, 1d3 nalfeshnees, 1d2 mariliths, or one goristro.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Demon",
-      "parent": "srd_balor",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 4,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_balor_variant-summon-demon"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
       "desc": "Melee Weapon Attack: +14 to hit, reach 30 ft., one target. Hit: 15 (2d6 + 8) slashing damage plus 10 (3d6) fire damage, and the target must succeed on a DC 20 Strength saving throw or be pulled up to 25 feet toward the balor.",
       "name": "Whip",
       "parent": "srd_balor",
@@ -5417,21 +5402,6 @@
   {
     "fields": {
       "action_type": "ACTION",
-      "desc": "The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Mephits",
-      "parent": "srd_dust-mephit",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_dust-mephit_variant-summon-mephits"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
       "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.",
       "name": "Talons",
       "parent": "srd_eagle",
@@ -6977,21 +6947,6 @@
   {
     "fields": {
       "action_type": "ACTION",
-      "desc": "The demon chooses what to summon and attempts a magical summoning.\nA glabrezu has a 30 percent chance of summoning 1d3 vrocks, 1d2 hezrous, or one glabrezu.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Demon",
-      "parent": "srd_glabrezu",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 3,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_glabrezu_variant-summon-demon"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
       "desc": "The gladiator makes three melee attacks or two ranged attacks.",
       "name": "Multiattack",
       "parent": "srd_gladiator",
@@ -7787,21 +7742,6 @@
   {
     "fields": {
       "action_type": "ACTION",
-      "desc": "The demon chooses what to summon and attempts a magical summoning.\nA hezrou has a 30 percent chance of summoning 2d6 dretches or one hezrou.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Demon",
-      "parent": "srd_hezrou",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 3,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_hezrou_variant-summon-demon"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
       "desc": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 18 (3d8 + 5) bludgeoning damage.",
       "name": "Greatclub",
       "parent": "srd_hill-giant",
@@ -8158,21 +8098,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "srd_ice-mephit_frost-breath"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
-      "desc": "The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Mephits",
-      "parent": "srd_ice-mephit",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_ice-mephit_variant-summon-mephits"
   },
   {
     "fields": {
@@ -8867,21 +8792,6 @@
   {
     "fields": {
       "action_type": "ACTION",
-      "desc": "The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Mephits",
-      "parent": "srd_magma-mephit",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_magma-mephit_variant-summon-mephits"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
       "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) fire damage. If the target is a creature or a flammable object, it ignites. Until a target takes an action to douse the fire, the target takes 3 (1d6) fire damage at the end of each of its turns.",
       "name": "Touch",
       "parent": "srd_magmin",
@@ -9058,21 +8968,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "srd_marilith_teleport"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
-      "desc": "The demon chooses what to summon and attempts a magical summoning.\nA marilith has a 50 percent chance of summoning 1d6 vrocks, 1d4 hezrous, 1d3 glabrezus, 1d2 nalfeshnees, or one marilith.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Demon",
-      "parent": "srd_marilith",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 4,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_marilith_variant-summon-demon"
   },
   {
     "fields": {
@@ -9568,21 +9463,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "srd_nalfeshnee_teleport"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
-      "desc": "The demon chooses what to summon and attempts a magical summoning.\nA nalfeshnee has a 50 percent chance of summoning 1d4 vrocks, 1d3 hezrous, 1d2 glabrezus, or one nalfeshnee.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Demon",
-      "parent": "srd_nalfeshnee",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 5,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_nalfeshnee_variant-summon-demon"
   },
   {
     "fields": {
@@ -11537,21 +11417,6 @@
   {
     "fields": {
       "action_type": "ACTION",
-      "desc": "The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Mephits",
-      "parent": "srd_steam-mephit",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 2,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_steam-mephit_variant-summon-mephits"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
       "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage, and the stirge attaches to the target. While attached, the stirge doesn't attack. Instead, at the start of each of the stirge's turns, the target loses 5 (1d4 + 3) hit points due to blood loss.\nThe stirge can detach itself by spending 5 feet of its movement. It does so after it drains 10 hit points of blood from the target or the target dies. A creature, including the target, can use its action to detach the stirge.",
       "name": "Blood Drain",
       "parent": "srd_stirge",
@@ -12808,21 +12673,6 @@
     },
     "model": "api_v2.creatureaction",
     "pk": "srd_vrock_talons"
-  },
-  {
-    "fields": {
-      "action_type": "ACTION",
-      "desc": "The demon chooses what to summon and attempts a magical summoning.\nA vrock has a 30 percent chance of summoning 2d4 dretches or one vrock.\nA summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.",
-      "name": "Variant: Summon Demon",
-      "parent": "srd_vrock",
-      "uses_param": 1,
-      "uses_type": "PER_DAY",
-      "order_in_statblock": 5,
-      "limited_to_form": null,
-      "legendary_action_cost": null
-    },
-    "model": "api_v2.creatureaction",
-    "pk": "srd_vrock_variant-summon-demon"
   },
   {
     "fields": {
