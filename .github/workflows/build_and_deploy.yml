@@ -19,16 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0  # git describe needs the tags.
       - name: Login to GHCR
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Set image tags
+      - name: Set image tags and release
         run: |
-          echo "GITHUB_REF = $GITHUB_REF" > version.py
-          echo "GITHUB_SHA = $GITHUB_SHA" >> version.py
+          echo "RELEASE_ID=$(git describe --tags --always)" >> $GITHUB_ENV
 
           if [[ $GITHUB_REF == refs/heads/main ]]; then
             echo "IMAGE_TAGS=ghcr.io/open5e/open5e-api:latest" >> $GITHUB_ENV
@@ -40,6 +41,7 @@ jobs:
         with:
           push: true
           tags: ${{ env.IMAGE_TAGS }}
+          build-args: OPEN5E_RELEASE_ID=${{ env.RELEASE_ID }}
 
   deploy:
     runs-on: ubuntu-latest
