@@ -118,6 +118,16 @@ gunicorn -b :8888 -w 3 --timeout 120 server.wsgi:application
 
 You can use our Dockerfile as inspiration, but it likely will not work without significant edits to your operating environment. We have customized our production environment to use it.
 
+### Health check
+`GET /health` reports whether the instance can serve requests, and what it's running. It uses the [Health Check Response Format for HTTP APIs](https://datatracker.ietf.org/doc/html/draft-inadarei-api-health-check) (`application/health+json`):
+
+- `status` is `pass`, `warn` (e.g. the vector search index is missing) or `fail` (e.g. no data is loaded). A `fail` returns HTTP 503.
+- `version` is the release in `pyproject.toml`, and `releaseId` is the build's `git describe`.
+- `schema` has a hash of the v2 OpenAPI document, which changes only when the shape of the API changes.
+- `data` has a hash of each document's fixture files, which changes only when that document's data changes.
+
+The Docker build records the version and hashes with `manage.py build_info`. Without that, they're worked out on the first request.
+
 ## Building the OAS file
 
 After completing a build, you can generate an OAS file to be used by another application.

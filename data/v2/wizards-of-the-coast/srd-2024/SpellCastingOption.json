@@ -573,7 +573,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "damage increases by 2d4 (Medium or smaller), 2d6 (Large), or 2d12 (Huge)",
+      "desc": "The creature's Slam damage increases by 1d4 (Medium or smaller), 1d6 (Large), or 1d12 (Huge).",
       "duration": null,
       "parent": "srd-2024_animate-objects",
       "range": null,
@@ -588,7 +588,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "damage increases by 3d4 (Medium or smaller), 3d6 (Large), or 3d12 (Huge)",
+      "desc": "The creature's Slam damage increases by 2d4 (Medium or smaller), 2d6 (Large), or 2d12 (Huge).",
       "duration": null,
       "parent": "srd-2024_animate-objects",
       "range": null,
@@ -603,7 +603,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "damage increases by 4d4 (Medium or smaller), 4d6 (Large), or 4d12 (Huge)",
+      "desc": "The creature's Slam damage increases by 3d4 (Medium or smaller), 3d6 (Large), or 3d12 (Huge).",
       "duration": null,
       "parent": "srd-2024_animate-objects",
       "range": null,
@@ -618,7 +618,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "damage increases by 5d4 (Medium or smaller), 5d6 (Large), or 5d12 (Huge)",
+      "desc": "The creature's Slam damage increases by 4d4 (Medium or smaller), 4d6 (Large), or 4d12 (Huge).",
       "duration": null,
       "parent": "srd-2024_animate-objects",
       "range": null,
@@ -641,7 +641,7 @@
       "range": null,
       "concentration": null,
       "shape_size": null,
-      "desc": "Clenched Fist deals 6d8 Force damage. Grasping Hand deals 4d6 Bludgeoning damage."
+      "desc": "The damage of the Clenched Fist increases by 2d8 and the damage of the Grasping Hand increases by 2d6."
     }
   },
   {
@@ -656,7 +656,7 @@
       "range": null,
       "concentration": null,
       "shape_size": null,
-      "desc": "Clenched Fist deals 8d8 Force damage. Grasping Hand deals 6d6 Bludgeoning damage."
+      "desc": "The damage of the Clenched Fist increases by 4d8 and the damage of the Grasping Hand increases by 4d6."
     }
   },
   {
@@ -671,7 +671,7 @@
       "range": null,
       "concentration": null,
       "shape_size": null,
-      "desc": "Clenched Fist deals 10d8 Force damage. Grasping Hand deals 8d6 Bludgeoning damage."
+      "desc": "The damage of the Clenched Fist increases by 6d8 and the damage of the Grasping Hand increases by 6d6."
     }
   },
   {
@@ -686,7 +686,7 @@
       "range": null,
       "concentration": null,
       "shape_size": null,
-      "desc": "Clenched Fist deals 12d8 Force damage. Grasping Hand deals 10d6 Bludgeoning damage."
+      "desc": "The damage of the Clenched Fist increases by 8d8 and the damage of the Grasping Hand increases by 8d6."
     }
   },
   {
@@ -2300,7 +2300,7 @@
     "fields": {
       "parent": "srd-2024_conjure-celestial",
       "type": "slot_level_8",
-      "damage_roll": "2d12",
+      "damage_roll": "7d12",
       "target_count": null,
       "duration": null,
       "range": null,
@@ -2315,7 +2315,7 @@
     "fields": {
       "parent": "srd-2024_conjure-celestial",
       "type": "slot_level_9",
-      "damage_roll": "3d12",
+      "damage_roll": "8d12",
       "target_count": null,
       "duration": null,
       "range": null,
@@ -2998,21 +2998,6 @@
     },
     "model": "api_v2.spellcastingoption",
     "pk": 10175
-  },
-  {
-    "fields": {
-      "concentration": null,
-      "damage_roll": null,
-      "desc": "automatically dispels spells of 3rd level or lower",
-      "duration": null,
-      "parent": "srd-2024_dispel-magic",
-      "range": null,
-      "shape_size": null,
-      "target_count": null,
-      "type": "slot_level_3"
-    },
-    "model": "api_v2.spellcastingoption",
-    "pk": 10176
   },
   {
     "fields": {
@@ -4696,7 +4681,7 @@
   },
   {
     "model": "api_v2.spellcastingoption",
-    "pk": 10669,
+    "pk": 10979,
     "fields": {
       "parent": "srd-2024_freezing-sphere",
       "type": "slot_level_7",
@@ -4706,12 +4691,12 @@
       "range": null,
       "concentration": null,
       "shape_size": null,
-      "desc": "The damage increases to 11d6."
+      "desc": "The damage increases by 1d6."
     }
   },
   {
     "model": "api_v2.spellcastingoption",
-    "pk": 10670,
+    "pk": 10980,
     "fields": {
       "parent": "srd-2024_freezing-sphere",
       "type": "slot_level_8",
@@ -4721,12 +4706,12 @@
       "range": null,
       "concentration": null,
       "shape_size": null,
-      "desc": "The damage increases to 12d6."
+      "desc": "The damage increases by 2d6."
     }
   },
   {
     "model": "api_v2.spellcastingoption",
-    "pk": 10671,
+    "pk": 10981,
     "fields": {
       "parent": "srd-2024_freezing-sphere",
       "type": "slot_level_9",
@@ -4736,7 +4721,7 @@
       "range": null,
       "concentration": null,
       "shape_size": null,
-      "desc": "The damage increases to 13d6."
+      "desc": "The damage increases by 3d6."
     }
   },
   {
@@ -4938,7 +4923,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "blocks spells of 5th level or lower",
+      "desc": "blocks spells of 6th level or lower",
       "duration": null,
       "parent": "srd-2024_globe-of-invulnerability",
       "range": null,
@@ -4953,7 +4938,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "blocks spells of 6th level or lower",
+      "desc": "blocks spells of 7th level or lower",
       "duration": null,
       "parent": "srd-2024_globe-of-invulnerability",
       "range": null,
@@ -4968,7 +4953,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "blocks spells of 7th level or lower",
+      "desc": "blocks spells of 8th level or lower",
       "duration": null,
       "parent": "srd-2024_globe-of-invulnerability",
       "range": null,
@@ -6212,8 +6197,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "2d10",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 3d6 Cold damage.",
       "duration": null,
       "parent": "srd-2024_ice-knife",
       "range": null,
@@ -6227,8 +6212,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "3d10",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 4d6 Cold damage.",
       "duration": null,
       "parent": "srd-2024_ice-knife",
       "range": null,
@@ -6242,8 +6227,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "4d10",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 5d6 Cold damage.",
       "duration": null,
       "parent": "srd-2024_ice-knife",
       "range": null,
@@ -6257,8 +6242,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "5d10",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 6d6 Cold damage.",
       "duration": null,
       "parent": "srd-2024_ice-knife",
       "range": null,
@@ -6272,8 +6257,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "6d10",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 7d6 Cold damage.",
       "duration": null,
       "parent": "srd-2024_ice-knife",
       "range": null,
@@ -6287,8 +6272,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "7d10",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 8d6 Cold damage.",
       "duration": null,
       "parent": "srd-2024_ice-knife",
       "range": null,
@@ -6302,8 +6287,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "8d10",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 9d6 Cold damage.",
       "duration": null,
       "parent": "srd-2024_ice-knife",
       "range": null,
@@ -6317,8 +6302,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "9d10",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 10d6 Cold damage.",
       "duration": null,
       "parent": "srd-2024_ice-knife",
       "range": null,
@@ -7232,8 +7217,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+2",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +2.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7247,8 +7232,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+2",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +2.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7262,8 +7247,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+2",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +2.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7277,8 +7262,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+3",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +3.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7292,8 +7277,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+3",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +3.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7307,8 +7292,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+3",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +3.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7322,8 +7307,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "+3",
-      "desc": null,
+      "damage_roll": null,
+      "desc": "The bonus increases to +3.",
       "duration": null,
       "parent": "srd-2024_magic-weapon",
       "range": null,
@@ -7758,7 +7743,7 @@
     "fields": {
       "concentration": null,
       "damage_roll": null,
-      "desc": "can alter memories from up to 1 year ago",
+      "desc": "can alter memories from up to 365 days ago",
       "duration": null,
       "parent": "srd-2024_modify-memory",
       "range": null,
@@ -9977,8 +9962,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "11d6",
-      "desc": null,
+      "damage_roll": "12d6",
+      "desc": "The damage from passing through the sheet of frigid air increases by 1d6.",
       "duration": null,
       "parent": "srd-2024_wall-of-ice",
       "range": null,
@@ -9992,8 +9977,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "12d6",
-      "desc": null,
+      "damage_roll": "14d6",
+      "desc": "The damage from passing through the sheet of frigid air increases by 2d6.",
       "duration": null,
       "parent": "srd-2024_wall-of-ice",
       "range": null,
@@ -10007,8 +9992,8 @@
   {
     "fields": {
       "concentration": null,
-      "damage_roll": "13d6",
-      "desc": null,
+      "damage_roll": "16d6",
+      "desc": "The damage from passing through the sheet of frigid air increases by 3d6.",
       "duration": null,
       "parent": "srd-2024_wall-of-ice",
       "range": null,
@@ -10228,5 +10213,20 @@
     },
     "model": "api_v2.spellcastingoption",
     "pk": 10752
+  },
+  {
+    "fields": {
+      "concentration": null,
+      "damage_roll": null,
+      "desc": "The spell lasts until it is ended by one of the spells mentioned above.",
+      "duration": "until dispelled",
+      "parent": "srd-2024_geas",
+      "range": null,
+      "shape_size": null,
+      "target_count": null,
+      "type": "slot_level_9"
+    },
+    "model": "api_v2.spellcastingoption",
+    "pk": 10978
   }
 ]

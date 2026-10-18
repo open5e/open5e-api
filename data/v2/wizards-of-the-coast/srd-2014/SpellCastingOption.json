@@ -32,51 +32,6 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "",
-    "desc": null,
-    "duration": null,
-    "parent": "srd_acid-splash",
-    "range": null,
-    "shape_size": null,
-    "target_count": null,
-    "type": "player_level_2"
-  },
-  "model": "api_v2.spellcastingoption",
-  "pk": 5016
-},
-{
-  "fields": {
-    "concentration": null,
-    "damage_roll": "",
-    "desc": null,
-    "duration": null,
-    "parent": "srd_acid-splash",
-    "range": null,
-    "shape_size": null,
-    "target_count": null,
-    "type": "player_level_3"
-  },
-  "model": "api_v2.spellcastingoption",
-  "pk": 5017
-},
-{
-  "fields": {
-    "concentration": null,
-    "damage_roll": "",
-    "desc": null,
-    "duration": null,
-    "parent": "srd_acid-splash",
-    "range": null,
-    "shape_size": null,
-    "target_count": null,
-    "type": "player_level_4"
-  },
-  "model": "api_v2.spellcastingoption",
-  "pk": 5018
-},
-{
-  "fields": {
-    "concentration": null,
     "damage_roll": "2d6",
     "desc": null,
     "duration": null,
@@ -1156,7 +1111,7 @@
 },
 {
   "fields": {
-    "concentration": null,
+    "concentration": false,
     "damage_roll": null,
     "desc": null,
     "duration": "8 hours",
@@ -1171,7 +1126,7 @@
 },
 {
   "fields": {
-    "concentration": null,
+    "concentration": false,
     "damage_roll": null,
     "desc": null,
     "duration": "8 hours",
@@ -1186,7 +1141,7 @@
 },
 {
   "fields": {
-    "concentration": null,
+    "concentration": false,
     "damage_roll": null,
     "desc": null,
     "duration": "24 hours",
@@ -1201,7 +1156,7 @@
 },
 {
   "fields": {
-    "concentration": null,
+    "concentration": false,
     "damage_roll": null,
     "desc": null,
     "duration": "24 hours",
@@ -1216,10 +1171,10 @@
 },
 {
   "fields": {
-    "concentration": null,
+    "concentration": false,
     "damage_roll": null,
     "desc": null,
-    "duration": "Until dispelled",
+    "duration": "until dispelled",
     "parent": "srd_bestow-curse",
     "range": null,
     "shape_size": null,
@@ -4547,21 +4502,6 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "3d6",
-    "desc": null,
-    "duration": null,
-    "parent": "srd_flame-blade",
-    "range": null,
-    "shape_size": null,
-    "target_count": null,
-    "type": "slot_level_3"
-  },
-  "model": "api_v2.spellcastingoption",
-  "pk": 5486
-},
-{
-  "fields": {
-    "concentration": null,
     "damage_roll": "4d6",
     "desc": null,
     "duration": null,
@@ -5224,7 +5164,7 @@
     "concentration": null,
     "damage_roll": null,
     "desc": null,
-    "duration": "Until dispelled",
+    "duration": "until dispelled",
     "parent": "srd_geas",
     "range": null,
     "shape_size": null,
@@ -7268,7 +7208,7 @@
     "parent": "srd_magic-missile",
     "range": null,
     "shape_size": null,
-    "target_count": 2,
+    "target_count": 4,
     "type": "slot_level_2"
   },
   "model": "api_v2.spellcastingoption",
@@ -7283,7 +7223,7 @@
     "parent": "srd_magic-missile",
     "range": null,
     "shape_size": null,
-    "target_count": 3,
+    "target_count": 5,
     "type": "slot_level_3"
   },
   "model": "api_v2.spellcastingoption",
@@ -7298,7 +7238,7 @@
     "parent": "srd_magic-missile",
     "range": null,
     "shape_size": null,
-    "target_count": 4,
+    "target_count": 6,
     "type": "slot_level_4"
   },
   "model": "api_v2.spellcastingoption",
@@ -7313,7 +7253,7 @@
     "parent": "srd_magic-missile",
     "range": null,
     "shape_size": null,
-    "target_count": 5,
+    "target_count": 7,
     "type": "slot_level_5"
   },
   "model": "api_v2.spellcastingoption",
@@ -7328,7 +7268,7 @@
     "parent": "srd_magic-missile",
     "range": null,
     "shape_size": null,
-    "target_count": 6,
+    "target_count": 8,
     "type": "slot_level_6"
   },
   "model": "api_v2.spellcastingoption",
@@ -7343,7 +7283,7 @@
     "parent": "srd_magic-missile",
     "range": null,
     "shape_size": null,
-    "target_count": 7,
+    "target_count": 9,
     "type": "slot_level_7"
   },
   "model": "api_v2.spellcastingoption",
@@ -7358,7 +7298,7 @@
     "parent": "srd_magic-missile",
     "range": null,
     "shape_size": null,
-    "target_count": 8,
+    "target_count": 10,
     "type": "slot_level_8"
   },
   "model": "api_v2.spellcastingoption",
@@ -7373,7 +7313,7 @@
     "parent": "srd_magic-missile",
     "range": null,
     "shape_size": null,
-    "target_count": 9,
+    "target_count": 11,
     "type": "slot_level_9"
   },
   "model": "api_v2.spellcastingoption",
@@ -8113,51 +8053,6 @@
   },
   "model": "api_v2.spellcastingoption",
   "pk": 5829
-},
-{
-  "fields": {
-    "concentration": null,
-    "damage_roll": "",
-    "desc": null,
-    "duration": null,
-    "parent": "srd_poison-spray",
-    "range": null,
-    "shape_size": null,
-    "target_count": null,
-    "type": "player_level_2"
-  },
-  "model": "api_v2.spellcastingoption",
-  "pk": 5831
-},
-{
-  "fields": {
-    "concentration": null,
-    "damage_roll": "",
-    "desc": null,
-    "duration": null,
-    "parent": "srd_poison-spray",
-    "range": null,
-    "shape_size": null,
-    "target_count": null,
-    "type": "player_level_3"
-  },
-  "model": "api_v2.spellcastingoption",
-  "pk": 5832
-},
-{
-  "fields": {
-    "concentration": null,
-    "damage_roll": "",
-    "desc": null,
-    "duration": null,
-    "parent": "srd_poison-spray",
-    "range": null,
-    "shape_size": null,
-    "target_count": null,
-    "type": "player_level_4"
-  },
-  "model": "api_v2.spellcastingoption",
-  "pk": 5833
 },
 {
   "fields": {
@@ -11192,21 +11087,6 @@
 {
   "fields": {
     "concentration": null,
-    "damage_roll": "",
-    "desc": null,
-    "duration": null,
-    "parent": "srd_vicious-mockery",
-    "range": null,
-    "shape_size": null,
-    "target_count": null,
-    "type": "player_level_4"
-  },
-  "model": "api_v2.spellcastingoption",
-  "pk": 6091
-},
-{
-  "fields": {
-    "concentration": null,
     "damage_roll": "2d4",
     "desc": null,
     "duration": null,
@@ -11818,5 +11698,3365 @@
   },
   "model": "api_v2.spellcastingoption",
   "pk": 10741
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "5d4",
+    "desc": "The damage (both initial and later) increases by 1d4.",
+    "duration": null,
+    "parent": "srd_acid-arrow",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10753
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d4",
+    "desc": "The damage (both initial and later) increases by 2d4.",
+    "duration": null,
+    "parent": "srd_acid-arrow",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10754
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d4",
+    "desc": "The damage (both initial and later) increases by 3d4.",
+    "duration": null,
+    "parent": "srd_acid-arrow",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10755
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d4",
+    "desc": "The damage (both initial and later) increases by 4d4.",
+    "duration": null,
+    "parent": "srd_acid-arrow",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10756
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "9d4",
+    "desc": "The damage (both initial and later) increases by 5d4.",
+    "duration": null,
+    "parent": "srd_acid-arrow",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10757
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "10d4",
+    "desc": "The damage (both initial and later) increases by 6d4.",
+    "duration": null,
+    "parent": "srd_acid-arrow",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10758
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "11d4",
+    "desc": "The damage (both initial and later) increases by 7d4.",
+    "duration": null,
+    "parent": "srd_acid-arrow",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10759
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You animate or reassert control over 2 additional undead creatures.",
+    "duration": null,
+    "parent": "srd_animate-dead",
+    "range": null,
+    "shape_size": null,
+    "target_count": 3,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10760
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You animate or reassert control over 4 additional undead creatures.",
+    "duration": null,
+    "parent": "srd_animate-dead",
+    "range": null,
+    "shape_size": null,
+    "target_count": 5,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10761
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You animate or reassert control over 6 additional undead creatures.",
+    "duration": null,
+    "parent": "srd_animate-dead",
+    "range": null,
+    "shape_size": null,
+    "target_count": 7,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10762
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You animate or reassert control over 8 additional undead creatures.",
+    "duration": null,
+    "parent": "srd_animate-dead",
+    "range": null,
+    "shape_size": null,
+    "target_count": 9,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10763
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You animate or reassert control over 10 additional undead creatures.",
+    "duration": null,
+    "parent": "srd_animate-dead",
+    "range": null,
+    "shape_size": null,
+    "target_count": 11,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10764
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You animate or reassert control over 12 additional undead creatures.",
+    "duration": null,
+    "parent": "srd_animate-dead",
+    "range": null,
+    "shape_size": null,
+    "target_count": 13,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10765
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can animate 2 additional objects.",
+    "duration": null,
+    "parent": "srd_animate-objects",
+    "range": null,
+    "shape_size": null,
+    "target_count": 12,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10766
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can animate 4 additional objects.",
+    "duration": null,
+    "parent": "srd_animate-objects",
+    "range": null,
+    "shape_size": null,
+    "target_count": 14,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10767
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can animate 6 additional objects.",
+    "duration": null,
+    "parent": "srd_animate-objects",
+    "range": null,
+    "shape_size": null,
+    "target_count": 16,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10768
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can animate 8 additional objects.",
+    "duration": null,
+    "parent": "srd_animate-objects",
+    "range": null,
+    "shape_size": null,
+    "target_count": 18,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10769
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d8",
+    "desc": "The damage from the grasping hand increases by 2d6.",
+    "duration": null,
+    "parent": "srd_arcane-hand",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10770
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d8",
+    "desc": "The damage from the grasping hand increases by 4d6.",
+    "duration": null,
+    "parent": "srd_arcane-hand",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10771
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "10d8",
+    "desc": "The damage from the grasping hand increases by 6d6.",
+    "duration": null,
+    "parent": "srd_arcane-hand",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10772
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "12d8",
+    "desc": "The damage from the grasping hand increases by 8d6.",
+    "duration": null,
+    "parent": "srd_arcane-hand",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10773
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "3d6",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_branding-smite",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10774
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "4d6",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_branding-smite",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10775
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "5d6",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_branding-smite",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10776
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d6",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_branding-smite",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10777
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d6",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_branding-smite",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10778
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d6",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_branding-smite",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10779
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "9d6",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_branding-smite",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10780
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_chain-lightning",
+    "range": null,
+    "shape_size": null,
+    "target_count": 5,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10781
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_chain-lightning",
+    "range": null,
+    "shape_size": null,
+    "target_count": 6,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10782
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_chain-lightning",
+    "range": null,
+    "shape_size": null,
+    "target_count": 7,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10783
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_confusion",
+    "range": null,
+    "shape_size": 15,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10784
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_confusion",
+    "range": null,
+    "shape_size": 20,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10785
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_confusion",
+    "range": null,
+    "shape_size": 25,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10786
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_confusion",
+    "range": null,
+    "shape_size": 30,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10787
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_confusion",
+    "range": null,
+    "shape_size": 35,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10788
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You create or destroy 10 additional gallons of water, or the size of the cube increases by 5 feet.",
+    "duration": null,
+    "parent": "srd_create-or-destroy-water",
+    "range": null,
+    "shape_size": 35,
+    "target_count": null,
+    "type": "slot_level_2"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10789
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You create or destroy 20 additional gallons of water, or the size of the cube increases by 10 feet.",
+    "duration": null,
+    "parent": "srd_create-or-destroy-water",
+    "range": null,
+    "shape_size": 40,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10790
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You create or destroy 30 additional gallons of water, or the size of the cube increases by 15 feet.",
+    "duration": null,
+    "parent": "srd_create-or-destroy-water",
+    "range": null,
+    "shape_size": 45,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10791
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You create or destroy 40 additional gallons of water, or the size of the cube increases by 20 feet.",
+    "duration": null,
+    "parent": "srd_create-or-destroy-water",
+    "range": null,
+    "shape_size": 50,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10792
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You create or destroy 50 additional gallons of water, or the size of the cube increases by 25 feet.",
+    "duration": null,
+    "parent": "srd_create-or-destroy-water",
+    "range": null,
+    "shape_size": 55,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10793
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You create or destroy 60 additional gallons of water, or the size of the cube increases by 30 feet.",
+    "duration": null,
+    "parent": "srd_create-or-destroy-water",
+    "range": null,
+    "shape_size": 60,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10794
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You create or destroy 70 additional gallons of water, or the size of the cube increases by 35 feet.",
+    "duration": null,
+    "parent": "srd_create-or-destroy-water",
+    "range": null,
+    "shape_size": 65,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10795
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You create or destroy 80 additional gallons of water, or the size of the cube increases by 40 feet.",
+    "duration": null,
+    "parent": "srd_create-or-destroy-water",
+    "range": null,
+    "shape_size": 70,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10796
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_creation",
+    "range": null,
+    "shape_size": 10,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10797
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_creation",
+    "range": null,
+    "shape_size": 15,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10798
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_creation",
+    "range": null,
+    "shape_size": 20,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10799
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_creation",
+    "range": null,
+    "shape_size": 25,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10800
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "2d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_2"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10801
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "3d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10802
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "4d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10803
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "5d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10804
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10805
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10806
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10807
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "9d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10808
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "13d6",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_delayed-blast-fireball",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10809
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "14d6",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_delayed-blast-fireball",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10810
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_etherealness",
+    "range": null,
+    "shape_size": null,
+    "target_count": 3,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10811
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_etherealness",
+    "range": null,
+    "shape_size": null,
+    "target_count": 6,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10812
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_fog-cloud",
+    "range": null,
+    "shape_size": 40,
+    "target_count": null,
+    "type": "slot_level_2"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10813
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_fog-cloud",
+    "range": null,
+    "shape_size": 60,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10814
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_fog-cloud",
+    "range": null,
+    "shape_size": 80,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10815
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_fog-cloud",
+    "range": null,
+    "shape_size": 100,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10816
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_fog-cloud",
+    "range": null,
+    "shape_size": 120,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10817
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_fog-cloud",
+    "range": null,
+    "shape_size": 140,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10818
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_fog-cloud",
+    "range": null,
+    "shape_size": 160,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10819
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_fog-cloud",
+    "range": null,
+    "shape_size": 180,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10820
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d8",
+    "desc": "You can store a prepared spell of 4th level or lower in the glyph.",
+    "duration": null,
+    "parent": "srd_glyph-of-warding",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10821
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d8",
+    "desc": "You can store a prepared spell of 5th level or lower in the glyph.",
+    "duration": null,
+    "parent": "srd_glyph-of-warding",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10822
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d8",
+    "desc": "You can store a prepared spell of 6th level or lower in the glyph.",
+    "duration": null,
+    "parent": "srd_glyph-of-warding",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10823
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "9d8",
+    "desc": "You can store a prepared spell of 7th level or lower in the glyph.",
+    "duration": null,
+    "parent": "srd_glyph-of-warding",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10824
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "10d8",
+    "desc": "You can store a prepared spell of 8th level or lower in the glyph.",
+    "duration": null,
+    "parent": "srd_glyph-of-warding",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10825
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "11d8",
+    "desc": "You can store a prepared spell of 9th level or lower in the glyph.",
+    "duration": null,
+    "parent": "srd_glyph-of-warding",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10826
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "2d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_2"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10827
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "3d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10828
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "4d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10829
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "5d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10830
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10831
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10832
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10833
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "9d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10834
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_hold-monster",
+    "range": null,
+    "shape_size": null,
+    "target_count": 2,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10835
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_hold-monster",
+    "range": null,
+    "shape_size": null,
+    "target_count": 3,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10836
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_hold-monster",
+    "range": null,
+    "shape_size": null,
+    "target_count": 4,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10837
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_hold-monster",
+    "range": null,
+    "shape_size": null,
+    "target_count": 5,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10838
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "8 hours",
+    "parent": "srd_hunters-mark",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10839
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "8 hours",
+    "parent": "srd_hunters-mark",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10840
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "24 hours",
+    "parent": "srd_hunters-mark",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10841
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "24 hours",
+    "parent": "srd_hunters-mark",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10842
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "24 hours",
+    "parent": "srd_hunters-mark",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10843
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "24 hours",
+    "parent": "srd_hunters-mark",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10844
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "24 hours",
+    "parent": "srd_hunters-mark",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10845
+},
+{
+  "fields": {
+    "concentration": false,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "until dispelled",
+    "parent": "srd_major-image",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10846
+},
+{
+  "fields": {
+    "concentration": false,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "until dispelled",
+    "parent": "srd_major-image",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10847
+},
+{
+  "fields": {
+    "concentration": false,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "until dispelled",
+    "parent": "srd_major-image",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10848
+},
+{
+  "fields": {
+    "concentration": false,
+    "damage_roll": null,
+    "desc": null,
+    "duration": "until dispelled",
+    "parent": "srd_major-image",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10849
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "4d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10850
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "5d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10851
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10852
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-cure-wounds",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10853
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "2d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10854
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "3d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10855
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "4d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10856
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "5d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10857
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10858
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d4",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_mass-healing-word",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10859
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "5d10",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_phantasmal-killer",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10860
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d10",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_phantasmal-killer",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10861
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d10",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_phantasmal-killer",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10862
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d10",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_phantasmal-killer",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10863
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "9d10",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_phantasmal-killer",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10864
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "3d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_prayer-of-healing",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10865
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "4d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_prayer-of-healing",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10866
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "5d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_prayer-of-healing",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10867
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_prayer-of-healing",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10868
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_prayer-of-healing",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10869
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_prayer-of-healing",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10870
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "9d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_prayer-of-healing",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10871
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_private-sanctum",
+    "range": null,
+    "shape_size": 200,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10872
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_private-sanctum",
+    "range": null,
+    "shape_size": 300,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10873
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_private-sanctum",
+    "range": null,
+    "shape_size": 400,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10874
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_private-sanctum",
+    "range": null,
+    "shape_size": 500,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10875
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": null,
+    "duration": null,
+    "parent": "srd_private-sanctum",
+    "range": null,
+    "shape_size": 600,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10876
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "2d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_spiritual-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10878
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "2d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_spiritual-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10879
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "3d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_spiritual-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10880
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "3d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_spiritual-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10881
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "4d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_spiritual-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10882
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "4d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_spiritual-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10883
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "6d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_wall-of-fire",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10884
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "7d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_wall-of-fire",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10885
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_wall-of-fire",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10886
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "9d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_wall-of-fire",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10887
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "10d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_wall-of-fire",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10888
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "12d6",
+    "desc": "The damage from passing through the sheet of frigid air increases by 1d6.",
+    "duration": null,
+    "parent": "srd_wall-of-ice",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10889
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "14d6",
+    "desc": "The damage from passing through the sheet of frigid air increases by 2d6.",
+    "duration": null,
+    "parent": "srd_wall-of-ice",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10890
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "16d6",
+    "desc": "The damage from passing through the sheet of frigid air increases by 3d6.",
+    "duration": null,
+    "parent": "srd_wall-of-ice",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10891
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "8d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_wall-of-thorns",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10892
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "9d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_wall-of-thorns",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10893
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": "10d8",
+    "desc": null,
+    "duration": null,
+    "parent": "srd_wall-of-thorns",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10894
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Each target's hit points increase by an additional 5.",
+    "duration": null,
+    "parent": "srd_aid",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10895
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Each target's hit points increase by an additional 10.",
+    "duration": null,
+    "parent": "srd_aid",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10896
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Each target's hit points increase by an additional 15.",
+    "duration": null,
+    "parent": "srd_aid",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10897
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Each target's hit points increase by an additional 20.",
+    "duration": null,
+    "parent": "srd_aid",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10898
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Each target's hit points increase by an additional 25.",
+    "duration": null,
+    "parent": "srd_aid",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10899
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Each target's hit points increase by an additional 30.",
+    "duration": null,
+    "parent": "srd_aid",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10900
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Each target's hit points increase by an additional 35.",
+    "duration": null,
+    "parent": "srd_aid",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10901
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You gain 5 additional temporary hit points.",
+    "duration": null,
+    "parent": "srd_false-life",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_2"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10902
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You gain 10 additional temporary hit points.",
+    "duration": null,
+    "parent": "srd_false-life",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10903
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You gain 15 additional temporary hit points.",
+    "duration": null,
+    "parent": "srd_false-life",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10904
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You gain 20 additional temporary hit points.",
+    "duration": null,
+    "parent": "srd_false-life",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10905
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You gain 25 additional temporary hit points.",
+    "duration": null,
+    "parent": "srd_false-life",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10906
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You gain 30 additional temporary hit points.",
+    "duration": null,
+    "parent": "srd_false-life",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10907
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You gain 35 additional temporary hit points.",
+    "duration": null,
+    "parent": "srd_false-life",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10908
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You gain 40 additional temporary hit points.",
+    "duration": null,
+    "parent": "srd_false-life",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10909
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The target regains 80 hit points.",
+    "duration": null,
+    "parent": "srd_heal",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10910
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The target regains 90 hit points.",
+    "duration": null,
+    "parent": "srd_heal",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10911
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The target regains 100 hit points.",
+    "duration": null,
+    "parent": "srd_heal",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10912
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 2d10.",
+    "duration": null,
+    "parent": "srd_color-spray",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_2"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10913
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 4d10.",
+    "duration": null,
+    "parent": "srd_color-spray",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10914
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 6d10.",
+    "duration": null,
+    "parent": "srd_color-spray",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10915
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 8d10.",
+    "duration": null,
+    "parent": "srd_color-spray",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10916
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 10d10.",
+    "duration": null,
+    "parent": "srd_color-spray",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10917
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 12d10.",
+    "duration": null,
+    "parent": "srd_color-spray",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10918
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 14d10.",
+    "duration": null,
+    "parent": "srd_color-spray",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10919
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 16d10.",
+    "duration": null,
+    "parent": "srd_color-spray",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10920
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 2d8.",
+    "duration": null,
+    "parent": "srd_sleep",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_2"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10921
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 4d8.",
+    "duration": null,
+    "parent": "srd_sleep",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_3"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10922
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 6d8.",
+    "duration": null,
+    "parent": "srd_sleep",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10923
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 8d8.",
+    "duration": null,
+    "parent": "srd_sleep",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10924
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 10d8.",
+    "duration": null,
+    "parent": "srd_sleep",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10925
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 12d8.",
+    "duration": null,
+    "parent": "srd_sleep",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10926
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 14d8.",
+    "duration": null,
+    "parent": "srd_sleep",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10927
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Roll an additional 16d8.",
+    "duration": null,
+    "parent": "srd_sleep",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10928
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: twice as many.",
+    "duration": null,
+    "parent": "srd_conjure-animals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10929
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: three times as many.",
+    "duration": null,
+    "parent": "srd_conjure-animals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10930
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: four times as many.",
+    "duration": null,
+    "parent": "srd_conjure-animals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10931
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: twice as many.",
+    "duration": null,
+    "parent": "srd_conjure-minor-elementals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10932
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: three times as many.",
+    "duration": null,
+    "parent": "srd_conjure-minor-elementals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10933
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: twice as many.",
+    "duration": null,
+    "parent": "srd_conjure-woodland-beings",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10934
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: three times as many.",
+    "duration": null,
+    "parent": "srd_conjure-woodland-beings",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10935
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon a celestial of challenge rating 5 or lower.",
+    "duration": null,
+    "parent": "srd_conjure-celestial",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10936
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The challenge rating increases by 1.",
+    "duration": null,
+    "parent": "srd_conjure-elemental",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10937
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The challenge rating increases by 2.",
+    "duration": null,
+    "parent": "srd_conjure-elemental",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10938
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The challenge rating increases by 3.",
+    "duration": null,
+    "parent": "srd_conjure-elemental",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10939
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The challenge rating increases by 4.",
+    "duration": null,
+    "parent": "srd_conjure-elemental",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10940
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon a fey creature of challenge rating 7 or lower.",
+    "duration": null,
+    "parent": "srd_conjure-fey",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10941
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon a fey creature of challenge rating 8 or lower.",
+    "duration": null,
+    "parent": "srd_conjure-fey",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10942
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You summon a fey creature of challenge rating 9 or lower.",
+    "duration": null,
+    "parent": "srd_conjure-fey",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10943
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can animate or reassert control over four ghouls.",
+    "duration": null,
+    "parent": "srd_create-undead",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10944
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can animate or reassert control over five ghouls or two ghasts or wights.",
+    "duration": null,
+    "parent": "srd_create-undead",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10945
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can animate or reassert control over six ghouls, three ghasts or wights, or two mummies.",
+    "duration": null,
+    "parent": "srd_create-undead",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10946
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The interrupted spell has no effect if its level is 4 or lower.",
+    "duration": null,
+    "parent": "srd_counterspell",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10947
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The interrupted spell has no effect if its level is 5 or lower.",
+    "duration": null,
+    "parent": "srd_counterspell",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10948
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The interrupted spell has no effect if its level is 6 or lower.",
+    "duration": null,
+    "parent": "srd_counterspell",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10949
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The interrupted spell has no effect if its level is 7 or lower.",
+    "duration": null,
+    "parent": "srd_counterspell",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10950
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The interrupted spell has no effect if its level is 8 or lower.",
+    "duration": null,
+    "parent": "srd_counterspell",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10951
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The interrupted spell has no effect if its level is 9 or lower.",
+    "duration": null,
+    "parent": "srd_counterspell",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10952
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Any spell of 4th level or lower on the target ends.",
+    "duration": null,
+    "parent": "srd_dispel-magic",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10953
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Any spell of 5th level or lower on the target ends.",
+    "duration": null,
+    "parent": "srd_dispel-magic",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10954
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Any spell of 6th level or lower on the target ends.",
+    "duration": null,
+    "parent": "srd_dispel-magic",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10955
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Any spell of 7th level or lower on the target ends.",
+    "duration": null,
+    "parent": "srd_dispel-magic",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10956
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Any spell of 8th level or lower on the target ends.",
+    "duration": null,
+    "parent": "srd_dispel-magic",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10957
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Any spell of 9th level or lower on the target ends.",
+    "duration": null,
+    "parent": "srd_dispel-magic",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10958
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Any spell of 6th level or lower cast from outside the barrier can't affect creatures or objects within it.",
+    "duration": null,
+    "parent": "srd_globe-of-invulnerability",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10959
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Any spell of 7th level or lower cast from outside the barrier can't affect creatures or objects within it.",
+    "duration": null,
+    "parent": "srd_globe-of-invulnerability",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10960
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "Any spell of 8th level or lower cast from outside the barrier can't affect creatures or objects within it.",
+    "duration": null,
+    "parent": "srd_globe-of-invulnerability",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10961
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The bonus increases to +2.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_4"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10962
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The bonus increases to +3.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10963
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can alter the target's memories of an event that took place up to 7 days ago.",
+    "duration": null,
+    "parent": "srd_modify-memory",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10964
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can alter the target's memories of an event that took place up to 30 days ago.",
+    "duration": null,
+    "parent": "srd_modify-memory",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10965
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can alter the target's memories of an event that took place up to 1 year ago.",
+    "duration": null,
+    "parent": "srd_modify-memory",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10966
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "You can alter the target's memories of an event that took place any time in the creature's past.",
+    "duration": null,
+    "parent": "srd_modify-memory",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10967
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: twice as many.",
+    "duration": null,
+    "parent": "srd_conjure-animals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_6"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10968
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: three times as many.",
+    "duration": null,
+    "parent": "srd_conjure-animals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10969
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: twice as many.",
+    "duration": null,
+    "parent": "srd_conjure-minor-elementals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10970
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: three times as many.",
+    "duration": null,
+    "parent": "srd_conjure-minor-elementals",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10971
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: twice as many.",
+    "duration": null,
+    "parent": "srd_conjure-woodland-beings",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10972
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "More creatures appear: three times as many.",
+    "duration": null,
+    "parent": "srd_conjure-woodland-beings",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10973
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The bonus increases to +2.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_5"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10974
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The bonus increases to +3.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_7"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10975
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The bonus increases to +3.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_8"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10976
+},
+{
+  "fields": {
+    "concentration": null,
+    "damage_roll": null,
+    "desc": "The bonus increases to +3.",
+    "duration": null,
+    "parent": "srd_magic-weapon",
+    "range": null,
+    "shape_size": null,
+    "target_count": null,
+    "type": "slot_level_9"
+  },
+  "model": "api_v2.spellcastingoption",
+  "pk": 10977
 }
 ]
