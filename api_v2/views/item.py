@@ -37,8 +37,8 @@ class ItemFilterSet(FilterSet):
     class Meta:
         model = models.Item
         fields = {
-            'key': ['in', 'iexact'],
-            'name': ['iexact', 'icontains'],
+            'key': ['in', 'iexact', 'exact'],
+            'name': ['iexact', 'exact', 'icontains'],
             'desc': ['icontains'],
             'cost': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
@@ -178,11 +178,11 @@ class WeaponFilterSet(FilterSet):
     class Meta:
         model = models.Weapon
         fields = {
-            'key': ['in', 'iexact'],
-            'name': ['iexact'],
+            'key': ['in', 'iexact', 'exact'],
+            'name': ['iexact', 'exact'],
             'document__key': ['in','iexact','exact'],
             'document__gamesystem__key': ['in','iexact','exact'],
-            'damage_dice': ['in','iexact'],
+            'damage_dice': ['in','iexact','exact'],
         }
 
 
