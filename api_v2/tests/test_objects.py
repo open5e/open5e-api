@@ -1,3 +1,4 @@
+import pytest
 import requests
 
 from approvaltests import verify_as_json, Options,  DiffReporter
@@ -113,6 +114,52 @@ class TestSpellCastingOptions:
             if s.get('duration') not in VALID_DURATION
         ]
         assert not violations, f"Spells with invalid duration: {violations}"
+
+
+class TestExactFilters:
+    """A plain ?field=value filter must narrow results, not be silently ignored (#998)."""
+
+    DOCUMENT_ENDPOINTS = ['items', 'magicitems', 'weapons', 'armor', 'spells', 'creatures']
+
+    def _get(self, endpoint, query, fields, limit=5000):
+        return requests.get(
+            f"{API_BASE}/v2/{endpoint}/?{query}&fields={fields}&limit={limit}",
+            headers={'Accept': 'application/json'}
+        ).json()
+
+    def _count(self, endpoint, query=''):
+        return self._get(endpoint, query, 'key', limit=1)['count']
+
+    @pytest.mark.parametrize('endpoint', DOCUMENT_ENDPOINTS)
+    def test_document_key_filter(self, endpoint):
+        """?document__key= should behave the same as ?document__key__in= with one key."""
+        results = self._get(endpoint, 'document__key=srd-2024', 'key,document')
+        docs = {r['document']['key'] for r in results['results']}
+        assert docs == {'srd-2024'}, f"{endpoint}: got documents {docs}"
+        assert results['count'] == self._count(endpoint, 'document__key__in=srd-2024')
+
+    @pytest.mark.parametrize('endpoint', DOCUMENT_ENDPOINTS)
+    def test_document_gamesystem_key_filter(self, endpoint):
+        """?document__gamesystem__key= should behave the same as the __in lookup."""
+        results = self._get(endpoint, 'document__gamesystem__key=5e-2024', 'key,document')
+        systems = {r['document']['gamesystem']['key'] for r in results['results']}
+        assert systems == {'5e-2024'}, f"{endpoint}: got gamesystems {systems}"
+        assert results['count'] == self._count(endpoint, 'document__gamesystem__key__in=5e-2024')
+        assert results['count'] < self._count(endpoint)
+
+    @pytest.mark.parametrize('endpoint,field,value', [
+        ('items', 'key', 'srd_longsword'),
+        ('magicitems', 'key', 'srd_apparatus-of-the-crab'),
+        ('magicitems', 'name', 'Bag of Holding'),
+        ('weapons', 'key', 'srd_longsword'),
+        ('weapons', 'name', 'Longsword'),
+        ('weapons', 'damage_dice', '1d8'),
+    ])
+    def test_item_exact_filter(self, endpoint, field, value):
+        results = self._get(endpoint, f'{field}={value}', field)
+        assert results['count'] > 0
+        assert all(r[field] == value for r in results['results']), \
+            f"{endpoint}?{field}={value} returned {[r[field] for r in results['results']]}"
 
 
 class TestObjects:

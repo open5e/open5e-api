@@ -37,15 +37,15 @@ class ItemFilterSet(FilterSet):
     class Meta:
         model = models.Item
         fields = {
-            'key': ['in', 'iexact'],
-            'name': ['iexact', 'icontains'],
+            'key': ['in', 'iexact', 'exact'],
+            'name': ['iexact', 'exact', 'icontains'],
             'desc': ['icontains'],
             'cost': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'category': ['in', 'exact'],
             'document': ['in', 'exact'],
-            'document__key': ['in','iexact'],
-            'document__gamesystem__key': ['in','iexact'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
         }
 
 # used in ItemViewSet and MagicItemViewSet - factored out for DRYness
@@ -178,11 +178,11 @@ class WeaponFilterSet(FilterSet):
     class Meta:
         model = models.Weapon
         fields = {
-            'key': ['in', 'iexact'],
-            'name': ['iexact'],
-            'document__key': ['in','iexact'],
-            'document__gamesystem__key': ['in','iexact'],
-            'damage_dice': ['in','iexact'],
+            'key': ['in', 'iexact', 'exact'],
+            'name': ['iexact', 'exact'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
+            'damage_dice': ['in','iexact','exact'],
         }
 
 
