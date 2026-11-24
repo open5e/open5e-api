@@ -44,8 +44,8 @@ class ItemFilterSet(FilterSet):
             'weight': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
             'category': ['in', 'exact'],
             'document': ['in', 'exact'],
-            'document__key': ['in','iexact'],
-            'document__gamesystem__key': ['in','iexact'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
         }
 
 # used in ItemViewSet and MagicItemViewSet - factored out for DRYness
@@ -180,8 +180,8 @@ class WeaponFilterSet(FilterSet):
         fields = {
             'key': ['in', 'iexact'],
             'name': ['iexact'],
-            'document__key': ['in','iexact'],
-            'document__gamesystem__key': ['in','iexact'],
+            'document__key': ['in','iexact','exact'],
+            'document__gamesystem__key': ['in','iexact','exact'],
             'damage_dice': ['in','iexact'],
         }
 

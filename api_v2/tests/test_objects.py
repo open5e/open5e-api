@@ -1,3 +1,4 @@
+import pytest
 import requests
 
 from approvaltests import verify_as_json, Options,  DiffReporter
@@ -113,6 +114,36 @@ class TestSpellCastingOptions:
             if s.get('duration') not in VALID_DURATION
         ]
         assert not violations, f"Spells with invalid duration: {violations}"
+
+
+class TestDocumentFilters:
+    """Filtering by document__key must narrow results to that document on every endpoint."""
+
+    DOCUMENT_ENDPOINTS = ['items', 'magicitems', 'weapons', 'armor', 'spells', 'creatures']
+
+    def _keys(self, endpoint, query):
+        response = requests.get(
+            f"{API_BASE}/v2/{endpoint}/?{query}&fields=key,document&limit=5000",
+            headers={'Accept': 'application/json'}
+        ).json()
+        return response['count'], {r['document']['key'] for r in response['results']}
+
+    @pytest.mark.parametrize('endpoint', DOCUMENT_ENDPOINTS)
+    def test_document_key_filter(self, endpoint):
+        """?document__key= should behave the same as ?document__key__in= with one key."""
+        exact_count, exact_docs = self._keys(endpoint, 'document__key=srd-2024')
+        in_count, _ = self._keys(endpoint, 'document__key__in=srd-2024')
+        assert exact_docs == {'srd-2024'}, f"{endpoint}: got documents {exact_docs}"
+        assert exact_count == in_count
+
+    @pytest.mark.parametrize('endpoint', DOCUMENT_ENDPOINTS)
+    def test_document_gamesystem_key_filter(self, endpoint):
+        """?document__gamesystem__key= should behave the same as the __in lookup."""
+        exact_count, _ = self._keys(endpoint, 'document__gamesystem__key=5e-2024')
+        in_count, _ = self._keys(endpoint, 'document__gamesystem__key__in=5e-2024')
+        all_count, _ = self._keys(endpoint, '')
+        assert exact_count == in_count
+        assert exact_count < all_count
 
 
 class TestObjects:
